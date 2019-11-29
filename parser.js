@@ -18,7 +18,7 @@ async function executeCommand(argv) {
 
         console.log('Executing openapi-generator command');
         // Execute Open API Command
-        let openApiCommand = `openapi-generator generate -i ${openApiFilePath} -g javascript -o ${projectName}/ --additional-properties=withSeparateModelsAndApi=true,supportsES6=true,npmName=bitbucket-ts,npmVersion=1.0.0`;
+        let openApiCommand = `openapi-generator generate -i ${openApiFilePath} -g javascript -o ${projectName}/ --additional-properties=withSeparateModelsAndApi=true,supportsES6=true,npmName=bitbucket-ts,npmVersion=1.0.0 --skip-validate-spec`;
 
         openApi = await execShellCommand(openApiCommand);
 
