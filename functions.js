@@ -89,15 +89,19 @@ exports.getCodeBlocks = function getCodeBlocks(contents) {
     return codeBlocks;
 }
 
-exports.generateCodeFile = function generateCodeFile(codeBlocks, functionWithParams) {
-    fs.writeFileSync('newfile.js', '');
-
+exports.generateCodeFile = function generateCodeFile(codeBlocks, functionWithParams, fileName, functionType) {
     // Apend the switch case to the top of the file
-    fs.appendFileSync('newfile.js', createSwitchfunction(functionWithParams));
+    fs.appendFileSync(fileName, createSwitchfunction(functionWithParams, functionType));
 
-    createSwitchfunction(functionWithParams);
+    let positionsToRemove = [];
     // Create a new file
     for (let i = 0; i < codeBlocks.length; i++) {
+        if (functionType !== 'unknown' && !functionWithParams[i].functionName.endsWith(functionType)) {
+            continue;
+        } else {
+            positionsToRemove.push(i);
+        }
+
         let codeBlock = codeBlocks[i];
         // Remove the first and last line
         codeBlock = codeBlock.replace('```javascript\n', '');
@@ -142,28 +146,42 @@ exports.generateCodeFile = function generateCodeFile(codeBlocks, functionWithPar
         }
 
         `;
-        fs.appendFileSync('newfile.js', fileContent)
+        fs.appendFileSync(fileName, fileContent)
     }
 
-    return codeBlocks;
+    // Remove the elements from Array which have already been used
+    for (let i = positionsToRemove.length - 1; i >= 0; i--) {
+        codeBlocks.splice(positionsToRemove[i], 1);
+        functionWithParams.splice(positionsToRemove[i], 1);
+    }
+
+    return codeBlocks, functionWithParams;
 }
 
-function createSwitchfunction(functionWithParams) {
+function createSwitchfunction(functionWithParams, functionType) {
     // Return the switch function to be created;
 
     let switchCode = '';
     for (let i = 0; i < functionWithParams.length; i++) {
         let currentFunction = functionWithParams[i];
 
+        if (functionType !== 'unknown' && !currentFunction.functionName.endsWith(functionType)) {
+            continue;
+        }
+
         let comment = 'No Function parameters';
         if (currentFunction.functionParams) {
             comment = `Function parameters for this API ${currentFunction.functionParams.join(',')}`
         }
+
+        let functionName = currentFunction.functionName;
+        if (functionType !== 'unknown') {
+            functionName = functionName.substring(0, functionName.length - functionType.length);
+        }
         switchCode += `
-        case "${currentFunction.functionName}":
+        case "${functionName}":
         // ${comment}
         return await this.${currentFunction.functionName}(options);
-        break;
         `
     }
 
@@ -173,7 +191,7 @@ function createSwitchfunction(functionWithParams) {
     `;
 
     // Mape a wrapper from entity name to wrapper
-    let code = `async function get(entity, options) {
+    let code = `async function ${functionType}(entity, options) {
         switch (entity) {
             ${switchCode}
         }

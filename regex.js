@@ -6,11 +6,11 @@ exports.functionNamesRegex = /[a-zA-Z]+/g
 // functions with params regex
 // > repositoriesUsernameRepoSlugCommitNodeApproveDelete(username, repoSlug, node)
 // Get function naem and parameter from the above string
-exports.functionWithParamsRegex = /\>.*\([a-z, A-Z_]*\)/g
+exports.functionWithParamsRegex = /\>.*\([a-z, A-Z_0-9]*\)\n/g
 // Get function name from the above retrieved string
-exports.functionNameFromFunctionWithParamRegex = /[a-zA-Z]+\(/g
+exports.functionNameFromFunctionWithParamRegex = /[a-zA-Z_0-9]+\(/g
 // Get function parameters from the above string
-exports.functionParamsFromFunctionWithParamRegex = /\([a-zA-Z, ]*\)/g
+exports.functionParamsFromFunctionWithParamRegex = /\([a-zA-Z, _0-9]*\)/g
 
 // Get Code Blocks
 exports.codeRegExp = /(```[a-z]*\n[\s\S]*?\n```)/g
