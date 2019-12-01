@@ -1,0 +1,126 @@
+[
+  {
+    "type": "REQUEST",
+    "entity": "PULL_REQUEST",
+    "integration": "JIRA",
+    "method": "ALL|GET|PUT|POST|DELETE"
+  },
+  {
+    "type": "RESPONSE",
+    "entity": "PULL_REQUEST",
+    "integration": "JIRA",
+    "method": "ALL|GET|PUT|POST|DELETE",
+    "map": [
+      {
+        "title": "pr.title",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "description": "pr.description",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "toolRefs.id": "id",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "toolRefs.url": "links.html.href",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "toolRefs.name": "BITBUCKET",
+        "type": "CONSTANT"
+      },
+      {
+        "basheSHA": "source.commit.hash",
+        "type": "FUNCTIONAL",
+        "value": "generateFullCommitHash"
+      },
+      {
+        "headSHA": "source.commit.hash",
+        "type": "FUNCTIONAL",
+        "value": "generateFullCommitHash"
+      },
+      {
+        "state": "state",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "author.name": "author.display_name",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "createOn": "create_on",
+        "type": "FUNCTIONAL",
+        "value": "ISOFormatToSlicedISOFormatInUTC"
+      },
+      {
+        "commentCount": "comment_count",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "issueCount": "task_count",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "approvedBy.name": "user.display_name",
+        "type": "FUNCTIONAL",
+        "value": "getPullRequestFromID"
+      },
+      {
+        "reviewers.name": "participants.user.display_name",
+        "type": "FUNCTIONAL",
+        "value": "getPullRequestFromID"
+      },
+      {
+        "assignees.name": "participants.user.display_name",
+        "type": "FUNCTIONAL",
+        "value": "getPullRequestFromID"
+      }
+    ]
+  },
+  {
+    "type": "RESPONSE",
+    "entity": "PROJECT",
+    "integration": "BITBUCKET",
+    "method": "GET",
+    "map": [
+      {
+        "projectName": "name",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "projectId": "full_name",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "projectDescription": "description",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "projectRef": "links.html.href",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "projectIcon": "links.avatar.href",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "organizationId": "full_name",
+        "type": "getFirstWordInTitleCase"
+      },
+      {
+        "metrics.key": "Language",
+        "type": "CONSTANT"
+      },
+      {
+        "metrics.key": "language",
+        "type": "ONE-TO-ONE"
+      },
+      {
+        "updatedOn": "updated_on",
+        "type": "ONE-TO-ONE"
+      }
+    ]
+  }
+]
