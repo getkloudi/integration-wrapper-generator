@@ -1,63 +1,109 @@
-var fs = require('fs');
+const { exec } = require("child_process");
 
-let fileContents = fs.readFileSync('file.md', 'utf8');
+const fs = require("fs");
+const functions = require("./src/generator/functions");
 
-getCodeBlocks(fileContents);
+async function executeCommand(argv) {
+  try {
+    let projectName = `${argv.name}`;
+    let openApiFilePath = `${argv.spec}`;
 
+    console.log(`Removing ${projectName} directory after completion.`);
+    // Remove the directory for the project name after execution
+    let rmCommand = `rm -rf out/${projectName}`;
+    await execShellCommand(rmCommand);
 
-async function getCodeBlocks(contents) {
-    // console.log(contents);
-    // let regExp1 = new RegExp('(```[a-z]*\n[\s\S]*?\n```)', 'g');
+    console.log("Executing openapi-generator command");
+    // Execute Open API Command
+    let openApiCommand = `openapi-generator generate -i ${openApiFilePath} -g javascript -o out/${projectName}/ --additional-properties=withSeparateModelsAndApi=true,supportsES6=true,npmName=bitbucket-ts,npmVersion=1.0.0 --skip-validate-spec`;
+    openApi = await execShellCommand(openApiCommand);
 
-    // This is the regular expression for code block
-    var regExpCode = /(```[a-z]*\n[\s\S]*?\n```)/g
-    // This is the regular expression for getting function names
-    var regExpFunctionName = /\[\*\*[a-zA-Z]*\*\*]/g
+    // parse the api md files
+    console.log("Parsing md api files generated");
+    await parseFilesAndGenerateCodeFile(
+      `out/${projectName}/`,
+      `${projectName.charAt(0).toUpperCase()}${projectName
+        .slice(1)
+        .toLowerCase()}.js`
+    );
 
-    // This is the regular expression to extract the function name
-    let regExpFunctionNameExtract = /[a-zA-Z]+/g
+    console.log("Command Execution completed");
+  } catch (e) {
+    console.log(e);
+  }
+}
 
+// This function is used to parse the files generated,
+// fetch required api.md files and fetch code snippets from it.
+async function parseFilesAndGenerateCodeFile(path, fileName) {
+  const fileNameWithPath = `${path}/${fileName}`;
+  // Fetch all files names with *api.md in the name
+  let findCommand = await execShellCommand(`find ${path}* -name "*Api.md"`);
+  let findCommandArray = findCommand.trim().split("\n");
 
-    // console.log(regExp);
-    // console.log(regExp1);
-    // contents = `You Bought :
-    // BGF GLOBAL MULTI ASSET INCOME FUND 
-    // CLASS D2 (USD)
-    // (OFFSHORE)  Trade Date:
-    // Process Date:
-    // Settlement Date:
-    // Cusip:`;
+  let functionsTypes = ["Get", "Post", "Put", "Delete", "Patch"];
 
-    // contents = `src ="How are things today /* this\n is comment */ and is your code /* this is another comment */ working?";`;
-    // console.log(contents);
-    // console.log(regExp.exec(contents));
-    // return;
-    // console.log(contents);
-    // return;
-    // let regExp = new RegExp('(```[a-z]*\n[\s\S]*?\n```)', 'g');
-    // console.log(regExp);
-    // contents = 'Hello dear let username = Harman; \nHow are you doing? let username = ABC;'
-    // console.log(contents);
-    // let res = regExp.exec(contents);
-    // console.log(res);
-    // console.log(res.length);
-    // console.log(res);    
-    // contents = 'This is a test string [more or less] [more or less] [more or less]';
-    // console.log(regExp.exec(contents));
-    var text = "The cat with the hat sat on the mat."
-    var pattern = /th/gi;
-    let v;
-    let count = 0;
-    // console.log(regExp1.exec(contents));
-    while ((v = regExpFunctionName.exec(contents)) !== null) {
-        // console.log('I am here');
-        // console.log(v);
-        // console.log(v[0]);
-        // Expression for number
-        let regExp = /[a-zA-Z]+/g
-        console.log(regExp.exec(v[0]));
-        break;
-        count++;
-    }
-    console.log(count);
+  // Start writing file with empty string
+  fs.writeFileSync(`${fileNameWithPath}`, "");
+
+  var functionWithParams = [];
+  var codeBlocks = [];
+
+  for (let j = 0; j < findCommandArray.length; j++) {
+    let file = findCommandArray[j];
+
+    let fileContents = fs.readFileSync(file, "utf8");
+
+    functionWithParams.push(...functions.getFunctionWithParams(fileContents));
+
+    codeBlocks.push(...functions.getCodeBlocks(fileContents));
+  }
+
+  for (let i = 0; i < functionsTypes.length; i++) {
+    let functionType = functionsTypes[i];
+    codeBlocks,
+      (functionWithParams = functions.generateCodeFile(
+        codeBlocks,
+        functionWithParams,
+        fileNameWithPath,
+        functionType
+      ));
+  }
+
+  if (codeBlocks.length && functionWithParams.length) {
+    // If we have any remaining functions, mark them as unknown
+    functions.generateCodeFile(
+      codeBlocks,
+      functionWithParams,
+      fileNameWithPath,
+      "unknown"
+    );
+  }
+}
+
+var argv = require("yargs")
+  .scriptName("api-code-gen")
+  .usage("Usage: $0 -name [str] -spec [path]")
+  .demandOption(["name", "spec"])
+  .describe("name", "Name of the API tool you are generating code for")
+  .describe("spec", "Path of OpenAPI v3 spec of the API tool")
+  .help()
+  .alias("h", "help").argv;
+executeCommand(argv);
+
+function execShellCommand(cmd) {
+  return new Promise((resolve, reject) => {
+    exec(
+      cmd,
+      {
+        maxBuffer: 1024 * 5000
+      },
+      (error, stdout, stderr) => {
+        if (error) {
+          console.warn(error);
+        }
+        resolve(stdout ? stdout : stderr);
+      }
+    );
+  });
 }
