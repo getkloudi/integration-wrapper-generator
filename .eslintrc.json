@@ -1,0 +1,25 @@
+{
+    "env": {
+        "browser": false,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+        "experimentalDecorators":true
+    },
+    "parserOptions": {
+        "sourceType": "module",
+        "experimentalDecorators":true
+    },
+    "plugins": ["async-await"],
+    "rules": {
+        "no-const-assign": "warn",
+        "no-this-before-super": "warn",
+        "no-undef": "warn",
+        "no-unreachable": "warn",
+        "no-unused-vars": "warn",
+        "constructor-super": "warn",
+        "valid-typeof": "warn",
+        "async-await/space-after-async": 2,
+        "async-await/space-after-await": 2
+    }
+}
