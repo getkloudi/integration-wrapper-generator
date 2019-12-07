@@ -1,587 +1,587 @@
-async function Get(entity, options) {
+async function get(entity, options) {
         switch (entity) {
             
-        case "emojis":
+        case "EMOJIS":
         // Function parameters for this API opts
         return await this.emojisGet(options);
         
-        case "events":
+        case "EVENTS":
         // Function parameters for this API opts
         return await this.eventsGet(options);
         
-        case "feeds":
+        case "FEEDS":
         // Function parameters for this API opts
         return await this.feedsGet(options);
         
-        case "gists":
+        case "GISTS":
         // Function parameters for this API opts
         return await this.gistsGet(options);
         
-        case "gistsIdCommentsCommentId":
+        case "GISTS_ID_COMMENTS_COMMENT_ID":
         // Function parameters for this API id,commentId,opts
         return await this.gistsIdCommentsCommentIdGet(options);
         
-        case "gistsIdComments":
+        case "GISTS_ID_COMMENTS":
         // Function parameters for this API id,opts
         return await this.gistsIdCommentsGet(options);
         
-        case "gistsId":
+        case "GISTS_ID":
         // Function parameters for this API id,opts
         return await this.gistsIdGet(options);
         
-        case "gistsIdStar":
+        case "GISTS_ID_STAR":
         // Function parameters for this API id,opts
         return await this.gistsIdStarGet(options);
         
-        case "gistsPublic":
+        case "GISTS_PUBLIC":
         // Function parameters for this API opts
         return await this.gistsPublicGet(options);
         
-        case "gistsStarred":
+        case "GISTS_STARRED":
         // Function parameters for this API opts
         return await this.gistsStarredGet(options);
         
-        case "gitignoreTemplates":
+        case "GITIGNORE_TEMPLATES":
         // Function parameters for this API opts
         return await this.gitignoreTemplatesGet(options);
         
-        case "gitignoreTemplatesLanguage":
+        case "GITIGNORE_TEMPLATES_LANGUAGE":
         // Function parameters for this API language,opts
         return await this.gitignoreTemplatesLanguageGet(options);
         
-        case "issues":
+        case "ISSUES":
         // Function parameters for this API filter,state,labels,sort,direction,opts
         return await this.issuesGet(options);
         
-        case "legacyIssuesSearchOwnerRepositoryStateKeyword":
+        case "LEGACY_ISSUES_SEARCH_OWNER_REPOSITORY_STATE_KEYWORD":
         // Function parameters for this API keyword,state,owner,repository,opts
         return await this.legacyIssuesSearchOwnerRepositoryStateKeywordGet(options);
         
-        case "legacyReposSearchKeyword":
+        case "LEGACY_REPOS_SEARCH_KEYWORD":
         // Function parameters for this API keyword,opts
         return await this.legacyReposSearchKeywordGet(options);
         
-        case "legacyUserEmailEmail":
+        case "LEGACY_USER_EMAIL_EMAIL":
         // Function parameters for this API email,opts
         return await this.legacyUserEmailEmailGet(options);
         
-        case "legacyUserSearchKeyword":
+        case "LEGACY_USER_SEARCH_KEYWORD":
         // Function parameters for this API keyword,opts
         return await this.legacyUserSearchKeywordGet(options);
         
-        case "meta":
+        case "META":
         // Function parameters for this API opts
         return await this.metaGet(options);
         
-        case "networksOwnerRepoEvents":
+        case "NETWORKS_OWNER_REPO_EVENTS":
         // Function parameters for this API owner,repo,opts
         return await this.networksOwnerRepoEventsGet(options);
         
-        case "notifications":
+        case "NOTIFICATIONS":
         // Function parameters for this API opts
         return await this.notificationsGet(options);
         
-        case "notificationsThreadsId":
+        case "NOTIFICATIONS_THREADS_ID":
         // Function parameters for this API id,opts
         return await this.notificationsThreadsIdGet(options);
         
-        case "notificationsThreadsIdSubscription":
+        case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
         // Function parameters for this API id,opts
         return await this.notificationsThreadsIdSubscriptionGet(options);
         
-        case "orgsOrgEvents":
+        case "ORGS_ORG_EVENTS":
         // Function parameters for this API org,opts
         return await this.orgsOrgEventsGet(options);
         
-        case "orgsOrg":
+        case "ORGS_ORG":
         // Function parameters for this API org,opts
         return await this.orgsOrgGet(options);
         
-        case "orgsOrgIssues":
+        case "ORGS_ORG_ISSUES":
         // Function parameters for this API org,filter,state,labels,sort,direction,opts
         return await this.orgsOrgIssuesGet(options);
         
-        case "orgsOrgMembers":
+        case "ORGS_ORG_MEMBERS":
         // Function parameters for this API org,opts
         return await this.orgsOrgMembersGet(options);
         
-        case "orgsOrgMembersUsername":
+        case "ORGS_ORG_MEMBERS_USERNAME":
         // Function parameters for this API org,username,opts
         return await this.orgsOrgMembersUsernameGet(options);
         
-        case "orgsOrgPublicMembers":
+        case "ORGS_ORG_PUBLIC_MEMBERS":
         // Function parameters for this API org,opts
         return await this.orgsOrgPublicMembersGet(options);
         
-        case "orgsOrgPublicMembersUsername":
+        case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
         // Function parameters for this API org,username,opts
         return await this.orgsOrgPublicMembersUsernameGet(options);
         
-        case "orgsOrgRepos":
+        case "ORGS_ORG_REPOS":
         // Function parameters for this API org,opts
         return await this.orgsOrgReposGet(options);
         
-        case "orgsOrgTeams":
+        case "ORGS_ORG_TEAMS":
         // Function parameters for this API org,opts
         return await this.orgsOrgTeamsGet(options);
         
-        case "rateLimit":
+        case "RATE_LIMIT":
         // Function parameters for this API opts
         return await this.rateLimitGet(options);
         
-        case "reposOwnerRepoArchiveFormatPath":
+        case "REPOS_OWNER_REPO_ARCHIVE_FORMAT_PATH":
         // Function parameters for this API owner,repo,archiveFormat,path,opts
         return await this.reposOwnerRepoArchiveFormatPathGet(options);
         
-        case "reposOwnerRepoAssigneesAssignee":
+        case "REPOS_OWNER_REPO_ASSIGNEES_ASSIGNEE":
         // Function parameters for this API owner,repo,assignee,opts
         return await this.reposOwnerRepoAssigneesAssigneeGet(options);
         
-        case "reposOwnerRepoAssignees":
+        case "REPOS_OWNER_REPO_ASSIGNEES":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoAssigneesGet(options);
         
-        case "reposOwnerRepoBranchesBranch":
+        case "REPOS_OWNER_REPO_BRANCHES_BRANCH":
         // Function parameters for this API owner,repo,branch,opts
         return await this.reposOwnerRepoBranchesBranchGet(options);
         
-        case "reposOwnerRepoBranches":
+        case "REPOS_OWNER_REPO_BRANCHES":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoBranchesGet(options);
         
-        case "reposOwnerRepoCollaborators":
+        case "REPOS_OWNER_REPO_COLLABORATORS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoCollaboratorsGet(options);
         
-        case "reposOwnerRepoCollaboratorsUser":
+        case "REPOS_OWNER_REPO_COLLABORATORS_USER":
         // Function parameters for this API owner,repo,user,opts
         return await this.reposOwnerRepoCollaboratorsUserGet(options);
         
-        case "reposOwnerRepoCommentsCommentId":
+        case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
         // Function parameters for this API owner,repo,commentId,opts
         return await this.reposOwnerRepoCommentsCommentIdGet(options);
         
-        case "reposOwnerRepoComments":
+        case "REPOS_OWNER_REPO_COMMENTS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoCommentsGet(options);
         
-        case "reposOwnerRepoCommits":
+        case "REPOS_OWNER_REPO_COMMITS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoCommitsGet(options);
         
-        case "reposOwnerRepoCommitsRefStatus":
+        case "REPOS_OWNER_REPO_COMMITS_REF_STATUS":
         // Function parameters for this API owner,repo,ref,opts
         return await this.reposOwnerRepoCommitsRefStatusGet(options);
         
-        case "reposOwnerRepoCommitsShaCodeComments":
+        case "REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS":
         // Function parameters for this API owner,repo,shaCode,opts
         return await this.reposOwnerRepoCommitsShaCodeCommentsGet(options);
         
-        case "reposOwnerRepoCommitsShaCode":
+        case "REPOS_OWNER_REPO_COMMITS_SHA_CODE":
         // Function parameters for this API owner,repo,shaCode,opts
         return await this.reposOwnerRepoCommitsShaCodeGet(options);
         
-        case "reposOwnerRepoCompareBaseIdHeadId":
+        case "REPOS_OWNER_REPO_COMPARE_BASE_ID_HEAD_ID":
         // Function parameters for this API owner,repo,baseId,headId,opts
         return await this.reposOwnerRepoCompareBaseIdHeadIdGet(options);
         
-        case "reposOwnerRepoContentsPath":
+        case "REPOS_OWNER_REPO_CONTENTS_PATH":
         // Function parameters for this API owner,repo,path,opts
         return await this.reposOwnerRepoContentsPathGet(options);
         
-        case "reposOwnerRepoContributors":
+        case "REPOS_OWNER_REPO_CONTRIBUTORS":
         // Function parameters for this API owner,repo,anon,opts
         return await this.reposOwnerRepoContributorsGet(options);
         
-        case "reposOwnerRepoDeployments":
+        case "REPOS_OWNER_REPO_DEPLOYMENTS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoDeploymentsGet(options);
         
-        case "reposOwnerRepoDeploymentsIdStatuses":
+        case "REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES":
         // Function parameters for this API owner,repo,id,opts
         return await this.reposOwnerRepoDeploymentsIdStatusesGet(options);
         
-        case "reposOwnerRepoDownloadsDownloadId":
+        case "REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID":
         // Function parameters for this API owner,repo,downloadId,opts
         return await this.reposOwnerRepoDownloadsDownloadIdGet(options);
         
-        case "reposOwnerRepoDownloads":
+        case "REPOS_OWNER_REPO_DOWNLOADS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoDownloadsGet(options);
         
-        case "reposOwnerRepoEvents":
+        case "REPOS_OWNER_REPO_EVENTS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoEventsGet(options);
         
-        case "reposOwnerRepoForks":
+        case "REPOS_OWNER_REPO_FORKS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoForksGet(options);
         
-        case "reposOwnerRepo":
+        case "REPOS_OWNER_REPO":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoGet(options);
         
-        case "reposOwnerRepoGitBlobsShaCode":
+        case "REPOS_OWNER_REPO_GIT_BLOBS_SHA_CODE":
         // Function parameters for this API owner,repo,shaCode,opts
         return await this.reposOwnerRepoGitBlobsShaCodeGet(options);
         
-        case "reposOwnerRepoGitCommitsShaCode":
+        case "REPOS_OWNER_REPO_GIT_COMMITS_SHA_CODE":
         // Function parameters for this API owner,repo,shaCode,opts
         return await this.reposOwnerRepoGitCommitsShaCodeGet(options);
         
-        case "reposOwnerRepoGitRefs":
+        case "REPOS_OWNER_REPO_GIT_REFS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoGitRefsGet(options);
         
-        case "reposOwnerRepoGitRefsRef":
+        case "REPOS_OWNER_REPO_GIT_REFS_REF":
         // Function parameters for this API owner,repo,ref,opts
         return await this.reposOwnerRepoGitRefsRefGet(options);
         
-        case "reposOwnerRepoGitTagsShaCode":
+        case "REPOS_OWNER_REPO_GIT_TAGS_SHA_CODE":
         // Function parameters for this API owner,repo,shaCode,opts
         return await this.reposOwnerRepoGitTagsShaCodeGet(options);
         
-        case "reposOwnerRepoGitTreesShaCode":
+        case "REPOS_OWNER_REPO_GIT_TREES_SHA_CODE":
         // Function parameters for this API owner,repo,shaCode,opts
         return await this.reposOwnerRepoGitTreesShaCodeGet(options);
         
-        case "reposOwnerRepoHooks":
+        case "REPOS_OWNER_REPO_HOOKS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoHooksGet(options);
         
-        case "reposOwnerRepoHooksHookId":
+        case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
         // Function parameters for this API owner,repo,hookId,opts
         return await this.reposOwnerRepoHooksHookIdGet(options);
         
-        case "reposOwnerRepoIssuesCommentsCommentId":
+        case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
         // Function parameters for this API owner,repo,commentId,opts
         return await this.reposOwnerRepoIssuesCommentsCommentIdGet(options);
         
-        case "reposOwnerRepoIssuesComments":
+        case "REPOS_OWNER_REPO_ISSUES_COMMENTS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoIssuesCommentsGet(options);
         
-        case "reposOwnerRepoIssuesEventsEventId":
+        case "REPOS_OWNER_REPO_ISSUES_EVENTS_EVENT_ID":
         // Function parameters for this API owner,repo,eventId,opts
         return await this.reposOwnerRepoIssuesEventsEventIdGet(options);
         
-        case "reposOwnerRepoIssuesEvents":
+        case "REPOS_OWNER_REPO_ISSUES_EVENTS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoIssuesEventsGet(options);
         
-        case "reposOwnerRepoIssues":
+        case "REPOS_OWNER_REPO_ISSUES":
         // Function parameters for this API owner,repo,filter,state,labels,sort,direction,opts
         return await this.reposOwnerRepoIssuesGet(options);
         
-        case "reposOwnerRepoIssuesNumberComments":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoIssuesNumberCommentsGet(options);
         
-        case "reposOwnerRepoIssuesNumberEvents":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER_EVENTS":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoIssuesNumberEventsGet(options);
         
-        case "reposOwnerRepoIssuesNumber":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoIssuesNumberGet(options);
         
-        case "reposOwnerRepoIssuesNumberLabels":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoIssuesNumberLabelsGet(options);
         
-        case "reposOwnerRepoKeys":
+        case "REPOS_OWNER_REPO_KEYS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoKeysGet(options);
         
-        case "reposOwnerRepoKeysKeyId":
+        case "REPOS_OWNER_REPO_KEYS_KEY_ID":
         // Function parameters for this API owner,repo,keyId,opts
         return await this.reposOwnerRepoKeysKeyIdGet(options);
         
-        case "reposOwnerRepoLabels":
+        case "REPOS_OWNER_REPO_LABELS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoLabelsGet(options);
         
-        case "reposOwnerRepoLabelsName":
+        case "REPOS_OWNER_REPO_LABELS_NAME":
         // Function parameters for this API owner,repo,name,opts
         return await this.reposOwnerRepoLabelsNameGet(options);
         
-        case "reposOwnerRepoLanguages":
+        case "REPOS_OWNER_REPO_LANGUAGES":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoLanguagesGet(options);
         
-        case "reposOwnerRepoMilestones":
+        case "REPOS_OWNER_REPO_MILESTONES":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoMilestonesGet(options);
         
-        case "reposOwnerRepoMilestonesNumber":
+        case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoMilestonesNumberGet(options);
         
-        case "reposOwnerRepoMilestonesNumberLabels":
+        case "REPOS_OWNER_REPO_MILESTONES_NUMBER_LABELS":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoMilestonesNumberLabelsGet(options);
         
-        case "reposOwnerRepoNotifications":
+        case "REPOS_OWNER_REPO_NOTIFICATIONS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoNotificationsGet(options);
         
-        case "reposOwnerRepoPullsCommentsCommentId":
+        case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
         // Function parameters for this API owner,repo,commentId,opts
         return await this.reposOwnerRepoPullsCommentsCommentIdGet(options);
         
-        case "reposOwnerRepoPullsComments":
+        case "REPOS_OWNER_REPO_PULLS_COMMENTS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoPullsCommentsGet(options);
         
-        case "reposOwnerRepoPulls":
+        case "REPOS_OWNER_REPO_PULLS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoPullsGet(options);
         
-        case "reposOwnerRepoPullsNumberComments":
+        case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoPullsNumberCommentsGet(options);
         
-        case "reposOwnerRepoPullsNumberCommits":
+        case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMITS":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoPullsNumberCommitsGet(options);
         
-        case "reposOwnerRepoPullsNumberFiles":
+        case "REPOS_OWNER_REPO_PULLS_NUMBER_FILES":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoPullsNumberFilesGet(options);
         
-        case "reposOwnerRepoPullsNumber":
+        case "REPOS_OWNER_REPO_PULLS_NUMBER":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoPullsNumberGet(options);
         
-        case "reposOwnerRepoPullsNumberMerge":
+        case "REPOS_OWNER_REPO_PULLS_NUMBER_MERGE":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoPullsNumberMergeGet(options);
         
-        case "reposOwnerRepoReadme":
+        case "REPOS_OWNER_REPO_README":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoReadmeGet(options);
         
-        case "reposOwnerRepoReleasesAssetsId":
+        case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
         // Function parameters for this API owner,repo,id,opts
         return await this.reposOwnerRepoReleasesAssetsIdGet(options);
         
-        case "reposOwnerRepoReleases":
+        case "REPOS_OWNER_REPO_RELEASES":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoReleasesGet(options);
         
-        case "reposOwnerRepoReleasesIdAssets":
+        case "REPOS_OWNER_REPO_RELEASES_ID_ASSETS":
         // Function parameters for this API owner,repo,id,opts
         return await this.reposOwnerRepoReleasesIdAssetsGet(options);
         
-        case "reposOwnerRepoReleasesId":
+        case "REPOS_OWNER_REPO_RELEASES_ID":
         // Function parameters for this API owner,repo,id,opts
         return await this.reposOwnerRepoReleasesIdGet(options);
         
-        case "reposOwnerRepoStargazers":
+        case "REPOS_OWNER_REPO_STARGAZERS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoStargazersGet(options);
         
-        case "reposOwnerRepoStatsCodeFrequency":
+        case "REPOS_OWNER_REPO_STATS_CODE_FREQUENCY":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoStatsCodeFrequencyGet(options);
         
-        case "reposOwnerRepoStatsCommitActivity":
+        case "REPOS_OWNER_REPO_STATS_COMMIT_ACTIVITY":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoStatsCommitActivityGet(options);
         
-        case "reposOwnerRepoStatsContributors":
+        case "REPOS_OWNER_REPO_STATS_CONTRIBUTORS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoStatsContributorsGet(options);
         
-        case "reposOwnerRepoStatsParticipation":
+        case "REPOS_OWNER_REPO_STATS_PARTICIPATION":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoStatsParticipationGet(options);
         
-        case "reposOwnerRepoStatsPunchCard":
+        case "REPOS_OWNER_REPO_STATS_PUNCH_CARD":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoStatsPunchCardGet(options);
         
-        case "reposOwnerRepoStatusesRef":
+        case "REPOS_OWNER_REPO_STATUSES_REF":
         // Function parameters for this API owner,repo,ref,opts
         return await this.reposOwnerRepoStatusesRefGet(options);
         
-        case "reposOwnerRepoSubscribers":
+        case "REPOS_OWNER_REPO_SUBSCRIBERS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoSubscribersGet(options);
         
-        case "reposOwnerRepoSubscription":
+        case "REPOS_OWNER_REPO_SUBSCRIPTION":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoSubscriptionGet(options);
         
-        case "reposOwnerRepoTags":
+        case "REPOS_OWNER_REPO_TAGS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoTagsGet(options);
         
-        case "reposOwnerRepoTeams":
+        case "REPOS_OWNER_REPO_TEAMS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoTeamsGet(options);
         
-        case "reposOwnerRepoWatchers":
+        case "REPOS_OWNER_REPO_WATCHERS":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoWatchersGet(options);
         
-        case "repositories":
+        case "REPOSITORIES":
         // Function parameters for this API opts
         return await this.repositoriesGet(options);
         
-        case "searchCode":
+        case "SEARCH_CODE":
         // Function parameters for this API q,opts
         return await this.searchCodeGet(options);
         
-        case "searchIssues":
+        case "SEARCH_ISSUES":
         // Function parameters for this API q,opts
         return await this.searchIssuesGet(options);
         
-        case "searchRepositories":
+        case "SEARCH_REPOSITORIES":
         // Function parameters for this API q,opts
         return await this.searchRepositoriesGet(options);
         
-        case "searchUsers":
+        case "SEARCH_USERS":
         // Function parameters for this API q,opts
         return await this.searchUsersGet(options);
         
-        case "teamsTeamId":
+        case "TEAMS_TEAM_ID":
         // Function parameters for this API teamId,opts
         return await this.teamsTeamIdGet(options);
         
-        case "teamsTeamIdMembers":
+        case "TEAMS_TEAM_ID_MEMBERS":
         // Function parameters for this API teamId,opts
         return await this.teamsTeamIdMembersGet(options);
         
-        case "teamsTeamIdMembersUsername":
+        case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
         // Function parameters for this API teamId,username,opts
         return await this.teamsTeamIdMembersUsernameGet(options);
         
-        case "teamsTeamIdMembershipsUsername":
+        case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
         // Function parameters for this API teamId,username,opts
         return await this.teamsTeamIdMembershipsUsernameGet(options);
         
-        case "teamsTeamIdRepos":
+        case "TEAMS_TEAM_ID_REPOS":
         // Function parameters for this API teamId,opts
         return await this.teamsTeamIdReposGet(options);
         
-        case "teamsTeamIdReposOwnerRepo":
+        case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
         // Function parameters for this API teamId,owner,repo,opts
         return await this.teamsTeamIdReposOwnerRepoGet(options);
         
-        case "userEmails":
+        case "USER_EMAILS":
         // Function parameters for this API opts
         return await this.userEmailsGet(options);
         
-        case "userFollowers":
+        case "USER_FOLLOWERS":
         // Function parameters for this API opts
         return await this.userFollowersGet(options);
         
-        case "userFollowing":
+        case "USER_FOLLOWING":
         // Function parameters for this API opts
         return await this.userFollowingGet(options);
         
-        case "userFollowingUsername":
+        case "USER_FOLLOWING_USERNAME":
         // Function parameters for this API username,opts
         return await this.userFollowingUsernameGet(options);
         
-        case "user":
+        case "USER":
         // Function parameters for this API opts
         return await this.userGet(options);
         
-        case "userIssues":
+        case "USER_ISSUES":
         // Function parameters for this API filter,state,labels,sort,direction,opts
         return await this.userIssuesGet(options);
         
-        case "userKeys":
+        case "USER_KEYS":
         // Function parameters for this API opts
         return await this.userKeysGet(options);
         
-        case "userKeysKeyId":
+        case "USER_KEYS_KEY_ID":
         // Function parameters for this API keyId,opts
         return await this.userKeysKeyIdGet(options);
         
-        case "userOrgs":
+        case "USER_ORGS":
         // Function parameters for this API opts
         return await this.userOrgsGet(options);
         
-        case "userRepos":
+        case "USER_REPOS":
         // Function parameters for this API opts
         return await this.userReposGet(options);
         
-        case "userStarred":
+        case "USER_STARRED":
         // Function parameters for this API opts
         return await this.userStarredGet(options);
         
-        case "userStarredOwnerRepo":
+        case "USER_STARRED_OWNER_REPO":
         // Function parameters for this API owner,repo,opts
         return await this.userStarredOwnerRepoGet(options);
         
-        case "userSubscriptions":
+        case "USER_SUBSCRIPTIONS":
         // Function parameters for this API opts
         return await this.userSubscriptionsGet(options);
         
-        case "userSubscriptionsOwnerRepo":
+        case "USER_SUBSCRIPTIONS_OWNER_REPO":
         // Function parameters for this API owner,repo,opts
         return await this.userSubscriptionsOwnerRepoGet(options);
         
-        case "userTeams":
+        case "USER_TEAMS":
         // Function parameters for this API opts
         return await this.userTeamsGet(options);
         
-        case "users":
+        case "USERS":
         // Function parameters for this API opts
         return await this.usersGet(options);
         
-        case "usersUsernameEvents":
+        case "USERS_USERNAME_EVENTS":
         // Function parameters for this API username,opts
         return await this.usersUsernameEventsGet(options);
         
-        case "usersUsernameEventsOrgsOrg":
+        case "USERS_USERNAME_EVENTS_ORGS_ORG":
         // Function parameters for this API username,org,opts
         return await this.usersUsernameEventsOrgsOrgGet(options);
         
-        case "usersUsernameFollowers":
+        case "USERS_USERNAME_FOLLOWERS":
         // Function parameters for this API username,opts
         return await this.usersUsernameFollowersGet(options);
         
-        case "usersUsernameFollowingTargetUser":
+        case "USERS_USERNAME_FOLLOWING_TARGET_USER":
         // Function parameters for this API username,targetUser,opts
         return await this.usersUsernameFollowingTargetUserGet(options);
         
-        case "usersUsername":
+        case "USERS_USERNAME":
         // Function parameters for this API username,opts
         return await this.usersUsernameGet(options);
         
-        case "usersUsernameGists":
+        case "USERS_USERNAME_GISTS":
         // Function parameters for this API username,opts
         return await this.usersUsernameGistsGet(options);
         
-        case "usersUsernameKeys":
+        case "USERS_USERNAME_KEYS":
         // Function parameters for this API username,opts
         return await this.usersUsernameKeysGet(options);
         
-        case "usersUsernameOrgs":
+        case "USERS_USERNAME_ORGS":
         // Function parameters for this API username,opts
         return await this.usersUsernameOrgsGet(options);
         
-        case "usersUsernameReceivedEvents":
+        case "USERS_USERNAME_RECEIVED_EVENTS":
         // Function parameters for this API username,opts
         return await this.usersUsernameReceivedEventsGet(options);
         
-        case "usersUsernameReceivedEventsPublic":
+        case "USERS_USERNAME_RECEIVED_EVENTS_PUBLIC":
         // Function parameters for this API username,opts
         return await this.usersUsernameReceivedEventsPublicGet(options);
         
-        case "usersUsernameRepos":
+        case "USERS_USERNAME_REPOS":
         // Function parameters for this API username,opts
         return await this.usersUsernameReposGet(options);
         
-        case "usersUsernameStarred":
+        case "USERS_USERNAME_STARRED":
         // Function parameters for this API username,opts
         return await this.usersUsernameStarredGet(options);
         
-        case "usersUsernameSubscriptions":
+        case "USERS_USERNAME_SUBSCRIPTIONS":
         // Function parameters for this API username,opts
         return await this.usersUsernameSubscriptionsGet(options);
         
@@ -3547,134 +3547,134 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
 });
         }
 
-        async function Post(entity, options) {
+        async function post(entity, options) {
         switch (entity) {
             
-        case "gistsIdComments":
+        case "GISTS_ID_COMMENTS":
         // Function parameters for this API id,body,opts
         return await this.gistsIdCommentsPost(options);
         
-        case "gistsIdForks":
+        case "GISTS_ID_FORKS":
         // Function parameters for this API id,opts
         return await this.gistsIdForksPost(options);
         
-        case "gists":
+        case "GISTS":
         // Function parameters for this API body,opts
         return await this.gistsPost(options);
         
-        case "markdown":
+        case "MARKDOWN":
         // Function parameters for this API body,opts
         return await this.markdownPost(options);
         
-        case "markdownRaw":
+        case "MARKDOWN_RAW":
         // Function parameters for this API opts
         return await this.markdownRawPost(options);
         
-        case "orgsOrgRepos":
+        case "ORGS_ORG_REPOS":
         // Function parameters for this API org,body,opts
         return await this.orgsOrgReposPost(options);
         
-        case "orgsOrgTeams":
+        case "ORGS_ORG_TEAMS":
         // Function parameters for this API org,body,opts
         return await this.orgsOrgTeamsPost(options);
         
-        case "reposOwnerRepoCommitsShaCodeComments":
+        case "REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS":
         // Function parameters for this API owner,repo,shaCode,body,opts
         return await this.reposOwnerRepoCommitsShaCodeCommentsPost(options);
         
-        case "reposOwnerRepoDeploymentsIdStatuses":
+        case "REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES":
         // Function parameters for this API owner,repo,id,body,opts
         return await this.reposOwnerRepoDeploymentsIdStatusesPost(options);
         
-        case "reposOwnerRepoDeployments":
+        case "REPOS_OWNER_REPO_DEPLOYMENTS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoDeploymentsPost(options);
         
-        case "reposOwnerRepoForks":
+        case "REPOS_OWNER_REPO_FORKS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoForksPost(options);
         
-        case "reposOwnerRepoGitBlobs":
+        case "REPOS_OWNER_REPO_GIT_BLOBS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoGitBlobsPost(options);
         
-        case "reposOwnerRepoGitCommits":
+        case "REPOS_OWNER_REPO_GIT_COMMITS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoGitCommitsPost(options);
         
-        case "reposOwnerRepoGitRefs":
+        case "REPOS_OWNER_REPO_GIT_REFS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoGitRefsPost(options);
         
-        case "reposOwnerRepoGitTags":
+        case "REPOS_OWNER_REPO_GIT_TAGS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoGitTagsPost(options);
         
-        case "reposOwnerRepoGitTrees":
+        case "REPOS_OWNER_REPO_GIT_TREES":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoGitTreesPost(options);
         
-        case "reposOwnerRepoHooksHookIdTests":
+        case "REPOS_OWNER_REPO_HOOKS_HOOK_ID_TESTS":
         // Function parameters for this API owner,repo,hookId,opts
         return await this.reposOwnerRepoHooksHookIdTestsPost(options);
         
-        case "reposOwnerRepoHooks":
+        case "REPOS_OWNER_REPO_HOOKS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoHooksPost(options);
         
-        case "reposOwnerRepoIssuesNumberComments":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS":
         // Function parameters for this API owner,repo,_number,body,opts
         return await this.reposOwnerRepoIssuesNumberCommentsPost(options);
         
-        case "reposOwnerRepoIssuesNumberLabels":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
         // Function parameters for this API owner,repo,_number,body,opts
         return await this.reposOwnerRepoIssuesNumberLabelsPost(options);
         
-        case "reposOwnerRepoIssues":
+        case "REPOS_OWNER_REPO_ISSUES":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoIssuesPost(options);
         
-        case "reposOwnerRepoKeys":
+        case "REPOS_OWNER_REPO_KEYS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoKeysPost(options);
         
-        case "reposOwnerRepoLabels":
+        case "REPOS_OWNER_REPO_LABELS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoLabelsPost(options);
         
-        case "reposOwnerRepoMerges":
+        case "REPOS_OWNER_REPO_MERGES":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoMergesPost(options);
         
-        case "reposOwnerRepoMilestones":
+        case "REPOS_OWNER_REPO_MILESTONES":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoMilestonesPost(options);
         
-        case "reposOwnerRepoPullsNumberComments":
+        case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS":
         // Function parameters for this API owner,repo,_number,body,opts
         return await this.reposOwnerRepoPullsNumberCommentsPost(options);
         
-        case "reposOwnerRepoPulls":
+        case "REPOS_OWNER_REPO_PULLS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoPullsPost(options);
         
-        case "reposOwnerRepoReleases":
+        case "REPOS_OWNER_REPO_RELEASES":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoReleasesPost(options);
         
-        case "reposOwnerRepoStatusesRef":
+        case "REPOS_OWNER_REPO_STATUSES_REF":
         // Function parameters for this API owner,repo,ref,body,opts
         return await this.reposOwnerRepoStatusesRefPost(options);
         
-        case "userEmails":
+        case "USER_EMAILS":
         // Function parameters for this API body,opts
         return await this.userEmailsPost(options);
         
-        case "userKeys":
+        case "USER_KEYS":
         // Function parameters for this API body,opts
         return await this.userKeysPost(options);
         
-        case "userRepos":
+        case "USER_REPOS":
         // Function parameters for this API body,opts
         return await this.userReposPost(options);
         
@@ -4342,70 +4342,70 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
 });
         }
 
-        async function Put(entity, options) {
+        async function put(entity, options) {
         switch (entity) {
             
-        case "gistsIdStar":
+        case "GISTS_ID_STAR":
         // Function parameters for this API id,opts
         return await this.gistsIdStarPut(options);
         
-        case "notifications":
+        case "NOTIFICATIONS":
         // Function parameters for this API body,opts
         return await this.notificationsPut(options);
         
-        case "notificationsThreadsIdSubscription":
+        case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
         // Function parameters for this API id,body,opts
         return await this.notificationsThreadsIdSubscriptionPut(options);
         
-        case "orgsOrgPublicMembersUsername":
+        case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
         // Function parameters for this API org,username,opts
         return await this.orgsOrgPublicMembersUsernamePut(options);
         
-        case "reposOwnerRepoCollaboratorsUser":
+        case "REPOS_OWNER_REPO_COLLABORATORS_USER":
         // Function parameters for this API owner,repo,user,opts
         return await this.reposOwnerRepoCollaboratorsUserPut(options);
         
-        case "reposOwnerRepoContentsPath":
+        case "REPOS_OWNER_REPO_CONTENTS_PATH":
         // Function parameters for this API owner,repo,path,body,opts
         return await this.reposOwnerRepoContentsPathPut(options);
         
-        case "reposOwnerRepoIssuesNumberLabels":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
         // Function parameters for this API owner,repo,_number,body,opts
         return await this.reposOwnerRepoIssuesNumberLabelsPut(options);
         
-        case "reposOwnerRepoNotifications":
+        case "REPOS_OWNER_REPO_NOTIFICATIONS":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoNotificationsPut(options);
         
-        case "reposOwnerRepoPullsNumberMerge":
+        case "REPOS_OWNER_REPO_PULLS_NUMBER_MERGE":
         // Function parameters for this API owner,repo,_number,body,opts
         return await this.reposOwnerRepoPullsNumberMergePut(options);
         
-        case "reposOwnerRepoSubscription":
+        case "REPOS_OWNER_REPO_SUBSCRIPTION":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoSubscriptionPut(options);
         
-        case "teamsTeamIdMembersUsername":
+        case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
         // Function parameters for this API teamId,username,opts
         return await this.teamsTeamIdMembersUsernamePut(options);
         
-        case "teamsTeamIdMembershipsUsername":
+        case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
         // Function parameters for this API teamId,username,opts
         return await this.teamsTeamIdMembershipsUsernamePut(options);
         
-        case "teamsTeamIdReposOwnerRepo":
+        case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
         // Function parameters for this API teamId,owner,repo,opts
         return await this.teamsTeamIdReposOwnerRepoPut(options);
         
-        case "userFollowingUsername":
+        case "USER_FOLLOWING_USERNAME":
         // Function parameters for this API username,opts
         return await this.userFollowingUsernamePut(options);
         
-        case "userStarredOwnerRepo":
+        case "USER_STARRED_OWNER_REPO":
         // Function parameters for this API owner,repo,opts
         return await this.userStarredOwnerRepoPut(options);
         
-        case "userSubscriptionsOwnerRepo":
+        case "USER_SUBSCRIPTIONS_OWNER_REPO":
         // Function parameters for this API owner,repo,opts
         return await this.userSubscriptionsOwnerRepoPut(options);
         
@@ -4740,134 +4740,134 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
 });
         }
 
-        async function Delete(entity, options) {
+        async function delete(entity, options) {
         switch (entity) {
             
-        case "gistsIdCommentsCommentId":
+        case "GISTS_ID_COMMENTS_COMMENT_ID":
         // Function parameters for this API id,commentId,opts
         return await this.gistsIdCommentsCommentIdDelete(options);
         
-        case "gistsId":
+        case "GISTS_ID":
         // Function parameters for this API id,opts
         return await this.gistsIdDelete(options);
         
-        case "gistsIdStar":
+        case "GISTS_ID_STAR":
         // Function parameters for this API id,opts
         return await this.gistsIdStarDelete(options);
         
-        case "notificationsThreadsIdSubscription":
+        case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
         // Function parameters for this API id,opts
         return await this.notificationsThreadsIdSubscriptionDelete(options);
         
-        case "orgsOrgMembersUsername":
+        case "ORGS_ORG_MEMBERS_USERNAME":
         // Function parameters for this API org,username,opts
         return await this.orgsOrgMembersUsernameDelete(options);
         
-        case "orgsOrgPublicMembersUsername":
+        case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
         // Function parameters for this API org,username,opts
         return await this.orgsOrgPublicMembersUsernameDelete(options);
         
-        case "reposOwnerRepoCollaboratorsUser":
+        case "REPOS_OWNER_REPO_COLLABORATORS_USER":
         // Function parameters for this API owner,repo,user,opts
         return await this.reposOwnerRepoCollaboratorsUserDelete(options);
         
-        case "reposOwnerRepoCommentsCommentId":
+        case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
         // Function parameters for this API owner,repo,commentId,opts
         return await this.reposOwnerRepoCommentsCommentIdDelete(options);
         
-        case "reposOwnerRepoContentsPath":
+        case "REPOS_OWNER_REPO_CONTENTS_PATH":
         // Function parameters for this API owner,repo,path,body,opts
         return await this.reposOwnerRepoContentsPathDelete(options);
         
-        case "reposOwnerRepo":
+        case "REPOS_OWNER_REPO":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoDelete(options);
         
-        case "reposOwnerRepoDownloadsDownloadId":
+        case "REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID":
         // Function parameters for this API owner,repo,downloadId,opts
         return await this.reposOwnerRepoDownloadsDownloadIdDelete(options);
         
-        case "reposOwnerRepoGitRefsRef":
+        case "REPOS_OWNER_REPO_GIT_REFS_REF":
         // Function parameters for this API owner,repo,ref,opts
         return await this.reposOwnerRepoGitRefsRefDelete(options);
         
-        case "reposOwnerRepoHooksHookId":
+        case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
         // Function parameters for this API owner,repo,hookId,opts
         return await this.reposOwnerRepoHooksHookIdDelete(options);
         
-        case "reposOwnerRepoIssuesCommentsCommentId":
+        case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
         // Function parameters for this API owner,repo,commentId,opts
         return await this.reposOwnerRepoIssuesCommentsCommentIdDelete(options);
         
-        case "reposOwnerRepoIssuesNumberLabels":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoIssuesNumberLabelsDelete(options);
         
-        case "reposOwnerRepoIssuesNumberLabelsName":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_NAME":
         // Function parameters for this API owner,repo,_number,name,opts
         return await this.reposOwnerRepoIssuesNumberLabelsNameDelete(options);
         
-        case "reposOwnerRepoKeysKeyId":
+        case "REPOS_OWNER_REPO_KEYS_KEY_ID":
         // Function parameters for this API owner,repo,keyId,opts
         return await this.reposOwnerRepoKeysKeyIdDelete(options);
         
-        case "reposOwnerRepoLabelsName":
+        case "REPOS_OWNER_REPO_LABELS_NAME":
         // Function parameters for this API owner,repo,name,opts
         return await this.reposOwnerRepoLabelsNameDelete(options);
         
-        case "reposOwnerRepoMilestonesNumber":
+        case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
         // Function parameters for this API owner,repo,_number,opts
         return await this.reposOwnerRepoMilestonesNumberDelete(options);
         
-        case "reposOwnerRepoPullsCommentsCommentId":
+        case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
         // Function parameters for this API owner,repo,commentId,opts
         return await this.reposOwnerRepoPullsCommentsCommentIdDelete(options);
         
-        case "reposOwnerRepoReleasesAssetsId":
+        case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
         // Function parameters for this API owner,repo,id,opts
         return await this.reposOwnerRepoReleasesAssetsIdDelete(options);
         
-        case "reposOwnerRepoReleasesId":
+        case "REPOS_OWNER_REPO_RELEASES_ID":
         // Function parameters for this API owner,repo,id,opts
         return await this.reposOwnerRepoReleasesIdDelete(options);
         
-        case "reposOwnerRepoSubscription":
+        case "REPOS_OWNER_REPO_SUBSCRIPTION":
         // Function parameters for this API owner,repo,opts
         return await this.reposOwnerRepoSubscriptionDelete(options);
         
-        case "teamsTeamId":
+        case "TEAMS_TEAM_ID":
         // Function parameters for this API teamId,opts
         return await this.teamsTeamIdDelete(options);
         
-        case "teamsTeamIdMembersUsername":
+        case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
         // Function parameters for this API teamId,username,opts
         return await this.teamsTeamIdMembersUsernameDelete(options);
         
-        case "teamsTeamIdMembershipsUsername":
+        case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
         // Function parameters for this API teamId,username,opts
         return await this.teamsTeamIdMembershipsUsernameDelete(options);
         
-        case "teamsTeamIdReposOwnerRepo":
+        case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
         // Function parameters for this API teamId,owner,repo,opts
         return await this.teamsTeamIdReposOwnerRepoDelete(options);
         
-        case "userEmails":
+        case "USER_EMAILS":
         // Function parameters for this API body,opts
         return await this.userEmailsDelete(options);
         
-        case "userFollowingUsername":
+        case "USER_FOLLOWING_USERNAME":
         // Function parameters for this API username,opts
         return await this.userFollowingUsernameDelete(options);
         
-        case "userKeysKeyId":
+        case "USER_KEYS_KEY_ID":
         // Function parameters for this API keyId,opts
         return await this.userKeysKeyIdDelete(options);
         
-        case "userStarredOwnerRepo":
+        case "USER_STARRED_OWNER_REPO":
         // Function parameters for this API owner,repo,opts
         return await this.userStarredOwnerRepoDelete(options);
         
-        case "userSubscriptionsOwnerRepo":
+        case "USER_SUBSCRIPTIONS_OWNER_REPO":
         // Function parameters for this API owner,repo,opts
         return await this.userSubscriptionsOwnerRepoDelete(options);
         
@@ -5526,78 +5526,78 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
 });
         }
 
-        async function Patch(entity, options) {
+        async function patch(entity, options) {
         switch (entity) {
             
-        case "gistsIdCommentsCommentId":
+        case "GISTS_ID_COMMENTS_COMMENT_ID":
         // Function parameters for this API id,commentId,body,opts
         return await this.gistsIdCommentsCommentIdPatch(options);
         
-        case "gistsId":
+        case "GISTS_ID":
         // Function parameters for this API id,body,opts
         return await this.gistsIdPatch(options);
         
-        case "notificationsThreadsId":
+        case "NOTIFICATIONS_THREADS_ID":
         // Function parameters for this API id,opts
         return await this.notificationsThreadsIdPatch(options);
         
-        case "orgsOrg":
+        case "ORGS_ORG":
         // Function parameters for this API org,body,opts
         return await this.orgsOrgPatch(options);
         
-        case "reposOwnerRepoCommentsCommentId":
+        case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
         // Function parameters for this API owner,repo,commentId,body,opts
         return await this.reposOwnerRepoCommentsCommentIdPatch(options);
         
-        case "reposOwnerRepoGitRefsRef":
+        case "REPOS_OWNER_REPO_GIT_REFS_REF":
         // Function parameters for this API owner,repo,ref,body,opts
         return await this.reposOwnerRepoGitRefsRefPatch(options);
         
-        case "reposOwnerRepoHooksHookId":
+        case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
         // Function parameters for this API owner,repo,hookId,body,opts
         return await this.reposOwnerRepoHooksHookIdPatch(options);
         
-        case "reposOwnerRepoIssuesCommentsCommentId":
+        case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
         // Function parameters for this API owner,repo,commentId,body,opts
         return await this.reposOwnerRepoIssuesCommentsCommentIdPatch(options);
         
-        case "reposOwnerRepoIssuesNumber":
+        case "REPOS_OWNER_REPO_ISSUES_NUMBER":
         // Function parameters for this API owner,repo,_number,body,opts
         return await this.reposOwnerRepoIssuesNumberPatch(options);
         
-        case "reposOwnerRepoLabelsName":
+        case "REPOS_OWNER_REPO_LABELS_NAME":
         // Function parameters for this API owner,repo,name,body,opts
         return await this.reposOwnerRepoLabelsNamePatch(options);
         
-        case "reposOwnerRepoMilestonesNumber":
+        case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
         // Function parameters for this API owner,repo,_number,body,opts
         return await this.reposOwnerRepoMilestonesNumberPatch(options);
         
-        case "reposOwnerRepo":
+        case "REPOS_OWNER_REPO":
         // Function parameters for this API owner,repo,body,opts
         return await this.reposOwnerRepoPatch(options);
         
-        case "reposOwnerRepoPullsCommentsCommentId":
+        case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
         // Function parameters for this API owner,repo,commentId,body,opts
         return await this.reposOwnerRepoPullsCommentsCommentIdPatch(options);
         
-        case "reposOwnerRepoPullsNumber":
+        case "REPOS_OWNER_REPO_PULLS_NUMBER":
         // Function parameters for this API owner,repo,_number,body,opts
         return await this.reposOwnerRepoPullsNumberPatch(options);
         
-        case "reposOwnerRepoReleasesAssetsId":
+        case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
         // Function parameters for this API owner,repo,id,body,opts
         return await this.reposOwnerRepoReleasesAssetsIdPatch(options);
         
-        case "reposOwnerRepoReleasesId":
+        case "REPOS_OWNER_REPO_RELEASES_ID":
         // Function parameters for this API owner,repo,id,body,opts
         return await this.reposOwnerRepoReleasesIdPatch(options);
         
-        case "teamsTeamId":
+        case "TEAMS_TEAM_ID":
         // Function parameters for this API teamId,body,opts
         return await this.teamsTeamIdPatch(options);
         
-        case "user":
+        case "USER":
         // Function parameters for this API body,opts
         return await this.userPatch(options);
         
