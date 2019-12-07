@@ -1,4 +1,4 @@
-# GitHub.Notifications
+# Github.Notifications
 
 ## Properties
 

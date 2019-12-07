@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Notifications();
+    instance = new Github.Notifications();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('Notifications', function() {
     it('should create an instance of Notifications', function() {
       // uncomment below and update the code to test Notifications
-      //var instane = new GitHub.Notifications();
-      //expect(instance).to.be.a(GitHub.Notifications);
+      //var instane = new Github.Notifications();
+      //expect(instance).to.be.a(Github.Notifications);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new GitHub.Notifications();
+      //var instane = new Github.Notifications();
       //expect(instance).to.be();
     });
 
     it('should have the property lastReadAt (base name: "last_read_at")', function() {
       // uncomment below and update the code to test the property lastReadAt
-      //var instane = new GitHub.Notifications();
+      //var instane = new Github.Notifications();
       //expect(instance).to.be();
     });
 
     it('should have the property reason (base name: "reason")', function() {
       // uncomment below and update the code to test the property reason
-      //var instane = new GitHub.Notifications();
+      //var instane = new Github.Notifications();
       //expect(instance).to.be();
     });
 
     it('should have the property repository (base name: "repository")', function() {
       // uncomment below and update the code to test the property repository
-      //var instane = new GitHub.Notifications();
+      //var instane = new Github.Notifications();
       //expect(instance).to.be();
     });
 
     it('should have the property subject (base name: "subject")', function() {
       // uncomment below and update the code to test the property subject
-      //var instane = new GitHub.Notifications();
+      //var instane = new Github.Notifications();
       //expect(instance).to.be();
     });
 
     it('should have the property unread (base name: "unread")', function() {
       // uncomment below and update the code to test the property unread
-      //var instane = new GitHub.Notifications();
+      //var instane = new Github.Notifications();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new GitHub.Notifications();
+      //var instane = new Github.Notifications();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.Notifications();
+      //var instane = new Github.Notifications();
       //expect(instance).to.be();
     });
 

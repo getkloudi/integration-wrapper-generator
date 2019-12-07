@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.SearchUsersByKeyword();
+    instance = new Github.SearchUsersByKeyword();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('SearchUsersByKeyword', function() {
     it('should create an instance of SearchUsersByKeyword', function() {
       // uncomment below and update the code to test SearchUsersByKeyword
-      //var instane = new GitHub.SearchUsersByKeyword();
-      //expect(instance).to.be.a(GitHub.SearchUsersByKeyword);
+      //var instane = new Github.SearchUsersByKeyword();
+      //expect(instance).to.be.a(Github.SearchUsersByKeyword);
     });
 
     it('should have the property users (base name: "users")', function() {
       // uncomment below and update the code to test the property users
-      //var instane = new GitHub.SearchUsersByKeyword();
+      //var instane = new Github.SearchUsersByKeyword();
       //expect(instance).to.be();
     });
 

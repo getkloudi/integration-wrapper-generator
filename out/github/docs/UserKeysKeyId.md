@@ -1,4 +1,4 @@
-# GitHub.UserKeysKeyId
+# Github.UserKeysKeyId
 
 ## Properties
 

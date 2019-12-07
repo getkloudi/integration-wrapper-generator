@@ -1,4 +1,4 @@
-# GitHub.SearchUsers
+# Github.SearchUsers
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.Tree
+# Github.Tree
 
 ## Properties
 

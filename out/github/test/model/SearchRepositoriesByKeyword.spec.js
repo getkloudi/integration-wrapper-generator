@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.SearchRepositoriesByKeyword();
+    instance = new Github.SearchRepositoriesByKeyword();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('SearchRepositoriesByKeyword', function() {
     it('should create an instance of SearchRepositoriesByKeyword', function() {
       // uncomment below and update the code to test SearchRepositoriesByKeyword
-      //var instane = new GitHub.SearchRepositoriesByKeyword();
-      //expect(instance).to.be.a(GitHub.SearchRepositoriesByKeyword);
+      //var instane = new Github.SearchRepositoriesByKeyword();
+      //expect(instance).to.be.a(Github.SearchRepositoriesByKeyword);
     });
 
     it('should have the property repositories (base name: "repositories")', function() {
       // uncomment below and update the code to test the property repositories
-      //var instane = new GitHub.SearchRepositoriesByKeyword();
+      //var instane = new Github.SearchRepositoriesByKeyword();
       //expect(instance).to.be();
     });
 

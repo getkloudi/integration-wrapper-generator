@@ -1,4 +1,4 @@
-# GitHub.PostRepo
+# Github.PostRepo
 
 ## Properties
 

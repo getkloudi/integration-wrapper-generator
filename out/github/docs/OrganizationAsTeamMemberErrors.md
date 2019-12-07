@@ -1,4 +1,4 @@
-# GitHub.OrganizationAsTeamMemberErrors
+# Github.OrganizationAsTeamMemberErrors
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.RepoEdit
+# Github.RepoEdit
 
 ## Properties
 

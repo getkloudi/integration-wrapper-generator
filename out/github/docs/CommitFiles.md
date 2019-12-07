@@ -1,4 +1,4 @@
-# GitHub.CommitFiles
+# Github.CommitFiles
 
 ## Properties
 

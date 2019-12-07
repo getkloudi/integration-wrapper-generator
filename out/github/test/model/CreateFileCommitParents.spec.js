@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.CreateFileCommitParents();
+    instance = new Github.CreateFileCommitParents();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('CreateFileCommitParents', function() {
     it('should create an instance of CreateFileCommitParents', function() {
       // uncomment below and update the code to test CreateFileCommitParents
-      //var instane = new GitHub.CreateFileCommitParents();
-      //expect(instance).to.be.a(GitHub.CreateFileCommitParents);
+      //var instane = new Github.CreateFileCommitParents();
+      //expect(instance).to.be.a(Github.CreateFileCommitParents);
     });
 
     it('should have the property htmlUrl (base name: "html_url")', function() {
       // uncomment below and update the code to test the property htmlUrl
-      //var instane = new GitHub.CreateFileCommitParents();
+      //var instane = new Github.CreateFileCommitParents();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.CreateFileCommitParents();
+      //var instane = new Github.CreateFileCommitParents();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.CreateFileCommitParents();
+      //var instane = new Github.CreateFileCommitParents();
       //expect(instance).to.be();
     });
 

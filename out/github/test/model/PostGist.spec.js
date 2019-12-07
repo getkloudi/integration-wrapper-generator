@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PostGist();
+    instance = new Github.PostGist();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('PostGist', function() {
     it('should create an instance of PostGist', function() {
       // uncomment below and update the code to test PostGist
-      //var instane = new GitHub.PostGist();
-      //expect(instance).to.be.a(GitHub.PostGist);
+      //var instane = new Github.PostGist();
+      //expect(instance).to.be.a(Github.PostGist);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new GitHub.PostGist();
+      //var instane = new Github.PostGist();
       //expect(instance).to.be();
     });
 
     it('should have the property files (base name: "files")', function() {
       // uncomment below and update the code to test the property files
-      //var instane = new GitHub.PostGist();
+      //var instane = new Github.PostGist();
       //expect(instance).to.be();
     });
 
     it('should have the property _public (base name: "public")', function() {
       // uncomment below and update the code to test the property _public
-      //var instane = new GitHub.PostGist();
+      //var instane = new Github.PostGist();
       //expect(instance).to.be();
     });
 

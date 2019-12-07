@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.MergesSuccessful();
+    instance = new Github.MergesSuccessful();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
   describe('MergesSuccessful', function() {
     it('should create an instance of MergesSuccessful', function() {
       // uncomment below and update the code to test MergesSuccessful
-      //var instane = new GitHub.MergesSuccessful();
-      //expect(instance).to.be.a(GitHub.MergesSuccessful);
+      //var instane = new Github.MergesSuccessful();
+      //expect(instance).to.be.a(Github.MergesSuccessful);
     });
 
     it('should have the property author (base name: "author")', function() {
       // uncomment below and update the code to test the property author
-      //var instane = new GitHub.MergesSuccessful();
+      //var instane = new Github.MergesSuccessful();
       //expect(instance).to.be();
     });
 
     it('should have the property commentsUrl (base name: "comments_url")', function() {
       // uncomment below and update the code to test the property commentsUrl
-      //var instane = new GitHub.MergesSuccessful();
+      //var instane = new Github.MergesSuccessful();
       //expect(instance).to.be();
     });
 
     it('should have the property commit (base name: "commit")', function() {
       // uncomment below and update the code to test the property commit
-      //var instane = new GitHub.MergesSuccessful();
+      //var instane = new Github.MergesSuccessful();
       //expect(instance).to.be();
     });
 
     it('should have the property committer (base name: "committer")', function() {
       // uncomment below and update the code to test the property committer
-      //var instane = new GitHub.MergesSuccessful();
+      //var instane = new Github.MergesSuccessful();
       //expect(instance).to.be();
     });
 
     it('should have the property merged (base name: "merged")', function() {
       // uncomment below and update the code to test the property merged
-      //var instane = new GitHub.MergesSuccessful();
+      //var instane = new Github.MergesSuccessful();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new GitHub.MergesSuccessful();
+      //var instane = new Github.MergesSuccessful();
       //expect(instance).to.be();
     });
 
     it('should have the property parents (base name: "parents")', function() {
       // uncomment below and update the code to test the property parents
-      //var instane = new GitHub.MergesSuccessful();
+      //var instane = new Github.MergesSuccessful();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.MergesSuccessful();
+      //var instane = new Github.MergesSuccessful();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.MergesSuccessful();
+      //var instane = new Github.MergesSuccessful();
       //expect(instance).to.be();
     });
 

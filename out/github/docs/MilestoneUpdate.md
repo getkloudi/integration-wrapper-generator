@@ -1,4 +1,4 @@
-# GitHub.MilestoneUpdate
+# Github.MilestoneUpdate
 
 ## Properties
 

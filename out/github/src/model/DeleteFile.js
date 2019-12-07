@@ -17,7 +17,7 @@ import DeleteFileCommit from './DeleteFileCommit';
 /**
  * The DeleteFile model module.
  * @module model/DeleteFile
- * @version v3
+ * @version 1.0.0
  */
 class DeleteFile {
     /**

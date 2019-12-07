@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.CommentBody();
+    instance = new Github.CommentBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('CommentBody', function() {
     it('should create an instance of CommentBody', function() {
       // uncomment below and update the code to test CommentBody
-      //var instane = new GitHub.CommentBody();
-      //expect(instance).to.be.a(GitHub.CommentBody);
+      //var instane = new Github.CommentBody();
+      //expect(instance).to.be.a(Github.CommentBody);
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.CommentBody();
+      //var instane = new Github.CommentBody();
       //expect(instance).to.be();
     });
 

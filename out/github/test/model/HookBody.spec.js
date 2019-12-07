@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.HookBody();
+    instance = new Github.HookBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('HookBody', function() {
     it('should create an instance of HookBody', function() {
       // uncomment below and update the code to test HookBody
-      //var instane = new GitHub.HookBody();
-      //expect(instance).to.be.a(GitHub.HookBody);
+      //var instane = new Github.HookBody();
+      //expect(instance).to.be.a(Github.HookBody);
     });
 
     it('should have the property active (base name: "active")', function() {
       // uncomment below and update the code to test the property active
-      //var instane = new GitHub.HookBody();
+      //var instane = new Github.HookBody();
       //expect(instance).to.be();
     });
 
     it('should have the property addEvents (base name: "add_events")', function() {
       // uncomment below and update the code to test the property addEvents
-      //var instane = new GitHub.HookBody();
+      //var instane = new Github.HookBody();
       //expect(instance).to.be();
     });
 

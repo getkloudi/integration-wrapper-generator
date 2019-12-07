@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.FeedsLinks();
+    instance = new Github.FeedsLinks();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('FeedsLinks', function() {
     it('should create an instance of FeedsLinks', function() {
       // uncomment below and update the code to test FeedsLinks
-      //var instane = new GitHub.FeedsLinks();
-      //expect(instance).to.be.a(GitHub.FeedsLinks);
+      //var instane = new Github.FeedsLinks();
+      //expect(instance).to.be.a(Github.FeedsLinks);
     });
 
     it('should have the property currentUser (base name: "current_user")', function() {
       // uncomment below and update the code to test the property currentUser
-      //var instane = new GitHub.FeedsLinks();
+      //var instane = new Github.FeedsLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property currentUserActor (base name: "current_user_actor")', function() {
       // uncomment below and update the code to test the property currentUserActor
-      //var instane = new GitHub.FeedsLinks();
+      //var instane = new Github.FeedsLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property currentUserOrganization (base name: "current_user_organization")', function() {
       // uncomment below and update the code to test the property currentUserOrganization
-      //var instane = new GitHub.FeedsLinks();
+      //var instane = new Github.FeedsLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property currentUserPublic (base name: "current_user_public")', function() {
       // uncomment below and update the code to test the property currentUserPublic
-      //var instane = new GitHub.FeedsLinks();
+      //var instane = new Github.FeedsLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property timeline (base name: "timeline")', function() {
       // uncomment below and update the code to test the property timeline
-      //var instane = new GitHub.FeedsLinks();
+      //var instane = new Github.FeedsLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property user (base name: "user")', function() {
       // uncomment below and update the code to test the property user
-      //var instane = new GitHub.FeedsLinks();
+      //var instane = new Github.FeedsLinks();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Gist();
+    instance = new Github.Gist();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,91 +50,91 @@
   describe('Gist', function() {
     it('should create an instance of Gist', function() {
       // uncomment below and update the code to test Gist
-      //var instane = new GitHub.Gist();
-      //expect(instance).to.be.a(GitHub.Gist);
+      //var instane = new Github.Gist();
+      //expect(instance).to.be.a(Github.Gist);
     });
 
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property commentsUrl (base name: "comments_url")', function() {
       // uncomment below and update the code to test the property commentsUrl
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property files (base name: "files")', function() {
       // uncomment below and update the code to test the property files
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property forks (base name: "forks")', function() {
       // uncomment below and update the code to test the property forks
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property gitPullUrl (base name: "git_pull_url")', function() {
       // uncomment below and update the code to test the property gitPullUrl
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property gitPushUrl (base name: "git_push_url")', function() {
       // uncomment below and update the code to test the property gitPushUrl
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property history (base name: "history")', function() {
       // uncomment below and update the code to test the property history
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property htmlUrl (base name: "html_url")', function() {
       // uncomment below and update the code to test the property htmlUrl
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property _public (base name: "public")', function() {
       // uncomment below and update the code to test the property _public
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 
     it('should have the property user (base name: "user")', function() {
       // uncomment below and update the code to test the property user
-      //var instane = new GitHub.Gist();
+      //var instane = new Github.Gist();
       //expect(instance).to.be();
     });
 

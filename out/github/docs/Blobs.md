@@ -1,4 +1,4 @@
-# GitHub.Blobs
+# Github.Blobs
 
 ## Properties
 

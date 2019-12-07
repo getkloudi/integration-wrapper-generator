@@ -1,4 +1,4 @@
-# GitHub.Commit
+# Github.Commit
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.Tag
+# Github.Tag
 
 ## Properties
 

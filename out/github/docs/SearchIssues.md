@@ -1,4 +1,4 @@
-# GitHub.SearchIssues
+# Github.SearchIssues
 
 ## Properties
 

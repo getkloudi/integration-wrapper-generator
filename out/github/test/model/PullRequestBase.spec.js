@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PullRequestBase();
+    instance = new Github.PullRequestBase();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('PullRequestBase', function() {
     it('should create an instance of PullRequestBase', function() {
       // uncomment below and update the code to test PullRequestBase
-      //var instane = new GitHub.PullRequestBase();
-      //expect(instance).to.be.a(GitHub.PullRequestBase);
+      //var instane = new Github.PullRequestBase();
+      //expect(instance).to.be.a(Github.PullRequestBase);
     });
 
     it('should have the property label (base name: "label")', function() {
       // uncomment below and update the code to test the property label
-      //var instane = new GitHub.PullRequestBase();
+      //var instane = new Github.PullRequestBase();
       //expect(instance).to.be();
     });
 
     it('should have the property ref (base name: "ref")', function() {
       // uncomment below and update the code to test the property ref
-      //var instane = new GitHub.PullRequestBase();
+      //var instane = new Github.PullRequestBase();
       //expect(instance).to.be();
     });
 
     it('should have the property repo (base name: "repo")', function() {
       // uncomment below and update the code to test the property repo
-      //var instane = new GitHub.PullRequestBase();
+      //var instane = new Github.PullRequestBase();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.PullRequestBase();
+      //var instane = new Github.PullRequestBase();
       //expect(instance).to.be();
     });
 
     it('should have the property user (base name: "user")', function() {
       // uncomment below and update the code to test the property user
-      //var instane = new GitHub.PullRequestBase();
+      //var instane = new Github.PullRequestBase();
       //expect(instance).to.be();
     });
 

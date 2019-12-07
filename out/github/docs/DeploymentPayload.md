@@ -1,4 +1,4 @@
-# GitHub.DeploymentPayload
+# Github.DeploymentPayload
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.Branch
+# Github.Branch
 
 ## Properties
 

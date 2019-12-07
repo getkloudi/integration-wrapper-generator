@@ -1,4 +1,4 @@
-# GitHub.ActorPlan
+# Github.ActorPlan
 
 ## Properties
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GistFilesRingErl model module.
  * @module model/GistFilesRingErl
- * @version v3
+ * @version 1.0.0
  */
 class GistFilesRingErl {
     /**

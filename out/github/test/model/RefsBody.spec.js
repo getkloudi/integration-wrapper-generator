@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.RefsBody();
+    instance = new Github.RefsBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('RefsBody', function() {
     it('should create an instance of RefsBody', function() {
       // uncomment below and update the code to test RefsBody
-      //var instane = new GitHub.RefsBody();
-      //expect(instance).to.be.a(GitHub.RefsBody);
+      //var instane = new Github.RefsBody();
+      //expect(instance).to.be.a(Github.RefsBody);
     });
 
     it('should have the property ref (base name: "ref")', function() {
       // uncomment below and update the code to test the property ref
-      //var instane = new GitHub.RefsBody();
+      //var instane = new Github.RefsBody();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.RefsBody();
+      //var instane = new Github.RefsBody();
       //expect(instance).to.be();
     });
 

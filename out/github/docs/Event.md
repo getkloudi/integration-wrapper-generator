@@ -1,4 +1,4 @@
-# GitHub.Event
+# Github.Event
 
 ## Properties
 

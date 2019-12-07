@@ -1,4 +1,4 @@
-# GitHub.FeedsLinks
+# Github.FeedsLinks
 
 ## Properties
 

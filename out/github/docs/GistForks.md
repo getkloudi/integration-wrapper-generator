@@ -1,4 +1,4 @@
-# GitHub.GistForks
+# Github.GistForks
 
 ## Properties
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.MergesBody();
+    instance = new Github.MergesBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('MergesBody', function() {
     it('should create an instance of MergesBody', function() {
       // uncomment below and update the code to test MergesBody
-      //var instane = new GitHub.MergesBody();
-      //expect(instance).to.be.a(GitHub.MergesBody);
+      //var instane = new Github.MergesBody();
+      //expect(instance).to.be.a(Github.MergesBody);
     });
 
     it('should have the property base (base name: "base")', function() {
       // uncomment below and update the code to test the property base
-      //var instane = new GitHub.MergesBody();
+      //var instane = new Github.MergesBody();
       //expect(instance).to.be();
     });
 
     it('should have the property commitMessage (base name: "commit_message")', function() {
       // uncomment below and update the code to test the property commitMessage
-      //var instane = new GitHub.MergesBody();
+      //var instane = new Github.MergesBody();
       //expect(instance).to.be();
     });
 
     it('should have the property head (base name: "head")', function() {
       // uncomment below and update the code to test the property head
-      //var instane = new GitHub.MergesBody();
+      //var instane = new Github.MergesBody();
       //expect(instance).to.be();
     });
 

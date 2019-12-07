@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.MergePullBody();
+    instance = new Github.MergePullBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('MergePullBody', function() {
     it('should create an instance of MergePullBody', function() {
       // uncomment below and update the code to test MergePullBody
-      //var instane = new GitHub.MergePullBody();
-      //expect(instance).to.be.a(GitHub.MergePullBody);
+      //var instane = new Github.MergePullBody();
+      //expect(instance).to.be.a(Github.MergePullBody);
     });
 
     it('should have the property commitMessage (base name: "commit_message")', function() {
       // uncomment below and update the code to test the property commitMessage
-      //var instane = new GitHub.MergePullBody();
+      //var instane = new Github.MergePullBody();
       //expect(instance).to.be();
     });
 

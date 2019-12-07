@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssetPatch model module.
  * @module model/AssetPatch
- * @version v3
+ * @version 1.0.0
  */
 class AssetPatch {
     /**

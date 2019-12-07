@@ -1,4 +1,4 @@
-# GitHub.CompareCommits
+# Github.CompareCommits
 
 ## Properties
 

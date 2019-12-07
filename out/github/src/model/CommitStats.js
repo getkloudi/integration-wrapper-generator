@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CommitStats model module.
  * @module model/CommitStats
- * @version v3
+ * @version 1.0.0
  */
 class CommitStats {
     /**

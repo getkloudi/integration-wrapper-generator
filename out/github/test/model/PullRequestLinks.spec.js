@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PullRequestLinks();
+    instance = new Github.PullRequestLinks();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('PullRequestLinks', function() {
     it('should create an instance of PullRequestLinks', function() {
       // uncomment below and update the code to test PullRequestLinks
-      //var instane = new GitHub.PullRequestLinks();
-      //expect(instance).to.be.a(GitHub.PullRequestLinks);
+      //var instane = new Github.PullRequestLinks();
+      //expect(instance).to.be.a(Github.PullRequestLinks);
     });
 
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
-      //var instane = new GitHub.PullRequestLinks();
+      //var instane = new Github.PullRequestLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property html (base name: "html")', function() {
       // uncomment below and update the code to test the property html
-      //var instane = new GitHub.PullRequestLinks();
+      //var instane = new Github.PullRequestLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property reviewComments (base name: "review_comments")', function() {
       // uncomment below and update the code to test the property reviewComments
-      //var instane = new GitHub.PullRequestLinks();
+      //var instane = new Github.PullRequestLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property self (base name: "self")', function() {
       // uncomment below and update the code to test the property self
-      //var instane = new GitHub.PullRequestLinks();
+      //var instane = new Github.PullRequestLinks();
       //expect(instance).to.be();
     });
 

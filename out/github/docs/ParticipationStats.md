@@ -1,4 +1,4 @@
-# GitHub.ParticipationStats
+# Github.ParticipationStats
 
 ## Properties
 

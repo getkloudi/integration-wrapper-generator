@@ -1,4 +1,4 @@
-# GitHub.PutSubscription
+# Github.PutSubscription
 
 ## Properties
 

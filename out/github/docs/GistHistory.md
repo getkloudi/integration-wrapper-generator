@@ -1,4 +1,4 @@
-# GitHub.GistHistory
+# Github.GistHistory
 
 ## Properties
 

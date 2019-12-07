@@ -1,4 +1,4 @@
-# GitHub.IssueEventIssue
+# Github.IssueEventIssue
 
 ## Properties
 

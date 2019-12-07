@@ -1,4 +1,4 @@
-# GitHub.PatchGist
+# Github.PatchGist
 
 ## Properties
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PullsPost model module.
  * @module model/PullsPost
- * @version v3
+ * @version 1.0.0
  */
 class PullsPost {
     /**

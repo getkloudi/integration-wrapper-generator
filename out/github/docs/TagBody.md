@@ -1,4 +1,4 @@
-# GitHub.TagBody
+# Github.TagBody
 
 ## Properties
 

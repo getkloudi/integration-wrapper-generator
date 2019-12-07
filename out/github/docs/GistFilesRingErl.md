@@ -1,4 +1,4 @@
-# GitHub.GistFilesRingErl
+# Github.GistFilesRingErl
 
 ## Properties
 

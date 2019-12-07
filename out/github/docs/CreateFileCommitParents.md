@@ -1,4 +1,4 @@
-# GitHub.CreateFileCommitParents
+# Github.CreateFileCommitParents
 
 ## Properties
 

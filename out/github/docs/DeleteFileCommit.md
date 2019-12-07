@@ -1,4 +1,4 @@
-# GitHub.DeleteFileCommit
+# Github.DeleteFileCommit
 
 ## Properties
 

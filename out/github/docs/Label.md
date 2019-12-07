@@ -1,4 +1,4 @@
-# GitHub.Label
+# Github.Label
 
 ## Properties
 

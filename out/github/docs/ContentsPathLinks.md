@@ -1,4 +1,4 @@
-# GitHub.ContentsPathLinks
+# Github.ContentsPathLinks
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.BranchLinks
+# Github.BranchLinks
 
 ## Properties
 

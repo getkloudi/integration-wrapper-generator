@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.SearchIssuesByKeywordIssues();
+    instance = new Github.SearchIssuesByKeywordIssues();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,85 +50,85 @@
   describe('SearchIssuesByKeywordIssues', function() {
     it('should create an instance of SearchIssuesByKeywordIssues', function() {
       // uncomment below and update the code to test SearchIssuesByKeywordIssues
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
-      //expect(instance).to.be.a(GitHub.SearchIssuesByKeywordIssues);
+      //var instane = new Github.SearchIssuesByKeywordIssues();
+      //expect(instance).to.be.a(Github.SearchIssuesByKeywordIssues);
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property comments (base name: "comments")', function() {
       // uncomment below and update the code to test the property comments
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property gravatarId (base name: "gravatar_id")', function() {
       // uncomment below and update the code to test the property gravatarId
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property htmlUrl (base name: "html_url")', function() {
       // uncomment below and update the code to test the property htmlUrl
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property labels (base name: "labels")', function() {
       // uncomment below and update the code to test the property labels
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property position (base name: "position")', function() {
       // uncomment below and update the code to test the property position
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property user (base name: "user")', function() {
       // uncomment below and update the code to test the property user
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 
     it('should have the property votes (base name: "votes")', function() {
       // uncomment below and update the code to test the property votes
-      //var instane = new GitHub.SearchIssuesByKeywordIssues();
+      //var instane = new Github.SearchIssuesByKeywordIssues();
       //expect(instance).to.be();
     });
 

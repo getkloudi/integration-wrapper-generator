@@ -1,4 +1,4 @@
-# GitHub.SearchUsersByKeyword
+# Github.SearchUsersByKeyword
 
 ## Properties
 

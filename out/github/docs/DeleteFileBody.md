@@ -1,4 +1,4 @@
-# GitHub.DeleteFileBody
+# Github.DeleteFileBody
 
 ## Properties
 

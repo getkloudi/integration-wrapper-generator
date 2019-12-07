@@ -1,4 +1,4 @@
-# GitHub.GistFiles
+# Github.GistFiles
 
 ## Properties
 

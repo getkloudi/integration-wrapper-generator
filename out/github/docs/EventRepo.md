@@ -1,4 +1,4 @@
-# GitHub.EventRepo
+# Github.EventRepo
 
 ## Properties
 

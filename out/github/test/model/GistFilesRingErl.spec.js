@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.GistFilesRingErl();
+    instance = new Github.GistFilesRingErl();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('GistFilesRingErl', function() {
     it('should create an instance of GistFilesRingErl', function() {
       // uncomment below and update the code to test GistFilesRingErl
-      //var instane = new GitHub.GistFilesRingErl();
-      //expect(instance).to.be.a(GitHub.GistFilesRingErl);
+      //var instane = new Github.GistFilesRingErl();
+      //expect(instance).to.be.a(Github.GistFilesRingErl);
     });
 
     it('should have the property filename (base name: "filename")', function() {
       // uncomment below and update the code to test the property filename
-      //var instane = new GitHub.GistFilesRingErl();
+      //var instane = new Github.GistFilesRingErl();
       //expect(instance).to.be();
     });
 
     it('should have the property rawUrl (base name: "raw_url")', function() {
       // uncomment below and update the code to test the property rawUrl
-      //var instane = new GitHub.GistFilesRingErl();
+      //var instane = new Github.GistFilesRingErl();
       //expect(instance).to.be();
     });
 
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
-      //var instane = new GitHub.GistFilesRingErl();
+      //var instane = new Github.GistFilesRingErl();
       //expect(instance).to.be();
     });
 

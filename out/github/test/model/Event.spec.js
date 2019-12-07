@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Event();
+    instance = new Github.Event();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('Event', function() {
     it('should create an instance of Event', function() {
       // uncomment below and update the code to test Event
-      //var instane = new GitHub.Event();
-      //expect(instance).to.be.a(GitHub.Event);
+      //var instane = new Github.Event();
+      //expect(instance).to.be.a(Github.Event);
     });
 
     it('should have the property actor (base name: "actor")', function() {
       // uncomment below and update the code to test the property actor
-      //var instane = new GitHub.Event();
+      //var instane = new Github.Event();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.Event();
+      //var instane = new Github.Event();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new GitHub.Event();
+      //var instane = new Github.Event();
       //expect(instance).to.be();
     });
 
     it('should have the property org (base name: "org")', function() {
       // uncomment below and update the code to test the property org
-      //var instane = new GitHub.Event();
+      //var instane = new Github.Event();
       //expect(instance).to.be();
     });
 
     it('should have the property payload (base name: "payload")', function() {
       // uncomment below and update the code to test the property payload
-      //var instane = new GitHub.Event();
+      //var instane = new Github.Event();
       //expect(instance).to.be();
     });
 
     it('should have the property _public (base name: "public")', function() {
       // uncomment below and update the code to test the property _public
-      //var instane = new GitHub.Event();
+      //var instane = new Github.Event();
       //expect(instance).to.be();
     });
 
     it('should have the property repo (base name: "repo")', function() {
       // uncomment below and update the code to test the property repo
-      //var instane = new GitHub.Event();
+      //var instane = new Github.Event();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new GitHub.Event();
+      //var instane = new Github.Event();
       //expect(instance).to.be();
     });
 

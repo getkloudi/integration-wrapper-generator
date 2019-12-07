@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Milestone();
+    instance = new Github.Milestone();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,67 +50,67 @@
   describe('Milestone', function() {
     it('should create an instance of Milestone', function() {
       // uncomment below and update the code to test Milestone
-      //var instane = new GitHub.Milestone();
-      //expect(instance).to.be.a(GitHub.Milestone);
+      //var instane = new Github.Milestone();
+      //expect(instance).to.be.a(Github.Milestone);
     });
 
     it('should have the property closedIssues (base name: "closed_issues")', function() {
       // uncomment below and update the code to test the property closedIssues
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 
     it('should have the property dueOn (base name: "due_on")', function() {
       // uncomment below and update the code to test the property dueOn
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 
     it('should have the property openIssues (base name: "open_issues")', function() {
       // uncomment below and update the code to test the property openIssues
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.Milestone();
+      //var instane = new Github.Milestone();
       //expect(instance).to.be();
     });
 

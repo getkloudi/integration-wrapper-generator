@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PutSubscription();
+    instance = new Github.PutSubscription();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('PutSubscription', function() {
     it('should create an instance of PutSubscription', function() {
       // uncomment below and update the code to test PutSubscription
-      //var instane = new GitHub.PutSubscription();
-      //expect(instance).to.be.a(GitHub.PutSubscription);
+      //var instane = new Github.PutSubscription();
+      //expect(instance).to.be.a(Github.PutSubscription);
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.PutSubscription();
+      //var instane = new Github.PutSubscription();
       //expect(instance).to.be();
     });
 
     it('should have the property ignored (base name: "ignored")', function() {
       // uncomment below and update the code to test the property ignored
-      //var instane = new GitHub.PutSubscription();
+      //var instane = new Github.PutSubscription();
       //expect(instance).to.be();
     });
 
     it('should have the property reason (base name: "reason")', function() {
       // uncomment below and update the code to test the property reason
-      //var instane = new GitHub.PutSubscription();
+      //var instane = new Github.PutSubscription();
       //expect(instance).to.be();
     });
 
     it('should have the property subscribed (base name: "subscribed")', function() {
       // uncomment below and update the code to test the property subscribed
-      //var instane = new GitHub.PutSubscription();
+      //var instane = new Github.PutSubscription();
       //expect(instance).to.be();
     });
 
     it('should have the property threadUrl (base name: "thread_url")', function() {
       // uncomment below and update the code to test the property threadUrl
-      //var instane = new GitHub.PutSubscription();
+      //var instane = new Github.PutSubscription();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.PutSubscription();
+      //var instane = new Github.PutSubscription();
       //expect(instance).to.be();
     });
 

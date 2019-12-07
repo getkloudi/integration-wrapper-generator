@@ -1,4 +1,4 @@
-# GitHub.User
+# Github.User
 
 ## Properties
 

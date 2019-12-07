@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.FeedsLinksCurrentUser();
+    instance = new Github.FeedsLinksCurrentUser();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('FeedsLinksCurrentUser', function() {
     it('should create an instance of FeedsLinksCurrentUser', function() {
       // uncomment below and update the code to test FeedsLinksCurrentUser
-      //var instane = new GitHub.FeedsLinksCurrentUser();
-      //expect(instance).to.be.a(GitHub.FeedsLinksCurrentUser);
+      //var instane = new Github.FeedsLinksCurrentUser();
+      //expect(instance).to.be.a(Github.FeedsLinksCurrentUser);
     });
 
     it('should have the property href (base name: "href")', function() {
       // uncomment below and update the code to test the property href
-      //var instane = new GitHub.FeedsLinksCurrentUser();
+      //var instane = new Github.FeedsLinksCurrentUser();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new GitHub.FeedsLinksCurrentUser();
+      //var instane = new Github.FeedsLinksCurrentUser();
       //expect(instance).to.be();
     });
 

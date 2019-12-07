@@ -1,4 +1,4 @@
-# GitHub.PatchOrg
+# Github.PatchOrg
 
 ## Properties
 

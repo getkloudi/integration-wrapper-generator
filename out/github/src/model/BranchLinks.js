@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BranchLinks model module.
  * @module model/BranchLinks
- * @version v3
+ * @version 1.0.0
  */
 class BranchLinks {
     /**

@@ -1,4 +1,4 @@
-# GitHub.BranchCommitCommitTree
+# Github.BranchCommitCommitTree
 
 ## Properties
 

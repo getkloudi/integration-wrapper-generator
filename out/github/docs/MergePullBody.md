@@ -1,4 +1,4 @@
-# GitHub.MergePullBody
+# Github.MergePullBody
 
 ## Properties
 

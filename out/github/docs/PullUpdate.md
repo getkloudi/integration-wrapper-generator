@@ -1,4 +1,4 @@
-# GitHub.PullUpdate
+# Github.PullUpdate
 
 ## Properties
 

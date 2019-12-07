@@ -1,4 +1,4 @@
-# GitHub.BranchCommitCommitAuthor
+# Github.BranchCommitCommitAuthor
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.MergesSuccessful
+# Github.MergesSuccessful
 
 ## Properties
 

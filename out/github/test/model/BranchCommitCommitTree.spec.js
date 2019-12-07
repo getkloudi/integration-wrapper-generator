@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.BranchCommitCommitTree();
+    instance = new Github.BranchCommitCommitTree();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('BranchCommitCommitTree', function() {
     it('should create an instance of BranchCommitCommitTree', function() {
       // uncomment below and update the code to test BranchCommitCommitTree
-      //var instane = new GitHub.BranchCommitCommitTree();
-      //expect(instance).to.be.a(GitHub.BranchCommitCommitTree);
+      //var instane = new Github.BranchCommitCommitTree();
+      //expect(instance).to.be.a(Github.BranchCommitCommitTree);
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.BranchCommitCommitTree();
+      //var instane = new Github.BranchCommitCommitTree();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.BranchCommitCommitTree();
+      //var instane = new Github.BranchCommitCommitTree();
       //expect(instance).to.be();
     });
 

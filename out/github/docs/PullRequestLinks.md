@@ -1,4 +1,4 @@
-# GitHub.PullRequestLinks
+# Github.PullRequestLinks
 
 ## Properties
 

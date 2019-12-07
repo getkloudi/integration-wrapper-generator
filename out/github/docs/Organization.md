@@ -1,4 +1,4 @@
-# GitHub.Organization
+# Github.Organization
 
 ## Properties
 

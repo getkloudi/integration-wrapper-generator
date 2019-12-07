@@ -1,4 +1,4 @@
-# GitHub.PullsPost
+# Github.PullsPost
 
 ## Properties
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Feeds();
+    instance = new Github.Feeds();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('Feeds', function() {
     it('should create an instance of Feeds', function() {
       // uncomment below and update the code to test Feeds
-      //var instane = new GitHub.Feeds();
-      //expect(instance).to.be.a(GitHub.Feeds);
+      //var instane = new Github.Feeds();
+      //expect(instance).to.be.a(Github.Feeds);
     });
 
     it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
-      //var instane = new GitHub.Feeds();
+      //var instane = new Github.Feeds();
       //expect(instance).to.be();
     });
 
     it('should have the property currentUserActorUrl (base name: "current_user_actor_url")', function() {
       // uncomment below and update the code to test the property currentUserActorUrl
-      //var instane = new GitHub.Feeds();
+      //var instane = new Github.Feeds();
       //expect(instance).to.be();
     });
 
     it('should have the property currentUserOrganizationUrl (base name: "current_user_organization_url")', function() {
       // uncomment below and update the code to test the property currentUserOrganizationUrl
-      //var instane = new GitHub.Feeds();
+      //var instane = new Github.Feeds();
       //expect(instance).to.be();
     });
 
     it('should have the property currentUserPublic (base name: "current_user_public")', function() {
       // uncomment below and update the code to test the property currentUserPublic
-      //var instane = new GitHub.Feeds();
+      //var instane = new Github.Feeds();
       //expect(instance).to.be();
     });
 
     it('should have the property currentUserUrl (base name: "current_user_url")', function() {
       // uncomment below and update the code to test the property currentUserUrl
-      //var instane = new GitHub.Feeds();
+      //var instane = new Github.Feeds();
       //expect(instance).to.be();
     });
 
     it('should have the property timelineUrl (base name: "timeline_url")', function() {
       // uncomment below and update the code to test the property timelineUrl
-      //var instane = new GitHub.Feeds();
+      //var instane = new Github.Feeds();
       //expect(instance).to.be();
     });
 
     it('should have the property userUrl (base name: "user_url")', function() {
       // uncomment below and update the code to test the property userUrl
-      //var instane = new GitHub.Feeds();
+      //var instane = new Github.Feeds();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# GitHub.PullsCommentLinks
+# Github.PullsCommentLinks
 
 ## Properties
 

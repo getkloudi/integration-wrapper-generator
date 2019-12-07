@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.IssueEvent();
+    instance = new Github.IssueEvent();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('IssueEvent', function() {
     it('should create an instance of IssueEvent', function() {
       // uncomment below and update the code to test IssueEvent
-      //var instane = new GitHub.IssueEvent();
-      //expect(instance).to.be.a(GitHub.IssueEvent);
+      //var instane = new Github.IssueEvent();
+      //expect(instance).to.be.a(Github.IssueEvent);
     });
 
     it('should have the property actor (base name: "actor")', function() {
       // uncomment below and update the code to test the property actor
-      //var instane = new GitHub.IssueEvent();
+      //var instane = new Github.IssueEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property commitId (base name: "commit_id")', function() {
       // uncomment below and update the code to test the property commitId
-      //var instane = new GitHub.IssueEvent();
+      //var instane = new Github.IssueEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.IssueEvent();
+      //var instane = new Github.IssueEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property event (base name: "event")', function() {
       // uncomment below and update the code to test the property event
-      //var instane = new GitHub.IssueEvent();
+      //var instane = new Github.IssueEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property issue (base name: "issue")', function() {
       // uncomment below and update the code to test the property issue
-      //var instane = new GitHub.IssueEvent();
+      //var instane = new Github.IssueEvent();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.IssueEvent();
+      //var instane = new Github.IssueEvent();
       //expect(instance).to.be();
     });
 

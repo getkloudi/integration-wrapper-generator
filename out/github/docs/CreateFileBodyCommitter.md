@@ -1,4 +1,4 @@
-# GitHub.CreateFileBodyCommitter
+# Github.CreateFileBodyCommitter
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.UserKeysPost
+# Github.UserKeysPost
 
 ## Properties
 

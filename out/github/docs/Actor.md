@@ -1,4 +1,4 @@
-# GitHub.Actor
+# Github.Actor
 
 ## Properties
 

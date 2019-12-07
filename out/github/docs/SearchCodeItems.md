@@ -1,4 +1,4 @@
-# GitHub.SearchCodeItems
+# Github.SearchCodeItems
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.PullsComment
+# Github.PullsComment
 
 ## Properties
 

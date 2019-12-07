@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.SubscriptionBody();
+    instance = new Github.SubscriptionBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('SubscriptionBody', function() {
     it('should create an instance of SubscriptionBody', function() {
       // uncomment below and update the code to test SubscriptionBody
-      //var instane = new GitHub.SubscriptionBody();
-      //expect(instance).to.be.a(GitHub.SubscriptionBody);
+      //var instane = new Github.SubscriptionBody();
+      //expect(instance).to.be.a(Github.SubscriptionBody);
     });
 
     it('should have the property ignored (base name: "ignored")', function() {
       // uncomment below and update the code to test the property ignored
-      //var instane = new GitHub.SubscriptionBody();
+      //var instane = new Github.SubscriptionBody();
       //expect(instance).to.be();
     });
 
     it('should have the property subscribed (base name: "subscribed")', function() {
       // uncomment below and update the code to test the property subscribed
-      //var instane = new GitHub.SubscriptionBody();
+      //var instane = new Github.SubscriptionBody();
       //expect(instance).to.be();
     });
 

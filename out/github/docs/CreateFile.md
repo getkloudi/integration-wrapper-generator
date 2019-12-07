@@ -1,4 +1,4 @@
-# GitHub.CreateFile
+# Github.CreateFile
 
 ## Properties
 

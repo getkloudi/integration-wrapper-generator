@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.RepoEdit();
+    instance = new Github.RepoEdit();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('RepoEdit', function() {
     it('should create an instance of RepoEdit', function() {
       // uncomment below and update the code to test RepoEdit
-      //var instane = new GitHub.RepoEdit();
-      //expect(instance).to.be.a(GitHub.RepoEdit);
+      //var instane = new Github.RepoEdit();
+      //expect(instance).to.be.a(Github.RepoEdit);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new GitHub.RepoEdit();
+      //var instane = new Github.RepoEdit();
       //expect(instance).to.be();
     });
 
     it('should have the property hasDownloads (base name: "has_downloads")', function() {
       // uncomment below and update the code to test the property hasDownloads
-      //var instane = new GitHub.RepoEdit();
+      //var instane = new Github.RepoEdit();
       //expect(instance).to.be();
     });
 
     it('should have the property hasIssues (base name: "has_issues")', function() {
       // uncomment below and update the code to test the property hasIssues
-      //var instane = new GitHub.RepoEdit();
+      //var instane = new Github.RepoEdit();
       //expect(instance).to.be();
     });
 
     it('should have the property hasWiki (base name: "has_wiki")', function() {
       // uncomment below and update the code to test the property hasWiki
-      //var instane = new GitHub.RepoEdit();
+      //var instane = new Github.RepoEdit();
       //expect(instance).to.be();
     });
 
     it('should have the property homepage (base name: "homepage")', function() {
       // uncomment below and update the code to test the property homepage
-      //var instane = new GitHub.RepoEdit();
+      //var instane = new Github.RepoEdit();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.RepoEdit();
+      //var instane = new Github.RepoEdit();
       //expect(instance).to.be();
     });
 
     it('should have the property _private (base name: "private")', function() {
       // uncomment below and update the code to test the property _private
-      //var instane = new GitHub.RepoEdit();
+      //var instane = new Github.RepoEdit();
       //expect(instance).to.be();
     });
 

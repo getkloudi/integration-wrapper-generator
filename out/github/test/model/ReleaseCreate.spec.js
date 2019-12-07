@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.ReleaseCreate();
+    instance = new Github.ReleaseCreate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('ReleaseCreate', function() {
     it('should create an instance of ReleaseCreate', function() {
       // uncomment below and update the code to test ReleaseCreate
-      //var instane = new GitHub.ReleaseCreate();
-      //expect(instance).to.be.a(GitHub.ReleaseCreate);
+      //var instane = new Github.ReleaseCreate();
+      //expect(instance).to.be.a(Github.ReleaseCreate);
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.ReleaseCreate();
+      //var instane = new Github.ReleaseCreate();
       //expect(instance).to.be();
     });
 
     it('should have the property draft (base name: "draft")', function() {
       // uncomment below and update the code to test the property draft
-      //var instane = new GitHub.ReleaseCreate();
+      //var instane = new Github.ReleaseCreate();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.ReleaseCreate();
+      //var instane = new Github.ReleaseCreate();
       //expect(instance).to.be();
     });
 
     it('should have the property prerelease (base name: "prerelease")', function() {
       // uncomment below and update the code to test the property prerelease
-      //var instane = new GitHub.ReleaseCreate();
+      //var instane = new Github.ReleaseCreate();
       //expect(instance).to.be();
     });
 
     it('should have the property tagName (base name: "tag_name")', function() {
       // uncomment below and update the code to test the property tagName
-      //var instane = new GitHub.ReleaseCreate();
+      //var instane = new Github.ReleaseCreate();
       //expect(instance).to.be();
     });
 
     it('should have the property targetCommitish (base name: "target_commitish")', function() {
       // uncomment below and update the code to test the property targetCommitish
-      //var instane = new GitHub.ReleaseCreate();
+      //var instane = new Github.ReleaseCreate();
       //expect(instance).to.be();
     });
 

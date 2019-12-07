@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.TeamMembership();
+    instance = new Github.TeamMembership();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('TeamMembership', function() {
     it('should create an instance of TeamMembership', function() {
       // uncomment below and update the code to test TeamMembership
-      //var instane = new GitHub.TeamMembership();
-      //expect(instance).to.be.a(GitHub.TeamMembership);
+      //var instane = new Github.TeamMembership();
+      //expect(instance).to.be.a(Github.TeamMembership);
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new GitHub.TeamMembership();
+      //var instane = new Github.TeamMembership();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.TeamMembership();
+      //var instane = new Github.TeamMembership();
       //expect(instance).to.be();
     });
 

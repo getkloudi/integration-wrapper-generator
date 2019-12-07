@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Actor();
+    instance = new Github.Actor();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,199 +50,199 @@
   describe('Actor', function() {
     it('should create an instance of Actor', function() {
       // uncomment below and update the code to test Actor
-      //var instane = new GitHub.Actor();
-      //expect(instance).to.be.a(GitHub.Actor);
+      //var instane = new Github.Actor();
+      //expect(instance).to.be.a(Github.Actor);
     });
 
     it('should have the property avatarUrl (base name: "avatar_url")', function() {
       // uncomment below and update the code to test the property avatarUrl
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property bio (base name: "bio")', function() {
       // uncomment below and update the code to test the property bio
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property blog (base name: "blog")', function() {
       // uncomment below and update the code to test the property blog
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property collaborators (base name: "collaborators")', function() {
       // uncomment below and update the code to test the property collaborators
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property company (base name: "company")', function() {
       // uncomment below and update the code to test the property company
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property diskUsage (base name: "disk_usage")', function() {
       // uncomment below and update the code to test the property diskUsage
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property followers (base name: "followers")', function() {
       // uncomment below and update the code to test the property followers
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property followersUrl (base name: "followers_url")', function() {
       // uncomment below and update the code to test the property followersUrl
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property following (base name: "following")', function() {
       // uncomment below and update the code to test the property following
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property followingUrl (base name: "following_url")', function() {
       // uncomment below and update the code to test the property followingUrl
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property gistsUrl (base name: "gists_url")', function() {
       // uncomment below and update the code to test the property gistsUrl
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property gravatarId (base name: "gravatar_id")', function() {
       // uncomment below and update the code to test the property gravatarId
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property hireable (base name: "hireable")', function() {
       // uncomment below and update the code to test the property hireable
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property htmlUrl (base name: "html_url")', function() {
       // uncomment below and update the code to test the property htmlUrl
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property location (base name: "location")', function() {
       // uncomment below and update the code to test the property location
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property login (base name: "login")', function() {
       // uncomment below and update the code to test the property login
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property organizationsUrl (base name: "organizations_url")', function() {
       // uncomment below and update the code to test the property organizationsUrl
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property ownedPrivateRepos (base name: "owned_private_repos")', function() {
       // uncomment below and update the code to test the property ownedPrivateRepos
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property plan (base name: "plan")', function() {
       // uncomment below and update the code to test the property plan
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property privateGists (base name: "private_gists")', function() {
       // uncomment below and update the code to test the property privateGists
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property publicGists (base name: "public_gists")', function() {
       // uncomment below and update the code to test the property publicGists
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property publicRepos (base name: "public_repos")', function() {
       // uncomment below and update the code to test the property publicRepos
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property starredUrl (base name: "starred_url")', function() {
       // uncomment below and update the code to test the property starredUrl
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property subscriptionsUrl (base name: "subscriptions_url")', function() {
       // uncomment below and update the code to test the property subscriptionsUrl
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property totalPrivateRepos (base name: "total_private_repos")', function() {
       // uncomment below and update the code to test the property totalPrivateRepos
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.Actor();
+      //var instane = new Github.Actor();
       //expect(instance).to.be();
     });
 

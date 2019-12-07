@@ -19,7 +19,7 @@ import User from './User';
 /**
  * The BranchCommit model module.
  * @module model/BranchCommit
- * @version v3
+ * @version 1.0.0
  */
 class BranchCommit {
     /**

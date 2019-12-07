@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.DeploymentResp();
+    instance = new Github.DeploymentResp();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,61 +50,61 @@
   describe('DeploymentResp', function() {
     it('should create an instance of DeploymentResp', function() {
       // uncomment below and update the code to test DeploymentResp
-      //var instane = new GitHub.DeploymentResp();
-      //expect(instance).to.be.a(GitHub.DeploymentResp);
+      //var instane = new Github.DeploymentResp();
+      //expect(instance).to.be.a(Github.DeploymentResp);
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.DeploymentResp();
+      //var instane = new Github.DeploymentResp();
       //expect(instance).to.be();
     });
 
     it('should have the property creator (base name: "creator")', function() {
       // uncomment below and update the code to test the property creator
-      //var instane = new GitHub.DeploymentResp();
+      //var instane = new Github.DeploymentResp();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new GitHub.DeploymentResp();
+      //var instane = new Github.DeploymentResp();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new GitHub.DeploymentResp();
+      //var instane = new Github.DeploymentResp();
       //expect(instance).to.be();
     });
 
     it('should have the property payload (base name: "payload")', function() {
       // uncomment below and update the code to test the property payload
-      //var instane = new GitHub.DeploymentResp();
+      //var instane = new Github.DeploymentResp();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.DeploymentResp();
+      //var instane = new Github.DeploymentResp();
       //expect(instance).to.be();
     });
 
     it('should have the property statusesUrl (base name: "statuses_url")', function() {
       // uncomment below and update the code to test the property statusesUrl
-      //var instane = new GitHub.DeploymentResp();
+      //var instane = new Github.DeploymentResp();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new GitHub.DeploymentResp();
+      //var instane = new Github.DeploymentResp();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.DeploymentResp();
+      //var instane = new Github.DeploymentResp();
       //expect(instance).to.be();
     });
 

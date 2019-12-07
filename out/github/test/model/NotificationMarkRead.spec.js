@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.NotificationMarkRead();
+    instance = new Github.NotificationMarkRead();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('NotificationMarkRead', function() {
     it('should create an instance of NotificationMarkRead', function() {
       // uncomment below and update the code to test NotificationMarkRead
-      //var instane = new GitHub.NotificationMarkRead();
-      //expect(instance).to.be.a(GitHub.NotificationMarkRead);
+      //var instane = new Github.NotificationMarkRead();
+      //expect(instance).to.be.a(Github.NotificationMarkRead);
     });
 
     it('should have the property lastReadAt (base name: "last_read_at")', function() {
       // uncomment below and update the code to test the property lastReadAt
-      //var instane = new GitHub.NotificationMarkRead();
+      //var instane = new Github.NotificationMarkRead();
       //expect(instance).to.be();
     });
 

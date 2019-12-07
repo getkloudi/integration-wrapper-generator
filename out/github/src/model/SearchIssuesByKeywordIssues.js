@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchIssuesByKeywordIssues model module.
  * @module model/SearchIssuesByKeywordIssues
- * @version v3
+ * @version 1.0.0
  */
 class SearchIssuesByKeywordIssues {
     /**

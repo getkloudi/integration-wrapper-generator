@@ -1,4 +1,4 @@
-# GitHub.OrganizationAsTeamMember
+# Github.OrganizationAsTeamMember
 
 ## Properties
 

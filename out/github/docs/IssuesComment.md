@@ -1,4 +1,4 @@
-# GitHub.IssuesComment
+# Github.IssuesComment
 
 ## Properties
 

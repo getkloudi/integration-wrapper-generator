@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.IssueEventIssueLabels();
+    instance = new Github.IssueEventIssueLabels();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('IssueEventIssueLabels', function() {
     it('should create an instance of IssueEventIssueLabels', function() {
       // uncomment below and update the code to test IssueEventIssueLabels
-      //var instane = new GitHub.IssueEventIssueLabels();
-      //expect(instance).to.be.a(GitHub.IssueEventIssueLabels);
+      //var instane = new Github.IssueEventIssueLabels();
+      //expect(instance).to.be.a(Github.IssueEventIssueLabels);
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new GitHub.IssueEventIssueLabels();
+      //var instane = new Github.IssueEventIssueLabels();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.IssueEventIssueLabels();
+      //var instane = new Github.IssueEventIssueLabels();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.IssueEventIssueLabels();
+      //var instane = new Github.IssueEventIssueLabels();
       //expect(instance).to.be();
     });
 

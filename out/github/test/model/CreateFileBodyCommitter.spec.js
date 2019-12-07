@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.CreateFileBodyCommitter();
+    instance = new Github.CreateFileBodyCommitter();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('CreateFileBodyCommitter', function() {
     it('should create an instance of CreateFileBodyCommitter', function() {
       // uncomment below and update the code to test CreateFileBodyCommitter
-      //var instane = new GitHub.CreateFileBodyCommitter();
-      //expect(instance).to.be.a(GitHub.CreateFileBodyCommitter);
+      //var instane = new Github.CreateFileBodyCommitter();
+      //expect(instance).to.be.a(Github.CreateFileBodyCommitter);
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new GitHub.CreateFileBodyCommitter();
+      //var instane = new Github.CreateFileBodyCommitter();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.CreateFileBodyCommitter();
+      //var instane = new Github.CreateFileBodyCommitter();
       //expect(instance).to.be();
     });
 

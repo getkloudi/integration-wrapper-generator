@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.ReleaseAssets();
+    instance = new Github.ReleaseAssets();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,73 +50,73 @@
   describe('ReleaseAssets', function() {
     it('should create an instance of ReleaseAssets', function() {
       // uncomment below and update the code to test ReleaseAssets
-      //var instane = new GitHub.ReleaseAssets();
-      //expect(instance).to.be.a(GitHub.ReleaseAssets);
+      //var instane = new Github.ReleaseAssets();
+      //expect(instance).to.be.a(Github.ReleaseAssets);
     });
 
     it('should have the property contentType (base name: "content_type")', function() {
       // uncomment below and update the code to test the property contentType
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property downloadCount (base name: "download_count")', function() {
       // uncomment below and update the code to test the property downloadCount
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property label (base name: "label")', function() {
       // uncomment below and update the code to test the property label
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property uploader (base name: "uploader")', function() {
       // uncomment below and update the code to test the property uploader
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.ReleaseAssets();
+      //var instane = new Github.ReleaseAssets();
       //expect(instance).to.be();
     });
 

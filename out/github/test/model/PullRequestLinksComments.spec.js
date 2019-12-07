@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PullRequestLinksComments();
+    instance = new Github.PullRequestLinksComments();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('PullRequestLinksComments', function() {
     it('should create an instance of PullRequestLinksComments', function() {
       // uncomment below and update the code to test PullRequestLinksComments
-      //var instane = new GitHub.PullRequestLinksComments();
-      //expect(instance).to.be.a(GitHub.PullRequestLinksComments);
+      //var instane = new Github.PullRequestLinksComments();
+      //expect(instance).to.be.a(Github.PullRequestLinksComments);
     });
 
     it('should have the property href (base name: "href")', function() {
       // uncomment below and update the code to test the property href
-      //var instane = new GitHub.PullRequestLinksComments();
+      //var instane = new Github.PullRequestLinksComments();
       //expect(instance).to.be();
     });
 

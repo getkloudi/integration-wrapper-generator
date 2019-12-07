@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IssueEventIssueLabels model module.
  * @module model/IssueEventIssueLabels
- * @version v3
+ * @version 1.0.0
  */
 class IssueEventIssueLabels {
     /**

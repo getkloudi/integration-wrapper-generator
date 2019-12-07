@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PatchGistFilesFile1Txt();
+    instance = new Github.PatchGistFilesFile1Txt();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('PatchGistFilesFile1Txt', function() {
     it('should create an instance of PatchGistFilesFile1Txt', function() {
       // uncomment below and update the code to test PatchGistFilesFile1Txt
-      //var instane = new GitHub.PatchGistFilesFile1Txt();
-      //expect(instance).to.be.a(GitHub.PatchGistFilesFile1Txt);
+      //var instane = new Github.PatchGistFilesFile1Txt();
+      //expect(instance).to.be.a(Github.PatchGistFilesFile1Txt);
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new GitHub.PatchGistFilesFile1Txt();
+      //var instane = new Github.PatchGistFilesFile1Txt();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PatchGistFiles();
+    instance = new Github.PatchGistFiles();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('PatchGistFiles', function() {
     it('should create an instance of PatchGistFiles', function() {
       // uncomment below and update the code to test PatchGistFiles
-      //var instane = new GitHub.PatchGistFiles();
-      //expect(instance).to.be.a(GitHub.PatchGistFiles);
+      //var instane = new Github.PatchGistFiles();
+      //expect(instance).to.be.a(Github.PatchGistFiles);
     });
 
     it('should have the property deleteThisFileTxt (base name: "delete_this_file.txt")', function() {
       // uncomment below and update the code to test the property deleteThisFileTxt
-      //var instane = new GitHub.PatchGistFiles();
+      //var instane = new Github.PatchGistFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property file1Txt (base name: "file1.txt")', function() {
       // uncomment below and update the code to test the property file1Txt
-      //var instane = new GitHub.PatchGistFiles();
+      //var instane = new Github.PatchGistFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property newFileTxt (base name: "new_file.txt")', function() {
       // uncomment below and update the code to test the property newFileTxt
-      //var instane = new GitHub.PatchGistFiles();
+      //var instane = new Github.PatchGistFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property oldNameTxt (base name: "old_name.txt")', function() {
       // uncomment below and update the code to test the property oldNameTxt
-      //var instane = new GitHub.PatchGistFiles();
+      //var instane = new Github.PatchGistFiles();
       //expect(instance).to.be();
     });
 

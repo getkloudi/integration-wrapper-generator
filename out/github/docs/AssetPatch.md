@@ -1,4 +1,4 @@
-# GitHub.AssetPatch
+# Github.AssetPatch
 
 ## Properties
 

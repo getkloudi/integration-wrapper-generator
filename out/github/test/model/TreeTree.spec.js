@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.TreeTree();
+    instance = new Github.TreeTree();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('TreeTree', function() {
     it('should create an instance of TreeTree', function() {
       // uncomment below and update the code to test TreeTree
-      //var instane = new GitHub.TreeTree();
-      //expect(instance).to.be.a(GitHub.TreeTree);
+      //var instane = new Github.TreeTree();
+      //expect(instance).to.be.a(Github.TreeTree);
     });
 
     it('should have the property mode (base name: "mode")', function() {
       // uncomment below and update the code to test the property mode
-      //var instane = new GitHub.TreeTree();
+      //var instane = new Github.TreeTree();
       //expect(instance).to.be();
     });
 
     it('should have the property path (base name: "path")', function() {
       // uncomment below and update the code to test the property path
-      //var instane = new GitHub.TreeTree();
+      //var instane = new Github.TreeTree();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.TreeTree();
+      //var instane = new Github.TreeTree();
       //expect(instance).to.be();
     });
 
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
-      //var instane = new GitHub.TreeTree();
+      //var instane = new Github.TreeTree();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new GitHub.TreeTree();
+      //var instane = new Github.TreeTree();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.TreeTree();
+      //var instane = new Github.TreeTree();
       //expect(instance).to.be();
     });
 

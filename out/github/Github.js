@@ -592,9 +592,9 @@ async function Get(entity, options) {
       }
         // This is a function for emojisGet
         function emojisGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -610,9 +610,9 @@ apiInstance.emojisGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for eventsGet
         function eventsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -628,9 +628,9 @@ apiInstance.eventsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for feedsGet
         function feedsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -646,9 +646,9 @@ apiInstance.feedsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for gistsGet
         function gistsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -665,9 +665,9 @@ apiInstance.gistsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for gistsIdCommentsCommentIdGet
         function gistsIdCommentsCommentIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let commentId = 56;*/ // Number | Id of comment
 /*let opts = {
@@ -685,9 +685,9 @@ apiInstance.gistsIdCommentsCommentIdGet(incomingOptions.id, incomingOptions.comm
         
         // This is a function for gistsIdCommentsGet
         function gistsIdCommentsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -704,9 +704,9 @@ apiInstance.gistsIdCommentsGet(incomingOptions.id, incomingOptions.opts, (error,
         
         // This is a function for gistsIdGet
         function gistsIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -723,9 +723,9 @@ apiInstance.gistsIdGet(incomingOptions.id, incomingOptions.opts, (error, data, r
         
         // This is a function for gistsIdStarGet
         function gistsIdStarGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -742,9 +742,9 @@ apiInstance.gistsIdStarGet(incomingOptions.id, incomingOptions.opts, (error, dat
         
         // This is a function for gistsPublicGet
         function gistsPublicGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -761,9 +761,9 @@ apiInstance.gistsPublicGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for gistsStarredGet
         function gistsStarredGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -780,9 +780,9 @@ apiInstance.gistsStarredGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for gitignoreTemplatesGet
         function gitignoreTemplatesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -798,9 +798,9 @@ apiInstance.gitignoreTemplatesGet(incomingOptions.opts, (error, data, response) 
         
         // This is a function for gitignoreTemplatesLanguageGet
         function gitignoreTemplatesLanguageGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let language = "language_example";*/ // String |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -817,9 +817,9 @@ apiInstance.gitignoreTemplatesLanguageGet(incomingOptions.language, incomingOpti
         
         // This is a function for issuesGet
         function issuesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let filter = "'all'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see
 /*let state = "'open'";*/ // String |
 /*let labels = "labels_example";*/ // String | String list of comma separated Label names. Example - bug,ui,@high
@@ -841,9 +841,9 @@ apiInstance.issuesGet(incomingOptions.filter, incomingOptions.state, incomingOpt
         
         // This is a function for legacyIssuesSearchOwnerRepositoryStateKeywordGet
         function legacyIssuesSearchOwnerRepositoryStateKeywordGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let keyword = "keyword_example";*/ // String | The search term
 /*let state = "state_example";*/ // String | Indicates the state of the issues to return. Can be either open or closed
 /*let owner = "owner_example";*/ // String |
@@ -863,9 +863,9 @@ apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(incomingOptions.key
         
         // This is a function for legacyReposSearchKeywordGet
         function legacyReposSearchKeywordGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let keyword = "keyword_example";*/ // String | The search ter
 /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -886,9 +886,9 @@ apiInstance.legacyReposSearchKeywordGet(incomingOptions.keyword, incomingOptions
         
         // This is a function for legacyUserEmailEmailGet
         function legacyUserEmailEmailGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let email = "email_example";*/ // String | The email addres
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -905,9 +905,9 @@ apiInstance.legacyUserEmailEmailGet(incomingOptions.email, incomingOptions.opts,
         
         // This is a function for legacyUserSearchKeywordGet
         function legacyUserSearchKeywordGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let keyword = "keyword_example";*/ // String | The search ter
 /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -927,9 +927,9 @@ apiInstance.legacyUserSearchKeywordGet(incomingOptions.keyword, incomingOptions.
         
         // This is a function for metaGet
         function metaGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -945,9 +945,9 @@ apiInstance.metaGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for networksOwnerRepoEventsGet
         function networksOwnerRepoEventsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of the owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -965,9 +965,9 @@ apiInstance.networksOwnerRepoEventsGet(incomingOptions.owner, incomingOptions.re
         
         // This is a function for notificationsGet
         function notificationsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'all': true, // Boolean | True to show notifications marked as read.
   'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned. 
@@ -986,9 +986,9 @@ apiInstance.notificationsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for notificationsThreadsIdGet
         function notificationsThreadsIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1005,9 +1005,9 @@ apiInstance.notificationsThreadsIdGet(incomingOptions.id, incomingOptions.opts, 
         
         // This is a function for notificationsThreadsIdSubscriptionGet
         function notificationsThreadsIdSubscriptionGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1024,9 +1024,9 @@ apiInstance.notificationsThreadsIdSubscriptionGet(incomingOptions.id, incomingOp
         
         // This is a function for orgsOrgEventsGet
         function orgsOrgEventsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1043,9 +1043,9 @@ apiInstance.incomingOptions.orgsOrgEventsGet(org, incomingOptions.opts, (error, 
         
         // This is a function for orgsOrgGet
         function orgsOrgGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1062,9 +1062,9 @@ apiInstance.incomingOptions.orgsOrgGet(org, incomingOptions.opts, (error, data, 
         
         // This is a function for orgsOrgIssuesGet
         function orgsOrgIssuesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let filter = "'all'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see
 /*let state = "'open'";*/ // String |
@@ -1087,9 +1087,9 @@ apiInstance.incomingOptions.orgsOrgIssuesGet(org, incomingOptions.filter, incomi
         
         // This is a function for orgsOrgMembersGet
         function orgsOrgMembersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1106,9 +1106,9 @@ apiInstance.incomingOptions.orgsOrgMembersGet(org, incomingOptions.opts, (error,
         
         // This is a function for orgsOrgMembersUsernameGet
         function orgsOrgMembersUsernameGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let username = "username_example";*/ // String | Name of the user
 /*let opts = {
@@ -1126,9 +1126,9 @@ apiInstance.incomingOptions.orgsOrgMembersUsernameGet(org, incomingOptions.usern
         
         // This is a function for orgsOrgPublicMembersGet
         function orgsOrgPublicMembersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1145,9 +1145,9 @@ apiInstance.incomingOptions.orgsOrgPublicMembersGet(org, incomingOptions.opts, (
         
         // This is a function for orgsOrgPublicMembersUsernameGet
         function orgsOrgPublicMembersUsernameGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let username = "username_example";*/ // String | Name of the user
 /*let opts = {
@@ -1165,9 +1165,9 @@ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameGet(org, incomingOptions
         
         // This is a function for orgsOrgReposGet
         function orgsOrgReposGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let opts = {
   'type': "'all'", // String | 
@@ -1185,9 +1185,9 @@ apiInstance.incomingOptions.orgsOrgReposGet(org, incomingOptions.opts, (error, d
         
         // This is a function for orgsOrgTeamsGet
         function orgsOrgTeamsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1204,9 +1204,9 @@ apiInstance.incomingOptions.orgsOrgTeamsGet(org, incomingOptions.opts, (error, d
         
         // This is a function for rateLimitGet
         function rateLimitGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -1222,9 +1222,9 @@ apiInstance.rateLimitGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for reposOwnerRepoArchiveFormatPathGet
         function reposOwnerRepoArchiveFormatPathGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let archiveFormat = "archiveFormat_example";*/ // String |
@@ -1244,9 +1244,9 @@ apiInstance.incomingOptions.reposOwnerRepoArchiveFormatPathGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoAssigneesAssigneeGet
         function reposOwnerRepoAssigneesAssigneeGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let assignee = "assignee_example";*/ // String | Login of the assignee
@@ -1265,9 +1265,9 @@ apiInstance.incomingOptions.reposOwnerRepoAssigneesAssigneeGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoAssigneesGet
         function reposOwnerRepoAssigneesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1285,9 +1285,9 @@ apiInstance.incomingOptions.reposOwnerRepoAssigneesGet(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoBranchesBranchGet
         function reposOwnerRepoBranchesBranchGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let branch = "branch_example";*/ // String | Name of the branch
@@ -1306,9 +1306,9 @@ apiInstance.incomingOptions.reposOwnerRepoBranchesBranchGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoBranchesGet
         function reposOwnerRepoBranchesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1326,9 +1326,9 @@ apiInstance.incomingOptions.reposOwnerRepoBranchesGet(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoCollaboratorsGet
         function reposOwnerRepoCollaboratorsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1346,9 +1346,9 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsGet(incomingOptions.owner
         
         // This is a function for reposOwnerRepoCollaboratorsUserGet
         function reposOwnerRepoCollaboratorsUserGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let user = "user_example";*/ // String | Login of the user
@@ -1367,9 +1367,9 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoCommentsCommentIdGet
         function reposOwnerRepoCommentsCommentIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | Id of comment
@@ -1388,9 +1388,9 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoCommentsGet
         function reposOwnerRepoCommentsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1408,9 +1408,9 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsGet(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoCommitsGet
         function reposOwnerRepoCommitsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1433,9 +1433,9 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsGet(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoCommitsRefStatusGet
         function reposOwnerRepoCommitsRefStatusGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let ref = "ref_example";*/ // String |
@@ -1454,9 +1454,9 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsRefStatusGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoCommitsShaCodeCommentsGet
         function reposOwnerRepoCommitsShaCodeCommentsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let shaCode = "shaCode_example";*/ // String | SHA-1 code of the commit
@@ -1475,9 +1475,9 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsGet(incomingOpti
         
         // This is a function for reposOwnerRepoCommitsShaCodeGet
         function reposOwnerRepoCommitsShaCodeGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let shaCode = "shaCode_example";*/ // String | SHA-1 code of the commit
@@ -1496,9 +1496,9 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoCompareBaseIdHeadIdGet
         function reposOwnerRepoCompareBaseIdHeadIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let baseId = "baseId_example";*/ // String |
@@ -1518,9 +1518,9 @@ apiInstance.incomingOptions.reposOwnerRepoCompareBaseIdHeadIdGet(incomingOptions
         
         // This is a function for reposOwnerRepoContentsPathGet
         function reposOwnerRepoContentsPathGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let path = "path_example";*/ // String |
@@ -1541,9 +1541,9 @@ apiInstance.incomingOptions.reposOwnerRepoContentsPathGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoContributorsGet
         function reposOwnerRepoContributorsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let anon = "anon_example";*/ // String | Set to 1 or true to include anonymous contributors in results
@@ -1562,9 +1562,9 @@ apiInstance.incomingOptions.reposOwnerRepoContributorsGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoDeploymentsGet
         function reposOwnerRepoDeploymentsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1582,9 +1582,9 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoDeploymentsIdStatusesGet
         function reposOwnerRepoDeploymentsIdStatusesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = 56;*/ // Number | The Deployment ID to list the statuses from
@@ -1603,9 +1603,9 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesGet(incomingOptio
         
         // This is a function for reposOwnerRepoDownloadsDownloadIdGet
         function reposOwnerRepoDownloadsDownloadIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let downloadId = 56;*/ // Number | Id of download
@@ -1624,9 +1624,9 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdGet(incomingOptions
         
         // This is a function for reposOwnerRepoDownloadsGet
         function reposOwnerRepoDownloadsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1644,9 +1644,9 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsGet(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoEventsGet
         function reposOwnerRepoEventsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1664,9 +1664,9 @@ apiInstance.incomingOptions.reposOwnerRepoEventsGet(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoForksGet
         function reposOwnerRepoForksGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1685,9 +1685,9 @@ apiInstance.incomingOptions.reposOwnerRepoForksGet(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoGet
         function reposOwnerRepoGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1705,9 +1705,9 @@ apiInstance.incomingOptions.reposOwnerRepoGet(incomingOptions.owner, repo, incom
         
         // This is a function for reposOwnerRepoGitBlobsShaCodeGet
         function reposOwnerRepoGitBlobsShaCodeGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let shaCode = "shaCode_example";*/ // String | SHA-1 code
@@ -1726,9 +1726,9 @@ apiInstance.incomingOptions.reposOwnerRepoGitBlobsShaCodeGet(incomingOptions.own
         
         // This is a function for reposOwnerRepoGitCommitsShaCodeGet
         function reposOwnerRepoGitCommitsShaCodeGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let shaCode = "shaCode_example";*/ // String | SHA-1 code
@@ -1747,9 +1747,9 @@ apiInstance.incomingOptions.reposOwnerRepoGitCommitsShaCodeGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoGitRefsGet
         function reposOwnerRepoGitRefsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1767,9 +1767,9 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsGet(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoGitRefsRefGet
         function reposOwnerRepoGitRefsRefGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let ref = "ref_example";*/ // String |
@@ -1788,9 +1788,9 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoGitTagsShaCodeGet
         function reposOwnerRepoGitTagsShaCodeGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let shaCode = "shaCode_example";*/ // String |
@@ -1809,9 +1809,9 @@ apiInstance.incomingOptions.reposOwnerRepoGitTagsShaCodeGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoGitTreesShaCodeGet
         function reposOwnerRepoGitTreesShaCodeGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let shaCode = "shaCode_example";*/ // String | Tree SHA
@@ -1831,9 +1831,9 @@ apiInstance.incomingOptions.reposOwnerRepoGitTreesShaCodeGet(incomingOptions.own
         
         // This is a function for reposOwnerRepoHooksGet
         function reposOwnerRepoHooksGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1851,9 +1851,9 @@ apiInstance.incomingOptions.reposOwnerRepoHooksGet(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoHooksHookIdGet
         function reposOwnerRepoHooksHookIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let hookId = 56;*/ // Number | Id of hook
@@ -1872,9 +1872,9 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoIssuesCommentsCommentIdGet
         function reposOwnerRepoIssuesCommentsCommentIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | ID of comment
@@ -1893,9 +1893,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdGet(incomingOpt
         
         // This is a function for reposOwnerRepoIssuesCommentsGet
         function reposOwnerRepoIssuesCommentsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1916,9 +1916,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoIssuesEventsEventIdGet
         function reposOwnerRepoIssuesEventsEventIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let eventId = 56;*/ // Number | Id of the event
@@ -1937,9 +1937,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsEventIdGet(incomingOptions
         
         // This is a function for reposOwnerRepoIssuesEventsGet
         function reposOwnerRepoIssuesEventsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -1957,9 +1957,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoIssuesGet
         function reposOwnerRepoIssuesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let filter = "'all'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see
@@ -1983,9 +1983,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesGet(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoIssuesNumberCommentsGet
         function reposOwnerRepoIssuesNumberCommentsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
@@ -2004,9 +2004,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsGet(incomingOption
         
         // This is a function for reposOwnerRepoIssuesNumberEventsGet
         function reposOwnerRepoIssuesNumberEventsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
@@ -2025,9 +2025,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberEventsGet(incomingOptions.
         
         // This is a function for reposOwnerRepoIssuesNumberGet
         function reposOwnerRepoIssuesNumberGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
@@ -2046,9 +2046,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsGet
         function reposOwnerRepoIssuesNumberLabelsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
@@ -2067,9 +2067,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsGet(incomingOptions.
         
         // This is a function for reposOwnerRepoKeysGet
         function reposOwnerRepoKeysGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2087,9 +2087,9 @@ apiInstance.incomingOptions.reposOwnerRepoKeysGet(incomingOptions.owner, repo, i
         
         // This is a function for reposOwnerRepoKeysKeyIdGet
         function reposOwnerRepoKeysKeyIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let keyId = 56;*/ // Number | Id of key
@@ -2108,9 +2108,9 @@ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdGet(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoLabelsGet
         function reposOwnerRepoLabelsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2128,9 +2128,9 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsGet(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoLabelsNameGet
         function reposOwnerRepoLabelsNameGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let name = "name_example";*/ // String | Name of the label
@@ -2149,9 +2149,9 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsNameGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoLanguagesGet
         function reposOwnerRepoLanguagesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2169,9 +2169,9 @@ apiInstance.incomingOptions.reposOwnerRepoLanguagesGet(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoMilestonesGet
         function reposOwnerRepoMilestonesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2192,9 +2192,9 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoMilestonesNumberGet
         function reposOwnerRepoMilestonesNumberGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of milestone
@@ -2213,9 +2213,9 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoMilestonesNumberLabelsGet
         function reposOwnerRepoMilestonesNumberLabelsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of milestone
@@ -2234,9 +2234,9 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberLabelsGet(incomingOpti
         
         // This is a function for reposOwnerRepoNotificationsGet
         function reposOwnerRepoNotificationsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2257,9 +2257,9 @@ apiInstance.incomingOptions.reposOwnerRepoNotificationsGet(incomingOptions.owner
         
         // This is a function for reposOwnerRepoPullsCommentsCommentIdGet
         function reposOwnerRepoPullsCommentsCommentIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | Id of comment
@@ -2278,9 +2278,9 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdGet(incomingOpti
         
         // This is a function for reposOwnerRepoPullsCommentsGet
         function reposOwnerRepoPullsCommentsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2301,9 +2301,9 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsGet(incomingOptions.owner
         
         // This is a function for reposOwnerRepoPullsGet
         function reposOwnerRepoPullsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2324,9 +2324,9 @@ apiInstance.incomingOptions.reposOwnerRepoPullsGet(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoPullsNumberCommentsGet
         function reposOwnerRepoPullsNumberCommentsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
@@ -2345,9 +2345,9 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsGet(incomingOptions
         
         // This is a function for reposOwnerRepoPullsNumberCommitsGet
         function reposOwnerRepoPullsNumberCommitsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
@@ -2366,9 +2366,9 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommitsGet(incomingOptions.
         
         // This is a function for reposOwnerRepoPullsNumberFilesGet
         function reposOwnerRepoPullsNumberFilesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
@@ -2387,9 +2387,9 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberFilesGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoPullsNumberGet
         function reposOwnerRepoPullsNumberGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
@@ -2408,9 +2408,9 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoPullsNumberMergeGet
         function reposOwnerRepoPullsNumberMergeGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
@@ -2429,9 +2429,9 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergeGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoReadmeGet
         function reposOwnerRepoReadmeGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2450,9 +2450,9 @@ apiInstance.incomingOptions.reposOwnerRepoReadmeGet(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoReleasesAssetsIdGet
         function reposOwnerRepoReleasesAssetsIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = "id_example";*/ // String |
@@ -2471,9 +2471,9 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoReleasesGet
         function reposOwnerRepoReleasesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2491,9 +2491,9 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesGet(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoReleasesIdAssetsGet
         function reposOwnerRepoReleasesIdAssetsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = "id_example";*/ // String |
@@ -2512,9 +2512,9 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdAssetsGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoReleasesIdGet
         function reposOwnerRepoReleasesIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = "id_example";*/ // String |
@@ -2533,9 +2533,9 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoStargazersGet
         function reposOwnerRepoStargazersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2553,9 +2553,9 @@ apiInstance.incomingOptions.reposOwnerRepoStargazersGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoStatsCodeFrequencyGet
         function reposOwnerRepoStatsCodeFrequencyGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2573,9 +2573,9 @@ apiInstance.incomingOptions.reposOwnerRepoStatsCodeFrequencyGet(incomingOptions.
         
         // This is a function for reposOwnerRepoStatsCommitActivityGet
         function reposOwnerRepoStatsCommitActivityGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2593,9 +2593,9 @@ apiInstance.incomingOptions.reposOwnerRepoStatsCommitActivityGet(incomingOptions
         
         // This is a function for reposOwnerRepoStatsContributorsGet
         function reposOwnerRepoStatsContributorsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2613,9 +2613,9 @@ apiInstance.incomingOptions.reposOwnerRepoStatsContributorsGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoStatsParticipationGet
         function reposOwnerRepoStatsParticipationGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2633,9 +2633,9 @@ apiInstance.incomingOptions.reposOwnerRepoStatsParticipationGet(incomingOptions.
         
         // This is a function for reposOwnerRepoStatsPunchCardGet
         function reposOwnerRepoStatsPunchCardGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2653,9 +2653,9 @@ apiInstance.incomingOptions.reposOwnerRepoStatsPunchCardGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoStatusesRefGet
         function reposOwnerRepoStatusesRefGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let ref = "ref_example";*/ // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name.
@@ -2674,9 +2674,9 @@ apiInstance.incomingOptions.reposOwnerRepoStatusesRefGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoSubscribersGet
         function reposOwnerRepoSubscribersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2694,9 +2694,9 @@ apiInstance.incomingOptions.reposOwnerRepoSubscribersGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoSubscriptionGet
         function reposOwnerRepoSubscriptionGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2714,9 +2714,9 @@ apiInstance.incomingOptions.reposOwnerRepoSubscriptionGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoTagsGet
         function reposOwnerRepoTagsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2734,9 +2734,9 @@ apiInstance.incomingOptions.reposOwnerRepoTagsGet(incomingOptions.owner, repo, i
         
         // This is a function for reposOwnerRepoTeamsGet
         function reposOwnerRepoTeamsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2754,9 +2754,9 @@ apiInstance.incomingOptions.reposOwnerRepoTeamsGet(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoWatchersGet
         function reposOwnerRepoWatchersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -2774,9 +2774,9 @@ apiInstance.incomingOptions.reposOwnerRepoWatchersGet(incomingOptions.owner, rep
         
         // This is a function for repositoriesGet
         function repositoriesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2793,9 +2793,9 @@ apiInstance.repositoriesGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for searchCodeGet
         function searchCodeGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository.
 /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -2814,9 +2814,9 @@ apiInstance.searchCodeGet(incomingOptions.q, incomingOptions.opts, (error, data,
         
         // This is a function for searchIssuesGet
         function searchIssuesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let q = "q_example";*/ // String | The q search term can also contain any combination of the supported issue search qualifiers
 /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -2835,9 +2835,9 @@ apiInstance.searchIssuesGet(incomingOptions.q, incomingOptions.opts, (error, dat
         
         // This is a function for searchRepositoriesGet
         function searchRepositoriesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars.
 /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -2856,9 +2856,9 @@ apiInstance.searchRepositoriesGet(incomingOptions.q, incomingOptions.opts, (erro
         
         // This is a function for searchUsersGet
         function searchUsersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have.
 /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -2877,9 +2877,9 @@ apiInstance.searchUsersGet(incomingOptions.q, incomingOptions.opts, (error, data
         
         // This is a function for teamsTeamIdGet
         function teamsTeamIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2896,9 +2896,9 @@ apiInstance.teamsTeamIdGet(incomingOptions.teamId, incomingOptions.opts, (error,
         
         // This is a function for teamsTeamIdMembersGet
         function teamsTeamIdMembersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2915,9 +2915,9 @@ apiInstance.teamsTeamIdMembersGet(incomingOptions.teamId, incomingOptions.opts, 
         
         // This is a function for teamsTeamIdMembersUsernameGet
         function teamsTeamIdMembersUsernameGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let username = "username_example";*/ // String | Name of a member
 /*let opts = {
@@ -2935,9 +2935,9 @@ apiInstance.teamsTeamIdMembersUsernameGet(incomingOptions.teamId, incomingOption
         
         // This is a function for teamsTeamIdMembershipsUsernameGet
         function teamsTeamIdMembershipsUsernameGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let username = "username_example";*/ // String | Name of a member
 /*let opts = {
@@ -2955,9 +2955,9 @@ apiInstance.teamsTeamIdMembershipsUsernameGet(incomingOptions.teamId, incomingOp
         
         // This is a function for teamsTeamIdReposGet
         function teamsTeamIdReposGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2974,9 +2974,9 @@ apiInstance.teamsTeamIdReposGet(incomingOptions.teamId, incomingOptions.opts, (e
         
         // This is a function for teamsTeamIdReposOwnerRepoGet
         function teamsTeamIdReposOwnerRepoGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let owner = "owner_example";*/ // String | Name of a repository owner
 /*let repo = "repo_example";*/ // String | Name of a repository
@@ -2995,9 +2995,9 @@ apiInstance.teamsTeamIdReposOwnerRepoGet(incomingOptions.teamId, incomingOptions
         
         // This is a function for userEmailsGet
         function userEmailsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3013,9 +3013,9 @@ apiInstance.userEmailsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userFollowersGet
         function userFollowersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3031,9 +3031,9 @@ apiInstance.userFollowersGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userFollowingGet
         function userFollowingGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3049,9 +3049,9 @@ apiInstance.userFollowingGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userFollowingUsernameGet
         function userFollowingUsernameGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3068,9 +3068,9 @@ apiInstance.userFollowingUsernameGet(incomingOptions.username, incomingOptions.o
         
         // This is a function for userGet
         function userGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3086,9 +3086,9 @@ apiInstance.userGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userIssuesGet
         function userIssuesGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let filter = "'all'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see
 /*let state = "'open'";*/ // String |
 /*let labels = "labels_example";*/ // String | String list of comma separated Label names. Example - bug,ui,@high
@@ -3110,9 +3110,9 @@ apiInstance.userIssuesGet(incomingOptions.filter, incomingOptions.state, incomin
         
         // This is a function for userKeysGet
         function userKeysGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3128,9 +3128,9 @@ apiInstance.userKeysGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userKeysKeyIdGet
         function userKeysKeyIdGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let keyId = 56;*/ // Number | ID of key
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3147,9 +3147,9 @@ apiInstance.userKeysKeyIdGet(incomingOptions.keyId, incomingOptions.opts, (error
         
         // This is a function for userOrgsGet
         function userOrgsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3165,9 +3165,9 @@ apiInstance.userOrgsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userReposGet
         function userReposGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'type': "'all'", // String | 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3184,9 +3184,9 @@ apiInstance.userReposGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userStarredGet
         function userStarredGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'direction': "direction_example", // String | Ignored without 'sort' parameter.
   'sort': "'created'", // String | 
@@ -3204,9 +3204,9 @@ apiInstance.userStarredGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userStarredOwnerRepoGet
         function userStarredOwnerRepoGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of a repository owner
 /*let repo = "repo_example";*/ // String | Name of a repository
 /*let opts = {
@@ -3224,9 +3224,9 @@ apiInstance.userStarredOwnerRepoGet(incomingOptions.owner, incomingOptions.repo,
         
         // This is a function for userSubscriptionsGet
         function userSubscriptionsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3242,9 +3242,9 @@ apiInstance.userSubscriptionsGet(incomingOptions.opts, (error, data, response) =
         
         // This is a function for userSubscriptionsOwnerRepoGet
         function userSubscriptionsOwnerRepoGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of the owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -3262,9 +3262,9 @@ apiInstance.userSubscriptionsOwnerRepoGet(incomingOptions.owner, incomingOptions
         
         // This is a function for userTeamsGet
         function userTeamsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3280,9 +3280,9 @@ apiInstance.userTeamsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for usersGet
         function usersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'since': 56, // Number | The integer ID of the last user that you've seen.
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3299,9 +3299,9 @@ apiInstance.usersGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for usersUsernameEventsGet
         function usersUsernameEventsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3318,9 +3318,9 @@ apiInstance.usersUsernameEventsGet(incomingOptions.username, incomingOptions.opt
         
         // This is a function for usersUsernameEventsOrgsOrgGet
         function usersUsernameEventsOrgsOrgGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let org = "org_example";*/ // String |
 /*let opts = {
@@ -3338,9 +3338,9 @@ apiInstance.usersUsernameEventsOrgsOrgGet(incomingOptions.username, incomingOpti
         
         // This is a function for usersUsernameFollowersGet
         function usersUsernameFollowersGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3357,9 +3357,9 @@ apiInstance.usersUsernameFollowersGet(incomingOptions.username, incomingOptions.
         
         // This is a function for usersUsernameFollowingTargetUserGet
         function usersUsernameFollowingTargetUserGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let targetUser = "targetUser_example";*/ // String | Name of user
 /*let opts = {
@@ -3377,9 +3377,9 @@ apiInstance.usersUsernameFollowingTargetUserGet(incomingOptions.username, incomi
         
         // This is a function for usersUsernameGet
         function usersUsernameGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3396,9 +3396,9 @@ apiInstance.usersUsernameGet(incomingOptions.username, incomingOptions.opts, (er
         
         // This is a function for usersUsernameGistsGet
         function usersUsernameGistsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
@@ -3416,9 +3416,9 @@ apiInstance.usersUsernameGistsGet(incomingOptions.username, incomingOptions.opts
         
         // This is a function for usersUsernameKeysGet
         function usersUsernameKeysGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3435,9 +3435,9 @@ apiInstance.usersUsernameKeysGet(incomingOptions.username, incomingOptions.opts,
         
         // This is a function for usersUsernameOrgsGet
         function usersUsernameOrgsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3454,9 +3454,9 @@ apiInstance.usersUsernameOrgsGet(incomingOptions.username, incomingOptions.opts,
         
         // This is a function for usersUsernameReceivedEventsGet
         function usersUsernameReceivedEventsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3473,9 +3473,9 @@ apiInstance.usersUsernameReceivedEventsGet(incomingOptions.username, incomingOpt
         
         // This is a function for usersUsernameReceivedEventsPublicGet
         function usersUsernameReceivedEventsPublicGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3492,9 +3492,9 @@ apiInstance.usersUsernameReceivedEventsPublicGet(incomingOptions.username, incom
         
         // This is a function for usersUsernameReposGet
         function usersUsernameReposGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'type': "'all'", // String | 
@@ -3512,9 +3512,9 @@ apiInstance.usersUsernameReposGet(incomingOptions.username, incomingOptions.opts
         
         // This is a function for usersUsernameStarredGet
         function usersUsernameStarredGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3531,9 +3531,9 @@ apiInstance.usersUsernameStarredGet(incomingOptions.username, incomingOptions.op
         
         // This is a function for usersUsernameSubscriptionsGet
         function usersUsernameSubscriptionsGet(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3685,11 +3685,11 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
       }
         // This is a function for gistsIdCommentsPost
         function gistsIdCommentsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
-/*let body = new GitHub.CommentBody();*/ // CommentBody |
+/*let body = new Github.CommentBody();*/ // CommentBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3705,9 +3705,9 @@ apiInstance.gistsIdCommentsPost(incomingOptions.id, incomingOptions.body, incomi
         
         // This is a function for gistsIdForksPost
         function gistsIdForksPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -3724,10 +3724,10 @@ apiInstance.gistsIdForksPost(incomingOptions.id, incomingOptions.opts, (error, d
         
         // This is a function for gistsPost
         function gistsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
-/*let body = new GitHub.PostGist();*/ // PostGist |
+let apiInstance = new Github.DefaultApi()
+/*let body = new Github.PostGist();*/ // PostGist |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3743,10 +3743,10 @@ apiInstance.gistsPost(incomingOptions.body, incomingOptions.opts, (error, data, 
         
         // This is a function for markdownPost
         function markdownPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
-/*let body = new GitHub.Markdown();*/ // Markdown |
+let apiInstance = new Github.DefaultApi()
+/*let body = new Github.Markdown();*/ // Markdown |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3762,9 +3762,9 @@ apiInstance.markdownPost(incomingOptions.body, incomingOptions.opts, (error, dat
         
         // This is a function for markdownRawPost
         function markdownRawPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3780,11 +3780,11 @@ apiInstance.markdownRawPost(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for orgsOrgReposPost
         function orgsOrgReposPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
-/*let body = new GitHub.PostRepo();*/ // PostRepo |
+/*let body = new Github.PostRepo();*/ // PostRepo |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3800,11 +3800,11 @@ apiInstance.incomingOptions.orgsOrgReposPost(org, incomingOptions.body, incoming
         
         // This is a function for orgsOrgTeamsPost
         function orgsOrgTeamsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
-/*let body = new GitHub.OrgTeamsPost();*/ // OrgTeamsPost |
+/*let body = new Github.OrgTeamsPost();*/ // OrgTeamsPost |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3820,13 +3820,13 @@ apiInstance.incomingOptions.orgsOrgTeamsPost(org, incomingOptions.body, incoming
         
         // This is a function for reposOwnerRepoCommitsShaCodeCommentsPost
         function reposOwnerRepoCommitsShaCodeCommentsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let shaCode = "shaCode_example";*/ // String | SHA-1 code of the commit
-/*let body = new GitHub.CommitCommentBody();*/ // CommitCommentBody |
+/*let body = new Github.CommitCommentBody();*/ // CommitCommentBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3842,13 +3842,13 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsPost(incomingOpt
         
         // This is a function for reposOwnerRepoDeploymentsIdStatusesPost
         function reposOwnerRepoDeploymentsIdStatusesPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = 56;*/ // Number | The Deployment ID to list the statuses from
-/*let body = new GitHub.DeploymentStatusesCreate();*/ // DeploymentStatusesCreate |
+/*let body = new Github.DeploymentStatusesCreate();*/ // DeploymentStatusesCreate |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3864,12 +3864,12 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesPost(incomingOpti
         
         // This is a function for reposOwnerRepoDeploymentsPost
         function reposOwnerRepoDeploymentsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.Deployment();*/ // Deployment |
+/*let body = new Github.Deployment();*/ // Deployment |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3885,12 +3885,12 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsPost(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoForksPost
         function reposOwnerRepoForksPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.ForkBody();*/ // ForkBody |
+/*let body = new Github.ForkBody();*/ // ForkBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3906,9 +3906,9 @@ apiInstance.incomingOptions.reposOwnerRepoForksPost(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoGitBlobsPost
         function reposOwnerRepoGitBlobsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let body = null;*/ // Blob |
@@ -3927,12 +3927,12 @@ apiInstance.incomingOptions.reposOwnerRepoGitBlobsPost(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoGitCommitsPost
         function reposOwnerRepoGitCommitsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.RepoCommitBody();*/ // RepoCommitBody |
+/*let body = new Github.RepoCommitBody();*/ // RepoCommitBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3948,12 +3948,12 @@ apiInstance.incomingOptions.reposOwnerRepoGitCommitsPost(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoGitRefsPost
         function reposOwnerRepoGitRefsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.RefsBody();*/ // RefsBody |
+/*let body = new Github.RefsBody();*/ // RefsBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3969,12 +3969,12 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsPost(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoGitTagsPost
         function reposOwnerRepoGitTagsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.TagBody();*/ // TagBody |
+/*let body = new Github.TagBody();*/ // TagBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -3990,12 +3990,12 @@ apiInstance.incomingOptions.reposOwnerRepoGitTagsPost(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoGitTreesPost
         function reposOwnerRepoGitTreesPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.Tree();*/ // Tree |
+/*let body = new Github.Tree();*/ // Tree |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4011,9 +4011,9 @@ apiInstance.incomingOptions.reposOwnerRepoGitTreesPost(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoHooksHookIdTestsPost
         function reposOwnerRepoHooksHookIdTestsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let hookId = 56;*/ // Number | Id of hook
@@ -4032,12 +4032,12 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdTestsPost(incomingOptions.o
         
         // This is a function for reposOwnerRepoHooksPost
         function reposOwnerRepoHooksPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.HookBody();*/ // HookBody |
+/*let body = new Github.HookBody();*/ // HookBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4053,13 +4053,13 @@ apiInstance.incomingOptions.reposOwnerRepoHooksPost(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoIssuesNumberCommentsPost
         function reposOwnerRepoIssuesNumberCommentsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
-/*let body = new GitHub.CommentBody();*/ // CommentBody |
+/*let body = new Github.CommentBody();*/ // CommentBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4075,9 +4075,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsPost(incomingOptio
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsPost
         function reposOwnerRepoIssuesNumberLabelsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
@@ -4097,12 +4097,12 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPost(incomingOptions
         
         // This is a function for reposOwnerRepoIssuesPost
         function reposOwnerRepoIssuesPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.Issue();*/ // Issue |
+/*let body = new Github.Issue();*/ // Issue |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4118,12 +4118,12 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesPost(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoKeysPost
         function reposOwnerRepoKeysPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.UserKeysPost();*/ // UserKeysPost |
+/*let body = new Github.UserKeysPost();*/ // UserKeysPost |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4139,9 +4139,9 @@ apiInstance.incomingOptions.reposOwnerRepoKeysPost(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoLabelsPost
         function reposOwnerRepoLabelsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let body = ["null"];*/ // [String] |
@@ -4160,12 +4160,12 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsPost(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoMergesPost
         function reposOwnerRepoMergesPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.MergesBody();*/ // MergesBody |
+/*let body = new Github.MergesBody();*/ // MergesBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4181,12 +4181,12 @@ apiInstance.incomingOptions.reposOwnerRepoMergesPost(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoMilestonesPost
         function reposOwnerRepoMilestonesPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.MilestoneUpdate();*/ // MilestoneUpdate |
+/*let body = new Github.MilestoneUpdate();*/ // MilestoneUpdate |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4202,13 +4202,13 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesPost(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoPullsNumberCommentsPost
         function reposOwnerRepoPullsNumberCommentsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
-/*let body = new GitHub.PullsCommentPost();*/ // PullsCommentPost |
+/*let body = new Github.PullsCommentPost();*/ // PullsCommentPost |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4224,12 +4224,12 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsPost(incomingOption
         
         // This is a function for reposOwnerRepoPullsPost
         function reposOwnerRepoPullsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.PullsPost();*/ // PullsPost |
+/*let body = new Github.PullsPost();*/ // PullsPost |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4245,12 +4245,12 @@ apiInstance.incomingOptions.reposOwnerRepoPullsPost(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoReleasesPost
         function reposOwnerRepoReleasesPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.ReleaseCreate();*/ // ReleaseCreate |
+/*let body = new Github.ReleaseCreate();*/ // ReleaseCreate |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4266,13 +4266,13 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesPost(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoStatusesRefPost
         function reposOwnerRepoStatusesRefPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let ref = "ref_example";*/ // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name.
-/*let body = new GitHub.HeadBranch();*/ // HeadBranch |
+/*let body = new Github.HeadBranch();*/ // HeadBranch |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4288,9 +4288,9 @@ apiInstance.incomingOptions.reposOwnerRepoStatusesRefPost(incomingOptions.owner,
         
         // This is a function for userEmailsPost
         function userEmailsPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let body = ["null"];*/ // [String] |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -4307,10 +4307,10 @@ apiInstance.userEmailsPost(incomingOptions.body, incomingOptions.opts, (error, d
         
         // This is a function for userKeysPost
         function userKeysPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
-/*let body = new GitHub.UserKeysPost();*/ // UserKeysPost |
+let apiInstance = new Github.DefaultApi()
+/*let body = new Github.UserKeysPost();*/ // UserKeysPost |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4326,10 +4326,10 @@ apiInstance.userKeysPost(incomingOptions.body, incomingOptions.opts, (error, dat
         
         // This is a function for userReposPost
         function userReposPost(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
-/*let body = new GitHub.PostRepo();*/ // PostRepo |
+let apiInstance = new Github.DefaultApi()
+/*let body = new Github.PostRepo();*/ // PostRepo |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4416,9 +4416,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
       }
         // This is a function for gistsIdStarPut
         function gistsIdStarPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -4435,10 +4435,10 @@ apiInstance.gistsIdStarPut(incomingOptions.id, incomingOptions.opts, (error, dat
         
         // This is a function for notificationsPut
         function notificationsPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
-/*let body = new GitHub.NotificationMarkRead();*/ // NotificationMarkRead |
+let apiInstance = new Github.DefaultApi()
+/*let body = new Github.NotificationMarkRead();*/ // NotificationMarkRead |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4454,11 +4454,11 @@ apiInstance.notificationsPut(incomingOptions.body, incomingOptions.opts, (error,
         
         // This is a function for notificationsThreadsIdSubscriptionPut
         function notificationsThreadsIdSubscriptionPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
-/*let body = new GitHub.PutSubscription();*/ // PutSubscription |
+/*let body = new Github.PutSubscription();*/ // PutSubscription |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4474,9 +4474,9 @@ apiInstance.notificationsThreadsIdSubscriptionPut(incomingOptions.id, incomingOp
         
         // This is a function for orgsOrgPublicMembersUsernamePut
         function orgsOrgPublicMembersUsernamePut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let username = "username_example";*/ // String | Name of the user
 /*let opts = {
@@ -4494,9 +4494,9 @@ apiInstance.incomingOptions.orgsOrgPublicMembersUsernamePut(org, incomingOptions
         
         // This is a function for reposOwnerRepoCollaboratorsUserPut
         function reposOwnerRepoCollaboratorsUserPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let user = "user_example";*/ // String | Login of the user
@@ -4515,13 +4515,13 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserPut(incomingOptions.o
         
         // This is a function for reposOwnerRepoContentsPathPut
         function reposOwnerRepoContentsPathPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let path = "path_example";*/ // String |
-/*let body = new GitHub.CreateFileBody();*/ // CreateFileBody |
+/*let body = new Github.CreateFileBody();*/ // CreateFileBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4537,9 +4537,9 @@ apiInstance.incomingOptions.reposOwnerRepoContentsPathPut(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsPut
         function reposOwnerRepoIssuesNumberLabelsPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
@@ -4559,12 +4559,12 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPut(incomingOptions.
         
         // This is a function for reposOwnerRepoNotificationsPut
         function reposOwnerRepoNotificationsPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.NotificationMarkRead();*/ // NotificationMarkRead |
+/*let body = new Github.NotificationMarkRead();*/ // NotificationMarkRead |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4580,13 +4580,13 @@ apiInstance.incomingOptions.reposOwnerRepoNotificationsPut(incomingOptions.owner
         
         // This is a function for reposOwnerRepoPullsNumberMergePut
         function reposOwnerRepoPullsNumberMergePut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
-/*let body = new GitHub.MergePullBody();*/ // MergePullBody |
+/*let body = new Github.MergePullBody();*/ // MergePullBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4602,12 +4602,12 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergePut(incomingOptions.ow
         
         // This is a function for reposOwnerRepoSubscriptionPut
         function reposOwnerRepoSubscriptionPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.SubscriptionBody();*/ // SubscriptionBody |
+/*let body = new Github.SubscriptionBody();*/ // SubscriptionBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -4623,9 +4623,9 @@ apiInstance.incomingOptions.reposOwnerRepoSubscriptionPut(incomingOptions.owner,
         
         // This is a function for teamsTeamIdMembersUsernamePut
         function teamsTeamIdMembersUsernamePut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let username = "username_example";*/ // String | Name of a member
 /*let opts = {
@@ -4643,9 +4643,9 @@ apiInstance.teamsTeamIdMembersUsernamePut(incomingOptions.teamId, incomingOption
         
         // This is a function for teamsTeamIdMembershipsUsernamePut
         function teamsTeamIdMembershipsUsernamePut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let username = "username_example";*/ // String | Name of a member
 /*let opts = {
@@ -4663,9 +4663,9 @@ apiInstance.teamsTeamIdMembershipsUsernamePut(incomingOptions.teamId, incomingOp
         
         // This is a function for teamsTeamIdReposOwnerRepoPut
         function teamsTeamIdReposOwnerRepoPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let owner = "owner_example";*/ // String | Name of a organization
 /*let repo = "repo_example";*/ // String | Name of a repository
@@ -4684,9 +4684,9 @@ apiInstance.teamsTeamIdReposOwnerRepoPut(incomingOptions.teamId, incomingOptions
         
         // This is a function for userFollowingUsernamePut
         function userFollowingUsernamePut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -4703,9 +4703,9 @@ apiInstance.userFollowingUsernamePut(incomingOptions.username, incomingOptions.o
         
         // This is a function for userStarredOwnerRepoPut
         function userStarredOwnerRepoPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of a repository owner
 /*let repo = "repo_example";*/ // String | Name of a repository
 /*let opts = {
@@ -4723,9 +4723,9 @@ apiInstance.userStarredOwnerRepoPut(incomingOptions.owner, incomingOptions.repo,
         
         // This is a function for userSubscriptionsOwnerRepoPut
         function userSubscriptionsOwnerRepoPut(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of the owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -4878,9 +4878,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
       }
         // This is a function for gistsIdCommentsCommentIdDelete
         function gistsIdCommentsCommentIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let commentId = 56;*/ // Number | Id of comment
 /*let opts = {
@@ -4898,9 +4898,9 @@ apiInstance.gistsIdCommentsCommentIdDelete(incomingOptions.id, incomingOptions.c
         
         // This is a function for gistsIdDelete
         function gistsIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -4917,9 +4917,9 @@ apiInstance.gistsIdDelete(incomingOptions.id, incomingOptions.opts, (error, data
         
         // This is a function for gistsIdStarDelete
         function gistsIdStarDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -4936,9 +4936,9 @@ apiInstance.gistsIdStarDelete(incomingOptions.id, incomingOptions.opts, (error, 
         
         // This is a function for notificationsThreadsIdSubscriptionDelete
         function notificationsThreadsIdSubscriptionDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -4955,9 +4955,9 @@ apiInstance.notificationsThreadsIdSubscriptionDelete(incomingOptions.id, incomin
         
         // This is a function for orgsOrgMembersUsernameDelete
         function orgsOrgMembersUsernameDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let username = "username_example";*/ // String | Name of the user
 /*let opts = {
@@ -4975,9 +4975,9 @@ apiInstance.incomingOptions.orgsOrgMembersUsernameDelete(org, incomingOptions.us
         
         // This is a function for orgsOrgPublicMembersUsernameDelete
         function orgsOrgPublicMembersUsernameDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
 /*let username = "username_example";*/ // String | Name of the user
 /*let opts = {
@@ -4995,9 +4995,9 @@ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameDelete(org, incomingOpti
         
         // This is a function for reposOwnerRepoCollaboratorsUserDelete
         function reposOwnerRepoCollaboratorsUserDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let user = "user_example";*/ // String | Login of the user
@@ -5016,9 +5016,9 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserDelete(incomingOption
         
         // This is a function for reposOwnerRepoCommentsCommentIdDelete
         function reposOwnerRepoCommentsCommentIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | Id of comment
@@ -5037,13 +5037,13 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdDelete(incomingOption
         
         // This is a function for reposOwnerRepoContentsPathDelete
         function reposOwnerRepoContentsPathDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let path = "path_example";*/ // String |
-/*let body = new GitHub.DeleteFileBody();*/ // DeleteFileBody |
+/*let body = new Github.DeleteFileBody();*/ // DeleteFileBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5059,9 +5059,9 @@ apiInstance.incomingOptions.reposOwnerRepoContentsPathDelete(incomingOptions.own
         
         // This is a function for reposOwnerRepoDelete
         function reposOwnerRepoDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -5079,9 +5079,9 @@ apiInstance.incomingOptions.reposOwnerRepoDelete(incomingOptions.owner, repo, in
         
         // This is a function for reposOwnerRepoDownloadsDownloadIdDelete
         function reposOwnerRepoDownloadsDownloadIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let downloadId = 56;*/ // Number | Id of download
@@ -5100,9 +5100,9 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdDelete(incomingOpti
         
         // This is a function for reposOwnerRepoGitRefsRefDelete
         function reposOwnerRepoGitRefsRefDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let ref = "ref_example";*/ // String |
@@ -5121,9 +5121,9 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefDelete(incomingOptions.owner
         
         // This is a function for reposOwnerRepoHooksHookIdDelete
         function reposOwnerRepoHooksHookIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let hookId = 56;*/ // Number | Id of hook
@@ -5142,9 +5142,9 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdDelete(incomingOptions.owne
         
         // This is a function for reposOwnerRepoIssuesCommentsCommentIdDelete
         function reposOwnerRepoIssuesCommentsCommentIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | ID of comment
@@ -5163,9 +5163,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdDelete(incoming
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsDelete
         function reposOwnerRepoIssuesNumberLabelsDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
@@ -5184,9 +5184,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsDelete(incomingOptio
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsNameDelete
         function reposOwnerRepoIssuesNumberLabelsNameDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
@@ -5206,9 +5206,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsNameDelete(incomingO
         
         // This is a function for reposOwnerRepoKeysKeyIdDelete
         function reposOwnerRepoKeysKeyIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let keyId = 56;*/ // Number | Id of key
@@ -5227,9 +5227,9 @@ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdDelete(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoLabelsNameDelete
         function reposOwnerRepoLabelsNameDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let name = "name_example";*/ // String | Name of the label
@@ -5248,9 +5248,9 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsNameDelete(incomingOptions.owner
         
         // This is a function for reposOwnerRepoMilestonesNumberDelete
         function reposOwnerRepoMilestonesNumberDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of milestone
@@ -5269,9 +5269,9 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberDelete(incomingOptions
         
         // This is a function for reposOwnerRepoPullsCommentsCommentIdDelete
         function reposOwnerRepoPullsCommentsCommentIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | Id of comment
@@ -5290,9 +5290,9 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdDelete(incomingO
         
         // This is a function for reposOwnerRepoReleasesAssetsIdDelete
         function reposOwnerRepoReleasesAssetsIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = "id_example";*/ // String |
@@ -5311,9 +5311,9 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdDelete(incomingOptions
         
         // This is a function for reposOwnerRepoReleasesIdDelete
         function reposOwnerRepoReleasesIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = "id_example";*/ // String |
@@ -5332,9 +5332,9 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdDelete(incomingOptions.owner
         
         // This is a function for reposOwnerRepoSubscriptionDelete
         function reposOwnerRepoSubscriptionDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -5352,9 +5352,9 @@ apiInstance.incomingOptions.reposOwnerRepoSubscriptionDelete(incomingOptions.own
         
         // This is a function for teamsTeamIdDelete
         function teamsTeamIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -5371,9 +5371,9 @@ apiInstance.teamsTeamIdDelete(incomingOptions.teamId, incomingOptions.opts, (err
         
         // This is a function for teamsTeamIdMembersUsernameDelete
         function teamsTeamIdMembersUsernameDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let username = "username_example";*/ // String | Name of a member
 /*let opts = {
@@ -5391,9 +5391,9 @@ apiInstance.teamsTeamIdMembersUsernameDelete(incomingOptions.teamId, incomingOpt
         
         // This is a function for teamsTeamIdMembershipsUsernameDelete
         function teamsTeamIdMembershipsUsernameDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let username = "username_example";*/ // String | Name of a member
 /*let opts = {
@@ -5411,9 +5411,9 @@ apiInstance.teamsTeamIdMembershipsUsernameDelete(incomingOptions.teamId, incomin
         
         // This is a function for teamsTeamIdReposOwnerRepoDelete
         function teamsTeamIdReposOwnerRepoDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
 /*let owner = "owner_example";*/ // String | Name of a repository owner
 /*let repo = "repo_example";*/ // String | Name of a repository
@@ -5432,9 +5432,9 @@ apiInstance.teamsTeamIdReposOwnerRepoDelete(incomingOptions.teamId, incomingOpti
         
         // This is a function for userEmailsDelete
         function userEmailsDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let body = ["null"];*/ // [String] |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -5451,9 +5451,9 @@ apiInstance.userEmailsDelete(incomingOptions.body, incomingOptions.opts, (error,
         
         // This is a function for userFollowingUsernameDelete
         function userFollowingUsernameDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -5470,9 +5470,9 @@ apiInstance.userFollowingUsernameDelete(incomingOptions.username, incomingOption
         
         // This is a function for userKeysKeyIdDelete
         function userKeysKeyIdDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let keyId = 56;*/ // Number | ID of key
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -5489,9 +5489,9 @@ apiInstance.userKeysKeyIdDelete(incomingOptions.keyId, incomingOptions.opts, (er
         
         // This is a function for userStarredOwnerRepoDelete
         function userStarredOwnerRepoDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of a repository owner
 /*let repo = "repo_example";*/ // String | Name of a repository
 /*let opts = {
@@ -5509,9 +5509,9 @@ apiInstance.userStarredOwnerRepoDelete(incomingOptions.owner, incomingOptions.re
         
         // This is a function for userSubscriptionsOwnerRepoDelete
         function userSubscriptionsOwnerRepoDelete(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of the owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let opts = {
@@ -5608,12 +5608,12 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
       }
         // This is a function for gistsIdCommentsCommentIdPatch
         function gistsIdCommentsCommentIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let commentId = 56;*/ // Number | Id of comment
-/*let body = new GitHub.Comment();*/ // Comment |
+/*let body = new Github.Comment();*/ // Comment |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5629,11 +5629,11 @@ apiInstance.gistsIdCommentsCommentIdPatch(incomingOptions.id, incomingOptions.co
         
         // This is a function for gistsIdPatch
         function gistsIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
-/*let body = new GitHub.PatchGist();*/ // PatchGist |
+/*let body = new Github.PatchGist();*/ // PatchGist |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5649,9 +5649,9 @@ apiInstance.gistsIdPatch(incomingOptions.id, incomingOptions.body, incomingOptio
         
         // This is a function for notificationsThreadsIdPatch
         function notificationsThreadsIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -5668,11 +5668,11 @@ apiInstance.notificationsThreadsIdPatch(incomingOptions.id, incomingOptions.opts
         
         // This is a function for orgsOrgPatch
         function orgsOrgPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
-/*let body = new GitHub.PatchOrg();*/ // PatchOrg |
+/*let body = new Github.PatchOrg();*/ // PatchOrg |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5688,13 +5688,13 @@ apiInstance.incomingOptions.orgsOrgPatch(org, incomingOptions.body, incomingOpti
         
         // This is a function for reposOwnerRepoCommentsCommentIdPatch
         function reposOwnerRepoCommentsCommentIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | Id of comment
-/*let body = new GitHub.CommentBody();*/ // CommentBody |
+/*let body = new Github.CommentBody();*/ // CommentBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5710,13 +5710,13 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdPatch(incomingOptions
         
         // This is a function for reposOwnerRepoGitRefsRefPatch
         function reposOwnerRepoGitRefsRefPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let ref = "ref_example";*/ // String |
-/*let body = new GitHub.GitRefPatch();*/ // GitRefPatch |
+/*let body = new Github.GitRefPatch();*/ // GitRefPatch |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5732,13 +5732,13 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefPatch(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoHooksHookIdPatch
         function reposOwnerRepoHooksHookIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let hookId = 56;*/ // Number | Id of hook
-/*let body = new GitHub.HookBody();*/ // HookBody |
+/*let body = new Github.HookBody();*/ // HookBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5754,13 +5754,13 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdPatch(incomingOptions.owner
         
         // This is a function for reposOwnerRepoIssuesCommentsCommentIdPatch
         function reposOwnerRepoIssuesCommentsCommentIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | ID of comment
-/*let body = new GitHub.CommentBody();*/ // CommentBody |
+/*let body = new Github.CommentBody();*/ // CommentBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5776,13 +5776,13 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdPatch(incomingO
         
         // This is a function for reposOwnerRepoIssuesNumberPatch
         function reposOwnerRepoIssuesNumberPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
-/*let body = new GitHub.Issue();*/ // Issue |
+/*let body = new Github.Issue();*/ // Issue |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5798,9 +5798,9 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberPatch(incomingOptions.owne
         
         // This is a function for reposOwnerRepoLabelsNamePatch
         function reposOwnerRepoLabelsNamePatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let name = "name_example";*/ // String | Name of the label
@@ -5820,13 +5820,13 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsNamePatch(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoMilestonesNumberPatch
         function reposOwnerRepoMilestonesNumberPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of milestone
-/*let body = new GitHub.MilestoneUpdate();*/ // MilestoneUpdate |
+/*let body = new Github.MilestoneUpdate();*/ // MilestoneUpdate |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5842,12 +5842,12 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberPatch(incomingOptions.
         
         // This is a function for reposOwnerRepoPatch
         function reposOwnerRepoPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new GitHub.RepoEdit();*/ // RepoEdit |
+/*let body = new Github.RepoEdit();*/ // RepoEdit |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5863,13 +5863,13 @@ apiInstance.incomingOptions.reposOwnerRepoPatch(incomingOptions.owner, repo, inc
         
         // This is a function for reposOwnerRepoPullsCommentsCommentIdPatch
         function reposOwnerRepoPullsCommentsCommentIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | Id of comment
-/*let body = new GitHub.CommentBody();*/ // CommentBody |
+/*let body = new Github.CommentBody();*/ // CommentBody |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5885,13 +5885,13 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdPatch(incomingOp
         
         // This is a function for reposOwnerRepoPullsNumberPatch
         function reposOwnerRepoPullsNumberPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
-/*let body = new GitHub.PullUpdate();*/ // PullUpdate |
+/*let body = new Github.PullUpdate();*/ // PullUpdate |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5907,13 +5907,13 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberPatch(incomingOptions.owner
         
         // This is a function for reposOwnerRepoReleasesAssetsIdPatch
         function reposOwnerRepoReleasesAssetsIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = "id_example";*/ // String |
-/*let body = new GitHub.AssetPatch();*/ // AssetPatch |
+/*let body = new Github.AssetPatch();*/ // AssetPatch |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5929,13 +5929,13 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdPatch(incomingOptions.
         
         // This is a function for reposOwnerRepoReleasesIdPatch
         function reposOwnerRepoReleasesIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = "id_example";*/ // String |
-/*let body = new GitHub.ReleaseCreate();*/ // ReleaseCreate |
+/*let body = new Github.ReleaseCreate();*/ // ReleaseCreate |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5951,11 +5951,11 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdPatch(incomingOptions.owner,
         
         // This is a function for teamsTeamIdPatch
         function teamsTeamIdPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
+let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
-/*let body = new GitHub.EditTeam();*/ // EditTeam |
+/*let body = new Github.EditTeam();*/ // EditTeam |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/
@@ -5971,10 +5971,10 @@ apiInstance.teamsTeamIdPatch(incomingOptions.teamId, incomingOptions.body, incom
         
         // This is a function for userPatch
         function userPatch(incomingOptions) {
-            import GitHub from 'git_hub';
+            import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi()
-/*let body = new GitHub.UserUpdate();*/ // UserUpdate |
+let apiInstance = new Github.DefaultApi()
+/*let body = new Github.UserUpdate();*/ // UserUpdate |
 /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };*/

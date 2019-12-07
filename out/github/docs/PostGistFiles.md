@@ -1,4 +1,4 @@
-# GitHub.PostGistFiles
+# Github.PostGistFiles
 
 ## Properties
 

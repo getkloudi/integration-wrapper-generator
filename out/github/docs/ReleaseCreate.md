@@ -1,4 +1,4 @@
-# GitHub.ReleaseCreate
+# Github.ReleaseCreate
 
 ## Properties
 

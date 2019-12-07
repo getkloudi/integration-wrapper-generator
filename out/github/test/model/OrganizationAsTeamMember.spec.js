@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.OrganizationAsTeamMember();
+    instance = new Github.OrganizationAsTeamMember();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('OrganizationAsTeamMember', function() {
     it('should create an instance of OrganizationAsTeamMember', function() {
       // uncomment below and update the code to test OrganizationAsTeamMember
-      //var instane = new GitHub.OrganizationAsTeamMember();
-      //expect(instance).to.be.a(GitHub.OrganizationAsTeamMember);
+      //var instane = new Github.OrganizationAsTeamMember();
+      //expect(instance).to.be.a(Github.OrganizationAsTeamMember);
     });
 
     it('should have the property errors (base name: "errors")', function() {
       // uncomment below and update the code to test the property errors
-      //var instane = new GitHub.OrganizationAsTeamMember();
+      //var instane = new Github.OrganizationAsTeamMember();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new GitHub.OrganizationAsTeamMember();
+      //var instane = new Github.OrganizationAsTeamMember();
       //expect(instance).to.be();
     });
 

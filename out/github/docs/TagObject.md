@@ -1,4 +1,4 @@
-# GitHub.TagObject
+# Github.TagObject
 
 ## Properties
 

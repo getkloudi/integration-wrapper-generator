@@ -20,7 +20,7 @@ import User from './User';
 /**
  * The IssueEventIssue model module.
  * @module model/IssueEventIssue
- * @version v3
+ * @version 1.0.0
  */
 class IssueEventIssue {
     /**

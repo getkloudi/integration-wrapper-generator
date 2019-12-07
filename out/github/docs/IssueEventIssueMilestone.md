@@ -1,4 +1,4 @@
-# GitHub.IssueEventIssueMilestone
+# Github.IssueEventIssueMilestone
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.NotificationMarkRead
+# Github.NotificationMarkRead
 
 ## Properties
 

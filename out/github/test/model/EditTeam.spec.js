@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.EditTeam();
+    instance = new Github.EditTeam();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('EditTeam', function() {
     it('should create an instance of EditTeam', function() {
       // uncomment below and update the code to test EditTeam
-      //var instane = new GitHub.EditTeam();
-      //expect(instance).to.be.a(GitHub.EditTeam);
+      //var instane = new Github.EditTeam();
+      //expect(instance).to.be.a(Github.EditTeam);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.EditTeam();
+      //var instane = new Github.EditTeam();
       //expect(instance).to.be();
     });
 
     it('should have the property permission (base name: "permission")', function() {
       // uncomment below and update the code to test the property permission
-      //var instane = new GitHub.EditTeam();
+      //var instane = new Github.EditTeam();
       //expect(instance).to.be();
     });
 

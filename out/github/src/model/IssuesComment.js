@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The IssuesComment model module.
  * @module model/IssuesComment
- * @version v3
+ * @version 1.0.0
  */
 class IssuesComment {
     /**

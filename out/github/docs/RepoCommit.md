@@ -1,4 +1,4 @@
-# GitHub.RepoCommit
+# Github.RepoCommit
 
 ## Properties
 

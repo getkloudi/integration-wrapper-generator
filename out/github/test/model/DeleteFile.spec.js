@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.DeleteFile();
+    instance = new Github.DeleteFile();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('DeleteFile', function() {
     it('should create an instance of DeleteFile', function() {
       // uncomment below and update the code to test DeleteFile
-      //var instane = new GitHub.DeleteFile();
-      //expect(instance).to.be.a(GitHub.DeleteFile);
+      //var instane = new Github.DeleteFile();
+      //expect(instance).to.be.a(Github.DeleteFile);
     });
 
     it('should have the property commit (base name: "commit")', function() {
       // uncomment below and update the code to test the property commit
-      //var instane = new GitHub.DeleteFile();
+      //var instane = new Github.DeleteFile();
       //expect(instance).to.be();
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new GitHub.DeleteFile();
+      //var instane = new Github.DeleteFile();
       //expect(instance).to.be();
     });
 

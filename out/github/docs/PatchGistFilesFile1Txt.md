@@ -1,4 +1,4 @@
-# GitHub.PatchGistFilesFile1Txt
+# Github.PatchGistFilesFile1Txt
 
 ## Properties
 

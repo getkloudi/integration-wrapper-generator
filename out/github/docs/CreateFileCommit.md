@@ -1,4 +1,4 @@
-# GitHub.CreateFileCommit
+# Github.CreateFileCommit
 
 ## Properties
 

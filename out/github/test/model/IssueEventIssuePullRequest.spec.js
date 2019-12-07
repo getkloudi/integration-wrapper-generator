@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.IssueEventIssuePullRequest();
+    instance = new Github.IssueEventIssuePullRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('IssueEventIssuePullRequest', function() {
     it('should create an instance of IssueEventIssuePullRequest', function() {
       // uncomment below and update the code to test IssueEventIssuePullRequest
-      //var instane = new GitHub.IssueEventIssuePullRequest();
-      //expect(instance).to.be.a(GitHub.IssueEventIssuePullRequest);
+      //var instane = new Github.IssueEventIssuePullRequest();
+      //expect(instance).to.be.a(Github.IssueEventIssuePullRequest);
     });
 
     it('should have the property diffUrl (base name: "diff_url")', function() {
       // uncomment below and update the code to test the property diffUrl
-      //var instane = new GitHub.IssueEventIssuePullRequest();
+      //var instane = new Github.IssueEventIssuePullRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property htmlUrl (base name: "html_url")', function() {
       // uncomment below and update the code to test the property htmlUrl
-      //var instane = new GitHub.IssueEventIssuePullRequest();
+      //var instane = new Github.IssueEventIssuePullRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property patchUrl (base name: "patch_url")', function() {
       // uncomment below and update the code to test the property patchUrl
-      //var instane = new GitHub.IssueEventIssuePullRequest();
+      //var instane = new Github.IssueEventIssuePullRequest();
       //expect(instance).to.be();
     });
 

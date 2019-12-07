@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.DeleteFileCommit();
+    instance = new Github.DeleteFileCommit();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('DeleteFileCommit', function() {
     it('should create an instance of DeleteFileCommit', function() {
       // uncomment below and update the code to test DeleteFileCommit
-      //var instane = new GitHub.DeleteFileCommit();
-      //expect(instance).to.be.a(GitHub.DeleteFileCommit);
+      //var instane = new Github.DeleteFileCommit();
+      //expect(instance).to.be.a(Github.DeleteFileCommit);
     });
 
     it('should have the property author (base name: "author")', function() {
       // uncomment below and update the code to test the property author
-      //var instane = new GitHub.DeleteFileCommit();
+      //var instane = new Github.DeleteFileCommit();
       //expect(instance).to.be();
     });
 
     it('should have the property committer (base name: "committer")', function() {
       // uncomment below and update the code to test the property committer
-      //var instane = new GitHub.DeleteFileCommit();
+      //var instane = new Github.DeleteFileCommit();
       //expect(instance).to.be();
     });
 
     it('should have the property htmlUrl (base name: "html_url")', function() {
       // uncomment below and update the code to test the property htmlUrl
-      //var instane = new GitHub.DeleteFileCommit();
+      //var instane = new Github.DeleteFileCommit();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new GitHub.DeleteFileCommit();
+      //var instane = new Github.DeleteFileCommit();
       //expect(instance).to.be();
     });
 
     it('should have the property parents (base name: "parents")', function() {
       // uncomment below and update the code to test the property parents
-      //var instane = new GitHub.DeleteFileCommit();
+      //var instane = new Github.DeleteFileCommit();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.DeleteFileCommit();
+      //var instane = new Github.DeleteFileCommit();
       //expect(instance).to.be();
     });
 
     it('should have the property tree (base name: "tree")', function() {
       // uncomment below and update the code to test the property tree
-      //var instane = new GitHub.DeleteFileCommit();
+      //var instane = new Github.DeleteFileCommit();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.DeleteFileCommit();
+      //var instane = new Github.DeleteFileCommit();
       //expect(instance).to.be();
     });
 

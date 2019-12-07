@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TreeTree model module.
  * @module model/TreeTree
- * @version v3
+ * @version 1.0.0
  */
 class TreeTree {
     /**

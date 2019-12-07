@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.DeploymentStatusesCreate();
+    instance = new Github.DeploymentStatusesCreate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('DeploymentStatusesCreate', function() {
     it('should create an instance of DeploymentStatusesCreate', function() {
       // uncomment below and update the code to test DeploymentStatusesCreate
-      //var instane = new GitHub.DeploymentStatusesCreate();
-      //expect(instance).to.be.a(GitHub.DeploymentStatusesCreate);
+      //var instane = new Github.DeploymentStatusesCreate();
+      //expect(instance).to.be.a(Github.DeploymentStatusesCreate);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new GitHub.DeploymentStatusesCreate();
+      //var instane = new Github.DeploymentStatusesCreate();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new GitHub.DeploymentStatusesCreate();
+      //var instane = new Github.DeploymentStatusesCreate();
       //expect(instance).to.be();
     });
 
     it('should have the property targetUrl (base name: "target_url")', function() {
       // uncomment below and update the code to test the property targetUrl
-      //var instane = new GitHub.DeploymentStatusesCreate();
+      //var instane = new Github.DeploymentStatusesCreate();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.AssetPatch();
+    instance = new Github.AssetPatch();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('AssetPatch', function() {
     it('should create an instance of AssetPatch', function() {
       // uncomment below and update the code to test AssetPatch
-      //var instane = new GitHub.AssetPatch();
-      //expect(instance).to.be.a(GitHub.AssetPatch);
+      //var instane = new Github.AssetPatch();
+      //expect(instance).to.be.a(Github.AssetPatch);
     });
 
     it('should have the property label (base name: "label")', function() {
       // uncomment below and update the code to test the property label
-      //var instane = new GitHub.AssetPatch();
+      //var instane = new Github.AssetPatch();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.AssetPatch();
+      //var instane = new Github.AssetPatch();
       //expect(instance).to.be();
     });
 

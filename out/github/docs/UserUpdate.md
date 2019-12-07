@@ -1,4 +1,4 @@
-# GitHub.UserUpdate
+# Github.UserUpdate
 
 ## Properties
 

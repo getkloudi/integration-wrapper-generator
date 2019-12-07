@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Blob();
+    instance = new Github.Blob();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('Blob', function() {
     it('should create an instance of Blob', function() {
       // uncomment below and update the code to test Blob
-      //var instane = new GitHub.Blob();
-      //expect(instance).to.be.a(GitHub.Blob);
+      //var instane = new Github.Blob();
+      //expect(instance).to.be.a(Github.Blob);
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new GitHub.Blob();
+      //var instane = new Github.Blob();
       //expect(instance).to.be();
     });
 
     it('should have the property encoding (base name: "encoding")', function() {
       // uncomment below and update the code to test the property encoding
-      //var instane = new GitHub.Blob();
+      //var instane = new Github.Blob();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.Blob();
+      //var instane = new Github.Blob();
       //expect(instance).to.be();
     });
 
     it('should have the property size (base name: "size")', function() {
       // uncomment below and update the code to test the property size
-      //var instane = new GitHub.Blob();
+      //var instane = new Github.Blob();
       //expect(instance).to.be();
     });
 

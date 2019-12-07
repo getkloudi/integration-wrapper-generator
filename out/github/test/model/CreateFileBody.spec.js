@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.CreateFileBody();
+    instance = new Github.CreateFileBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('CreateFileBody', function() {
     it('should create an instance of CreateFileBody', function() {
       // uncomment below and update the code to test CreateFileBody
-      //var instane = new GitHub.CreateFileBody();
-      //expect(instance).to.be.a(GitHub.CreateFileBody);
+      //var instane = new Github.CreateFileBody();
+      //expect(instance).to.be.a(Github.CreateFileBody);
     });
 
     it('should have the property committer (base name: "committer")', function() {
       // uncomment below and update the code to test the property committer
-      //var instane = new GitHub.CreateFileBody();
+      //var instane = new Github.CreateFileBody();
       //expect(instance).to.be();
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new GitHub.CreateFileBody();
+      //var instane = new Github.CreateFileBody();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new GitHub.CreateFileBody();
+      //var instane = new Github.CreateFileBody();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# GitHub.SearchRepositories
+# Github.SearchRepositories
 
 ## Properties
 

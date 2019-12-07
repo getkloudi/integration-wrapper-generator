@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.ActorPlan();
+    instance = new Github.ActorPlan();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('ActorPlan', function() {
     it('should create an instance of ActorPlan', function() {
       // uncomment below and update the code to test ActorPlan
-      //var instane = new GitHub.ActorPlan();
-      //expect(instance).to.be.a(GitHub.ActorPlan);
+      //var instane = new Github.ActorPlan();
+      //expect(instance).to.be.a(Github.ActorPlan);
     });
 
     it('should have the property collaborators (base name: "collaborators")', function() {
       // uncomment below and update the code to test the property collaborators
-      //var instane = new GitHub.ActorPlan();
+      //var instane = new Github.ActorPlan();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.ActorPlan();
+      //var instane = new Github.ActorPlan();
       //expect(instance).to.be();
     });
 
     it('should have the property privateRepos (base name: "private_repos")', function() {
       // uncomment below and update the code to test the property privateRepos
-      //var instane = new GitHub.ActorPlan();
+      //var instane = new Github.ActorPlan();
       //expect(instance).to.be();
     });
 
     it('should have the property space (base name: "space")', function() {
       // uncomment below and update the code to test the property space
-      //var instane = new GitHub.ActorPlan();
+      //var instane = new Github.ActorPlan();
       //expect(instance).to.be();
     });
 

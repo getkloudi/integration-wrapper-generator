@@ -1,4 +1,4 @@
-# GitHub.TeamMembership
+# Github.TeamMembership
 
 ## Properties
 

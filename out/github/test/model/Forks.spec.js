@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Forks();
+    instance = new Github.Forks();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,8 +50,8 @@
   describe('Forks', function() {
     it('should create an instance of Forks', function() {
       // uncomment below and update the code to test Forks
-      //var instane = new GitHub.Forks();
-      //expect(instance).to.be.a(GitHub.Forks);
+      //var instane = new Github.Forks();
+      //expect(instance).to.be.a(Github.Forks);
     });
 
   });

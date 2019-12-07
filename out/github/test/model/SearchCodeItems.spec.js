@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.SearchCodeItems();
+    instance = new Github.SearchCodeItems();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,55 +50,55 @@
   describe('SearchCodeItems', function() {
     it('should create an instance of SearchCodeItems', function() {
       // uncomment below and update the code to test SearchCodeItems
-      //var instane = new GitHub.SearchCodeItems();
-      //expect(instance).to.be.a(GitHub.SearchCodeItems);
+      //var instane = new Github.SearchCodeItems();
+      //expect(instance).to.be.a(Github.SearchCodeItems);
     });
 
     it('should have the property gitUrl (base name: "git_url")', function() {
       // uncomment below and update the code to test the property gitUrl
-      //var instane = new GitHub.SearchCodeItems();
+      //var instane = new Github.SearchCodeItems();
       //expect(instance).to.be();
     });
 
     it('should have the property htmlUrl (base name: "html_url")', function() {
       // uncomment below and update the code to test the property htmlUrl
-      //var instane = new GitHub.SearchCodeItems();
+      //var instane = new Github.SearchCodeItems();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.SearchCodeItems();
+      //var instane = new Github.SearchCodeItems();
       //expect(instance).to.be();
     });
 
     it('should have the property path (base name: "path")', function() {
       // uncomment below and update the code to test the property path
-      //var instane = new GitHub.SearchCodeItems();
+      //var instane = new Github.SearchCodeItems();
       //expect(instance).to.be();
     });
 
     it('should have the property repository (base name: "repository")', function() {
       // uncomment below and update the code to test the property repository
-      //var instane = new GitHub.SearchCodeItems();
+      //var instane = new Github.SearchCodeItems();
       //expect(instance).to.be();
     });
 
     it('should have the property score (base name: "score")', function() {
       // uncomment below and update the code to test the property score
-      //var instane = new GitHub.SearchCodeItems();
+      //var instane = new Github.SearchCodeItems();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.SearchCodeItems();
+      //var instane = new Github.SearchCodeItems();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.SearchCodeItems();
+      //var instane = new Github.SearchCodeItems();
       //expect(instance).to.be();
     });
 

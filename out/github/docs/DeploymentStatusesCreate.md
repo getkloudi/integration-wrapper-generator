@@ -1,4 +1,4 @@
-# GitHub.DeploymentStatusesCreate
+# Github.DeploymentStatusesCreate
 
 ## Properties
 

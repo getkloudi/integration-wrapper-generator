@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Deployment();
+    instance = new Github.Deployment();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Deployment', function() {
     it('should create an instance of Deployment', function() {
       // uncomment below and update the code to test Deployment
-      //var instane = new GitHub.Deployment();
-      //expect(instance).to.be.a(GitHub.Deployment);
+      //var instane = new Github.Deployment();
+      //expect(instance).to.be.a(Github.Deployment);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new GitHub.Deployment();
+      //var instane = new Github.Deployment();
       //expect(instance).to.be();
     });
 
     it('should have the property payload (base name: "payload")', function() {
       // uncomment below and update the code to test the property payload
-      //var instane = new GitHub.Deployment();
+      //var instane = new Github.Deployment();
       //expect(instance).to.be();
     });
 
     it('should have the property ref (base name: "ref")', function() {
       // uncomment below and update the code to test the property ref
-      //var instane = new GitHub.Deployment();
+      //var instane = new Github.Deployment();
       //expect(instance).to.be();
     });
 

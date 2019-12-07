@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Trees();
+    instance = new Github.Trees();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('Trees', function() {
     it('should create an instance of Trees', function() {
       // uncomment below and update the code to test Trees
-      //var instane = new GitHub.Trees();
-      //expect(instance).to.be.a(GitHub.Trees);
+      //var instane = new Github.Trees();
+      //expect(instance).to.be.a(Github.Trees);
     });
 
     it('should have the property baseTree (base name: "base_tree")', function() {
       // uncomment below and update the code to test the property baseTree
-      //var instane = new GitHub.Trees();
+      //var instane = new Github.Trees();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.Trees();
+      //var instane = new Github.Trees();
       //expect(instance).to.be();
     });
 
     it('should have the property tree (base name: "tree")', function() {
       // uncomment below and update the code to test the property tree
-      //var instane = new GitHub.Trees();
+      //var instane = new Github.Trees();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.Trees();
+      //var instane = new Github.Trees();
       //expect(instance).to.be();
     });
 

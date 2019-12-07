@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.CompareCommitsBaseCommitCommitAuthor();
+    instance = new Github.CompareCommitsBaseCommitCommitAuthor();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('CompareCommitsBaseCommitCommitAuthor', function() {
     it('should create an instance of CompareCommitsBaseCommitCommitAuthor', function() {
       // uncomment below and update the code to test CompareCommitsBaseCommitCommitAuthor
-      //var instane = new GitHub.CompareCommitsBaseCommitCommitAuthor();
-      //expect(instance).to.be.a(GitHub.CompareCommitsBaseCommitCommitAuthor);
+      //var instane = new Github.CompareCommitsBaseCommitCommitAuthor();
+      //expect(instance).to.be.a(Github.CompareCommitsBaseCommitCommitAuthor);
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new GitHub.CompareCommitsBaseCommitCommitAuthor();
+      //var instane = new Github.CompareCommitsBaseCommitCommitAuthor();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new GitHub.CompareCommitsBaseCommitCommitAuthor();
+      //var instane = new Github.CompareCommitsBaseCommitCommitAuthor();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.CompareCommitsBaseCommitCommitAuthor();
+      //var instane = new Github.CompareCommitsBaseCommitCommitAuthor();
       //expect(instance).to.be();
     });
 

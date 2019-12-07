@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.NotificationsSubject();
+    instance = new Github.NotificationsSubject();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('NotificationsSubject', function() {
     it('should create an instance of NotificationsSubject', function() {
       // uncomment below and update the code to test NotificationsSubject
-      //var instane = new GitHub.NotificationsSubject();
-      //expect(instance).to.be.a(GitHub.NotificationsSubject);
+      //var instane = new Github.NotificationsSubject();
+      //expect(instance).to.be.a(Github.NotificationsSubject);
     });
 
     it('should have the property latestCommentUrl (base name: "latest_comment_url")', function() {
       // uncomment below and update the code to test the property latestCommentUrl
-      //var instane = new GitHub.NotificationsSubject();
+      //var instane = new Github.NotificationsSubject();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new GitHub.NotificationsSubject();
+      //var instane = new Github.NotificationsSubject();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new GitHub.NotificationsSubject();
+      //var instane = new Github.NotificationsSubject();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.NotificationsSubject();
+      //var instane = new Github.NotificationsSubject();
       //expect(instance).to.be();
     });
 

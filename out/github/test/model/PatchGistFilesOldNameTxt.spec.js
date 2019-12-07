@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PatchGistFilesOldNameTxt();
+    instance = new Github.PatchGistFilesOldNameTxt();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('PatchGistFilesOldNameTxt', function() {
     it('should create an instance of PatchGistFilesOldNameTxt', function() {
       // uncomment below and update the code to test PatchGistFilesOldNameTxt
-      //var instane = new GitHub.PatchGistFilesOldNameTxt();
-      //expect(instance).to.be.a(GitHub.PatchGistFilesOldNameTxt);
+      //var instane = new Github.PatchGistFilesOldNameTxt();
+      //expect(instance).to.be.a(Github.PatchGistFilesOldNameTxt);
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new GitHub.PatchGistFilesOldNameTxt();
+      //var instane = new Github.PatchGistFilesOldNameTxt();
       //expect(instance).to.be();
     });
 
     it('should have the property filename (base name: "filename")', function() {
       // uncomment below and update the code to test the property filename
-      //var instane = new GitHub.PatchGistFilesOldNameTxt();
+      //var instane = new Github.PatchGistFilesOldNameTxt();
       //expect(instance).to.be();
     });
 

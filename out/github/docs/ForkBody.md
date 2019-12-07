@@ -1,4 +1,4 @@
-# GitHub.ForkBody
+# Github.ForkBody
 
 ## Properties
 

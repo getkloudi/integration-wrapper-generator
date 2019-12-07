@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.CompareCommitsFiles();
+    instance = new Github.CompareCommitsFiles();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,67 +50,67 @@
   describe('CompareCommitsFiles', function() {
     it('should create an instance of CompareCommitsFiles', function() {
       // uncomment below and update the code to test CompareCommitsFiles
-      //var instane = new GitHub.CompareCommitsFiles();
-      //expect(instance).to.be.a(GitHub.CompareCommitsFiles);
+      //var instane = new Github.CompareCommitsFiles();
+      //expect(instance).to.be.a(Github.CompareCommitsFiles);
     });
 
     it('should have the property additions (base name: "additions")', function() {
       // uncomment below and update the code to test the property additions
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property blobUrl (base name: "blob_url")', function() {
       // uncomment below and update the code to test the property blobUrl
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property changes (base name: "changes")', function() {
       // uncomment below and update the code to test the property changes
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property contentsUrl (base name: "contents_url")', function() {
       // uncomment below and update the code to test the property contentsUrl
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property deletions (base name: "deletions")', function() {
       // uncomment below and update the code to test the property deletions
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property filename (base name: "filename")', function() {
       // uncomment below and update the code to test the property filename
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property patch (base name: "patch")', function() {
       // uncomment below and update the code to test the property patch
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property rawUrl (base name: "raw_url")', function() {
       // uncomment below and update the code to test the property rawUrl
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
-      //var instane = new GitHub.CompareCommitsFiles();
+      //var instane = new Github.CompareCommitsFiles();
       //expect(instance).to.be();
     });
 

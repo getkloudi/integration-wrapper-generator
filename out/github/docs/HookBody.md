@@ -1,4 +1,4 @@
-# GitHub.HookBody
+# Github.HookBody
 
 ## Properties
 

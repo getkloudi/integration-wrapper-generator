@@ -17,7 +17,7 @@ import SearchIssuesItems from './SearchIssuesItems';
 /**
  * The SearchIssues model module.
  * @module model/SearchIssues
- * @version v3
+ * @version 1.0.0
  */
 class SearchIssues {
     /**

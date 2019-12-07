@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PostRepo();
+    instance = new Github.PostRepo();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,67 +50,67 @@
   describe('PostRepo', function() {
     it('should create an instance of PostRepo', function() {
       // uncomment below and update the code to test PostRepo
-      //var instane = new GitHub.PostRepo();
-      //expect(instance).to.be.a(GitHub.PostRepo);
+      //var instane = new Github.PostRepo();
+      //expect(instance).to.be.a(Github.PostRepo);
     });
 
     it('should have the property autoInit (base name: "auto_init")', function() {
       // uncomment below and update the code to test the property autoInit
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property gitignoreTemplate (base name: "gitignore_template")', function() {
       // uncomment below and update the code to test the property gitignoreTemplate
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property hasDownloads (base name: "has_downloads")', function() {
       // uncomment below and update the code to test the property hasDownloads
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property hasIssues (base name: "has_issues")', function() {
       // uncomment below and update the code to test the property hasIssues
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property hasWiki (base name: "has_wiki")', function() {
       // uncomment below and update the code to test the property hasWiki
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property homepage (base name: "homepage")', function() {
       // uncomment below and update the code to test the property homepage
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property _private (base name: "private")', function() {
       // uncomment below and update the code to test the property _private
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property teamId (base name: "team_id")', function() {
       // uncomment below and update the code to test the property teamId
-      //var instane = new GitHub.PostRepo();
+      //var instane = new Github.PostRepo();
       //expect(instance).to.be();
     });
 

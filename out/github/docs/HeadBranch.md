@@ -1,4 +1,4 @@
-# GitHub.HeadBranch
+# Github.HeadBranch
 
 ## Properties
 

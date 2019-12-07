@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Issue();
+    instance = new Github.Issue();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('Issue', function() {
     it('should create an instance of Issue', function() {
       // uncomment below and update the code to test Issue
-      //var instane = new GitHub.Issue();
-      //expect(instance).to.be.a(GitHub.Issue);
+      //var instane = new Github.Issue();
+      //expect(instance).to.be.a(Github.Issue);
     });
 
     it('should have the property assignee (base name: "assignee")', function() {
       // uncomment below and update the code to test the property assignee
-      //var instane = new GitHub.Issue();
+      //var instane = new Github.Issue();
       //expect(instance).to.be();
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.Issue();
+      //var instane = new Github.Issue();
       //expect(instance).to.be();
     });
 
     it('should have the property labels (base name: "labels")', function() {
       // uncomment below and update the code to test the property labels
-      //var instane = new GitHub.Issue();
+      //var instane = new Github.Issue();
       //expect(instance).to.be();
     });
 
     it('should have the property milestone (base name: "milestone")', function() {
       // uncomment below and update the code to test the property milestone
-      //var instane = new GitHub.Issue();
+      //var instane = new Github.Issue();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new GitHub.Issue();
+      //var instane = new Github.Issue();
       //expect(instance).to.be();
     });
 

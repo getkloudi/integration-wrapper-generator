@@ -1,4 +1,4 @@
-# GitHub.SearchIssuesByKeyword
+# Github.SearchIssuesByKeyword
 
 ## Properties
 

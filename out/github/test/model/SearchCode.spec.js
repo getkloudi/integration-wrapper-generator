@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.SearchCode();
+    instance = new Github.SearchCode();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('SearchCode', function() {
     it('should create an instance of SearchCode', function() {
       // uncomment below and update the code to test SearchCode
-      //var instane = new GitHub.SearchCode();
-      //expect(instance).to.be.a(GitHub.SearchCode);
+      //var instane = new Github.SearchCode();
+      //expect(instance).to.be.a(Github.SearchCode);
     });
 
     it('should have the property items (base name: "items")', function() {
       // uncomment below and update the code to test the property items
-      //var instane = new GitHub.SearchCode();
+      //var instane = new Github.SearchCode();
       //expect(instance).to.be();
     });
 
     it('should have the property totalCount (base name: "total_count")', function() {
       // uncomment below and update the code to test the property totalCount
-      //var instane = new GitHub.SearchCode();
+      //var instane = new Github.SearchCode();
       //expect(instance).to.be();
     });
 

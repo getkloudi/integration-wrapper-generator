@@ -1,4 +1,4 @@
-# GitHub.FeedsLinksCurrentUser
+# Github.FeedsLinksCurrentUser
 
 ## Properties
 

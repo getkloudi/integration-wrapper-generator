@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.GitRefPatch();
+    instance = new Github.GitRefPatch();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('GitRefPatch', function() {
     it('should create an instance of GitRefPatch', function() {
       // uncomment below and update the code to test GitRefPatch
-      //var instane = new GitHub.GitRefPatch();
-      //expect(instance).to.be.a(GitHub.GitRefPatch);
+      //var instane = new Github.GitRefPatch();
+      //expect(instance).to.be.a(Github.GitRefPatch);
     });
 
     it('should have the property force (base name: "force")', function() {
       // uncomment below and update the code to test the property force
-      //var instane = new GitHub.GitRefPatch();
+      //var instane = new Github.GitRefPatch();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.GitRefPatch();
+      //var instane = new Github.GitRefPatch();
       //expect(instance).to.be();
     });
 

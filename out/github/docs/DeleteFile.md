@@ -1,4 +1,4 @@
-# GitHub.DeleteFile
+# Github.DeleteFile
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.CommitStats
+# Github.CommitStats
 
 ## Properties
 

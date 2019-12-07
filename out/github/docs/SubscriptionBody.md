@@ -1,4 +1,4 @@
-# GitHub.SubscriptionBody
+# Github.SubscriptionBody
 
 ## Properties
 

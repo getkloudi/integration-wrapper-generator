@@ -17,7 +17,7 @@ import Tree from './Tree';
 /**
  * The Trees model module.
  * @module model/Trees
- * @version v3
+ * @version 1.0.0
  */
 class Trees {
     /**

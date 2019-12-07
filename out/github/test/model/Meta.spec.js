@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Meta();
+    instance = new Github.Meta();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('Meta', function() {
     it('should create an instance of Meta', function() {
       // uncomment below and update the code to test Meta
-      //var instane = new GitHub.Meta();
-      //expect(instance).to.be.a(GitHub.Meta);
+      //var instane = new Github.Meta();
+      //expect(instance).to.be.a(Github.Meta);
     });
 
     it('should have the property git (base name: "git")', function() {
       // uncomment below and update the code to test the property git
-      //var instane = new GitHub.Meta();
+      //var instane = new Github.Meta();
       //expect(instance).to.be();
     });
 
     it('should have the property hooks (base name: "hooks")', function() {
       // uncomment below and update the code to test the property hooks
-      //var instane = new GitHub.Meta();
+      //var instane = new Github.Meta();
       //expect(instance).to.be();
     });
 

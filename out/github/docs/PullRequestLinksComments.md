@@ -1,4 +1,4 @@
-# GitHub.PullRequestLinksComments
+# Github.PullRequestLinksComments
 
 ## Properties
 

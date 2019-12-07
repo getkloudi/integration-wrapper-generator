@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.BranchCommitCommitAuthor();
+    instance = new Github.BranchCommitCommitAuthor();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('BranchCommitCommitAuthor', function() {
     it('should create an instance of BranchCommitCommitAuthor', function() {
       // uncomment below and update the code to test BranchCommitCommitAuthor
-      //var instane = new GitHub.BranchCommitCommitAuthor();
-      //expect(instance).to.be.a(GitHub.BranchCommitCommitAuthor);
+      //var instane = new Github.BranchCommitCommitAuthor();
+      //expect(instance).to.be.a(Github.BranchCommitCommitAuthor);
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new GitHub.BranchCommitCommitAuthor();
+      //var instane = new Github.BranchCommitCommitAuthor();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new GitHub.BranchCommitCommitAuthor();
+      //var instane = new Github.BranchCommitCommitAuthor();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.BranchCommitCommitAuthor();
+      //var instane = new Github.BranchCommitCommitAuthor();
       //expect(instance).to.be();
     });
 

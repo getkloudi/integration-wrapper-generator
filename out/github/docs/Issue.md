@@ -1,4 +1,4 @@
-# GitHub.Issue
+# Github.Issue
 
 ## Properties
 

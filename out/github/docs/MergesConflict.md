@@ -1,4 +1,4 @@
-# GitHub.MergesConflict
+# Github.MergesConflict
 
 ## Properties
 

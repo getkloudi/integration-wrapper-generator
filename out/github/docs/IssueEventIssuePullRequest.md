@@ -1,4 +1,4 @@
-# GitHub.IssueEventIssuePullRequest
+# Github.IssueEventIssuePullRequest
 
 ## Properties
 

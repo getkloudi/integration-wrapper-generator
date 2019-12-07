@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.TagTagger();
+    instance = new Github.TagTagger();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('TagTagger', function() {
     it('should create an instance of TagTagger', function() {
       // uncomment below and update the code to test TagTagger
-      //var instane = new GitHub.TagTagger();
-      //expect(instance).to.be.a(GitHub.TagTagger);
+      //var instane = new Github.TagTagger();
+      //expect(instance).to.be.a(Github.TagTagger);
     });
 
     it('should have the property _date (base name: "date")', function() {
       // uncomment below and update the code to test the property _date
-      //var instane = new GitHub.TagTagger();
+      //var instane = new Github.TagTagger();
       //expect(instance).to.be();
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instane = new GitHub.TagTagger();
+      //var instane = new Github.TagTagger();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.TagTagger();
+      //var instane = new Github.TagTagger();
       //expect(instance).to.be();
     });
 

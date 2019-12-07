@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Merge();
+    instance = new Github.Merge();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Merge', function() {
     it('should create an instance of Merge', function() {
       // uncomment below and update the code to test Merge
-      //var instane = new GitHub.Merge();
-      //expect(instance).to.be.a(GitHub.Merge);
+      //var instane = new Github.Merge();
+      //expect(instance).to.be.a(Github.Merge);
     });
 
     it('should have the property merged (base name: "merged")', function() {
       // uncomment below and update the code to test the property merged
-      //var instane = new GitHub.Merge();
+      //var instane = new Github.Merge();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new GitHub.Merge();
+      //var instane = new Github.Merge();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.Merge();
+      //var instane = new Github.Merge();
       //expect(instance).to.be();
     });
 

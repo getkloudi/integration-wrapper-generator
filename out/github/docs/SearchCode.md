@@ -1,4 +1,4 @@
-# GitHub.SearchCode
+# Github.SearchCode
 
 ## Properties
 

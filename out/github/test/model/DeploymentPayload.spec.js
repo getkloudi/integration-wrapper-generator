@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.DeploymentPayload();
+    instance = new Github.DeploymentPayload();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('DeploymentPayload', function() {
     it('should create an instance of DeploymentPayload', function() {
       // uncomment below and update the code to test DeploymentPayload
-      //var instane = new GitHub.DeploymentPayload();
-      //expect(instance).to.be.a(GitHub.DeploymentPayload);
+      //var instane = new Github.DeploymentPayload();
+      //expect(instance).to.be.a(Github.DeploymentPayload);
     });
 
     it('should have the property deployUser (base name: "deploy_user")', function() {
       // uncomment below and update the code to test the property deployUser
-      //var instane = new GitHub.DeploymentPayload();
+      //var instane = new Github.DeploymentPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property environment (base name: "environment")', function() {
       // uncomment below and update the code to test the property environment
-      //var instane = new GitHub.DeploymentPayload();
+      //var instane = new Github.DeploymentPayload();
       //expect(instance).to.be();
     });
 
     it('should have the property roomId (base name: "room_id")', function() {
       // uncomment below and update the code to test the property roomId
-      //var instane = new GitHub.DeploymentPayload();
+      //var instane = new Github.DeploymentPayload();
       //expect(instance).to.be();
     });
 

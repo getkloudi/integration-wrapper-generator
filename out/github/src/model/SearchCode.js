@@ -17,7 +17,7 @@ import SearchCodeItems from './SearchCodeItems';
 /**
  * The SearchCode model module.
  * @module model/SearchCode
- * @version v3
+ * @version 1.0.0
  */
 class SearchCode {
     /**

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.EventRepo();
+    instance = new Github.EventRepo();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('EventRepo', function() {
     it('should create an instance of EventRepo', function() {
       // uncomment below and update the code to test EventRepo
-      //var instane = new GitHub.EventRepo();
-      //expect(instance).to.be.a(GitHub.EventRepo);
+      //var instane = new Github.EventRepo();
+      //expect(instance).to.be.a(Github.EventRepo);
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new GitHub.EventRepo();
+      //var instane = new Github.EventRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.EventRepo();
+      //var instane = new Github.EventRepo();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.EventRepo();
+      //var instane = new Github.EventRepo();
       //expect(instance).to.be();
     });
 

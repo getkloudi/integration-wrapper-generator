@@ -1,4 +1,4 @@
-# GitHub.PatchGistFilesOldNameTxt
+# Github.PatchGistFilesOldNameTxt
 
 ## Properties
 

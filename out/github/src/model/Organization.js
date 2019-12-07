@@ -18,7 +18,7 @@ import ActorPlan from './ActorPlan';
 /**
  * The Organization model module.
  * @module model/Organization
- * @version v3
+ * @version 1.0.0
  */
 class Organization {
     /**

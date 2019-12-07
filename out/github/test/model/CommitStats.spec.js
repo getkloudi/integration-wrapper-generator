@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.CommitStats();
+    instance = new Github.CommitStats();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('CommitStats', function() {
     it('should create an instance of CommitStats', function() {
       // uncomment below and update the code to test CommitStats
-      //var instane = new GitHub.CommitStats();
-      //expect(instance).to.be.a(GitHub.CommitStats);
+      //var instane = new Github.CommitStats();
+      //expect(instance).to.be.a(Github.CommitStats);
     });
 
     it('should have the property additions (base name: "additions")', function() {
       // uncomment below and update the code to test the property additions
-      //var instane = new GitHub.CommitStats();
+      //var instane = new Github.CommitStats();
       //expect(instance).to.be();
     });
 
     it('should have the property deletions (base name: "deletions")', function() {
       // uncomment below and update the code to test the property deletions
-      //var instane = new GitHub.CommitStats();
+      //var instane = new Github.CommitStats();
       //expect(instance).to.be();
     });
 
     it('should have the property total (base name: "total")', function() {
       // uncomment below and update the code to test the property total
-      //var instane = new GitHub.CommitStats();
+      //var instane = new Github.CommitStats();
       //expect(instance).to.be();
     });
 

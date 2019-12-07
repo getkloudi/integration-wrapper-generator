@@ -1,4 +1,4 @@
-# GitHub.OrgTeamsPost
+# Github.OrgTeamsPost
 
 ## Properties
 

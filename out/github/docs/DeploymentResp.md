@@ -1,4 +1,4 @@
-# GitHub.DeploymentResp
+# Github.DeploymentResp
 
 ## Properties
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.CreateFile();
+    instance = new Github.CreateFile();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('CreateFile', function() {
     it('should create an instance of CreateFile', function() {
       // uncomment below and update the code to test CreateFile
-      //var instane = new GitHub.CreateFile();
-      //expect(instance).to.be.a(GitHub.CreateFile);
+      //var instane = new Github.CreateFile();
+      //expect(instance).to.be.a(Github.CreateFile);
     });
 
     it('should have the property commit (base name: "commit")', function() {
       // uncomment below and update the code to test the property commit
-      //var instane = new GitHub.CreateFile();
+      //var instane = new Github.CreateFile();
       //expect(instance).to.be();
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instane = new GitHub.CreateFile();
+      //var instane = new Github.CreateFile();
       //expect(instance).to.be();
     });
 

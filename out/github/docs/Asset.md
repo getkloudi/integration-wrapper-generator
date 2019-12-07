@@ -1,4 +1,4 @@
-# GitHub.Asset
+# Github.Asset
 
 ## Properties
 

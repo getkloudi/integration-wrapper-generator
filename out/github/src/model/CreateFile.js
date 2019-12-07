@@ -18,7 +18,7 @@ import CreateFileContent from './CreateFileContent';
 /**
  * The CreateFile model module.
  * @module model/CreateFile
- * @version v3
+ * @version 1.0.0
  */
 class CreateFile {
     /**

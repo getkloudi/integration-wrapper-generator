@@ -1,4 +1,4 @@
-# GitHub.Repo
+# Github.Repo
 
 ## Properties
 

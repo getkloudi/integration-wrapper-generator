@@ -1,4 +1,4 @@
-# GitHub.TagTagger
+# Github.TagTagger
 
 ## Properties
 

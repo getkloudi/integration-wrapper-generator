@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PullsPost();
+    instance = new Github.PullsPost();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('PullsPost', function() {
     it('should create an instance of PullsPost', function() {
       // uncomment below and update the code to test PullsPost
-      //var instane = new GitHub.PullsPost();
-      //expect(instance).to.be.a(GitHub.PullsPost);
+      //var instane = new Github.PullsPost();
+      //expect(instance).to.be.a(Github.PullsPost);
     });
 
     it('should have the property base (base name: "base")', function() {
       // uncomment below and update the code to test the property base
-      //var instane = new GitHub.PullsPost();
+      //var instane = new Github.PullsPost();
       //expect(instance).to.be();
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.PullsPost();
+      //var instane = new Github.PullsPost();
       //expect(instance).to.be();
     });
 
     it('should have the property head (base name: "head")', function() {
       // uncomment below and update the code to test the property head
-      //var instane = new GitHub.PullsPost();
+      //var instane = new Github.PullsPost();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new GitHub.PullsPost();
+      //var instane = new Github.PullsPost();
       //expect(instance).to.be();
     });
 

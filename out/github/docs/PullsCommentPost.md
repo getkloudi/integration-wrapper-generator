@@ -1,4 +1,4 @@
-# GitHub.PullsCommentPost
+# Github.PullsCommentPost
 
 ## Properties
 

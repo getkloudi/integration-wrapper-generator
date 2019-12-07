@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.IssuesComment();
+    instance = new Github.IssuesComment();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,49 +50,49 @@
   describe('IssuesComment', function() {
     it('should create an instance of IssuesComment', function() {
       // uncomment below and update the code to test IssuesComment
-      //var instane = new GitHub.IssuesComment();
-      //expect(instance).to.be.a(GitHub.IssuesComment);
+      //var instane = new Github.IssuesComment();
+      //expect(instance).to.be.a(Github.IssuesComment);
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.IssuesComment();
+      //var instane = new Github.IssuesComment();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.IssuesComment();
+      //var instane = new Github.IssuesComment();
       //expect(instance).to.be();
     });
 
     it('should have the property htmlUrl (base name: "html_url")', function() {
       // uncomment below and update the code to test the property htmlUrl
-      //var instane = new GitHub.IssuesComment();
+      //var instane = new Github.IssuesComment();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new GitHub.IssuesComment();
+      //var instane = new Github.IssuesComment();
       //expect(instance).to.be();
     });
 
     it('should have the property updatedAt (base name: "updated_at")', function() {
       // uncomment below and update the code to test the property updatedAt
-      //var instane = new GitHub.IssuesComment();
+      //var instane = new Github.IssuesComment();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.IssuesComment();
+      //var instane = new Github.IssuesComment();
       //expect(instance).to.be();
     });
 
     it('should have the property user (base name: "user")', function() {
       // uncomment below and update the code to test the property user
-      //var instane = new GitHub.IssuesComment();
+      //var instane = new Github.IssuesComment();
       //expect(instance).to.be();
     });
 

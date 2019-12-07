@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.MilestoneUpdate();
+    instance = new Github.MilestoneUpdate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('MilestoneUpdate', function() {
     it('should create an instance of MilestoneUpdate', function() {
       // uncomment below and update the code to test MilestoneUpdate
-      //var instane = new GitHub.MilestoneUpdate();
-      //expect(instance).to.be.a(GitHub.MilestoneUpdate);
+      //var instane = new Github.MilestoneUpdate();
+      //expect(instance).to.be.a(Github.MilestoneUpdate);
     });
 
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
-      //var instane = new GitHub.MilestoneUpdate();
+      //var instane = new Github.MilestoneUpdate();
       //expect(instance).to.be();
     });
 
     it('should have the property dueOn (base name: "due_on")', function() {
       // uncomment below and update the code to test the property dueOn
-      //var instane = new GitHub.MilestoneUpdate();
+      //var instane = new Github.MilestoneUpdate();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new GitHub.MilestoneUpdate();
+      //var instane = new Github.MilestoneUpdate();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new GitHub.MilestoneUpdate();
+      //var instane = new Github.MilestoneUpdate();
       //expect(instance).to.be();
     });
 

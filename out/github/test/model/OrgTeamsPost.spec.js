@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.OrgTeamsPost();
+    instance = new Github.OrgTeamsPost();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('OrgTeamsPost', function() {
     it('should create an instance of OrgTeamsPost', function() {
       // uncomment below and update the code to test OrgTeamsPost
-      //var instane = new GitHub.OrgTeamsPost();
-      //expect(instance).to.be.a(GitHub.OrgTeamsPost);
+      //var instane = new Github.OrgTeamsPost();
+      //expect(instance).to.be.a(Github.OrgTeamsPost);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.OrgTeamsPost();
+      //var instane = new Github.OrgTeamsPost();
       //expect(instance).to.be();
     });
 
     it('should have the property permission (base name: "permission")', function() {
       // uncomment below and update the code to test the property permission
-      //var instane = new GitHub.OrgTeamsPost();
+      //var instane = new Github.OrgTeamsPost();
       //expect(instance).to.be();
     });
 
     it('should have the property repoNames (base name: "repo_names")', function() {
       // uncomment below and update the code to test the property repoNames
-      //var instane = new GitHub.OrgTeamsPost();
+      //var instane = new Github.OrgTeamsPost();
       //expect(instance).to.be();
     });
 

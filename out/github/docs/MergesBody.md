@@ -1,4 +1,4 @@
-# GitHub.MergesBody
+# Github.MergesBody
 
 ## Properties
 

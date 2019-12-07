@@ -1,4 +1,4 @@
-# GitHub.BranchCommit
+# Github.BranchCommit
 
 ## Properties
 

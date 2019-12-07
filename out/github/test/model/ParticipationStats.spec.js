@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.ParticipationStats();
+    instance = new Github.ParticipationStats();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('ParticipationStats', function() {
     it('should create an instance of ParticipationStats', function() {
       // uncomment below and update the code to test ParticipationStats
-      //var instane = new GitHub.ParticipationStats();
-      //expect(instance).to.be.a(GitHub.ParticipationStats);
+      //var instane = new Github.ParticipationStats();
+      //expect(instance).to.be.a(Github.ParticipationStats);
     });
 
     it('should have the property all (base name: "all")', function() {
       // uncomment below and update the code to test the property all
-      //var instane = new GitHub.ParticipationStats();
+      //var instane = new Github.ParticipationStats();
       //expect(instance).to.be();
     });
 
     it('should have the property owner (base name: "owner")', function() {
       // uncomment below and update the code to test the property owner
-      //var instane = new GitHub.ParticipationStats();
+      //var instane = new Github.ParticipationStats();
       //expect(instance).to.be();
     });
 

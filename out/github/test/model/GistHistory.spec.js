@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.GistHistory();
+    instance = new Github.GistHistory();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,37 +50,37 @@
   describe('GistHistory', function() {
     it('should create an instance of GistHistory', function() {
       // uncomment below and update the code to test GistHistory
-      //var instane = new GitHub.GistHistory();
-      //expect(instance).to.be.a(GitHub.GistHistory);
+      //var instane = new Github.GistHistory();
+      //expect(instance).to.be.a(Github.GistHistory);
     });
 
     it('should have the property changeStatus (base name: "change_status")', function() {
       // uncomment below and update the code to test the property changeStatus
-      //var instane = new GitHub.GistHistory();
+      //var instane = new Github.GistHistory();
       //expect(instance).to.be();
     });
 
     it('should have the property committedAt (base name: "committed_at")', function() {
       // uncomment below and update the code to test the property committedAt
-      //var instane = new GitHub.GistHistory();
+      //var instane = new Github.GistHistory();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.GistHistory();
+      //var instane = new Github.GistHistory();
       //expect(instance).to.be();
     });
 
     it('should have the property user (base name: "user")', function() {
       // uncomment below and update the code to test the property user
-      //var instane = new GitHub.GistHistory();
+      //var instane = new Github.GistHistory();
       //expect(instance).to.be();
     });
 
     it('should have the property version (base name: "version")', function() {
       // uncomment below and update the code to test the property version
-      //var instane = new GitHub.GistHistory();
+      //var instane = new Github.GistHistory();
       //expect(instance).to.be();
     });
 

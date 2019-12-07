@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.TagObject();
+    instance = new Github.TagObject();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('TagObject', function() {
     it('should create an instance of TagObject', function() {
       // uncomment below and update the code to test TagObject
-      //var instane = new GitHub.TagObject();
-      //expect(instance).to.be.a(GitHub.TagObject);
+      //var instane = new Github.TagObject();
+      //expect(instance).to.be.a(Github.TagObject);
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.TagObject();
+      //var instane = new Github.TagObject();
       //expect(instance).to.be();
     });
 
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
-      //var instane = new GitHub.TagObject();
+      //var instane = new Github.TagObject();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.TagObject();
+      //var instane = new Github.TagObject();
       //expect(instance).to.be();
     });
 

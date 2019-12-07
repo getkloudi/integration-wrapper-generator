@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Label();
+    instance = new Github.Label();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Label', function() {
     it('should create an instance of Label', function() {
       // uncomment below and update the code to test Label
-      //var instane = new GitHub.Label();
-      //expect(instance).to.be.a(GitHub.Label);
+      //var instane = new Github.Label();
+      //expect(instance).to.be.a(Github.Label);
     });
 
     it('should have the property color (base name: "color")', function() {
       // uncomment below and update the code to test the property color
-      //var instane = new GitHub.Label();
+      //var instane = new Github.Label();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.Label();
+      //var instane = new Github.Label();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.Label();
+      //var instane = new Github.Label();
       //expect(instance).to.be();
     });
 

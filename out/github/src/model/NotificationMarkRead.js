@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NotificationMarkRead model module.
  * @module model/NotificationMarkRead
- * @version v3
+ * @version 1.0.0
  */
 class NotificationMarkRead {
     /**

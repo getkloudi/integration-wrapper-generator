@@ -1,4 +1,4 @@
-# GitHub.Meta
+# Github.Meta
 
 ## Properties
 

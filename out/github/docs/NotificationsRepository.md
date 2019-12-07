@@ -1,4 +1,4 @@
-# GitHub.NotificationsRepository
+# Github.NotificationsRepository
 
 ## Properties
 

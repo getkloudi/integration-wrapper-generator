@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.MergesConflict();
+    instance = new Github.MergesConflict();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('MergesConflict', function() {
     it('should create an instance of MergesConflict', function() {
       // uncomment below and update the code to test MergesConflict
-      //var instane = new GitHub.MergesConflict();
-      //expect(instance).to.be.a(GitHub.MergesConflict);
+      //var instane = new Github.MergesConflict();
+      //expect(instance).to.be.a(Github.MergesConflict);
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new GitHub.MergesConflict();
+      //var instane = new Github.MergesConflict();
       //expect(instance).to.be();
     });
 

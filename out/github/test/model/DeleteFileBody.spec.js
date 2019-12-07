@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.DeleteFileBody();
+    instance = new Github.DeleteFileBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('DeleteFileBody', function() {
     it('should create an instance of DeleteFileBody', function() {
       // uncomment below and update the code to test DeleteFileBody
-      //var instane = new GitHub.DeleteFileBody();
-      //expect(instance).to.be.a(GitHub.DeleteFileBody);
+      //var instane = new Github.DeleteFileBody();
+      //expect(instance).to.be.a(Github.DeleteFileBody);
     });
 
     it('should have the property committer (base name: "committer")', function() {
       // uncomment below and update the code to test the property committer
-      //var instane = new GitHub.DeleteFileBody();
+      //var instane = new Github.DeleteFileBody();
       //expect(instance).to.be();
     });
 
     it('should have the property message (base name: "message")', function() {
       // uncomment below and update the code to test the property message
-      //var instane = new GitHub.DeleteFileBody();
+      //var instane = new Github.DeleteFileBody();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.DeleteFileBody();
+      //var instane = new Github.DeleteFileBody();
       //expect(instance).to.be();
     });
 

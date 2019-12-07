@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.GitignoreLang();
+    instance = new Github.GitignoreLang();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,19 +50,19 @@
   describe('GitignoreLang', function() {
     it('should create an instance of GitignoreLang', function() {
       // uncomment below and update the code to test GitignoreLang
-      //var instane = new GitHub.GitignoreLang();
-      //expect(instance).to.be.a(GitHub.GitignoreLang);
+      //var instane = new Github.GitignoreLang();
+      //expect(instance).to.be.a(Github.GitignoreLang);
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.GitignoreLang();
+      //var instane = new Github.GitignoreLang();
       //expect(instance).to.be();
     });
 
     it('should have the property source (base name: "source")', function() {
       // uncomment below and update the code to test the property source
-      //var instane = new GitHub.GitignoreLang();
+      //var instane = new Github.GitignoreLang();
       //expect(instance).to.be();
     });
 

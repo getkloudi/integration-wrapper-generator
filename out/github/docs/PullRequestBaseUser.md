@@ -1,4 +1,4 @@
-# GitHub.PullRequestBaseUser
+# Github.PullRequestBaseUser
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.ReleaseAssets
+# Github.ReleaseAssets
 
 ## Properties
 

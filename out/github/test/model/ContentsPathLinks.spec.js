@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.ContentsPathLinks();
+    instance = new Github.ContentsPathLinks();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('ContentsPathLinks', function() {
     it('should create an instance of ContentsPathLinks', function() {
       // uncomment below and update the code to test ContentsPathLinks
-      //var instane = new GitHub.ContentsPathLinks();
-      //expect(instance).to.be.a(GitHub.ContentsPathLinks);
+      //var instane = new Github.ContentsPathLinks();
+      //expect(instance).to.be.a(Github.ContentsPathLinks);
     });
 
     it('should have the property git (base name: "git")', function() {
       // uncomment below and update the code to test the property git
-      //var instane = new GitHub.ContentsPathLinks();
+      //var instane = new Github.ContentsPathLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property html (base name: "html")', function() {
       // uncomment below and update the code to test the property html
-      //var instane = new GitHub.ContentsPathLinks();
+      //var instane = new Github.ContentsPathLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property self (base name: "self")', function() {
       // uncomment below and update the code to test the property self
-      //var instane = new GitHub.ContentsPathLinks();
+      //var instane = new Github.ContentsPathLinks();
       //expect(instance).to.be();
     });
 

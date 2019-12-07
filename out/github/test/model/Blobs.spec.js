@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Blobs();
+    instance = new Github.Blobs();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('Blobs', function() {
     it('should create an instance of Blobs', function() {
       // uncomment below and update the code to test Blobs
-      //var instane = new GitHub.Blobs();
-      //expect(instance).to.be.a(GitHub.Blobs);
+      //var instane = new Github.Blobs();
+      //expect(instance).to.be.a(Github.Blobs);
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.Blobs();
+      //var instane = new Github.Blobs();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# GitHub.RefsBody
+# Github.RefsBody
 
 ## Properties
 

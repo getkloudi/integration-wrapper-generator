@@ -1,4 +1,4 @@
-# GitHub.RateLimitRate
+# Github.RateLimitRate
 
 ## Properties
 

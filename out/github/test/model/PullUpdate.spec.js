@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PullUpdate();
+    instance = new Github.PullUpdate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('PullUpdate', function() {
     it('should create an instance of PullUpdate', function() {
       // uncomment below and update the code to test PullUpdate
-      //var instane = new GitHub.PullUpdate();
-      //expect(instance).to.be.a(GitHub.PullUpdate);
+      //var instane = new Github.PullUpdate();
+      //expect(instance).to.be.a(Github.PullUpdate);
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.PullUpdate();
+      //var instane = new Github.PullUpdate();
       //expect(instance).to.be();
     });
 
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
-      //var instane = new GitHub.PullUpdate();
+      //var instane = new Github.PullUpdate();
       //expect(instance).to.be();
     });
 
     it('should have the property title (base name: "title")', function() {
       // uncomment below and update the code to test the property title
-      //var instane = new GitHub.PullUpdate();
+      //var instane = new Github.PullUpdate();
       //expect(instance).to.be();
     });
 

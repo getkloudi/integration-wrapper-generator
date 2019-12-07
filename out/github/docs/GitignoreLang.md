@@ -1,4 +1,4 @@
-# GitHub.GitignoreLang
+# Github.GitignoreLang
 
 ## Properties
 

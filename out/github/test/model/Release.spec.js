@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Release();
+    instance = new Github.Release();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,109 +50,109 @@
   describe('Release', function() {
     it('should create an instance of Release', function() {
       // uncomment below and update the code to test Release
-      //var instane = new GitHub.Release();
-      //expect(instance).to.be.a(GitHub.Release);
+      //var instane = new Github.Release();
+      //expect(instance).to.be.a(Github.Release);
     });
 
     it('should have the property assets (base name: "assets")', function() {
       // uncomment below and update the code to test the property assets
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property assetsUrl (base name: "assets_url")', function() {
       // uncomment below and update the code to test the property assetsUrl
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property author (base name: "author")', function() {
       // uncomment below and update the code to test the property author
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property draft (base name: "draft")', function() {
       // uncomment below and update the code to test the property draft
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property htmlUrl (base name: "html_url")', function() {
       // uncomment below and update the code to test the property htmlUrl
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property prerelease (base name: "prerelease")', function() {
       // uncomment below and update the code to test the property prerelease
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property publishedAt (base name: "published_at")', function() {
       // uncomment below and update the code to test the property publishedAt
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property tagName (base name: "tag_name")', function() {
       // uncomment below and update the code to test the property tagName
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property tarballUrl (base name: "tarball_url")', function() {
       // uncomment below and update the code to test the property tarballUrl
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property targetCommitish (base name: "target_commitish")', function() {
       // uncomment below and update the code to test the property targetCommitish
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property uploadUrl (base name: "upload_url")', function() {
       // uncomment below and update the code to test the property uploadUrl
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 
     it('should have the property zipballUrl (base name: "zipball_url")', function() {
       // uncomment below and update the code to test the property zipballUrl
-      //var instane = new GitHub.Release();
+      //var instane = new Github.Release();
       //expect(instance).to.be();
     });
 

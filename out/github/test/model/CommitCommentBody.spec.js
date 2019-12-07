@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.CommitCommentBody();
+    instance = new Github.CommitCommentBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,43 @@
   describe('CommitCommentBody', function() {
     it('should create an instance of CommitCommentBody', function() {
       // uncomment below and update the code to test CommitCommentBody
-      //var instane = new GitHub.CommitCommentBody();
-      //expect(instance).to.be.a(GitHub.CommitCommentBody);
+      //var instane = new Github.CommitCommentBody();
+      //expect(instance).to.be.a(Github.CommitCommentBody);
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.CommitCommentBody();
+      //var instane = new Github.CommitCommentBody();
       //expect(instance).to.be();
     });
 
     it('should have the property line (base name: "line")', function() {
       // uncomment below and update the code to test the property line
-      //var instane = new GitHub.CommitCommentBody();
+      //var instane = new Github.CommitCommentBody();
       //expect(instance).to.be();
     });
 
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
-      //var instane = new GitHub.CommitCommentBody();
+      //var instane = new Github.CommitCommentBody();
       //expect(instance).to.be();
     });
 
     it('should have the property path (base name: "path")', function() {
       // uncomment below and update the code to test the property path
-      //var instane = new GitHub.CommitCommentBody();
+      //var instane = new Github.CommitCommentBody();
       //expect(instance).to.be();
     });
 
     it('should have the property position (base name: "position")', function() {
       // uncomment below and update the code to test the property position
-      //var instane = new GitHub.CommitCommentBody();
+      //var instane = new Github.CommitCommentBody();
       //expect(instance).to.be();
     });
 
     it('should have the property sha (base name: "sha")', function() {
       // uncomment below and update the code to test the property sha
-      //var instane = new GitHub.CommitCommentBody();
+      //var instane = new Github.CommitCommentBody();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# GitHub.Milestone
+# Github.Milestone
 
 ## Properties
 

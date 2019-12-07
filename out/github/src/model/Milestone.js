@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The Milestone model module.
  * @module model/Milestone
- * @version v3
+ * @version 1.0.0
  */
 class Milestone {
     /**

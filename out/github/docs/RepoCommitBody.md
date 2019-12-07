@@ -1,4 +1,4 @@
-# GitHub.RepoCommitBody
+# Github.RepoCommitBody
 
 ## Properties
 

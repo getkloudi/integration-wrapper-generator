@@ -17,7 +17,7 @@ import ActorPlan from './ActorPlan';
 /**
  * The Actor model module.
  * @module model/Actor
- * @version v3
+ * @version 1.0.0
  */
 class Actor {
     /**

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.GistForks();
+    instance = new Github.GistForks();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('GistForks', function() {
     it('should create an instance of GistForks', function() {
       // uncomment below and update the code to test GistForks
-      //var instane = new GitHub.GistForks();
-      //expect(instance).to.be.a(GitHub.GistForks);
+      //var instane = new Github.GistForks();
+      //expect(instance).to.be.a(Github.GistForks);
     });
 
     it('should have the property createdAt (base name: "created_at")', function() {
       // uncomment below and update the code to test the property createdAt
-      //var instane = new GitHub.GistForks();
+      //var instane = new Github.GistForks();
       //expect(instance).to.be();
     });
 
     it('should have the property url (base name: "url")', function() {
       // uncomment below and update the code to test the property url
-      //var instane = new GitHub.GistForks();
+      //var instane = new Github.GistForks();
       //expect(instance).to.be();
     });
 
     it('should have the property user (base name: "user")', function() {
       // uncomment below and update the code to test the property user
-      //var instane = new GitHub.GistForks();
+      //var instane = new Github.GistForks();
       //expect(instance).to.be();
     });
 

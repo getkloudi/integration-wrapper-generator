@@ -1,4 +1,4 @@
-# GitHub.Download
+# Github.Download
 
 ## Properties
 

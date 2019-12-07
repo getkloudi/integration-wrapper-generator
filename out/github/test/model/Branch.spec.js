@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.Branch();
+    instance = new Github.Branch();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('Branch', function() {
     it('should create an instance of Branch', function() {
       // uncomment below and update the code to test Branch
-      //var instane = new GitHub.Branch();
-      //expect(instance).to.be.a(GitHub.Branch);
+      //var instane = new Github.Branch();
+      //expect(instance).to.be.a(Github.Branch);
     });
 
     it('should have the property links (base name: "_links")', function() {
       // uncomment below and update the code to test the property links
-      //var instane = new GitHub.Branch();
+      //var instane = new Github.Branch();
       //expect(instance).to.be();
     });
 
     it('should have the property commit (base name: "commit")', function() {
       // uncomment below and update the code to test the property commit
-      //var instane = new GitHub.Branch();
+      //var instane = new Github.Branch();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instane = new GitHub.Branch();
+      //var instane = new Github.Branch();
       //expect(instance).to.be();
     });
 

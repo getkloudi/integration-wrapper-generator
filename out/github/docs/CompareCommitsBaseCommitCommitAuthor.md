@@ -1,4 +1,4 @@
-# GitHub.CompareCommitsBaseCommitCommitAuthor
+# Github.CompareCommitsBaseCommitCommitAuthor
 
 ## Properties
 

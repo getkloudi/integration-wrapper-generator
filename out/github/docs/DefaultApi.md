@@ -1,4 +1,4 @@
-# GitHub.DefaultApi
+# Github.DefaultApi
 
 All URIs are relative to *https://api.github.com*
 
@@ -262,9 +262,9 @@ Lists all the emojis available to use on GitHub.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -309,9 +309,9 @@ List public events.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -356,9 +356,9 @@ List Feeds. GitHub provides several timeline resources in Atom format. The Feeds
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -403,9 +403,9 @@ List the authenticated user&#39;s gists or if called anonymously, this will retu
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -452,9 +452,9 @@ Delete a comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let commentId = 56; // Number | Id of comment.
 let opts = {
@@ -503,9 +503,9 @@ Get a single comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let commentId = 56; // Number | Id of comment.
 let opts = {
@@ -554,12 +554,12 @@ Edit a comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let commentId = 56; // Number | Id of comment.
-let body = new GitHub.Comment(); // Comment | 
+let body = new Github.Comment(); // Comment | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -607,9 +607,9 @@ List comments on a gist.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -656,11 +656,11 @@ Create a commen
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
-let body = new GitHub.CommentBody(); // CommentBody | 
+let body = new Github.CommentBody(); // CommentBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -707,9 +707,9 @@ Delete a gist.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -756,9 +756,9 @@ Fork a gist.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -805,9 +805,9 @@ Get a single gist.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -854,11 +854,11 @@ Edit a gist.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
-let body = new GitHub.PatchGist(); // PatchGist | 
+let body = new Github.PatchGist(); // PatchGist | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -905,9 +905,9 @@ Unstar a gist.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -954,9 +954,9 @@ Check if a gist is starred.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1003,9 +1003,9 @@ Star a gist.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1052,10 +1052,10 @@ Create a gist.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
-let body = new GitHub.PostGist(); // PostGist | 
+let apiInstance = new Github.DefaultApi();
+let body = new Github.PostGist(); // PostGist | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -1101,9 +1101,9 @@ List all public gists.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1150,9 +1150,9 @@ List the authenticated user&#39;s starred gists.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1199,9 +1199,9 @@ Listing available templates. List all templates available to pass as an option w
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -1246,9 +1246,9 @@ Get a single template.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let language = "language_example"; // String | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1295,9 +1295,9 @@ List issues. List all issues across all the authenticated user&#39;s visible rep
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let filter = "'all'"; // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see 
 let state = "'open'"; // String | 
 let labels = "labels_example"; // String | String list of comma separated Label names. Example - bug,ui,@high.
@@ -1354,9 +1354,9 @@ Find issues by state and keyword.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let keyword = "keyword_example"; // String | The search term.
 let state = "state_example"; // String | Indicates the state of the issues to return. Can be either open or closed.
 let owner = "owner_example"; // String | 
@@ -1409,9 +1409,9 @@ Find repositories by keyword. Note, this legacy method does not follow the v3 pa
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let keyword = "keyword_example"; // String | The search term
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -1466,9 +1466,9 @@ This API call is added for compatibility reasons only.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let email = "email_example"; // String | The email address
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1515,9 +1515,9 @@ Find users by keyword.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let keyword = "keyword_example"; // String | The search term
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -1570,10 +1570,10 @@ Render an arbitrary Markdown document
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
-let body = new GitHub.Markdown(); // Markdown | 
+let apiInstance = new Github.DefaultApi();
+let body = new Github.Markdown(); // Markdown | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -1619,9 +1619,9 @@ Render a Markdown document in raw mode
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -1666,9 +1666,9 @@ This gives some information about GitHub.com, the service.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -1713,9 +1713,9 @@ List public events for a network of repositories.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of the owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -1764,9 +1764,9 @@ List your notifications. List all notifications for the current user, grouped by
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'all': true, // Boolean | True to show notifications marked as read.
   'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned. 
@@ -1817,10 +1817,10 @@ Mark as read. Marking a notification as \&quot;read\&quot; removes it from the d
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
-let body = new GitHub.NotificationMarkRead(); // NotificationMarkRead | 
+let apiInstance = new Github.DefaultApi();
+let body = new Github.NotificationMarkRead(); // NotificationMarkRead | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -1866,9 +1866,9 @@ View a single thread.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1915,9 +1915,9 @@ Mark a thread as read
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -1964,9 +1964,9 @@ Delete a Thread Subscription.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2013,9 +2013,9 @@ Get a Thread Subscription.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2062,11 +2062,11 @@ Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Su
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
-let body = new GitHub.PutSubscription(); // PutSubscription | 
+let body = new Github.PutSubscription(); // PutSubscription | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -2113,9 +2113,9 @@ List public events for an organization.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2162,9 +2162,9 @@ Get an Organization.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2211,9 +2211,9 @@ List issues. List all issues for a given organization for the authenticated user
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let filter = "'all'"; // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see 
 let state = "'open'"; // String | 
@@ -2272,9 +2272,9 @@ Members list. List all users who are members of an organization. A member is a u
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2321,9 +2321,9 @@ Remove a member. Removing a user from this list will remove them from all teams 
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let username = "username_example"; // String | Name of the user.
 let opts = {
@@ -2372,9 +2372,9 @@ Check if a user is, publicly or privately, a member of the organization.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let username = "username_example"; // String | Name of the user.
 let opts = {
@@ -2423,11 +2423,11 @@ Edit an Organization.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
-let body = new GitHub.PatchOrg(); // PatchOrg | 
+let body = new Github.PatchOrg(); // PatchOrg | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -2474,9 +2474,9 @@ Public members list. Members of an organization can choose to have their members
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2523,9 +2523,9 @@ Conceal a user&#39;s membership.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let username = "username_example"; // String | Name of the user.
 let opts = {
@@ -2574,9 +2574,9 @@ Check public membership.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let username = "username_example"; // String | Name of the user.
 let opts = {
@@ -2625,9 +2625,9 @@ Publicize a user&#39;s membership.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let username = "username_example"; // String | Name of the user.
 let opts = {
@@ -2676,9 +2676,9 @@ List repositories for the specified org.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
   'type': "'all'", // String | 
@@ -2727,11 +2727,11 @@ Create a new repository for the authenticated user. OAuth users must supply repo
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
-let body = new GitHub.PostRepo(); // PostRepo | 
+let body = new Github.PostRepo(); // PostRepo | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -2778,9 +2778,9 @@ List teams.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -2827,11 +2827,11 @@ Create team. In order to create a team, the authenticated user must be an owner 
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
-let body = new GitHub.OrgTeamsPost(); // OrgTeamsPost | 
+let body = new Github.OrgTeamsPost(); // OrgTeamsPost | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -2878,9 +2878,9 @@ Get your current rate limit status Note: Accessing this endpoint does not count 
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -2925,9 +2925,9 @@ Get archive link. This method will return a 302 to a URL to download a tarball o
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let archiveFormat = "archiveFormat_example"; // String | 
@@ -2980,9 +2980,9 @@ Check assignee. You may also check to see if a particular user is an assignee fo
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let assignee = "assignee_example"; // String | Login of the assignee.
@@ -3033,9 +3033,9 @@ List assignees. This call lists all the available assignees (owner + collaborato
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -3084,9 +3084,9 @@ Get Branch
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let branch = "branch_example"; // String | Name of the branch.
@@ -3137,9 +3137,9 @@ Get list of branches
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -3188,9 +3188,9 @@ List. When authenticating as an organization owner of an organization-owned repo
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -3239,9 +3239,9 @@ Remove collaborator.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let user = "user_example"; // String | Login of the user.
@@ -3292,9 +3292,9 @@ Check if user is a collaborator
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let user = "user_example"; // String | Login of the user.
@@ -3345,9 +3345,9 @@ Add collaborator.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let user = "user_example"; // String | Login of the user.
@@ -3398,9 +3398,9 @@ Delete a commit comment
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | Id of comment.
@@ -3451,9 +3451,9 @@ Get a single commit comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | Id of comment.
@@ -3504,13 +3504,13 @@ Update a commit comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | Id of comment.
-let body = new GitHub.CommentBody(); // CommentBody | 
+let body = new Github.CommentBody(); // CommentBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -3559,9 +3559,9 @@ List commit comments for a repository. Comments are ordered by ascending ID.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -3610,9 +3610,9 @@ List commits on a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -3671,9 +3671,9 @@ Get the combined Status for a specific Ref The Combined status endpoint is curre
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let ref = "ref_example"; // String | 
@@ -3724,9 +3724,9 @@ List comments for a single commitList comments for a single commit.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | SHA-1 code of the commit.
@@ -3777,13 +3777,13 @@ Create a commit comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | SHA-1 code of the commit.
-let body = new GitHub.CommitCommentBody(); // CommitCommentBody | 
+let body = new Github.CommitCommentBody(); // CommitCommentBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -3832,9 +3832,9 @@ Get a single commit.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | SHA-1 code of the commit.
@@ -3885,9 +3885,9 @@ Compare two commits
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let baseId = "baseId_example"; // String | 
@@ -3940,13 +3940,13 @@ Delete a file. This method deletes a file in a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let path = "path_example"; // String | 
-let body = new GitHub.DeleteFileBody(); // DeleteFileBody | 
+let body = new Github.DeleteFileBody(); // DeleteFileBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -3995,9 +3995,9 @@ Get contents. This method returns the contents of a file or directory in a repos
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let path = "path_example"; // String | 
@@ -4052,13 +4052,13 @@ Create a file.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let path = "path_example"; // String | 
-let body = new GitHub.CreateFileBody(); // CreateFileBody | 
+let body = new Github.CreateFileBody(); // CreateFileBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -4107,9 +4107,9 @@ Get list of contributors.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let anon = "anon_example"; // String | Set to 1 or true to include anonymous contributors in results.
@@ -4160,9 +4160,9 @@ Delete a Repository. Deleting a repository requires admin access. If OAuth is us
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -4211,9 +4211,9 @@ Users with pull access can view deployments for a repository
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -4262,9 +4262,9 @@ Users with pull access can view deployment statuses for a deployment
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = 56; // Number | The Deployment ID to list the statuses from.
@@ -4315,13 +4315,13 @@ Create a Deployment Status Users with push access can create deployment statuses
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = 56; // Number | The Deployment ID to list the statuses from.
-let body = new GitHub.DeploymentStatusesCreate(); // DeploymentStatusesCreate | 
+let body = new Github.DeploymentStatusesCreate(); // DeploymentStatusesCreate | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -4370,12 +4370,12 @@ Users with push access can create a deployment for a given ref
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.Deployment(); // Deployment | 
+let body = new Github.Deployment(); // Deployment | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -4423,9 +4423,9 @@ Deprecated. Delete a download.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let downloadId = 56; // Number | Id of download.
@@ -4476,9 +4476,9 @@ Deprecated. Get a single download.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let downloadId = 56; // Number | Id of download.
@@ -4529,9 +4529,9 @@ Deprecated. List downloads for a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -4580,9 +4580,9 @@ Get list of repository events.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -4631,9 +4631,9 @@ List forks.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -4684,12 +4684,12 @@ Create a fork. Forking a Repository happens asynchronously. Therefore, you may h
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.ForkBody(); // ForkBody | 
+let body = new Github.ForkBody(); // ForkBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -4737,9 +4737,9 @@ Get repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -4788,9 +4788,9 @@ Create a Blob.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let body = null; // Blob | 
@@ -4841,9 +4841,9 @@ Get a Blob. Since blobs can be any arbitrary binary data, the input and response
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | SHA-1 code.
@@ -4894,12 +4894,12 @@ Create a Commit.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.RepoCommitBody(); // RepoCommitBody | 
+let body = new Github.RepoCommitBody(); // RepoCommitBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -4947,9 +4947,9 @@ Get a Commit.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | SHA-1 code.
@@ -5000,9 +5000,9 @@ Get all References
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -5051,12 +5051,12 @@ Create a Reference
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.RefsBody(); // RefsBody | 
+let body = new Github.RefsBody(); // RefsBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -5104,9 +5104,9 @@ Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let ref = "ref_example"; // String | 
@@ -5157,9 +5157,9 @@ Get a Reference
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let ref = "ref_example"; // String | 
@@ -5210,13 +5210,13 @@ Update a Reference
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let ref = "ref_example"; // String | 
-let body = new GitHub.GitRefPatch(); // GitRefPatch | 
+let body = new Github.GitRefPatch(); // GitRefPatch | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -5265,12 +5265,12 @@ Create a Tag Object. Note that creating a tag object does not create the referen
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.TagBody(); // TagBody | 
+let body = new Github.TagBody(); // TagBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -5318,9 +5318,9 @@ Get a Tag.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | 
@@ -5371,12 +5371,12 @@ Create a Tree. The tree creation API will take nested entries as well. If both a
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.Tree(); // Tree | 
+let body = new Github.Tree(); // Tree | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -5424,9 +5424,9 @@ Get a Tree.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | Tree SHA.
@@ -5479,9 +5479,9 @@ Get list of hooks.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -5530,9 +5530,9 @@ Delete a hook.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let hookId = 56; // Number | Id of hook.
@@ -5583,9 +5583,9 @@ Get single hook.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let hookId = 56; // Number | Id of hook.
@@ -5636,13 +5636,13 @@ Edit a hook.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let hookId = 56; // Number | Id of hook.
-let body = new GitHub.HookBody(); // HookBody | 
+let body = new Github.HookBody(); // HookBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -5691,9 +5691,9 @@ Test a push hook. This will trigger the hook with the latest push to the current
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let hookId = 56; // Number | Id of hook.
@@ -5744,12 +5744,12 @@ Create a hook.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.HookBody(); // HookBody | 
+let body = new Github.HookBody(); // HookBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -5797,9 +5797,9 @@ Delete a comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | ID of comment.
@@ -5850,9 +5850,9 @@ Get a single comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | ID of comment.
@@ -5903,13 +5903,13 @@ Edit a comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | ID of comment.
-let body = new GitHub.CommentBody(); // CommentBody | 
+let body = new Github.CommentBody(); // CommentBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -5958,9 +5958,9 @@ List comments in a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -6015,9 +6015,9 @@ Get a single event.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let eventId = 56; // Number | Id of the event.
@@ -6068,9 +6068,9 @@ List issue events for a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -6119,9 +6119,9 @@ List issues for a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let filter = "'all'"; // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see 
@@ -6182,9 +6182,9 @@ List comments on an issue.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
@@ -6235,13 +6235,13 @@ Create a comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
-let body = new GitHub.CommentBody(); // CommentBody | 
+let body = new Github.CommentBody(); // CommentBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -6290,9 +6290,9 @@ List events for an issue.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
@@ -6343,9 +6343,9 @@ Get a single issue
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
@@ -6396,9 +6396,9 @@ Remove all labels from an issue.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
@@ -6449,9 +6449,9 @@ List labels on an issue.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
@@ -6502,9 +6502,9 @@ Remove a label from an issue.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
@@ -6557,9 +6557,9 @@ Add labels to an issue.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
@@ -6612,9 +6612,9 @@ Replace all labels for an issue. Sending an empty array ([]) will remove all Lab
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
@@ -6667,13 +6667,13 @@ Edit an issue. Issue owners and users with push access can edit an issue.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of issue.
-let body = new GitHub.Issue(); // Issue | 
+let body = new Github.Issue(); // Issue | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -6722,12 +6722,12 @@ Create an issue. Any user with pull access to a repository can create an issue.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.Issue(); // Issue | 
+let body = new Github.Issue(); // Issue | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -6775,9 +6775,9 @@ Get list of keys.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -6826,9 +6826,9 @@ Delete a key.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let keyId = 56; // Number | Id of key.
@@ -6879,9 +6879,9 @@ Get a key
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let keyId = 56; // Number | Id of key.
@@ -6932,12 +6932,12 @@ Create a key.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.UserKeysPost(); // UserKeysPost | 
+let body = new Github.UserKeysPost(); // UserKeysPost | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -6985,9 +6985,9 @@ List all labels for this repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -7036,9 +7036,9 @@ Delete a label.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let name = "name_example"; // String | Name of the label.
@@ -7089,9 +7089,9 @@ Get a single label.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let name = "name_example"; // String | Name of the label.
@@ -7142,9 +7142,9 @@ Update a label.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let name = "name_example"; // String | Name of the label.
@@ -7197,9 +7197,9 @@ Create a label.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let body = ["null"]; // [String] | 
@@ -7250,9 +7250,9 @@ List languages. List languages for the specified repository. The value on the ri
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -7301,12 +7301,12 @@ Perform a merge.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.MergesBody(); // MergesBody | 
+let body = new Github.MergesBody(); // MergesBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7354,9 +7354,9 @@ List milestones for a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -7411,9 +7411,9 @@ Delete a milestone.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of milestone.
@@ -7464,9 +7464,9 @@ Get a single milestone.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of milestone.
@@ -7517,9 +7517,9 @@ Get labels for every issue in a milestone.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of milestone.
@@ -7570,13 +7570,13 @@ Update a milestone.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Number of milestone.
-let body = new GitHub.MilestoneUpdate(); // MilestoneUpdate | 
+let body = new Github.MilestoneUpdate(); // MilestoneUpdate | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7625,12 +7625,12 @@ Create a milestone.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.MilestoneUpdate(); // MilestoneUpdate | 
+let body = new Github.MilestoneUpdate(); // MilestoneUpdate | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7678,9 +7678,9 @@ List your notifications in a repository List all notifications for the current u
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -7735,12 +7735,12 @@ Mark notifications as read in a repository. Marking all notifications in a repos
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.NotificationMarkRead(); // NotificationMarkRead | 
+let body = new Github.NotificationMarkRead(); // NotificationMarkRead | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7788,12 +7788,12 @@ Edit repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.RepoEdit(); // RepoEdit | 
+let body = new Github.RepoEdit(); // RepoEdit | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7841,9 +7841,9 @@ Delete a comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | Id of comment.
@@ -7894,9 +7894,9 @@ Get a single comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | Id of comment.
@@ -7947,13 +7947,13 @@ Edit a comment.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | Id of comment.
-let body = new GitHub.CommentBody(); // CommentBody | 
+let body = new Github.CommentBody(); // CommentBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8002,9 +8002,9 @@ List comments in a repository. By default, Review Comments are ordered by ascend
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -8059,9 +8059,9 @@ List pull requests.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -8116,9 +8116,9 @@ List comments on a pull request.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Id of pull.
@@ -8169,13 +8169,13 @@ Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pul
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Id of pull.
-let body = new GitHub.PullsCommentPost(); // PullsCommentPost | 
+let body = new Github.PullsCommentPost(); // PullsCommentPost | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8224,9 +8224,9 @@ List commits on a pull request.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Id of pull.
@@ -8277,9 +8277,9 @@ List pull requests files.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Id of pull.
@@ -8330,9 +8330,9 @@ Get a single pull request.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Id of pull.
@@ -8383,9 +8383,9 @@ Get if a pull request has been merged.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Id of pull.
@@ -8436,13 +8436,13 @@ Merge a pull request (Merge Button&#39;s)
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Id of pull.
-let body = new GitHub.MergePullBody(); // MergePullBody | 
+let body = new Github.MergePullBody(); // MergePullBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8491,13 +8491,13 @@ Update a pull request.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let _number = 56; // Number | Id of pull.
-let body = new GitHub.PullUpdate(); // PullUpdate | 
+let body = new Github.PullUpdate(); // PullUpdate | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8546,12 +8546,12 @@ Create a pull request.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.PullsPost(); // PullsPost | 
+let body = new Github.PullsPost(); // PullsPost | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8599,9 +8599,9 @@ Get the README. This method returns the preferred README for a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -8652,9 +8652,9 @@ Delete a release asset
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = "id_example"; // String | 
@@ -8705,9 +8705,9 @@ Get a single release asset
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = "id_example"; // String | 
@@ -8758,13 +8758,13 @@ Edit a release asset Users with push access to the repository can edit a release
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = "id_example"; // String | 
-let body = new GitHub.AssetPatch(); // AssetPatch | 
+let body = new Github.AssetPatch(); // AssetPatch | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8813,9 +8813,9 @@ Users with push access to the repository will receive all releases (i.e., publis
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -8864,9 +8864,9 @@ List assets for a release
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = "id_example"; // String | 
@@ -8917,9 +8917,9 @@ Users with push access to the repository can delete a release.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = "id_example"; // String | 
@@ -8970,9 +8970,9 @@ Get a single release
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = "id_example"; // String | 
@@ -9023,13 +9023,13 @@ Users with push access to the repository can edit a release
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = "id_example"; // String | 
-let body = new GitHub.ReleaseCreate(); // ReleaseCreate | 
+let body = new Github.ReleaseCreate(); // ReleaseCreate | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -9078,12 +9078,12 @@ Create a release Users with push access to the repository can create a release.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.ReleaseCreate(); // ReleaseCreate | 
+let body = new Github.ReleaseCreate(); // ReleaseCreate | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -9131,9 +9131,9 @@ List Stargazers.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9182,9 +9182,9 @@ Get the number of additions and deletions per week. Returns a weekly aggregate o
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9233,9 +9233,9 @@ Get the last year of commit activity data. Returns the last year of commit activ
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9284,9 +9284,9 @@ Get contributors list with additions, deletions, and commit counts.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9335,9 +9335,9 @@ Get the weekly commit count for the repo owner and everyone else.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9386,9 +9386,9 @@ Get the number of commits per hour in each day. Each array contains the day numb
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9437,9 +9437,9 @@ List Statuses for a specific Ref.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let ref = "ref_example"; // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name. 
@@ -9490,13 +9490,13 @@ Create a Status.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let ref = "ref_example"; // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name. 
-let body = new GitHub.HeadBranch(); // HeadBranch | 
+let body = new Github.HeadBranch(); // HeadBranch | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -9545,9 +9545,9 @@ List watchers.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9596,9 +9596,9 @@ Delete a Repository Subscription.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9647,9 +9647,9 @@ Get a Repository Subscription.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9698,12 +9698,12 @@ Set a Repository Subscription
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
-let body = new GitHub.SubscriptionBody(); // SubscriptionBody | 
+let body = new Github.SubscriptionBody(); // SubscriptionBody | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -9751,9 +9751,9 @@ Get list of tags.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9802,9 +9802,9 @@ Get list of teams
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9853,9 +9853,9 @@ List Stargazers. New implementation.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -9904,9 +9904,9 @@ List all public repositories. This provides a dump of every public repository, i
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -9953,9 +9953,9 @@ Search code.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let q = "q_example"; // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository. 
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -10006,9 +10006,9 @@ Find issues by state and keyword. (This method returns up to 100 results per pag
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let q = "q_example"; // String | The q search term can also contain any combination of the supported issue search qualifiers:
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -10059,9 +10059,9 @@ Search repositories.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let q = "q_example"; // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars. 
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -10112,9 +10112,9 @@ Search users.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let q = "q_example"; // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have. 
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
@@ -10165,9 +10165,9 @@ Delete team. In order to delete a team, the authenticated user must be an owner 
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -10214,9 +10214,9 @@ Get team.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -10263,9 +10263,9 @@ List team members. In order to list members in a team, the authenticated user mu
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -10312,9 +10312,9 @@ The \&quot;Remove team member\&quot; API is deprecated and is scheduled for remo
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let username = "username_example"; // String | Name of a member.
 let opts = {
@@ -10363,9 +10363,9 @@ The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let username = "username_example"; // String | Name of a member.
 let opts = {
@@ -10414,9 +10414,9 @@ The API (described below) is deprecated and is scheduled for removal in the next
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let username = "username_example"; // String | Name of a member.
 let opts = {
@@ -10465,9 +10465,9 @@ Remove team membership. In order to remove a membership between a user and a tea
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let username = "username_example"; // String | Name of a member.
 let opts = {
@@ -10516,9 +10516,9 @@ Get team membership. In order to get a user&#39;s membership with a team, the au
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let username = "username_example"; // String | Name of a member.
 let opts = {
@@ -10567,9 +10567,9 @@ Add team membership. In order to add a membership between a user and a team, the
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let username = "username_example"; // String | Name of a member.
 let opts = {
@@ -10618,11 +10618,11 @@ Edit team. In order to edit a team, the authenticated user must be an owner of t
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
-let body = new GitHub.EditTeam(); // EditTeam | 
+let body = new Github.EditTeam(); // EditTeam | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10669,9 +10669,9 @@ List team repos
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -10718,9 +10718,9 @@ In order to remove a repository from a team, the authenticated user must be an o
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let owner = "owner_example"; // String | Name of a repository owner.
 let repo = "repo_example"; // String | Name of a repository.
@@ -10771,9 +10771,9 @@ Check if a team manages a repository
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let owner = "owner_example"; // String | Name of a repository owner.
 let repo = "repo_example"; // String | Name of a repository.
@@ -10824,9 +10824,9 @@ In order to add a repository to a team, the authenticated user must be an owner 
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let owner = "owner_example"; // String | Name of a organization.
 let repo = "repo_example"; // String | Name of a repository.
@@ -10877,9 +10877,9 @@ Delete email address(es). You can include a single email address or an array of 
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let body = ["null"]; // [String] | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -10926,9 +10926,9 @@ List email addresses for a user. In the final version of the API, this method wi
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10973,9 +10973,9 @@ Add email address(es). You can post a single email address or an array of addres
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let body = ["null"]; // [String] | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -11022,9 +11022,9 @@ List the authenticated user&#39;s followers
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -11069,9 +11069,9 @@ List who the authenticated user is following.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -11116,9 +11116,9 @@ Unfollow a user. Unfollowing a user requires the user to be logged in and authen
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -11165,9 +11165,9 @@ Check if you are following a user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -11214,9 +11214,9 @@ Follow a user. Following a user requires the user to be logged in and authentica
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -11263,9 +11263,9 @@ Get the authenticated user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -11310,9 +11310,9 @@ List issues. List all issues across owned and member repositories for the authen
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let filter = "'all'"; // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see 
 let state = "'open'"; // String | 
 let labels = "labels_example"; // String | String list of comma separated Label names. Example - bug,ui,@high.
@@ -11369,9 +11369,9 @@ List your public keys. Lists the current user&#39;s keys. Management of public k
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -11416,9 +11416,9 @@ Delete a public key. Removes a public key. Requires that you are authenticated v
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let keyId = 56; // Number | ID of key.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -11465,9 +11465,9 @@ Get a single public key.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let keyId = 56; // Number | ID of key.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -11514,10 +11514,10 @@ Create a public key.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
-let body = new GitHub.UserKeysPost(); // UserKeysPost | 
+let apiInstance = new Github.DefaultApi();
+let body = new Github.UserKeysPost(); // UserKeysPost | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -11563,9 +11563,9 @@ List public and private organizations for the authenticated user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -11610,10 +11610,10 @@ Update the authenticated user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
-let body = new GitHub.UserUpdate(); // UserUpdate | 
+let apiInstance = new Github.DefaultApi();
+let body = new Github.UserUpdate(); // UserUpdate | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -11659,9 +11659,9 @@ List repositories for the authenticated user. Note that this does not include re
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'type': "'all'", // String | 
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -11708,10 +11708,10 @@ Create a new repository for the authenticated user. OAuth users must supply repo
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
-let body = new GitHub.PostRepo(); // PostRepo | 
+let apiInstance = new Github.DefaultApi();
+let body = new Github.PostRepo(); // PostRepo | 
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -11757,9 +11757,9 @@ List repositories being starred by the authenticated user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'direction': "direction_example", // String | Ignored without 'sort' parameter.
   'sort': "'created'", // String | 
@@ -11808,9 +11808,9 @@ Unstar a repository
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of a repository owner.
 let repo = "repo_example"; // String | Name of a repository.
 let opts = {
@@ -11859,9 +11859,9 @@ Check if you are starring a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of a repository owner.
 let repo = "repo_example"; // String | Name of a repository.
 let opts = {
@@ -11910,9 +11910,9 @@ Star a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of a repository owner.
 let repo = "repo_example"; // String | Name of a repository.
 let opts = {
@@ -11961,9 +11961,9 @@ List repositories being watched by the authenticated user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -12008,9 +12008,9 @@ Stop watching a repository
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of the owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -12059,9 +12059,9 @@ Check if you are watching a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of the owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -12110,9 +12110,9 @@ Watch a repository.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of the owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
@@ -12161,9 +12161,9 @@ List all of the teams across all of the organizations to which the authenticated
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -12208,9 +12208,9 @@ Get all users. This provides a dump of every user, in the order that they signed
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let opts = {
   'since': 56, // Number | The integer ID of the last user that you've seen.
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -12257,9 +12257,9 @@ If you are authenticated as the given user, you will see your private events. Ot
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -12306,9 +12306,9 @@ This is the user&#39;s organization dashboard. You must be authenticated as the 
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let org = "org_example"; // String | 
 let opts = {
@@ -12357,9 +12357,9 @@ List a user&#39;s followers
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -12406,9 +12406,9 @@ Check if one user follows another.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let targetUser = "targetUser_example"; // String | Name of user.
 let opts = {
@@ -12457,9 +12457,9 @@ Get a single user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -12506,9 +12506,9 @@ List a users gists.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
@@ -12557,9 +12557,9 @@ List public keys for a user. Lists the verified public keys for a user. This is 
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -12606,9 +12606,9 @@ List all public organizations for a user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -12655,9 +12655,9 @@ These are events that you&#39;ll only see public events.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -12704,9 +12704,9 @@ List public events that a user has received
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -12753,9 +12753,9 @@ List public repositories for the specified user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'type': "'all'", // String | 
@@ -12804,9 +12804,9 @@ List repositories being starred by a user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
@@ -12853,9 +12853,9 @@ List repositories being watched by a user.
 ### Example
 
 ```javascript
-import GitHub from 'git_hub';
+import Github from 'github';
 
-let apiInstance = new GitHub.DefaultApi();
+let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.

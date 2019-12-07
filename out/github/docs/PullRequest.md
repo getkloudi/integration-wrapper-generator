@@ -1,4 +1,4 @@
-# GitHub.PullRequest
+# Github.PullRequest
 
 ## Properties
 

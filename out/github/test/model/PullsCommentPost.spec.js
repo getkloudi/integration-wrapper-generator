@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.PullsCommentPost();
+    instance = new Github.PullsCommentPost();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,31 +50,31 @@
   describe('PullsCommentPost', function() {
     it('should create an instance of PullsCommentPost', function() {
       // uncomment below and update the code to test PullsCommentPost
-      //var instane = new GitHub.PullsCommentPost();
-      //expect(instance).to.be.a(GitHub.PullsCommentPost);
+      //var instane = new Github.PullsCommentPost();
+      //expect(instance).to.be.a(Github.PullsCommentPost);
     });
 
     it('should have the property body (base name: "body")', function() {
       // uncomment below and update the code to test the property body
-      //var instane = new GitHub.PullsCommentPost();
+      //var instane = new Github.PullsCommentPost();
       //expect(instance).to.be();
     });
 
     it('should have the property commitId (base name: "commit_id")', function() {
       // uncomment below and update the code to test the property commitId
-      //var instane = new GitHub.PullsCommentPost();
+      //var instane = new Github.PullsCommentPost();
       //expect(instance).to.be();
     });
 
     it('should have the property path (base name: "path")', function() {
       // uncomment below and update the code to test the property path
-      //var instane = new GitHub.PullsCommentPost();
+      //var instane = new Github.PullsCommentPost();
       //expect(instance).to.be();
     });
 
     it('should have the property position (base name: "position")', function() {
       // uncomment below and update the code to test the property position
-      //var instane = new GitHub.PullsCommentPost();
+      //var instane = new Github.PullsCommentPost();
       //expect(instance).to.be();
     });
 

@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.OrganizationAsTeamMemberErrors();
+    instance = new Github.OrganizationAsTeamMemberErrors();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('OrganizationAsTeamMemberErrors', function() {
     it('should create an instance of OrganizationAsTeamMemberErrors', function() {
       // uncomment below and update the code to test OrganizationAsTeamMemberErrors
-      //var instane = new GitHub.OrganizationAsTeamMemberErrors();
-      //expect(instance).to.be.a(GitHub.OrganizationAsTeamMemberErrors);
+      //var instane = new Github.OrganizationAsTeamMemberErrors();
+      //expect(instance).to.be.a(Github.OrganizationAsTeamMemberErrors);
     });
 
     it('should have the property code (base name: "code")', function() {
       // uncomment below and update the code to test the property code
-      //var instane = new GitHub.OrganizationAsTeamMemberErrors();
+      //var instane = new Github.OrganizationAsTeamMemberErrors();
       //expect(instance).to.be();
     });
 
     it('should have the property field (base name: "field")', function() {
       // uncomment below and update the code to test the property field
-      //var instane = new GitHub.OrganizationAsTeamMemberErrors();
+      //var instane = new Github.OrganizationAsTeamMemberErrors();
       //expect(instance).to.be();
     });
 
     it('should have the property resource (base name: "resource")', function() {
       // uncomment below and update the code to test the property resource
-      //var instane = new GitHub.OrganizationAsTeamMemberErrors();
+      //var instane = new Github.OrganizationAsTeamMemberErrors();
       //expect(instance).to.be();
     });
 

@@ -1,4 +1,4 @@
-# GitHub.Merge
+# Github.Merge
 
 ## Properties
 

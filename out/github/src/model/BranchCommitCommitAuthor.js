@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BranchCommitCommitAuthor model module.
  * @module model/BranchCommitCommitAuthor
- * @version v3
+ * @version 1.0.0
  */
 class BranchCommitCommitAuthor {
     /**

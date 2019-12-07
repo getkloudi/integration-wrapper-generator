@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.RateLimitRate();
+    instance = new Github.RateLimitRate();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('RateLimitRate', function() {
     it('should create an instance of RateLimitRate', function() {
       // uncomment below and update the code to test RateLimitRate
-      //var instane = new GitHub.RateLimitRate();
-      //expect(instance).to.be.a(GitHub.RateLimitRate);
+      //var instane = new Github.RateLimitRate();
+      //expect(instance).to.be.a(Github.RateLimitRate);
     });
 
     it('should have the property limit (base name: "limit")', function() {
       // uncomment below and update the code to test the property limit
-      //var instane = new GitHub.RateLimitRate();
+      //var instane = new Github.RateLimitRate();
       //expect(instance).to.be();
     });
 
     it('should have the property remaining (base name: "remaining")', function() {
       // uncomment below and update the code to test the property remaining
-      //var instane = new GitHub.RateLimitRate();
+      //var instane = new Github.RateLimitRate();
       //expect(instance).to.be();
     });
 
     it('should have the property reset (base name: "reset")', function() {
       // uncomment below and update the code to test the property reset
-      //var instane = new GitHub.RateLimitRate();
+      //var instane = new Github.RateLimitRate();
       //expect(instance).to.be();
     });
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Blobs model module.
  * @module model/Blobs
- * @version v3
+ * @version 1.0.0
  */
 class Blobs {
     /**

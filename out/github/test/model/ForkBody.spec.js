@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.GitHub);
+    factory(root.expect, root.Github);
   }
-}(this, function(expect, GitHub) {
+}(this, function(expect, Github) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new GitHub.ForkBody();
+    instance = new Github.ForkBody();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('ForkBody', function() {
     it('should create an instance of ForkBody', function() {
       // uncomment below and update the code to test ForkBody
-      //var instane = new GitHub.ForkBody();
-      //expect(instance).to.be.a(GitHub.ForkBody);
+      //var instane = new Github.ForkBody();
+      //expect(instance).to.be.a(Github.ForkBody);
     });
 
     it('should have the property organization (base name: "organization")', function() {
       // uncomment below and update the code to test the property organization
-      //var instane = new GitHub.ForkBody();
+      //var instane = new Github.ForkBody();
       //expect(instance).to.be();
     });
 

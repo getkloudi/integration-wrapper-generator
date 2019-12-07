@@ -1,4 +1,4 @@
-# GitHub.TeamRepos
+# Github.TeamRepos
 
 ## Properties
 

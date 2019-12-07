@@ -1,4 +1,4 @@
-# GitHub.CommitCommentBody
+# Github.CommitCommentBody
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# GitHub.SearchUserByEmail
+# Github.SearchUserByEmail
 
 ## Properties
 
