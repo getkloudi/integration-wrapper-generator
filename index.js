@@ -7,15 +7,16 @@ async function executeCommand(argv) {
   try {
     let projectName = `${argv.name}`;
     let openApiFilePath = `${argv.spec}`;
+    let version = `${argv.vesion ? argv.version : `1.0.0`}`;
 
-    console.log(`Removing ${projectName} directory after completion.`);
+    console.log(`Removing ${projectName} directory from out/ folder`);
     // Remove the directory for the project name after execution
     let rmCommand = `rm -rf out/${projectName}`;
     await execShellCommand(rmCommand);
 
     console.log("Executing openapi-generator command");
     // Execute Open API Command
-    let openApiCommand = `openapi-generator generate -i ${openApiFilePath} -g javascript -o out/${projectName}/ --additional-properties=withSeparateModelsAndApi=true,supportsES6=true,npmName=bitbucket-ts,npmVersion=1.0.0 --skip-validate-spec`;
+    let openApiCommand = `openapi-generator generate -i ${openApiFilePath} -g javascript -o out/${projectName}/ --additional-properties=withSeparateModelsAndApi=true,supportsES6=true,projectName=${projectName},projectVersion=${version},modelPackage=model,apiPackage=api --skip-validate-spec`;
     openApi = await execShellCommand(openApiCommand);
 
     // parse the api md files
