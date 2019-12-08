@@ -12,70 +12,86 @@
     "method": "ALL|GET|PUT|POST|DELETE",
     "map": [
       {
-        "title": "pr.title",
-        "type": "ONE-TO-ONE"
+        "input": {
+          "key": "pr.title",
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "title",
+          "type": "ONE-TO-ONE"
+        }
       },
       {
-        "description": "pr.description",
-        "type": "ONE-TO-ONE"
+        "input": {
+          "key": "pr.description",
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "description",
+          "type": "ONE-TO-ONE"
+        }
       },
       {
-        "toolRefs.id": "id",
-        "type": "ONE-TO-ONE"
+        "input": {
+          "key": "toolsRef.name",
+          "type": "CONSTANT",
+          "value": "BITBUCKET"
+        },
+        "output": {
+          "key": "toolsRef.name",
+          "type": "CONSTANT",
+          "value": "BITBUCKET"
+        }
       },
       {
-        "toolRefs.url": "links.html.href",
-        "type": "ONE-TO-ONE"
+        "input": {
+          "key": "source.commit.hash",
+          "type": "FUNCTION",
+          "value": "generateFullCommitHash"
+        },
+        "output": {
+          "key": "basheSHA",
+          "type": "FUNCTION",
+          "value": "generateFullCommitHash"
+        }
       },
       {
-        "toolRefs.name": "BITBUCKET",
-        "type": "CONSTANT"
+        "input": {
+          "key": "author.display_name",
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "author.name",
+          "type": "ONE-TO-ONE"
+        }
       },
       {
-        "basheSHA": "source.commit.hash",
-        "type": "FUNCTIONAL",
-        "value": "generateFullCommitHash"
+        "input": {
+          "key": "participants[${index}].user.display_name",
+          "type": "FUNCTION",
+          "root": "participants",
+          "value": "getPullRequestFromID"
+        },
+        "output": {
+          "key": "reviewers[${index}].name",
+          "type": "FUNCTION",
+          "root": "reviewers",
+          "value": "getPullRequestFromID"
+        }
       },
       {
-        "headSHA": "source.commit.hash",
-        "type": "FUNCTIONAL",
-        "value": "generateFullCommitHash"
-      },
-      {
-        "state": "state",
-        "type": "ONE-TO-ONE"
-      },
-      {
-        "author.name": "author.display_name",
-        "type": "ONE-TO-ONE"
-      },
-      {
-        "createOn": "create_on",
-        "type": "FUNCTIONAL",
-        "value": "ISOFormatToSlicedISOFormatInUTC"
-      },
-      {
-        "commentCount": "comment_count",
-        "type": "ONE-TO-ONE"
-      },
-      {
-        "issueCount": "task_count",
-        "type": "ONE-TO-ONE"
-      },
-      {
-        "approvedBy.name": "user.display_name",
-        "type": "FUNCTIONAL",
-        "value": "getPullRequestFromID"
-      },
-      {
-        "reviewers.name": "participants.user.display_name",
-        "type": "FUNCTIONAL",
-        "value": "getPullRequestFromID"
-      },
-      {
-        "assignees.name": "participants.user.display_name",
-        "type": "FUNCTIONAL",
-        "value": "getPullRequestFromID"
+        "input": {
+          "key": "participants[${index}].user.id",
+          "type": "FUNCTION",
+          "root": "participants",
+          "value": "getPullRequestFromID"
+        },
+        "output": {
+          "key": "reviewers[${index}].id",
+          "type": "FUNCTION",
+          "root": "reviewers",
+          "value": "getPullRequestFromID"
+        }
       }
     ]
   },

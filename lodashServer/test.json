@@ -1,0 +1,56 @@
+// INPUT JSON
+
+[
+    {
+        "pr": {
+            "title": "PR Title",
+            "description": "PR Description"
+        },
+        "source": {
+            "commit": {
+                "hash": "HASH VALUE"
+            }
+        },
+        "author": {
+            "display_name": "Author Name"
+        },
+        "participants": [
+            {
+                "user": {
+                    "display_name": "Participant Display Name"
+                }
+            },
+            {
+                "user": {
+                    "display_name": "Participant 2 Display Name"
+                }
+            }
+        ]
+    }
+    
+]
+
+
+// OUTPUT JSON
+
+[
+    {
+        "title": "PR Title",
+        "description": "PR Description",
+        "toolsRef": {
+            "name": "BITBUCKET"
+        },
+        "basheSHA": "generateFullCommitHash(HASH VALUE)",
+        "author": {
+            "name": "Author Name"
+        },
+        "reviewers": [
+            {
+                "name": "Participant Display Name"
+            },
+            {
+                "name": "Participant 2 Display Name"
+            }
+        ]
+    }
+]
