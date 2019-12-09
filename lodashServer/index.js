@@ -20,11 +20,11 @@ let errorCodes = {
 };
 
 app.get('/', function(req, res) {
-    let integration = 'JIRA';
-    let entity = 'PULL_REQUEST';
-    let method = "GET";
+    const integration = 'JIRA';
+    const entity = 'PULL_REQUEST';
+    const method = "GET";
 
-    let incomingOptionsBeforeTransformation = {
+    const incomingOptionsBeforeTransformation = {
         "pr": {
             "title": "PR Title",
             "description": "PR Description"
@@ -57,8 +57,8 @@ app.get('/', function(req, res) {
     res.status(200).json(result);
 });
 
-let transform = (integration, entity, method, incomingOptionsBeforeTransformation) => {
-    let result = [];
+const transform = (integration, entity, method, incomingOptionsBeforeTransformation) => {
+    const result = [];
     responseItem = _.map(mapper, (o) => {
         methods = o.method.split("|");
         if(o.type === 'RESPONSE' && o.integration === integration && o.entity === entity && methods.indexOf(method) !== -1){
