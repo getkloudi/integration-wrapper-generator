@@ -120,6 +120,17 @@ exports.generateCodeFile = function generateCodeFile(
     codeBlock = codeBlock.replace("```javascript\n", "");
     codeBlock = codeBlock.replace("\n```", "");
 
+    let importStatement = codeBlock.split('\n')[0]
+    // Split the import statement by space
+    let importStatementWords = importStatement.split(' ');
+    // Covert the import statement to require
+    if (importStatementWords[0] === 'import') {
+      let fileName = importStatementWords[1];
+      let requireStatement = `const ${fileName} = require('./dist');`
+      // Remove the Code Block
+      codeBlock = codeBlock.replace(importStatement, requireStatement);
+    }
+
     codeBlock = codeBlock.replace(
       "'YOUR ACCESS TOKEN'",
       "incomingOptions.accessToken"
