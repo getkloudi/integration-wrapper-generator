@@ -7,7 +7,7 @@ async function executeCommand(argv) {
   try {
     let projectName = `${argv.name}`;
     let openApiFilePath = `${argv.spec}`;
-    let version = `${argv.vesion ? argv.version : `1.0.0`}`;
+    let version = `${argv.v ? argv.v : `1.0.0`}`;
 
     console.log(`Removing ${projectName} directory from out/ folder`);
     // Remove the directory for the project name after execution
@@ -18,6 +18,11 @@ async function executeCommand(argv) {
     // Execute Open API Command
     let openApiCommand = `openapi-generator generate -i ${openApiFilePath} -g javascript -o out/${projectName}/ --additional-properties=withSeparateModelsAndApi=true,supportsES6=true,projectName=${projectName},projectVersion=${version},modelPackage=model,apiPackage=api --skip-validate-spec`;
     openApi = await execShellCommand(openApiCommand);
+
+    let npmInstallCommand = `npm install --prefix out/${projectName}`;
+    await execShellCommand(npmInstallCommand);
+    let npmBuildCommand = `npm run build --prefix out/${projectName}`;
+    await execShellCommand(npmBuildCommand);
 
     // parse the api md files
     console.log("Parsing md api files generated");
@@ -45,7 +50,6 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
   let functionsTypes = ["Get", "Post", "Put", "Delete", "Patch"];
 
   // Start writing file with empty string
-  console.log(fileNameWithPath);
   fs.writeFileSync(`${fileNameWithPath}`, "");
 
   var functionWithParams = [];
@@ -87,8 +91,10 @@ var argv = require("yargs")
   .scriptName("api-code-gen")
   .usage("Usage: $0 -name [str] -spec [path]")
   .demandOption(["name", "spec"])
+  .string("v")
   .describe("name", "Name of the API tool you are generating code for")
   .describe("spec", "Path of OpenAPI v3 spec of the API tool")
+  .describe("v", "Version of the API being generated")
   .help()
   .alias("h", "help").argv;
 executeCommand(argv);
