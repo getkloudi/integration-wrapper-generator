@@ -18,4 +18,4 @@ staging:
     - chmod 700 ~/.ssh
     - ssh-keyscan "$STAGING_SSH_HOST" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - rsync -a out/ ubuntu@"$STAGING_SSH_HOST":~/tmp/ --delete
+    - rsync -ap out/ ubuntu@"$STAGING_SSH_HOST":~/api-wrappers/app/services/third-party
