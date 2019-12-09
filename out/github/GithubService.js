@@ -592,7 +592,7 @@ async function get(entity, options) {
       }
         // This is a function for emojisGet
         function emojisGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -610,7 +610,7 @@ apiInstance.emojisGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for eventsGet
         function eventsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -628,7 +628,7 @@ apiInstance.eventsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for feedsGet
         function feedsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -646,7 +646,7 @@ apiInstance.feedsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for gistsGet
         function gistsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -665,7 +665,7 @@ apiInstance.gistsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for gistsIdCommentsCommentIdGet
         function gistsIdCommentsCommentIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -685,7 +685,7 @@ apiInstance.gistsIdCommentsCommentIdGet(incomingOptions.id, incomingOptions.comm
         
         // This is a function for gistsIdCommentsGet
         function gistsIdCommentsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -704,7 +704,7 @@ apiInstance.gistsIdCommentsGet(incomingOptions.id, incomingOptions.opts, (error,
         
         // This is a function for gistsIdGet
         function gistsIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -723,7 +723,7 @@ apiInstance.gistsIdGet(incomingOptions.id, incomingOptions.opts, (error, data, r
         
         // This is a function for gistsIdStarGet
         function gistsIdStarGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -742,7 +742,7 @@ apiInstance.gistsIdStarGet(incomingOptions.id, incomingOptions.opts, (error, dat
         
         // This is a function for gistsPublicGet
         function gistsPublicGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -761,7 +761,7 @@ apiInstance.gistsPublicGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for gistsStarredGet
         function gistsStarredGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -780,7 +780,7 @@ apiInstance.gistsStarredGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for gitignoreTemplatesGet
         function gitignoreTemplatesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -798,7 +798,7 @@ apiInstance.gitignoreTemplatesGet(incomingOptions.opts, (error, data, response) 
         
         // This is a function for gitignoreTemplatesLanguageGet
         function gitignoreTemplatesLanguageGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let language = "language_example";*/ // String |
@@ -817,7 +817,7 @@ apiInstance.gitignoreTemplatesLanguageGet(incomingOptions.language, incomingOpti
         
         // This is a function for issuesGet
         function issuesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let filter = "'all'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see
@@ -841,7 +841,7 @@ apiInstance.issuesGet(incomingOptions.filter, incomingOptions.state, incomingOpt
         
         // This is a function for legacyIssuesSearchOwnerRepositoryStateKeywordGet
         function legacyIssuesSearchOwnerRepositoryStateKeywordGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let keyword = "keyword_example";*/ // String | The search term
@@ -863,7 +863,7 @@ apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(incomingOptions.key
         
         // This is a function for legacyReposSearchKeywordGet
         function legacyReposSearchKeywordGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let keyword = "keyword_example";*/ // String | The search ter
@@ -886,7 +886,7 @@ apiInstance.legacyReposSearchKeywordGet(incomingOptions.keyword, incomingOptions
         
         // This is a function for legacyUserEmailEmailGet
         function legacyUserEmailEmailGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let email = "email_example";*/ // String | The email addres
@@ -905,7 +905,7 @@ apiInstance.legacyUserEmailEmailGet(incomingOptions.email, incomingOptions.opts,
         
         // This is a function for legacyUserSearchKeywordGet
         function legacyUserSearchKeywordGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let keyword = "keyword_example";*/ // String | The search ter
@@ -927,7 +927,7 @@ apiInstance.legacyUserSearchKeywordGet(incomingOptions.keyword, incomingOptions.
         
         // This is a function for metaGet
         function metaGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -945,7 +945,7 @@ apiInstance.metaGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for networksOwnerRepoEventsGet
         function networksOwnerRepoEventsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of the owner
@@ -965,7 +965,7 @@ apiInstance.networksOwnerRepoEventsGet(incomingOptions.owner, incomingOptions.re
         
         // This is a function for notificationsGet
         function notificationsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -986,7 +986,7 @@ apiInstance.notificationsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for notificationsThreadsIdGet
         function notificationsThreadsIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
@@ -1005,7 +1005,7 @@ apiInstance.notificationsThreadsIdGet(incomingOptions.id, incomingOptions.opts, 
         
         // This is a function for notificationsThreadsIdSubscriptionGet
         function notificationsThreadsIdSubscriptionGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
@@ -1024,7 +1024,7 @@ apiInstance.notificationsThreadsIdSubscriptionGet(incomingOptions.id, incomingOp
         
         // This is a function for orgsOrgEventsGet
         function orgsOrgEventsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -1043,7 +1043,7 @@ apiInstance.incomingOptions.orgsOrgEventsGet(org, incomingOptions.opts, (error, 
         
         // This is a function for orgsOrgGet
         function orgsOrgGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -1062,7 +1062,7 @@ apiInstance.incomingOptions.orgsOrgGet(org, incomingOptions.opts, (error, data, 
         
         // This is a function for orgsOrgIssuesGet
         function orgsOrgIssuesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -1087,7 +1087,7 @@ apiInstance.incomingOptions.orgsOrgIssuesGet(org, incomingOptions.filter, incomi
         
         // This is a function for orgsOrgMembersGet
         function orgsOrgMembersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -1106,7 +1106,7 @@ apiInstance.incomingOptions.orgsOrgMembersGet(org, incomingOptions.opts, (error,
         
         // This is a function for orgsOrgMembersUsernameGet
         function orgsOrgMembersUsernameGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -1126,7 +1126,7 @@ apiInstance.incomingOptions.orgsOrgMembersUsernameGet(org, incomingOptions.usern
         
         // This is a function for orgsOrgPublicMembersGet
         function orgsOrgPublicMembersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -1145,7 +1145,7 @@ apiInstance.incomingOptions.orgsOrgPublicMembersGet(org, incomingOptions.opts, (
         
         // This is a function for orgsOrgPublicMembersUsernameGet
         function orgsOrgPublicMembersUsernameGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -1165,7 +1165,7 @@ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameGet(org, incomingOptions
         
         // This is a function for orgsOrgReposGet
         function orgsOrgReposGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -1185,7 +1185,7 @@ apiInstance.incomingOptions.orgsOrgReposGet(org, incomingOptions.opts, (error, d
         
         // This is a function for orgsOrgTeamsGet
         function orgsOrgTeamsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -1204,7 +1204,7 @@ apiInstance.incomingOptions.orgsOrgTeamsGet(org, incomingOptions.opts, (error, d
         
         // This is a function for rateLimitGet
         function rateLimitGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -1222,7 +1222,7 @@ apiInstance.rateLimitGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for reposOwnerRepoArchiveFormatPathGet
         function reposOwnerRepoArchiveFormatPathGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1244,7 +1244,7 @@ apiInstance.incomingOptions.reposOwnerRepoArchiveFormatPathGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoAssigneesAssigneeGet
         function reposOwnerRepoAssigneesAssigneeGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1265,7 +1265,7 @@ apiInstance.incomingOptions.reposOwnerRepoAssigneesAssigneeGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoAssigneesGet
         function reposOwnerRepoAssigneesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1285,7 +1285,7 @@ apiInstance.incomingOptions.reposOwnerRepoAssigneesGet(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoBranchesBranchGet
         function reposOwnerRepoBranchesBranchGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1306,7 +1306,7 @@ apiInstance.incomingOptions.reposOwnerRepoBranchesBranchGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoBranchesGet
         function reposOwnerRepoBranchesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1326,7 +1326,7 @@ apiInstance.incomingOptions.reposOwnerRepoBranchesGet(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoCollaboratorsGet
         function reposOwnerRepoCollaboratorsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1346,7 +1346,7 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsGet(incomingOptions.owner
         
         // This is a function for reposOwnerRepoCollaboratorsUserGet
         function reposOwnerRepoCollaboratorsUserGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1367,7 +1367,7 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoCommentsCommentIdGet
         function reposOwnerRepoCommentsCommentIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1388,7 +1388,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoCommentsGet
         function reposOwnerRepoCommentsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1408,7 +1408,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsGet(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoCommitsGet
         function reposOwnerRepoCommitsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1433,7 +1433,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsGet(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoCommitsRefStatusGet
         function reposOwnerRepoCommitsRefStatusGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1454,7 +1454,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsRefStatusGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoCommitsShaCodeCommentsGet
         function reposOwnerRepoCommitsShaCodeCommentsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1475,7 +1475,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsGet(incomingOpti
         
         // This is a function for reposOwnerRepoCommitsShaCodeGet
         function reposOwnerRepoCommitsShaCodeGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1496,7 +1496,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoCompareBaseIdHeadIdGet
         function reposOwnerRepoCompareBaseIdHeadIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1518,7 +1518,7 @@ apiInstance.incomingOptions.reposOwnerRepoCompareBaseIdHeadIdGet(incomingOptions
         
         // This is a function for reposOwnerRepoContentsPathGet
         function reposOwnerRepoContentsPathGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1541,7 +1541,7 @@ apiInstance.incomingOptions.reposOwnerRepoContentsPathGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoContributorsGet
         function reposOwnerRepoContributorsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1562,7 +1562,7 @@ apiInstance.incomingOptions.reposOwnerRepoContributorsGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoDeploymentsGet
         function reposOwnerRepoDeploymentsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1582,7 +1582,7 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoDeploymentsIdStatusesGet
         function reposOwnerRepoDeploymentsIdStatusesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1603,7 +1603,7 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesGet(incomingOptio
         
         // This is a function for reposOwnerRepoDownloadsDownloadIdGet
         function reposOwnerRepoDownloadsDownloadIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1624,7 +1624,7 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdGet(incomingOptions
         
         // This is a function for reposOwnerRepoDownloadsGet
         function reposOwnerRepoDownloadsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1644,7 +1644,7 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsGet(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoEventsGet
         function reposOwnerRepoEventsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1664,7 +1664,7 @@ apiInstance.incomingOptions.reposOwnerRepoEventsGet(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoForksGet
         function reposOwnerRepoForksGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1685,7 +1685,7 @@ apiInstance.incomingOptions.reposOwnerRepoForksGet(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoGet
         function reposOwnerRepoGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1705,7 +1705,7 @@ apiInstance.incomingOptions.reposOwnerRepoGet(incomingOptions.owner, repo, incom
         
         // This is a function for reposOwnerRepoGitBlobsShaCodeGet
         function reposOwnerRepoGitBlobsShaCodeGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1726,7 +1726,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitBlobsShaCodeGet(incomingOptions.own
         
         // This is a function for reposOwnerRepoGitCommitsShaCodeGet
         function reposOwnerRepoGitCommitsShaCodeGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1747,7 +1747,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitCommitsShaCodeGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoGitRefsGet
         function reposOwnerRepoGitRefsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1767,7 +1767,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsGet(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoGitRefsRefGet
         function reposOwnerRepoGitRefsRefGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1788,7 +1788,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoGitTagsShaCodeGet
         function reposOwnerRepoGitTagsShaCodeGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1809,7 +1809,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitTagsShaCodeGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoGitTreesShaCodeGet
         function reposOwnerRepoGitTreesShaCodeGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1831,7 +1831,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitTreesShaCodeGet(incomingOptions.own
         
         // This is a function for reposOwnerRepoHooksGet
         function reposOwnerRepoHooksGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1851,7 +1851,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksGet(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoHooksHookIdGet
         function reposOwnerRepoHooksHookIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1872,7 +1872,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoIssuesCommentsCommentIdGet
         function reposOwnerRepoIssuesCommentsCommentIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1893,7 +1893,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdGet(incomingOpt
         
         // This is a function for reposOwnerRepoIssuesCommentsGet
         function reposOwnerRepoIssuesCommentsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1916,7 +1916,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoIssuesEventsEventIdGet
         function reposOwnerRepoIssuesEventsEventIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1937,7 +1937,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsEventIdGet(incomingOptions
         
         // This is a function for reposOwnerRepoIssuesEventsGet
         function reposOwnerRepoIssuesEventsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1957,7 +1957,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoIssuesGet
         function reposOwnerRepoIssuesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -1983,7 +1983,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesGet(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoIssuesNumberCommentsGet
         function reposOwnerRepoIssuesNumberCommentsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2004,7 +2004,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsGet(incomingOption
         
         // This is a function for reposOwnerRepoIssuesNumberEventsGet
         function reposOwnerRepoIssuesNumberEventsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2025,7 +2025,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberEventsGet(incomingOptions.
         
         // This is a function for reposOwnerRepoIssuesNumberGet
         function reposOwnerRepoIssuesNumberGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2046,7 +2046,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsGet
         function reposOwnerRepoIssuesNumberLabelsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2067,7 +2067,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsGet(incomingOptions.
         
         // This is a function for reposOwnerRepoKeysGet
         function reposOwnerRepoKeysGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2087,7 +2087,7 @@ apiInstance.incomingOptions.reposOwnerRepoKeysGet(incomingOptions.owner, repo, i
         
         // This is a function for reposOwnerRepoKeysKeyIdGet
         function reposOwnerRepoKeysKeyIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2108,7 +2108,7 @@ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdGet(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoLabelsGet
         function reposOwnerRepoLabelsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2128,7 +2128,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsGet(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoLabelsNameGet
         function reposOwnerRepoLabelsNameGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2149,7 +2149,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsNameGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoLanguagesGet
         function reposOwnerRepoLanguagesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2169,7 +2169,7 @@ apiInstance.incomingOptions.reposOwnerRepoLanguagesGet(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoMilestonesGet
         function reposOwnerRepoMilestonesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2192,7 +2192,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoMilestonesNumberGet
         function reposOwnerRepoMilestonesNumberGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2213,7 +2213,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoMilestonesNumberLabelsGet
         function reposOwnerRepoMilestonesNumberLabelsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2234,7 +2234,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberLabelsGet(incomingOpti
         
         // This is a function for reposOwnerRepoNotificationsGet
         function reposOwnerRepoNotificationsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2257,7 +2257,7 @@ apiInstance.incomingOptions.reposOwnerRepoNotificationsGet(incomingOptions.owner
         
         // This is a function for reposOwnerRepoPullsCommentsCommentIdGet
         function reposOwnerRepoPullsCommentsCommentIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2278,7 +2278,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdGet(incomingOpti
         
         // This is a function for reposOwnerRepoPullsCommentsGet
         function reposOwnerRepoPullsCommentsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2301,7 +2301,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsGet(incomingOptions.owner
         
         // This is a function for reposOwnerRepoPullsGet
         function reposOwnerRepoPullsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2324,7 +2324,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsGet(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoPullsNumberCommentsGet
         function reposOwnerRepoPullsNumberCommentsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2345,7 +2345,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsGet(incomingOptions
         
         // This is a function for reposOwnerRepoPullsNumberCommitsGet
         function reposOwnerRepoPullsNumberCommitsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2366,7 +2366,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommitsGet(incomingOptions.
         
         // This is a function for reposOwnerRepoPullsNumberFilesGet
         function reposOwnerRepoPullsNumberFilesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2387,7 +2387,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberFilesGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoPullsNumberGet
         function reposOwnerRepoPullsNumberGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2408,7 +2408,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoPullsNumberMergeGet
         function reposOwnerRepoPullsNumberMergeGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2429,7 +2429,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergeGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoReadmeGet
         function reposOwnerRepoReadmeGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2450,7 +2450,7 @@ apiInstance.incomingOptions.reposOwnerRepoReadmeGet(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoReleasesAssetsIdGet
         function reposOwnerRepoReleasesAssetsIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2471,7 +2471,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoReleasesGet
         function reposOwnerRepoReleasesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2491,7 +2491,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesGet(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoReleasesIdAssetsGet
         function reposOwnerRepoReleasesIdAssetsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2512,7 +2512,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdAssetsGet(incomingOptions.ow
         
         // This is a function for reposOwnerRepoReleasesIdGet
         function reposOwnerRepoReleasesIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2533,7 +2533,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoStargazersGet
         function reposOwnerRepoStargazersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2553,7 +2553,7 @@ apiInstance.incomingOptions.reposOwnerRepoStargazersGet(incomingOptions.owner, r
         
         // This is a function for reposOwnerRepoStatsCodeFrequencyGet
         function reposOwnerRepoStatsCodeFrequencyGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2573,7 +2573,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsCodeFrequencyGet(incomingOptions.
         
         // This is a function for reposOwnerRepoStatsCommitActivityGet
         function reposOwnerRepoStatsCommitActivityGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2593,7 +2593,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsCommitActivityGet(incomingOptions
         
         // This is a function for reposOwnerRepoStatsContributorsGet
         function reposOwnerRepoStatsContributorsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2613,7 +2613,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsContributorsGet(incomingOptions.o
         
         // This is a function for reposOwnerRepoStatsParticipationGet
         function reposOwnerRepoStatsParticipationGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2633,7 +2633,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsParticipationGet(incomingOptions.
         
         // This is a function for reposOwnerRepoStatsPunchCardGet
         function reposOwnerRepoStatsPunchCardGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2653,7 +2653,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsPunchCardGet(incomingOptions.owne
         
         // This is a function for reposOwnerRepoStatusesRefGet
         function reposOwnerRepoStatusesRefGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2674,7 +2674,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatusesRefGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoSubscribersGet
         function reposOwnerRepoSubscribersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2694,7 +2694,7 @@ apiInstance.incomingOptions.reposOwnerRepoSubscribersGet(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoSubscriptionGet
         function reposOwnerRepoSubscriptionGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2714,7 +2714,7 @@ apiInstance.incomingOptions.reposOwnerRepoSubscriptionGet(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoTagsGet
         function reposOwnerRepoTagsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2734,7 +2734,7 @@ apiInstance.incomingOptions.reposOwnerRepoTagsGet(incomingOptions.owner, repo, i
         
         // This is a function for reposOwnerRepoTeamsGet
         function reposOwnerRepoTeamsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2754,7 +2754,7 @@ apiInstance.incomingOptions.reposOwnerRepoTeamsGet(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoWatchersGet
         function reposOwnerRepoWatchersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -2774,7 +2774,7 @@ apiInstance.incomingOptions.reposOwnerRepoWatchersGet(incomingOptions.owner, rep
         
         // This is a function for repositoriesGet
         function repositoriesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -2793,7 +2793,7 @@ apiInstance.repositoriesGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for searchCodeGet
         function searchCodeGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository.
@@ -2814,7 +2814,7 @@ apiInstance.searchCodeGet(incomingOptions.q, incomingOptions.opts, (error, data,
         
         // This is a function for searchIssuesGet
         function searchIssuesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let q = "q_example";*/ // String | The q search term can also contain any combination of the supported issue search qualifiers
@@ -2835,7 +2835,7 @@ apiInstance.searchIssuesGet(incomingOptions.q, incomingOptions.opts, (error, dat
         
         // This is a function for searchRepositoriesGet
         function searchRepositoriesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars.
@@ -2856,7 +2856,7 @@ apiInstance.searchRepositoriesGet(incomingOptions.q, incomingOptions.opts, (erro
         
         // This is a function for searchUsersGet
         function searchUsersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have.
@@ -2877,7 +2877,7 @@ apiInstance.searchUsersGet(incomingOptions.q, incomingOptions.opts, (error, data
         
         // This is a function for teamsTeamIdGet
         function teamsTeamIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -2896,7 +2896,7 @@ apiInstance.teamsTeamIdGet(incomingOptions.teamId, incomingOptions.opts, (error,
         
         // This is a function for teamsTeamIdMembersGet
         function teamsTeamIdMembersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -2915,7 +2915,7 @@ apiInstance.teamsTeamIdMembersGet(incomingOptions.teamId, incomingOptions.opts, 
         
         // This is a function for teamsTeamIdMembersUsernameGet
         function teamsTeamIdMembersUsernameGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -2935,7 +2935,7 @@ apiInstance.teamsTeamIdMembersUsernameGet(incomingOptions.teamId, incomingOption
         
         // This is a function for teamsTeamIdMembershipsUsernameGet
         function teamsTeamIdMembershipsUsernameGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -2955,7 +2955,7 @@ apiInstance.teamsTeamIdMembershipsUsernameGet(incomingOptions.teamId, incomingOp
         
         // This is a function for teamsTeamIdReposGet
         function teamsTeamIdReposGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -2974,7 +2974,7 @@ apiInstance.teamsTeamIdReposGet(incomingOptions.teamId, incomingOptions.opts, (e
         
         // This is a function for teamsTeamIdReposOwnerRepoGet
         function teamsTeamIdReposOwnerRepoGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -2995,7 +2995,7 @@ apiInstance.teamsTeamIdReposOwnerRepoGet(incomingOptions.teamId, incomingOptions
         
         // This is a function for userEmailsGet
         function userEmailsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3013,7 +3013,7 @@ apiInstance.userEmailsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userFollowersGet
         function userFollowersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3031,7 +3031,7 @@ apiInstance.userFollowersGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userFollowingGet
         function userFollowingGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3049,7 +3049,7 @@ apiInstance.userFollowingGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userFollowingUsernameGet
         function userFollowingUsernameGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3068,7 +3068,7 @@ apiInstance.userFollowingUsernameGet(incomingOptions.username, incomingOptions.o
         
         // This is a function for userGet
         function userGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3086,7 +3086,7 @@ apiInstance.userGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userIssuesGet
         function userIssuesGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let filter = "'all'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see
@@ -3110,7 +3110,7 @@ apiInstance.userIssuesGet(incomingOptions.filter, incomingOptions.state, incomin
         
         // This is a function for userKeysGet
         function userKeysGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3128,7 +3128,7 @@ apiInstance.userKeysGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userKeysKeyIdGet
         function userKeysKeyIdGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let keyId = 56;*/ // Number | ID of key
@@ -3147,7 +3147,7 @@ apiInstance.userKeysKeyIdGet(incomingOptions.keyId, incomingOptions.opts, (error
         
         // This is a function for userOrgsGet
         function userOrgsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3165,7 +3165,7 @@ apiInstance.userOrgsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userReposGet
         function userReposGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3184,7 +3184,7 @@ apiInstance.userReposGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userStarredGet
         function userStarredGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3204,7 +3204,7 @@ apiInstance.userStarredGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for userStarredOwnerRepoGet
         function userStarredOwnerRepoGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of a repository owner
@@ -3224,7 +3224,7 @@ apiInstance.userStarredOwnerRepoGet(incomingOptions.owner, incomingOptions.repo,
         
         // This is a function for userSubscriptionsGet
         function userSubscriptionsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3242,7 +3242,7 @@ apiInstance.userSubscriptionsGet(incomingOptions.opts, (error, data, response) =
         
         // This is a function for userSubscriptionsOwnerRepoGet
         function userSubscriptionsOwnerRepoGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of the owner
@@ -3262,7 +3262,7 @@ apiInstance.userSubscriptionsOwnerRepoGet(incomingOptions.owner, incomingOptions
         
         // This is a function for userTeamsGet
         function userTeamsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3280,7 +3280,7 @@ apiInstance.userTeamsGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for usersGet
         function usersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3299,7 +3299,7 @@ apiInstance.usersGet(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for usersUsernameEventsGet
         function usersUsernameEventsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3318,7 +3318,7 @@ apiInstance.usersUsernameEventsGet(incomingOptions.username, incomingOptions.opt
         
         // This is a function for usersUsernameEventsOrgsOrgGet
         function usersUsernameEventsOrgsOrgGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3338,7 +3338,7 @@ apiInstance.usersUsernameEventsOrgsOrgGet(incomingOptions.username, incomingOpti
         
         // This is a function for usersUsernameFollowersGet
         function usersUsernameFollowersGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3357,7 +3357,7 @@ apiInstance.usersUsernameFollowersGet(incomingOptions.username, incomingOptions.
         
         // This is a function for usersUsernameFollowingTargetUserGet
         function usersUsernameFollowingTargetUserGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3377,7 +3377,7 @@ apiInstance.usersUsernameFollowingTargetUserGet(incomingOptions.username, incomi
         
         // This is a function for usersUsernameGet
         function usersUsernameGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3396,7 +3396,7 @@ apiInstance.usersUsernameGet(incomingOptions.username, incomingOptions.opts, (er
         
         // This is a function for usersUsernameGistsGet
         function usersUsernameGistsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3416,7 +3416,7 @@ apiInstance.usersUsernameGistsGet(incomingOptions.username, incomingOptions.opts
         
         // This is a function for usersUsernameKeysGet
         function usersUsernameKeysGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3435,7 +3435,7 @@ apiInstance.usersUsernameKeysGet(incomingOptions.username, incomingOptions.opts,
         
         // This is a function for usersUsernameOrgsGet
         function usersUsernameOrgsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3454,7 +3454,7 @@ apiInstance.usersUsernameOrgsGet(incomingOptions.username, incomingOptions.opts,
         
         // This is a function for usersUsernameReceivedEventsGet
         function usersUsernameReceivedEventsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3473,7 +3473,7 @@ apiInstance.usersUsernameReceivedEventsGet(incomingOptions.username, incomingOpt
         
         // This is a function for usersUsernameReceivedEventsPublicGet
         function usersUsernameReceivedEventsPublicGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3492,7 +3492,7 @@ apiInstance.usersUsernameReceivedEventsPublicGet(incomingOptions.username, incom
         
         // This is a function for usersUsernameReposGet
         function usersUsernameReposGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3512,7 +3512,7 @@ apiInstance.usersUsernameReposGet(incomingOptions.username, incomingOptions.opts
         
         // This is a function for usersUsernameStarredGet
         function usersUsernameStarredGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3531,7 +3531,7 @@ apiInstance.usersUsernameStarredGet(incomingOptions.username, incomingOptions.op
         
         // This is a function for usersUsernameSubscriptionsGet
         function usersUsernameSubscriptionsGet(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -3685,7 +3685,7 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
       }
         // This is a function for gistsIdCommentsPost
         function gistsIdCommentsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -3705,7 +3705,7 @@ apiInstance.gistsIdCommentsPost(incomingOptions.id, incomingOptions.body, incomi
         
         // This is a function for gistsIdForksPost
         function gistsIdForksPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -3724,7 +3724,7 @@ apiInstance.gistsIdForksPost(incomingOptions.id, incomingOptions.opts, (error, d
         
         // This is a function for gistsPost
         function gistsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let body = new Github.PostGist();*/ // PostGist |
@@ -3743,7 +3743,7 @@ apiInstance.gistsPost(incomingOptions.body, incomingOptions.opts, (error, data, 
         
         // This is a function for markdownPost
         function markdownPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let body = new Github.Markdown();*/ // Markdown |
@@ -3762,7 +3762,7 @@ apiInstance.markdownPost(incomingOptions.body, incomingOptions.opts, (error, dat
         
         // This is a function for markdownRawPost
         function markdownRawPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let opts = {
@@ -3780,7 +3780,7 @@ apiInstance.markdownRawPost(incomingOptions.opts, (error, data, response) => {
         
         // This is a function for orgsOrgReposPost
         function orgsOrgReposPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -3800,7 +3800,7 @@ apiInstance.incomingOptions.orgsOrgReposPost(org, incomingOptions.body, incoming
         
         // This is a function for orgsOrgTeamsPost
         function orgsOrgTeamsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -3820,7 +3820,7 @@ apiInstance.incomingOptions.orgsOrgTeamsPost(org, incomingOptions.body, incoming
         
         // This is a function for reposOwnerRepoCommitsShaCodeCommentsPost
         function reposOwnerRepoCommitsShaCodeCommentsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -3842,7 +3842,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsPost(incomingOpt
         
         // This is a function for reposOwnerRepoDeploymentsIdStatusesPost
         function reposOwnerRepoDeploymentsIdStatusesPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -3864,7 +3864,7 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesPost(incomingOpti
         
         // This is a function for reposOwnerRepoDeploymentsPost
         function reposOwnerRepoDeploymentsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -3885,7 +3885,7 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsPost(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoForksPost
         function reposOwnerRepoForksPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -3906,7 +3906,7 @@ apiInstance.incomingOptions.reposOwnerRepoForksPost(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoGitBlobsPost
         function reposOwnerRepoGitBlobsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -3927,7 +3927,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitBlobsPost(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoGitCommitsPost
         function reposOwnerRepoGitCommitsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -3948,7 +3948,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitCommitsPost(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoGitRefsPost
         function reposOwnerRepoGitRefsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -3969,7 +3969,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsPost(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoGitTagsPost
         function reposOwnerRepoGitTagsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -3990,7 +3990,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitTagsPost(incomingOptions.owner, rep
         
         // This is a function for reposOwnerRepoGitTreesPost
         function reposOwnerRepoGitTreesPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4011,7 +4011,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitTreesPost(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoHooksHookIdTestsPost
         function reposOwnerRepoHooksHookIdTestsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4032,7 +4032,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdTestsPost(incomingOptions.o
         
         // This is a function for reposOwnerRepoHooksPost
         function reposOwnerRepoHooksPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4053,7 +4053,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksPost(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoIssuesNumberCommentsPost
         function reposOwnerRepoIssuesNumberCommentsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4075,7 +4075,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsPost(incomingOptio
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsPost
         function reposOwnerRepoIssuesNumberLabelsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4097,7 +4097,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPost(incomingOptions
         
         // This is a function for reposOwnerRepoIssuesPost
         function reposOwnerRepoIssuesPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4118,7 +4118,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesPost(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoKeysPost
         function reposOwnerRepoKeysPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4139,7 +4139,7 @@ apiInstance.incomingOptions.reposOwnerRepoKeysPost(incomingOptions.owner, repo, 
         
         // This is a function for reposOwnerRepoLabelsPost
         function reposOwnerRepoLabelsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4160,7 +4160,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsPost(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoMergesPost
         function reposOwnerRepoMergesPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4181,7 +4181,7 @@ apiInstance.incomingOptions.reposOwnerRepoMergesPost(incomingOptions.owner, repo
         
         // This is a function for reposOwnerRepoMilestonesPost
         function reposOwnerRepoMilestonesPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4202,7 +4202,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesPost(incomingOptions.owner, 
         
         // This is a function for reposOwnerRepoPullsNumberCommentsPost
         function reposOwnerRepoPullsNumberCommentsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4224,7 +4224,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsPost(incomingOption
         
         // This is a function for reposOwnerRepoPullsPost
         function reposOwnerRepoPullsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4245,7 +4245,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsPost(incomingOptions.owner, repo,
         
         // This is a function for reposOwnerRepoReleasesPost
         function reposOwnerRepoReleasesPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4266,7 +4266,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesPost(incomingOptions.owner, re
         
         // This is a function for reposOwnerRepoStatusesRefPost
         function reposOwnerRepoStatusesRefPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4288,7 +4288,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatusesRefPost(incomingOptions.owner,
         
         // This is a function for userEmailsPost
         function userEmailsPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let body = ["null"];*/ // [String] |
@@ -4307,7 +4307,7 @@ apiInstance.userEmailsPost(incomingOptions.body, incomingOptions.opts, (error, d
         
         // This is a function for userKeysPost
         function userKeysPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let body = new Github.UserKeysPost();*/ // UserKeysPost |
@@ -4326,7 +4326,7 @@ apiInstance.userKeysPost(incomingOptions.body, incomingOptions.opts, (error, dat
         
         // This is a function for userReposPost
         function userReposPost(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let body = new Github.PostRepo();*/ // PostRepo |
@@ -4416,7 +4416,7 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
       }
         // This is a function for gistsIdStarPut
         function gistsIdStarPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -4435,7 +4435,7 @@ apiInstance.gistsIdStarPut(incomingOptions.id, incomingOptions.opts, (error, dat
         
         // This is a function for notificationsPut
         function notificationsPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let body = new Github.NotificationMarkRead();*/ // NotificationMarkRead |
@@ -4454,7 +4454,7 @@ apiInstance.notificationsPut(incomingOptions.body, incomingOptions.opts, (error,
         
         // This is a function for notificationsThreadsIdSubscriptionPut
         function notificationsThreadsIdSubscriptionPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
@@ -4474,7 +4474,7 @@ apiInstance.notificationsThreadsIdSubscriptionPut(incomingOptions.id, incomingOp
         
         // This is a function for orgsOrgPublicMembersUsernamePut
         function orgsOrgPublicMembersUsernamePut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -4494,7 +4494,7 @@ apiInstance.incomingOptions.orgsOrgPublicMembersUsernamePut(org, incomingOptions
         
         // This is a function for reposOwnerRepoCollaboratorsUserPut
         function reposOwnerRepoCollaboratorsUserPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4515,7 +4515,7 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserPut(incomingOptions.o
         
         // This is a function for reposOwnerRepoContentsPathPut
         function reposOwnerRepoContentsPathPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4537,7 +4537,7 @@ apiInstance.incomingOptions.reposOwnerRepoContentsPathPut(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsPut
         function reposOwnerRepoIssuesNumberLabelsPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4559,7 +4559,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPut(incomingOptions.
         
         // This is a function for reposOwnerRepoNotificationsPut
         function reposOwnerRepoNotificationsPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4580,7 +4580,7 @@ apiInstance.incomingOptions.reposOwnerRepoNotificationsPut(incomingOptions.owner
         
         // This is a function for reposOwnerRepoPullsNumberMergePut
         function reposOwnerRepoPullsNumberMergePut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4602,7 +4602,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergePut(incomingOptions.ow
         
         // This is a function for reposOwnerRepoSubscriptionPut
         function reposOwnerRepoSubscriptionPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -4623,7 +4623,7 @@ apiInstance.incomingOptions.reposOwnerRepoSubscriptionPut(incomingOptions.owner,
         
         // This is a function for teamsTeamIdMembersUsernamePut
         function teamsTeamIdMembersUsernamePut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -4643,7 +4643,7 @@ apiInstance.teamsTeamIdMembersUsernamePut(incomingOptions.teamId, incomingOption
         
         // This is a function for teamsTeamIdMembershipsUsernamePut
         function teamsTeamIdMembershipsUsernamePut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -4663,7 +4663,7 @@ apiInstance.teamsTeamIdMembershipsUsernamePut(incomingOptions.teamId, incomingOp
         
         // This is a function for teamsTeamIdReposOwnerRepoPut
         function teamsTeamIdReposOwnerRepoPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -4684,7 +4684,7 @@ apiInstance.teamsTeamIdReposOwnerRepoPut(incomingOptions.teamId, incomingOptions
         
         // This is a function for userFollowingUsernamePut
         function userFollowingUsernamePut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -4703,7 +4703,7 @@ apiInstance.userFollowingUsernamePut(incomingOptions.username, incomingOptions.o
         
         // This is a function for userStarredOwnerRepoPut
         function userStarredOwnerRepoPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of a repository owner
@@ -4723,7 +4723,7 @@ apiInstance.userStarredOwnerRepoPut(incomingOptions.owner, incomingOptions.repo,
         
         // This is a function for userSubscriptionsOwnerRepoPut
         function userSubscriptionsOwnerRepoPut(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of the owner
@@ -4878,7 +4878,7 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
       }
         // This is a function for gistsIdCommentsCommentIdDelete
         function gistsIdCommentsCommentIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -4898,7 +4898,7 @@ apiInstance.gistsIdCommentsCommentIdDelete(incomingOptions.id, incomingOptions.c
         
         // This is a function for gistsIdDelete
         function gistsIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -4917,7 +4917,7 @@ apiInstance.gistsIdDelete(incomingOptions.id, incomingOptions.opts, (error, data
         
         // This is a function for gistsIdStarDelete
         function gistsIdStarDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -4936,7 +4936,7 @@ apiInstance.gistsIdStarDelete(incomingOptions.id, incomingOptions.opts, (error, 
         
         // This is a function for notificationsThreadsIdSubscriptionDelete
         function notificationsThreadsIdSubscriptionDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
@@ -4955,7 +4955,7 @@ apiInstance.notificationsThreadsIdSubscriptionDelete(incomingOptions.id, incomin
         
         // This is a function for orgsOrgMembersUsernameDelete
         function orgsOrgMembersUsernameDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -4975,7 +4975,7 @@ apiInstance.incomingOptions.orgsOrgMembersUsernameDelete(org, incomingOptions.us
         
         // This is a function for orgsOrgPublicMembersUsernameDelete
         function orgsOrgPublicMembersUsernameDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -4995,7 +4995,7 @@ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameDelete(org, incomingOpti
         
         // This is a function for reposOwnerRepoCollaboratorsUserDelete
         function reposOwnerRepoCollaboratorsUserDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5016,7 +5016,7 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserDelete(incomingOption
         
         // This is a function for reposOwnerRepoCommentsCommentIdDelete
         function reposOwnerRepoCommentsCommentIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5037,7 +5037,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdDelete(incomingOption
         
         // This is a function for reposOwnerRepoContentsPathDelete
         function reposOwnerRepoContentsPathDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5059,7 +5059,7 @@ apiInstance.incomingOptions.reposOwnerRepoContentsPathDelete(incomingOptions.own
         
         // This is a function for reposOwnerRepoDelete
         function reposOwnerRepoDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5079,7 +5079,7 @@ apiInstance.incomingOptions.reposOwnerRepoDelete(incomingOptions.owner, repo, in
         
         // This is a function for reposOwnerRepoDownloadsDownloadIdDelete
         function reposOwnerRepoDownloadsDownloadIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5100,7 +5100,7 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdDelete(incomingOpti
         
         // This is a function for reposOwnerRepoGitRefsRefDelete
         function reposOwnerRepoGitRefsRefDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5121,7 +5121,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefDelete(incomingOptions.owner
         
         // This is a function for reposOwnerRepoHooksHookIdDelete
         function reposOwnerRepoHooksHookIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5142,7 +5142,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdDelete(incomingOptions.owne
         
         // This is a function for reposOwnerRepoIssuesCommentsCommentIdDelete
         function reposOwnerRepoIssuesCommentsCommentIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5163,7 +5163,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdDelete(incoming
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsDelete
         function reposOwnerRepoIssuesNumberLabelsDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5184,7 +5184,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsDelete(incomingOptio
         
         // This is a function for reposOwnerRepoIssuesNumberLabelsNameDelete
         function reposOwnerRepoIssuesNumberLabelsNameDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5206,7 +5206,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsNameDelete(incomingO
         
         // This is a function for reposOwnerRepoKeysKeyIdDelete
         function reposOwnerRepoKeysKeyIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5227,7 +5227,7 @@ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdDelete(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoLabelsNameDelete
         function reposOwnerRepoLabelsNameDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5248,7 +5248,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsNameDelete(incomingOptions.owner
         
         // This is a function for reposOwnerRepoMilestonesNumberDelete
         function reposOwnerRepoMilestonesNumberDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5269,7 +5269,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberDelete(incomingOptions
         
         // This is a function for reposOwnerRepoPullsCommentsCommentIdDelete
         function reposOwnerRepoPullsCommentsCommentIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5290,7 +5290,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdDelete(incomingO
         
         // This is a function for reposOwnerRepoReleasesAssetsIdDelete
         function reposOwnerRepoReleasesAssetsIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5311,7 +5311,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdDelete(incomingOptions
         
         // This is a function for reposOwnerRepoReleasesIdDelete
         function reposOwnerRepoReleasesIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5332,7 +5332,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdDelete(incomingOptions.owner
         
         // This is a function for reposOwnerRepoSubscriptionDelete
         function reposOwnerRepoSubscriptionDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5352,7 +5352,7 @@ apiInstance.incomingOptions.reposOwnerRepoSubscriptionDelete(incomingOptions.own
         
         // This is a function for teamsTeamIdDelete
         function teamsTeamIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -5371,7 +5371,7 @@ apiInstance.teamsTeamIdDelete(incomingOptions.teamId, incomingOptions.opts, (err
         
         // This is a function for teamsTeamIdMembersUsernameDelete
         function teamsTeamIdMembersUsernameDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -5391,7 +5391,7 @@ apiInstance.teamsTeamIdMembersUsernameDelete(incomingOptions.teamId, incomingOpt
         
         // This is a function for teamsTeamIdMembershipsUsernameDelete
         function teamsTeamIdMembershipsUsernameDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -5411,7 +5411,7 @@ apiInstance.teamsTeamIdMembershipsUsernameDelete(incomingOptions.teamId, incomin
         
         // This is a function for teamsTeamIdReposOwnerRepoDelete
         function teamsTeamIdReposOwnerRepoDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -5432,7 +5432,7 @@ apiInstance.teamsTeamIdReposOwnerRepoDelete(incomingOptions.teamId, incomingOpti
         
         // This is a function for userEmailsDelete
         function userEmailsDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let body = ["null"];*/ // [String] |
@@ -5451,7 +5451,7 @@ apiInstance.userEmailsDelete(incomingOptions.body, incomingOptions.opts, (error,
         
         // This is a function for userFollowingUsernameDelete
         function userFollowingUsernameDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
@@ -5470,7 +5470,7 @@ apiInstance.userFollowingUsernameDelete(incomingOptions.username, incomingOption
         
         // This is a function for userKeysKeyIdDelete
         function userKeysKeyIdDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let keyId = 56;*/ // Number | ID of key
@@ -5489,7 +5489,7 @@ apiInstance.userKeysKeyIdDelete(incomingOptions.keyId, incomingOptions.opts, (er
         
         // This is a function for userStarredOwnerRepoDelete
         function userStarredOwnerRepoDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of a repository owner
@@ -5509,7 +5509,7 @@ apiInstance.userStarredOwnerRepoDelete(incomingOptions.owner, incomingOptions.re
         
         // This is a function for userSubscriptionsOwnerRepoDelete
         function userSubscriptionsOwnerRepoDelete(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of the owner
@@ -5608,7 +5608,7 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
       }
         // This is a function for gistsIdCommentsCommentIdPatch
         function gistsIdCommentsCommentIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -5629,7 +5629,7 @@ apiInstance.gistsIdCommentsCommentIdPatch(incomingOptions.id, incomingOptions.co
         
         // This is a function for gistsIdPatch
         function gistsIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
@@ -5649,7 +5649,7 @@ apiInstance.gistsIdPatch(incomingOptions.id, incomingOptions.body, incomingOptio
         
         // This is a function for notificationsThreadsIdPatch
         function notificationsThreadsIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
@@ -5668,7 +5668,7 @@ apiInstance.notificationsThreadsIdPatch(incomingOptions.id, incomingOptions.opts
         
         // This is a function for orgsOrgPatch
         function orgsOrgPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
@@ -5688,7 +5688,7 @@ apiInstance.incomingOptions.orgsOrgPatch(org, incomingOptions.body, incomingOpti
         
         // This is a function for reposOwnerRepoCommentsCommentIdPatch
         function reposOwnerRepoCommentsCommentIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5710,7 +5710,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdPatch(incomingOptions
         
         // This is a function for reposOwnerRepoGitRefsRefPatch
         function reposOwnerRepoGitRefsRefPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5732,7 +5732,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefPatch(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoHooksHookIdPatch
         function reposOwnerRepoHooksHookIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5754,7 +5754,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdPatch(incomingOptions.owner
         
         // This is a function for reposOwnerRepoIssuesCommentsCommentIdPatch
         function reposOwnerRepoIssuesCommentsCommentIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5776,7 +5776,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdPatch(incomingO
         
         // This is a function for reposOwnerRepoIssuesNumberPatch
         function reposOwnerRepoIssuesNumberPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5798,7 +5798,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberPatch(incomingOptions.owne
         
         // This is a function for reposOwnerRepoLabelsNamePatch
         function reposOwnerRepoLabelsNamePatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5820,7 +5820,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsNamePatch(incomingOptions.owner,
         
         // This is a function for reposOwnerRepoMilestonesNumberPatch
         function reposOwnerRepoMilestonesNumberPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5842,7 +5842,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberPatch(incomingOptions.
         
         // This is a function for reposOwnerRepoPatch
         function reposOwnerRepoPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5863,7 +5863,7 @@ apiInstance.incomingOptions.reposOwnerRepoPatch(incomingOptions.owner, repo, inc
         
         // This is a function for reposOwnerRepoPullsCommentsCommentIdPatch
         function reposOwnerRepoPullsCommentsCommentIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5885,7 +5885,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdPatch(incomingOp
         
         // This is a function for reposOwnerRepoPullsNumberPatch
         function reposOwnerRepoPullsNumberPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5907,7 +5907,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberPatch(incomingOptions.owner
         
         // This is a function for reposOwnerRepoReleasesAssetsIdPatch
         function reposOwnerRepoReleasesAssetsIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5929,7 +5929,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdPatch(incomingOptions.
         
         // This is a function for reposOwnerRepoReleasesIdPatch
         function reposOwnerRepoReleasesIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
@@ -5951,7 +5951,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdPatch(incomingOptions.owner,
         
         // This is a function for teamsTeamIdPatch
         function teamsTeamIdPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
@@ -5971,7 +5971,7 @@ apiInstance.teamsTeamIdPatch(incomingOptions.teamId, incomingOptions.body, incom
         
         // This is a function for userPatch
         function userPatch(incomingOptions) {
-            import Github from 'github';
+            const Github = require('./dist');
 
 let apiInstance = new Github.DefaultApi()
 /*let body = new Github.UserUpdate();*/ // UserUpdate |

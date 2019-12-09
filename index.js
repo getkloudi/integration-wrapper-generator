@@ -25,7 +25,7 @@ async function executeCommand(argv) {
       `out/${projectName}/`,
       `${projectName.charAt(0).toUpperCase()}${projectName
         .slice(1)
-        .toLowerCase()}.js`
+        .toLowerCase()}Service.js`
     );
 
     console.log("Command Execution completed");
@@ -37,7 +37,7 @@ async function executeCommand(argv) {
 // This function is used to parse the files generated,
 // fetch required api.md files and fetch code snippets from it.
 async function parseFilesAndGenerateCodeFile(path, fileName) {
-  const fileNameWithPath = `${path}/${fileName}`;
+  const fileNameWithPath = `${path}${fileName}`;
   // Fetch all files names with *api.md in the name
   let findCommand = await execShellCommand(`find ${path}* -name "*Api.md"`);
   let findCommandArray = findCommand.trim().split("\n");
@@ -45,6 +45,7 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
   let functionsTypes = ["Get", "Post", "Put", "Delete", "Patch"];
 
   // Start writing file with empty string
+  console.log(fileNameWithPath);
   fs.writeFileSync(`${fileNameWithPath}`, "");
 
   var functionWithParams = [];
