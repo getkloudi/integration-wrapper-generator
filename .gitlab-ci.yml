@@ -21,15 +21,15 @@ staging:
     - chmod 644 ~/.ssh/known_hosts
     - rsync -ap --no-perms out/ ubuntu@"$STAGING_SSH_HOST":~/api-wrappers/app/services/third-party
 
-  production:
-    type: deploy
-    stage: production
-    only:
-      - master
-    script:
-      - echo "$PRODUCTION_SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
-      - mkdir -p ~/.ssh
-      - chmod 700 ~/.ssh
-      - ssh-keyscan "$PRODUCTION_SSH_HOST" >> ~/.ssh/known_hosts
-      - chmod 644 ~/.ssh/known_hosts
-      - rsync -ap --no-perms out/ ubuntu@"$PRODUCTION_SSH_HOST":~/api-wrappers/app/services/third-party
+production:
+  type: deploy
+  stage: production
+  only:
+    - master
+  script:
+    - echo "$PRODUCTION_SSH_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan "$PRODUCTION_SSH_HOST" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - rsync -ap --no-perms out/ ubuntu@"$PRODUCTION_SSH_HOST":~/api-wrappers/app/services/third-party
