@@ -67,13 +67,13 @@
       },
       {
         "input": {
-          "key": "participants[${index}].user.display_name",
+          "key": "participants.user.display_name",
           "type": "FUNCTION",
           "root": "participants",
           "value": "getPullRequestFromID"
         },
         "output": {
-          "key": "reviewers[${index}].name",
+          "key": "reviewers.name",
           "type": "FUNCTION",
           "root": "reviewers",
           "value": "getPullRequestFromID"
@@ -81,13 +81,13 @@
       },
       {
         "input": {
-          "key": "participants[${index}].user.id",
+          "key": "participants.user.id",
           "type": "FUNCTION",
           "root": "participants",
           "value": "getPullRequestFromID"
         },
         "output": {
-          "key": "reviewers[${index}].id",
+          "key": "reviewers.id",
           "type": "FUNCTION",
           "root": "reviewers",
           "value": "getPullRequestFromID"

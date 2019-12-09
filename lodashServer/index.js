@@ -82,11 +82,11 @@ let transform = (integration, entity, method, incomingOptionsBeforeTransformatio
             return errorCodes['MAPPING_MISCONFIGURED'];
         }
         incomingOptionsBeforeTransformation.forEach((incomingOption) => {
-            let incomingOptionDotObj = dot.dot(incomingOption);
+            const incomingOptionDotObj = dot.dot(incomingOption);
             let json = {};
             mapping.forEach((item) => {
-                let input = item.input;
-                let output = item.output;
+                const input = item.input;
+                const output = item.output;
                 if (!input){
                     return errorCodes['INPUT_MISCONFIGURED']
                 }
@@ -95,14 +95,15 @@ let transform = (integration, entity, method, incomingOptionsBeforeTransformatio
                 }
 
                 if (input.root){
-                    let root = incomingOption[input.root];
+                    const root = incomingOption[input.root];
                     root.forEach((obj, index) => {
-                        let objDot = dot.dot(obj);
+                        const objDot = dot.dot(obj);
                         objKeys = Object.keys(objDot);
                         objKeys.forEach((element) => {
-                            let denormInputKey = denormKey(input.key, index);
+                            const denormInputKey = denormKey(input.key, input.root, input.root.concat('[', index, ']'));
                             if (denormInputKey === `${input.root}[${index}].${element}`){
-                                json = parseInput(incomingOptionDotObj, input.type, denormInputKey, input.value, denormKey(output.key, index), json);
+                                const denormOutputKey = denormKey(output.key, output.root, output.root.concat('[', index, ']'));
+                                json = parseInput(incomingOptionDotObj, input.type, denormInputKey, input.value, denormOutputKey, json);
                             }                            
                         });                        
                     });
@@ -117,8 +118,8 @@ let transform = (integration, entity, method, incomingOptionsBeforeTransformatio
 }
 
 
-const denormKey = (key, value) => {
-    return key.replace('${index}', value);
+const denormKey = (key, oldValue, newValue) => {
+    return key.replace(oldValue, newValue);
 }
 
 const checkAndConvertToArray = (options) => {
