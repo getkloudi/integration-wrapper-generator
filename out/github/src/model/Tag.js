@@ -18,7 +18,7 @@ import TagTagger from './TagTagger';
 /**
  * The Tag model module.
  * @module model/Tag
- * @version 1.0.0
+ * @version 1.2.0
  */
 class Tag {
     /**

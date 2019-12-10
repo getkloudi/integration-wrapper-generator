@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Branch model module.
  * @module model/Branch
- * @version 1.0.0
+ * @version 1.2.0
  */
 var Branch =
 /*#__PURE__*/

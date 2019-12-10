@@ -18,7 +18,7 @@ import CompareCommitsFiles from './CompareCommitsFiles';
 /**
  * The CompareCommits model module.
  * @module model/CompareCommits
- * @version 1.0.0
+ * @version 1.2.0
  */
 class CompareCommits {
     /**

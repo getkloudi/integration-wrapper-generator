@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MergesConflict model module.
  * @module model/MergesConflict
- * @version 1.0.0
+ * @version 1.2.0
  */
 var MergesConflict =
 /*#__PURE__*/

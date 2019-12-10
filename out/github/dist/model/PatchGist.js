@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PatchGist model module.
  * @module model/PatchGist
- * @version 1.0.0
+ * @version 1.2.0
  */
 var PatchGist =
 /*#__PURE__*/

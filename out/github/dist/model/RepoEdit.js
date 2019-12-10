@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RepoEdit model module.
  * @module model/RepoEdit
- * @version 1.0.0
+ * @version 1.2.0
  */
 var RepoEdit =
 /*#__PURE__*/

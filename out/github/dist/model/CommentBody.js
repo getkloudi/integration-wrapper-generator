@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommentBody model module.
  * @module model/CommentBody
- * @version 1.0.0
+ * @version 1.2.0
  */
 var CommentBody =
 /*#__PURE__*/

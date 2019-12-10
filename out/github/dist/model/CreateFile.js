@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFile model module.
  * @module model/CreateFile
- * @version 1.0.0
+ * @version 1.2.0
  */
 var CreateFile =
 /*#__PURE__*/

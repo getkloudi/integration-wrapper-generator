@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RepoEdit model module.
  * @module model/RepoEdit
- * @version 1.0.0
+ * @version 1.2.0
  */
 class RepoEdit {
     /**

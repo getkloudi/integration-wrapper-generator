@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserKeysKeyId model module.
  * @module model/UserKeysKeyId
- * @version 1.0.0
+ * @version 1.2.0
  */
 class UserKeysKeyId {
     /**

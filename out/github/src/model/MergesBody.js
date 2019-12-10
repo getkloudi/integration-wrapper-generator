@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MergesBody model module.
  * @module model/MergesBody
- * @version 1.0.0
+ * @version 1.2.0
  */
 class MergesBody {
     /**

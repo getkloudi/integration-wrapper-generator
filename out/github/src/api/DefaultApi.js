@@ -103,7 +103,7 @@ import UserUpdate from '../model/UserUpdate';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.0.0
+* @version 1.2.0
 */
 export default class DefaultApi {
 

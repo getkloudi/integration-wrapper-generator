@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchIssues model module.
  * @module model/SearchIssues
- * @version 1.0.0
+ * @version 1.2.0
  */
 var SearchIssues =
 /*#__PURE__*/

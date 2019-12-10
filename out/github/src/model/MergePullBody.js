@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MergePullBody model module.
  * @module model/MergePullBody
- * @version 1.0.0
+ * @version 1.2.0
  */
 class MergePullBody {
     /**

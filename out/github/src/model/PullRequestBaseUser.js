@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PullRequestBaseUser model module.
  * @module model/PullRequestBaseUser
- * @version 1.0.0
+ * @version 1.2.0
  */
 class PullRequestBaseUser {
     /**

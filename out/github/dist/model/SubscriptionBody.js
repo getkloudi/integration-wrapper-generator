@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SubscriptionBody model module.
  * @module model/SubscriptionBody
- * @version 1.0.0
+ * @version 1.2.0
  */
 var SubscriptionBody =
 /*#__PURE__*/

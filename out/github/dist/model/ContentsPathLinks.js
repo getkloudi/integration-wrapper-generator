@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ContentsPathLinks model module.
  * @module model/ContentsPathLinks
- * @version 1.0.0
+ * @version 1.2.0
  */
 var ContentsPathLinks =
 /*#__PURE__*/

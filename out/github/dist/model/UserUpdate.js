@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UserUpdate model module.
  * @module model/UserUpdate
- * @version 1.0.0
+ * @version 1.2.0
  */
 var UserUpdate =
 /*#__PURE__*/

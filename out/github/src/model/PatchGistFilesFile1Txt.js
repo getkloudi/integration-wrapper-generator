@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PatchGistFilesFile1Txt model module.
  * @module model/PatchGistFilesFile1Txt
- * @version 1.0.0
+ * @version 1.2.0
  */
 class PatchGistFilesFile1Txt {
     /**
