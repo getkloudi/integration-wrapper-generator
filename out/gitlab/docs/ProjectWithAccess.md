@@ -1,0 +1,48 @@
+# Gitlab.ProjectWithAccess
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**archived** | **String** |  | [optional] 
+**avatarUrl** | **String** |  | [optional] 
+**buildsEnabled** | **String** |  | [optional] 
+**containerRegistryEnabled** | **String** |  | [optional] 
+**createdAt** | **String** |  | [optional] 
+**creatorId** | **String** |  | [optional] 
+**defaultBranch** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**forkedFromProject** | [**BasicProjectDetails**](BasicProjectDetails.md) |  | [optional] 
+**forksCount** | **String** |  | [optional] 
+**httpUrlToRepo** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
+**issuesEnabled** | **String** |  | [optional] 
+**lastActivityAt** | **String** |  | [optional] 
+**lfsEnabled** | **String** |  | [optional] 
+**mergeRequestsEnabled** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
+**nameWithNamespace** | **String** |  | [optional] 
+**namespace** | [**Namespace**](Namespace.md) |  | [optional] 
+**onlyAllowMergeIfAllDiscussionsAreResolved** | **String** |  | [optional] 
+**onlyAllowMergeIfBuildSucceeds** | **String** |  | [optional] 
+**openIssuesCount** | **String** |  | [optional] 
+**owner** | [**UserBasic**](UserBasic.md) |  | [optional] 
+**path** | **String** |  | [optional] 
+**pathWithNamespace** | **String** |  | [optional] 
+**permissions** | **String** |  | [optional] 
+**_public** | **String** |  | [optional] 
+**publicBuilds** | **String** |  | [optional] 
+**requestAccessEnabled** | **String** |  | [optional] 
+**runnersToken** | **String** |  | [optional] 
+**sharedRunnersEnabled** | **String** |  | [optional] 
+**sharedWithGroups** | **String** |  | [optional] 
+**snippetsEnabled** | **String** |  | [optional] 
+**sshUrlToRepo** | **String** |  | [optional] 
+**starCount** | **String** |  | [optional] 
+**statistics** | [**ProjectStatistics**](ProjectStatistics.md) |  | [optional] 
+**tagList** | **String** |  | [optional] 
+**visibilityLevel** | **String** |  | [optional] 
+**webUrl** | **String** |  | [optional] 
+**wikiEnabled** | **String** |  | [optional] 
+
+
