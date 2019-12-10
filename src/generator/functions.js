@@ -165,16 +165,19 @@ exports.generateCodeFile = function generateCodeFile(
       );
 
       // This can be added on need basis
-      // codeBlock = codeBlock.replace('console.error(error);', 'return error;');
+      codeBlock = codeBlock.replace(`console.error(error);`,
+        `cb(error, null)`);
 
       codeBlock = codeBlock.replace(
         `console.log('API called successfully.');`,
-        `return;`
+        // `return;`
+        "cb(null, '')"
       );
 
       codeBlock = codeBlock.replace(
         `console.log('API called successfully. Returned data: ' + data);`,
-        "return data;"
+        // "return data;"
+        "cb(null, data)"
       );
     }
 
@@ -183,7 +186,7 @@ exports.generateCodeFile = function generateCodeFile(
     // append this to the file
     let fileContent = `
         // This is a function for ${functionWithParams[i].functionName}
-        function ${functionWithParams[i].functionName}(incomingOptions) {
+        ${functionWithParams[i].functionName}(incomingOptions, cb) {
             ${codeBlock}
         }
 
@@ -199,6 +202,79 @@ exports.generateCodeFile = function generateCodeFile(
 
   return codeBlocks, functionWithParams;
 };
+
+exports.startCodeFile = function (filePath, fileName) {
+  let fileNameWithoutExtension = fileName.split('.')[0];
+
+  // Generate fileContent
+  let fileContent = `class ${fileNameWithoutExtension} {
+    get name() {
+      return;
+    }
+
+    get description() {
+      return;
+    }
+
+    get icon() {
+      return;
+    }
+
+    get category() {
+      return;
+    }
+
+    get apiEndpoint() {
+      return;
+    }
+
+    get authMethod() {
+      return;
+    }
+
+    get authEndpoint() {
+      return;
+    }
+
+    get apiTokenURL() {
+      return;
+    }
+
+    get scopes() {
+      return;
+    }
+
+    get requiredAuthParams() {
+      return;
+    }
+
+    get primaryAction() {
+      return;
+    }
+
+    get webhooks() {
+      return;
+    }
+
+    get webhooksToTaskMap() {
+      return;
+    }
+
+    get entities() {
+      return;
+    }
+  `;
+  fs.appendFileSync(filePath, fileContent);
+}
+
+exports.endCodeFile = function (filePath, fileName) {
+  let fileNameWithoutExtension = fileName.split('.')[0];
+
+  let fileContent = `
+  }
+  module.exports = new ${fileNameWithoutExtension}();`
+  fs.appendFileSync(filePath, fileContent);
+}
 
 function createSwitchfunction(functionWithParams, functionType) {
   // Return the switch function to be created;
@@ -233,7 +309,14 @@ function createSwitchfunction(functionWithParams, functionType) {
           functionName
         ).toUpperCase()}":
         // ${comment}
-        return await this.${currentFunction.functionName}(options);
+        return new Promise((resolve, reject) => {
+          this.${currentFunction.functionName}(options, (err, data) => {
+            if(err) {
+              reject(err);
+            }
+            resolve(data);
+          })
+        })
         `;
   }
 
@@ -243,7 +326,7 @@ function createSwitchfunction(functionWithParams, functionType) {
     `;
 
   // Mape a wrapper from entity name to wrapper
-  let code = `async function ${
+  let code = `async ${
     functionType !== "unknownHTTPMethod"
       ? functionType.toLowerCase()
       : functionType
