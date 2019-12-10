@@ -107,7 +107,7 @@ exports.generateCodeFile = function generateCodeFile(
   // Create a new file
   for (let i = 0; i < codeBlocks.length; i++) {
     if (
-      functionType !== "unknown" &&
+      functionType !== "unknownHTTPMethod" &&
       !functionWithParams[i].functionName.endsWith(functionType)
     ) {
       continue;
@@ -120,13 +120,13 @@ exports.generateCodeFile = function generateCodeFile(
     codeBlock = codeBlock.replace("```javascript\n", "");
     codeBlock = codeBlock.replace("\n```", "");
 
-    let importStatement = codeBlock.split('\n')[0]
+    let importStatement = codeBlock.split("\n")[0];
     // Split the import statement by space
-    let importStatementWords = importStatement.split(' ');
+    let importStatementWords = importStatement.split(" ");
     // Covert the import statement to require
-    if (importStatementWords[0] === 'import') {
+    if (importStatementWords[0] === "import") {
       let fileName = importStatementWords[1];
-      let requireStatement = `const ${fileName} = require('./dist');`
+      let requireStatement = `const ${fileName} = require('./dist');`;
       // Remove the Code Block
       codeBlock = codeBlock.replace(importStatement, requireStatement);
     }
@@ -208,7 +208,7 @@ function createSwitchfunction(functionWithParams, functionType) {
     let currentFunction = functionWithParams[i];
 
     if (
-      functionType !== "unknown" &&
+      functionType !== "unknownHTTPMethod" &&
       !currentFunction.functionName.endsWith(functionType)
     ) {
       continue;
@@ -222,7 +222,7 @@ function createSwitchfunction(functionWithParams, functionType) {
     }
 
     let functionName = currentFunction.functionName;
-    if (functionType !== "unknown") {
+    if (functionType !== "unknownHTTPMethod") {
       functionName = functionName.substring(
         0,
         functionName.length - functionType.length
@@ -243,7 +243,11 @@ function createSwitchfunction(functionWithParams, functionType) {
     `;
 
   // Mape a wrapper from entity name to wrapper
-  let code = `async function ${functionType.toLowerCase()}(entity, options) {
+  let code = `async function ${
+    functionType !== "unknownHTTPMethod"
+      ? functionType.toLowerCase()
+      : functionType
+  }(entity, options) {
         switch (entity) {
             ${switchCode}
         }

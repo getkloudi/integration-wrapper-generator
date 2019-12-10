@@ -82,7 +82,7 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
       codeBlocks,
       functionWithParams,
       fileNameWithPath,
-      "unknown"
+      "unknownHTTPMethod"
     );
   }
 }
