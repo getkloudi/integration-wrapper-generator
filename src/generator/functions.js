@@ -165,8 +165,7 @@ exports.generateCodeFile = function generateCodeFile(
       );
 
       // This can be added on need basis
-      codeBlock = codeBlock.replace(`console.error(error);`,
-        `cb(error, null)`);
+      codeBlock = codeBlock.replace(`console.error(error);`, `cb(error, null)`);
 
       codeBlock = codeBlock.replace(
         `console.log('API called successfully.');`,
@@ -203,13 +202,19 @@ exports.generateCodeFile = function generateCodeFile(
   return codeBlocks, functionWithParams;
 };
 
-exports.startCodeFile = function (filePath, fileName) {
-  let fileNameWithoutExtension = fileName.split('.')[0];
+exports.startCodeFile = function(filePath, fileName) {
+  let fileNameWithoutExtension = fileName.split(".")[0];
 
   // Generate fileContent
-  let fileContent = `class ${fileNameWithoutExtension} {
+  let fileContent = `
+  const axios = require("axios");
+  const errorHelper = require("../../helpers/ErrorHelper");
+  const nconf = require("nconf");
+  const qs = require("querystring");
+
+  class ${fileNameWithoutExtension} {
     get name() {
-      return;
+      return \"${fileNameWithoutExtension.split("Service")[0].toUpperCase()}\";
     }
 
     get description() {
@@ -217,7 +222,9 @@ exports.startCodeFile = function (filePath, fileName) {
     }
 
     get icon() {
-      return;
+      return \"${fileNameWithoutExtension
+        .split("Service")[0]
+        .toLowerCase()}.svg\";
     }
 
     get category() {
@@ -263,18 +270,27 @@ exports.startCodeFile = function (filePath, fileName) {
     get entities() {
       return;
     }
+
+    async connect(authParams) {
+      //TODO: Add custom connect functionality here
+    }
+
+    async syncIntegrationEntities(options) {
+      //TODO: Add custom syncIntegrationEntities functionality here
+    }
+
   `;
   fs.appendFileSync(filePath, fileContent);
-}
+};
 
-exports.endCodeFile = function (filePath, fileName) {
-  let fileNameWithoutExtension = fileName.split('.')[0];
+exports.endCodeFile = function(filePath, fileName) {
+  let fileNameWithoutExtension = fileName.split(".")[0];
 
   let fileContent = `
   }
-  module.exports = new ${fileNameWithoutExtension}();`
+  module.exports = new ${fileNameWithoutExtension}();`;
   fs.appendFileSync(filePath, fileContent);
-}
+};
 
 function createSwitchfunction(functionWithParams, functionType) {
   // Return the switch function to be created;

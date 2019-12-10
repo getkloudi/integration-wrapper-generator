@@ -1,6 +1,4 @@
-const {
-  exec
-} = require("child_process");
+const { exec } = require("child_process");
 
 const fs = require("fs");
 const functions = require("./src/generator/functions");
@@ -73,12 +71,12 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
   for (let i = 0; i < functionsTypes.length; i++) {
     let functionType = functionsTypes[i];
     codeBlocks,
-    (functionWithParams = functions.generateCodeFile(
-      codeBlocks,
-      functionWithParams,
-      fileNameWithPath,
-      functionType
-    ));
+      (functionWithParams = functions.generateCodeFile(
+        codeBlocks,
+        functionWithParams,
+        fileNameWithPath,
+        functionType
+      ));
   }
 
   if (codeBlocks.length && functionWithParams.length) {
@@ -110,7 +108,8 @@ executeCommand(argv);
 function execShellCommand(cmd) {
   return new Promise((resolve, reject) => {
     exec(
-      cmd, {
+      cmd,
+      {
         maxBuffer: 1024 * 5000
       },
       (error, stdout, stderr) => {
