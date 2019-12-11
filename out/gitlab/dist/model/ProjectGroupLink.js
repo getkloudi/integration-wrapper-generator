@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ProjectGroupLink model module.
  * @module model/ProjectGroupLink
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ProjectGroupLink =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Sidekiq service.
 * @module api/SidekiqApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var SidekiqApi =
 /*#__PURE__*/

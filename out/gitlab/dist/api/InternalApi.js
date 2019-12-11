@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Internal service.
 * @module api/InternalApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var InternalApi =
 /*#__PURE__*/

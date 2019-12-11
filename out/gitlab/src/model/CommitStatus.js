@@ -17,7 +17,7 @@ import UserBasic from './UserBasic';
 /**
  * The CommitStatus model module.
  * @module model/CommitStatus
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CommitStatus {
     /**

@@ -17,7 +17,7 @@ import Identity from './Identity';
 /**
  * The UserPublic model module.
  * @module model/UserPublic
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UserPublic {
     /**

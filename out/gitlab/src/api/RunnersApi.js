@@ -20,7 +20,7 @@ import UNKNOWN_BASE_TYPE from '../model/UNKNOWN_BASE_TYPE';
 /**
 * Runners service.
 * @module api/RunnersApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class RunnersApi {
 

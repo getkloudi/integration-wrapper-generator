@@ -17,7 +17,7 @@ import UserBasic from './UserBasic';
 /**
  * The ProjectSnippet model module.
  * @module model/ProjectSnippet
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ProjectSnippet {
     /**

@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Templates service.
 * @module api/TemplatesApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var TemplatesApi =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Group model module.
  * @module model/Group
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Group =
 /*#__PURE__*/

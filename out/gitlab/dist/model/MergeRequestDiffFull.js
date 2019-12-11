@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MergeRequestDiffFull model module.
  * @module model/MergeRequestDiffFull
- * @version 1.0.0
+ * @version 1.1.0
  */
 var MergeRequestDiffFull =
 /*#__PURE__*/

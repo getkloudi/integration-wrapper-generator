@@ -19,7 +19,7 @@ import TemplatesList from '../model/TemplatesList';
 /**
 * GitlabCiYmls service.
 * @module api/GitlabCiYmlsApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class GitlabCiYmlsApi {
 

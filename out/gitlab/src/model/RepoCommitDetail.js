@@ -17,7 +17,7 @@ import RepoCommitStats from './RepoCommitStats';
 /**
  * The RepoCommitDetail model module.
  * @module model/RepoCommitDetail
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RepoCommitDetail {
     /**

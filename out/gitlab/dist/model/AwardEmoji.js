@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AwardEmoji model module.
  * @module model/AwardEmoji
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AwardEmoji =
 /*#__PURE__*/

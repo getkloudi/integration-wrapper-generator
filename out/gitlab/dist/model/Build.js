@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Build model module.
  * @module model/Build
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Build =
 /*#__PURE__*/

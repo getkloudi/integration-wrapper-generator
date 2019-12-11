@@ -17,7 +17,7 @@ import UserPublic from './UserPublic';
 /**
  * The SSHKeyWithUser model module.
  * @module model/SSHKeyWithUser
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SSHKeyWithUser {
     /**

@@ -19,7 +19,7 @@ import UserBasic from './UserBasic';
 /**
  * The Deployment model module.
  * @module model/Deployment
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Deployment {
     /**

@@ -18,7 +18,7 @@ import UserBasic from './UserBasic';
 /**
  * The Issue model module.
  * @module model/Issue
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Issue {
     /**

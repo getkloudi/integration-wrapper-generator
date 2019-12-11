@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * DeployKeys service.
 * @module api/DeployKeysApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class DeployKeysApi {
 

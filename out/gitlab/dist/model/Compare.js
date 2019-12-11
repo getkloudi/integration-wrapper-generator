@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Compare model module.
  * @module model/Compare
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Compare =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import UserBasic from './UserBasic';
 /**
  * The AwardEmoji model module.
  * @module model/AwardEmoji
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AwardEmoji {
     /**

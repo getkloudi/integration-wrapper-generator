@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineBasic model module.
  * @module model/PipelineBasic
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PipelineBasic =
 /*#__PURE__*/

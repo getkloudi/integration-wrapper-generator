@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Variable model module.
  * @module model/Variable
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Variable =
 /*#__PURE__*/

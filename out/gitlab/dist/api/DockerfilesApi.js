@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Dockerfiles service.
 * @module api/DockerfilesApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var DockerfilesApi =
 /*#__PURE__*/

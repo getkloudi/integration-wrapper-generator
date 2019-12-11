@@ -17,7 +17,7 @@ import BasicProjectDetails from './BasicProjectDetails';
 /**
  * The RunnerDetails model module.
  * @module model/RunnerDetails
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RunnerDetails {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RepoTag model module.
  * @module model/RepoTag
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RepoTag =
 /*#__PURE__*/

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MRNote model module.
  * @module model/MRNote
- * @version 1.0.0
+ * @version 1.1.0
  */
 var MRNote =
 /*#__PURE__*/

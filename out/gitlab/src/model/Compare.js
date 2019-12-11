@@ -18,7 +18,7 @@ import RepoDiff from './RepoDiff';
 /**
  * The Compare model module.
  * @module model/Compare
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Compare {
     /**

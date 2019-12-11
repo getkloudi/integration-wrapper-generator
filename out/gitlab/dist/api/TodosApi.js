@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Todos service.
 * @module api/TodosApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var TodosApi =
 /*#__PURE__*/

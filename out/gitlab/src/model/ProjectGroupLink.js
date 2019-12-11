@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProjectGroupLink model module.
  * @module model/ProjectGroupLink
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ProjectGroupLink {
     /**

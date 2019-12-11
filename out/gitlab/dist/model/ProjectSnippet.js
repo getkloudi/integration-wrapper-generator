@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ProjectSnippet model module.
  * @module model/ProjectSnippet
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ProjectSnippet =
 /*#__PURE__*/

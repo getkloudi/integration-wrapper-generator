@@ -17,7 +17,7 @@ import UserBasic from './UserBasic';
 /**
  * The CommitNote model module.
  * @module model/CommitNote
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CommitNote {
     /**

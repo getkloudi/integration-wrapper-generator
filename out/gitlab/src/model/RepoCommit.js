@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RepoCommit model module.
  * @module model/RepoCommit
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RepoCommit {
     /**

@@ -1,6 +1,6 @@
 {
   "name": "gitlab",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The_platform_for_modern_developersGitLab_unifies_issues_code_review_CI_and_CD_into_a_single_UI",
   "license": "Unlicense",
   "main": "dist/index.js",

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccessRequester model module.
  * @module model/AccessRequester
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AccessRequester {
     /**

@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * Internal service.
 * @module api/InternalApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class InternalApi {
 

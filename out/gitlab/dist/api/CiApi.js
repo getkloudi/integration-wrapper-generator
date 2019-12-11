@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Ci service.
 * @module api/CiApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var CiApi =
 /*#__PURE__*/

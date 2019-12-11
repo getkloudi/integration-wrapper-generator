@@ -19,7 +19,7 @@ import TemplatesList from '../model/TemplatesList';
 /**
 * Dockerfiles service.
 * @module api/DockerfilesApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class DockerfilesApi {
 

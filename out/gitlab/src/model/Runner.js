@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Runner model module.
  * @module model/Runner
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Runner {
     /**

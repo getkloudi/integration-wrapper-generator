@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Board model module.
  * @module model/Board
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Board =
 /*#__PURE__*/

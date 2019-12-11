@@ -18,7 +18,7 @@ import Issue from '../model/Issue';
 /**
 * Issues service.
 * @module api/IssuesApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class IssuesApi {
 

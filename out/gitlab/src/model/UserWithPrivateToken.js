@@ -17,7 +17,7 @@ import Identity from './Identity';
 /**
  * The UserWithPrivateToken model module.
  * @module model/UserWithPrivateToken
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UserWithPrivateToken {
     /**

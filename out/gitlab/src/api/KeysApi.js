@@ -18,7 +18,7 @@ import SSHKeyWithUser from '../model/SSHKeyWithUser';
 /**
 * Keys service.
 * @module api/KeysApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class KeysApi {
 

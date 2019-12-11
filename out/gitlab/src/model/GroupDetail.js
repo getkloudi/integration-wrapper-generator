@@ -17,7 +17,7 @@ import Project from './Project';
 /**
  * The GroupDetail model module.
  * @module model/GroupDetail
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GroupDetail {
     /**

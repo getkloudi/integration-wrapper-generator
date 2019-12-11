@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Identity model module.
  * @module model/Identity
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Identity =
 /*#__PURE__*/

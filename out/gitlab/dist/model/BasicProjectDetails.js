@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BasicProjectDetails model module.
  * @module model/BasicProjectDetails
- * @version 1.0.0
+ * @version 1.1.0
  */
 var BasicProjectDetails =
 /*#__PURE__*/

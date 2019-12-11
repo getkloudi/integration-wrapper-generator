@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserBasic model module.
  * @module model/UserBasic
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UserBasic {
     /**

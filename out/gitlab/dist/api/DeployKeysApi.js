@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * DeployKeys service.
 * @module api/DeployKeysApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var DeployKeysApi =
 /*#__PURE__*/

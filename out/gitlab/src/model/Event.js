@@ -18,7 +18,7 @@ import UserBasic from './UserBasic';
 /**
  * The Event model module.
  * @module model/Event
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Event {
     /**

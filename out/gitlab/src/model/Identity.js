@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Identity model module.
  * @module model/Identity
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Identity {
     /**

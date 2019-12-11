@@ -19,7 +19,7 @@ import UNKNOWN_BASE_TYPE from '../model/UNKNOWN_BASE_TYPE';
 /**
 * Application service.
 * @module api/ApplicationApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class ApplicationApi {
 

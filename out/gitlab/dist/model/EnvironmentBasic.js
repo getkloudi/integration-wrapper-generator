@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EnvironmentBasic model module.
  * @module model/EnvironmentBasic
- * @version 1.0.0
+ * @version 1.1.0
  */
 var EnvironmentBasic =
 /*#__PURE__*/

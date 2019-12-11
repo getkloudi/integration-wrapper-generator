@@ -17,7 +17,7 @@ import UserBasic from './UserBasic';
 /**
  * The Note model module.
  * @module model/Note
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Note {
     /**

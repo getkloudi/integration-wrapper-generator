@@ -34,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Groups service.
 * @module api/GroupsApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var GroupsApi =
 /*#__PURE__*/

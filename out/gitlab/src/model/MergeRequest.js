@@ -18,7 +18,7 @@ import UserBasic from './UserBasic';
 /**
  * The MergeRequest model module.
  * @module model/MergeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class MergeRequest {
     /**

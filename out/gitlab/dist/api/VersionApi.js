@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Version service.
 * @module api/VersionApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var VersionApi =
 /*#__PURE__*/

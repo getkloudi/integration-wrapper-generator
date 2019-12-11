@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SSHKey model module.
  * @module model/SSHKey
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SSHKey {
     /**

@@ -17,7 +17,7 @@ import UserBasic from './UserBasic';
 /**
  * The MRNote model module.
  * @module model/MRNote
- * @version 1.0.0
+ * @version 1.1.0
  */
 class MRNote {
     /**

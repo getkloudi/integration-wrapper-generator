@@ -61,7 +61,7 @@ import Variable from '../model/Variable';
 /**
 * Projects service.
 * @module api/ProjectsApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class ProjectsApi {
 

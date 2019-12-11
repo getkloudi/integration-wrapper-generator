@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SSHKeyWithUser model module.
  * @module model/SSHKeyWithUser
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SSHKeyWithUser =
 /*#__PURE__*/

@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MergeRequestChanges model module.
  * @module model/MergeRequestChanges
- * @version 1.0.0
+ * @version 1.1.0
  */
 var MergeRequestChanges =
 /*#__PURE__*/

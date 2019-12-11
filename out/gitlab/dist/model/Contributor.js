@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Contributor model module.
  * @module model/Contributor
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Contributor =
 /*#__PURE__*/

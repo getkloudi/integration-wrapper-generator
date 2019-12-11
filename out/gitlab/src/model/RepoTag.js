@@ -17,7 +17,7 @@ import Release from './Release';
 /**
  * The RepoTag model module.
  * @module model/RepoTag
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RepoTag {
     /**

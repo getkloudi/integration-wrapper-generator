@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccessRequester model module.
  * @module model/AccessRequester
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AccessRequester =
 /*#__PURE__*/

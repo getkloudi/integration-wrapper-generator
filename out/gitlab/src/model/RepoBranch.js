@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RepoBranch model module.
  * @module model/RepoBranch
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RepoBranch {
     /**

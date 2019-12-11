@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * NotificationSettings service.
 * @module api/NotificationSettingsApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var NotificationSettingsApi =
 /*#__PURE__*/

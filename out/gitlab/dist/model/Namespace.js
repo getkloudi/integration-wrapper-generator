@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Namespace model module.
  * @module model/Namespace
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Namespace =
 /*#__PURE__*/

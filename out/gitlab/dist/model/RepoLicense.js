@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RepoLicense model module.
  * @module model/RepoLicense
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RepoLicense =
 /*#__PURE__*/

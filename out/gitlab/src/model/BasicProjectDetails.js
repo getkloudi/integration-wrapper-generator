@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BasicProjectDetails model module.
  * @module model/BasicProjectDetails
- * @version 1.0.0
+ * @version 1.1.0
  */
 class BasicProjectDetails {
     /**

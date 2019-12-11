@@ -18,7 +18,7 @@ import RepoDiff from './RepoDiff';
 /**
  * The MergeRequestDiffFull model module.
  * @module model/MergeRequestDiffFull
- * @version 1.0.0
+ * @version 1.1.0
  */
 class MergeRequestDiffFull {
     /**
