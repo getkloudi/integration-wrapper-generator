@@ -208,7 +208,7 @@ exports.startCodeFile = function(filePath, fileName) {
   // Generate fileContent
   let fileContent = `
   const axios = require("axios");
-  const errorHelper = require("../../helpers/ErrorHelper");
+  const errorHelper = require("../../../helpers/ErrorHelper");
   const nconf = require("nconf");
   const qs = require("querystring");
 
