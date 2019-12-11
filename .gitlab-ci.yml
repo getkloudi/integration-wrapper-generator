@@ -19,7 +19,7 @@ staging:
     - chmod 700 ~/.ssh
     - ssh-keyscan "$STAGING_SSH_HOST" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - rsync -ap --no-perms out/ ubuntu@"$STAGING_SSH_HOST":~/api-wrappers/app/services/third-party
+    - rsync -ap --no-perms out/ ubuntu@"$STAGING_SSH_HOST":~/api-wrappers/app/services/third-party --delete
 
 production:
   type: deploy
@@ -32,4 +32,4 @@ production:
     - chmod 700 ~/.ssh
     - ssh-keyscan "$PRODUCTION_SSH_HOST" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - rsync -ap --no-perms out/ ubuntu@"$PRODUCTION_SSH_HOST":~/api-wrappers/app/services/third-party
+    - rsync -ap --no-perms out/ ubuntu@"$PRODUCTION_SSH_HOST":~/api-wrappers/app/services/third-party --delete
