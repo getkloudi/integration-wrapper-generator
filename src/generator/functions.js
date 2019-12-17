@@ -210,6 +210,7 @@ exports.generateCodeFile = function generateCodeFile(
     // append this to the file
     let fileContent = `
         // This is a function for ${functionWithParams[i].functionName}
+        /* ${codeComments[i]} */
         ${functionWithParams[i].functionName}(incomingOptions, cb) {
             ${codeBlock}
         }
