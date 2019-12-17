@@ -91,16 +91,41 @@ exports.getCodeBlocks = function getCodeBlocks(contents) {
   return codeBlocks;
 };
 
+
+exports.getCodeComments = function (contents) {
+  let codeComments = [];
+
+  let v;
+
+  while ((v = regex.functionCommentsRegex.exec(contents)) !== null) {
+    if (!v[0]) continue;
+    // Split the string with \n
+    let splitArray = v[0].split('\n');
+    let comment = '';
+    if (splitArray.length > 1) {
+      for (let i = 1; i < splitArray.length - 1; i++) {
+        if (splitArray[i].trim()) {
+          comment += splitArray[i];
+        }
+      }
+    }
+    codeComments.push(comment);
+  }
+
+  return codeComments;
+}
+
 exports.generateCodeFile = function generateCodeFile(
   codeBlocks,
   functionWithParams,
+  codeComments,
   fileName,
   functionType
 ) {
   // Apend the switch case to the top of the file
   fs.appendFileSync(
     fileName,
-    createSwitchfunction(functionWithParams, functionType)
+    createSwitchfunction(functionWithParams, functionType, codeComments)
   );
 
   let positionsToRemove = [];
@@ -135,6 +160,16 @@ exports.generateCodeFile = function generateCodeFile(
       "'YOUR ACCESS TOKEN'",
       "incomingOptions.accessToken"
     );
+
+    codeBlock = codeBlock.replace(
+      "'YOUR API KEY'",
+      "incomingOptions.apiKey"
+    );
+
+    codeBlock = codeBlock.replace(
+      "//api_key.apiKeyPrefix = 'Token';",
+      "api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix;"
+    )
 
     // comment out all variables
     for (let j = 0; j < functionWithParams[i].functionParams.length; j++) {
@@ -185,6 +220,7 @@ exports.generateCodeFile = function generateCodeFile(
     // append this to the file
     let fileContent = `
         // This is a function for ${functionWithParams[i].functionName}
+        /* ${codeComments[i]} */
         ${functionWithParams[i].functionName}(incomingOptions, cb) {
             ${codeBlock}
         }
@@ -197,12 +233,13 @@ exports.generateCodeFile = function generateCodeFile(
   for (let i = positionsToRemove.length - 1; i >= 0; i--) {
     codeBlocks.splice(positionsToRemove[i], 1);
     functionWithParams.splice(positionsToRemove[i], 1);
+    codeComments.splice(positionsToRemove[i], 1);
   }
 
-  return codeBlocks, functionWithParams;
+  return codeBlocks, functionWithParams, codeComments;
 };
 
-exports.startCodeFile = function(filePath, fileName) {
+exports.startCodeFile = function (filePath, fileName) {
   let fileNameWithoutExtension = fileName.split(".")[0];
 
   // Generate fileContent
@@ -283,7 +320,7 @@ exports.startCodeFile = function(filePath, fileName) {
   fs.appendFileSync(filePath, fileContent);
 };
 
-exports.endCodeFile = function(filePath, fileName) {
+exports.endCodeFile = function (filePath, fileName) {
   let fileNameWithoutExtension = fileName.split(".")[0];
 
   let fileContent = `
@@ -292,9 +329,8 @@ exports.endCodeFile = function(filePath, fileName) {
   fs.appendFileSync(filePath, fileContent);
 };
 
-function createSwitchfunction(functionWithParams, functionType) {
+function createSwitchfunction(functionWithParams, functionType, codeComments) {
   // Return the switch function to be created;
-
   let switchCode = "";
   for (let i = 0; i < functionWithParams.length; i++) {
     let currentFunction = functionWithParams[i];
@@ -306,9 +342,12 @@ function createSwitchfunction(functionWithParams, functionType) {
       continue;
     }
 
-    let comment = "No Function parameters";
+    // let comment = "No Function parameters";
+    let comment = `${codeComments[i]}`;
     if (currentFunction.functionParams) {
-      comment = `Function parameters for this API ${currentFunction.functionParams.join(
+      comment = `
+      ${comment}
+      Function parameters for this API ${currentFunction.functionParams.join(
         ","
       )}`;
     }
@@ -324,7 +363,8 @@ function createSwitchfunction(functionWithParams, functionType) {
         case "${StringHelper.convertCamelCaseToSnakeCase(
           functionName
         ).toUpperCase()}":
-        // ${comment}
+        /* ${comment}
+        */
         return new Promise((resolve, reject) => {
           this.${currentFunction.functionName}(options, (err, data) => {
             if(err) {

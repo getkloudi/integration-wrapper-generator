@@ -5,6 +5,9 @@ exports.functionNamesRegex = /[a-zA-Z]+/g
 
 // functions with params regex
 // > repositoriesUsernameRepoSlugCommitNodeApproveDelete(username, repoSlug, node)
+
+// function comments
+exports.functionCommentsRegex = /\>.*\([a-z, A-Z_0-9]*\)\n*.*\n*###/g
 // Get function naem and parameter from the above string
 exports.functionWithParamsRegex = /\>.*\([a-z, A-Z_0-9]*\)\n/g
 // Get function name from the above retrieved string
