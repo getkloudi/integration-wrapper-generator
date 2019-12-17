@@ -161,6 +161,16 @@ exports.generateCodeFile = function generateCodeFile(
       "incomingOptions.accessToken"
     );
 
+    codeBlock = codeBlock.replace(
+      "'YOUR API KEY'",
+      "incomingOptions.apiKey"
+    );
+
+    codeBlock = codeBlock.replace(
+      "//api_key.apiKeyPrefix = 'Token';",
+      "api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix;"
+    )
+
     // comment out all variables
     for (let j = 0; j < functionWithParams[i].functionParams.length; j++) {
       let variable = functionWithParams[i].functionParams[j];
