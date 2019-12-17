@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The IssueEventIssueMilestone model module.
  * @module model/IssueEventIssueMilestone
- * @version 1.2.0
+ * @version 1.3.0
  */
 class IssueEventIssueMilestone {
     /**

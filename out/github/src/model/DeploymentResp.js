@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The DeploymentResp model module.
  * @module model/DeploymentResp
- * @version 1.2.0
+ * @version 1.3.0
  */
 class DeploymentResp {
     /**

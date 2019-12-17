@@ -17,11 +17,13 @@
 		"x-logo": {
 			"url": "https://api.apis.guru/v2/cache/logo/https_twitter.com_github_profile_image.jpeg"
 		},
-		"x-origin": [{
-			"format": "swagger",
-			"url": "https://raw.githubusercontent.com/APIs-guru/unofficial_openapi_specs/master/github.com/v3/swagger.yaml",
-			"version": "2.0"
-		}],
+		"x-origin": [
+			{
+				"format": "swagger",
+				"url": "https://raw.githubusercontent.com/APIs-guru/unofficial_openapi_specs/master/github.com/v3/swagger.yaml",
+				"version": "2.0"
+			}
+		],
 		"x-preferred": true,
 		"x-providerName": "github.com",
 		"x-unofficialSpec": true
@@ -36,7 +38,7 @@
 		"application/json"
 	],
 	"securityDefinitions": {
-		"oauth_2_0": {
+		"api_key": {
 			"authorizationUrl": "https://github.com/login/oauth/authorize",
 			"description": "OAuth2 is a protocol that lets external apps request authorization to private\ndetails in a user's GitHub account without getting their password. This is\npreferred over Basic Authentication because tokens can be limited to specific\ntypes of data, and can be revoked by users at any time.\n",
 			"flow": "accessCode",
@@ -63,19 +65,23 @@
 				"write:repo_hook": ""
 			},
 			"tokenUrl": "https://github.com/login/oauth/access_token",
-			"type": "oauth2"
+			"in": "header",
+			"name": "Authorization",
+			"type": "apiKey"
 		}
 	},
 	"paths": {
 		"/emojis": {
 			"get": {
 				"description": "Lists all the emojis available to use on GitHub.",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -128,12 +134,14 @@
 		"/events": {
 			"get": {
 				"description": "List public events.",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -186,12 +194,14 @@
 		"/feeds": {
 			"get": {
 				"description": "List Feeds.\nGitHub provides several timeline resources in Atom format. The Feeds API\n lists all the feeds available to the authenticating user.\n",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -244,7 +254,8 @@
 		"/gists": {
 			"get": {
 				"description": "List the authenticated user's gists or if called anonymously, this will\nreturn all public gists.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.\nOnly gists updated at or after this time are returned.\n",
 						"in": "query",
 						"name": "since",
@@ -307,7 +318,8 @@
 			},
 			"post": {
 				"description": "Create a gist.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Is used to set specified media type.",
 						"in": "header",
 						"name": "Accept",
@@ -374,7 +386,8 @@
 		"/gists/public": {
 			"get": {
 				"description": "List all public gists.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.\nOnly gists updated at or after this time are returned.\n",
 						"in": "query",
 						"name": "since",
@@ -439,7 +452,8 @@
 		"/gists/starred": {
 			"get": {
 				"description": "List the authenticated user's starred gists.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.\nOnly gists updated at or after this time are returned.\n",
 						"in": "query",
 						"name": "since",
@@ -504,7 +518,8 @@
 		"/gists/{id}": {
 			"delete": {
 				"description": "Delete a gist.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -565,7 +580,8 @@
 			},
 			"get": {
 				"description": "Get a single gist.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -629,7 +645,8 @@
 			},
 			"patch": {
 				"description": "Edit a gist.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -703,7 +720,8 @@
 		"/gists/{id}/comments": {
 			"get": {
 				"description": "List comments on a gist.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -767,7 +785,8 @@
 			},
 			"post": {
 				"description": "Create a commen",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -841,7 +860,8 @@
 		"/gists/{id}/comments/{commentId}": {
 			"delete": {
 				"description": "Delete a comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -909,7 +929,8 @@
 			},
 			"get": {
 				"description": "Get a single comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -980,7 +1001,8 @@
 			},
 			"patch": {
 				"description": "Edit a comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -1061,7 +1083,8 @@
 		"/gists/{id}/forks": {
 			"post": {
 				"description": "Fork a gist.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -1145,7 +1168,8 @@
 		"/gists/{id}/star": {
 			"delete": {
 				"description": "Unstar a gist.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -1206,7 +1230,8 @@
 			},
 			"get": {
 				"description": "Check if a gist is starred.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -1288,7 +1313,8 @@
 			},
 			"put": {
 				"description": "Star a gist.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of gist.",
 						"in": "path",
 						"name": "id",
@@ -1351,12 +1377,14 @@
 		"/gitignore/templates": {
 			"get": {
 				"description": "Listing available templates.\nList all templates available to pass as an option when creating a repository.\n",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -1409,7 +1437,8 @@
 		"/gitignore/templates/{language}": {
 			"get": {
 				"description": "Get a single template.",
-				"parameters": [{
+				"parameters": [
+					{
 						"in": "path",
 						"name": "language",
 						"required": true,
@@ -1474,7 +1503,8 @@
 		"/issues": {
 			"get": {
 				"description": "List issues.\nList all issues across all the authenticated user's visible repositories.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"default": "all",
 						"description": "Issues assigned to you / created by you / mentioning you / you're\nsubscribed to updates for / All issues the authenticated user can see\n",
 						"enum": [
@@ -1596,7 +1626,8 @@
 			"get": {
 				"deprecated": true,
 				"description": "Find issues by state and keyword.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "The search term.",
 						"in": "path",
 						"name": "keyword",
@@ -1686,7 +1717,8 @@
 			"get": {
 				"deprecated": true,
 				"description": "Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "The search term",
 						"in": "path",
 						"name": "keyword",
@@ -1787,7 +1819,8 @@
 			"get": {
 				"deprecated": true,
 				"description": "This API call is added for compatibility reasons only.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "The email address",
 						"in": "path",
 						"name": "email",
@@ -1854,7 +1887,8 @@
 			"get": {
 				"deprecated": true,
 				"description": "Find users by keyword.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "The search term",
 						"in": "path",
 						"name": "keyword",
@@ -1948,7 +1982,8 @@
 		"/markdown": {
 			"post": {
 				"description": "Render an arbitrary Markdown document",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Is used to set specified media type.",
 						"in": "header",
 						"name": "Accept",
@@ -2018,12 +2053,14 @@
 					"text/plain"
 				],
 				"description": "Render a Markdown document in raw mode",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"produces": [
 					"text/html"
 				],
@@ -2076,12 +2113,14 @@
 		"/meta": {
 			"get": {
 				"description": "This gives some information about GitHub.com, the service.",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -2134,7 +2173,8 @@
 		"/networks/{owner}/{repo}/events": {
 			"get": {
 				"description": "List public events for a network of repositories.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of the owner.",
 						"in": "path",
 						"name": "owner",
@@ -2207,7 +2247,8 @@
 		"/notifications": {
 			"get": {
 				"description": "List your notifications.\nList all notifications for the current user, grouped by repository.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "True to show notifications marked as read.",
 						"in": "query",
 						"name": "all",
@@ -2282,7 +2323,8 @@
 			},
 			"put": {
 				"description": "Mark as read.\nMarking a notification as \"read\" removes it from the default view on GitHub.com.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Is used to set specified media type.",
 						"in": "header",
 						"name": "Accept",
@@ -2346,7 +2388,8 @@
 		"/notifications/threads/{id}": {
 			"get": {
 				"description": "View a single thread.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of thread.",
 						"in": "path",
 						"name": "id",
@@ -2410,7 +2453,8 @@
 			},
 			"patch": {
 				"description": "Mark a thread as read",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of thread.",
 						"in": "path",
 						"name": "id",
@@ -2473,7 +2517,8 @@
 		"/notifications/threads/{id}/subscription": {
 			"delete": {
 				"description": "Delete a Thread Subscription.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of thread.",
 						"in": "path",
 						"name": "id",
@@ -2534,7 +2579,8 @@
 			},
 			"get": {
 				"description": "Get a Thread Subscription.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of thread.",
 						"in": "path",
 						"name": "id",
@@ -2598,7 +2644,8 @@
 			},
 			"put": {
 				"description": "Set a Thread Subscription.\nThis lets you subscribe to a thread, or ignore it. Subscribing to a thread\nis unnecessary if the user is already subscribed to the repository. Ignoring\na thread will mute all future notifications (until you comment or get @mentioned).\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of thread.",
 						"in": "path",
 						"name": "id",
@@ -2672,7 +2719,8 @@
 		"/orgs/{org}": {
 			"get": {
 				"description": "Get an Organization.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -2736,7 +2784,8 @@
 			},
 			"patch": {
 				"description": "Edit an Organization.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -2810,7 +2859,8 @@
 		"/orgs/{org}/events": {
 			"get": {
 				"description": "List public events for an organization.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -2876,7 +2926,8 @@
 		"/orgs/{org}/issues": {
 			"get": {
 				"description": "List issues.\nList all issues for a given organization for the authenticated user.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3004,7 +3055,8 @@
 		"/orgs/{org}/members": {
 			"get": {
 				"description": "Members list.\nList all users who are members of an organization. A member is a user tha\nbelongs to at least 1 team in the organization. If the authenticated user\nis also an owner of this organization then both concealed and public members\nwill be returned. If the requester is not an owner of the organization the\nquery will be redirected to the public members list.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3091,7 +3143,8 @@
 		"/orgs/{org}/members/{username}": {
 			"delete": {
 				"description": "Remove a member.\nRemoving a user from this list will remove them from all teams and they\nwill no longer have any access to the organization's repositories.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3159,7 +3212,8 @@
 			},
 			"get": {
 				"description": "Check if a user is, publicly or privately, a member of the organization.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3271,7 +3325,8 @@
 		"/orgs/{org}/public_members": {
 			"get": {
 				"description": "Public members list.\nMembers of an organization can choose to have their membership publicized\nor not.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3337,7 +3392,8 @@
 		"/orgs/{org}/public_members/{username}": {
 			"delete": {
 				"description": "Conceal a user's membership.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3405,7 +3461,8 @@
 			},
 			"get": {
 				"description": "Check public membership.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3494,7 +3551,8 @@
 			},
 			"put": {
 				"description": "Publicize a user's membership.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3564,7 +3622,8 @@
 		"/orgs/{org}/repos": {
 			"get": {
 				"description": "List repositories for the specified org.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3642,7 +3701,8 @@
 			},
 			"post": {
 				"description": "Create a new repository for the authenticated user. OAuth users must supply\nrepo scope.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3716,7 +3776,8 @@
 		"/orgs/{org}/teams": {
 			"get": {
 				"description": "List teams.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3780,7 +3841,8 @@
 			},
 			"post": {
 				"description": "Create team.\nIn order to create a team, the authenticated user must be an owner of organization.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of organisation.",
 						"in": "path",
 						"name": "org",
@@ -3854,12 +3916,14 @@
 		"/rate_limit": {
 			"get": {
 				"description": "Get your current rate limit status\nNote: Accessing this endpoint does not count against your rate limit.\n",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -3912,7 +3976,8 @@
 		"/repos/{owner}/{repo}": {
 			"delete": {
 				"description": "Delete a Repository.\nDeleting a repository requires admin access. If OAuth is used, the delete_repo\nscope is required.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -3980,7 +4045,8 @@
 			},
 			"get": {
 				"description": "Get repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4051,7 +4117,8 @@
 			},
 			"patch": {
 				"description": "Edit repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4132,7 +4199,8 @@
 		"/repos/{owner}/{repo}/assignees": {
 			"get": {
 				"description": "List assignees.\nThis call lists all the available assignees (owner + collaborators) to which\nissues may be assigned.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4205,7 +4273,8 @@
 		"/repos/{owner}/{repo}/assignees/{assignee}": {
 			"get": {
 				"description": "Check assignee.\nYou may also check to see if a particular user is an assignee for a repository.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4303,7 +4372,8 @@
 		"/repos/{owner}/{repo}/branches": {
 			"get": {
 				"description": "Get list of branches",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4376,7 +4446,8 @@
 		"/repos/{owner}/{repo}/branches/{branch}": {
 			"get": {
 				"description": "Get Branch",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4456,7 +4527,8 @@
 		"/repos/{owner}/{repo}/collaborators": {
 			"get": {
 				"description": "List.\nWhen authenticating as an organization owner of an organization-owned\nrepository, all organization owners are included in the list of\ncollaborators. Otherwise, only users with access to the repository are\nreturned in the collaborators list.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4529,7 +4601,8 @@
 		"/repos/{owner}/{repo}/collaborators/{user}": {
 			"delete": {
 				"description": "Remove collaborator.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4604,7 +4677,8 @@
 			},
 			"get": {
 				"description": "Check if user is a collaborator",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4700,7 +4774,8 @@
 			},
 			"put": {
 				"description": "Add collaborator.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4777,7 +4852,8 @@
 		"/repos/{owner}/{repo}/comments": {
 			"get": {
 				"description": "List commit comments for a repository.\nComments are ordered by ascending ID.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4850,7 +4926,8 @@
 		"/repos/{owner}/{repo}/comments/{commentId}": {
 			"delete": {
 				"description": "Delete a commit comment",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -4925,7 +5002,8 @@
 			},
 			"get": {
 				"description": "Get a single commit comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5003,7 +5081,8 @@
 			},
 			"patch": {
 				"description": "Update a commit comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5091,7 +5170,8 @@
 		"/repos/{owner}/{repo}/commits": {
 			"get": {
 				"description": "List commits on a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5194,7 +5274,8 @@
 		"/repos/{owner}/{repo}/commits/{ref}/status": {
 			"get": {
 				"description": "Get the combined Status for a specific Ref\nThe Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details.\nTo access this endpoint during the preview period, you must provide a custom media type in the Accept header:\napplication/vnd.github.she-hulk-preview+json\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5273,7 +5354,8 @@
 		"/repos/{owner}/{repo}/commits/{shaCode}": {
 			"get": {
 				"description": "Get a single commit.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5353,7 +5435,8 @@
 		"/repos/{owner}/{repo}/commits/{shaCode}/comments": {
 			"get": {
 				"description": "List comments for a single commitList comments for a single commit.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5431,7 +5514,8 @@
 			},
 			"post": {
 				"description": "Create a commit comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5519,7 +5603,8 @@
 		"/repos/{owner}/{repo}/compare/{baseId}...{headId}": {
 			"get": {
 				"description": "Compare two commits",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5604,7 +5689,8 @@
 		"/repos/{owner}/{repo}/contents/{path}": {
 			"delete": {
 				"description": "Delete a file.\nThis method deletes a file in a repository.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5689,7 +5775,8 @@
 			},
 			"get": {
 				"description": "Get contents.\nThis method returns the contents of a file or directory in a repository.\nFiles and symlinks support a custom media type for getting the raw content.\nDirectories and submodules do not support custom media types.\nNote: This API supports files up to 1 megabyte in size.\nHere can be many outcomes. For details see \"http://developer.github.com/v3/repos/contents/\"\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5778,7 +5865,8 @@
 			},
 			"put": {
 				"description": "Create a file.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5865,7 +5953,8 @@
 		"/repos/{owner}/{repo}/contributors": {
 			"get": {
 				"description": "Get list of contributors.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -5945,7 +6034,8 @@
 		"/repos/{owner}/{repo}/deployments": {
 			"get": {
 				"description": "Users with pull access can view deployments for a repository",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6016,7 +6106,8 @@
 			},
 			"post": {
 				"description": "Users with push access can create a deployment for a given ref",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6097,7 +6188,8 @@
 		"/repos/{owner}/{repo}/deployments/{id}/statuses": {
 			"get": {
 				"description": "Users with pull access can view deployment statuses for a deployment",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6175,7 +6267,8 @@
 			},
 			"post": {
 				"description": "Create a Deployment Status\nUsers with push access can create deployment statuses for a given deployment:\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6261,7 +6354,8 @@
 			"get": {
 				"deprecated": true,
 				"description": "Deprecated. List downloads for a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6335,7 +6429,8 @@
 			"delete": {
 				"deprecated": true,
 				"description": "Deprecated. Delete a download.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6411,7 +6506,8 @@
 			"get": {
 				"deprecated": true,
 				"description": "Deprecated. Get a single download.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6491,7 +6587,8 @@
 		"/repos/{owner}/{repo}/events": {
 			"get": {
 				"description": "Get list of repository events.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6564,7 +6661,8 @@
 		"/repos/{owner}/{repo}/forks": {
 			"get": {
 				"description": "List forks.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6646,7 +6744,8 @@
 			},
 			"post": {
 				"description": "Create a fork.\nForking a Repository happens asynchronously. Therefore, you may have to wai\na short period before accessing the git objects. If this takes longer than 5\nminutes, be sure to contact Support.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6727,7 +6826,8 @@
 		"/repos/{owner}/{repo}/git/blobs": {
 			"post": {
 				"description": "Create a Blob.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6808,7 +6908,8 @@
 		"/repos/{owner}/{repo}/git/blobs/{shaCode}": {
 			"get": {
 				"description": "Get a Blob.\nSince blobs can be any arbitrary binary data, the input and responses for\nthe blob API takes an encoding parameter that can be either utf-8 or\nbase64. If your data cannot be losslessly sent as a UTF-8 string, you can\nbase64 encode it.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6888,7 +6989,8 @@
 		"/repos/{owner}/{repo}/git/commits": {
 			"post": {
 				"description": "Create a Commit.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -6969,7 +7071,8 @@
 		"/repos/{owner}/{repo}/git/commits/{shaCode}": {
 			"get": {
 				"description": "Get a Commit.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7049,7 +7152,8 @@
 		"/repos/{owner}/{repo}/git/refs": {
 			"get": {
 				"description": "Get all References",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7120,7 +7224,8 @@
 			},
 			"post": {
 				"description": "Create a Reference",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7201,7 +7306,8 @@
 		"/repos/{owner}/{repo}/git/refs/{ref}": {
 			"delete": {
 				"description": "Delete a Reference\nExample: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a \nExample: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7275,7 +7381,8 @@
 			},
 			"get": {
 				"description": "Get a Reference",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7352,7 +7459,8 @@
 			},
 			"patch": {
 				"description": "Update a Reference",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7439,7 +7547,8 @@
 		"/repos/{owner}/{repo}/git/tags": {
 			"post": {
 				"description": "Create a Tag Object.\nNote that creating a tag object does not create the reference that makes a\ntag in Git. If you want to create an annotated tag in Git, you have to do\nthis call to create the tag object, and then create the refs/tags/[tag]\nreference. If you want to create a lightweight tag, you only have to create\nthe tag reference - this call would be unnecessary.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7520,7 +7629,8 @@
 		"/repos/{owner}/{repo}/git/tags/{shaCode}": {
 			"get": {
 				"description": "Get a Tag.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7599,7 +7709,8 @@
 		"/repos/{owner}/{repo}/git/trees": {
 			"post": {
 				"description": "Create a Tree.\nThe tree creation API will take nested entries as well. If both a tree and\na nested path modifying that tree are specified, it will overwrite the\ncontents of that tree with the new path contents and write a new tree out.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7680,7 +7791,8 @@
 		"/repos/{owner}/{repo}/git/trees/{shaCode}": {
 			"get": {
 				"description": "Get a Tree.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7766,7 +7878,8 @@
 		"/repos/{owner}/{repo}/hooks": {
 			"get": {
 				"description": "Get list of hooks.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7837,7 +7950,8 @@
 			},
 			"post": {
 				"description": "Create a hook.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7918,7 +8032,8 @@
 		"/repos/{owner}/{repo}/hooks/{hookId}": {
 			"delete": {
 				"description": "Delete a hook.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -7993,7 +8108,8 @@
 			},
 			"get": {
 				"description": "Get single hook.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8071,7 +8187,8 @@
 			},
 			"patch": {
 				"description": "Edit a hook.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8159,7 +8276,8 @@
 		"/repos/{owner}/{repo}/hooks/{hookId}/tests": {
 			"post": {
 				"description": "Test a push hook.\nThis will trigger the hook with the latest push to the current repository\nif the hook is subscribed to push events. If the hook is not subscribed\nto push events, the server will respond with 204 but no test POST will\nbe generated.\nNote: Previously /repos/:owner/:repo/hooks/:id/tes\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8236,7 +8354,8 @@
 		"/repos/{owner}/{repo}/issues": {
 			"get": {
 				"description": "List issues for a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8369,7 +8488,8 @@
 			},
 			"post": {
 				"description": "Create an issue.\nAny user with pull access to a repository can create an issue.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8450,7 +8570,8 @@
 		"/repos/{owner}/{repo}/issues/comments": {
 			"get": {
 				"description": "List comments in a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8545,7 +8666,8 @@
 		"/repos/{owner}/{repo}/issues/comments/{commentId}": {
 			"delete": {
 				"description": "Delete a comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8620,7 +8742,8 @@
 			},
 			"get": {
 				"description": "Get a single comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8698,7 +8821,8 @@
 			},
 			"patch": {
 				"description": "Edit a comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8786,7 +8910,8 @@
 		"/repos/{owner}/{repo}/issues/events": {
 			"get": {
 				"description": "List issue events for a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8859,7 +8984,8 @@
 		"/repos/{owner}/{repo}/issues/events/{eventId}": {
 			"get": {
 				"description": "Get a single event.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -8939,7 +9065,8 @@
 		"/repos/{owner}/{repo}/issues/{number}": {
 			"get": {
 				"description": "Get a single issue",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9017,7 +9144,8 @@
 			},
 			"patch": {
 				"description": "Edit an issue.\nIssue owners and users with push access can edit an issue.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9105,7 +9233,8 @@
 		"/repos/{owner}/{repo}/issues/{number}/comments": {
 			"get": {
 				"description": "List comments on an issue.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9183,7 +9312,8 @@
 			},
 			"post": {
 				"description": "Create a comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9271,7 +9401,8 @@
 		"/repos/{owner}/{repo}/issues/{number}/events": {
 			"get": {
 				"description": "List events for an issue.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9351,7 +9482,8 @@
 		"/repos/{owner}/{repo}/issues/{number}/labels": {
 			"delete": {
 				"description": "Remove all labels from an issue.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9426,7 +9558,8 @@
 			},
 			"get": {
 				"description": "List labels on an issue.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9504,7 +9637,8 @@
 			},
 			"post": {
 				"description": "Add labels to an issue.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9590,7 +9724,8 @@
 			},
 			"put": {
 				"description": "Replace all labels for an issue.\nSending an empty array ([]) will remove all Labels from the Issue.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9678,7 +9813,8 @@
 		"/repos/{owner}/{repo}/issues/{number}/labels/{name}": {
 			"delete": {
 				"description": "Remove a label from an issue.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9762,7 +9898,8 @@
 		"/repos/{owner}/{repo}/keys": {
 			"get": {
 				"description": "Get list of keys.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9833,7 +9970,8 @@
 			},
 			"post": {
 				"description": "Create a key.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9914,7 +10052,8 @@
 		"/repos/{owner}/{repo}/keys/{keyId}": {
 			"delete": {
 				"description": "Delete a key.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -9989,7 +10128,8 @@
 			},
 			"get": {
 				"description": "Get a key",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10069,7 +10209,8 @@
 		"/repos/{owner}/{repo}/labels": {
 			"get": {
 				"description": "List all labels for this repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10140,7 +10281,8 @@
 			},
 			"post": {
 				"description": "Create a label.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10221,7 +10363,8 @@
 		"/repos/{owner}/{repo}/labels/{name}": {
 			"delete": {
 				"description": "Delete a label.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10296,7 +10439,8 @@
 			},
 			"get": {
 				"description": "Get a single label.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10374,7 +10518,8 @@
 			},
 			"patch": {
 				"description": "Update a label.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10462,7 +10607,8 @@
 		"/repos/{owner}/{repo}/languages": {
 			"get": {
 				"description": "List languages.\nList languages for the specified repository. The value on the right of a\nlanguage is the number of bytes of code written in that language.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10535,7 +10681,8 @@
 		"/repos/{owner}/{repo}/merges": {
 			"post": {
 				"description": "Perform a merge.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10685,7 +10832,8 @@
 		"/repos/{owner}/{repo}/milestones": {
 			"get": {
 				"description": "List milestones for a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10784,7 +10932,8 @@
 			},
 			"post": {
 				"description": "Create a milestone.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10865,7 +11014,8 @@
 		"/repos/{owner}/{repo}/milestones/{number}": {
 			"delete": {
 				"description": "Delete a milestone.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -10940,7 +11090,8 @@
 			},
 			"get": {
 				"description": "Get a single milestone.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11018,7 +11169,8 @@
 			},
 			"patch": {
 				"description": "Update a milestone.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11106,7 +11258,8 @@
 		"/repos/{owner}/{repo}/milestones/{number}/labels": {
 			"get": {
 				"description": "Get labels for every issue in a milestone.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11186,7 +11339,8 @@
 		"/repos/{owner}/{repo}/notifications": {
 			"get": {
 				"description": "List your notifications in a repository\nList all notifications for the current user.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11275,7 +11429,8 @@
 			},
 			"put": {
 				"description": "Mark notifications as read in a repository.\nMarking all notifications in a repository as \"read\" removes them from the\ndefault view on GitHub.com.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11353,7 +11508,8 @@
 		"/repos/{owner}/{repo}/pulls": {
 			"get": {
 				"description": "List pull requests.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11447,7 +11603,8 @@
 			},
 			"post": {
 				"description": "Create a pull request.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11528,7 +11685,8 @@
 		"/repos/{owner}/{repo}/pulls/comments": {
 			"get": {
 				"description": "List comments in a repository.\nBy default, Review Comments are ordered by ascending ID.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11623,7 +11781,8 @@
 		"/repos/{owner}/{repo}/pulls/comments/{commentId}": {
 			"delete": {
 				"description": "Delete a comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11698,7 +11857,8 @@
 			},
 			"get": {
 				"description": "Get a single comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11776,7 +11936,8 @@
 			},
 			"patch": {
 				"description": "Edit a comment.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11864,7 +12025,8 @@
 		"/repos/{owner}/{repo}/pulls/{number}": {
 			"get": {
 				"description": "Get a single pull request.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -11942,7 +12104,8 @@
 			},
 			"patch": {
 				"description": "Update a pull request.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12030,7 +12193,8 @@
 		"/repos/{owner}/{repo}/pulls/{number}/comments": {
 			"get": {
 				"description": "List comments on a pull request.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12108,7 +12272,8 @@
 			},
 			"post": {
 				"description": "Create a comment.\n  #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )\n  description: |\n    Alternative Input.\n    Instead of passing commit_id, path, and position you can reply to an\n    existing Pull Request Comment like this:\n\n        body\n           Required string\n        in_reply_to\n           Required number - Comment id to reply to.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12196,7 +12361,8 @@
 		"/repos/{owner}/{repo}/pulls/{number}/commits": {
 			"get": {
 				"description": "List commits on a pull request.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12276,7 +12442,8 @@
 		"/repos/{owner}/{repo}/pulls/{number}/files": {
 			"get": {
 				"description": "List pull requests files.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12356,7 +12523,8 @@
 		"/repos/{owner}/{repo}/pulls/{number}/merge": {
 			"get": {
 				"description": "Get if a pull request has been merged.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12452,7 +12620,8 @@
 			},
 			"put": {
 				"description": "Merge a pull request (Merge Button's)",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12564,7 +12733,8 @@
 		"/repos/{owner}/{repo}/readme": {
 			"get": {
 				"description": "Get the README.\nThis method returns the preferred README for a repository.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12643,7 +12813,8 @@
 		"/repos/{owner}/{repo}/releases": {
 			"get": {
 				"description": "Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12714,7 +12885,8 @@
 			},
 			"post": {
 				"description": "Create a release\nUsers with push access to the repository can create a release.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12795,7 +12967,8 @@
 		"/repos/{owner}/{repo}/releases/assets/{id}": {
 			"delete": {
 				"description": "Delete a release asset",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12869,7 +13042,8 @@
 			},
 			"get": {
 				"description": "Get a single release asset",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -12946,7 +13120,8 @@
 			},
 			"patch": {
 				"description": "Edit a release asset\nUsers with push access to the repository can edit a release asset.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13033,7 +13208,8 @@
 		"/repos/{owner}/{repo}/releases/{id}": {
 			"delete": {
 				"description": "Users with push access to the repository can delete a release.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13107,7 +13283,8 @@
 			},
 			"get": {
 				"description": "Get a single release",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13184,7 +13361,8 @@
 			},
 			"patch": {
 				"description": "Users with push access to the repository can edit a release",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13271,7 +13449,8 @@
 		"/repos/{owner}/{repo}/releases/{id}/assets": {
 			"get": {
 				"description": "List assets for a release",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13350,7 +13529,8 @@
 		"/repos/{owner}/{repo}/stargazers": {
 			"get": {
 				"description": "List Stargazers.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13423,7 +13603,8 @@
 		"/repos/{owner}/{repo}/stats/code_frequency": {
 			"get": {
 				"description": "Get the number of additions and deletions per week.\nReturns a weekly aggregate of the number of additions and deletions pushed\nto a repository.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13496,7 +13677,8 @@
 		"/repos/{owner}/{repo}/stats/commit_activity": {
 			"get": {
 				"description": "Get the last year of commit activity data.\nReturns the last year of commit activity grouped by week. The days array\nis a group of commits per day, starting on Sunday.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13569,7 +13751,8 @@
 		"/repos/{owner}/{repo}/stats/contributors": {
 			"get": {
 				"description": "Get contributors list with additions, deletions, and commit counts.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13642,7 +13825,8 @@
 		"/repos/{owner}/{repo}/stats/participation": {
 			"get": {
 				"description": "Get the weekly commit count for the repo owner and everyone else.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13715,7 +13899,8 @@
 		"/repos/{owner}/{repo}/stats/punch_card": {
 			"get": {
 				"description": "Get the number of commits per hour in each day.\nEach array contains the day number, hour number, and number of commits\n0-6 Sunday - Saturday\n0-23 Hour of day\nNumber of commits\n\nFor example, [2, 14, 25] indicates that there were 25 total commits, during\nthe 2.00pm hour on Tuesdays. All times are based on the time zone of\nindividual commits.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13788,7 +13973,8 @@
 		"/repos/{owner}/{repo}/statuses/{ref}": {
 			"get": {
 				"description": "List Statuses for a specific Ref.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13866,7 +14052,8 @@
 			},
 			"post": {
 				"description": "Create a Status.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -13954,7 +14141,8 @@
 		"/repos/{owner}/{repo}/subscribers": {
 			"get": {
 				"description": "List watchers.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -14027,7 +14215,8 @@
 		"/repos/{owner}/{repo}/subscription": {
 			"delete": {
 				"description": "Delete a Repository Subscription.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -14095,7 +14284,8 @@
 			},
 			"get": {
 				"description": "Get a Repository Subscription.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -14166,7 +14356,8 @@
 			},
 			"put": {
 				"description": "Set a Repository Subscription",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -14247,7 +14438,8 @@
 		"/repos/{owner}/{repo}/tags": {
 			"get": {
 				"description": "Get list of tags.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -14320,7 +14512,8 @@
 		"/repos/{owner}/{repo}/teams": {
 			"get": {
 				"description": "Get list of teams",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -14393,7 +14586,8 @@
 		"/repos/{owner}/{repo}/watchers": {
 			"get": {
 				"description": "List Stargazers. New implementation.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -14466,7 +14660,8 @@
 		"/repos/{owner}/{repo}/{archive_format}/{path}": {
 			"get": {
 				"description": "Get archive link.\nThis method will return a 302 to a URL to download a tarball or zipball\narchive for a repository. Please make sure your HTTP framework is\nconfigured to follow redirects or you will need to use the Location header\nto make a second GET request.\nNote: For private repositories, these links are temporary and expire quickly.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -14553,7 +14748,8 @@
 		"/repositories": {
 			"get": {
 				"description": "List all public repositories.\nThis provides a dump of every public repository, in the order that they\nwere created.\nNote: Pagination is powered exclusively by the since parameter. is the\nLink header to get the URL for the next page of repositories.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.\nExample: \"2012-10-09T23:39:01Z\".\n",
 						"in": "query",
 						"name": "since",
@@ -14618,7 +14814,8 @@
 		"/search/code": {
 			"get": {
 				"description": "Search code.",
-				"parameters": [{
+				"parameters": [
+					{
 						"default": "desc",
 						"description": "The sort field. if sort param is provided. Can be either asc or desc.",
 						"enum": [
@@ -14704,7 +14901,8 @@
 		"/search/issues": {
 			"get": {
 				"description": "Find issues by state and keyword. (This method returns up to 100 results per page.)",
-				"parameters": [{
+				"parameters": [
+					{
 						"default": "desc",
 						"description": "The sort field. if sort param is provided. Can be either asc or desc.",
 						"enum": [
@@ -14792,7 +14990,8 @@
 		"/search/repositories": {
 			"get": {
 				"description": "Search repositories.",
-				"parameters": [{
+				"parameters": [
+					{
 						"default": "desc",
 						"description": "The sort field. if sort param is provided. Can be either asc or desc.",
 						"enum": [
@@ -14880,7 +15079,8 @@
 		"/search/users": {
 			"get": {
 				"description": "Search users.",
-				"parameters": [{
+				"parameters": [
+					{
 						"default": "desc",
 						"description": "The sort field. if sort param is provided. Can be either asc or desc.",
 						"enum": [
@@ -14968,7 +15168,8 @@
 		"/teams/{teamId}": {
 			"delete": {
 				"description": "Delete team.\nIn order to delete a team, the authenticated user must be an owner of the\norg that the team is associated with.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15029,7 +15230,8 @@
 			},
 			"get": {
 				"description": "Get team.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15093,7 +15295,8 @@
 			},
 			"patch": {
 				"description": "Edit team.\nIn order to edit a team, the authenticated user must be an owner of the org\nthat the team is associated with.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15167,7 +15370,8 @@
 		"/teams/{teamId}/members": {
 			"get": {
 				"description": "List team members.\nIn order to list members in a team, the authenticated user must be a member\nof the team.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15234,7 +15438,8 @@
 			"delete": {
 				"deprecated": true,
 				"description": "The \"Remove team member\" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.\n\nRemove team member.\nIn order to remove a user from a team, the authenticated user must have 'admin'\npermissions to the team or be an owner of the org that the team is associated\nwith.\nNOTE This does not delete the user, it just remove them from the team.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15303,7 +15508,8 @@
 			"get": {
 				"deprecated": true,
 				"description": "The \"Get team member\" API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.\n\nGet team member.\nIn order to get if a user is a member of a team, the authenticated user mus\nbe a member of the team.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15393,7 +15599,8 @@
 			"put": {
 				"deprecated": true,
 				"description": "The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.\n\nAdd team member.\nIn order to add a user to a team, the authenticated user must have 'admin'\npermissions to the team or be an owner of the org that the team is associated\nwith.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15487,7 +15694,8 @@
 		"/teams/{teamId}/memberships/{username}": {
 			"delete": {
 				"description": "Remove team membership.\nIn order to remove a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15555,7 +15763,8 @@
 			},
 			"get": {
 				"description": "Get team membership.\nIn order to get a user's membership with a team, the authenticated user must be a member of the team or an owner of the team's organization.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15647,7 +15856,8 @@
 			},
 			"put": {
 				"description": "Add team membership.\nIn order to add a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with.\n\nIf the user is already a part of the team's organization (meaning they're on at least one other team in the organization), this endpoint will add the user to the team.\n\nIf the user is completely unaffiliated with the team's organization (meaning they're on none of the organization's teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the 'pending' state until the user accepts the invitation, at which point the membership will transition to the 'active' state and the user will be added as a member of the team.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15744,7 +15954,8 @@
 		"/teams/{teamId}/repos": {
 			"get": {
 				"description": "List team repos",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15810,7 +16021,8 @@
 		"/teams/{teamId}/repos/{owner}/{repo}": {
 			"delete": {
 				"description": "In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15885,7 +16097,8 @@
 			},
 			"get": {
 				"description": "Check if a team manages a repository",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15939,7 +16152,8 @@
 			},
 			"put": {
 				"description": "In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Id of team.",
 						"in": "path",
 						"name": "teamId",
@@ -15995,12 +16209,14 @@
 		"/user": {
 			"get": {
 				"description": "Get the authenticated user.",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -16047,11 +16263,17 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"patch": {
 				"description": "Update the authenticated user.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Is used to set specified media type.",
 						"in": "header",
 						"name": "Accept",
@@ -16118,7 +16340,8 @@
 		"/user/emails": {
 			"delete": {
 				"description": "Delete email address(es).\nYou can include a single email address or an array of addresses.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Is used to set specified media type.",
 						"in": "header",
 						"name": "Accept",
@@ -16180,12 +16403,14 @@
 			},
 			"get": {
 				"description": "List email addresses for a user.\nIn the final version of the API, this method will return an array of hashes\nwith extended information for each email address indicating if the address\nhas been verified and if it's primary email address for GitHub.\nUntil API v3 is finalized, use the application/vnd.github.v3 media type to\nget other response format.\n",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"produces": [
 					"application/vnd.github.v3"
 				],
@@ -16239,7 +16464,8 @@
 			},
 			"post": {
 				"description": "Add email address(es).\nYou can post a single email address or an array of addresses.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Is used to set specified media type.",
 						"in": "header",
 						"name": "Accept",
@@ -16282,12 +16508,14 @@
 		"/user/followers": {
 			"get": {
 				"description": "List the authenticated user's followers",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -16340,12 +16568,14 @@
 		"/user/following": {
 			"get": {
 				"description": "List who the authenticated user is following.",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -16398,7 +16628,8 @@
 		"/user/following/{username}": {
 			"delete": {
 				"description": "Unfollow a user.\nUnfollowing a user requires the user to be logged in and authenticated with\nbasic auth or OAuth with the user:follow scope.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -16459,7 +16690,8 @@
 			},
 			"get": {
 				"description": "Check if you are following a user.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -16541,7 +16773,8 @@
 			},
 			"put": {
 				"description": "Follow a user.\nFollowing a user requires the user to be logged in and authenticated with\nbasic auth or OAuth with the user:follow scope.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -16604,7 +16837,8 @@
 		"/user/issues": {
 			"get": {
 				"description": "List issues.\nList all issues across owned and member repositories for the authenticated\nuser.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"default": "all",
 						"description": "Issues assigned to you / created by you / mentioning you / you're\nsubscribed to updates for / All issues the authenticated user can see\n",
 						"enum": [
@@ -16725,12 +16959,14 @@
 		"/user/keys": {
 			"get": {
 				"description": "List your public keys.\nLists the current user's keys. Management of public keys via the API requires\nthat you are authenticated through basic auth, or OAuth with the 'user', 'write:public_key' scopes.\n",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -16781,7 +17017,8 @@
 			},
 			"post": {
 				"description": "Create a public key.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Is used to set specified media type.",
 						"in": "header",
 						"name": "Accept",
@@ -16848,7 +17085,8 @@
 		"/user/keys/{keyId}": {
 			"delete": {
 				"description": "Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "ID of key.",
 						"in": "path",
 						"name": "keyId",
@@ -16909,7 +17147,8 @@
 			},
 			"get": {
 				"description": "Get a single public key.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "ID of key.",
 						"in": "path",
 						"name": "keyId",
@@ -16975,12 +17214,14 @@
 		"/user/orgs": {
 			"get": {
 				"description": "List public and private organizations for the authenticated user.",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -17033,7 +17274,8 @@
 		"/user/repos": {
 			"get": {
 				"description": "List repositories for the authenticated user. Note that this does not include\nrepositories owned by organizations which the user can access. You can lis\nuser organizations and list organization repositories separately.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"default": "all",
 						"enum": [
 							"all",
@@ -17104,7 +17346,8 @@
 			},
 			"post": {
 				"description": "Create a new repository for the authenticated user. OAuth users must supply\nrepo scope.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Is used to set specified media type.",
 						"in": "header",
 						"name": "Accept",
@@ -17171,7 +17414,8 @@
 		"/user/starred": {
 			"get": {
 				"description": "List repositories being starred by the authenticated user.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Ignored without 'sort' parameter.",
 						"in": "query",
 						"name": "direction",
@@ -17247,7 +17491,8 @@
 		"/user/starred/{owner}/{repo}": {
 			"delete": {
 				"description": "Unstar a repository",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of a repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -17315,7 +17560,8 @@
 			},
 			"get": {
 				"description": "Check if you are starring a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of a repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -17404,7 +17650,8 @@
 			},
 			"put": {
 				"description": "Star a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of a repository owner.",
 						"in": "path",
 						"name": "owner",
@@ -17474,12 +17721,14 @@
 		"/user/subscriptions": {
 			"get": {
 				"description": "List repositories being watched by the authenticated user.",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -17533,7 +17782,8 @@
 			"delete": {
 				"deprecated": true,
 				"description": "Stop watching a repository",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of the owner.",
 						"in": "path",
 						"name": "owner",
@@ -17602,7 +17852,8 @@
 			"get": {
 				"deprecated": true,
 				"description": "Check if you are watching a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of the owner.",
 						"in": "path",
 						"name": "owner",
@@ -17692,7 +17943,8 @@
 			"put": {
 				"deprecated": true,
 				"description": "Watch a repository.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of the owner.",
 						"in": "path",
 						"name": "owner",
@@ -17762,12 +18014,14 @@
 		"/user/teams": {
 			"get": {
 				"description": "List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.",
-				"parameters": [{
-					"description": "Is used to set specified media type.",
-					"in": "header",
-					"name": "Accept",
-					"type": "string"
-				}],
+				"parameters": [
+					{
+						"description": "Is used to set specified media type.",
+						"in": "header",
+						"name": "Accept",
+						"type": "string"
+					}
+				],
 				"responses": {
 					"200": {
 						"description": "OK",
@@ -17820,7 +18074,8 @@
 		"/users": {
 			"get": {
 				"description": "Get all users.\nThis provides a dump of every user, in the order that they signed up for GitHub.\nNote: Pagination is powered exclusively by the since parameter. Use the Link\nheader to get the URL for the next page of users.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "The integer ID of the last user that you've seen.",
 						"in": "query",
 						"name": "since",
@@ -17885,7 +18140,8 @@
 		"/users/{username}": {
 			"get": {
 				"description": "Get a single user.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -17951,7 +18207,8 @@
 		"/users/{username}/events": {
 			"get": {
 				"description": "If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -17993,7 +18250,8 @@
 		"/users/{username}/events/orgs/{org}": {
 			"get": {
 				"description": "This is the user's organization dashboard. You must be authenticated as the user to view this.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18041,7 +18299,8 @@
 		"/users/{username}/followers": {
 			"get": {
 				"description": "List a user's followers",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18107,7 +18366,8 @@
 		"/users/{username}/following/{targetUser}": {
 			"get": {
 				"description": "Check if one user follows another.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18198,7 +18458,8 @@
 		"/users/{username}/gists": {
 			"get": {
 				"description": "List a users gists.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18270,7 +18531,8 @@
 		"/users/{username}/keys": {
 			"get": {
 				"description": "List public keys for a user.\nLists the verified public keys for a user. This is accessible by anyone.\n",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18336,7 +18598,8 @@
 		"/users/{username}/orgs": {
 			"get": {
 				"description": "List all public organizations for a user.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18402,7 +18665,8 @@
 		"/users/{username}/received_events": {
 			"get": {
 				"description": "These are events that you'll only see public events.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18444,7 +18708,8 @@
 		"/users/{username}/received_events/public": {
 			"get": {
 				"description": "List public events that a user has received",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18486,7 +18751,8 @@
 		"/users/{username}/repos": {
 			"get": {
 				"description": "List public repositories for the specified user.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18566,7 +18832,8 @@
 		"/users/{username}/starred": {
 			"get": {
 				"description": "List repositories being starred by a user.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -18608,7 +18875,8 @@
 		"/users/{username}/subscriptions": {
 			"get": {
 				"description": "List repositories being watched by a user.",
-				"parameters": [{
+				"parameters": [
+					{
 						"description": "Name of user.",
 						"in": "path",
 						"name": "username",
@@ -21352,7 +21620,8 @@
 			"type": "object"
 		},
 		"organization": {
-			"allOf": [{
+			"allOf": [
+				{
 					"$ref": "#/definitions/actor"
 				},
 				{
@@ -22621,7 +22890,8 @@
 					"$ref": "#/definitions/actor"
 				},
 				"parent": {
-					"allOf": [{
+					"allOf": [
+						{
 							"$ref": "#/definitions/repo"
 						},
 						{
@@ -22640,7 +22910,8 @@
 					"type": "integer"
 				},
 				"source": {
-					"allOf": [{
+					"allOf": [
+						{
 							"$ref": "#/definitions/repo"
 						},
 						{
@@ -23582,7 +23853,8 @@
 			"type": "object"
 		},
 		"user": {
-			"allOf": [{
+			"allOf": [
+				{
 					"$ref": "#/definitions/actor"
 				},
 				{

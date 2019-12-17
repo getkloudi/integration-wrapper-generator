@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 1.2.0
+* @version 1.3.0
 */
 
 /**
@@ -41,7 +41,7 @@ class ApiClient {
          * @type {Array.<String>}
          */
         this.authentications = {
-            'oauth_2_0': {type: 'oauth2'}
+            'api_key': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
         }
 
         /**

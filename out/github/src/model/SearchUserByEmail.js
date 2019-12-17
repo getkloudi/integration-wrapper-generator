@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The SearchUserByEmail model module.
  * @module model/SearchUserByEmail
- * @version 1.2.0
+ * @version 1.3.0
  */
 class SearchUserByEmail {
     /**

@@ -17,7 +17,7 @@ import PatchGistFilesFile1Txt from './PatchGistFilesFile1Txt';
 /**
  * The PostGistFiles model module.
  * @module model/PostGistFiles
- * @version 1.2.0
+ * @version 1.3.0
  */
 class PostGistFiles {
     /**

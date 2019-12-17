@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The OrganizationAsTeamMemberErrors model module.
  * @module model/OrganizationAsTeamMemberErrors
- * @version 1.2.0
+ * @version 1.3.0
  */
 var OrganizationAsTeamMemberErrors =
 /*#__PURE__*/

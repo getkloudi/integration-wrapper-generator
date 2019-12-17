@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The SearchUsersByKeyword model module.
  * @module model/SearchUsersByKeyword
- * @version 1.2.0
+ * @version 1.3.0
  */
 class SearchUsersByKeyword {
     /**

@@ -17,7 +17,7 @@ import SearchIssuesByKeywordIssues from './SearchIssuesByKeywordIssues';
 /**
  * The SearchIssuesByKeyword model module.
  * @module model/SearchIssuesByKeyword
- * @version 1.2.0
+ * @version 1.3.0
  */
 class SearchIssuesByKeyword {
     /**

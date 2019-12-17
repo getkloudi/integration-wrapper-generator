@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TagBody model module.
  * @module model/TagBody
- * @version 1.2.0
+ * @version 1.3.0
  */
 var TagBody =
 /*#__PURE__*/

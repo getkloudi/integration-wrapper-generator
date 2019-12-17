@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GistFiles model module.
  * @module model/GistFiles
- * @version 1.2.0
+ * @version 1.3.0
  */
 var GistFiles =
 /*#__PURE__*/

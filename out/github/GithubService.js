@@ -1,7 +1,18 @@
-const axios = require("axios");
-const errorHelper = require("../../helpers/ErrorHelper");
-const nconf = require("nconf");
+const Axios = require("axios");
 const qs = require("querystring");
+const nconf = require("nconf");
+const ErrorHelper = require("../../helpers/ErrorHelper");
+
+/*
+    - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
+  */
+const SCOPES = [
+  "notifications",
+  "repo",
+  "read:user",
+  "user:email",
+  "write:org"
+];
 
 class GithubService {
   get name() {
@@ -40,20 +51,12 @@ class GithubService {
     return;
   }
 
-  get scopes() {
-    return ["notifications", "repo", "read:user", "user:email", "write:org"];
-  }
-
   get requiredAuthParams() {
     return ["code"];
   }
 
-  get primaryAction() {
-    return {
-      type: "HREF",
-      url: this.authEndpoint,
-      requiredAuthParams: this.requiredAuthParams
-    };
+  get scopes() {
+    return [...SCOPES];
   }
 
   get webhooks() {
@@ -69,7 +72,7 @@ class GithubService {
     ];
   }
 
-  get webhooksToTaskMap() {
+  get webhookToTasksMap() {
     return [
       {
         name: "task.thirdParty.UPDATE_GITHUB_PR",
@@ -107,12 +110,40 @@ class GithubService {
     ];
   }
 
+  get primaryAction() {
+    return {
+      type: "HREF",
+      url: this.authEndpoint,
+      requiredAuthParams: this.requiredAuthParams
+    };
+  }
+
   get entities() {
-    return;
+    return [
+      "PROJECTS",
+      "REPOS",
+      "MEMBERS",
+      // Organisations - https://developer.github.com/v3/orgs/
+      "ORGS",
+      // PR - https://developer.github.com/v3/pulls/
+      "PULL_REQUESTS",
+      // PR comments - https://developer.github.com/v3/pulls/comments/, https://developer.github.com/v3/pulls/reviews/,
+      "PULL_REQUEST_COMMENTS",
+      "PULL_REQUEST_COMMITS",
+      // Issues - https://developer.github.com/v3/issues/
+      "ISSUES",
+      // Issue Comments - https://developer.github.com/v3/issues/comments/
+      "ISSUE_COMMENTS"
+    ];
+  }
+
+  getNextPaginationURIFromResponse(response) {
+    return ((response.headers.link || "").match(/<([^>]+)>;\s*rel="next"/) ||
+      [])[1];
   }
 
   async connect(authParams) {
-    const res = await axios.default.post(
+    const res = await Axios.default.post(
       "https://github.com/login/oauth/access_token",
       {
         client_id: nconf.get("GITHUB_CLIENT_ID"),
@@ -126,7 +157,7 @@ class GithubService {
       }
     );
 
-    const user = await axios.default.get(`${this.apiEndpoint}/user`, {
+    const user = await Axios.default.get(`${this.apiEndpoint}/user`, {
       headers: {
         Authorization: `token ${res.data.access_token}`
       }
@@ -136,7 +167,7 @@ class GithubService {
       uri = `${this.apiEndpoint}/user/orgs`;
 
     while (uri) {
-      let resOrgs = await axios.default.get(uri, {
+      let resOrgs = await Axios.default.get(uri, {
         headers: {
           Authorization: `token ${res.data.access_token}`
         }
@@ -155,12 +186,12 @@ class GithubService {
     return data;
   }
 
-  async syncIntegrationEntities(options) {
+  async syncIntegrationEntities(integrationData, thirdPartyProject) {
     const taskUri = nconf.get("TASK_API_URI");
     const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
 
     try {
-      const res = await axios.default.post(
+      const res = await Axios.default.post(
         taskUri,
         {
           pepper_task: [
@@ -4505,6 +4536,12 @@ class GithubService {
   // This is a function for userGet
   userGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = "YOUR API KEY";
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //api_key.apiKeyPrefix = 'Token';
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {

@@ -18,7 +18,7 @@ import PatchGistFilesOldNameTxt from './PatchGistFilesOldNameTxt';
 /**
  * The PatchGistFiles model module.
  * @module model/PatchGistFiles
- * @version 1.2.0
+ * @version 1.3.0
  */
 class PatchGistFiles {
     /**
