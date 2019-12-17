@@ -1,4 +1,6 @@
-const { exec } = require("child_process");
+const {
+  exec
+} = require("child_process");
 
 const fs = require("fs");
 const functions = require("./src/generator/functions");
@@ -54,6 +56,7 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
 
   var functionWithParams = [];
   var codeBlocks = [];
+  var codeComments = [];
 
   for (let j = 0; j < findCommandArray.length; j++) {
     let file = findCommandArray[j];
@@ -63,6 +66,8 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
     functionWithParams.push(...functions.getFunctionWithParams(fileContents));
 
     codeBlocks.push(...functions.getCodeBlocks(fileContents));
+
+    codeComments.push(...functions.getCodeComments(fileContents));
   }
 
   // Generate getter functions and start class code
@@ -71,12 +76,14 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
   for (let i = 0; i < functionsTypes.length; i++) {
     let functionType = functionsTypes[i];
     codeBlocks,
-      (functionWithParams = functions.generateCodeFile(
-        codeBlocks,
-        functionWithParams,
-        fileNameWithPath,
-        functionType
-      ));
+    functionWithParams,
+    codeComments = functions.generateCodeFile(
+      codeBlocks,
+      functionWithParams,
+      codeComments,
+      fileNameWithPath,
+      functionType
+    );
   }
 
   if (codeBlocks.length && functionWithParams.length) {
@@ -84,6 +91,7 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
     functions.generateCodeFile(
       codeBlocks,
       functionWithParams,
+      codeBlocks,
       fileNameWithPath,
       "unknownHTTPMethod"
     );
@@ -108,8 +116,7 @@ executeCommand(argv);
 function execShellCommand(cmd) {
   return new Promise((resolve, reject) => {
     exec(
-      cmd,
-      {
+      cmd, {
         maxBuffer: 1024 * 5000
       },
       (error, stdout, stderr) => {
