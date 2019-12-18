@@ -168,7 +168,7 @@ exports.generateCodeFile = function generateCodeFile(
 
     codeBlock = codeBlock.replace(
       "//api_key.apiKeyPrefix = 'Token';",
-      "api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix;"
+      "api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';"
     )
 
     // comment out all variables
