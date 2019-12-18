@@ -130,7 +130,9 @@ export default class DefaultApi {
     /**
      * Lists all the emojis available to use on GitHub.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~emojisGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object.<String, {String: String}>}
      */
@@ -141,6 +143,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -148,7 +152,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = {'String': 'String'};
@@ -170,7 +174,9 @@ export default class DefaultApi {
     /**
      * List public events.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~eventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Event>}
      */
@@ -181,6 +187,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -188,7 +196,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Event];
@@ -210,7 +218,9 @@ export default class DefaultApi {
     /**
      * List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~feedsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Feeds}
      */
@@ -221,6 +231,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -228,7 +240,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Feeds;
@@ -250,8 +262,10 @@ export default class DefaultApi {
     /**
      * List the authenticated user's gists or if called anonymously, this will return all public gists. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~gistsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -262,6 +276,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page'],
         'since': opts['since']
       };
       let headerParams = {
@@ -270,7 +286,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -321,7 +337,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -373,7 +389,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Comment;
@@ -430,7 +446,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Comment;
@@ -453,7 +469,9 @@ export default class DefaultApi {
      * List comments on a gist.
      * @param {Number} id Id of gist.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~gistsIdCommentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -469,6 +487,8 @@ export default class DefaultApi {
         'id': id
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -476,7 +496,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -527,7 +547,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Comment;
@@ -572,7 +592,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -617,7 +637,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -663,7 +683,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Gist;
@@ -714,7 +734,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Gist;
@@ -759,7 +779,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -782,7 +802,9 @@ export default class DefaultApi {
      * Check if a gist is starred.
      * @param {Number} id Id of gist.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~gistsIdStarGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     gistsIdStarGet(id, opts, callback) {
@@ -797,6 +819,8 @@ export default class DefaultApi {
         'id': id
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -804,7 +828,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -849,7 +873,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -894,7 +918,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Gist;
@@ -916,8 +940,10 @@ export default class DefaultApi {
     /**
      * List all public gists.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~gistsPublicGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -928,6 +954,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page'],
         'since': opts['since']
       };
       let headerParams = {
@@ -936,7 +964,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -958,8 +986,10 @@ export default class DefaultApi {
     /**
      * List the authenticated user's starred gists.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~gistsStarredGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -970,6 +1000,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page'],
         'since': opts['since']
       };
       let headerParams = {
@@ -978,7 +1010,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -1000,7 +1032,9 @@ export default class DefaultApi {
     /**
      * Listing available templates. List all templates available to pass as an option when creating a repository. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~gitignoreTemplatesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -1011,6 +1045,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -1018,7 +1054,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -1041,7 +1077,7 @@ export default class DefaultApi {
      * Get a single template.
      * @param {String} language 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~gitignoreTemplatesLanguageGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GitignoreLang}
      */
@@ -1064,7 +1100,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = GitignoreLang;
@@ -1091,8 +1127,10 @@ export default class DefaultApi {
      * @param {module:model/String} sort 
      * @param {module:model/String} direction 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~issuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -1128,6 +1166,8 @@ export default class DefaultApi {
         'labels': labels,
         'sort': sort,
         'direction': direction,
+        'per_page': opts['perPage'],
+        'page': opts['page'],
         'since': opts['since']
       };
       let headerParams = {
@@ -1136,7 +1176,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -1396,7 +1436,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -1435,7 +1475,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1475,7 +1515,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Meta;
@@ -1499,7 +1539,9 @@ export default class DefaultApi {
      * @param {String} owner Name of the owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~networksOwnerRepoEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Event>}
      */
@@ -1520,6 +1562,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -1527,7 +1571,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Event];
@@ -1552,7 +1596,9 @@ export default class DefaultApi {
      * @param {Boolean} opts.all True to show notifications marked as read.
      * @param {Boolean} opts.participating True to show only notifications in which the user is directly participating or mentioned. 
      * @param {String} opts.since The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~notificationsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Notifications}
      */
@@ -1565,7 +1611,9 @@ export default class DefaultApi {
       let queryParams = {
         'all': opts['all'],
         'participating': opts['participating'],
-        'since': opts['since']
+        'since': opts['since'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -1573,7 +1621,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Notifications;
@@ -1617,7 +1665,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -1663,7 +1711,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Notifications;
@@ -1708,7 +1756,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1753,7 +1801,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -1776,7 +1824,9 @@ export default class DefaultApi {
      * Get a Thread Subscription.
      * @param {Number} id Id of thread.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~notificationsThreadsIdSubscriptionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Subscription}
      */
@@ -1792,6 +1842,8 @@ export default class DefaultApi {
         'id': id
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -1799,7 +1851,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Subscription;
@@ -1850,7 +1902,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Subscription;
@@ -1873,7 +1925,9 @@ export default class DefaultApi {
      * List public events for an organization.
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Event>}
      */
@@ -1889,6 +1943,8 @@ export default class DefaultApi {
         'org': org
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -1896,7 +1952,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Event];
@@ -1919,7 +1975,9 @@ export default class DefaultApi {
      * Get an Organization.
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Organization}
      */
@@ -1935,6 +1993,8 @@ export default class DefaultApi {
         'org': org
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -1942,7 +2002,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Organization;
@@ -1970,8 +2030,10 @@ export default class DefaultApi {
      * @param {module:model/String} sort 
      * @param {module:model/String} direction 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~orgsOrgIssuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -2012,6 +2074,8 @@ export default class DefaultApi {
         'labels': labels,
         'sort': sort,
         'direction': direction,
+        'per_page': opts['perPage'],
+        'page': opts['page'],
         'since': opts['since']
       };
       let headerParams = {
@@ -2020,7 +2084,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -2043,7 +2107,9 @@ export default class DefaultApi {
      * Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list. 
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -2059,6 +2125,8 @@ export default class DefaultApi {
         'org': org
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2066,7 +2134,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -2117,7 +2185,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2141,7 +2209,9 @@ export default class DefaultApi {
      * @param {String} org Name of organisation.
      * @param {String} username Name of the user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgMembersUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     orgsOrgMembersUsernameGet(org, username, opts, callback) {
@@ -2161,6 +2231,8 @@ export default class DefaultApi {
         'username': username
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2168,7 +2240,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2219,7 +2291,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Organization;
@@ -2242,7 +2314,9 @@ export default class DefaultApi {
      * Public members list. Members of an organization can choose to have their membership publicized or not. 
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgPublicMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -2258,6 +2332,8 @@ export default class DefaultApi {
         'org': org
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2265,7 +2341,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -2316,7 +2392,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2340,7 +2416,9 @@ export default class DefaultApi {
      * @param {String} org Name of organisation.
      * @param {String} username Name of the user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgPublicMembersUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     orgsOrgPublicMembersUsernameGet(org, username, opts, callback) {
@@ -2360,6 +2438,8 @@ export default class DefaultApi {
         'username': username
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2367,7 +2447,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2418,7 +2498,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2442,7 +2522,9 @@ export default class DefaultApi {
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.type  (default to 'all')
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgReposGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */
@@ -2458,7 +2540,9 @@ export default class DefaultApi {
         'org': org
       };
       let queryParams = {
-        'type': opts['type']
+        'type': opts['type'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2466,7 +2550,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Repo];
@@ -2517,7 +2601,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Repo];
@@ -2540,7 +2624,9 @@ export default class DefaultApi {
      * List teams.
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgTeamsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -2556,6 +2642,8 @@ export default class DefaultApi {
         'org': org
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2563,7 +2651,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -2614,7 +2702,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Team;
@@ -2636,7 +2724,9 @@ export default class DefaultApi {
     /**
      * Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~rateLimitGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RateLimit}
      */
@@ -2647,6 +2737,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2654,7 +2746,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = RateLimit;
@@ -2680,7 +2772,9 @@ export default class DefaultApi {
      * @param {module:model/String} archiveFormat 
      * @param {String} path Valid Git reference, defaults to 'master'.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoArchiveFormatPathGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     reposOwnerRepoArchiveFormatPathGet(owner, repo, archiveFormat, path, opts, callback) {
@@ -2710,6 +2804,8 @@ export default class DefaultApi {
         'path': path
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2717,7 +2813,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2742,7 +2838,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {String} assignee Login of the assignee.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoAssigneesAssigneeGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     reposOwnerRepoAssigneesAssigneeGet(owner, repo, assignee, opts, callback) {
@@ -2767,6 +2865,8 @@ export default class DefaultApi {
         'assignee': assignee
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2774,7 +2874,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -2798,7 +2898,9 @@ export default class DefaultApi {
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoAssigneesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -2819,6 +2921,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2826,7 +2930,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -2851,7 +2955,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {String} branch Name of the branch.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoBranchesBranchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Branch}
      */
@@ -2877,6 +2983,8 @@ export default class DefaultApi {
         'branch': branch
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2884,7 +2992,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Branch;
@@ -2908,7 +3016,9 @@ export default class DefaultApi {
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoBranchesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -2929,6 +3039,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2936,7 +3048,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -2960,7 +3072,9 @@ export default class DefaultApi {
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCollaboratorsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -2981,6 +3095,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -2988,7 +3104,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -3045,7 +3161,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3070,7 +3186,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {String} user Login of the user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCollaboratorsUserGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     reposOwnerRepoCollaboratorsUserGet(owner, repo, user, opts, callback) {
@@ -3095,6 +3213,8 @@ export default class DefaultApi {
         'user': user
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3102,7 +3222,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3159,7 +3279,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3216,7 +3336,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -3241,7 +3361,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {Number} commentId Id of comment.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommentsCommentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommitComment}
      */
@@ -3267,6 +3389,8 @@ export default class DefaultApi {
         'commentId': commentId
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3274,7 +3398,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CommitComment;
@@ -3337,7 +3461,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CommitComment;
@@ -3361,7 +3485,9 @@ export default class DefaultApi {
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -3382,6 +3508,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3389,7 +3517,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -3418,7 +3546,9 @@ export default class DefaultApi {
      * @param {String} opts.path Only commits containing this file path will be returned.
      * @param {String} opts.author GitHub login, name, or email by which to filter by commit author.
      * @param {String} opts.until ISO 8601 Date - Only commits before this date will be returned.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommitsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -3443,7 +3573,9 @@ export default class DefaultApi {
         'sha': opts['sha'],
         'path': opts['path'],
         'author': opts['author'],
-        'until': opts['until']
+        'until': opts['until'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3451,7 +3583,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -3476,7 +3608,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {String} ref 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommitsRefStatusGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -3502,6 +3636,8 @@ export default class DefaultApi {
         'ref': ref
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3509,7 +3645,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -3534,7 +3670,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {String} shaCode SHA-1 code of the commit.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommitsShaCodeCommentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -3560,6 +3698,8 @@ export default class DefaultApi {
         'shaCode': shaCode
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3567,7 +3707,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -3630,7 +3770,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CommitComment;
@@ -3655,7 +3795,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {String} shaCode SHA-1 code of the commit.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommitsShaCodeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Commit}
      */
@@ -3681,6 +3823,8 @@ export default class DefaultApi {
         'shaCode': shaCode
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3688,7 +3832,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Commit;
@@ -3714,7 +3858,9 @@ export default class DefaultApi {
      * @param {String} baseId 
      * @param {String} headId 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCompareBaseIdHeadIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompareCommits}
      */
@@ -3745,6 +3891,8 @@ export default class DefaultApi {
         'headId': headId
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3752,7 +3900,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = CompareCommits;
@@ -3815,7 +3963,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = DeleteFile;
@@ -3842,7 +3990,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.path2 The content path.
      * @param {String} opts.ref The String name of the Commit/Branch/Tag. Defaults to 'master'.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoContentsPathGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContentsPath}
      */
@@ -3869,7 +4019,9 @@ export default class DefaultApi {
       };
       let queryParams = {
         'path': opts['path2'],
-        'ref': opts['ref']
+        'ref': opts['ref'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3877,7 +4029,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ContentsPath;
@@ -3940,7 +4092,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = CreateFile;
@@ -3965,7 +4117,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {String} anon Set to 1 or true to include anonymous contributors in results.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoContributorsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -3990,7 +4144,9 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
-        'anon': anon
+        'anon': anon,
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -3998,7 +4154,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -4049,7 +4205,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4073,7 +4229,9 @@ export default class DefaultApi {
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoDeploymentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -4094,6 +4252,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -4101,7 +4261,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -4126,7 +4286,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {Number} id The Deployment ID to list the statuses from.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoDeploymentsIdStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -4152,6 +4314,8 @@ export default class DefaultApi {
         'id': id
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -4159,7 +4323,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -4221,7 +4385,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -4278,7 +4442,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = DeploymentResp;
@@ -4335,7 +4499,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -4393,7 +4557,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Download;
@@ -4445,7 +4609,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Download];
@@ -4469,7 +4633,9 @@ export default class DefaultApi {
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Event>}
      */
@@ -4490,6 +4656,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -4497,7 +4665,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Event];
@@ -4522,7 +4690,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.sort  (default to 'newes')
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoForksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */
@@ -4543,7 +4713,9 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
-        'sort': opts['sort']
+        'sort': opts['sort'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -4551,7 +4723,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Repo];
@@ -4608,7 +4780,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Repo;
@@ -4632,7 +4804,9 @@ export default class DefaultApi {
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Repo}
      */
@@ -4653,6 +4827,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -4660,7 +4836,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Repo;
@@ -4685,7 +4861,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {Blob} body 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGitBlobsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Blobs}
      */
@@ -4710,6 +4888,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -4717,7 +4897,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Blobs;
@@ -4914,7 +5094,9 @@ export default class DefaultApi {
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGitRefsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -4935,6 +5117,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -5081,7 +5265,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {String} ref 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGitRefsRefGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/HeadBranch}
      */
@@ -5107,6 +5293,8 @@ export default class DefaultApi {
         'ref': ref
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -5259,7 +5447,9 @@ export default class DefaultApi {
      * @param {String} repo Name of repository.
      * @param {String} shaCode 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGitTagsShaCodeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tag}
      */
@@ -5285,6 +5475,8 @@ export default class DefaultApi {
         'shaCode': shaCode
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -5433,7 +5625,9 @@ export default class DefaultApi {
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -5454,6 +5648,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -6128,8 +6324,10 @@ export default class DefaultApi {
      * @param {module:model/String} sort 
      * @param {module:model/String} direction 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~reposOwnerRepoIssuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -6175,6 +6373,8 @@ export default class DefaultApi {
         'labels': labels,
         'sort': sort,
         'direction': direction,
+        'per_page': opts['perPage'],
+        'page': opts['page'],
         'since': opts['since']
       };
       let headerParams = {
@@ -7986,7 +8186,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Repo;
@@ -10193,7 +10393,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -10215,8 +10415,10 @@ export default class DefaultApi {
     /**
      * List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~repositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */
@@ -10227,6 +10429,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page'],
         'since': opts['since']
       };
       let headerParams = {
@@ -10235,7 +10439,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Repo];
@@ -10260,7 +10464,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.order The sort field. if sort param is provided. Can be either asc or desc. (default to 'desc')
      * @param {module:model/String} opts.sort Can only be 'indexed', which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~searchCodeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SearchCode}
      */
@@ -10277,7 +10483,9 @@ export default class DefaultApi {
       let queryParams = {
         'order': opts['order'],
         'q': q,
-        'sort': opts['sort']
+        'sort': opts['sort'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -10285,7 +10493,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SearchCode;
@@ -10310,7 +10518,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.order The sort field. if sort param is provided. Can be either asc or desc. (default to 'desc')
      * @param {module:model/String} opts.sort The sort field. Can be comments, created, or updated. Default: results are sorted by best match.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~searchIssuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SearchIssues}
      */
@@ -10327,7 +10537,9 @@ export default class DefaultApi {
       let queryParams = {
         'order': opts['order'],
         'q': q,
-        'sort': opts['sort']
+        'sort': opts['sort'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -10335,7 +10547,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SearchIssues;
@@ -10360,7 +10572,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.order The sort field. if sort param is provided. Can be either asc or desc. (default to 'desc')
      * @param {module:model/String} opts.sort If not provided, results are sorted by best match.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~searchRepositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SearchRepositories}
      */
@@ -10377,7 +10591,9 @@ export default class DefaultApi {
       let queryParams = {
         'order': opts['order'],
         'q': q,
-        'sort': opts['sort']
+        'sort': opts['sort'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -10385,7 +10601,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SearchRepositories;
@@ -10410,7 +10626,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.order The sort field. if sort param is provided. Can be either asc or desc. (default to 'desc')
      * @param {module:model/String} opts.sort If not provided, results are sorted by best match.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~searchUsersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SearchUsers}
      */
@@ -10427,7 +10645,9 @@ export default class DefaultApi {
       let queryParams = {
         'order': opts['order'],
         'q': q,
-        'sort': opts['sort']
+        'sort': opts['sort'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -10435,7 +10655,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = SearchUsers;
@@ -10458,7 +10678,9 @@ export default class DefaultApi {
      * Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with. 
      * @param {Number} teamId Id of team.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     teamsTeamIdDelete(teamId, opts, callback) {
@@ -10473,6 +10695,8 @@ export default class DefaultApi {
         'teamId': teamId
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -10480,7 +10704,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -10526,7 +10750,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = Team;
@@ -10549,7 +10773,9 @@ export default class DefaultApi {
      * List team members. In order to list members in a team, the authenticated user must be a member of the team. 
      * @param {Number} teamId Id of team.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -10565,6 +10791,8 @@ export default class DefaultApi {
         'teamId': teamId
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -10572,7 +10800,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -10596,7 +10824,9 @@ export default class DefaultApi {
      * @param {Number} teamId Id of team.
      * @param {String} username Name of a member.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdMembersUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     teamsTeamIdMembersUsernameDelete(teamId, username, opts, callback) {
@@ -10616,6 +10846,8 @@ export default class DefaultApi {
         'username': username
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -10623,7 +10855,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -10674,7 +10906,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -10725,7 +10957,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;
@@ -10749,7 +10981,9 @@ export default class DefaultApi {
      * @param {Number} teamId Id of team.
      * @param {String} username Name of a member.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdMembershipsUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     teamsTeamIdMembershipsUsernameDelete(teamId, username, opts, callback) {
@@ -10769,6 +11003,8 @@ export default class DefaultApi {
         'username': username
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -10776,7 +11012,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -10828,7 +11064,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = TeamMembership;
@@ -10880,7 +11116,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = TeamMembership;
@@ -10931,7 +11167,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Team;
@@ -10954,7 +11190,9 @@ export default class DefaultApi {
      * List team repos
      * @param {Number} teamId Id of team.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdReposGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */
@@ -10970,6 +11208,8 @@ export default class DefaultApi {
         'teamId': teamId
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -10977,7 +11217,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Repo];
@@ -11002,7 +11242,9 @@ export default class DefaultApi {
      * @param {String} owner Name of a repository owner.
      * @param {String} repo Name of a repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdReposOwnerRepoDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     teamsTeamIdReposOwnerRepoDelete(teamId, owner, repo, opts, callback) {
@@ -11027,6 +11269,8 @@ export default class DefaultApi {
         'repo': repo
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -11034,7 +11278,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -11091,7 +11335,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -11148,7 +11392,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -11171,7 +11415,7 @@ export default class DefaultApi {
      * Delete email address(es). You can include a single email address or an array of addresses. 
      * @param {Array.<String>} body 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userEmailsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     userEmailsDelete(body, opts, callback) {
@@ -11192,7 +11436,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -11232,7 +11476,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/vnd.github.v3'];
       let returnType = ['String'];
@@ -11276,7 +11520,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = [];
       let returnType = null;
@@ -11298,7 +11542,9 @@ export default class DefaultApi {
     /**
      * List the authenticated user's followers
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~userFollowersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -11309,6 +11555,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -11316,7 +11564,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -11338,7 +11586,9 @@ export default class DefaultApi {
     /**
      * List who the authenticated user is following.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~userFollowingGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -11349,6 +11599,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -11356,7 +11608,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -11379,7 +11631,7 @@ export default class DefaultApi {
      * Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope. 
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userFollowingUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     userFollowingUsernameDelete(username, opts, callback) {
@@ -11401,7 +11653,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -11446,7 +11698,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -11491,7 +11743,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -11513,7 +11765,9 @@ export default class DefaultApi {
     /**
      * Get the authenticated user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~userGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
@@ -11524,6 +11778,8 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -11558,8 +11814,10 @@ export default class DefaultApi {
      * @param {module:model/String} sort 
      * @param {module:model/String} direction 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~userIssuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -11595,6 +11853,8 @@ export default class DefaultApi {
         'labels': labels,
         'sort': sort,
         'direction': direction,
+        'per_page': opts['perPage'],
+        'page': opts['page'],
         'since': opts['since']
       };
       let headerParams = {
@@ -11603,7 +11863,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -11625,7 +11885,7 @@ export default class DefaultApi {
     /**
      * List your public keys. Lists the current user's keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the 'user', 'write:public_key' scopes. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userKeysGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -11643,7 +11903,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -11666,7 +11926,7 @@ export default class DefaultApi {
      * Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.
      * @param {Number} keyId ID of key.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userKeysKeyIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     userKeysKeyIdDelete(keyId, opts, callback) {
@@ -11688,7 +11948,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -11734,7 +11994,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = UserKeysKeyId;
@@ -11779,7 +12039,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = UserKeysKeyId;
@@ -11801,7 +12061,7 @@ export default class DefaultApi {
     /**
      * List public and private organizations for the authenticated user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userOrgsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -11819,7 +12079,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -11864,7 +12124,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = User;
@@ -11887,7 +12147,7 @@ export default class DefaultApi {
      * List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately. 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.type  (default to 'all')
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userReposGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */
@@ -11906,7 +12166,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Repo];
@@ -11951,7 +12211,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [Repo];
@@ -11995,7 +12255,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -12046,7 +12306,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12097,7 +12357,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12148,7 +12408,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12188,7 +12448,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Repo];
@@ -12239,7 +12499,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12290,7 +12550,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12341,7 +12601,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12363,7 +12623,7 @@ export default class DefaultApi {
     /**
      * List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userTeamsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -12381,7 +12641,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -12404,7 +12664,9 @@ export default class DefaultApi {
      * Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users. 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.since The integer ID of the last user that you've seen.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~usersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -12415,7 +12677,9 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
-        'since': opts['since']
+        'since': opts['since'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -12423,7 +12687,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -12446,7 +12710,9 @@ export default class DefaultApi {
      * If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~usersUsernameEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     usersUsernameEventsGet(username, opts, callback) {
@@ -12461,6 +12727,8 @@ export default class DefaultApi {
         'username': username
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -12468,7 +12736,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12492,7 +12760,7 @@ export default class DefaultApi {
      * @param {String} username Name of user.
      * @param {String} org 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameEventsOrgsOrgGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     usersUsernameEventsOrgsOrgGet(username, org, opts, callback) {
@@ -12519,7 +12787,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12542,7 +12810,7 @@ export default class DefaultApi {
      * List a user's followers
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameFollowersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */
@@ -12565,7 +12833,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [User];
@@ -12589,7 +12857,7 @@ export default class DefaultApi {
      * @param {String} username Name of user.
      * @param {String} targetUser Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameFollowingTargetUserGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     usersUsernameFollowingTargetUserGet(username, targetUser, opts, callback) {
@@ -12639,7 +12907,7 @@ export default class DefaultApi {
      * Get a single user.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
@@ -12662,7 +12930,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = User;
@@ -12685,8 +12953,10 @@ export default class DefaultApi {
      * List a users gists.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~usersUsernameGistsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -12702,6 +12972,8 @@ export default class DefaultApi {
         'username': username
       };
       let queryParams = {
+        'per_page': opts['perPage'],
+        'page': opts['page'],
         'since': opts['since']
       };
       let headerParams = {
@@ -12710,7 +12982,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -12733,7 +13005,7 @@ export default class DefaultApi {
      * List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone. 
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameKeysGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -12756,7 +13028,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -12779,7 +13051,7 @@ export default class DefaultApi {
      * List all public organizations for a user.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameOrgsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
@@ -12802,7 +13074,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -12825,7 +13097,7 @@ export default class DefaultApi {
      * These are events that you'll only see public events.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameReceivedEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     usersUsernameReceivedEventsGet(username, opts, callback) {
@@ -12847,7 +13119,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12870,7 +13142,7 @@ export default class DefaultApi {
      * List public events that a user has received
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameReceivedEventsPublicGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     usersUsernameReceivedEventsPublicGet(username, opts, callback) {
@@ -12892,7 +13164,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -12916,7 +13188,9 @@ export default class DefaultApi {
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.type  (default to 'all')
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~usersUsernameReposGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */
@@ -12932,7 +13206,9 @@ export default class DefaultApi {
         'username': username
       };
       let queryParams = {
-        'type': opts['type']
+        'type': opts['type'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']
@@ -12940,7 +13216,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Repo];
@@ -12963,7 +13239,7 @@ export default class DefaultApi {
      * List repositories being starred by a user.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameStarredGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     usersUsernameStarredGet(username, opts, callback) {
@@ -12985,7 +13261,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -13008,7 +13284,7 @@ export default class DefaultApi {
      * List repositories being watched by a user.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameSubscriptionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
     usersUsernameSubscriptionsGet(username, opts, callback) {
@@ -13030,7 +13306,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;

@@ -1,7 +1,7 @@
-const Axios = require("axios");
-const qs = require("querystring");
+const axios = require("axios");
+const errorHelper = require("../../../helpers/ErrorHelper");
 const nconf = require("nconf");
-const ErrorHelper = require("../../helpers/ErrorHelper");
+const qs = require("querystring");
 
 /*
     - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
@@ -143,7 +143,7 @@ class GithubService {
   }
 
   async connect(authParams) {
-    const res = await Axios.default.post(
+    const res = await axios.default.post(
       "https://github.com/login/oauth/access_token",
       {
         client_id: nconf.get("GITHUB_CLIENT_ID"),
@@ -157,7 +157,7 @@ class GithubService {
       }
     );
 
-    const user = await Axios.default.get(`${this.apiEndpoint}/user`, {
+    const user = await axios.default.get(`${this.apiEndpoint}/user`, {
       headers: {
         Authorization: `token ${res.data.access_token}`
       }
@@ -167,7 +167,7 @@ class GithubService {
       uri = `${this.apiEndpoint}/user/orgs`;
 
     while (uri) {
-      let resOrgs = await Axios.default.get(uri, {
+      let resOrgs = await axios.default.get(uri, {
         headers: {
           Authorization: `token ${res.data.access_token}`
         }
@@ -191,7 +191,7 @@ class GithubService {
     const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
 
     try {
-      const res = await Axios.default.post(
+      const res = await axios.default.post(
         taskUri,
         {
           pepper_task: [
@@ -221,7 +221,10 @@ class GithubService {
   async get(entity, options) {
     switch (entity) {
       case "EMOJIS":
-        // Function parameters for this API opts
+        /*
+      Lists all the emojis available to use on GitHub.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.emojisGet(options, (err, data) => {
             if (err) {
@@ -232,7 +235,10 @@ class GithubService {
         });
 
       case "EVENTS":
-        // Function parameters for this API opts
+        /*
+      List public events.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.eventsGet(options, (err, data) => {
             if (err) {
@@ -243,7 +249,10 @@ class GithubService {
         });
 
       case "FEEDS":
-        // Function parameters for this API opts
+        /*
+      List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.feedsGet(options, (err, data) => {
             if (err) {
@@ -254,7 +263,10 @@ class GithubService {
         });
 
       case "GISTS":
-        // Function parameters for this API opts
+        /*
+      List the authenticated user&#39;s gists or if called anonymously, this will return all public gists.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsGet(options, (err, data) => {
             if (err) {
@@ -265,7 +277,10 @@ class GithubService {
         });
 
       case "GISTS_ID_COMMENTS_COMMENT_ID":
-        // Function parameters for this API id,commentId,opts
+        /*
+      Get a single comment.
+      Function parameters for this API id,commentId,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdCommentsCommentIdGet(options, (err, data) => {
             if (err) {
@@ -276,7 +291,10 @@ class GithubService {
         });
 
       case "GISTS_ID_COMMENTS":
-        // Function parameters for this API id,opts
+        /*
+      List comments on a gist.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdCommentsGet(options, (err, data) => {
             if (err) {
@@ -287,7 +305,10 @@ class GithubService {
         });
 
       case "GISTS_ID":
-        // Function parameters for this API id,opts
+        /*
+      Get a single gist.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdGet(options, (err, data) => {
             if (err) {
@@ -298,7 +319,10 @@ class GithubService {
         });
 
       case "GISTS_ID_STAR":
-        // Function parameters for this API id,opts
+        /*
+      Check if a gist is starred.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdStarGet(options, (err, data) => {
             if (err) {
@@ -309,7 +333,10 @@ class GithubService {
         });
 
       case "GISTS_PUBLIC":
-        // Function parameters for this API opts
+        /*
+      List all public gists.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsPublicGet(options, (err, data) => {
             if (err) {
@@ -320,7 +347,10 @@ class GithubService {
         });
 
       case "GISTS_STARRED":
-        // Function parameters for this API opts
+        /*
+      List the authenticated user&#39;s starred gists.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsStarredGet(options, (err, data) => {
             if (err) {
@@ -331,7 +361,10 @@ class GithubService {
         });
 
       case "GITIGNORE_TEMPLATES":
-        // Function parameters for this API opts
+        /*
+      Listing available templates. List all templates available to pass as an option when creating a repository.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.gitignoreTemplatesGet(options, (err, data) => {
             if (err) {
@@ -342,7 +375,10 @@ class GithubService {
         });
 
       case "GITIGNORE_TEMPLATES_LANGUAGE":
-        // Function parameters for this API language,opts
+        /*
+      Get a single template.
+      Function parameters for this API language,opts
+        */
         return new Promise((resolve, reject) => {
           this.gitignoreTemplatesLanguageGet(options, (err, data) => {
             if (err) {
@@ -353,7 +389,10 @@ class GithubService {
         });
 
       case "ISSUES":
-        // Function parameters for this API filter,state,labels,sort,direction,opts
+        /*
+      List issues. List all issues across all the authenticated user&#39;s visible repositories.
+      Function parameters for this API filter,state,labels,sort,direction,opts
+        */
         return new Promise((resolve, reject) => {
           this.issuesGet(options, (err, data) => {
             if (err) {
@@ -364,7 +403,10 @@ class GithubService {
         });
 
       case "LEGACY_ISSUES_SEARCH_OWNER_REPOSITORY_STATE_KEYWORD":
-        // Function parameters for this API keyword,state,owner,repository,opts
+        /*
+      Find issues by state and keyword.
+      Function parameters for this API keyword,state,owner,repository,opts
+        */
         return new Promise((resolve, reject) => {
           this.legacyIssuesSearchOwnerRepositoryStateKeywordGet(
             options,
@@ -378,7 +420,10 @@ class GithubService {
         });
 
       case "LEGACY_REPOS_SEARCH_KEYWORD":
-        // Function parameters for this API keyword,opts
+        /*
+      Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.
+      Function parameters for this API keyword,opts
+        */
         return new Promise((resolve, reject) => {
           this.legacyReposSearchKeywordGet(options, (err, data) => {
             if (err) {
@@ -389,7 +434,10 @@ class GithubService {
         });
 
       case "LEGACY_USER_EMAIL_EMAIL":
-        // Function parameters for this API email,opts
+        /*
+      This API call is added for compatibility reasons only.
+      Function parameters for this API email,opts
+        */
         return new Promise((resolve, reject) => {
           this.legacyUserEmailEmailGet(options, (err, data) => {
             if (err) {
@@ -400,7 +448,10 @@ class GithubService {
         });
 
       case "LEGACY_USER_SEARCH_KEYWORD":
-        // Function parameters for this API keyword,opts
+        /*
+      Find users by keyword.
+      Function parameters for this API keyword,opts
+        */
         return new Promise((resolve, reject) => {
           this.legacyUserSearchKeywordGet(options, (err, data) => {
             if (err) {
@@ -411,7 +462,10 @@ class GithubService {
         });
 
       case "META":
-        // Function parameters for this API opts
+        /*
+      This gives some information about GitHub.com, the service.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.metaGet(options, (err, data) => {
             if (err) {
@@ -422,7 +476,10 @@ class GithubService {
         });
 
       case "NETWORKS_OWNER_REPO_EVENTS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List public events for a network of repositories.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.networksOwnerRepoEventsGet(options, (err, data) => {
             if (err) {
@@ -433,7 +490,10 @@ class GithubService {
         });
 
       case "NOTIFICATIONS":
-        // Function parameters for this API opts
+        /*
+      List your notifications. List all notifications for the current user, grouped by repository.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.notificationsGet(options, (err, data) => {
             if (err) {
@@ -444,7 +504,10 @@ class GithubService {
         });
 
       case "NOTIFICATIONS_THREADS_ID":
-        // Function parameters for this API id,opts
+        /*
+      View a single thread.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.notificationsThreadsIdGet(options, (err, data) => {
             if (err) {
@@ -455,7 +518,10 @@ class GithubService {
         });
 
       case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
-        // Function parameters for this API id,opts
+        /*
+      Get a Thread Subscription.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.notificationsThreadsIdSubscriptionGet(options, (err, data) => {
             if (err) {
@@ -466,7 +532,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_EVENTS":
-        // Function parameters for this API org,opts
+        /*
+      List public events for an organization.
+      Function parameters for this API org,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgEventsGet(options, (err, data) => {
             if (err) {
@@ -477,7 +546,10 @@ class GithubService {
         });
 
       case "ORGS_ORG":
-        // Function parameters for this API org,opts
+        /*
+      Get an Organization.
+      Function parameters for this API org,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgGet(options, (err, data) => {
             if (err) {
@@ -488,7 +560,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_ISSUES":
-        // Function parameters for this API org,filter,state,labels,sort,direction,opts
+        /*
+      List issues. List all issues for a given organization for the authenticated user.
+      Function parameters for this API org,filter,state,labels,sort,direction,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgIssuesGet(options, (err, data) => {
             if (err) {
@@ -499,7 +574,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_MEMBERS":
-        // Function parameters for this API org,opts
+        /*
+      Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list.
+      Function parameters for this API org,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgMembersGet(options, (err, data) => {
             if (err) {
@@ -510,7 +588,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_MEMBERS_USERNAME":
-        // Function parameters for this API org,username,opts
+        /*
+      Check if a user is, publicly or privately, a member of the organization.
+      Function parameters for this API org,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgMembersUsernameGet(options, (err, data) => {
             if (err) {
@@ -521,7 +602,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_PUBLIC_MEMBERS":
-        // Function parameters for this API org,opts
+        /*
+      Public members list. Members of an organization can choose to have their membership publicized or not.
+      Function parameters for this API org,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgPublicMembersGet(options, (err, data) => {
             if (err) {
@@ -532,7 +616,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
-        // Function parameters for this API org,username,opts
+        /*
+      Check public membership.
+      Function parameters for this API org,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgPublicMembersUsernameGet(options, (err, data) => {
             if (err) {
@@ -543,7 +630,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_REPOS":
-        // Function parameters for this API org,opts
+        /*
+      List repositories for the specified org.
+      Function parameters for this API org,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgReposGet(options, (err, data) => {
             if (err) {
@@ -554,7 +644,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_TEAMS":
-        // Function parameters for this API org,opts
+        /*
+      List teams.
+      Function parameters for this API org,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgTeamsGet(options, (err, data) => {
             if (err) {
@@ -565,7 +658,10 @@ class GithubService {
         });
 
       case "RATE_LIMIT":
-        // Function parameters for this API opts
+        /*
+      Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.rateLimitGet(options, (err, data) => {
             if (err) {
@@ -576,7 +672,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ARCHIVE_FORMAT_PATH":
-        // Function parameters for this API owner,repo,archiveFormat,path,opts
+        /*
+      Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly.
+      Function parameters for this API owner,repo,archiveFormat,path,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoArchiveFormatPathGet(options, (err, data) => {
             if (err) {
@@ -587,7 +686,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ASSIGNEES_ASSIGNEE":
-        // Function parameters for this API owner,repo,assignee,opts
+        /*
+      Check assignee. You may also check to see if a particular user is an assignee for a repository.
+      Function parameters for this API owner,repo,assignee,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoAssigneesAssigneeGet(options, (err, data) => {
             if (err) {
@@ -598,7 +700,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ASSIGNEES":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoAssigneesGet(options, (err, data) => {
             if (err) {
@@ -609,7 +714,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_BRANCHES_BRANCH":
-        // Function parameters for this API owner,repo,branch,opts
+        /*
+      Get Branch
+      Function parameters for this API owner,repo,branch,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoBranchesBranchGet(options, (err, data) => {
             if (err) {
@@ -620,7 +728,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_BRANCHES":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get list of branches
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoBranchesGet(options, (err, data) => {
             if (err) {
@@ -631,7 +742,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COLLABORATORS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCollaboratorsGet(options, (err, data) => {
             if (err) {
@@ -642,7 +756,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COLLABORATORS_USER":
-        // Function parameters for this API owner,repo,user,opts
+        /*
+      Check if user is a collaborator
+      Function parameters for this API owner,repo,user,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCollaboratorsUserGet(options, (err, data) => {
             if (err) {
@@ -653,7 +770,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
-        // Function parameters for this API owner,repo,commentId,opts
+        /*
+      Get a single commit comment.
+      Function parameters for this API owner,repo,commentId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommentsCommentIdGet(options, (err, data) => {
             if (err) {
@@ -664,7 +784,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMMENTS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List commit comments for a repository. Comments are ordered by ascending ID.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommentsGet(options, (err, data) => {
             if (err) {
@@ -675,7 +798,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMMITS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List commits on a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommitsGet(options, (err, data) => {
             if (err) {
@@ -686,7 +812,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMMITS_REF_STATUS":
-        // Function parameters for this API owner,repo,ref,opts
+        /*
+      Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json
+      Function parameters for this API owner,repo,ref,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommitsRefStatusGet(options, (err, data) => {
             if (err) {
@@ -697,7 +826,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS":
-        // Function parameters for this API owner,repo,shaCode,opts
+        /*
+      List comments for a single commitList comments for a single commit.
+      Function parameters for this API owner,repo,shaCode,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommitsShaCodeCommentsGet(options, (err, data) => {
             if (err) {
@@ -708,7 +840,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMMITS_SHA_CODE":
-        // Function parameters for this API owner,repo,shaCode,opts
+        /*
+      Get a single commit.
+      Function parameters for this API owner,repo,shaCode,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommitsShaCodeGet(options, (err, data) => {
             if (err) {
@@ -719,7 +854,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMPARE_BASE_ID_HEAD_ID":
-        // Function parameters for this API owner,repo,baseId,headId,opts
+        /*
+      Compare two commits
+      Function parameters for this API owner,repo,baseId,headId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCompareBaseIdHeadIdGet(options, (err, data) => {
             if (err) {
@@ -730,7 +868,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_CONTENTS_PATH":
-        // Function parameters for this API owner,repo,path,opts
+        /*
+      Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot;
+      Function parameters for this API owner,repo,path,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoContentsPathGet(options, (err, data) => {
             if (err) {
@@ -741,7 +882,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_CONTRIBUTORS":
-        // Function parameters for this API owner,repo,anon,opts
+        /*
+      Get list of contributors.
+      Function parameters for this API owner,repo,anon,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoContributorsGet(options, (err, data) => {
             if (err) {
@@ -752,7 +896,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_DEPLOYMENTS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Users with pull access can view deployments for a repository
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoDeploymentsGet(options, (err, data) => {
             if (err) {
@@ -763,7 +910,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES":
-        // Function parameters for this API owner,repo,id,opts
+        /*
+      Users with pull access can view deployment statuses for a deployment
+      Function parameters for this API owner,repo,id,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoDeploymentsIdStatusesGet(options, (err, data) => {
             if (err) {
@@ -774,7 +924,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID":
-        // Function parameters for this API owner,repo,downloadId,opts
+        /*
+      Deprecated. Get a single download.
+      Function parameters for this API owner,repo,downloadId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoDownloadsDownloadIdGet(options, (err, data) => {
             if (err) {
@@ -785,7 +938,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_DOWNLOADS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Deprecated. List downloads for a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoDownloadsGet(options, (err, data) => {
             if (err) {
@@ -796,7 +952,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_EVENTS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get list of repository events.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoEventsGet(options, (err, data) => {
             if (err) {
@@ -807,7 +966,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_FORKS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List forks.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoForksGet(options, (err, data) => {
             if (err) {
@@ -818,7 +980,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGet(options, (err, data) => {
             if (err) {
@@ -829,7 +994,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_BLOBS_SHA_CODE":
-        // Function parameters for this API owner,repo,shaCode,opts
+        /*
+      Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it.
+      Function parameters for this API owner,repo,shaCode,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitBlobsShaCodeGet(options, (err, data) => {
             if (err) {
@@ -840,7 +1008,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_COMMITS_SHA_CODE":
-        // Function parameters for this API owner,repo,shaCode,opts
+        /*
+      Get a Commit.
+      Function parameters for this API owner,repo,shaCode,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitCommitsShaCodeGet(options, (err, data) => {
             if (err) {
@@ -851,7 +1022,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_REFS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get all References
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitRefsGet(options, (err, data) => {
             if (err) {
@@ -862,7 +1036,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_REFS_REF":
-        // Function parameters for this API owner,repo,ref,opts
+        /*
+      Get a Reference
+      Function parameters for this API owner,repo,ref,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitRefsRefGet(options, (err, data) => {
             if (err) {
@@ -873,7 +1050,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_TAGS_SHA_CODE":
-        // Function parameters for this API owner,repo,shaCode,opts
+        /*
+      Get a Tag.
+      Function parameters for this API owner,repo,shaCode,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitTagsShaCodeGet(options, (err, data) => {
             if (err) {
@@ -884,7 +1064,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_TREES_SHA_CODE":
-        // Function parameters for this API owner,repo,shaCode,opts
+        /*
+      Get a Tree.
+      Function parameters for this API owner,repo,shaCode,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitTreesShaCodeGet(options, (err, data) => {
             if (err) {
@@ -895,7 +1078,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_HOOKS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get list of hooks.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoHooksGet(options, (err, data) => {
             if (err) {
@@ -906,7 +1092,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
-        // Function parameters for this API owner,repo,hookId,opts
+        /*
+      Get single hook.
+      Function parameters for this API owner,repo,hookId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoHooksHookIdGet(options, (err, data) => {
             if (err) {
@@ -917,7 +1106,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
-        // Function parameters for this API owner,repo,commentId,opts
+        /*
+      Get a single comment.
+      Function parameters for this API owner,repo,commentId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesCommentsCommentIdGet(
             options,
@@ -931,7 +1123,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List comments in a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesCommentsGet(options, (err, data) => {
             if (err) {
@@ -942,7 +1137,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_EVENTS_EVENT_ID":
-        // Function parameters for this API owner,repo,eventId,opts
+        /*
+      Get a single event.
+      Function parameters for this API owner,repo,eventId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesEventsEventIdGet(options, (err, data) => {
             if (err) {
@@ -953,7 +1151,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_EVENTS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List issue events for a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesEventsGet(options, (err, data) => {
             if (err) {
@@ -964,7 +1165,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES":
-        // Function parameters for this API owner,repo,filter,state,labels,sort,direction,opts
+        /*
+      List issues for a repository.
+      Function parameters for this API owner,repo,filter,state,labels,sort,direction,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesGet(options, (err, data) => {
             if (err) {
@@ -975,7 +1179,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      List comments on an issue.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberCommentsGet(options, (err, data) => {
             if (err) {
@@ -986,7 +1193,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_EVENTS":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      List events for an issue.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberEventsGet(options, (err, data) => {
             if (err) {
@@ -997,7 +1207,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      Get a single issue
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberGet(options, (err, data) => {
             if (err) {
@@ -1008,7 +1221,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      List labels on an issue.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberLabelsGet(options, (err, data) => {
             if (err) {
@@ -1019,7 +1235,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_KEYS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get list of keys.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoKeysGet(options, (err, data) => {
             if (err) {
@@ -1030,7 +1249,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_KEYS_KEY_ID":
-        // Function parameters for this API owner,repo,keyId,opts
+        /*
+      Get a key
+      Function parameters for this API owner,repo,keyId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoKeysKeyIdGet(options, (err, data) => {
             if (err) {
@@ -1041,7 +1263,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_LABELS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List all labels for this repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoLabelsGet(options, (err, data) => {
             if (err) {
@@ -1052,7 +1277,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_LABELS_NAME":
-        // Function parameters for this API owner,repo,name,opts
+        /*
+      Get a single label.
+      Function parameters for this API owner,repo,name,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoLabelsNameGet(options, (err, data) => {
             if (err) {
@@ -1063,7 +1291,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_LANGUAGES":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoLanguagesGet(options, (err, data) => {
             if (err) {
@@ -1074,7 +1305,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_MILESTONES":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List milestones for a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoMilestonesGet(options, (err, data) => {
             if (err) {
@@ -1085,7 +1319,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      Get a single milestone.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoMilestonesNumberGet(options, (err, data) => {
             if (err) {
@@ -1096,7 +1333,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER_LABELS":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      Get labels for every issue in a milestone.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoMilestonesNumberLabelsGet(options, (err, data) => {
             if (err) {
@@ -1107,7 +1347,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_NOTIFICATIONS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List your notifications in a repository List all notifications for the current user.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoNotificationsGet(options, (err, data) => {
             if (err) {
@@ -1118,7 +1361,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
-        // Function parameters for this API owner,repo,commentId,opts
+        /*
+      Get a single comment.
+      Function parameters for this API owner,repo,commentId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsCommentsCommentIdGet(options, (err, data) => {
             if (err) {
@@ -1129,7 +1375,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List comments in a repository. By default, Review Comments are ordered by ascending ID.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsCommentsGet(options, (err, data) => {
             if (err) {
@@ -1140,7 +1389,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List pull requests.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsGet(options, (err, data) => {
             if (err) {
@@ -1151,7 +1403,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      List comments on a pull request.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsNumberCommentsGet(options, (err, data) => {
             if (err) {
@@ -1162,7 +1417,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMITS":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      List commits on a pull request.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsNumberCommitsGet(options, (err, data) => {
             if (err) {
@@ -1173,7 +1431,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_FILES":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      List pull requests files.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsNumberFilesGet(options, (err, data) => {
             if (err) {
@@ -1184,7 +1445,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      Get a single pull request.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsNumberGet(options, (err, data) => {
             if (err) {
@@ -1195,7 +1459,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_MERGE":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      Get if a pull request has been merged.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsNumberMergeGet(options, (err, data) => {
             if (err) {
@@ -1206,7 +1473,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_README":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get the README. This method returns the preferred README for a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReadmeGet(options, (err, data) => {
             if (err) {
@@ -1217,7 +1487,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
-        // Function parameters for this API owner,repo,id,opts
+        /*
+      Get a single release asset
+      Function parameters for this API owner,repo,id,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReleasesAssetsIdGet(options, (err, data) => {
             if (err) {
@@ -1228,7 +1501,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_RELEASES":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReleasesGet(options, (err, data) => {
             if (err) {
@@ -1239,7 +1515,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ID_ASSETS":
-        // Function parameters for this API owner,repo,id,opts
+        /*
+      List assets for a release
+      Function parameters for this API owner,repo,id,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReleasesIdAssetsGet(options, (err, data) => {
             if (err) {
@@ -1250,7 +1529,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ID":
-        // Function parameters for this API owner,repo,id,opts
+        /*
+      Get a single release
+      Function parameters for this API owner,repo,id,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReleasesIdGet(options, (err, data) => {
             if (err) {
@@ -1261,7 +1543,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_STARGAZERS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List Stargazers.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoStargazersGet(options, (err, data) => {
             if (err) {
@@ -1272,7 +1557,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_STATS_CODE_FREQUENCY":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoStatsCodeFrequencyGet(options, (err, data) => {
             if (err) {
@@ -1283,7 +1571,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_STATS_COMMIT_ACTIVITY":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoStatsCommitActivityGet(options, (err, data) => {
             if (err) {
@@ -1294,7 +1585,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_STATS_CONTRIBUTORS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get contributors list with additions, deletions, and commit counts.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoStatsContributorsGet(options, (err, data) => {
             if (err) {
@@ -1305,7 +1599,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_STATS_PARTICIPATION":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get the weekly commit count for the repo owner and everyone else.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoStatsParticipationGet(options, (err, data) => {
             if (err) {
@@ -1316,7 +1613,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_STATS_PUNCH_CARD":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoStatsPunchCardGet(options, (err, data) => {
             if (err) {
@@ -1327,7 +1627,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_STATUSES_REF":
-        // Function parameters for this API owner,repo,ref,opts
+        /*
+      List Statuses for a specific Ref.
+      Function parameters for this API owner,repo,ref,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoStatusesRefGet(options, (err, data) => {
             if (err) {
@@ -1338,7 +1641,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_SUBSCRIBERS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List watchers.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoSubscribersGet(options, (err, data) => {
             if (err) {
@@ -1349,7 +1655,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_SUBSCRIPTION":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get a Repository Subscription.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoSubscriptionGet(options, (err, data) => {
             if (err) {
@@ -1360,7 +1669,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_TAGS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get list of tags.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoTagsGet(options, (err, data) => {
             if (err) {
@@ -1371,7 +1683,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_TEAMS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Get list of teams
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoTeamsGet(options, (err, data) => {
             if (err) {
@@ -1382,7 +1697,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_WATCHERS":
-        // Function parameters for this API owner,repo,opts
+        /*
+      List Stargazers. New implementation.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoWatchersGet(options, (err, data) => {
             if (err) {
@@ -1393,7 +1711,10 @@ class GithubService {
         });
 
       case "REPOSITORIES":
-        // Function parameters for this API opts
+        /*
+      List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.repositoriesGet(options, (err, data) => {
             if (err) {
@@ -1404,7 +1725,10 @@ class GithubService {
         });
 
       case "SEARCH_CODE":
-        // Function parameters for this API q,opts
+        /*
+      Search code.
+      Function parameters for this API q,opts
+        */
         return new Promise((resolve, reject) => {
           this.searchCodeGet(options, (err, data) => {
             if (err) {
@@ -1415,7 +1739,10 @@ class GithubService {
         });
 
       case "SEARCH_ISSUES":
-        // Function parameters for this API q,opts
+        /*
+      Find issues by state and keyword. (This method returns up to 100 results per page.)
+      Function parameters for this API q,opts
+        */
         return new Promise((resolve, reject) => {
           this.searchIssuesGet(options, (err, data) => {
             if (err) {
@@ -1426,7 +1753,10 @@ class GithubService {
         });
 
       case "SEARCH_REPOSITORIES":
-        // Function parameters for this API q,opts
+        /*
+      Search repositories.
+      Function parameters for this API q,opts
+        */
         return new Promise((resolve, reject) => {
           this.searchRepositoriesGet(options, (err, data) => {
             if (err) {
@@ -1437,7 +1767,10 @@ class GithubService {
         });
 
       case "SEARCH_USERS":
-        // Function parameters for this API q,opts
+        /*
+      Search users.
+      Function parameters for this API q,opts
+        */
         return new Promise((resolve, reject) => {
           this.searchUsersGet(options, (err, data) => {
             if (err) {
@@ -1448,7 +1781,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID":
-        // Function parameters for this API teamId,opts
+        /*
+      Get team.
+      Function parameters for this API teamId,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdGet(options, (err, data) => {
             if (err) {
@@ -1459,7 +1795,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_MEMBERS":
-        // Function parameters for this API teamId,opts
+        /*
+      List team members. In order to list members in a team, the authenticated user must be a member of the team.
+      Function parameters for this API teamId,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdMembersGet(options, (err, data) => {
             if (err) {
@@ -1470,7 +1809,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
-        // Function parameters for this API teamId,username,opts
+        /*
+      The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team.
+      Function parameters for this API teamId,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdMembersUsernameGet(options, (err, data) => {
             if (err) {
@@ -1481,7 +1823,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
-        // Function parameters for this API teamId,username,opts
+        /*
+      Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization.
+      Function parameters for this API teamId,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdMembershipsUsernameGet(options, (err, data) => {
             if (err) {
@@ -1492,7 +1837,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_REPOS":
-        // Function parameters for this API teamId,opts
+        /*
+      List team repos
+      Function parameters for this API teamId,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdReposGet(options, (err, data) => {
             if (err) {
@@ -1503,7 +1851,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
-        // Function parameters for this API teamId,owner,repo,opts
+        /*
+      Check if a team manages a repository
+      Function parameters for this API teamId,owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdReposOwnerRepoGet(options, (err, data) => {
             if (err) {
@@ -1514,7 +1865,10 @@ class GithubService {
         });
 
       case "USER_EMAILS":
-        // Function parameters for this API opts
+        /*
+      List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userEmailsGet(options, (err, data) => {
             if (err) {
@@ -1525,7 +1879,10 @@ class GithubService {
         });
 
       case "USER_FOLLOWERS":
-        // Function parameters for this API opts
+        /*
+      List the authenticated user&#39;s followers
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userFollowersGet(options, (err, data) => {
             if (err) {
@@ -1536,7 +1893,10 @@ class GithubService {
         });
 
       case "USER_FOLLOWING":
-        // Function parameters for this API opts
+        /*
+      List who the authenticated user is following.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userFollowingGet(options, (err, data) => {
             if (err) {
@@ -1547,7 +1907,10 @@ class GithubService {
         });
 
       case "USER_FOLLOWING_USERNAME":
-        // Function parameters for this API username,opts
+        /*
+      Check if you are following a user.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.userFollowingUsernameGet(options, (err, data) => {
             if (err) {
@@ -1558,7 +1921,10 @@ class GithubService {
         });
 
       case "USER":
-        // Function parameters for this API opts
+        /*
+      Get the authenticated user.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userGet(options, (err, data) => {
             if (err) {
@@ -1569,7 +1935,10 @@ class GithubService {
         });
 
       case "USER_ISSUES":
-        // Function parameters for this API filter,state,labels,sort,direction,opts
+        /*
+      List issues. List all issues across owned and member repositories for the authenticated user.
+      Function parameters for this API filter,state,labels,sort,direction,opts
+        */
         return new Promise((resolve, reject) => {
           this.userIssuesGet(options, (err, data) => {
             if (err) {
@@ -1580,7 +1949,10 @@ class GithubService {
         });
 
       case "USER_KEYS":
-        // Function parameters for this API opts
+        /*
+      List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userKeysGet(options, (err, data) => {
             if (err) {
@@ -1591,7 +1963,10 @@ class GithubService {
         });
 
       case "USER_KEYS_KEY_ID":
-        // Function parameters for this API keyId,opts
+        /*
+      Get a single public key.
+      Function parameters for this API keyId,opts
+        */
         return new Promise((resolve, reject) => {
           this.userKeysKeyIdGet(options, (err, data) => {
             if (err) {
@@ -1602,7 +1977,10 @@ class GithubService {
         });
 
       case "USER_ORGS":
-        // Function parameters for this API opts
+        /*
+      List public and private organizations for the authenticated user.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userOrgsGet(options, (err, data) => {
             if (err) {
@@ -1613,7 +1991,10 @@ class GithubService {
         });
 
       case "USER_REPOS":
-        // Function parameters for this API opts
+        /*
+      List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userReposGet(options, (err, data) => {
             if (err) {
@@ -1624,7 +2005,10 @@ class GithubService {
         });
 
       case "USER_STARRED":
-        // Function parameters for this API opts
+        /*
+      List repositories being starred by the authenticated user.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userStarredGet(options, (err, data) => {
             if (err) {
@@ -1635,7 +2019,10 @@ class GithubService {
         });
 
       case "USER_STARRED_OWNER_REPO":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Check if you are starring a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.userStarredOwnerRepoGet(options, (err, data) => {
             if (err) {
@@ -1646,7 +2033,10 @@ class GithubService {
         });
 
       case "USER_SUBSCRIPTIONS":
-        // Function parameters for this API opts
+        /*
+      List repositories being watched by the authenticated user.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userSubscriptionsGet(options, (err, data) => {
             if (err) {
@@ -1657,7 +2047,10 @@ class GithubService {
         });
 
       case "USER_SUBSCRIPTIONS_OWNER_REPO":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Check if you are watching a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.userSubscriptionsOwnerRepoGet(options, (err, data) => {
             if (err) {
@@ -1668,7 +2061,10 @@ class GithubService {
         });
 
       case "USER_TEAMS":
-        // Function parameters for this API opts
+        /*
+      List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.userTeamsGet(options, (err, data) => {
             if (err) {
@@ -1679,7 +2075,10 @@ class GithubService {
         });
 
       case "USERS":
-        // Function parameters for this API opts
+        /*
+      Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users.
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.usersGet(options, (err, data) => {
             if (err) {
@@ -1690,7 +2089,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_EVENTS":
-        // Function parameters for this API username,opts
+        /*
+      If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameEventsGet(options, (err, data) => {
             if (err) {
@@ -1701,7 +2103,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_EVENTS_ORGS_ORG":
-        // Function parameters for this API username,org,opts
+        /*
+      This is the user&#39;s organization dashboard. You must be authenticated as the user to view this.
+      Function parameters for this API username,org,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameEventsOrgsOrgGet(options, (err, data) => {
             if (err) {
@@ -1712,7 +2117,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_FOLLOWERS":
-        // Function parameters for this API username,opts
+        /*
+      List a user&#39;s followers
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameFollowersGet(options, (err, data) => {
             if (err) {
@@ -1723,7 +2131,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_FOLLOWING_TARGET_USER":
-        // Function parameters for this API username,targetUser,opts
+        /*
+      Check if one user follows another.
+      Function parameters for this API username,targetUser,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameFollowingTargetUserGet(options, (err, data) => {
             if (err) {
@@ -1734,7 +2145,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME":
-        // Function parameters for this API username,opts
+        /*
+      Get a single user.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameGet(options, (err, data) => {
             if (err) {
@@ -1745,7 +2159,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_GISTS":
-        // Function parameters for this API username,opts
+        /*
+      List a users gists.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameGistsGet(options, (err, data) => {
             if (err) {
@@ -1756,7 +2173,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_KEYS":
-        // Function parameters for this API username,opts
+        /*
+      List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameKeysGet(options, (err, data) => {
             if (err) {
@@ -1767,7 +2187,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_ORGS":
-        // Function parameters for this API username,opts
+        /*
+      List all public organizations for a user.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameOrgsGet(options, (err, data) => {
             if (err) {
@@ -1778,7 +2201,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_RECEIVED_EVENTS":
-        // Function parameters for this API username,opts
+        /*
+      These are events that you&#39;ll only see public events.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameReceivedEventsGet(options, (err, data) => {
             if (err) {
@@ -1789,7 +2215,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_RECEIVED_EVENTS_PUBLIC":
-        // Function parameters for this API username,opts
+        /*
+      List public events that a user has received
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameReceivedEventsPublicGet(options, (err, data) => {
             if (err) {
@@ -1800,7 +2229,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_REPOS":
-        // Function parameters for this API username,opts
+        /*
+      List public repositories for the specified user.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameReposGet(options, (err, data) => {
             if (err) {
@@ -1811,7 +2243,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_STARRED":
-        // Function parameters for this API username,opts
+        /*
+      List repositories being starred by a user.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameStarredGet(options, (err, data) => {
             if (err) {
@@ -1822,7 +2257,10 @@ class GithubService {
         });
 
       case "USERS_USERNAME_SUBSCRIPTIONS":
-        // Function parameters for this API username,opts
+        /*
+      List repositories being watched by a user.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.usersUsernameSubscriptionsGet(options, (err, data) => {
             if (err) {
@@ -1837,12 +2275,21 @@ class GithubService {
     }
   }
   // This is a function for emojisGet
+  /* Lists all the emojis available to use on GitHub. */
   emojisGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.emojisGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -1854,12 +2301,21 @@ class GithubService {
   }
 
   // This is a function for eventsGet
+  /* List public events. */
   eventsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.eventsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -1871,12 +2327,21 @@ class GithubService {
   }
 
   // This is a function for feedsGet
+  /* List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user.  */
   feedsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.feedsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -1888,13 +2353,22 @@ class GithubService {
   }
 
   // This is a function for gistsGet
+  /* List the authenticated user&#39;s gists or if called anonymously, this will return all public gists.  */
   gistsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };*/
     apiInstance.gistsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -1906,14 +2380,20 @@ class GithubService {
   }
 
   // This is a function for gistsIdCommentsCommentIdGet
+  /* Get a single comment. */
   gistsIdCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // Number | Id of comment
-    /*let id = 56;*/ /*let commentId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdCommentsCommentIdGet(
+};*/ /*let commentId = 56;*/ // Number | Id of gist // Number | Id of comment
+    /*let id = 56;*/ apiInstance.gistsIdCommentsCommentIdGet(
       incomingOptions.id,
       incomingOptions.commentId,
       incomingOptions.opts,
@@ -1928,14 +2408,22 @@ class GithubService {
   }
 
   // This is a function for gistsIdCommentsGet
+  /* List comments on a gist. */
   gistsIdCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist
-    /*let id = 56;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdCommentsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // Number | Id of gist
+    /*let id = 56;*/ apiInstance.gistsIdCommentsGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -1949,14 +2437,20 @@ class GithubService {
   }
 
   // This is a function for gistsIdGet
+  /* Get a single gist. */
   gistsIdGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist
-    /*let id = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdGet(
+};*/ // Number | Id of gist
+    /*let id = 56;*/ apiInstance.gistsIdGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -1970,14 +2464,22 @@ class GithubService {
   }
 
   // This is a function for gistsIdStarGet
+  /* Check if a gist is starred. */
   gistsIdStarGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist
-    /*let id = 56;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdStarGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // Number | Id of gist
+    /*let id = 56;*/ apiInstance.gistsIdStarGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -1991,13 +2493,22 @@ class GithubService {
   }
 
   // This is a function for gistsPublicGet
+  /* List all public gists. */
   gistsPublicGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };*/
     apiInstance.gistsPublicGet(
       incomingOptions.opts,
@@ -2012,13 +2523,22 @@ class GithubService {
   }
 
   // This is a function for gistsStarredGet
+  /* List the authenticated user&#39;s starred gists. */
   gistsStarredGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };*/
     apiInstance.gistsStarredGet(
       incomingOptions.opts,
@@ -2033,12 +2553,21 @@ class GithubService {
   }
 
   // This is a function for gitignoreTemplatesGet
+  /* Listing available templates. List all templates available to pass as an option when creating a repository.  */
   gitignoreTemplatesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.gitignoreTemplatesGet(
       incomingOptions.opts,
@@ -2053,14 +2582,20 @@ class GithubService {
   }
 
   // This is a function for gitignoreTemplatesLanguageGet
+  /* Get a single template. */
   gitignoreTemplatesLanguageGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String |
-    /*let language = "language_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gitignoreTemplatesLanguageGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String |
+    /*let language = "language_example";*/ apiInstance.gitignoreTemplatesLanguageGet(
       incomingOptions.language,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2074,15 +2609,23 @@ class GithubService {
   }
 
   // This is a function for issuesGet
+  /* List issues. List all issues across all the authenticated user&#39;s visible repositories.  */
   issuesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
-    /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ /*let opts = {
-  'since': "since_example", // String | Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.issuesGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+};*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
+    /*let filter = "'all'";*/ apiInstance.issuesGet(
       incomingOptions.filter,
       incomingOptions.state,
       incomingOptions.labels,
@@ -2100,14 +2643,14 @@ class GithubService {
   }
 
   // This is a function for legacyIssuesSearchOwnerRepositoryStateKeywordGet
+  /* Find issues by state and keyword. */
   legacyIssuesSearchOwnerRepositoryStateKeywordGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | The search term // String | Indicates the state of the issues to return. Can be either open or closed // String | // String |
-    /*let keyword = "keyword_example";*/ /*let state = "state_example";*/ /*let owner = "owner_example";*/ /*let repository = "repository_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(
+};*/ /*let state = "state_example";*/ /*let owner = "owner_example";*/ /*let repository = "repository_example";*/ // String | The search term // String | Indicates the state of the issues to return. Can be either open or closed // String | // String |
+    /*let keyword = "keyword_example";*/ apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(
       incomingOptions.keyword,
       incomingOptions.state,
       incomingOptions.owner,
@@ -2124,18 +2667,18 @@ class GithubService {
   }
 
   // This is a function for legacyReposSearchKeywordGet
+  /* Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter. */
   legacyReposSearchKeywordGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | The search ter
-    /*let keyword = "keyword_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'language': "language_example", // String | Filter results by language
   'startPage': "startPage_example", // String | The page number to fetch
   'sort': "sort_example", // String | The sort field. One of stars, forks, or updated. Default: results are sorted by best match.
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.legacyReposSearchKeywordGet(
+};*/ // String | The search ter
+    /*let keyword = "keyword_example";*/ apiInstance.legacyReposSearchKeywordGet(
       incomingOptions.keyword,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2149,14 +2692,14 @@ class GithubService {
   }
 
   // This is a function for legacyUserEmailEmailGet
+  /* This API call is added for compatibility reasons only. */
   legacyUserEmailEmailGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | The email addres
-    /*let email = "email_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.legacyUserEmailEmailGet(
+};*/ // String | The email addres
+    /*let email = "email_example";*/ apiInstance.legacyUserEmailEmailGet(
       incomingOptions.email,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2170,17 +2713,17 @@ class GithubService {
   }
 
   // This is a function for legacyUserSearchKeywordGet
+  /* Find users by keyword. */
   legacyUserSearchKeywordGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | The search ter
-    /*let keyword = "keyword_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'startPage': "startPage_example", // String | The page number to fetch
   'sort': "sort_example", // String | The sort field. One of stars, forks, or updated. Default: results are sorted by best match.
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.legacyUserSearchKeywordGet(
+};*/ // String | The search ter
+    /*let keyword = "keyword_example";*/ apiInstance.legacyUserSearchKeywordGet(
       incomingOptions.keyword,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2194,8 +2737,15 @@ class GithubService {
   }
 
   // This is a function for metaGet
+  /* This gives some information about GitHub.com, the service. */
   metaGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
@@ -2211,14 +2761,22 @@ class GithubService {
   }
 
   // This is a function for networksOwnerRepoEventsGet
+  /* List public events for a network of repositories. */
   networksOwnerRepoEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of the owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.networksOwnerRepoEventsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of the owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.networksOwnerRepoEventsGet(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
@@ -2233,15 +2791,24 @@ class GithubService {
   }
 
   // This is a function for notificationsGet
+  /* List your notifications. List all notifications for the current user, grouped by repository.  */
   notificationsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
   'all': true, // Boolean | True to show notifications marked as read.
   'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned.
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.notificationsGet(
       incomingOptions.opts,
@@ -2256,14 +2823,20 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdGet
+  /* View a single thread. */
   notificationsThreadsIdGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of thread
-    /*let id = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.notificationsThreadsIdGet(
+};*/ // Number | Id of thread
+    /*let id = 56;*/ apiInstance.notificationsThreadsIdGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2277,14 +2850,22 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdSubscriptionGet
+  /* Get a Thread Subscription. */
   notificationsThreadsIdSubscriptionGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of thread
-    /*let id = 56;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.notificationsThreadsIdSubscriptionGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // Number | Id of thread
+    /*let id = 56;*/ apiInstance.notificationsThreadsIdSubscriptionGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2298,14 +2879,22 @@ class GithubService {
   }
 
   // This is a function for orgsOrgEventsGet
+  /* List public events for an organization. */
   orgsOrgEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation
-    /*let org = "org_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgEventsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | Name of organisation
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgEventsGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2319,14 +2908,22 @@ class GithubService {
   }
 
   // This is a function for orgsOrgGet
+  /* Get an Organization. */
   orgsOrgGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation
-    /*let org = "org_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | Name of organisation
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2340,15 +2937,23 @@ class GithubService {
   }
 
   // This is a function for orgsOrgIssuesGet
+  /* List issues. List all issues for a given organization for the authenticated user.  */
   orgsOrgIssuesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
-    /*let org = "org_example";*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ /*let opts = {
-  'since': "since_example", // String | Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgIssuesGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+};*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ // String | Name of organisation // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgIssuesGet(
       org,
       incomingOptions.filter,
       incomingOptions.state,
@@ -2367,14 +2972,22 @@ class GithubService {
   }
 
   // This is a function for orgsOrgMembersGet
+  /* Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list.  */
   orgsOrgMembersGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation
-    /*let org = "org_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgMembersGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | Name of organisation
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgMembersGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2388,14 +3001,22 @@ class GithubService {
   }
 
   // This is a function for orgsOrgMembersUsernameGet
+  /* Check if a user is, publicly or privately, a member of the organization. */
   orgsOrgMembersUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgMembersUsernameGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgMembersUsernameGet(
       org,
       incomingOptions.username,
       incomingOptions.opts,
@@ -2410,14 +3031,22 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPublicMembersGet
+  /* Public members list. Members of an organization can choose to have their membership publicized or not.  */
   orgsOrgPublicMembersGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation
-    /*let org = "org_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgPublicMembersGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | Name of organisation
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPublicMembersGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2431,14 +3060,22 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPublicMembersUsernameGet
+  /* Check public membership. */
   orgsOrgPublicMembersUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgPublicMembersUsernameGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameGet(
       org,
       incomingOptions.username,
       incomingOptions.opts,
@@ -2453,15 +3090,23 @@ class GithubService {
   }
 
   // This is a function for orgsOrgReposGet
+  /* List repositories for the specified org. */
   orgsOrgReposGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation
-    /*let org = "org_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'type': "'all'", // String |
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgReposGet(
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | Name of organisation
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgReposGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2475,14 +3120,22 @@ class GithubService {
   }
 
   // This is a function for orgsOrgTeamsGet
+  /* List teams. */
   orgsOrgTeamsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation
-    /*let org = "org_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgTeamsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | Name of organisation
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgTeamsGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
@@ -2496,12 +3149,21 @@ class GithubService {
   }
 
   // This is a function for rateLimitGet
+  /* Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit.  */
   rateLimitGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.rateLimitGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -2513,14 +3175,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoArchiveFormatPathGet
+  /* Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly.  */
   reposOwnerRepoArchiveFormatPathGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // String | Valid Git reference, defaults to 'master'
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let archiveFormat = "archiveFormat_example";*/ /*let path = "path_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoArchiveFormatPathGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let archiveFormat = "archiveFormat_example";*/ /*let path = "path_example";*/ // String | Name of repository owner // String | Name of repository // String | // String | Valid Git reference, defaults to 'master'
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoArchiveFormatPathGet(
       incomingOptions.owner,
       repo,
       incomingOptions.archiveFormat,
@@ -2537,14 +3207,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoAssigneesAssigneeGet
+  /* Check assignee. You may also check to see if a particular user is an assignee for a repository.  */
   reposOwnerRepoAssigneesAssigneeGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Login of the assignee
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let assignee = "assignee_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoAssigneesAssigneeGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let assignee = "assignee_example";*/ // String | Name of repository owner // String | Name of repository // String | Login of the assignee
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoAssigneesAssigneeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.assignee,
@@ -2560,14 +3238,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoAssigneesGet
+  /* List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned.  */
   reposOwnerRepoAssigneesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoAssigneesGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoAssigneesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -2582,14 +3268,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoBranchesBranchGet
+  /* Get Branch */
   reposOwnerRepoBranchesBranchGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Name of the branch
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let branch = "branch_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoBranchesBranchGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let branch = "branch_example";*/ // String | Name of repository owner // String | Name of repository // String | Name of the branch
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoBranchesBranchGet(
       incomingOptions.owner,
       repo,
       incomingOptions.branch,
@@ -2605,14 +3299,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoBranchesGet
+  /* Get list of branches */
   reposOwnerRepoBranchesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoBranchesGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoBranchesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -2627,14 +3329,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCollaboratorsGet
+  /* List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list.  */
   reposOwnerRepoCollaboratorsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -2649,14 +3359,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCollaboratorsUserGet
+  /* Check if user is a collaborator */
   reposOwnerRepoCollaboratorsUserGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Login of the user
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ // String | Name of repository owner // String | Name of repository // String | Login of the user
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserGet(
       incomingOptions.owner,
       repo,
       incomingOptions.user,
@@ -2672,14 +3390,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommentsCommentIdGet
+  /* Get a single commit comment. */
   reposOwnerRepoCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -2695,14 +3421,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommentsGet
+  /* List commit comments for a repository. Comments are ordered by ascending ID.  */
   reposOwnerRepoCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCommentsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -2717,19 +3451,27 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsGet
+  /* List commits on a repository. */
   reposOwnerRepoCommitsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
   'sha': "sha_example", // String | Sha or branch to start listing commits from.
   'path': "path_example", // String | Only commits containing this file path will be returned.
   'author': "author_example", // String | GitHub login, name, or email by which to filter by commit author.
   'until': "until_example", // String | ISO 8601 Date - Only commits before this date will be returned.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCommitsGet(
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -2744,14 +3486,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsRefStatusGet
+  /* Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json  */
   reposOwnerRepoCommitsRefStatusGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCommitsRefStatusGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsRefStatusGet(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
@@ -2767,14 +3517,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsShaCodeCommentsGet
+  /* List comments for a single commitList comments for a single commit. */
   reposOwnerRepoCommitsShaCodeCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
@@ -2790,14 +3548,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsShaCodeGet
+  /* Get a single commit. */
   reposOwnerRepoCommitsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
@@ -2813,14 +3579,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCompareBaseIdHeadIdGet
+  /* Compare two commits */
   reposOwnerRepoCompareBaseIdHeadIdGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let baseId = "baseId_example";*/ /*let headId = "headId_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCompareBaseIdHeadIdGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let baseId = "baseId_example";*/ /*let headId = "headId_example";*/ // String | Name of repository owner // String | Name of repository // String | // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCompareBaseIdHeadIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.baseId,
@@ -2837,16 +3611,24 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoContentsPathGet
+  /* Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot;  */
   reposOwnerRepoContentsPathGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'path2': "path_example", // String | The content path.
   'ref': "ref_example", // String | The String name of the Commit/Branch/Tag. Defaults to 'master'.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoContentsPathGet(
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoContentsPathGet(
       incomingOptions.owner,
       repo,
       incomingOptions.path,
@@ -2862,14 +3644,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoContributorsGet
+  /* Get list of contributors. */
   reposOwnerRepoContributorsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Set to 1 or true to include anonymous contributors in results
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let anon = "anon_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoContributorsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let anon = "anon_example";*/ // String | Name of repository owner // String | Name of repository // String | Set to 1 or true to include anonymous contributors in results
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoContributorsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.anon,
@@ -2885,14 +3675,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDeploymentsGet
+  /* Users with pull access can view deployments for a repository */
   reposOwnerRepoDeploymentsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoDeploymentsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDeploymentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -2907,14 +3705,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDeploymentsIdStatusesGet
+  /* Users with pull access can view deployment statuses for a deployment */
   reposOwnerRepoDeploymentsIdStatusesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | The Deployment ID to list the statuses from
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = 56;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let id = 56;*/ // String | Name of repository owner // String | Name of repository // Number | The Deployment ID to list the statuses from
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -2930,14 +3736,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDownloadsDownloadIdGet
+  /* Deprecated. Get a single download. */
   reposOwnerRepoDownloadsDownloadIdGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of download
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let downloadId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdGet(
+};*/ /*let repo = "repo_example";*/ /*let downloadId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of download
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.downloadId,
@@ -2953,14 +3765,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDownloadsGet
+  /* Deprecated. List downloads for a repository. */
   reposOwnerRepoDownloadsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoDownloadsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDownloadsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -2975,14 +3793,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoEventsGet
+  /* Get list of repository events. */
   reposOwnerRepoEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoEventsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoEventsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -2997,15 +3823,23 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoForksGet
+  /* List forks. */
   reposOwnerRepoForksGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'sort': "'newes'", // String |
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoForksGet(
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoForksGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3020,14 +3854,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGet
+  /* Get repository. */
   reposOwnerRepoGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3042,14 +3884,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitBlobsShaCodeGet
+  /* Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it.  */
   reposOwnerRepoGitBlobsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitBlobsShaCodeGet(
+};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitBlobsShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
@@ -3065,14 +3907,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitCommitsShaCodeGet
+  /* Get a Commit. */
   reposOwnerRepoGitCommitsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitCommitsShaCodeGet(
+};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitCommitsShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
@@ -3088,14 +3930,16 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsGet
+  /* Get all References */
   reposOwnerRepoGitRefsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3110,14 +3954,16 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsRefGet
+  /* Get a Reference */
   reposOwnerRepoGitRefsRefGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsRefGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefGet(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
@@ -3133,14 +3979,16 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitTagsShaCodeGet
+  /* Get a Tag. */
   reposOwnerRepoGitTagsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitTagsShaCodeGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitTagsShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
@@ -3156,15 +4004,15 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitTreesShaCodeGet
+  /* Get a Tree. */
   reposOwnerRepoGitTreesShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Tree SHA
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'recursive': 56, // Number | Get a Tree Recursively. (0 or 1)
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitTreesShaCodeGet(
+};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | Tree SHA
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitTreesShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
@@ -3180,14 +4028,16 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksGet
+  /* Get list of hooks. */
   reposOwnerRepoHooksGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoHooksGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3202,14 +4052,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksHookIdGet
+  /* Get single hook. */
   reposOwnerRepoHooksHookIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdGet(
+};*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of hook
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.hookId,
@@ -3225,14 +4075,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesCommentsCommentIdGet
+  /* Get a single comment. */
   reposOwnerRepoIssuesCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | ID of comment
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdGet(
+};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | ID of comment
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -3248,17 +4098,17 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesCommentsGet
+  /* List comments in a repository. */
   reposOwnerRepoIssuesCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'direction': "direction_example", // String | Ignored without 'sort' parameter.
   'sort': "sort_example", // String |
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3273,14 +4123,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesEventsEventIdGet
+  /* Get a single event. */
   reposOwnerRepoIssuesEventsEventIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of the event
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let eventId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesEventsEventIdGet(
+};*/ /*let repo = "repo_example";*/ /*let eventId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of the event
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsEventIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.eventId,
@@ -3296,14 +4146,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesEventsGet
+  /* List issue events for a repository. */
   reposOwnerRepoIssuesEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesEventsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3318,15 +4168,17 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesGet
+  /* List issues for a repository. */
   reposOwnerRepoIssuesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ /*let opts = {
-  'since': "since_example", // String | Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+};*/ /*let repo = "repo_example";*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ // String | Name of repository owner // String | Name of repository // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.filter,
@@ -3346,14 +4198,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberCommentsGet
+  /* List comments on an issue. */
   reposOwnerRepoIssuesNumberCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3369,14 +4221,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberEventsGet
+  /* List events for an issue. */
   reposOwnerRepoIssuesNumberEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberEventsGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberEventsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3392,14 +4244,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberGet
+  /* Get a single issue */
   reposOwnerRepoIssuesNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3415,14 +4267,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsGet
+  /* List labels on an issue. */
   reposOwnerRepoIssuesNumberLabelsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3438,14 +4290,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoKeysGet
+  /* Get list of keys. */
   reposOwnerRepoKeysGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoKeysGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoKeysGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3460,14 +4312,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoKeysKeyIdGet
+  /* Get a key */
   reposOwnerRepoKeysKeyIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of key
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let keyId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdGet(
+};*/ /*let repo = "repo_example";*/ /*let keyId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of key
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.keyId,
@@ -3483,14 +4335,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsGet
+  /* List all labels for this repository. */
   reposOwnerRepoLabelsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoLabelsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3505,14 +4357,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsNameGet
+  /* Get a single label. */
   reposOwnerRepoLabelsNameGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Name of the label
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoLabelsNameGet(
+};*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ // String | Name of repository owner // String | Name of repository // String | Name of the label
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsNameGet(
       incomingOptions.owner,
       repo,
       incomingOptions.name,
@@ -3528,14 +4380,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLanguagesGet
+  /* List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language.  */
   reposOwnerRepoLanguagesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoLanguagesGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLanguagesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3550,17 +4402,17 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesGet
+  /* List milestones for a repository. */
   reposOwnerRepoMilestonesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'state': "'open'", // String | String to filter by state.
   'direction': "direction_example", // String | Ignored without 'sort' parameter.
   'sort': "'due_date'", // String |
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3575,14 +4427,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesNumberGet
+  /* Get a single milestone. */
   reposOwnerRepoMilestonesNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of milestone
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of milestone
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3598,14 +4450,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesNumberLabelsGet
+  /* Get labels for every issue in a milestone. */
   reposOwnerRepoMilestonesNumberLabelsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of milestone
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberLabelsGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of milestone
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberLabelsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3621,17 +4473,17 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoNotificationsGet
+  /* List your notifications in a repository List all notifications for the current user.  */
   reposOwnerRepoNotificationsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'all': true, // Boolean | True to show notifications marked as read.
   'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned.
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoNotificationsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoNotificationsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3646,14 +4498,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsCommentsCommentIdGet
+  /* Get a single comment. */
   reposOwnerRepoPullsCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdGet(
+};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -3669,17 +4521,17 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsCommentsGet
+  /* List comments in a repository. By default, Review Comments are ordered by ascending ID.  */
   reposOwnerRepoPullsCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'direction': "direction_example", // String | Ignored without 'sort' parameter.
   'sort': "sort_example", // String |
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3694,17 +4546,17 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsGet
+  /* List pull requests. */
   reposOwnerRepoPullsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'state': "'open'", // String | String to filter by state.
   'head': "head_example", // String | Filter pulls by head user and branch name in the format of 'user:ref-name'. Example: github:new-script-format.
   'base': "base_example", // String | Filter pulls by base branch name. Example - gh-pages.
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3719,14 +4571,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberCommentsGet
+  /* List comments on a pull request. */
   reposOwnerRepoPullsNumberCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3742,14 +4594,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberCommitsGet
+  /* List commits on a pull request. */
   reposOwnerRepoPullsNumberCommitsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommitsGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommitsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3765,14 +4617,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberFilesGet
+  /* List pull requests files. */
   reposOwnerRepoPullsNumberFilesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberFilesGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberFilesGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3788,14 +4640,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberGet
+  /* Get a single pull request. */
   reposOwnerRepoPullsNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3811,14 +4663,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberMergeGet
+  /* Get if a pull request has been merged. */
   reposOwnerRepoPullsNumberMergeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergeGet(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergeGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -3834,15 +4686,15 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReadmeGet
+  /* Get the README. This method returns the preferred README for a repository.  */
   reposOwnerRepoReadmeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'ref': "ref_example", // String | The String name of the Commit/Branch/Tag. Defaults to master.
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReadmeGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReadmeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3857,14 +4709,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesAssetsIdGet
+  /* Get a single release asset */
   reposOwnerRepoReleasesAssetsIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdGet(
+};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -3880,14 +4732,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesGet
+  /* Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only */
   reposOwnerRepoReleasesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReleasesGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3902,14 +4754,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesIdAssetsGet
+  /* List assets for a release */
   reposOwnerRepoReleasesIdAssetsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReleasesIdAssetsGet(
+};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesIdAssetsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -3925,14 +4777,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesIdGet
+  /* Get a single release */
   reposOwnerRepoReleasesIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReleasesIdGet(
+};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -3948,14 +4800,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStargazersGet
+  /* List Stargazers. */
   reposOwnerRepoStargazersGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoStargazersGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStargazersGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3970,14 +4822,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsCodeFrequencyGet
+  /* Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository.  */
   reposOwnerRepoStatsCodeFrequencyGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoStatsCodeFrequencyGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsCodeFrequencyGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -3992,14 +4844,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsCommitActivityGet
+  /* Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday.  */
   reposOwnerRepoStatsCommitActivityGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoStatsCommitActivityGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsCommitActivityGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -4014,14 +4866,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsContributorsGet
+  /* Get contributors list with additions, deletions, and commit counts. */
   reposOwnerRepoStatsContributorsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoStatsContributorsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsContributorsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -4036,14 +4888,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsParticipationGet
+  /* Get the weekly commit count for the repo owner and everyone else. */
   reposOwnerRepoStatsParticipationGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoStatsParticipationGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsParticipationGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -4058,14 +4910,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsPunchCardGet
+  /* Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits.  */
   reposOwnerRepoStatsPunchCardGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoStatsPunchCardGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsPunchCardGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -4080,14 +4932,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatusesRefGet
+  /* List Statuses for a specific Ref. */
   reposOwnerRepoStatusesRefGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name.
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoStatusesRefGet(
+};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ // String | Name of repository owner // String | Name of repository // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name.
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatusesRefGet(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
@@ -4103,14 +4955,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoSubscribersGet
+  /* List watchers. */
   reposOwnerRepoSubscribersGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoSubscribersGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoSubscribersGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -4125,14 +4977,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoSubscriptionGet
+  /* Get a Repository Subscription. */
   reposOwnerRepoSubscriptionGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoSubscriptionGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoSubscriptionGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -4147,14 +4999,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoTagsGet
+  /* Get list of tags. */
   reposOwnerRepoTagsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoTagsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoTagsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -4169,14 +5021,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoTeamsGet
+  /* Get list of teams */
   reposOwnerRepoTeamsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoTeamsGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoTeamsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -4191,14 +5043,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoWatchersGet
+  /* List Stargazers. New implementation. */
   reposOwnerRepoWatchersGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoWatchersGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoWatchersGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -4213,13 +5071,22 @@ class GithubService {
   }
 
   // This is a function for repositoriesGet
+  /* List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories.  */
   repositoriesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };*/
     apiInstance.repositoriesGet(
       incomingOptions.opts,
@@ -4234,16 +5101,24 @@ class GithubService {
   }
 
   // This is a function for searchCodeGet
+  /* Search code. */
   searchCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository.
-    /*let q = "q_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'sort': "sort_example", // String | Can only be 'indexed', which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.searchCodeGet(
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository.
+    /*let q = "q_example";*/ apiInstance.searchCodeGet(
       incomingOptions.q,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4257,16 +5132,24 @@ class GithubService {
   }
 
   // This is a function for searchIssuesGet
+  /* Find issues by state and keyword. (This method returns up to 100 results per page.) */
   searchIssuesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | The q search term can also contain any combination of the supported issue search qualifiers
-    /*let q = "q_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'sort': "sort_example", // String | The sort field. Can be comments, created, or updated. Default: results are sorted by best match.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.searchIssuesGet(
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | The q search term can also contain any combination of the supported issue search qualifiers
+    /*let q = "q_example";*/ apiInstance.searchIssuesGet(
       incomingOptions.q,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4280,16 +5163,24 @@ class GithubService {
   }
 
   // This is a function for searchRepositoriesGet
+  /* Search repositories. */
   searchRepositoriesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars.
-    /*let q = "q_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'sort': "sort_example", // String | If not provided, results are sorted by best match.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.searchRepositoriesGet(
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars.
+    /*let q = "q_example";*/ apiInstance.searchRepositoriesGet(
       incomingOptions.q,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4303,16 +5194,24 @@ class GithubService {
   }
 
   // This is a function for searchUsersGet
+  /* Search users. */
   searchUsersGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have.
-    /*let q = "q_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'sort': "sort_example", // String | If not provided, results are sorted by best match.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.searchUsersGet(
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have.
+    /*let q = "q_example";*/ apiInstance.searchUsersGet(
       incomingOptions.q,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4326,14 +5225,20 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdGet
+  /* Get team. */
   teamsTeamIdGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team
-    /*let teamId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdGet(
+};*/ // Number | Id of team
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdGet(
       incomingOptions.teamId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4347,14 +5252,22 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembersGet
+  /* List team members. In order to list members in a team, the authenticated user must be a member of the team.  */
   teamsTeamIdMembersGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team
-    /*let teamId = 56;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdMembersGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // Number | Id of team
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembersGet(
       incomingOptions.teamId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4368,14 +5281,20 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembersUsernameGet
+  /* The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team.  */
   teamsTeamIdMembersUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdMembersUsernameGet(
+};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembersUsernameGet(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
@@ -4390,14 +5309,20 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembershipsUsernameGet
+  /* Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization.  */
   teamsTeamIdMembershipsUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdMembershipsUsernameGet(
+};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembershipsUsernameGet(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
@@ -4412,14 +5337,22 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdReposGet
+  /* List team repos */
   teamsTeamIdReposGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team
-    /*let teamId = 56;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdReposGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // Number | Id of team
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdReposGet(
       incomingOptions.teamId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4433,14 +5366,20 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdReposOwnerRepoGet
+  /* Check if a team manages a repository */
   teamsTeamIdReposOwnerRepoGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a repository owner // String | Name of a repository
-    /*let teamId = 56;*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdReposOwnerRepoGet(
+};*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ // Number | Id of team // String | Name of a repository owner // String | Name of a repository
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdReposOwnerRepoGet(
       incomingOptions.teamId,
       incomingOptions.owner,
       incomingOptions.repo,
@@ -4456,8 +5395,15 @@ class GithubService {
   }
 
   // This is a function for userEmailsGet
+  /* List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format.  */
   userEmailsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
@@ -4473,12 +5419,21 @@ class GithubService {
   }
 
   // This is a function for userFollowersGet
+  /* List the authenticated user&#39;s followers */
   userFollowersGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.userFollowersGet(
       incomingOptions.opts,
@@ -4493,12 +5448,21 @@ class GithubService {
   }
 
   // This is a function for userFollowingGet
+  /* List who the authenticated user is following. */
   userFollowingGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.userFollowingGet(
       incomingOptions.opts,
@@ -4513,14 +5477,20 @@ class GithubService {
   }
 
   // This is a function for userFollowingUsernameGet
+  /* Check if you are following a user. */
   userFollowingUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userFollowingUsernameGet(
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.userFollowingUsernameGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4534,18 +5504,21 @@ class GithubService {
   }
 
   // This is a function for userGet
+  /* Get the authenticated user. */
   userGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
     // Configure API key authorization: api_key
     let api_key = defaultClient.authentications["api_key"];
-    api_key.apiKey = "YOUR API KEY";
+    api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.apiKeyPrefix = 'Token';
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.userGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -4557,15 +5530,23 @@ class GithubService {
   }
 
   // This is a function for userIssuesGet
+  /* List issues. List all issues across owned and member repositories for the authenticated user.  */
   userIssuesGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
-    /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ /*let opts = {
-  'since': "since_example", // String | Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userIssuesGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+};*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
+    /*let filter = "'all'";*/ apiInstance.userIssuesGet(
       incomingOptions.filter,
       incomingOptions.state,
       incomingOptions.labels,
@@ -4583,12 +5564,19 @@ class GithubService {
   }
 
   // This is a function for userKeysGet
+  /* List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes.  */
   userKeysGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };*/
     apiInstance.userKeysGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -4600,14 +5588,20 @@ class GithubService {
   }
 
   // This is a function for userKeysKeyIdGet
+  /* Get a single public key. */
   userKeysKeyIdGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | ID of key
-    /*let keyId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userKeysKeyIdGet(
+};*/ // Number | ID of key
+    /*let keyId = 56;*/ apiInstance.userKeysKeyIdGet(
       incomingOptions.keyId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4621,12 +5615,19 @@ class GithubService {
   }
 
   // This is a function for userOrgsGet
+  /* List public and private organizations for the authenticated user. */
   userOrgsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };*/
     apiInstance.userOrgsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -4638,13 +5639,20 @@ class GithubService {
   }
 
   // This is a function for userReposGet
+  /* List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately.  */
   userReposGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
   'type': "'all'", // String |
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };*/
     apiInstance.userReposGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -4656,8 +5664,15 @@ class GithubService {
   }
 
   // This is a function for userStarredGet
+  /* List repositories being starred by the authenticated user. */
   userStarredGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
@@ -4678,14 +5693,20 @@ class GithubService {
   }
 
   // This is a function for userStarredOwnerRepoGet
+  /* Check if you are starring a repository. */
   userStarredOwnerRepoGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of a repository owner // String | Name of a repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userStarredOwnerRepoGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of a repository owner // String | Name of a repository
+    /*let owner = "owner_example";*/ apiInstance.userStarredOwnerRepoGet(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
@@ -4700,8 +5721,15 @@ class GithubService {
   }
 
   // This is a function for userSubscriptionsGet
+  /* List repositories being watched by the authenticated user. */
   userSubscriptionsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
@@ -4720,14 +5748,20 @@ class GithubService {
   }
 
   // This is a function for userSubscriptionsOwnerRepoGet
+  /* Check if you are watching a repository. */
   userSubscriptionsOwnerRepoGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of the owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userSubscriptionsOwnerRepoGet(
+};*/ /*let repo = "repo_example";*/ // String | Name of the owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.userSubscriptionsOwnerRepoGet(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
@@ -4742,12 +5776,19 @@ class GithubService {
   }
 
   // This is a function for userTeamsGet
+  /* List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth. */
   userTeamsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };*/
     apiInstance.userTeamsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -4759,13 +5800,22 @@ class GithubService {
   }
 
   // This is a function for usersGet
+  /* Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users.  */
   usersGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
   'since': 56, // Number | The integer ID of the last user that you've seen.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };*/
     apiInstance.usersGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -4777,14 +5827,22 @@ class GithubService {
   }
 
   // This is a function for usersUsernameEventsGet
+  /* If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events. */
   usersUsernameEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameEventsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameEventsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4798,14 +5856,20 @@ class GithubService {
   }
 
   // This is a function for usersUsernameEventsOrgsOrgGet
+  /* This is the user&#39;s organization dashboard. You must be authenticated as the user to view this. */
   usersUsernameEventsOrgsOrgGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user // String |
-    /*let username = "username_example";*/ /*let org = "org_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameEventsOrgsOrgGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ /*let org = "org_example";*/ // String | Name of user // String |
+    /*let username = "username_example";*/ apiInstance.usersUsernameEventsOrgsOrgGet(
       incomingOptions.username,
       incomingOptions.org,
       incomingOptions.opts,
@@ -4820,14 +5884,20 @@ class GithubService {
   }
 
   // This is a function for usersUsernameFollowersGet
+  /* List a user&#39;s followers */
   usersUsernameFollowersGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameFollowersGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameFollowersGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4841,14 +5911,14 @@ class GithubService {
   }
 
   // This is a function for usersUsernameFollowingTargetUserGet
+  /* Check if one user follows another. */
   usersUsernameFollowingTargetUserGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user // String | Name of user
-    /*let username = "username_example";*/ /*let targetUser = "targetUser_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameFollowingTargetUserGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ /*let targetUser = "targetUser_example";*/ // String | Name of user // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameFollowingTargetUserGet(
       incomingOptions.username,
       incomingOptions.targetUser,
       incomingOptions.opts,
@@ -4863,14 +5933,20 @@ class GithubService {
   }
 
   // This is a function for usersUsernameGet
+  /* Get a single user. */
   usersUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4884,15 +5960,23 @@ class GithubService {
   }
 
   // This is a function for usersUsernameGistsGet
+  /* List a users gists. */
   usersUsernameGistsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameGistsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameGistsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4906,14 +5990,20 @@ class GithubService {
   }
 
   // This is a function for usersUsernameKeysGet
+  /* List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone.  */
   usersUsernameKeysGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameKeysGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameKeysGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4927,14 +6017,20 @@ class GithubService {
   }
 
   // This is a function for usersUsernameOrgsGet
+  /* List all public organizations for a user. */
   usersUsernameOrgsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameOrgsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameOrgsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4948,14 +6044,20 @@ class GithubService {
   }
 
   // This is a function for usersUsernameReceivedEventsGet
+  /* These are events that you&#39;ll only see public events. */
   usersUsernameReceivedEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameReceivedEventsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameReceivedEventsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4969,14 +6071,20 @@ class GithubService {
   }
 
   // This is a function for usersUsernameReceivedEventsPublicGet
+  /* List public events that a user has received */
   usersUsernameReceivedEventsPublicGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameReceivedEventsPublicGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameReceivedEventsPublicGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4990,15 +6098,23 @@ class GithubService {
   }
 
   // This is a function for usersUsernameReposGet
+  /* List public repositories for the specified user. */
   usersUsernameReposGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'type': "'all'", // String |
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameReposGet(
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameReposGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5012,14 +6128,20 @@ class GithubService {
   }
 
   // This is a function for usersUsernameStarredGet
+  /* List repositories being starred by a user. */
   usersUsernameStarredGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameStarredGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameStarredGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5033,14 +6155,20 @@ class GithubService {
   }
 
   // This is a function for usersUsernameSubscriptionsGet
+  /* List repositories being watched by a user. */
   usersUsernameSubscriptionsGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.usersUsernameSubscriptionsGet(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.usersUsernameSubscriptionsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5056,7 +6184,10 @@ class GithubService {
   async post(entity, options) {
     switch (entity) {
       case "GISTS_ID_COMMENTS":
-        // Function parameters for this API id,body,opts
+        /*
+      Create a commen
+      Function parameters for this API id,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdCommentsPost(options, (err, data) => {
             if (err) {
@@ -5067,7 +6198,10 @@ class GithubService {
         });
 
       case "GISTS_ID_FORKS":
-        // Function parameters for this API id,opts
+        /*
+      Fork a gist.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdForksPost(options, (err, data) => {
             if (err) {
@@ -5078,7 +6212,10 @@ class GithubService {
         });
 
       case "GISTS":
-        // Function parameters for this API body,opts
+        /*
+      Create a gist.
+      Function parameters for this API body,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsPost(options, (err, data) => {
             if (err) {
@@ -5089,7 +6226,10 @@ class GithubService {
         });
 
       case "MARKDOWN":
-        // Function parameters for this API body,opts
+        /*
+      Render an arbitrary Markdown document
+      Function parameters for this API body,opts
+        */
         return new Promise((resolve, reject) => {
           this.markdownPost(options, (err, data) => {
             if (err) {
@@ -5100,7 +6240,10 @@ class GithubService {
         });
 
       case "MARKDOWN_RAW":
-        // Function parameters for this API opts
+        /*
+      Render a Markdown document in raw mode
+      Function parameters for this API opts
+        */
         return new Promise((resolve, reject) => {
           this.markdownRawPost(options, (err, data) => {
             if (err) {
@@ -5111,7 +6254,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_REPOS":
-        // Function parameters for this API org,body,opts
+        /*
+      Create a new repository for the authenticated user. OAuth users must supply repo scope.
+      Function parameters for this API org,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgReposPost(options, (err, data) => {
             if (err) {
@@ -5122,7 +6268,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_TEAMS":
-        // Function parameters for this API org,body,opts
+        /*
+      Create team. In order to create a team, the authenticated user must be an owner of organization.
+      Function parameters for this API org,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgTeamsPost(options, (err, data) => {
             if (err) {
@@ -5133,7 +6282,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS":
-        // Function parameters for this API owner,repo,shaCode,body,opts
+        /*
+      Create a commit comment.
+      Function parameters for this API owner,repo,shaCode,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommitsShaCodeCommentsPost(
             options,
@@ -5147,7 +6299,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES":
-        // Function parameters for this API owner,repo,id,body,opts
+        /*
+      Create a Deployment Status Users with push access can create deployment statuses for a given deployment:
+      Function parameters for this API owner,repo,id,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoDeploymentsIdStatusesPost(options, (err, data) => {
             if (err) {
@@ -5158,7 +6313,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_DEPLOYMENTS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Users with push access can create a deployment for a given ref
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoDeploymentsPost(options, (err, data) => {
             if (err) {
@@ -5169,7 +6327,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_FORKS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoForksPost(options, (err, data) => {
             if (err) {
@@ -5180,7 +6341,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_BLOBS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a Blob.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitBlobsPost(options, (err, data) => {
             if (err) {
@@ -5191,7 +6355,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_COMMITS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a Commit.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitCommitsPost(options, (err, data) => {
             if (err) {
@@ -5202,7 +6369,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_REFS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a Reference
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitRefsPost(options, (err, data) => {
             if (err) {
@@ -5213,7 +6383,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_TAGS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitTagsPost(options, (err, data) => {
             if (err) {
@@ -5224,7 +6397,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_TREES":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitTreesPost(options, (err, data) => {
             if (err) {
@@ -5235,7 +6411,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_HOOKS_HOOK_ID_TESTS":
-        // Function parameters for this API owner,repo,hookId,opts
+        /*
+      Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes
+      Function parameters for this API owner,repo,hookId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoHooksHookIdTestsPost(options, (err, data) => {
             if (err) {
@@ -5246,7 +6425,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_HOOKS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a hook.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoHooksPost(options, (err, data) => {
             if (err) {
@@ -5257,7 +6439,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS":
-        // Function parameters for this API owner,repo,_number,body,opts
+        /*
+      Create a comment.
+      Function parameters for this API owner,repo,_number,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberCommentsPost(options, (err, data) => {
             if (err) {
@@ -5268,7 +6453,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
-        // Function parameters for this API owner,repo,_number,body,opts
+        /*
+      Add labels to an issue.
+      Function parameters for this API owner,repo,_number,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberLabelsPost(options, (err, data) => {
             if (err) {
@@ -5279,7 +6467,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create an issue. Any user with pull access to a repository can create an issue.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesPost(options, (err, data) => {
             if (err) {
@@ -5290,7 +6481,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_KEYS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a key.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoKeysPost(options, (err, data) => {
             if (err) {
@@ -5301,7 +6495,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_LABELS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a label.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoLabelsPost(options, (err, data) => {
             if (err) {
@@ -5312,7 +6509,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_MERGES":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Perform a merge.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoMergesPost(options, (err, data) => {
             if (err) {
@@ -5323,7 +6523,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_MILESTONES":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a milestone.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoMilestonesPost(options, (err, data) => {
             if (err) {
@@ -5334,7 +6537,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS":
-        // Function parameters for this API owner,repo,_number,body,opts
+        /*
+      Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.
+      Function parameters for this API owner,repo,_number,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsNumberCommentsPost(options, (err, data) => {
             if (err) {
@@ -5345,7 +6551,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a pull request.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsPost(options, (err, data) => {
             if (err) {
@@ -5356,7 +6565,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_RELEASES":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Create a release Users with push access to the repository can create a release.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReleasesPost(options, (err, data) => {
             if (err) {
@@ -5367,7 +6579,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_STATUSES_REF":
-        // Function parameters for this API owner,repo,ref,body,opts
+        /*
+      Create a Status.
+      Function parameters for this API owner,repo,ref,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoStatusesRefPost(options, (err, data) => {
             if (err) {
@@ -5378,7 +6593,10 @@ class GithubService {
         });
 
       case "USER_EMAILS":
-        // Function parameters for this API body,opts
+        /*
+      Add email address(es). You can post a single email address or an array of addresses.
+      Function parameters for this API body,opts
+        */
         return new Promise((resolve, reject) => {
           this.userEmailsPost(options, (err, data) => {
             if (err) {
@@ -5389,7 +6607,10 @@ class GithubService {
         });
 
       case "USER_KEYS":
-        // Function parameters for this API body,opts
+        /*
+      Create a public key.
+      Function parameters for this API body,opts
+        */
         return new Promise((resolve, reject) => {
           this.userKeysPost(options, (err, data) => {
             if (err) {
@@ -5400,7 +6621,10 @@ class GithubService {
         });
 
       case "USER_REPOS":
-        // Function parameters for this API body,opts
+        /*
+      Create a new repository for the authenticated user. OAuth users must supply repo scope.
+      Function parameters for this API body,opts
+        */
         return new Promise((resolve, reject) => {
           this.userReposPost(options, (err, data) => {
             if (err) {
@@ -5415,14 +6639,20 @@ class GithubService {
     }
   }
   // This is a function for gistsIdCommentsPost
+  /* Create a commen */
   gistsIdCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // CommentBody |
-    /*let id = 56;*/ /*let body = new Github.CommentBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdCommentsPost(
+};*/ /*let body = new Github.CommentBody();*/ // Number | Id of gist // CommentBody |
+    /*let id = 56;*/ apiInstance.gistsIdCommentsPost(
       incomingOptions.id,
       incomingOptions.body,
       incomingOptions.opts,
@@ -5437,14 +6667,20 @@ class GithubService {
   }
 
   // This is a function for gistsIdForksPost
+  /* Fork a gist. */
   gistsIdForksPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist
-    /*let id = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdForksPost(
+};*/ // Number | Id of gist
+    /*let id = 56;*/ apiInstance.gistsIdForksPost(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5458,14 +6694,20 @@ class GithubService {
   }
 
   // This is a function for gistsPost
+  /* Create a gist. */
   gistsPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // PostGist |
-    /*let body = new Github.PostGist();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsPost(
+};*/ // PostGist |
+    /*let body = new Github.PostGist();*/ apiInstance.gistsPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5479,14 +6721,20 @@ class GithubService {
   }
 
   // This is a function for markdownPost
+  /* Render an arbitrary Markdown document */
   markdownPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Markdown |
-    /*let body = new Github.Markdown();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.markdownPost(
+};*/ // Markdown |
+    /*let body = new Github.Markdown();*/ apiInstance.markdownPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5500,8 +6748,15 @@ class GithubService {
   }
 
   // This is a function for markdownRawPost
+  /* Render a Markdown document in raw mode */
   markdownRawPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
     /*let opts = {
@@ -5520,14 +6775,20 @@ class GithubService {
   }
 
   // This is a function for orgsOrgReposPost
+  /* Create a new repository for the authenticated user. OAuth users must supply repo scope.  */
   orgsOrgReposPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // PostRepo |
-    /*let org = "org_example";*/ /*let body = new Github.PostRepo();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgReposPost(
+};*/ /*let body = new Github.PostRepo();*/ // String | Name of organisation // PostRepo |
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgReposPost(
       org,
       incomingOptions.body,
       incomingOptions.opts,
@@ -5542,14 +6803,20 @@ class GithubService {
   }
 
   // This is a function for orgsOrgTeamsPost
+  /* Create team. In order to create a team, the authenticated user must be an owner of organization.  */
   orgsOrgTeamsPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // OrgTeamsPost |
-    /*let org = "org_example";*/ /*let body = new Github.OrgTeamsPost();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgTeamsPost(
+};*/ /*let body = new Github.OrgTeamsPost();*/ // String | Name of organisation // OrgTeamsPost |
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgTeamsPost(
       org,
       incomingOptions.body,
       incomingOptions.opts,
@@ -5564,14 +6831,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsShaCodeCommentsPost
+  /* Create a commit comment. */
   reposOwnerRepoCommitsShaCodeCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit // CommitCommentBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let body = new Github.CommitCommentBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsPost(
+};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let body = new Github.CommitCommentBody();*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit // CommitCommentBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
@@ -5588,14 +6861,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDeploymentsIdStatusesPost
+  /* Create a Deployment Status Users with push access can create deployment statuses for a given deployment:  */
   reposOwnerRepoDeploymentsIdStatusesPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | The Deployment ID to list the statuses from // DeploymentStatusesCreate |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = 56;*/ /*let body = new Github.DeploymentStatusesCreate();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesPost(
+};*/ /*let repo = "repo_example";*/ /*let id = 56;*/ /*let body = new Github.DeploymentStatusesCreate();*/ // String | Name of repository owner // String | Name of repository // Number | The Deployment ID to list the statuses from // DeploymentStatusesCreate |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -5612,14 +6891,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDeploymentsPost
+  /* Users with push access can create a deployment for a given ref */
   reposOwnerRepoDeploymentsPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Deployment |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.Deployment();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoDeploymentsPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.Deployment();*/ // String | Name of repository owner // String | Name of repository // Deployment |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDeploymentsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5635,14 +6920,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoForksPost
+  /* Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support.  */
   reposOwnerRepoForksPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // ForkBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.ForkBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoForksPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.ForkBody();*/ // String | Name of repository owner // String | Name of repository // ForkBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoForksPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5658,14 +6949,22 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitBlobsPost
+  /* Create a Blob. */
   reposOwnerRepoGitBlobsPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Blob |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = null;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitBlobsPost(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let repo = "repo_example";*/ /*let body = null;*/ // String | Name of repository owner // String | Name of repository // Blob |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitBlobsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5681,14 +6980,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitCommitsPost
+  /* Create a Commit. */
   reposOwnerRepoGitCommitsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // RepoCommitBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.RepoCommitBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitCommitsPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.RepoCommitBody();*/ // String | Name of repository owner // String | Name of repository // RepoCommitBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitCommitsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5704,14 +7003,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsPost
+  /* Create a Reference */
   reposOwnerRepoGitRefsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // RefsBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.RefsBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.RefsBody();*/ // String | Name of repository owner // String | Name of repository // RefsBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5727,14 +7026,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitTagsPost
+  /* Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary.  */
   reposOwnerRepoGitTagsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // TagBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.TagBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitTagsPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.TagBody();*/ // String | Name of repository owner // String | Name of repository // TagBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitTagsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5750,14 +7049,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitTreesPost
+  /* Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out.  */
   reposOwnerRepoGitTreesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Tree |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.Tree();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitTreesPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.Tree();*/ // String | Name of repository owner // String | Name of repository // Tree |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitTreesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5773,14 +7072,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksHookIdTestsPost
+  /* Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes  */
   reposOwnerRepoHooksHookIdTestsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdTestsPost(
+};*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of hook
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdTestsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.hookId,
@@ -5796,14 +7095,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksPost
+  /* Create a hook. */
   reposOwnerRepoHooksPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // HookBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.HookBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoHooksPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.HookBody();*/ // String | Name of repository owner // String | Name of repository // HookBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5819,14 +7118,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberCommentsPost
+  /* Create a comment. */
   reposOwnerRepoIssuesNumberCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // CommentBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.CommentBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsPost(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.CommentBody();*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // CommentBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsPost(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -5843,14 +7142,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsPost
+  /* Add labels to an issue. */
   reposOwnerRepoIssuesNumberLabelsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // [String] |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = ["null"];*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPost(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = ["null"];*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // [String] |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPost(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -5867,14 +7166,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesPost
+  /* Create an issue. Any user with pull access to a repository can create an issue.  */
   reposOwnerRepoIssuesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Issue |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.Issue();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.Issue();*/ // String | Name of repository owner // String | Name of repository // Issue |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5890,14 +7189,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoKeysPost
+  /* Create a key. */
   reposOwnerRepoKeysPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // UserKeysPost |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.UserKeysPost();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoKeysPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.UserKeysPost();*/ // String | Name of repository owner // String | Name of repository // UserKeysPost |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoKeysPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5913,14 +7212,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsPost
+  /* Create a label. */
   reposOwnerRepoLabelsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // [String] |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = ["null"];*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoLabelsPost(
+};*/ /*let repo = "repo_example";*/ /*let body = ["null"];*/ // String | Name of repository owner // String | Name of repository // [String] |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5936,14 +7235,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMergesPost
+  /* Perform a merge. */
   reposOwnerRepoMergesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // MergesBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.MergesBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoMergesPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.MergesBody();*/ // String | Name of repository owner // String | Name of repository // MergesBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMergesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5959,14 +7258,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesPost
+  /* Create a milestone. */
   reposOwnerRepoMilestonesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // MilestoneUpdate |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.MilestoneUpdate();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.MilestoneUpdate();*/ // String | Name of repository owner // String | Name of repository // MilestoneUpdate |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -5982,14 +7281,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberCommentsPost
+  /* Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.  */
   reposOwnerRepoPullsNumberCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullsCommentPost |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullsCommentPost();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsPost(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullsCommentPost();*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullsCommentPost |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsPost(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -6006,14 +7305,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsPost
+  /* Create a pull request. */
   reposOwnerRepoPullsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // PullsPost |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.PullsPost();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.PullsPost();*/ // String | Name of repository owner // String | Name of repository // PullsPost |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -6029,14 +7328,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesPost
+  /* Create a release Users with push access to the repository can create a release.  */
   reposOwnerRepoReleasesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // ReleaseCreate |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.ReleaseCreate();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReleasesPost(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.ReleaseCreate();*/ // String | Name of repository owner // String | Name of repository // ReleaseCreate |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -6052,14 +7351,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatusesRefPost
+  /* Create a Status. */
   reposOwnerRepoStatusesRefPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name. // HeadBranch |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let body = new Github.HeadBranch();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoStatusesRefPost(
+};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let body = new Github.HeadBranch();*/ // String | Name of repository owner // String | Name of repository // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name. // HeadBranch |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatusesRefPost(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
@@ -6076,14 +7375,20 @@ class GithubService {
   }
 
   // This is a function for userEmailsPost
+  /* Add email address(es). You can post a single email address or an array of addresses.  */
   userEmailsPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // [String] |
-    /*let body = ["null"];*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userEmailsPost(
+};*/ // [String] |
+    /*let body = ["null"];*/ apiInstance.userEmailsPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -6097,14 +7402,20 @@ class GithubService {
   }
 
   // This is a function for userKeysPost
+  /* Create a public key. */
   userKeysPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // UserKeysPost |
-    /*let body = new Github.UserKeysPost();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userKeysPost(
+};*/ // UserKeysPost |
+    /*let body = new Github.UserKeysPost();*/ apiInstance.userKeysPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -6118,14 +7429,20 @@ class GithubService {
   }
 
   // This is a function for userReposPost
+  /* Create a new repository for the authenticated user. OAuth users must supply repo scope.  */
   userReposPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // PostRepo |
-    /*let body = new Github.PostRepo();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userReposPost(
+};*/ // PostRepo |
+    /*let body = new Github.PostRepo();*/ apiInstance.userReposPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -6141,7 +7458,10 @@ class GithubService {
   async put(entity, options) {
     switch (entity) {
       case "GISTS_ID_STAR":
-        // Function parameters for this API id,opts
+        /*
+      Star a gist.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdStarPut(options, (err, data) => {
             if (err) {
@@ -6152,7 +7472,10 @@ class GithubService {
         });
 
       case "NOTIFICATIONS":
-        // Function parameters for this API body,opts
+        /*
+      Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com.
+      Function parameters for this API body,opts
+        */
         return new Promise((resolve, reject) => {
           this.notificationsPut(options, (err, data) => {
             if (err) {
@@ -6163,7 +7486,10 @@ class GithubService {
         });
 
       case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
-        // Function parameters for this API id,body,opts
+        /*
+      Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned).
+      Function parameters for this API id,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.notificationsThreadsIdSubscriptionPut(options, (err, data) => {
             if (err) {
@@ -6174,7 +7500,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
-        // Function parameters for this API org,username,opts
+        /*
+      Publicize a user&#39;s membership.
+      Function parameters for this API org,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgPublicMembersUsernamePut(options, (err, data) => {
             if (err) {
@@ -6185,7 +7514,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COLLABORATORS_USER":
-        // Function parameters for this API owner,repo,user,opts
+        /*
+      Add collaborator.
+      Function parameters for this API owner,repo,user,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCollaboratorsUserPut(options, (err, data) => {
             if (err) {
@@ -6196,7 +7528,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_CONTENTS_PATH":
-        // Function parameters for this API owner,repo,path,body,opts
+        /*
+      Create a file.
+      Function parameters for this API owner,repo,path,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoContentsPathPut(options, (err, data) => {
             if (err) {
@@ -6207,7 +7542,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
-        // Function parameters for this API owner,repo,_number,body,opts
+        /*
+      Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue.
+      Function parameters for this API owner,repo,_number,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberLabelsPut(options, (err, data) => {
             if (err) {
@@ -6218,7 +7556,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_NOTIFICATIONS":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoNotificationsPut(options, (err, data) => {
             if (err) {
@@ -6229,7 +7570,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_MERGE":
-        // Function parameters for this API owner,repo,_number,body,opts
+        /*
+      Merge a pull request (Merge Button&#39;s)
+      Function parameters for this API owner,repo,_number,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsNumberMergePut(options, (err, data) => {
             if (err) {
@@ -6240,7 +7584,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_SUBSCRIPTION":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Set a Repository Subscription
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoSubscriptionPut(options, (err, data) => {
             if (err) {
@@ -6251,7 +7598,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
-        // Function parameters for this API teamId,username,opts
+        /*
+      The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with.
+      Function parameters for this API teamId,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdMembersUsernamePut(options, (err, data) => {
             if (err) {
@@ -6262,7 +7612,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
-        // Function parameters for this API teamId,username,opts
+        /*
+      Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team.
+      Function parameters for this API teamId,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdMembershipsUsernamePut(options, (err, data) => {
             if (err) {
@@ -6273,7 +7626,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
-        // Function parameters for this API teamId,owner,repo,opts
+        /*
+      In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.
+      Function parameters for this API teamId,owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdReposOwnerRepoPut(options, (err, data) => {
             if (err) {
@@ -6284,7 +7640,10 @@ class GithubService {
         });
 
       case "USER_FOLLOWING_USERNAME":
-        // Function parameters for this API username,opts
+        /*
+      Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.userFollowingUsernamePut(options, (err, data) => {
             if (err) {
@@ -6295,7 +7654,10 @@ class GithubService {
         });
 
       case "USER_STARRED_OWNER_REPO":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Star a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.userStarredOwnerRepoPut(options, (err, data) => {
             if (err) {
@@ -6306,7 +7668,10 @@ class GithubService {
         });
 
       case "USER_SUBSCRIPTIONS_OWNER_REPO":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Watch a repository.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.userSubscriptionsOwnerRepoPut(options, (err, data) => {
             if (err) {
@@ -6321,14 +7686,20 @@ class GithubService {
     }
   }
   // This is a function for gistsIdStarPut
+  /* Star a gist. */
   gistsIdStarPut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist
-    /*let id = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdStarPut(
+};*/ // Number | Id of gist
+    /*let id = 56;*/ apiInstance.gistsIdStarPut(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -6342,14 +7713,20 @@ class GithubService {
   }
 
   // This is a function for notificationsPut
+  /* Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com.  */
   notificationsPut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // NotificationMarkRead |
-    /*let body = new Github.NotificationMarkRead();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.notificationsPut(
+};*/ // NotificationMarkRead |
+    /*let body = new Github.NotificationMarkRead();*/ apiInstance.notificationsPut(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -6363,14 +7740,20 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdSubscriptionPut
+  /* Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned).  */
   notificationsThreadsIdSubscriptionPut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of thread // PutSubscription |
-    /*let id = 56;*/ /*let body = new Github.PutSubscription();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.notificationsThreadsIdSubscriptionPut(
+};*/ /*let body = new Github.PutSubscription();*/ // Number | Id of thread // PutSubscription |
+    /*let id = 56;*/ apiInstance.notificationsThreadsIdSubscriptionPut(
       incomingOptions.id,
       incomingOptions.body,
       incomingOptions.opts,
@@ -6385,14 +7768,20 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPublicMembersUsernamePut
+  /* Publicize a user&#39;s membership. */
   orgsOrgPublicMembersUsernamePut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgPublicMembersUsernamePut(
+};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPublicMembersUsernamePut(
       org,
       incomingOptions.username,
       incomingOptions.opts,
@@ -6407,14 +7796,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCollaboratorsUserPut
+  /* Add collaborator. */
   reposOwnerRepoCollaboratorsUserPut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Login of the user
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserPut(
+};*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ // String | Name of repository owner // String | Name of repository // String | Login of the user
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserPut(
       incomingOptions.owner,
       repo,
       incomingOptions.user,
@@ -6430,14 +7825,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoContentsPathPut
+  /* Create a file. */
   reposOwnerRepoContentsPathPut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // CreateFileBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ /*let body = new Github.CreateFileBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoContentsPathPut(
+};*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ /*let body = new Github.CreateFileBody();*/ // String | Name of repository owner // String | Name of repository // String | // CreateFileBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoContentsPathPut(
       incomingOptions.owner,
       repo,
       incomingOptions.path,
@@ -6454,14 +7855,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsPut
+  /* Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue.  */
   reposOwnerRepoIssuesNumberLabelsPut(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // [String] |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = ["null"];*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPut(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = ["null"];*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // [String] |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPut(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -6478,14 +7879,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoNotificationsPut
+  /* Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com.  */
   reposOwnerRepoNotificationsPut(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // NotificationMarkRead |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.NotificationMarkRead();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoNotificationsPut(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.NotificationMarkRead();*/ // String | Name of repository owner // String | Name of repository // NotificationMarkRead |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoNotificationsPut(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -6501,14 +7902,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberMergePut
+  /* Merge a pull request (Merge Button&#39;s) */
   reposOwnerRepoPullsNumberMergePut(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull // MergePullBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.MergePullBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergePut(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.MergePullBody();*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull // MergePullBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergePut(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -6525,14 +7926,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoSubscriptionPut
+  /* Set a Repository Subscription */
   reposOwnerRepoSubscriptionPut(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // SubscriptionBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.SubscriptionBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoSubscriptionPut(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.SubscriptionBody();*/ // String | Name of repository owner // String | Name of repository // SubscriptionBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoSubscriptionPut(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -6548,14 +7949,20 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembersUsernamePut
+  /* The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with.  */
   teamsTeamIdMembersUsernamePut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdMembersUsernamePut(
+};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembersUsernamePut(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
@@ -6570,14 +7977,20 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembershipsUsernamePut
+  /* Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team.  */
   teamsTeamIdMembershipsUsernamePut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdMembershipsUsernamePut(
+};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembershipsUsernamePut(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
@@ -6592,14 +8005,20 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdReposOwnerRepoPut
+  /* In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization. */
   teamsTeamIdReposOwnerRepoPut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a organization // String | Name of a repository
-    /*let teamId = 56;*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdReposOwnerRepoPut(
+};*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ // Number | Id of team // String | Name of a organization // String | Name of a repository
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdReposOwnerRepoPut(
       incomingOptions.teamId,
       incomingOptions.owner,
       incomingOptions.repo,
@@ -6615,14 +8034,20 @@ class GithubService {
   }
 
   // This is a function for userFollowingUsernamePut
+  /* Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.  */
   userFollowingUsernamePut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userFollowingUsernamePut(
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.userFollowingUsernamePut(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -6636,14 +8061,20 @@ class GithubService {
   }
 
   // This is a function for userStarredOwnerRepoPut
+  /* Star a repository. */
   userStarredOwnerRepoPut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of a repository owner // String | Name of a repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userStarredOwnerRepoPut(
+};*/ /*let repo = "repo_example";*/ // String | Name of a repository owner // String | Name of a repository
+    /*let owner = "owner_example";*/ apiInstance.userStarredOwnerRepoPut(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
@@ -6658,14 +8089,20 @@ class GithubService {
   }
 
   // This is a function for userSubscriptionsOwnerRepoPut
+  /* Watch a repository. */
   userSubscriptionsOwnerRepoPut(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of the owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userSubscriptionsOwnerRepoPut(
+};*/ /*let repo = "repo_example";*/ // String | Name of the owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.userSubscriptionsOwnerRepoPut(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
@@ -6682,7 +8119,10 @@ class GithubService {
   async delete(entity, options) {
     switch (entity) {
       case "GISTS_ID_COMMENTS_COMMENT_ID":
-        // Function parameters for this API id,commentId,opts
+        /*
+      Delete a comment.
+      Function parameters for this API id,commentId,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdCommentsCommentIdDelete(options, (err, data) => {
             if (err) {
@@ -6693,7 +8133,10 @@ class GithubService {
         });
 
       case "GISTS_ID":
-        // Function parameters for this API id,opts
+        /*
+      Delete a gist.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdDelete(options, (err, data) => {
             if (err) {
@@ -6704,7 +8147,10 @@ class GithubService {
         });
 
       case "GISTS_ID_STAR":
-        // Function parameters for this API id,opts
+        /*
+      Unstar a gist.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdStarDelete(options, (err, data) => {
             if (err) {
@@ -6715,7 +8161,10 @@ class GithubService {
         });
 
       case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
-        // Function parameters for this API id,opts
+        /*
+      Delete a Thread Subscription.
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.notificationsThreadsIdSubscriptionDelete(
             options,
@@ -6729,7 +8178,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_MEMBERS_USERNAME":
-        // Function parameters for this API org,username,opts
+        /*
+      Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories.
+      Function parameters for this API org,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgMembersUsernameDelete(options, (err, data) => {
             if (err) {
@@ -6740,7 +8192,10 @@ class GithubService {
         });
 
       case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
-        // Function parameters for this API org,username,opts
+        /*
+      Conceal a user&#39;s membership.
+      Function parameters for this API org,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgPublicMembersUsernameDelete(options, (err, data) => {
             if (err) {
@@ -6751,7 +8206,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COLLABORATORS_USER":
-        // Function parameters for this API owner,repo,user,opts
+        /*
+      Remove collaborator.
+      Function parameters for this API owner,repo,user,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCollaboratorsUserDelete(options, (err, data) => {
             if (err) {
@@ -6762,7 +8220,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
-        // Function parameters for this API owner,repo,commentId,opts
+        /*
+      Delete a commit comment
+      Function parameters for this API owner,repo,commentId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommentsCommentIdDelete(options, (err, data) => {
             if (err) {
@@ -6773,7 +8234,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_CONTENTS_PATH":
-        // Function parameters for this API owner,repo,path,body,opts
+        /*
+      Delete a file. This method deletes a file in a repository.
+      Function parameters for this API owner,repo,path,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoContentsPathDelete(options, (err, data) => {
             if (err) {
@@ -6784,7 +8248,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoDelete(options, (err, data) => {
             if (err) {
@@ -6795,7 +8262,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID":
-        // Function parameters for this API owner,repo,downloadId,opts
+        /*
+      Deprecated. Delete a download.
+      Function parameters for this API owner,repo,downloadId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoDownloadsDownloadIdDelete(options, (err, data) => {
             if (err) {
@@ -6806,7 +8276,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_REFS_REF":
-        // Function parameters for this API owner,repo,ref,opts
+        /*
+      Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
+      Function parameters for this API owner,repo,ref,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitRefsRefDelete(options, (err, data) => {
             if (err) {
@@ -6817,7 +8290,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
-        // Function parameters for this API owner,repo,hookId,opts
+        /*
+      Delete a hook.
+      Function parameters for this API owner,repo,hookId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoHooksHookIdDelete(options, (err, data) => {
             if (err) {
@@ -6828,7 +8304,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
-        // Function parameters for this API owner,repo,commentId,opts
+        /*
+      Delete a comment.
+      Function parameters for this API owner,repo,commentId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesCommentsCommentIdDelete(
             options,
@@ -6842,7 +8321,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      Remove all labels from an issue.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberLabelsDelete(options, (err, data) => {
             if (err) {
@@ -6853,7 +8335,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_NAME":
-        // Function parameters for this API owner,repo,_number,name,opts
+        /*
+      Remove a label from an issue.
+      Function parameters for this API owner,repo,_number,name,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberLabelsNameDelete(
             options,
@@ -6867,7 +8352,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_KEYS_KEY_ID":
-        // Function parameters for this API owner,repo,keyId,opts
+        /*
+      Delete a key.
+      Function parameters for this API owner,repo,keyId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoKeysKeyIdDelete(options, (err, data) => {
             if (err) {
@@ -6878,7 +8366,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_LABELS_NAME":
-        // Function parameters for this API owner,repo,name,opts
+        /*
+      Delete a label.
+      Function parameters for this API owner,repo,name,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoLabelsNameDelete(options, (err, data) => {
             if (err) {
@@ -6889,7 +8380,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
-        // Function parameters for this API owner,repo,_number,opts
+        /*
+      Delete a milestone.
+      Function parameters for this API owner,repo,_number,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoMilestonesNumberDelete(options, (err, data) => {
             if (err) {
@@ -6900,7 +8394,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
-        // Function parameters for this API owner,repo,commentId,opts
+        /*
+      Delete a comment.
+      Function parameters for this API owner,repo,commentId,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsCommentsCommentIdDelete(
             options,
@@ -6914,7 +8411,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
-        // Function parameters for this API owner,repo,id,opts
+        /*
+      Delete a release asset
+      Function parameters for this API owner,repo,id,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReleasesAssetsIdDelete(options, (err, data) => {
             if (err) {
@@ -6925,7 +8425,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ID":
-        // Function parameters for this API owner,repo,id,opts
+        /*
+      Users with push access to the repository can delete a release.
+      Function parameters for this API owner,repo,id,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReleasesIdDelete(options, (err, data) => {
             if (err) {
@@ -6936,7 +8439,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_SUBSCRIPTION":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Delete a Repository Subscription.
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoSubscriptionDelete(options, (err, data) => {
             if (err) {
@@ -6947,7 +8453,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID":
-        // Function parameters for this API teamId,opts
+        /*
+      Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with.
+      Function parameters for this API teamId,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdDelete(options, (err, data) => {
             if (err) {
@@ -6958,7 +8467,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
-        // Function parameters for this API teamId,username,opts
+        /*
+      The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team.
+      Function parameters for this API teamId,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdMembersUsernameDelete(options, (err, data) => {
             if (err) {
@@ -6969,7 +8481,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
-        // Function parameters for this API teamId,username,opts
+        /*
+      Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.
+      Function parameters for this API teamId,username,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdMembershipsUsernameDelete(options, (err, data) => {
             if (err) {
@@ -6980,7 +8495,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
-        // Function parameters for this API teamId,owner,repo,opts
+        /*
+      In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.
+      Function parameters for this API teamId,owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdReposOwnerRepoDelete(options, (err, data) => {
             if (err) {
@@ -6991,7 +8509,10 @@ class GithubService {
         });
 
       case "USER_EMAILS":
-        // Function parameters for this API body,opts
+        /*
+      Delete email address(es). You can include a single email address or an array of addresses.
+      Function parameters for this API body,opts
+        */
         return new Promise((resolve, reject) => {
           this.userEmailsDelete(options, (err, data) => {
             if (err) {
@@ -7002,7 +8523,10 @@ class GithubService {
         });
 
       case "USER_FOLLOWING_USERNAME":
-        // Function parameters for this API username,opts
+        /*
+      Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
+      Function parameters for this API username,opts
+        */
         return new Promise((resolve, reject) => {
           this.userFollowingUsernameDelete(options, (err, data) => {
             if (err) {
@@ -7013,7 +8537,10 @@ class GithubService {
         });
 
       case "USER_KEYS_KEY_ID":
-        // Function parameters for this API keyId,opts
+        /*
+      Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.
+      Function parameters for this API keyId,opts
+        */
         return new Promise((resolve, reject) => {
           this.userKeysKeyIdDelete(options, (err, data) => {
             if (err) {
@@ -7024,7 +8551,10 @@ class GithubService {
         });
 
       case "USER_STARRED_OWNER_REPO":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Unstar a repository
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.userStarredOwnerRepoDelete(options, (err, data) => {
             if (err) {
@@ -7035,7 +8565,10 @@ class GithubService {
         });
 
       case "USER_SUBSCRIPTIONS_OWNER_REPO":
-        // Function parameters for this API owner,repo,opts
+        /*
+      Stop watching a repository
+      Function parameters for this API owner,repo,opts
+        */
         return new Promise((resolve, reject) => {
           this.userSubscriptionsOwnerRepoDelete(options, (err, data) => {
             if (err) {
@@ -7050,14 +8583,20 @@ class GithubService {
     }
   }
   // This is a function for gistsIdCommentsCommentIdDelete
+  /* Delete a comment. */
   gistsIdCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // Number | Id of comment
-    /*let id = 56;*/ /*let commentId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdCommentsCommentIdDelete(
+};*/ /*let commentId = 56;*/ // Number | Id of gist // Number | Id of comment
+    /*let id = 56;*/ apiInstance.gistsIdCommentsCommentIdDelete(
       incomingOptions.id,
       incomingOptions.commentId,
       incomingOptions.opts,
@@ -7072,14 +8611,20 @@ class GithubService {
   }
 
   // This is a function for gistsIdDelete
+  /* Delete a gist. */
   gistsIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist
-    /*let id = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdDelete(
+};*/ // Number | Id of gist
+    /*let id = 56;*/ apiInstance.gistsIdDelete(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7093,14 +8638,20 @@ class GithubService {
   }
 
   // This is a function for gistsIdStarDelete
+  /* Unstar a gist. */
   gistsIdStarDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist
-    /*let id = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdStarDelete(
+};*/ // Number | Id of gist
+    /*let id = 56;*/ apiInstance.gistsIdStarDelete(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7114,14 +8665,20 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdSubscriptionDelete
+  /* Delete a Thread Subscription. */
   notificationsThreadsIdSubscriptionDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of thread
-    /*let id = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.notificationsThreadsIdSubscriptionDelete(
+};*/ // Number | Id of thread
+    /*let id = 56;*/ apiInstance.notificationsThreadsIdSubscriptionDelete(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7135,14 +8692,20 @@ class GithubService {
   }
 
   // This is a function for orgsOrgMembersUsernameDelete
+  /* Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories.  */
   orgsOrgMembersUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgMembersUsernameDelete(
+};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgMembersUsernameDelete(
       org,
       incomingOptions.username,
       incomingOptions.opts,
@@ -7157,14 +8720,20 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPublicMembersUsernameDelete
+  /* Conceal a user&#39;s membership. */
   orgsOrgPublicMembersUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ /*let username = "username_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgPublicMembersUsernameDelete(
+};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameDelete(
       org,
       incomingOptions.username,
       incomingOptions.opts,
@@ -7179,14 +8748,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCollaboratorsUserDelete
+  /* Remove collaborator. */
   reposOwnerRepoCollaboratorsUserDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Login of the user
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserDelete(
+};*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ // String | Name of repository owner // String | Name of repository // String | Login of the user
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.user,
@@ -7202,14 +8777,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommentsCommentIdDelete
+  /* Delete a commit comment */
   reposOwnerRepoCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdDelete(
+};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -7225,14 +8806,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoContentsPathDelete
+  /* Delete a file. This method deletes a file in a repository.  */
   reposOwnerRepoContentsPathDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // DeleteFileBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ /*let body = new Github.DeleteFileBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoContentsPathDelete(
+};*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ /*let body = new Github.DeleteFileBody();*/ // String | Name of repository owner // String | Name of repository // String | // DeleteFileBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoContentsPathDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.path,
@@ -7249,14 +8836,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDelete
+  /* Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required.  */
   reposOwnerRepoDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoDelete(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -7271,14 +8864,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDownloadsDownloadIdDelete
+  /* Deprecated. Delete a download. */
   reposOwnerRepoDownloadsDownloadIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of download
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let downloadId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdDelete(
+};*/ /*let repo = "repo_example";*/ /*let downloadId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of download
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.downloadId,
@@ -7294,14 +8893,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsRefDelete
+  /* Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0  */
   reposOwnerRepoGitRefsRefDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsRefDelete(
+};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
@@ -7317,14 +8916,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksHookIdDelete
+  /* Delete a hook. */
   reposOwnerRepoHooksHookIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdDelete(
+};*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of hook
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.hookId,
@@ -7340,14 +8939,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesCommentsCommentIdDelete
+  /* Delete a comment. */
   reposOwnerRepoIssuesCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | ID of comment
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdDelete(
+};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | ID of comment
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -7363,14 +8962,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsDelete
+  /* Remove all labels from an issue. */
   reposOwnerRepoIssuesNumberLabelsDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsDelete(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsDelete(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -7386,14 +8985,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsNameDelete
+  /* Remove a label from an issue. */
   reposOwnerRepoIssuesNumberLabelsNameDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // String | Name of the label
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let name = "name_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsNameDelete(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let name = "name_example";*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // String | Name of the label
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsNameDelete(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -7410,14 +9009,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoKeysKeyIdDelete
+  /* Delete a key. */
   reposOwnerRepoKeysKeyIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of key
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let keyId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdDelete(
+};*/ /*let repo = "repo_example";*/ /*let keyId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of key
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.keyId,
@@ -7433,14 +9032,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsNameDelete
+  /* Delete a label. */
   reposOwnerRepoLabelsNameDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Name of the label
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoLabelsNameDelete(
+};*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ // String | Name of repository owner // String | Name of repository // String | Name of the label
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsNameDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.name,
@@ -7456,14 +9055,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesNumberDelete
+  /* Delete a milestone. */
   reposOwnerRepoMilestonesNumberDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of milestone
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberDelete(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of milestone
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberDelete(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -7479,14 +9078,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsCommentsCommentIdDelete
+  /* Delete a comment. */
   reposOwnerRepoPullsCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdDelete(
+};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -7502,14 +9101,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesAssetsIdDelete
+  /* Delete a release asset */
   reposOwnerRepoReleasesAssetsIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdDelete(
+};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -7525,14 +9124,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesIdDelete
+  /* Users with push access to the repository can delete a release. */
   reposOwnerRepoReleasesIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReleasesIdDelete(
+};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -7548,14 +9147,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoSubscriptionDelete
+  /* Delete a Repository Subscription. */
   reposOwnerRepoSubscriptionDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoSubscriptionDelete(
+};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoSubscriptionDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
@@ -7570,14 +9169,22 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdDelete
+  /* Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with.  */
   teamsTeamIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team
-    /*let teamId = 56;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdDelete(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ // Number | Id of team
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdDelete(
       incomingOptions.teamId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7591,14 +9198,22 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembersUsernameDelete
+  /* The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team.  */
   teamsTeamIdMembersUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdMembersUsernameDelete(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembersUsernameDelete(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
@@ -7613,14 +9228,22 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembershipsUsernameDelete
+  /* Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.  */
   teamsTeamIdMembershipsUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdMembershipsUsernameDelete(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembershipsUsernameDelete(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
@@ -7635,14 +9258,22 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdReposOwnerRepoDelete
+  /* In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team. */
   teamsTeamIdReposOwnerRepoDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a repository owner // String | Name of a repository
-    /*let teamId = 56;*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdReposOwnerRepoDelete(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
+};*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ // Number | Id of team // String | Name of a repository owner // String | Name of a repository
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdReposOwnerRepoDelete(
       incomingOptions.teamId,
       incomingOptions.owner,
       incomingOptions.repo,
@@ -7658,14 +9289,20 @@ class GithubService {
   }
 
   // This is a function for userEmailsDelete
+  /* Delete email address(es). You can include a single email address or an array of addresses.  */
   userEmailsDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // [String] |
-    /*let body = ["null"];*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userEmailsDelete(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // [String] |
+    /*let body = ["null"];*/ apiInstance.userEmailsDelete(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7679,14 +9316,20 @@ class GithubService {
   }
 
   // This is a function for userFollowingUsernameDelete
+  /* Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.  */
   userFollowingUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of user
-    /*let username = "username_example";*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userFollowingUsernameDelete(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // String | Name of user
+    /*let username = "username_example";*/ apiInstance.userFollowingUsernameDelete(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7700,14 +9343,20 @@ class GithubService {
   }
 
   // This is a function for userKeysKeyIdDelete
+  /* Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope. */
   userKeysKeyIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | ID of key
-    /*let keyId = 56;*/ /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userKeysKeyIdDelete(
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+};*/ // Number | ID of key
+    /*let keyId = 56;*/ apiInstance.userKeysKeyIdDelete(
       incomingOptions.keyId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7721,14 +9370,20 @@ class GithubService {
   }
 
   // This is a function for userStarredOwnerRepoDelete
+  /* Unstar a repository */
   userStarredOwnerRepoDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of a repository owner // String | Name of a repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userStarredOwnerRepoDelete(
+};*/ /*let repo = "repo_example";*/ // String | Name of a repository owner // String | Name of a repository
+    /*let owner = "owner_example";*/ apiInstance.userStarredOwnerRepoDelete(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
@@ -7743,14 +9398,20 @@ class GithubService {
   }
 
   // This is a function for userSubscriptionsOwnerRepoDelete
+  /* Stop watching a repository */
   userSubscriptionsOwnerRepoDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of the owner // String | Name of repository
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userSubscriptionsOwnerRepoDelete(
+};*/ /*let repo = "repo_example";*/ // String | Name of the owner // String | Name of repository
+    /*let owner = "owner_example";*/ apiInstance.userSubscriptionsOwnerRepoDelete(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
@@ -7767,7 +9428,10 @@ class GithubService {
   async patch(entity, options) {
     switch (entity) {
       case "GISTS_ID_COMMENTS_COMMENT_ID":
-        // Function parameters for this API id,commentId,body,opts
+        /*
+      Edit a comment.
+      Function parameters for this API id,commentId,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdCommentsCommentIdPatch(options, (err, data) => {
             if (err) {
@@ -7778,7 +9442,10 @@ class GithubService {
         });
 
       case "GISTS_ID":
-        // Function parameters for this API id,body,opts
+        /*
+      Edit a gist.
+      Function parameters for this API id,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.gistsIdPatch(options, (err, data) => {
             if (err) {
@@ -7789,7 +9456,10 @@ class GithubService {
         });
 
       case "NOTIFICATIONS_THREADS_ID":
-        // Function parameters for this API id,opts
+        /*
+      Mark a thread as read
+      Function parameters for this API id,opts
+        */
         return new Promise((resolve, reject) => {
           this.notificationsThreadsIdPatch(options, (err, data) => {
             if (err) {
@@ -7800,7 +9470,10 @@ class GithubService {
         });
 
       case "ORGS_ORG":
-        // Function parameters for this API org,body,opts
+        /*
+      Edit an Organization.
+      Function parameters for this API org,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.orgsOrgPatch(options, (err, data) => {
             if (err) {
@@ -7811,7 +9484,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
-        // Function parameters for this API owner,repo,commentId,body,opts
+        /*
+      Update a commit comment.
+      Function parameters for this API owner,repo,commentId,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommentsCommentIdPatch(options, (err, data) => {
             if (err) {
@@ -7822,7 +9498,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_GIT_REFS_REF":
-        // Function parameters for this API owner,repo,ref,body,opts
+        /*
+      Update a Reference
+      Function parameters for this API owner,repo,ref,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoGitRefsRefPatch(options, (err, data) => {
             if (err) {
@@ -7833,7 +9512,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
-        // Function parameters for this API owner,repo,hookId,body,opts
+        /*
+      Edit a hook.
+      Function parameters for this API owner,repo,hookId,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoHooksHookIdPatch(options, (err, data) => {
             if (err) {
@@ -7844,7 +9526,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
-        // Function parameters for this API owner,repo,commentId,body,opts
+        /*
+      Edit a comment.
+      Function parameters for this API owner,repo,commentId,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesCommentsCommentIdPatch(
             options,
@@ -7858,7 +9543,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER":
-        // Function parameters for this API owner,repo,_number,body,opts
+        /*
+      Edit an issue. Issue owners and users with push access can edit an issue.
+      Function parameters for this API owner,repo,_number,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberPatch(options, (err, data) => {
             if (err) {
@@ -7869,7 +9557,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_LABELS_NAME":
-        // Function parameters for this API owner,repo,name,body,opts
+        /*
+      Update a label.
+      Function parameters for this API owner,repo,name,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoLabelsNamePatch(options, (err, data) => {
             if (err) {
@@ -7880,7 +9571,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
-        // Function parameters for this API owner,repo,_number,body,opts
+        /*
+      Update a milestone.
+      Function parameters for this API owner,repo,_number,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoMilestonesNumberPatch(options, (err, data) => {
             if (err) {
@@ -7891,7 +9585,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO":
-        // Function parameters for this API owner,repo,body,opts
+        /*
+      Edit repository.
+      Function parameters for this API owner,repo,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPatch(options, (err, data) => {
             if (err) {
@@ -7902,7 +9599,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
-        // Function parameters for this API owner,repo,commentId,body,opts
+        /*
+      Edit a comment.
+      Function parameters for this API owner,repo,commentId,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsCommentsCommentIdPatch(
             options,
@@ -7916,7 +9616,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER":
-        // Function parameters for this API owner,repo,_number,body,opts
+        /*
+      Update a pull request.
+      Function parameters for this API owner,repo,_number,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsNumberPatch(options, (err, data) => {
             if (err) {
@@ -7927,7 +9630,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
-        // Function parameters for this API owner,repo,id,body,opts
+        /*
+      Edit a release asset Users with push access to the repository can edit a release asset.
+      Function parameters for this API owner,repo,id,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReleasesAssetsIdPatch(options, (err, data) => {
             if (err) {
@@ -7938,7 +9644,10 @@ class GithubService {
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ID":
-        // Function parameters for this API owner,repo,id,body,opts
+        /*
+      Users with push access to the repository can edit a release
+      Function parameters for this API owner,repo,id,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoReleasesIdPatch(options, (err, data) => {
             if (err) {
@@ -7949,7 +9658,10 @@ class GithubService {
         });
 
       case "TEAMS_TEAM_ID":
-        // Function parameters for this API teamId,body,opts
+        /*
+      Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with.
+      Function parameters for this API teamId,body,opts
+        */
         return new Promise((resolve, reject) => {
           this.teamsTeamIdPatch(options, (err, data) => {
             if (err) {
@@ -7960,7 +9672,10 @@ class GithubService {
         });
 
       case "USER":
-        // Function parameters for this API body,opts
+        /*
+      Update the authenticated user.
+      Function parameters for this API body,opts
+        */
         return new Promise((resolve, reject) => {
           this.userPatch(options, (err, data) => {
             if (err) {
@@ -7975,14 +9690,20 @@ class GithubService {
     }
   }
   // This is a function for gistsIdCommentsCommentIdPatch
+  /* Edit a comment. */
   gistsIdCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // Number | Id of comment // Comment |
-    /*let id = 56;*/ /*let commentId = 56;*/ /*let body = new Github.Comment();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdCommentsCommentIdPatch(
+};*/ /*let commentId = 56;*/ /*let body = new Github.Comment();*/ // Number | Id of gist // Number | Id of comment // Comment |
+    /*let id = 56;*/ apiInstance.gistsIdCommentsCommentIdPatch(
       incomingOptions.id,
       incomingOptions.commentId,
       incomingOptions.body,
@@ -7998,14 +9719,20 @@ class GithubService {
   }
 
   // This is a function for gistsIdPatch
+  /* Edit a gist. */
   gistsIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // PatchGist |
-    /*let id = 56;*/ /*let body = new Github.PatchGist();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.gistsIdPatch(
+};*/ /*let body = new Github.PatchGist();*/ // Number | Id of gist // PatchGist |
+    /*let id = 56;*/ apiInstance.gistsIdPatch(
       incomingOptions.id,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8020,14 +9747,20 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdPatch
+  /* Mark a thread as read */
   notificationsThreadsIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of thread
-    /*let id = 56;*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.notificationsThreadsIdPatch(
+};*/ // Number | Id of thread
+    /*let id = 56;*/ apiInstance.notificationsThreadsIdPatch(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8041,14 +9774,20 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPatch
+  /* Edit an Organization. */
   orgsOrgPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // PatchOrg |
-    /*let org = "org_example";*/ /*let body = new Github.PatchOrg();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.orgsOrgPatch(
+};*/ /*let body = new Github.PatchOrg();*/ // String | Name of organisation // PatchOrg |
+    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPatch(
       org,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8063,14 +9802,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommentsCommentIdPatch
+  /* Update a commit comment. */
   reposOwnerRepoCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment // CommentBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdPatch(
+};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment // CommentBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -8087,14 +9832,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsRefPatch
+  /* Update a Reference */
   reposOwnerRepoGitRefsRefPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // GitRefPatch |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let body = new Github.GitRefPatch();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsRefPatch(
+};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let body = new Github.GitRefPatch();*/ // String | Name of repository owner // String | Name of repository // String | // GitRefPatch |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
@@ -8111,14 +9856,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksHookIdPatch
+  /* Edit a hook. */
   reposOwnerRepoHooksHookIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook // HookBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ /*let body = new Github.HookBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdPatch(
+};*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ /*let body = new Github.HookBody();*/ // String | Name of repository owner // String | Name of repository // Number | Id of hook // HookBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.hookId,
@@ -8135,14 +9880,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesCommentsCommentIdPatch
+  /* Edit a comment. */
   reposOwnerRepoIssuesCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | ID of comment // CommentBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdPatch(
+};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ // String | Name of repository owner // String | Name of repository // Number | ID of comment // CommentBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -8159,14 +9904,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberPatch
+  /* Edit an issue. Issue owners and users with push access can edit an issue.  */
   reposOwnerRepoIssuesNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // Issue |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.Issue();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberPatch(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.Issue();*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // Issue |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberPatch(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -8183,14 +9928,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsNamePatch
+  /* Update a label. */
   reposOwnerRepoLabelsNamePatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Name of the label // [String] |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ /*let body = ["null"];*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoLabelsNamePatch(
+};*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ /*let body = ["null"];*/ // String | Name of repository owner // String | Name of repository // String | Name of the label // [String] |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsNamePatch(
       incomingOptions.owner,
       repo,
       incomingOptions.name,
@@ -8207,14 +9952,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesNumberPatch
+  /* Update a milestone. */
   reposOwnerRepoMilestonesNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of milestone // MilestoneUpdate |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.MilestoneUpdate();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberPatch(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.MilestoneUpdate();*/ // String | Name of repository owner // String | Name of repository // Number | Number of milestone // MilestoneUpdate |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberPatch(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -8231,14 +9976,20 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPatch
+  /* Edit repository. */
   reposOwnerRepoPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // RepoEdit |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.RepoEdit();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPatch(
+};*/ /*let repo = "repo_example";*/ /*let body = new Github.RepoEdit();*/ // String | Name of repository owner // String | Name of repository // RepoEdit |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
@@ -8254,14 +10005,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsCommentsCommentIdPatch
+  /* Edit a comment. */
   reposOwnerRepoPullsCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment // CommentBody |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdPatch(
+};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment // CommentBody |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -8278,14 +10029,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberPatch
+  /* Update a pull request. */
   reposOwnerRepoPullsNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullUpdate |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullUpdate();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberPatch(
+};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullUpdate();*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullUpdate |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberPatch(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -8302,14 +10053,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesAssetsIdPatch
+  /* Edit a release asset Users with push access to the repository can edit a release asset.  */
   reposOwnerRepoReleasesAssetsIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // AssetPatch |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let body = new Github.AssetPatch();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdPatch(
+};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let body = new Github.AssetPatch();*/ // String | Name of repository owner // String | Name of repository // String | // AssetPatch |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -8326,14 +10077,14 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesIdPatch
+  /* Users with push access to the repository can edit a release */
   reposOwnerRepoReleasesIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // ReleaseCreate |
-    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let body = new Github.ReleaseCreate();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.incomingOptions.reposOwnerRepoReleasesIdPatch(
+};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let body = new Github.ReleaseCreate();*/ // String | Name of repository owner // String | Name of repository // String | // ReleaseCreate |
+    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -8350,14 +10101,20 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdPatch
+  /* Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with.  */
   teamsTeamIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // Number | Id of team // EditTeam |
-    /*let teamId = 56;*/ /*let body = new Github.EditTeam();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.teamsTeamIdPatch(
+};*/ /*let body = new Github.EditTeam();*/ // Number | Id of team // EditTeam |
+    /*let teamId = 56;*/ apiInstance.teamsTeamIdPatch(
       incomingOptions.teamId,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8372,14 +10129,20 @@ class GithubService {
   }
 
   // This is a function for userPatch
+  /* Update the authenticated user. */
   userPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); // UserUpdate |
-    /*let body = new Github.UserUpdate();*/ /*let opts = {
+    let apiInstance = new Github.DefaultApi(); /*let opts = {
   'accept': "accept_example" // String | Is used to set specified media type.
-};*/
-    apiInstance.userPatch(
+};*/ // UserUpdate |
+    /*let body = new Github.UserUpdate();*/ apiInstance.userPatch(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {

@@ -38,7 +38,7 @@
 		"application/json"
 	],
 	"securityDefinitions": {
-		"api_key": {
+		"oauth2": {
 			"authorizationUrl": "https://github.com/login/oauth/authorize",
 			"description": "OAuth2 is a protocol that lets external apps request authorization to private\ndetails in a user's GitHub account without getting their password. This is\npreferred over Basic Authentication because tokens can be limited to specific\ntypes of data, and can be revoked by users at any time.\n",
 			"flow": "accessCode",
@@ -65,6 +65,10 @@
 				"write:repo_hook": ""
 			},
 			"tokenUrl": "https://github.com/login/oauth/access_token",
+			"type": "oauth2"
+		},
+		"api_key": {
+			"description": "To get OAUTH2 token to work for Github v3 API since they have a non standard fromat.\n",
 			"in": "header",
 			"name": "Authorization",
 			"type": "apiKey"
@@ -76,10 +80,13 @@
 				"description": "Lists all the emojis available to use on GitHub.",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -128,7 +135,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/events": {
@@ -136,10 +148,13 @@
 				"description": "List public events.",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -188,7 +203,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/feeds": {
@@ -196,10 +216,13 @@
 				"description": "List Feeds.\nGitHub provides several timeline resources in Atom format. The Feeds API\n lists all the feeds available to the authenticating user.\n",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -248,7 +271,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gists": {
@@ -256,16 +284,16 @@
 				"description": "List the authenticated user's gists or if called anonymously, this will\nreturn all public gists.\n",
 				"parameters": [
 					{
-						"description": "Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.\nOnly gists updated at or after this time are returned.\n",
-						"in": "query",
-						"name": "since",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
+					},
+					{
+						"$ref": "#/components/parameters/since"
 					}
 				],
 				"responses": {
@@ -314,7 +342,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a gist.",
@@ -380,7 +413,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gists/public": {
@@ -388,16 +426,16 @@
 				"description": "List all public gists.",
 				"parameters": [
 					{
-						"description": "Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.\nOnly gists updated at or after this time are returned.\n",
-						"in": "query",
-						"name": "since",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
+					},
+					{
+						"$ref": "#/components/parameters/since"
 					}
 				],
 				"responses": {
@@ -446,7 +484,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gists/starred": {
@@ -454,16 +497,16 @@
 				"description": "List the authenticated user's starred gists.",
 				"parameters": [
 					{
-						"description": "Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.\nOnly gists updated at or after this time are returned.\n",
-						"in": "query",
-						"name": "since",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
+					},
+					{
+						"$ref": "#/components/parameters/since"
 					}
 				],
 				"responses": {
@@ -512,7 +555,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gists/{id}": {
@@ -576,7 +624,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Get a single gist.",
@@ -641,7 +694,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"patch": {
 				"description": "Edit a gist.",
@@ -714,7 +772,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gists/{id}/comments": {
@@ -729,10 +792,13 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -781,7 +847,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a commen",
@@ -854,7 +925,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gists/{id}/comments/{commentId}": {
@@ -925,7 +1001,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Get a single comment.",
@@ -997,7 +1078,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"patch": {
 				"description": "Edit a comment.",
@@ -1077,7 +1163,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gists/{id}/forks": {
@@ -1162,7 +1253,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gists/{id}/star": {
@@ -1226,7 +1322,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Check if a gist is starred.",
@@ -1239,10 +1340,13 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -1309,7 +1413,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "Star a gist.",
@@ -1371,7 +1480,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gitignore/templates": {
@@ -1379,10 +1493,13 @@
 				"description": "Listing available templates.\nList all templates available to pass as an option when creating a repository.\n",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -1431,7 +1548,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/gitignore/templates/{language}": {
@@ -1445,10 +1567,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -1497,7 +1616,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/issues": {
@@ -1561,16 +1685,16 @@
 						"type": "string"
 					},
 					{
-						"description": "Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.\nOnly issues updated at or after this time are returned.\n",
-						"in": "query",
-						"name": "since",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
+					},
+					{
+						"$ref": "#/components/parameters/since"
 					}
 				],
 				"responses": {
@@ -1619,7 +1743,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/legacy/issues/search/{owner}/{repository}/{state}/{keyword}": {
@@ -2044,7 +2173,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/markdown/raw": {
@@ -2107,7 +2241,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/meta": {
@@ -2167,7 +2306,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/networks/{owner}/{repo}/events": {
@@ -2189,10 +2333,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -2241,7 +2388,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/notifications": {
@@ -2267,10 +2419,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -2319,7 +2474,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "Mark as read.\nMarking a notification as \"read\" removes it from the default view on GitHub.com.\n",
@@ -2382,7 +2542,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/notifications/threads/{id}": {
@@ -2449,7 +2614,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"patch": {
 				"description": "Mark a thread as read",
@@ -2511,7 +2681,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/notifications/threads/{id}/subscription": {
@@ -2575,7 +2750,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Get a Thread Subscription.",
@@ -2588,10 +2768,13 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -2640,7 +2823,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "Set a Thread Subscription.\nThis lets you subscribe to a thread, or ignore it. Subscribing to a thread\nis unnecessary if the user is already subscribed to the repository. Ignoring\na thread will mute all future notifications (until you comment or get @mentioned).\n",
@@ -2713,7 +2901,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/orgs/{org}": {
@@ -2728,10 +2921,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -2780,7 +2976,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"patch": {
 				"description": "Edit an Organization.",
@@ -2853,7 +3054,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/orgs/{org}/events": {
@@ -2868,10 +3074,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -2920,7 +3129,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/orgs/{org}/issues": {
@@ -2991,16 +3205,16 @@
 						"type": "string"
 					},
 					{
-						"description": "Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.\nOnly issues updated at or after this time are returned.\n",
-						"in": "query",
-						"name": "since",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
+					},
+					{
+						"$ref": "#/components/parameters/since"
 					}
 				],
 				"responses": {
@@ -3049,7 +3263,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/orgs/{org}/members": {
@@ -3064,10 +3283,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -3137,7 +3359,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/orgs/{org}/members/{username}": {
@@ -3208,7 +3435,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Check if a user is, publicly or privately, a member of the organization.",
@@ -3228,10 +3460,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -3319,7 +3554,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/orgs/{org}/public_members": {
@@ -3334,10 +3574,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -3386,7 +3629,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/orgs/{org}/public_members/{username}": {
@@ -3457,7 +3705,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Check public membership.",
@@ -3477,10 +3730,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -3547,7 +3803,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "Publicize a user's membership.",
@@ -3616,7 +3877,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/orgs/{org}/repos": {
@@ -3645,10 +3911,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -3697,7 +3966,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a new repository for the authenticated user. OAuth users must supply\nrepo scope.\n",
@@ -3770,7 +4044,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/orgs/{org}/teams": {
@@ -3785,10 +4064,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -3837,7 +4119,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create team.\nIn order to create a team, the authenticated user must be an owner of organization.\n",
@@ -3910,7 +4197,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/rate_limit": {
@@ -3918,10 +4210,13 @@
 				"description": "Get your current rate limit status\nNote: Accessing this endpoint does not count against your rate limit.\n",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -3970,7 +4265,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}": {
@@ -4041,7 +4341,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Get repository.",
@@ -4061,10 +4366,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -4113,7 +4421,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"patch": {
 				"description": "Edit repository.",
@@ -4193,7 +4506,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/assignees": {
@@ -4215,10 +4533,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -4267,7 +4588,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/assignees/{assignee}": {
@@ -4296,10 +4622,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -4366,7 +4695,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/branches": {
@@ -4388,10 +4722,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -4440,7 +4777,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/branches/{branch}": {
@@ -4469,10 +4811,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -4521,7 +4866,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/collaborators": {
@@ -4543,10 +4893,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -4595,7 +4948,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/collaborators/{user}": {
@@ -4673,7 +5031,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Check if user is a collaborator",
@@ -4700,10 +5063,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -4770,7 +5136,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "Add collaborator.",
@@ -4846,7 +5217,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/comments": {
@@ -4868,10 +5244,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -4920,7 +5299,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/comments/{commentId}": {
@@ -4998,7 +5382,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Get a single commit comment.",
@@ -5025,10 +5414,13 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -5077,7 +5469,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"patch": {
 				"description": "Update a commit comment.",
@@ -5164,7 +5561,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/commits": {
@@ -5216,10 +5618,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -5268,7 +5673,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/commits/{ref}/status": {
@@ -5296,10 +5706,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -5348,7 +5761,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/commits/{shaCode}": {
@@ -5377,10 +5795,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -5429,7 +5850,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/commits/{shaCode}/comments": {
@@ -5458,10 +5884,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -5510,7 +5939,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a commit comment.",
@@ -5597,7 +6031,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/compare/{baseId}...{headId}": {
@@ -5631,10 +6070,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -5683,7 +6125,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/contents/{path}": {
@@ -5771,7 +6218,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Get contents.\nThis method returns the contents of a file or directory in a repository.\nFiles and symlinks support a custom media type for getting the raw content.\nDirectories and submodules do not support custom media types.\nNote: This API supports files up to 1 megabyte in size.\nHere can be many outcomes. For details see \"http://developer.github.com/v3/repos/contents/\"\n",
@@ -5809,10 +6261,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -5861,7 +6316,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "Create a file.",
@@ -5947,7 +6407,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/contributors": {
@@ -5976,10 +6441,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -6028,7 +6496,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/deployments": {
@@ -6050,10 +6523,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -6102,7 +6578,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Users with push access can create a deployment for a given ref",
@@ -6182,7 +6663,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/deployments/{id}/statuses": {
@@ -6211,10 +6697,13 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -6263,7 +6752,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a Deployment Status\nUsers with push access can create deployment statuses for a given deployment:\n",
@@ -6347,7 +6841,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/downloads": {
@@ -6422,7 +6921,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/downloads/{downloadId}": {
@@ -6501,7 +7005,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"deprecated": true,
@@ -6581,7 +7090,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/events": {
@@ -6603,10 +7117,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -6655,7 +7172,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/forks": {
@@ -6688,10 +7210,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -6740,7 +7265,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a fork.\nForking a Repository happens asynchronously. Therefore, you may have to wai\na short period before accessing the git objects. If this takes longer than 5\nminutes, be sure to contact Support.\n",
@@ -6820,7 +7350,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/git/blobs": {
@@ -6842,10 +7377,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					},
 					{
 						"in": "body",
@@ -6902,7 +7440,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/git/blobs/{shaCode}": {
@@ -7168,10 +7711,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -7403,10 +7949,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -7651,10 +8200,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -7894,10 +8446,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -8426,16 +8981,16 @@
 						"type": "string"
 					},
 					{
-						"description": "Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.\nOnly issues updated at or after this time are returned.\n",
-						"in": "query",
-						"name": "since",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
+					},
+					{
+						"$ref": "#/components/parameters/since"
 					}
 				],
 				"responses": {
@@ -14654,7 +15209,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repos/{owner}/{repo}/{archive_format}/{path}": {
@@ -14693,10 +15253,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -14742,7 +15305,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/repositories": {
@@ -14750,16 +15318,16 @@
 				"description": "List all public repositories.\nThis provides a dump of every public repository, in the order that they\nwere created.\nNote: Pagination is powered exclusively by the since parameter. is the\nLink header to get the URL for the next page of repositories.\n",
 				"parameters": [
 					{
-						"description": "The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.\nExample: \"2012-10-09T23:39:01Z\".\n",
-						"in": "query",
-						"name": "since",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
+					},
+					{
+						"$ref": "#/components/parameters/since"
 					}
 				],
 				"responses": {
@@ -14808,7 +15376,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/search/code": {
@@ -14843,10 +15416,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -14895,7 +15471,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/search/issues": {
@@ -14932,10 +15513,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -14984,7 +15568,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/search/repositories": {
@@ -15021,10 +15610,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -15073,7 +15665,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/search/users": {
@@ -15110,10 +15707,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -15162,7 +15762,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/teams/{teamId}": {
@@ -15177,10 +15782,13 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -15226,7 +15834,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Get team.",
@@ -15291,7 +15904,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"patch": {
 				"description": "Edit team.\nIn order to edit a team, the authenticated user must be an owner of the org\nthat the team is associated with.\n",
@@ -15364,7 +15982,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/teams/{teamId}/members": {
@@ -15379,10 +16002,13 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -15431,7 +16057,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/teams/{teamId}/members/{username}": {
@@ -15454,10 +16085,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -15503,7 +16137,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"deprecated": true,
@@ -15594,7 +16233,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"deprecated": true,
@@ -15688,7 +16332,12 @@
 							"$ref": "#/definitions/organizationAsTeamMember"
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/teams/{teamId}/memberships/{username}": {
@@ -15710,10 +16359,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -15759,7 +16411,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Get team membership.\nIn order to get a user's membership with a team, the authenticated user must be a member of the team or an owner of the team's organization.\n",
@@ -15852,7 +16509,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "Add team membership.\nIn order to add a membership between a user and a team, the authenticated user must have 'admin' permissions to the team or be an owner of the organization that the team is associated with.\n\nIf the user is already a part of the team's organization (meaning they're on at least one other team in the organization), this endpoint will add the user to the team.\n\nIf the user is completely unaffiliated with the team's organization (meaning they're on none of the organization's teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the 'pending' state until the user accepts the invitation, at which point the membership will transition to the 'active' state and the user will be added as a member of the team.\n",
@@ -15948,7 +16610,12 @@
 							"$ref": "#/definitions/organizationAsTeamMember"
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/teams/{teamId}/repos": {
@@ -15963,10 +16630,13 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -16015,7 +16685,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/teams/{teamId}/repos/{owner}/{repo}": {
@@ -16044,10 +16719,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -16093,7 +16771,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Check if a team manages a repository",
@@ -16148,7 +16831,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.",
@@ -16203,7 +16891,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user": {
@@ -16211,10 +16904,13 @@
 				"description": "Get the authenticated user.",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -16334,7 +17030,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/emails": {
@@ -16342,10 +17043,7 @@
 				"description": "Delete email address(es).\nYou can include a single email address or an array of addresses.\n",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
 						"in": "body",
@@ -16399,7 +17097,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "List email addresses for a user.\nIn the final version of the API, this method will return an array of hashes\nwith extended information for each email address indicating if the address\nhas been verified and if it's primary email address for GitHub.\nUntil API v3 is finalized, use the application/vnd.github.v3 media type to\nget other response format.\n",
@@ -16460,7 +17163,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Add email address(es).\nYou can post a single email address or an array of addresses.\n",
@@ -16502,7 +17210,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/followers": {
@@ -16510,10 +17223,13 @@
 				"description": "List the authenticated user's followers",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -16562,7 +17278,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/following": {
@@ -16570,10 +17291,13 @@
 				"description": "List who the authenticated user is following.",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -16622,7 +17346,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/following/{username}": {
@@ -16637,10 +17366,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -16686,7 +17412,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Check if you are following a user.",
@@ -16769,7 +17500,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "Follow a user.\nFollowing a user requires the user to be logged in and authenticated with\nbasic auth or OAuth with the user:follow scope.\n",
@@ -16831,7 +17567,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/issues": {
@@ -16895,16 +17636,16 @@
 						"type": "string"
 					},
 					{
-						"description": "Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.\nOnly issues updated at or after this time are returned.\n",
-						"in": "query",
-						"name": "since",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
+					},
+					{
+						"$ref": "#/components/parameters/since"
 					}
 				],
 				"responses": {
@@ -16953,7 +17694,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/keys": {
@@ -16961,10 +17707,7 @@
 				"description": "List your public keys.\nLists the current user's keys. Management of public keys via the API requires\nthat you are authenticated through basic auth, or OAuth with the 'user', 'write:public_key' scopes.\n",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -17013,7 +17756,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a public key.",
@@ -17079,7 +17827,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/keys/{keyId}": {
@@ -17094,10 +17847,7 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -17143,7 +17893,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Get a single public key.",
@@ -17208,7 +17963,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/orgs": {
@@ -17216,10 +17976,7 @@
 				"description": "List public and private organizations for the authenticated user.",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -17268,7 +18025,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/repos": {
@@ -17290,10 +18052,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -17342,7 +18101,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"post": {
 				"description": "Create a new repository for the authenticated user. OAuth users must supply\nrepo scope.\n",
@@ -17408,7 +18172,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/starred": {
@@ -17485,7 +18254,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/starred/{owner}/{repo}": {
@@ -17556,7 +18330,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"description": "Check if you are starring a repository.",
@@ -17646,7 +18425,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"description": "Star a repository.",
@@ -17715,7 +18499,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/subscriptions": {
@@ -17775,7 +18564,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/subscriptions/{owner}/{repo}": {
@@ -17847,7 +18641,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"get": {
 				"deprecated": true,
@@ -17938,7 +18737,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			},
 			"put": {
 				"deprecated": true,
@@ -18008,7 +18812,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/user/teams": {
@@ -18016,10 +18825,7 @@
 				"description": "List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.",
 				"parameters": [
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18068,7 +18874,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users": {
@@ -18082,10 +18893,13 @@
 						"type": "integer"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -18134,7 +18948,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}": {
@@ -18149,10 +18968,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18201,7 +19017,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/events": {
@@ -18216,10 +19037,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -18244,7 +19068,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/events/orgs/{org}": {
@@ -18265,10 +19094,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18293,7 +19119,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/followers": {
@@ -18308,10 +19139,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18360,7 +19188,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/following/{targetUser}": {
@@ -18382,10 +19215,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18467,16 +19297,16 @@
 						"type": "string"
 					},
 					{
-						"description": "The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.\nExample: \"2012-10-09T23:39:01Z\".\n",
-						"in": "query",
-						"name": "since",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
+					},
+					{
+						"$ref": "#/components/parameters/since"
 					}
 				],
 				"responses": {
@@ -18525,7 +19355,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/keys": {
@@ -18540,10 +19375,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18592,7 +19424,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/orgs": {
@@ -18607,10 +19444,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18659,7 +19493,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/received_events": {
@@ -18674,10 +19513,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18702,7 +19538,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/received_events/public": {
@@ -18717,10 +19558,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18745,7 +19583,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/repos": {
@@ -18774,10 +19617,13 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {
@@ -18826,7 +19672,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/starred": {
@@ -18841,10 +19692,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18869,7 +19717,12 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
 		},
 		"/users/{username}/subscriptions": {
@@ -18884,10 +19737,7 @@
 						"type": "string"
 					},
 					{
-						"description": "Is used to set specified media type.",
-						"in": "header",
-						"name": "Accept",
-						"type": "string"
+						"$ref": "#/components/parameters/accept"
 					}
 				],
 				"responses": {
@@ -18912,8 +19762,42 @@
 							}
 						}
 					}
-				}
+				},
+				"security": [
+					{
+						"api_key": []
+					}
+				]
 			}
+		}
+	},
+	"parameters": {
+		"since": {
+			"description": "Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.",
+			"in": "query",
+			"name": "since",
+			"type": "string"
+		},
+		"noOfResultPerPage": {
+			"name": "per_page",
+			"in": "query",
+			"type": "integer",
+			"description": "No of result showed per request.",
+			"default": 30
+		},
+		"page": {
+			"name": "page",
+			"in": "query",
+			"type": "integer",
+			"description": "Page number at which you want the search result to come from.",
+			"default": 1
+		},
+		"accept": {
+			"name": "Accept",
+			"in": "header",
+			"type": "string",
+			"description": "Is used to set specified media type",
+			"default": "application/vnd.github.v3+json"
 		}
 	},
 	"definitions": {

@@ -53,6 +53,9 @@ function () {
         type: 'apiKey',
         'in': 'header',
         name: 'Authorization'
+      },
+      'oauth2': {
+        type: 'oauth2'
       }
     };
     /**

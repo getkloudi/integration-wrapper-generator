@@ -17,10 +17,12 @@
      */ /**
      * Lists all the emojis available to use on GitHub.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~emojisGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Object.<String, {String: String}>}
-     */_createClass(DefaultApi,[{key:"emojisGet",value:function emojisGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType={'String':'String'};return this.apiClient.callApi('/emojis','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */_createClass(DefaultApi,[{key:"emojisGet",value:function emojisGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType={'String':'String'};return this.apiClient.callApi('/emojis','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the eventsGet operation.
      * @callback module:api/DefaultApi~eventsGetCallback
      * @param {String} error Error message, if any.
@@ -29,10 +31,12 @@
      */ /**
      * List public events.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~eventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Event>}
-     */},{key:"eventsGet",value:function eventsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Event["default"]];return this.apiClient.callApi('/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"eventsGet",value:function eventsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Event["default"]];return this.apiClient.callApi('/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the feedsGet operation.
      * @callback module:api/DefaultApi~feedsGetCallback
      * @param {String} error Error message, if any.
@@ -41,10 +45,12 @@
      */ /**
      * List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~feedsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Feeds}
-     */},{key:"feedsGet",value:function feedsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Feeds["default"];return this.apiClient.callApi('/feeds','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"feedsGet",value:function feedsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Feeds["default"];return this.apiClient.callApi('/feeds','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsGet operation.
      * @callback module:api/DefaultApi~gistsGetCallback
      * @param {String} error Error message, if any.
@@ -53,11 +59,13 @@
      */ /**
      * List the authenticated user's gists or if called anonymously, this will return all public gists. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~gistsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
-     */},{key:"gistsGet",value:function gistsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gists','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"gistsGet",value:function gistsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gists','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdCommentsCommentIdDelete operation.
      * @callback module:api/DefaultApi~gistsIdCommentsCommentIdDeleteCallback
      * @param {String} error Error message, if any.
@@ -72,7 +80,7 @@
      * @param {module:api/DefaultApi~gistsIdCommentsCommentIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"gistsIdCommentsCommentIdDelete",value:function gistsIdCommentsCommentIdDelete(id,commentId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
 if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdCommentsCommentIdDelete");}// verify the required parameter 'commentId' is set
-if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling gistsIdCommentsCommentIdDelete");}var pathParams={'id':id,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/comments/{commentId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling gistsIdCommentsCommentIdDelete");}var pathParams={'id':id,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/comments/{commentId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdCommentsCommentIdGet operation.
      * @callback module:api/DefaultApi~gistsIdCommentsCommentIdGetCallback
      * @param {String} error Error message, if any.
@@ -88,7 +96,7 @@ if(commentId===undefined||commentId===null){throw new Error("Missing the require
      * data is of type: {@link module:model/Comment}
      */},{key:"gistsIdCommentsCommentIdGet",value:function gistsIdCommentsCommentIdGet(id,commentId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
 if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdCommentsCommentIdGet");}// verify the required parameter 'commentId' is set
-if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling gistsIdCommentsCommentIdGet");}var pathParams={'id':id,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Comment["default"];return this.apiClient.callApi('/gists/{id}/comments/{commentId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling gistsIdCommentsCommentIdGet");}var pathParams={'id':id,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Comment["default"];return this.apiClient.callApi('/gists/{id}/comments/{commentId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdCommentsCommentIdPatch operation.
      * @callback module:api/DefaultApi~gistsIdCommentsCommentIdPatchCallback
      * @param {String} error Error message, if any.
@@ -106,7 +114,7 @@ if(commentId===undefined||commentId===null){throw new Error("Missing the require
      */},{key:"gistsIdCommentsCommentIdPatch",value:function gistsIdCommentsCommentIdPatch(id,commentId,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'id' is set
 if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdCommentsCommentIdPatch");}// verify the required parameter 'commentId' is set
 if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling gistsIdCommentsCommentIdPatch");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling gistsIdCommentsCommentIdPatch");}var pathParams={'id':id,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Comment["default"];return this.apiClient.callApi('/gists/{id}/comments/{commentId}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling gistsIdCommentsCommentIdPatch");}var pathParams={'id':id,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Comment["default"];return this.apiClient.callApi('/gists/{id}/comments/{commentId}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdCommentsGet operation.
      * @callback module:api/DefaultApi~gistsIdCommentsGetCallback
      * @param {String} error Error message, if any.
@@ -116,11 +124,13 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * List comments on a gist.
      * @param {Number} id Id of gist.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~gistsIdCommentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"gistsIdCommentsGet",value:function gistsIdCommentsGet(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdCommentsGet");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gists/{id}/comments','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdCommentsGet");}var pathParams={'id':id};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gists/{id}/comments','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdCommentsPost operation.
      * @callback module:api/DefaultApi~gistsIdCommentsPostCallback
      * @param {String} error Error message, if any.
@@ -136,7 +146,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * data is of type: {@link module:model/Comment}
      */},{key:"gistsIdCommentsPost",value:function gistsIdCommentsPost(id,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'id' is set
 if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdCommentsPost");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling gistsIdCommentsPost");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Comment["default"];return this.apiClient.callApi('/gists/{id}/comments','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling gistsIdCommentsPost");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Comment["default"];return this.apiClient.callApi('/gists/{id}/comments','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdDelete operation.
      * @callback module:api/DefaultApi~gistsIdDeleteCallback
      * @param {String} error Error message, if any.
@@ -149,7 +159,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~gistsIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"gistsIdDelete",value:function gistsIdDelete(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdDelete");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdDelete");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdForksPost operation.
      * @callback module:api/DefaultApi~gistsIdForksPostCallback
      * @param {String} error Error message, if any.
@@ -162,7 +172,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~gistsIdForksPostCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"gistsIdForksPost",value:function gistsIdForksPost(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdForksPost");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/forks','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdForksPost");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/forks','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdGet operation.
      * @callback module:api/DefaultApi~gistsIdGetCallback
      * @param {String} error Error message, if any.
@@ -176,7 +186,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * @param {module:api/DefaultApi~gistsIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Gist}
      */},{key:"gistsIdGet",value:function gistsIdGet(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdGet");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Gist["default"];return this.apiClient.callApi('/gists/{id}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdGet");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Gist["default"];return this.apiClient.callApi('/gists/{id}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdPatch operation.
      * @callback module:api/DefaultApi~gistsIdPatchCallback
      * @param {String} error Error message, if any.
@@ -192,7 +202,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * data is of type: {@link module:model/Gist}
      */},{key:"gistsIdPatch",value:function gistsIdPatch(id,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'id' is set
 if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdPatch");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling gistsIdPatch");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Gist["default"];return this.apiClient.callApi('/gists/{id}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling gistsIdPatch");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Gist["default"];return this.apiClient.callApi('/gists/{id}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdStarDelete operation.
      * @callback module:api/DefaultApi~gistsIdStarDeleteCallback
      * @param {String} error Error message, if any.
@@ -205,7 +215,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~gistsIdStarDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"gistsIdStarDelete",value:function gistsIdStarDelete(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdStarDelete");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/star','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdStarDelete");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/star','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdStarGet operation.
      * @callback module:api/DefaultApi~gistsIdStarGetCallback
      * @param {String} error Error message, if any.
@@ -215,10 +225,12 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * Check if a gist is starred.
      * @param {Number} id Id of gist.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~gistsIdStarGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"gistsIdStarGet",value:function gistsIdStarGet(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdStarGet");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/star','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdStarGet");}var pathParams={'id':id};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/star','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsIdStarPut operation.
      * @callback module:api/DefaultApi~gistsIdStarPutCallback
      * @param {String} error Error message, if any.
@@ -231,7 +243,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~gistsIdStarPutCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"gistsIdStarPut",value:function gistsIdStarPut(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdStarPut");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/star','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling gistsIdStarPut");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/gists/{id}/star','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsPost operation.
      * @callback module:api/DefaultApi~gistsPostCallback
      * @param {String} error Error message, if any.
@@ -245,7 +257,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * @param {module:api/DefaultApi~gistsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Gist}
      */},{key:"gistsPost",value:function gistsPost(body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling gistsPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Gist["default"];return this.apiClient.callApi('/gists','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling gistsPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Gist["default"];return this.apiClient.callApi('/gists','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsPublicGet operation.
      * @callback module:api/DefaultApi~gistsPublicGetCallback
      * @param {String} error Error message, if any.
@@ -254,11 +266,13 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */ /**
      * List all public gists.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~gistsPublicGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
-     */},{key:"gistsPublicGet",value:function gistsPublicGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gists/public','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"gistsPublicGet",value:function gistsPublicGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gists/public','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gistsStarredGet operation.
      * @callback module:api/DefaultApi~gistsStarredGetCallback
      * @param {String} error Error message, if any.
@@ -267,11 +281,13 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */ /**
      * List the authenticated user's starred gists.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~gistsStarredGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
-     */},{key:"gistsStarredGet",value:function gistsStarredGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gists/starred','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"gistsStarredGet",value:function gistsStarredGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gists/starred','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gitignoreTemplatesGet operation.
      * @callback module:api/DefaultApi~gitignoreTemplatesGetCallback
      * @param {String} error Error message, if any.
@@ -280,10 +296,12 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */ /**
      * Listing available templates. List all templates available to pass as an option when creating a repository. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~gitignoreTemplatesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
-     */},{key:"gitignoreTemplatesGet",value:function gitignoreTemplatesGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gitignore/templates','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"gitignoreTemplatesGet",value:function gitignoreTemplatesGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/gitignore/templates','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the gitignoreTemplatesLanguageGet operation.
      * @callback module:api/DefaultApi~gitignoreTemplatesLanguageGetCallback
      * @param {String} error Error message, if any.
@@ -293,11 +311,11 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * Get a single template.
      * @param {String} language 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~gitignoreTemplatesLanguageGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/GitignoreLang}
      */},{key:"gitignoreTemplatesLanguageGet",value:function gitignoreTemplatesLanguageGet(language,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'language' is set
-if(language===undefined||language===null){throw new Error("Missing the required parameter 'language' when calling gitignoreTemplatesLanguageGet");}var pathParams={'language':language};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_GitignoreLang["default"];return this.apiClient.callApi('/gitignore/templates/{language}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(language===undefined||language===null){throw new Error("Missing the required parameter 'language' when calling gitignoreTemplatesLanguageGet");}var pathParams={'language':language};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_GitignoreLang["default"];return this.apiClient.callApi('/gitignore/templates/{language}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the issuesGet operation.
      * @callback module:api/DefaultApi~issuesGetCallback
      * @param {String} error Error message, if any.
@@ -311,8 +329,10 @@ if(language===undefined||language===null){throw new Error("Missing the required 
      * @param {module:model/String} sort 
      * @param {module:model/String} direction 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~issuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"issuesGet",value:function issuesGet(filter,state,labels,sort,direction,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'filter' is set
@@ -320,7 +340,7 @@ if(filter===undefined||filter===null){throw new Error("Missing the required para
 if(state===undefined||state===null){throw new Error("Missing the required parameter 'state' when calling issuesGet");}// verify the required parameter 'labels' is set
 if(labels===undefined||labels===null){throw new Error("Missing the required parameter 'labels' when calling issuesGet");}// verify the required parameter 'sort' is set
 if(sort===undefined||sort===null){throw new Error("Missing the required parameter 'sort' when calling issuesGet");}// verify the required parameter 'direction' is set
-if(direction===undefined||direction===null){throw new Error("Missing the required parameter 'direction' when calling issuesGet");}var pathParams={};var queryParams={'filter':filter,'state':state,'labels':labels,'sort':sort,'direction':direction,'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(direction===undefined||direction===null){throw new Error("Missing the required parameter 'direction' when calling issuesGet");}var pathParams={};var queryParams={'filter':filter,'state':state,'labels':labels,'sort':sort,'direction':direction,'per_page':opts['perPage'],'page':opts['page'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the legacyIssuesSearchOwnerRepositoryStateKeywordGet operation.
      * @callback module:api/DefaultApi~legacyIssuesSearchOwnerRepositoryStateKeywordGetCallback
      * @param {String} error Error message, if any.
@@ -402,7 +422,7 @@ if(keyword===undefined||keyword===null){throw new Error("Missing the required pa
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~markdownPostCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"markdownPost",value:function markdownPost(body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling markdownPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/markdown','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling markdownPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/markdown','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the markdownRawPost operation.
      * @callback module:api/DefaultApi~markdownRawPostCallback
      * @param {String} error Error message, if any.
@@ -413,7 +433,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {Object} opts Optional parameters
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~markdownRawPostCallback} callback The callback function, accepting three arguments: error, data, response
-     */},{key:"markdownRawPost",value:function markdownRawPost(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/markdown/raw','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"markdownRawPost",value:function markdownRawPost(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/markdown/raw','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the metaGet operation.
      * @callback module:api/DefaultApi~metaGetCallback
      * @param {String} error Error message, if any.
@@ -425,7 +445,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~metaGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Meta}
-     */},{key:"metaGet",value:function metaGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Meta["default"];return this.apiClient.callApi('/meta','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"metaGet",value:function metaGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Meta["default"];return this.apiClient.callApi('/meta','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the networksOwnerRepoEventsGet operation.
      * @callback module:api/DefaultApi~networksOwnerRepoEventsGetCallback
      * @param {String} error Error message, if any.
@@ -436,12 +456,14 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} owner Name of the owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~networksOwnerRepoEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Event>}
      */},{key:"networksOwnerRepoEventsGet",value:function networksOwnerRepoEventsGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling networksOwnerRepoEventsGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling networksOwnerRepoEventsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Event["default"]];return this.apiClient.callApi('/networks/{owner}/{repo}/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling networksOwnerRepoEventsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Event["default"]];return this.apiClient.callApi('/networks/{owner}/{repo}/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the notificationsGet operation.
      * @callback module:api/DefaultApi~notificationsGetCallback
      * @param {String} error Error message, if any.
@@ -453,10 +475,12 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {Boolean} opts.all True to show notifications marked as read.
      * @param {Boolean} opts.participating True to show only notifications in which the user is directly participating or mentioned. 
      * @param {String} opts.since The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~notificationsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Notifications}
-     */},{key:"notificationsGet",value:function notificationsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'all':opts['all'],'participating':opts['participating'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Notifications["default"];return this.apiClient.callApi('/notifications','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"notificationsGet",value:function notificationsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'all':opts['all'],'participating':opts['participating'],'since':opts['since'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Notifications["default"];return this.apiClient.callApi('/notifications','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the notificationsPut operation.
      * @callback module:api/DefaultApi~notificationsPutCallback
      * @param {String} error Error message, if any.
@@ -469,7 +493,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~notificationsPutCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"notificationsPut",value:function notificationsPut(body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling notificationsPut");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/notifications','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling notificationsPut");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/notifications','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the notificationsThreadsIdGet operation.
      * @callback module:api/DefaultApi~notificationsThreadsIdGetCallback
      * @param {String} error Error message, if any.
@@ -483,7 +507,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~notificationsThreadsIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Notifications}
      */},{key:"notificationsThreadsIdGet",value:function notificationsThreadsIdGet(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling notificationsThreadsIdGet");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Notifications["default"];return this.apiClient.callApi('/notifications/threads/{id}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling notificationsThreadsIdGet");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Notifications["default"];return this.apiClient.callApi('/notifications/threads/{id}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the notificationsThreadsIdPatch operation.
      * @callback module:api/DefaultApi~notificationsThreadsIdPatchCallback
      * @param {String} error Error message, if any.
@@ -496,7 +520,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~notificationsThreadsIdPatchCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"notificationsThreadsIdPatch",value:function notificationsThreadsIdPatch(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling notificationsThreadsIdPatch");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/notifications/threads/{id}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling notificationsThreadsIdPatch");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/notifications/threads/{id}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the notificationsThreadsIdSubscriptionDelete operation.
      * @callback module:api/DefaultApi~notificationsThreadsIdSubscriptionDeleteCallback
      * @param {String} error Error message, if any.
@@ -509,7 +533,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~notificationsThreadsIdSubscriptionDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"notificationsThreadsIdSubscriptionDelete",value:function notificationsThreadsIdSubscriptionDelete(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling notificationsThreadsIdSubscriptionDelete");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/notifications/threads/{id}/subscription','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling notificationsThreadsIdSubscriptionDelete");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/notifications/threads/{id}/subscription','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the notificationsThreadsIdSubscriptionGet operation.
      * @callback module:api/DefaultApi~notificationsThreadsIdSubscriptionGetCallback
      * @param {String} error Error message, if any.
@@ -519,11 +543,13 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * Get a Thread Subscription.
      * @param {Number} id Id of thread.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~notificationsThreadsIdSubscriptionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Subscription}
      */},{key:"notificationsThreadsIdSubscriptionGet",value:function notificationsThreadsIdSubscriptionGet(id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling notificationsThreadsIdSubscriptionGet");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Subscription["default"];return this.apiClient.callApi('/notifications/threads/{id}/subscription','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling notificationsThreadsIdSubscriptionGet");}var pathParams={'id':id};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Subscription["default"];return this.apiClient.callApi('/notifications/threads/{id}/subscription','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the notificationsThreadsIdSubscriptionPut operation.
      * @callback module:api/DefaultApi~notificationsThreadsIdSubscriptionPutCallback
      * @param {String} error Error message, if any.
@@ -539,7 +565,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
      * data is of type: {@link module:model/Subscription}
      */},{key:"notificationsThreadsIdSubscriptionPut",value:function notificationsThreadsIdSubscriptionPut(id,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'id' is set
 if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling notificationsThreadsIdSubscriptionPut");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling notificationsThreadsIdSubscriptionPut");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Subscription["default"];return this.apiClient.callApi('/notifications/threads/{id}/subscription','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling notificationsThreadsIdSubscriptionPut");}var pathParams={'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Subscription["default"];return this.apiClient.callApi('/notifications/threads/{id}/subscription','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgEventsGet operation.
      * @callback module:api/DefaultApi~orgsOrgEventsGetCallback
      * @param {String} error Error message, if any.
@@ -549,11 +575,13 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * List public events for an organization.
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Event>}
      */},{key:"orgsOrgEventsGet",value:function orgsOrgEventsGet(org,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
-if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgEventsGet");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Event["default"]];return this.apiClient.callApi('/orgs/{org}/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgEventsGet");}var pathParams={'org':org};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Event["default"]];return this.apiClient.callApi('/orgs/{org}/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgGet operation.
      * @callback module:api/DefaultApi~orgsOrgGetCallback
      * @param {String} error Error message, if any.
@@ -563,11 +591,13 @@ if(org===undefined||org===null){throw new Error("Missing the required parameter 
      * Get an Organization.
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Organization}
      */},{key:"orgsOrgGet",value:function orgsOrgGet(org,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
-if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgGet");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Organization["default"];return this.apiClient.callApi('/orgs/{org}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgGet");}var pathParams={'org':org};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Organization["default"];return this.apiClient.callApi('/orgs/{org}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgIssuesGet operation.
      * @callback module:api/DefaultApi~orgsOrgIssuesGetCallback
      * @param {String} error Error message, if any.
@@ -582,8 +612,10 @@ if(org===undefined||org===null){throw new Error("Missing the required parameter 
      * @param {module:model/String} sort 
      * @param {module:model/String} direction 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~orgsOrgIssuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"orgsOrgIssuesGet",value:function orgsOrgIssuesGet(org,filter,state,labels,sort,direction,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
@@ -592,7 +624,7 @@ if(filter===undefined||filter===null){throw new Error("Missing the required para
 if(state===undefined||state===null){throw new Error("Missing the required parameter 'state' when calling orgsOrgIssuesGet");}// verify the required parameter 'labels' is set
 if(labels===undefined||labels===null){throw new Error("Missing the required parameter 'labels' when calling orgsOrgIssuesGet");}// verify the required parameter 'sort' is set
 if(sort===undefined||sort===null){throw new Error("Missing the required parameter 'sort' when calling orgsOrgIssuesGet");}// verify the required parameter 'direction' is set
-if(direction===undefined||direction===null){throw new Error("Missing the required parameter 'direction' when calling orgsOrgIssuesGet");}var pathParams={'org':org};var queryParams={'filter':filter,'state':state,'labels':labels,'sort':sort,'direction':direction,'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/orgs/{org}/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(direction===undefined||direction===null){throw new Error("Missing the required parameter 'direction' when calling orgsOrgIssuesGet");}var pathParams={'org':org};var queryParams={'filter':filter,'state':state,'labels':labels,'sort':sort,'direction':direction,'per_page':opts['perPage'],'page':opts['page'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/orgs/{org}/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgMembersGet operation.
      * @callback module:api/DefaultApi~orgsOrgMembersGetCallback
      * @param {String} error Error message, if any.
@@ -602,11 +634,13 @@ if(direction===undefined||direction===null){throw new Error("Missing the require
      * Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list. 
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */},{key:"orgsOrgMembersGet",value:function orgsOrgMembersGet(org,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
-if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgMembersGet");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/orgs/{org}/members','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgMembersGet");}var pathParams={'org':org};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/orgs/{org}/members','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgMembersUsernameDelete operation.
      * @callback module:api/DefaultApi~orgsOrgMembersUsernameDeleteCallback
      * @param {String} error Error message, if any.
@@ -621,7 +655,7 @@ if(org===undefined||org===null){throw new Error("Missing the required parameter 
      * @param {module:api/DefaultApi~orgsOrgMembersUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"orgsOrgMembersUsernameDelete",value:function orgsOrgMembersUsernameDelete(org,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
 if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgMembersUsernameDelete");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgMembersUsernameDelete");}var pathParams={'org':org,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/members/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgMembersUsernameDelete");}var pathParams={'org':org,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/members/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgMembersUsernameGet operation.
      * @callback module:api/DefaultApi~orgsOrgMembersUsernameGetCallback
      * @param {String} error Error message, if any.
@@ -632,11 +666,13 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {String} org Name of organisation.
      * @param {String} username Name of the user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgMembersUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"orgsOrgMembersUsernameGet",value:function orgsOrgMembersUsernameGet(org,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
 if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgMembersUsernameGet");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgMembersUsernameGet");}var pathParams={'org':org,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/members/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgMembersUsernameGet");}var pathParams={'org':org,'username':username};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/members/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgPatch operation.
      * @callback module:api/DefaultApi~orgsOrgPatchCallback
      * @param {String} error Error message, if any.
@@ -652,7 +688,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * data is of type: {@link module:model/Organization}
      */},{key:"orgsOrgPatch",value:function orgsOrgPatch(org,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'org' is set
 if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgPatch");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling orgsOrgPatch");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Organization["default"];return this.apiClient.callApi('/orgs/{org}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling orgsOrgPatch");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Organization["default"];return this.apiClient.callApi('/orgs/{org}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgPublicMembersGet operation.
      * @callback module:api/DefaultApi~orgsOrgPublicMembersGetCallback
      * @param {String} error Error message, if any.
@@ -662,11 +698,13 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * Public members list. Members of an organization can choose to have their membership publicized or not. 
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgPublicMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */},{key:"orgsOrgPublicMembersGet",value:function orgsOrgPublicMembersGet(org,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
-if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgPublicMembersGet");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/orgs/{org}/public_members','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgPublicMembersGet");}var pathParams={'org':org};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/orgs/{org}/public_members','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgPublicMembersUsernameDelete operation.
      * @callback module:api/DefaultApi~orgsOrgPublicMembersUsernameDeleteCallback
      * @param {String} error Error message, if any.
@@ -681,7 +719,7 @@ if(org===undefined||org===null){throw new Error("Missing the required parameter 
      * @param {module:api/DefaultApi~orgsOrgPublicMembersUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"orgsOrgPublicMembersUsernameDelete",value:function orgsOrgPublicMembersUsernameDelete(org,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
 if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgPublicMembersUsernameDelete");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgPublicMembersUsernameDelete");}var pathParams={'org':org,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/public_members/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgPublicMembersUsernameDelete");}var pathParams={'org':org,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/public_members/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgPublicMembersUsernameGet operation.
      * @callback module:api/DefaultApi~orgsOrgPublicMembersUsernameGetCallback
      * @param {String} error Error message, if any.
@@ -692,11 +730,13 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {String} org Name of organisation.
      * @param {String} username Name of the user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgPublicMembersUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"orgsOrgPublicMembersUsernameGet",value:function orgsOrgPublicMembersUsernameGet(org,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
 if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgPublicMembersUsernameGet");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgPublicMembersUsernameGet");}var pathParams={'org':org,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/public_members/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgPublicMembersUsernameGet");}var pathParams={'org':org,'username':username};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/public_members/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgPublicMembersUsernamePut operation.
      * @callback module:api/DefaultApi~orgsOrgPublicMembersUsernamePutCallback
      * @param {String} error Error message, if any.
@@ -711,7 +751,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {module:api/DefaultApi~orgsOrgPublicMembersUsernamePutCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"orgsOrgPublicMembersUsernamePut",value:function orgsOrgPublicMembersUsernamePut(org,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
 if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgPublicMembersUsernamePut");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgPublicMembersUsernamePut");}var pathParams={'org':org,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/public_members/{username}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling orgsOrgPublicMembersUsernamePut");}var pathParams={'org':org,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/orgs/{org}/public_members/{username}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgReposGet operation.
      * @callback module:api/DefaultApi~orgsOrgReposGetCallback
      * @param {String} error Error message, if any.
@@ -722,11 +762,13 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.type  (default to 'all')
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgReposGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */},{key:"orgsOrgReposGet",value:function orgsOrgReposGet(org,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
-if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgReposGet");}var pathParams={'org':org};var queryParams={'type':opts['type']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/orgs/{org}/repos','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgReposGet");}var pathParams={'org':org};var queryParams={'type':opts['type'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/orgs/{org}/repos','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgReposPost operation.
      * @callback module:api/DefaultApi~orgsOrgReposPostCallback
      * @param {String} error Error message, if any.
@@ -742,7 +784,7 @@ if(org===undefined||org===null){throw new Error("Missing the required parameter 
      * data is of type: {@link Array.<module:model/Repo>}
      */},{key:"orgsOrgReposPost",value:function orgsOrgReposPost(org,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'org' is set
 if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgReposPost");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling orgsOrgReposPost");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/orgs/{org}/repos','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling orgsOrgReposPost");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/orgs/{org}/repos','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgTeamsGet operation.
      * @callback module:api/DefaultApi~orgsOrgTeamsGetCallback
      * @param {String} error Error message, if any.
@@ -752,11 +794,13 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * List teams.
      * @param {String} org Name of organisation.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~orgsOrgTeamsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"orgsOrgTeamsGet",value:function orgsOrgTeamsGet(org,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'org' is set
-if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgTeamsGet");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/orgs/{org}/teams','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgTeamsGet");}var pathParams={'org':org};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/orgs/{org}/teams','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the orgsOrgTeamsPost operation.
      * @callback module:api/DefaultApi~orgsOrgTeamsPostCallback
      * @param {String} error Error message, if any.
@@ -772,7 +816,7 @@ if(org===undefined||org===null){throw new Error("Missing the required parameter 
      * data is of type: {@link module:model/Team}
      */},{key:"orgsOrgTeamsPost",value:function orgsOrgTeamsPost(org,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'org' is set
 if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling orgsOrgTeamsPost");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling orgsOrgTeamsPost");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Team["default"];return this.apiClient.callApi('/orgs/{org}/teams','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling orgsOrgTeamsPost");}var pathParams={'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Team["default"];return this.apiClient.callApi('/orgs/{org}/teams','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the rateLimitGet operation.
      * @callback module:api/DefaultApi~rateLimitGetCallback
      * @param {String} error Error message, if any.
@@ -781,10 +825,12 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */ /**
      * Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~rateLimitGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/RateLimit}
-     */},{key:"rateLimitGet",value:function rateLimitGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_RateLimit["default"];return this.apiClient.callApi('/rate_limit','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"rateLimitGet",value:function rateLimitGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_RateLimit["default"];return this.apiClient.callApi('/rate_limit','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoArchiveFormatPathGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoArchiveFormatPathGetCallback
      * @param {String} error Error message, if any.
@@ -797,13 +843,15 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {module:model/String} archiveFormat 
      * @param {String} path Valid Git reference, defaults to 'master'.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoArchiveFormatPathGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"reposOwnerRepoArchiveFormatPathGet",value:function reposOwnerRepoArchiveFormatPathGet(owner,repo,archiveFormat,path,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoArchiveFormatPathGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoArchiveFormatPathGet");}// verify the required parameter 'archiveFormat' is set
 if(archiveFormat===undefined||archiveFormat===null){throw new Error("Missing the required parameter 'archiveFormat' when calling reposOwnerRepoArchiveFormatPathGet");}// verify the required parameter 'path' is set
-if(path===undefined||path===null){throw new Error("Missing the required parameter 'path' when calling reposOwnerRepoArchiveFormatPathGet");}var pathParams={'owner':owner,'repo':repo,'archive_format':archiveFormat,'path':path};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/{archive_format}/{path}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(path===undefined||path===null){throw new Error("Missing the required parameter 'path' when calling reposOwnerRepoArchiveFormatPathGet");}var pathParams={'owner':owner,'repo':repo,'archive_format':archiveFormat,'path':path};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/{archive_format}/{path}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoAssigneesAssigneeGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoAssigneesAssigneeGetCallback
      * @param {String} error Error message, if any.
@@ -815,12 +863,14 @@ if(path===undefined||path===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {String} assignee Login of the assignee.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoAssigneesAssigneeGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"reposOwnerRepoAssigneesAssigneeGet",value:function reposOwnerRepoAssigneesAssigneeGet(owner,repo,assignee,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoAssigneesAssigneeGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoAssigneesAssigneeGet");}// verify the required parameter 'assignee' is set
-if(assignee===undefined||assignee===null){throw new Error("Missing the required parameter 'assignee' when calling reposOwnerRepoAssigneesAssigneeGet");}var pathParams={'owner':owner,'repo':repo,'assignee':assignee};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/assignees/{assignee}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(assignee===undefined||assignee===null){throw new Error("Missing the required parameter 'assignee' when calling reposOwnerRepoAssigneesAssigneeGet");}var pathParams={'owner':owner,'repo':repo,'assignee':assignee};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/assignees/{assignee}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoAssigneesGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoAssigneesGetCallback
      * @param {String} error Error message, if any.
@@ -831,12 +881,14 @@ if(assignee===undefined||assignee===null){throw new Error("Missing the required 
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoAssigneesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */},{key:"reposOwnerRepoAssigneesGet",value:function reposOwnerRepoAssigneesGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoAssigneesGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoAssigneesGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/assignees','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoAssigneesGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/assignees','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoBranchesBranchGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoBranchesBranchGetCallback
      * @param {String} error Error message, if any.
@@ -848,13 +900,15 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {String} branch Name of the branch.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoBranchesBranchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Branch}
      */},{key:"reposOwnerRepoBranchesBranchGet",value:function reposOwnerRepoBranchesBranchGet(owner,repo,branch,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoBranchesBranchGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoBranchesBranchGet");}// verify the required parameter 'branch' is set
-if(branch===undefined||branch===null){throw new Error("Missing the required parameter 'branch' when calling reposOwnerRepoBranchesBranchGet");}var pathParams={'owner':owner,'repo':repo,'branch':branch};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Branch["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/branches/{branch}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(branch===undefined||branch===null){throw new Error("Missing the required parameter 'branch' when calling reposOwnerRepoBranchesBranchGet");}var pathParams={'owner':owner,'repo':repo,'branch':branch};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Branch["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/branches/{branch}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoBranchesGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoBranchesGetCallback
      * @param {String} error Error message, if any.
@@ -865,12 +919,14 @@ if(branch===undefined||branch===null){throw new Error("Missing the required para
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoBranchesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoBranchesGet",value:function reposOwnerRepoBranchesGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoBranchesGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoBranchesGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/branches','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoBranchesGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/branches','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCollaboratorsGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCollaboratorsGetCallback
      * @param {String} error Error message, if any.
@@ -881,12 +937,14 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCollaboratorsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */},{key:"reposOwnerRepoCollaboratorsGet",value:function reposOwnerRepoCollaboratorsGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCollaboratorsGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCollaboratorsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/collaborators','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCollaboratorsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/collaborators','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCollaboratorsUserDelete operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCollaboratorsUserDeleteCallback
      * @param {String} error Error message, if any.
@@ -903,7 +961,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      */},{key:"reposOwnerRepoCollaboratorsUserDelete",value:function reposOwnerRepoCollaboratorsUserDelete(owner,repo,user,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCollaboratorsUserDelete");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCollaboratorsUserDelete");}// verify the required parameter 'user' is set
-if(user===undefined||user===null){throw new Error("Missing the required parameter 'user' when calling reposOwnerRepoCollaboratorsUserDelete");}var pathParams={'owner':owner,'repo':repo,'user':user};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/collaborators/{user}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(user===undefined||user===null){throw new Error("Missing the required parameter 'user' when calling reposOwnerRepoCollaboratorsUserDelete");}var pathParams={'owner':owner,'repo':repo,'user':user};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/collaborators/{user}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCollaboratorsUserGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCollaboratorsUserGetCallback
      * @param {String} error Error message, if any.
@@ -915,12 +973,14 @@ if(user===undefined||user===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {String} user Login of the user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCollaboratorsUserGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"reposOwnerRepoCollaboratorsUserGet",value:function reposOwnerRepoCollaboratorsUserGet(owner,repo,user,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCollaboratorsUserGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCollaboratorsUserGet");}// verify the required parameter 'user' is set
-if(user===undefined||user===null){throw new Error("Missing the required parameter 'user' when calling reposOwnerRepoCollaboratorsUserGet");}var pathParams={'owner':owner,'repo':repo,'user':user};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/collaborators/{user}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(user===undefined||user===null){throw new Error("Missing the required parameter 'user' when calling reposOwnerRepoCollaboratorsUserGet");}var pathParams={'owner':owner,'repo':repo,'user':user};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/collaborators/{user}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCollaboratorsUserPut operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCollaboratorsUserPutCallback
      * @param {String} error Error message, if any.
@@ -937,7 +997,7 @@ if(user===undefined||user===null){throw new Error("Missing the required paramete
      */},{key:"reposOwnerRepoCollaboratorsUserPut",value:function reposOwnerRepoCollaboratorsUserPut(owner,repo,user,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCollaboratorsUserPut");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCollaboratorsUserPut");}// verify the required parameter 'user' is set
-if(user===undefined||user===null){throw new Error("Missing the required parameter 'user' when calling reposOwnerRepoCollaboratorsUserPut");}var pathParams={'owner':owner,'repo':repo,'user':user};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/collaborators/{user}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(user===undefined||user===null){throw new Error("Missing the required parameter 'user' when calling reposOwnerRepoCollaboratorsUserPut");}var pathParams={'owner':owner,'repo':repo,'user':user};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/collaborators/{user}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCommentsCommentIdDelete operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCommentsCommentIdDeleteCallback
      * @param {String} error Error message, if any.
@@ -954,7 +1014,7 @@ if(user===undefined||user===null){throw new Error("Missing the required paramete
      */},{key:"reposOwnerRepoCommentsCommentIdDelete",value:function reposOwnerRepoCommentsCommentIdDelete(owner,repo,commentId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCommentsCommentIdDelete");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommentsCommentIdDelete");}// verify the required parameter 'commentId' is set
-if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling reposOwnerRepoCommentsCommentIdDelete");}var pathParams={'owner':owner,'repo':repo,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/comments/{commentId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling reposOwnerRepoCommentsCommentIdDelete");}var pathParams={'owner':owner,'repo':repo,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/comments/{commentId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCommentsCommentIdGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCommentsCommentIdGetCallback
      * @param {String} error Error message, if any.
@@ -966,13 +1026,15 @@ if(commentId===undefined||commentId===null){throw new Error("Missing the require
      * @param {String} repo Name of repository.
      * @param {Number} commentId Id of comment.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommentsCommentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CommitComment}
      */},{key:"reposOwnerRepoCommentsCommentIdGet",value:function reposOwnerRepoCommentsCommentIdGet(owner,repo,commentId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCommentsCommentIdGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommentsCommentIdGet");}// verify the required parameter 'commentId' is set
-if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling reposOwnerRepoCommentsCommentIdGet");}var pathParams={'owner':owner,'repo':repo,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_CommitComment["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/comments/{commentId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling reposOwnerRepoCommentsCommentIdGet");}var pathParams={'owner':owner,'repo':repo,'commentId':commentId};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_CommitComment["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/comments/{commentId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCommentsCommentIdPatch operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCommentsCommentIdPatchCallback
      * @param {String} error Error message, if any.
@@ -992,7 +1054,7 @@ if(commentId===undefined||commentId===null){throw new Error("Missing the require
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCommentsCommentIdPatch");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommentsCommentIdPatch");}// verify the required parameter 'commentId' is set
 if(commentId===undefined||commentId===null){throw new Error("Missing the required parameter 'commentId' when calling reposOwnerRepoCommentsCommentIdPatch");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoCommentsCommentIdPatch");}var pathParams={'owner':owner,'repo':repo,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_CommitComment["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/comments/{commentId}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoCommentsCommentIdPatch");}var pathParams={'owner':owner,'repo':repo,'commentId':commentId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_CommitComment["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/comments/{commentId}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCommentsGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCommentsGetCallback
      * @param {String} error Error message, if any.
@@ -1003,12 +1065,14 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoCommentsGet",value:function reposOwnerRepoCommentsGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCommentsGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommentsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/comments','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommentsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/comments','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCommitsGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCommitsGetCallback
      * @param {String} error Error message, if any.
@@ -1024,12 +1088,14 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} opts.path Only commits containing this file path will be returned.
      * @param {String} opts.author GitHub login, name, or email by which to filter by commit author.
      * @param {String} opts.until ISO 8601 Date - Only commits before this date will be returned.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommitsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoCommitsGet",value:function reposOwnerRepoCommitsGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCommitsGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommitsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'since':opts['since'],'sha':opts['sha'],'path':opts['path'],'author':opts['author'],'until':opts['until']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/commits','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommitsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'since':opts['since'],'sha':opts['sha'],'path':opts['path'],'author':opts['author'],'until':opts['until'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/commits','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCommitsRefStatusGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCommitsRefStatusGetCallback
      * @param {String} error Error message, if any.
@@ -1041,13 +1107,15 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {String} ref 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommitsRefStatusGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoCommitsRefStatusGet",value:function reposOwnerRepoCommitsRefStatusGet(owner,repo,ref,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCommitsRefStatusGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommitsRefStatusGet");}// verify the required parameter 'ref' is set
-if(ref===undefined||ref===null){throw new Error("Missing the required parameter 'ref' when calling reposOwnerRepoCommitsRefStatusGet");}var pathParams={'owner':owner,'repo':repo,'ref':ref};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/commits/{ref}/status','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(ref===undefined||ref===null){throw new Error("Missing the required parameter 'ref' when calling reposOwnerRepoCommitsRefStatusGet");}var pathParams={'owner':owner,'repo':repo,'ref':ref};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/commits/{ref}/status','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCommitsShaCodeCommentsGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCommitsShaCodeCommentsGetCallback
      * @param {String} error Error message, if any.
@@ -1059,13 +1127,15 @@ if(ref===undefined||ref===null){throw new Error("Missing the required parameter 
      * @param {String} repo Name of repository.
      * @param {String} shaCode SHA-1 code of the commit.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommitsShaCodeCommentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoCommitsShaCodeCommentsGet",value:function reposOwnerRepoCommitsShaCodeCommentsGet(owner,repo,shaCode,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCommitsShaCodeCommentsGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommitsShaCodeCommentsGet");}// verify the required parameter 'shaCode' is set
-if(shaCode===undefined||shaCode===null){throw new Error("Missing the required parameter 'shaCode' when calling reposOwnerRepoCommitsShaCodeCommentsGet");}var pathParams={'owner':owner,'repo':repo,'shaCode':shaCode};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/commits/{shaCode}/comments','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(shaCode===undefined||shaCode===null){throw new Error("Missing the required parameter 'shaCode' when calling reposOwnerRepoCommitsShaCodeCommentsGet");}var pathParams={'owner':owner,'repo':repo,'shaCode':shaCode};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/commits/{shaCode}/comments','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCommitsShaCodeCommentsPost operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCommitsShaCodeCommentsPostCallback
      * @param {String} error Error message, if any.
@@ -1085,7 +1155,7 @@ if(shaCode===undefined||shaCode===null){throw new Error("Missing the required pa
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCommitsShaCodeCommentsPost");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommitsShaCodeCommentsPost");}// verify the required parameter 'shaCode' is set
 if(shaCode===undefined||shaCode===null){throw new Error("Missing the required parameter 'shaCode' when calling reposOwnerRepoCommitsShaCodeCommentsPost");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoCommitsShaCodeCommentsPost");}var pathParams={'owner':owner,'repo':repo,'shaCode':shaCode};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_CommitComment["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/commits/{shaCode}/comments','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoCommitsShaCodeCommentsPost");}var pathParams={'owner':owner,'repo':repo,'shaCode':shaCode};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_CommitComment["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/commits/{shaCode}/comments','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCommitsShaCodeGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCommitsShaCodeGetCallback
      * @param {String} error Error message, if any.
@@ -1097,13 +1167,15 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {String} shaCode SHA-1 code of the commit.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCommitsShaCodeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Commit}
      */},{key:"reposOwnerRepoCommitsShaCodeGet",value:function reposOwnerRepoCommitsShaCodeGet(owner,repo,shaCode,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCommitsShaCodeGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCommitsShaCodeGet");}// verify the required parameter 'shaCode' is set
-if(shaCode===undefined||shaCode===null){throw new Error("Missing the required parameter 'shaCode' when calling reposOwnerRepoCommitsShaCodeGet");}var pathParams={'owner':owner,'repo':repo,'shaCode':shaCode};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Commit["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/commits/{shaCode}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(shaCode===undefined||shaCode===null){throw new Error("Missing the required parameter 'shaCode' when calling reposOwnerRepoCommitsShaCodeGet");}var pathParams={'owner':owner,'repo':repo,'shaCode':shaCode};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Commit["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/commits/{shaCode}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoCompareBaseIdHeadIdGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoCompareBaseIdHeadIdGetCallback
      * @param {String} error Error message, if any.
@@ -1116,14 +1188,16 @@ if(shaCode===undefined||shaCode===null){throw new Error("Missing the required pa
      * @param {String} baseId 
      * @param {String} headId 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoCompareBaseIdHeadIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/CompareCommits}
      */},{key:"reposOwnerRepoCompareBaseIdHeadIdGet",value:function reposOwnerRepoCompareBaseIdHeadIdGet(owner,repo,baseId,headId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoCompareBaseIdHeadIdGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoCompareBaseIdHeadIdGet");}// verify the required parameter 'baseId' is set
 if(baseId===undefined||baseId===null){throw new Error("Missing the required parameter 'baseId' when calling reposOwnerRepoCompareBaseIdHeadIdGet");}// verify the required parameter 'headId' is set
-if(headId===undefined||headId===null){throw new Error("Missing the required parameter 'headId' when calling reposOwnerRepoCompareBaseIdHeadIdGet");}var pathParams={'owner':owner,'repo':repo,'baseId':baseId,'headId':headId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_CompareCommits["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/compare/{baseId}...{headId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(headId===undefined||headId===null){throw new Error("Missing the required parameter 'headId' when calling reposOwnerRepoCompareBaseIdHeadIdGet");}var pathParams={'owner':owner,'repo':repo,'baseId':baseId,'headId':headId};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_CompareCommits["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/compare/{baseId}...{headId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoContentsPathDelete operation.
      * @callback module:api/DefaultApi~reposOwnerRepoContentsPathDeleteCallback
      * @param {String} error Error message, if any.
@@ -1143,7 +1217,7 @@ if(headId===undefined||headId===null){throw new Error("Missing the required para
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoContentsPathDelete");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoContentsPathDelete");}// verify the required parameter 'path' is set
 if(path===undefined||path===null){throw new Error("Missing the required parameter 'path' when calling reposOwnerRepoContentsPathDelete");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoContentsPathDelete");}var pathParams={'owner':owner,'repo':repo,'path':path};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_DeleteFile["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/contents/{path}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoContentsPathDelete");}var pathParams={'owner':owner,'repo':repo,'path':path};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_DeleteFile["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/contents/{path}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoContentsPathGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoContentsPathGetCallback
      * @param {String} error Error message, if any.
@@ -1157,13 +1231,15 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {Object} opts Optional parameters
      * @param {String} opts.path2 The content path.
      * @param {String} opts.ref The String name of the Commit/Branch/Tag. Defaults to 'master'.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoContentsPathGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ContentsPath}
      */},{key:"reposOwnerRepoContentsPathGet",value:function reposOwnerRepoContentsPathGet(owner,repo,path,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoContentsPathGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoContentsPathGet");}// verify the required parameter 'path' is set
-if(path===undefined||path===null){throw new Error("Missing the required parameter 'path' when calling reposOwnerRepoContentsPathGet");}var pathParams={'owner':owner,'repo':repo,'path':path};var queryParams={'path':opts['path2'],'ref':opts['ref']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_ContentsPath["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/contents/{path}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(path===undefined||path===null){throw new Error("Missing the required parameter 'path' when calling reposOwnerRepoContentsPathGet");}var pathParams={'owner':owner,'repo':repo,'path':path};var queryParams={'path':opts['path2'],'ref':opts['ref'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_ContentsPath["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/contents/{path}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoContentsPathPut operation.
      * @callback module:api/DefaultApi~reposOwnerRepoContentsPathPutCallback
      * @param {String} error Error message, if any.
@@ -1183,7 +1259,7 @@ if(path===undefined||path===null){throw new Error("Missing the required paramete
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoContentsPathPut");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoContentsPathPut");}// verify the required parameter 'path' is set
 if(path===undefined||path===null){throw new Error("Missing the required parameter 'path' when calling reposOwnerRepoContentsPathPut");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoContentsPathPut");}var pathParams={'owner':owner,'repo':repo,'path':path};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_CreateFile["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/contents/{path}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoContentsPathPut");}var pathParams={'owner':owner,'repo':repo,'path':path};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_CreateFile["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/contents/{path}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoContributorsGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoContributorsGetCallback
      * @param {String} error Error message, if any.
@@ -1195,13 +1271,15 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {String} anon Set to 1 or true to include anonymous contributors in results.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoContributorsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */},{key:"reposOwnerRepoContributorsGet",value:function reposOwnerRepoContributorsGet(owner,repo,anon,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoContributorsGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoContributorsGet");}// verify the required parameter 'anon' is set
-if(anon===undefined||anon===null){throw new Error("Missing the required parameter 'anon' when calling reposOwnerRepoContributorsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'anon':anon};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/contributors','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(anon===undefined||anon===null){throw new Error("Missing the required parameter 'anon' when calling reposOwnerRepoContributorsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'anon':anon,'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/contributors','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoDelete operation.
      * @callback module:api/DefaultApi~reposOwnerRepoDeleteCallback
      * @param {String} error Error message, if any.
@@ -1216,7 +1294,7 @@ if(anon===undefined||anon===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~reposOwnerRepoDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"reposOwnerRepoDelete",value:function reposOwnerRepoDelete(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoDelete");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDelete");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDelete");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoDeploymentsGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoDeploymentsGetCallback
      * @param {String} error Error message, if any.
@@ -1227,12 +1305,14 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoDeploymentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoDeploymentsGet",value:function reposOwnerRepoDeploymentsGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoDeploymentsGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDeploymentsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/deployments','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDeploymentsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/deployments','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoDeploymentsIdStatusesGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoDeploymentsIdStatusesGetCallback
      * @param {String} error Error message, if any.
@@ -1244,13 +1324,15 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {Number} id The Deployment ID to list the statuses from.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoDeploymentsIdStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoDeploymentsIdStatusesGet",value:function reposOwnerRepoDeploymentsIdStatusesGet(owner,repo,id,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoDeploymentsIdStatusesGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDeploymentsIdStatusesGet");}// verify the required parameter 'id' is set
-if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling reposOwnerRepoDeploymentsIdStatusesGet");}var pathParams={'owner':owner,'repo':repo,'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/deployments/{id}/statuses','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling reposOwnerRepoDeploymentsIdStatusesGet");}var pathParams={'owner':owner,'repo':repo,'id':id};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/deployments/{id}/statuses','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoDeploymentsIdStatusesPost operation.
      * @callback module:api/DefaultApi~reposOwnerRepoDeploymentsIdStatusesPostCallback
      * @param {String} error Error message, if any.
@@ -1269,7 +1351,7 @@ if(id===undefined||id===null){throw new Error("Missing the required parameter 'i
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoDeploymentsIdStatusesPost");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDeploymentsIdStatusesPost");}// verify the required parameter 'id' is set
 if(id===undefined||id===null){throw new Error("Missing the required parameter 'id' when calling reposOwnerRepoDeploymentsIdStatusesPost");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoDeploymentsIdStatusesPost");}var pathParams={'owner':owner,'repo':repo,'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/deployments/{id}/statuses','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoDeploymentsIdStatusesPost");}var pathParams={'owner':owner,'repo':repo,'id':id};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/deployments/{id}/statuses','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoDeploymentsPost operation.
      * @callback module:api/DefaultApi~reposOwnerRepoDeploymentsPostCallback
      * @param {String} error Error message, if any.
@@ -1287,7 +1369,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */},{key:"reposOwnerRepoDeploymentsPost",value:function reposOwnerRepoDeploymentsPost(owner,repo,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoDeploymentsPost");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDeploymentsPost");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoDeploymentsPost");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_DeploymentResp["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/deployments','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoDeploymentsPost");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_DeploymentResp["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/deployments','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoDownloadsDownloadIdDelete operation.
      * @callback module:api/DefaultApi~reposOwnerRepoDownloadsDownloadIdDeleteCallback
      * @param {String} error Error message, if any.
@@ -1304,7 +1386,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */},{key:"reposOwnerRepoDownloadsDownloadIdDelete",value:function reposOwnerRepoDownloadsDownloadIdDelete(owner,repo,downloadId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoDownloadsDownloadIdDelete");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDownloadsDownloadIdDelete");}// verify the required parameter 'downloadId' is set
-if(downloadId===undefined||downloadId===null){throw new Error("Missing the required parameter 'downloadId' when calling reposOwnerRepoDownloadsDownloadIdDelete");}var pathParams={'owner':owner,'repo':repo,'downloadId':downloadId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/downloads/{downloadId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(downloadId===undefined||downloadId===null){throw new Error("Missing the required parameter 'downloadId' when calling reposOwnerRepoDownloadsDownloadIdDelete");}var pathParams={'owner':owner,'repo':repo,'downloadId':downloadId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/repos/{owner}/{repo}/downloads/{downloadId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoDownloadsDownloadIdGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoDownloadsDownloadIdGetCallback
      * @param {String} error Error message, if any.
@@ -1322,7 +1404,7 @@ if(downloadId===undefined||downloadId===null){throw new Error("Missing the requi
      */},{key:"reposOwnerRepoDownloadsDownloadIdGet",value:function reposOwnerRepoDownloadsDownloadIdGet(owner,repo,downloadId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoDownloadsDownloadIdGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDownloadsDownloadIdGet");}// verify the required parameter 'downloadId' is set
-if(downloadId===undefined||downloadId===null){throw new Error("Missing the required parameter 'downloadId' when calling reposOwnerRepoDownloadsDownloadIdGet");}var pathParams={'owner':owner,'repo':repo,'downloadId':downloadId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Download["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/downloads/{downloadId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(downloadId===undefined||downloadId===null){throw new Error("Missing the required parameter 'downloadId' when calling reposOwnerRepoDownloadsDownloadIdGet");}var pathParams={'owner':owner,'repo':repo,'downloadId':downloadId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Download["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/downloads/{downloadId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoDownloadsGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoDownloadsGetCallback
      * @param {String} error Error message, if any.
@@ -1338,7 +1420,7 @@ if(downloadId===undefined||downloadId===null){throw new Error("Missing the requi
      * data is of type: {@link Array.<module:model/Download>}
      */},{key:"reposOwnerRepoDownloadsGet",value:function reposOwnerRepoDownloadsGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoDownloadsGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDownloadsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Download["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/downloads','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoDownloadsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Download["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/downloads','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoEventsGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoEventsGetCallback
      * @param {String} error Error message, if any.
@@ -1349,12 +1431,14 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Event>}
      */},{key:"reposOwnerRepoEventsGet",value:function reposOwnerRepoEventsGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoEventsGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoEventsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Event["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoEventsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Event["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoForksGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoForksGetCallback
      * @param {String} error Error message, if any.
@@ -1366,12 +1450,14 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.sort  (default to 'newes')
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoForksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */},{key:"reposOwnerRepoForksGet",value:function reposOwnerRepoForksGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoForksGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoForksGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'sort':opts['sort']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/forks','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoForksGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'sort':opts['sort'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/forks','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoForksPost operation.
      * @callback module:api/DefaultApi~reposOwnerRepoForksPostCallback
      * @param {String} error Error message, if any.
@@ -1389,7 +1475,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      */},{key:"reposOwnerRepoForksPost",value:function reposOwnerRepoForksPost(owner,repo,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoForksPost");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoForksPost");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoForksPost");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Repo["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/forks','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoForksPost");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Repo["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/forks','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoGetCallback
      * @param {String} error Error message, if any.
@@ -1400,12 +1486,14 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Repo}
      */},{key:"reposOwnerRepoGet",value:function reposOwnerRepoGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Repo["default"];return this.apiClient.callApi('/repos/{owner}/{repo}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Repo["default"];return this.apiClient.callApi('/repos/{owner}/{repo}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoGitBlobsPost operation.
      * @callback module:api/DefaultApi~reposOwnerRepoGitBlobsPostCallback
      * @param {String} error Error message, if any.
@@ -1417,13 +1505,15 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {Blob} body 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGitBlobsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Blobs}
      */},{key:"reposOwnerRepoGitBlobsPost",value:function reposOwnerRepoGitBlobsPost(owner,repo,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoGitBlobsPost");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoGitBlobsPost");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoGitBlobsPost");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Blobs["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/git/blobs','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoGitBlobsPost");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Blobs["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/git/blobs','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoGitBlobsShaCodeGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoGitBlobsShaCodeGetCallback
      * @param {String} error Error message, if any.
@@ -1488,12 +1578,14 @@ if(shaCode===undefined||shaCode===null){throw new Error("Missing the required pa
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGitRefsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoGitRefsGet",value:function reposOwnerRepoGitRefsGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoGitRefsGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoGitRefsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/git/refs','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoGitRefsGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/git/refs','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoGitRefsPost operation.
      * @callback module:api/DefaultApi~reposOwnerRepoGitRefsPostCallback
      * @param {String} error Error message, if any.
@@ -1540,13 +1632,15 @@ if(ref===undefined||ref===null){throw new Error("Missing the required parameter 
      * @param {String} repo Name of repository.
      * @param {String} ref 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGitRefsRefGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/HeadBranch}
      */},{key:"reposOwnerRepoGitRefsRefGet",value:function reposOwnerRepoGitRefsRefGet(owner,repo,ref,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoGitRefsRefGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoGitRefsRefGet");}// verify the required parameter 'ref' is set
-if(ref===undefined||ref===null){throw new Error("Missing the required parameter 'ref' when calling reposOwnerRepoGitRefsRefGet");}var pathParams={'owner':owner,'repo':repo,'ref':ref};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_HeadBranch["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/git/refs/{ref}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(ref===undefined||ref===null){throw new Error("Missing the required parameter 'ref' when calling reposOwnerRepoGitRefsRefGet");}var pathParams={'owner':owner,'repo':repo,'ref':ref};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_HeadBranch["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/git/refs/{ref}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoGitRefsRefPatch operation.
      * @callback module:api/DefaultApi~reposOwnerRepoGitRefsRefPatchCallback
      * @param {String} error Error message, if any.
@@ -1596,13 +1690,15 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} repo Name of repository.
      * @param {String} shaCode 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoGitTagsShaCodeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Tag}
      */},{key:"reposOwnerRepoGitTagsShaCodeGet",value:function reposOwnerRepoGitTagsShaCodeGet(owner,repo,shaCode,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoGitTagsShaCodeGet");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoGitTagsShaCodeGet");}// verify the required parameter 'shaCode' is set
-if(shaCode===undefined||shaCode===null){throw new Error("Missing the required parameter 'shaCode' when calling reposOwnerRepoGitTagsShaCodeGet");}var pathParams={'owner':owner,'repo':repo,'shaCode':shaCode};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Tag["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/git/tags/{shaCode}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(shaCode===undefined||shaCode===null){throw new Error("Missing the required parameter 'shaCode' when calling reposOwnerRepoGitTagsShaCodeGet");}var pathParams={'owner':owner,'repo':repo,'shaCode':shaCode};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Tag["default"];return this.apiClient.callApi('/repos/{owner}/{repo}/git/tags/{shaCode}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoGitTreesPost operation.
      * @callback module:api/DefaultApi~reposOwnerRepoGitTreesPostCallback
      * @param {String} error Error message, if any.
@@ -1650,12 +1746,14 @@ if(shaCode===undefined||shaCode===null){throw new Error("Missing the required pa
      * @param {String} owner Name of repository owner.
      * @param {String} repo Name of repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~reposOwnerRepoHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoHooksGet",value:function reposOwnerRepoHooksGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoHooksGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoHooksGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/hooks','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoHooksGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/hooks','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoHooksHookIdDelete operation.
      * @callback module:api/DefaultApi~reposOwnerRepoHooksHookIdDeleteCallback
      * @param {String} error Error message, if any.
@@ -1869,8 +1967,10 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {module:model/String} sort 
      * @param {module:model/String} direction 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~reposOwnerRepoIssuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"reposOwnerRepoIssuesGet",value:function reposOwnerRepoIssuesGet(owner,repo,filter,state,labels,sort,direction,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
@@ -1880,7 +1980,7 @@ if(filter===undefined||filter===null){throw new Error("Missing the required para
 if(state===undefined||state===null){throw new Error("Missing the required parameter 'state' when calling reposOwnerRepoIssuesGet");}// verify the required parameter 'labels' is set
 if(labels===undefined||labels===null){throw new Error("Missing the required parameter 'labels' when calling reposOwnerRepoIssuesGet");}// verify the required parameter 'sort' is set
 if(sort===undefined||sort===null){throw new Error("Missing the required parameter 'sort' when calling reposOwnerRepoIssuesGet");}// verify the required parameter 'direction' is set
-if(direction===undefined||direction===null){throw new Error("Missing the required parameter 'direction' when calling reposOwnerRepoIssuesGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'filter':filter,'state':state,'labels':labels,'sort':sort,'direction':direction,'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(direction===undefined||direction===null){throw new Error("Missing the required parameter 'direction' when calling reposOwnerRepoIssuesGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={'filter':filter,'state':state,'labels':labels,'sort':sort,'direction':direction,'per_page':opts['perPage'],'page':opts['page'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/repos/{owner}/{repo}/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoIssuesNumberCommentsGet operation.
      * @callback module:api/DefaultApi~reposOwnerRepoIssuesNumberCommentsGetCallback
      * @param {String} error Error message, if any.
@@ -2442,7 +2542,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */},{key:"reposOwnerRepoPatch",value:function reposOwnerRepoPatch(owner,repo,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoPatch");}// verify the required parameter 'repo' is set
 if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoPatch");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoPatch");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Repo["default"];return this.apiClient.callApi('/repos/{owner}/{repo}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling reposOwnerRepoPatch");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Repo["default"];return this.apiClient.callApi('/repos/{owner}/{repo}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the reposOwnerRepoPullsCommentsCommentIdDelete operation.
      * @callback module:api/DefaultApi~reposOwnerRepoPullsCommentsCommentIdDeleteCallback
      * @param {String} error Error message, if any.
@@ -3128,7 +3228,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * data is of type: {@link Array.<module:model/User>}
      */},{key:"reposOwnerRepoWatchersGet",value:function reposOwnerRepoWatchersGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling reposOwnerRepoWatchersGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoWatchersGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/watchers','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling reposOwnerRepoWatchersGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/repos/{owner}/{repo}/watchers','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the repositoriesGet operation.
      * @callback module:api/DefaultApi~repositoriesGetCallback
      * @param {String} error Error message, if any.
@@ -3137,11 +3237,13 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      */ /**
      * List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~repositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
-     */},{key:"repositoriesGet",value:function repositoriesGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/repositories','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"repositoriesGet",value:function repositoriesGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/repositories','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the searchCodeGet operation.
      * @callback module:api/DefaultApi~searchCodeGetCallback
      * @param {String} error Error message, if any.
@@ -3153,11 +3255,13 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.order The sort field. if sort param is provided. Can be either asc or desc. (default to 'desc')
      * @param {module:model/String} opts.sort Can only be 'indexed', which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~searchCodeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SearchCode}
      */},{key:"searchCodeGet",value:function searchCodeGet(q,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'q' is set
-if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' when calling searchCodeGet");}var pathParams={};var queryParams={'order':opts['order'],'q':q,'sort':opts['sort']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_SearchCode["default"];return this.apiClient.callApi('/search/code','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' when calling searchCodeGet");}var pathParams={};var queryParams={'order':opts['order'],'q':q,'sort':opts['sort'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_SearchCode["default"];return this.apiClient.callApi('/search/code','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the searchIssuesGet operation.
      * @callback module:api/DefaultApi~searchIssuesGetCallback
      * @param {String} error Error message, if any.
@@ -3169,11 +3273,13 @@ if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.order The sort field. if sort param is provided. Can be either asc or desc. (default to 'desc')
      * @param {module:model/String} opts.sort The sort field. Can be comments, created, or updated. Default: results are sorted by best match.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~searchIssuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SearchIssues}
      */},{key:"searchIssuesGet",value:function searchIssuesGet(q,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'q' is set
-if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' when calling searchIssuesGet");}var pathParams={};var queryParams={'order':opts['order'],'q':q,'sort':opts['sort']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_SearchIssues["default"];return this.apiClient.callApi('/search/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' when calling searchIssuesGet");}var pathParams={};var queryParams={'order':opts['order'],'q':q,'sort':opts['sort'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_SearchIssues["default"];return this.apiClient.callApi('/search/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the searchRepositoriesGet operation.
      * @callback module:api/DefaultApi~searchRepositoriesGetCallback
      * @param {String} error Error message, if any.
@@ -3185,11 +3291,13 @@ if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.order The sort field. if sort param is provided. Can be either asc or desc. (default to 'desc')
      * @param {module:model/String} opts.sort If not provided, results are sorted by best match.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~searchRepositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SearchRepositories}
      */},{key:"searchRepositoriesGet",value:function searchRepositoriesGet(q,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'q' is set
-if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' when calling searchRepositoriesGet");}var pathParams={};var queryParams={'order':opts['order'],'q':q,'sort':opts['sort']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_SearchRepositories["default"];return this.apiClient.callApi('/search/repositories','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' when calling searchRepositoriesGet");}var pathParams={};var queryParams={'order':opts['order'],'q':q,'sort':opts['sort'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_SearchRepositories["default"];return this.apiClient.callApi('/search/repositories','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the searchUsersGet operation.
      * @callback module:api/DefaultApi~searchUsersGetCallback
      * @param {String} error Error message, if any.
@@ -3201,11 +3309,13 @@ if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.order The sort field. if sort param is provided. Can be either asc or desc. (default to 'desc')
      * @param {module:model/String} opts.sort If not provided, results are sorted by best match.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~searchUsersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SearchUsers}
      */},{key:"searchUsersGet",value:function searchUsersGet(q,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'q' is set
-if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' when calling searchUsersGet");}var pathParams={};var queryParams={'order':opts['order'],'q':q,'sort':opts['sort']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_SearchUsers["default"];return this.apiClient.callApi('/search/users','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' when calling searchUsersGet");}var pathParams={};var queryParams={'order':opts['order'],'q':q,'sort':opts['sort'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_SearchUsers["default"];return this.apiClient.callApi('/search/users','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdDelete operation.
      * @callback module:api/DefaultApi~teamsTeamIdDeleteCallback
      * @param {String} error Error message, if any.
@@ -3215,10 +3325,12 @@ if(q===undefined||q===null){throw new Error("Missing the required parameter 'q' 
      * Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with. 
      * @param {Number} teamId Id of team.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"teamsTeamIdDelete",value:function teamsTeamIdDelete(teamId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
-if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdDelete");}var pathParams={'teamId':teamId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdDelete");}var pathParams={'teamId':teamId};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdGet operation.
      * @callback module:api/DefaultApi~teamsTeamIdGetCallback
      * @param {String} error Error message, if any.
@@ -3232,7 +3344,7 @@ if(teamId===undefined||teamId===null){throw new Error("Missing the required para
      * @param {module:api/DefaultApi~teamsTeamIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Team}
      */},{key:"teamsTeamIdGet",value:function teamsTeamIdGet(teamId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
-if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdGet");}var pathParams={'teamId':teamId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_Team["default"];return this.apiClient.callApi('/teams/{teamId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdGet");}var pathParams={'teamId':teamId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_Team["default"];return this.apiClient.callApi('/teams/{teamId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdMembersGet operation.
      * @callback module:api/DefaultApi~teamsTeamIdMembersGetCallback
      * @param {String} error Error message, if any.
@@ -3242,11 +3354,13 @@ if(teamId===undefined||teamId===null){throw new Error("Missing the required para
      * List team members. In order to list members in a team, the authenticated user must be a member of the team. 
      * @param {Number} teamId Id of team.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */},{key:"teamsTeamIdMembersGet",value:function teamsTeamIdMembersGet(teamId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
-if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdMembersGet");}var pathParams={'teamId':teamId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/teams/{teamId}/members','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdMembersGet");}var pathParams={'teamId':teamId};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/teams/{teamId}/members','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdMembersUsernameDelete operation.
      * @callback module:api/DefaultApi~teamsTeamIdMembersUsernameDeleteCallback
      * @param {String} error Error message, if any.
@@ -3257,11 +3371,13 @@ if(teamId===undefined||teamId===null){throw new Error("Missing the required para
      * @param {Number} teamId Id of team.
      * @param {String} username Name of a member.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdMembersUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"teamsTeamIdMembersUsernameDelete",value:function teamsTeamIdMembersUsernameDelete(teamId,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdMembersUsernameDelete");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembersUsernameDelete");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/members/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembersUsernameDelete");}var pathParams={'teamId':teamId,'username':username};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/members/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdMembersUsernameGet operation.
      * @callback module:api/DefaultApi~teamsTeamIdMembersUsernameGetCallback
      * @param {String} error Error message, if any.
@@ -3276,7 +3392,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {module:api/DefaultApi~teamsTeamIdMembersUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"teamsTeamIdMembersUsernameGet",value:function teamsTeamIdMembersUsernameGet(teamId,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdMembersUsernameGet");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembersUsernameGet");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/members/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembersUsernameGet");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/members/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdMembersUsernamePut operation.
      * @callback module:api/DefaultApi~teamsTeamIdMembersUsernamePutCallback
      * @param {String} error Error message, if any.
@@ -3291,7 +3407,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {module:api/DefaultApi~teamsTeamIdMembersUsernamePutCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"teamsTeamIdMembersUsernamePut",value:function teamsTeamIdMembersUsernamePut(teamId,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdMembersUsernamePut");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembersUsernamePut");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/members/{username}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembersUsernamePut");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/members/{username}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdMembershipsUsernameDelete operation.
      * @callback module:api/DefaultApi~teamsTeamIdMembershipsUsernameDeleteCallback
      * @param {String} error Error message, if any.
@@ -3302,11 +3418,13 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {Number} teamId Id of team.
      * @param {String} username Name of a member.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdMembershipsUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"teamsTeamIdMembershipsUsernameDelete",value:function teamsTeamIdMembershipsUsernameDelete(teamId,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdMembershipsUsernameDelete");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembershipsUsernameDelete");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/memberships/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembershipsUsernameDelete");}var pathParams={'teamId':teamId,'username':username};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/memberships/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdMembershipsUsernameGet operation.
      * @callback module:api/DefaultApi~teamsTeamIdMembershipsUsernameGetCallback
      * @param {String} error Error message, if any.
@@ -3322,7 +3440,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * data is of type: {@link module:model/TeamMembership}
      */},{key:"teamsTeamIdMembershipsUsernameGet",value:function teamsTeamIdMembershipsUsernameGet(teamId,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdMembershipsUsernameGet");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembershipsUsernameGet");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_TeamMembership["default"];return this.apiClient.callApi('/teams/{teamId}/memberships/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembershipsUsernameGet");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_TeamMembership["default"];return this.apiClient.callApi('/teams/{teamId}/memberships/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdMembershipsUsernamePut operation.
      * @callback module:api/DefaultApi~teamsTeamIdMembershipsUsernamePutCallback
      * @param {String} error Error message, if any.
@@ -3338,7 +3456,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * data is of type: {@link module:model/TeamMembership}
      */},{key:"teamsTeamIdMembershipsUsernamePut",value:function teamsTeamIdMembershipsUsernamePut(teamId,username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdMembershipsUsernamePut");}// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembershipsUsernamePut");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_TeamMembership["default"];return this.apiClient.callApi('/teams/{teamId}/memberships/{username}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling teamsTeamIdMembershipsUsernamePut");}var pathParams={'teamId':teamId,'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_TeamMembership["default"];return this.apiClient.callApi('/teams/{teamId}/memberships/{username}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdPatch operation.
      * @callback module:api/DefaultApi~teamsTeamIdPatchCallback
      * @param {String} error Error message, if any.
@@ -3354,7 +3472,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * data is of type: {@link module:model/Team}
      */},{key:"teamsTeamIdPatch",value:function teamsTeamIdPatch(teamId,body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdPatch");}// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling teamsTeamIdPatch");}var pathParams={'teamId':teamId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Team["default"];return this.apiClient.callApi('/teams/{teamId}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling teamsTeamIdPatch");}var pathParams={'teamId':teamId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_Team["default"];return this.apiClient.callApi('/teams/{teamId}','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdReposGet operation.
      * @callback module:api/DefaultApi~teamsTeamIdReposGetCallback
      * @param {String} error Error message, if any.
@@ -3364,11 +3482,13 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * List team repos
      * @param {Number} teamId Id of team.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdReposGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */},{key:"teamsTeamIdReposGet",value:function teamsTeamIdReposGet(teamId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
-if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdReposGet");}var pathParams={'teamId':teamId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/teams/{teamId}/repos','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdReposGet");}var pathParams={'teamId':teamId};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/teams/{teamId}/repos','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdReposOwnerRepoDelete operation.
      * @callback module:api/DefaultApi~teamsTeamIdReposOwnerRepoDeleteCallback
      * @param {String} error Error message, if any.
@@ -3380,12 +3500,14 @@ if(teamId===undefined||teamId===null){throw new Error("Missing the required para
      * @param {String} owner Name of a repository owner.
      * @param {String} repo Name of a repository.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~teamsTeamIdReposOwnerRepoDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"teamsTeamIdReposOwnerRepoDelete",value:function teamsTeamIdReposOwnerRepoDelete(teamId,owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdReposOwnerRepoDelete");}// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling teamsTeamIdReposOwnerRepoDelete");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling teamsTeamIdReposOwnerRepoDelete");}var pathParams={'teamId':teamId,'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/repos/{owner}/{repo}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling teamsTeamIdReposOwnerRepoDelete");}var pathParams={'teamId':teamId,'owner':owner,'repo':repo};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/repos/{owner}/{repo}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdReposOwnerRepoGet operation.
      * @callback module:api/DefaultApi~teamsTeamIdReposOwnerRepoGetCallback
      * @param {String} error Error message, if any.
@@ -3402,7 +3524,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      */},{key:"teamsTeamIdReposOwnerRepoGet",value:function teamsTeamIdReposOwnerRepoGet(teamId,owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdReposOwnerRepoGet");}// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling teamsTeamIdReposOwnerRepoGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling teamsTeamIdReposOwnerRepoGet");}var pathParams={'teamId':teamId,'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/repos/{owner}/{repo}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling teamsTeamIdReposOwnerRepoGet");}var pathParams={'teamId':teamId,'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/repos/{owner}/{repo}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the teamsTeamIdReposOwnerRepoPut operation.
      * @callback module:api/DefaultApi~teamsTeamIdReposOwnerRepoPutCallback
      * @param {String} error Error message, if any.
@@ -3419,7 +3541,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      */},{key:"teamsTeamIdReposOwnerRepoPut",value:function teamsTeamIdReposOwnerRepoPut(teamId,owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'teamId' is set
 if(teamId===undefined||teamId===null){throw new Error("Missing the required parameter 'teamId' when calling teamsTeamIdReposOwnerRepoPut");}// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling teamsTeamIdReposOwnerRepoPut");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling teamsTeamIdReposOwnerRepoPut");}var pathParams={'teamId':teamId,'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/repos/{owner}/{repo}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling teamsTeamIdReposOwnerRepoPut");}var pathParams={'teamId':teamId,'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/teams/{teamId}/repos/{owner}/{repo}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userEmailsDelete operation.
      * @callback module:api/DefaultApi~userEmailsDeleteCallback
      * @param {String} error Error message, if any.
@@ -3429,10 +3551,10 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * Delete email address(es). You can include a single email address or an array of addresses. 
      * @param {Array.<String>} body 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userEmailsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userEmailsDelete",value:function userEmailsDelete(body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userEmailsDelete");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/emails','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userEmailsDelete");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/emails','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userEmailsGet operation.
      * @callback module:api/DefaultApi~userEmailsGetCallback
      * @param {String} error Error message, if any.
@@ -3444,7 +3566,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~userEmailsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<String>}
-     */},{key:"userEmailsGet",value:function userEmailsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/vnd.github.v3'];var returnType=['String'];return this.apiClient.callApi('/user/emails','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userEmailsGet",value:function userEmailsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/vnd.github.v3'];var returnType=['String'];return this.apiClient.callApi('/user/emails','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userEmailsPost operation.
      * @callback module:api/DefaultApi~userEmailsPostCallback
      * @param {String} error Error message, if any.
@@ -3457,7 +3579,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~userEmailsPostCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userEmailsPost",value:function userEmailsPost(body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userEmailsPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/emails','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userEmailsPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/emails','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userFollowersGet operation.
      * @callback module:api/DefaultApi~userFollowersGetCallback
      * @param {String} error Error message, if any.
@@ -3466,10 +3588,12 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */ /**
      * List the authenticated user's followers
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~userFollowersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
-     */},{key:"userFollowersGet",value:function userFollowersGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/user/followers','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userFollowersGet",value:function userFollowersGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/user/followers','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userFollowingGet operation.
      * @callback module:api/DefaultApi~userFollowingGetCallback
      * @param {String} error Error message, if any.
@@ -3478,10 +3602,12 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */ /**
      * List who the authenticated user is following.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~userFollowingGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
-     */},{key:"userFollowingGet",value:function userFollowingGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/user/following','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userFollowingGet",value:function userFollowingGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/user/following','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userFollowingUsernameDelete operation.
      * @callback module:api/DefaultApi~userFollowingUsernameDeleteCallback
      * @param {String} error Error message, if any.
@@ -3491,10 +3617,10 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope. 
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userFollowingUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userFollowingUsernameDelete",value:function userFollowingUsernameDelete(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling userFollowingUsernameDelete");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/following/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling userFollowingUsernameDelete");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/following/{username}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userFollowingUsernameGet operation.
      * @callback module:api/DefaultApi~userFollowingUsernameGetCallback
      * @param {String} error Error message, if any.
@@ -3507,7 +3633,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~userFollowingUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userFollowingUsernameGet",value:function userFollowingUsernameGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling userFollowingUsernameGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/following/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling userFollowingUsernameGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/following/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userFollowingUsernamePut operation.
      * @callback module:api/DefaultApi~userFollowingUsernamePutCallback
      * @param {String} error Error message, if any.
@@ -3520,7 +3646,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~userFollowingUsernamePutCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userFollowingUsernamePut",value:function userFollowingUsernamePut(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling userFollowingUsernamePut");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/following/{username}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling userFollowingUsernamePut");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/following/{username}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userGet operation.
      * @callback module:api/DefaultApi~userGetCallback
      * @param {String} error Error message, if any.
@@ -3529,10 +3655,12 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      */ /**
      * Get the authenticated user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~userGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
-     */},{key:"userGet",value:function userGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_User["default"];return this.apiClient.callApi('/user','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userGet",value:function userGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_User["default"];return this.apiClient.callApi('/user','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userIssuesGet operation.
      * @callback module:api/DefaultApi~userIssuesGetCallback
      * @param {String} error Error message, if any.
@@ -3546,8 +3674,10 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {module:model/String} sort 
      * @param {module:model/String} direction 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~userIssuesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"userIssuesGet",value:function userIssuesGet(filter,state,labels,sort,direction,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'filter' is set
@@ -3555,7 +3685,7 @@ if(filter===undefined||filter===null){throw new Error("Missing the required para
 if(state===undefined||state===null){throw new Error("Missing the required parameter 'state' when calling userIssuesGet");}// verify the required parameter 'labels' is set
 if(labels===undefined||labels===null){throw new Error("Missing the required parameter 'labels' when calling userIssuesGet");}// verify the required parameter 'sort' is set
 if(sort===undefined||sort===null){throw new Error("Missing the required parameter 'sort' when calling userIssuesGet");}// verify the required parameter 'direction' is set
-if(direction===undefined||direction===null){throw new Error("Missing the required parameter 'direction' when calling userIssuesGet");}var pathParams={};var queryParams={'filter':filter,'state':state,'labels':labels,'sort':sort,'direction':direction,'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(direction===undefined||direction===null){throw new Error("Missing the required parameter 'direction' when calling userIssuesGet");}var pathParams={};var queryParams={'filter':filter,'state':state,'labels':labels,'sort':sort,'direction':direction,'per_page':opts['perPage'],'page':opts['page'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/issues','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userKeysGet operation.
      * @callback module:api/DefaultApi~userKeysGetCallback
      * @param {String} error Error message, if any.
@@ -3564,10 +3694,10 @@ if(direction===undefined||direction===null){throw new Error("Missing the require
      */ /**
      * List your public keys. Lists the current user's keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the 'user', 'write:public_key' scopes. 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userKeysGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
-     */},{key:"userKeysGet",value:function userKeysGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/keys','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userKeysGet",value:function userKeysGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/keys','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userKeysKeyIdDelete operation.
      * @callback module:api/DefaultApi~userKeysKeyIdDeleteCallback
      * @param {String} error Error message, if any.
@@ -3577,10 +3707,10 @@ if(direction===undefined||direction===null){throw new Error("Missing the require
      * Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.
      * @param {Number} keyId ID of key.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userKeysKeyIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userKeysKeyIdDelete",value:function userKeysKeyIdDelete(keyId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'keyId' is set
-if(keyId===undefined||keyId===null){throw new Error("Missing the required parameter 'keyId' when calling userKeysKeyIdDelete");}var pathParams={'keyId':keyId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/keys/{keyId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(keyId===undefined||keyId===null){throw new Error("Missing the required parameter 'keyId' when calling userKeysKeyIdDelete");}var pathParams={'keyId':keyId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/keys/{keyId}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userKeysKeyIdGet operation.
      * @callback module:api/DefaultApi~userKeysKeyIdGetCallback
      * @param {String} error Error message, if any.
@@ -3594,7 +3724,7 @@ if(keyId===undefined||keyId===null){throw new Error("Missing the required parame
      * @param {module:api/DefaultApi~userKeysKeyIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserKeysKeyId}
      */},{key:"userKeysKeyIdGet",value:function userKeysKeyIdGet(keyId,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'keyId' is set
-if(keyId===undefined||keyId===null){throw new Error("Missing the required parameter 'keyId' when calling userKeysKeyIdGet");}var pathParams={'keyId':keyId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_UserKeysKeyId["default"];return this.apiClient.callApi('/user/keys/{keyId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(keyId===undefined||keyId===null){throw new Error("Missing the required parameter 'keyId' when calling userKeysKeyIdGet");}var pathParams={'keyId':keyId};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_UserKeysKeyId["default"];return this.apiClient.callApi('/user/keys/{keyId}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userKeysPost operation.
      * @callback module:api/DefaultApi~userKeysPostCallback
      * @param {String} error Error message, if any.
@@ -3608,7 +3738,7 @@ if(keyId===undefined||keyId===null){throw new Error("Missing the required parame
      * @param {module:api/DefaultApi~userKeysPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/UserKeysKeyId}
      */},{key:"userKeysPost",value:function userKeysPost(body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userKeysPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_UserKeysKeyId["default"];return this.apiClient.callApi('/user/keys','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userKeysPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_UserKeysKeyId["default"];return this.apiClient.callApi('/user/keys','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userOrgsGet operation.
      * @callback module:api/DefaultApi~userOrgsGetCallback
      * @param {String} error Error message, if any.
@@ -3617,10 +3747,10 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      */ /**
      * List public and private organizations for the authenticated user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userOrgsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
-     */},{key:"userOrgsGet",value:function userOrgsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/orgs','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userOrgsGet",value:function userOrgsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/orgs','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userPatch operation.
      * @callback module:api/DefaultApi~userPatchCallback
      * @param {String} error Error message, if any.
@@ -3634,7 +3764,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~userPatchCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */},{key:"userPatch",value:function userPatch(body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userPatch");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_User["default"];return this.apiClient.callApi('/user','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userPatch");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=_User["default"];return this.apiClient.callApi('/user','PATCH',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userReposGet operation.
      * @callback module:api/DefaultApi~userReposGetCallback
      * @param {String} error Error message, if any.
@@ -3644,10 +3774,10 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately. 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.type  (default to 'all')
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userReposGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
-     */},{key:"userReposGet",value:function userReposGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'type':opts['type']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/user/repos','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userReposGet",value:function userReposGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'type':opts['type']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/user/repos','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userReposPost operation.
      * @callback module:api/DefaultApi~userReposPostCallback
      * @param {String} error Error message, if any.
@@ -3661,7 +3791,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~userReposPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */},{key:"userReposPost",value:function userReposPost(body,opts,callback){opts=opts||{};var postBody=body;// verify the required parameter 'body' is set
-if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userReposPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/user/repos','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(body===undefined||body===null){throw new Error("Missing the required parameter 'body' when calling userReposPost");}var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=['application/json'];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/user/repos','POST',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userStarredGet operation.
      * @callback module:api/DefaultApi~userStarredGetCallback
      * @param {String} error Error message, if any.
@@ -3675,7 +3805,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~userStarredGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
-     */},{key:"userStarredGet",value:function userStarredGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'direction':opts['direction'],'sort':opts['sort']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/starred','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userStarredGet",value:function userStarredGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'direction':opts['direction'],'sort':opts['sort']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/starred','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userStarredOwnerRepoDelete operation.
      * @callback module:api/DefaultApi~userStarredOwnerRepoDeleteCallback
      * @param {String} error Error message, if any.
@@ -3690,7 +3820,7 @@ if(body===undefined||body===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~userStarredOwnerRepoDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userStarredOwnerRepoDelete",value:function userStarredOwnerRepoDelete(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling userStarredOwnerRepoDelete");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userStarredOwnerRepoDelete");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/starred/{owner}/{repo}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userStarredOwnerRepoDelete");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/starred/{owner}/{repo}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userStarredOwnerRepoGet operation.
      * @callback module:api/DefaultApi~userStarredOwnerRepoGetCallback
      * @param {String} error Error message, if any.
@@ -3705,7 +3835,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~userStarredOwnerRepoGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userStarredOwnerRepoGet",value:function userStarredOwnerRepoGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling userStarredOwnerRepoGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userStarredOwnerRepoGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/starred/{owner}/{repo}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userStarredOwnerRepoGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/starred/{owner}/{repo}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userStarredOwnerRepoPut operation.
      * @callback module:api/DefaultApi~userStarredOwnerRepoPutCallback
      * @param {String} error Error message, if any.
@@ -3720,7 +3850,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~userStarredOwnerRepoPutCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userStarredOwnerRepoPut",value:function userStarredOwnerRepoPut(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling userStarredOwnerRepoPut");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userStarredOwnerRepoPut");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/starred/{owner}/{repo}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userStarredOwnerRepoPut");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/starred/{owner}/{repo}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userSubscriptionsGet operation.
      * @callback module:api/DefaultApi~userSubscriptionsGetCallback
      * @param {String} error Error message, if any.
@@ -3732,7 +3862,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {String} opts.accept Is used to set specified media type.
      * @param {module:api/DefaultApi~userSubscriptionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
-     */},{key:"userSubscriptionsGet",value:function userSubscriptionsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/user/subscriptions','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userSubscriptionsGet",value:function userSubscriptionsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/user/subscriptions','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userSubscriptionsOwnerRepoDelete operation.
      * @callback module:api/DefaultApi~userSubscriptionsOwnerRepoDeleteCallback
      * @param {String} error Error message, if any.
@@ -3747,7 +3877,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~userSubscriptionsOwnerRepoDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userSubscriptionsOwnerRepoDelete",value:function userSubscriptionsOwnerRepoDelete(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling userSubscriptionsOwnerRepoDelete");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userSubscriptionsOwnerRepoDelete");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/subscriptions/{owner}/{repo}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userSubscriptionsOwnerRepoDelete");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/subscriptions/{owner}/{repo}','DELETE',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userSubscriptionsOwnerRepoGet operation.
      * @callback module:api/DefaultApi~userSubscriptionsOwnerRepoGetCallback
      * @param {String} error Error message, if any.
@@ -3762,7 +3892,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~userSubscriptionsOwnerRepoGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userSubscriptionsOwnerRepoGet",value:function userSubscriptionsOwnerRepoGet(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling userSubscriptionsOwnerRepoGet");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userSubscriptionsOwnerRepoGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/subscriptions/{owner}/{repo}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userSubscriptionsOwnerRepoGet");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/subscriptions/{owner}/{repo}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userSubscriptionsOwnerRepoPut operation.
      * @callback module:api/DefaultApi~userSubscriptionsOwnerRepoPutCallback
      * @param {String} error Error message, if any.
@@ -3777,7 +3907,7 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * @param {module:api/DefaultApi~userSubscriptionsOwnerRepoPutCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"userSubscriptionsOwnerRepoPut",value:function userSubscriptionsOwnerRepoPut(owner,repo,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'owner' is set
 if(owner===undefined||owner===null){throw new Error("Missing the required parameter 'owner' when calling userSubscriptionsOwnerRepoPut");}// verify the required parameter 'repo' is set
-if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userSubscriptionsOwnerRepoPut");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/subscriptions/{owner}/{repo}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(repo===undefined||repo===null){throw new Error("Missing the required parameter 'repo' when calling userSubscriptionsOwnerRepoPut");}var pathParams={'owner':owner,'repo':repo};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/user/subscriptions/{owner}/{repo}','PUT',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the userTeamsGet operation.
      * @callback module:api/DefaultApi~userTeamsGetCallback
      * @param {String} error Error message, if any.
@@ -3786,10 +3916,10 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      */ /**
      * List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~userTeamsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
-     */},{key:"userTeamsGet",value:function userTeamsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/teams','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"userTeamsGet",value:function userTeamsGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/user/teams','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersGet operation.
      * @callback module:api/DefaultApi~usersGetCallback
      * @param {String} error Error message, if any.
@@ -3799,10 +3929,12 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users. 
      * @param {Object} opts Optional parameters
      * @param {Number} opts.since The integer ID of the last user that you've seen.
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~usersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
-     */},{key:"usersGet",value:function usersGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/users','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+     */},{key:"usersGet",value:function usersGet(opts,callback){opts=opts||{};var postBody=null;var pathParams={};var queryParams={'since':opts['since'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/users','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameEventsGet operation.
      * @callback module:api/DefaultApi~usersUsernameEventsGetCallback
      * @param {String} error Error message, if any.
@@ -3812,10 +3944,12 @@ if(repo===undefined||repo===null){throw new Error("Missing the required paramete
      * If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~usersUsernameEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"usersUsernameEventsGet",value:function usersUsernameEventsGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameEventsGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameEventsGet");}var pathParams={'username':username};var queryParams={'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameEventsOrgsOrgGet operation.
      * @callback module:api/DefaultApi~usersUsernameEventsOrgsOrgGetCallback
      * @param {String} error Error message, if any.
@@ -3826,11 +3960,11 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {String} username Name of user.
      * @param {String} org 
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameEventsOrgsOrgGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"usersUsernameEventsOrgsOrgGet",value:function usersUsernameEventsOrgsOrgGet(username,org,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
 if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameEventsOrgsOrgGet");}// verify the required parameter 'org' is set
-if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling usersUsernameEventsOrgsOrgGet");}var pathParams={'username':username,'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/events/orgs/{org}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(org===undefined||org===null){throw new Error("Missing the required parameter 'org' when calling usersUsernameEventsOrgsOrgGet");}var pathParams={'username':username,'org':org};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/events/orgs/{org}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameFollowersGet operation.
      * @callback module:api/DefaultApi~usersUsernameFollowersGetCallback
      * @param {String} error Error message, if any.
@@ -3840,11 +3974,11 @@ if(org===undefined||org===null){throw new Error("Missing the required parameter 
      * List a user's followers
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameFollowersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/User>}
      */},{key:"usersUsernameFollowersGet",value:function usersUsernameFollowersGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameFollowersGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/users/{username}/followers','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameFollowersGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_User["default"]];return this.apiClient.callApi('/users/{username}/followers','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameFollowingTargetUserGet operation.
      * @callback module:api/DefaultApi~usersUsernameFollowingTargetUserGetCallback
      * @param {String} error Error message, if any.
@@ -3855,7 +3989,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {String} username Name of user.
      * @param {String} targetUser Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameFollowingTargetUserGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"usersUsernameFollowingTargetUserGet",value:function usersUsernameFollowingTargetUserGet(username,targetUser,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
 if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameFollowingTargetUserGet");}// verify the required parameter 'targetUser' is set
@@ -3869,11 +4003,11 @@ if(targetUser===undefined||targetUser===null){throw new Error("Missing the requi
      * Get a single user.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */},{key:"usersUsernameGet",value:function usersUsernameGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=_User["default"];return this.apiClient.callApi('/users/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=_User["default"];return this.apiClient.callApi('/users/{username}','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameGistsGet operation.
      * @callback module:api/DefaultApi~usersUsernameGistsGetCallback
      * @param {String} error Error message, if any.
@@ -3883,12 +4017,14 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * List a users gists.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.since The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
+     * @param {String} opts.since Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
      * @param {module:api/DefaultApi~usersUsernameGistsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"usersUsernameGistsGet",value:function usersUsernameGistsGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameGistsGet");}var pathParams={'username':username};var queryParams={'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/users/{username}/gists','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameGistsGet");}var pathParams={'username':username};var queryParams={'per_page':opts['perPage'],'page':opts['page'],'since':opts['since']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/users/{username}/gists','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameKeysGet operation.
      * @callback module:api/DefaultApi~usersUsernameKeysGetCallback
      * @param {String} error Error message, if any.
@@ -3898,11 +4034,11 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone. 
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameKeysGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"usersUsernameKeysGet",value:function usersUsernameKeysGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameKeysGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/users/{username}/keys','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameKeysGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/users/{username}/keys','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameOrgsGet operation.
      * @callback module:api/DefaultApi~usersUsernameOrgsGetCallback
      * @param {String} error Error message, if any.
@@ -3912,11 +4048,11 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * List all public organizations for a user.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameOrgsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */},{key:"usersUsernameOrgsGet",value:function usersUsernameOrgsGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameOrgsGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/users/{username}/orgs','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameOrgsGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[Object];return this.apiClient.callApi('/users/{username}/orgs','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameReceivedEventsGet operation.
      * @callback module:api/DefaultApi~usersUsernameReceivedEventsGetCallback
      * @param {String} error Error message, if any.
@@ -3926,10 +4062,10 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * These are events that you'll only see public events.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameReceivedEventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"usersUsernameReceivedEventsGet",value:function usersUsernameReceivedEventsGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameReceivedEventsGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/received_events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameReceivedEventsGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/received_events','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameReceivedEventsPublicGet operation.
      * @callback module:api/DefaultApi~usersUsernameReceivedEventsPublicGetCallback
      * @param {String} error Error message, if any.
@@ -3939,10 +4075,10 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * List public events that a user has received
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameReceivedEventsPublicGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"usersUsernameReceivedEventsPublicGet",value:function usersUsernameReceivedEventsPublicGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameReceivedEventsPublicGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/received_events/public','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameReceivedEventsPublicGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/received_events/public','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameReposGet operation.
      * @callback module:api/DefaultApi~usersUsernameReposGetCallback
      * @param {String} error Error message, if any.
@@ -3953,11 +4089,13 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.type  (default to 'all')
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~usersUsernameReposGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */},{key:"usersUsernameReposGet",value:function usersUsernameReposGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameReposGet");}var pathParams={'username':username};var queryParams={'type':opts['type']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/users/{username}/repos','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameReposGet");}var pathParams={'username':username};var queryParams={'type':opts['type'],'per_page':opts['perPage'],'page':opts['page']};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=['application/json'];var returnType=[_Repo["default"]];return this.apiClient.callApi('/users/{username}/repos','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameStarredGet operation.
      * @callback module:api/DefaultApi~usersUsernameStarredGetCallback
      * @param {String} error Error message, if any.
@@ -3967,10 +4105,10 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * List repositories being starred by a user.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameStarredGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"usersUsernameStarredGet",value:function usersUsernameStarredGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameStarredGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/starred','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameStarredGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/starred','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}/**
      * Callback function to receive the result of the usersUsernameSubscriptionsGet operation.
      * @callback module:api/DefaultApi~usersUsernameSubscriptionsGetCallback
      * @param {String} error Error message, if any.
@@ -3980,7 +4118,7 @@ if(username===undefined||username===null){throw new Error("Missing the required 
      * List repositories being watched by a user.
      * @param {String} username Name of user.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.accept Is used to set specified media type.
+     * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
      * @param {module:api/DefaultApi~usersUsernameSubscriptionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */},{key:"usersUsernameSubscriptionsGet",value:function usersUsernameSubscriptionsGet(username,opts,callback){opts=opts||{};var postBody=null;// verify the required parameter 'username' is set
-if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameSubscriptionsGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=[];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/subscriptions','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}}]);return DefaultApi;}();exports["default"]=DefaultApi;
+if(username===undefined||username===null){throw new Error("Missing the required parameter 'username' when calling usersUsernameSubscriptionsGet");}var pathParams={'username':username};var queryParams={};var headerParams={'Accept':opts['accept']};var formParams={};var authNames=['api_key'];var contentTypes=[];var accepts=[];var returnType=null;return this.apiClient.callApi('/users/{username}/subscriptions','GET',pathParams,queryParams,headerParams,formParams,postBody,authNames,contentTypes,accepts,returnType,null,callback);}}]);return DefaultApi;}();exports["default"]=DefaultApi;

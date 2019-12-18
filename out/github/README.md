@@ -100,10 +100,18 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var Github = require('github');
 
+var defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+var api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix['Authorization'] = "Token"
 
 var api = new Github.DefaultApi()
 var opts = {
-  'accept': "accept_example" // {String} Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // {String} Is used to set specified media type
+  'perPage': 30, // {Number} No of result showed per request.
+  'page': 1 // {Number} Page number at which you want the search result to come from.
 };
 var callback = function(error, data, response) {
   if (error) {
@@ -525,4 +533,34 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+
+
+### oauth2
+
+
+- **Type**: OAuth
+- **Flow**: accessCode
+- **Authorization URL**: https://github.com/login/oauth/authorize
+- **Scopes**: 
+  - admin:org: 
+  - admin:org_hook: 
+  - admin:public_key: 
+  - admin:repo_hook: 
+  - delete_repo: 
+  - gist: 
+  - notifications: 
+  - public_repo: 
+  - read:org: 
+  - read:public_key: 
+  - read:repo_hook: 
+  - repo: 
+  - repo:status: 
+  - repo_deployment: 
+  - user: 
+  - user:email: 
+  - user:follow: 
+  - write:org: 
+  - write:public_key: 
+  - write:repo_hook: 
 

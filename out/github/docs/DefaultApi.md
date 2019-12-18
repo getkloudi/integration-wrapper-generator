@@ -263,10 +263,18 @@ Lists all the emojis available to use on GitHub.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.emojisGet(opts, (error, data, response) => {
   if (error) {
@@ -282,7 +290,9 @@ apiInstance.emojisGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -290,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -310,10 +320,18 @@ List public events.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.eventsGet(opts, (error, data, response) => {
   if (error) {
@@ -329,7 +347,9 @@ apiInstance.eventsGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -337,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -357,10 +377,18 @@ List Feeds. GitHub provides several timeline resources in Atom format. The Feeds
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.feedsGet(opts, (error, data, response) => {
   if (error) {
@@ -376,7 +404,9 @@ apiInstance.feedsGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -384,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -404,11 +434,19 @@ List the authenticated user&#39;s gists or if called anonymously, this will retu
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };
 apiInstance.gistsGet(opts, (error, data, response) => {
   if (error) {
@@ -424,8 +462,10 @@ apiInstance.gistsGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
+ **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. | [optional] 
 
 ### Return type
 
@@ -433,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -453,6 +493,12 @@ Delete a comment.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -484,7 +530,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -504,6 +550,12 @@ Get a single comment.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -535,7 +587,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -555,6 +607,12 @@ Edit a comment.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -588,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -608,11 +666,19 @@ List comments on a gist.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.gistsIdCommentsGet(id, opts, (error, data, response) => {
   if (error) {
@@ -629,7 +695,9 @@ apiInstance.gistsIdCommentsGet(id, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of gist. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -637,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -657,6 +725,12 @@ Create a commen
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -688,7 +762,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -708,6 +782,12 @@ Delete a gist.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -737,7 +817,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -757,6 +837,12 @@ Fork a gist.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -786,7 +872,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -806,6 +892,12 @@ Get a single gist.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -835,7 +927,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -855,6 +947,12 @@ Edit a gist.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -886,7 +984,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -906,6 +1004,12 @@ Unstar a gist.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -935,7 +1039,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -955,11 +1059,19 @@ Check if a gist is starred.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.gistsIdStarGet(id, opts, (error, data, response) => {
   if (error) {
@@ -976,7 +1088,9 @@ apiInstance.gistsIdStarGet(id, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of gist. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -984,7 +1098,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1004,6 +1118,12 @@ Star a gist.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of gist.
@@ -1033,7 +1153,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1053,6 +1173,12 @@ Create a gist.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let body = new Github.PostGist(); // PostGist | 
@@ -1082,7 +1208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1102,11 +1228,19 @@ List all public gists.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };
 apiInstance.gistsPublicGet(opts, (error, data, response) => {
   if (error) {
@@ -1122,8 +1256,10 @@ apiInstance.gistsPublicGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
+ **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. | [optional] 
 
 ### Return type
 
@@ -1131,7 +1267,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1151,11 +1287,19 @@ List the authenticated user&#39;s starred gists.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'since': "since_example", // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned. 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };
 apiInstance.gistsStarredGet(opts, (error, data, response) => {
   if (error) {
@@ -1171,8 +1315,10 @@ apiInstance.gistsStarredGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
+ **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. | [optional] 
 
 ### Return type
 
@@ -1180,7 +1326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1200,10 +1346,18 @@ Listing available templates. List all templates available to pass as an option w
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.gitignoreTemplatesGet(opts, (error, data, response) => {
   if (error) {
@@ -1219,7 +1373,9 @@ apiInstance.gitignoreTemplatesGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -1227,7 +1383,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1247,11 +1403,17 @@ Get a single template.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let language = "language_example"; // String | 
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.gitignoreTemplatesLanguageGet(language, opts, (error, data, response) => {
   if (error) {
@@ -1268,7 +1430,7 @@ apiInstance.gitignoreTemplatesLanguageGet(language, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **language** | **String**|  | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -1276,7 +1438,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1296,6 +1458,12 @@ List issues. List all issues across all the authenticated user&#39;s visible rep
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let filter = "'all'"; // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see 
@@ -1304,8 +1472,10 @@ let labels = "labels_example"; // String | String list of comma separated Label 
 let sort = "'created'"; // String | 
 let direction = "'desc'"; // String | 
 let opts = {
-  'since': "since_example", // String | Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };
 apiInstance.issuesGet(filter, state, labels, sort, direction, opts, (error, data, response) => {
   if (error) {
@@ -1326,8 +1496,10 @@ Name | Type | Description  | Notes
  **labels** | **String**| String list of comma separated Label names. Example - bug,ui,@high. | 
  **sort** | **String**|  | [default to &#39;created&#39;]
  **direction** | **String**|  | [default to &#39;desc&#39;]
- **since** | **String**| Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
+ **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. | [optional] 
 
 ### Return type
 
@@ -1335,7 +1507,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1571,6 +1743,12 @@ Render an arbitrary Markdown document
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let body = new Github.Markdown(); // Markdown | 
@@ -1600,7 +1778,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1620,6 +1798,12 @@ Render a Markdown document in raw mode
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
@@ -1647,7 +1831,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1667,6 +1851,12 @@ This gives some information about GitHub.com, the service.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
@@ -1694,7 +1884,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1714,12 +1904,20 @@ List public events for a network of repositories.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of the owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.networksOwnerRepoEventsGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -1737,7 +1935,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of the owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -1745,7 +1945,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1765,13 +1965,21 @@ List your notifications. List all notifications for the current user, grouped by
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
   'all': true, // Boolean | True to show notifications marked as read.
   'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned. 
   'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.notificationsGet(opts, (error, data, response) => {
   if (error) {
@@ -1790,7 +1998,9 @@ Name | Type | Description  | Notes
  **all** | **Boolean**| True to show notifications marked as read. | [optional] 
  **participating** | **Boolean**| True to show only notifications in which the user is directly participating or mentioned.  | [optional] 
  **since** | **String**| The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \&quot;2012-10-09T23:39:01Z\&quot;.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -1798,7 +2008,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1818,6 +2028,12 @@ Mark as read. Marking a notification as \&quot;read\&quot; removes it from the d
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let body = new Github.NotificationMarkRead(); // NotificationMarkRead | 
@@ -1847,7 +2063,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1867,6 +2083,12 @@ View a single thread.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
@@ -1896,7 +2118,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1916,6 +2138,12 @@ Mark a thread as read
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
@@ -1945,7 +2173,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -1965,6 +2193,12 @@ Delete a Thread Subscription.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
@@ -1994,7 +2228,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2014,11 +2248,19 @@ Get a Thread Subscription.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.notificationsThreadsIdSubscriptionGet(id, opts, (error, data, response) => {
   if (error) {
@@ -2035,7 +2277,9 @@ apiInstance.notificationsThreadsIdSubscriptionGet(id, opts, (error, data, respon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| Id of thread. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2043,7 +2287,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2063,6 +2307,12 @@ Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Su
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let id = 56; // Number | Id of thread.
@@ -2094,7 +2344,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2114,11 +2364,19 @@ List public events for an organization.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.orgsOrgEventsGet(org, opts, (error, data, response) => {
   if (error) {
@@ -2135,7 +2393,9 @@ apiInstance.orgsOrgEventsGet(org, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **String**| Name of organisation. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2143,7 +2403,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2163,11 +2423,19 @@ Get an Organization.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.orgsOrgGet(org, opts, (error, data, response) => {
   if (error) {
@@ -2184,7 +2452,9 @@ apiInstance.orgsOrgGet(org, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **String**| Name of organisation. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2192,7 +2462,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2212,6 +2482,12 @@ List issues. List all issues for a given organization for the authenticated user
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
@@ -2221,8 +2497,10 @@ let labels = "labels_example"; // String | String list of comma separated Label 
 let sort = "'created'"; // String | 
 let direction = "'desc'"; // String | 
 let opts = {
-  'since': "since_example", // String | Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };
 apiInstance.orgsOrgIssuesGet(org, filter, state, labels, sort, direction, opts, (error, data, response) => {
   if (error) {
@@ -2244,8 +2522,10 @@ Name | Type | Description  | Notes
  **labels** | **String**| String list of comma separated Label names. Example - bug,ui,@high. | 
  **sort** | **String**|  | [default to &#39;created&#39;]
  **direction** | **String**|  | [default to &#39;desc&#39;]
- **since** | **String**| Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
+ **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. | [optional] 
 
 ### Return type
 
@@ -2253,7 +2533,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2273,11 +2553,19 @@ Members list. List all users who are members of an organization. A member is a u
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.orgsOrgMembersGet(org, opts, (error, data, response) => {
   if (error) {
@@ -2294,7 +2582,9 @@ apiInstance.orgsOrgMembersGet(org, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **String**| Name of organisation. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2302,7 +2592,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2322,6 +2612,12 @@ Remove a member. Removing a user from this list will remove them from all teams 
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
@@ -2353,7 +2649,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2373,12 +2669,20 @@ Check if a user is, publicly or privately, a member of the organization.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let username = "username_example"; // String | Name of the user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.orgsOrgMembersUsernameGet(org, username, opts, (error, data, response) => {
   if (error) {
@@ -2396,7 +2700,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **String**| Name of organisation. | 
  **username** | **String**| Name of the user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2404,7 +2710,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2424,6 +2730,12 @@ Edit an Organization.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
@@ -2455,7 +2767,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2475,11 +2787,19 @@ Public members list. Members of an organization can choose to have their members
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.orgsOrgPublicMembersGet(org, opts, (error, data, response) => {
   if (error) {
@@ -2496,7 +2816,9 @@ apiInstance.orgsOrgPublicMembersGet(org, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **String**| Name of organisation. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2504,7 +2826,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2524,6 +2846,12 @@ Conceal a user&#39;s membership.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
@@ -2555,7 +2883,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2575,12 +2903,20 @@ Check public membership.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let username = "username_example"; // String | Name of the user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.orgsOrgPublicMembersUsernameGet(org, username, opts, (error, data, response) => {
   if (error) {
@@ -2598,7 +2934,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **String**| Name of organisation. | 
  **username** | **String**| Name of the user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2606,7 +2944,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2626,6 +2964,12 @@ Publicize a user&#39;s membership.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
@@ -2657,7 +3001,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2677,12 +3021,20 @@ List repositories for the specified org.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
   'type': "'all'", // String | 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.orgsOrgReposGet(org, opts, (error, data, response) => {
   if (error) {
@@ -2700,7 +3052,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **String**| Name of organisation. | 
  **type** | **String**|  | [optional] [default to &#39;all&#39;]
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2708,7 +3062,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2728,6 +3082,12 @@ Create a new repository for the authenticated user. OAuth users must supply repo
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
@@ -2759,7 +3119,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2779,11 +3139,19 @@ List teams.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.orgsOrgTeamsGet(org, opts, (error, data, response) => {
   if (error) {
@@ -2800,7 +3168,9 @@ apiInstance.orgsOrgTeamsGet(org, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **org** | **String**| Name of organisation. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2808,7 +3178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2828,6 +3198,12 @@ Create team. In order to create a team, the authenticated user must be an owner 
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let org = "org_example"; // String | Name of organisation.
@@ -2859,7 +3235,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2879,10 +3255,18 @@ Get your current rate limit status Note: Accessing this endpoint does not count 
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.rateLimitGet(opts, (error, data, response) => {
   if (error) {
@@ -2898,7 +3282,9 @@ apiInstance.rateLimitGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2906,7 +3292,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2926,6 +3312,12 @@ Get archive link. This method will return a 302 to a URL to download a tarball o
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -2933,7 +3325,9 @@ let repo = "repo_example"; // String | Name of repository.
 let archiveFormat = "archiveFormat_example"; // String | 
 let path = "path_example"; // String | Valid Git reference, defaults to 'master'.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoArchiveFormatPathGet(owner, repo, archiveFormat, path, opts, (error, data, response) => {
   if (error) {
@@ -2953,7 +3347,9 @@ Name | Type | Description  | Notes
  **repo** | **String**| Name of repository. | 
  **archiveFormat** | **String**|  | 
  **path** | **String**| Valid Git reference, defaults to &#39;master&#39;. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -2961,7 +3357,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -2981,13 +3377,21 @@ Check assignee. You may also check to see if a particular user is an assignee fo
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let assignee = "assignee_example"; // String | Login of the assignee.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoAssigneesAssigneeGet(owner, repo, assignee, opts, (error, data, response) => {
   if (error) {
@@ -3006,7 +3410,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **assignee** | **String**| Login of the assignee. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3014,7 +3420,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3034,12 +3440,20 @@ List assignees. This call lists all the available assignees (owner + collaborato
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoAssigneesGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -3057,7 +3471,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3065,7 +3481,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3085,13 +3501,21 @@ Get Branch
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let branch = "branch_example"; // String | Name of the branch.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoBranchesBranchGet(owner, repo, branch, opts, (error, data, response) => {
   if (error) {
@@ -3110,7 +3534,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **branch** | **String**| Name of the branch. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3118,7 +3544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3138,12 +3564,20 @@ Get list of branches
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoBranchesGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -3161,7 +3595,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3169,7 +3605,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3189,12 +3625,20 @@ List. When authenticating as an organization owner of an organization-owned repo
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoCollaboratorsGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -3212,7 +3656,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3220,7 +3666,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3240,6 +3686,12 @@ Remove collaborator.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -3273,7 +3725,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3293,13 +3745,21 @@ Check if user is a collaborator
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let user = "user_example"; // String | Login of the user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoCollaboratorsUserGet(owner, repo, user, opts, (error, data, response) => {
   if (error) {
@@ -3318,7 +3778,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **user** | **String**| Login of the user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3326,7 +3788,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3346,6 +3808,12 @@ Add collaborator.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -3379,7 +3847,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3399,6 +3867,12 @@ Delete a commit comment
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -3432,7 +3906,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3452,13 +3926,21 @@ Get a single commit comment.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let commentId = 56; // Number | Id of comment.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoCommentsCommentIdGet(owner, repo, commentId, opts, (error, data, response) => {
   if (error) {
@@ -3477,7 +3959,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **commentId** | **Number**| Id of comment. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3485,7 +3969,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3505,6 +3989,12 @@ Update a commit comment.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -3540,7 +4030,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3560,12 +4050,20 @@ List commit comments for a repository. Comments are ordered by ascending ID.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoCommentsGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -3583,7 +4081,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3591,7 +4091,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3611,6 +4111,12 @@ List commits on a repository.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -3621,7 +4127,9 @@ let opts = {
   'path': "path_example", // String | Only commits containing this file path will be returned.
   'author': "author_example", // String | GitHub login, name, or email by which to filter by commit author.
   'until': "until_example", // String | ISO 8601 Date - Only commits before this date will be returned.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoCommitsGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -3644,7 +4152,9 @@ Name | Type | Description  | Notes
  **path** | **String**| Only commits containing this file path will be returned. | [optional] 
  **author** | **String**| GitHub login, name, or email by which to filter by commit author. | [optional] 
  **until** | **String**| ISO 8601 Date - Only commits before this date will be returned. | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3652,7 +4162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3672,13 +4182,21 @@ Get the combined Status for a specific Ref The Combined status endpoint is curre
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let ref = "ref_example"; // String | 
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoCommitsRefStatusGet(owner, repo, ref, opts, (error, data, response) => {
   if (error) {
@@ -3697,7 +4215,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **ref** | **String**|  | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3705,7 +4225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3725,13 +4245,21 @@ List comments for a single commitList comments for a single commit.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | SHA-1 code of the commit.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoCommitsShaCodeCommentsGet(owner, repo, shaCode, opts, (error, data, response) => {
   if (error) {
@@ -3750,7 +4278,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **shaCode** | **String**| SHA-1 code of the commit. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3758,7 +4288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3778,6 +4308,12 @@ Create a commit comment.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -3813,7 +4349,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3833,13 +4369,21 @@ Get a single commit.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | SHA-1 code of the commit.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoCommitsShaCodeGet(owner, repo, shaCode, opts, (error, data, response) => {
   if (error) {
@@ -3858,7 +4402,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **shaCode** | **String**| SHA-1 code of the commit. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3866,7 +4412,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3886,6 +4432,12 @@ Compare two commits
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -3893,7 +4445,9 @@ let repo = "repo_example"; // String | Name of repository.
 let baseId = "baseId_example"; // String | 
 let headId = "headId_example"; // String | 
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoCompareBaseIdHeadIdGet(owner, repo, baseId, headId, opts, (error, data, response) => {
   if (error) {
@@ -3913,7 +4467,9 @@ Name | Type | Description  | Notes
  **repo** | **String**| Name of repository. | 
  **baseId** | **String**|  | 
  **headId** | **String**|  | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -3921,7 +4477,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3941,6 +4497,12 @@ Delete a file. This method deletes a file in a repository.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -3976,7 +4538,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -3996,6 +4558,12 @@ Get contents. This method returns the contents of a file or directory in a repos
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -4004,7 +4572,9 @@ let path = "path_example"; // String |
 let opts = {
   'path2': "path_example", // String | The content path.
   'ref': "ref_example", // String | The String name of the Commit/Branch/Tag. Defaults to 'master'.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoContentsPathGet(owner, repo, path, opts, (error, data, response) => {
   if (error) {
@@ -4025,7 +4595,9 @@ Name | Type | Description  | Notes
  **path** | **String**|  | 
  **path2** | **String**| The content path. | [optional] 
  **ref** | **String**| The String name of the Commit/Branch/Tag. Defaults to &#39;master&#39;. | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -4033,7 +4605,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4053,6 +4625,12 @@ Create a file.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -4088,7 +4666,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4108,13 +4686,21 @@ Get list of contributors.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let anon = "anon_example"; // String | Set to 1 or true to include anonymous contributors in results.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoContributorsGet(owner, repo, anon, opts, (error, data, response) => {
   if (error) {
@@ -4133,7 +4719,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **anon** | **String**| Set to 1 or true to include anonymous contributors in results. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -4141,7 +4729,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4161,6 +4749,12 @@ Delete a Repository. Deleting a repository requires admin access. If OAuth is us
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -4192,7 +4786,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4212,12 +4806,20 @@ Users with pull access can view deployments for a repository
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoDeploymentsGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -4235,7 +4837,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -4243,7 +4847,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4263,13 +4867,21 @@ Users with pull access can view deployment statuses for a deployment
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let id = 56; // Number | The Deployment ID to list the statuses from.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoDeploymentsIdStatusesGet(owner, repo, id, opts, (error, data, response) => {
   if (error) {
@@ -4288,7 +4900,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **id** | **Number**| The Deployment ID to list the statuses from. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -4296,7 +4910,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4316,6 +4930,12 @@ Create a Deployment Status Users with push access can create deployment statuses
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -4351,7 +4971,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4371,6 +4991,12 @@ Users with push access can create a deployment for a given ref
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -4404,7 +5030,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4424,6 +5050,12 @@ Deprecated. Delete a download.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -4457,7 +5089,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4477,6 +5109,12 @@ Deprecated. Get a single download.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -4510,7 +5148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4530,6 +5168,12 @@ Deprecated. List downloads for a repository.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -4561,7 +5205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4581,12 +5225,20 @@ Get list of repository events.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoEventsGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -4604,7 +5256,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -4612,7 +5266,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4632,13 +5286,21 @@ List forks.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
   'sort': "'newes'", // String | 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoForksGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -4657,7 +5319,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **sort** | **String**|  | [optional] [default to &#39;newes&#39;]
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -4665,7 +5329,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4685,6 +5349,12 @@ Create a fork. Forking a Repository happens asynchronously. Therefore, you may h
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -4718,7 +5388,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4738,12 +5408,20 @@ Get repository.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -4761,7 +5439,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -4769,7 +5449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -4789,13 +5469,21 @@ Create a Blob.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let body = null; // Blob | 
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoGitBlobsPost(owner, repo, body, opts, (error, data, response) => {
   if (error) {
@@ -4814,7 +5502,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **body** | [**Blob**](Blob.md)|  | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -4822,7 +5512,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -5006,7 +5696,9 @@ let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoGitRefsGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -5024,7 +5716,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -5164,7 +5858,9 @@ let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let ref = "ref_example"; // String | 
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoGitRefsRefGet(owner, repo, ref, opts, (error, data, response) => {
   if (error) {
@@ -5183,7 +5879,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **ref** | **String**|  | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -5325,7 +6023,9 @@ let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let shaCode = "shaCode_example"; // String | 
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoGitTagsShaCodeGet(owner, repo, shaCode, opts, (error, data, response) => {
   if (error) {
@@ -5344,7 +6044,9 @@ Name | Type | Description  | Notes
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
  **shaCode** | **String**|  | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -5485,7 +6187,9 @@ let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
 let repo = "repo_example"; // String | Name of repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.reposOwnerRepoHooksGet(owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -5503,7 +6207,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **owner** | **String**| Name of repository owner. | 
  **repo** | **String**| Name of repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -6130,8 +6836,10 @@ let labels = "labels_example"; // String | String list of comma separated Label 
 let sort = "'created'"; // String | 
 let direction = "'desc'"; // String | 
 let opts = {
-  'since': "since_example", // String | Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };
 apiInstance.reposOwnerRepoIssuesGet(owner, repo, filter, state, labels, sort, direction, opts, (error, data, response) => {
   if (error) {
@@ -6154,8 +6862,10 @@ Name | Type | Description  | Notes
  **labels** | **String**| String list of comma separated Label names. Example - bug,ui,@high. | 
  **sort** | **String**|  | [default to &#39;created&#39;]
  **direction** | **String**|  | [default to &#39;desc&#39;]
- **since** | **String**| Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
+ **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. | [optional] 
 
 ### Return type
 
@@ -7789,6 +8499,12 @@ Edit repository.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7822,7 +8538,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -9854,6 +10570,12 @@ List Stargazers. New implementation.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9885,7 +10607,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -9905,11 +10627,19 @@ List all public repositories. This provides a dump of every public repository, i
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };
 apiInstance.repositoriesGet(opts, (error, data, response) => {
   if (error) {
@@ -9925,8 +10655,10 @@ apiInstance.repositoriesGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **since** | **String**| The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \&quot;2012-10-09T23:39:01Z\&quot;.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
+ **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. | [optional] 
 
 ### Return type
 
@@ -9934,7 +10666,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -9954,13 +10686,21 @@ Search code.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let q = "q_example"; // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository. 
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'sort': "sort_example", // String | Can only be 'indexed', which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match. 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.searchCodeGet(q, opts, (error, data, response) => {
   if (error) {
@@ -9979,7 +10719,9 @@ Name | Type | Description  | Notes
  **q** | **String**| The search terms. This can be any combination of the supported code search parameters: &#39;Search In&#39; Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. &#39;Languages&#39; Searches code based on the language it&#39;s written in. &#39;Forks&#39; Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. &#39;Size&#39; Finds files that match a certain size (in bytes). &#39;Path&#39; Specifies the path that the resulting file must be at. &#39;Extension&#39; Matches files with a certain extension. &#39;Users&#39; or &#39;Repositories&#39; Limits searches to a specific user or repository.  | 
  **order** | **String**| The sort field. if sort param is provided. Can be either asc or desc. | [optional] [default to &#39;desc&#39;]
  **sort** | **String**| Can only be &#39;indexed&#39;, which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -9987,7 +10729,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10007,13 +10749,21 @@ Find issues by state and keyword. (This method returns up to 100 results per pag
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let q = "q_example"; // String | The q search term can also contain any combination of the supported issue search qualifiers:
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'sort': "sort_example", // String | The sort field. Can be comments, created, or updated. Default: results are sorted by best match.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.searchIssuesGet(q, opts, (error, data, response) => {
   if (error) {
@@ -10032,7 +10782,9 @@ Name | Type | Description  | Notes
  **q** | **String**| The q search term can also contain any combination of the supported issue search qualifiers: | 
  **order** | **String**| The sort field. if sort param is provided. Can be either asc or desc. | [optional] [default to &#39;desc&#39;]
  **sort** | **String**| The sort field. Can be comments, created, or updated. Default: results are sorted by best match. | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -10040,7 +10792,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10060,13 +10812,21 @@ Search repositories.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let q = "q_example"; // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars. 
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'sort': "sort_example", // String | If not provided, results are sorted by best match.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.searchRepositoriesGet(q, opts, (error, data, response) => {
   if (error) {
@@ -10085,7 +10845,9 @@ Name | Type | Description  | Notes
  **q** | **String**| The search terms. This can be any combination of the supported repository search parameters: &#39;Search In&#39; Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. &#39;Size&#39; Finds repositories that match a certain size (in kilobytes). &#39;Forks&#39; Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. &#39;Created&#39; and &#39;Last Updated&#39; Filters repositories based on times of creation, or when they were last updated. &#39;Users or Repositories&#39; Limits searches to a specific user or repository. &#39;Languages&#39; Searches repositories based on the language they are written in. &#39;Stars&#39; Searches repositories based on the number of stars.  | 
  **order** | **String**| The sort field. if sort param is provided. Can be either asc or desc. | [optional] [default to &#39;desc&#39;]
  **sort** | **String**| If not provided, results are sorted by best match. | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -10093,7 +10855,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10113,13 +10875,21 @@ Search users.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let q = "q_example"; // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have. 
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
   'sort': "sort_example", // String | If not provided, results are sorted by best match.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.searchUsersGet(q, opts, (error, data, response) => {
   if (error) {
@@ -10138,7 +10908,9 @@ Name | Type | Description  | Notes
  **q** | **String**| The search terms. This can be any combination of the supported user search parameters: &#39;Search In&#39; Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. &#39;Repository count&#39; Filters users based on the number of repositories they have. &#39;Location&#39; Filter users by the location indicated in their profile. &#39;Language&#39; Search for users that have repositories that match a certain language. &#39;Created&#39; Filter users based on when they joined. &#39;Followers&#39; Filter users based on the number of followers they have.  | 
  **order** | **String**| The sort field. if sort param is provided. Can be either asc or desc. | [optional] [default to &#39;desc&#39;]
  **sort** | **String**| If not provided, results are sorted by best match. | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -10146,7 +10918,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10166,11 +10938,19 @@ Delete team. In order to delete a team, the authenticated user must be an owner 
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.teamsTeamIdDelete(teamId, opts, (error, data, response) => {
   if (error) {
@@ -10187,7 +10967,9 @@ apiInstance.teamsTeamIdDelete(teamId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **teamId** | **Number**| Id of team. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -10195,7 +10977,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10215,6 +10997,12 @@ Get team.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
@@ -10244,7 +11032,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10264,11 +11052,19 @@ List team members. In order to list members in a team, the authenticated user mu
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.teamsTeamIdMembersGet(teamId, opts, (error, data, response) => {
   if (error) {
@@ -10285,7 +11081,9 @@ apiInstance.teamsTeamIdMembersGet(teamId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **teamId** | **Number**| Id of team. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -10293,7 +11091,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10313,12 +11111,20 @@ The \&quot;Remove team member\&quot; API is deprecated and is scheduled for remo
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let username = "username_example"; // String | Name of a member.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.teamsTeamIdMembersUsernameDelete(teamId, username, opts, (error, data, response) => {
   if (error) {
@@ -10336,7 +11142,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **teamId** | **Number**| Id of team. | 
  **username** | **String**| Name of a member. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -10344,7 +11152,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10364,6 +11172,12 @@ The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
@@ -10395,7 +11209,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10415,6 +11229,12 @@ The API (described below) is deprecated and is scheduled for removal in the next
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
@@ -10446,7 +11266,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10466,12 +11286,20 @@ Remove team membership. In order to remove a membership between a user and a tea
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let username = "username_example"; // String | Name of a member.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.teamsTeamIdMembershipsUsernameDelete(teamId, username, opts, (error, data, response) => {
   if (error) {
@@ -10489,7 +11317,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **teamId** | **Number**| Id of team. | 
  **username** | **String**| Name of a member. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -10497,7 +11327,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10517,6 +11347,12 @@ Get team membership. In order to get a user&#39;s membership with a team, the au
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
@@ -10548,7 +11384,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10568,6 +11404,12 @@ Add team membership. In order to add a membership between a user and a team, the
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
@@ -10599,7 +11441,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10619,6 +11461,12 @@ Edit team. In order to edit a team, the authenticated user must be an owner of t
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
@@ -10650,7 +11498,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10670,11 +11518,19 @@ List team repos
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.teamsTeamIdReposGet(teamId, opts, (error, data, response) => {
   if (error) {
@@ -10691,7 +11547,9 @@ apiInstance.teamsTeamIdReposGet(teamId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **teamId** | **Number**| Id of team. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -10699,7 +11557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10719,13 +11577,21 @@ In order to remove a repository from a team, the authenticated user must be an o
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
 let owner = "owner_example"; // String | Name of a repository owner.
 let repo = "repo_example"; // String | Name of a repository.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.teamsTeamIdReposOwnerRepoDelete(teamId, owner, repo, opts, (error, data, response) => {
   if (error) {
@@ -10744,7 +11610,9 @@ Name | Type | Description  | Notes
  **teamId** | **Number**| Id of team. | 
  **owner** | **String**| Name of a repository owner. | 
  **repo** | **String**| Name of a repository. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -10752,7 +11620,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10772,6 +11640,12 @@ Check if a team manages a repository
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
@@ -10805,7 +11679,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10825,6 +11699,12 @@ In order to add a repository to a team, the authenticated user must be an owner 
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let teamId = 56; // Number | Id of team.
@@ -10858,7 +11738,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10878,11 +11758,17 @@ Delete email address(es). You can include a single email address or an array of 
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let body = ["null"]; // [String] | 
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.userEmailsDelete(body, opts, (error, data, response) => {
   if (error) {
@@ -10899,7 +11785,7 @@ apiInstance.userEmailsDelete(body, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**[String]**](String.md)|  | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -10907,7 +11793,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10927,6 +11813,12 @@ List email addresses for a user. In the final version of the API, this method wi
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
@@ -10954,7 +11846,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -10974,6 +11866,12 @@ Add email address(es). You can post a single email address or an array of addres
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let body = ["null"]; // [String] | 
@@ -11003,7 +11901,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11023,10 +11921,18 @@ List the authenticated user&#39;s followers
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.userFollowersGet(opts, (error, data, response) => {
   if (error) {
@@ -11042,7 +11948,9 @@ apiInstance.userFollowersGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -11050,7 +11958,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11070,10 +11978,18 @@ List who the authenticated user is following.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.userFollowingGet(opts, (error, data, response) => {
   if (error) {
@@ -11089,7 +12005,9 @@ apiInstance.userFollowingGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -11097,7 +12015,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11117,11 +12035,17 @@ Unfollow a user. Unfollowing a user requires the user to be logged in and authen
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.userFollowingUsernameDelete(username, opts, (error, data, response) => {
   if (error) {
@@ -11138,7 +12062,7 @@ apiInstance.userFollowingUsernameDelete(username, opts, (error, data, response) 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -11146,7 +12070,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11166,6 +12090,12 @@ Check if you are following a user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
@@ -11195,7 +12125,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11215,6 +12145,12 @@ Follow a user. Following a user requires the user to be logged in and authentica
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
@@ -11244,7 +12180,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11273,7 +12209,9 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.userGet(opts, (error, data, response) => {
   if (error) {
@@ -11289,7 +12227,9 @@ apiInstance.userGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -11317,6 +12257,12 @@ List issues. List all issues across owned and member repositories for the authen
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let filter = "'all'"; // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see 
@@ -11325,8 +12271,10 @@ let labels = "labels_example"; // String | String list of comma separated Label 
 let sort = "'created'"; // String | 
 let direction = "'desc'"; // String | 
 let opts = {
-  'since': "since_example", // String | Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned. 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };
 apiInstance.userIssuesGet(filter, state, labels, sort, direction, opts, (error, data, response) => {
   if (error) {
@@ -11347,8 +12295,10 @@ Name | Type | Description  | Notes
  **labels** | **String**| String list of comma separated Label names. Example - bug,ui,@high. | 
  **sort** | **String**|  | [default to &#39;created&#39;]
  **direction** | **String**|  | [default to &#39;desc&#39;]
- **since** | **String**| Optional string of a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only issues updated at or after this time are returned.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
+ **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. | [optional] 
 
 ### Return type
 
@@ -11356,7 +12306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11376,10 +12326,16 @@ List your public keys. Lists the current user&#39;s keys. Management of public k
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.userKeysGet(opts, (error, data, response) => {
   if (error) {
@@ -11395,7 +12351,7 @@ apiInstance.userKeysGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -11403,7 +12359,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11423,11 +12379,17 @@ Delete a public key. Removes a public key. Requires that you are authenticated v
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let keyId = 56; // Number | ID of key.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.userKeysKeyIdDelete(keyId, opts, (error, data, response) => {
   if (error) {
@@ -11444,7 +12406,7 @@ apiInstance.userKeysKeyIdDelete(keyId, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **keyId** | **Number**| ID of key. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -11452,7 +12414,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11472,6 +12434,12 @@ Get a single public key.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let keyId = 56; // Number | ID of key.
@@ -11501,7 +12469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11521,6 +12489,12 @@ Create a public key.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let body = new Github.UserKeysPost(); // UserKeysPost | 
@@ -11550,7 +12524,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11570,10 +12544,16 @@ List public and private organizations for the authenticated user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.userOrgsGet(opts, (error, data, response) => {
   if (error) {
@@ -11589,7 +12569,7 @@ apiInstance.userOrgsGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -11597,7 +12577,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11617,6 +12597,12 @@ Update the authenticated user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let body = new Github.UserUpdate(); // UserUpdate | 
@@ -11646,7 +12632,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11666,11 +12652,17 @@ List repositories for the authenticated user. Note that this does not include re
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
   'type': "'all'", // String | 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.userReposGet(opts, (error, data, response) => {
   if (error) {
@@ -11687,7 +12679,7 @@ apiInstance.userReposGet(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**|  | [optional] [default to &#39;all&#39;]
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -11695,7 +12687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11715,6 +12707,12 @@ Create a new repository for the authenticated user. OAuth users must supply repo
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let body = new Github.PostRepo(); // PostRepo | 
@@ -11744,7 +12742,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11764,6 +12762,12 @@ List repositories being starred by the authenticated user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
@@ -11795,7 +12799,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11815,6 +12819,12 @@ Unstar a repository
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of a repository owner.
@@ -11846,7 +12856,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11866,6 +12876,12 @@ Check if you are starring a repository.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of a repository owner.
@@ -11897,7 +12913,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11917,6 +12933,12 @@ Star a repository.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of a repository owner.
@@ -11948,7 +12970,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -11968,6 +12990,12 @@ List repositories being watched by the authenticated user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
@@ -11995,7 +13023,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12015,6 +13043,12 @@ Stop watching a repository
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of the owner.
@@ -12046,7 +13080,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12066,6 +13100,12 @@ Check if you are watching a repository.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of the owner.
@@ -12097,7 +13137,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12117,6 +13157,12 @@ Watch a repository.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of the owner.
@@ -12148,7 +13194,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12168,10 +13214,16 @@ List all of the teams across all of the organizations to which the authenticated
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.userTeamsGet(opts, (error, data, response) => {
   if (error) {
@@ -12187,7 +13239,7 @@ apiInstance.userTeamsGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12195,7 +13247,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12215,11 +13267,19 @@ Get all users. This provides a dump of every user, in the order that they signed
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
   'since': 56, // Number | The integer ID of the last user that you've seen.
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.usersGet(opts, (error, data, response) => {
   if (error) {
@@ -12236,7 +13296,9 @@ apiInstance.usersGet(opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **since** | **Number**| The integer ID of the last user that you&#39;ve seen. | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -12244,7 +13306,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12264,11 +13326,19 @@ If you are authenticated as the given user, you will see your private events. Ot
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.usersUsernameEventsGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12285,7 +13355,9 @@ apiInstance.usersUsernameEventsGet(username, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -12293,7 +13365,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12313,12 +13385,18 @@ This is the user&#39;s organization dashboard. You must be authenticated as the 
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let org = "org_example"; // String | 
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameEventsOrgsOrgGet(username, org, opts, (error, data, response) => {
   if (error) {
@@ -12336,7 +13414,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
  **org** | **String**|  | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12344,7 +13422,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12364,11 +13442,17 @@ List a user&#39;s followers
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameFollowersGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12385,7 +13469,7 @@ apiInstance.usersUsernameFollowersGet(username, opts, (error, data, response) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12393,7 +13477,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12418,7 +13502,7 @@ let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let targetUser = "targetUser_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameFollowingTargetUserGet(username, targetUser, opts, (error, data, response) => {
   if (error) {
@@ -12436,7 +13520,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
  **targetUser** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12464,11 +13548,17 @@ Get a single user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12485,7 +13575,7 @@ apiInstance.usersUsernameGet(username, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12493,7 +13583,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12513,12 +13603,20 @@ List a users gists.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1, // Number | Page number at which you want the search result to come from.
+  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
 };
 apiInstance.usersUsernameGistsGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12535,8 +13633,10 @@ apiInstance.usersUsernameGistsGet(username, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **since** | **String**| The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \&quot;2012-10-09T23:39:01Z\&quot;.  | [optional] 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
+ **since** | **String**| Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ. | [optional] 
 
 ### Return type
 
@@ -12544,7 +13644,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12564,11 +13664,17 @@ List public keys for a user. Lists the verified public keys for a user. This is 
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameKeysGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12585,7 +13691,7 @@ apiInstance.usersUsernameKeysGet(username, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12593,7 +13699,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12613,11 +13719,17 @@ List all public organizations for a user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameOrgsGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12634,7 +13746,7 @@ apiInstance.usersUsernameOrgsGet(username, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12642,7 +13754,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12662,11 +13774,17 @@ These are events that you&#39;ll only see public events.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameReceivedEventsGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12683,7 +13801,7 @@ apiInstance.usersUsernameReceivedEventsGet(username, opts, (error, data, respons
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12691,7 +13809,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12711,11 +13829,17 @@ List public events that a user has received
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameReceivedEventsPublicGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12732,7 +13856,7 @@ apiInstance.usersUsernameReceivedEventsPublicGet(username, opts, (error, data, r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12740,7 +13864,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12760,12 +13884,20 @@ List public repositories for the specified user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
   'type': "'all'", // String | 
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.usersUsernameReposGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12783,7 +13915,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
  **type** | **String**|  | [optional] [default to &#39;all&#39;]
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 
@@ -12791,7 +13925,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12811,11 +13945,17 @@ List repositories being starred by a user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameStarredGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12832,7 +13972,7 @@ apiInstance.usersUsernameStarredGet(username, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12840,7 +13980,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -12860,11 +14000,17 @@ List repositories being watched by a user.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
 let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
+  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
 apiInstance.usersUsernameSubscriptionsGet(username, opts, (error, data, response) => {
   if (error) {
@@ -12881,7 +14027,7 @@ apiInstance.usersUsernameSubscriptionsGet(username, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| Name of user. | 
- **accept** | **String**| Is used to set specified media type. | [optional] 
+ **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
 
 ### Return type
 
@@ -12889,7 +14035,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
