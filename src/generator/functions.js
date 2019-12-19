@@ -181,17 +181,35 @@ exports.generateCodeFile = function generateCodeFile(
       // Get index of the first semicolon after this
       let semiColonIndex = codeBlock.substr(indexOfVariable).indexOf(";");
 
-      // Add starting comment
-      codeBlock =
-        codeBlock.substr(0, indexOfVariable - 2) +
-        "\n/*" +
-        codeBlock.substr(indexOfVariable);
+      if (variable !== 'opts') {
+        // Add starting comment
+        codeBlock =
+          codeBlock.substr(0, indexOfVariable - 2) +
+          "\n/*" +
+          codeBlock.substr(indexOfVariable);
 
-      // Add ending comment
-      codeBlock =
-        codeBlock.substr(0, semiColonIndex + indexOfVariable + 1) +
-        ";*/" +
-        codeBlock.substr(semiColonIndex + indexOfVariable + 2);
+        // Add ending comment
+        codeBlock =
+          codeBlock.substr(0, semiColonIndex + indexOfVariable + 1) +
+          ";*/" +
+          codeBlock.substr(semiColonIndex + indexOfVariable + 2);
+      } else {
+        let substring = codeBlock.substr(indexOfVariable, semiColonIndex + 1);
+        // Split this string by \n
+        splitSubstring = substring.split('\n');
+        for (let i = 0; i < splitSubstring.length; i++) {
+          let str = splitSubstring[i];
+          if (str.indexOf(`_example"`) !== -1) {
+            // Comment out this line if not already commented out
+            if (str[0] !== '/' && str[1] !== '/') {
+              splitSubstring[i] = `//${splitSubstring[i]}`;
+            }
+          }
+        }
+
+        // Join the sub string generated above after commenting out variables containing _example
+        codeBlock = codeBlock.replace(substring, `${splitSubstring.join('\n')}\n\nincomingOptions.opts = Object.assign(opts, incomingOptions.opts)\n\n`);
+      }
 
       // incomingOptions change
       codeBlock = codeBlock.replace(
