@@ -218,18 +218,18 @@ exports.generateCodeFile = function generateCodeFile(
       );
 
       // This can be added on need basis
-      codeBlock = codeBlock.replace(`console.error(error);`, `cb(error, null)`);
+      codeBlock = codeBlock.replace(`console.error(error);`, `cb(error, null, response)`);
 
       codeBlock = codeBlock.replace(
         `console.log('API called successfully.');`,
         // `return;`
-        "cb(null, '')"
+        "cb(null, '', response)"
       );
 
       codeBlock = codeBlock.replace(
         `console.log('API called successfully. Returned data: ' + data);`,
         // "return data;"
-        "cb(null, data)"
+        "cb(null, data, response)"
       );
     }
 
@@ -384,11 +384,11 @@ function createSwitchfunction(functionWithParams, functionType, codeComments) {
         /* ${comment}
         */
         return new Promise((resolve, reject) => {
-          this.${currentFunction.functionName}(options, (err, data) => {
+          this.${currentFunction.functionName}(options, (err, data, response) => {
             if(err) {
-              reject(err);
+              reject({error: err, response: response});
             }
-            resolve(data);
+            resolve({data: data, response: response});
           })
         })
         `;
