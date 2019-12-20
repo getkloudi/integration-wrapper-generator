@@ -4,8 +4,8 @@ const nconf = require("nconf");
 const qs = require("querystring");
 
 /*
-            - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
-          */
+              - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
+            */
 const SCOPES = [
   "notifications",
   "repo",

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Issue model module.
  * @module model/Issue
- * @version 1.3.0
+ * @version 1.3.1
  */
 class Issue {
     /**

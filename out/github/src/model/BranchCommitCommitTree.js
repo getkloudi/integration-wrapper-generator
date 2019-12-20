@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BranchCommitCommitTree model module.
  * @module model/BranchCommitCommitTree
- * @version 1.3.0
+ * @version 1.3.1
  */
 class BranchCommitCommitTree {
     /**
