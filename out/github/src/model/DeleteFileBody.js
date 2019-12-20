@@ -17,7 +17,7 @@ import CreateFileBodyCommitter from './CreateFileBodyCommitter';
 /**
  * The DeleteFileBody model module.
  * @module model/DeleteFileBody
- * @version 1.3.1
+ * @version 1.3.2
  */
 class DeleteFileBody {
     /**

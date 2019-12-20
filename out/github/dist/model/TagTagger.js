@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TagTagger model module.
  * @module model/TagTagger
- * @version 1.3.1
+ * @version 1.3.2
  */
 var TagTagger =
 /*#__PURE__*/

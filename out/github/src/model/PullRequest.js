@@ -19,7 +19,7 @@ import PullRequestLinks from './PullRequestLinks';
 /**
  * The PullRequest model module.
  * @module model/PullRequest
- * @version 1.3.1
+ * @version 1.3.2
  */
 class PullRequest {
     /**

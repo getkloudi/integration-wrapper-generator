@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchIssuesByKeywordIssues model module.
  * @module model/SearchIssuesByKeywordIssues
- * @version 1.3.1
+ * @version 1.3.2
  */
 var SearchIssuesByKeywordIssues =
 /*#__PURE__*/

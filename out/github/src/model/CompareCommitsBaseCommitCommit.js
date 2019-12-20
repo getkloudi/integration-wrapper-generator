@@ -18,7 +18,7 @@ import CompareCommitsBaseCommitCommitAuthor from './CompareCommitsBaseCommitComm
 /**
  * The CompareCommitsBaseCommitCommit model module.
  * @module model/CompareCommitsBaseCommitCommit
- * @version 1.3.1
+ * @version 1.3.2
  */
 class CompareCommitsBaseCommitCommit {
     /**

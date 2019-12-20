@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The CommitComment model module.
  * @module model/CommitComment
- * @version 1.3.1
+ * @version 1.3.2
  */
 class CommitComment {
     /**

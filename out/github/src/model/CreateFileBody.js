@@ -17,7 +17,7 @@ import CreateFileBodyCommitter from './CreateFileBodyCommitter';
 /**
  * The CreateFileBody model module.
  * @module model/CreateFileBody
- * @version 1.3.1
+ * @version 1.3.2
  */
 class CreateFileBody {
     /**

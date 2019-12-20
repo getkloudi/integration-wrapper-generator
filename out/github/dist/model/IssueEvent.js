@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueEvent model module.
  * @module model/IssueEvent
- * @version 1.3.1
+ * @version 1.3.2
  */
 var IssueEvent =
 /*#__PURE__*/

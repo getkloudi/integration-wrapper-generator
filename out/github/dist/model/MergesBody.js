@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MergesBody model module.
  * @module model/MergesBody
- * @version 1.3.1
+ * @version 1.3.2
  */
 var MergesBody =
 /*#__PURE__*/

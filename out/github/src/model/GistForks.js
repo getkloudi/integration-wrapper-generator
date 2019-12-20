@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The GistForks model module.
  * @module model/GistForks
- * @version 1.3.1
+ * @version 1.3.2
  */
 class GistForks {
     /**

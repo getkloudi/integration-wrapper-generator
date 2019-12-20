@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FeedsLinksCurrentUser model module.
  * @module model/FeedsLinksCurrentUser
- * @version 1.3.1
+ * @version 1.3.2
  */
 var FeedsLinksCurrentUser =
 /*#__PURE__*/

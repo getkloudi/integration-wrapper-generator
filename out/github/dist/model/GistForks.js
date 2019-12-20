@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GistForks model module.
  * @module model/GistForks
- * @version 1.3.1
+ * @version 1.3.2
  */
 var GistForks =
 /*#__PURE__*/

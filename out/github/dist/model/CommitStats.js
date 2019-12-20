@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommitStats model module.
  * @module model/CommitStats
- * @version 1.3.1
+ * @version 1.3.2
  */
 var CommitStats =
 /*#__PURE__*/

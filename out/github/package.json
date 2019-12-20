@@ -1,6 +1,6 @@
 {
   "name": "github",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Powerful_collaboration_code_review_and_code_management_for_open_source_and_private_projects_",
   "license": "Unlicense",
   "main": "dist/index.js",

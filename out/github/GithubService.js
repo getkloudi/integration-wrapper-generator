@@ -4,8 +4,8 @@ const nconf = require("nconf");
 const qs = require("querystring");
 
 /*
-              - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
-            */
+                - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
+              */
 const SCOPES = [
   "notifications",
   "repo",
@@ -119,22 +119,7 @@ class GithubService {
   }
 
   get entities() {
-    return [
-      "PROJECTS",
-      "REPOS",
-      "MEMBERS",
-      // Organisations - https://developer.github.com/v3/orgs/
-      "ORGS",
-      // PR - https://developer.github.com/v3/pulls/
-      "PULL_REQUESTS",
-      // PR comments - https://developer.github.com/v3/pulls/comments/, https://developer.github.com/v3/pulls/reviews/,
-      "PULL_REQUEST_COMMENTS",
-      "PULL_REQUEST_COMMITS",
-      // Issues - https://developer.github.com/v3/issues/
-      "ISSUES",
-      // Issue Comments - https://developer.github.com/v3/issues/comments/
-      "ISSUE_COMMENTS"
-    ];
+    return;
   }
 
   getNextPaginationURIFromResponse(response) {

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GitCommit model module.
  * @module model/GitCommit
- * @version 1.3.1
+ * @version 1.3.2
  */
 var GitCommit =
 /*#__PURE__*/

@@ -19,7 +19,7 @@ import CreateFileCommitParents from './CreateFileCommitParents';
 /**
  * The DeleteFileCommit model module.
  * @module model/DeleteFileCommit
- * @version 1.3.1
+ * @version 1.3.2
  */
 class DeleteFileCommit {
     /**

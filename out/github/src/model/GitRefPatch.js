@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GitRefPatch model module.
  * @module model/GitRefPatch
- * @version 1.3.1
+ * @version 1.3.2
  */
 class GitRefPatch {
     /**

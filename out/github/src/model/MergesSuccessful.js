@@ -19,7 +19,7 @@ import User from './User';
 /**
  * The MergesSuccessful model module.
  * @module model/MergesSuccessful
- * @version 1.3.1
+ * @version 1.3.2
  */
 class MergesSuccessful {
     /**

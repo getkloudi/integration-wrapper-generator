@@ -18,7 +18,7 @@ import Organization from './Organization';
 /**
  * The Repo model module.
  * @module model/Repo
- * @version 1.3.1
+ * @version 1.3.2
  */
 class Repo {
     /**

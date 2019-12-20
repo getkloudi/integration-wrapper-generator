@@ -17,7 +17,7 @@ import Repo from './Repo';
 /**
  * The Forks model module.
  * @module model/Forks
- * @version 1.3.1
+ * @version 1.3.2
  */
 class Forks {
     /**

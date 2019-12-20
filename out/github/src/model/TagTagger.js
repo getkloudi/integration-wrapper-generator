@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TagTagger model module.
  * @module model/TagTagger
- * @version 1.3.1
+ * @version 1.3.2
  */
 class TagTagger {
     /**

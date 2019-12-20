@@ -17,7 +17,7 @@ import Repo from './Repo';
 /**
  * The SearchRepositoriesByKeyword model module.
  * @module model/SearchRepositoriesByKeyword
- * @version 1.3.1
+ * @version 1.3.2
  */
 class SearchRepositoriesByKeyword {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CommitFiles model module.
  * @module model/CommitFiles
- * @version 1.3.1
+ * @version 1.3.2
  */
 class CommitFiles {
     /**

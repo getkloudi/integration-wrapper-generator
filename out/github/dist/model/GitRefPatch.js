@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GitRefPatch model module.
  * @module model/GitRefPatch
- * @version 1.3.1
+ * @version 1.3.2
  */
 var GitRefPatch =
 /*#__PURE__*/

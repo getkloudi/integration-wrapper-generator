@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RateLimitRate model module.
  * @module model/RateLimitRate
- * @version 1.3.1
+ * @version 1.3.2
  */
 class RateLimitRate {
     /**

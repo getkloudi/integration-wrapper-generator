@@ -18,7 +18,7 @@ import NotificationsSubject from './NotificationsSubject';
 /**
  * The Notifications model module.
  * @module model/Notifications
- * @version 1.3.1
+ * @version 1.3.2
  */
 class Notifications {
     /**
