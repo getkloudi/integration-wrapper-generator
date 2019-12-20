@@ -4,8 +4,8 @@ const nconf = require("nconf");
 const qs = require("querystring");
 
 /*
-    - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
-  */
+            - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
+          */
 const SCOPES = [
   "notifications",
   "repo",
@@ -138,8 +138,11 @@ class GithubService {
   }
 
   getNextPaginationURIFromResponse(response) {
-    return ((response.headers.link || "").match(/<([^>]+)>;\s*rel="next"/) ||
-      [])[1];
+    const parse = require("parse-link-header");
+    const links = parse(response.headers.link);
+    if (links && links.next)
+      return { page: links.next.page, per_page: links.next.per_page };
+    return;
   }
 
   async connect(authParams) {
@@ -157,32 +160,34 @@ class GithubService {
       }
     );
 
-    const user = await axios.default.get(`${this.apiEndpoint}/user`, {
-      headers: {
-        Authorization: `token ${res.data.access_token}`
-      }
+    const user = await this.get("USER", {
+      apiKey: res.data.access_token,
+      apiKeyPrefix: "token"
     });
 
-    let organisations = [],
-      uri = `${this.apiEndpoint}/user/orgs`;
-
-    while (uri) {
-      let resOrgs = await axios.default.get(uri, {
-        headers: {
-          Authorization: `token ${res.data.access_token}`
+    let orgs,
+      incomingOptions = { opts: {} };
+    while (true) {
+      orgs = await this.get("USER_ORGS", {
+        apiKey: res.data.access_token,
+        opts: {
+          per_page: incomingOptions.opts.per_page,
+          page: incomingOptions.opts.page
         }
       });
-      organisations.push(...resOrgs.data.map(item => item.login));
-      uri = this.getNextPaginationURIFromResponse(resOrgs);
+      incomingOptions.opts = this.getNextPaginationURIFromResponse(
+        orgs.response
+      );
+      orgs = orgs.data.map(item => item.login);
+      if (!incomingOptions.opts || !incomingOptions.opts.page) break;
     }
-
     const data = {
       accessToken: res.data.access_token,
       integrationSpecificParams: {
         username: user.data.login
       }
     };
-    if (organisations.length > 0) data.team = { usernames: organisations };
+    if (orgs.length > 0) data.team = { usernames: orgs };
     return data;
   }
 
@@ -226,11 +231,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.emojisGet(options, (err, data) => {
+          this.emojisGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -240,11 +245,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.eventsGet(options, (err, data) => {
+          this.eventsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -254,11 +259,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.feedsGet(options, (err, data) => {
+          this.feedsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -268,11 +273,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsGet(options, (err, data) => {
+          this.gistsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -282,11 +287,11 @@ class GithubService {
       Function parameters for this API id,commentId,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdCommentsCommentIdGet(options, (err, data) => {
+          this.gistsIdCommentsCommentIdGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -296,11 +301,11 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdCommentsGet(options, (err, data) => {
+          this.gistsIdCommentsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -310,11 +315,11 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdGet(options, (err, data) => {
+          this.gistsIdGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -324,11 +329,11 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdStarGet(options, (err, data) => {
+          this.gistsIdStarGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -338,11 +343,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsPublicGet(options, (err, data) => {
+          this.gistsPublicGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -352,11 +357,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsStarredGet(options, (err, data) => {
+          this.gistsStarredGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -366,11 +371,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.gitignoreTemplatesGet(options, (err, data) => {
+          this.gitignoreTemplatesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -380,11 +385,11 @@ class GithubService {
       Function parameters for this API language,opts
         */
         return new Promise((resolve, reject) => {
-          this.gitignoreTemplatesLanguageGet(options, (err, data) => {
+          this.gitignoreTemplatesLanguageGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -394,11 +399,11 @@ class GithubService {
       Function parameters for this API filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
-          this.issuesGet(options, (err, data) => {
+          this.issuesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -410,11 +415,11 @@ class GithubService {
         return new Promise((resolve, reject) => {
           this.legacyIssuesSearchOwnerRepositoryStateKeywordGet(
             options,
-            (err, data) => {
+            (err, data, response) => {
               if (err) {
-                reject(err);
+                reject({ error: err, response: response });
               }
-              resolve(data);
+              resolve({ data: data, response: response });
             }
           );
         });
@@ -425,11 +430,11 @@ class GithubService {
       Function parameters for this API keyword,opts
         */
         return new Promise((resolve, reject) => {
-          this.legacyReposSearchKeywordGet(options, (err, data) => {
+          this.legacyReposSearchKeywordGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -439,11 +444,11 @@ class GithubService {
       Function parameters for this API email,opts
         */
         return new Promise((resolve, reject) => {
-          this.legacyUserEmailEmailGet(options, (err, data) => {
+          this.legacyUserEmailEmailGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -453,11 +458,11 @@ class GithubService {
       Function parameters for this API keyword,opts
         */
         return new Promise((resolve, reject) => {
-          this.legacyUserSearchKeywordGet(options, (err, data) => {
+          this.legacyUserSearchKeywordGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -467,11 +472,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.metaGet(options, (err, data) => {
+          this.metaGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -481,11 +486,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.networksOwnerRepoEventsGet(options, (err, data) => {
+          this.networksOwnerRepoEventsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -495,11 +500,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.notificationsGet(options, (err, data) => {
+          this.notificationsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -509,11 +514,11 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.notificationsThreadsIdGet(options, (err, data) => {
+          this.notificationsThreadsIdGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -523,12 +528,15 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.notificationsThreadsIdSubscriptionGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.notificationsThreadsIdSubscriptionGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "ORGS_ORG_EVENTS":
@@ -537,11 +545,11 @@ class GithubService {
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgEventsGet(options, (err, data) => {
+          this.orgsOrgEventsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -551,11 +559,11 @@ class GithubService {
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgGet(options, (err, data) => {
+          this.orgsOrgGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -565,11 +573,11 @@ class GithubService {
       Function parameters for this API org,filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgIssuesGet(options, (err, data) => {
+          this.orgsOrgIssuesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -579,11 +587,11 @@ class GithubService {
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgMembersGet(options, (err, data) => {
+          this.orgsOrgMembersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -593,11 +601,11 @@ class GithubService {
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgMembersUsernameGet(options, (err, data) => {
+          this.orgsOrgMembersUsernameGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -607,11 +615,11 @@ class GithubService {
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgPublicMembersGet(options, (err, data) => {
+          this.orgsOrgPublicMembersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -621,12 +629,15 @@ class GithubService {
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgPublicMembersUsernameGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.orgsOrgPublicMembersUsernameGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "ORGS_ORG_REPOS":
@@ -635,11 +646,11 @@ class GithubService {
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgReposGet(options, (err, data) => {
+          this.orgsOrgReposGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -649,11 +660,11 @@ class GithubService {
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgTeamsGet(options, (err, data) => {
+          this.orgsOrgTeamsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -663,11 +674,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.rateLimitGet(options, (err, data) => {
+          this.rateLimitGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -677,12 +688,15 @@ class GithubService {
       Function parameters for this API owner,repo,archiveFormat,path,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoArchiveFormatPathGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoArchiveFormatPathGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ASSIGNEES_ASSIGNEE":
@@ -691,12 +705,15 @@ class GithubService {
       Function parameters for this API owner,repo,assignee,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoAssigneesAssigneeGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoAssigneesAssigneeGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ASSIGNEES":
@@ -705,11 +722,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoAssigneesGet(options, (err, data) => {
+          this.reposOwnerRepoAssigneesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -719,12 +736,15 @@ class GithubService {
       Function parameters for this API owner,repo,branch,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoBranchesBranchGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoBranchesBranchGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_BRANCHES":
@@ -733,11 +753,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoBranchesGet(options, (err, data) => {
+          this.reposOwnerRepoBranchesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -747,12 +767,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCollaboratorsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCollaboratorsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_COLLABORATORS_USER":
@@ -761,12 +784,15 @@ class GithubService {
       Function parameters for this API owner,repo,user,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCollaboratorsUserGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCollaboratorsUserGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
@@ -775,12 +801,15 @@ class GithubService {
       Function parameters for this API owner,repo,commentId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCommentsCommentIdGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCommentsCommentIdGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_COMMENTS":
@@ -789,11 +818,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCommentsGet(options, (err, data) => {
+          this.reposOwnerRepoCommentsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -803,11 +832,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCommitsGet(options, (err, data) => {
+          this.reposOwnerRepoCommitsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -817,12 +846,15 @@ class GithubService {
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCommitsRefStatusGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCommitsRefStatusGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS":
@@ -831,12 +863,15 @@ class GithubService {
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCommitsShaCodeCommentsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCommitsShaCodeCommentsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_COMMITS_SHA_CODE":
@@ -845,12 +880,15 @@ class GithubService {
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCommitsShaCodeGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCommitsShaCodeGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_COMPARE_BASE_ID_HEAD_ID":
@@ -859,12 +897,15 @@ class GithubService {
       Function parameters for this API owner,repo,baseId,headId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCompareBaseIdHeadIdGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCompareBaseIdHeadIdGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_CONTENTS_PATH":
@@ -873,11 +914,11 @@ class GithubService {
       Function parameters for this API owner,repo,path,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoContentsPathGet(options, (err, data) => {
+          this.reposOwnerRepoContentsPathGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -887,11 +928,11 @@ class GithubService {
       Function parameters for this API owner,repo,anon,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoContributorsGet(options, (err, data) => {
+          this.reposOwnerRepoContributorsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -901,11 +942,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoDeploymentsGet(options, (err, data) => {
+          this.reposOwnerRepoDeploymentsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -915,12 +956,15 @@ class GithubService {
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoDeploymentsIdStatusesGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoDeploymentsIdStatusesGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID":
@@ -929,12 +973,15 @@ class GithubService {
       Function parameters for this API owner,repo,downloadId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoDownloadsDownloadIdGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoDownloadsDownloadIdGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_DOWNLOADS":
@@ -943,11 +990,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoDownloadsGet(options, (err, data) => {
+          this.reposOwnerRepoDownloadsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -957,11 +1004,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoEventsGet(options, (err, data) => {
+          this.reposOwnerRepoEventsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -971,11 +1018,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoForksGet(options, (err, data) => {
+          this.reposOwnerRepoForksGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -985,11 +1032,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGet(options, (err, data) => {
+          this.reposOwnerRepoGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -999,12 +1046,15 @@ class GithubService {
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitBlobsShaCodeGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoGitBlobsShaCodeGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_GIT_COMMITS_SHA_CODE":
@@ -1013,12 +1063,15 @@ class GithubService {
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitCommitsShaCodeGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoGitCommitsShaCodeGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_GIT_REFS":
@@ -1027,11 +1080,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitRefsGet(options, (err, data) => {
+          this.reposOwnerRepoGitRefsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1041,11 +1094,11 @@ class GithubService {
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitRefsRefGet(options, (err, data) => {
+          this.reposOwnerRepoGitRefsRefGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1055,12 +1108,15 @@ class GithubService {
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitTagsShaCodeGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoGitTagsShaCodeGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_GIT_TREES_SHA_CODE":
@@ -1069,12 +1125,15 @@ class GithubService {
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitTreesShaCodeGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoGitTreesShaCodeGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_HOOKS":
@@ -1083,11 +1142,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoHooksGet(options, (err, data) => {
+          this.reposOwnerRepoHooksGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1097,11 +1156,11 @@ class GithubService {
       Function parameters for this API owner,repo,hookId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoHooksHookIdGet(options, (err, data) => {
+          this.reposOwnerRepoHooksHookIdGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1113,11 +1172,11 @@ class GithubService {
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesCommentsCommentIdGet(
             options,
-            (err, data) => {
+            (err, data, response) => {
               if (err) {
-                reject(err);
+                reject({ error: err, response: response });
               }
-              resolve(data);
+              resolve({ data: data, response: response });
             }
           );
         });
@@ -1128,12 +1187,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesCommentsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesCommentsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ISSUES_EVENTS_EVENT_ID":
@@ -1142,12 +1204,15 @@ class GithubService {
       Function parameters for this API owner,repo,eventId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesEventsEventIdGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesEventsEventIdGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ISSUES_EVENTS":
@@ -1156,11 +1221,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesEventsGet(options, (err, data) => {
+          this.reposOwnerRepoIssuesEventsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1170,11 +1235,11 @@ class GithubService {
       Function parameters for this API owner,repo,filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesGet(options, (err, data) => {
+          this.reposOwnerRepoIssuesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1184,12 +1249,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesNumberCommentsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesNumberCommentsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_EVENTS":
@@ -1198,12 +1266,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesNumberEventsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesNumberEventsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER":
@@ -1212,11 +1283,11 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesNumberGet(options, (err, data) => {
+          this.reposOwnerRepoIssuesNumberGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1226,12 +1297,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesNumberLabelsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesNumberLabelsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_KEYS":
@@ -1240,11 +1314,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoKeysGet(options, (err, data) => {
+          this.reposOwnerRepoKeysGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1254,11 +1328,11 @@ class GithubService {
       Function parameters for this API owner,repo,keyId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoKeysKeyIdGet(options, (err, data) => {
+          this.reposOwnerRepoKeysKeyIdGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1268,11 +1342,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoLabelsGet(options, (err, data) => {
+          this.reposOwnerRepoLabelsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1282,11 +1356,11 @@ class GithubService {
       Function parameters for this API owner,repo,name,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoLabelsNameGet(options, (err, data) => {
+          this.reposOwnerRepoLabelsNameGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1296,11 +1370,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoLanguagesGet(options, (err, data) => {
+          this.reposOwnerRepoLanguagesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1310,11 +1384,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoMilestonesGet(options, (err, data) => {
+          this.reposOwnerRepoMilestonesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1324,12 +1398,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoMilestonesNumberGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoMilestonesNumberGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER_LABELS":
@@ -1338,12 +1415,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoMilestonesNumberLabelsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoMilestonesNumberLabelsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_NOTIFICATIONS":
@@ -1352,12 +1432,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoNotificationsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoNotificationsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
@@ -1366,12 +1449,15 @@ class GithubService {
       Function parameters for this API owner,repo,commentId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsCommentsCommentIdGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoPullsCommentsCommentIdGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS":
@@ -1380,12 +1466,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsCommentsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoPullsCommentsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_PULLS":
@@ -1394,11 +1483,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsGet(options, (err, data) => {
+          this.reposOwnerRepoPullsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1408,12 +1497,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsNumberCommentsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoPullsNumberCommentsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMITS":
@@ -1422,12 +1514,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsNumberCommitsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoPullsNumberCommitsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_FILES":
@@ -1436,12 +1531,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsNumberFilesGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoPullsNumberFilesGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER":
@@ -1450,11 +1548,11 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsNumberGet(options, (err, data) => {
+          this.reposOwnerRepoPullsNumberGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1464,12 +1562,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsNumberMergeGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoPullsNumberMergeGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_README":
@@ -1478,11 +1579,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReadmeGet(options, (err, data) => {
+          this.reposOwnerRepoReadmeGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1492,12 +1593,15 @@ class GithubService {
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReleasesAssetsIdGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoReleasesAssetsIdGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_RELEASES":
@@ -1506,11 +1610,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReleasesGet(options, (err, data) => {
+          this.reposOwnerRepoReleasesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1520,12 +1624,15 @@ class GithubService {
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReleasesIdAssetsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoReleasesIdAssetsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ID":
@@ -1534,11 +1641,11 @@ class GithubService {
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReleasesIdGet(options, (err, data) => {
+          this.reposOwnerRepoReleasesIdGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1548,11 +1655,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoStargazersGet(options, (err, data) => {
+          this.reposOwnerRepoStargazersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1562,12 +1669,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoStatsCodeFrequencyGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoStatsCodeFrequencyGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_STATS_COMMIT_ACTIVITY":
@@ -1576,12 +1686,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoStatsCommitActivityGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoStatsCommitActivityGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_STATS_CONTRIBUTORS":
@@ -1590,12 +1703,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoStatsContributorsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoStatsContributorsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_STATS_PARTICIPATION":
@@ -1604,12 +1720,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoStatsParticipationGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoStatsParticipationGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_STATS_PUNCH_CARD":
@@ -1618,12 +1737,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoStatsPunchCardGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoStatsPunchCardGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_STATUSES_REF":
@@ -1632,11 +1754,11 @@ class GithubService {
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoStatusesRefGet(options, (err, data) => {
+          this.reposOwnerRepoStatusesRefGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1646,11 +1768,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoSubscribersGet(options, (err, data) => {
+          this.reposOwnerRepoSubscribersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1660,11 +1782,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoSubscriptionGet(options, (err, data) => {
+          this.reposOwnerRepoSubscriptionGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1674,11 +1796,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoTagsGet(options, (err, data) => {
+          this.reposOwnerRepoTagsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1688,11 +1810,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoTeamsGet(options, (err, data) => {
+          this.reposOwnerRepoTeamsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1702,11 +1824,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoWatchersGet(options, (err, data) => {
+          this.reposOwnerRepoWatchersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1716,11 +1838,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.repositoriesGet(options, (err, data) => {
+          this.repositoriesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1730,11 +1852,11 @@ class GithubService {
       Function parameters for this API q,opts
         */
         return new Promise((resolve, reject) => {
-          this.searchCodeGet(options, (err, data) => {
+          this.searchCodeGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1744,11 +1866,11 @@ class GithubService {
       Function parameters for this API q,opts
         */
         return new Promise((resolve, reject) => {
-          this.searchIssuesGet(options, (err, data) => {
+          this.searchIssuesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1758,11 +1880,11 @@ class GithubService {
       Function parameters for this API q,opts
         */
         return new Promise((resolve, reject) => {
-          this.searchRepositoriesGet(options, (err, data) => {
+          this.searchRepositoriesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1772,11 +1894,11 @@ class GithubService {
       Function parameters for this API q,opts
         */
         return new Promise((resolve, reject) => {
-          this.searchUsersGet(options, (err, data) => {
+          this.searchUsersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1786,11 +1908,11 @@ class GithubService {
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdGet(options, (err, data) => {
+          this.teamsTeamIdGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1800,11 +1922,11 @@ class GithubService {
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdMembersGet(options, (err, data) => {
+          this.teamsTeamIdMembersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1814,11 +1936,11 @@ class GithubService {
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdMembersUsernameGet(options, (err, data) => {
+          this.teamsTeamIdMembersUsernameGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1828,12 +1950,15 @@ class GithubService {
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdMembershipsUsernameGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.teamsTeamIdMembershipsUsernameGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "TEAMS_TEAM_ID_REPOS":
@@ -1842,11 +1967,11 @@ class GithubService {
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdReposGet(options, (err, data) => {
+          this.teamsTeamIdReposGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1856,11 +1981,11 @@ class GithubService {
       Function parameters for this API teamId,owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdReposOwnerRepoGet(options, (err, data) => {
+          this.teamsTeamIdReposOwnerRepoGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1870,11 +1995,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userEmailsGet(options, (err, data) => {
+          this.userEmailsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1884,11 +2009,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userFollowersGet(options, (err, data) => {
+          this.userFollowersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1898,11 +2023,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userFollowingGet(options, (err, data) => {
+          this.userFollowingGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1912,11 +2037,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.userFollowingUsernameGet(options, (err, data) => {
+          this.userFollowingUsernameGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1926,11 +2051,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userGet(options, (err, data) => {
+          this.userGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1940,11 +2065,11 @@ class GithubService {
       Function parameters for this API filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
-          this.userIssuesGet(options, (err, data) => {
+          this.userIssuesGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1954,11 +2079,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userKeysGet(options, (err, data) => {
+          this.userKeysGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1968,11 +2093,11 @@ class GithubService {
       Function parameters for this API keyId,opts
         */
         return new Promise((resolve, reject) => {
-          this.userKeysKeyIdGet(options, (err, data) => {
+          this.userKeysKeyIdGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1982,11 +2107,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userOrgsGet(options, (err, data) => {
+          this.userOrgsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -1996,11 +2121,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userReposGet(options, (err, data) => {
+          this.userReposGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2010,11 +2135,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userStarredGet(options, (err, data) => {
+          this.userStarredGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2024,11 +2149,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.userStarredOwnerRepoGet(options, (err, data) => {
+          this.userStarredOwnerRepoGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2038,11 +2163,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userSubscriptionsGet(options, (err, data) => {
+          this.userSubscriptionsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2052,11 +2177,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.userSubscriptionsOwnerRepoGet(options, (err, data) => {
+          this.userSubscriptionsOwnerRepoGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2066,11 +2191,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.userTeamsGet(options, (err, data) => {
+          this.userTeamsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2080,11 +2205,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.usersGet(options, (err, data) => {
+          this.usersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2094,11 +2219,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameEventsGet(options, (err, data) => {
+          this.usersUsernameEventsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2108,11 +2233,11 @@ class GithubService {
       Function parameters for this API username,org,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameEventsOrgsOrgGet(options, (err, data) => {
+          this.usersUsernameEventsOrgsOrgGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2122,11 +2247,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameFollowersGet(options, (err, data) => {
+          this.usersUsernameFollowersGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2136,12 +2261,15 @@ class GithubService {
       Function parameters for this API username,targetUser,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameFollowingTargetUserGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.usersUsernameFollowingTargetUserGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "USERS_USERNAME":
@@ -2150,11 +2278,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameGet(options, (err, data) => {
+          this.usersUsernameGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2164,11 +2292,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameGistsGet(options, (err, data) => {
+          this.usersUsernameGistsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2178,11 +2306,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameKeysGet(options, (err, data) => {
+          this.usersUsernameKeysGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2192,11 +2320,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameOrgsGet(options, (err, data) => {
+          this.usersUsernameOrgsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2206,12 +2334,15 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameReceivedEventsGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.usersUsernameReceivedEventsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "USERS_USERNAME_RECEIVED_EVENTS_PUBLIC":
@@ -2220,12 +2351,15 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameReceivedEventsPublicGet(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.usersUsernameReceivedEventsPublicGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "USERS_USERNAME_REPOS":
@@ -2234,11 +2368,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameReposGet(options, (err, data) => {
+          this.usersUsernameReposGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2248,11 +2382,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameStarredGet(options, (err, data) => {
+          this.usersUsernameStarredGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2262,11 +2396,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameSubscriptionsGet(options, (err, data) => {
+          this.usersUsernameSubscriptionsGet(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -2286,16 +2420,19 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.emojisGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -2312,16 +2449,19 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.eventsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -2338,16 +2478,19 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.feedsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -2364,17 +2507,20 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1, // Number | Page number at which you want the search result to come from.
-  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+      //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.gistsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -2390,18 +2536,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let commentId = 56;*/ // Number | Id of gist // Number | Id of comment
-    /*let id = 56;*/ apiInstance.gistsIdCommentsCommentIdGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // Number | Id of comment.
+    /*let id = 56;*/ /*let commentId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdCommentsCommentIdGet(
       incomingOptions.id,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2418,19 +2568,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // Number | Id of gist
-    /*let id = 56;*/ apiInstance.gistsIdCommentsGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist.
+    /*let id = 56;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdCommentsGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2447,17 +2601,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | Id of gist
-    /*let id = 56;*/ apiInstance.gistsIdGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist.
+    /*let id = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2474,19 +2632,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // Number | Id of gist
-    /*let id = 56;*/ apiInstance.gistsIdStarGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist.
+    /*let id = 56;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdStarGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -2504,19 +2666,22 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1, // Number | Page number at which you want the search result to come from.
-  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+      //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.gistsPublicGet(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2534,19 +2699,22 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1, // Number | Page number at which you want the search result to come from.
-  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+      //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.gistsStarredGet(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2564,18 +2732,21 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.gitignoreTemplatesGet(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2592,17 +2763,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String |
-    /*let language = "language_example";*/ apiInstance.gitignoreTemplatesLanguageGet(
+    let apiInstance = new Github.DefaultApi(); // String |
+    /*let language = "language_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gitignoreTemplatesLanguageGet(
       incomingOptions.language,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2619,13 +2794,17 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1, // Number | Page number at which you want the search result to come from.
-  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
-};*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
-    /*let filter = "'all'";*/ apiInstance.issuesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
+    /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+      //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.issuesGet(
       incomingOptions.filter,
       incomingOptions.state,
       incomingOptions.labels,
@@ -2634,9 +2813,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2647,10 +2826,14 @@ class GithubService {
   legacyIssuesSearchOwnerRepositoryStateKeywordGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let state = "state_example";*/ /*let owner = "owner_example";*/ /*let repository = "repository_example";*/ // String | The search term // String | Indicates the state of the issues to return. Can be either open or closed // String | // String |
-    /*let keyword = "keyword_example";*/ apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(
+    let apiInstance = new Github.DefaultApi(); // String | The search term // String | Indicates the state of the issues to return. Can be either open or closed // String | // String |
+    /*let keyword = "keyword_example";*/ /*let state = "state_example";*/ /*let owner = "owner_example";*/ /*let repository = "repository_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(
       incomingOptions.keyword,
       incomingOptions.state,
       incomingOptions.owner,
@@ -2658,9 +2841,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2671,21 +2854,25 @@ class GithubService {
   legacyReposSearchKeywordGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
-  'language': "language_example", // String | Filter results by language
-  'startPage': "startPage_example", // String | The page number to fetch
-  'sort': "sort_example", // String | The sort field. One of stars, forks, or updated. Default: results are sorted by best match.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // String | The search ter
-    /*let keyword = "keyword_example";*/ apiInstance.legacyReposSearchKeywordGet(
+    let apiInstance = new Github.DefaultApi(); // String | The search term
+    /*let keyword = "keyword_example";*/ let opts = {
+      order: "'desc'" // String | The sort field. if sort param is provided. Can be either asc or desc.
+      //  'language': "language_example", // String | Filter results by language
+      //  'startPage': "startPage_example", // String | The page number to fetch
+      //  'sort': "sort_example", // String | The sort field. One of stars, forks, or updated. Default: results are sorted by best match.
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.legacyReposSearchKeywordGet(
       incomingOptions.keyword,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2696,17 +2883,21 @@ class GithubService {
   legacyUserEmailEmailGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // String | The email addres
-    /*let email = "email_example";*/ apiInstance.legacyUserEmailEmailGet(
+    let apiInstance = new Github.DefaultApi(); // String | The email address
+    /*let email = "email_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.legacyUserEmailEmailGet(
       incomingOptions.email,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2717,20 +2908,24 @@ class GithubService {
   legacyUserSearchKeywordGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
-  'startPage': "startPage_example", // String | The page number to fetch
-  'sort': "sort_example", // String | The sort field. One of stars, forks, or updated. Default: results are sorted by best match.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // String | The search ter
-    /*let keyword = "keyword_example";*/ apiInstance.legacyUserSearchKeywordGet(
+    let apiInstance = new Github.DefaultApi(); // String | The search term
+    /*let keyword = "keyword_example";*/ let opts = {
+      order: "'desc'" // String | The sort field. if sort param is provided. Can be either asc or desc.
+      //  'startPage': "startPage_example", // String | The page number to fetch
+      //  'sort': "sort_example", // String | The sort field. One of stars, forks, or updated. Default: results are sorted by best match.
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.legacyUserSearchKeywordGet(
       incomingOptions.keyword,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2748,14 +2943,17 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
+    let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.metaGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -2771,20 +2969,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of the owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.networksOwnerRepoEventsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of the owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.networksOwnerRepoEventsGet(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2802,21 +3004,24 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'all': true, // Boolean | True to show notifications marked as read.
-  'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned.
-  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      all: true, // Boolean | True to show notifications marked as read.
+      participating: true, // Boolean | True to show only notifications in which the user is directly participating or mentioned.
+      //  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.notificationsGet(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2833,17 +3038,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | Id of thread
-    /*let id = 56;*/ apiInstance.notificationsThreadsIdGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of thread.
+    /*let id = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.notificationsThreadsIdGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2860,19 +3069,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // Number | Id of thread
-    /*let id = 56;*/ apiInstance.notificationsThreadsIdSubscriptionGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of thread.
+    /*let id = 56;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.notificationsThreadsIdSubscriptionGet(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2889,19 +3102,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | Name of organisation
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgEventsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation.
+    /*let org = "org_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgEventsGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2918,19 +3135,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | Name of organisation
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation.
+    /*let org = "org_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2947,13 +3168,17 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1, // Number | Page number at which you want the search result to come from.
-  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
-};*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ // String | Name of organisation // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgIssuesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
+    /*let org = "org_example";*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+      //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgIssuesGet(
       org,
       incomingOptions.filter,
       incomingOptions.state,
@@ -2963,9 +3188,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -2982,19 +3207,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | Name of organisation
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgMembersGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation.
+    /*let org = "org_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgMembersGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3011,20 +3240,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgMembersUsernameGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user.
+    /*let org = "org_example";*/ /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgMembersUsernameGet(
       org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -3041,19 +3274,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | Name of organisation
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPublicMembersGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation.
+    /*let org = "org_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgPublicMembersGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3070,20 +3307,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user.
+    /*let org = "org_example";*/ /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgPublicMembersUsernameGet(
       org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -3100,20 +3341,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'type': "'all'", // String |
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | Name of organisation
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgReposGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation.
+    /*let org = "org_example";*/ let opts = {
+      type: "'all'", // String |
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgReposGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3130,19 +3375,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | Name of organisation
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgTeamsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation.
+    /*let org = "org_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgTeamsGet(
       org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3160,16 +3409,19 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.rateLimitGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -3185,12 +3437,16 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let archiveFormat = "archiveFormat_example";*/ /*let path = "path_example";*/ // String | Name of repository owner // String | Name of repository // String | // String | Valid Git reference, defaults to 'master'
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoArchiveFormatPathGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // String | Valid Git reference, defaults to 'master'.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let archiveFormat = "archiveFormat_example";*/ /*let path = "path_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoArchiveFormatPathGet(
       incomingOptions.owner,
       repo,
       incomingOptions.archiveFormat,
@@ -3198,9 +3454,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -3217,21 +3473,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let assignee = "assignee_example";*/ // String | Name of repository owner // String | Name of repository // String | Login of the assignee
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoAssigneesAssigneeGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Login of the assignee.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let assignee = "assignee_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoAssigneesAssigneeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.assignee,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -3248,20 +3508,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoAssigneesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoAssigneesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3278,21 +3542,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let branch = "branch_example";*/ // String | Name of repository owner // String | Name of repository // String | Name of the branch
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoBranchesBranchGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Name of the branch.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let branch = "branch_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoBranchesBranchGet(
       incomingOptions.owner,
       repo,
       incomingOptions.branch,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3309,20 +3577,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoBranchesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoBranchesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3339,20 +3611,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3369,21 +3645,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ // String | Name of repository owner // String | Name of repository // String | Login of the user
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Login of the user.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserGet(
       incomingOptions.owner,
       repo,
       incomingOptions.user,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -3400,21 +3680,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3431,20 +3715,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommentsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3461,25 +3749,29 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
-  'sha': "sha_example", // String | Sha or branch to start listing commits from.
-  'path': "path_example", // String | Only commits containing this file path will be returned.
-  'author': "author_example", // String | GitHub login, name, or email by which to filter by commit author.
-  'until': "until_example", // String | ISO 8601 Date - Only commits before this date will be returned.
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
+      //  'sha': "sha_example", // String | Sha or branch to start listing commits from.
+      //  'path': "path_example", // String | Only commits containing this file path will be returned.
+      //  'author': "author_example", // String | GitHub login, name, or email by which to filter by commit author.
+      //  'until': "until_example", // String | ISO 8601 Date - Only commits before this date will be returned.
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCommitsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3496,21 +3788,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsRefStatusGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCommitsRefStatusGet(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3527,21 +3823,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3558,21 +3858,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3589,12 +3893,16 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let baseId = "baseId_example";*/ /*let headId = "headId_example";*/ // String | Name of repository owner // String | Name of repository // String | // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCompareBaseIdHeadIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let baseId = "baseId_example";*/ /*let headId = "headId_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCompareBaseIdHeadIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.baseId,
@@ -3602,9 +3910,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3621,23 +3929,27 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'path2': "path_example", // String | The content path.
-  'ref': "ref_example", // String | The String name of the Commit/Branch/Tag. Defaults to 'master'.
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoContentsPathGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ let opts = {
+      //  'path2': "path_example", // String | The content path.
+      //  'ref': "ref_example", // String | The String name of the Commit/Branch/Tag. Defaults to 'master'.
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoContentsPathGet(
       incomingOptions.owner,
       repo,
       incomingOptions.path,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3654,21 +3966,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let anon = "anon_example";*/ // String | Name of repository owner // String | Name of repository // String | Set to 1 or true to include anonymous contributors in results
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoContributorsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Set to 1 or true to include anonymous contributors in results.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let anon = "anon_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoContributorsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.anon,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3685,20 +4001,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDeploymentsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoDeploymentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3715,21 +4035,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let id = 56;*/ // String | Name of repository owner // String | Name of repository // Number | The Deployment ID to list the statuses from
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | The Deployment ID to list the statuses from.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = 56;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3746,19 +4070,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let downloadId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of download
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of download.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let downloadId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.downloadId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3775,18 +4103,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDownloadsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoDownloadsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3803,20 +4135,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoEventsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoEventsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3833,21 +4169,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'sort': "'newes'", // String |
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoForksGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      sort: "'newes'", // String |
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoForksGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3864,20 +4204,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3888,19 +4232,23 @@ class GithubService {
   reposOwnerRepoGitBlobsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitBlobsShaCodeGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitBlobsShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3911,19 +4259,23 @@ class GithubService {
   reposOwnerRepoGitCommitsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitCommitsShaCodeGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitCommitsShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3934,20 +4286,24 @@ class GithubService {
   reposOwnerRepoGitRefsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitRefsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3958,21 +4314,25 @@ class GithubService {
   reposOwnerRepoGitRefsRefGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitRefsRefGet(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -3983,21 +4343,25 @@ class GithubService {
   reposOwnerRepoGitTagsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitTagsShaCodeGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitTagsShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4008,20 +4372,24 @@ class GithubService {
   reposOwnerRepoGitTreesShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'recursive': 56, // Number | Get a Tree Recursively. (0 or 1)
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ // String | Name of repository owner // String | Name of repository // String | Tree SHA
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitTreesShaCodeGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Tree SHA.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
+      recursive: 56 // Number | Get a Tree Recursively. (0 or 1)
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitTreesShaCodeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4032,20 +4400,24 @@ class GithubService {
   reposOwnerRepoHooksGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoHooksGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4056,19 +4428,23 @@ class GithubService {
   reposOwnerRepoHooksHookIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of hook
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.hookId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4079,19 +4455,23 @@ class GithubService {
   reposOwnerRepoIssuesCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | ID of comment
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | ID of comment.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4102,21 +4482,25 @@ class GithubService {
   reposOwnerRepoIssuesCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-  'sort': "sort_example", // String |
-  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
+      //  'sort': "sort_example", // String |
+      //  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4127,19 +4511,23 @@ class GithubService {
   reposOwnerRepoIssuesEventsEventIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let eventId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of the event
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsEventIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of the event.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let eventId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesEventsEventIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.eventId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4150,18 +4538,22 @@ class GithubService {
   reposOwnerRepoIssuesEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesEventsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4172,13 +4564,17 @@ class GithubService {
   reposOwnerRepoIssuesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1, // Number | Page number at which you want the search result to come from.
-  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
-};*/ /*let repo = "repo_example";*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ // String | Name of repository owner // String | Name of repository // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+      //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.filter,
@@ -4189,9 +4585,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4202,19 +4598,23 @@ class GithubService {
   reposOwnerRepoIssuesNumberCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4225,19 +4625,23 @@ class GithubService {
   reposOwnerRepoIssuesNumberEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberEventsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberEventsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4248,19 +4652,23 @@ class GithubService {
   reposOwnerRepoIssuesNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4271,19 +4679,23 @@ class GithubService {
   reposOwnerRepoIssuesNumberLabelsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4294,18 +4706,22 @@ class GithubService {
   reposOwnerRepoKeysGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoKeysGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoKeysGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4316,19 +4732,23 @@ class GithubService {
   reposOwnerRepoKeysKeyIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let keyId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of key
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of key.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let keyId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.keyId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4339,18 +4759,22 @@ class GithubService {
   reposOwnerRepoLabelsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoLabelsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4361,19 +4785,23 @@ class GithubService {
   reposOwnerRepoLabelsNameGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ // String | Name of repository owner // String | Name of repository // String | Name of the label
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsNameGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Name of the label.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoLabelsNameGet(
       incomingOptions.owner,
       repo,
       incomingOptions.name,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4384,18 +4812,22 @@ class GithubService {
   reposOwnerRepoLanguagesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLanguagesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoLanguagesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4406,21 +4838,25 @@ class GithubService {
   reposOwnerRepoMilestonesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'state': "'open'", // String | String to filter by state.
-  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-  'sort': "'due_date'", // String |
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      state: "'open'", // String | String to filter by state.
+      //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
+      sort: "'due_date'" // String |
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoMilestonesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4431,19 +4867,23 @@ class GithubService {
   reposOwnerRepoMilestonesNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of milestone
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of milestone.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4454,19 +4894,23 @@ class GithubService {
   reposOwnerRepoMilestonesNumberLabelsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of milestone
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberLabelsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of milestone.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberLabelsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4477,21 +4921,25 @@ class GithubService {
   reposOwnerRepoNotificationsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'all': true, // Boolean | True to show notifications marked as read.
-  'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned.
-  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoNotificationsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      all: true, // Boolean | True to show notifications marked as read.
+      participating: true // Boolean | True to show only notifications in which the user is directly participating or mentioned.
+      //  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoNotificationsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4502,19 +4950,23 @@ class GithubService {
   reposOwnerRepoPullsCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4525,21 +4977,25 @@ class GithubService {
   reposOwnerRepoPullsCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-  'sort': "sort_example", // String |
-  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
+      //  'sort': "sort_example", // String |
+      //  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4550,21 +5006,25 @@ class GithubService {
   reposOwnerRepoPullsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'state': "'open'", // String | String to filter by state.
-  'head': "head_example", // String | Filter pulls by head user and branch name in the format of 'user:ref-name'. Example: github:new-script-format.
-  'base': "base_example", // String | Filter pulls by base branch name. Example - gh-pages.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      state: "'open'" // String | String to filter by state.
+      //  'head': "head_example", // String | Filter pulls by head user and branch name in the format of 'user:ref-name'. Example: github:new-script-format.
+      //  'base': "base_example", // String | Filter pulls by base branch name. Example - gh-pages.
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4575,19 +5035,23 @@ class GithubService {
   reposOwnerRepoPullsNumberCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4598,19 +5062,23 @@ class GithubService {
   reposOwnerRepoPullsNumberCommitsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommitsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommitsGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4621,19 +5089,23 @@ class GithubService {
   reposOwnerRepoPullsNumberFilesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberFilesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsNumberFilesGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4644,19 +5116,23 @@ class GithubService {
   reposOwnerRepoPullsNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsNumberGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4667,19 +5143,23 @@ class GithubService {
   reposOwnerRepoPullsNumberMergeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergeGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergeGet(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -4690,19 +5170,23 @@ class GithubService {
   reposOwnerRepoReadmeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'ref': "ref_example", // String | The String name of the Commit/Branch/Tag. Defaults to master.
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReadmeGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'ref': "ref_example", // String | The String name of the Commit/Branch/Tag. Defaults to master.
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReadmeGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4713,19 +5197,23 @@ class GithubService {
   reposOwnerRepoReleasesAssetsIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4736,18 +5224,22 @@ class GithubService {
   reposOwnerRepoReleasesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReleasesGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4758,19 +5250,23 @@ class GithubService {
   reposOwnerRepoReleasesIdAssetsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesIdAssetsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReleasesIdAssetsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4781,19 +5277,23 @@ class GithubService {
   reposOwnerRepoReleasesIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesIdGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReleasesIdGet(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4804,18 +5304,22 @@ class GithubService {
   reposOwnerRepoStargazersGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStargazersGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoStargazersGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4826,18 +5330,22 @@ class GithubService {
   reposOwnerRepoStatsCodeFrequencyGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsCodeFrequencyGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoStatsCodeFrequencyGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4848,18 +5356,22 @@ class GithubService {
   reposOwnerRepoStatsCommitActivityGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsCommitActivityGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoStatsCommitActivityGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4870,18 +5382,22 @@ class GithubService {
   reposOwnerRepoStatsContributorsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsContributorsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoStatsContributorsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4892,18 +5408,22 @@ class GithubService {
   reposOwnerRepoStatsParticipationGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsParticipationGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoStatsParticipationGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4914,18 +5434,22 @@ class GithubService {
   reposOwnerRepoStatsPunchCardGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatsPunchCardGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoStatsPunchCardGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4936,19 +5460,23 @@ class GithubService {
   reposOwnerRepoStatusesRefGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ // String | Name of repository owner // String | Name of repository // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name.
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatusesRefGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoStatusesRefGet(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4959,18 +5487,22 @@ class GithubService {
   reposOwnerRepoSubscribersGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoSubscribersGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoSubscribersGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -4981,18 +5513,22 @@ class GithubService {
   reposOwnerRepoSubscriptionGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoSubscriptionGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoSubscriptionGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5003,18 +5539,22 @@ class GithubService {
   reposOwnerRepoTagsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoTagsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoTagsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5025,18 +5565,22 @@ class GithubService {
   reposOwnerRepoTeamsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoTeamsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoTeamsGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5053,18 +5597,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoWatchersGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoWatchersGet(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5082,19 +5630,22 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1, // Number | Page number at which you want the search result to come from.
-  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+      //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.repositoriesGet(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5111,21 +5662,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
-  'sort': "sort_example", // String | Can only be 'indexed', which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match.
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository.
-    /*let q = "q_example";*/ apiInstance.searchCodeGet(
+    let apiInstance = new Github.DefaultApi(); // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository.
+    /*let q = "q_example";*/ let opts = {
+      order: "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
+      //  'sort': "sort_example", // String | Can only be 'indexed', which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match.
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.searchCodeGet(
       incomingOptions.q,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5142,21 +5697,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
-  'sort': "sort_example", // String | The sort field. Can be comments, created, or updated. Default: results are sorted by best match.
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | The q search term can also contain any combination of the supported issue search qualifiers
-    /*let q = "q_example";*/ apiInstance.searchIssuesGet(
+    let apiInstance = new Github.DefaultApi(); // String | The q search term can also contain any combination of the supported issue search qualifiers:
+    /*let q = "q_example";*/ let opts = {
+      order: "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
+      //  'sort': "sort_example", // String | The sort field. Can be comments, created, or updated. Default: results are sorted by best match.
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.searchIssuesGet(
       incomingOptions.q,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5173,21 +5732,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
-  'sort': "sort_example", // String | If not provided, results are sorted by best match.
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars.
-    /*let q = "q_example";*/ apiInstance.searchRepositoriesGet(
+    let apiInstance = new Github.DefaultApi(); // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars.
+    /*let q = "q_example";*/ let opts = {
+      order: "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
+      //  'sort': "sort_example", // String | If not provided, results are sorted by best match.
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.searchRepositoriesGet(
       incomingOptions.q,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5204,21 +5767,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
-  'sort': "sort_example", // String | If not provided, results are sorted by best match.
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have.
-    /*let q = "q_example";*/ apiInstance.searchUsersGet(
+    let apiInstance = new Github.DefaultApi(); // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have.
+    /*let q = "q_example";*/ let opts = {
+      order: "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
+      //  'sort': "sort_example", // String | If not provided, results are sorted by best match.
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.searchUsersGet(
       incomingOptions.q,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5235,17 +5802,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | Id of team
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team.
+    /*let teamId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdGet(
       incomingOptions.teamId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5262,19 +5833,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // Number | Id of team
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembersGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team.
+    /*let teamId = 56;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdMembersGet(
       incomingOptions.teamId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5291,18 +5866,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembersUsernameGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member.
+    /*let teamId = 56;*/ /*let username = "username_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdMembersUsernameGet(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -5319,18 +5898,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembershipsUsernameGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member.
+    /*let teamId = 56;*/ /*let username = "username_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdMembershipsUsernameGet(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5347,19 +5930,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // Number | Id of team
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdReposGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team.
+    /*let teamId = 56;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdReposGet(
       incomingOptions.teamId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5376,19 +5963,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ // Number | Id of team // String | Name of a repository owner // String | Name of a repository
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdReposOwnerRepoGet(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a repository owner // String | Name of a repository.
+    /*let teamId = 56;*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdReposOwnerRepoGet(
       incomingOptions.teamId,
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -5406,14 +5997,17 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
+    let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userEmailsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -5430,18 +6024,21 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userFollowersGet(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5459,18 +6056,21 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userFollowingGet(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5487,17 +6087,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.userFollowingUsernameGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userFollowingUsernameGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -5515,16 +6119,19 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -5540,13 +6147,17 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1, // Number | Page number at which you want the search result to come from.
-  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
-};*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
-    /*let filter = "'all'";*/ apiInstance.userIssuesGet(
+    let apiInstance = new Github.DefaultApi(); // String | Issues assigned to you / created by you / mentioning you / you're subscribed to updates for / All issues the authenticated user can see // String | // String | String list of comma separated Label names. Example - bug,ui,@high // String | // String |
+    /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+      //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userIssuesGet(
       incomingOptions.filter,
       incomingOptions.state,
       incomingOptions.labels,
@@ -5555,9 +6166,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5575,14 +6186,17 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userKeysGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -5598,17 +6212,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | ID of key
-    /*let keyId = 56;*/ apiInstance.userKeysKeyIdGet(
+    let apiInstance = new Github.DefaultApi(); // Number | ID of key.
+    /*let keyId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userKeysKeyIdGet(
       incomingOptions.keyId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5626,14 +6244,17 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userOrgsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -5650,15 +6271,18 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'type': "'all'", // String |
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/
+    let opts = {
+      type: "'all'", // String |
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userReposGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -5675,18 +6299,21 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-  'sort': "'created'", // String |
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
+    let opts = {
+      //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
+      sort: "'created'" // String |
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userStarredGet(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5703,18 +6330,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of a repository owner // String | Name of a repository
-    /*let owner = "owner_example";*/ apiInstance.userStarredOwnerRepoGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of a repository owner // String | Name of a repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userStarredOwnerRepoGet(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -5732,16 +6363,19 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
+    let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userSubscriptionsGet(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5758,18 +6392,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of the owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.userSubscriptionsOwnerRepoGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of the owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userSubscriptionsOwnerRepoGet(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -5787,14 +6425,17 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/
+    let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.userTeamsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -5811,17 +6452,20 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'since': 56, // Number | The integer ID of the last user that you've seen.
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/
+    let opts = {
+      since: 56, // Number | The integer ID of the last user that you've seen.
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.usersGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
-        cb(error, null);
+        cb(error, null, response);
       } else {
-        cb(null, data);
+        cb(null, data, response);
       }
     });
   }
@@ -5837,19 +6481,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameEventsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameEventsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -5866,18 +6514,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ /*let org = "org_example";*/ // String | Name of user // String |
-    /*let username = "username_example";*/ apiInstance.usersUsernameEventsOrgsOrgGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user // String |
+    /*let username = "username_example";*/ /*let org = "org_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameEventsOrgsOrgGet(
       incomingOptions.username,
       incomingOptions.org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -5894,17 +6546,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameFollowersGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameFollowersGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5915,18 +6571,22 @@ class GithubService {
   usersUsernameFollowingTargetUserGet(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ /*let targetUser = "targetUser_example";*/ // String | Name of user // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameFollowingTargetUserGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user // String | Name of user.
+    /*let username = "username_example";*/ /*let targetUser = "targetUser_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameFollowingTargetUserGet(
       incomingOptions.username,
       incomingOptions.targetUser,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -5943,17 +6603,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -5970,20 +6634,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1, // Number | Page number at which you want the search result to come from.
-  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameGistsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+      //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameGistsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6000,17 +6668,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameKeysGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameKeysGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6027,17 +6699,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameOrgsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameOrgsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6054,17 +6730,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameReceivedEventsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameReceivedEventsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -6081,17 +6761,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameReceivedEventsPublicGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameReceivedEventsPublicGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -6108,20 +6792,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'type': "'all'", // String |
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameReposGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      type: "'all'", // String |
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameReposGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6138,17 +6826,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameStarredGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameStarredGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -6165,17 +6857,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.usersUsernameSubscriptionsGet(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.usersUsernameSubscriptionsGet(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -6189,11 +6885,11 @@ class GithubService {
       Function parameters for this API id,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdCommentsPost(options, (err, data) => {
+          this.gistsIdCommentsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6203,11 +6899,11 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdForksPost(options, (err, data) => {
+          this.gistsIdForksPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6217,11 +6913,11 @@ class GithubService {
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsPost(options, (err, data) => {
+          this.gistsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6231,11 +6927,11 @@ class GithubService {
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
-          this.markdownPost(options, (err, data) => {
+          this.markdownPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6245,11 +6941,11 @@ class GithubService {
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
-          this.markdownRawPost(options, (err, data) => {
+          this.markdownRawPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6259,11 +6955,11 @@ class GithubService {
       Function parameters for this API org,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgReposPost(options, (err, data) => {
+          this.orgsOrgReposPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6273,11 +6969,11 @@ class GithubService {
       Function parameters for this API org,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgTeamsPost(options, (err, data) => {
+          this.orgsOrgTeamsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6289,11 +6985,11 @@ class GithubService {
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoCommitsShaCodeCommentsPost(
             options,
-            (err, data) => {
+            (err, data, response) => {
               if (err) {
-                reject(err);
+                reject({ error: err, response: response });
               }
-              resolve(data);
+              resolve({ data: data, response: response });
             }
           );
         });
@@ -6304,12 +7000,15 @@ class GithubService {
       Function parameters for this API owner,repo,id,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoDeploymentsIdStatusesPost(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoDeploymentsIdStatusesPost(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_DEPLOYMENTS":
@@ -6318,11 +7017,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoDeploymentsPost(options, (err, data) => {
+          this.reposOwnerRepoDeploymentsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6332,11 +7031,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoForksPost(options, (err, data) => {
+          this.reposOwnerRepoForksPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6346,11 +7045,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitBlobsPost(options, (err, data) => {
+          this.reposOwnerRepoGitBlobsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6360,11 +7059,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitCommitsPost(options, (err, data) => {
+          this.reposOwnerRepoGitCommitsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6374,11 +7073,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitRefsPost(options, (err, data) => {
+          this.reposOwnerRepoGitRefsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6388,11 +7087,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitTagsPost(options, (err, data) => {
+          this.reposOwnerRepoGitTagsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6402,11 +7101,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitTreesPost(options, (err, data) => {
+          this.reposOwnerRepoGitTreesPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6416,12 +7115,15 @@ class GithubService {
       Function parameters for this API owner,repo,hookId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoHooksHookIdTestsPost(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoHooksHookIdTestsPost(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_HOOKS":
@@ -6430,11 +7132,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoHooksPost(options, (err, data) => {
+          this.reposOwnerRepoHooksPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6444,12 +7146,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesNumberCommentsPost(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesNumberCommentsPost(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
@@ -6458,12 +7163,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesNumberLabelsPost(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesNumberLabelsPost(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ISSUES":
@@ -6472,11 +7180,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesPost(options, (err, data) => {
+          this.reposOwnerRepoIssuesPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6486,11 +7194,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoKeysPost(options, (err, data) => {
+          this.reposOwnerRepoKeysPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6500,11 +7208,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoLabelsPost(options, (err, data) => {
+          this.reposOwnerRepoLabelsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6514,11 +7222,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoMergesPost(options, (err, data) => {
+          this.reposOwnerRepoMergesPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6528,11 +7236,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoMilestonesPost(options, (err, data) => {
+          this.reposOwnerRepoMilestonesPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6542,12 +7250,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsNumberCommentsPost(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoPullsNumberCommentsPost(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_PULLS":
@@ -6556,11 +7267,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsPost(options, (err, data) => {
+          this.reposOwnerRepoPullsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6570,11 +7281,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReleasesPost(options, (err, data) => {
+          this.reposOwnerRepoReleasesPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6584,11 +7295,11 @@ class GithubService {
       Function parameters for this API owner,repo,ref,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoStatusesRefPost(options, (err, data) => {
+          this.reposOwnerRepoStatusesRefPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6598,11 +7309,11 @@ class GithubService {
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
-          this.userEmailsPost(options, (err, data) => {
+          this.userEmailsPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6612,11 +7323,11 @@ class GithubService {
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
-          this.userKeysPost(options, (err, data) => {
+          this.userKeysPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6626,11 +7337,11 @@ class GithubService {
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
-          this.userReposPost(options, (err, data) => {
+          this.userReposPost(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -6649,18 +7360,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let body = new Github.CommentBody();*/ // Number | Id of gist // CommentBody |
-    /*let id = 56;*/ apiInstance.gistsIdCommentsPost(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // CommentBody |
+    /*let id = 56;*/ /*let body = new Github.CommentBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdCommentsPost(
       incomingOptions.id,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6677,17 +7392,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | Id of gist
-    /*let id = 56;*/ apiInstance.gistsIdForksPost(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist.
+    /*let id = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdForksPost(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -6704,17 +7423,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // PostGist |
-    /*let body = new Github.PostGist();*/ apiInstance.gistsPost(
+    let apiInstance = new Github.DefaultApi(); // PostGist |
+    /*let body = new Github.PostGist();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6731,17 +7454,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Markdown |
-    /*let body = new Github.Markdown();*/ apiInstance.markdownPost(
+    let apiInstance = new Github.DefaultApi(); // Markdown |
+    /*let body = new Github.Markdown();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.markdownPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -6759,16 +7486,19 @@ class GithubService {
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi();
-    /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/
+    let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
     apiInstance.markdownRawPost(
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -6785,18 +7515,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let body = new Github.PostRepo();*/ // String | Name of organisation // PostRepo |
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgReposPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // PostRepo |
+    /*let org = "org_example";*/ /*let body = new Github.PostRepo();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgReposPost(
       org,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6813,18 +7547,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let body = new Github.OrgTeamsPost();*/ // String | Name of organisation // OrgTeamsPost |
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgTeamsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // OrgTeamsPost |
+    /*let org = "org_example";*/ /*let body = new Github.OrgTeamsPost();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgTeamsPost(
       org,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6841,10 +7579,14 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let body = new Github.CommitCommentBody();*/ // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit // CommitCommentBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | SHA-1 code of the commit // CommitCommentBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ /*let body = new Github.CommitCommentBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.shaCode,
@@ -6852,9 +7594,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6871,10 +7613,14 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let id = 56;*/ /*let body = new Github.DeploymentStatusesCreate();*/ // String | Name of repository owner // String | Name of repository // Number | The Deployment ID to list the statuses from // DeploymentStatusesCreate |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | The Deployment ID to list the statuses from // DeploymentStatusesCreate |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = 56;*/ /*let body = new Github.DeploymentStatusesCreate();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -6882,9 +7628,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -6901,19 +7647,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.Deployment();*/ // String | Name of repository owner // String | Name of repository // Deployment |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDeploymentsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Deployment |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.Deployment();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoDeploymentsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6930,19 +7680,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.ForkBody();*/ // String | Name of repository owner // String | Name of repository // ForkBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoForksPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // ForkBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.ForkBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoForksPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6959,21 +7713,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let repo = "repo_example";*/ /*let body = null;*/ // String | Name of repository owner // String | Name of repository // Blob |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitBlobsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Blob |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = null;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitBlobsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -6984,19 +7742,23 @@ class GithubService {
   reposOwnerRepoGitCommitsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.RepoCommitBody();*/ // String | Name of repository owner // String | Name of repository // RepoCommitBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitCommitsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // RepoCommitBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.RepoCommitBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitCommitsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7007,19 +7769,23 @@ class GithubService {
   reposOwnerRepoGitRefsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.RefsBody();*/ // String | Name of repository owner // String | Name of repository // RefsBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // RefsBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.RefsBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitRefsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7030,19 +7796,23 @@ class GithubService {
   reposOwnerRepoGitTagsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.TagBody();*/ // String | Name of repository owner // String | Name of repository // TagBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitTagsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // TagBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.TagBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitTagsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7053,19 +7823,23 @@ class GithubService {
   reposOwnerRepoGitTreesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.Tree();*/ // String | Name of repository owner // String | Name of repository // Tree |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitTreesPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Tree |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.Tree();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitTreesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7076,19 +7850,23 @@ class GithubService {
   reposOwnerRepoHooksHookIdTestsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of hook
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdTestsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdTestsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.hookId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -7099,19 +7877,23 @@ class GithubService {
   reposOwnerRepoHooksPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.HookBody();*/ // String | Name of repository owner // String | Name of repository // HookBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // HookBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.HookBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoHooksPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7122,10 +7904,14 @@ class GithubService {
   reposOwnerRepoIssuesNumberCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.CommentBody();*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // CommentBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // CommentBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.CommentBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsPost(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -7133,9 +7919,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7146,10 +7932,14 @@ class GithubService {
   reposOwnerRepoIssuesNumberLabelsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = ["null"];*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // [String] |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // [String] |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = ["null"];*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPost(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -7157,9 +7947,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7170,19 +7960,23 @@ class GithubService {
   reposOwnerRepoIssuesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.Issue();*/ // String | Name of repository owner // String | Name of repository // Issue |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Issue |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.Issue();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7193,19 +7987,23 @@ class GithubService {
   reposOwnerRepoKeysPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.UserKeysPost();*/ // String | Name of repository owner // String | Name of repository // UserKeysPost |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoKeysPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // UserKeysPost |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.UserKeysPost();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoKeysPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7216,19 +8014,23 @@ class GithubService {
   reposOwnerRepoLabelsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = ["null"];*/ // String | Name of repository owner // String | Name of repository // [String] |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // [String] |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = ["null"];*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoLabelsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7239,19 +8041,23 @@ class GithubService {
   reposOwnerRepoMergesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.MergesBody();*/ // String | Name of repository owner // String | Name of repository // MergesBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMergesPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // MergesBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.MergesBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoMergesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7262,19 +8068,23 @@ class GithubService {
   reposOwnerRepoMilestonesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.MilestoneUpdate();*/ // String | Name of repository owner // String | Name of repository // MilestoneUpdate |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // MilestoneUpdate |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.MilestoneUpdate();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoMilestonesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7285,10 +8095,14 @@ class GithubService {
   reposOwnerRepoPullsNumberCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullsCommentPost();*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullsCommentPost |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullsCommentPost |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullsCommentPost();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsPost(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -7296,9 +8110,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7309,19 +8123,23 @@ class GithubService {
   reposOwnerRepoPullsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.PullsPost();*/ // String | Name of repository owner // String | Name of repository // PullsPost |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // PullsPost |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.PullsPost();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7332,19 +8150,23 @@ class GithubService {
   reposOwnerRepoReleasesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.ReleaseCreate();*/ // String | Name of repository owner // String | Name of repository // ReleaseCreate |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // ReleaseCreate |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.ReleaseCreate();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReleasesPost(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7355,10 +8177,14 @@ class GithubService {
   reposOwnerRepoStatusesRefPost(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let body = new Github.HeadBranch();*/ // String | Name of repository owner // String | Name of repository // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name. // HeadBranch |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoStatusesRefPost(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name. // HeadBranch |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let body = new Github.HeadBranch();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoStatusesRefPost(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
@@ -7366,9 +8192,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7385,17 +8211,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // [String] |
-    /*let body = ["null"];*/ apiInstance.userEmailsPost(
+    let apiInstance = new Github.DefaultApi(); // [String] |
+    /*let body = ["null"];*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userEmailsPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -7412,17 +8242,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // UserKeysPost |
-    /*let body = new Github.UserKeysPost();*/ apiInstance.userKeysPost(
+    let apiInstance = new Github.DefaultApi(); // UserKeysPost |
+    /*let body = new Github.UserKeysPost();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userKeysPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7439,17 +8273,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // PostRepo |
-    /*let body = new Github.PostRepo();*/ apiInstance.userReposPost(
+    let apiInstance = new Github.DefaultApi(); // PostRepo |
+    /*let body = new Github.PostRepo();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userReposPost(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7463,11 +8301,11 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdStarPut(options, (err, data) => {
+          this.gistsIdStarPut(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -7477,11 +8315,11 @@ class GithubService {
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
-          this.notificationsPut(options, (err, data) => {
+          this.notificationsPut(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -7491,12 +8329,15 @@ class GithubService {
       Function parameters for this API id,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.notificationsThreadsIdSubscriptionPut(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.notificationsThreadsIdSubscriptionPut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
@@ -7505,12 +8346,15 @@ class GithubService {
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgPublicMembersUsernamePut(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.orgsOrgPublicMembersUsernamePut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_COLLABORATORS_USER":
@@ -7519,12 +8363,15 @@ class GithubService {
       Function parameters for this API owner,repo,user,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCollaboratorsUserPut(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCollaboratorsUserPut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_CONTENTS_PATH":
@@ -7533,11 +8380,11 @@ class GithubService {
       Function parameters for this API owner,repo,path,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoContentsPathPut(options, (err, data) => {
+          this.reposOwnerRepoContentsPathPut(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -7547,12 +8394,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesNumberLabelsPut(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesNumberLabelsPut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_NOTIFICATIONS":
@@ -7561,12 +8411,15 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoNotificationsPut(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoNotificationsPut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_MERGE":
@@ -7575,12 +8428,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsNumberMergePut(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoPullsNumberMergePut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_SUBSCRIPTION":
@@ -7589,11 +8445,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoSubscriptionPut(options, (err, data) => {
+          this.reposOwnerRepoSubscriptionPut(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -7603,11 +8459,11 @@ class GithubService {
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdMembersUsernamePut(options, (err, data) => {
+          this.teamsTeamIdMembersUsernamePut(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -7617,12 +8473,15 @@ class GithubService {
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdMembershipsUsernamePut(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.teamsTeamIdMembershipsUsernamePut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
@@ -7631,11 +8490,11 @@ class GithubService {
       Function parameters for this API teamId,owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdReposOwnerRepoPut(options, (err, data) => {
+          this.teamsTeamIdReposOwnerRepoPut(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -7645,11 +8504,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.userFollowingUsernamePut(options, (err, data) => {
+          this.userFollowingUsernamePut(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -7659,11 +8518,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.userStarredOwnerRepoPut(options, (err, data) => {
+          this.userStarredOwnerRepoPut(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -7673,11 +8532,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.userSubscriptionsOwnerRepoPut(options, (err, data) => {
+          this.userSubscriptionsOwnerRepoPut(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -7696,17 +8555,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | Id of gist
-    /*let id = 56;*/ apiInstance.gistsIdStarPut(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist.
+    /*let id = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdStarPut(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -7723,17 +8586,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // NotificationMarkRead |
-    /*let body = new Github.NotificationMarkRead();*/ apiInstance.notificationsPut(
+    let apiInstance = new Github.DefaultApi(); // NotificationMarkRead |
+    /*let body = new Github.NotificationMarkRead();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.notificationsPut(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -7750,18 +8617,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let body = new Github.PutSubscription();*/ // Number | Id of thread // PutSubscription |
-    /*let id = 56;*/ apiInstance.notificationsThreadsIdSubscriptionPut(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of thread // PutSubscription |
+    /*let id = 56;*/ /*let body = new Github.PutSubscription();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.notificationsThreadsIdSubscriptionPut(
       incomingOptions.id,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7778,18 +8649,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPublicMembersUsernamePut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user.
+    /*let org = "org_example";*/ /*let username = "username_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgPublicMembersUsernamePut(
       org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -7806,19 +8681,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ // String | Name of repository owner // String | Name of repository // String | Login of the user
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserPut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Login of the user.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserPut(
       incomingOptions.owner,
       repo,
       incomingOptions.user,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -7835,10 +8714,14 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ /*let body = new Github.CreateFileBody();*/ // String | Name of repository owner // String | Name of repository // String | // CreateFileBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoContentsPathPut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // CreateFileBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ /*let body = new Github.CreateFileBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoContentsPathPut(
       incomingOptions.owner,
       repo,
       incomingOptions.path,
@@ -7846,9 +8729,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7859,10 +8742,14 @@ class GithubService {
   reposOwnerRepoIssuesNumberLabelsPut(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = ["null"];*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // [String] |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // [String] |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = ["null"];*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPut(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -7870,9 +8757,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7883,19 +8770,23 @@ class GithubService {
   reposOwnerRepoNotificationsPut(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.NotificationMarkRead();*/ // String | Name of repository owner // String | Name of repository // NotificationMarkRead |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoNotificationsPut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // NotificationMarkRead |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.NotificationMarkRead();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoNotificationsPut(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -7906,10 +8797,14 @@ class GithubService {
   reposOwnerRepoPullsNumberMergePut(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.MergePullBody();*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull // MergePullBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergePut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull // MergePullBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.MergePullBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergePut(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -7917,9 +8812,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7930,19 +8825,23 @@ class GithubService {
   reposOwnerRepoSubscriptionPut(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.SubscriptionBody();*/ // String | Name of repository owner // String | Name of repository // SubscriptionBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoSubscriptionPut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // SubscriptionBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.SubscriptionBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoSubscriptionPut(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -7959,18 +8858,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembersUsernamePut(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member.
+    /*let teamId = 56;*/ /*let username = "username_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdMembersUsernamePut(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -7987,18 +8890,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembershipsUsernamePut(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member.
+    /*let teamId = 56;*/ /*let username = "username_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdMembershipsUsernamePut(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -8015,19 +8922,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ // Number | Id of team // String | Name of a organization // String | Name of a repository
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdReposOwnerRepoPut(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a organization // String | Name of a repository.
+    /*let teamId = 56;*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdReposOwnerRepoPut(
       incomingOptions.teamId,
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8044,17 +8955,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.userFollowingUsernamePut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userFollowingUsernamePut(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8071,18 +8986,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of a repository owner // String | Name of a repository
-    /*let owner = "owner_example";*/ apiInstance.userStarredOwnerRepoPut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of a repository owner // String | Name of a repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userStarredOwnerRepoPut(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8099,18 +9018,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of the owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.userSubscriptionsOwnerRepoPut(
+    let apiInstance = new Github.DefaultApi(); // String | Name of the owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userSubscriptionsOwnerRepoPut(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8124,12 +9047,15 @@ class GithubService {
       Function parameters for this API id,commentId,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdCommentsCommentIdDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.gistsIdCommentsCommentIdDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "GISTS_ID":
@@ -8138,11 +9064,11 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdDelete(options, (err, data) => {
+          this.gistsIdDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8152,11 +9078,11 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdStarDelete(options, (err, data) => {
+          this.gistsIdStarDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8168,11 +9094,11 @@ class GithubService {
         return new Promise((resolve, reject) => {
           this.notificationsThreadsIdSubscriptionDelete(
             options,
-            (err, data) => {
+            (err, data, response) => {
               if (err) {
-                reject(err);
+                reject({ error: err, response: response });
               }
-              resolve(data);
+              resolve({ data: data, response: response });
             }
           );
         });
@@ -8183,11 +9109,11 @@ class GithubService {
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgMembersUsernameDelete(options, (err, data) => {
+          this.orgsOrgMembersUsernameDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8197,12 +9123,15 @@ class GithubService {
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgPublicMembersUsernameDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.orgsOrgPublicMembersUsernameDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_COLLABORATORS_USER":
@@ -8211,12 +9140,15 @@ class GithubService {
       Function parameters for this API owner,repo,user,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCollaboratorsUserDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCollaboratorsUserDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
@@ -8225,12 +9157,15 @@ class GithubService {
       Function parameters for this API owner,repo,commentId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCommentsCommentIdDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCommentsCommentIdDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_CONTENTS_PATH":
@@ -8239,12 +9174,15 @@ class GithubService {
       Function parameters for this API owner,repo,path,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoContentsPathDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoContentsPathDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO":
@@ -8253,11 +9191,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoDelete(options, (err, data) => {
+          this.reposOwnerRepoDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8267,12 +9205,15 @@ class GithubService {
       Function parameters for this API owner,repo,downloadId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoDownloadsDownloadIdDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoDownloadsDownloadIdDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_GIT_REFS_REF":
@@ -8281,12 +9222,15 @@ class GithubService {
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitRefsRefDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoGitRefsRefDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
@@ -8295,12 +9239,15 @@ class GithubService {
       Function parameters for this API owner,repo,hookId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoHooksHookIdDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoHooksHookIdDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
@@ -8311,11 +9258,11 @@ class GithubService {
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesCommentsCommentIdDelete(
             options,
-            (err, data) => {
+            (err, data, response) => {
               if (err) {
-                reject(err);
+                reject({ error: err, response: response });
               }
-              resolve(data);
+              resolve({ data: data, response: response });
             }
           );
         });
@@ -8326,12 +9273,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesNumberLabelsDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesNumberLabelsDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_NAME":
@@ -8342,11 +9292,11 @@ class GithubService {
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesNumberLabelsNameDelete(
             options,
-            (err, data) => {
+            (err, data, response) => {
               if (err) {
-                reject(err);
+                reject({ error: err, response: response });
               }
-              resolve(data);
+              resolve({ data: data, response: response });
             }
           );
         });
@@ -8357,11 +9307,11 @@ class GithubService {
       Function parameters for this API owner,repo,keyId,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoKeysKeyIdDelete(options, (err, data) => {
+          this.reposOwnerRepoKeysKeyIdDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8371,12 +9321,15 @@ class GithubService {
       Function parameters for this API owner,repo,name,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoLabelsNameDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoLabelsNameDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
@@ -8385,12 +9338,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoMilestonesNumberDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoMilestonesNumberDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
@@ -8401,11 +9357,11 @@ class GithubService {
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsCommentsCommentIdDelete(
             options,
-            (err, data) => {
+            (err, data, response) => {
               if (err) {
-                reject(err);
+                reject({ error: err, response: response });
               }
-              resolve(data);
+              resolve({ data: data, response: response });
             }
           );
         });
@@ -8416,12 +9372,15 @@ class GithubService {
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReleasesAssetsIdDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoReleasesAssetsIdDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ID":
@@ -8430,12 +9389,15 @@ class GithubService {
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReleasesIdDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoReleasesIdDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_SUBSCRIPTION":
@@ -8444,12 +9406,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoSubscriptionDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoSubscriptionDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "TEAMS_TEAM_ID":
@@ -8458,11 +9423,11 @@ class GithubService {
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdDelete(options, (err, data) => {
+          this.teamsTeamIdDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8472,12 +9437,15 @@ class GithubService {
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdMembersUsernameDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.teamsTeamIdMembersUsernameDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
@@ -8486,12 +9454,15 @@ class GithubService {
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdMembershipsUsernameDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.teamsTeamIdMembershipsUsernameDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
@@ -8500,12 +9471,15 @@ class GithubService {
       Function parameters for this API teamId,owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdReposOwnerRepoDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.teamsTeamIdReposOwnerRepoDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "USER_EMAILS":
@@ -8514,11 +9488,11 @@ class GithubService {
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
-          this.userEmailsDelete(options, (err, data) => {
+          this.userEmailsDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8528,11 +9502,11 @@ class GithubService {
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
-          this.userFollowingUsernameDelete(options, (err, data) => {
+          this.userFollowingUsernameDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8542,11 +9516,11 @@ class GithubService {
       Function parameters for this API keyId,opts
         */
         return new Promise((resolve, reject) => {
-          this.userKeysKeyIdDelete(options, (err, data) => {
+          this.userKeysKeyIdDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8556,11 +9530,11 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.userStarredOwnerRepoDelete(options, (err, data) => {
+          this.userStarredOwnerRepoDelete(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -8570,12 +9544,15 @@ class GithubService {
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
-          this.userSubscriptionsOwnerRepoDelete(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.userSubscriptionsOwnerRepoDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       default:
@@ -8593,18 +9570,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let commentId = 56;*/ // Number | Id of gist // Number | Id of comment
-    /*let id = 56;*/ apiInstance.gistsIdCommentsCommentIdDelete(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // Number | Id of comment.
+    /*let id = 56;*/ /*let commentId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdCommentsCommentIdDelete(
       incomingOptions.id,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8621,17 +9602,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | Id of gist
-    /*let id = 56;*/ apiInstance.gistsIdDelete(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist.
+    /*let id = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdDelete(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8648,17 +9633,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | Id of gist
-    /*let id = 56;*/ apiInstance.gistsIdStarDelete(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist.
+    /*let id = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdStarDelete(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8675,17 +9664,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | Id of thread
-    /*let id = 56;*/ apiInstance.notificationsThreadsIdSubscriptionDelete(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of thread.
+    /*let id = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.notificationsThreadsIdSubscriptionDelete(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8702,18 +9695,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgMembersUsernameDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user.
+    /*let org = "org_example";*/ /*let username = "username_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgMembersUsernameDelete(
       org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8730,18 +9727,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let username = "username_example";*/ // String | Name of organisation // String | Name of the user
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // String | Name of the user.
+    /*let org = "org_example";*/ /*let username = "username_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgPublicMembersUsernameDelete(
       org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8758,19 +9759,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ // String | Name of repository owner // String | Name of repository // String | Login of the user
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Login of the user.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.user,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8787,19 +9792,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8816,10 +9825,14 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ /*let body = new Github.DeleteFileBody();*/ // String | Name of repository owner // String | Name of repository // String | // DeleteFileBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoContentsPathDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // DeleteFileBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let path = "path_example";*/ /*let body = new Github.DeleteFileBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoContentsPathDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.path,
@@ -8827,9 +9840,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -8846,18 +9859,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8874,19 +9891,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let downloadId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of download
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of download.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let downloadId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.downloadId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8897,19 +9918,23 @@ class GithubService {
   reposOwnerRepoGitRefsRefDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitRefsRefDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8920,19 +9945,23 @@ class GithubService {
   reposOwnerRepoHooksHookIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of hook
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.hookId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8943,19 +9972,23 @@ class GithubService {
   reposOwnerRepoIssuesCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | ID of comment
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | ID of comment.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8966,19 +9999,23 @@ class GithubService {
   reposOwnerRepoIssuesNumberLabelsDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsDelete(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -8989,10 +10026,14 @@ class GithubService {
   reposOwnerRepoIssuesNumberLabelsNameDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let name = "name_example";*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // String | Name of the label
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsNameDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // String | Name of the label.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let name = "name_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsNameDelete(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -9000,9 +10041,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9013,19 +10054,23 @@ class GithubService {
   reposOwnerRepoKeysKeyIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let keyId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of key
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of key.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let keyId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.keyId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9036,19 +10081,23 @@ class GithubService {
   reposOwnerRepoLabelsNameDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ // String | Name of repository owner // String | Name of repository // String | Name of the label
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsNameDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Name of the label.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoLabelsNameDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.name,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9059,19 +10108,23 @@ class GithubService {
   reposOwnerRepoMilestonesNumberDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Number of milestone
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of milestone.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberDelete(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9082,19 +10135,23 @@ class GithubService {
   reposOwnerRepoPullsCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9105,19 +10162,23 @@ class GithubService {
   reposOwnerRepoReleasesAssetsIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9128,19 +10189,23 @@ class GithubService {
   reposOwnerRepoReleasesIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ // String | Name of repository owner // String | Name of repository // String |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesIdDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReleasesIdDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9151,18 +10216,22 @@ class GithubService {
   reposOwnerRepoSubscriptionDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of repository owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoSubscriptionDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoSubscriptionDelete(
       incomingOptions.owner,
       repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9179,19 +10248,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ // Number | Id of team
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdDelete(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team.
+    /*let teamId = 56;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdDelete(
       incomingOptions.teamId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9208,20 +10281,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembersUsernameDelete(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member.
+    /*let teamId = 56;*/ /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdMembersUsernameDelete(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9238,20 +10315,24 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let username = "username_example";*/ // Number | Id of team // String | Name of a member
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdMembershipsUsernameDelete(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a member.
+    /*let teamId = 56;*/ /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdMembershipsUsernameDelete(
       incomingOptions.teamId,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9268,21 +10349,25 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
-  'perPage': 30, // Number | No of result showed per request.
-  'page': 1 // Number | Page number at which you want the search result to come from.
-};*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ // Number | Id of team // String | Name of a repository owner // String | Name of a repository
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdReposOwnerRepoDelete(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // String | Name of a repository owner // String | Name of a repository.
+    /*let teamId = 56;*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+      perPage: 30, // Number | No of result showed per request.
+      page: 1 // Number | Page number at which you want the search result to come from.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdReposOwnerRepoDelete(
       incomingOptions.teamId,
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9299,17 +10384,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // [String] |
-    /*let body = ["null"];*/ apiInstance.userEmailsDelete(
+    let apiInstance = new Github.DefaultApi(); // [String] |
+    /*let body = ["null"];*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userEmailsDelete(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9326,17 +10415,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // String | Name of user
-    /*let username = "username_example";*/ apiInstance.userFollowingUsernameDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of user.
+    /*let username = "username_example";*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userFollowingUsernameDelete(
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9353,17 +10446,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
-};*/ // Number | ID of key
-    /*let keyId = 56;*/ apiInstance.userKeysKeyIdDelete(
+    let apiInstance = new Github.DefaultApi(); // Number | ID of key.
+    /*let keyId = 56;*/ let opts = {
+      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userKeysKeyIdDelete(
       incomingOptions.keyId,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9380,18 +10477,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of a repository owner // String | Name of a repository
-    /*let owner = "owner_example";*/ apiInstance.userStarredOwnerRepoDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of a repository owner // String | Name of a repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userStarredOwnerRepoDelete(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9408,18 +10509,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ // String | Name of the owner // String | Name of repository
-    /*let owner = "owner_example";*/ apiInstance.userSubscriptionsOwnerRepoDelete(
+    let apiInstance = new Github.DefaultApi(); // String | Name of the owner // String | Name of repository.
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userSubscriptionsOwnerRepoDelete(
       incomingOptions.owner,
       incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9433,11 +10538,11 @@ class GithubService {
       Function parameters for this API id,commentId,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdCommentsCommentIdPatch(options, (err, data) => {
+          this.gistsIdCommentsCommentIdPatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9447,11 +10552,11 @@ class GithubService {
       Function parameters for this API id,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.gistsIdPatch(options, (err, data) => {
+          this.gistsIdPatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9461,11 +10566,11 @@ class GithubService {
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
-          this.notificationsThreadsIdPatch(options, (err, data) => {
+          this.notificationsThreadsIdPatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9475,11 +10580,11 @@ class GithubService {
       Function parameters for this API org,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.orgsOrgPatch(options, (err, data) => {
+          this.orgsOrgPatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9489,12 +10594,15 @@ class GithubService {
       Function parameters for this API owner,repo,commentId,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoCommentsCommentIdPatch(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoCommentsCommentIdPatch(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_GIT_REFS_REF":
@@ -9503,11 +10611,11 @@ class GithubService {
       Function parameters for this API owner,repo,ref,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoGitRefsRefPatch(options, (err, data) => {
+          this.reposOwnerRepoGitRefsRefPatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9517,12 +10625,15 @@ class GithubService {
       Function parameters for this API owner,repo,hookId,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoHooksHookIdPatch(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoHooksHookIdPatch(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
@@ -9533,11 +10644,11 @@ class GithubService {
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoIssuesCommentsCommentIdPatch(
             options,
-            (err, data) => {
+            (err, data, response) => {
               if (err) {
-                reject(err);
+                reject({ error: err, response: response });
               }
-              resolve(data);
+              resolve({ data: data, response: response });
             }
           );
         });
@@ -9548,12 +10659,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoIssuesNumberPatch(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoIssuesNumberPatch(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_LABELS_NAME":
@@ -9562,11 +10676,11 @@ class GithubService {
       Function parameters for this API owner,repo,name,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoLabelsNamePatch(options, (err, data) => {
+          this.reposOwnerRepoLabelsNamePatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9576,12 +10690,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoMilestonesNumberPatch(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoMilestonesNumberPatch(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO":
@@ -9590,11 +10707,11 @@ class GithubService {
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPatch(options, (err, data) => {
+          this.reposOwnerRepoPatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9606,11 +10723,11 @@ class GithubService {
         return new Promise((resolve, reject) => {
           this.reposOwnerRepoPullsCommentsCommentIdPatch(
             options,
-            (err, data) => {
+            (err, data, response) => {
               if (err) {
-                reject(err);
+                reject({ error: err, response: response });
               }
-              resolve(data);
+              resolve({ data: data, response: response });
             }
           );
         });
@@ -9621,12 +10738,15 @@ class GithubService {
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoPullsNumberPatch(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoPullsNumberPatch(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
@@ -9635,12 +10755,15 @@ class GithubService {
       Function parameters for this API owner,repo,id,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReleasesAssetsIdPatch(options, (err, data) => {
-            if (err) {
-              reject(err);
+          this.reposOwnerRepoReleasesAssetsIdPatch(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve(data);
-          });
+          );
         });
 
       case "REPOS_OWNER_REPO_RELEASES_ID":
@@ -9649,11 +10772,11 @@ class GithubService {
       Function parameters for this API owner,repo,id,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.reposOwnerRepoReleasesIdPatch(options, (err, data) => {
+          this.reposOwnerRepoReleasesIdPatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9663,11 +10786,11 @@ class GithubService {
       Function parameters for this API teamId,body,opts
         */
         return new Promise((resolve, reject) => {
-          this.teamsTeamIdPatch(options, (err, data) => {
+          this.teamsTeamIdPatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9677,11 +10800,11 @@ class GithubService {
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
-          this.userPatch(options, (err, data) => {
+          this.userPatch(options, (err, data, response) => {
             if (err) {
-              reject(err);
+              reject({ error: err, response: response });
             }
-            resolve(data);
+            resolve({ data: data, response: response });
           });
         });
 
@@ -9700,19 +10823,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let commentId = 56;*/ /*let body = new Github.Comment();*/ // Number | Id of gist // Number | Id of comment // Comment |
-    /*let id = 56;*/ apiInstance.gistsIdCommentsCommentIdPatch(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // Number | Id of comment // Comment |
+    /*let id = 56;*/ /*let commentId = 56;*/ /*let body = new Github.Comment();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdCommentsCommentIdPatch(
       incomingOptions.id,
       incomingOptions.commentId,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9729,18 +10856,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let body = new Github.PatchGist();*/ // Number | Id of gist // PatchGist |
-    /*let id = 56;*/ apiInstance.gistsIdPatch(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of gist // PatchGist |
+    /*let id = 56;*/ /*let body = new Github.PatchGist();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.gistsIdPatch(
       incomingOptions.id,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9757,17 +10888,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // Number | Id of thread
-    /*let id = 56;*/ apiInstance.notificationsThreadsIdPatch(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of thread.
+    /*let id = 56;*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.notificationsThreadsIdPatch(
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, "");
+          cb(null, "", response);
         }
       }
     );
@@ -9784,18 +10919,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let body = new Github.PatchOrg();*/ // String | Name of organisation // PatchOrg |
-    /*let org = "org_example";*/ apiInstance.incomingOptions.orgsOrgPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of organisation // PatchOrg |
+    /*let org = "org_example";*/ /*let body = new Github.PatchOrg();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.orgsOrgPatch(
       org,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9812,10 +10951,14 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment // CommentBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment // CommentBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -9823,9 +10966,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9836,10 +10979,14 @@ class GithubService {
   reposOwnerRepoGitRefsRefPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let body = new Github.GitRefPatch();*/ // String | Name of repository owner // String | Name of repository // String | // GitRefPatch |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // GitRefPatch |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ /*let body = new Github.GitRefPatch();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoGitRefsRefPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.ref,
@@ -9847,9 +10994,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9860,10 +11007,14 @@ class GithubService {
   reposOwnerRepoHooksHookIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ /*let body = new Github.HookBody();*/ // String | Name of repository owner // String | Name of repository // Number | Id of hook // HookBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook // HookBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ /*let body = new Github.HookBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.hookId,
@@ -9871,9 +11022,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9884,10 +11035,14 @@ class GithubService {
   reposOwnerRepoIssuesCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ // String | Name of repository owner // String | Name of repository // Number | ID of comment // CommentBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | ID of comment // CommentBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -9895,9 +11050,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9908,10 +11063,14 @@ class GithubService {
   reposOwnerRepoIssuesNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.Issue();*/ // String | Name of repository owner // String | Name of repository // Number | Number of issue // Issue |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // Issue |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.Issue();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberPatch(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -9919,9 +11078,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9932,10 +11091,14 @@ class GithubService {
   reposOwnerRepoLabelsNamePatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ /*let body = ["null"];*/ // String | Name of repository owner // String | Name of repository // String | Name of the label // [String] |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoLabelsNamePatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Name of the label // [String] |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let name = "name_example";*/ /*let body = ["null"];*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoLabelsNamePatch(
       incomingOptions.owner,
       repo,
       incomingOptions.name,
@@ -9943,9 +11106,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9956,10 +11119,14 @@ class GithubService {
   reposOwnerRepoMilestonesNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.MilestoneUpdate();*/ // String | Name of repository owner // String | Name of repository // Number | Number of milestone // MilestoneUpdate |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of milestone // MilestoneUpdate |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.MilestoneUpdate();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberPatch(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -9967,9 +11134,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -9986,19 +11153,23 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let body = new Github.RepoEdit();*/ // String | Name of repository owner // String | Name of repository // RepoEdit |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // RepoEdit |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.RepoEdit();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -10009,10 +11180,14 @@ class GithubService {
   reposOwnerRepoPullsCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ // String | Name of repository owner // String | Name of repository // Number | Id of comment // CommentBody |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of comment // CommentBody |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ /*let body = new Github.CommentBody();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.commentId,
@@ -10020,9 +11195,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -10033,10 +11208,14 @@ class GithubService {
   reposOwnerRepoPullsNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullUpdate();*/ // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullUpdate |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoPullsNumberPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of pull // PullUpdate |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.PullUpdate();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoPullsNumberPatch(
       incomingOptions.owner,
       repo,
       incomingOptions._number,
@@ -10044,9 +11223,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -10057,10 +11236,14 @@ class GithubService {
   reposOwnerRepoReleasesAssetsIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let body = new Github.AssetPatch();*/ // String | Name of repository owner // String | Name of repository // String | // AssetPatch |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // AssetPatch |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let body = new Github.AssetPatch();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -10068,9 +11251,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -10081,10 +11264,14 @@ class GithubService {
   reposOwnerRepoReleasesIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let body = new Github.ReleaseCreate();*/ // String | Name of repository owner // String | Name of repository // String | // ReleaseCreate |
-    /*let owner = "owner_example";*/ apiInstance.incomingOptions.reposOwnerRepoReleasesIdPatch(
+    let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | // ReleaseCreate |
+    /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = "id_example";*/ /*let body = new Github.ReleaseCreate();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.incomingOptions.reposOwnerRepoReleasesIdPatch(
       incomingOptions.owner,
       repo,
       incomingOptions.id,
@@ -10092,9 +11279,9 @@ class GithubService {
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -10111,18 +11298,22 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ /*let body = new Github.EditTeam();*/ // Number | Id of team // EditTeam |
-    /*let teamId = 56;*/ apiInstance.teamsTeamIdPatch(
+    let apiInstance = new Github.DefaultApi(); // Number | Id of team // EditTeam |
+    /*let teamId = 56;*/ /*let body = new Github.EditTeam();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.teamsTeamIdPatch(
       incomingOptions.teamId,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
@@ -10139,17 +11330,21 @@ class GithubService {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
-    let apiInstance = new Github.DefaultApi(); /*let opts = {
-  'accept': "accept_example" // String | Is used to set specified media type.
-};*/ // UserUpdate |
-    /*let body = new Github.UserUpdate();*/ apiInstance.userPatch(
+    let apiInstance = new Github.DefaultApi(); // UserUpdate |
+    /*let body = new Github.UserUpdate();*/ let opts = {
+      //  'accept': "accept_example" // String | Is used to set specified media type.
+    };
+
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.userPatch(
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
-          cb(error, null);
+          cb(error, null, response);
         } else {
-          cb(null, data);
+          cb(null, data, response);
         }
       }
     );
