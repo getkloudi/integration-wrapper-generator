@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CommitCommentBody model module.
  * @module model/CommitCommentBody
- * @version 1.3.2
+ * @version 1.3.3
  */
 class CommitCommentBody {
     /**

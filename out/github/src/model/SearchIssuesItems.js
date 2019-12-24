@@ -18,7 +18,7 @@ import User from './User';
 /**
  * The SearchIssuesItems model module.
  * @module model/SearchIssuesItems
- * @version 1.3.2
+ * @version 1.3.3
  */
 class SearchIssuesItems {
     /**

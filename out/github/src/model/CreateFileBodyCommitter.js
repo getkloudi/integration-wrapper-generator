@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateFileBodyCommitter model module.
  * @module model/CreateFileBodyCommitter
- * @version 1.3.2
+ * @version 1.3.3
  */
 class CreateFileBodyCommitter {
     /**

@@ -12662,7 +12662,9 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new Github.DefaultApi();
 let opts = {
   'type': "'all'", // String | 
-  'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+  'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
+  'perPage': 30, // Number | No of result showed per request.
+  'page': 1 // Number | Page number at which you want the search result to come from.
 };
 apiInstance.userReposGet(opts, (error, data, response) => {
   if (error) {
@@ -12680,6 +12682,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**|  | [optional] [default to &#39;all&#39;]
  **accept** | **String**| Is used to set specified media type | [optional] [default to &#39;application/vnd.github.v3+json&#39;]
+ **perPage** | **Number**| No of result showed per request. | [optional] [default to 30]
+ **page** | **Number**| Page number at which you want the search result to come from. | [optional] [default to 1]
 
 ### Return type
 

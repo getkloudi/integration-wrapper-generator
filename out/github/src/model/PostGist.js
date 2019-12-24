@@ -17,7 +17,7 @@ import PostGistFiles from './PostGistFiles';
 /**
  * The PostGist model module.
  * @module model/PostGist
- * @version 1.3.2
+ * @version 1.3.3
  */
 class PostGist {
     /**

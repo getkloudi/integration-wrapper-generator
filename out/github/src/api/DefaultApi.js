@@ -103,7 +103,7 @@ import UserUpdate from '../model/UserUpdate';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.3.2
+* @version 1.3.3
 */
 export default class DefaultApi {
 
@@ -12148,6 +12148,8 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.type  (default to 'all')
      * @param {String} opts.accept Is used to set specified media type (default to 'application/vnd.github.v3+json')
+     * @param {Number} opts.perPage No of result showed per request. (default to 30)
+     * @param {Number} opts.page Page number at which you want the search result to come from. (default to 1)
      * @param {module:api/DefaultApi~userReposGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Repo>}
      */
@@ -12158,7 +12160,9 @@ export default class DefaultApi {
       let pathParams = {
       };
       let queryParams = {
-        'type': opts['type']
+        'type': opts['type'],
+        'per_page': opts['perPage'],
+        'page': opts['page']
       };
       let headerParams = {
         'Accept': opts['accept']

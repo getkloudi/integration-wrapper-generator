@@ -17,7 +17,7 @@ import Repo from './Repo';
 /**
  * The TeamRepos model module.
  * @module model/TeamRepos
- * @version 1.3.2
+ * @version 1.3.3
  */
 class TeamRepos {
     /**

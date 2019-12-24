@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PostRepo model module.
  * @module model/PostRepo
- * @version 1.3.2
+ * @version 1.3.3
  */
 class PostRepo {
     /**

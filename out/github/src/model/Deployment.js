@@ -17,7 +17,7 @@ import DeploymentPayload from './DeploymentPayload';
 /**
  * The Deployment model module.
  * @module model/Deployment
- * @version 1.3.2
+ * @version 1.3.3
  */
 class Deployment {
     /**

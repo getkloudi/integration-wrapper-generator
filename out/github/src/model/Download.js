@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Download model module.
  * @module model/Download
- * @version 1.3.2
+ * @version 1.3.3
  */
 class Download {
     /**

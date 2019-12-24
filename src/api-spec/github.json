@@ -18053,6 +18053,12 @@
 					},
 					{
 						"$ref": "#/components/parameters/accept"
+					},
+					{
+						"$ref": "#/components/parameters/noOfResultPerPage"
+					},
+					{
+						"$ref": "#/components/parameters/page"
 					}
 				],
 				"responses": {

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HookBody model module.
  * @module model/HookBody
- * @version 1.3.2
+ * @version 1.3.3
  */
 class HookBody {
     /**
