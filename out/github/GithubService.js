@@ -1,6 +1,6 @@
 
   const axios = require("axios");
-  const errorHelper = require("../../../helpers/ErrorHelper");
+  const ErrorHelper = require("../../../helpers/ErrorHelper");
   const nconf = require("nconf");
   const qs = require("querystring");
 
@@ -71,9 +71,9 @@
 
   async get(entity, options) {
         switch (entity) {
-            
+
         case "EMOJIS":
-        /* 
+        /*
       Lists all the emojis available to use on GitHub.
       Function parameters for this API opts
         */
@@ -85,9 +85,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "EVENTS":
-        /* 
+        /*
       List public events.
       Function parameters for this API opts
         */
@@ -99,10 +99,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "FEEDS":
-        /* 
-      List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user. 
+        /*
+      List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -113,10 +113,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS":
-        /* 
-      List the authenticated user&#39;s gists or if called anonymously, this will return all public gists. 
+        /*
+      List the authenticated user&#39;s gists or if called anonymously, this will return all public gists.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -127,9 +127,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_ID_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Get a single comment.
       Function parameters for this API id,commentId,opts
         */
@@ -141,9 +141,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_ID_COMMENTS":
-        /* 
+        /*
       List comments on a gist.
       Function parameters for this API id,opts
         */
@@ -155,9 +155,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_ID":
-        /* 
+        /*
       Get a single gist.
       Function parameters for this API id,opts
         */
@@ -169,9 +169,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_ID_STAR":
-        /* 
+        /*
       Check if a gist is starred.
       Function parameters for this API id,opts
         */
@@ -183,9 +183,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_PUBLIC":
-        /* 
+        /*
       List all public gists.
       Function parameters for this API opts
         */
@@ -197,9 +197,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_STARRED":
-        /* 
+        /*
       List the authenticated user&#39;s starred gists.
       Function parameters for this API opts
         */
@@ -211,10 +211,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GITIGNORE_TEMPLATES":
-        /* 
-      Listing available templates. List all templates available to pass as an option when creating a repository. 
+        /*
+      Listing available templates. List all templates available to pass as an option when creating a repository.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -225,9 +225,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GITIGNORE_TEMPLATES_LANGUAGE":
-        /* 
+        /*
       Get a single template.
       Function parameters for this API language,opts
         */
@@ -239,10 +239,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ISSUES":
-        /* 
-      List issues. List all issues across all the authenticated user&#39;s visible repositories. 
+        /*
+      List issues. List all issues across all the authenticated user&#39;s visible repositories.
       Function parameters for this API filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
@@ -253,9 +253,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "LEGACY_ISSUES_SEARCH_OWNER_REPOSITORY_STATE_KEYWORD":
-        /* 
+        /*
       Find issues by state and keyword.
       Function parameters for this API keyword,state,owner,repository,opts
         */
@@ -267,9 +267,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "LEGACY_REPOS_SEARCH_KEYWORD":
-        /* 
+        /*
       Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.
       Function parameters for this API keyword,opts
         */
@@ -281,9 +281,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "LEGACY_USER_EMAIL_EMAIL":
-        /* 
+        /*
       This API call is added for compatibility reasons only.
       Function parameters for this API email,opts
         */
@@ -295,9 +295,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "LEGACY_USER_SEARCH_KEYWORD":
-        /* 
+        /*
       Find users by keyword.
       Function parameters for this API keyword,opts
         */
@@ -309,9 +309,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "META":
-        /* 
+        /*
       This gives some information about GitHub.com, the service.
       Function parameters for this API opts
         */
@@ -323,9 +323,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "NETWORKS_OWNER_REPO_EVENTS":
-        /* 
+        /*
       List public events for a network of repositories.
       Function parameters for this API owner,repo,opts
         */
@@ -337,10 +337,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "NOTIFICATIONS":
-        /* 
-      List your notifications. List all notifications for the current user, grouped by repository. 
+        /*
+      List your notifications. List all notifications for the current user, grouped by repository.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -351,9 +351,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "NOTIFICATIONS_THREADS_ID":
-        /* 
+        /*
       View a single thread.
       Function parameters for this API id,opts
         */
@@ -365,9 +365,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
-        /* 
+        /*
       Get a Thread Subscription.
       Function parameters for this API id,opts
         */
@@ -379,9 +379,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_EVENTS":
-        /* 
+        /*
       List public events for an organization.
       Function parameters for this API org,opts
         */
@@ -393,9 +393,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG":
-        /* 
+        /*
       Get an Organization.
       Function parameters for this API org,opts
         */
@@ -407,10 +407,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_ISSUES":
-        /* 
-      List issues. List all issues for a given organization for the authenticated user. 
+        /*
+      List issues. List all issues for a given organization for the authenticated user.
       Function parameters for this API org,filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
@@ -421,10 +421,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_MEMBERS":
-        /* 
-      Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list. 
+        /*
+      Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list.
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
@@ -435,9 +435,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_MEMBERS_USERNAME":
-        /* 
+        /*
       Check if a user is, publicly or privately, a member of the organization.
       Function parameters for this API org,username,opts
         */
@@ -449,10 +449,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_PUBLIC_MEMBERS":
-        /* 
-      Public members list. Members of an organization can choose to have their membership publicized or not. 
+        /*
+      Public members list. Members of an organization can choose to have their membership publicized or not.
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
@@ -463,9 +463,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
-        /* 
+        /*
       Check public membership.
       Function parameters for this API org,username,opts
         */
@@ -477,9 +477,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_REPOS":
-        /* 
+        /*
       List repositories for the specified org.
       Function parameters for this API org,opts
         */
@@ -491,9 +491,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_TEAMS":
-        /* 
+        /*
       List teams.
       Function parameters for this API org,opts
         */
@@ -505,10 +505,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "RATE_LIMIT":
-        /* 
-      Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit. 
+        /*
+      Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -519,10 +519,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ARCHIVE_FORMAT_PATH":
-        /* 
-      Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly. 
+        /*
+      Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly.
       Function parameters for this API owner,repo,archiveFormat,path,opts
         */
         return new Promise((resolve, reject) => {
@@ -533,10 +533,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ASSIGNEES_ASSIGNEE":
-        /* 
-      Check assignee. You may also check to see if a particular user is an assignee for a repository. 
+        /*
+      Check assignee. You may also check to see if a particular user is an assignee for a repository.
       Function parameters for this API owner,repo,assignee,opts
         */
         return new Promise((resolve, reject) => {
@@ -547,10 +547,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ASSIGNEES":
-        /* 
-      List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned. 
+        /*
+      List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -561,9 +561,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_BRANCHES_BRANCH":
-        /* 
+        /*
       Get Branch
       Function parameters for this API owner,repo,branch,opts
         */
@@ -575,9 +575,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_BRANCHES":
-        /* 
+        /*
       Get list of branches
       Function parameters for this API owner,repo,opts
         */
@@ -589,10 +589,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COLLABORATORS":
-        /* 
-      List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list. 
+        /*
+      List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -603,9 +603,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COLLABORATORS_USER":
-        /* 
+        /*
       Check if user is a collaborator
       Function parameters for this API owner,repo,user,opts
         */
@@ -617,9 +617,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Get a single commit comment.
       Function parameters for this API owner,repo,commentId,opts
         */
@@ -631,10 +631,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMMENTS":
-        /* 
-      List commit comments for a repository. Comments are ordered by ascending ID. 
+        /*
+      List commit comments for a repository. Comments are ordered by ascending ID.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -645,9 +645,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMMITS":
-        /* 
+        /*
       List commits on a repository.
       Function parameters for this API owner,repo,opts
         */
@@ -659,10 +659,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMMITS_REF_STATUS":
-        /* 
-      Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json 
+        /*
+      Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
@@ -673,9 +673,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS":
-        /* 
+        /*
       List comments for a single commitList comments for a single commit.
       Function parameters for this API owner,repo,shaCode,opts
         */
@@ -687,9 +687,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMMITS_SHA_CODE":
-        /* 
+        /*
       Get a single commit.
       Function parameters for this API owner,repo,shaCode,opts
         */
@@ -701,9 +701,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMPARE_BASE_ID_HEAD_ID":
-        /* 
+        /*
       Compare two commits
       Function parameters for this API owner,repo,baseId,headId,opts
         */
@@ -715,10 +715,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_CONTENTS_PATH":
-        /* 
-      Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot; 
+        /*
+      Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot;
       Function parameters for this API owner,repo,path,opts
         */
         return new Promise((resolve, reject) => {
@@ -729,9 +729,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_CONTRIBUTORS":
-        /* 
+        /*
       Get list of contributors.
       Function parameters for this API owner,repo,anon,opts
         */
@@ -743,9 +743,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_DEPLOYMENTS":
-        /* 
+        /*
       Users with pull access can view deployments for a repository
       Function parameters for this API owner,repo,opts
         */
@@ -757,9 +757,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES":
-        /* 
+        /*
       Users with pull access can view deployment statuses for a deployment
       Function parameters for this API owner,repo,id,opts
         */
@@ -771,9 +771,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID":
-        /* 
+        /*
       Deprecated. Get a single download.
       Function parameters for this API owner,repo,downloadId,opts
         */
@@ -785,9 +785,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_DOWNLOADS":
-        /* 
+        /*
       Deprecated. List downloads for a repository.
       Function parameters for this API owner,repo,opts
         */
@@ -799,9 +799,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_EVENTS":
-        /* 
+        /*
       Get list of repository events.
       Function parameters for this API owner,repo,opts
         */
@@ -813,9 +813,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_FORKS":
-        /* 
+        /*
       List forks.
       Function parameters for this API owner,repo,opts
         */
@@ -827,9 +827,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO":
-        /* 
+        /*
       Get repository.
       Function parameters for this API owner,repo,opts
         */
@@ -841,10 +841,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_BLOBS_SHA_CODE":
-        /* 
-      Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it. 
+        /*
+      Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it.
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
@@ -855,9 +855,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_COMMITS_SHA_CODE":
-        /* 
+        /*
       Get a Commit.
       Function parameters for this API owner,repo,shaCode,opts
         */
@@ -869,9 +869,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_REFS":
-        /* 
+        /*
       Get all References
       Function parameters for this API owner,repo,opts
         */
@@ -883,9 +883,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_REFS_REF":
-        /* 
+        /*
       Get a Reference
       Function parameters for this API owner,repo,ref,opts
         */
@@ -897,9 +897,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_TAGS_SHA_CODE":
-        /* 
+        /*
       Get a Tag.
       Function parameters for this API owner,repo,shaCode,opts
         */
@@ -911,9 +911,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_TREES_SHA_CODE":
-        /* 
+        /*
       Get a Tree.
       Function parameters for this API owner,repo,shaCode,opts
         */
@@ -925,9 +925,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_HOOKS":
-        /* 
+        /*
       Get list of hooks.
       Function parameters for this API owner,repo,opts
         */
@@ -939,9 +939,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
-        /* 
+        /*
       Get single hook.
       Function parameters for this API owner,repo,hookId,opts
         */
@@ -953,9 +953,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Get a single comment.
       Function parameters for this API owner,repo,commentId,opts
         */
@@ -967,9 +967,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_COMMENTS":
-        /* 
+        /*
       List comments in a repository.
       Function parameters for this API owner,repo,opts
         */
@@ -981,9 +981,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_EVENTS_EVENT_ID":
-        /* 
+        /*
       Get a single event.
       Function parameters for this API owner,repo,eventId,opts
         */
@@ -995,9 +995,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_EVENTS":
-        /* 
+        /*
       List issue events for a repository.
       Function parameters for this API owner,repo,opts
         */
@@ -1009,9 +1009,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES":
-        /* 
+        /*
       List issues for a repository.
       Function parameters for this API owner,repo,filter,state,labels,sort,direction,opts
         */
@@ -1023,9 +1023,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS":
-        /* 
+        /*
       List comments on an issue.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1037,9 +1037,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER_EVENTS":
-        /* 
+        /*
       List events for an issue.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1051,9 +1051,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER":
-        /* 
+        /*
       Get a single issue
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1065,9 +1065,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
-        /* 
+        /*
       List labels on an issue.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1079,9 +1079,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_KEYS":
-        /* 
+        /*
       Get list of keys.
       Function parameters for this API owner,repo,opts
         */
@@ -1093,9 +1093,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_KEYS_KEY_ID":
-        /* 
+        /*
       Get a key
       Function parameters for this API owner,repo,keyId,opts
         */
@@ -1107,9 +1107,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_LABELS":
-        /* 
+        /*
       List all labels for this repository.
       Function parameters for this API owner,repo,opts
         */
@@ -1121,9 +1121,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_LABELS_NAME":
-        /* 
+        /*
       Get a single label.
       Function parameters for this API owner,repo,name,opts
         */
@@ -1135,10 +1135,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_LANGUAGES":
-        /* 
-      List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language. 
+        /*
+      List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1149,9 +1149,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_MILESTONES":
-        /* 
+        /*
       List milestones for a repository.
       Function parameters for this API owner,repo,opts
         */
@@ -1163,9 +1163,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
-        /* 
+        /*
       Get a single milestone.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1177,9 +1177,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_MILESTONES_NUMBER_LABELS":
-        /* 
+        /*
       Get labels for every issue in a milestone.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1191,10 +1191,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_NOTIFICATIONS":
-        /* 
-      List your notifications in a repository List all notifications for the current user. 
+        /*
+      List your notifications in a repository List all notifications for the current user.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1205,9 +1205,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Get a single comment.
       Function parameters for this API owner,repo,commentId,opts
         */
@@ -1219,10 +1219,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_COMMENTS":
-        /* 
-      List comments in a repository. By default, Review Comments are ordered by ascending ID. 
+        /*
+      List comments in a repository. By default, Review Comments are ordered by ascending ID.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1233,9 +1233,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS":
-        /* 
+        /*
       List pull requests.
       Function parameters for this API owner,repo,opts
         */
@@ -1247,9 +1247,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS":
-        /* 
+        /*
       List comments on a pull request.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1261,9 +1261,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMITS":
-        /* 
+        /*
       List commits on a pull request.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1275,9 +1275,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_NUMBER_FILES":
-        /* 
+        /*
       List pull requests files.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1289,9 +1289,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_NUMBER":
-        /* 
+        /*
       Get a single pull request.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1303,9 +1303,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_NUMBER_MERGE":
-        /* 
+        /*
       Get if a pull request has been merged.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -1317,10 +1317,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_README":
-        /* 
-      Get the README. This method returns the preferred README for a repository. 
+        /*
+      Get the README. This method returns the preferred README for a repository.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1331,9 +1331,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
-        /* 
+        /*
       Get a single release asset
       Function parameters for this API owner,repo,id,opts
         */
@@ -1345,9 +1345,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_RELEASES":
-        /* 
+        /*
       Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only
       Function parameters for this API owner,repo,opts
         */
@@ -1359,9 +1359,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_RELEASES_ID_ASSETS":
-        /* 
+        /*
       List assets for a release
       Function parameters for this API owner,repo,id,opts
         */
@@ -1373,9 +1373,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_RELEASES_ID":
-        /* 
+        /*
       Get a single release
       Function parameters for this API owner,repo,id,opts
         */
@@ -1387,9 +1387,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_STARGAZERS":
-        /* 
+        /*
       List Stargazers.
       Function parameters for this API owner,repo,opts
         */
@@ -1401,10 +1401,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_STATS_CODE_FREQUENCY":
-        /* 
-      Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository. 
+        /*
+      Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1415,10 +1415,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_STATS_COMMIT_ACTIVITY":
-        /* 
-      Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday. 
+        /*
+      Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1429,9 +1429,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_STATS_CONTRIBUTORS":
-        /* 
+        /*
       Get contributors list with additions, deletions, and commit counts.
       Function parameters for this API owner,repo,opts
         */
@@ -1443,9 +1443,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_STATS_PARTICIPATION":
-        /* 
+        /*
       Get the weekly commit count for the repo owner and everyone else.
       Function parameters for this API owner,repo,opts
         */
@@ -1457,10 +1457,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_STATS_PUNCH_CARD":
-        /* 
-      Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits. 
+        /*
+      Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1471,9 +1471,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_STATUSES_REF":
-        /* 
+        /*
       List Statuses for a specific Ref.
       Function parameters for this API owner,repo,ref,opts
         */
@@ -1485,9 +1485,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_SUBSCRIBERS":
-        /* 
+        /*
       List watchers.
       Function parameters for this API owner,repo,opts
         */
@@ -1499,9 +1499,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_SUBSCRIPTION":
-        /* 
+        /*
       Get a Repository Subscription.
       Function parameters for this API owner,repo,opts
         */
@@ -1513,9 +1513,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_TAGS":
-        /* 
+        /*
       Get list of tags.
       Function parameters for this API owner,repo,opts
         */
@@ -1527,9 +1527,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_TEAMS":
-        /* 
+        /*
       Get list of teams
       Function parameters for this API owner,repo,opts
         */
@@ -1541,9 +1541,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_WATCHERS":
-        /* 
+        /*
       List Stargazers. New implementation.
       Function parameters for this API owner,repo,opts
         */
@@ -1555,10 +1555,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOSITORIES":
-        /* 
-      List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories. 
+        /*
+      List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -1569,9 +1569,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "SEARCH_CODE":
-        /* 
+        /*
       Search code.
       Function parameters for this API q,opts
         */
@@ -1583,9 +1583,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "SEARCH_ISSUES":
-        /* 
+        /*
       Find issues by state and keyword. (This method returns up to 100 results per page.)
       Function parameters for this API q,opts
         */
@@ -1597,9 +1597,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "SEARCH_REPOSITORIES":
-        /* 
+        /*
       Search repositories.
       Function parameters for this API q,opts
         */
@@ -1611,9 +1611,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "SEARCH_USERS":
-        /* 
+        /*
       Search users.
       Function parameters for this API q,opts
         */
@@ -1625,9 +1625,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID":
-        /* 
+        /*
       Get team.
       Function parameters for this API teamId,opts
         */
@@ -1639,10 +1639,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_MEMBERS":
-        /* 
-      List team members. In order to list members in a team, the authenticated user must be a member of the team. 
+        /*
+      List team members. In order to list members in a team, the authenticated user must be a member of the team.
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
@@ -1653,10 +1653,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
-        /* 
-      The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team. 
+        /*
+      The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team.
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -1667,10 +1667,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
-        /* 
-      Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization. 
+        /*
+      Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization.
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -1681,9 +1681,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_REPOS":
-        /* 
+        /*
       List team repos
       Function parameters for this API teamId,opts
         */
@@ -1695,9 +1695,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
-        /* 
+        /*
       Check if a team manages a repository
       Function parameters for this API teamId,owner,repo,opts
         */
@@ -1709,10 +1709,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_EMAILS":
-        /* 
-      List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format. 
+        /*
+      List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -1723,9 +1723,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_FOLLOWERS":
-        /* 
+        /*
       List the authenticated user&#39;s followers
       Function parameters for this API opts
         */
@@ -1737,9 +1737,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_FOLLOWING":
-        /* 
+        /*
       List who the authenticated user is following.
       Function parameters for this API opts
         */
@@ -1751,9 +1751,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_FOLLOWING_USERNAME":
-        /* 
+        /*
       Check if you are following a user.
       Function parameters for this API username,opts
         */
@@ -1765,9 +1765,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER":
-        /* 
+        /*
       Get the authenticated user.
       Function parameters for this API opts
         */
@@ -1779,10 +1779,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_ISSUES":
-        /* 
-      List issues. List all issues across owned and member repositories for the authenticated user. 
+        /*
+      List issues. List all issues across owned and member repositories for the authenticated user.
       Function parameters for this API filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
@@ -1793,10 +1793,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_KEYS":
-        /* 
-      List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes. 
+        /*
+      List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -1807,9 +1807,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_KEYS_KEY_ID":
-        /* 
+        /*
       Get a single public key.
       Function parameters for this API keyId,opts
         */
@@ -1821,9 +1821,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_ORGS":
-        /* 
+        /*
       List public and private organizations for the authenticated user.
       Function parameters for this API opts
         */
@@ -1835,10 +1835,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_REPOS":
-        /* 
-      List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately. 
+        /*
+      List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -1849,9 +1849,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_STARRED":
-        /* 
+        /*
       List repositories being starred by the authenticated user.
       Function parameters for this API opts
         */
@@ -1863,9 +1863,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_STARRED_OWNER_REPO":
-        /* 
+        /*
       Check if you are starring a repository.
       Function parameters for this API owner,repo,opts
         */
@@ -1877,9 +1877,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_SUBSCRIPTIONS":
-        /* 
+        /*
       List repositories being watched by the authenticated user.
       Function parameters for this API opts
         */
@@ -1891,9 +1891,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_SUBSCRIPTIONS_OWNER_REPO":
-        /* 
+        /*
       Check if you are watching a repository.
       Function parameters for this API owner,repo,opts
         */
@@ -1905,9 +1905,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_TEAMS":
-        /* 
+        /*
       List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.
       Function parameters for this API opts
         */
@@ -1919,10 +1919,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS":
-        /* 
-      Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users. 
+        /*
+      Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users.
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -1933,9 +1933,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_EVENTS":
-        /* 
+        /*
       If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events.
       Function parameters for this API username,opts
         */
@@ -1947,9 +1947,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_EVENTS_ORGS_ORG":
-        /* 
+        /*
       This is the user&#39;s organization dashboard. You must be authenticated as the user to view this.
       Function parameters for this API username,org,opts
         */
@@ -1961,9 +1961,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_FOLLOWERS":
-        /* 
+        /*
       List a user&#39;s followers
       Function parameters for this API username,opts
         */
@@ -1975,9 +1975,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_FOLLOWING_TARGET_USER":
-        /* 
+        /*
       Check if one user follows another.
       Function parameters for this API username,targetUser,opts
         */
@@ -1989,9 +1989,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME":
-        /* 
+        /*
       Get a single user.
       Function parameters for this API username,opts
         */
@@ -2003,9 +2003,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_GISTS":
-        /* 
+        /*
       List a users gists.
       Function parameters for this API username,opts
         */
@@ -2017,10 +2017,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_KEYS":
-        /* 
-      List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone. 
+        /*
+      List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone.
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2031,9 +2031,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_ORGS":
-        /* 
+        /*
       List all public organizations for a user.
       Function parameters for this API username,opts
         */
@@ -2045,9 +2045,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_RECEIVED_EVENTS":
-        /* 
+        /*
       These are events that you&#39;ll only see public events.
       Function parameters for this API username,opts
         */
@@ -2059,9 +2059,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_RECEIVED_EVENTS_PUBLIC":
-        /* 
+        /*
       List public events that a user has received
       Function parameters for this API username,opts
         */
@@ -2073,9 +2073,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_REPOS":
-        /* 
+        /*
       List public repositories for the specified user.
       Function parameters for this API username,opts
         */
@@ -2087,9 +2087,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_STARRED":
-        /* 
+        /*
       List repositories being starred by a user.
       Function parameters for this API username,opts
         */
@@ -2101,9 +2101,9 @@
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USERS_USERNAME_SUBSCRIPTIONS":
-        /* 
+        /*
       List repositories being watched by a user.
       Function parameters for this API username,opts
         */
@@ -2115,10 +2115,10 @@
             resolve({data: data, response: response});
           })
         })
-        
+
     default:
     throw ErrorHelper.getError(`Can't get entity`, 404)
-    
+
         }
       }
         // This is a function for emojisGet
@@ -2151,7 +2151,7 @@ apiInstance.emojisGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for eventsGet
         /* List public events. */
         eventsGet(incomingOptions, cb) {
@@ -2182,7 +2182,7 @@ apiInstance.eventsGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for feedsGet
         /* List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user.  */
         feedsGet(incomingOptions, cb) {
@@ -2213,7 +2213,7 @@ apiInstance.feedsGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for gistsGet
         /* List the authenticated user&#39;s gists or if called anonymously, this will return all public gists.  */
         gistsGet(incomingOptions, cb) {
@@ -2245,7 +2245,7 @@ apiInstance.gistsGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for gistsIdCommentsCommentIdGet
         /* Get a single comment. */
         gistsIdCommentsCommentIdGet(incomingOptions, cb) {
@@ -2276,7 +2276,7 @@ apiInstance.gistsIdCommentsCommentIdGet(incomingOptions.id, incomingOptions.comm
 });
         }
 
-        
+
         // This is a function for gistsIdCommentsGet
         /* List comments on a gist. */
         gistsIdCommentsGet(incomingOptions, cb) {
@@ -2308,7 +2308,7 @@ apiInstance.gistsIdCommentsGet(incomingOptions.id, incomingOptions.opts, (error,
 });
         }
 
-        
+
         // This is a function for gistsIdGet
         /* Get a single gist. */
         gistsIdGet(incomingOptions, cb) {
@@ -2338,7 +2338,7 @@ apiInstance.gistsIdGet(incomingOptions.id, incomingOptions.opts, (error, data, r
 });
         }
 
-        
+
         // This is a function for gistsIdStarGet
         /* Check if a gist is starred. */
         gistsIdStarGet(incomingOptions, cb) {
@@ -2370,7 +2370,7 @@ apiInstance.gistsIdStarGet(incomingOptions.id, incomingOptions.opts, (error, dat
 });
         }
 
-        
+
         // This is a function for gistsPublicGet
         /* List all public gists. */
         gistsPublicGet(incomingOptions, cb) {
@@ -2402,7 +2402,7 @@ apiInstance.gistsPublicGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for gistsStarredGet
         /* List the authenticated user&#39;s starred gists. */
         gistsStarredGet(incomingOptions, cb) {
@@ -2434,7 +2434,7 @@ apiInstance.gistsStarredGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for gitignoreTemplatesGet
         /* Listing available templates. List all templates available to pass as an option when creating a repository.  */
         gitignoreTemplatesGet(incomingOptions, cb) {
@@ -2465,7 +2465,7 @@ apiInstance.gitignoreTemplatesGet(incomingOptions.opts, (error, data, response) 
 });
         }
 
-        
+
         // This is a function for gitignoreTemplatesLanguageGet
         /* Get a single template. */
         gitignoreTemplatesLanguageGet(incomingOptions, cb) {
@@ -2478,7 +2478,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let language = "language_example";*/ // String | 
+/*let language = "language_example";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
@@ -2495,7 +2495,7 @@ apiInstance.gitignoreTemplatesLanguageGet(incomingOptions.language, incomingOpti
 });
         }
 
-        
+
         // This is a function for issuesGet
         /* List issues. List all issues across all the authenticated user&#39;s visible repositories.  */
         issuesGet(incomingOptions, cb) {
@@ -2512,7 +2512,7 @@ let apiInstance = new Github.DefaultApi()
 /*let state = "'open'";*/ // String |
 /*let labels = "labels_example";*/ // String | String list of comma separated Label names. Example - bug,ui,@high
 /*let sort = "'created'";*/ // String |
-/*let direction = "'desc'";*/ // String | 
+/*let direction = "'desc'";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
@@ -2532,7 +2532,7 @@ apiInstance.issuesGet(incomingOptions.filter, incomingOptions.state, incomingOpt
 });
         }
 
-        
+
         // This is a function for legacyIssuesSearchOwnerRepositoryStateKeywordGet
         /* Find issues by state and keyword. */
         legacyIssuesSearchOwnerRepositoryStateKeywordGet(incomingOptions, cb) {
@@ -2542,7 +2542,7 @@ let apiInstance = new Github.DefaultApi()
 /*let keyword = "keyword_example";*/ // String | The search term
 /*let state = "state_example";*/ // String | Indicates the state of the issues to return. Can be either open or closed
 /*let owner = "owner_example";*/ // String |
-/*let repository = "repository_example";*/ // String | 
+/*let repository = "repository_example";*/ // String |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -2559,7 +2559,7 @@ apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(incomingOptions.key
 });
         }
 
-        
+
         // This is a function for legacyReposSearchKeywordGet
         /* Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter. */
         legacyReposSearchKeywordGet(incomingOptions, cb) {
@@ -2587,7 +2587,7 @@ apiInstance.legacyReposSearchKeywordGet(incomingOptions.keyword, incomingOptions
 });
         }
 
-        
+
         // This is a function for legacyUserEmailEmailGet
         /* This API call is added for compatibility reasons only. */
         legacyUserEmailEmailGet(incomingOptions, cb) {
@@ -2611,7 +2611,7 @@ apiInstance.legacyUserEmailEmailGet(incomingOptions.email, incomingOptions.opts,
 });
         }
 
-        
+
         // This is a function for legacyUserSearchKeywordGet
         /* Find users by keyword. */
         legacyUserSearchKeywordGet(incomingOptions, cb) {
@@ -2638,7 +2638,7 @@ apiInstance.legacyUserSearchKeywordGet(incomingOptions.keyword, incomingOptions.
 });
         }
 
-        
+
         // This is a function for metaGet
         /* This gives some information about GitHub.com, the service. */
         metaGet(incomingOptions, cb) {
@@ -2667,7 +2667,7 @@ apiInstance.metaGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for networksOwnerRepoEventsGet
         /* List public events for a network of repositories. */
         networksOwnerRepoEventsGet(incomingOptions, cb) {
@@ -2700,7 +2700,7 @@ apiInstance.networksOwnerRepoEventsGet(incomingOptions.owner, incomingOptions.re
 });
         }
 
-        
+
         // This is a function for notificationsGet
         /* List your notifications. List all notifications for the current user, grouped by repository.  */
         notificationsGet(incomingOptions, cb) {
@@ -2715,8 +2715,8 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi();
 let opts = {
   'all': true, // Boolean | True to show notifications marked as read.
-  'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned. 
-//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
+  'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned.
+//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
   'page': 1 // Number | Page number at which you want the search result to come from.
@@ -2734,7 +2734,7 @@ apiInstance.notificationsGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for notificationsThreadsIdGet
         /* View a single thread. */
         notificationsThreadsIdGet(incomingOptions, cb) {
@@ -2764,7 +2764,7 @@ apiInstance.notificationsThreadsIdGet(incomingOptions.id, incomingOptions.opts, 
 });
         }
 
-        
+
         // This is a function for notificationsThreadsIdSubscriptionGet
         /* Get a Thread Subscription. */
         notificationsThreadsIdSubscriptionGet(incomingOptions, cb) {
@@ -2796,7 +2796,7 @@ apiInstance.notificationsThreadsIdSubscriptionGet(incomingOptions.id, incomingOp
 });
         }
 
-        
+
         // This is a function for orgsOrgEventsGet
         /* List public events for an organization. */
         orgsOrgEventsGet(incomingOptions, cb) {
@@ -2828,7 +2828,7 @@ apiInstance.incomingOptions.orgsOrgEventsGet(org, incomingOptions.opts, (error, 
 });
         }
 
-        
+
         // This is a function for orgsOrgGet
         /* Get an Organization. */
         orgsOrgGet(incomingOptions, cb) {
@@ -2860,7 +2860,7 @@ apiInstance.incomingOptions.orgsOrgGet(org, incomingOptions.opts, (error, data, 
 });
         }
 
-        
+
         // This is a function for orgsOrgIssuesGet
         /* List issues. List all issues for a given organization for the authenticated user.  */
         orgsOrgIssuesGet(incomingOptions, cb) {
@@ -2878,7 +2878,7 @@ let apiInstance = new Github.DefaultApi()
 /*let state = "'open'";*/ // String |
 /*let labels = "labels_example";*/ // String | String list of comma separated Label names. Example - bug,ui,@high
 /*let sort = "'created'";*/ // String |
-/*let direction = "'desc'";*/ // String | 
+/*let direction = "'desc'";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
@@ -2898,7 +2898,7 @@ apiInstance.incomingOptions.orgsOrgIssuesGet(org, incomingOptions.filter, incomi
 });
         }
 
-        
+
         // This is a function for orgsOrgMembersGet
         /* Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list.  */
         orgsOrgMembersGet(incomingOptions, cb) {
@@ -2930,7 +2930,7 @@ apiInstance.incomingOptions.orgsOrgMembersGet(org, incomingOptions.opts, (error,
 });
         }
 
-        
+
         // This is a function for orgsOrgMembersUsernameGet
         /* Check if a user is, publicly or privately, a member of the organization. */
         orgsOrgMembersUsernameGet(incomingOptions, cb) {
@@ -2963,7 +2963,7 @@ apiInstance.incomingOptions.orgsOrgMembersUsernameGet(org, incomingOptions.usern
 });
         }
 
-        
+
         // This is a function for orgsOrgPublicMembersGet
         /* Public members list. Members of an organization can choose to have their membership publicized or not.  */
         orgsOrgPublicMembersGet(incomingOptions, cb) {
@@ -2995,7 +2995,7 @@ apiInstance.incomingOptions.orgsOrgPublicMembersGet(org, incomingOptions.opts, (
 });
         }
 
-        
+
         // This is a function for orgsOrgPublicMembersUsernameGet
         /* Check public membership. */
         orgsOrgPublicMembersUsernameGet(incomingOptions, cb) {
@@ -3028,7 +3028,7 @@ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameGet(org, incomingOptions
 });
         }
 
-        
+
         // This is a function for orgsOrgReposGet
         /* List repositories for the specified org. */
         orgsOrgReposGet(incomingOptions, cb) {
@@ -3043,7 +3043,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation.
 let opts = {
-  'type': "'all'", // String | 
+  'type': "'all'", // String |
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
   'page': 1 // Number | Page number at which you want the search result to come from.
@@ -3061,7 +3061,7 @@ apiInstance.incomingOptions.orgsOrgReposGet(org, incomingOptions.opts, (error, d
 });
         }
 
-        
+
         // This is a function for orgsOrgTeamsGet
         /* List teams. */
         orgsOrgTeamsGet(incomingOptions, cb) {
@@ -3093,7 +3093,7 @@ apiInstance.incomingOptions.orgsOrgTeamsGet(org, incomingOptions.opts, (error, d
 });
         }
 
-        
+
         // This is a function for rateLimitGet
         /* Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit.  */
         rateLimitGet(incomingOptions, cb) {
@@ -3124,7 +3124,7 @@ apiInstance.rateLimitGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoArchiveFormatPathGet
         /* Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly.  */
         reposOwnerRepoArchiveFormatPathGet(incomingOptions, cb) {
@@ -3159,7 +3159,7 @@ apiInstance.incomingOptions.reposOwnerRepoArchiveFormatPathGet(incomingOptions.o
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoAssigneesAssigneeGet
         /* Check assignee. You may also check to see if a particular user is an assignee for a repository.  */
         reposOwnerRepoAssigneesAssigneeGet(incomingOptions, cb) {
@@ -3193,7 +3193,7 @@ apiInstance.incomingOptions.reposOwnerRepoAssigneesAssigneeGet(incomingOptions.o
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoAssigneesGet
         /* List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned.  */
         reposOwnerRepoAssigneesGet(incomingOptions, cb) {
@@ -3226,7 +3226,7 @@ apiInstance.incomingOptions.reposOwnerRepoAssigneesGet(incomingOptions.owner, re
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoBranchesBranchGet
         /* Get Branch */
         reposOwnerRepoBranchesBranchGet(incomingOptions, cb) {
@@ -3260,7 +3260,7 @@ apiInstance.incomingOptions.reposOwnerRepoBranchesBranchGet(incomingOptions.owne
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoBranchesGet
         /* Get list of branches */
         reposOwnerRepoBranchesGet(incomingOptions, cb) {
@@ -3293,7 +3293,7 @@ apiInstance.incomingOptions.reposOwnerRepoBranchesGet(incomingOptions.owner, rep
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCollaboratorsGet
         /* List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list.  */
         reposOwnerRepoCollaboratorsGet(incomingOptions, cb) {
@@ -3326,7 +3326,7 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsGet(incomingOptions.owner
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCollaboratorsUserGet
         /* Check if user is a collaborator */
         reposOwnerRepoCollaboratorsUserGet(incomingOptions, cb) {
@@ -3360,7 +3360,7 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserGet(incomingOptions.o
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCommentsCommentIdGet
         /* Get a single commit comment. */
         reposOwnerRepoCommentsCommentIdGet(incomingOptions, cb) {
@@ -3394,7 +3394,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdGet(incomingOptions.o
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCommentsGet
         /* List commit comments for a repository. Comments are ordered by ascending ID.  */
         reposOwnerRepoCommentsGet(incomingOptions, cb) {
@@ -3427,7 +3427,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsGet(incomingOptions.owner, rep
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCommitsGet
         /* List commits on a repository. */
         reposOwnerRepoCommitsGet(incomingOptions, cb) {
@@ -3443,7 +3443,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository.
 let opts = {
-//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
+//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
 //  'sha': "sha_example", // String | Sha or branch to start listing commits from.
 //  'path': "path_example", // String | Only commits containing this file path will be returned.
 //  'author': "author_example", // String | GitHub login, name, or email by which to filter by commit author.
@@ -3465,7 +3465,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsGet(incomingOptions.owner, repo
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCommitsRefStatusGet
         /* Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json  */
         reposOwnerRepoCommitsRefStatusGet(incomingOptions, cb) {
@@ -3480,7 +3480,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let ref = "ref_example";*/ // String | 
+/*let ref = "ref_example";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
@@ -3499,7 +3499,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsRefStatusGet(incomingOptions.ow
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCommitsShaCodeCommentsGet
         /* List comments for a single commitList comments for a single commit. */
         reposOwnerRepoCommitsShaCodeCommentsGet(incomingOptions, cb) {
@@ -3533,7 +3533,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsGet(incomingOpti
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCommitsShaCodeGet
         /* Get a single commit. */
         reposOwnerRepoCommitsShaCodeGet(incomingOptions, cb) {
@@ -3567,7 +3567,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeGet(incomingOptions.owne
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCompareBaseIdHeadIdGet
         /* Compare two commits */
         reposOwnerRepoCompareBaseIdHeadIdGet(incomingOptions, cb) {
@@ -3583,7 +3583,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let baseId = "baseId_example";*/ // String |
-/*let headId = "headId_example";*/ // String | 
+/*let headId = "headId_example";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
@@ -3602,7 +3602,7 @@ apiInstance.incomingOptions.reposOwnerRepoCompareBaseIdHeadIdGet(incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoContentsPathGet
         /* Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot;  */
         reposOwnerRepoContentsPathGet(incomingOptions, cb) {
@@ -3617,7 +3617,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let path = "path_example";*/ // String | 
+/*let path = "path_example";*/ // String |
 let opts = {
 //  'path2': "path_example", // String | The content path.
 //  'ref': "ref_example", // String | The String name of the Commit/Branch/Tag. Defaults to 'master'.
@@ -3638,7 +3638,7 @@ apiInstance.incomingOptions.reposOwnerRepoContentsPathGet(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoContributorsGet
         /* Get list of contributors. */
         reposOwnerRepoContributorsGet(incomingOptions, cb) {
@@ -3672,7 +3672,7 @@ apiInstance.incomingOptions.reposOwnerRepoContributorsGet(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoDeploymentsGet
         /* Users with pull access can view deployments for a repository */
         reposOwnerRepoDeploymentsGet(incomingOptions, cb) {
@@ -3705,7 +3705,7 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsGet(incomingOptions.owner, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoDeploymentsIdStatusesGet
         /* Users with pull access can view deployment statuses for a deployment */
         reposOwnerRepoDeploymentsIdStatusesGet(incomingOptions, cb) {
@@ -3739,7 +3739,7 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesGet(incomingOptio
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoDownloadsDownloadIdGet
         /* Deprecated. Get a single download. */
         reposOwnerRepoDownloadsDownloadIdGet(incomingOptions, cb) {
@@ -3771,7 +3771,7 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdGet(incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoDownloadsGet
         /* Deprecated. List downloads for a repository. */
         reposOwnerRepoDownloadsGet(incomingOptions, cb) {
@@ -3802,7 +3802,7 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsGet(incomingOptions.owner, re
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoEventsGet
         /* Get list of repository events. */
         reposOwnerRepoEventsGet(incomingOptions, cb) {
@@ -3835,7 +3835,7 @@ apiInstance.incomingOptions.reposOwnerRepoEventsGet(incomingOptions.owner, repo,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoForksGet
         /* List forks. */
         reposOwnerRepoForksGet(incomingOptions, cb) {
@@ -3851,7 +3851,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository.
 let opts = {
-  'sort': "'newes'", // String | 
+  'sort': "'newes'", // String |
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
   'page': 1 // Number | Page number at which you want the search result to come from.
@@ -3869,7 +3869,7 @@ apiInstance.incomingOptions.reposOwnerRepoForksGet(incomingOptions.owner, repo, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGet
         /* Get repository. */
         reposOwnerRepoGet(incomingOptions, cb) {
@@ -3902,7 +3902,7 @@ apiInstance.incomingOptions.reposOwnerRepoGet(incomingOptions.owner, repo, incom
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitBlobsShaCodeGet
         /* Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it.  */
         reposOwnerRepoGitBlobsShaCodeGet(incomingOptions, cb) {
@@ -3928,7 +3928,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitBlobsShaCodeGet(incomingOptions.own
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitCommitsShaCodeGet
         /* Get a Commit. */
         reposOwnerRepoGitCommitsShaCodeGet(incomingOptions, cb) {
@@ -3954,7 +3954,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitCommitsShaCodeGet(incomingOptions.o
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitRefsGet
         /* Get all References */
         reposOwnerRepoGitRefsGet(incomingOptions, cb) {
@@ -3981,7 +3981,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsGet(incomingOptions.owner, repo
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitRefsRefGet
         /* Get a Reference */
         reposOwnerRepoGitRefsRefGet(incomingOptions, cb) {
@@ -3990,7 +3990,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsGet(incomingOptions.owner, repo
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let ref = "ref_example";*/ // String | 
+/*let ref = "ref_example";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
@@ -4009,7 +4009,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefGet(incomingOptions.owner, r
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitTagsShaCodeGet
         /* Get a Tag. */
         reposOwnerRepoGitTagsShaCodeGet(incomingOptions, cb) {
@@ -4018,7 +4018,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefGet(incomingOptions.owner, r
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let shaCode = "shaCode_example";*/ // String | 
+/*let shaCode = "shaCode_example";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
@@ -4037,7 +4037,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitTagsShaCodeGet(incomingOptions.owne
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitTreesShaCodeGet
         /* Get a Tree. */
         reposOwnerRepoGitTreesShaCodeGet(incomingOptions, cb) {
@@ -4064,7 +4064,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitTreesShaCodeGet(incomingOptions.own
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoHooksGet
         /* Get list of hooks. */
         reposOwnerRepoHooksGet(incomingOptions, cb) {
@@ -4091,7 +4091,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksGet(incomingOptions.owner, repo, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoHooksHookIdGet
         /* Get single hook. */
         reposOwnerRepoHooksHookIdGet(incomingOptions, cb) {
@@ -4117,7 +4117,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdGet(incomingOptions.owner, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesCommentsCommentIdGet
         /* Get a single comment. */
         reposOwnerRepoIssuesCommentsCommentIdGet(incomingOptions, cb) {
@@ -4143,7 +4143,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdGet(incomingOpt
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesCommentsGet
         /* List comments in a repository. */
         reposOwnerRepoIssuesCommentsGet(incomingOptions, cb) {
@@ -4154,8 +4154,8 @@ let apiInstance = new Github.DefaultApi()
 /*let repo = "repo_example";*/ // String | Name of repository.
 let opts = {
 //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-//  'sort': "sort_example", // String | 
-//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
+//  'sort': "sort_example", // String |
+//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
 
@@ -4171,7 +4171,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsGet(incomingOptions.owne
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesEventsEventIdGet
         /* Get a single event. */
         reposOwnerRepoIssuesEventsEventIdGet(incomingOptions, cb) {
@@ -4197,7 +4197,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsEventIdGet(incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesEventsGet
         /* List issue events for a repository. */
         reposOwnerRepoIssuesEventsGet(incomingOptions, cb) {
@@ -4222,7 +4222,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesEventsGet(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesGet
         /* List issues for a repository. */
         reposOwnerRepoIssuesGet(incomingOptions, cb) {
@@ -4235,7 +4235,7 @@ let apiInstance = new Github.DefaultApi()
 /*let state = "'open'";*/ // String |
 /*let labels = "labels_example";*/ // String | String list of comma separated Label names. Example - bug,ui,@high
 /*let sort = "'created'";*/ // String |
-/*let direction = "'desc'";*/ // String | 
+/*let direction = "'desc'";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
@@ -4255,7 +4255,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesGet(incomingOptions.owner, repo,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberCommentsGet
         /* List comments on an issue. */
         reposOwnerRepoIssuesNumberCommentsGet(incomingOptions, cb) {
@@ -4281,7 +4281,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsGet(incomingOption
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberEventsGet
         /* List events for an issue. */
         reposOwnerRepoIssuesNumberEventsGet(incomingOptions, cb) {
@@ -4307,7 +4307,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberEventsGet(incomingOptions.
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberGet
         /* Get a single issue */
         reposOwnerRepoIssuesNumberGet(incomingOptions, cb) {
@@ -4333,7 +4333,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberGet(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberLabelsGet
         /* List labels on an issue. */
         reposOwnerRepoIssuesNumberLabelsGet(incomingOptions, cb) {
@@ -4359,7 +4359,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsGet(incomingOptions.
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoKeysGet
         /* Get list of keys. */
         reposOwnerRepoKeysGet(incomingOptions, cb) {
@@ -4384,7 +4384,7 @@ apiInstance.incomingOptions.reposOwnerRepoKeysGet(incomingOptions.owner, repo, i
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoKeysKeyIdGet
         /* Get a key */
         reposOwnerRepoKeysKeyIdGet(incomingOptions, cb) {
@@ -4410,7 +4410,7 @@ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdGet(incomingOptions.owner, re
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoLabelsGet
         /* List all labels for this repository. */
         reposOwnerRepoLabelsGet(incomingOptions, cb) {
@@ -4435,7 +4435,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsGet(incomingOptions.owner, repo,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoLabelsNameGet
         /* Get a single label. */
         reposOwnerRepoLabelsNameGet(incomingOptions, cb) {
@@ -4461,7 +4461,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsNameGet(incomingOptions.owner, r
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoLanguagesGet
         /* List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language.  */
         reposOwnerRepoLanguagesGet(incomingOptions, cb) {
@@ -4486,7 +4486,7 @@ apiInstance.incomingOptions.reposOwnerRepoLanguagesGet(incomingOptions.owner, re
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoMilestonesGet
         /* List milestones for a repository. */
         reposOwnerRepoMilestonesGet(incomingOptions, cb) {
@@ -4498,7 +4498,7 @@ let apiInstance = new Github.DefaultApi()
 let opts = {
   'state': "'open'", // String | String to filter by state.
 //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-  'sort': "'due_date'", // String | 
+  'sort': "'due_date'", // String |
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
 
@@ -4514,7 +4514,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesGet(incomingOptions.owner, r
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoMilestonesNumberGet
         /* Get a single milestone. */
         reposOwnerRepoMilestonesNumberGet(incomingOptions, cb) {
@@ -4540,7 +4540,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberGet(incomingOptions.ow
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoMilestonesNumberLabelsGet
         /* Get labels for every issue in a milestone. */
         reposOwnerRepoMilestonesNumberLabelsGet(incomingOptions, cb) {
@@ -4566,7 +4566,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberLabelsGet(incomingOpti
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoNotificationsGet
         /* List your notifications in a repository List all notifications for the current user.  */
         reposOwnerRepoNotificationsGet(incomingOptions, cb) {
@@ -4577,8 +4577,8 @@ let apiInstance = new Github.DefaultApi()
 /*let repo = "repo_example";*/ // String | Name of repository.
 let opts = {
   'all': true, // Boolean | True to show notifications marked as read.
-  'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned. 
-//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
+  'participating': true, // Boolean | True to show only notifications in which the user is directly participating or mentioned.
+//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
 
@@ -4594,7 +4594,7 @@ apiInstance.incomingOptions.reposOwnerRepoNotificationsGet(incomingOptions.owner
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsCommentsCommentIdGet
         /* Get a single comment. */
         reposOwnerRepoPullsCommentsCommentIdGet(incomingOptions, cb) {
@@ -4620,7 +4620,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdGet(incomingOpti
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsCommentsGet
         /* List comments in a repository. By default, Review Comments are ordered by ascending ID.  */
         reposOwnerRepoPullsCommentsGet(incomingOptions, cb) {
@@ -4631,8 +4631,8 @@ let apiInstance = new Github.DefaultApi()
 /*let repo = "repo_example";*/ // String | Name of repository.
 let opts = {
 //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-//  'sort': "sort_example", // String | 
-//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\". 
+//  'sort': "sort_example", // String |
+//  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
 
@@ -4648,7 +4648,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsGet(incomingOptions.owner
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsGet
         /* List pull requests. */
         reposOwnerRepoPullsGet(incomingOptions, cb) {
@@ -4659,7 +4659,7 @@ let apiInstance = new Github.DefaultApi()
 /*let repo = "repo_example";*/ // String | Name of repository.
 let opts = {
   'state': "'open'", // String | String to filter by state.
-//  'head': "head_example", // String | Filter pulls by head user and branch name in the format of 'user:ref-name'. Example: github:new-script-format. 
+//  'head': "head_example", // String | Filter pulls by head user and branch name in the format of 'user:ref-name'. Example: github:new-script-format.
 //  'base': "base_example", // String | Filter pulls by base branch name. Example - gh-pages.
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -4676,7 +4676,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsGet(incomingOptions.owner, repo, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsNumberCommentsGet
         /* List comments on a pull request. */
         reposOwnerRepoPullsNumberCommentsGet(incomingOptions, cb) {
@@ -4702,7 +4702,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsGet(incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsNumberCommitsGet
         /* List commits on a pull request. */
         reposOwnerRepoPullsNumberCommitsGet(incomingOptions, cb) {
@@ -4728,7 +4728,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommitsGet(incomingOptions.
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsNumberFilesGet
         /* List pull requests files. */
         reposOwnerRepoPullsNumberFilesGet(incomingOptions, cb) {
@@ -4754,7 +4754,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberFilesGet(incomingOptions.ow
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsNumberGet
         /* Get a single pull request. */
         reposOwnerRepoPullsNumberGet(incomingOptions, cb) {
@@ -4780,7 +4780,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberGet(incomingOptions.owner, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsNumberMergeGet
         /* Get if a pull request has been merged. */
         reposOwnerRepoPullsNumberMergeGet(incomingOptions, cb) {
@@ -4806,7 +4806,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergeGet(incomingOptions.ow
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReadmeGet
         /* Get the README. This method returns the preferred README for a repository.  */
         reposOwnerRepoReadmeGet(incomingOptions, cb) {
@@ -4832,7 +4832,7 @@ apiInstance.incomingOptions.reposOwnerRepoReadmeGet(incomingOptions.owner, repo,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReleasesAssetsIdGet
         /* Get a single release asset */
         reposOwnerRepoReleasesAssetsIdGet(incomingOptions, cb) {
@@ -4841,7 +4841,7 @@ apiInstance.incomingOptions.reposOwnerRepoReadmeGet(incomingOptions.owner, repo,
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let id = "id_example";*/ // String | 
+/*let id = "id_example";*/ // String |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -4858,7 +4858,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdGet(incomingOptions.ow
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReleasesGet
         /* Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only */
         reposOwnerRepoReleasesGet(incomingOptions, cb) {
@@ -4883,7 +4883,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesGet(incomingOptions.owner, rep
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReleasesIdAssetsGet
         /* List assets for a release */
         reposOwnerRepoReleasesIdAssetsGet(incomingOptions, cb) {
@@ -4892,7 +4892,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesGet(incomingOptions.owner, rep
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let id = "id_example";*/ // String | 
+/*let id = "id_example";*/ // String |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -4909,7 +4909,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdAssetsGet(incomingOptions.ow
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReleasesIdGet
         /* Get a single release */
         reposOwnerRepoReleasesIdGet(incomingOptions, cb) {
@@ -4918,7 +4918,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdAssetsGet(incomingOptions.ow
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let id = "id_example";*/ // String | 
+/*let id = "id_example";*/ // String |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -4935,7 +4935,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdGet(incomingOptions.owner, r
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoStargazersGet
         /* List Stargazers. */
         reposOwnerRepoStargazersGet(incomingOptions, cb) {
@@ -4960,7 +4960,7 @@ apiInstance.incomingOptions.reposOwnerRepoStargazersGet(incomingOptions.owner, r
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoStatsCodeFrequencyGet
         /* Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository.  */
         reposOwnerRepoStatsCodeFrequencyGet(incomingOptions, cb) {
@@ -4985,7 +4985,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsCodeFrequencyGet(incomingOptions.
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoStatsCommitActivityGet
         /* Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday.  */
         reposOwnerRepoStatsCommitActivityGet(incomingOptions, cb) {
@@ -5010,7 +5010,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsCommitActivityGet(incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoStatsContributorsGet
         /* Get contributors list with additions, deletions, and commit counts. */
         reposOwnerRepoStatsContributorsGet(incomingOptions, cb) {
@@ -5035,7 +5035,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsContributorsGet(incomingOptions.o
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoStatsParticipationGet
         /* Get the weekly commit count for the repo owner and everyone else. */
         reposOwnerRepoStatsParticipationGet(incomingOptions, cb) {
@@ -5060,7 +5060,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsParticipationGet(incomingOptions.
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoStatsPunchCardGet
         /* Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits.  */
         reposOwnerRepoStatsPunchCardGet(incomingOptions, cb) {
@@ -5085,7 +5085,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsPunchCardGet(incomingOptions.owne
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoStatusesRefGet
         /* List Statuses for a specific Ref. */
         reposOwnerRepoStatusesRefGet(incomingOptions, cb) {
@@ -5094,7 +5094,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatsPunchCardGet(incomingOptions.owne
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let ref = "ref_example";*/ // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name. 
+/*let ref = "ref_example";*/ // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name.
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -5111,7 +5111,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatusesRefGet(incomingOptions.owner, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoSubscribersGet
         /* List watchers. */
         reposOwnerRepoSubscribersGet(incomingOptions, cb) {
@@ -5136,7 +5136,7 @@ apiInstance.incomingOptions.reposOwnerRepoSubscribersGet(incomingOptions.owner, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoSubscriptionGet
         /* Get a Repository Subscription. */
         reposOwnerRepoSubscriptionGet(incomingOptions, cb) {
@@ -5161,7 +5161,7 @@ apiInstance.incomingOptions.reposOwnerRepoSubscriptionGet(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoTagsGet
         /* Get list of tags. */
         reposOwnerRepoTagsGet(incomingOptions, cb) {
@@ -5186,7 +5186,7 @@ apiInstance.incomingOptions.reposOwnerRepoTagsGet(incomingOptions.owner, repo, i
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoTeamsGet
         /* Get list of teams */
         reposOwnerRepoTeamsGet(incomingOptions, cb) {
@@ -5211,7 +5211,7 @@ apiInstance.incomingOptions.reposOwnerRepoTeamsGet(incomingOptions.owner, repo, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoWatchersGet
         /* List Stargazers. New implementation. */
         reposOwnerRepoWatchersGet(incomingOptions, cb) {
@@ -5242,7 +5242,7 @@ apiInstance.incomingOptions.reposOwnerRepoWatchersGet(incomingOptions.owner, rep
 });
         }
 
-        
+
         // This is a function for repositoriesGet
         /* List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories.  */
         repositoriesGet(incomingOptions, cb) {
@@ -5274,7 +5274,7 @@ apiInstance.repositoriesGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for searchCodeGet
         /* Search code. */
         searchCodeGet(incomingOptions, cb) {
@@ -5287,10 +5287,10 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository. 
+/*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported code search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the file contents, the file path, or both. 'Languages' Searches code based on the language it's written in. 'Forks' Filters repositories based on the number of forks, and/or whether code from forked repositories should be included in the results at all. 'Size' Finds files that match a certain size (in bytes). 'Path' Specifies the path that the resulting file must be at. 'Extension' Matches files with a certain extension. 'Users' or 'Repositories' Limits searches to a specific user or repository.
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
-//  'sort': "sort_example", // String | Can only be 'indexed', which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match. 
+//  'sort': "sort_example", // String | Can only be 'indexed', which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match.
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
   'page': 1 // Number | Page number at which you want the search result to come from.
@@ -5308,7 +5308,7 @@ apiInstance.searchCodeGet(incomingOptions.q, incomingOptions.opts, (error, data,
 });
         }
 
-        
+
         // This is a function for searchIssuesGet
         /* Find issues by state and keyword. (This method returns up to 100 results per page.) */
         searchIssuesGet(incomingOptions, cb) {
@@ -5342,7 +5342,7 @@ apiInstance.searchIssuesGet(incomingOptions.q, incomingOptions.opts, (error, dat
 });
         }
 
-        
+
         // This is a function for searchRepositoriesGet
         /* Search repositories. */
         searchRepositoriesGet(incomingOptions, cb) {
@@ -5355,7 +5355,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars. 
+/*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported repository search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the repository name, description, readme, or any combination of these. 'Size' Finds repositories that match a certain size (in kilobytes). 'Forks' Filters repositories based on the number of forks, and/or whether forked repositories should be included in the results at all. 'Created' and 'Last Updated' Filters repositories based on times of creation, or when they were last updated. 'Users or Repositories' Limits searches to a specific user or repository. 'Languages' Searches repositories based on the language they are written in. 'Stars' Searches repositories based on the number of stars.
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
 //  'sort': "sort_example", // String | If not provided, results are sorted by best match.
@@ -5376,7 +5376,7 @@ apiInstance.searchRepositoriesGet(incomingOptions.q, incomingOptions.opts, (erro
 });
         }
 
-        
+
         // This is a function for searchUsersGet
         /* Search users. */
         searchUsersGet(incomingOptions, cb) {
@@ -5389,7 +5389,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have. 
+/*let q = "q_example";*/ // String | The search terms. This can be any combination of the supported user search parameters: 'Search In' Qualifies which fields are searched. With this qualifier you can restrict the search to just the username, public email, full name, location, or any combination of these. 'Repository count' Filters users based on the number of repositories they have. 'Location' Filter users by the location indicated in their profile. 'Language' Search for users that have repositories that match a certain language. 'Created' Filter users based on when they joined. 'Followers' Filter users based on the number of followers they have.
 let opts = {
   'order': "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
 //  'sort': "sort_example", // String | If not provided, results are sorted by best match.
@@ -5410,7 +5410,7 @@ apiInstance.searchUsersGet(incomingOptions.q, incomingOptions.opts, (error, data
 });
         }
 
-        
+
         // This is a function for teamsTeamIdGet
         /* Get team. */
         teamsTeamIdGet(incomingOptions, cb) {
@@ -5440,7 +5440,7 @@ apiInstance.teamsTeamIdGet(incomingOptions.teamId, incomingOptions.opts, (error,
 });
         }
 
-        
+
         // This is a function for teamsTeamIdMembersGet
         /* List team members. In order to list members in a team, the authenticated user must be a member of the team.  */
         teamsTeamIdMembersGet(incomingOptions, cb) {
@@ -5472,7 +5472,7 @@ apiInstance.teamsTeamIdMembersGet(incomingOptions.teamId, incomingOptions.opts, 
 });
         }
 
-        
+
         // This is a function for teamsTeamIdMembersUsernameGet
         /* The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team.  */
         teamsTeamIdMembersUsernameGet(incomingOptions, cb) {
@@ -5503,7 +5503,7 @@ apiInstance.teamsTeamIdMembersUsernameGet(incomingOptions.teamId, incomingOption
 });
         }
 
-        
+
         // This is a function for teamsTeamIdMembershipsUsernameGet
         /* Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization.  */
         teamsTeamIdMembershipsUsernameGet(incomingOptions, cb) {
@@ -5534,7 +5534,7 @@ apiInstance.teamsTeamIdMembershipsUsernameGet(incomingOptions.teamId, incomingOp
 });
         }
 
-        
+
         // This is a function for teamsTeamIdReposGet
         /* List team repos */
         teamsTeamIdReposGet(incomingOptions, cb) {
@@ -5566,7 +5566,7 @@ apiInstance.teamsTeamIdReposGet(incomingOptions.teamId, incomingOptions.opts, (e
 });
         }
 
-        
+
         // This is a function for teamsTeamIdReposOwnerRepoGet
         /* Check if a team manages a repository */
         teamsTeamIdReposOwnerRepoGet(incomingOptions, cb) {
@@ -5598,7 +5598,7 @@ apiInstance.teamsTeamIdReposOwnerRepoGet(incomingOptions.teamId, incomingOptions
 });
         }
 
-        
+
         // This is a function for userEmailsGet
         /* List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format.  */
         userEmailsGet(incomingOptions, cb) {
@@ -5627,7 +5627,7 @@ apiInstance.userEmailsGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for userFollowersGet
         /* List the authenticated user&#39;s followers */
         userFollowersGet(incomingOptions, cb) {
@@ -5658,7 +5658,7 @@ apiInstance.userFollowersGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for userFollowingGet
         /* List who the authenticated user is following. */
         userFollowingGet(incomingOptions, cb) {
@@ -5689,7 +5689,7 @@ apiInstance.userFollowingGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for userFollowingUsernameGet
         /* Check if you are following a user. */
         userFollowingUsernameGet(incomingOptions, cb) {
@@ -5719,7 +5719,7 @@ apiInstance.userFollowingUsernameGet(incomingOptions.username, incomingOptions.o
 });
         }
 
-        
+
         // This is a function for userGet
         /* Get the authenticated user. */
         userGet(incomingOptions, cb) {
@@ -5750,7 +5750,7 @@ apiInstance.userGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for userIssuesGet
         /* List issues. List all issues across owned and member repositories for the authenticated user.  */
         userIssuesGet(incomingOptions, cb) {
@@ -5767,7 +5767,7 @@ let apiInstance = new Github.DefaultApi()
 /*let state = "'open'";*/ // String |
 /*let labels = "labels_example";*/ // String | String list of comma separated Label names. Example - bug,ui,@high
 /*let sort = "'created'";*/ // String |
-/*let direction = "'desc'";*/ // String | 
+/*let direction = "'desc'";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
@@ -5787,7 +5787,7 @@ apiInstance.userIssuesGet(incomingOptions.filter, incomingOptions.state, incomin
 });
         }
 
-        
+
         // This is a function for userKeysGet
         /* List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes.  */
         userKeysGet(incomingOptions, cb) {
@@ -5816,7 +5816,7 @@ apiInstance.userKeysGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for userKeysKeyIdGet
         /* Get a single public key. */
         userKeysKeyIdGet(incomingOptions, cb) {
@@ -5846,7 +5846,7 @@ apiInstance.userKeysKeyIdGet(incomingOptions.keyId, incomingOptions.opts, (error
 });
         }
 
-        
+
         // This is a function for userOrgsGet
         /* List public and private organizations for the authenticated user. */
         userOrgsGet(incomingOptions, cb) {
@@ -5875,7 +5875,7 @@ apiInstance.userOrgsGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for userReposGet
         /* List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately.  */
         userReposGet(incomingOptions, cb) {
@@ -5889,7 +5889,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let opts = {
-  'type': "'all'", // String | 
+  'type': "'all'", // String |
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
   'page': 1 // Number | Page number at which you want the search result to come from.
@@ -5907,7 +5907,7 @@ apiInstance.userReposGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for userStarredGet
         /* List repositories being starred by the authenticated user. */
         userStarredGet(incomingOptions, cb) {
@@ -5922,7 +5922,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi();
 let opts = {
 //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-  'sort': "'created'", // String | 
+  'sort': "'created'", // String |
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
 
@@ -5938,7 +5938,7 @@ apiInstance.userStarredGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for userStarredOwnerRepoGet
         /* Check if you are starring a repository. */
         userStarredOwnerRepoGet(incomingOptions, cb) {
@@ -5969,7 +5969,7 @@ apiInstance.userStarredOwnerRepoGet(incomingOptions.owner, incomingOptions.repo,
 });
         }
 
-        
+
         // This is a function for userSubscriptionsGet
         /* List repositories being watched by the authenticated user. */
         userSubscriptionsGet(incomingOptions, cb) {
@@ -5998,7 +5998,7 @@ apiInstance.userSubscriptionsGet(incomingOptions.opts, (error, data, response) =
 });
         }
 
-        
+
         // This is a function for userSubscriptionsOwnerRepoGet
         /* Check if you are watching a repository. */
         userSubscriptionsOwnerRepoGet(incomingOptions, cb) {
@@ -6029,7 +6029,7 @@ apiInstance.userSubscriptionsOwnerRepoGet(incomingOptions.owner, incomingOptions
 });
         }
 
-        
+
         // This is a function for userTeamsGet
         /* List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth. */
         userTeamsGet(incomingOptions, cb) {
@@ -6058,7 +6058,7 @@ apiInstance.userTeamsGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for usersGet
         /* Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users.  */
         usersGet(incomingOptions, cb) {
@@ -6090,7 +6090,7 @@ apiInstance.usersGet(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for usersUsernameEventsGet
         /* If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events. */
         usersUsernameEventsGet(incomingOptions, cb) {
@@ -6122,7 +6122,7 @@ apiInstance.usersUsernameEventsGet(incomingOptions.username, incomingOptions.opt
 });
         }
 
-        
+
         // This is a function for usersUsernameEventsOrgsOrgGet
         /* This is the user&#39;s organization dashboard. You must be authenticated as the user to view this. */
         usersUsernameEventsOrgsOrgGet(incomingOptions, cb) {
@@ -6136,7 +6136,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user
-/*let org = "org_example";*/ // String | 
+/*let org = "org_example";*/ // String |
 let opts = {
   'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
@@ -6153,7 +6153,7 @@ apiInstance.usersUsernameEventsOrgsOrgGet(incomingOptions.username, incomingOpti
 });
         }
 
-        
+
         // This is a function for usersUsernameFollowersGet
         /* List a user&#39;s followers */
         usersUsernameFollowersGet(incomingOptions, cb) {
@@ -6183,7 +6183,7 @@ apiInstance.usersUsernameFollowersGet(incomingOptions.username, incomingOptions.
 });
         }
 
-        
+
         // This is a function for usersUsernameFollowingTargetUserGet
         /* Check if one user follows another. */
         usersUsernameFollowingTargetUserGet(incomingOptions, cb) {
@@ -6208,7 +6208,7 @@ apiInstance.usersUsernameFollowingTargetUserGet(incomingOptions.username, incomi
 });
         }
 
-        
+
         // This is a function for usersUsernameGet
         /* Get a single user. */
         usersUsernameGet(incomingOptions, cb) {
@@ -6238,7 +6238,7 @@ apiInstance.usersUsernameGet(incomingOptions.username, incomingOptions.opts, (er
 });
         }
 
-        
+
         // This is a function for usersUsernameGistsGet
         /* List a users gists. */
         usersUsernameGistsGet(incomingOptions, cb) {
@@ -6271,7 +6271,7 @@ apiInstance.usersUsernameGistsGet(incomingOptions.username, incomingOptions.opts
 });
         }
 
-        
+
         // This is a function for usersUsernameKeysGet
         /* List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone.  */
         usersUsernameKeysGet(incomingOptions, cb) {
@@ -6301,7 +6301,7 @@ apiInstance.usersUsernameKeysGet(incomingOptions.username, incomingOptions.opts,
 });
         }
 
-        
+
         // This is a function for usersUsernameOrgsGet
         /* List all public organizations for a user. */
         usersUsernameOrgsGet(incomingOptions, cb) {
@@ -6331,7 +6331,7 @@ apiInstance.usersUsernameOrgsGet(incomingOptions.username, incomingOptions.opts,
 });
         }
 
-        
+
         // This is a function for usersUsernameReceivedEventsGet
         /* These are events that you&#39;ll only see public events. */
         usersUsernameReceivedEventsGet(incomingOptions, cb) {
@@ -6361,7 +6361,7 @@ apiInstance.usersUsernameReceivedEventsGet(incomingOptions.username, incomingOpt
 });
         }
 
-        
+
         // This is a function for usersUsernameReceivedEventsPublicGet
         /* List public events that a user has received */
         usersUsernameReceivedEventsPublicGet(incomingOptions, cb) {
@@ -6391,7 +6391,7 @@ apiInstance.usersUsernameReceivedEventsPublicGet(incomingOptions.username, incom
 });
         }
 
-        
+
         // This is a function for usersUsernameReposGet
         /* List public repositories for the specified user. */
         usersUsernameReposGet(incomingOptions, cb) {
@@ -6406,7 +6406,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi()
 /*let username = "username_example";*/ // String | Name of user.
 let opts = {
-  'type': "'all'", // String | 
+  'type': "'all'", // String |
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
   'page': 1 // Number | Page number at which you want the search result to come from.
@@ -6424,7 +6424,7 @@ apiInstance.usersUsernameReposGet(incomingOptions.username, incomingOptions.opts
 });
         }
 
-        
+
         // This is a function for usersUsernameStarredGet
         /* List repositories being starred by a user. */
         usersUsernameStarredGet(incomingOptions, cb) {
@@ -6454,7 +6454,7 @@ apiInstance.usersUsernameStarredGet(incomingOptions.username, incomingOptions.op
 });
         }
 
-        
+
         // This is a function for usersUsernameSubscriptionsGet
         /* List repositories being watched by a user. */
         usersUsernameSubscriptionsGet(incomingOptions, cb) {
@@ -6486,9 +6486,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
 
         async post(entity, options) {
         switch (entity) {
-            
+
         case "GISTS_ID_COMMENTS":
-        /* 
+        /*
       Create a commen
       Function parameters for this API id,body,opts
         */
@@ -6500,9 +6500,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_ID_FORKS":
-        /* 
+        /*
       Fork a gist.
       Function parameters for this API id,opts
         */
@@ -6514,9 +6514,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS":
-        /* 
+        /*
       Create a gist.
       Function parameters for this API body,opts
         */
@@ -6528,9 +6528,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "MARKDOWN":
-        /* 
+        /*
       Render an arbitrary Markdown document
       Function parameters for this API body,opts
         */
@@ -6542,9 +6542,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "MARKDOWN_RAW":
-        /* 
+        /*
       Render a Markdown document in raw mode
       Function parameters for this API opts
         */
@@ -6556,10 +6556,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_REPOS":
-        /* 
-      Create a new repository for the authenticated user. OAuth users must supply repo scope. 
+        /*
+      Create a new repository for the authenticated user. OAuth users must supply repo scope.
       Function parameters for this API org,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6570,10 +6570,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_TEAMS":
-        /* 
-      Create team. In order to create a team, the authenticated user must be an owner of organization. 
+        /*
+      Create team. In order to create a team, the authenticated user must be an owner of organization.
       Function parameters for this API org,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6584,9 +6584,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS":
-        /* 
+        /*
       Create a commit comment.
       Function parameters for this API owner,repo,shaCode,body,opts
         */
@@ -6598,10 +6598,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES":
-        /* 
-      Create a Deployment Status Users with push access can create deployment statuses for a given deployment: 
+        /*
+      Create a Deployment Status Users with push access can create deployment statuses for a given deployment:
       Function parameters for this API owner,repo,id,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6612,9 +6612,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_DEPLOYMENTS":
-        /* 
+        /*
       Users with push access can create a deployment for a given ref
       Function parameters for this API owner,repo,body,opts
         */
@@ -6626,10 +6626,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_FORKS":
-        /* 
-      Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support. 
+        /*
+      Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support.
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6640,9 +6640,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_BLOBS":
-        /* 
+        /*
       Create a Blob.
       Function parameters for this API owner,repo,body,opts
         */
@@ -6654,9 +6654,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_COMMITS":
-        /* 
+        /*
       Create a Commit.
       Function parameters for this API owner,repo,body,opts
         */
@@ -6668,9 +6668,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_REFS":
-        /* 
+        /*
       Create a Reference
       Function parameters for this API owner,repo,body,opts
         */
@@ -6682,10 +6682,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_TAGS":
-        /* 
-      Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary. 
+        /*
+      Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary.
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6696,10 +6696,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_TREES":
-        /* 
-      Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out. 
+        /*
+      Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out.
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6710,10 +6710,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_HOOKS_HOOK_ID_TESTS":
-        /* 
-      Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes 
+        /*
+      Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes
       Function parameters for this API owner,repo,hookId,opts
         */
         return new Promise((resolve, reject) => {
@@ -6724,9 +6724,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_HOOKS":
-        /* 
+        /*
       Create a hook.
       Function parameters for this API owner,repo,body,opts
         */
@@ -6738,9 +6738,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS":
-        /* 
+        /*
       Create a comment.
       Function parameters for this API owner,repo,_number,body,opts
         */
@@ -6752,9 +6752,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
-        /* 
+        /*
       Add labels to an issue.
       Function parameters for this API owner,repo,_number,body,opts
         */
@@ -6766,10 +6766,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES":
-        /* 
-      Create an issue. Any user with pull access to a repository can create an issue. 
+        /*
+      Create an issue. Any user with pull access to a repository can create an issue.
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6780,9 +6780,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_KEYS":
-        /* 
+        /*
       Create a key.
       Function parameters for this API owner,repo,body,opts
         */
@@ -6794,9 +6794,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_LABELS":
-        /* 
+        /*
       Create a label.
       Function parameters for this API owner,repo,body,opts
         */
@@ -6808,9 +6808,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_MERGES":
-        /* 
+        /*
       Perform a merge.
       Function parameters for this API owner,repo,body,opts
         */
@@ -6822,9 +6822,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_MILESTONES":
-        /* 
+        /*
       Create a milestone.
       Function parameters for this API owner,repo,body,opts
         */
@@ -6836,10 +6836,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS":
-        /* 
-      Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to. 
+        /*
+      Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6850,9 +6850,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS":
-        /* 
+        /*
       Create a pull request.
       Function parameters for this API owner,repo,body,opts
         */
@@ -6864,10 +6864,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_RELEASES":
-        /* 
-      Create a release Users with push access to the repository can create a release. 
+        /*
+      Create a release Users with push access to the repository can create a release.
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6878,9 +6878,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_STATUSES_REF":
-        /* 
+        /*
       Create a Status.
       Function parameters for this API owner,repo,ref,body,opts
         */
@@ -6892,10 +6892,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_EMAILS":
-        /* 
-      Add email address(es). You can post a single email address or an array of addresses. 
+        /*
+      Add email address(es). You can post a single email address or an array of addresses.
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6906,9 +6906,9 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_KEYS":
-        /* 
+        /*
       Create a public key.
       Function parameters for this API body,opts
         */
@@ -6920,10 +6920,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_REPOS":
-        /* 
-      Create a new repository for the authenticated user. OAuth users must supply repo scope. 
+        /*
+      Create a new repository for the authenticated user. OAuth users must supply repo scope.
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -6934,10 +6934,10 @@ apiInstance.usersUsernameSubscriptionsGet(incomingOptions.username, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
     default:
     throw ErrorHelper.getError(`Can't get entity`, 404)
-    
+
         }
       }
         // This is a function for gistsIdCommentsPost
@@ -6953,7 +6953,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
-/*let body = new Github.CommentBody();*/ // CommentBody | 
+/*let body = new Github.CommentBody();*/ // CommentBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -6970,7 +6970,7 @@ apiInstance.gistsIdCommentsPost(incomingOptions.id, incomingOptions.body, incomi
 });
         }
 
-        
+
         // This is a function for gistsIdForksPost
         /* Fork a gist. */
         gistsIdForksPost(incomingOptions, cb) {
@@ -7000,7 +7000,7 @@ apiInstance.gistsIdForksPost(incomingOptions.id, incomingOptions.opts, (error, d
 });
         }
 
-        
+
         // This is a function for gistsPost
         /* Create a gist. */
         gistsPost(incomingOptions, cb) {
@@ -7013,7 +7013,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let body = new Github.PostGist();*/ // PostGist | 
+/*let body = new Github.PostGist();*/ // PostGist |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7030,7 +7030,7 @@ apiInstance.gistsPost(incomingOptions.body, incomingOptions.opts, (error, data, 
 });
         }
 
-        
+
         // This is a function for markdownPost
         /* Render an arbitrary Markdown document */
         markdownPost(incomingOptions, cb) {
@@ -7043,7 +7043,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let body = new Github.Markdown();*/ // Markdown | 
+/*let body = new Github.Markdown();*/ // Markdown |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7060,7 +7060,7 @@ apiInstance.markdownPost(incomingOptions.body, incomingOptions.opts, (error, dat
 });
         }
 
-        
+
         // This is a function for markdownRawPost
         /* Render a Markdown document in raw mode */
         markdownRawPost(incomingOptions, cb) {
@@ -7089,7 +7089,7 @@ apiInstance.markdownRawPost(incomingOptions.opts, (error, data, response) => {
 });
         }
 
-        
+
         // This is a function for orgsOrgReposPost
         /* Create a new repository for the authenticated user. OAuth users must supply repo scope.  */
         orgsOrgReposPost(incomingOptions, cb) {
@@ -7103,7 +7103,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
-/*let body = new Github.PostRepo();*/ // PostRepo | 
+/*let body = new Github.PostRepo();*/ // PostRepo |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7120,7 +7120,7 @@ apiInstance.incomingOptions.orgsOrgReposPost(org, incomingOptions.body, incoming
 });
         }
 
-        
+
         // This is a function for orgsOrgTeamsPost
         /* Create team. In order to create a team, the authenticated user must be an owner of organization.  */
         orgsOrgTeamsPost(incomingOptions, cb) {
@@ -7134,7 +7134,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
-/*let body = new Github.OrgTeamsPost();*/ // OrgTeamsPost | 
+/*let body = new Github.OrgTeamsPost();*/ // OrgTeamsPost |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7151,7 +7151,7 @@ apiInstance.incomingOptions.orgsOrgTeamsPost(org, incomingOptions.body, incoming
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCommitsShaCodeCommentsPost
         /* Create a commit comment. */
         reposOwnerRepoCommitsShaCodeCommentsPost(incomingOptions, cb) {
@@ -7167,7 +7167,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let shaCode = "shaCode_example";*/ // String | SHA-1 code of the commit
-/*let body = new Github.CommitCommentBody();*/ // CommitCommentBody | 
+/*let body = new Github.CommitCommentBody();*/ // CommitCommentBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7184,7 +7184,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsPost(incomingOpt
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoDeploymentsIdStatusesPost
         /* Create a Deployment Status Users with push access can create deployment statuses for a given deployment:  */
         reposOwnerRepoDeploymentsIdStatusesPost(incomingOptions, cb) {
@@ -7200,7 +7200,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = 56;*/ // Number | The Deployment ID to list the statuses from
-/*let body = new Github.DeploymentStatusesCreate();*/ // DeploymentStatusesCreate | 
+/*let body = new Github.DeploymentStatusesCreate();*/ // DeploymentStatusesCreate |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7217,7 +7217,7 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesPost(incomingOpti
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoDeploymentsPost
         /* Users with push access can create a deployment for a given ref */
         reposOwnerRepoDeploymentsPost(incomingOptions, cb) {
@@ -7232,7 +7232,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.Deployment();*/ // Deployment | 
+/*let body = new Github.Deployment();*/ // Deployment |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7249,7 +7249,7 @@ apiInstance.incomingOptions.reposOwnerRepoDeploymentsPost(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoForksPost
         /* Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support.  */
         reposOwnerRepoForksPost(incomingOptions, cb) {
@@ -7264,7 +7264,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.ForkBody();*/ // ForkBody | 
+/*let body = new Github.ForkBody();*/ // ForkBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7281,7 +7281,7 @@ apiInstance.incomingOptions.reposOwnerRepoForksPost(incomingOptions.owner, repo,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitBlobsPost
         /* Create a Blob. */
         reposOwnerRepoGitBlobsPost(incomingOptions, cb) {
@@ -7296,7 +7296,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = null;*/ // Blob | 
+/*let body = null;*/ // Blob |
 let opts = {
   'accept': "'application/vnd.github.v3+json'", // String | Is used to set specified media type
   'perPage': 30, // Number | No of result showed per request.
@@ -7315,7 +7315,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitBlobsPost(incomingOptions.owner, re
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitCommitsPost
         /* Create a Commit. */
         reposOwnerRepoGitCommitsPost(incomingOptions, cb) {
@@ -7324,7 +7324,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitBlobsPost(incomingOptions.owner, re
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.RepoCommitBody();*/ // RepoCommitBody | 
+/*let body = new Github.RepoCommitBody();*/ // RepoCommitBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7341,7 +7341,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitCommitsPost(incomingOptions.owner, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitRefsPost
         /* Create a Reference */
         reposOwnerRepoGitRefsPost(incomingOptions, cb) {
@@ -7350,7 +7350,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitCommitsPost(incomingOptions.owner, 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.RefsBody();*/ // RefsBody | 
+/*let body = new Github.RefsBody();*/ // RefsBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7367,7 +7367,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsPost(incomingOptions.owner, rep
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitTagsPost
         /* Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary.  */
         reposOwnerRepoGitTagsPost(incomingOptions, cb) {
@@ -7376,7 +7376,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsPost(incomingOptions.owner, rep
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.TagBody();*/ // TagBody | 
+/*let body = new Github.TagBody();*/ // TagBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7393,7 +7393,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitTagsPost(incomingOptions.owner, rep
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitTreesPost
         /* Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out.  */
         reposOwnerRepoGitTreesPost(incomingOptions, cb) {
@@ -7402,7 +7402,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitTagsPost(incomingOptions.owner, rep
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.Tree();*/ // Tree | 
+/*let body = new Github.Tree();*/ // Tree |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7419,7 +7419,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitTreesPost(incomingOptions.owner, re
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoHooksHookIdTestsPost
         /* Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes  */
         reposOwnerRepoHooksHookIdTestsPost(incomingOptions, cb) {
@@ -7445,7 +7445,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdTestsPost(incomingOptions.o
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoHooksPost
         /* Create a hook. */
         reposOwnerRepoHooksPost(incomingOptions, cb) {
@@ -7454,7 +7454,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdTestsPost(incomingOptions.o
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.HookBody();*/ // HookBody | 
+/*let body = new Github.HookBody();*/ // HookBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7471,7 +7471,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksPost(incomingOptions.owner, repo,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberCommentsPost
         /* Create a comment. */
         reposOwnerRepoIssuesNumberCommentsPost(incomingOptions, cb) {
@@ -7481,7 +7481,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
-/*let body = new Github.CommentBody();*/ // CommentBody | 
+/*let body = new Github.CommentBody();*/ // CommentBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7498,7 +7498,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsPost(incomingOptio
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberLabelsPost
         /* Add labels to an issue. */
         reposOwnerRepoIssuesNumberLabelsPost(incomingOptions, cb) {
@@ -7508,7 +7508,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
-/*let body = ["null"];*/ // [String] | 
+/*let body = ["null"];*/ // [String] |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7525,7 +7525,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPost(incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesPost
         /* Create an issue. Any user with pull access to a repository can create an issue.  */
         reposOwnerRepoIssuesPost(incomingOptions, cb) {
@@ -7534,7 +7534,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPost(incomingOptions
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.Issue();*/ // Issue | 
+/*let body = new Github.Issue();*/ // Issue |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7551,7 +7551,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesPost(incomingOptions.owner, repo
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoKeysPost
         /* Create a key. */
         reposOwnerRepoKeysPost(incomingOptions, cb) {
@@ -7560,7 +7560,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesPost(incomingOptions.owner, repo
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.UserKeysPost();*/ // UserKeysPost | 
+/*let body = new Github.UserKeysPost();*/ // UserKeysPost |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7577,7 +7577,7 @@ apiInstance.incomingOptions.reposOwnerRepoKeysPost(incomingOptions.owner, repo, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoLabelsPost
         /* Create a label. */
         reposOwnerRepoLabelsPost(incomingOptions, cb) {
@@ -7586,7 +7586,7 @@ apiInstance.incomingOptions.reposOwnerRepoKeysPost(incomingOptions.owner, repo, 
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = ["null"];*/ // [String] | 
+/*let body = ["null"];*/ // [String] |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7603,7 +7603,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsPost(incomingOptions.owner, repo
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoMergesPost
         /* Perform a merge. */
         reposOwnerRepoMergesPost(incomingOptions, cb) {
@@ -7612,7 +7612,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsPost(incomingOptions.owner, repo
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.MergesBody();*/ // MergesBody | 
+/*let body = new Github.MergesBody();*/ // MergesBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7629,7 +7629,7 @@ apiInstance.incomingOptions.reposOwnerRepoMergesPost(incomingOptions.owner, repo
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoMilestonesPost
         /* Create a milestone. */
         reposOwnerRepoMilestonesPost(incomingOptions, cb) {
@@ -7638,7 +7638,7 @@ apiInstance.incomingOptions.reposOwnerRepoMergesPost(incomingOptions.owner, repo
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.MilestoneUpdate();*/ // MilestoneUpdate | 
+/*let body = new Github.MilestoneUpdate();*/ // MilestoneUpdate |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7655,7 +7655,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesPost(incomingOptions.owner, 
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsNumberCommentsPost
         /* Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.  */
         reposOwnerRepoPullsNumberCommentsPost(incomingOptions, cb) {
@@ -7665,7 +7665,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
-/*let body = new Github.PullsCommentPost();*/ // PullsCommentPost | 
+/*let body = new Github.PullsCommentPost();*/ // PullsCommentPost |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7682,7 +7682,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsPost(incomingOption
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsPost
         /* Create a pull request. */
         reposOwnerRepoPullsPost(incomingOptions, cb) {
@@ -7691,7 +7691,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsPost(incomingOption
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.PullsPost();*/ // PullsPost | 
+/*let body = new Github.PullsPost();*/ // PullsPost |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7708,7 +7708,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsPost(incomingOptions.owner, repo,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReleasesPost
         /* Create a release Users with push access to the repository can create a release.  */
         reposOwnerRepoReleasesPost(incomingOptions, cb) {
@@ -7717,7 +7717,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsPost(incomingOptions.owner, repo,
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.ReleaseCreate();*/ // ReleaseCreate | 
+/*let body = new Github.ReleaseCreate();*/ // ReleaseCreate |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7734,7 +7734,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesPost(incomingOptions.owner, re
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoStatusesRefPost
         /* Create a Status. */
         reposOwnerRepoStatusesRefPost(incomingOptions, cb) {
@@ -7744,7 +7744,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let ref = "ref_example";*/ // String | Ref to list the statuses from. It can be a SHA, a branch name, or a tag name.
-/*let body = new Github.HeadBranch();*/ // HeadBranch | 
+/*let body = new Github.HeadBranch();*/ // HeadBranch |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7761,7 +7761,7 @@ apiInstance.incomingOptions.reposOwnerRepoStatusesRefPost(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for userEmailsPost
         /* Add email address(es). You can post a single email address or an array of addresses.  */
         userEmailsPost(incomingOptions, cb) {
@@ -7774,7 +7774,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let body = ["null"];*/ // [String] | 
+/*let body = ["null"];*/ // [String] |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7791,7 +7791,7 @@ apiInstance.userEmailsPost(incomingOptions.body, incomingOptions.opts, (error, d
 });
         }
 
-        
+
         // This is a function for userKeysPost
         /* Create a public key. */
         userKeysPost(incomingOptions, cb) {
@@ -7804,7 +7804,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let body = new Github.UserKeysPost();*/ // UserKeysPost | 
+/*let body = new Github.UserKeysPost();*/ // UserKeysPost |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7821,7 +7821,7 @@ apiInstance.userKeysPost(incomingOptions.body, incomingOptions.opts, (error, dat
 });
         }
 
-        
+
         // This is a function for userReposPost
         /* Create a new repository for the authenticated user. OAuth users must supply repo scope.  */
         userReposPost(incomingOptions, cb) {
@@ -7834,7 +7834,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let body = new Github.PostRepo();*/ // PostRepo | 
+/*let body = new Github.PostRepo();*/ // PostRepo |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -7853,9 +7853,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
 
         async put(entity, options) {
         switch (entity) {
-            
+
         case "GISTS_ID_STAR":
-        /* 
+        /*
       Star a gist.
       Function parameters for this API id,opts
         */
@@ -7867,10 +7867,10 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "NOTIFICATIONS":
-        /* 
-      Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com. 
+        /*
+      Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com.
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7881,10 +7881,10 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
-        /* 
-      Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned). 
+        /*
+      Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned).
       Function parameters for this API id,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7895,9 +7895,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
-        /* 
+        /*
       Publicize a user&#39;s membership.
       Function parameters for this API org,username,opts
         */
@@ -7909,9 +7909,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COLLABORATORS_USER":
-        /* 
+        /*
       Add collaborator.
       Function parameters for this API owner,repo,user,opts
         */
@@ -7923,9 +7923,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_CONTENTS_PATH":
-        /* 
+        /*
       Create a file.
       Function parameters for this API owner,repo,path,body,opts
         */
@@ -7937,10 +7937,10 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
-        /* 
-      Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue. 
+        /*
+      Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue.
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7951,10 +7951,10 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_NOTIFICATIONS":
-        /* 
-      Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com. 
+        /*
+      Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com.
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7965,9 +7965,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_NUMBER_MERGE":
-        /* 
+        /*
       Merge a pull request (Merge Button&#39;s)
       Function parameters for this API owner,repo,_number,body,opts
         */
@@ -7979,9 +7979,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_SUBSCRIPTION":
-        /* 
+        /*
       Set a Repository Subscription
       Function parameters for this API owner,repo,body,opts
         */
@@ -7993,10 +7993,10 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
-        /* 
-      The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. 
+        /*
+      The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with.
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8007,10 +8007,10 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
-        /* 
-      Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team. 
+        /*
+      Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team.
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8021,9 +8021,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
-        /* 
+        /*
       In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.
       Function parameters for this API teamId,owner,repo,opts
         */
@@ -8035,10 +8035,10 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_FOLLOWING_USERNAME":
-        /* 
-      Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope. 
+        /*
+      Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8049,9 +8049,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_STARRED_OWNER_REPO":
-        /* 
+        /*
       Star a repository.
       Function parameters for this API owner,repo,opts
         */
@@ -8063,9 +8063,9 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_SUBSCRIPTIONS_OWNER_REPO":
-        /* 
+        /*
       Watch a repository.
       Function parameters for this API owner,repo,opts
         */
@@ -8077,10 +8077,10 @@ apiInstance.userReposPost(incomingOptions.body, incomingOptions.opts, (error, da
             resolve({data: data, response: response});
           })
         })
-        
+
     default:
     throw ErrorHelper.getError(`Can't get entity`, 404)
-    
+
         }
       }
         // This is a function for gistsIdStarPut
@@ -8112,7 +8112,7 @@ apiInstance.gistsIdStarPut(incomingOptions.id, incomingOptions.opts, (error, dat
 });
         }
 
-        
+
         // This is a function for notificationsPut
         /* Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com.  */
         notificationsPut(incomingOptions, cb) {
@@ -8125,7 +8125,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let body = new Github.NotificationMarkRead();*/ // NotificationMarkRead | 
+/*let body = new Github.NotificationMarkRead();*/ // NotificationMarkRead |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8142,7 +8142,7 @@ apiInstance.notificationsPut(incomingOptions.body, incomingOptions.opts, (error,
 });
         }
 
-        
+
         // This is a function for notificationsThreadsIdSubscriptionPut
         /* Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned).  */
         notificationsThreadsIdSubscriptionPut(incomingOptions, cb) {
@@ -8156,7 +8156,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of thread
-/*let body = new Github.PutSubscription();*/ // PutSubscription | 
+/*let body = new Github.PutSubscription();*/ // PutSubscription |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8173,7 +8173,7 @@ apiInstance.notificationsThreadsIdSubscriptionPut(incomingOptions.id, incomingOp
 });
         }
 
-        
+
         // This is a function for orgsOrgPublicMembersUsernamePut
         /* Publicize a user&#39;s membership. */
         orgsOrgPublicMembersUsernamePut(incomingOptions, cb) {
@@ -8204,7 +8204,7 @@ apiInstance.incomingOptions.orgsOrgPublicMembersUsernamePut(org, incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCollaboratorsUserPut
         /* Add collaborator. */
         reposOwnerRepoCollaboratorsUserPut(incomingOptions, cb) {
@@ -8236,7 +8236,7 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserPut(incomingOptions.o
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoContentsPathPut
         /* Create a file. */
         reposOwnerRepoContentsPathPut(incomingOptions, cb) {
@@ -8252,7 +8252,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let path = "path_example";*/ // String |
-/*let body = new Github.CreateFileBody();*/ // CreateFileBody | 
+/*let body = new Github.CreateFileBody();*/ // CreateFileBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8269,7 +8269,7 @@ apiInstance.incomingOptions.reposOwnerRepoContentsPathPut(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberLabelsPut
         /* Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue.  */
         reposOwnerRepoIssuesNumberLabelsPut(incomingOptions, cb) {
@@ -8279,7 +8279,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
-/*let body = ["null"];*/ // [String] | 
+/*let body = ["null"];*/ // [String] |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8296,7 +8296,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPut(incomingOptions.
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoNotificationsPut
         /* Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com.  */
         reposOwnerRepoNotificationsPut(incomingOptions, cb) {
@@ -8305,7 +8305,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPut(incomingOptions.
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.NotificationMarkRead();*/ // NotificationMarkRead | 
+/*let body = new Github.NotificationMarkRead();*/ // NotificationMarkRead |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8322,7 +8322,7 @@ apiInstance.incomingOptions.reposOwnerRepoNotificationsPut(incomingOptions.owner
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsNumberMergePut
         /* Merge a pull request (Merge Button&#39;s) */
         reposOwnerRepoPullsNumberMergePut(incomingOptions, cb) {
@@ -8332,7 +8332,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
-/*let body = new Github.MergePullBody();*/ // MergePullBody | 
+/*let body = new Github.MergePullBody();*/ // MergePullBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8349,7 +8349,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergePut(incomingOptions.ow
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoSubscriptionPut
         /* Set a Repository Subscription */
         reposOwnerRepoSubscriptionPut(incomingOptions, cb) {
@@ -8358,7 +8358,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergePut(incomingOptions.ow
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.SubscriptionBody();*/ // SubscriptionBody | 
+/*let body = new Github.SubscriptionBody();*/ // SubscriptionBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -8375,7 +8375,7 @@ apiInstance.incomingOptions.reposOwnerRepoSubscriptionPut(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for teamsTeamIdMembersUsernamePut
         /* The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with.  */
         teamsTeamIdMembersUsernamePut(incomingOptions, cb) {
@@ -8406,7 +8406,7 @@ apiInstance.teamsTeamIdMembersUsernamePut(incomingOptions.teamId, incomingOption
 });
         }
 
-        
+
         // This is a function for teamsTeamIdMembershipsUsernamePut
         /* Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team.  */
         teamsTeamIdMembershipsUsernamePut(incomingOptions, cb) {
@@ -8437,7 +8437,7 @@ apiInstance.teamsTeamIdMembershipsUsernamePut(incomingOptions.teamId, incomingOp
 });
         }
 
-        
+
         // This is a function for teamsTeamIdReposOwnerRepoPut
         /* In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization. */
         teamsTeamIdReposOwnerRepoPut(incomingOptions, cb) {
@@ -8469,7 +8469,7 @@ apiInstance.teamsTeamIdReposOwnerRepoPut(incomingOptions.teamId, incomingOptions
 });
         }
 
-        
+
         // This is a function for userFollowingUsernamePut
         /* Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.  */
         userFollowingUsernamePut(incomingOptions, cb) {
@@ -8499,7 +8499,7 @@ apiInstance.userFollowingUsernamePut(incomingOptions.username, incomingOptions.o
 });
         }
 
-        
+
         // This is a function for userStarredOwnerRepoPut
         /* Star a repository. */
         userStarredOwnerRepoPut(incomingOptions, cb) {
@@ -8530,7 +8530,7 @@ apiInstance.userStarredOwnerRepoPut(incomingOptions.owner, incomingOptions.repo,
 });
         }
 
-        
+
         // This is a function for userSubscriptionsOwnerRepoPut
         /* Watch a repository. */
         userSubscriptionsOwnerRepoPut(incomingOptions, cb) {
@@ -8563,9 +8563,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
 
         async delete(entity, options) {
         switch (entity) {
-            
+
         case "GISTS_ID_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Delete a comment.
       Function parameters for this API id,commentId,opts
         */
@@ -8577,9 +8577,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_ID":
-        /* 
+        /*
       Delete a gist.
       Function parameters for this API id,opts
         */
@@ -8591,9 +8591,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_ID_STAR":
-        /* 
+        /*
       Unstar a gist.
       Function parameters for this API id,opts
         */
@@ -8605,9 +8605,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
-        /* 
+        /*
       Delete a Thread Subscription.
       Function parameters for this API id,opts
         */
@@ -8619,10 +8619,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_MEMBERS_USERNAME":
-        /* 
-      Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories. 
+        /*
+      Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories.
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8633,9 +8633,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
-        /* 
+        /*
       Conceal a user&#39;s membership.
       Function parameters for this API org,username,opts
         */
@@ -8647,9 +8647,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COLLABORATORS_USER":
-        /* 
+        /*
       Remove collaborator.
       Function parameters for this API owner,repo,user,opts
         */
@@ -8661,9 +8661,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Delete a commit comment
       Function parameters for this API owner,repo,commentId,opts
         */
@@ -8675,10 +8675,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_CONTENTS_PATH":
-        /* 
-      Delete a file. This method deletes a file in a repository. 
+        /*
+      Delete a file. This method deletes a file in a repository.
       Function parameters for this API owner,repo,path,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -8689,10 +8689,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO":
-        /* 
-      Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required. 
+        /*
+      Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required.
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -8703,9 +8703,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID":
-        /* 
+        /*
       Deprecated. Delete a download.
       Function parameters for this API owner,repo,downloadId,opts
         */
@@ -8717,10 +8717,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_REFS_REF":
-        /* 
-      Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0 
+        /*
+      Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
@@ -8731,9 +8731,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
-        /* 
+        /*
       Delete a hook.
       Function parameters for this API owner,repo,hookId,opts
         */
@@ -8745,9 +8745,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Delete a comment.
       Function parameters for this API owner,repo,commentId,opts
         */
@@ -8759,9 +8759,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
-        /* 
+        /*
       Remove all labels from an issue.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -8773,9 +8773,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_NAME":
-        /* 
+        /*
       Remove a label from an issue.
       Function parameters for this API owner,repo,_number,name,opts
         */
@@ -8787,9 +8787,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_KEYS_KEY_ID":
-        /* 
+        /*
       Delete a key.
       Function parameters for this API owner,repo,keyId,opts
         */
@@ -8801,9 +8801,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_LABELS_NAME":
-        /* 
+        /*
       Delete a label.
       Function parameters for this API owner,repo,name,opts
         */
@@ -8815,9 +8815,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
-        /* 
+        /*
       Delete a milestone.
       Function parameters for this API owner,repo,_number,opts
         */
@@ -8829,9 +8829,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Delete a comment.
       Function parameters for this API owner,repo,commentId,opts
         */
@@ -8843,9 +8843,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
-        /* 
+        /*
       Delete a release asset
       Function parameters for this API owner,repo,id,opts
         */
@@ -8857,9 +8857,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_RELEASES_ID":
-        /* 
+        /*
       Users with push access to the repository can delete a release.
       Function parameters for this API owner,repo,id,opts
         */
@@ -8871,9 +8871,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_SUBSCRIPTION":
-        /* 
+        /*
       Delete a Repository Subscription.
       Function parameters for this API owner,repo,opts
         */
@@ -8885,10 +8885,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID":
-        /* 
-      Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with. 
+        /*
+      Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with.
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
@@ -8899,10 +8899,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
-        /* 
-      The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team. 
+        /*
+      The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team.
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8913,10 +8913,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
-        /* 
-      Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team. 
+        /*
+      Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8927,9 +8927,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
-        /* 
+        /*
       In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.
       Function parameters for this API teamId,owner,repo,opts
         */
@@ -8941,10 +8941,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_EMAILS":
-        /* 
-      Delete email address(es). You can include a single email address or an array of addresses. 
+        /*
+      Delete email address(es). You can include a single email address or an array of addresses.
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -8955,10 +8955,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_FOLLOWING_USERNAME":
-        /* 
-      Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope. 
+        /*
+      Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8969,9 +8969,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_KEYS_KEY_ID":
-        /* 
+        /*
       Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.
       Function parameters for this API keyId,opts
         */
@@ -8983,9 +8983,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_STARRED_OWNER_REPO":
-        /* 
+        /*
       Unstar a repository
       Function parameters for this API owner,repo,opts
         */
@@ -8997,9 +8997,9 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER_SUBSCRIPTIONS_OWNER_REPO":
-        /* 
+        /*
       Stop watching a repository
       Function parameters for this API owner,repo,opts
         */
@@ -9011,10 +9011,10 @@ apiInstance.userSubscriptionsOwnerRepoPut(incomingOptions.owner, incomingOptions
             resolve({data: data, response: response});
           })
         })
-        
+
     default:
     throw ErrorHelper.getError(`Can't get entity`, 404)
-    
+
         }
       }
         // This is a function for gistsIdCommentsCommentIdDelete
@@ -9047,7 +9047,7 @@ apiInstance.gistsIdCommentsCommentIdDelete(incomingOptions.id, incomingOptions.c
 });
         }
 
-        
+
         // This is a function for gistsIdDelete
         /* Delete a gist. */
         gistsIdDelete(incomingOptions, cb) {
@@ -9077,7 +9077,7 @@ apiInstance.gistsIdDelete(incomingOptions.id, incomingOptions.opts, (error, data
 });
         }
 
-        
+
         // This is a function for gistsIdStarDelete
         /* Unstar a gist. */
         gistsIdStarDelete(incomingOptions, cb) {
@@ -9107,7 +9107,7 @@ apiInstance.gistsIdStarDelete(incomingOptions.id, incomingOptions.opts, (error, 
 });
         }
 
-        
+
         // This is a function for notificationsThreadsIdSubscriptionDelete
         /* Delete a Thread Subscription. */
         notificationsThreadsIdSubscriptionDelete(incomingOptions, cb) {
@@ -9137,7 +9137,7 @@ apiInstance.notificationsThreadsIdSubscriptionDelete(incomingOptions.id, incomin
 });
         }
 
-        
+
         // This is a function for orgsOrgMembersUsernameDelete
         /* Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories.  */
         orgsOrgMembersUsernameDelete(incomingOptions, cb) {
@@ -9168,7 +9168,7 @@ apiInstance.incomingOptions.orgsOrgMembersUsernameDelete(org, incomingOptions.us
 });
         }
 
-        
+
         // This is a function for orgsOrgPublicMembersUsernameDelete
         /* Conceal a user&#39;s membership. */
         orgsOrgPublicMembersUsernameDelete(incomingOptions, cb) {
@@ -9199,7 +9199,7 @@ apiInstance.incomingOptions.orgsOrgPublicMembersUsernameDelete(org, incomingOpti
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCollaboratorsUserDelete
         /* Remove collaborator. */
         reposOwnerRepoCollaboratorsUserDelete(incomingOptions, cb) {
@@ -9231,7 +9231,7 @@ apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserDelete(incomingOption
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCommentsCommentIdDelete
         /* Delete a commit comment */
         reposOwnerRepoCommentsCommentIdDelete(incomingOptions, cb) {
@@ -9263,7 +9263,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdDelete(incomingOption
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoContentsPathDelete
         /* Delete a file. This method deletes a file in a repository.  */
         reposOwnerRepoContentsPathDelete(incomingOptions, cb) {
@@ -9279,7 +9279,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let path = "path_example";*/ // String |
-/*let body = new Github.DeleteFileBody();*/ // DeleteFileBody | 
+/*let body = new Github.DeleteFileBody();*/ // DeleteFileBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -9296,7 +9296,7 @@ apiInstance.incomingOptions.reposOwnerRepoContentsPathDelete(incomingOptions.own
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoDelete
         /* Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required.  */
         reposOwnerRepoDelete(incomingOptions, cb) {
@@ -9327,7 +9327,7 @@ apiInstance.incomingOptions.reposOwnerRepoDelete(incomingOptions.owner, repo, in
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoDownloadsDownloadIdDelete
         /* Deprecated. Delete a download. */
         reposOwnerRepoDownloadsDownloadIdDelete(incomingOptions, cb) {
@@ -9359,7 +9359,7 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdDelete(incomingOpti
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitRefsRefDelete
         /* Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0  */
         reposOwnerRepoGitRefsRefDelete(incomingOptions, cb) {
@@ -9368,7 +9368,7 @@ apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdDelete(incomingOpti
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let ref = "ref_example";*/ // String | 
+/*let ref = "ref_example";*/ // String |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -9385,7 +9385,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefDelete(incomingOptions.owner
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoHooksHookIdDelete
         /* Delete a hook. */
         reposOwnerRepoHooksHookIdDelete(incomingOptions, cb) {
@@ -9411,7 +9411,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdDelete(incomingOptions.owne
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesCommentsCommentIdDelete
         /* Delete a comment. */
         reposOwnerRepoIssuesCommentsCommentIdDelete(incomingOptions, cb) {
@@ -9437,7 +9437,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdDelete(incoming
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberLabelsDelete
         /* Remove all labels from an issue. */
         reposOwnerRepoIssuesNumberLabelsDelete(incomingOptions, cb) {
@@ -9463,7 +9463,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsDelete(incomingOptio
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberLabelsNameDelete
         /* Remove a label from an issue. */
         reposOwnerRepoIssuesNumberLabelsNameDelete(incomingOptions, cb) {
@@ -9490,7 +9490,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsNameDelete(incomingO
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoKeysKeyIdDelete
         /* Delete a key. */
         reposOwnerRepoKeysKeyIdDelete(incomingOptions, cb) {
@@ -9516,7 +9516,7 @@ apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdDelete(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoLabelsNameDelete
         /* Delete a label. */
         reposOwnerRepoLabelsNameDelete(incomingOptions, cb) {
@@ -9542,7 +9542,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsNameDelete(incomingOptions.owner
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoMilestonesNumberDelete
         /* Delete a milestone. */
         reposOwnerRepoMilestonesNumberDelete(incomingOptions, cb) {
@@ -9568,7 +9568,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberDelete(incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsCommentsCommentIdDelete
         /* Delete a comment. */
         reposOwnerRepoPullsCommentsCommentIdDelete(incomingOptions, cb) {
@@ -9594,7 +9594,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdDelete(incomingO
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReleasesAssetsIdDelete
         /* Delete a release asset */
         reposOwnerRepoReleasesAssetsIdDelete(incomingOptions, cb) {
@@ -9603,7 +9603,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdDelete(incomingO
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let id = "id_example";*/ // String | 
+/*let id = "id_example";*/ // String |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -9620,7 +9620,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdDelete(incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReleasesIdDelete
         /* Users with push access to the repository can delete a release. */
         reposOwnerRepoReleasesIdDelete(incomingOptions, cb) {
@@ -9629,7 +9629,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdDelete(incomingOptions
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let id = "id_example";*/ // String | 
+/*let id = "id_example";*/ // String |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -9646,7 +9646,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdDelete(incomingOptions.owner
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoSubscriptionDelete
         /* Delete a Repository Subscription. */
         reposOwnerRepoSubscriptionDelete(incomingOptions, cb) {
@@ -9671,7 +9671,7 @@ apiInstance.incomingOptions.reposOwnerRepoSubscriptionDelete(incomingOptions.own
 });
         }
 
-        
+
         // This is a function for teamsTeamIdDelete
         /* Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with.  */
         teamsTeamIdDelete(incomingOptions, cb) {
@@ -9703,7 +9703,7 @@ apiInstance.teamsTeamIdDelete(incomingOptions.teamId, incomingOptions.opts, (err
 });
         }
 
-        
+
         // This is a function for teamsTeamIdMembersUsernameDelete
         /* The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team.  */
         teamsTeamIdMembersUsernameDelete(incomingOptions, cb) {
@@ -9736,7 +9736,7 @@ apiInstance.teamsTeamIdMembersUsernameDelete(incomingOptions.teamId, incomingOpt
 });
         }
 
-        
+
         // This is a function for teamsTeamIdMembershipsUsernameDelete
         /* Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.  */
         teamsTeamIdMembershipsUsernameDelete(incomingOptions, cb) {
@@ -9769,7 +9769,7 @@ apiInstance.teamsTeamIdMembershipsUsernameDelete(incomingOptions.teamId, incomin
 });
         }
 
-        
+
         // This is a function for teamsTeamIdReposOwnerRepoDelete
         /* In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team. */
         teamsTeamIdReposOwnerRepoDelete(incomingOptions, cb) {
@@ -9803,7 +9803,7 @@ apiInstance.teamsTeamIdReposOwnerRepoDelete(incomingOptions.teamId, incomingOpti
 });
         }
 
-        
+
         // This is a function for userEmailsDelete
         /* Delete email address(es). You can include a single email address or an array of addresses.  */
         userEmailsDelete(incomingOptions, cb) {
@@ -9816,7 +9816,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let body = ["null"];*/ // [String] | 
+/*let body = ["null"];*/ // [String] |
 let opts = {
   'accept': "'application/vnd.github.v3+json'" // String | Is used to set specified media type
 };
@@ -9833,7 +9833,7 @@ apiInstance.userEmailsDelete(incomingOptions.body, incomingOptions.opts, (error,
 });
         }
 
-        
+
         // This is a function for userFollowingUsernameDelete
         /* Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.  */
         userFollowingUsernameDelete(incomingOptions, cb) {
@@ -9863,7 +9863,7 @@ apiInstance.userFollowingUsernameDelete(incomingOptions.username, incomingOption
 });
         }
 
-        
+
         // This is a function for userKeysKeyIdDelete
         /* Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope. */
         userKeysKeyIdDelete(incomingOptions, cb) {
@@ -9893,7 +9893,7 @@ apiInstance.userKeysKeyIdDelete(incomingOptions.keyId, incomingOptions.opts, (er
 });
         }
 
-        
+
         // This is a function for userStarredOwnerRepoDelete
         /* Unstar a repository */
         userStarredOwnerRepoDelete(incomingOptions, cb) {
@@ -9924,7 +9924,7 @@ apiInstance.userStarredOwnerRepoDelete(incomingOptions.owner, incomingOptions.re
 });
         }
 
-        
+
         // This is a function for userSubscriptionsOwnerRepoDelete
         /* Stop watching a repository */
         userSubscriptionsOwnerRepoDelete(incomingOptions, cb) {
@@ -9957,9 +9957,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
 
         async patch(entity, options) {
         switch (entity) {
-            
+
         case "GISTS_ID_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Edit a comment.
       Function parameters for this API id,commentId,body,opts
         */
@@ -9971,9 +9971,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "GISTS_ID":
-        /* 
+        /*
       Edit a gist.
       Function parameters for this API id,body,opts
         */
@@ -9985,9 +9985,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "NOTIFICATIONS_THREADS_ID":
-        /* 
+        /*
       Mark a thread as read
       Function parameters for this API id,opts
         */
@@ -9999,9 +9999,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "ORGS_ORG":
-        /* 
+        /*
       Edit an Organization.
       Function parameters for this API org,body,opts
         */
@@ -10013,9 +10013,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Update a commit comment.
       Function parameters for this API owner,repo,commentId,body,opts
         */
@@ -10027,9 +10027,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_GIT_REFS_REF":
-        /* 
+        /*
       Update a Reference
       Function parameters for this API owner,repo,ref,body,opts
         */
@@ -10041,9 +10041,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
-        /* 
+        /*
       Edit a hook.
       Function parameters for this API owner,repo,hookId,body,opts
         */
@@ -10055,9 +10055,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Edit a comment.
       Function parameters for this API owner,repo,commentId,body,opts
         */
@@ -10069,10 +10069,10 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_ISSUES_NUMBER":
-        /* 
-      Edit an issue. Issue owners and users with push access can edit an issue. 
+        /*
+      Edit an issue. Issue owners and users with push access can edit an issue.
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -10083,9 +10083,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_LABELS_NAME":
-        /* 
+        /*
       Update a label.
       Function parameters for this API owner,repo,name,body,opts
         */
@@ -10097,9 +10097,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
-        /* 
+        /*
       Update a milestone.
       Function parameters for this API owner,repo,_number,body,opts
         */
@@ -10111,9 +10111,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO":
-        /* 
+        /*
       Edit repository.
       Function parameters for this API owner,repo,body,opts
         */
@@ -10125,9 +10125,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
-        /* 
+        /*
       Edit a comment.
       Function parameters for this API owner,repo,commentId,body,opts
         */
@@ -10139,9 +10139,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_PULLS_NUMBER":
-        /* 
+        /*
       Update a pull request.
       Function parameters for this API owner,repo,_number,body,opts
         */
@@ -10153,10 +10153,10 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
-        /* 
-      Edit a release asset Users with push access to the repository can edit a release asset. 
+        /*
+      Edit a release asset Users with push access to the repository can edit a release asset.
       Function parameters for this API owner,repo,id,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -10167,9 +10167,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "REPOS_OWNER_REPO_RELEASES_ID":
-        /* 
+        /*
       Users with push access to the repository can edit a release
       Function parameters for this API owner,repo,id,body,opts
         */
@@ -10181,10 +10181,10 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "TEAMS_TEAM_ID":
-        /* 
-      Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with. 
+        /*
+      Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with.
       Function parameters for this API teamId,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -10195,9 +10195,9 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
         case "USER":
-        /* 
+        /*
       Update the authenticated user.
       Function parameters for this API body,opts
         */
@@ -10209,10 +10209,10 @@ apiInstance.userSubscriptionsOwnerRepoDelete(incomingOptions.owner, incomingOpti
             resolve({data: data, response: response});
           })
         })
-        
+
     default:
     throw ErrorHelper.getError(`Can't get entity`, 404)
-    
+
         }
       }
         // This is a function for gistsIdCommentsCommentIdPatch
@@ -10229,7 +10229,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
 /*let commentId = 56;*/ // Number | Id of comment
-/*let body = new Github.Comment();*/ // Comment | 
+/*let body = new Github.Comment();*/ // Comment |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10246,7 +10246,7 @@ apiInstance.gistsIdCommentsCommentIdPatch(incomingOptions.id, incomingOptions.co
 });
         }
 
-        
+
         // This is a function for gistsIdPatch
         /* Edit a gist. */
         gistsIdPatch(incomingOptions, cb) {
@@ -10260,7 +10260,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
 /*let id = 56;*/ // Number | Id of gist
-/*let body = new Github.PatchGist();*/ // PatchGist | 
+/*let body = new Github.PatchGist();*/ // PatchGist |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10277,7 +10277,7 @@ apiInstance.gistsIdPatch(incomingOptions.id, incomingOptions.body, incomingOptio
 });
         }
 
-        
+
         // This is a function for notificationsThreadsIdPatch
         /* Mark a thread as read */
         notificationsThreadsIdPatch(incomingOptions, cb) {
@@ -10307,7 +10307,7 @@ apiInstance.notificationsThreadsIdPatch(incomingOptions.id, incomingOptions.opts
 });
         }
 
-        
+
         // This is a function for orgsOrgPatch
         /* Edit an Organization. */
         orgsOrgPatch(incomingOptions, cb) {
@@ -10321,7 +10321,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
 /*let org = "org_example";*/ // String | Name of organisation
-/*let body = new Github.PatchOrg();*/ // PatchOrg | 
+/*let body = new Github.PatchOrg();*/ // PatchOrg |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10338,7 +10338,7 @@ apiInstance.incomingOptions.orgsOrgPatch(org, incomingOptions.body, incomingOpti
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoCommentsCommentIdPatch
         /* Update a commit comment. */
         reposOwnerRepoCommentsCommentIdPatch(incomingOptions, cb) {
@@ -10354,7 +10354,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | Id of comment
-/*let body = new Github.CommentBody();*/ // CommentBody | 
+/*let body = new Github.CommentBody();*/ // CommentBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10371,7 +10371,7 @@ apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdPatch(incomingOptions
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoGitRefsRefPatch
         /* Update a Reference */
         reposOwnerRepoGitRefsRefPatch(incomingOptions, cb) {
@@ -10381,7 +10381,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let ref = "ref_example";*/ // String |
-/*let body = new Github.GitRefPatch();*/ // GitRefPatch | 
+/*let body = new Github.GitRefPatch();*/ // GitRefPatch |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10398,7 +10398,7 @@ apiInstance.incomingOptions.reposOwnerRepoGitRefsRefPatch(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoHooksHookIdPatch
         /* Edit a hook. */
         reposOwnerRepoHooksHookIdPatch(incomingOptions, cb) {
@@ -10408,7 +10408,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let hookId = 56;*/ // Number | Id of hook
-/*let body = new Github.HookBody();*/ // HookBody | 
+/*let body = new Github.HookBody();*/ // HookBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10425,7 +10425,7 @@ apiInstance.incomingOptions.reposOwnerRepoHooksHookIdPatch(incomingOptions.owner
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesCommentsCommentIdPatch
         /* Edit a comment. */
         reposOwnerRepoIssuesCommentsCommentIdPatch(incomingOptions, cb) {
@@ -10435,7 +10435,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | ID of comment
-/*let body = new Github.CommentBody();*/ // CommentBody | 
+/*let body = new Github.CommentBody();*/ // CommentBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10452,7 +10452,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdPatch(incomingO
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoIssuesNumberPatch
         /* Edit an issue. Issue owners and users with push access can edit an issue.  */
         reposOwnerRepoIssuesNumberPatch(incomingOptions, cb) {
@@ -10462,7 +10462,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of issue
-/*let body = new Github.Issue();*/ // Issue | 
+/*let body = new Github.Issue();*/ // Issue |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10479,7 +10479,7 @@ apiInstance.incomingOptions.reposOwnerRepoIssuesNumberPatch(incomingOptions.owne
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoLabelsNamePatch
         /* Update a label. */
         reposOwnerRepoLabelsNamePatch(incomingOptions, cb) {
@@ -10489,7 +10489,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let name = "name_example";*/ // String | Name of the label
-/*let body = ["null"];*/ // [String] | 
+/*let body = ["null"];*/ // [String] |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10506,7 +10506,7 @@ apiInstance.incomingOptions.reposOwnerRepoLabelsNamePatch(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoMilestonesNumberPatch
         /* Update a milestone. */
         reposOwnerRepoMilestonesNumberPatch(incomingOptions, cb) {
@@ -10516,7 +10516,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Number of milestone
-/*let body = new Github.MilestoneUpdate();*/ // MilestoneUpdate | 
+/*let body = new Github.MilestoneUpdate();*/ // MilestoneUpdate |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10533,7 +10533,7 @@ apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberPatch(incomingOptions.
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPatch
         /* Edit repository. */
         reposOwnerRepoPatch(incomingOptions, cb) {
@@ -10548,7 +10548,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
-/*let body = new Github.RepoEdit();*/ // RepoEdit | 
+/*let body = new Github.RepoEdit();*/ // RepoEdit |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10565,7 +10565,7 @@ apiInstance.incomingOptions.reposOwnerRepoPatch(incomingOptions.owner, repo, inc
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsCommentsCommentIdPatch
         /* Edit a comment. */
         reposOwnerRepoPullsCommentsCommentIdPatch(incomingOptions, cb) {
@@ -10575,7 +10575,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let commentId = 56;*/ // Number | Id of comment
-/*let body = new Github.CommentBody();*/ // CommentBody | 
+/*let body = new Github.CommentBody();*/ // CommentBody |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10592,7 +10592,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdPatch(incomingOp
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoPullsNumberPatch
         /* Update a pull request. */
         reposOwnerRepoPullsNumberPatch(incomingOptions, cb) {
@@ -10602,7 +10602,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let _number = 56;*/ // Number | Id of pull
-/*let body = new Github.PullUpdate();*/ // PullUpdate | 
+/*let body = new Github.PullUpdate();*/ // PullUpdate |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10619,7 +10619,7 @@ apiInstance.incomingOptions.reposOwnerRepoPullsNumberPatch(incomingOptions.owner
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReleasesAssetsIdPatch
         /* Edit a release asset Users with push access to the repository can edit a release asset.  */
         reposOwnerRepoReleasesAssetsIdPatch(incomingOptions, cb) {
@@ -10629,7 +10629,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = "id_example";*/ // String |
-/*let body = new Github.AssetPatch();*/ // AssetPatch | 
+/*let body = new Github.AssetPatch();*/ // AssetPatch |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10646,7 +10646,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdPatch(incomingOptions.
 });
         }
 
-        
+
         // This is a function for reposOwnerRepoReleasesIdPatch
         /* Users with push access to the repository can edit a release */
         reposOwnerRepoReleasesIdPatch(incomingOptions, cb) {
@@ -10656,7 +10656,7 @@ let apiInstance = new Github.DefaultApi()
 /*let owner = "owner_example";*/ // String | Name of repository owner
 /*let repo = "repo_example";*/ // String | Name of repository
 /*let id = "id_example";*/ // String |
-/*let body = new Github.ReleaseCreate();*/ // ReleaseCreate | 
+/*let body = new Github.ReleaseCreate();*/ // ReleaseCreate |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10673,7 +10673,7 @@ apiInstance.incomingOptions.reposOwnerRepoReleasesIdPatch(incomingOptions.owner,
 });
         }
 
-        
+
         // This is a function for teamsTeamIdPatch
         /* Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with.  */
         teamsTeamIdPatch(incomingOptions, cb) {
@@ -10687,7 +10687,7 @@ api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
 /*let teamId = 56;*/ // Number | Id of team
-/*let body = new Github.EditTeam();*/ // EditTeam | 
+/*let body = new Github.EditTeam();*/ // EditTeam |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10704,7 +10704,7 @@ apiInstance.teamsTeamIdPatch(incomingOptions.teamId, incomingOptions.body, incom
 });
         }
 
-        
+
         // This is a function for userPatch
         /* Update the authenticated user. */
         userPatch(incomingOptions, cb) {
@@ -10717,7 +10717,7 @@ api_key.apiKey = incomingOptions.apiKey;
 api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
 
 let apiInstance = new Github.DefaultApi()
-/*let body = new Github.UserUpdate();*/ // UserUpdate | 
+/*let body = new Github.UserUpdate();*/ // UserUpdate |
 let opts = {
 //  'accept': "accept_example" // String | Is used to set specified media type.
 };
@@ -10734,6 +10734,6 @@ apiInstance.userPatch(incomingOptions.body, incomingOptions.opts, (error, data, 
 });
         }
 
-        
+
   }
   module.exports = new GithubService();
