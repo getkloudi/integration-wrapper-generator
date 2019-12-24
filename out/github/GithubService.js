@@ -3,13 +3,24 @@ const ErrorHelper = require("../../../helpers/ErrorHelper");
 const nconf = require("nconf");
 const qs = require("querystring");
 
+/*
+  - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
+*/
+const SCOPES = [
+  "notifications",
+  "repo",
+  "read:user",
+  "user:email",
+  "write:org"
+];
+
 class GithubService {
   get name() {
     return "GITHUB";
   }
 
   get description() {
-    return;
+    return "GitHub is the best place to share code with friends, co-workers, classmates, and complete strangers. Over three million people use GitHub to build amazing things together.";
   }
 
   get icon() {
@@ -21,55 +32,196 @@ class GithubService {
   }
 
   get apiEndpoint() {
-    return;
+    return "https://api.github.com";
   }
 
   get authMethod() {
-    return;
+    return "OAUTH2";
   }
 
   get authEndpoint() {
-    return;
+    return (
+      `https://github.com/login/oauth/authorize?` +
+      `client_id=${nconf.get("GITHUB_CLIENT_ID")}&` +
+      `scope=${qs.escape(this.scopes.join(" "))}`
+    );
   }
 
   get apiTokenURL() {
     return;
   }
 
-  get scopes() {
-    return;
-  }
-
   get requiredAuthParams() {
-    return;
+    return ["code"];
   }
 
-  get primaryAction() {
-    return;
+  get scopes() {
+    return [...SCOPES];
   }
 
   get webhooks() {
-    return;
+    return [
+      "pull_request",
+      "pull_request_review",
+      "pull_request_review_comment",
+      "push",
+      "commit_comment",
+      "issues",
+      "issue_comment",
+      "ping"
+    ];
   }
 
-  get webhooksToTaskMap() {
-    return;
+  get webhookToTasksMap() {
+    return [
+      {
+        name: "task.thirdParty.UPDATE_GITHUB_PR",
+        webhook: "pull_request"
+      },
+      {
+        name: "task.thirdParty.UPDATE_GITHUB_PR",
+        webhook: "pull_request_review"
+      },
+      {
+        name: "task.thirdParty.UPDATE_GITHUB_PR",
+        webhook: "pull_request_review_comment"
+      },
+      { name: "task.pepper.SYNC_GITHUB_COMMITS", webhook: "push" },
+      {
+        name: "task.pepper.SYNC_GITHUB_TEAM_MEMBERS",
+        webhook: "push"
+      },
+      {
+        name: "task.thirdParty.UPDATE_GITHUB_ISSUE",
+        webhook: "commit_comment"
+      },
+      {
+        name: "task.thirdParty.UPDATE_GITHUB_ISSUE",
+        webhook: "issues"
+      },
+      {
+        name: "task.thirdParty.UPDATE_GITHUB_ISSUE",
+        webhook: "issue_comment"
+      },
+      {
+        name: "task.system.UPDATE_WEBHOOK_STATUS",
+        webhook: "ping"
+      }
+    ];
+  }
+
+  get primaryAction() {
+    return {
+      type: "HREF",
+      url: this.authEndpoint,
+      requiredAuthParams: this.requiredAuthParams
+    };
   }
 
   get entities() {
     return;
   }
 
-  async connect(authParams) {
-    //TODO: Add custom connect functionality here
+  getNextPaginationURIFromResponse(response) {
+    const parse = require("parse-link-header");
+    const links = parse(response.headers.link);
+    if (links && links.next)
+      return { page: links.next.page, per_page: links.next.per_page };
+    return;
   }
 
-  async syncIntegrationEntities(options) {
-    //TODO: Add custom syncIntegrationEntities functionality here
+  async connect(authParams) {
+    const res = await axios.default.post(
+      "https://github.com/login/oauth/access_token",
+      {
+        client_id: nconf.get("GITHUB_CLIENT_ID"),
+        client_secret: nconf.get("GITHUB_CLIENT_SECRET"),
+        code: authParams.code
+      },
+      {
+        headers: {
+          Accept: "application/json"
+        }
+      }
+    );
+
+    const user = await this.get("USER", {
+      apiKey: res.data.access_token,
+      apiKeyPrefix: "token"
+    });
+
+    let orgs,
+      incomingOptions = { opts: {} };
+    while (true) {
+      orgs = await this.get("USER_ORGS", {
+        apiKey: res.data.access_token,
+        opts: {
+          per_page: incomingOptions.opts.per_page,
+          page: incomingOptions.opts.page
+        }
+      });
+      incomingOptions.opts = this.getNextPaginationURIFromResponse(
+        orgs.response
+      );
+      orgs = orgs.data.map(item => item.login);
+      if (!incomingOptions.opts || !incomingOptions.opts.page) break;
+    }
+    const data = {
+      accessToken: res.data.access_token,
+      integrationSpecificParams: {
+        username: user.data.login
+      }
+    };
+    if (orgs.length > 0) data.team = { usernames: orgs };
+    return data;
+  }
+
+  async syncIntegrationEntities(integrationData, thirdPartyProject) {
+    const taskUri = nconf.get("TASK_API_URI");
+    const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
+
+    try {
+      const res = await axios.default.post(
+        taskUri,
+        {
+          pepper_task: [
+            "task.pepper.SYNC_GITHUB_TEAM_MEMBERS",
+            "task.pepper.SYNC_GITHUB_PRS",
+            "task.pepper.SYNC_GITHUB_COMMITS",
+            "task.pepper.SYNC_GITHUB_ISSUES"
+          ],
+          project_id: integrationData.projectId,
+          user_id: integrationData.userId,
+          repo_endpoint: thirdPartyProject.projectId,
+          github_username: integrationData.integrationSpecificParams.username
+        },
+        {
+          headers: {
+            Authorization: authToken
+          }
+        }
+      );
+      return "Ok";
+    } catch (error) {
+      console.error(error.response || error);
+      return "ERROR";
+    }
   }
 
   async get(entity, options) {
+    options = {
+      apiKey: options.integrationData.authAccessToken,
+      apiKeyPrefix: `token`,
+      opts: {
+        per_page: options.per_page,
+        page: options.page
+      },
+      ...options
+    };
     switch (entity) {
+      case "PROJECTS":
+        return await this.getGithubProject(options);
+
       case "EMOJIS":
         /*
       Lists all the emojis available to use on GitHub.
@@ -2252,6 +2404,21 @@ class GithubService {
       default:
         throw ErrorHelper.getError(`Can't get entity`, 404);
     }
+  }
+
+  async getGithubProject(incomingOptions) {
+    let repos;
+    while (true) {
+      repos = await this.get("USER_REPOS", incomingOptions);
+      incomingOptions.opts = this.getNextPaginationURIFromResponse(
+        repos.response
+      );
+      repos.data = repos.data.concat(repos.data);
+      if (!incomingOptions.opts || !incomingOptions.opts.page) {
+        break;
+      }
+    }
+    return repos;
   }
   // This is a function for emojisGet
   /* Lists all the emojis available to use on GitHub. */
