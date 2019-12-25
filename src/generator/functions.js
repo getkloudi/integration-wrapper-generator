@@ -63,10 +63,15 @@ exports.getFunctionWithParams = function getFunctionWithParams(contents) {
     let newFunctionParamsToReplace = functionParamToReplace;
 
     for (let i = 0; i < functionParams.length; i++) {
-      newFunctionParamsToReplace = newFunctionParamsToReplace.replace(
+      // Split the newFunctionParamsToReplace  by (
+      let splitNewFunctionParamsToReplace = newFunctionParamsToReplace.split('(');
+
+      splitNewFunctionParamsToReplace[1] = splitNewFunctionParamsToReplace[1].replace(
         `${functionParams[i]}`,
         `incomingOptions.${functionParams[i]}`
       );
+
+      newFunctionParamsToReplace = splitNewFunctionParamsToReplace.join('(');
     }
 
     functionWithParams.push({
