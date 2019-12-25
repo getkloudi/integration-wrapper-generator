@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The HeadBranchObject model module.
  * @module model/HeadBranchObject
- * @version 1.3.3
+ * @version 1.4.0
  */
 var HeadBranchObject =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TeamMembership model module.
  * @module model/TeamMembership
- * @version 1.3.3
+ * @version 1.4.0
  */
 var TeamMembership =
 /*#__PURE__*/

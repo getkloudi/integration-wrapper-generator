@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserKeysPost model module.
  * @module model/UserKeysPost
- * @version 1.3.3
+ * @version 1.4.0
  */
 class UserKeysPost {
     /**

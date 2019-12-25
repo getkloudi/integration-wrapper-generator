@@ -208,6 +208,57 @@ class GithubService {
     }
   }
 
+  async getThirdPartyProjects(incomingOptions) {
+    let repos;
+    while (true) {
+      repos = await this.get("USER_REPOS", incomingOptions);
+      incomingOptions.opts = this.getNextPaginationURIFromResponse(
+        repos.response
+      );
+      repos.data = repos.data.concat(repos.data);
+      if (!incomingOptions.opts || !incomingOptions.opts.page) {
+        break;
+      }
+    }
+    return repos;
+  }
+
+  async registerWebhooks(incomingOptions) {
+    const webhookURL = incomingOptions.webhookURL;
+
+    const data = (await this.get("REPOS_OWNER_REPO_HOOKS", options)).data;
+    const webhooks = data.filter(
+      item =>
+        item.config.url === webhookURL &&
+        item.events.sort().toString() ===
+          options.webhookEvents.sort().toString()
+    );
+
+    if (webhooks && webhooks.length > 0) return "Ok";
+
+    const res = await this.post("REPOS_OWNER_REPO_HOOKS", options);
+    console.log(res);
+    // await Axios.default.post(
+    //   `${this.apiEndpoint}/repos/${options.repoEndpoint}/hooks`,
+    //   {
+    //     active: true,
+    //     events: options.webhookEvents,
+    //     config: {
+    //       url: webhookURL,
+    //       content_type: "json",
+    //       insecure_ssl: "0"
+    //     }
+    //   },
+    //   {
+    //     headers: {
+    //       Authorization: `token ${options.integrationData.authAccessToken}`
+    //     }
+    //   }
+    // );
+    if (res.status == 201) return "Ok";
+    return "ERROR";
+  }
+
   async get(entity, options) {
     options = {
       apiKey: options.integrationData.authAccessToken,
@@ -219,9 +270,6 @@ class GithubService {
       ...options
     };
     switch (entity) {
-      case "PROJECTS":
-        return await this.getGithubProject(options);
-
       case "EMOJIS":
         /*
       Lists all the emojis available to use on GitHub.
@@ -2405,21 +2453,6 @@ class GithubService {
         throw ErrorHelper.getError(`Can't get entity`, 404);
     }
   }
-
-  async getGithubProject(incomingOptions) {
-    let repos;
-    while (true) {
-      repos = await this.get("USER_REPOS", incomingOptions);
-      incomingOptions.opts = this.getNextPaginationURIFromResponse(
-        repos.response
-      );
-      repos.data = repos.data.concat(repos.data);
-      if (!incomingOptions.opts || !incomingOptions.opts.page) {
-        break;
-      }
-    }
-    return repos;
-  }
   // This is a function for emojisGet
   /* Lists all the emojis available to use on GitHub. */
   emojisGet(incomingOptions, cb) {
@@ -4411,6 +4444,12 @@ class GithubService {
   /* Get list of hooks. */
   reposOwnerRepoHooksGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
@@ -4439,6 +4478,12 @@ class GithubService {
   /* Get single hook. */
   reposOwnerRepoHooksHookIdGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ let opts = {
@@ -7890,6 +7935,12 @@ class GithubService {
   /* Create a hook. */
   reposOwnerRepoHooksPost(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // HookBody |
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = new Github.HookBody();*/ let opts = {
@@ -9958,6 +10009,12 @@ class GithubService {
   /* Delete a hook. */
   reposOwnerRepoHooksHookIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ let opts = {
@@ -11020,6 +11077,12 @@ class GithubService {
   /* Edit a hook. */
   reposOwnerRepoHooksHookIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Id of hook // HookBody |
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let hookId = 56;*/ /*let body = new Github.HookBody();*/ let opts = {

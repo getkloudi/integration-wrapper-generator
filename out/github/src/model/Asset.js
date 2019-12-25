@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The Asset model module.
  * @module model/Asset
- * @version 1.3.3
+ * @version 1.4.0
  */
 class Asset {
     /**

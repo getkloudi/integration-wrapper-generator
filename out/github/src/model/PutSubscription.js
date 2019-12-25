@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PutSubscription model module.
  * @module model/PutSubscription
- * @version 1.3.3
+ * @version 1.4.0
  */
 class PutSubscription {
     /**

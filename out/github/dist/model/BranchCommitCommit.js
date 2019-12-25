@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchCommitCommit model module.
  * @module model/BranchCommitCommit
- * @version 1.3.3
+ * @version 1.4.0
  */
 var BranchCommitCommit =
 /*#__PURE__*/

@@ -6182,6 +6182,12 @@ Get list of hooks.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6217,7 +6223,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -6237,6 +6243,12 @@ Delete a hook.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6270,7 +6282,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -6290,6 +6302,12 @@ Get single hook.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6323,7 +6341,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -6343,6 +6361,12 @@ Edit a hook.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6378,7 +6402,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -6451,6 +6475,12 @@ Create a hook.
 
 ```javascript
 import Github from 'github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6484,7 +6514,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

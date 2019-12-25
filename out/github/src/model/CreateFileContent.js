@@ -17,7 +17,7 @@ import ContentsPathLinks from './ContentsPathLinks';
 /**
  * The CreateFileContent model module.
  * @module model/CreateFileContent
- * @version 1.3.3
+ * @version 1.4.0
  */
 class CreateFileContent {
     /**

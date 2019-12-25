@@ -18,7 +18,7 @@ import BranchCommitCommitTree from './BranchCommitCommitTree';
 /**
  * The BranchCommitCommit model module.
  * @module model/BranchCommitCommit
- * @version 1.3.3
+ * @version 1.4.0
  */
 class BranchCommitCommit {
     /**
