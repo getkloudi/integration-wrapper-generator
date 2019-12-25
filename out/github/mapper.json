@@ -1,0 +1,103 @@
+[
+  {
+    "type": "RESPONSE",
+    "entity": "PROJECTS",
+    "integration": "GITHUB",
+    "method": "GET",
+    "map": [
+      {
+        "input": {
+          "key": "name"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectName"
+        }
+      },
+      {
+        "input": {
+          "key": "full_name"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "splitAndGetLastElement",
+          "params": [
+            "/",
+            " ",
+            "-",
+            "_"
+          ]
+        },
+        "output": {
+          "key": "projectId"
+        }
+      },
+      {
+        "input": {
+          "key": "description"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectDescription"
+        }
+      },
+      {
+        "input": {
+          "key": "html_url"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectRef"
+        }
+      },
+      {
+        "input": {
+          "key": "full_name"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "splitAndGetFirstElement",
+          "params": [
+            "/"
+          ]
+        },
+        "output": {
+          "key": "organizationId"
+        }
+      },
+      {
+        "input": {
+          "key": "updated_at"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "updatedOn"
+        }
+      },
+      {
+        "input": {
+          "key": "language"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transforToInfoTableMetrics",
+          "params": [
+            "Language"
+          ]
+        },
+        "output": {
+          "key": "value",
+          "parent": "metrics"
+        }
+      }
+    ]
+  }
+]
