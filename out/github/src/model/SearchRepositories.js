@@ -17,7 +17,7 @@ import Repo from './Repo';
 /**
  * The SearchRepositories model module.
  * @module model/SearchRepositories
- * @version 1.4.0
+ * @version 1.4.1
  */
 class SearchRepositories {
     /**

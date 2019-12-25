@@ -223,52 +223,47 @@ class GithubService {
     return repos;
   }
 
-  async registerWebhooks(incomingOptions) {
-    const webhookURL = incomingOptions.webhookURL;
+  async registerWebhooks(options) {
+    let data, res;
 
-    const data = (await this.get("REPOS_OWNER_REPO_HOOKS", options)).data;
+    res = await this.get("REPOS_OWNER_REPO_HOOKS", {
+      repo: options.body.repo,
+      owner: options.body.owner,
+      ...options
+    });
+    data = res.data;
     const webhooks = data.filter(
       item =>
-        item.config.url === webhookURL &&
+        item.config.url === options.body.webhookURL &&
         item.events.sort().toString() ===
-          options.webhookEvents.sort().toString()
+          options.body.webhookEvents.sort().toString()
     );
-
     if (webhooks && webhooks.length > 0) return "Ok";
 
-    const res = await this.post("REPOS_OWNER_REPO_HOOKS", options);
-    console.log(res);
-    // await Axios.default.post(
-    //   `${this.apiEndpoint}/repos/${options.repoEndpoint}/hooks`,
-    //   {
-    //     active: true,
-    //     events: options.webhookEvents,
-    //     config: {
-    //       url: webhookURL,
-    //       content_type: "json",
-    //       insecure_ssl: "0"
-    //     }
-    //   },
-    //   {
-    //     headers: {
-    //       Authorization: `token ${options.integrationData.authAccessToken}`
-    //     }
-    //   }
-    // );
-    if (res.status == 201) return "Ok";
-    return "ERROR";
-  }
-
-  async get(entity, options) {
-    options = {
+    res = await this.post("REPOS_OWNER_REPO_HOOKS", {
+      repo: options.body.repo,
+      owner: options.body.owner,
+      body: {
+        active: true,
+        events: options.body.webhookEvents,
+        config: {
+          url: options.body.webhookURL,
+          content_type: "json",
+          insecure_ssl: "0"
+        }
+      },
       apiKey: options.integrationData.authAccessToken,
       apiKeyPrefix: `token`,
       opts: {
         per_page: options.per_page,
         page: options.page
-      },
-      ...options
-    };
+      }
+    });
+    if (res.status == 201) return "Ok";
+    return "ERROR";
+  }
+
+  async get(entity, options) {
     switch (entity) {
       case "EMOJIS":
         /*
@@ -3156,8 +3151,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgEventsGet(
-      org,
+    apiInstance.orgsOrgEventsGet(
+      incomingOptions.org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3189,8 +3184,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgGet(
-      org,
+    apiInstance.orgsOrgGet(
+      incomingOptions.org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3223,8 +3218,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgIssuesGet(
-      org,
+    apiInstance.orgsOrgIssuesGet(
+      incomingOptions.org,
       incomingOptions.filter,
       incomingOptions.state,
       incomingOptions.labels,
@@ -3261,8 +3256,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgMembersGet(
-      org,
+    apiInstance.orgsOrgMembersGet(
+      incomingOptions.org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3294,8 +3289,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgMembersUsernameGet(
-      org,
+    apiInstance.orgsOrgMembersUsernameGet(
+      incomingOptions.org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -3328,8 +3323,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgPublicMembersGet(
-      org,
+    apiInstance.orgsOrgPublicMembersGet(
+      incomingOptions.org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3361,8 +3356,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgPublicMembersUsernameGet(
-      org,
+    apiInstance.orgsOrgPublicMembersUsernameGet(
+      incomingOptions.org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -3396,8 +3391,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgReposGet(
-      org,
+    apiInstance.orgsOrgReposGet(
+      incomingOptions.org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3429,8 +3424,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgTeamsGet(
-      org,
+    apiInstance.orgsOrgTeamsGet(
+      incomingOptions.org,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3491,9 +3486,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoArchiveFormatPathGet(
+    apiInstance.reposOwnerRepoArchiveFormatPathGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.archiveFormat,
       incomingOptions.path,
       incomingOptions.opts,
@@ -3527,9 +3522,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoAssigneesAssigneeGet(
+    apiInstance.reposOwnerRepoAssigneesAssigneeGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.assignee,
       incomingOptions.opts,
       (error, data, response) => {
@@ -3562,9 +3557,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoAssigneesGet(
+    apiInstance.reposOwnerRepoAssigneesGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3596,9 +3591,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoBranchesBranchGet(
+    apiInstance.reposOwnerRepoBranchesBranchGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.branch,
       incomingOptions.opts,
       (error, data, response) => {
@@ -3631,9 +3626,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoBranchesGet(
+    apiInstance.reposOwnerRepoBranchesGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3665,9 +3660,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsGet(
+    apiInstance.reposOwnerRepoCollaboratorsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3699,9 +3694,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserGet(
+    apiInstance.reposOwnerRepoCollaboratorsUserGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.user,
       incomingOptions.opts,
       (error, data, response) => {
@@ -3734,9 +3729,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdGet(
+    apiInstance.reposOwnerRepoCommentsCommentIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -3769,9 +3764,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCommentsGet(
+    apiInstance.reposOwnerRepoCommentsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3808,9 +3803,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCommitsGet(
+    apiInstance.reposOwnerRepoCommitsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -3842,9 +3837,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCommitsRefStatusGet(
+    apiInstance.reposOwnerRepoCommitsRefStatusGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.ref,
       incomingOptions.opts,
       (error, data, response) => {
@@ -3877,9 +3872,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsGet(
+    apiInstance.reposOwnerRepoCommitsShaCodeCommentsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
@@ -3912,9 +3907,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeGet(
+    apiInstance.reposOwnerRepoCommitsShaCodeGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
@@ -3947,9 +3942,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCompareBaseIdHeadIdGet(
+    apiInstance.reposOwnerRepoCompareBaseIdHeadIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.baseId,
       incomingOptions.headId,
       incomingOptions.opts,
@@ -3985,9 +3980,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoContentsPathGet(
+    apiInstance.reposOwnerRepoContentsPathGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.path,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4020,9 +4015,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoContributorsGet(
+    apiInstance.reposOwnerRepoContributorsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.anon,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4055,9 +4050,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoDeploymentsGet(
+    apiInstance.reposOwnerRepoDeploymentsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4089,9 +4084,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesGet(
+    apiInstance.reposOwnerRepoDeploymentsIdStatusesGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4122,9 +4117,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdGet(
+    apiInstance.reposOwnerRepoDownloadsDownloadIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.downloadId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4155,9 +4150,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoDownloadsGet(
+    apiInstance.reposOwnerRepoDownloadsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4189,9 +4184,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoEventsGet(
+    apiInstance.reposOwnerRepoEventsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4224,9 +4219,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoForksGet(
+    apiInstance.reposOwnerRepoForksGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4258,9 +4253,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGet(
+    apiInstance.reposOwnerRepoGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4284,9 +4279,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitBlobsShaCodeGet(
+    apiInstance.reposOwnerRepoGitBlobsShaCodeGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4311,9 +4306,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitCommitsShaCodeGet(
+    apiInstance.reposOwnerRepoGitCommitsShaCodeGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4340,9 +4335,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsGet(
+    apiInstance.reposOwnerRepoGitRefsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4368,9 +4363,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsRefGet(
+    apiInstance.reposOwnerRepoGitRefsRefGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.ref,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4397,9 +4392,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitTagsShaCodeGet(
+    apiInstance.reposOwnerRepoGitTagsShaCodeGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4425,9 +4420,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitTreesShaCodeGet(
+    apiInstance.reposOwnerRepoGitTreesShaCodeGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.shaCode,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4460,9 +4455,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoHooksGet(
+    apiInstance.reposOwnerRepoHooksGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4492,9 +4487,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdGet(
+    apiInstance.reposOwnerRepoHooksHookIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.hookId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4519,9 +4514,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdGet(
+    apiInstance.reposOwnerRepoIssuesCommentsCommentIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4549,9 +4544,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsGet(
+    apiInstance.reposOwnerRepoIssuesCommentsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4575,9 +4570,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesEventsEventIdGet(
+    apiInstance.reposOwnerRepoIssuesEventsEventIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.eventId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4602,9 +4597,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesEventsGet(
+    apiInstance.reposOwnerRepoIssuesEventsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4631,9 +4626,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesGet(
+    apiInstance.reposOwnerRepoIssuesGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.filter,
       incomingOptions.state,
       incomingOptions.labels,
@@ -4662,9 +4657,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsGet(
+    apiInstance.reposOwnerRepoIssuesNumberCommentsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4689,9 +4684,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberEventsGet(
+    apiInstance.reposOwnerRepoIssuesNumberEventsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4716,9 +4711,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberGet(
+    apiInstance.reposOwnerRepoIssuesNumberGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4743,9 +4738,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsGet(
+    apiInstance.reposOwnerRepoIssuesNumberLabelsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4770,9 +4765,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoKeysGet(
+    apiInstance.reposOwnerRepoKeysGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4796,9 +4791,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdGet(
+    apiInstance.reposOwnerRepoKeysKeyIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.keyId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4823,9 +4818,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoLabelsGet(
+    apiInstance.reposOwnerRepoLabelsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4849,9 +4844,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoLabelsNameGet(
+    apiInstance.reposOwnerRepoLabelsNameGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.name,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4876,9 +4871,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoLanguagesGet(
+    apiInstance.reposOwnerRepoLanguagesGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4905,9 +4900,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesGet(
+    apiInstance.reposOwnerRepoMilestonesGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -4931,9 +4926,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberGet(
+    apiInstance.reposOwnerRepoMilestonesNumberGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4958,9 +4953,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberLabelsGet(
+    apiInstance.reposOwnerRepoMilestonesNumberLabelsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -4988,9 +4983,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoNotificationsGet(
+    apiInstance.reposOwnerRepoNotificationsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5014,9 +5009,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdGet(
+    apiInstance.reposOwnerRepoPullsCommentsCommentIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5044,9 +5039,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsGet(
+    apiInstance.reposOwnerRepoPullsCommentsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5073,9 +5068,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsGet(
+    apiInstance.reposOwnerRepoPullsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5099,9 +5094,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsGet(
+    apiInstance.reposOwnerRepoPullsNumberCommentsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5126,9 +5121,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommitsGet(
+    apiInstance.reposOwnerRepoPullsNumberCommitsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5153,9 +5148,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberFilesGet(
+    apiInstance.reposOwnerRepoPullsNumberFilesGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5180,9 +5175,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberGet(
+    apiInstance.reposOwnerRepoPullsNumberGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5207,9 +5202,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergeGet(
+    apiInstance.reposOwnerRepoPullsNumberMergeGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5235,9 +5230,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReadmeGet(
+    apiInstance.reposOwnerRepoReadmeGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5261,9 +5256,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdGet(
+    apiInstance.reposOwnerRepoReleasesAssetsIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5288,9 +5283,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReleasesGet(
+    apiInstance.reposOwnerRepoReleasesGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5314,9 +5309,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReleasesIdAssetsGet(
+    apiInstance.reposOwnerRepoReleasesIdAssetsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5341,9 +5336,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReleasesIdGet(
+    apiInstance.reposOwnerRepoReleasesIdGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5368,9 +5363,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoStargazersGet(
+    apiInstance.reposOwnerRepoStargazersGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5394,9 +5389,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoStatsCodeFrequencyGet(
+    apiInstance.reposOwnerRepoStatsCodeFrequencyGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5420,9 +5415,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoStatsCommitActivityGet(
+    apiInstance.reposOwnerRepoStatsCommitActivityGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5446,9 +5441,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoStatsContributorsGet(
+    apiInstance.reposOwnerRepoStatsContributorsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5472,9 +5467,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoStatsParticipationGet(
+    apiInstance.reposOwnerRepoStatsParticipationGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5498,9 +5493,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoStatsPunchCardGet(
+    apiInstance.reposOwnerRepoStatsPunchCardGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5524,9 +5519,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoStatusesRefGet(
+    apiInstance.reposOwnerRepoStatusesRefGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.ref,
       incomingOptions.opts,
       (error, data, response) => {
@@ -5551,9 +5546,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoSubscribersGet(
+    apiInstance.reposOwnerRepoSubscribersGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5577,9 +5572,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoSubscriptionGet(
+    apiInstance.reposOwnerRepoSubscriptionGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5603,9 +5598,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoTagsGet(
+    apiInstance.reposOwnerRepoTagsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5629,9 +5624,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoTeamsGet(
+    apiInstance.reposOwnerRepoTeamsGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -5661,9 +5656,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoWatchersGet(
+    apiInstance.reposOwnerRepoWatchersGet(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -7581,8 +7576,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgReposPost(
-      org,
+    apiInstance.orgsOrgReposPost(
+      incomingOptions.org,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7613,8 +7608,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgTeamsPost(
-      org,
+    apiInstance.orgsOrgTeamsPost(
+      incomingOptions.org,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7645,9 +7640,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCommitsShaCodeCommentsPost(
+    apiInstance.reposOwnerRepoCommitsShaCodeCommentsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.shaCode,
       incomingOptions.body,
       incomingOptions.opts,
@@ -7679,9 +7674,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoDeploymentsIdStatusesPost(
+    apiInstance.reposOwnerRepoDeploymentsIdStatusesPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.id,
       incomingOptions.body,
       incomingOptions.opts,
@@ -7713,9 +7708,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoDeploymentsPost(
+    apiInstance.reposOwnerRepoDeploymentsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7746,9 +7741,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoForksPost(
+    apiInstance.reposOwnerRepoForksPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7781,9 +7776,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitBlobsPost(
+    apiInstance.reposOwnerRepoGitBlobsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7808,9 +7803,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitCommitsPost(
+    apiInstance.reposOwnerRepoGitCommitsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7835,9 +7830,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsPost(
+    apiInstance.reposOwnerRepoGitRefsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7862,9 +7857,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitTagsPost(
+    apiInstance.reposOwnerRepoGitTagsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7889,9 +7884,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitTreesPost(
+    apiInstance.reposOwnerRepoGitTreesPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7916,9 +7911,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdTestsPost(
+    apiInstance.reposOwnerRepoHooksHookIdTestsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.hookId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7949,9 +7944,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoHooksPost(
+    apiInstance.reposOwnerRepoHooksPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -7976,9 +7971,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberCommentsPost(
+    apiInstance.reposOwnerRepoIssuesNumberCommentsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8004,9 +7999,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPost(
+    apiInstance.reposOwnerRepoIssuesNumberLabelsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8032,9 +8027,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesPost(
+    apiInstance.reposOwnerRepoIssuesPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8059,9 +8054,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoKeysPost(
+    apiInstance.reposOwnerRepoKeysPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8086,9 +8081,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoLabelsPost(
+    apiInstance.reposOwnerRepoLabelsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8113,9 +8108,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoMergesPost(
+    apiInstance.reposOwnerRepoMergesPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8140,9 +8135,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesPost(
+    apiInstance.reposOwnerRepoMilestonesPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8167,9 +8162,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberCommentsPost(
+    apiInstance.reposOwnerRepoPullsNumberCommentsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8195,9 +8190,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsPost(
+    apiInstance.reposOwnerRepoPullsPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8222,9 +8217,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReleasesPost(
+    apiInstance.reposOwnerRepoReleasesPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8249,9 +8244,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoStatusesRefPost(
+    apiInstance.reposOwnerRepoStatusesRefPost(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.ref,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8721,8 +8716,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgPublicMembersUsernamePut(
-      org,
+    apiInstance.orgsOrgPublicMembersUsernamePut(
+      incomingOptions.org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8753,9 +8748,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserPut(
+    apiInstance.reposOwnerRepoCollaboratorsUserPut(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.user,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8786,9 +8781,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoContentsPathPut(
+    apiInstance.reposOwnerRepoContentsPathPut(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.path,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8814,9 +8809,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsPut(
+    apiInstance.reposOwnerRepoIssuesNumberLabelsPut(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8842,9 +8837,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoNotificationsPut(
+    apiInstance.reposOwnerRepoNotificationsPut(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -8869,9 +8864,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberMergePut(
+    apiInstance.reposOwnerRepoPullsNumberMergePut(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.body,
       incomingOptions.opts,
@@ -8897,9 +8892,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoSubscriptionPut(
+    apiInstance.reposOwnerRepoSubscriptionPut(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -9767,8 +9762,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgMembersUsernameDelete(
-      org,
+    apiInstance.orgsOrgMembersUsernameDelete(
+      incomingOptions.org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -9799,8 +9794,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgPublicMembersUsernameDelete(
-      org,
+    apiInstance.orgsOrgPublicMembersUsernameDelete(
+      incomingOptions.org,
       incomingOptions.username,
       incomingOptions.opts,
       (error, data, response) => {
@@ -9831,9 +9826,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCollaboratorsUserDelete(
+    apiInstance.reposOwnerRepoCollaboratorsUserDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.user,
       incomingOptions.opts,
       (error, data, response) => {
@@ -9864,9 +9859,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdDelete(
+    apiInstance.reposOwnerRepoCommentsCommentIdDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -9897,9 +9892,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoContentsPathDelete(
+    apiInstance.reposOwnerRepoContentsPathDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.path,
       incomingOptions.body,
       incomingOptions.opts,
@@ -9931,9 +9926,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoDelete(
+    apiInstance.reposOwnerRepoDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -9963,9 +9958,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoDownloadsDownloadIdDelete(
+    apiInstance.reposOwnerRepoDownloadsDownloadIdDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.downloadId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -9990,9 +9985,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsRefDelete(
+    apiInstance.reposOwnerRepoGitRefsRefDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.ref,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10023,9 +10018,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdDelete(
+    apiInstance.reposOwnerRepoHooksHookIdDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.hookId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10050,9 +10045,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdDelete(
+    apiInstance.reposOwnerRepoIssuesCommentsCommentIdDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10077,9 +10072,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsDelete(
+    apiInstance.reposOwnerRepoIssuesNumberLabelsDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10104,9 +10099,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberLabelsNameDelete(
+    apiInstance.reposOwnerRepoIssuesNumberLabelsNameDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.name,
       incomingOptions.opts,
@@ -10132,9 +10127,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoKeysKeyIdDelete(
+    apiInstance.reposOwnerRepoKeysKeyIdDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.keyId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10159,9 +10154,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoLabelsNameDelete(
+    apiInstance.reposOwnerRepoLabelsNameDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.name,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10186,9 +10181,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberDelete(
+    apiInstance.reposOwnerRepoMilestonesNumberDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10213,9 +10208,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdDelete(
+    apiInstance.reposOwnerRepoPullsCommentsCommentIdDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.commentId,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10240,9 +10235,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdDelete(
+    apiInstance.reposOwnerRepoReleasesAssetsIdDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10267,9 +10262,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReleasesIdDelete(
+    apiInstance.reposOwnerRepoReleasesIdDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.id,
       incomingOptions.opts,
       (error, data, response) => {
@@ -10294,9 +10289,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoSubscriptionDelete(
+    apiInstance.reposOwnerRepoSubscriptionDelete(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.opts,
       (error, data, response) => {
         if (error) {
@@ -10997,8 +10992,8 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.orgsOrgPatch(
-      org,
+    apiInstance.orgsOrgPatch(
+      incomingOptions.org,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -11029,9 +11024,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoCommentsCommentIdPatch(
+    apiInstance.reposOwnerRepoCommentsCommentIdPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.commentId,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11057,9 +11052,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoGitRefsRefPatch(
+    apiInstance.reposOwnerRepoGitRefsRefPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.ref,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11091,9 +11086,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoHooksHookIdPatch(
+    apiInstance.reposOwnerRepoHooksHookIdPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.hookId,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11119,9 +11114,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesCommentsCommentIdPatch(
+    apiInstance.reposOwnerRepoIssuesCommentsCommentIdPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.commentId,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11147,9 +11142,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoIssuesNumberPatch(
+    apiInstance.reposOwnerRepoIssuesNumberPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11175,9 +11170,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoLabelsNamePatch(
+    apiInstance.reposOwnerRepoLabelsNamePatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.name,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11203,9 +11198,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoMilestonesNumberPatch(
+    apiInstance.reposOwnerRepoMilestonesNumberPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11237,9 +11232,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPatch(
+    apiInstance.reposOwnerRepoPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.body,
       incomingOptions.opts,
       (error, data, response) => {
@@ -11264,9 +11259,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsCommentsCommentIdPatch(
+    apiInstance.reposOwnerRepoPullsCommentsCommentIdPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.commentId,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11292,9 +11287,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoPullsNumberPatch(
+    apiInstance.reposOwnerRepoPullsNumberPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions._number,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11320,9 +11315,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReleasesAssetsIdPatch(
+    apiInstance.reposOwnerRepoReleasesAssetsIdPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.id,
       incomingOptions.body,
       incomingOptions.opts,
@@ -11348,9 +11343,9 @@ class GithubService {
 
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
-    apiInstance.incomingOptions.reposOwnerRepoReleasesIdPatch(
+    apiInstance.reposOwnerRepoReleasesIdPatch(
       incomingOptions.owner,
-      repo,
+      incomingOptions.repo,
       incomingOptions.id,
       incomingOptions.body,
       incomingOptions.opts,

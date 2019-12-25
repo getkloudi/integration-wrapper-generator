@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NotificationsRepository model module.
  * @module model/NotificationsRepository
- * @version 1.4.0
+ * @version 1.4.1
  */
 var NotificationsRepository =
 /*#__PURE__*/

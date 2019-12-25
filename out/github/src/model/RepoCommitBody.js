@@ -17,7 +17,7 @@ import CompareCommitsBaseCommitCommitAuthor from './CompareCommitsBaseCommitComm
 /**
  * The RepoCommitBody model module.
  * @module model/RepoCommitBody
- * @version 1.4.0
+ * @version 1.4.1
  */
 class RepoCommitBody {
     /**

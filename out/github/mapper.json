@@ -99,5 +99,130 @@
         }
       }
     ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "PROJECTS",
+    "integration": "GITHUB",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "apiKey"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "CONSTANT",
+          "value": "token"
+        },
+        "output": {
+          "key": "apiKeyPrefix"
+        }
+      },
+      {
+        "input": {
+          "key": "body.projects"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projects"
+        }
+      },
+      {
+        "input": {
+          "key": "query.page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.page"
+        }
+      },
+      {
+        "input": {
+          "key": "query.per_page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.per_page"
+        }
+      },
+      {
+        "input": {
+          "key": "query.page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "skip"
+        }
+      },
+      {
+        "input": {
+          "key": "query.per_page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "limit"
+        }
+      },
+      {
+        "input": {
+          "key": "projectId",
+          "parent": "body.integration.thirdPartyProjects"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "repo",
+          "parent": "repos"
+        }
+      },
+      {
+        "input": {
+          "key": "organizationId",
+          "parent": "body.integration.thirdPartyProjects"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "owner",
+          "parent": "repos"
+        }
+      },
+      {
+        "input": {
+          "key": "body",
+          "parent": "body.integration.thirdPartyProjects"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "getWebhookURL"
+        },
+        "output": {
+          "key": "body.webhookURL"
+        }
+      }
+    ]
   }
 ]

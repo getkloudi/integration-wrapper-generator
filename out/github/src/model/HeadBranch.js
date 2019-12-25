@@ -17,7 +17,7 @@ import HeadBranchObject from './HeadBranchObject';
 /**
  * The HeadBranch model module.
  * @module model/HeadBranch
- * @version 1.4.0
+ * @version 1.4.1
  */
 class HeadBranch {
     /**

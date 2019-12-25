@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeploymentPayload model module.
  * @module model/DeploymentPayload
- * @version 1.4.0
+ * @version 1.4.1
  */
 class DeploymentPayload {
     /**

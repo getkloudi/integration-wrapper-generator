@@ -18,7 +18,7 @@ import IssueEventIssue from './IssueEventIssue';
 /**
  * The IssueEvent model module.
  * @module model/IssueEvent
- * @version 1.4.0
+ * @version 1.4.1
  */
 class IssueEvent {
     /**

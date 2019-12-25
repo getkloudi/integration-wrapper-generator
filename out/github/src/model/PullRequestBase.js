@@ -18,7 +18,7 @@ import Repo from './Repo';
 /**
  * The PullRequestBase model module.
  * @module model/PullRequestBase
- * @version 1.4.0
+ * @version 1.4.1
  */
 class PullRequestBase {
     /**

@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MergesSuccessful model module.
  * @module model/MergesSuccessful
- * @version 1.4.0
+ * @version 1.4.1
  */
 var MergesSuccessful =
 /*#__PURE__*/

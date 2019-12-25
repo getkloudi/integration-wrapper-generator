@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFileBodyCommitter model module.
  * @module model/CreateFileBodyCommitter
- * @version 1.4.0
+ * @version 1.4.1
  */
 var CreateFileBodyCommitter =
 /*#__PURE__*/

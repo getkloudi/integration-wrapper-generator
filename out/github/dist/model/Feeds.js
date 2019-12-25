@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Feeds model module.
  * @module model/Feeds
- * @version 1.4.0
+ * @version 1.4.1
  */
 var Feeds =
 /*#__PURE__*/

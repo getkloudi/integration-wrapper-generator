@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Subscription model module.
  * @module model/Subscription
- * @version 1.4.0
+ * @version 1.4.1
  */
 var Subscription =
 /*#__PURE__*/

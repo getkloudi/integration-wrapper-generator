@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Blobs model module.
  * @module model/Blobs
- * @version 1.4.0
+ * @version 1.4.1
  */
 var Blobs =
 /*#__PURE__*/
