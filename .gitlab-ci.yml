@@ -5,12 +5,12 @@ before_script:
   - "which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )"
   - eval $(ssh-agent -s)
 stages:
-  - staging
-  - production
+  - deploy
 
 staging:
-  type: deploy
-  stage: staging
+  stage: deploy
+  environment:
+    name: staging
   only:
     - dev
   script:
@@ -22,8 +22,9 @@ staging:
     - rsync -ap --no-perms out/ ubuntu@"$STAGING_SSH_HOST":~/integrations-io-server/app/services/third-party --delete
 
 production:
-  type: deploy
-  stage: production
+  stage: deploy
+  environment:
+    name: production
   only:
     - master
   script:
