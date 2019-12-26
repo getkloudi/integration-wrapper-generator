@@ -341,8 +341,38 @@ exports.startCodeFile = function(filePath, fileName) {
       //TODO: Add custom connect functionality here
     }
 
-    async syncIntegrationEntities(options) {
-      //TODO: Add custom syncIntegrationEntities functionality here
+    async getThirdPartyProjects(incomingOptions) {
+      //TODO: Add custom getThirdPartyProjects functionality here
+    }
+
+    async registerWebhooks(incomingOptions) {
+      //TODO: Add custom registerWebhooks functionality here
+    }
+
+    async syncIntegrationEntities(integration, incomingOptions) {
+      const taskUri = nconf.get("TASK_API_URI");
+      const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
+
+      try {
+        //TODO: Add custom syncIntegrationEntities functionality here
+        const res = await Axios.default.post(
+          taskUri,
+          {
+            pepper_task: [],
+            project_id: incomingOptions.projectId,
+            user_id: incomingOptions.userId
+          },
+          {
+            headers: {
+              Authorization: authToken
+            }
+          }
+        );
+        return "Ok";
+      } catch (error) {
+        console.error(error.response);
+        return "ERROR";
+      }
     }
 
   `;
