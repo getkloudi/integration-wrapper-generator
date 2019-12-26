@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RefsBody model module.
  * @module model/RefsBody
- * @version 1.4.1
+ * @version 1.4.2
  */
 var RefsBody =
 /*#__PURE__*/

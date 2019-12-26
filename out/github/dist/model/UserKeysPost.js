@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UserKeysPost model module.
  * @module model/UserKeysPost
- * @version 1.4.1
+ * @version 1.4.2
  */
 var UserKeysPost =
 /*#__PURE__*/

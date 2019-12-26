@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Label model module.
  * @module model/Label
- * @version 1.4.1
+ * @version 1.4.2
  */
 class Label {
     /**

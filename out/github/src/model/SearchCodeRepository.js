@@ -17,7 +17,7 @@ import Actor from './Actor';
 /**
  * The SearchCodeRepository model module.
  * @module model/SearchCodeRepository
- * @version 1.4.1
+ * @version 1.4.2
  */
 class SearchCodeRepository {
     /**

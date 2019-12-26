@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullRequestBaseUser model module.
  * @module model/PullRequestBaseUser
- * @version 1.4.1
+ * @version 1.4.2
  */
 var PullRequestBaseUser =
 /*#__PURE__*/

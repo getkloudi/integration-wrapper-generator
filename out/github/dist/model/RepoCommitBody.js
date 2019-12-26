@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RepoCommitBody model module.
  * @module model/RepoCommitBody
- * @version 1.4.1
+ * @version 1.4.2
  */
 var RepoCommitBody =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import FeedsLinksCurrentUser from './FeedsLinksCurrentUser';
 /**
  * The FeedsLinks model module.
  * @module model/FeedsLinks
- * @version 1.4.1
+ * @version 1.4.2
  */
 class FeedsLinks {
     /**

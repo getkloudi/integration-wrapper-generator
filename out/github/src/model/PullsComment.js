@@ -18,7 +18,7 @@ import PullsCommentLinks from './PullsCommentLinks';
 /**
  * The PullsComment model module.
  * @module model/PullsComment
- * @version 1.4.1
+ * @version 1.4.2
  */
 class PullsComment {
     /**

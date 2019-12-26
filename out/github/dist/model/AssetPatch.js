@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssetPatch model module.
  * @module model/AssetPatch
- * @version 1.4.1
+ * @version 1.4.2
  */
 var AssetPatch =
 /*#__PURE__*/

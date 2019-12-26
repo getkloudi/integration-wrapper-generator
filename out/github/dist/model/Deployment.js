@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Deployment model module.
  * @module model/Deployment
- * @version 1.4.1
+ * @version 1.4.2
  */
 var Deployment =
 /*#__PURE__*/

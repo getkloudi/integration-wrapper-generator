@@ -18,7 +18,7 @@ import BranchCommitCommitTree from './BranchCommitCommitTree';
 /**
  * The RepoCommit model module.
  * @module model/RepoCommit
- * @version 1.4.1
+ * @version 1.4.2
  */
 class RepoCommit {
     /**

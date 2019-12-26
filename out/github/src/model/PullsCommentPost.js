@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PullsCommentPost model module.
  * @module model/PullsCommentPost
- * @version 1.4.1
+ * @version 1.4.2
  */
 class PullsCommentPost {
     /**

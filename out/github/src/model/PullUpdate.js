@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PullUpdate model module.
  * @module model/PullUpdate
- * @version 1.4.1
+ * @version 1.4.2
  */
 class PullUpdate {
     /**

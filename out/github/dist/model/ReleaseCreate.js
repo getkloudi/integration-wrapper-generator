@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ReleaseCreate model module.
  * @module model/ReleaseCreate
- * @version 1.4.1
+ * @version 1.4.2
  */
 var ReleaseCreate =
 /*#__PURE__*/

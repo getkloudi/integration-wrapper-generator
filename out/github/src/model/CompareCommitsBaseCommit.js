@@ -19,7 +19,7 @@ import User from './User';
 /**
  * The CompareCommitsBaseCommit model module.
  * @module model/CompareCommitsBaseCommit
- * @version 1.4.1
+ * @version 1.4.2
  */
 class CompareCommitsBaseCommit {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OrgTeamsPost model module.
  * @module model/OrgTeamsPost
- * @version 1.4.1
+ * @version 1.4.2
  */
 class OrgTeamsPost {
     /**

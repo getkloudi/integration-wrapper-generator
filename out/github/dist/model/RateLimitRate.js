@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RateLimitRate model module.
  * @module model/RateLimitRate
- * @version 1.4.1
+ * @version 1.4.2
  */
 var RateLimitRate =
 /*#__PURE__*/

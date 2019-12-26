@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Gist model module.
  * @module model/Gist
- * @version 1.4.1
+ * @version 1.4.2
  */
 var Gist =
 /*#__PURE__*/

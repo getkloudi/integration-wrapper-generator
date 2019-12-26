@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteFileCommit model module.
  * @module model/DeleteFileCommit
- * @version 1.4.1
+ * @version 1.4.2
  */
 var DeleteFileCommit =
 /*#__PURE__*/

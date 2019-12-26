@@ -17,7 +17,7 @@ import Actor from './Actor';
 /**
  * The NotificationsRepository model module.
  * @module model/NotificationsRepository
- * @version 1.4.1
+ * @version 1.4.2
  */
 class NotificationsRepository {
     /**

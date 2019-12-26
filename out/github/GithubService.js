@@ -4,8 +4,8 @@ const nconf = require("nconf");
 const qs = require("querystring");
 
 /*
-  - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
-*/
+    - https://developer.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/
+  */
 const SCOPES = [
   "notifications",
   "repo",
@@ -2466,7 +2466,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.emojisGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -2495,7 +2497,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.eventsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -2524,7 +2528,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.feedsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -2554,7 +2560,9 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -2581,7 +2589,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdCommentsCommentIdGet(
       incomingOptions.id,
@@ -2615,7 +2625,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdCommentsGet(
       incomingOptions.id,
@@ -2646,7 +2658,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdGet(
       incomingOptions.id,
@@ -2679,7 +2693,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdStarGet(
       incomingOptions.id,
@@ -2713,7 +2729,9 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsPublicGet(
       incomingOptions.opts,
@@ -2746,7 +2764,9 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsStarredGet(
       incomingOptions.opts,
@@ -2778,7 +2798,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gitignoreTemplatesGet(
       incomingOptions.opts,
@@ -2808,7 +2830,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gitignoreTemplatesLanguageGet(
       incomingOptions.language,
@@ -2842,7 +2866,9 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.issuesGet(
       incomingOptions.filter,
@@ -2871,7 +2897,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(
       incomingOptions.keyword,
@@ -2903,7 +2931,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.legacyReposSearchKeywordGet(
       incomingOptions.keyword,
@@ -2928,7 +2958,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.legacyUserEmailEmailGet(
       incomingOptions.email,
@@ -2956,7 +2988,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.legacyUserSearchKeywordGet(
       incomingOptions.keyword,
@@ -2987,7 +3021,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.metaGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -3016,7 +3052,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.networksOwnerRepoEventsGet(
       incomingOptions.owner,
@@ -3053,7 +3091,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.notificationsGet(
       incomingOptions.opts,
@@ -3083,7 +3123,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.notificationsThreadsIdGet(
       incomingOptions.id,
@@ -3116,7 +3158,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.notificationsThreadsIdSubscriptionGet(
       incomingOptions.id,
@@ -3149,7 +3193,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgEventsGet(
       incomingOptions.org,
@@ -3182,7 +3228,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgGet(
       incomingOptions.org,
@@ -3216,7 +3264,9 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgIssuesGet(
       incomingOptions.org,
@@ -3254,7 +3304,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgMembersGet(
       incomingOptions.org,
@@ -3287,7 +3339,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgMembersUsernameGet(
       incomingOptions.org,
@@ -3321,7 +3375,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgPublicMembersGet(
       incomingOptions.org,
@@ -3354,7 +3410,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgPublicMembersUsernameGet(
       incomingOptions.org,
@@ -3389,7 +3447,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgReposGet(
       incomingOptions.org,
@@ -3422,7 +3482,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgTeamsGet(
       incomingOptions.org,
@@ -3455,7 +3517,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.rateLimitGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -3484,7 +3548,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoArchiveFormatPathGet(
       incomingOptions.owner,
@@ -3520,7 +3586,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoAssigneesAssigneeGet(
       incomingOptions.owner,
@@ -3555,7 +3623,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoAssigneesGet(
       incomingOptions.owner,
@@ -3589,7 +3659,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoBranchesBranchGet(
       incomingOptions.owner,
@@ -3624,7 +3696,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoBranchesGet(
       incomingOptions.owner,
@@ -3658,7 +3732,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCollaboratorsGet(
       incomingOptions.owner,
@@ -3692,7 +3768,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCollaboratorsUserGet(
       incomingOptions.owner,
@@ -3727,7 +3805,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCommentsCommentIdGet(
       incomingOptions.owner,
@@ -3762,7 +3842,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCommentsGet(
       incomingOptions.owner,
@@ -3801,7 +3883,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCommitsGet(
       incomingOptions.owner,
@@ -3835,7 +3919,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCommitsRefStatusGet(
       incomingOptions.owner,
@@ -3870,7 +3956,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCommitsShaCodeCommentsGet(
       incomingOptions.owner,
@@ -3905,7 +3993,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCommitsShaCodeGet(
       incomingOptions.owner,
@@ -3940,7 +4030,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCompareBaseIdHeadIdGet(
       incomingOptions.owner,
@@ -3978,7 +4070,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoContentsPathGet(
       incomingOptions.owner,
@@ -4013,7 +4107,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoContributorsGet(
       incomingOptions.owner,
@@ -4048,7 +4144,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoDeploymentsGet(
       incomingOptions.owner,
@@ -4082,7 +4180,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoDeploymentsIdStatusesGet(
       incomingOptions.owner,
@@ -4115,7 +4215,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoDownloadsDownloadIdGet(
       incomingOptions.owner,
@@ -4148,7 +4250,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoDownloadsGet(
       incomingOptions.owner,
@@ -4182,7 +4286,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoEventsGet(
       incomingOptions.owner,
@@ -4217,7 +4323,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoForksGet(
       incomingOptions.owner,
@@ -4251,7 +4359,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGet(
       incomingOptions.owner,
@@ -4277,7 +4387,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitBlobsShaCodeGet(
       incomingOptions.owner,
@@ -4304,7 +4416,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitCommitsShaCodeGet(
       incomingOptions.owner,
@@ -4333,7 +4447,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitRefsGet(
       incomingOptions.owner,
@@ -4361,7 +4477,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitRefsRefGet(
       incomingOptions.owner,
@@ -4390,7 +4508,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitTagsShaCodeGet(
       incomingOptions.owner,
@@ -4418,7 +4538,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitTreesShaCodeGet(
       incomingOptions.owner,
@@ -4453,7 +4575,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoHooksGet(
       incomingOptions.owner,
@@ -4485,7 +4609,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoHooksHookIdGet(
       incomingOptions.owner,
@@ -4512,7 +4638,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesCommentsCommentIdGet(
       incomingOptions.owner,
@@ -4542,7 +4670,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesCommentsGet(
       incomingOptions.owner,
@@ -4568,7 +4698,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesEventsEventIdGet(
       incomingOptions.owner,
@@ -4595,7 +4727,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesEventsGet(
       incomingOptions.owner,
@@ -4624,7 +4758,9 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesGet(
       incomingOptions.owner,
@@ -4655,7 +4791,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberCommentsGet(
       incomingOptions.owner,
@@ -4682,7 +4820,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberEventsGet(
       incomingOptions.owner,
@@ -4709,7 +4849,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberGet(
       incomingOptions.owner,
@@ -4736,7 +4878,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsGet(
       incomingOptions.owner,
@@ -4763,7 +4907,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoKeysGet(
       incomingOptions.owner,
@@ -4789,7 +4935,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoKeysKeyIdGet(
       incomingOptions.owner,
@@ -4816,7 +4964,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoLabelsGet(
       incomingOptions.owner,
@@ -4842,7 +4992,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoLabelsNameGet(
       incomingOptions.owner,
@@ -4869,7 +5021,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoLanguagesGet(
       incomingOptions.owner,
@@ -4898,7 +5052,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoMilestonesGet(
       incomingOptions.owner,
@@ -4924,7 +5080,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoMilestonesNumberGet(
       incomingOptions.owner,
@@ -4951,7 +5109,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoMilestonesNumberLabelsGet(
       incomingOptions.owner,
@@ -4981,7 +5141,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoNotificationsGet(
       incomingOptions.owner,
@@ -5007,7 +5169,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsCommentsCommentIdGet(
       incomingOptions.owner,
@@ -5037,7 +5201,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsCommentsGet(
       incomingOptions.owner,
@@ -5066,7 +5232,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsGet(
       incomingOptions.owner,
@@ -5092,7 +5260,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsNumberCommentsGet(
       incomingOptions.owner,
@@ -5119,7 +5289,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsNumberCommitsGet(
       incomingOptions.owner,
@@ -5146,7 +5318,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsNumberFilesGet(
       incomingOptions.owner,
@@ -5173,7 +5347,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsNumberGet(
       incomingOptions.owner,
@@ -5200,7 +5376,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsNumberMergeGet(
       incomingOptions.owner,
@@ -5228,7 +5406,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReadmeGet(
       incomingOptions.owner,
@@ -5254,7 +5434,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReleasesAssetsIdGet(
       incomingOptions.owner,
@@ -5281,7 +5463,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReleasesGet(
       incomingOptions.owner,
@@ -5307,7 +5491,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReleasesIdAssetsGet(
       incomingOptions.owner,
@@ -5334,7 +5520,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReleasesIdGet(
       incomingOptions.owner,
@@ -5361,7 +5549,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoStargazersGet(
       incomingOptions.owner,
@@ -5387,7 +5577,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoStatsCodeFrequencyGet(
       incomingOptions.owner,
@@ -5413,7 +5605,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoStatsCommitActivityGet(
       incomingOptions.owner,
@@ -5439,7 +5633,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoStatsContributorsGet(
       incomingOptions.owner,
@@ -5465,7 +5661,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoStatsParticipationGet(
       incomingOptions.owner,
@@ -5491,7 +5689,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoStatsPunchCardGet(
       incomingOptions.owner,
@@ -5517,7 +5717,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoStatusesRefGet(
       incomingOptions.owner,
@@ -5544,7 +5746,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoSubscribersGet(
       incomingOptions.owner,
@@ -5570,7 +5774,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoSubscriptionGet(
       incomingOptions.owner,
@@ -5596,7 +5802,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoTagsGet(
       incomingOptions.owner,
@@ -5622,7 +5830,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoTeamsGet(
       incomingOptions.owner,
@@ -5654,7 +5864,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoWatchersGet(
       incomingOptions.owner,
@@ -5689,7 +5901,9 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.repositoriesGet(
       incomingOptions.opts,
@@ -5723,7 +5937,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.searchCodeGet(
       incomingOptions.q,
@@ -5758,7 +5974,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.searchIssuesGet(
       incomingOptions.q,
@@ -5793,7 +6011,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.searchRepositoriesGet(
       incomingOptions.q,
@@ -5828,7 +6048,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.searchUsersGet(
       incomingOptions.q,
@@ -5859,7 +6081,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdGet(
       incomingOptions.teamId,
@@ -5892,7 +6116,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdMembersGet(
       incomingOptions.teamId,
@@ -5923,7 +6149,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdMembersUsernameGet(
       incomingOptions.teamId,
@@ -5955,7 +6183,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdMembershipsUsernameGet(
       incomingOptions.teamId,
@@ -5989,7 +6219,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdReposGet(
       incomingOptions.teamId,
@@ -6020,7 +6252,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdReposOwnerRepoGet(
       incomingOptions.teamId,
@@ -6053,7 +6287,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userEmailsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6082,7 +6318,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userFollowersGet(
       incomingOptions.opts,
@@ -6114,7 +6352,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userFollowingGet(
       incomingOptions.opts,
@@ -6144,7 +6384,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userFollowingUsernameGet(
       incomingOptions.username,
@@ -6177,7 +6419,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6207,7 +6451,9 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userIssuesGet(
       incomingOptions.filter,
@@ -6242,7 +6488,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userKeysGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6269,7 +6517,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userKeysKeyIdGet(
       incomingOptions.keyId,
@@ -6300,7 +6550,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userOrgsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6330,7 +6582,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userReposGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6359,7 +6613,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userStarredGet(
       incomingOptions.opts,
@@ -6389,7 +6645,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userStarredOwnerRepoGet(
       incomingOptions.owner,
@@ -6421,7 +6679,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userSubscriptionsGet(
       incomingOptions.opts,
@@ -6451,7 +6711,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userSubscriptionsOwnerRepoGet(
       incomingOptions.owner,
@@ -6483,7 +6745,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userTeamsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6513,7 +6777,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6542,7 +6808,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameEventsGet(
       incomingOptions.username,
@@ -6573,7 +6841,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameEventsOrgsOrgGet(
       incomingOptions.username,
@@ -6605,7 +6875,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameFollowersGet(
       incomingOptions.username,
@@ -6630,7 +6902,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameFollowingTargetUserGet(
       incomingOptions.username,
@@ -6662,7 +6936,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameGet(
       incomingOptions.username,
@@ -6696,7 +6972,9 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameGistsGet(
       incomingOptions.username,
@@ -6727,7 +7005,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameKeysGet(
       incomingOptions.username,
@@ -6758,7 +7038,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameOrgsGet(
       incomingOptions.username,
@@ -6789,7 +7071,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameReceivedEventsGet(
       incomingOptions.username,
@@ -6820,7 +7104,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameReceivedEventsPublicGet(
       incomingOptions.username,
@@ -6854,7 +7140,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameReposGet(
       incomingOptions.username,
@@ -6885,7 +7173,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameStarredGet(
       incomingOptions.username,
@@ -6916,7 +7206,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.usersUsernameSubscriptionsGet(
       incomingOptions.username,
@@ -7419,7 +7711,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdCommentsPost(
       incomingOptions.id,
@@ -7451,7 +7745,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdForksPost(
       incomingOptions.id,
@@ -7482,7 +7778,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsPost(
       incomingOptions.body,
@@ -7513,7 +7811,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.markdownPost(
       incomingOptions.body,
@@ -7544,7 +7844,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.markdownRawPost(
       incomingOptions.opts,
@@ -7574,7 +7876,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgReposPost(
       incomingOptions.org,
@@ -7606,7 +7910,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgTeamsPost(
       incomingOptions.org,
@@ -7638,7 +7944,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCommitsShaCodeCommentsPost(
       incomingOptions.owner,
@@ -7672,7 +7980,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoDeploymentsIdStatusesPost(
       incomingOptions.owner,
@@ -7706,7 +8016,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoDeploymentsPost(
       incomingOptions.owner,
@@ -7739,7 +8051,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoForksPost(
       incomingOptions.owner,
@@ -7774,7 +8088,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitBlobsPost(
       incomingOptions.owner,
@@ -7801,7 +8117,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitCommitsPost(
       incomingOptions.owner,
@@ -7828,7 +8146,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitRefsPost(
       incomingOptions.owner,
@@ -7855,7 +8175,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitTagsPost(
       incomingOptions.owner,
@@ -7882,7 +8204,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitTreesPost(
       incomingOptions.owner,
@@ -7909,7 +8233,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoHooksHookIdTestsPost(
       incomingOptions.owner,
@@ -7942,7 +8268,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoHooksPost(
       incomingOptions.owner,
@@ -7969,7 +8297,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberCommentsPost(
       incomingOptions.owner,
@@ -7997,7 +8327,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsPost(
       incomingOptions.owner,
@@ -8025,7 +8357,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesPost(
       incomingOptions.owner,
@@ -8052,7 +8386,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoKeysPost(
       incomingOptions.owner,
@@ -8079,7 +8415,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoLabelsPost(
       incomingOptions.owner,
@@ -8106,7 +8444,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoMergesPost(
       incomingOptions.owner,
@@ -8133,7 +8473,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoMilestonesPost(
       incomingOptions.owner,
@@ -8160,7 +8502,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsNumberCommentsPost(
       incomingOptions.owner,
@@ -8188,7 +8532,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsPost(
       incomingOptions.owner,
@@ -8215,7 +8561,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReleasesPost(
       incomingOptions.owner,
@@ -8242,7 +8590,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoStatusesRefPost(
       incomingOptions.owner,
@@ -8276,7 +8626,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userEmailsPost(
       incomingOptions.body,
@@ -8307,7 +8659,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userKeysPost(
       incomingOptions.body,
@@ -8338,7 +8692,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userReposPost(
       incomingOptions.body,
@@ -8620,7 +8976,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdStarPut(
       incomingOptions.id,
@@ -8651,7 +9009,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.notificationsPut(
       incomingOptions.body,
@@ -8682,7 +9042,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.notificationsThreadsIdSubscriptionPut(
       incomingOptions.id,
@@ -8714,7 +9076,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgPublicMembersUsernamePut(
       incomingOptions.org,
@@ -8746,7 +9110,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCollaboratorsUserPut(
       incomingOptions.owner,
@@ -8779,7 +9145,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoContentsPathPut(
       incomingOptions.owner,
@@ -8807,7 +9175,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsPut(
       incomingOptions.owner,
@@ -8835,7 +9205,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoNotificationsPut(
       incomingOptions.owner,
@@ -8862,7 +9234,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsNumberMergePut(
       incomingOptions.owner,
@@ -8890,7 +9264,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoSubscriptionPut(
       incomingOptions.owner,
@@ -8923,7 +9299,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdMembersUsernamePut(
       incomingOptions.teamId,
@@ -8955,7 +9333,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdMembershipsUsernamePut(
       incomingOptions.teamId,
@@ -8987,7 +9367,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdReposOwnerRepoPut(
       incomingOptions.teamId,
@@ -9020,7 +9402,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userFollowingUsernamePut(
       incomingOptions.username,
@@ -9051,7 +9435,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userStarredOwnerRepoPut(
       incomingOptions.owner,
@@ -9083,7 +9469,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userSubscriptionsOwnerRepoPut(
       incomingOptions.owner,
@@ -9635,7 +10023,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdCommentsCommentIdDelete(
       incomingOptions.id,
@@ -9667,7 +10057,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdDelete(
       incomingOptions.id,
@@ -9698,7 +10090,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdStarDelete(
       incomingOptions.id,
@@ -9729,7 +10123,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.notificationsThreadsIdSubscriptionDelete(
       incomingOptions.id,
@@ -9760,7 +10156,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgMembersUsernameDelete(
       incomingOptions.org,
@@ -9792,7 +10190,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgPublicMembersUsernameDelete(
       incomingOptions.org,
@@ -9824,7 +10224,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCollaboratorsUserDelete(
       incomingOptions.owner,
@@ -9857,7 +10259,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCommentsCommentIdDelete(
       incomingOptions.owner,
@@ -9890,7 +10294,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoContentsPathDelete(
       incomingOptions.owner,
@@ -9924,7 +10330,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoDelete(
       incomingOptions.owner,
@@ -9956,7 +10364,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoDownloadsDownloadIdDelete(
       incomingOptions.owner,
@@ -9983,7 +10393,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitRefsRefDelete(
       incomingOptions.owner,
@@ -10016,7 +10428,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoHooksHookIdDelete(
       incomingOptions.owner,
@@ -10043,7 +10457,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesCommentsCommentIdDelete(
       incomingOptions.owner,
@@ -10070,7 +10486,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsDelete(
       incomingOptions.owner,
@@ -10097,7 +10515,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsNameDelete(
       incomingOptions.owner,
@@ -10125,7 +10545,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoKeysKeyIdDelete(
       incomingOptions.owner,
@@ -10152,7 +10574,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoLabelsNameDelete(
       incomingOptions.owner,
@@ -10179,7 +10603,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoMilestonesNumberDelete(
       incomingOptions.owner,
@@ -10206,7 +10632,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsCommentsCommentIdDelete(
       incomingOptions.owner,
@@ -10233,7 +10661,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReleasesAssetsIdDelete(
       incomingOptions.owner,
@@ -10260,7 +10690,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReleasesIdDelete(
       incomingOptions.owner,
@@ -10287,7 +10719,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoSubscriptionDelete(
       incomingOptions.owner,
@@ -10321,7 +10755,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdDelete(
       incomingOptions.teamId,
@@ -10354,7 +10790,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdMembersUsernameDelete(
       incomingOptions.teamId,
@@ -10388,7 +10826,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdMembershipsUsernameDelete(
       incomingOptions.teamId,
@@ -10422,7 +10862,9 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdReposOwnerRepoDelete(
       incomingOptions.teamId,
@@ -10455,7 +10897,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userEmailsDelete(
       incomingOptions.body,
@@ -10486,7 +10930,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userFollowingUsernameDelete(
       incomingOptions.username,
@@ -10517,7 +10963,9 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userKeysKeyIdDelete(
       incomingOptions.keyId,
@@ -10548,7 +10996,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userStarredOwnerRepoDelete(
       incomingOptions.owner,
@@ -10580,7 +11030,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userSubscriptionsOwnerRepoDelete(
       incomingOptions.owner,
@@ -10894,7 +11346,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdCommentsCommentIdPatch(
       incomingOptions.id,
@@ -10927,7 +11381,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.gistsIdPatch(
       incomingOptions.id,
@@ -10959,7 +11415,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.notificationsThreadsIdPatch(
       incomingOptions.id,
@@ -10990,7 +11448,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.orgsOrgPatch(
       incomingOptions.org,
@@ -11022,7 +11482,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoCommentsCommentIdPatch(
       incomingOptions.owner,
@@ -11050,7 +11512,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoGitRefsRefPatch(
       incomingOptions.owner,
@@ -11084,7 +11548,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoHooksHookIdPatch(
       incomingOptions.owner,
@@ -11112,7 +11578,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesCommentsCommentIdPatch(
       incomingOptions.owner,
@@ -11140,7 +11608,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoIssuesNumberPatch(
       incomingOptions.owner,
@@ -11168,7 +11638,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoLabelsNamePatch(
       incomingOptions.owner,
@@ -11196,7 +11668,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoMilestonesNumberPatch(
       incomingOptions.owner,
@@ -11230,7 +11704,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPatch(
       incomingOptions.owner,
@@ -11257,7 +11733,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsCommentsCommentIdPatch(
       incomingOptions.owner,
@@ -11285,7 +11763,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoPullsNumberPatch(
       incomingOptions.owner,
@@ -11313,7 +11793,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReleasesAssetsIdPatch(
       incomingOptions.owner,
@@ -11341,7 +11823,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.reposOwnerRepoReleasesIdPatch(
       incomingOptions.owner,
@@ -11375,7 +11859,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.teamsTeamIdPatch(
       incomingOptions.teamId,
@@ -11407,7 +11893,9 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+    incomingOptions.opts = Object.assign(opts, function() {
+      return incomingOptions.opts;
+    });
 
     apiInstance.userPatch(
       incomingOptions.body,
