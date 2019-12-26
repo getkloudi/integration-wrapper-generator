@@ -158,7 +158,7 @@
           "type": "ONE-TO-ONE"
         },
         "output": {
-          "key": "opts.per_page"
+          "key": "opts.perPage"
         }
       },
       {
