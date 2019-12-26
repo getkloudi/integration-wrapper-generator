@@ -64,14 +64,16 @@ exports.getFunctionWithParams = function getFunctionWithParams(contents) {
 
     for (let i = 0; i < functionParams.length; i++) {
       // Split the newFunctionParamsToReplace  by (
-      let splitNewFunctionParamsToReplace = newFunctionParamsToReplace.split('(');
+      let splitNewFunctionParamsToReplace = newFunctionParamsToReplace.split(
+        "("
+      );
 
       splitNewFunctionParamsToReplace[1] = splitNewFunctionParamsToReplace[1].replace(
         `${functionParams[i]}`,
         `incomingOptions.${functionParams[i]}`
       );
 
-      newFunctionParamsToReplace = splitNewFunctionParamsToReplace.join('(');
+      newFunctionParamsToReplace = splitNewFunctionParamsToReplace.join("(");
     }
 
     functionWithParams.push({
@@ -96,8 +98,7 @@ exports.getCodeBlocks = function getCodeBlocks(contents) {
   return codeBlocks;
 };
 
-
-exports.getCodeComments = function (contents) {
+exports.getCodeComments = function(contents) {
   let codeComments = [];
 
   let v;
@@ -105,8 +106,8 @@ exports.getCodeComments = function (contents) {
   while ((v = regex.functionCommentsRegex.exec(contents)) !== null) {
     if (!v[0]) continue;
     // Split the string with \n
-    let splitArray = v[0].split('\n');
-    let comment = '';
+    let splitArray = v[0].split("\n");
+    let comment = "";
     if (splitArray.length > 1) {
       for (let i = 1; i < splitArray.length - 1; i++) {
         if (splitArray[i].trim()) {
@@ -118,7 +119,7 @@ exports.getCodeComments = function (contents) {
   }
 
   return codeComments;
-}
+};
 
 exports.generateCodeFile = function generateCodeFile(
   codeBlocks,
@@ -166,15 +167,12 @@ exports.generateCodeFile = function generateCodeFile(
       "incomingOptions.accessToken"
     );
 
-    codeBlock = codeBlock.replace(
-      "'YOUR API KEY'",
-      "incomingOptions.apiKey"
-    );
+    codeBlock = codeBlock.replace("'YOUR API KEY'", "incomingOptions.apiKey");
 
     codeBlock = codeBlock.replace(
       "//api_key.apiKeyPrefix = 'Token';",
       "api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';"
-    )
+    );
 
     // comment out all variables
     for (let j = 0; j < functionWithParams[i].functionParams.length; j++) {
@@ -186,7 +184,7 @@ exports.generateCodeFile = function generateCodeFile(
       // Get index of the first semicolon after this
       let semiColonIndex = codeBlock.substr(indexOfVariable).indexOf(";");
 
-      if (variable !== 'opts') {
+      if (variable !== "opts") {
         // Add starting comment
         codeBlock =
           codeBlock.substr(0, indexOfVariable - 2) +
@@ -201,19 +199,24 @@ exports.generateCodeFile = function generateCodeFile(
       } else {
         let substring = codeBlock.substr(indexOfVariable, semiColonIndex + 1);
         // Split this string by \n
-        splitSubstring = substring.split('\n');
+        splitSubstring = substring.split("\n");
         for (let i = 0; i < splitSubstring.length; i++) {
           let str = splitSubstring[i];
           if (str.indexOf(`_example"`) !== -1) {
             // Comment out this line if not already commented out
-            if (str[0] !== '/' && str[1] !== '/') {
+            if (str[0] !== "/" && str[1] !== "/") {
               splitSubstring[i] = `//${splitSubstring[i]}`;
             }
           }
         }
 
         // Join the sub string generated above after commenting out variables containing _example
-        codeBlock = codeBlock.replace(substring, `${splitSubstring.join('\n')}\n\nincomingOptions.opts = Object.assign(opts, incomingOptions.opts)\n\n`);
+        codeBlock = codeBlock.replace(
+          substring,
+          `${splitSubstring.join(
+            "\n"
+          )}\n\nincomingOptions.opts = Object.assign(opts, function(){ return incomingOptions.opts;})\n\n`
+        );
       }
 
       // incomingOptions change
@@ -223,7 +226,10 @@ exports.generateCodeFile = function generateCodeFile(
       );
 
       // This can be added on need basis
-      codeBlock = codeBlock.replace(`console.error(error);`, `cb(error, null, response)`);
+      codeBlock = codeBlock.replace(
+        `console.error(error);`,
+        `cb(error, null, response)`
+      );
 
       codeBlock = codeBlock.replace(
         `console.log('API called successfully.');`,
@@ -262,7 +268,7 @@ exports.generateCodeFile = function generateCodeFile(
   return codeBlocks, functionWithParams, codeComments;
 };
 
-exports.startCodeFile = function (filePath, fileName) {
+exports.startCodeFile = function(filePath, fileName) {
   let fileNameWithoutExtension = fileName.split(".")[0];
 
   // Generate fileContent
@@ -343,7 +349,7 @@ exports.startCodeFile = function (filePath, fileName) {
   fs.appendFileSync(filePath, fileContent);
 };
 
-exports.endCodeFile = function (filePath, fileName) {
+exports.endCodeFile = function(filePath, fileName) {
   let fileNameWithoutExtension = fileName.split(".")[0];
 
   let fileContent = `
@@ -389,7 +395,9 @@ function createSwitchfunction(functionWithParams, functionType, codeComments) {
         /* ${comment}
         */
         return new Promise((resolve, reject) => {
-          this.${currentFunction.functionName}(options, (err, data, response) => {
+          this.${
+            currentFunction.functionName
+          }(options, (err, data, response) => {
             if(err) {
               reject({error: err, response: response});
             }
