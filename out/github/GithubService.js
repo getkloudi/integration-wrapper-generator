@@ -246,6 +246,8 @@ class GithubService {
           ],
           project_id: options.projectId,
           user_id: options.userId,
+          third_party_project_id: options.repo,
+          third_party_organization_id: options.owner,
           repo_endpoint: `${options.owner}/${options.repo}`,
           github_username: integration.integrationSpecificParams.username
         },
