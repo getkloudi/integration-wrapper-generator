@@ -1,7 +1,7 @@
 const Axios = require("axios");
 const qs = require("querystring");
 const nconf = require("nconf");
-const ErrorHelper = require("../../helpers/ErrorHelper");
+const ErrorHelper = require("../../../helpers/ErrorHelper");
 const parseLinkHeader = require("parse-link-header");
 class SentryService {
   get name() {
@@ -78,7 +78,16 @@ class SentryService {
     }
   }
 
-  async syncIntegrationEntities(integrationData, sentryProjectData) {
+  async getThirdPartyProjects(incomingOptions) {
+    //TODO: Refactor this function and other related functions
+    return await this.getProjects(incomingOptions);
+  }
+
+  async registerWebhooks(incomingOptions) {
+    //TODO: Add custom registerWebhooks functionality here
+  }
+
+  async syncIntegrationEntities(integration, incomingOptions) {
     const taskUri = nconf.get("TASK_API_URI");
     const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
 
@@ -90,10 +99,10 @@ class SentryService {
             "task.pepper.SYNC_LEGACY_SENTRY_ISSUES",
             "task.pepper.SYNC_SENTRY_TEAM_MEMBERS"
           ],
-          project_id: integrationData.projectId,
-          user_id: integrationData.userId,
-          third_party_project_id: sentryProjectData.projectId,
-          third_party_organization_id: sentryProjectData.organizationId
+          project_id: incomingOptions.projectId,
+          user_id: incomingOptions.userId,
+          third_party_project_id: incomingOptions.projectId,
+          third_party_organization_id: incomingOptions.organizationId
         },
         {
           headers: {
@@ -101,10 +110,10 @@ class SentryService {
           }
         }
       );
-      return "Ok";
+      return { data: "Ok" };
     } catch (error) {
       console.error(error.response);
-      return "ERROR";
+      return { data: "ERROR" };
     }
   }
 
@@ -146,7 +155,7 @@ class SentryService {
   async getProjects(options) {
     const projects = await Axios.default.get(`${this.apiEndpoint}/projects/`, {
       headers: {
-        Authorization: `Bearer ${options.integrationData.authAccessToken}`
+        Authorization: `Bearer ${options.integration.authAccessToken}`
       }
     });
 
@@ -157,7 +166,7 @@ class SentryService {
           `${this.apiEndpoint}/projects/${projects.data[index].organization.slug}/${projects.data[index].slug}/stats/?stat=received&resolution=1d`,
           {
             headers: {
-              Authorization: `Bearer ${options.integrationData.authAccessToken}`
+              Authorization: `Bearer ${options.integration.authAccessToken}`
             }
           }
         );
@@ -187,7 +196,7 @@ class SentryService {
         return 1;
       else return 0;
     });
-    return data;
+    return { data: data };
   }
 
   async getIssues(options) {
@@ -199,7 +208,7 @@ class SentryService {
       }/issues/?${params ? params : ``}&statsPeriod=`,
       {
         headers: {
-          Authorization: `Bearer ${options.integrationData.authAccessToken}`
+          Authorization: `Bearer ${options.integration.authAccessToken}`
         }
       }
     );
@@ -210,7 +219,7 @@ class SentryService {
       while (parsedHeader.next.results == "true" && count < 10) {
         const res = await Axios.default.get(parsedHeader.next.url, {
           headers: {
-            Authorization: `Bearer ${options.integrationData.authAccessToken}`
+            Authorization: `Bearer ${options.integration.authAccessToken}`
           }
         });
         issues = issues.concat(res.data);
@@ -220,7 +229,7 @@ class SentryService {
     } catch (error) {
       console.error(error);
     }
-    return issues;
+    return { data: issues };
   }
 
   async getMembers(options) {
@@ -228,7 +237,7 @@ class SentryService {
       `${this.apiEndpoint}/projects/${options.thirdPartyOrganizationId}/${options.thirdPartyProjectId}/members/`,
       {
         headers: {
-          Authorization: `Bearer ${options.integrationData.authAccessToken}`
+          Authorization: `Bearer ${options.integration.authAccessToken}`
         }
       }
     );
@@ -243,7 +252,7 @@ class SentryService {
       ) {
         const res = await Axios.default.get(parsedHeader.next.url, {
           headers: {
-            Authorization: `Bearer ${options.integrationData.authAccessToken}`
+            Authorization: `Bearer ${options.integration.authAccessToken}`
           }
         });
         members = members.concat(res.data);
@@ -253,16 +262,16 @@ class SentryService {
     } catch (error) {
       console.error(error);
     }
-    return members;
+    return { data: members };
   }
 
   async updateIssues(options) {
     if (
-      !options.integrationData.thirdPartyProjects ||
-      options.integrationData.thirdPartyProjects.length == 0
+      !options.integration.thirdPartyProjects ||
+      options.integration.thirdPartyProjects.length == 0
     ) {
       console.error("No third party projects present");
-      return "Ok";
+      return { data: "Error" };
     }
 
     const taskUri = nconf.get("TASK_API_URI");
@@ -279,9 +288,9 @@ class SentryService {
           resolveSimilarBugs: options.resolveSimilarBugs,
           markSimilarBugsAsViewed: options.markSimilarBugsAsViewed,
           third_party_project_id:
-            options.integrationData.thirdPartyProjects[0].projectId,
+            options.integration.thirdPartyProjects[0].projectId,
           third_party_organization_id:
-            options.integrationData.thirdPartyProjects[0].projectId
+            options.integration.thirdPartyProjects[0].projectId
         },
         {
           headers: {
@@ -289,20 +298,20 @@ class SentryService {
           }
         }
       );
-      return "Ok";
+      return { data: "Ok" };
     } catch (error) {
       console.error(error.response || error);
-      return "ERROR";
+      return { data: "ERROR" };
     }
   }
 
   async updateIssue(options) {
     if (
-      !options.integrationData.thirdPartyProjects ||
-      options.integrationData.thirdPartyProjects.length == 0
+      !options.integration.thirdPartyProjects ||
+      options.integration.thirdPartyProjects.length == 0
     ) {
       console.error("No third party projects present");
-      return "Ok";
+      return { data: "Error" };
     }
 
     let params = {};
@@ -311,21 +320,21 @@ class SentryService {
     if (optionKeys.includes("status"))
       params = { hasSeen: true, status: options.status };
 
-    if (Object.keys(params) <= 0) return "Nothing to update";
+    if (Object.keys(params) <= 0) return { data: "Nothing to update" };
     try {
       const data = await Axios.default.put(
         `${this.apiEndpoint}/issues/${options.sentry.id}/`,
         params,
         {
           headers: {
-            Authorization: `Bearer ${options.integrationData.authAccessToken}`
+            Authorization: `Bearer ${options.integration.authAccessToken}`
           }
         }
       );
-      return "Ok";
+      return { data: "Ok" };
     } catch (error) {
       console.error(error.response.data || error.response || error);
-      return error.response.data;
+      return { data: error.response.data };
     }
   }
 
@@ -339,11 +348,11 @@ class SentryService {
     uri += `?full=1`;
     const res = await Axios.default.get(uri, {
       headers: {
-        Authorization: `Bearer ${options.integrationData.authAccessToken}`
+        Authorization: `Bearer ${options.integration.authAccessToken}`
       }
     });
     events.push(res.data);
-    return events;
+    return { data: events };
   }
 
   async getIssueFromID(options) {
@@ -352,11 +361,11 @@ class SentryService {
       `${this.apiEndpoint}/issues/${options.id}/?statsPeriod=`,
       {
         headers: {
-          Authorization: `Bearer ${options.integrationData.authAccessToken}`
+          Authorization: `Bearer ${options.integration.authAccessToken}`
         }
       }
     );
-    return res.data;
+    return { data: res.data, response: res };
   }
 }
 
