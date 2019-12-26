@@ -145,29 +145,32 @@ class GithubService {
       }
     );
 
+    const apiKey = res.data.access_token;
+    const apiKeyPrefix = "token";
+
     const user = await this.get("USER", {
-      apiKey: res.data.access_token,
-      apiKeyPrefix: "token"
+      apiKey: apiKey,
+      apiKeyPrefix: apiKeyPrefix
     });
 
     let orgs,
       incomingOptions = { opts: {} };
     while (true) {
-      orgs = await this.get("USER_ORGS", {
-        apiKey: res.data.access_token,
+      let res = await this.get("USER_ORGS", {
+        apiKey: apiKey,
         opts: {
-          per_page: incomingOptions.opts.per_page,
+          perPage: incomingOptions.opts.perPage,
           page: incomingOptions.opts.page
         }
       });
       incomingOptions.opts = this.getNextPaginationURIFromResponse(
-        orgs.response
+        res.response
       );
-      orgs = orgs.data.map(item => item.login);
+      orgs = res.data.map(item => item.login);
       if (!incomingOptions.opts || !incomingOptions.opts.page) break;
     }
     const data = {
-      accessToken: res.data.access_token,
+      accessToken: apiKey,
       integrationSpecificParams: {
         username: user.data.login
       }
@@ -176,7 +179,58 @@ class GithubService {
     return data;
   }
 
-  async syncIntegrationEntities(integrationData, thirdPartyProject) {
+  async getThirdPartyProjects(incomingOptions) {
+    let repos = { data: [] };
+    while (true) {
+      const res = await this.get("USER_REPOS", incomingOptions);
+      incomingOptions.opts = this.getNextPaginationURIFromResponse(
+        res.response
+      );
+      repos.data = repos.data.concat(res.data);
+      repos.response = res.response;
+      if (!incomingOptions.opts || !incomingOptions.opts.page) {
+        break;
+      }
+    }
+    return repos;
+  }
+
+  async registerWebhooks(options) {
+    let data, res;
+
+    res = await this.get("REPOS_OWNER_REPO_HOOKS", options);
+    data = res.data;
+    const webhooks = data.filter(
+      item =>
+        item.config.url === options.body.webhookURL &&
+        item.events.sort().toString() ===
+          options.body.webhookEvents.sort().toString()
+    );
+    if (webhooks && webhooks.length > 0) return "Ok";
+
+    const body = {
+      active: true,
+      events: options.body.webhookEvents,
+      config: {
+        url: options.body.webhookURL,
+        content_type: "json",
+        insecure_ssl: "0"
+      }
+    };
+    delete options.body;
+    try {
+      res = await this.post("REPOS_OWNER_REPO_HOOKS", {
+        body: body,
+        ...options
+      });
+    } catch (err) {
+    } finally {
+      if (res.response.status == 200) return "Ok";
+      else return "ERROR";
+    }
+  }
+
+  async syncIntegrationEntities(integration, options) {
     const taskUri = nconf.get("TASK_API_URI");
     const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
 
@@ -190,10 +244,10 @@ class GithubService {
             "task.pepper.SYNC_GITHUB_COMMITS",
             "task.pepper.SYNC_GITHUB_ISSUES"
           ],
-          project_id: integrationData.projectId,
-          user_id: integrationData.userId,
-          repo_endpoint: thirdPartyProject.projectId,
-          github_username: integrationData.integrationSpecificParams.username
+          project_id: options.projectId,
+          user_id: options.userId,
+          repo_endpoint: `${options.owner}/${options.repo}`,
+          github_username: integration.integrationSpecificParams.username
         },
         {
           headers: {
@@ -206,61 +260,6 @@ class GithubService {
       console.error(error.response || error);
       return "ERROR";
     }
-  }
-
-  async getThirdPartyProjects(incomingOptions) {
-    let repos;
-    while (true) {
-      repos = await this.get("USER_REPOS", incomingOptions);
-      incomingOptions.opts = this.getNextPaginationURIFromResponse(
-        repos.response
-      );
-      repos.data = repos.data.concat(repos.data);
-      if (!incomingOptions.opts || !incomingOptions.opts.page) {
-        break;
-      }
-    }
-    return repos;
-  }
-
-  async registerWebhooks(options) {
-    let data, res;
-
-    res = await this.get("REPOS_OWNER_REPO_HOOKS", {
-      repo: options.body.repo,
-      owner: options.body.owner,
-      ...options
-    });
-    data = res.data;
-    const webhooks = data.filter(
-      item =>
-        item.config.url === options.body.webhookURL &&
-        item.events.sort().toString() ===
-          options.body.webhookEvents.sort().toString()
-    );
-    if (webhooks && webhooks.length > 0) return "Ok";
-
-    res = await this.post("REPOS_OWNER_REPO_HOOKS", {
-      repo: options.body.repo,
-      owner: options.body.owner,
-      body: {
-        active: true,
-        events: options.body.webhookEvents,
-        config: {
-          url: options.body.webhookURL,
-          content_type: "json",
-          insecure_ssl: "0"
-        }
-      },
-      apiKey: options.integrationData.authAccessToken,
-      apiKeyPrefix: `token`,
-      opts: {
-        per_page: options.per_page,
-        page: options.page
-      }
-    });
-    if (res.status == 201) return "Ok";
-    return "ERROR";
   }
 
   async get(entity, options) {

@@ -130,13 +130,15 @@
       },
       {
         "input": {
-          "key": "body.projects"
+          "key": "",
+          "parent": "body.integration.thirdPartyProjects"
         },
         "transform": {
-          "type": "ONE-TO-ONE"
+          "type": "FUNCTION",
+          "name": "tansformThirdPartyProjectsToRepoAndOwner"
         },
         "output": {
-          "key": "projects"
+          "parent": "projects"
         }
       },
       {
@@ -181,45 +183,6 @@
         },
         "output": {
           "key": "limit"
-        }
-      },
-      {
-        "input": {
-          "key": "projectId",
-          "parent": "body.integration.thirdPartyProjects"
-        },
-        "transform": {
-          "type": "ONE-TO-ONE"
-        },
-        "output": {
-          "key": "repo",
-          "parent": "repos"
-        }
-      },
-      {
-        "input": {
-          "key": "organizationId",
-          "parent": "body.integration.thirdPartyProjects"
-        },
-        "transform": {
-          "type": "ONE-TO-ONE"
-        },
-        "output": {
-          "key": "owner",
-          "parent": "repos"
-        }
-      },
-      {
-        "input": {
-          "key": "",
-          "parent": "body.integration.thirdPartyProjects"
-        },
-        "transform": {
-          "type": "FUNCTION",
-          "name": "getWebhookURL"
-        },
-        "output": {
-          "parent": "webhookURLs"
         }
       }
     ]
