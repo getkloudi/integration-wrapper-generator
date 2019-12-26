@@ -94,7 +94,6 @@
           ]
         },
         "output": {
-          "key": "value",
           "parent": "metrics"
         }
       }
@@ -102,7 +101,7 @@
   },
   {
     "type": "REQUEST",
-    "entity": "PROJECTS",
+    "entity": "PROJECTS|WEBHOOKS",
     "integration": "GITHUB",
     "method": "GET|POST",
     "map": [
@@ -142,7 +141,7 @@
       },
       {
         "input": {
-          "key": "query.page"
+          "key": "params.page"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -153,7 +152,7 @@
       },
       {
         "input": {
-          "key": "query.per_page"
+          "key": "params.per_page"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -164,7 +163,7 @@
       },
       {
         "input": {
-          "key": "query.page"
+          "key": "params.page"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -175,7 +174,7 @@
       },
       {
         "input": {
-          "key": "query.per_page"
+          "key": "params.per_page"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -212,7 +211,7 @@
       },
       {
         "input": {
-          "key": "body",
+          "key": "",
           "parent": "body.integration.thirdPartyProjects"
         },
         "transform": {
@@ -220,7 +219,7 @@
           "name": "getWebhookURL"
         },
         "output": {
-          "key": "body.webhookURL"
+          "parent": "webhookURLs"
         }
       }
     ]
