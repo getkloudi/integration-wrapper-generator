@@ -1,6 +1,4 @@
-const {
-  exec
-} = require("child_process");
+const { exec } = require("child_process");
 
 const fs = require("fs");
 const functions = require("./src/generator/functions");
@@ -33,9 +31,7 @@ async function executeCommand(argv) {
       `${projectName.charAt(0).toUpperCase()}${projectName
         .slice(1)
         .toLowerCase()}Service.js`,
-      `${projectName.charAt(0).toUpperCase()}${projectName
-          .slice(1)
-          .toLowerCase()}Service.csv`
+      `${projectName.toLowerCase()}.csv`
     );
 
     console.log("Command Execution completed");
@@ -72,15 +68,24 @@ async function parseFilesAndGenerateCodeFile(path, fileName, csvFileName) {
     let tempFunctionWithParams = functions.getFunctionWithParams(fileContents);
     functionWithParams.push(...tempFunctionWithParams);
 
-    functionNamesWithTypeAndApi.push(...functions.getFunctionNamesWithTypeAndApi(fileContents));
+    functionNamesWithTypeAndApi.push(
+      ...functions.getFunctionNamesWithTypeAndApi(fileContents)
+    );
 
     codeBlocks.push(...functions.getCodeBlocks(fileContents));
 
-    codeComments.push(...functions.getCodeComments(fileContents, tempFunctionWithParams));
+    codeComments.push(
+      ...functions.getCodeComments(fileContents, tempFunctionWithParams)
+    );
   }
 
   // Generate CSV File
-  functions.generateCSVFile(csvFileNameWithPath, functionNamesWithTypeAndApi, functionWithParams, codeComments);
+  functions.generateCSVFile(
+    csvFileNameWithPath,
+    functionNamesWithTypeAndApi,
+    functionWithParams,
+    codeComments
+  );
 
   // Generate getter functions and start class code
   functions.startCodeFile(fileNameWithPath, fileName);
@@ -88,15 +93,16 @@ async function parseFilesAndGenerateCodeFile(path, fileName, csvFileName) {
   for (let i = 0; i < functionsTypes.length; i++) {
     let functionType = functionsTypes[i];
     codeBlocks,
-    functionWithParams,
-    codeComments, functionNamesWithTypeAndApi = functions.generateCodeFile(
-      codeBlocks,
       functionWithParams,
       codeComments,
-      fileNameWithPath,
-      functionType,
-      functionNamesWithTypeAndApi
-    );
+      (functionNamesWithTypeAndApi = functions.generateCodeFile(
+        codeBlocks,
+        functionWithParams,
+        codeComments,
+        fileNameWithPath,
+        functionType,
+        functionNamesWithTypeAndApi
+      ));
   }
 
   if (codeBlocks.length && functionWithParams.length) {
@@ -129,7 +135,8 @@ executeCommand(argv);
 function execShellCommand(cmd) {
   return new Promise((resolve, reject) => {
     exec(
-      cmd, {
+      cmd,
+      {
         maxBuffer: 1024 * 5000
       },
       (error, stdout, stderr) => {
