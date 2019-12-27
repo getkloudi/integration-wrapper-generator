@@ -21,7 +21,7 @@ import PullrequestEndpoint from './PullrequestEndpoint';
 /**
  * The PullrequestAllOf model module.
  * @module model/PullrequestAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PullrequestAllOf {
     /**

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The WebhookSubscription model module.
  * @module model/WebhookSubscription
- * @version 1.0.0
+ * @version 1.1.0
  */
 var WebhookSubscription =
 /*#__PURE__*/

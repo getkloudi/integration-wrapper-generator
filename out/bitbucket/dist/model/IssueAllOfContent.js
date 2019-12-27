@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueAllOfContent model module.
  * @module model/IssueAllOfContent
- * @version 1.0.0
+ * @version 1.1.0
  */
 var IssueAllOfContent =
 /*#__PURE__*/

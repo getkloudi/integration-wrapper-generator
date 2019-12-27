@@ -18,7 +18,7 @@ import BaseCommit from './BaseCommit';
 /**
  * The BaseCommitAllOf model module.
  * @module model/BaseCommitAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class BaseCommitAllOf {
     /**

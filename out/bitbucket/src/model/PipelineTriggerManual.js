@@ -17,7 +17,7 @@ import PipelineTrigger from './PipelineTrigger';
 /**
  * The PipelineTriggerManual model module.
  * @module model/PipelineTriggerManual
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineTriggerManual {
     /**

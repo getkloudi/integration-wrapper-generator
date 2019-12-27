@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The PipelineTrigger model module.
  * @module model/PipelineTrigger
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineTrigger {
     /**

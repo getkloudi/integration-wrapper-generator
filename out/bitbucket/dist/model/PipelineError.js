@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineError model module.
  * @module model/PipelineError
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PipelineError =
 /*#__PURE__*/

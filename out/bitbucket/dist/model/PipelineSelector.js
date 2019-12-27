@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineSelector model module.
  * @module model/PipelineSelector
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PipelineSelector =
 /*#__PURE__*/

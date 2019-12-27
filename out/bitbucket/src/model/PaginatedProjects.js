@@ -17,7 +17,7 @@ import Project from './Project';
 /**
  * The PaginatedProjects model module.
  * @module model/PaginatedProjects
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PaginatedProjects {
     /**

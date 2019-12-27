@@ -17,7 +17,7 @@ import BranchrestrictionAllOfLinks from './BranchrestrictionAllOfLinks';
 /**
  * The VersionAllOf model module.
  * @module model/VersionAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VersionAllOf {
     /**

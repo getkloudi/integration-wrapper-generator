@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Commitstatuses service.
 * @module api/CommitstatusesApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var CommitstatusesApi =
 /*#__PURE__*/

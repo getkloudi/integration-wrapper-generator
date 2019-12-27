@@ -18,7 +18,7 @@ import PipelineVariableAllOf from './PipelineVariableAllOf';
 /**
  * The PipelineVariable model module.
  * @module model/PipelineVariable
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineVariable {
     /**

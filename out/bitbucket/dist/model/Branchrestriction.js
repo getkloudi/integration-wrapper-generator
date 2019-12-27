@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Branchrestriction model module.
  * @module model/Branchrestriction
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Branchrestriction =
 /*#__PURE__*/

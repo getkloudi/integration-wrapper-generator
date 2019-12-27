@@ -17,7 +17,7 @@ import WebhookSubscription from './WebhookSubscription';
 /**
  * The PaginatedWebhookSubscriptions model module.
  * @module model/PaginatedWebhookSubscriptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PaginatedWebhookSubscriptions {
     /**

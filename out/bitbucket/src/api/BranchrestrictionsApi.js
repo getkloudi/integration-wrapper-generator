@@ -20,7 +20,7 @@ import PaginatedBranchrestrictions from '../model/PaginatedBranchrestrictions';
 /**
 * Branchrestrictions service.
 * @module api/BranchrestrictionsApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class BranchrestrictionsApi {
 

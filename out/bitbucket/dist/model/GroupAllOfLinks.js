@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GroupAllOfLinks model module.
  * @module model/GroupAllOfLinks
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GroupAllOfLinks =
 /*#__PURE__*/

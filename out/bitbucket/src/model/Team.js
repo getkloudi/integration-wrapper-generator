@@ -18,7 +18,7 @@ import AccountAllOfLinks from './AccountAllOfLinks';
 /**
  * The Team model module.
  * @module model/Team
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Team {
     /**

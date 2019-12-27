@@ -1,0 +1,112 @@
+[
+  {
+    "type": "REQUEST",
+    "entity": "PROJECTS|WEBHOOKS",
+    "integration": "BITBUCKET",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {
+          "key": "body.integration"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "getRefreshedAccessToken"
+        },
+        "output": {
+          "key": "accessToken"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.username"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "username"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.team"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "team"
+        }
+      },
+      {
+        "input": {
+          "key": "",
+          "parent": "body.integration.thirdPartyProjects"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "tansformThirdPartyProjectsToRepoAndOwner"
+        },
+        "output": {
+          "parent": "projects"
+        }
+      },
+      {
+        "input": {
+          "key": "params.size"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.size"
+        }
+      },
+      {
+        "input": {
+          "key": "params.page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.page"
+        }
+      },
+      {
+        "input": {
+          "key": "params.pagelen"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.pagelen"
+        }
+      },
+      {
+        "input": {
+          "key": "params.next"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.next"
+        }
+      },
+      {
+        "input": {
+          "key": "params.previous"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.previous"
+        }
+      }
+    ]
+  }
+]

@@ -21,7 +21,7 @@ import ModelObject from './ModelObject';
 /**
  * The Branchrestriction model module.
  * @module model/Branchrestriction
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Branchrestriction {
     /**

@@ -17,7 +17,7 @@ import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
 /**
  * The TagLinks model module.
  * @module model/TagLinks
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TagLinks {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStateCompletedAllOf model module.
  * @module model/PipelineStateCompletedAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PipelineStateCompletedAllOf =
 /*#__PURE__*/

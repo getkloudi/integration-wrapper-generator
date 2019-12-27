@@ -19,7 +19,7 @@ import Repository from './Repository';
 /**
  * The CommitAllOf model module.
  * @module model/CommitAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CommitAllOf {
     /**

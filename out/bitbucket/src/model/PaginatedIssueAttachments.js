@@ -17,7 +17,7 @@ import IssueAttachment from './IssueAttachment';
 /**
  * The PaginatedIssueAttachments model module.
  * @module model/PaginatedIssueAttachments
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PaginatedIssueAttachments {
     /**

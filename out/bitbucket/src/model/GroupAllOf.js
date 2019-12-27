@@ -18,7 +18,7 @@ import GroupAllOfLinks from './GroupAllOfLinks';
 /**
  * The GroupAllOf model module.
  * @module model/GroupAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GroupAllOf {
     /**

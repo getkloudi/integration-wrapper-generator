@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebhookSubscriptionAllOf model module.
  * @module model/WebhookSubscriptionAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class WebhookSubscriptionAllOf {
     /**

@@ -19,7 +19,7 @@ import ModelObject from './ModelObject';
 /**
  * The Milestone model module.
  * @module model/Milestone
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Milestone {
     /**

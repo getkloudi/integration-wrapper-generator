@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStatePendingAllOf model module.
  * @module model/PipelineStepStatePendingAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PipelineStepStatePendingAllOf =
 /*#__PURE__*/

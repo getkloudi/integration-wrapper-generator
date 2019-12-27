@@ -23,7 +23,7 @@ import PullrequestEndpoint from './PullrequestEndpoint';
 /**
  * The Pullrequest model module.
  * @module model/Pullrequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Pullrequest {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineSelectorAllOf model module.
  * @module model/PipelineSelectorAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineSelectorAllOf {
     /**

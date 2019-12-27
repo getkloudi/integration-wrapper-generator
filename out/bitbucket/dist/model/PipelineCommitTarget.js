@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineCommitTarget model module.
  * @module model/PipelineCommitTarget
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PipelineCommitTarget =
 /*#__PURE__*/

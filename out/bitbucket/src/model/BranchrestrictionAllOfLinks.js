@@ -17,7 +17,7 @@ import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
 /**
  * The BranchrestrictionAllOfLinks model module.
  * @module model/BranchrestrictionAllOfLinks
- * @version 1.0.0
+ * @version 1.1.0
  */
 class BranchrestrictionAllOfLinks {
     /**

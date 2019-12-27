@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedProjects model module.
  * @module model/PaginatedProjects
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PaginatedProjects =
 /*#__PURE__*/

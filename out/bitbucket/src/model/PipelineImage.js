@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineImage model module.
  * @module model/PipelineImage
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineImage {
     /**

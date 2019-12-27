@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SnippetCommentAllOf model module.
  * @module model/SnippetCommentAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SnippetCommentAllOf =
 /*#__PURE__*/

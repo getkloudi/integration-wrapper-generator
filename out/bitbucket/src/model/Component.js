@@ -19,7 +19,7 @@ import ModelObject from './ModelObject';
 /**
  * The Component model module.
  * @module model/Component
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Component {
     /**

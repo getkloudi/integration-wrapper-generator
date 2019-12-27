@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullrequestAllOfLinks model module.
  * @module model/PullrequestAllOfLinks
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PullrequestAllOfLinks =
 /*#__PURE__*/

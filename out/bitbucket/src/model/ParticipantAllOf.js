@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The ParticipantAllOf model module.
  * @module model/ParticipantAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ParticipantAllOf {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueAllOfLinks model module.
  * @module model/IssueAllOfLinks
- * @version 1.0.0
+ * @version 1.1.0
  */
 var IssueAllOfLinks =
 /*#__PURE__*/

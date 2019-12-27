@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineStepStateCompletedSuccessfulAllOf model module.
  * @module model/PipelineStepStateCompletedSuccessfulAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineStepStateCompletedSuccessfulAllOf {
     /**

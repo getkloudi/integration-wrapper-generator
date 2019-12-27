@@ -40,7 +40,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Pipelines service.
 * @module api/PipelinesApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var PipelinesApi =
 /*#__PURE__*/

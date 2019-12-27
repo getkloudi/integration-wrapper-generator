@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueAttachmentAllOf model module.
  * @module model/IssueAttachmentAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 var IssueAttachmentAllOf =
 /*#__PURE__*/

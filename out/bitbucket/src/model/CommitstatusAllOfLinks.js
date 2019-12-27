@@ -17,7 +17,7 @@ import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
 /**
  * The CommitstatusAllOfLinks model module.
  * @module model/CommitstatusAllOfLinks
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CommitstatusAllOfLinks {
     /**

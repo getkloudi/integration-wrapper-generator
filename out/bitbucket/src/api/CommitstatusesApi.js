@@ -20,7 +20,7 @@ import PaginatedCommitstatuses from '../model/PaginatedCommitstatuses';
 /**
 * Commitstatuses service.
 * @module api/CommitstatusesApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class CommitstatusesApi {
 

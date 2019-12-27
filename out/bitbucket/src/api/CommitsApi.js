@@ -20,7 +20,7 @@ import Participant from '../model/Participant';
 /**
 * Commits service.
 * @module api/CommitsApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class CommitsApi {
 

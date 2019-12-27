@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Participant model module.
  * @module model/Participant
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Participant =
 /*#__PURE__*/

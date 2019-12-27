@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchrestrictionAllOfLinks model module.
  * @module model/BranchrestrictionAllOfLinks
- * @version 1.0.0
+ * @version 1.1.0
  */
 var BranchrestrictionAllOfLinks =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineStatePendingAllOf model module.
  * @module model/PipelineStatePendingAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineStatePendingAllOf {
     /**

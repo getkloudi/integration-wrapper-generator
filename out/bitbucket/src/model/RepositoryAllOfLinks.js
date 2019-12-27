@@ -17,7 +17,7 @@ import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
 /**
  * The RepositoryAllOfLinks model module.
  * @module model/RepositoryAllOfLinks
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RepositoryAllOfLinks {
     /**

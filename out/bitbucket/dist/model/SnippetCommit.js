@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SnippetCommit model module.
  * @module model/SnippetCommit
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SnippetCommit =
 /*#__PURE__*/

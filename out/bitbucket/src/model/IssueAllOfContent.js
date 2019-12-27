@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IssueAllOfContent model module.
  * @module model/IssueAllOfContent
- * @version 1.0.0
+ * @version 1.1.0
  */
 class IssueAllOfContent {
     /**

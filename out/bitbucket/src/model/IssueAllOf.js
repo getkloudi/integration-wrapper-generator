@@ -23,7 +23,7 @@ import Version from './Version';
 /**
  * The IssueAllOf model module.
  * @module model/IssueAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class IssueAllOf {
     /**

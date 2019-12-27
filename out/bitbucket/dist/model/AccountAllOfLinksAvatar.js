@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountAllOfLinksAvatar model module.
  * @module model/AccountAllOfLinksAvatar
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AccountAllOfLinksAvatar =
 /*#__PURE__*/

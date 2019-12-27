@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Branchrestrictions service.
 * @module api/BranchrestrictionsApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var BranchrestrictionsApi =
 /*#__PURE__*/

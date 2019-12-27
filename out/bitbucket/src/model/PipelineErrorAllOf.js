@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineErrorAllOf model module.
  * @module model/PipelineErrorAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineErrorAllOf {
     /**

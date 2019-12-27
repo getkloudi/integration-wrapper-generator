@@ -239,7 +239,8 @@ exports.generateCodeFile = function generateCodeFile(
           substring,
           `${splitSubstring.join(
             "\n"
-          )}\n\nincomingOptions.opts = Object.assign(opts, function(){ return incomingOptions.opts;})\n\n`
+          )}\n\nObject.keys(incomingOptions.opts).forEach(key =>incomingOptions.opts[key] === undefined && delete incomingOptions.opts[key]
+          )\nincomingOptions.opts = Object.assign(opts, incomingOptions.opts)\n\n`
         );
       }
 

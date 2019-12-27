@@ -17,7 +17,7 @@ import BranchrestrictionAllOfLinks from './BranchrestrictionAllOfLinks';
 /**
  * The MilestoneAllOf model module.
  * @module model/MilestoneAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class MilestoneAllOf {
     /**

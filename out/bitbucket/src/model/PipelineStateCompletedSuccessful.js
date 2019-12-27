@@ -18,7 +18,7 @@ import PipelineStateCompletedSuccessfulAllOf from './PipelineStateCompletedSucce
 /**
  * The PipelineStateCompletedSuccessful model module.
  * @module model/PipelineStateCompletedSuccessful
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineStateCompletedSuccessful {
     /**

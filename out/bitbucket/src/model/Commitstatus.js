@@ -19,7 +19,7 @@ import ModelObject from './ModelObject';
 /**
  * The Commitstatus model module.
  * @module model/Commitstatus
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Commitstatus {
     /**

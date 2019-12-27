@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineCommand model module.
  * @module model/PipelineCommand
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PipelineCommand =
 /*#__PURE__*/

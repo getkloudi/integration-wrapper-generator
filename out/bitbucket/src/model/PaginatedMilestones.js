@@ -17,7 +17,7 @@ import Milestone from './Milestone';
 /**
  * The PaginatedMilestones model module.
  * @module model/PaginatedMilestones
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PaginatedMilestones {
     /**

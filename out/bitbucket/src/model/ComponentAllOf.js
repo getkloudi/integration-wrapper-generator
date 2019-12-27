@@ -17,7 +17,7 @@ import BranchrestrictionAllOfLinks from './BranchrestrictionAllOfLinks';
 /**
  * The ComponentAllOf model module.
  * @module model/ComponentAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ComponentAllOf {
     /**

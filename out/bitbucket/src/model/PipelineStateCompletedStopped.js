@@ -18,7 +18,7 @@ import PipelineStateCompletedStoppedAllOf from './PipelineStateCompletedStoppedA
 /**
  * The PipelineStateCompletedStopped model module.
  * @module model/PipelineStateCompletedStopped
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineStateCompletedStopped {
     /**

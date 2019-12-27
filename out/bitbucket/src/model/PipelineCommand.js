@@ -17,7 +17,7 @@ import PipelineLogRange from './PipelineLogRange';
 /**
  * The PipelineCommand model module.
  * @module model/PipelineCommand
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineCommand {
     /**

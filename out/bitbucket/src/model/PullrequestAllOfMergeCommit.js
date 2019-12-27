@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PullrequestAllOfMergeCommit model module.
  * @module model/PullrequestAllOfMergeCommit
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PullrequestAllOfMergeCommit {
     /**

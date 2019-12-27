@@ -21,7 +21,7 @@ import Repository from './Repository';
 /**
  * The PipelineAllOf model module.
  * @module model/PipelineAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PipelineAllOf {
     /**

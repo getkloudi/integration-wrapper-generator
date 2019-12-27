@@ -17,7 +17,7 @@ import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
 /**
  * The AccountAllOfLinks model module.
  * @module model/AccountAllOfLinks
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AccountAllOfLinks {
     /**

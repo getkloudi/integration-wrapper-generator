@@ -19,7 +19,7 @@ import TagLinks from './TagLinks';
 /**
  * The Tag model module.
  * @module model/Tag
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Tag {
     /**

@@ -38,7 +38,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * IssueTracker service.
 * @module api/IssueTrackerApi
-* @version 1.0.0
+* @version 1.1.0
 */
 var IssueTrackerApi =
 /*#__PURE__*/

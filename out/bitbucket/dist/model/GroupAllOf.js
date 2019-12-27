@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GroupAllOf model module.
  * @module model/GroupAllOf
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GroupAllOf =
 /*#__PURE__*/
