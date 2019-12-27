@@ -3,20 +3,44 @@ const StringHelper = require("../helper/StringHelper");
 const regex = require("./regex");
 
 //Regular Expressions
-exports.getFunctionNames = function getFunctionNames(contents) {
-  let functionNames = [];
+exports.getFunctionNamesWithTypeAndApi = function getFunctionNames(contents) {
+  let functionNamesWithTypeAndApi = [];
   let v;
   while ((v = regex.functionNamesExpRegex.exec(contents)) !== null) {
+    let functionNameWithTypeAndApi = {};
     if (!v[0]) continue;
     let functionExp = v[0];
     let w;
-    while ((w = regex.functionNamesRegex.exec(functionExp)) !== null) {
+    while ((w = regex.functionNamesBigRegex.exec(functionExp)) !== null) {
       if (!w[0]) continue;
-      functionNames.push(w[0]);
+      let innerFunctionExp = w[0];
+      let x;
+      while ((x = regex.functionNamesRegex.exec(innerFunctionExp)) !== null) {
+        if (!x[0]) continue;
+        functionNameWithTypeAndApi['functionName'] = x[0];
+      }
     }
+
+    // Get the function type
+    let functionType = '';
+    while ((w = regex.functionTypeRegex.exec(functionExp)) !== null) {
+      if (!w[0]) continue;
+      if (w[0].split('**').length > 1) {
+        functionType = w[0].split('**')[1];
+      }
+    }
+
+    functionNameWithTypeAndApi['functionType'] = functionType;
+    // get the function API
+    let apiIndex = functionExp.indexOf(`${functionType}** `);
+
+    let api = functionExp.substring(apiIndex, functionExp.length - 1).split(' ')[1];
+    functionNameWithTypeAndApi['functionApi'] = api;
+
+    functionNamesWithTypeAndApi.push(functionNameWithTypeAndApi);
   }
 
-  return functionNames;
+  return functionNamesWithTypeAndApi;
 };
 
 exports.getFunctionWithParams = function getFunctionWithParams(contents) {
@@ -98,7 +122,7 @@ exports.getCodeBlocks = function getCodeBlocks(contents) {
   return codeBlocks;
 };
 
-exports.getCodeComments = function(contents) {
+exports.getCodeComments = function (contents) {
   let codeComments = [];
 
   let v;
@@ -126,20 +150,20 @@ exports.generateCodeFile = function generateCodeFile(
   functionWithParams,
   codeComments,
   fileName,
-  functionType
+  functionType,
+  functionNamesWithTypeAndApi
 ) {
   // Apend the switch case to the top of the file
   fs.appendFileSync(
     fileName,
-    createSwitchfunction(functionWithParams, functionType, codeComments)
+    createSwitchfunction(functionWithParams, functionType, codeComments, functionNamesWithTypeAndApi)
   );
 
   let positionsToRemove = [];
   // Create a new file
   for (let i = 0; i < codeBlocks.length; i++) {
     if (
-      functionType !== "unknownHTTPMethod" &&
-      !functionWithParams[i].functionName.endsWith(functionType)
+      functionType.toUpperCase() !== functionNamesWithTypeAndApi[i]['functionType']
     ) {
       continue;
     } else {
@@ -263,12 +287,13 @@ exports.generateCodeFile = function generateCodeFile(
     codeBlocks.splice(positionsToRemove[i], 1);
     functionWithParams.splice(positionsToRemove[i], 1);
     codeComments.splice(positionsToRemove[i], 1);
+    functionNamesWithTypeAndApi.splice(positionsToRemove[i], 1);
   }
 
-  return codeBlocks, functionWithParams, codeComments;
+  return codeBlocks, functionWithParams, codeComments, functionNamesWithTypeAndApi;
 };
 
-exports.startCodeFile = function(filePath, fileName) {
+exports.startCodeFile = function (filePath, fileName) {
   let fileNameWithoutExtension = fileName.split(".")[0];
 
   // Generate fileContent
@@ -387,7 +412,7 @@ exports.startCodeFile = function(filePath, fileName) {
   fs.appendFileSync(filePath, fileContent);
 };
 
-exports.endCodeFile = function(filePath, fileName) {
+exports.endCodeFile = function (filePath, fileName) {
   let fileNameWithoutExtension = fileName.split(".")[0];
 
   let fileContent = `
@@ -396,15 +421,14 @@ exports.endCodeFile = function(filePath, fileName) {
   fs.appendFileSync(filePath, fileContent);
 };
 
-function createSwitchfunction(functionWithParams, functionType, codeComments) {
+function createSwitchfunction(functionWithParams, functionType, codeComments, functionNamesWithTypeAndApi) {
   // Return the switch function to be created;
   let switchCode = "";
   for (let i = 0; i < functionWithParams.length; i++) {
     let currentFunction = functionWithParams[i];
 
     if (
-      functionType !== "unknownHTTPMethod" &&
-      !currentFunction.functionName.endsWith(functionType)
+      functionType.toUpperCase() !== functionNamesWithTypeAndApi[i]['functionType']
     ) {
       continue;
     }
@@ -462,4 +486,15 @@ function createSwitchfunction(functionWithParams, functionType, codeComments) {
       }`;
 
   return code;
+}
+
+exports.generateCSVFile = function (fileName, functionNamesWithTypeAndApi, functionWithParams, codeComments) {
+  let content = 'api,http-method,description,functionName,functionParameters\n';
+  for (let i = 0; i < functionNamesWithTypeAndApi.length; i++) {
+    content = `${content}${functionNamesWithTypeAndApi[i]['functionApi']},${functionNamesWithTypeAndApi[i]['functionType']},${codeComments[i]},${functionNamesWithTypeAndApi[i]['functionName']},${functionWithParams[i]['functionParams'].join(' ')}\n`
+  }
+  fs.appendFileSync(
+    fileName,
+    content
+  );
 }

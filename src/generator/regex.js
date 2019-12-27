@@ -1,7 +1,11 @@
 // To get these type of functions from the file [**repositoriesUsernameRepoSlugCommitNodeApproveDelete**]
-exports.functionNamesExpRegex = /\[\*\*[a-z][a-zA-Z]*\*\*]/g
+exports.functionNamesExpRegex = /\[\*\*[a-z][a-zA-Z_0-9]*\*\*].*\n/g
+
+exports.functionNamesBigRegex = /\[\*\*[a-z][a-zA-Z_0-9]*\*\*]/g
 // To get the function name from the above retrieved string
-exports.functionNamesRegex = /[a-zA-Z]+/g
+exports.functionNamesRegex = /[a-zA-Z_0-9]+/g
+
+exports.functionTypeRegex = /\| \*\*.*\*\*/g
 
 // functions with params regex
 // > repositoriesUsernameRepoSlugCommitNodeApproveDelete(username, repoSlug, node)
