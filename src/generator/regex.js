@@ -11,7 +11,11 @@ exports.functionTypeRegex = /\| \*\*.*\*\*/g
 // > repositoriesUsernameRepoSlugCommitNodeApproveDelete(username, repoSlug, node)
 
 // function comments
-exports.functionCommentsRegex = /\>.*\([a-z, A-Z_0-9]*\)\n*.*\n*###/g
+// exports.functionCommentsRegex = /\>.*\([a-z, A-Z_0-9]*\)\n*.*\n*###/g
+// exports.functionCommentsRegex = />[a-zA-Z0-9 ]*\([a-zA-Z0-9_ ,]*\)*[a-zA-Z0-9_ ,\n\(\)]*###/g
+exports.functionCommentsRegex = /> .*\(.*\)*/g
+
+// >[\{\}\:\[\]a-zA-Z0-9 ]*\([a-zA-Z0-9_ ,]*\)
 // Get function naem and parameter from the above string
 exports.functionWithParamsRegex = /\>.*\([a-z, A-Z_0-9]*\)\n/g
 // Get function name from the above retrieved string

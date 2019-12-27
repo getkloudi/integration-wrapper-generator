@@ -69,13 +69,14 @@ async function parseFilesAndGenerateCodeFile(path, fileName, csvFileName) {
 
     let fileContents = fs.readFileSync(file, "utf8");
 
-    functionWithParams.push(...functions.getFunctionWithParams(fileContents));
+    let tempFunctionWithParams = functions.getFunctionWithParams(fileContents);
+    functionWithParams.push(...tempFunctionWithParams);
 
     functionNamesWithTypeAndApi.push(...functions.getFunctionNamesWithTypeAndApi(fileContents));
 
     codeBlocks.push(...functions.getCodeBlocks(fileContents));
 
-    codeComments.push(...functions.getCodeComments(fileContents));
+    codeComments.push(...functions.getCodeComments(fileContents, tempFunctionWithParams));
   }
 
   // Generate CSV File
