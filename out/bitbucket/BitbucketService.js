@@ -253,7 +253,7 @@ class BitbucketService {
     while (true) {
       res = await this.get("REPOSITORIES_WORKSPACE", {
         ...incomingOptions,
-        workspace: username
+        workspace: incomingOptions.username
       });
       incomingOptions.opts = this.getNextPaginationURIFromResponse(
         res.response
@@ -335,7 +335,10 @@ class BitbucketService {
           ],
           project_id: incomingOptions.projectId,
           user_id: incomingOptions.userId,
-          repo_endpoint: `${options.owner}/${options.repo}`
+          third_party_project_id: incomingOptions.repoSlug,
+          third_party_organization_id: incomingOptions.workspace,
+          bitbucket_username: incomingOptions.username,
+          repo_endpoint: `${incomingOptions.workspace}/${incomingOptions.repoSlug}`
         },
         {
           headers: {
@@ -345,7 +348,7 @@ class BitbucketService {
       );
       return "Ok";
     } catch (error) {
-      console.error(error.response);
+      console.error(error.response || error);
       return "ERROR";
     }
   }
