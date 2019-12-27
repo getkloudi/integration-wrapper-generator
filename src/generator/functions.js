@@ -122,23 +122,27 @@ exports.getCodeBlocks = function getCodeBlocks(contents) {
   return codeBlocks;
 };
 
-exports.getCodeComments = function (contents) {
+exports.getCodeComments = function (contents, functionWithParams) {
   let codeComments = [];
 
   let v;
 
+  let i = 0;
+
   while ((v = regex.functionCommentsRegex.exec(contents)) !== null) {
     if (!v[0]) continue;
-    // Split the string with \n
-    let splitArray = v[0].split("\n");
-    let comment = "";
-    if (splitArray.length > 1) {
-      for (let i = 1; i < splitArray.length - 1; i++) {
-        if (splitArray[i].trim()) {
-          comment += splitArray[i];
-        }
-      }
+    if (v[0].indexOf(functionWithParams[i].functionName) === -1) {
+      continue;
     }
+    i++;
+    let startIndex = contents.indexOf(v[0]);
+    let comment = contents.substring(startIndex, contents.length - 1);
+
+    startIndex = comment.indexOf('\n')
+    let endIndex = comment.indexOf('### ');
+
+    comment = comment.substring(startIndex + 1, endIndex);
+
     codeComments.push(comment);
   }
 
@@ -492,7 +496,7 @@ function createSwitchfunction(functionWithParams, functionType, codeComments, fu
 exports.generateCSVFile = function (fileName, functionNamesWithTypeAndApi, functionWithParams, codeComments) {
   let content = 'api,http-method,description,functionName,functionParameters\n';
   for (let i = 0; i < functionNamesWithTypeAndApi.length; i++) {
-    content = `${content}${functionNamesWithTypeAndApi[i]['functionApi']},${functionNamesWithTypeAndApi[i]['functionType']},${codeComments[i]},${functionNamesWithTypeAndApi[i]['functionName']},${functionWithParams[i]['functionParams'].join(' ')}\n`
+    content = `${content}${functionNamesWithTypeAndApi[i]['functionApi']},${functionNamesWithTypeAndApi[i]['functionType']},"${codeComments[i]}",${functionNamesWithTypeAndApi[i]['functionName']},${functionWithParams[i]['functionParams'].join(' ')}\n`
   }
   fs.appendFileSync(
     fileName,
