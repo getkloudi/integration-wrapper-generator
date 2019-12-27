@@ -248,25 +248,25 @@ exports.generateCodeFile = function generateCodeFile(
         functionWithParams[i].functionParamToReplace,
         functionWithParams[i].newFunctionParamsToReplace
       );
-
-      // This can be added on need basis
-      codeBlock = codeBlock.replace(
-        `console.error(error);`,
-        `cb(error, null, response)`
-      );
-
-      codeBlock = codeBlock.replace(
-        `console.log('API called successfully.');`,
-        // `return;`
-        "cb(null, '', response)"
-      );
-
-      codeBlock = codeBlock.replace(
-        `console.log('API called successfully. Returned data: ' + data);`,
-        // "return data;"
-        "cb(null, data, response)"
-      );
     }
+
+    // This can be added on need basis
+    codeBlock = codeBlock.replace(
+      `console.error(error);`,
+      `cb(error, null, response)`
+    );
+
+    codeBlock = codeBlock.replace(
+      `console.log('API called successfully.');`,
+      // `return;`
+      "cb(null, '', response)"
+    );
+
+    codeBlock = codeBlock.replace(
+      `console.log('API called successfully. Returned data: ' + data);`,
+      // "return data;"
+      "cb(null, data, response)"
+    );
 
     codeBlocks[i] = codeBlock;
 
