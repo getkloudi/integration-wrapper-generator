@@ -91,7 +91,7 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
     functions.generateCodeFile(
       codeBlocks,
       functionWithParams,
-      codeBlocks,
+      codeComments,
       fileNameWithPath,
       "unknownHTTPMethod"
     );
