@@ -359,7 +359,7 @@ exports.startCodeFile = function (filePath, fileName) {
       return;
     }
 
-    get webhooksToTaskMap() {
+    get webhookToTasksMap() {
       return;
     }
 
@@ -398,7 +398,9 @@ exports.startCodeFile = function (filePath, fileName) {
           {
             pepper_task: [],
             project_id: incomingOptions.projectId,
-            user_id: incomingOptions.userId
+            user_id: incomingOptions.userId,
+            third_party_project_id: ,
+            third_party_organization_id: ,
           },
           {
             headers: {
@@ -408,7 +410,7 @@ exports.startCodeFile = function (filePath, fileName) {
         );
         return "Ok";
       } catch (error) {
-        console.error(error.response);
+        console.error(error.response || error);
         return "ERROR";
       }
     }
