@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VersionAllOf model module.
  * @module model/VersionAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var VersionAllOf =
 /*#__PURE__*/

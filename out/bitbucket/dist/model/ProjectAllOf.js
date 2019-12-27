@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ProjectAllOf model module.
  * @module model/ProjectAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var ProjectAllOf =
 /*#__PURE__*/

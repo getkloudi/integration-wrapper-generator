@@ -30,7 +30,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Commit model module.
  * @module model/Commit
- * @version 1.1.0
+ * @version 1.1.2
  */
 var Commit =
 /*#__PURE__*/

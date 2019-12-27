@@ -17,7 +17,7 @@ import Snippet from './Snippet';
 /**
  * The PaginatedSnippets model module.
  * @module model/PaginatedSnippets
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedSnippets {
     /**

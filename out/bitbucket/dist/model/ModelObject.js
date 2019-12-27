@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModelObject model module.
  * @module model/ModelObject
- * @version 1.1.0
+ * @version 1.1.2
  */
 var ModelObject =
 /*#__PURE__*/

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineTrigger model module.
  * @module model/PipelineTrigger
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineTrigger =
 /*#__PURE__*/

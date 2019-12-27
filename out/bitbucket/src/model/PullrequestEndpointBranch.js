@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PullrequestEndpointBranch model module.
  * @module model/PullrequestEndpointBranch
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PullrequestEndpointBranch {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeploymentStateUndeployedAllOf model module.
  * @module model/DeploymentStateUndeployedAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class DeploymentStateUndeployedAllOf {
     /**

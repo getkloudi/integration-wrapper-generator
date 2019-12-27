@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchContentMatch model module.
  * @module model/SearchContentMatch
- * @version 1.1.0
+ * @version 1.1.2
  */
 var SearchContentMatch =
 /*#__PURE__*/

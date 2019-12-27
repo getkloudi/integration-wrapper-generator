@@ -18,7 +18,7 @@ import User from './User';
 /**
  * The TeamPermission model module.
  * @module model/TeamPermission
- * @version 1.1.0
+ * @version 1.1.2
  */
 class TeamPermission {
     /**

@@ -18,7 +18,7 @@ import Snippet from './Snippet';
 /**
  * The SnippetCommentAllOf model module.
  * @module model/SnippetCommentAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class SnippetCommentAllOf {
     /**

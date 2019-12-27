@@ -20,7 +20,7 @@ import Team from './Team';
 /**
  * The Project model module.
  * @module model/Project
- * @version 1.1.0
+ * @version 1.1.2
  */
 class Project {
     /**

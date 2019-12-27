@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Diffstat model module.
  * @module model/Diffstat
- * @version 1.1.0
+ * @version 1.1.2
  */
 var Diffstat =
 /*#__PURE__*/

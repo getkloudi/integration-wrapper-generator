@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentStateCompletedStatusFailed model module.
  * @module model/DeploymentStateCompletedStatusFailed
- * @version 1.1.0
+ * @version 1.1.2
  */
 var DeploymentStateCompletedStatusFailed =
 /*#__PURE__*/

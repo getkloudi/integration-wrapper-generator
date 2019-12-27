@@ -17,7 +17,7 @@ import Commit from './Commit';
 /**
  * The DeploymentReleaseAllOf model module.
  * @module model/DeploymentReleaseAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class DeploymentReleaseAllOf {
     /**

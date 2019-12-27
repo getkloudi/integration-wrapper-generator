@@ -19,7 +19,7 @@ import SearchSegment from './SearchSegment';
 /**
  * The SearchCodeSearchResult model module.
  * @module model/SearchCodeSearchResult
- * @version 1.1.0
+ * @version 1.1.2
  */
 class SearchCodeSearchResult {
     /**

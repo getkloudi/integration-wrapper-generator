@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueChangeChangesAssignee model module.
  * @module model/IssueChangeChangesAssignee
- * @version 1.1.0
+ * @version 1.1.2
  */
 var IssueChangeChangesAssignee =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommentAllOfInline model module.
  * @module model/CommentAllOfInline
- * @version 1.1.0
+ * @version 1.1.2
  */
 var CommentAllOfInline =
 /*#__PURE__*/

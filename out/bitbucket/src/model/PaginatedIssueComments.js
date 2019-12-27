@@ -17,7 +17,7 @@ import IssueComment from './IssueComment';
 /**
  * The PaginatedIssueComments model module.
  * @module model/PaginatedIssueComments
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedIssueComments {
     /**

@@ -17,7 +17,7 @@ import IssueChange from './IssueChange';
 /**
  * The PaginatedLogEntries model module.
  * @module model/PaginatedLogEntries
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedLogEntries {
     /**

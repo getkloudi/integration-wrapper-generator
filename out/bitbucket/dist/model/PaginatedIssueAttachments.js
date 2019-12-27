@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedIssueAttachments model module.
  * @module model/PaginatedIssueAttachments
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PaginatedIssueAttachments =
 /*#__PURE__*/

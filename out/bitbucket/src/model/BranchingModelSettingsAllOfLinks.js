@@ -17,7 +17,7 @@ import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 /**
  * The BranchingModelSettingsAllOfLinks model module.
  * @module model/BranchingModelSettingsAllOfLinks
- * @version 1.1.0
+ * @version 1.1.2
  */
 class BranchingModelSettingsAllOfLinks {
     /**

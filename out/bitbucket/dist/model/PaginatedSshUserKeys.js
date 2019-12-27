@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedSshUserKeys model module.
  * @module model/PaginatedSshUserKeys
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PaginatedSshUserKeys =
 /*#__PURE__*/

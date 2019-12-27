@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchingModelAllOfBranchTypes model module.
  * @module model/BranchingModelAllOfBranchTypes
- * @version 1.1.0
+ * @version 1.1.2
  */
 var BranchingModelAllOfBranchTypes =
 /*#__PURE__*/

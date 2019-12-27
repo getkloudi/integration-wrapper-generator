@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommitCommentAllOf model module.
  * @module model/CommitCommentAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var CommitCommentAllOf =
 /*#__PURE__*/

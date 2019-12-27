@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelinesConfigAllOf model module.
  * @module model/PipelinesConfigAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelinesConfigAllOf =
 /*#__PURE__*/

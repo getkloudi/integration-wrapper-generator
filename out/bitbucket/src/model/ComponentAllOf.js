@@ -17,7 +17,7 @@ import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks
 /**
  * The ComponentAllOf model module.
  * @module model/ComponentAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class ComponentAllOf {
     /**

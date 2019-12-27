@@ -17,7 +17,7 @@ import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 /**
  * The SubjectTypesRepository model module.
  * @module model/SubjectTypesRepository
- * @version 1.1.0
+ * @version 1.1.2
  */
 class SubjectTypesRepository {
     /**

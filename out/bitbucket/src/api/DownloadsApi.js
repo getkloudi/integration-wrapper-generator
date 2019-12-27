@@ -18,7 +18,7 @@ import Error from '../model/Error';
 /**
 * Downloads service.
 * @module api/DownloadsApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class DownloadsApi {
 

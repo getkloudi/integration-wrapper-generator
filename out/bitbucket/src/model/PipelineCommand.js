@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineCommand model module.
  * @module model/PipelineCommand
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelineCommand {
     /**

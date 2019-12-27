@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineSshKeyPairAllOf model module.
  * @module model/PipelineSshKeyPairAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineSshKeyPairAllOf =
 /*#__PURE__*/

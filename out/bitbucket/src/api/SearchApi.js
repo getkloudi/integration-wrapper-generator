@@ -19,7 +19,7 @@ import SearchResultPage from '../model/SearchResultPage';
 /**
 * Search service.
 * @module api/SearchApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class SearchApi {
 

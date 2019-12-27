@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStateCompletedSuccessfulAllOf model module.
  * @module model/PipelineStepStateCompletedSuccessfulAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineStepStateCompletedSuccessfulAllOf =
 /*#__PURE__*/

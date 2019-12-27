@@ -19,7 +19,7 @@ import PullrequestAllOfRenderedTitle from './PullrequestAllOfRenderedTitle';
 /**
  * The BaseCommitAllOf model module.
  * @module model/BaseCommitAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class BaseCommitAllOf {
     /**

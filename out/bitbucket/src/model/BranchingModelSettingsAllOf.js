@@ -20,7 +20,7 @@ import BranchingModelSettingsAllOfProduction from './BranchingModelSettingsAllOf
 /**
  * The BranchingModelSettingsAllOf model module.
  * @module model/BranchingModelSettingsAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class BranchingModelSettingsAllOf {
     /**

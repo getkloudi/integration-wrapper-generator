@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * BranchingModel service.
 * @module api/BranchingModelApi
-* @version 1.1.0
+* @version 1.1.2
 */
 var BranchingModelApi =
 /*#__PURE__*/

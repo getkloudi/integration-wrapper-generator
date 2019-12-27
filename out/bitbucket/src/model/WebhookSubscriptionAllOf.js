@@ -17,7 +17,7 @@ import Account from './Account';
 /**
  * The WebhookSubscriptionAllOf model module.
  * @module model/WebhookSubscriptionAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class WebhookSubscriptionAllOf {
     /**

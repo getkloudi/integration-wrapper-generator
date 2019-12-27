@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SearchSegment model module.
  * @module model/SearchSegment
- * @version 1.1.0
+ * @version 1.1.2
  */
 class SearchSegment {
     /**

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineBuildNumber model module.
  * @module model/PipelineBuildNumber
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineBuildNumber =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentStateUndeployedAllOf model module.
  * @module model/DeploymentStateUndeployedAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var DeploymentStateUndeployedAllOf =
 /*#__PURE__*/

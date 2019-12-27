@@ -20,7 +20,7 @@ import PipelineTarget from './PipelineTarget';
 /**
  * The PipelineRefTarget model module.
  * @module model/PipelineRefTarget
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelineRefTarget {
     /**

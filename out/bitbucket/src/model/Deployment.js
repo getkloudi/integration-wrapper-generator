@@ -21,7 +21,7 @@ import ModelObject from './ModelObject';
 /**
  * The Deployment model module.
  * @module model/Deployment
- * @version 1.1.0
+ * @version 1.1.2
  */
 class Deployment {
     /**

@@ -18,7 +18,7 @@ import ModelObject from './ModelObject';
 /**
  * The DeploymentEnvironment model module.
  * @module model/DeploymentEnvironment
- * @version 1.1.0
+ * @version 1.1.2
  */
 class DeploymentEnvironment {
     /**

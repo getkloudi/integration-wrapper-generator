@@ -18,7 +18,7 @@ import RefLinks from './RefLinks';
 /**
  * The Ref model module.
  * @module model/Ref
- * @version 1.1.0
+ * @version 1.1.2
  */
 class Ref {
     /**

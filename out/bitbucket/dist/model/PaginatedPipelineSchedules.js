@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedPipelineSchedules model module.
  * @module model/PaginatedPipelineSchedules
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PaginatedPipelineSchedules =
 /*#__PURE__*/

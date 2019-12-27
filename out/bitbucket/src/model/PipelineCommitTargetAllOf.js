@@ -18,7 +18,7 @@ import PipelineSelector from './PipelineSelector';
 /**
  * The PipelineCommitTargetAllOf model module.
  * @module model/PipelineCommitTargetAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelineCommitTargetAllOf {
     /**

@@ -23,7 +23,7 @@ import Repository from './Repository';
 /**
  * The Pipeline model module.
  * @module model/Pipeline
- * @version 1.1.0
+ * @version 1.1.2
  */
 class Pipeline {
     /**

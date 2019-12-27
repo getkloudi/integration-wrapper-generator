@@ -19,7 +19,7 @@ import DeploymentStateInProgressAllOf from './DeploymentStateInProgressAllOf';
 /**
  * The DeploymentStateInProgress model module.
  * @module model/DeploymentStateInProgress
- * @version 1.1.0
+ * @version 1.1.2
  */
 class DeploymentStateInProgress {
     /**

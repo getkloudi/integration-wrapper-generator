@@ -17,7 +17,7 @@ import Pipeline from './Pipeline';
 /**
  * The PaginatedPipelines model module.
  * @module model/PaginatedPipelines
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedPipelines {
     /**

@@ -20,7 +20,7 @@ import SshAccountKey from '../model/SshAccountKey';
 /**
 * Ssh service.
 * @module api/SshApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class SshApi {
 

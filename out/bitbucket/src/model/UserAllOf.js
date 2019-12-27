@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserAllOf model module.
  * @module model/UserAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class UserAllOf {
     /**

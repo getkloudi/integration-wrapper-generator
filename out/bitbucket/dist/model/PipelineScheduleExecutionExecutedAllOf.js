@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineScheduleExecutionExecutedAllOf model module.
  * @module model/PipelineScheduleExecutionExecutedAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineScheduleExecutionExecutedAllOf =
 /*#__PURE__*/

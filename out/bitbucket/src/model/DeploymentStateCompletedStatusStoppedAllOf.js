@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeploymentStateCompletedStatusStoppedAllOf model module.
  * @module model/DeploymentStateCompletedStatusStoppedAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class DeploymentStateCompletedStatusStoppedAllOf {
     /**

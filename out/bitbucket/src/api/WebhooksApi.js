@@ -23,7 +23,7 @@ import WebhookSubscription from '../model/WebhookSubscription';
 /**
 * Webhooks service.
 * @module api/WebhooksApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class WebhooksApi {
 

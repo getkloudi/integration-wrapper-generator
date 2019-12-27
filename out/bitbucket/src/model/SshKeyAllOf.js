@@ -17,7 +17,7 @@ import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks
 /**
  * The SshKeyAllOf model module.
  * @module model/SshKeyAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class SshKeyAllOf {
     /**

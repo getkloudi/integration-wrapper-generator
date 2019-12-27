@@ -17,7 +17,7 @@ import PipelineStep from './PipelineStep';
 /**
  * The PaginatedPipelineSteps model module.
  * @module model/PaginatedPipelineSteps
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedPipelineSteps {
     /**

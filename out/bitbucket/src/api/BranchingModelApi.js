@@ -20,7 +20,7 @@ import Error from '../model/Error';
 /**
 * BranchingModel service.
 * @module api/BranchingModelApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class BranchingModelApi {
 

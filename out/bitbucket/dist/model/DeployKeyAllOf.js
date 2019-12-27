@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeployKeyAllOf model module.
  * @module model/DeployKeyAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var DeployKeyAllOf =
 /*#__PURE__*/

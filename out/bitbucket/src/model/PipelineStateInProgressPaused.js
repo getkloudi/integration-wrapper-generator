@@ -18,7 +18,7 @@ import PipelineStateInProgressStage from './PipelineStateInProgressStage';
 /**
  * The PipelineStateInProgressPaused model module.
  * @module model/PipelineStateInProgressPaused
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelineStateInProgressPaused {
     /**

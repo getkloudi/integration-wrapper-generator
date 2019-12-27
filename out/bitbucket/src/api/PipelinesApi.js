@@ -34,7 +34,7 @@ import PipelinesConfig from '../model/PipelinesConfig';
 /**
 * Pipelines service.
 * @module api/PipelinesApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class PipelinesApi {
 

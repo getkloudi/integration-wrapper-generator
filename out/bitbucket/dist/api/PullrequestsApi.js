@@ -34,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Pullrequests service.
 * @module api/PullrequestsApi
-* @version 1.1.0
+* @version 1.1.2
 */
 var PullrequestsApi =
 /*#__PURE__*/

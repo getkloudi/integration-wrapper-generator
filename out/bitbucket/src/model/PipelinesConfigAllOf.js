@@ -17,7 +17,7 @@ import Repository from './Repository';
 /**
  * The PipelinesConfigAllOf model module.
  * @module model/PipelinesConfigAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelinesConfigAllOf {
     /**

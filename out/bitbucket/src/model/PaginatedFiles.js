@@ -17,7 +17,7 @@ import CommitFile from './CommitFile';
 /**
  * The PaginatedFiles model module.
  * @module model/PaginatedFiles
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedFiles {
     /**

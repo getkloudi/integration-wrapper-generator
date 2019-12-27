@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountAllOfLinks model module.
  * @module model/AccountAllOfLinks
- * @version 1.1.0
+ * @version 1.1.2
  */
 var AccountAllOfLinks =
 /*#__PURE__*/

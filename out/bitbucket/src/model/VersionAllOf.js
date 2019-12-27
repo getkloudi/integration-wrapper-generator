@@ -17,7 +17,7 @@ import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks
 /**
  * The VersionAllOf model module.
  * @module model/VersionAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class VersionAllOf {
     /**

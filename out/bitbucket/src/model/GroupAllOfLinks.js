@@ -17,7 +17,7 @@ import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 /**
  * The GroupAllOfLinks model module.
  * @module model/GroupAllOfLinks
- * @version 1.1.0
+ * @version 1.1.2
  */
 class GroupAllOfLinks {
     /**

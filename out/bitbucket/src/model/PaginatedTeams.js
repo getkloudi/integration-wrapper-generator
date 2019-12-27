@@ -17,7 +17,7 @@ import Team from './Team';
 /**
  * The PaginatedTeams model module.
  * @module model/PaginatedTeams
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedTeams {
     /**

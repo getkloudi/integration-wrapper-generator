@@ -17,7 +17,7 @@ import SearchLine from './SearchLine';
 /**
  * The SearchContentMatch model module.
  * @module model/SearchContentMatch
- * @version 1.1.0
+ * @version 1.1.2
  */
 class SearchContentMatch {
     /**

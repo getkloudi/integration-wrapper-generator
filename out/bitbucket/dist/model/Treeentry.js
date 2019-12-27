@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Treeentry model module.
  * @module model/Treeentry
- * @version 1.1.0
+ * @version 1.1.2
  */
 var Treeentry =
 /*#__PURE__*/

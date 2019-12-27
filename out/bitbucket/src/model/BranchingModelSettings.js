@@ -22,7 +22,7 @@ import ModelObject from './ModelObject';
 /**
  * The BranchingModelSettings model module.
  * @module model/BranchingModelSettings
- * @version 1.1.0
+ * @version 1.1.2
  */
 class BranchingModelSettings {
     /**

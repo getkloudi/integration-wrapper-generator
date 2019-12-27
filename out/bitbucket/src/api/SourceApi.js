@@ -20,7 +20,7 @@ import PaginatedTreeentries from '../model/PaginatedTreeentries';
 /**
 * Source service.
 * @module api/SourceApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class SourceApi {
 

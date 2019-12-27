@@ -17,7 +17,7 @@ import DeployKey from './DeployKey';
 /**
  * The PaginatedDeployKeys model module.
  * @module model/PaginatedDeployKeys
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedDeployKeys {
     /**

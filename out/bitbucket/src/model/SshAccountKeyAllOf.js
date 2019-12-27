@@ -17,7 +17,7 @@ import Account from './Account';
 /**
  * The SshAccountKeyAllOf model module.
  * @module model/SshAccountKeyAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class SshAccountKeyAllOf {
     /**

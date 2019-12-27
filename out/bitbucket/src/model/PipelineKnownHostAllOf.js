@@ -17,7 +17,7 @@ import PipelineSshPublicKey from './PipelineSshPublicKey';
 /**
  * The PipelineKnownHostAllOf model module.
  * @module model/PipelineKnownHostAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelineKnownHostAllOf {
     /**

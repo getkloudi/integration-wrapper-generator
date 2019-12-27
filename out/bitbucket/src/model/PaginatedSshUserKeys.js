@@ -17,7 +17,7 @@ import SshAccountKey from './SshAccountKey';
 /**
  * The PaginatedSshUserKeys model module.
  * @module model/PaginatedSshUserKeys
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedSshUserKeys {
     /**

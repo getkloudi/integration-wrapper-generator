@@ -19,7 +19,7 @@ import WebhookSubscriptionAllOf from './WebhookSubscriptionAllOf';
 /**
  * The WebhookSubscription model module.
  * @module model/WebhookSubscription
- * @version 1.1.0
+ * @version 1.1.2
  */
 class WebhookSubscription {
     /**

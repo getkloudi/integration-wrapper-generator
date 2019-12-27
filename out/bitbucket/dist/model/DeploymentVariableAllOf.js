@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentVariableAllOf model module.
  * @module model/DeploymentVariableAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var DeploymentVariableAllOf =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import Commit from './Commit';
 /**
  * The Treeentry model module.
  * @module model/Treeentry
- * @version 1.1.0
+ * @version 1.1.2
  */
 class Treeentry {
     /**

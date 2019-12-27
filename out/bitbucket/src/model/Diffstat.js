@@ -17,7 +17,7 @@ import CommitFile from './CommitFile';
 /**
  * The Diffstat model module.
  * @module model/Diffstat
- * @version 1.1.0
+ * @version 1.1.2
  */
 class Diffstat {
     /**

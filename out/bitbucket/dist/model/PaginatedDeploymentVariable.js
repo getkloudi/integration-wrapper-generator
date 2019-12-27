@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedDeploymentVariable model module.
  * @module model/PaginatedDeploymentVariable
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PaginatedDeploymentVariable =
 /*#__PURE__*/

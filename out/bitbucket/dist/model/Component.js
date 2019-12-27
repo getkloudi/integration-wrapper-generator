@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Component model module.
  * @module model/Component
- * @version 1.1.0
+ * @version 1.1.2
  */
 var Component =
 /*#__PURE__*/

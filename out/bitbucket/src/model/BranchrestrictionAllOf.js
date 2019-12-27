@@ -19,7 +19,7 @@ import Group from './Group';
 /**
  * The BranchrestrictionAllOf model module.
  * @module model/BranchrestrictionAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class BranchrestrictionAllOf {
     /**

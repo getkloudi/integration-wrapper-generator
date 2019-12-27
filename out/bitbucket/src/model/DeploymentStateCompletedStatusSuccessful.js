@@ -18,7 +18,7 @@ import DeploymentStateCompletedStatusSuccessfulAllOf from './DeploymentStateComp
 /**
  * The DeploymentStateCompletedStatusSuccessful model module.
  * @module model/DeploymentStateCompletedStatusSuccessful
- * @version 1.1.0
+ * @version 1.1.2
  */
 class DeploymentStateCompletedStatusSuccessful {
     /**

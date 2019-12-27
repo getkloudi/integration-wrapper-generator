@@ -34,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Snippets service.
 * @module api/SnippetsApi
-* @version 1.1.0
+* @version 1.1.2
 */
 var SnippetsApi =
 /*#__PURE__*/

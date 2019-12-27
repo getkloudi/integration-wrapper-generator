@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullrequestComment model module.
  * @module model/PullrequestComment
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PullrequestComment =
 /*#__PURE__*/

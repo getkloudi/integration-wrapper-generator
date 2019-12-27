@@ -17,7 +17,7 @@ import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 /**
  * The IssueAllOfLinks model module.
  * @module model/IssueAllOfLinks
- * @version 1.1.0
+ * @version 1.1.2
  */
 class IssueAllOfLinks {
     /**

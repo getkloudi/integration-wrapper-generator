@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchingModel model module.
  * @module model/BranchingModel
- * @version 1.1.0
+ * @version 1.1.2
  */
 var BranchingModel =
 /*#__PURE__*/

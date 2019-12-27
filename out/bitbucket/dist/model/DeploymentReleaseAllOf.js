@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentReleaseAllOf model module.
  * @module model/DeploymentReleaseAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var DeploymentReleaseAllOf =
 /*#__PURE__*/

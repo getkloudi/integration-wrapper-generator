@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SshKey model module.
  * @module model/SshKey
- * @version 1.1.0
+ * @version 1.1.2
  */
 var SshKey =
 /*#__PURE__*/

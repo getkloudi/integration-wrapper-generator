@@ -28,7 +28,7 @@ import WebhookSubscription from '../model/WebhookSubscription';
 /**
 * Repositories service.
 * @module api/RepositoriesApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class RepositoriesApi {
 

@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeployKey model module.
  * @module model/DeployKey
- * @version 1.1.0
+ * @version 1.1.2
  */
 var DeployKey =
 /*#__PURE__*/

@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStateCompleted model module.
  * @module model/PipelineStepStateCompleted
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineStepStateCompleted =
 /*#__PURE__*/

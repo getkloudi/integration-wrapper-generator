@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommentAllOfLinks model module.
  * @module model/CommentAllOfLinks
- * @version 1.1.0
+ * @version 1.1.2
  */
 var CommentAllOfLinks =
 /*#__PURE__*/

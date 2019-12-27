@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Pipeline model module.
  * @module model/Pipeline
- * @version 1.1.0
+ * @version 1.1.2
  */
 var Pipeline =
 /*#__PURE__*/

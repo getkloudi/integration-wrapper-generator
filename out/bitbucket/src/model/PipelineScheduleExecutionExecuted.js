@@ -19,7 +19,7 @@ import PipelineScheduleExecutionExecutedAllOf from './PipelineScheduleExecutionE
 /**
  * The PipelineScheduleExecutionExecuted model module.
  * @module model/PipelineScheduleExecutionExecuted
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelineScheduleExecutionExecuted {
     /**

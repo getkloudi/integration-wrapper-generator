@@ -17,7 +17,7 @@ import Author from './Author';
 /**
  * The TagAllOf model module.
  * @module model/TagAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class TagAllOf {
     /**

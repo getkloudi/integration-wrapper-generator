@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineImage model module.
  * @module model/PipelineImage
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineImage =
 /*#__PURE__*/

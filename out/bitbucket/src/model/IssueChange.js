@@ -21,7 +21,7 @@ import User from './User';
 /**
  * The IssueChange model module.
  * @module model/IssueChange
- * @version 1.1.0
+ * @version 1.1.2
  */
 class IssueChange {
     /**

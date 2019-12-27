@@ -19,7 +19,7 @@ import User from './User';
 /**
  * The Participant model module.
  * @module model/Participant
- * @version 1.1.0
+ * @version 1.1.2
  */
 class Participant {
     /**

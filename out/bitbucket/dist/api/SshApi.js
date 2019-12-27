@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Ssh service.
 * @module api/SshApi
-* @version 1.1.0
+* @version 1.1.2
 */
 var SshApi =
 /*#__PURE__*/

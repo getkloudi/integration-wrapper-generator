@@ -1,6 +1,6 @@
 {
   "name": "bitbucket",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Code_against_the_Bitbucket_API_to_automate_simple_tasks_embed_Bitbucket_data_into_your_own_site_build_mobile_or_desktop_apps_or_even_add_custom_UI_add_ons_into_Bitbucket_itself_using_the_Connect_framework_",
   "license": "Unlicense",
   "main": "dist/index.js",

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineScheduleAllOf model module.
  * @module model/PipelineScheduleAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineScheduleAllOf =
 /*#__PURE__*/

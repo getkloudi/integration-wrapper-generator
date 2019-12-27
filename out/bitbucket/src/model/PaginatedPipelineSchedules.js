@@ -17,7 +17,7 @@ import PipelineSchedule from './PipelineSchedule';
 /**
  * The PaginatedPipelineSchedules model module.
  * @module model/PaginatedPipelineSchedules
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedPipelineSchedules {
     /**

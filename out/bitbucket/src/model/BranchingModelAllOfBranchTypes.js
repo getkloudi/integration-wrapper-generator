@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BranchingModelAllOfBranchTypes model module.
  * @module model/BranchingModelAllOfBranchTypes
- * @version 1.1.0
+ * @version 1.1.2
  */
 class BranchingModelAllOfBranchTypes {
     /**

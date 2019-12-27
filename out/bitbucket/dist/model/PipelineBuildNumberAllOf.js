@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineBuildNumberAllOf model module.
  * @module model/PipelineBuildNumberAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineBuildNumberAllOf =
 /*#__PURE__*/

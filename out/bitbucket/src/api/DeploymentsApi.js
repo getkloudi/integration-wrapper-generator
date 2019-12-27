@@ -22,7 +22,7 @@ import PaginatedEnvironments from '../model/PaginatedEnvironments';
 /**
 * Deployments service.
 * @module api/DeploymentsApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class DeploymentsApi {
 

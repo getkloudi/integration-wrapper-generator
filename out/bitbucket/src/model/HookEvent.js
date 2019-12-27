@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HookEvent model module.
  * @module model/HookEvent
- * @version 1.1.0
+ * @version 1.1.2
  */
 class HookEvent {
     /**

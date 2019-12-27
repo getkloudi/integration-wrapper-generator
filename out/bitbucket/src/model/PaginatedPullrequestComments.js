@@ -17,7 +17,7 @@ import PullrequestComment from './PullrequestComment';
 /**
  * The PaginatedPullrequestComments model module.
  * @module model/PaginatedPullrequestComments
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedPullrequestComments {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineStateCompletedExpiredAllOf model module.
  * @module model/PipelineStateCompletedExpiredAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelineStateCompletedExpiredAllOf {
     /**

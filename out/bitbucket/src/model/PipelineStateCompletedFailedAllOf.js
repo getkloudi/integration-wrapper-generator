@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineStateCompletedFailedAllOf model module.
  * @module model/PipelineStateCompletedFailedAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelineStateCompletedFailedAllOf {
     /**

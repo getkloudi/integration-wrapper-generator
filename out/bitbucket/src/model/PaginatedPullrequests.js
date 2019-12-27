@@ -17,7 +17,7 @@ import Pullrequest from './Pullrequest';
 /**
  * The PaginatedPullrequests model module.
  * @module model/PaginatedPullrequests
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedPullrequests {
     /**

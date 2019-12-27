@@ -19,7 +19,7 @@ import Repository from './Repository';
 /**
  * The PipelinesConfig model module.
  * @module model/PipelinesConfig
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PipelinesConfig {
     /**

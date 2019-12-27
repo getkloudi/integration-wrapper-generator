@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommentAllOf model module.
  * @module model/CommentAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var CommentAllOf =
 /*#__PURE__*/

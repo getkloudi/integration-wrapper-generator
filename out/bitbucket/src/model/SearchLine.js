@@ -17,7 +17,7 @@ import SearchSegment from './SearchSegment';
 /**
  * The SearchLine model module.
  * @module model/SearchLine
- * @version 1.1.0
+ * @version 1.1.2
  */
 class SearchLine {
     /**

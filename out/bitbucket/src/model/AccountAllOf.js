@@ -17,7 +17,7 @@ import AccountAllOfLinks from './AccountAllOfLinks';
 /**
  * The AccountAllOf model module.
  * @module model/AccountAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 class AccountAllOf {
     /**

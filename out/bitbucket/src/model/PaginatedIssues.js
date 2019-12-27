@@ -17,7 +17,7 @@ import Issue from './Issue';
 /**
  * The PaginatedIssues model module.
  * @module model/PaginatedIssues
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PaginatedIssues {
     /**

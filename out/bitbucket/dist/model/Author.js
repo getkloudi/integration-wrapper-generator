@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Author model module.
  * @module model/Author
- * @version 1.1.0
+ * @version 1.1.2
  */
 var Author =
 /*#__PURE__*/

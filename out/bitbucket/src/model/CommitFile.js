@@ -17,7 +17,7 @@ import Commit from './Commit';
 /**
  * The CommitFile model module.
  * @module model/CommitFile
- * @version 1.1.0
+ * @version 1.1.2
  */
 class CommitFile {
     /**

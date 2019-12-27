@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueAllOf model module.
  * @module model/IssueAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var IssueAllOf =
 /*#__PURE__*/

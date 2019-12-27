@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStep model module.
  * @module model/PipelineStep
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineStep =
 /*#__PURE__*/

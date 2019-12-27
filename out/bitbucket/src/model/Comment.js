@@ -22,7 +22,7 @@ import User from './User';
 /**
  * The Comment model module.
  * @module model/Comment
- * @version 1.1.0
+ * @version 1.1.2
  */
 class Comment {
     /**

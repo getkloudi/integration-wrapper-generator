@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineScheduleExecutionErroredAllOf model module.
  * @module model/PipelineScheduleExecutionErroredAllOf
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PipelineScheduleExecutionErroredAllOf =
 /*#__PURE__*/

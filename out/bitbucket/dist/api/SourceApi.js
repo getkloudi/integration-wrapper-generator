@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Source service.
 * @module api/SourceApi
-* @version 1.1.0
+* @version 1.1.2
 */
 var SourceApi =
 /*#__PURE__*/

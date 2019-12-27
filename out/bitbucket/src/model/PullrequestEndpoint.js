@@ -19,7 +19,7 @@ import Repository from './Repository';
 /**
  * The PullrequestEndpoint model module.
  * @module model/PullrequestEndpoint
- * @version 1.1.0
+ * @version 1.1.2
  */
 class PullrequestEndpoint {
     /**

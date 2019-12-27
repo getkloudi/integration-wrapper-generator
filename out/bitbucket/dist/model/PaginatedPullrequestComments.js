@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedPullrequestComments model module.
  * @module model/PaginatedPullrequestComments
- * @version 1.1.0
+ * @version 1.1.2
  */
 var PaginatedPullrequestComments =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Properties service.
 * @module api/PropertiesApi
-* @version 1.1.0
+* @version 1.1.2
 */
 var PropertiesApi =
 /*#__PURE__*/

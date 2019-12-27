@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TeamPermission model module.
  * @module model/TeamPermission
- * @version 1.1.0
+ * @version 1.1.2
  */
 var TeamPermission =
 /*#__PURE__*/

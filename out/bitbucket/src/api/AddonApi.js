@@ -18,7 +18,7 @@ import Error from '../model/Error';
 /**
 * Addon service.
 * @module api/AddonApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class AddonApi {
 

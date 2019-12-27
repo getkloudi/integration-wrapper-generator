@@ -42,7 +42,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Repositories service.
 * @module api/RepositoriesApi
-* @version 1.1.0
+* @version 1.1.2
 */
 var RepositoriesApi =
 /*#__PURE__*/

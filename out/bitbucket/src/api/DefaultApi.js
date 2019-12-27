@@ -22,7 +22,7 @@ import PaginatedTeamPermissions from '../model/PaginatedTeamPermissions';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.1.0
+* @version 1.1.2
 */
 export default class DefaultApi {
 
