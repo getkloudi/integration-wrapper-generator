@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Merge model module.
  * @module model/Merge
- * @version 1.4.2
+ * @version 1.4.3
  */
 class Merge {
     /**

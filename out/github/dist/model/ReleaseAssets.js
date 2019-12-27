@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ReleaseAssets model module.
  * @module model/ReleaseAssets
- * @version 1.4.2
+ * @version 1.4.3
  */
 var ReleaseAssets =
 /*#__PURE__*/

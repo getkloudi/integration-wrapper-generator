@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GistFilesRingErl model module.
  * @module model/GistFilesRingErl
- * @version 1.4.2
+ * @version 1.4.3
  */
 var GistFilesRingErl =
 /*#__PURE__*/

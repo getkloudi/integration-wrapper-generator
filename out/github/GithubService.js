@@ -268,7 +268,12 @@ class GithubService {
     switch (entity) {
       case "EMOJIS":
         /*
-      Lists all the emojis available to use on GitHub.
+
+
+
+Lists all the emojis available to use on GitHub.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -282,7 +287,12 @@ class GithubService {
 
       case "EVENTS":
         /*
-      List public events.
+
+
+
+List public events.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -296,7 +306,12 @@ class GithubService {
 
       case "FEEDS":
         /*
-      List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user.
+
+
+
+List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -310,7 +325,12 @@ class GithubService {
 
       case "GISTS":
         /*
-      List the authenticated user&#39;s gists or if called anonymously, this will return all public gists.
+
+
+
+List the authenticated user&#39;s gists or if called anonymously, this will return all public gists.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -324,7 +344,12 @@ class GithubService {
 
       case "GISTS_ID_COMMENTS_COMMENT_ID":
         /*
-      Get a single comment.
+
+
+
+Get a single comment.
+
+
       Function parameters for this API id,commentId,opts
         */
         return new Promise((resolve, reject) => {
@@ -338,7 +363,12 @@ class GithubService {
 
       case "GISTS_ID_COMMENTS":
         /*
-      List comments on a gist.
+
+
+
+List comments on a gist.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -352,7 +382,12 @@ class GithubService {
 
       case "GISTS_ID":
         /*
-      Get a single gist.
+
+
+
+Get a single gist.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -366,7 +401,12 @@ class GithubService {
 
       case "GISTS_ID_STAR":
         /*
-      Check if a gist is starred.
+
+
+
+Check if a gist is starred.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -380,7 +420,12 @@ class GithubService {
 
       case "GISTS_PUBLIC":
         /*
-      List all public gists.
+
+
+
+List all public gists.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -394,7 +439,12 @@ class GithubService {
 
       case "GISTS_STARRED":
         /*
-      List the authenticated user&#39;s starred gists.
+
+
+
+List the authenticated user&#39;s starred gists.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -408,7 +458,12 @@ class GithubService {
 
       case "GITIGNORE_TEMPLATES":
         /*
-      Listing available templates. List all templates available to pass as an option when creating a repository.
+
+
+
+Listing available templates. List all templates available to pass as an option when creating a repository.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -422,7 +477,12 @@ class GithubService {
 
       case "GITIGNORE_TEMPLATES_LANGUAGE":
         /*
-      Get a single template.
+
+
+
+Get a single template.
+
+
       Function parameters for this API language,opts
         */
         return new Promise((resolve, reject) => {
@@ -436,7 +496,12 @@ class GithubService {
 
       case "ISSUES":
         /*
-      List issues. List all issues across all the authenticated user&#39;s visible repositories.
+
+
+
+List issues. List all issues across all the authenticated user&#39;s visible repositories.
+
+
       Function parameters for this API filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
@@ -450,7 +515,12 @@ class GithubService {
 
       case "LEGACY_ISSUES_SEARCH_OWNER_REPOSITORY_STATE_KEYWORD":
         /*
-      Find issues by state and keyword.
+
+
+
+Find issues by state and keyword.
+
+
       Function parameters for this API keyword,state,owner,repository,opts
         */
         return new Promise((resolve, reject) => {
@@ -467,7 +537,12 @@ class GithubService {
 
       case "LEGACY_REPOS_SEARCH_KEYWORD":
         /*
-      Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.
+
+
+
+Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.
+
+
       Function parameters for this API keyword,opts
         */
         return new Promise((resolve, reject) => {
@@ -481,7 +556,12 @@ class GithubService {
 
       case "LEGACY_USER_EMAIL_EMAIL":
         /*
-      This API call is added for compatibility reasons only.
+
+
+
+This API call is added for compatibility reasons only.
+
+
       Function parameters for this API email,opts
         */
         return new Promise((resolve, reject) => {
@@ -495,7 +575,12 @@ class GithubService {
 
       case "LEGACY_USER_SEARCH_KEYWORD":
         /*
-      Find users by keyword.
+
+
+
+Find users by keyword.
+
+
       Function parameters for this API keyword,opts
         */
         return new Promise((resolve, reject) => {
@@ -509,7 +594,12 @@ class GithubService {
 
       case "META":
         /*
-      This gives some information about GitHub.com, the service.
+
+
+
+This gives some information about GitHub.com, the service.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -523,7 +613,12 @@ class GithubService {
 
       case "NETWORKS_OWNER_REPO_EVENTS":
         /*
-      List public events for a network of repositories.
+
+
+
+List public events for a network of repositories.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -537,7 +632,12 @@ class GithubService {
 
       case "NOTIFICATIONS":
         /*
-      List your notifications. List all notifications for the current user, grouped by repository.
+
+
+
+List your notifications. List all notifications for the current user, grouped by repository.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -551,7 +651,12 @@ class GithubService {
 
       case "NOTIFICATIONS_THREADS_ID":
         /*
-      View a single thread.
+
+
+
+View a single thread.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -565,7 +670,12 @@ class GithubService {
 
       case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
         /*
-      Get a Thread Subscription.
+
+
+
+Get a Thread Subscription.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -582,7 +692,12 @@ class GithubService {
 
       case "ORGS_ORG_EVENTS":
         /*
-      List public events for an organization.
+
+
+
+List public events for an organization.
+
+
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
@@ -596,7 +711,12 @@ class GithubService {
 
       case "ORGS_ORG":
         /*
-      Get an Organization.
+
+
+
+Get an Organization.
+
+
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
@@ -610,7 +730,12 @@ class GithubService {
 
       case "ORGS_ORG_ISSUES":
         /*
-      List issues. List all issues for a given organization for the authenticated user.
+
+
+
+List issues. List all issues for a given organization for the authenticated user.
+
+
       Function parameters for this API org,filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
@@ -624,7 +749,12 @@ class GithubService {
 
       case "ORGS_ORG_MEMBERS":
         /*
-      Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list.
+
+
+
+Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list.
+
+
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
@@ -638,7 +768,12 @@ class GithubService {
 
       case "ORGS_ORG_MEMBERS_USERNAME":
         /*
-      Check if a user is, publicly or privately, a member of the organization.
+
+
+
+Check if a user is, publicly or privately, a member of the organization.
+
+
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -652,7 +787,12 @@ class GithubService {
 
       case "ORGS_ORG_PUBLIC_MEMBERS":
         /*
-      Public members list. Members of an organization can choose to have their membership publicized or not.
+
+
+
+Public members list. Members of an organization can choose to have their membership publicized or not.
+
+
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
@@ -666,7 +806,12 @@ class GithubService {
 
       case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
         /*
-      Check public membership.
+
+
+
+Check public membership.
+
+
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -683,7 +828,12 @@ class GithubService {
 
       case "ORGS_ORG_REPOS":
         /*
-      List repositories for the specified org.
+
+
+
+List repositories for the specified org.
+
+
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
@@ -697,7 +847,12 @@ class GithubService {
 
       case "ORGS_ORG_TEAMS":
         /*
-      List teams.
+
+
+
+List teams.
+
+
       Function parameters for this API org,opts
         */
         return new Promise((resolve, reject) => {
@@ -711,7 +866,12 @@ class GithubService {
 
       case "RATE_LIMIT":
         /*
-      Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit.
+
+
+
+Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -725,7 +885,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ARCHIVE_FORMAT_PATH":
         /*
-      Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly.
+
+
+
+Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly.
+
+
       Function parameters for this API owner,repo,archiveFormat,path,opts
         */
         return new Promise((resolve, reject) => {
@@ -742,7 +907,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ASSIGNEES_ASSIGNEE":
         /*
-      Check assignee. You may also check to see if a particular user is an assignee for a repository.
+
+
+
+Check assignee. You may also check to see if a particular user is an assignee for a repository.
+
+
       Function parameters for this API owner,repo,assignee,opts
         */
         return new Promise((resolve, reject) => {
@@ -759,7 +929,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ASSIGNEES":
         /*
-      List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned.
+
+
+
+List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -773,7 +948,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_BRANCHES_BRANCH":
         /*
-      Get Branch
+
+
+
+Get Branch
+
+
       Function parameters for this API owner,repo,branch,opts
         */
         return new Promise((resolve, reject) => {
@@ -790,7 +970,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_BRANCHES":
         /*
-      Get list of branches
+
+
+
+Get list of branches
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -804,7 +989,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COLLABORATORS":
         /*
-      List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list.
+
+
+
+List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -821,7 +1011,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COLLABORATORS_USER":
         /*
-      Check if user is a collaborator
+
+
+
+Check if user is a collaborator
+
+
       Function parameters for this API owner,repo,user,opts
         */
         return new Promise((resolve, reject) => {
@@ -838,7 +1033,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
         /*
-      Get a single commit comment.
+
+
+
+Get a single commit comment.
+
+
       Function parameters for this API owner,repo,commentId,opts
         */
         return new Promise((resolve, reject) => {
@@ -855,7 +1055,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMMENTS":
         /*
-      List commit comments for a repository. Comments are ordered by ascending ID.
+
+
+
+List commit comments for a repository. Comments are ordered by ascending ID.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -869,7 +1074,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMMITS":
         /*
-      List commits on a repository.
+
+
+
+List commits on a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -883,7 +1093,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMMITS_REF_STATUS":
         /*
-      Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json
+
+
+
+Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json
+
+
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
@@ -900,7 +1115,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS":
         /*
-      List comments for a single commitList comments for a single commit.
+
+
+
+List comments for a single commitList comments for a single commit.
+
+
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
@@ -917,7 +1137,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMMITS_SHA_CODE":
         /*
-      Get a single commit.
+
+
+
+Get a single commit.
+
+
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
@@ -934,7 +1159,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMPARE_BASE_ID_HEAD_ID":
         /*
-      Compare two commits
+
+
+
+Compare two commits
+
+
       Function parameters for this API owner,repo,baseId,headId,opts
         */
         return new Promise((resolve, reject) => {
@@ -951,7 +1181,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_CONTENTS_PATH":
         /*
-      Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot;
+
+
+
+Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot;
+
+
       Function parameters for this API owner,repo,path,opts
         */
         return new Promise((resolve, reject) => {
@@ -965,7 +1200,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_CONTRIBUTORS":
         /*
-      Get list of contributors.
+
+
+
+Get list of contributors.
+
+
       Function parameters for this API owner,repo,anon,opts
         */
         return new Promise((resolve, reject) => {
@@ -979,7 +1219,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_DEPLOYMENTS":
         /*
-      Users with pull access can view deployments for a repository
+
+
+
+Users with pull access can view deployments for a repository
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -993,7 +1238,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES":
         /*
-      Users with pull access can view deployment statuses for a deployment
+
+
+
+Users with pull access can view deployment statuses for a deployment
+
+
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
@@ -1010,7 +1260,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID":
         /*
-      Deprecated. Get a single download.
+
+
+
+Deprecated. Get a single download.
+
+
       Function parameters for this API owner,repo,downloadId,opts
         */
         return new Promise((resolve, reject) => {
@@ -1027,7 +1282,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_DOWNLOADS":
         /*
-      Deprecated. List downloads for a repository.
+
+
+
+Deprecated. List downloads for a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1041,7 +1301,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_EVENTS":
         /*
-      Get list of repository events.
+
+
+
+Get list of repository events.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1055,7 +1320,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_FORKS":
         /*
-      List forks.
+
+
+
+List forks.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1069,7 +1339,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO":
         /*
-      Get repository.
+
+
+
+Get repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1083,7 +1358,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_BLOBS_SHA_CODE":
         /*
-      Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it.
+
+
+
+Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it.
+
+
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
@@ -1100,7 +1380,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_COMMITS_SHA_CODE":
         /*
-      Get a Commit.
+
+
+
+Get a Commit.
+
+
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
@@ -1117,7 +1402,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_REFS":
         /*
-      Get all References
+
+
+
+Get all References
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1131,7 +1421,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_REFS_REF":
         /*
-      Get a Reference
+
+
+
+Get a Reference
+
+
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
@@ -1145,7 +1440,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_TAGS_SHA_CODE":
         /*
-      Get a Tag.
+
+
+
+Get a Tag.
+
+
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
@@ -1162,7 +1462,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_TREES_SHA_CODE":
         /*
-      Get a Tree.
+
+
+
+Get a Tree.
+
+
       Function parameters for this API owner,repo,shaCode,opts
         */
         return new Promise((resolve, reject) => {
@@ -1179,7 +1484,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_HOOKS":
         /*
-      Get list of hooks.
+
+
+
+Get list of hooks.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1193,7 +1503,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
         /*
-      Get single hook.
+
+
+
+Get single hook.
+
+
       Function parameters for this API owner,repo,hookId,opts
         */
         return new Promise((resolve, reject) => {
@@ -1207,7 +1522,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
         /*
-      Get a single comment.
+
+
+
+Get a single comment.
+
+
       Function parameters for this API owner,repo,commentId,opts
         */
         return new Promise((resolve, reject) => {
@@ -1224,7 +1544,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS":
         /*
-      List comments in a repository.
+
+
+
+List comments in a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1241,7 +1566,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_EVENTS_EVENT_ID":
         /*
-      Get a single event.
+
+
+
+Get a single event.
+
+
       Function parameters for this API owner,repo,eventId,opts
         */
         return new Promise((resolve, reject) => {
@@ -1258,7 +1588,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_EVENTS":
         /*
-      List issue events for a repository.
+
+
+
+List issue events for a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1272,7 +1607,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES":
         /*
-      List issues for a repository.
+
+
+
+List issues for a repository.
+
+
       Function parameters for this API owner,repo,filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
@@ -1286,7 +1626,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS":
         /*
-      List comments on an issue.
+
+
+
+List comments on an issue.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1303,7 +1648,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_EVENTS":
         /*
-      List events for an issue.
+
+
+
+List events for an issue.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1320,7 +1670,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER":
         /*
-      Get a single issue
+
+
+
+Get a single issue
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1334,7 +1689,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
         /*
-      List labels on an issue.
+
+
+
+List labels on an issue.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1351,7 +1711,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_KEYS":
         /*
-      Get list of keys.
+
+
+
+Get list of keys.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1365,7 +1730,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_KEYS_KEY_ID":
         /*
-      Get a key
+
+
+
+Get a key
+
+
       Function parameters for this API owner,repo,keyId,opts
         */
         return new Promise((resolve, reject) => {
@@ -1379,7 +1749,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_LABELS":
         /*
-      List all labels for this repository.
+
+
+
+List all labels for this repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1393,7 +1768,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_LABELS_NAME":
         /*
-      Get a single label.
+
+
+
+Get a single label.
+
+
       Function parameters for this API owner,repo,name,opts
         */
         return new Promise((resolve, reject) => {
@@ -1407,7 +1787,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_LANGUAGES":
         /*
-      List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language.
+
+
+
+List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1421,7 +1806,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_MILESTONES":
         /*
-      List milestones for a repository.
+
+
+
+List milestones for a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1435,7 +1825,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
         /*
-      Get a single milestone.
+
+
+
+Get a single milestone.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1452,7 +1847,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER_LABELS":
         /*
-      Get labels for every issue in a milestone.
+
+
+
+Get labels for every issue in a milestone.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1469,7 +1869,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_NOTIFICATIONS":
         /*
-      List your notifications in a repository List all notifications for the current user.
+
+
+
+List your notifications in a repository List all notifications for the current user.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1486,7 +1891,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
         /*
-      Get a single comment.
+
+
+
+Get a single comment.
+
+
       Function parameters for this API owner,repo,commentId,opts
         */
         return new Promise((resolve, reject) => {
@@ -1503,7 +1913,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS":
         /*
-      List comments in a repository. By default, Review Comments are ordered by ascending ID.
+
+
+
+List comments in a repository. By default, Review Comments are ordered by ascending ID.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1520,7 +1935,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS":
         /*
-      List pull requests.
+
+
+
+List pull requests.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1534,7 +1954,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS":
         /*
-      List comments on a pull request.
+
+
+
+List comments on a pull request.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1551,7 +1976,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMITS":
         /*
-      List commits on a pull request.
+
+
+
+List commits on a pull request.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1568,7 +1998,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_FILES":
         /*
-      List pull requests files.
+
+
+
+List pull requests files.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1585,7 +2020,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER":
         /*
-      Get a single pull request.
+
+
+
+Get a single pull request.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1599,7 +2039,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_MERGE":
         /*
-      Get if a pull request has been merged.
+
+
+
+Get if a pull request has been merged.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -1616,7 +2061,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_README":
         /*
-      Get the README. This method returns the preferred README for a repository.
+
+
+
+Get the README. This method returns the preferred README for a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1630,7 +2080,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
         /*
-      Get a single release asset
+
+
+
+Get a single release asset
+
+
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
@@ -1647,7 +2102,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_RELEASES":
         /*
-      Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only
+
+
+
+Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1661,7 +2121,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_RELEASES_ID_ASSETS":
         /*
-      List assets for a release
+
+
+
+List assets for a release
+
+
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
@@ -1678,7 +2143,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_RELEASES_ID":
         /*
-      Get a single release
+
+
+
+Get a single release
+
+
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
@@ -1692,7 +2162,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_STARGAZERS":
         /*
-      List Stargazers.
+
+
+
+List Stargazers.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1706,7 +2181,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_STATS_CODE_FREQUENCY":
         /*
-      Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
+
+
+
+Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1723,7 +2203,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_STATS_COMMIT_ACTIVITY":
         /*
-      Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday.
+
+
+
+Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1740,7 +2225,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_STATS_CONTRIBUTORS":
         /*
-      Get contributors list with additions, deletions, and commit counts.
+
+
+
+Get contributors list with additions, deletions, and commit counts.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1757,7 +2247,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_STATS_PARTICIPATION":
         /*
-      Get the weekly commit count for the repo owner and everyone else.
+
+
+
+Get the weekly commit count for the repo owner and everyone else.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1774,7 +2269,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_STATS_PUNCH_CARD":
         /*
-      Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits.
+
+
+
+Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1791,7 +2291,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_STATUSES_REF":
         /*
-      List Statuses for a specific Ref.
+
+
+
+List Statuses for a specific Ref.
+
+
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
@@ -1805,7 +2310,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_SUBSCRIBERS":
         /*
-      List watchers.
+
+
+
+List watchers.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1819,7 +2329,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_SUBSCRIPTION":
         /*
-      Get a Repository Subscription.
+
+
+
+Get a Repository Subscription.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1833,7 +2348,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_TAGS":
         /*
-      Get list of tags.
+
+
+
+Get list of tags.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1847,7 +2367,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_TEAMS":
         /*
-      Get list of teams
+
+
+
+Get list of teams
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1861,7 +2386,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_WATCHERS":
         /*
-      List Stargazers. New implementation.
+
+
+
+List Stargazers. New implementation.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -1875,7 +2405,12 @@ class GithubService {
 
       case "REPOSITORIES":
         /*
-      List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories.
+
+
+
+List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -1889,7 +2424,12 @@ class GithubService {
 
       case "SEARCH_CODE":
         /*
-      Search code.
+
+
+
+Search code.
+
+
       Function parameters for this API q,opts
         */
         return new Promise((resolve, reject) => {
@@ -1903,7 +2443,12 @@ class GithubService {
 
       case "SEARCH_ISSUES":
         /*
-      Find issues by state and keyword. (This method returns up to 100 results per page.)
+
+
+
+Find issues by state and keyword. (This method returns up to 100 results per page.)
+
+
       Function parameters for this API q,opts
         */
         return new Promise((resolve, reject) => {
@@ -1917,7 +2462,12 @@ class GithubService {
 
       case "SEARCH_REPOSITORIES":
         /*
-      Search repositories.
+
+
+
+Search repositories.
+
+
       Function parameters for this API q,opts
         */
         return new Promise((resolve, reject) => {
@@ -1931,7 +2481,12 @@ class GithubService {
 
       case "SEARCH_USERS":
         /*
-      Search users.
+
+
+
+Search users.
+
+
       Function parameters for this API q,opts
         */
         return new Promise((resolve, reject) => {
@@ -1945,7 +2500,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID":
         /*
-      Get team.
+
+
+
+Get team.
+
+
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
@@ -1959,7 +2519,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_MEMBERS":
         /*
-      List team members. In order to list members in a team, the authenticated user must be a member of the team.
+
+
+
+List team members. In order to list members in a team, the authenticated user must be a member of the team.
+
+
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
@@ -1973,7 +2538,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
         /*
-      The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team.
+
+
+
+The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team.
+
+
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -1987,7 +2557,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
         /*
-      Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization.
+
+
+
+Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization.
+
+
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2004,7 +2579,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_REPOS":
         /*
-      List team repos
+
+
+
+List team repos
+
+
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
@@ -2018,7 +2598,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
         /*
-      Check if a team manages a repository
+
+
+
+Check if a team manages a repository
+
+
       Function parameters for this API teamId,owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -2032,7 +2617,12 @@ class GithubService {
 
       case "USER_EMAILS":
         /*
-      List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format.
+
+
+
+List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2046,7 +2636,12 @@ class GithubService {
 
       case "USER_FOLLOWERS":
         /*
-      List the authenticated user&#39;s followers
+
+
+
+List the authenticated user&#39;s followers
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2060,7 +2655,12 @@ class GithubService {
 
       case "USER_FOLLOWING":
         /*
-      List who the authenticated user is following.
+
+
+
+List who the authenticated user is following.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2074,7 +2674,12 @@ class GithubService {
 
       case "USER_FOLLOWING_USERNAME":
         /*
-      Check if you are following a user.
+
+
+
+Check if you are following a user.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2088,7 +2693,12 @@ class GithubService {
 
       case "USER":
         /*
-      Get the authenticated user.
+
+
+
+Get the authenticated user.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2102,7 +2712,12 @@ class GithubService {
 
       case "USER_ISSUES":
         /*
-      List issues. List all issues across owned and member repositories for the authenticated user.
+
+
+
+List issues. List all issues across owned and member repositories for the authenticated user.
+
+
       Function parameters for this API filter,state,labels,sort,direction,opts
         */
         return new Promise((resolve, reject) => {
@@ -2116,7 +2731,12 @@ class GithubService {
 
       case "USER_KEYS":
         /*
-      List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes.
+
+
+
+List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2130,7 +2750,12 @@ class GithubService {
 
       case "USER_KEYS_KEY_ID":
         /*
-      Get a single public key.
+
+
+
+Get a single public key.
+
+
       Function parameters for this API keyId,opts
         */
         return new Promise((resolve, reject) => {
@@ -2144,7 +2769,12 @@ class GithubService {
 
       case "USER_ORGS":
         /*
-      List public and private organizations for the authenticated user.
+
+
+
+List public and private organizations for the authenticated user.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2158,7 +2788,12 @@ class GithubService {
 
       case "USER_REPOS":
         /*
-      List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately.
+
+
+
+List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2172,7 +2807,12 @@ class GithubService {
 
       case "USER_STARRED":
         /*
-      List repositories being starred by the authenticated user.
+
+
+
+List repositories being starred by the authenticated user.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2186,7 +2826,12 @@ class GithubService {
 
       case "USER_STARRED_OWNER_REPO":
         /*
-      Check if you are starring a repository.
+
+
+
+Check if you are starring a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -2200,7 +2845,12 @@ class GithubService {
 
       case "USER_SUBSCRIPTIONS":
         /*
-      List repositories being watched by the authenticated user.
+
+
+
+List repositories being watched by the authenticated user.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2214,7 +2864,12 @@ class GithubService {
 
       case "USER_SUBSCRIPTIONS_OWNER_REPO":
         /*
-      Check if you are watching a repository.
+
+
+
+Check if you are watching a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -2228,7 +2883,12 @@ class GithubService {
 
       case "USER_TEAMS":
         /*
-      List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.
+
+
+
+List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2242,7 +2902,12 @@ class GithubService {
 
       case "USERS":
         /*
-      Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users.
+
+
+
+Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users.
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -2256,7 +2921,12 @@ class GithubService {
 
       case "USERS_USERNAME_EVENTS":
         /*
-      If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events.
+
+
+
+If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2270,7 +2940,12 @@ class GithubService {
 
       case "USERS_USERNAME_EVENTS_ORGS_ORG":
         /*
-      This is the user&#39;s organization dashboard. You must be authenticated as the user to view this.
+
+
+
+This is the user&#39;s organization dashboard. You must be authenticated as the user to view this.
+
+
       Function parameters for this API username,org,opts
         */
         return new Promise((resolve, reject) => {
@@ -2284,7 +2959,12 @@ class GithubService {
 
       case "USERS_USERNAME_FOLLOWERS":
         /*
-      List a user&#39;s followers
+
+
+
+List a user&#39;s followers
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2298,7 +2978,12 @@ class GithubService {
 
       case "USERS_USERNAME_FOLLOWING_TARGET_USER":
         /*
-      Check if one user follows another.
+
+
+
+Check if one user follows another.
+
+
       Function parameters for this API username,targetUser,opts
         */
         return new Promise((resolve, reject) => {
@@ -2315,7 +3000,12 @@ class GithubService {
 
       case "USERS_USERNAME":
         /*
-      Get a single user.
+
+
+
+Get a single user.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2329,7 +3019,12 @@ class GithubService {
 
       case "USERS_USERNAME_GISTS":
         /*
-      List a users gists.
+
+
+
+List a users gists.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2343,7 +3038,12 @@ class GithubService {
 
       case "USERS_USERNAME_KEYS":
         /*
-      List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone.
+
+
+
+List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2357,7 +3057,12 @@ class GithubService {
 
       case "USERS_USERNAME_ORGS":
         /*
-      List all public organizations for a user.
+
+
+
+List all public organizations for a user.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2371,7 +3076,12 @@ class GithubService {
 
       case "USERS_USERNAME_RECEIVED_EVENTS":
         /*
-      These are events that you&#39;ll only see public events.
+
+
+
+These are events that you&#39;ll only see public events.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2388,7 +3098,12 @@ class GithubService {
 
       case "USERS_USERNAME_RECEIVED_EVENTS_PUBLIC":
         /*
-      List public events that a user has received
+
+
+
+List public events that a user has received
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2405,7 +3120,12 @@ class GithubService {
 
       case "USERS_USERNAME_REPOS":
         /*
-      List public repositories for the specified user.
+
+
+
+List public repositories for the specified user.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2419,7 +3139,12 @@ class GithubService {
 
       case "USERS_USERNAME_STARRED":
         /*
-      List repositories being starred by a user.
+
+
+
+List repositories being starred by a user.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2433,7 +3158,12 @@ class GithubService {
 
       case "USERS_USERNAME_SUBSCRIPTIONS":
         /*
-      List repositories being watched by a user.
+
+
+
+List repositories being watched by a user.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -2450,7 +3180,12 @@ class GithubService {
     }
   }
   // This is a function for emojisGet
-  /* Lists all the emojis available to use on GitHub. */
+  /*
+
+
+Lists all the emojis available to use on GitHub.
+
+ */
   emojisGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2467,9 +3202,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.emojisGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -2481,7 +3219,12 @@ class GithubService {
   }
 
   // This is a function for eventsGet
-  /* List public events. */
+  /*
+
+
+List public events.
+
+ */
   eventsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2498,9 +3241,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.eventsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -2512,7 +3258,12 @@ class GithubService {
   }
 
   // This is a function for feedsGet
-  /* List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user.  */
+  /*
+
+
+List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user.
+
+ */
   feedsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2529,9 +3280,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.feedsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -2543,7 +3297,12 @@ class GithubService {
   }
 
   // This is a function for gistsGet
-  /* List the authenticated user&#39;s gists or if called anonymously, this will return all public gists.  */
+  /*
+
+
+List the authenticated user&#39;s gists or if called anonymously, this will return all public gists.
+
+ */
   gistsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2561,9 +3320,12 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -2575,7 +3337,12 @@ class GithubService {
   }
 
   // This is a function for gistsIdCommentsCommentIdGet
-  /* Get a single comment. */
+  /*
+
+
+Get a single comment.
+
+ */
   gistsIdCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2590,9 +3357,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsCommentIdGet(
       incomingOptions.id,
@@ -2609,7 +3379,12 @@ class GithubService {
   }
 
   // This is a function for gistsIdCommentsGet
-  /* List comments on a gist. */
+  /*
+
+
+List comments on a gist.
+
+ */
   gistsIdCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2626,9 +3401,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsGet(
       incomingOptions.id,
@@ -2644,7 +3422,12 @@ class GithubService {
   }
 
   // This is a function for gistsIdGet
-  /* Get a single gist. */
+  /*
+
+
+Get a single gist.
+
+ */
   gistsIdGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2659,9 +3442,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdGet(
       incomingOptions.id,
@@ -2677,7 +3463,12 @@ class GithubService {
   }
 
   // This is a function for gistsIdStarGet
-  /* Check if a gist is starred. */
+  /*
+
+
+Check if a gist is starred.
+
+ */
   gistsIdStarGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2694,9 +3485,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdStarGet(
       incomingOptions.id,
@@ -2712,7 +3506,12 @@ class GithubService {
   }
 
   // This is a function for gistsPublicGet
-  /* List all public gists. */
+  /*
+
+
+List all public gists.
+
+ */
   gistsPublicGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2730,9 +3529,12 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsPublicGet(
       incomingOptions.opts,
@@ -2747,7 +3549,12 @@ class GithubService {
   }
 
   // This is a function for gistsStarredGet
-  /* List the authenticated user&#39;s starred gists. */
+  /*
+
+
+List the authenticated user&#39;s starred gists.
+
+ */
   gistsStarredGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2765,9 +3572,12 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsStarredGet(
       incomingOptions.opts,
@@ -2782,7 +3592,12 @@ class GithubService {
   }
 
   // This is a function for gitignoreTemplatesGet
-  /* Listing available templates. List all templates available to pass as an option when creating a repository.  */
+  /*
+
+
+Listing available templates. List all templates available to pass as an option when creating a repository.
+
+ */
   gitignoreTemplatesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2799,9 +3614,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gitignoreTemplatesGet(
       incomingOptions.opts,
@@ -2816,7 +3634,12 @@ class GithubService {
   }
 
   // This is a function for gitignoreTemplatesLanguageGet
-  /* Get a single template. */
+  /*
+
+
+Get a single template.
+
+ */
   gitignoreTemplatesLanguageGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2831,9 +3654,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gitignoreTemplatesLanguageGet(
       incomingOptions.language,
@@ -2849,7 +3675,12 @@ class GithubService {
   }
 
   // This is a function for issuesGet
-  /* List issues. List all issues across all the authenticated user&#39;s visible repositories.  */
+  /*
+
+
+List issues. List all issues across all the authenticated user&#39;s visible repositories.
+
+ */
   issuesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -2867,9 +3698,12 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.issuesGet(
       incomingOptions.filter,
@@ -2889,7 +3723,12 @@ class GithubService {
   }
 
   // This is a function for legacyIssuesSearchOwnerRepositoryStateKeywordGet
-  /* Find issues by state and keyword. */
+  /*
+
+
+Find issues by state and keyword.
+
+ */
   legacyIssuesSearchOwnerRepositoryStateKeywordGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -2898,9 +3737,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.legacyIssuesSearchOwnerRepositoryStateKeywordGet(
       incomingOptions.keyword,
@@ -2919,7 +3761,12 @@ class GithubService {
   }
 
   // This is a function for legacyReposSearchKeywordGet
-  /* Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter. */
+  /*
+
+
+Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.
+
+ */
   legacyReposSearchKeywordGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -2932,9 +3779,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.legacyReposSearchKeywordGet(
       incomingOptions.keyword,
@@ -2950,7 +3800,12 @@ class GithubService {
   }
 
   // This is a function for legacyUserEmailEmailGet
-  /* This API call is added for compatibility reasons only. */
+  /*
+
+
+This API call is added for compatibility reasons only.
+
+ */
   legacyUserEmailEmailGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -2959,9 +3814,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.legacyUserEmailEmailGet(
       incomingOptions.email,
@@ -2977,7 +3835,12 @@ class GithubService {
   }
 
   // This is a function for legacyUserSearchKeywordGet
-  /* Find users by keyword. */
+  /*
+
+
+Find users by keyword.
+
+ */
   legacyUserSearchKeywordGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -2989,9 +3852,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.legacyUserSearchKeywordGet(
       incomingOptions.keyword,
@@ -3007,7 +3873,12 @@ class GithubService {
   }
 
   // This is a function for metaGet
-  /* This gives some information about GitHub.com, the service. */
+  /*
+
+
+This gives some information about GitHub.com, the service.
+
+ */
   metaGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3022,9 +3893,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.metaGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -3036,7 +3910,12 @@ class GithubService {
   }
 
   // This is a function for networksOwnerRepoEventsGet
-  /* List public events for a network of repositories. */
+  /*
+
+
+List public events for a network of repositories.
+
+ */
   networksOwnerRepoEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3053,9 +3932,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.networksOwnerRepoEventsGet(
       incomingOptions.owner,
@@ -3072,7 +3954,12 @@ class GithubService {
   }
 
   // This is a function for notificationsGet
-  /* List your notifications. List all notifications for the current user, grouped by repository.  */
+  /*
+
+
+List your notifications. List all notifications for the current user, grouped by repository.
+
+ */
   notificationsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3092,9 +3979,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsGet(
       incomingOptions.opts,
@@ -3109,7 +3999,12 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdGet
-  /* View a single thread. */
+  /*
+
+
+View a single thread.
+
+ */
   notificationsThreadsIdGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3124,9 +4019,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdGet(
       incomingOptions.id,
@@ -3142,7 +4040,12 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdSubscriptionGet
-  /* Get a Thread Subscription. */
+  /*
+
+
+Get a Thread Subscription.
+
+ */
   notificationsThreadsIdSubscriptionGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3159,9 +4062,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdSubscriptionGet(
       incomingOptions.id,
@@ -3177,7 +4083,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgEventsGet
-  /* List public events for an organization. */
+  /*
+
+
+List public events for an organization.
+
+ */
   orgsOrgEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3194,9 +4105,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgEventsGet(
       incomingOptions.org,
@@ -3212,7 +4126,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgGet
-  /* Get an Organization. */
+  /*
+
+
+Get an Organization.
+
+ */
   orgsOrgGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3229,9 +4148,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgGet(
       incomingOptions.org,
@@ -3247,7 +4169,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgIssuesGet
-  /* List issues. List all issues for a given organization for the authenticated user.  */
+  /*
+
+
+List issues. List all issues for a given organization for the authenticated user.
+
+ */
   orgsOrgIssuesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3265,9 +4192,12 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgIssuesGet(
       incomingOptions.org,
@@ -3288,7 +4218,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgMembersGet
-  /* Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list.  */
+  /*
+
+
+Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list.
+
+ */
   orgsOrgMembersGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3305,9 +4240,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgMembersGet(
       incomingOptions.org,
@@ -3323,7 +4261,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgMembersUsernameGet
-  /* Check if a user is, publicly or privately, a member of the organization. */
+  /*
+
+
+Check if a user is, publicly or privately, a member of the organization.
+
+ */
   orgsOrgMembersUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3340,9 +4283,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgMembersUsernameGet(
       incomingOptions.org,
@@ -3359,7 +4305,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPublicMembersGet
-  /* Public members list. Members of an organization can choose to have their membership publicized or not.  */
+  /*
+
+
+Public members list. Members of an organization can choose to have their membership publicized or not.
+
+ */
   orgsOrgPublicMembersGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3376,9 +4327,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPublicMembersGet(
       incomingOptions.org,
@@ -3394,7 +4348,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPublicMembersUsernameGet
-  /* Check public membership. */
+  /*
+
+
+Check public membership.
+
+ */
   orgsOrgPublicMembersUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3411,9 +4370,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPublicMembersUsernameGet(
       incomingOptions.org,
@@ -3430,7 +4392,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgReposGet
-  /* List repositories for the specified org. */
+  /*
+
+
+List repositories for the specified org.
+
+ */
   orgsOrgReposGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3448,9 +4415,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgReposGet(
       incomingOptions.org,
@@ -3466,7 +4436,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgTeamsGet
-  /* List teams. */
+  /*
+
+
+List teams.
+
+ */
   orgsOrgTeamsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3483,9 +4458,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgTeamsGet(
       incomingOptions.org,
@@ -3501,7 +4479,12 @@ class GithubService {
   }
 
   // This is a function for rateLimitGet
-  /* Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit.  */
+  /*
+
+
+Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit.
+
+ */
   rateLimitGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3518,9 +4501,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.rateLimitGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -3532,7 +4518,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoArchiveFormatPathGet
-  /* Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly.  */
+  /*
+
+
+Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly.
+
+ */
   reposOwnerRepoArchiveFormatPathGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3549,9 +4540,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoArchiveFormatPathGet(
       incomingOptions.owner,
@@ -3570,7 +4564,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoAssigneesAssigneeGet
-  /* Check assignee. You may also check to see if a particular user is an assignee for a repository.  */
+  /*
+
+
+Check assignee. You may also check to see if a particular user is an assignee for a repository.
+
+ */
   reposOwnerRepoAssigneesAssigneeGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3587,9 +4586,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoAssigneesAssigneeGet(
       incomingOptions.owner,
@@ -3607,7 +4609,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoAssigneesGet
-  /* List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned.  */
+  /*
+
+
+List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned.
+
+ */
   reposOwnerRepoAssigneesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3624,9 +4631,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoAssigneesGet(
       incomingOptions.owner,
@@ -3643,7 +4653,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoBranchesBranchGet
-  /* Get Branch */
+  /*
+
+
+Get Branch
+
+ */
   reposOwnerRepoBranchesBranchGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3660,9 +4675,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoBranchesBranchGet(
       incomingOptions.owner,
@@ -3680,7 +4698,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoBranchesGet
-  /* Get list of branches */
+  /*
+
+
+Get list of branches
+
+ */
   reposOwnerRepoBranchesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3697,9 +4720,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoBranchesGet(
       incomingOptions.owner,
@@ -3716,7 +4742,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCollaboratorsGet
-  /* List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list.  */
+  /*
+
+
+List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list.
+
+ */
   reposOwnerRepoCollaboratorsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3733,9 +4764,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCollaboratorsGet(
       incomingOptions.owner,
@@ -3752,7 +4786,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCollaboratorsUserGet
-  /* Check if user is a collaborator */
+  /*
+
+
+Check if user is a collaborator
+
+ */
   reposOwnerRepoCollaboratorsUserGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3769,9 +4808,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCollaboratorsUserGet(
       incomingOptions.owner,
@@ -3789,7 +4831,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommentsCommentIdGet
-  /* Get a single commit comment. */
+  /*
+
+
+Get a single commit comment.
+
+ */
   reposOwnerRepoCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3806,9 +4853,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommentsCommentIdGet(
       incomingOptions.owner,
@@ -3826,7 +4876,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommentsGet
-  /* List commit comments for a repository. Comments are ordered by ascending ID.  */
+  /*
+
+
+List commit comments for a repository. Comments are ordered by ascending ID.
+
+ */
   reposOwnerRepoCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3843,9 +4898,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommentsGet(
       incomingOptions.owner,
@@ -3862,7 +4920,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsGet
-  /* List commits on a repository. */
+  /*
+
+
+List commits on a repository.
+
+ */
   reposOwnerRepoCommitsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3884,9 +4947,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsGet(
       incomingOptions.owner,
@@ -3903,7 +4969,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsRefStatusGet
-  /* Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json  */
+  /*
+
+
+Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json
+
+ */
   reposOwnerRepoCommitsRefStatusGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3920,9 +4991,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsRefStatusGet(
       incomingOptions.owner,
@@ -3940,7 +5014,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsShaCodeCommentsGet
-  /* List comments for a single commitList comments for a single commit. */
+  /*
+
+
+List comments for a single commitList comments for a single commit.
+
+ */
   reposOwnerRepoCommitsShaCodeCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3957,9 +5036,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsShaCodeCommentsGet(
       incomingOptions.owner,
@@ -3977,7 +5059,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsShaCodeGet
-  /* Get a single commit. */
+  /*
+
+
+Get a single commit.
+
+ */
   reposOwnerRepoCommitsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -3994,9 +5081,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsShaCodeGet(
       incomingOptions.owner,
@@ -4014,7 +5104,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCompareBaseIdHeadIdGet
-  /* Compare two commits */
+  /*
+
+
+Compare two commits
+
+ */
   reposOwnerRepoCompareBaseIdHeadIdGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4031,9 +5126,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCompareBaseIdHeadIdGet(
       incomingOptions.owner,
@@ -4052,7 +5150,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoContentsPathGet
-  /* Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot;  */
+  /*
+
+
+Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot;
+
+ */
   reposOwnerRepoContentsPathGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4071,9 +5174,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoContentsPathGet(
       incomingOptions.owner,
@@ -4091,7 +5197,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoContributorsGet
-  /* Get list of contributors. */
+  /*
+
+
+Get list of contributors.
+
+ */
   reposOwnerRepoContributorsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4108,9 +5219,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoContributorsGet(
       incomingOptions.owner,
@@ -4128,7 +5242,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDeploymentsGet
-  /* Users with pull access can view deployments for a repository */
+  /*
+
+
+Users with pull access can view deployments for a repository
+
+ */
   reposOwnerRepoDeploymentsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4145,9 +5264,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDeploymentsGet(
       incomingOptions.owner,
@@ -4164,7 +5286,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDeploymentsIdStatusesGet
-  /* Users with pull access can view deployment statuses for a deployment */
+  /*
+
+
+Users with pull access can view deployment statuses for a deployment
+
+ */
   reposOwnerRepoDeploymentsIdStatusesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4181,9 +5308,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDeploymentsIdStatusesGet(
       incomingOptions.owner,
@@ -4201,7 +5331,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDownloadsDownloadIdGet
-  /* Deprecated. Get a single download. */
+  /*
+
+
+Deprecated. Get a single download.
+
+ */
   reposOwnerRepoDownloadsDownloadIdGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4216,9 +5351,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDownloadsDownloadIdGet(
       incomingOptions.owner,
@@ -4236,7 +5374,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDownloadsGet
-  /* Deprecated. List downloads for a repository. */
+  /*
+
+
+Deprecated. List downloads for a repository.
+
+ */
   reposOwnerRepoDownloadsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4251,9 +5394,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDownloadsGet(
       incomingOptions.owner,
@@ -4270,7 +5416,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoEventsGet
-  /* Get list of repository events. */
+  /*
+
+
+Get list of repository events.
+
+ */
   reposOwnerRepoEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4287,9 +5438,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoEventsGet(
       incomingOptions.owner,
@@ -4306,7 +5460,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoForksGet
-  /* List forks. */
+  /*
+
+
+List forks.
+
+ */
   reposOwnerRepoForksGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4324,9 +5483,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoForksGet(
       incomingOptions.owner,
@@ -4343,7 +5505,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGet
-  /* Get repository. */
+  /*
+
+
+Get repository.
+
+ */
   reposOwnerRepoGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4360,9 +5527,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGet(
       incomingOptions.owner,
@@ -4379,7 +5549,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitBlobsShaCodeGet
-  /* Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it.  */
+  /*
+
+
+Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it.
+
+ */
   reposOwnerRepoGitBlobsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4388,9 +5563,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitBlobsShaCodeGet(
       incomingOptions.owner,
@@ -4408,7 +5586,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitCommitsShaCodeGet
-  /* Get a Commit. */
+  /*
+
+
+Get a Commit.
+
+ */
   reposOwnerRepoGitCommitsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4417,9 +5600,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitCommitsShaCodeGet(
       incomingOptions.owner,
@@ -4437,7 +5623,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsGet
-  /* Get all References */
+  /*
+
+
+Get all References
+
+ */
   reposOwnerRepoGitRefsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4448,9 +5639,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsGet(
       incomingOptions.owner,
@@ -4467,7 +5661,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsRefGet
-  /* Get a Reference */
+  /*
+
+
+Get a Reference
+
+ */
   reposOwnerRepoGitRefsRefGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4478,9 +5677,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsRefGet(
       incomingOptions.owner,
@@ -4498,7 +5700,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitTagsShaCodeGet
-  /* Get a Tag. */
+  /*
+
+
+Get a Tag.
+
+ */
   reposOwnerRepoGitTagsShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4509,9 +5716,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitTagsShaCodeGet(
       incomingOptions.owner,
@@ -4529,7 +5739,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitTreesShaCodeGet
-  /* Get a Tree. */
+  /*
+
+
+Get a Tree.
+
+ */
   reposOwnerRepoGitTreesShaCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4539,9 +5754,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitTreesShaCodeGet(
       incomingOptions.owner,
@@ -4559,7 +5777,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksGet
-  /* Get list of hooks. */
+  /*
+
+
+Get list of hooks.
+
+ */
   reposOwnerRepoHooksGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4576,9 +5799,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksGet(
       incomingOptions.owner,
@@ -4595,7 +5821,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksHookIdGet
-  /* Get single hook. */
+  /*
+
+
+Get single hook.
+
+ */
   reposOwnerRepoHooksHookIdGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -4610,9 +5841,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksHookIdGet(
       incomingOptions.owner,
@@ -4630,7 +5864,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesCommentsCommentIdGet
-  /* Get a single comment. */
+  /*
+
+
+Get a single comment.
+
+ */
   reposOwnerRepoIssuesCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4639,9 +5878,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesCommentsCommentIdGet(
       incomingOptions.owner,
@@ -4659,7 +5901,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesCommentsGet
-  /* List comments in a repository. */
+  /*
+
+
+List comments in a repository.
+
+ */
   reposOwnerRepoIssuesCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4671,9 +5918,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesCommentsGet(
       incomingOptions.owner,
@@ -4690,7 +5940,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesEventsEventIdGet
-  /* Get a single event. */
+  /*
+
+
+Get a single event.
+
+ */
   reposOwnerRepoIssuesEventsEventIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4699,9 +5954,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesEventsEventIdGet(
       incomingOptions.owner,
@@ -4719,7 +5977,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesEventsGet
-  /* List issue events for a repository. */
+  /*
+
+
+List issue events for a repository.
+
+ */
   reposOwnerRepoIssuesEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4728,9 +5991,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesEventsGet(
       incomingOptions.owner,
@@ -4747,7 +6013,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesGet
-  /* List issues for a repository. */
+  /*
+
+
+List issues for a repository.
+
+ */
   reposOwnerRepoIssuesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4759,9 +6030,12 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesGet(
       incomingOptions.owner,
@@ -4783,7 +6057,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberCommentsGet
-  /* List comments on an issue. */
+  /*
+
+
+List comments on an issue.
+
+ */
   reposOwnerRepoIssuesNumberCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4792,9 +6071,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberCommentsGet(
       incomingOptions.owner,
@@ -4812,7 +6094,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberEventsGet
-  /* List events for an issue. */
+  /*
+
+
+List events for an issue.
+
+ */
   reposOwnerRepoIssuesNumberEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4821,9 +6108,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberEventsGet(
       incomingOptions.owner,
@@ -4841,7 +6131,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberGet
-  /* Get a single issue */
+  /*
+
+
+Get a single issue
+
+ */
   reposOwnerRepoIssuesNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4850,9 +6145,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberGet(
       incomingOptions.owner,
@@ -4870,7 +6168,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsGet
-  /* List labels on an issue. */
+  /*
+
+
+List labels on an issue.
+
+ */
   reposOwnerRepoIssuesNumberLabelsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4879,9 +6182,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsGet(
       incomingOptions.owner,
@@ -4899,7 +6205,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoKeysGet
-  /* Get list of keys. */
+  /*
+
+
+Get list of keys.
+
+ */
   reposOwnerRepoKeysGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4908,9 +6219,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoKeysGet(
       incomingOptions.owner,
@@ -4927,7 +6241,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoKeysKeyIdGet
-  /* Get a key */
+  /*
+
+
+Get a key
+
+ */
   reposOwnerRepoKeysKeyIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4936,9 +6255,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoKeysKeyIdGet(
       incomingOptions.owner,
@@ -4956,7 +6278,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsGet
-  /* List all labels for this repository. */
+  /*
+
+
+List all labels for this repository.
+
+ */
   reposOwnerRepoLabelsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4965,9 +6292,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsGet(
       incomingOptions.owner,
@@ -4984,7 +6314,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsNameGet
-  /* Get a single label. */
+  /*
+
+
+Get a single label.
+
+ */
   reposOwnerRepoLabelsNameGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -4993,9 +6328,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsNameGet(
       incomingOptions.owner,
@@ -5013,7 +6351,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLanguagesGet
-  /* List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language.  */
+  /*
+
+
+List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language.
+
+ */
   reposOwnerRepoLanguagesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5022,9 +6365,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLanguagesGet(
       incomingOptions.owner,
@@ -5041,7 +6387,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesGet
-  /* List milestones for a repository. */
+  /*
+
+
+List milestones for a repository.
+
+ */
   reposOwnerRepoMilestonesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5053,9 +6404,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesGet(
       incomingOptions.owner,
@@ -5072,7 +6426,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesNumberGet
-  /* Get a single milestone. */
+  /*
+
+
+Get a single milestone.
+
+ */
   reposOwnerRepoMilestonesNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5081,9 +6440,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesNumberGet(
       incomingOptions.owner,
@@ -5101,7 +6463,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesNumberLabelsGet
-  /* Get labels for every issue in a milestone. */
+  /*
+
+
+Get labels for every issue in a milestone.
+
+ */
   reposOwnerRepoMilestonesNumberLabelsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5110,9 +6477,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesNumberLabelsGet(
       incomingOptions.owner,
@@ -5130,7 +6500,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoNotificationsGet
-  /* List your notifications in a repository List all notifications for the current user.  */
+  /*
+
+
+List your notifications in a repository List all notifications for the current user.
+
+ */
   reposOwnerRepoNotificationsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5142,9 +6517,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoNotificationsGet(
       incomingOptions.owner,
@@ -5161,7 +6539,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsCommentsCommentIdGet
-  /* Get a single comment. */
+  /*
+
+
+Get a single comment.
+
+ */
   reposOwnerRepoPullsCommentsCommentIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5170,9 +6553,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsCommentsCommentIdGet(
       incomingOptions.owner,
@@ -5190,7 +6576,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsCommentsGet
-  /* List comments in a repository. By default, Review Comments are ordered by ascending ID.  */
+  /*
+
+
+List comments in a repository. By default, Review Comments are ordered by ascending ID.
+
+ */
   reposOwnerRepoPullsCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5202,9 +6593,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsCommentsGet(
       incomingOptions.owner,
@@ -5221,7 +6615,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsGet
-  /* List pull requests. */
+  /*
+
+
+List pull requests.
+
+ */
   reposOwnerRepoPullsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5233,9 +6632,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsGet(
       incomingOptions.owner,
@@ -5252,7 +6654,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberCommentsGet
-  /* List comments on a pull request. */
+  /*
+
+
+List comments on a pull request.
+
+ */
   reposOwnerRepoPullsNumberCommentsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5261,9 +6668,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberCommentsGet(
       incomingOptions.owner,
@@ -5281,7 +6691,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberCommitsGet
-  /* List commits on a pull request. */
+  /*
+
+
+List commits on a pull request.
+
+ */
   reposOwnerRepoPullsNumberCommitsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5290,9 +6705,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberCommitsGet(
       incomingOptions.owner,
@@ -5310,7 +6728,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberFilesGet
-  /* List pull requests files. */
+  /*
+
+
+List pull requests files.
+
+ */
   reposOwnerRepoPullsNumberFilesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5319,9 +6742,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberFilesGet(
       incomingOptions.owner,
@@ -5339,7 +6765,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberGet
-  /* Get a single pull request. */
+  /*
+
+
+Get a single pull request.
+
+ */
   reposOwnerRepoPullsNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5348,9 +6779,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberGet(
       incomingOptions.owner,
@@ -5368,7 +6802,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberMergeGet
-  /* Get if a pull request has been merged. */
+  /*
+
+
+Get if a pull request has been merged.
+
+ */
   reposOwnerRepoPullsNumberMergeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5377,9 +6816,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberMergeGet(
       incomingOptions.owner,
@@ -5397,7 +6839,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReadmeGet
-  /* Get the README. This method returns the preferred README for a repository.  */
+  /*
+
+
+Get the README. This method returns the preferred README for a repository.
+
+ */
   reposOwnerRepoReadmeGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5407,9 +6854,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReadmeGet(
       incomingOptions.owner,
@@ -5426,7 +6876,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesAssetsIdGet
-  /* Get a single release asset */
+  /*
+
+
+Get a single release asset
+
+ */
   reposOwnerRepoReleasesAssetsIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5435,9 +6890,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesAssetsIdGet(
       incomingOptions.owner,
@@ -5455,7 +6913,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesGet
-  /* Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only */
+  /*
+
+
+Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only
+
+ */
   reposOwnerRepoReleasesGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5464,9 +6927,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesGet(
       incomingOptions.owner,
@@ -5483,7 +6949,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesIdAssetsGet
-  /* List assets for a release */
+  /*
+
+
+List assets for a release
+
+ */
   reposOwnerRepoReleasesIdAssetsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5492,9 +6963,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesIdAssetsGet(
       incomingOptions.owner,
@@ -5512,7 +6986,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesIdGet
-  /* Get a single release */
+  /*
+
+
+Get a single release
+
+ */
   reposOwnerRepoReleasesIdGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5521,9 +7000,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesIdGet(
       incomingOptions.owner,
@@ -5541,7 +7023,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStargazersGet
-  /* List Stargazers. */
+  /*
+
+
+List Stargazers.
+
+ */
   reposOwnerRepoStargazersGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5550,9 +7037,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStargazersGet(
       incomingOptions.owner,
@@ -5569,7 +7059,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsCodeFrequencyGet
-  /* Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository.  */
+  /*
+
+
+Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
+
+ */
   reposOwnerRepoStatsCodeFrequencyGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5578,9 +7073,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsCodeFrequencyGet(
       incomingOptions.owner,
@@ -5597,7 +7095,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsCommitActivityGet
-  /* Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday.  */
+  /*
+
+
+Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday.
+
+ */
   reposOwnerRepoStatsCommitActivityGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5606,9 +7109,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsCommitActivityGet(
       incomingOptions.owner,
@@ -5625,7 +7131,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsContributorsGet
-  /* Get contributors list with additions, deletions, and commit counts. */
+  /*
+
+
+Get contributors list with additions, deletions, and commit counts.
+
+ */
   reposOwnerRepoStatsContributorsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5634,9 +7145,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsContributorsGet(
       incomingOptions.owner,
@@ -5653,7 +7167,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsParticipationGet
-  /* Get the weekly commit count for the repo owner and everyone else. */
+  /*
+
+
+Get the weekly commit count for the repo owner and everyone else.
+
+ */
   reposOwnerRepoStatsParticipationGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5662,9 +7181,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsParticipationGet(
       incomingOptions.owner,
@@ -5681,7 +7203,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatsPunchCardGet
-  /* Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits.  */
+  /*
+
+
+Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits.
+
+ */
   reposOwnerRepoStatsPunchCardGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5690,9 +7217,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatsPunchCardGet(
       incomingOptions.owner,
@@ -5709,7 +7239,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatusesRefGet
-  /* List Statuses for a specific Ref. */
+  /*
+
+
+List Statuses for a specific Ref.
+
+ */
   reposOwnerRepoStatusesRefGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5718,9 +7253,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatusesRefGet(
       incomingOptions.owner,
@@ -5738,7 +7276,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoSubscribersGet
-  /* List watchers. */
+  /*
+
+
+List watchers.
+
+ */
   reposOwnerRepoSubscribersGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5747,9 +7290,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoSubscribersGet(
       incomingOptions.owner,
@@ -5766,7 +7312,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoSubscriptionGet
-  /* Get a Repository Subscription. */
+  /*
+
+
+Get a Repository Subscription.
+
+ */
   reposOwnerRepoSubscriptionGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5775,9 +7326,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoSubscriptionGet(
       incomingOptions.owner,
@@ -5794,7 +7348,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoTagsGet
-  /* Get list of tags. */
+  /*
+
+
+Get list of tags.
+
+ */
   reposOwnerRepoTagsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5803,9 +7362,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoTagsGet(
       incomingOptions.owner,
@@ -5822,7 +7384,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoTeamsGet
-  /* Get list of teams */
+  /*
+
+
+Get list of teams
+
+ */
   reposOwnerRepoTeamsGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -5831,9 +7398,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoTeamsGet(
       incomingOptions.owner,
@@ -5850,7 +7420,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoWatchersGet
-  /* List Stargazers. New implementation. */
+  /*
+
+
+List Stargazers. New implementation.
+
+ */
   reposOwnerRepoWatchersGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -5865,9 +7440,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoWatchersGet(
       incomingOptions.owner,
@@ -5884,7 +7462,12 @@ class GithubService {
   }
 
   // This is a function for repositoriesGet
-  /* List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories.  */
+  /*
+
+
+List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories.
+
+ */
   repositoriesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -5902,9 +7485,12 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesGet(
       incomingOptions.opts,
@@ -5919,7 +7505,12 @@ class GithubService {
   }
 
   // This is a function for searchCodeGet
-  /* Search code. */
+  /*
+
+
+Search code.
+
+ */
   searchCodeGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -5938,9 +7529,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchCodeGet(
       incomingOptions.q,
@@ -5956,7 +7550,12 @@ class GithubService {
   }
 
   // This is a function for searchIssuesGet
-  /* Find issues by state and keyword. (This method returns up to 100 results per page.) */
+  /*
+
+
+Find issues by state and keyword. (This method returns up to 100 results per page.)
+
+ */
   searchIssuesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -5975,9 +7574,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchIssuesGet(
       incomingOptions.q,
@@ -5993,7 +7595,12 @@ class GithubService {
   }
 
   // This is a function for searchRepositoriesGet
-  /* Search repositories. */
+  /*
+
+
+Search repositories.
+
+ */
   searchRepositoriesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6012,9 +7619,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchRepositoriesGet(
       incomingOptions.q,
@@ -6030,7 +7640,12 @@ class GithubService {
   }
 
   // This is a function for searchUsersGet
-  /* Search users. */
+  /*
+
+
+Search users.
+
+ */
   searchUsersGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6049,9 +7664,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchUsersGet(
       incomingOptions.q,
@@ -6067,7 +7685,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdGet
-  /* Get team. */
+  /*
+
+
+Get team.
+
+ */
   teamsTeamIdGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6082,9 +7705,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdGet(
       incomingOptions.teamId,
@@ -6100,7 +7726,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembersGet
-  /* List team members. In order to list members in a team, the authenticated user must be a member of the team.  */
+  /*
+
+
+List team members. In order to list members in a team, the authenticated user must be a member of the team.
+
+ */
   teamsTeamIdMembersGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6117,9 +7748,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembersGet(
       incomingOptions.teamId,
@@ -6135,7 +7769,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembersUsernameGet
-  /* The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team.  */
+  /*
+
+
+The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team.
+
+ */
   teamsTeamIdMembersUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6150,9 +7789,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembersUsernameGet(
       incomingOptions.teamId,
@@ -6169,7 +7811,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembershipsUsernameGet
-  /* Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization.  */
+  /*
+
+
+Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization.
+
+ */
   teamsTeamIdMembershipsUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6184,9 +7831,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembershipsUsernameGet(
       incomingOptions.teamId,
@@ -6203,7 +7853,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdReposGet
-  /* List team repos */
+  /*
+
+
+List team repos
+
+ */
   teamsTeamIdReposGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6220,9 +7875,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdReposGet(
       incomingOptions.teamId,
@@ -6238,7 +7896,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdReposOwnerRepoGet
-  /* Check if a team manages a repository */
+  /*
+
+
+Check if a team manages a repository
+
+ */
   teamsTeamIdReposOwnerRepoGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6253,9 +7916,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdReposOwnerRepoGet(
       incomingOptions.teamId,
@@ -6273,7 +7939,12 @@ class GithubService {
   }
 
   // This is a function for userEmailsGet
-  /* List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format.  */
+  /*
+
+
+List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format.
+
+ */
   userEmailsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6288,9 +7959,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userEmailsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6302,7 +7976,12 @@ class GithubService {
   }
 
   // This is a function for userFollowersGet
-  /* List the authenticated user&#39;s followers */
+  /*
+
+
+List the authenticated user&#39;s followers
+
+ */
   userFollowersGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6319,9 +7998,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowersGet(
       incomingOptions.opts,
@@ -6336,7 +8018,12 @@ class GithubService {
   }
 
   // This is a function for userFollowingGet
-  /* List who the authenticated user is following. */
+  /*
+
+
+List who the authenticated user is following.
+
+ */
   userFollowingGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6353,9 +8040,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowingGet(
       incomingOptions.opts,
@@ -6370,7 +8060,12 @@ class GithubService {
   }
 
   // This is a function for userFollowingUsernameGet
-  /* Check if you are following a user. */
+  /*
+
+
+Check if you are following a user.
+
+ */
   userFollowingUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6385,9 +8080,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowingUsernameGet(
       incomingOptions.username,
@@ -6403,7 +8101,12 @@ class GithubService {
   }
 
   // This is a function for userGet
-  /* Get the authenticated user. */
+  /*
+
+
+Get the authenticated user.
+
+ */
   userGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6420,9 +8123,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6434,7 +8140,12 @@ class GithubService {
   }
 
   // This is a function for userIssuesGet
-  /* List issues. List all issues across owned and member repositories for the authenticated user.  */
+  /*
+
+
+List issues. List all issues across owned and member repositories for the authenticated user.
+
+ */
   userIssuesGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6452,9 +8163,12 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userIssuesGet(
       incomingOptions.filter,
@@ -6474,7 +8188,12 @@ class GithubService {
   }
 
   // This is a function for userKeysGet
-  /* List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes.  */
+  /*
+
+
+List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes.
+
+ */
   userKeysGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6489,9 +8208,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userKeysGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6503,7 +8225,12 @@ class GithubService {
   }
 
   // This is a function for userKeysKeyIdGet
-  /* Get a single public key. */
+  /*
+
+
+Get a single public key.
+
+ */
   userKeysKeyIdGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6518,9 +8245,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userKeysKeyIdGet(
       incomingOptions.keyId,
@@ -6536,7 +8266,12 @@ class GithubService {
   }
 
   // This is a function for userOrgsGet
-  /* List public and private organizations for the authenticated user. */
+  /*
+
+
+List public and private organizations for the authenticated user.
+
+ */
   userOrgsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6551,9 +8286,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userOrgsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6565,7 +8303,12 @@ class GithubService {
   }
 
   // This is a function for userReposGet
-  /* List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately.  */
+  /*
+
+
+List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately.
+
+ */
   userReposGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6583,9 +8326,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userReposGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6597,7 +8343,12 @@ class GithubService {
   }
 
   // This is a function for userStarredGet
-  /* List repositories being starred by the authenticated user. */
+  /*
+
+
+List repositories being starred by the authenticated user.
+
+ */
   userStarredGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6614,9 +8365,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userStarredGet(
       incomingOptions.opts,
@@ -6631,7 +8385,12 @@ class GithubService {
   }
 
   // This is a function for userStarredOwnerRepoGet
-  /* Check if you are starring a repository. */
+  /*
+
+
+Check if you are starring a repository.
+
+ */
   userStarredOwnerRepoGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6646,9 +8405,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userStarredOwnerRepoGet(
       incomingOptions.owner,
@@ -6665,7 +8427,12 @@ class GithubService {
   }
 
   // This is a function for userSubscriptionsGet
-  /* List repositories being watched by the authenticated user. */
+  /*
+
+
+List repositories being watched by the authenticated user.
+
+ */
   userSubscriptionsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6680,9 +8447,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userSubscriptionsGet(
       incomingOptions.opts,
@@ -6697,7 +8467,12 @@ class GithubService {
   }
 
   // This is a function for userSubscriptionsOwnerRepoGet
-  /* Check if you are watching a repository. */
+  /*
+
+
+Check if you are watching a repository.
+
+ */
   userSubscriptionsOwnerRepoGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6712,9 +8487,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userSubscriptionsOwnerRepoGet(
       incomingOptions.owner,
@@ -6731,7 +8509,12 @@ class GithubService {
   }
 
   // This is a function for userTeamsGet
-  /* List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth. */
+  /*
+
+
+List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.
+
+ */
   userTeamsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6746,9 +8529,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userTeamsGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6760,7 +8546,12 @@ class GithubService {
   }
 
   // This is a function for usersGet
-  /* Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users.  */
+  /*
+
+
+Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users.
+
+ */
   usersGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6778,9 +8569,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersGet(incomingOptions.opts, (error, data, response) => {
       if (error) {
@@ -6792,7 +8586,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameEventsGet
-  /* If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events. */
+  /*
+
+
+If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events.
+
+ */
   usersUsernameEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6809,9 +8608,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameEventsGet(
       incomingOptions.username,
@@ -6827,7 +8629,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameEventsOrgsOrgGet
-  /* This is the user&#39;s organization dashboard. You must be authenticated as the user to view this. */
+  /*
+
+
+This is the user&#39;s organization dashboard. You must be authenticated as the user to view this.
+
+ */
   usersUsernameEventsOrgsOrgGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6842,9 +8649,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameEventsOrgsOrgGet(
       incomingOptions.username,
@@ -6861,7 +8671,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameFollowersGet
-  /* List a user&#39;s followers */
+  /*
+
+
+List a user&#39;s followers
+
+ */
   usersUsernameFollowersGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6876,9 +8691,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameFollowersGet(
       incomingOptions.username,
@@ -6894,7 +8712,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameFollowingTargetUserGet
-  /* Check if one user follows another. */
+  /*
+
+
+Check if one user follows another.
+
+ */
   usersUsernameFollowingTargetUserGet(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -6903,9 +8726,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameFollowingTargetUserGet(
       incomingOptions.username,
@@ -6922,7 +8748,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameGet
-  /* Get a single user. */
+  /*
+
+
+Get a single user.
+
+ */
   usersUsernameGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6937,9 +8768,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameGet(
       incomingOptions.username,
@@ -6955,7 +8789,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameGistsGet
-  /* List a users gists. */
+  /*
+
+
+List a users gists.
+
+ */
   usersUsernameGistsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -6973,9 +8812,12 @@ class GithubService {
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameGistsGet(
       incomingOptions.username,
@@ -6991,7 +8833,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameKeysGet
-  /* List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone.  */
+  /*
+
+
+List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone.
+
+ */
   usersUsernameKeysGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7006,9 +8853,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameKeysGet(
       incomingOptions.username,
@@ -7024,7 +8874,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameOrgsGet
-  /* List all public organizations for a user. */
+  /*
+
+
+List all public organizations for a user.
+
+ */
   usersUsernameOrgsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7039,9 +8894,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameOrgsGet(
       incomingOptions.username,
@@ -7057,7 +8915,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameReceivedEventsGet
-  /* These are events that you&#39;ll only see public events. */
+  /*
+
+
+These are events that you&#39;ll only see public events.
+
+ */
   usersUsernameReceivedEventsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7072,9 +8935,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameReceivedEventsGet(
       incomingOptions.username,
@@ -7090,7 +8956,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameReceivedEventsPublicGet
-  /* List public events that a user has received */
+  /*
+
+
+List public events that a user has received
+
+ */
   usersUsernameReceivedEventsPublicGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7105,9 +8976,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameReceivedEventsPublicGet(
       incomingOptions.username,
@@ -7123,7 +8997,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameReposGet
-  /* List public repositories for the specified user. */
+  /*
+
+
+List public repositories for the specified user.
+
+ */
   usersUsernameReposGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7141,9 +9020,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameReposGet(
       incomingOptions.username,
@@ -7159,7 +9041,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameStarredGet
-  /* List repositories being starred by a user. */
+  /*
+
+
+List repositories being starred by a user.
+
+ */
   usersUsernameStarredGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7174,9 +9061,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameStarredGet(
       incomingOptions.username,
@@ -7192,7 +9082,12 @@ class GithubService {
   }
 
   // This is a function for usersUsernameSubscriptionsGet
-  /* List repositories being watched by a user. */
+  /*
+
+
+List repositories being watched by a user.
+
+ */
   usersUsernameSubscriptionsGet(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7207,9 +9102,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameSubscriptionsGet(
       incomingOptions.username,
@@ -7228,7 +9126,12 @@ class GithubService {
     switch (entity) {
       case "GISTS_ID_COMMENTS":
         /*
-      Create a commen
+
+
+
+Create a commen
+
+
       Function parameters for this API id,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7242,7 +9145,12 @@ class GithubService {
 
       case "GISTS_ID_FORKS":
         /*
-      Fork a gist.
+
+
+
+Fork a gist.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -7256,7 +9164,12 @@ class GithubService {
 
       case "GISTS":
         /*
-      Create a gist.
+
+
+
+Create a gist.
+
+
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7270,7 +9183,12 @@ class GithubService {
 
       case "MARKDOWN":
         /*
-      Render an arbitrary Markdown document
+
+
+
+Render an arbitrary Markdown document
+
+
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7284,7 +9202,12 @@ class GithubService {
 
       case "MARKDOWN_RAW":
         /*
-      Render a Markdown document in raw mode
+
+
+
+Render a Markdown document in raw mode
+
+
       Function parameters for this API opts
         */
         return new Promise((resolve, reject) => {
@@ -7298,7 +9221,12 @@ class GithubService {
 
       case "ORGS_ORG_REPOS":
         /*
-      Create a new repository for the authenticated user. OAuth users must supply repo scope.
+
+
+
+Create a new repository for the authenticated user. OAuth users must supply repo scope.
+
+
       Function parameters for this API org,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7312,7 +9240,12 @@ class GithubService {
 
       case "ORGS_ORG_TEAMS":
         /*
-      Create team. In order to create a team, the authenticated user must be an owner of organization.
+
+
+
+Create team. In order to create a team, the authenticated user must be an owner of organization.
+
+
       Function parameters for this API org,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7326,7 +9259,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS":
         /*
-      Create a commit comment.
+
+
+
+Create a commit comment.
+
+
       Function parameters for this API owner,repo,shaCode,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7343,7 +9281,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES":
         /*
-      Create a Deployment Status Users with push access can create deployment statuses for a given deployment:
+
+
+
+Create a Deployment Status Users with push access can create deployment statuses for a given deployment:
+
+
       Function parameters for this API owner,repo,id,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7360,7 +9303,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_DEPLOYMENTS":
         /*
-      Users with push access can create a deployment for a given ref
+
+
+
+Users with push access can create a deployment for a given ref
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7374,7 +9322,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_FORKS":
         /*
-      Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support.
+
+
+
+Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7388,7 +9341,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_BLOBS":
         /*
-      Create a Blob.
+
+
+
+Create a Blob.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7402,7 +9360,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_COMMITS":
         /*
-      Create a Commit.
+
+
+
+Create a Commit.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7416,7 +9379,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_REFS":
         /*
-      Create a Reference
+
+
+
+Create a Reference
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7430,7 +9398,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_TAGS":
         /*
-      Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary.
+
+
+
+Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7444,7 +9417,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_TREES":
         /*
-      Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out.
+
+
+
+Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7458,7 +9436,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_HOOKS_HOOK_ID_TESTS":
         /*
-      Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes
+
+
+
+Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes
+
+
       Function parameters for this API owner,repo,hookId,opts
         */
         return new Promise((resolve, reject) => {
@@ -7475,7 +9458,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_HOOKS":
         /*
-      Create a hook.
+
+
+
+Create a hook.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7489,7 +9477,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS":
         /*
-      Create a comment.
+
+
+
+Create a comment.
+
+
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7506,7 +9499,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
         /*
-      Add labels to an issue.
+
+
+
+Add labels to an issue.
+
+
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7523,7 +9521,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES":
         /*
-      Create an issue. Any user with pull access to a repository can create an issue.
+
+
+
+Create an issue. Any user with pull access to a repository can create an issue.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7537,7 +9540,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_KEYS":
         /*
-      Create a key.
+
+
+
+Create a key.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7551,7 +9559,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_LABELS":
         /*
-      Create a label.
+
+
+
+Create a label.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7565,7 +9578,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_MERGES":
         /*
-      Perform a merge.
+
+
+
+Perform a merge.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7579,7 +9597,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_MILESTONES":
         /*
-      Create a milestone.
+
+
+
+Create a milestone.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7593,7 +9616,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS":
         /*
-      Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.
+
+
+
+Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.
+
+
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7610,7 +9638,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS":
         /*
-      Create a pull request.
+
+
+
+Create a pull request.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7624,7 +9657,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_RELEASES":
         /*
-      Create a release Users with push access to the repository can create a release.
+
+
+
+Create a release Users with push access to the repository can create a release.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7638,7 +9676,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_STATUSES_REF":
         /*
-      Create a Status.
+
+
+
+Create a Status.
+
+
       Function parameters for this API owner,repo,ref,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7652,7 +9695,12 @@ class GithubService {
 
       case "USER_EMAILS":
         /*
-      Add email address(es). You can post a single email address or an array of addresses.
+
+
+
+Add email address(es). You can post a single email address or an array of addresses.
+
+
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7666,7 +9714,12 @@ class GithubService {
 
       case "USER_KEYS":
         /*
-      Create a public key.
+
+
+
+Create a public key.
+
+
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7680,7 +9733,12 @@ class GithubService {
 
       case "USER_REPOS":
         /*
-      Create a new repository for the authenticated user. OAuth users must supply repo scope.
+
+
+
+Create a new repository for the authenticated user. OAuth users must supply repo scope.
+
+
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -7697,7 +9755,12 @@ class GithubService {
     }
   }
   // This is a function for gistsIdCommentsPost
-  /* Create a commen */
+  /*
+
+
+Create a commen
+
+ */
   gistsIdCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7712,9 +9775,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsPost(
       incomingOptions.id,
@@ -7731,7 +9797,12 @@ class GithubService {
   }
 
   // This is a function for gistsIdForksPost
-  /* Fork a gist. */
+  /*
+
+
+Fork a gist.
+
+ */
   gistsIdForksPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7746,9 +9817,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdForksPost(
       incomingOptions.id,
@@ -7764,7 +9838,12 @@ class GithubService {
   }
 
   // This is a function for gistsPost
-  /* Create a gist. */
+  /*
+
+
+Create a gist.
+
+ */
   gistsPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7779,9 +9858,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsPost(
       incomingOptions.body,
@@ -7797,7 +9879,12 @@ class GithubService {
   }
 
   // This is a function for markdownPost
-  /* Render an arbitrary Markdown document */
+  /*
+
+
+Render an arbitrary Markdown document
+
+ */
   markdownPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7812,9 +9899,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.markdownPost(
       incomingOptions.body,
@@ -7830,7 +9920,12 @@ class GithubService {
   }
 
   // This is a function for markdownRawPost
-  /* Render a Markdown document in raw mode */
+  /*
+
+
+Render a Markdown document in raw mode
+
+ */
   markdownRawPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7845,9 +9940,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.markdownRawPost(
       incomingOptions.opts,
@@ -7862,7 +9960,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgReposPost
-  /* Create a new repository for the authenticated user. OAuth users must supply repo scope.  */
+  /*
+
+
+Create a new repository for the authenticated user. OAuth users must supply repo scope.
+
+ */
   orgsOrgReposPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7877,9 +9980,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgReposPost(
       incomingOptions.org,
@@ -7896,7 +10002,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgTeamsPost
-  /* Create team. In order to create a team, the authenticated user must be an owner of organization.  */
+  /*
+
+
+Create team. In order to create a team, the authenticated user must be an owner of organization.
+
+ */
   orgsOrgTeamsPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7911,9 +10022,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgTeamsPost(
       incomingOptions.org,
@@ -7930,7 +10044,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommitsShaCodeCommentsPost
-  /* Create a commit comment. */
+  /*
+
+
+Create a commit comment.
+
+ */
   reposOwnerRepoCommitsShaCodeCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7945,9 +10064,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommitsShaCodeCommentsPost(
       incomingOptions.owner,
@@ -7966,7 +10088,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDeploymentsIdStatusesPost
-  /* Create a Deployment Status Users with push access can create deployment statuses for a given deployment:  */
+  /*
+
+
+Create a Deployment Status Users with push access can create deployment statuses for a given deployment:
+
+ */
   reposOwnerRepoDeploymentsIdStatusesPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -7981,9 +10108,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDeploymentsIdStatusesPost(
       incomingOptions.owner,
@@ -8002,7 +10132,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDeploymentsPost
-  /* Users with push access can create a deployment for a given ref */
+  /*
+
+
+Users with push access can create a deployment for a given ref
+
+ */
   reposOwnerRepoDeploymentsPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -8017,9 +10152,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDeploymentsPost(
       incomingOptions.owner,
@@ -8037,7 +10175,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoForksPost
-  /* Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support.  */
+  /*
+
+
+Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support.
+
+ */
   reposOwnerRepoForksPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -8052,9 +10195,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoForksPost(
       incomingOptions.owner,
@@ -8072,7 +10218,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitBlobsPost
-  /* Create a Blob. */
+  /*
+
+
+Create a Blob.
+
+ */
   reposOwnerRepoGitBlobsPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -8089,9 +10240,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitBlobsPost(
       incomingOptions.owner,
@@ -8109,7 +10263,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitCommitsPost
-  /* Create a Commit. */
+  /*
+
+
+Create a Commit.
+
+ */
   reposOwnerRepoGitCommitsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8118,9 +10277,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitCommitsPost(
       incomingOptions.owner,
@@ -8138,7 +10300,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsPost
-  /* Create a Reference */
+  /*
+
+
+Create a Reference
+
+ */
   reposOwnerRepoGitRefsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8147,9 +10314,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsPost(
       incomingOptions.owner,
@@ -8167,7 +10337,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitTagsPost
-  /* Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary.  */
+  /*
+
+
+Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary.
+
+ */
   reposOwnerRepoGitTagsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8176,9 +10351,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitTagsPost(
       incomingOptions.owner,
@@ -8196,7 +10374,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitTreesPost
-  /* Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out.  */
+  /*
+
+
+Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out.
+
+ */
   reposOwnerRepoGitTreesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8205,9 +10388,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitTreesPost(
       incomingOptions.owner,
@@ -8225,7 +10411,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksHookIdTestsPost
-  /* Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes  */
+  /*
+
+
+Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes
+
+ */
   reposOwnerRepoHooksHookIdTestsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8234,9 +10425,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksHookIdTestsPost(
       incomingOptions.owner,
@@ -8254,7 +10448,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksPost
-  /* Create a hook. */
+  /*
+
+
+Create a hook.
+
+ */
   reposOwnerRepoHooksPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -8269,9 +10468,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksPost(
       incomingOptions.owner,
@@ -8289,7 +10491,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberCommentsPost
-  /* Create a comment. */
+  /*
+
+
+Create a comment.
+
+ */
   reposOwnerRepoIssuesNumberCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8298,9 +10505,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberCommentsPost(
       incomingOptions.owner,
@@ -8319,7 +10529,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsPost
-  /* Add labels to an issue. */
+  /*
+
+
+Add labels to an issue.
+
+ */
   reposOwnerRepoIssuesNumberLabelsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8328,9 +10543,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsPost(
       incomingOptions.owner,
@@ -8349,7 +10567,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesPost
-  /* Create an issue. Any user with pull access to a repository can create an issue.  */
+  /*
+
+
+Create an issue. Any user with pull access to a repository can create an issue.
+
+ */
   reposOwnerRepoIssuesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8358,9 +10581,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesPost(
       incomingOptions.owner,
@@ -8378,7 +10604,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoKeysPost
-  /* Create a key. */
+  /*
+
+
+Create a key.
+
+ */
   reposOwnerRepoKeysPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8387,9 +10618,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoKeysPost(
       incomingOptions.owner,
@@ -8407,7 +10641,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsPost
-  /* Create a label. */
+  /*
+
+
+Create a label.
+
+ */
   reposOwnerRepoLabelsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8416,9 +10655,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsPost(
       incomingOptions.owner,
@@ -8436,7 +10678,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMergesPost
-  /* Perform a merge. */
+  /*
+
+
+Perform a merge.
+
+ */
   reposOwnerRepoMergesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8445,9 +10692,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMergesPost(
       incomingOptions.owner,
@@ -8465,7 +10715,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesPost
-  /* Create a milestone. */
+  /*
+
+
+Create a milestone.
+
+ */
   reposOwnerRepoMilestonesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8474,9 +10729,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesPost(
       incomingOptions.owner,
@@ -8494,7 +10752,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberCommentsPost
-  /* Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.  */
+  /*
+
+
+Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.
+
+ */
   reposOwnerRepoPullsNumberCommentsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8503,9 +10766,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberCommentsPost(
       incomingOptions.owner,
@@ -8524,7 +10790,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsPost
-  /* Create a pull request. */
+  /*
+
+
+Create a pull request.
+
+ */
   reposOwnerRepoPullsPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8533,9 +10804,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsPost(
       incomingOptions.owner,
@@ -8553,7 +10827,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesPost
-  /* Create a release Users with push access to the repository can create a release.  */
+  /*
+
+
+Create a release Users with push access to the repository can create a release.
+
+ */
   reposOwnerRepoReleasesPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8562,9 +10841,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesPost(
       incomingOptions.owner,
@@ -8582,7 +10864,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoStatusesRefPost
-  /* Create a Status. */
+  /*
+
+
+Create a Status.
+
+ */
   reposOwnerRepoStatusesRefPost(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -8591,9 +10878,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoStatusesRefPost(
       incomingOptions.owner,
@@ -8612,7 +10902,12 @@ class GithubService {
   }
 
   // This is a function for userEmailsPost
-  /* Add email address(es). You can post a single email address or an array of addresses.  */
+  /*
+
+
+Add email address(es). You can post a single email address or an array of addresses.
+
+ */
   userEmailsPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -8627,9 +10922,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userEmailsPost(
       incomingOptions.body,
@@ -8645,7 +10943,12 @@ class GithubService {
   }
 
   // This is a function for userKeysPost
-  /* Create a public key. */
+  /*
+
+
+Create a public key.
+
+ */
   userKeysPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -8660,9 +10963,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userKeysPost(
       incomingOptions.body,
@@ -8678,7 +10984,12 @@ class GithubService {
   }
 
   // This is a function for userReposPost
-  /* Create a new repository for the authenticated user. OAuth users must supply repo scope.  */
+  /*
+
+
+Create a new repository for the authenticated user. OAuth users must supply repo scope.
+
+ */
   userReposPost(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -8693,9 +11004,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userReposPost(
       incomingOptions.body,
@@ -8714,7 +11028,12 @@ class GithubService {
     switch (entity) {
       case "GISTS_ID_STAR":
         /*
-      Star a gist.
+
+
+
+Star a gist.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -8728,7 +11047,12 @@ class GithubService {
 
       case "NOTIFICATIONS":
         /*
-      Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com.
+
+
+
+Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com.
+
+
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -8742,7 +11066,12 @@ class GithubService {
 
       case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
         /*
-      Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned).
+
+
+
+Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned).
+
+
       Function parameters for this API id,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -8759,7 +11088,12 @@ class GithubService {
 
       case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
         /*
-      Publicize a user&#39;s membership.
+
+
+
+Publicize a user&#39;s membership.
+
+
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8776,7 +11110,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COLLABORATORS_USER":
         /*
-      Add collaborator.
+
+
+
+Add collaborator.
+
+
       Function parameters for this API owner,repo,user,opts
         */
         return new Promise((resolve, reject) => {
@@ -8793,7 +11132,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_CONTENTS_PATH":
         /*
-      Create a file.
+
+
+
+Create a file.
+
+
       Function parameters for this API owner,repo,path,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -8807,7 +11151,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
         /*
-      Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue.
+
+
+
+Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue.
+
+
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -8824,7 +11173,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_NOTIFICATIONS":
         /*
-      Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com.
+
+
+
+Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -8841,7 +11195,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER_MERGE":
         /*
-      Merge a pull request (Merge Button&#39;s)
+
+
+
+Merge a pull request (Merge Button&#39;s)
+
+
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -8858,7 +11217,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_SUBSCRIPTION":
         /*
-      Set a Repository Subscription
+
+
+
+Set a Repository Subscription
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -8872,7 +11236,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
         /*
-      The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with.
+
+
+
+The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with.
+
+
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8886,7 +11255,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
         /*
-      Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team.
+
+
+
+Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team.
+
+
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8903,7 +11277,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
         /*
-      In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.
+
+
+
+In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.
+
+
       Function parameters for this API teamId,owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -8917,7 +11296,12 @@ class GithubService {
 
       case "USER_FOLLOWING_USERNAME":
         /*
-      Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
+
+
+
+Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -8931,7 +11315,12 @@ class GithubService {
 
       case "USER_STARRED_OWNER_REPO":
         /*
-      Star a repository.
+
+
+
+Star a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -8945,7 +11334,12 @@ class GithubService {
 
       case "USER_SUBSCRIPTIONS_OWNER_REPO":
         /*
-      Watch a repository.
+
+
+
+Watch a repository.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -8962,7 +11356,12 @@ class GithubService {
     }
   }
   // This is a function for gistsIdStarPut
-  /* Star a gist. */
+  /*
+
+
+Star a gist.
+
+ */
   gistsIdStarPut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -8977,9 +11376,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdStarPut(
       incomingOptions.id,
@@ -8995,7 +11397,12 @@ class GithubService {
   }
 
   // This is a function for notificationsPut
-  /* Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com.  */
+  /*
+
+
+Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com.
+
+ */
   notificationsPut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9010,9 +11417,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsPut(
       incomingOptions.body,
@@ -9028,7 +11438,12 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdSubscriptionPut
-  /* Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned).  */
+  /*
+
+
+Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned).
+
+ */
   notificationsThreadsIdSubscriptionPut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9043,9 +11458,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdSubscriptionPut(
       incomingOptions.id,
@@ -9062,7 +11480,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPublicMembersUsernamePut
-  /* Publicize a user&#39;s membership. */
+  /*
+
+
+Publicize a user&#39;s membership.
+
+ */
   orgsOrgPublicMembersUsernamePut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9077,9 +11500,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPublicMembersUsernamePut(
       incomingOptions.org,
@@ -9096,7 +11522,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCollaboratorsUserPut
-  /* Add collaborator. */
+  /*
+
+
+Add collaborator.
+
+ */
   reposOwnerRepoCollaboratorsUserPut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9111,9 +11542,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCollaboratorsUserPut(
       incomingOptions.owner,
@@ -9131,7 +11565,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoContentsPathPut
-  /* Create a file. */
+  /*
+
+
+Create a file.
+
+ */
   reposOwnerRepoContentsPathPut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9146,9 +11585,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoContentsPathPut(
       incomingOptions.owner,
@@ -9167,7 +11609,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsPut
-  /* Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue.  */
+  /*
+
+
+Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue.
+
+ */
   reposOwnerRepoIssuesNumberLabelsPut(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -9176,9 +11623,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsPut(
       incomingOptions.owner,
@@ -9197,7 +11647,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoNotificationsPut
-  /* Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com.  */
+  /*
+
+
+Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com.
+
+ */
   reposOwnerRepoNotificationsPut(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -9206,9 +11661,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoNotificationsPut(
       incomingOptions.owner,
@@ -9226,7 +11684,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberMergePut
-  /* Merge a pull request (Merge Button&#39;s) */
+  /*
+
+
+Merge a pull request (Merge Button&#39;s)
+
+ */
   reposOwnerRepoPullsNumberMergePut(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -9235,9 +11698,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberMergePut(
       incomingOptions.owner,
@@ -9256,7 +11722,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoSubscriptionPut
-  /* Set a Repository Subscription */
+  /*
+
+
+Set a Repository Subscription
+
+ */
   reposOwnerRepoSubscriptionPut(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -9265,9 +11736,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoSubscriptionPut(
       incomingOptions.owner,
@@ -9285,7 +11759,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembersUsernamePut
-  /* The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with.  */
+  /*
+
+
+The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with.
+
+ */
   teamsTeamIdMembersUsernamePut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9300,9 +11779,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembersUsernamePut(
       incomingOptions.teamId,
@@ -9319,7 +11801,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembershipsUsernamePut
-  /* Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team.  */
+  /*
+
+
+Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team.
+
+ */
   teamsTeamIdMembershipsUsernamePut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9334,9 +11821,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembershipsUsernamePut(
       incomingOptions.teamId,
@@ -9353,7 +11843,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdReposOwnerRepoPut
-  /* In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization. */
+  /*
+
+
+In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.
+
+ */
   teamsTeamIdReposOwnerRepoPut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9368,9 +11863,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdReposOwnerRepoPut(
       incomingOptions.teamId,
@@ -9388,7 +11886,12 @@ class GithubService {
   }
 
   // This is a function for userFollowingUsernamePut
-  /* Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.  */
+  /*
+
+
+Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
+
+ */
   userFollowingUsernamePut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9403,9 +11906,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowingUsernamePut(
       incomingOptions.username,
@@ -9421,7 +11927,12 @@ class GithubService {
   }
 
   // This is a function for userStarredOwnerRepoPut
-  /* Star a repository. */
+  /*
+
+
+Star a repository.
+
+ */
   userStarredOwnerRepoPut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9436,9 +11947,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userStarredOwnerRepoPut(
       incomingOptions.owner,
@@ -9455,7 +11969,12 @@ class GithubService {
   }
 
   // This is a function for userSubscriptionsOwnerRepoPut
-  /* Watch a repository. */
+  /*
+
+
+Watch a repository.
+
+ */
   userSubscriptionsOwnerRepoPut(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -9470,9 +11989,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userSubscriptionsOwnerRepoPut(
       incomingOptions.owner,
@@ -9492,7 +12014,12 @@ class GithubService {
     switch (entity) {
       case "GISTS_ID_COMMENTS_COMMENT_ID":
         /*
-      Delete a comment.
+
+
+
+Delete a comment.
+
+
       Function parameters for this API id,commentId,opts
         */
         return new Promise((resolve, reject) => {
@@ -9509,7 +12036,12 @@ class GithubService {
 
       case "GISTS_ID":
         /*
-      Delete a gist.
+
+
+
+Delete a gist.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -9523,7 +12055,12 @@ class GithubService {
 
       case "GISTS_ID_STAR":
         /*
-      Unstar a gist.
+
+
+
+Unstar a gist.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -9537,7 +12074,12 @@ class GithubService {
 
       case "NOTIFICATIONS_THREADS_ID_SUBSCRIPTION":
         /*
-      Delete a Thread Subscription.
+
+
+
+Delete a Thread Subscription.
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -9554,7 +12096,12 @@ class GithubService {
 
       case "ORGS_ORG_MEMBERS_USERNAME":
         /*
-      Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories.
+
+
+
+Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories.
+
+
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -9568,7 +12115,12 @@ class GithubService {
 
       case "ORGS_ORG_PUBLIC_MEMBERS_USERNAME":
         /*
-      Conceal a user&#39;s membership.
+
+
+
+Conceal a user&#39;s membership.
+
+
       Function parameters for this API org,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -9585,7 +12137,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COLLABORATORS_USER":
         /*
-      Remove collaborator.
+
+
+
+Remove collaborator.
+
+
       Function parameters for this API owner,repo,user,opts
         */
         return new Promise((resolve, reject) => {
@@ -9602,7 +12159,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
         /*
-      Delete a commit comment
+
+
+
+Delete a commit comment
+
+
       Function parameters for this API owner,repo,commentId,opts
         */
         return new Promise((resolve, reject) => {
@@ -9619,7 +12181,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_CONTENTS_PATH":
         /*
-      Delete a file. This method deletes a file in a repository.
+
+
+
+Delete a file. This method deletes a file in a repository.
+
+
       Function parameters for this API owner,repo,path,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -9636,7 +12203,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO":
         /*
-      Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required.
+
+
+
+Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -9650,7 +12222,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID":
         /*
-      Deprecated. Delete a download.
+
+
+
+Deprecated. Delete a download.
+
+
       Function parameters for this API owner,repo,downloadId,opts
         */
         return new Promise((resolve, reject) => {
@@ -9667,7 +12244,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_REFS_REF":
         /*
-      Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
+
+
+
+Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
+
+
       Function parameters for this API owner,repo,ref,opts
         */
         return new Promise((resolve, reject) => {
@@ -9684,7 +12266,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
         /*
-      Delete a hook.
+
+
+
+Delete a hook.
+
+
       Function parameters for this API owner,repo,hookId,opts
         */
         return new Promise((resolve, reject) => {
@@ -9701,7 +12288,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
         /*
-      Delete a comment.
+
+
+
+Delete a comment.
+
+
       Function parameters for this API owner,repo,commentId,opts
         */
         return new Promise((resolve, reject) => {
@@ -9718,7 +12310,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS":
         /*
-      Remove all labels from an issue.
+
+
+
+Remove all labels from an issue.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -9735,7 +12332,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_NAME":
         /*
-      Remove a label from an issue.
+
+
+
+Remove a label from an issue.
+
+
       Function parameters for this API owner,repo,_number,name,opts
         */
         return new Promise((resolve, reject) => {
@@ -9752,7 +12354,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_KEYS_KEY_ID":
         /*
-      Delete a key.
+
+
+
+Delete a key.
+
+
       Function parameters for this API owner,repo,keyId,opts
         */
         return new Promise((resolve, reject) => {
@@ -9766,7 +12373,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_LABELS_NAME":
         /*
-      Delete a label.
+
+
+
+Delete a label.
+
+
       Function parameters for this API owner,repo,name,opts
         */
         return new Promise((resolve, reject) => {
@@ -9783,7 +12395,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
         /*
-      Delete a milestone.
+
+
+
+Delete a milestone.
+
+
       Function parameters for this API owner,repo,_number,opts
         */
         return new Promise((resolve, reject) => {
@@ -9800,7 +12417,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
         /*
-      Delete a comment.
+
+
+
+Delete a comment.
+
+
       Function parameters for this API owner,repo,commentId,opts
         */
         return new Promise((resolve, reject) => {
@@ -9817,7 +12439,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
         /*
-      Delete a release asset
+
+
+
+Delete a release asset
+
+
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
@@ -9834,7 +12461,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_RELEASES_ID":
         /*
-      Users with push access to the repository can delete a release.
+
+
+
+Users with push access to the repository can delete a release.
+
+
       Function parameters for this API owner,repo,id,opts
         */
         return new Promise((resolve, reject) => {
@@ -9851,7 +12483,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_SUBSCRIPTION":
         /*
-      Delete a Repository Subscription.
+
+
+
+Delete a Repository Subscription.
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -9868,7 +12505,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID":
         /*
-      Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with.
+
+
+
+Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with.
+
+
       Function parameters for this API teamId,opts
         */
         return new Promise((resolve, reject) => {
@@ -9882,7 +12524,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_MEMBERS_USERNAME":
         /*
-      The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team.
+
+
+
+The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team.
+
+
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -9899,7 +12546,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME":
         /*
-      Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.
+
+
+
+Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.
+
+
       Function parameters for this API teamId,username,opts
         */
         return new Promise((resolve, reject) => {
@@ -9916,7 +12568,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID_REPOS_OWNER_REPO":
         /*
-      In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.
+
+
+
+In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.
+
+
       Function parameters for this API teamId,owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -9933,7 +12590,12 @@ class GithubService {
 
       case "USER_EMAILS":
         /*
-      Delete email address(es). You can include a single email address or an array of addresses.
+
+
+
+Delete email address(es). You can include a single email address or an array of addresses.
+
+
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -9947,7 +12609,12 @@ class GithubService {
 
       case "USER_FOLLOWING_USERNAME":
         /*
-      Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
+
+
+
+Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
+
+
       Function parameters for this API username,opts
         */
         return new Promise((resolve, reject) => {
@@ -9961,7 +12628,12 @@ class GithubService {
 
       case "USER_KEYS_KEY_ID":
         /*
-      Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.
+
+
+
+Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.
+
+
       Function parameters for this API keyId,opts
         */
         return new Promise((resolve, reject) => {
@@ -9975,7 +12647,12 @@ class GithubService {
 
       case "USER_STARRED_OWNER_REPO":
         /*
-      Unstar a repository
+
+
+
+Unstar a repository
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -9989,7 +12666,12 @@ class GithubService {
 
       case "USER_SUBSCRIPTIONS_OWNER_REPO":
         /*
-      Stop watching a repository
+
+
+
+Stop watching a repository
+
+
       Function parameters for this API owner,repo,opts
         */
         return new Promise((resolve, reject) => {
@@ -10009,7 +12691,12 @@ class GithubService {
     }
   }
   // This is a function for gistsIdCommentsCommentIdDelete
-  /* Delete a comment. */
+  /*
+
+
+Delete a comment.
+
+ */
   gistsIdCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10024,9 +12711,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsCommentIdDelete(
       incomingOptions.id,
@@ -10043,7 +12733,12 @@ class GithubService {
   }
 
   // This is a function for gistsIdDelete
-  /* Delete a gist. */
+  /*
+
+
+Delete a gist.
+
+ */
   gistsIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10058,9 +12753,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdDelete(
       incomingOptions.id,
@@ -10076,7 +12774,12 @@ class GithubService {
   }
 
   // This is a function for gistsIdStarDelete
-  /* Unstar a gist. */
+  /*
+
+
+Unstar a gist.
+
+ */
   gistsIdStarDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10091,9 +12794,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdStarDelete(
       incomingOptions.id,
@@ -10109,7 +12815,12 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdSubscriptionDelete
-  /* Delete a Thread Subscription. */
+  /*
+
+
+Delete a Thread Subscription.
+
+ */
   notificationsThreadsIdSubscriptionDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10124,9 +12835,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdSubscriptionDelete(
       incomingOptions.id,
@@ -10142,7 +12856,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgMembersUsernameDelete
-  /* Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories.  */
+  /*
+
+
+Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories.
+
+ */
   orgsOrgMembersUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10157,9 +12876,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgMembersUsernameDelete(
       incomingOptions.org,
@@ -10176,7 +12898,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPublicMembersUsernameDelete
-  /* Conceal a user&#39;s membership. */
+  /*
+
+
+Conceal a user&#39;s membership.
+
+ */
   orgsOrgPublicMembersUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10191,9 +12918,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPublicMembersUsernameDelete(
       incomingOptions.org,
@@ -10210,7 +12940,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCollaboratorsUserDelete
-  /* Remove collaborator. */
+  /*
+
+
+Remove collaborator.
+
+ */
   reposOwnerRepoCollaboratorsUserDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10225,9 +12960,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCollaboratorsUserDelete(
       incomingOptions.owner,
@@ -10245,7 +12983,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommentsCommentIdDelete
-  /* Delete a commit comment */
+  /*
+
+
+Delete a commit comment
+
+ */
   reposOwnerRepoCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10260,9 +13003,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommentsCommentIdDelete(
       incomingOptions.owner,
@@ -10280,7 +13026,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoContentsPathDelete
-  /* Delete a file. This method deletes a file in a repository.  */
+  /*
+
+
+Delete a file. This method deletes a file in a repository.
+
+ */
   reposOwnerRepoContentsPathDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10295,9 +13046,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoContentsPathDelete(
       incomingOptions.owner,
@@ -10316,7 +13070,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDelete
-  /* Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required.  */
+  /*
+
+
+Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required.
+
+ */
   reposOwnerRepoDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10331,9 +13090,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDelete(
       incomingOptions.owner,
@@ -10350,7 +13112,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoDownloadsDownloadIdDelete
-  /* Deprecated. Delete a download. */
+  /*
+
+
+Deprecated. Delete a download.
+
+ */
   reposOwnerRepoDownloadsDownloadIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10365,9 +13132,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoDownloadsDownloadIdDelete(
       incomingOptions.owner,
@@ -10385,7 +13155,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsRefDelete
-  /* Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0  */
+  /*
+
+
+Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0
+
+ */
   reposOwnerRepoGitRefsRefDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10394,9 +13169,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsRefDelete(
       incomingOptions.owner,
@@ -10414,7 +13192,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksHookIdDelete
-  /* Delete a hook. */
+  /*
+
+
+Delete a hook.
+
+ */
   reposOwnerRepoHooksHookIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10429,9 +13212,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksHookIdDelete(
       incomingOptions.owner,
@@ -10449,7 +13235,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesCommentsCommentIdDelete
-  /* Delete a comment. */
+  /*
+
+
+Delete a comment.
+
+ */
   reposOwnerRepoIssuesCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10458,9 +13249,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesCommentsCommentIdDelete(
       incomingOptions.owner,
@@ -10478,7 +13272,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsDelete
-  /* Remove all labels from an issue. */
+  /*
+
+
+Remove all labels from an issue.
+
+ */
   reposOwnerRepoIssuesNumberLabelsDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10487,9 +13286,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsDelete(
       incomingOptions.owner,
@@ -10507,7 +13309,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberLabelsNameDelete
-  /* Remove a label from an issue. */
+  /*
+
+
+Remove a label from an issue.
+
+ */
   reposOwnerRepoIssuesNumberLabelsNameDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10516,9 +13323,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberLabelsNameDelete(
       incomingOptions.owner,
@@ -10537,7 +13347,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoKeysKeyIdDelete
-  /* Delete a key. */
+  /*
+
+
+Delete a key.
+
+ */
   reposOwnerRepoKeysKeyIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10546,9 +13361,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoKeysKeyIdDelete(
       incomingOptions.owner,
@@ -10566,7 +13384,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsNameDelete
-  /* Delete a label. */
+  /*
+
+
+Delete a label.
+
+ */
   reposOwnerRepoLabelsNameDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10575,9 +13398,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsNameDelete(
       incomingOptions.owner,
@@ -10595,7 +13421,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesNumberDelete
-  /* Delete a milestone. */
+  /*
+
+
+Delete a milestone.
+
+ */
   reposOwnerRepoMilestonesNumberDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10604,9 +13435,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesNumberDelete(
       incomingOptions.owner,
@@ -10624,7 +13458,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsCommentsCommentIdDelete
-  /* Delete a comment. */
+  /*
+
+
+Delete a comment.
+
+ */
   reposOwnerRepoPullsCommentsCommentIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10633,9 +13472,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsCommentsCommentIdDelete(
       incomingOptions.owner,
@@ -10653,7 +13495,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesAssetsIdDelete
-  /* Delete a release asset */
+  /*
+
+
+Delete a release asset
+
+ */
   reposOwnerRepoReleasesAssetsIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10662,9 +13509,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesAssetsIdDelete(
       incomingOptions.owner,
@@ -10682,7 +13532,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesIdDelete
-  /* Users with push access to the repository can delete a release. */
+  /*
+
+
+Users with push access to the repository can delete a release.
+
+ */
   reposOwnerRepoReleasesIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10691,9 +13546,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesIdDelete(
       incomingOptions.owner,
@@ -10711,7 +13569,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoSubscriptionDelete
-  /* Delete a Repository Subscription. */
+  /*
+
+
+Delete a Repository Subscription.
+
+ */
   reposOwnerRepoSubscriptionDelete(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -10720,9 +13583,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoSubscriptionDelete(
       incomingOptions.owner,
@@ -10739,7 +13605,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdDelete
-  /* Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with.  */
+  /*
+
+
+Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with.
+
+ */
   teamsTeamIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10756,9 +13627,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdDelete(
       incomingOptions.teamId,
@@ -10774,7 +13648,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembersUsernameDelete
-  /* The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team.  */
+  /*
+
+
+The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team.
+
+ */
   teamsTeamIdMembersUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10791,9 +13670,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembersUsernameDelete(
       incomingOptions.teamId,
@@ -10810,7 +13692,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdMembershipsUsernameDelete
-  /* Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.  */
+  /*
+
+
+Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.
+
+ */
   teamsTeamIdMembershipsUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10827,9 +13714,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdMembershipsUsernameDelete(
       incomingOptions.teamId,
@@ -10846,7 +13736,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdReposOwnerRepoDelete
-  /* In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team. */
+  /*
+
+
+In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.
+
+ */
   teamsTeamIdReposOwnerRepoDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10863,9 +13758,12 @@ class GithubService {
       page: 1 // Number | Page number at which you want the search result to come from.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdReposOwnerRepoDelete(
       incomingOptions.teamId,
@@ -10883,7 +13781,12 @@ class GithubService {
   }
 
   // This is a function for userEmailsDelete
-  /* Delete email address(es). You can include a single email address or an array of addresses.  */
+  /*
+
+
+Delete email address(es). You can include a single email address or an array of addresses.
+
+ */
   userEmailsDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10898,9 +13801,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userEmailsDelete(
       incomingOptions.body,
@@ -10916,7 +13822,12 @@ class GithubService {
   }
 
   // This is a function for userFollowingUsernameDelete
-  /* Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.  */
+  /*
+
+
+Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.
+
+ */
   userFollowingUsernameDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10931,9 +13842,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userFollowingUsernameDelete(
       incomingOptions.username,
@@ -10949,7 +13863,12 @@ class GithubService {
   }
 
   // This is a function for userKeysKeyIdDelete
-  /* Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope. */
+  /*
+
+
+Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.
+
+ */
   userKeysKeyIdDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10964,9 +13883,12 @@ class GithubService {
       accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userKeysKeyIdDelete(
       incomingOptions.keyId,
@@ -10982,7 +13904,12 @@ class GithubService {
   }
 
   // This is a function for userStarredOwnerRepoDelete
-  /* Unstar a repository */
+  /*
+
+
+Unstar a repository
+
+ */
   userStarredOwnerRepoDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -10997,9 +13924,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userStarredOwnerRepoDelete(
       incomingOptions.owner,
@@ -11016,7 +13946,12 @@ class GithubService {
   }
 
   // This is a function for userSubscriptionsOwnerRepoDelete
-  /* Stop watching a repository */
+  /*
+
+
+Stop watching a repository
+
+ */
   userSubscriptionsOwnerRepoDelete(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11031,9 +13966,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userSubscriptionsOwnerRepoDelete(
       incomingOptions.owner,
@@ -11053,7 +13991,12 @@ class GithubService {
     switch (entity) {
       case "GISTS_ID_COMMENTS_COMMENT_ID":
         /*
-      Edit a comment.
+
+
+
+Edit a comment.
+
+
       Function parameters for this API id,commentId,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11067,7 +14010,12 @@ class GithubService {
 
       case "GISTS_ID":
         /*
-      Edit a gist.
+
+
+
+Edit a gist.
+
+
       Function parameters for this API id,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11081,7 +14029,12 @@ class GithubService {
 
       case "NOTIFICATIONS_THREADS_ID":
         /*
-      Mark a thread as read
+
+
+
+Mark a thread as read
+
+
       Function parameters for this API id,opts
         */
         return new Promise((resolve, reject) => {
@@ -11095,7 +14048,12 @@ class GithubService {
 
       case "ORGS_ORG":
         /*
-      Edit an Organization.
+
+
+
+Edit an Organization.
+
+
       Function parameters for this API org,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11109,7 +14067,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_COMMENTS_COMMENT_ID":
         /*
-      Update a commit comment.
+
+
+
+Update a commit comment.
+
+
       Function parameters for this API owner,repo,commentId,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11126,7 +14089,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_GIT_REFS_REF":
         /*
-      Update a Reference
+
+
+
+Update a Reference
+
+
       Function parameters for this API owner,repo,ref,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11140,7 +14108,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_HOOKS_HOOK_ID":
         /*
-      Edit a hook.
+
+
+
+Edit a hook.
+
+
       Function parameters for this API owner,repo,hookId,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11157,7 +14130,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID":
         /*
-      Edit a comment.
+
+
+
+Edit a comment.
+
+
       Function parameters for this API owner,repo,commentId,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11174,7 +14152,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_ISSUES_NUMBER":
         /*
-      Edit an issue. Issue owners and users with push access can edit an issue.
+
+
+
+Edit an issue. Issue owners and users with push access can edit an issue.
+
+
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11191,7 +14174,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_LABELS_NAME":
         /*
-      Update a label.
+
+
+
+Update a label.
+
+
       Function parameters for this API owner,repo,name,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11205,7 +14193,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_MILESTONES_NUMBER":
         /*
-      Update a milestone.
+
+
+
+Update a milestone.
+
+
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11222,7 +14215,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO":
         /*
-      Edit repository.
+
+
+
+Edit repository.
+
+
       Function parameters for this API owner,repo,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11236,7 +14234,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID":
         /*
-      Edit a comment.
+
+
+
+Edit a comment.
+
+
       Function parameters for this API owner,repo,commentId,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11253,7 +14256,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_PULLS_NUMBER":
         /*
-      Update a pull request.
+
+
+
+Update a pull request.
+
+
       Function parameters for this API owner,repo,_number,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11270,7 +14278,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_RELEASES_ASSETS_ID":
         /*
-      Edit a release asset Users with push access to the repository can edit a release asset.
+
+
+
+Edit a release asset Users with push access to the repository can edit a release asset.
+
+
       Function parameters for this API owner,repo,id,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11287,7 +14300,12 @@ class GithubService {
 
       case "REPOS_OWNER_REPO_RELEASES_ID":
         /*
-      Users with push access to the repository can edit a release
+
+
+
+Users with push access to the repository can edit a release
+
+
       Function parameters for this API owner,repo,id,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11301,7 +14319,12 @@ class GithubService {
 
       case "TEAMS_TEAM_ID":
         /*
-      Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with.
+
+
+
+Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with.
+
+
       Function parameters for this API teamId,body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11315,7 +14338,12 @@ class GithubService {
 
       case "USER":
         /*
-      Update the authenticated user.
+
+
+
+Update the authenticated user.
+
+
       Function parameters for this API body,opts
         */
         return new Promise((resolve, reject) => {
@@ -11332,7 +14360,12 @@ class GithubService {
     }
   }
   // This is a function for gistsIdCommentsCommentIdPatch
-  /* Edit a comment. */
+  /*
+
+
+Edit a comment.
+
+ */
   gistsIdCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11347,9 +14380,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdCommentsCommentIdPatch(
       incomingOptions.id,
@@ -11367,7 +14403,12 @@ class GithubService {
   }
 
   // This is a function for gistsIdPatch
-  /* Edit a gist. */
+  /*
+
+
+Edit a gist.
+
+ */
   gistsIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11382,9 +14423,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.gistsIdPatch(
       incomingOptions.id,
@@ -11401,7 +14445,12 @@ class GithubService {
   }
 
   // This is a function for notificationsThreadsIdPatch
-  /* Mark a thread as read */
+  /*
+
+
+Mark a thread as read
+
+ */
   notificationsThreadsIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11416,9 +14465,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.notificationsThreadsIdPatch(
       incomingOptions.id,
@@ -11434,7 +14486,12 @@ class GithubService {
   }
 
   // This is a function for orgsOrgPatch
-  /* Edit an Organization. */
+  /*
+
+
+Edit an Organization.
+
+ */
   orgsOrgPatch(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11449,9 +14506,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.orgsOrgPatch(
       incomingOptions.org,
@@ -11468,7 +14528,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoCommentsCommentIdPatch
-  /* Update a commit comment. */
+  /*
+
+
+Update a commit comment.
+
+ */
   reposOwnerRepoCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11483,9 +14548,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoCommentsCommentIdPatch(
       incomingOptions.owner,
@@ -11504,7 +14572,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoGitRefsRefPatch
-  /* Update a Reference */
+  /*
+
+
+Update a Reference
+
+ */
   reposOwnerRepoGitRefsRefPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -11513,9 +14586,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoGitRefsRefPatch(
       incomingOptions.owner,
@@ -11534,7 +14610,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoHooksHookIdPatch
-  /* Edit a hook. */
+  /*
+
+
+Edit a hook.
+
+ */
   reposOwnerRepoHooksHookIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11549,9 +14630,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoHooksHookIdPatch(
       incomingOptions.owner,
@@ -11570,7 +14654,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesCommentsCommentIdPatch
-  /* Edit a comment. */
+  /*
+
+
+Edit a comment.
+
+ */
   reposOwnerRepoIssuesCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -11579,9 +14668,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesCommentsCommentIdPatch(
       incomingOptions.owner,
@@ -11600,7 +14692,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoIssuesNumberPatch
-  /* Edit an issue. Issue owners and users with push access can edit an issue.  */
+  /*
+
+
+Edit an issue. Issue owners and users with push access can edit an issue.
+
+ */
   reposOwnerRepoIssuesNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -11609,9 +14706,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoIssuesNumberPatch(
       incomingOptions.owner,
@@ -11630,7 +14730,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoLabelsNamePatch
-  /* Update a label. */
+  /*
+
+
+Update a label.
+
+ */
   reposOwnerRepoLabelsNamePatch(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -11639,9 +14744,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoLabelsNamePatch(
       incomingOptions.owner,
@@ -11660,7 +14768,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoMilestonesNumberPatch
-  /* Update a milestone. */
+  /*
+
+
+Update a milestone.
+
+ */
   reposOwnerRepoMilestonesNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -11669,9 +14782,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoMilestonesNumberPatch(
       incomingOptions.owner,
@@ -11690,7 +14806,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPatch
-  /* Edit repository. */
+  /*
+
+
+Edit repository.
+
+ */
   reposOwnerRepoPatch(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11705,9 +14826,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPatch(
       incomingOptions.owner,
@@ -11725,7 +14849,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsCommentsCommentIdPatch
-  /* Edit a comment. */
+  /*
+
+
+Edit a comment.
+
+ */
   reposOwnerRepoPullsCommentsCommentIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -11734,9 +14863,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsCommentsCommentIdPatch(
       incomingOptions.owner,
@@ -11755,7 +14887,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoPullsNumberPatch
-  /* Update a pull request. */
+  /*
+
+
+Update a pull request.
+
+ */
   reposOwnerRepoPullsNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -11764,9 +14901,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoPullsNumberPatch(
       incomingOptions.owner,
@@ -11785,7 +14925,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesAssetsIdPatch
-  /* Edit a release asset Users with push access to the repository can edit a release asset.  */
+  /*
+
+
+Edit a release asset Users with push access to the repository can edit a release asset.
+
+ */
   reposOwnerRepoReleasesAssetsIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -11794,9 +14939,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesAssetsIdPatch(
       incomingOptions.owner,
@@ -11815,7 +14963,12 @@ class GithubService {
   }
 
   // This is a function for reposOwnerRepoReleasesIdPatch
-  /* Users with push access to the repository can edit a release */
+  /*
+
+
+Users with push access to the repository can edit a release
+
+ */
   reposOwnerRepoReleasesIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
 
@@ -11824,9 +14977,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.reposOwnerRepoReleasesIdPatch(
       incomingOptions.owner,
@@ -11845,7 +15001,12 @@ class GithubService {
   }
 
   // This is a function for teamsTeamIdPatch
-  /* Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with.  */
+  /*
+
+
+Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with.
+
+ */
   teamsTeamIdPatch(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11860,9 +15021,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsTeamIdPatch(
       incomingOptions.teamId,
@@ -11879,7 +15043,12 @@ class GithubService {
   }
 
   // This is a function for userPatch
-  /* Update the authenticated user. */
+  /*
+
+
+Update the authenticated user.
+
+ */
   userPatch(incomingOptions, cb) {
     const Github = require("./dist");
     let defaultClient = Github.ApiClient.instance;
@@ -11894,9 +15063,12 @@ class GithubService {
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
-    incomingOptions.opts = Object.assign(opts, function() {
-      return incomingOptions.opts;
-    });
+    Object.keys(incomingOptions.opts).forEach(
+      key =>
+        incomingOptions.opts[key] === undefined &&
+        delete incomingOptions.opts[key]
+    );
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userPatch(
       incomingOptions.body,

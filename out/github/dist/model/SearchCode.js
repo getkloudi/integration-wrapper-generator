@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchCode model module.
  * @module model/SearchCode
- * @version 1.4.2
+ * @version 1.4.3
  */
 var SearchCode =
 /*#__PURE__*/

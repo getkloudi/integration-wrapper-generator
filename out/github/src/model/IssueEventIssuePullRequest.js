@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IssueEventIssuePullRequest model module.
  * @module model/IssueEventIssuePullRequest
- * @version 1.4.2
+ * @version 1.4.3
  */
 class IssueEventIssuePullRequest {
     /**

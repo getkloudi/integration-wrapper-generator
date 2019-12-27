@@ -17,7 +17,7 @@ import OrganizationAsTeamMemberErrors from './OrganizationAsTeamMemberErrors';
 /**
  * The OrganizationAsTeamMember model module.
  * @module model/OrganizationAsTeamMember
- * @version 1.4.2
+ * @version 1.4.3
  */
 class OrganizationAsTeamMember {
     /**

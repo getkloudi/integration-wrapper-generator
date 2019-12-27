@@ -1,0 +1,1465 @@
+api,http-method,description,functionName,functionParameters
+/emojis,GET,"
+
+
+Lists all the emojis available to use on GitHub.
+
+",emojisGet,opts
+/events,GET,"
+
+
+List public events.
+
+",eventsGet,opts
+/feeds,GET,"
+
+
+List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user. 
+
+",feedsGet,opts
+/gists,GET,"
+
+
+List the authenticated user&#39;s gists or if called anonymously, this will return all public gists. 
+
+",gistsGet,opts
+/gists/{id}/comments/{commentId},DELETE,"
+
+
+Delete a comment.
+
+",gistsIdCommentsCommentIdDelete,id commentId opts
+/gists/{id}/comments/{commentId},GET,"
+
+
+Get a single comment.
+
+",gistsIdCommentsCommentIdGet,id commentId opts
+/gists/{id}/comments/{commentId},PATCH,"
+
+
+Edit a comment.
+
+",gistsIdCommentsCommentIdPatch,id commentId body opts
+/gists/{id}/comments,GET,"
+
+
+List comments on a gist.
+
+",gistsIdCommentsGet,id opts
+/gists/{id}/comments,POST,"
+
+
+Create a commen
+
+",gistsIdCommentsPost,id body opts
+/gists/{id},DELETE,"
+
+
+Delete a gist.
+
+",gistsIdDelete,id opts
+/gists/{id}/forks,POST,"
+
+
+Fork a gist.
+
+",gistsIdForksPost,id opts
+/gists/{id},GET,"
+
+
+Get a single gist.
+
+",gistsIdGet,id opts
+/gists/{id},PATCH,"
+
+
+Edit a gist.
+
+",gistsIdPatch,id body opts
+/gists/{id}/star,DELETE,"
+
+
+Unstar a gist.
+
+",gistsIdStarDelete,id opts
+/gists/{id}/star,GET,"
+
+
+Check if a gist is starred.
+
+",gistsIdStarGet,id opts
+/gists/{id}/star,PUT,"
+
+
+Star a gist.
+
+",gistsIdStarPut,id opts
+/gists,POST,"
+
+
+Create a gist.
+
+",gistsPost,body opts
+/gists/public,GET,"
+
+
+List all public gists.
+
+",gistsPublicGet,opts
+/gists/starred,GET,"
+
+
+List the authenticated user&#39;s starred gists.
+
+",gistsStarredGet,opts
+/gitignore/templates,GET,"
+
+
+Listing available templates. List all templates available to pass as an option when creating a repository. 
+
+",gitignoreTemplatesGet,opts
+/gitignore/templates/{language},GET,"
+
+
+Get a single template.
+
+",gitignoreTemplatesLanguageGet,language opts
+/issues,GET,"
+
+
+List issues. List all issues across all the authenticated user&#39;s visible repositories. 
+
+",issuesGet,filter state labels sort direction opts
+/legacy/issues/search/{owner}/{repository}/{state}/{keyword},GET,"
+
+
+Find issues by state and keyword.
+
+",legacyIssuesSearchOwnerRepositoryStateKeywordGet,keyword state owner repository opts
+/legacy/repos/search/{keyword},GET,"
+
+
+Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.
+
+",legacyReposSearchKeywordGet,keyword opts
+/legacy/user/email/{email},GET,"
+
+
+This API call is added for compatibility reasons only.
+
+",legacyUserEmailEmailGet,email opts
+/legacy/user/search/{keyword},GET,"
+
+
+Find users by keyword.
+
+",legacyUserSearchKeywordGet,keyword opts
+/markdown,POST,"
+
+
+Render an arbitrary Markdown document
+
+",markdownPost,body opts
+/markdown/raw,POST,"
+
+
+Render a Markdown document in raw mode
+
+",markdownRawPost,opts
+/meta,GET,"
+
+
+This gives some information about GitHub.com, the service.
+
+",metaGet,opts
+/networks/{owner}/{repo}/events,GET,"
+
+
+List public events for a network of repositories.
+
+",networksOwnerRepoEventsGet,owner repo opts
+/notifications,GET,"
+
+
+List your notifications. List all notifications for the current user, grouped by repository. 
+
+",notificationsGet,opts
+/notifications,PUT,"
+
+
+Mark as read. Marking a notification as \&quot;read\&quot; removes it from the default view on GitHub.com. 
+
+",notificationsPut,body opts
+/notifications/threads/{id},GET,"
+
+
+View a single thread.
+
+",notificationsThreadsIdGet,id opts
+/notifications/threads/{id},PATCH,"
+
+
+Mark a thread as read
+
+",notificationsThreadsIdPatch,id opts
+/notifications/threads/{id}/subscription,DELETE,"
+
+
+Delete a Thread Subscription.
+
+",notificationsThreadsIdSubscriptionDelete,id opts
+/notifications/threads/{id}/subscription,GET,"
+
+
+Get a Thread Subscription.
+
+",notificationsThreadsIdSubscriptionGet,id opts
+/notifications/threads/{id}/subscription,PUT,"
+
+
+Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned). 
+
+",notificationsThreadsIdSubscriptionPut,id body opts
+/orgs/{org}/events,GET,"
+
+
+List public events for an organization.
+
+",orgsOrgEventsGet,org opts
+/orgs/{org},GET,"
+
+
+Get an Organization.
+
+",orgsOrgGet,org opts
+/orgs/{org}/issues,GET,"
+
+
+List issues. List all issues for a given organization for the authenticated user. 
+
+",orgsOrgIssuesGet,org filter state labels sort direction opts
+/orgs/{org}/members,GET,"
+
+
+Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list. 
+
+",orgsOrgMembersGet,org opts
+/orgs/{org}/members/{username},DELETE,"
+
+
+Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories. 
+
+",orgsOrgMembersUsernameDelete,org username opts
+/orgs/{org}/members/{username},GET,"
+
+
+Check if a user is, publicly or privately, a member of the organization.
+
+",orgsOrgMembersUsernameGet,org username opts
+/orgs/{org},PATCH,"
+
+
+Edit an Organization.
+
+",orgsOrgPatch,org body opts
+/orgs/{org}/public_members,GET,"
+
+
+Public members list. Members of an organization can choose to have their membership publicized or not. 
+
+",orgsOrgPublicMembersGet,org opts
+/orgs/{org}/public_members/{username},DELETE,"
+
+
+Conceal a user&#39;s membership.
+
+",orgsOrgPublicMembersUsernameDelete,org username opts
+/orgs/{org}/public_members/{username},GET,"
+
+
+Check public membership.
+
+",orgsOrgPublicMembersUsernameGet,org username opts
+/orgs/{org}/public_members/{username},PUT,"
+
+
+Publicize a user&#39;s membership.
+
+",orgsOrgPublicMembersUsernamePut,org username opts
+/orgs/{org}/repos,GET,"
+
+
+List repositories for the specified org.
+
+",orgsOrgReposGet,org opts
+/orgs/{org}/repos,POST,"
+
+
+Create a new repository for the authenticated user. OAuth users must supply repo scope. 
+
+",orgsOrgReposPost,org body opts
+/orgs/{org}/teams,GET,"
+
+
+List teams.
+
+",orgsOrgTeamsGet,org opts
+/orgs/{org}/teams,POST,"
+
+
+Create team. In order to create a team, the authenticated user must be an owner of organization. 
+
+",orgsOrgTeamsPost,org body opts
+/rate_limit,GET,"
+
+
+Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit. 
+
+",rateLimitGet,opts
+/repos/{owner}/{repo}/{archive_format}/{path},GET,"
+
+
+Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly. 
+
+",reposOwnerRepoArchiveFormatPathGet,owner repo archiveFormat path opts
+/repos/{owner}/{repo}/assignees/{assignee},GET,"
+
+
+Check assignee. You may also check to see if a particular user is an assignee for a repository. 
+
+",reposOwnerRepoAssigneesAssigneeGet,owner repo assignee opts
+/repos/{owner}/{repo}/assignees,GET,"
+
+
+List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned. 
+
+",reposOwnerRepoAssigneesGet,owner repo opts
+/repos/{owner}/{repo}/branches/{branch},GET,"
+
+
+Get Branch
+
+",reposOwnerRepoBranchesBranchGet,owner repo branch opts
+/repos/{owner}/{repo}/branches,GET,"
+
+
+Get list of branches
+
+",reposOwnerRepoBranchesGet,owner repo opts
+/repos/{owner}/{repo}/collaborators,GET,"
+
+
+List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list. 
+
+",reposOwnerRepoCollaboratorsGet,owner repo opts
+/repos/{owner}/{repo}/collaborators/{user},DELETE,"
+
+
+Remove collaborator.
+
+",reposOwnerRepoCollaboratorsUserDelete,owner repo user opts
+/repos/{owner}/{repo}/collaborators/{user},GET,"
+
+
+Check if user is a collaborator
+
+",reposOwnerRepoCollaboratorsUserGet,owner repo user opts
+/repos/{owner}/{repo}/collaborators/{user},PUT,"
+
+
+Add collaborator.
+
+",reposOwnerRepoCollaboratorsUserPut,owner repo user opts
+/repos/{owner}/{repo}/comments/{commentId},DELETE,"
+
+
+Delete a commit comment
+
+",reposOwnerRepoCommentsCommentIdDelete,owner repo commentId opts
+/repos/{owner}/{repo}/comments/{commentId},GET,"
+
+
+Get a single commit comment.
+
+",reposOwnerRepoCommentsCommentIdGet,owner repo commentId opts
+/repos/{owner}/{repo}/comments/{commentId},PATCH,"
+
+
+Update a commit comment.
+
+",reposOwnerRepoCommentsCommentIdPatch,owner repo commentId body opts
+/repos/{owner}/{repo}/comments,GET,"
+
+
+List commit comments for a repository. Comments are ordered by ascending ID. 
+
+",reposOwnerRepoCommentsGet,owner repo opts
+/repos/{owner}/{repo}/commits,GET,"
+
+
+List commits on a repository.
+
+",reposOwnerRepoCommitsGet,owner repo opts
+/repos/{owner}/{repo}/commits/{ref}/status,GET,"
+
+
+Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json 
+
+",reposOwnerRepoCommitsRefStatusGet,owner repo ref opts
+/repos/{owner}/{repo}/commits/{shaCode}/comments,GET,"
+
+
+List comments for a single commitList comments for a single commit.
+
+",reposOwnerRepoCommitsShaCodeCommentsGet,owner repo shaCode opts
+/repos/{owner}/{repo}/commits/{shaCode}/comments,POST,"
+
+
+Create a commit comment.
+
+",reposOwnerRepoCommitsShaCodeCommentsPost,owner repo shaCode body opts
+/repos/{owner}/{repo}/commits/{shaCode},GET,"
+
+
+Get a single commit.
+
+",reposOwnerRepoCommitsShaCodeGet,owner repo shaCode opts
+/repos/{owner}/{repo}/compare/{baseId}...{headId},GET,"
+
+
+Compare two commits
+
+",reposOwnerRepoCompareBaseIdHeadIdGet,owner repo baseId headId opts
+/repos/{owner}/{repo}/contents/{path},DELETE,"
+
+
+Delete a file. This method deletes a file in a repository. 
+
+",reposOwnerRepoContentsPathDelete,owner repo path body opts
+/repos/{owner}/{repo}/contents/{path},GET,"
+
+
+Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \&quot;http://developer.github.com/v3/repos/contents/\&quot; 
+
+",reposOwnerRepoContentsPathGet,owner repo path opts
+/repos/{owner}/{repo}/contents/{path},PUT,"
+
+
+Create a file.
+
+",reposOwnerRepoContentsPathPut,owner repo path body opts
+/repos/{owner}/{repo}/contributors,GET,"
+
+
+Get list of contributors.
+
+",reposOwnerRepoContributorsGet,owner repo anon opts
+/repos/{owner}/{repo},DELETE,"
+
+
+Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required. 
+
+",reposOwnerRepoDelete,owner repo opts
+/repos/{owner}/{repo}/deployments,GET,"
+
+
+Users with pull access can view deployments for a repository
+
+",reposOwnerRepoDeploymentsGet,owner repo opts
+/repos/{owner}/{repo}/deployments/{id}/statuses,GET,"
+
+
+Users with pull access can view deployment statuses for a deployment
+
+",reposOwnerRepoDeploymentsIdStatusesGet,owner repo id opts
+/repos/{owner}/{repo}/deployments/{id}/statuses,POST,"
+
+
+Create a Deployment Status Users with push access can create deployment statuses for a given deployment: 
+
+",reposOwnerRepoDeploymentsIdStatusesPost,owner repo id body opts
+/repos/{owner}/{repo}/deployments,POST,"
+
+
+Users with push access can create a deployment for a given ref
+
+",reposOwnerRepoDeploymentsPost,owner repo body opts
+/repos/{owner}/{repo}/downloads/{downloadId},DELETE,"
+
+
+Deprecated. Delete a download.
+
+",reposOwnerRepoDownloadsDownloadIdDelete,owner repo downloadId opts
+/repos/{owner}/{repo}/downloads/{downloadId},GET,"
+
+
+Deprecated. Get a single download.
+
+",reposOwnerRepoDownloadsDownloadIdGet,owner repo downloadId opts
+/repos/{owner}/{repo}/downloads,GET,"
+
+
+Deprecated. List downloads for a repository.
+
+",reposOwnerRepoDownloadsGet,owner repo opts
+/repos/{owner}/{repo}/events,GET,"
+
+
+Get list of repository events.
+
+",reposOwnerRepoEventsGet,owner repo opts
+/repos/{owner}/{repo}/forks,GET,"
+
+
+List forks.
+
+",reposOwnerRepoForksGet,owner repo opts
+/repos/{owner}/{repo}/forks,POST,"
+
+
+Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support. 
+
+",reposOwnerRepoForksPost,owner repo body opts
+/repos/{owner}/{repo},GET,"
+
+
+Get repository.
+
+",reposOwnerRepoGet,owner repo opts
+/repos/{owner}/{repo}/git/blobs,POST,"
+
+
+Create a Blob.
+
+",reposOwnerRepoGitBlobsPost,owner repo body opts
+/repos/{owner}/{repo}/git/blobs/{shaCode},GET,"
+
+
+Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it. 
+
+",reposOwnerRepoGitBlobsShaCodeGet,owner repo shaCode opts
+/repos/{owner}/{repo}/git/commits,POST,"
+
+
+Create a Commit.
+
+",reposOwnerRepoGitCommitsPost,owner repo body opts
+/repos/{owner}/{repo}/git/commits/{shaCode},GET,"
+
+
+Get a Commit.
+
+",reposOwnerRepoGitCommitsShaCodeGet,owner repo shaCode opts
+/repos/{owner}/{repo}/git/refs,GET,"
+
+
+Get all References
+
+",reposOwnerRepoGitRefsGet,owner repo opts
+/repos/{owner}/{repo}/git/refs,POST,"
+
+
+Create a Reference
+
+",reposOwnerRepoGitRefsPost,owner repo body opts
+/repos/{owner}/{repo}/git/refs/{ref},DELETE,"
+
+
+Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0 
+
+",reposOwnerRepoGitRefsRefDelete,owner repo ref opts
+/repos/{owner}/{repo}/git/refs/{ref},GET,"
+
+
+Get a Reference
+
+",reposOwnerRepoGitRefsRefGet,owner repo ref opts
+/repos/{owner}/{repo}/git/refs/{ref},PATCH,"
+
+
+Update a Reference
+
+",reposOwnerRepoGitRefsRefPatch,owner repo ref body opts
+/repos/{owner}/{repo}/git/tags,POST,"
+
+
+Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary. 
+
+",reposOwnerRepoGitTagsPost,owner repo body opts
+/repos/{owner}/{repo}/git/tags/{shaCode},GET,"
+
+
+Get a Tag.
+
+",reposOwnerRepoGitTagsShaCodeGet,owner repo shaCode opts
+/repos/{owner}/{repo}/git/trees,POST,"
+
+
+Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out. 
+
+",reposOwnerRepoGitTreesPost,owner repo body opts
+/repos/{owner}/{repo}/git/trees/{shaCode},GET,"
+
+
+Get a Tree.
+
+",reposOwnerRepoGitTreesShaCodeGet,owner repo shaCode opts
+/repos/{owner}/{repo}/hooks,GET,"
+
+
+Get list of hooks.
+
+",reposOwnerRepoHooksGet,owner repo opts
+/repos/{owner}/{repo}/hooks/{hookId},DELETE,"
+
+
+Delete a hook.
+
+",reposOwnerRepoHooksHookIdDelete,owner repo hookId opts
+/repos/{owner}/{repo}/hooks/{hookId},GET,"
+
+
+Get single hook.
+
+",reposOwnerRepoHooksHookIdGet,owner repo hookId opts
+/repos/{owner}/{repo}/hooks/{hookId},PATCH,"
+
+
+Edit a hook.
+
+",reposOwnerRepoHooksHookIdPatch,owner repo hookId body opts
+/repos/{owner}/{repo}/hooks/{hookId}/tests,POST,"
+
+
+Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes 
+
+",reposOwnerRepoHooksHookIdTestsPost,owner repo hookId opts
+/repos/{owner}/{repo}/hooks,POST,"
+
+
+Create a hook.
+
+",reposOwnerRepoHooksPost,owner repo body opts
+/repos/{owner}/{repo}/issues/comments/{commentId},DELETE,"
+
+
+Delete a comment.
+
+",reposOwnerRepoIssuesCommentsCommentIdDelete,owner repo commentId opts
+/repos/{owner}/{repo}/issues/comments/{commentId},GET,"
+
+
+Get a single comment.
+
+",reposOwnerRepoIssuesCommentsCommentIdGet,owner repo commentId opts
+/repos/{owner}/{repo}/issues/comments/{commentId},PATCH,"
+
+
+Edit a comment.
+
+",reposOwnerRepoIssuesCommentsCommentIdPatch,owner repo commentId body opts
+/repos/{owner}/{repo}/issues/comments,GET,"
+
+
+List comments in a repository.
+
+",reposOwnerRepoIssuesCommentsGet,owner repo opts
+/repos/{owner}/{repo}/issues/events/{eventId},GET,"
+
+
+Get a single event.
+
+",reposOwnerRepoIssuesEventsEventIdGet,owner repo eventId opts
+/repos/{owner}/{repo}/issues/events,GET,"
+
+
+List issue events for a repository.
+
+",reposOwnerRepoIssuesEventsGet,owner repo opts
+/repos/{owner}/{repo}/issues,GET,"
+
+
+List issues for a repository.
+
+",reposOwnerRepoIssuesGet,owner repo filter state labels sort direction opts
+/repos/{owner}/{repo}/issues/{number}/comments,GET,"
+
+
+List comments on an issue.
+
+",reposOwnerRepoIssuesNumberCommentsGet,owner repo _number opts
+/repos/{owner}/{repo}/issues/{number}/comments,POST,"
+
+
+Create a comment.
+
+",reposOwnerRepoIssuesNumberCommentsPost,owner repo _number body opts
+/repos/{owner}/{repo}/issues/{number}/events,GET,"
+
+
+List events for an issue.
+
+",reposOwnerRepoIssuesNumberEventsGet,owner repo _number opts
+/repos/{owner}/{repo}/issues/{number},GET,"
+
+
+Get a single issue
+
+",reposOwnerRepoIssuesNumberGet,owner repo _number opts
+/repos/{owner}/{repo}/issues/{number}/labels,DELETE,"
+
+
+Remove all labels from an issue.
+
+",reposOwnerRepoIssuesNumberLabelsDelete,owner repo _number opts
+/repos/{owner}/{repo}/issues/{number}/labels,GET,"
+
+
+List labels on an issue.
+
+",reposOwnerRepoIssuesNumberLabelsGet,owner repo _number opts
+/repos/{owner}/{repo}/issues/{number}/labels/{name},DELETE,"
+
+
+Remove a label from an issue.
+
+",reposOwnerRepoIssuesNumberLabelsNameDelete,owner repo _number name opts
+/repos/{owner}/{repo}/issues/{number}/labels,POST,"
+
+
+Add labels to an issue.
+
+",reposOwnerRepoIssuesNumberLabelsPost,owner repo _number body opts
+/repos/{owner}/{repo}/issues/{number}/labels,PUT,"
+
+
+Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue. 
+
+",reposOwnerRepoIssuesNumberLabelsPut,owner repo _number body opts
+/repos/{owner}/{repo}/issues/{number},PATCH,"
+
+
+Edit an issue. Issue owners and users with push access can edit an issue. 
+
+",reposOwnerRepoIssuesNumberPatch,owner repo _number body opts
+/repos/{owner}/{repo}/issues,POST,"
+
+
+Create an issue. Any user with pull access to a repository can create an issue. 
+
+",reposOwnerRepoIssuesPost,owner repo body opts
+/repos/{owner}/{repo}/keys,GET,"
+
+
+Get list of keys.
+
+",reposOwnerRepoKeysGet,owner repo opts
+/repos/{owner}/{repo}/keys/{keyId},DELETE,"
+
+
+Delete a key.
+
+",reposOwnerRepoKeysKeyIdDelete,owner repo keyId opts
+/repos/{owner}/{repo}/keys/{keyId},GET,"
+
+
+Get a key
+
+",reposOwnerRepoKeysKeyIdGet,owner repo keyId opts
+/repos/{owner}/{repo}/keys,POST,"
+
+
+Create a key.
+
+",reposOwnerRepoKeysPost,owner repo body opts
+/repos/{owner}/{repo}/labels,GET,"
+
+
+List all labels for this repository.
+
+",reposOwnerRepoLabelsGet,owner repo opts
+/repos/{owner}/{repo}/labels/{name},DELETE,"
+
+
+Delete a label.
+
+",reposOwnerRepoLabelsNameDelete,owner repo name opts
+/repos/{owner}/{repo}/labels/{name},GET,"
+
+
+Get a single label.
+
+",reposOwnerRepoLabelsNameGet,owner repo name opts
+/repos/{owner}/{repo}/labels/{name},PATCH,"
+
+
+Update a label.
+
+",reposOwnerRepoLabelsNamePatch,owner repo name body opts
+/repos/{owner}/{repo}/labels,POST,"
+
+
+Create a label.
+
+",reposOwnerRepoLabelsPost,owner repo body opts
+/repos/{owner}/{repo}/languages,GET,"
+
+
+List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language. 
+
+",reposOwnerRepoLanguagesGet,owner repo opts
+/repos/{owner}/{repo}/merges,POST,"
+
+
+Perform a merge.
+
+",reposOwnerRepoMergesPost,owner repo body opts
+/repos/{owner}/{repo}/milestones,GET,"
+
+
+List milestones for a repository.
+
+",reposOwnerRepoMilestonesGet,owner repo opts
+/repos/{owner}/{repo}/milestones/{number},DELETE,"
+
+
+Delete a milestone.
+
+",reposOwnerRepoMilestonesNumberDelete,owner repo _number opts
+/repos/{owner}/{repo}/milestones/{number},GET,"
+
+
+Get a single milestone.
+
+",reposOwnerRepoMilestonesNumberGet,owner repo _number opts
+/repos/{owner}/{repo}/milestones/{number}/labels,GET,"
+
+
+Get labels for every issue in a milestone.
+
+",reposOwnerRepoMilestonesNumberLabelsGet,owner repo _number opts
+/repos/{owner}/{repo}/milestones/{number},PATCH,"
+
+
+Update a milestone.
+
+",reposOwnerRepoMilestonesNumberPatch,owner repo _number body opts
+/repos/{owner}/{repo}/milestones,POST,"
+
+
+Create a milestone.
+
+",reposOwnerRepoMilestonesPost,owner repo body opts
+/repos/{owner}/{repo}/notifications,GET,"
+
+
+List your notifications in a repository List all notifications for the current user. 
+
+",reposOwnerRepoNotificationsGet,owner repo opts
+/repos/{owner}/{repo}/notifications,PUT,"
+
+
+Mark notifications as read in a repository. Marking all notifications in a repository as \&quot;read\&quot; removes them from the default view on GitHub.com. 
+
+",reposOwnerRepoNotificationsPut,owner repo body opts
+/repos/{owner}/{repo},PATCH,"
+
+
+Edit repository.
+
+",reposOwnerRepoPatch,owner repo body opts
+/repos/{owner}/{repo}/pulls/comments/{commentId},DELETE,"
+
+
+Delete a comment.
+
+",reposOwnerRepoPullsCommentsCommentIdDelete,owner repo commentId opts
+/repos/{owner}/{repo}/pulls/comments/{commentId},GET,"
+
+
+Get a single comment.
+
+",reposOwnerRepoPullsCommentsCommentIdGet,owner repo commentId opts
+/repos/{owner}/{repo}/pulls/comments/{commentId},PATCH,"
+
+
+Edit a comment.
+
+",reposOwnerRepoPullsCommentsCommentIdPatch,owner repo commentId body opts
+/repos/{owner}/{repo}/pulls/comments,GET,"
+
+
+List comments in a repository. By default, Review Comments are ordered by ascending ID. 
+
+",reposOwnerRepoPullsCommentsGet,owner repo opts
+/repos/{owner}/{repo}/pulls,GET,"
+
+
+List pull requests.
+
+",reposOwnerRepoPullsGet,owner repo opts
+/repos/{owner}/{repo}/pulls/{number}/comments,GET,"
+
+
+List comments on a pull request.
+
+",reposOwnerRepoPullsNumberCommentsGet,owner repo _number opts
+/repos/{owner}/{repo}/pulls/{number}/comments,POST,"
+
+
+Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to. 
+
+",reposOwnerRepoPullsNumberCommentsPost,owner repo _number body opts
+/repos/{owner}/{repo}/pulls/{number}/commits,GET,"
+
+
+List commits on a pull request.
+
+",reposOwnerRepoPullsNumberCommitsGet,owner repo _number opts
+/repos/{owner}/{repo}/pulls/{number}/files,GET,"
+
+
+List pull requests files.
+
+",reposOwnerRepoPullsNumberFilesGet,owner repo _number opts
+/repos/{owner}/{repo}/pulls/{number},GET,"
+
+
+Get a single pull request.
+
+",reposOwnerRepoPullsNumberGet,owner repo _number opts
+/repos/{owner}/{repo}/pulls/{number}/merge,GET,"
+
+
+Get if a pull request has been merged.
+
+",reposOwnerRepoPullsNumberMergeGet,owner repo _number opts
+/repos/{owner}/{repo}/pulls/{number}/merge,PUT,"
+
+
+Merge a pull request (Merge Button&#39;s)
+
+",reposOwnerRepoPullsNumberMergePut,owner repo _number body opts
+/repos/{owner}/{repo}/pulls/{number},PATCH,"
+
+
+Update a pull request.
+
+",reposOwnerRepoPullsNumberPatch,owner repo _number body opts
+/repos/{owner}/{repo}/pulls,POST,"
+
+
+Create a pull request.
+
+",reposOwnerRepoPullsPost,owner repo body opts
+/repos/{owner}/{repo}/readme,GET,"
+
+
+Get the README. This method returns the preferred README for a repository. 
+
+",reposOwnerRepoReadmeGet,owner repo opts
+/repos/{owner}/{repo}/releases/assets/{id},DELETE,"
+
+
+Delete a release asset
+
+",reposOwnerRepoReleasesAssetsIdDelete,owner repo id opts
+/repos/{owner}/{repo}/releases/assets/{id},GET,"
+
+
+Get a single release asset
+
+",reposOwnerRepoReleasesAssetsIdGet,owner repo id opts
+/repos/{owner}/{repo}/releases/assets/{id},PATCH,"
+
+
+Edit a release asset Users with push access to the repository can edit a release asset. 
+
+",reposOwnerRepoReleasesAssetsIdPatch,owner repo id body opts
+/repos/{owner}/{repo}/releases,GET,"
+
+
+Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only
+
+",reposOwnerRepoReleasesGet,owner repo opts
+/repos/{owner}/{repo}/releases/{id}/assets,GET,"
+
+
+List assets for a release
+
+",reposOwnerRepoReleasesIdAssetsGet,owner repo id opts
+/repos/{owner}/{repo}/releases/{id},DELETE,"
+
+
+Users with push access to the repository can delete a release.
+
+",reposOwnerRepoReleasesIdDelete,owner repo id opts
+/repos/{owner}/{repo}/releases/{id},GET,"
+
+
+Get a single release
+
+",reposOwnerRepoReleasesIdGet,owner repo id opts
+/repos/{owner}/{repo}/releases/{id},PATCH,"
+
+
+Users with push access to the repository can edit a release
+
+",reposOwnerRepoReleasesIdPatch,owner repo id body opts
+/repos/{owner}/{repo}/releases,POST,"
+
+
+Create a release Users with push access to the repository can create a release. 
+
+",reposOwnerRepoReleasesPost,owner repo body opts
+/repos/{owner}/{repo}/stargazers,GET,"
+
+
+List Stargazers.
+
+",reposOwnerRepoStargazersGet,owner repo opts
+/repos/{owner}/{repo}/stats/code_frequency,GET,"
+
+
+Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository. 
+
+",reposOwnerRepoStatsCodeFrequencyGet,owner repo opts
+/repos/{owner}/{repo}/stats/commit_activity,GET,"
+
+
+Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday. 
+
+",reposOwnerRepoStatsCommitActivityGet,owner repo opts
+/repos/{owner}/{repo}/stats/contributors,GET,"
+
+
+Get contributors list with additions, deletions, and commit counts.
+
+",reposOwnerRepoStatsContributorsGet,owner repo opts
+/repos/{owner}/{repo}/stats/participation,GET,"
+
+
+Get the weekly commit count for the repo owner and everyone else.
+
+",reposOwnerRepoStatsParticipationGet,owner repo opts
+/repos/{owner}/{repo}/stats/punch_card,GET,"
+
+
+Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits. 
+
+",reposOwnerRepoStatsPunchCardGet,owner repo opts
+/repos/{owner}/{repo}/statuses/{ref},GET,"
+
+
+List Statuses for a specific Ref.
+
+",reposOwnerRepoStatusesRefGet,owner repo ref opts
+/repos/{owner}/{repo}/statuses/{ref},POST,"
+
+
+Create a Status.
+
+",reposOwnerRepoStatusesRefPost,owner repo ref body opts
+/repos/{owner}/{repo}/subscribers,GET,"
+
+
+List watchers.
+
+",reposOwnerRepoSubscribersGet,owner repo opts
+/repos/{owner}/{repo}/subscription,DELETE,"
+
+
+Delete a Repository Subscription.
+
+",reposOwnerRepoSubscriptionDelete,owner repo opts
+/repos/{owner}/{repo}/subscription,GET,"
+
+
+Get a Repository Subscription.
+
+",reposOwnerRepoSubscriptionGet,owner repo opts
+/repos/{owner}/{repo}/subscription,PUT,"
+
+
+Set a Repository Subscription
+
+",reposOwnerRepoSubscriptionPut,owner repo body opts
+/repos/{owner}/{repo}/tags,GET,"
+
+
+Get list of tags.
+
+",reposOwnerRepoTagsGet,owner repo opts
+/repos/{owner}/{repo}/teams,GET,"
+
+
+Get list of teams
+
+",reposOwnerRepoTeamsGet,owner repo opts
+/repos/{owner}/{repo}/watchers,GET,"
+
+
+List Stargazers. New implementation.
+
+",reposOwnerRepoWatchersGet,owner repo opts
+/repositories,GET,"
+
+
+List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories. 
+
+",repositoriesGet,opts
+/search/code,GET,"
+
+
+Search code.
+
+",searchCodeGet,q opts
+/search/issues,GET,"
+
+
+Find issues by state and keyword. (This method returns up to 100 results per page.)
+
+",searchIssuesGet,q opts
+/search/repositories,GET,"
+
+
+Search repositories.
+
+",searchRepositoriesGet,q opts
+/search/users,GET,"
+
+
+Search users.
+
+",searchUsersGet,q opts
+/teams/{teamId},DELETE,"
+
+
+Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with. 
+
+",teamsTeamIdDelete,teamId opts
+/teams/{teamId},GET,"
+
+
+Get team.
+
+",teamsTeamIdGet,teamId opts
+/teams/{teamId}/members,GET,"
+
+
+List team members. In order to list members in a team, the authenticated user must be a member of the team. 
+
+",teamsTeamIdMembersGet,teamId opts
+/teams/{teamId}/members/{username},DELETE,"
+
+
+The \&quot;Remove team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team. 
+
+",teamsTeamIdMembersUsernameDelete,teamId username opts
+/teams/{teamId}/members/{username},GET,"
+
+
+The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team. 
+
+",teamsTeamIdMembersUsernameGet,teamId username opts
+/teams/{teamId}/members/{username},PUT,"
+
+
+The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. 
+
+",teamsTeamIdMembersUsernamePut,teamId username opts
+/teams/{teamId}/memberships/{username},DELETE,"
+
+
+Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team. 
+
+",teamsTeamIdMembershipsUsernameDelete,teamId username opts
+/teams/{teamId}/memberships/{username},GET,"
+
+
+Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization. 
+
+",teamsTeamIdMembershipsUsernameGet,teamId username opts
+/teams/{teamId}/memberships/{username},PUT,"
+
+
+Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team. 
+
+",teamsTeamIdMembershipsUsernamePut,teamId username opts
+/teams/{teamId},PATCH,"
+
+
+Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with. 
+
+",teamsTeamIdPatch,teamId body opts
+/teams/{teamId}/repos,GET,"
+
+
+List team repos
+
+",teamsTeamIdReposGet,teamId opts
+/teams/{teamId}/repos/{owner}/{repo},DELETE,"
+
+
+In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.
+
+",teamsTeamIdReposOwnerRepoDelete,teamId owner repo opts
+/teams/{teamId}/repos/{owner}/{repo},GET,"
+
+
+Check if a team manages a repository
+
+",teamsTeamIdReposOwnerRepoGet,teamId owner repo opts
+/teams/{teamId}/repos/{owner}/{repo},PUT,"
+
+
+In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.
+
+",teamsTeamIdReposOwnerRepoPut,teamId owner repo opts
+/user/emails,DELETE,"
+
+
+Delete email address(es). You can include a single email address or an array of addresses. 
+
+",userEmailsDelete,body opts
+/user/emails,GET,"
+
+
+List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format. 
+
+",userEmailsGet,opts
+/user/emails,POST,"
+
+
+Add email address(es). You can post a single email address or an array of addresses. 
+
+",userEmailsPost,body opts
+/user/followers,GET,"
+
+
+List the authenticated user&#39;s followers
+
+",userFollowersGet,opts
+/user/following,GET,"
+
+
+List who the authenticated user is following.
+
+",userFollowingGet,opts
+/user/following/{username},DELETE,"
+
+
+Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope. 
+
+",userFollowingUsernameDelete,username opts
+/user/following/{username},GET,"
+
+
+Check if you are following a user.
+
+",userFollowingUsernameGet,username opts
+/user/following/{username},PUT,"
+
+
+Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope. 
+
+",userFollowingUsernamePut,username opts
+/user,GET,"
+
+
+Get the authenticated user.
+
+",userGet,opts
+/user/issues,GET,"
+
+
+List issues. List all issues across owned and member repositories for the authenticated user. 
+
+",userIssuesGet,filter state labels sort direction opts
+/user/keys,GET,"
+
+
+List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes. 
+
+",userKeysGet,opts
+/user/keys/{keyId},DELETE,"
+
+
+Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.
+
+",userKeysKeyIdDelete,keyId opts
+/user/keys/{keyId},GET,"
+
+
+Get a single public key.
+
+",userKeysKeyIdGet,keyId opts
+/user/keys,POST,"
+
+
+Create a public key.
+
+",userKeysPost,body opts
+/user/orgs,GET,"
+
+
+List public and private organizations for the authenticated user.
+
+",userOrgsGet,opts
+/user,PATCH,"
+
+
+Update the authenticated user.
+
+",userPatch,body opts
+/user/repos,GET,"
+
+
+List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately. 
+
+",userReposGet,opts
+/user/repos,POST,"
+
+
+Create a new repository for the authenticated user. OAuth users must supply repo scope. 
+
+",userReposPost,body opts
+/user/starred,GET,"
+
+
+List repositories being starred by the authenticated user.
+
+",userStarredGet,opts
+/user/starred/{owner}/{repo},DELETE,"
+
+
+Unstar a repository
+
+",userStarredOwnerRepoDelete,owner repo opts
+/user/starred/{owner}/{repo},GET,"
+
+
+Check if you are starring a repository.
+
+",userStarredOwnerRepoGet,owner repo opts
+/user/starred/{owner}/{repo},PUT,"
+
+
+Star a repository.
+
+",userStarredOwnerRepoPut,owner repo opts
+/user/subscriptions,GET,"
+
+
+List repositories being watched by the authenticated user.
+
+",userSubscriptionsGet,opts
+/user/subscriptions/{owner}/{repo},DELETE,"
+
+
+Stop watching a repository
+
+",userSubscriptionsOwnerRepoDelete,owner repo opts
+/user/subscriptions/{owner}/{repo},GET,"
+
+
+Check if you are watching a repository.
+
+",userSubscriptionsOwnerRepoGet,owner repo opts
+/user/subscriptions/{owner}/{repo},PUT,"
+
+
+Watch a repository.
+
+",userSubscriptionsOwnerRepoPut,owner repo opts
+/user/teams,GET,"
+
+
+List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.
+
+",userTeamsGet,opts
+/users,GET,"
+
+
+Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users. 
+
+",usersGet,opts
+/users/{username}/events,GET,"
+
+
+If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events.
+
+",usersUsernameEventsGet,username opts
+/users/{username}/events/orgs/{org},GET,"
+
+
+This is the user&#39;s organization dashboard. You must be authenticated as the user to view this.
+
+",usersUsernameEventsOrgsOrgGet,username org opts
+/users/{username}/followers,GET,"
+
+
+List a user&#39;s followers
+
+",usersUsernameFollowersGet,username opts
+/users/{username}/following/{targetUser},GET,"
+
+
+Check if one user follows another.
+
+",usersUsernameFollowingTargetUserGet,username targetUser opts
+/users/{username},GET,"
+
+
+Get a single user.
+
+",usersUsernameGet,username opts
+/users/{username}/gists,GET,"
+
+
+List a users gists.
+
+",usersUsernameGistsGet,username opts
+/users/{username}/keys,GET,"
+
+
+List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone. 
+
+",usersUsernameKeysGet,username opts
+/users/{username}/orgs,GET,"
+
+
+List all public organizations for a user.
+
+",usersUsernameOrgsGet,username opts
+/users/{username}/received_events,GET,"
+
+
+These are events that you&#39;ll only see public events.
+
+",usersUsernameReceivedEventsGet,username opts
+/users/{username}/received_events/public,GET,"
+
+
+List public events that a user has received
+
+",usersUsernameReceivedEventsPublicGet,username opts
+/users/{username}/repos,GET,"
+
+
+List public repositories for the specified user.
+
+",usersUsernameReposGet,username opts
+/users/{username}/starred,GET,"
+
+
+List repositories being starred by a user.
+
+",usersUsernameStarredGet,username opts
+/users/{username}/subscriptions,GET,"
+
+
+List repositories being watched by a user.
+
+",usersUsernameSubscriptionsGet,username opts

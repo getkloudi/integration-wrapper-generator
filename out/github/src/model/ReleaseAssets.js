@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The ReleaseAssets model module.
  * @module model/ReleaseAssets
- * @version 1.4.2
+ * @version 1.4.3
  */
 class ReleaseAssets {
     /**

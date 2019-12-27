@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EventRepo model module.
  * @module model/EventRepo
- * @version 1.4.2
+ * @version 1.4.3
  */
 var EventRepo =
 /*#__PURE__*/

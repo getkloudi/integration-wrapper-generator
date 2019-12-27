@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateFileCommitParents model module.
  * @module model/CreateFileCommitParents
- * @version 1.4.2
+ * @version 1.4.3
  */
 class CreateFileCommitParents {
     /**

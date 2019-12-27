@@ -20,7 +20,7 @@ import User from './User';
 /**
  * The Gist model module.
  * @module model/Gist
- * @version 1.4.2
+ * @version 1.4.3
  */
 class Gist {
     /**

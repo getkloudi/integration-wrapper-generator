@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PatchOrg model module.
  * @module model/PatchOrg
- * @version 1.4.2
+ * @version 1.4.3
  */
 class PatchOrg {
     /**
