@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,11 +48,11 @@ class UserAllOf {
         if (data) {
             obj = obj || new UserAllOf();
 
-            if (data.hasOwnProperty('account_id')) {
-                obj['account_id'] = ApiClient.convertToType(data['account_id'], 'String');
-            }
             if (data.hasOwnProperty('is_staff')) {
                 obj['is_staff'] = ApiClient.convertToType(data['is_staff'], 'Boolean');
+            }
+            if (data.hasOwnProperty('account_id')) {
+                obj['account_id'] = ApiClient.convertToType(data['account_id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class UserAllOf {
 }
 
 /**
+ * @member {Boolean} is_staff
+ */
+UserAllOf.prototype['is_staff'] = undefined;
+
+/**
  * The user's Atlassian account ID.
  * @member {String} account_id
  */
 UserAllOf.prototype['account_id'] = undefined;
-
-/**
- * @member {Boolean} is_staff
- */
-UserAllOf.prototype['is_staff'] = undefined;
 
 
 

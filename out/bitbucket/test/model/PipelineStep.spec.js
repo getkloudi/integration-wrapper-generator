@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,32 +54,8 @@
       //expect(instance).to.be.a(Bitbucket.PipelineStep);
     });
 
-    it('should have the property completedOn (base name: "completed_on")', function() {
-      // uncomment below and update the code to test the property completedOn
-      //var instane = new Bitbucket.PipelineStep();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property image (base name: "image")', function() {
-      // uncomment below and update the code to test the property image
-      //var instane = new Bitbucket.PipelineStep();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property logByteCount (base name: "logByteCount")', function() {
-      // uncomment below and update the code to test the property logByteCount
-      //var instane = new Bitbucket.PipelineStep();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property scriptCommands (base name: "script_commands")', function() {
-      // uncomment below and update the code to test the property scriptCommands
-      //var instane = new Bitbucket.PipelineStep();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property setupCommands (base name: "setup_commands")', function() {
-      // uncomment below and update the code to test the property setupCommands
+    it('should have the property uuid (base name: "uuid")', function() {
+      // uncomment below and update the code to test the property uuid
       //var instane = new Bitbucket.PipelineStep();
       //expect(instance).to.be();
     });
@@ -90,14 +66,32 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property completedOn (base name: "completed_on")', function() {
+      // uncomment below and update the code to test the property completedOn
+      //var instane = new Bitbucket.PipelineStep();
+      //expect(instance).to.be();
+    });
+
     it('should have the property state (base name: "state")', function() {
       // uncomment below and update the code to test the property state
       //var instane = new Bitbucket.PipelineStep();
       //expect(instance).to.be();
     });
 
-    it('should have the property uuid (base name: "uuid")', function() {
-      // uncomment below and update the code to test the property uuid
+    it('should have the property image (base name: "image")', function() {
+      // uncomment below and update the code to test the property image
+      //var instane = new Bitbucket.PipelineStep();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property setupCommands (base name: "setup_commands")', function() {
+      // uncomment below and update the code to test the property setupCommands
+      //var instane = new Bitbucket.PipelineStep();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property scriptCommands (base name: "script_commands")', function() {
+      // uncomment below and update the code to test the property scriptCommands
       //var instane = new Bitbucket.PipelineStep();
       //expect(instance).to.be();
     });

@@ -4,16 +4,16 @@ All URIs are relative to *https://api.bitbucket.org/2.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**repositoriesUsernameRepoSlugDownloadsFilenameDelete**](DownloadsApi.md#repositoriesUsernameRepoSlugDownloadsFilenameDelete) | **DELETE** /repositories/{username}/{repo_slug}/downloads/{filename} | 
-[**repositoriesUsernameRepoSlugDownloadsFilenameGet**](DownloadsApi.md#repositoriesUsernameRepoSlugDownloadsFilenameGet) | **GET** /repositories/{username}/{repo_slug}/downloads/{filename} | 
-[**repositoriesUsernameRepoSlugDownloadsGet**](DownloadsApi.md#repositoriesUsernameRepoSlugDownloadsGet) | **GET** /repositories/{username}/{repo_slug}/downloads | 
-[**repositoriesUsernameRepoSlugDownloadsPost**](DownloadsApi.md#repositoriesUsernameRepoSlugDownloadsPost) | **POST** /repositories/{username}/{repo_slug}/downloads | 
+[**repositoriesWorkspaceRepoSlugDownloadsFilenameDelete**](DownloadsApi.md#repositoriesWorkspaceRepoSlugDownloadsFilenameDelete) | **DELETE** /repositories/{workspace}/{repo_slug}/downloads/{filename} | 
+[**repositoriesWorkspaceRepoSlugDownloadsFilenameGet**](DownloadsApi.md#repositoriesWorkspaceRepoSlugDownloadsFilenameGet) | **GET** /repositories/{workspace}/{repo_slug}/downloads/{filename} | 
+[**repositoriesWorkspaceRepoSlugDownloadsGet**](DownloadsApi.md#repositoriesWorkspaceRepoSlugDownloadsGet) | **GET** /repositories/{workspace}/{repo_slug}/downloads | 
+[**repositoriesWorkspaceRepoSlugDownloadsPost**](DownloadsApi.md#repositoriesWorkspaceRepoSlugDownloadsPost) | **POST** /repositories/{workspace}/{repo_slug}/downloads | 
 
 
 
-## repositoriesUsernameRepoSlugDownloadsFilenameDelete
+## repositoriesWorkspaceRepoSlugDownloadsFilenameDelete
 
-> Error repositoriesUsernameRepoSlugDownloadsFilenameDelete(username, filename, repoSlug)
+> Error repositoriesWorkspaceRepoSlugDownloadsFilenameDelete(filename, workspace, repoSlug)
 
 
 
@@ -38,10 +38,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.DownloadsApi();
-let username = "username_example"; // String | 
 let filename = "filename_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-apiInstance.repositoriesUsernameRepoSlugDownloadsFilenameDelete(username, filename, repoSlug, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+apiInstance.repositoriesWorkspaceRepoSlugDownloadsFilenameDelete(filename, workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -55,9 +55,9 @@ apiInstance.repositoriesUsernameRepoSlugDownloadsFilenameDelete(username, filena
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **filename** | **String**|  | 
- **repoSlug** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
 
 ### Return type
 
@@ -73,9 +73,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugDownloadsFilenameGet
+## repositoriesWorkspaceRepoSlugDownloadsFilenameGet
 
-> Error repositoriesUsernameRepoSlugDownloadsFilenameGet(username, filename, repoSlug)
+> Error repositoriesWorkspaceRepoSlugDownloadsFilenameGet(filename, workspace, repoSlug)
 
 
 
@@ -100,10 +100,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.DownloadsApi();
-let username = "username_example"; // String | 
 let filename = "filename_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-apiInstance.repositoriesUsernameRepoSlugDownloadsFilenameGet(username, filename, repoSlug, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+apiInstance.repositoriesWorkspaceRepoSlugDownloadsFilenameGet(filename, workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -117,9 +117,9 @@ apiInstance.repositoriesUsernameRepoSlugDownloadsFilenameGet(username, filename,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **filename** | **String**|  | 
- **repoSlug** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
 
 ### Return type
 
@@ -135,9 +135,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugDownloadsGet
+## repositoriesWorkspaceRepoSlugDownloadsGet
 
-> Error repositoriesUsernameRepoSlugDownloadsGet(username, repoSlug)
+> Error repositoriesWorkspaceRepoSlugDownloadsGet(workspace, repoSlug)
 
 
 
@@ -162,9 +162,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.DownloadsApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-apiInstance.repositoriesUsernameRepoSlugDownloadsGet(username, repoSlug, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+apiInstance.repositoriesWorkspaceRepoSlugDownloadsGet(workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -178,8 +178,8 @@ apiInstance.repositoriesUsernameRepoSlugDownloadsGet(username, repoSlug, (error,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
 
 ### Return type
 
@@ -195,9 +195,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugDownloadsPost
+## repositoriesWorkspaceRepoSlugDownloadsPost
 
-> Error repositoriesUsernameRepoSlugDownloadsPost(username, repoSlug)
+> Error repositoriesWorkspaceRepoSlugDownloadsPost(workspace, repoSlug)
 
 
 
@@ -222,9 +222,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.DownloadsApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-apiInstance.repositoriesUsernameRepoSlugDownloadsPost(username, repoSlug, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+apiInstance.repositoriesWorkspaceRepoSlugDownloadsPost(workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -238,8 +238,8 @@ apiInstance.repositoriesUsernameRepoSlugDownloadsPost(username, repoSlug, (error
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
 
 ### Return type
 

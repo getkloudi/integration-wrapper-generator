@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -49,11 +49,11 @@ class PipelineStepStateCompletedErrorAllOf {
         if (data) {
             obj = obj || new PipelineStepStateCompletedErrorAllOf();
 
-            if (data.hasOwnProperty('error')) {
-                obj['error'] = PipelineStepError.constructFromObject(data['error']);
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('error')) {
+                obj['error'] = PipelineStepError.constructFromObject(data['error']);
             }
         }
         return obj;
@@ -63,15 +63,15 @@ class PipelineStepStateCompletedErrorAllOf {
 }
 
 /**
- * @member {module:model/PipelineStepError} error
- */
-PipelineStepStateCompletedErrorAllOf.prototype['error'] = undefined;
-
-/**
  * The name of the result (ERROR)
  * @member {module:model/PipelineStepStateCompletedErrorAllOf.NameEnum} name
  */
 PipelineStepStateCompletedErrorAllOf.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/PipelineStepError} error
+ */
+PipelineStepStateCompletedErrorAllOf.prototype['error'] = undefined;
 
 
 

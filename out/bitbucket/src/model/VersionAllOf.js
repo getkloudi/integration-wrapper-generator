@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BranchrestrictionAllOfLinks from './BranchrestrictionAllOfLinks';
+import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks';
 
 /**
  * The VersionAllOf model module.
@@ -49,14 +49,14 @@ class VersionAllOf {
         if (data) {
             obj = obj || new VersionAllOf();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
             if (data.hasOwnProperty('links')) {
-                obj['links'] = BranchrestrictionAllOfLinks.constructFromObject(data['links']);
+                obj['links'] = BranchingModelSettingsAllOfLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
         }
         return obj;
@@ -66,12 +66,7 @@ class VersionAllOf {
 }
 
 /**
- * @member {Number} id
- */
-VersionAllOf.prototype['id'] = undefined;
-
-/**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 VersionAllOf.prototype['links'] = undefined;
 
@@ -79,6 +74,11 @@ VersionAllOf.prototype['links'] = undefined;
  * @member {String} name
  */
 VersionAllOf.prototype['name'] = undefined;
+
+/**
+ * @member {Number} id
+ */
+VersionAllOf.prototype['id'] = undefined;
 
 
 

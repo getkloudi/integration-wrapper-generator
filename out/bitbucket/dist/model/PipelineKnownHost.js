@@ -76,16 +76,16 @@ function () {
 
         _PipelineKnownHostAllOf["default"].constructFromObject(data, obj);
 
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        }
+
         if (data.hasOwnProperty('hostname')) {
           obj['hostname'] = _ApiClient["default"].convertToType(data['hostname'], 'String');
         }
 
         if (data.hasOwnProperty('public_key')) {
           obj['public_key'] = _PipelineSshPublicKey["default"].constructFromObject(data['public_key']);
-        }
-
-        if (data.hasOwnProperty('uuid')) {
-          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
         }
       }
 
@@ -96,23 +96,23 @@ function () {
   return PipelineKnownHost;
 }();
 /**
+ * The UUID identifying the known host.
+ * @member {String} uuid
+ */
+
+
+PipelineKnownHost.prototype['uuid'] = undefined;
+/**
  * The hostname of the known host.
  * @member {String} hostname
  */
-
 
 PipelineKnownHost.prototype['hostname'] = undefined;
 /**
  * @member {module:model/PipelineSshPublicKey} public_key
  */
 
-PipelineKnownHost.prototype['public_key'] = undefined;
-/**
- * The UUID identifying the known host.
- * @member {String} uuid
- */
-
-PipelineKnownHost.prototype['uuid'] = undefined; // Implement ModelObject interface:
+PipelineKnownHost.prototype['public_key'] = undefined; // Implement ModelObject interface:
 
 /**
  * @member {String} type
@@ -120,6 +120,12 @@ PipelineKnownHost.prototype['uuid'] = undefined; // Implement ModelObject interf
 
 _ModelObject["default"].prototype['type'] = undefined; // Implement PipelineKnownHostAllOf interface:
 
+/**
+ * The UUID identifying the known host.
+ * @member {String} uuid
+ */
+
+_PipelineKnownHostAllOf["default"].prototype['uuid'] = undefined;
 /**
  * The hostname of the known host.
  * @member {String} hostname
@@ -131,11 +137,5 @@ _PipelineKnownHostAllOf["default"].prototype['hostname'] = undefined;
  */
 
 _PipelineKnownHostAllOf["default"].prototype['public_key'] = undefined;
-/**
- * The UUID identifying the known host.
- * @member {String} uuid
- */
-
-_PipelineKnownHostAllOf["default"].prototype['uuid'] = undefined;
 var _default = PipelineKnownHost;
 exports["default"] = _default;

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,17 +48,17 @@ class PipelineImage {
         if (data) {
             obj = obj || new PipelineImage();
 
-            if (data.hasOwnProperty('email')) {
-                obj['email'] = ApiClient.convertToType(data['email'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
-            if (data.hasOwnProperty('username')) {
-                obj['username'] = ApiClient.convertToType(data['username'], 'String');
+            if (data.hasOwnProperty('email')) {
+                obj['email'] = ApiClient.convertToType(data['email'], 'String');
             }
         }
         return obj;
@@ -68,16 +68,16 @@ class PipelineImage {
 }
 
 /**
- * The email needed to authenticate with the Docker registry. Only required when using a private Docker image.
- * @member {String} email
- */
-PipelineImage.prototype['email'] = undefined;
-
-/**
  * The name of the image. If the image is hosted on DockerHub the short name can be used, otherwise the fully qualified name is required here.
  * @member {String} name
  */
 PipelineImage.prototype['name'] = undefined;
+
+/**
+ * The username needed to authenticate with the Docker registry. Only required when using a private Docker image.
+ * @member {String} username
+ */
+PipelineImage.prototype['username'] = undefined;
 
 /**
  * The password needed to authenticate with the Docker registry. Only required when using a private Docker image.
@@ -86,10 +86,10 @@ PipelineImage.prototype['name'] = undefined;
 PipelineImage.prototype['password'] = undefined;
 
 /**
- * The username needed to authenticate with the Docker registry. Only required when using a private Docker image.
- * @member {String} username
+ * The email needed to authenticate with the Docker registry. Only required when using a private Docker image.
+ * @member {String} email
  */
-PipelineImage.prototype['username'] = undefined;
+PipelineImage.prototype['email'] = undefined;
 
 
 

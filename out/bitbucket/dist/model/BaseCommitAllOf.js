@@ -11,6 +11,8 @@ var _Author = _interopRequireDefault(require("./Author"));
 
 var _BaseCommit = _interopRequireDefault(require("./BaseCommit"));
 
+var _PullrequestAllOfRenderedTitle = _interopRequireDefault(require("./PullrequestAllOfRenderedTitle"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -61,20 +63,24 @@ function () {
       if (data) {
         obj = obj || new BaseCommitAllOf();
 
-        if (data.hasOwnProperty('author')) {
-          obj['author'] = _Author["default"].constructFromObject(data['author']);
+        if (data.hasOwnProperty('hash')) {
+          obj['hash'] = _ApiClient["default"].convertToType(data['hash'], 'String');
         }
 
         if (data.hasOwnProperty('date')) {
           obj['date'] = _ApiClient["default"].convertToType(data['date'], 'Date');
         }
 
-        if (data.hasOwnProperty('hash')) {
-          obj['hash'] = _ApiClient["default"].convertToType(data['hash'], 'String');
+        if (data.hasOwnProperty('author')) {
+          obj['author'] = _Author["default"].constructFromObject(data['author']);
         }
 
         if (data.hasOwnProperty('message')) {
           obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
+        }
+
+        if (data.hasOwnProperty('summary')) {
+          obj['summary'] = _PullrequestAllOfRenderedTitle["default"].constructFromObject(data['summary']);
         }
 
         if (data.hasOwnProperty('parents')) {
@@ -89,26 +95,31 @@ function () {
   return BaseCommitAllOf;
 }();
 /**
- * @member {module:model/Author} author
+ * @member {String} hash
  */
 
 
-BaseCommitAllOf.prototype['author'] = undefined;
+BaseCommitAllOf.prototype['hash'] = undefined;
 /**
  * @member {Date} date
  */
 
 BaseCommitAllOf.prototype['date'] = undefined;
 /**
- * @member {String} hash
+ * @member {module:model/Author} author
  */
 
-BaseCommitAllOf.prototype['hash'] = undefined;
+BaseCommitAllOf.prototype['author'] = undefined;
 /**
  * @member {String} message
  */
 
 BaseCommitAllOf.prototype['message'] = undefined;
+/**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+
+BaseCommitAllOf.prototype['summary'] = undefined;
 /**
  * @member {Array.<module:model/BaseCommit>} parents
  */

@@ -57,20 +57,20 @@ function () {
       if (data) {
         obj = obj || new PipelineImage();
 
-        if (data.hasOwnProperty('email')) {
-          obj['email'] = _ApiClient["default"].convertToType(data['email'], 'String');
-        }
-
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('username')) {
+          obj['username'] = _ApiClient["default"].convertToType(data['username'], 'String');
         }
 
         if (data.hasOwnProperty('password')) {
           obj['password'] = _ApiClient["default"].convertToType(data['password'], 'String');
         }
 
-        if (data.hasOwnProperty('username')) {
-          obj['username'] = _ApiClient["default"].convertToType(data['username'], 'String');
+        if (data.hasOwnProperty('email')) {
+          obj['email'] = _ApiClient["default"].convertToType(data['email'], 'String');
         }
       }
 
@@ -81,18 +81,18 @@ function () {
   return PipelineImage;
 }();
 /**
- * The email needed to authenticate with the Docker registry. Only required when using a private Docker image.
- * @member {String} email
- */
-
-
-PipelineImage.prototype['email'] = undefined;
-/**
  * The name of the image. If the image is hosted on DockerHub the short name can be used, otherwise the fully qualified name is required here.
  * @member {String} name
  */
 
+
 PipelineImage.prototype['name'] = undefined;
+/**
+ * The username needed to authenticate with the Docker registry. Only required when using a private Docker image.
+ * @member {String} username
+ */
+
+PipelineImage.prototype['username'] = undefined;
 /**
  * The password needed to authenticate with the Docker registry. Only required when using a private Docker image.
  * @member {String} password
@@ -100,10 +100,10 @@ PipelineImage.prototype['name'] = undefined;
 
 PipelineImage.prototype['password'] = undefined;
 /**
- * The username needed to authenticate with the Docker registry. Only required when using a private Docker image.
- * @member {String} username
+ * The email needed to authenticate with the Docker registry. Only required when using a private Docker image.
+ * @member {String} email
  */
 
-PipelineImage.prototype['username'] = undefined;
+PipelineImage.prototype['email'] = undefined;
 var _default = PipelineImage;
 exports["default"] = _default;

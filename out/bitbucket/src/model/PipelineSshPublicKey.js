@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -56,11 +56,11 @@ class PipelineSshPublicKey {
             ModelObject.constructFromObject(data, obj);
             PipelineSshPublicKeyAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('key')) {
-                obj['key'] = ApiClient.convertToType(data['key'], 'String');
-            }
             if (data.hasOwnProperty('key_type')) {
                 obj['key_type'] = ApiClient.convertToType(data['key_type'], 'String');
+            }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('md5_fingerprint')) {
                 obj['md5_fingerprint'] = ApiClient.convertToType(data['md5_fingerprint'], 'String');
@@ -76,16 +76,16 @@ class PipelineSshPublicKey {
 }
 
 /**
- * The base64 encoded public key.
- * @member {String} key
- */
-PipelineSshPublicKey.prototype['key'] = undefined;
-
-/**
  * The type of the public key.
  * @member {String} key_type
  */
 PipelineSshPublicKey.prototype['key_type'] = undefined;
+
+/**
+ * The base64 encoded public key.
+ * @member {String} key
+ */
+PipelineSshPublicKey.prototype['key'] = undefined;
 
 /**
  * The MD5 fingerprint of the public key.
@@ -107,15 +107,15 @@ PipelineSshPublicKey.prototype['sha256_fingerprint'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement PipelineSshPublicKeyAllOf interface:
 /**
- * The base64 encoded public key.
- * @member {String} key
- */
-PipelineSshPublicKeyAllOf.prototype['key'] = undefined;
-/**
  * The type of the public key.
  * @member {String} key_type
  */
 PipelineSshPublicKeyAllOf.prototype['key_type'] = undefined;
+/**
+ * The base64 encoded public key.
+ * @member {String} key
+ */
+PipelineSshPublicKeyAllOf.prototype['key'] = undefined;
 /**
  * The MD5 fingerprint of the public key.
  * @member {String} md5_fingerprint

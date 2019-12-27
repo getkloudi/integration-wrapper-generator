@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
+import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 
 /**
  * The PullrequestAllOfLinks model module.
@@ -48,32 +48,35 @@ class PullrequestAllOfLinks {
         if (data) {
             obj = obj || new PullrequestAllOfLinks();
 
-            if (data.hasOwnProperty('activity')) {
-                obj['activity'] = AccountAllOfLinksAvatar.constructFromObject(data['activity']);
-            }
-            if (data.hasOwnProperty('approve')) {
-                obj['approve'] = AccountAllOfLinksAvatar.constructFromObject(data['approve']);
-            }
-            if (data.hasOwnProperty('comments')) {
-                obj['comments'] = AccountAllOfLinksAvatar.constructFromObject(data['comments']);
-            }
-            if (data.hasOwnProperty('commits')) {
-                obj['commits'] = AccountAllOfLinksAvatar.constructFromObject(data['commits']);
-            }
-            if (data.hasOwnProperty('decline')) {
-                obj['decline'] = AccountAllOfLinksAvatar.constructFromObject(data['decline']);
-            }
-            if (data.hasOwnProperty('diff')) {
-                obj['diff'] = AccountAllOfLinksAvatar.constructFromObject(data['diff']);
+            if (data.hasOwnProperty('self')) {
+                obj['self'] = SubjectTypesRepositoryEvents.constructFromObject(data['self']);
             }
             if (data.hasOwnProperty('html')) {
-                obj['html'] = AccountAllOfLinksAvatar.constructFromObject(data['html']);
+                obj['html'] = SubjectTypesRepositoryEvents.constructFromObject(data['html']);
+            }
+            if (data.hasOwnProperty('commits')) {
+                obj['commits'] = SubjectTypesRepositoryEvents.constructFromObject(data['commits']);
+            }
+            if (data.hasOwnProperty('approve')) {
+                obj['approve'] = SubjectTypesRepositoryEvents.constructFromObject(data['approve']);
+            }
+            if (data.hasOwnProperty('diff')) {
+                obj['diff'] = SubjectTypesRepositoryEvents.constructFromObject(data['diff']);
+            }
+            if (data.hasOwnProperty('diffstat')) {
+                obj['diffstat'] = SubjectTypesRepositoryEvents.constructFromObject(data['diffstat']);
+            }
+            if (data.hasOwnProperty('comments')) {
+                obj['comments'] = SubjectTypesRepositoryEvents.constructFromObject(data['comments']);
+            }
+            if (data.hasOwnProperty('activity')) {
+                obj['activity'] = SubjectTypesRepositoryEvents.constructFromObject(data['activity']);
             }
             if (data.hasOwnProperty('merge')) {
-                obj['merge'] = AccountAllOfLinksAvatar.constructFromObject(data['merge']);
+                obj['merge'] = SubjectTypesRepositoryEvents.constructFromObject(data['merge']);
             }
-            if (data.hasOwnProperty('self')) {
-                obj['self'] = AccountAllOfLinksAvatar.constructFromObject(data['self']);
+            if (data.hasOwnProperty('decline')) {
+                obj['decline'] = SubjectTypesRepositoryEvents.constructFromObject(data['decline']);
             }
         }
         return obj;
@@ -83,49 +86,54 @@ class PullrequestAllOfLinks {
 }
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} activity
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
-PullrequestAllOfLinks.prototype['activity'] = undefined;
+PullrequestAllOfLinks.prototype['self'] = undefined;
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} approve
- */
-PullrequestAllOfLinks.prototype['approve'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} comments
- */
-PullrequestAllOfLinks.prototype['comments'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} commits
- */
-PullrequestAllOfLinks.prototype['commits'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} decline
- */
-PullrequestAllOfLinks.prototype['decline'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} diff
- */
-PullrequestAllOfLinks.prototype['diff'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} html
+ * @member {module:model/SubjectTypesRepositoryEvents} html
  */
 PullrequestAllOfLinks.prototype['html'] = undefined;
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} merge
+ * @member {module:model/SubjectTypesRepositoryEvents} commits
+ */
+PullrequestAllOfLinks.prototype['commits'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} approve
+ */
+PullrequestAllOfLinks.prototype['approve'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} diff
+ */
+PullrequestAllOfLinks.prototype['diff'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} diffstat
+ */
+PullrequestAllOfLinks.prototype['diffstat'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} comments
+ */
+PullrequestAllOfLinks.prototype['comments'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} activity
+ */
+PullrequestAllOfLinks.prototype['activity'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} merge
  */
 PullrequestAllOfLinks.prototype['merge'] = undefined;
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} self
+ * @member {module:model/SubjectTypesRepositoryEvents} decline
  */
-PullrequestAllOfLinks.prototype['self'] = undefined;
+PullrequestAllOfLinks.prototype['decline'] = undefined;
 
 
 

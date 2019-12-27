@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import Account from './Account';
+import Branch from './Branch';
 import Project from './Project';
 import Repository from './Repository';
 import RepositoryAllOfLinks from './RepositoryAllOfLinks';
@@ -52,17 +53,44 @@ class RepositoryAllOf {
         if (data) {
             obj = obj || new RepositoryAllOf();
 
-            if (data.hasOwnProperty('created_on')) {
-                obj['created_on'] = ApiClient.convertToType(data['created_on'], 'Date');
+            if (data.hasOwnProperty('links')) {
+                obj['links'] = RepositoryAllOfLinks.constructFromObject(data['links']);
+            }
+            if (data.hasOwnProperty('uuid')) {
+                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
+            }
+            if (data.hasOwnProperty('full_name')) {
+                obj['full_name'] = ApiClient.convertToType(data['full_name'], 'String');
+            }
+            if (data.hasOwnProperty('is_private')) {
+                obj['is_private'] = ApiClient.convertToType(data['is_private'], 'Boolean');
+            }
+            if (data.hasOwnProperty('parent')) {
+                obj['parent'] = Repository.constructFromObject(data['parent']);
+            }
+            if (data.hasOwnProperty('scm')) {
+                obj['scm'] = ApiClient.convertToType(data['scm'], 'String');
+            }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = Account.constructFromObject(data['owner']);
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('fork_policy')) {
-                obj['fork_policy'] = ApiClient.convertToType(data['fork_policy'], 'String');
+            if (data.hasOwnProperty('created_on')) {
+                obj['created_on'] = ApiClient.convertToType(data['created_on'], 'Date');
             }
-            if (data.hasOwnProperty('full_name')) {
-                obj['full_name'] = ApiClient.convertToType(data['full_name'], 'String');
+            if (data.hasOwnProperty('updated_on')) {
+                obj['updated_on'] = ApiClient.convertToType(data['updated_on'], 'Date');
+            }
+            if (data.hasOwnProperty('size')) {
+                obj['size'] = ApiClient.convertToType(data['size'], 'Number');
+            }
+            if (data.hasOwnProperty('language')) {
+                obj['language'] = ApiClient.convertToType(data['language'], 'String');
             }
             if (data.hasOwnProperty('has_issues')) {
                 obj['has_issues'] = ApiClient.convertToType(data['has_issues'], 'Boolean');
@@ -70,38 +98,14 @@ class RepositoryAllOf {
             if (data.hasOwnProperty('has_wiki')) {
                 obj['has_wiki'] = ApiClient.convertToType(data['has_wiki'], 'Boolean');
             }
-            if (data.hasOwnProperty('is_private')) {
-                obj['is_private'] = ApiClient.convertToType(data['is_private'], 'Boolean');
-            }
-            if (data.hasOwnProperty('language')) {
-                obj['language'] = ApiClient.convertToType(data['language'], 'String');
-            }
-            if (data.hasOwnProperty('links')) {
-                obj['links'] = RepositoryAllOfLinks.constructFromObject(data['links']);
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('owner')) {
-                obj['owner'] = Account.constructFromObject(data['owner']);
-            }
-            if (data.hasOwnProperty('parent')) {
-                obj['parent'] = Repository.constructFromObject(data['parent']);
+            if (data.hasOwnProperty('fork_policy')) {
+                obj['fork_policy'] = ApiClient.convertToType(data['fork_policy'], 'String');
             }
             if (data.hasOwnProperty('project')) {
                 obj['project'] = Project.constructFromObject(data['project']);
             }
-            if (data.hasOwnProperty('scm')) {
-                obj['scm'] = ApiClient.convertToType(data['scm'], 'String');
-            }
-            if (data.hasOwnProperty('size')) {
-                obj['size'] = ApiClient.convertToType(data['size'], 'Number');
-            }
-            if (data.hasOwnProperty('updated_on')) {
-                obj['updated_on'] = ApiClient.convertToType(data['updated_on'], 'Date');
-            }
-            if (data.hasOwnProperty('uuid')) {
-                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
+            if (data.hasOwnProperty('mainbranch')) {
+                obj['mainbranch'] = Branch.constructFromObject(data['mainbranch']);
             }
         }
         return obj;
@@ -111,9 +115,46 @@ class RepositoryAllOf {
 }
 
 /**
- * @member {Date} created_on
+ * @member {module:model/RepositoryAllOfLinks} links
  */
-RepositoryAllOf.prototype['created_on'] = undefined;
+RepositoryAllOf.prototype['links'] = undefined;
+
+/**
+ * The repository's immutable id. This can be used as a substitute for the slug segment in URLs. Doing this guarantees your URLs will survive renaming of the repository by its owner, or even transfer of the repository to a different user.
+ * @member {String} uuid
+ */
+RepositoryAllOf.prototype['uuid'] = undefined;
+
+/**
+ * The concatenation of the repository owner's username and the slugified name, e.g. \"evzijst/interruptingcow\". This is the same string used in Bitbucket URLs.
+ * @member {String} full_name
+ */
+RepositoryAllOf.prototype['full_name'] = undefined;
+
+/**
+ * @member {Boolean} is_private
+ */
+RepositoryAllOf.prototype['is_private'] = undefined;
+
+/**
+ * @member {module:model/Repository} parent
+ */
+RepositoryAllOf.prototype['parent'] = undefined;
+
+/**
+ * @member {module:model/RepositoryAllOf.ScmEnum} scm
+ */
+RepositoryAllOf.prototype['scm'] = undefined;
+
+/**
+ * @member {module:model/Account} owner
+ */
+RepositoryAllOf.prototype['owner'] = undefined;
+
+/**
+ * @member {String} name
+ */
+RepositoryAllOf.prototype['name'] = undefined;
 
 /**
  * @member {String} description
@@ -121,16 +162,24 @@ RepositoryAllOf.prototype['created_on'] = undefined;
 RepositoryAllOf.prototype['description'] = undefined;
 
 /**
- *  Controls the rules for forking this repository.  * **allow_forks**: unrestricted forking * **no_public_forks**: restrict forking to private forks (forks cannot   be made public later) * **no_forks**: deny all forking 
- * @member {module:model/RepositoryAllOf.ForkPolicyEnum} fork_policy
+ * @member {Date} created_on
  */
-RepositoryAllOf.prototype['fork_policy'] = undefined;
+RepositoryAllOf.prototype['created_on'] = undefined;
 
 /**
- * The concatenation of the repository owner's username and the slugified name, e.g. \"evzijst/interruptingcow\". This is the same string used in Bitbucket URLs.
- * @member {String} full_name
+ * @member {Date} updated_on
  */
-RepositoryAllOf.prototype['full_name'] = undefined;
+RepositoryAllOf.prototype['updated_on'] = undefined;
+
+/**
+ * @member {Number} size
+ */
+RepositoryAllOf.prototype['size'] = undefined;
+
+/**
+ * @member {String} language
+ */
+RepositoryAllOf.prototype['language'] = undefined;
 
 /**
  * @member {Boolean} has_issues
@@ -143,34 +192,10 @@ RepositoryAllOf.prototype['has_issues'] = undefined;
 RepositoryAllOf.prototype['has_wiki'] = undefined;
 
 /**
- * @member {Boolean} is_private
+ *  Controls the rules for forking this repository.  * **allow_forks**: unrestricted forking * **no_public_forks**: restrict forking to private forks (forks cannot   be made public later) * **no_forks**: deny all forking 
+ * @member {module:model/RepositoryAllOf.ForkPolicyEnum} fork_policy
  */
-RepositoryAllOf.prototype['is_private'] = undefined;
-
-/**
- * @member {String} language
- */
-RepositoryAllOf.prototype['language'] = undefined;
-
-/**
- * @member {module:model/RepositoryAllOfLinks} links
- */
-RepositoryAllOf.prototype['links'] = undefined;
-
-/**
- * @member {String} name
- */
-RepositoryAllOf.prototype['name'] = undefined;
-
-/**
- * @member {module:model/Account} owner
- */
-RepositoryAllOf.prototype['owner'] = undefined;
-
-/**
- * @member {module:model/Repository} parent
- */
-RepositoryAllOf.prototype['parent'] = undefined;
+RepositoryAllOf.prototype['fork_policy'] = undefined;
 
 /**
  * @member {module:model/Project} project
@@ -178,28 +203,33 @@ RepositoryAllOf.prototype['parent'] = undefined;
 RepositoryAllOf.prototype['project'] = undefined;
 
 /**
- * @member {module:model/RepositoryAllOf.ScmEnum} scm
+ * @member {module:model/Branch} mainbranch
  */
-RepositoryAllOf.prototype['scm'] = undefined;
+RepositoryAllOf.prototype['mainbranch'] = undefined;
+
+
+
+
 
 /**
- * @member {Number} size
+ * Allowed values for the <code>scm</code> property.
+ * @enum {String}
+ * @readonly
  */
-RepositoryAllOf.prototype['size'] = undefined;
+RepositoryAllOf['ScmEnum'] = {
 
-/**
- * @member {Date} updated_on
- */
-RepositoryAllOf.prototype['updated_on'] = undefined;
+    /**
+     * value: "hg"
+     * @const
+     */
+    "hg": "hg",
 
-/**
- * The repository's immutable id. This can be used as a substitute for the slug segment in URLs. Doing this guarantees your URLs will survive renaming of the repository by its owner, or even transfer of the repository to a different user.
- * @member {String} uuid
- */
-RepositoryAllOf.prototype['uuid'] = undefined;
-
-
-
+    /**
+     * value: "git"
+     * @const
+     */
+    "git": "git"
+};
 
 
 /**
@@ -226,27 +256,6 @@ RepositoryAllOf['ForkPolicyEnum'] = {
      * @const
      */
     "no_forks": "no_forks"
-};
-
-
-/**
- * Allowed values for the <code>scm</code> property.
- * @enum {String}
- * @readonly
- */
-RepositoryAllOf['ScmEnum'] = {
-
-    /**
-     * value: "hg"
-     * @const
-     */
-    "hg": "hg",
-
-    /**
-     * value: "git"
-     * @const
-     */
-    "git": "git"
 };
 
 

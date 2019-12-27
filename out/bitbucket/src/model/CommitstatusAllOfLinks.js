@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
+import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 
 /**
  * The CommitstatusAllOfLinks model module.
@@ -48,11 +48,11 @@ class CommitstatusAllOfLinks {
         if (data) {
             obj = obj || new CommitstatusAllOfLinks();
 
-            if (data.hasOwnProperty('commit')) {
-                obj['commit'] = AccountAllOfLinksAvatar.constructFromObject(data['commit']);
-            }
             if (data.hasOwnProperty('self')) {
-                obj['self'] = AccountAllOfLinksAvatar.constructFromObject(data['self']);
+                obj['self'] = SubjectTypesRepositoryEvents.constructFromObject(data['self']);
+            }
+            if (data.hasOwnProperty('commit')) {
+                obj['commit'] = SubjectTypesRepositoryEvents.constructFromObject(data['commit']);
             }
         }
         return obj;
@@ -62,14 +62,14 @@ class CommitstatusAllOfLinks {
 }
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} commit
- */
-CommitstatusAllOfLinks.prototype['commit'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} self
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
 CommitstatusAllOfLinks.prototype['self'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} commit
+ */
+CommitstatusAllOfLinks.prototype['commit'] = undefined;
 
 
 

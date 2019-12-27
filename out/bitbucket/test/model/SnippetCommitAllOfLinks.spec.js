@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(Bitbucket.SnippetCommitAllOfLinks);
     });
 
-    it('should have the property diff (base name: "diff")', function() {
-      // uncomment below and update the code to test the property diff
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new Bitbucket.SnippetCommitAllOfLinks();
       //expect(instance).to.be();
     });
@@ -66,8 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property diff (base name: "diff")', function() {
+      // uncomment below and update the code to test the property diff
       //var instane = new Bitbucket.SnippetCommitAllOfLinks();
       //expect(instance).to.be();
     });

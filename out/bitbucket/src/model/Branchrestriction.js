@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -13,8 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import Account from './Account';
+import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks';
 import BranchrestrictionAllOf from './BranchrestrictionAllOf';
-import BranchrestrictionAllOfLinks from './BranchrestrictionAllOfLinks';
 import Group from './Group';
 import ModelObject from './ModelObject';
 
@@ -31,10 +31,13 @@ class Branchrestriction {
      * @implements module:model/ModelObject
      * @implements module:model/BranchrestrictionAllOf
      * @param type {String} 
+     * @param kind {module:model/Branchrestriction.KindEnum} The type of restriction that is being applied.
+     * @param branchMatchKind {module:model/Branchrestriction.BranchMatchKindEnum} Indicates how the restriction is matched against a branch. The default is `glob`.
+     * @param pattern {String} Apply the restriction to branches that match this pattern. Active when `branch_match_kind` is `glob`. Will be empty when `branch_match_kind` is `branching_model`.
      */
-    constructor(type) { 
-        ModelObject.initialize(this, type);BranchrestrictionAllOf.initialize(this);
-        Branchrestriction.initialize(this, type);
+    constructor(type, kind, branchMatchKind, pattern) { 
+        ModelObject.initialize(this, type);BranchrestrictionAllOf.initialize(this, kind, branchMatchKind, pattern);
+        Branchrestriction.initialize(this, type, kind, branchMatchKind, pattern);
     }
 
     /**
@@ -42,7 +45,10 @@ class Branchrestriction {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, type) { 
+    static initialize(obj, type, kind, branchMatchKind, pattern) { 
+        obj['kind'] = kind;
+        obj['branch_match_kind'] = branchMatchKind;
+        obj['pattern'] = pattern;
     }
 
     /**
@@ -59,8 +65,8 @@ class Branchrestriction {
             ModelObject.constructFromObject(data, obj);
             BranchrestrictionAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('groups')) {
-                obj['groups'] = ApiClient.convertToType(data['groups'], [Group]);
+            if (data.hasOwnProperty('links')) {
+                obj['links'] = BranchingModelSettingsAllOfLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -68,11 +74,20 @@ class Branchrestriction {
             if (data.hasOwnProperty('kind')) {
                 obj['kind'] = ApiClient.convertToType(data['kind'], 'String');
             }
-            if (data.hasOwnProperty('links')) {
-                obj['links'] = BranchrestrictionAllOfLinks.constructFromObject(data['links']);
+            if (data.hasOwnProperty('branch_match_kind')) {
+                obj['branch_match_kind'] = ApiClient.convertToType(data['branch_match_kind'], 'String');
+            }
+            if (data.hasOwnProperty('branch_type')) {
+                obj['branch_type'] = ApiClient.convertToType(data['branch_type'], 'String');
+            }
+            if (data.hasOwnProperty('pattern')) {
+                obj['pattern'] = ApiClient.convertToType(data['pattern'], 'String');
             }
             if (data.hasOwnProperty('users')) {
                 obj['users'] = ApiClient.convertToType(data['users'], [Account]);
+            }
+            if (data.hasOwnProperty('groups')) {
+                obj['groups'] = ApiClient.convertToType(data['groups'], [Group]);
             }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'Number');
@@ -85,9 +100,9 @@ class Branchrestriction {
 }
 
 /**
- * @member {Array.<module:model/Group>} groups
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
-Branchrestriction.prototype['groups'] = undefined;
+Branchrestriction.prototype['links'] = undefined;
 
 /**
  * The branch restriction status' id.
@@ -96,15 +111,28 @@ Branchrestriction.prototype['groups'] = undefined;
 Branchrestriction.prototype['id'] = undefined;
 
 /**
- * The type of restriction that is being applied
+ * The type of restriction that is being applied.
  * @member {module:model/Branchrestriction.KindEnum} kind
  */
 Branchrestriction.prototype['kind'] = undefined;
 
 /**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * Indicates how the restriction is matched against a branch. The default is `glob`.
+ * @member {module:model/Branchrestriction.BranchMatchKindEnum} branch_match_kind
  */
-Branchrestriction.prototype['links'] = undefined;
+Branchrestriction.prototype['branch_match_kind'] = undefined;
+
+/**
+ * Apply the restriction to branches of this type. Active when `branch_match_kind` is `branching_model`. The branch type will be calculated using the branching model configured for the repository.
+ * @member {module:model/Branchrestriction.BranchTypeEnum} branch_type
+ */
+Branchrestriction.prototype['branch_type'] = undefined;
+
+/**
+ * Apply the restriction to branches that match this pattern. Active when `branch_match_kind` is `glob`. Will be empty when `branch_match_kind` is `branching_model`.
+ * @member {String} pattern
+ */
+Branchrestriction.prototype['pattern'] = undefined;
 
 /**
  * @member {Array.<module:model/Account>} users
@@ -112,7 +140,12 @@ Branchrestriction.prototype['links'] = undefined;
 Branchrestriction.prototype['users'] = undefined;
 
 /**
- * Value with kind-specific semantics: \"require_approvals_to_merge\" uses it to require a minimum number of approvals on a PR; \"require_passing_builds_to_merge\" uses it to require a minimum number of passing builds.
+ * @member {Array.<module:model/Group>} groups
+ */
+Branchrestriction.prototype['groups'] = undefined;
+
+/**
+ * Value with kind-specific semantics: \"require_approvals_to_merge\" uses it to require a minimum number of approvals on a PR; \"require_default_reviewer_approvals_to_merge\" uses it to require a minimum number of approvals from default reviewers on a PR; \"require_passing_builds_to_merge\" uses it to require a minimum number of passing builds.
  * @member {Number} value
  */
 Branchrestriction.prototype['value'] = undefined;
@@ -125,29 +158,44 @@ Branchrestriction.prototype['value'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement BranchrestrictionAllOf interface:
 /**
- * @member {Array.<module:model/Group>} groups
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
-BranchrestrictionAllOf.prototype['groups'] = undefined;
+BranchrestrictionAllOf.prototype['links'] = undefined;
 /**
  * The branch restriction status' id.
  * @member {Number} id
  */
 BranchrestrictionAllOf.prototype['id'] = undefined;
 /**
- * The type of restriction that is being applied
+ * The type of restriction that is being applied.
  * @member {module:model/BranchrestrictionAllOf.KindEnum} kind
  */
 BranchrestrictionAllOf.prototype['kind'] = undefined;
 /**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * Indicates how the restriction is matched against a branch. The default is `glob`.
+ * @member {module:model/BranchrestrictionAllOf.BranchMatchKindEnum} branch_match_kind
  */
-BranchrestrictionAllOf.prototype['links'] = undefined;
+BranchrestrictionAllOf.prototype['branch_match_kind'] = undefined;
+/**
+ * Apply the restriction to branches of this type. Active when `branch_match_kind` is `branching_model`. The branch type will be calculated using the branching model configured for the repository.
+ * @member {module:model/BranchrestrictionAllOf.BranchTypeEnum} branch_type
+ */
+BranchrestrictionAllOf.prototype['branch_type'] = undefined;
+/**
+ * Apply the restriction to branches that match this pattern. Active when `branch_match_kind` is `glob`. Will be empty when `branch_match_kind` is `branching_model`.
+ * @member {String} pattern
+ */
+BranchrestrictionAllOf.prototype['pattern'] = undefined;
 /**
  * @member {Array.<module:model/Account>} users
  */
 BranchrestrictionAllOf.prototype['users'] = undefined;
 /**
- * Value with kind-specific semantics: \"require_approvals_to_merge\" uses it to require a minimum number of approvals on a PR; \"require_passing_builds_to_merge\" uses it to require a minimum number of passing builds.
+ * @member {Array.<module:model/Group>} groups
+ */
+BranchrestrictionAllOf.prototype['groups'] = undefined;
+/**
+ * Value with kind-specific semantics: \"require_approvals_to_merge\" uses it to require a minimum number of approvals on a PR; \"require_default_reviewer_approvals_to_merge\" uses it to require a minimum number of approvals from default reviewers on a PR; \"require_passing_builds_to_merge\" uses it to require a minimum number of passing builds.
  * @member {Number} value
  */
 BranchrestrictionAllOf.prototype['value'] = undefined;
@@ -168,16 +216,34 @@ Branchrestriction['KindEnum'] = {
     "require_tasks_to_be_completed": "require_tasks_to_be_completed",
 
     /**
-     * value: "require_passing_builds_to_merge"
-     * @const
-     */
-    "require_passing_builds_to_merge": "require_passing_builds_to_merge",
-
-    /**
      * value: "force"
      * @const
      */
     "force": "force",
+
+    /**
+     * value: "restrict_merges"
+     * @const
+     */
+    "restrict_merges": "restrict_merges",
+
+    /**
+     * value: "enforce_merge_checks"
+     * @const
+     */
+    "enforce_merge_checks": "enforce_merge_checks",
+
+    /**
+     * value: "require_approvals_to_merge"
+     * @const
+     */
+    "require_approvals_to_merge": "require_approvals_to_merge",
+
+    /**
+     * value: "delete"
+     * @const
+     */
+    "delete": "delete",
 
     /**
      * value: "require_all_dependencies_merged"
@@ -192,22 +258,10 @@ Branchrestriction['KindEnum'] = {
     "push": "push",
 
     /**
-     * value: "require_approvals_to_merge"
+     * value: "require_passing_builds_to_merge"
      * @const
      */
-    "require_approvals_to_merge": "require_approvals_to_merge",
-
-    /**
-     * value: "enforce_merge_checks"
-     * @const
-     */
-    "enforce_merge_checks": "enforce_merge_checks",
-
-    /**
-     * value: "restrict_merges"
-     * @const
-     */
-    "restrict_merges": "restrict_merges",
+    "require_passing_builds_to_merge": "require_passing_builds_to_merge",
 
     /**
      * value: "reset_pullrequest_approvals_on_change"
@@ -216,10 +270,76 @@ Branchrestriction['KindEnum'] = {
     "reset_pullrequest_approvals_on_change": "reset_pullrequest_approvals_on_change",
 
     /**
-     * value: "delete"
+     * value: "require_default_reviewer_approvals_to_merge"
      * @const
      */
-    "delete": "delete"
+    "require_default_reviewer_approvals_to_merge": "require_default_reviewer_approvals_to_merge"
+};
+
+
+/**
+ * Allowed values for the <code>branch_match_kind</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Branchrestriction['BranchMatchKindEnum'] = {
+
+    /**
+     * value: "branching_model"
+     * @const
+     */
+    "branching_model": "branching_model",
+
+    /**
+     * value: "glob"
+     * @const
+     */
+    "glob": "glob"
+};
+
+
+/**
+ * Allowed values for the <code>branch_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Branchrestriction['BranchTypeEnum'] = {
+
+    /**
+     * value: "feature"
+     * @const
+     */
+    "feature": "feature",
+
+    /**
+     * value: "bugfix"
+     * @const
+     */
+    "bugfix": "bugfix",
+
+    /**
+     * value: "release"
+     * @const
+     */
+    "release": "release",
+
+    /**
+     * value: "hotfix"
+     * @const
+     */
+    "hotfix": "hotfix",
+
+    /**
+     * value: "development"
+     * @const
+     */
+    "development": "development",
+
+    /**
+     * value: "production"
+     * @const
+     */
+    "production": "production"
 };
 
 

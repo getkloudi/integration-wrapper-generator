@@ -13,9 +13,9 @@ var _BaseCommit = _interopRequireDefault(require("./BaseCommit"));
 
 var _CommitAllOf = _interopRequireDefault(require("./CommitAllOf"));
 
-var _CommitAllOfLinks = _interopRequireDefault(require("./CommitAllOfLinks"));
-
 var _Participant = _interopRequireDefault(require("./Participant"));
+
+var _PullrequestAllOfRenderedTitle = _interopRequireDefault(require("./PullrequestAllOfRenderedTitle"));
 
 var _Repository = _interopRequireDefault(require("./Repository"));
 
@@ -85,36 +85,36 @@ function () {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
 
-        if (data.hasOwnProperty('author')) {
-          obj['author'] = _Author["default"].constructFromObject(data['author']);
+        if (data.hasOwnProperty('hash')) {
+          obj['hash'] = _ApiClient["default"].convertToType(data['hash'], 'String');
         }
 
         if (data.hasOwnProperty('date')) {
           obj['date'] = _ApiClient["default"].convertToType(data['date'], 'Date');
         }
 
-        if (data.hasOwnProperty('hash')) {
-          obj['hash'] = _ApiClient["default"].convertToType(data['hash'], 'String');
+        if (data.hasOwnProperty('author')) {
+          obj['author'] = _Author["default"].constructFromObject(data['author']);
         }
 
         if (data.hasOwnProperty('message')) {
           obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
         }
 
+        if (data.hasOwnProperty('summary')) {
+          obj['summary'] = _PullrequestAllOfRenderedTitle["default"].constructFromObject(data['summary']);
+        }
+
         if (data.hasOwnProperty('parents')) {
           obj['parents'] = _ApiClient["default"].convertToType(data['parents'], [_BaseCommit["default"]]);
         }
 
-        if (data.hasOwnProperty('links')) {
-          obj['links'] = _CommitAllOfLinks["default"].constructFromObject(data['links']);
+        if (data.hasOwnProperty('repository')) {
+          obj['repository'] = _Repository["default"].constructFromObject(data['repository']);
         }
 
         if (data.hasOwnProperty('participants')) {
           obj['participants'] = _ApiClient["default"].convertToType(data['participants'], [_Participant["default"]]);
-        }
-
-        if (data.hasOwnProperty('repository')) {
-          obj['repository'] = _Repository["default"].constructFromObject(data['repository']);
         }
       }
 
@@ -131,45 +131,45 @@ function () {
 
 Commit.prototype['type'] = undefined;
 /**
- * @member {module:model/Author} author
+ * @member {String} hash
  */
 
-Commit.prototype['author'] = undefined;
+Commit.prototype['hash'] = undefined;
 /**
  * @member {Date} date
  */
 
 Commit.prototype['date'] = undefined;
 /**
- * @member {String} hash
+ * @member {module:model/Author} author
  */
 
-Commit.prototype['hash'] = undefined;
+Commit.prototype['author'] = undefined;
 /**
  * @member {String} message
  */
 
 Commit.prototype['message'] = undefined;
 /**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+
+Commit.prototype['summary'] = undefined;
+/**
  * @member {Array.<module:model/BaseCommit>} parents
  */
 
 Commit.prototype['parents'] = undefined;
 /**
- * @member {module:model/CommitAllOfLinks} links
+ * @member {module:model/Repository} repository
  */
 
-Commit.prototype['links'] = undefined;
+Commit.prototype['repository'] = undefined;
 /**
  * @member {Array.<module:model/Participant>} participants
  */
 
-Commit.prototype['participants'] = undefined;
-/**
- * @member {module:model/Repository} repository
- */
-
-Commit.prototype['repository'] = undefined; // Implement BaseCommit interface:
+Commit.prototype['participants'] = undefined; // Implement BaseCommit interface:
 
 /**
  * @member {String} type
@@ -177,25 +177,30 @@ Commit.prototype['repository'] = undefined; // Implement BaseCommit interface:
 
 _BaseCommit["default"].prototype['type'] = undefined;
 /**
- * @member {module:model/Author} author
+ * @member {String} hash
  */
 
-_BaseCommit["default"].prototype['author'] = undefined;
+_BaseCommit["default"].prototype['hash'] = undefined;
 /**
  * @member {Date} date
  */
 
 _BaseCommit["default"].prototype['date'] = undefined;
 /**
- * @member {String} hash
+ * @member {module:model/Author} author
  */
 
-_BaseCommit["default"].prototype['hash'] = undefined;
+_BaseCommit["default"].prototype['author'] = undefined;
 /**
  * @member {String} message
  */
 
 _BaseCommit["default"].prototype['message'] = undefined;
+/**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+
+_BaseCommit["default"].prototype['summary'] = undefined;
 /**
  * @member {Array.<module:model/BaseCommit>} parents
  */
@@ -203,19 +208,14 @@ _BaseCommit["default"].prototype['message'] = undefined;
 _BaseCommit["default"].prototype['parents'] = undefined; // Implement CommitAllOf interface:
 
 /**
- * @member {module:model/CommitAllOfLinks} links
+ * @member {module:model/Repository} repository
  */
 
-_CommitAllOf["default"].prototype['links'] = undefined;
+_CommitAllOf["default"].prototype['repository'] = undefined;
 /**
  * @member {Array.<module:model/Participant>} participants
  */
 
 _CommitAllOf["default"].prototype['participants'] = undefined;
-/**
- * @member {module:model/Repository} repository
- */
-
-_CommitAllOf["default"].prototype['repository'] = undefined;
 var _default = Commit;
 exports["default"] = _default;

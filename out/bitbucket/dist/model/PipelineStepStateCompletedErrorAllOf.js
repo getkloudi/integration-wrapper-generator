@@ -59,12 +59,12 @@ function () {
       if (data) {
         obj = obj || new PipelineStepStateCompletedErrorAllOf();
 
-        if (data.hasOwnProperty('error')) {
-          obj['error'] = _PipelineStepError["default"].constructFromObject(data['error']);
-        }
-
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('error')) {
+          obj['error'] = _PipelineStepError["default"].constructFromObject(data['error']);
         }
       }
 
@@ -75,17 +75,17 @@ function () {
   return PipelineStepStateCompletedErrorAllOf;
 }();
 /**
- * @member {module:model/PipelineStepError} error
- */
-
-
-PipelineStepStateCompletedErrorAllOf.prototype['error'] = undefined;
-/**
  * The name of the result (ERROR)
  * @member {module:model/PipelineStepStateCompletedErrorAllOf.NameEnum} name
  */
 
+
 PipelineStepStateCompletedErrorAllOf.prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineStepError} error
+ */
+
+PipelineStepStateCompletedErrorAllOf.prototype['error'] = undefined;
 /**
  * Allowed values for the <code>name</code> property.
  * @enum {String}

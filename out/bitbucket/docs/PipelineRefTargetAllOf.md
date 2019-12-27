@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**commit** | [**Commit**](Commit.md) |  | [optional] 
-**refName** | **String** | The name of the reference. | [optional] 
 **refType** | **String** | The type of reference (branch/tag). | [optional] 
+**refName** | **String** | The name of the reference. | [optional] 
+**commit** | [**Commit**](Commit.md) |  | [optional] 
 **selector** | [**PipelineSelector**](PipelineSelector.md) |  | [optional] 
 
 

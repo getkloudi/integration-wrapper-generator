@@ -62,12 +62,12 @@ function () {
       if (data) {
         obj = obj || new Error();
 
-        if (data.hasOwnProperty('error')) {
-          obj['error'] = _ErrorError["default"].constructFromObject(data['error']);
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
+        }
+
+        if (data.hasOwnProperty('error')) {
+          obj['error'] = _ErrorError["default"].constructFromObject(data['error']);
         }
       }
 
@@ -78,15 +78,15 @@ function () {
   return Error;
 }();
 /**
- * @member {module:model/ErrorError} error
- */
-
-
-Error.prototype['error'] = undefined;
-/**
  * @member {String} type
  */
 
+
 Error.prototype['type'] = undefined;
+/**
+ * @member {module:model/ErrorError} error
+ */
+
+Error.prototype['error'] = undefined;
 var _default = Error;
 exports["default"] = _default;

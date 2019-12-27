@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -57,29 +57,29 @@ class Snippet {
             ModelObject.constructFromObject(data, obj);
             SnippetAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('created_on')) {
-                obj['created_on'] = ApiClient.convertToType(data['created_on'], 'Date');
-            }
-            if (data.hasOwnProperty('creator')) {
-                obj['creator'] = Account.constructFromObject(data['creator']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
-            if (data.hasOwnProperty('is_private')) {
-                obj['is_private'] = ApiClient.convertToType(data['is_private'], 'Boolean');
-            }
-            if (data.hasOwnProperty('owner')) {
-                obj['owner'] = Account.constructFromObject(data['owner']);
-            }
-            if (data.hasOwnProperty('scm')) {
-                obj['scm'] = ApiClient.convertToType(data['scm'], 'String');
             }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
+            if (data.hasOwnProperty('scm')) {
+                obj['scm'] = ApiClient.convertToType(data['scm'], 'String');
+            }
+            if (data.hasOwnProperty('created_on')) {
+                obj['created_on'] = ApiClient.convertToType(data['created_on'], 'Date');
+            }
             if (data.hasOwnProperty('updated_on')) {
                 obj['updated_on'] = ApiClient.convertToType(data['updated_on'], 'Date');
+            }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = Account.constructFromObject(data['owner']);
+            }
+            if (data.hasOwnProperty('creator')) {
+                obj['creator'] = Account.constructFromObject(data['creator']);
+            }
+            if (data.hasOwnProperty('is_private')) {
+                obj['is_private'] = ApiClient.convertToType(data['is_private'], 'Boolean');
             }
         }
         return obj;
@@ -89,29 +89,14 @@ class Snippet {
 }
 
 /**
- * @member {Date} created_on
- */
-Snippet.prototype['created_on'] = undefined;
-
-/**
- * @member {module:model/Account} creator
- */
-Snippet.prototype['creator'] = undefined;
-
-/**
  * @member {Number} id
  */
 Snippet.prototype['id'] = undefined;
 
 /**
- * @member {Boolean} is_private
+ * @member {String} title
  */
-Snippet.prototype['is_private'] = undefined;
-
-/**
- * @member {module:model/Account} owner
- */
-Snippet.prototype['owner'] = undefined;
+Snippet.prototype['title'] = undefined;
 
 /**
  * The DVCS used to store the snippet.
@@ -120,14 +105,29 @@ Snippet.prototype['owner'] = undefined;
 Snippet.prototype['scm'] = undefined;
 
 /**
- * @member {String} title
+ * @member {Date} created_on
  */
-Snippet.prototype['title'] = undefined;
+Snippet.prototype['created_on'] = undefined;
 
 /**
  * @member {Date} updated_on
  */
 Snippet.prototype['updated_on'] = undefined;
+
+/**
+ * @member {module:model/Account} owner
+ */
+Snippet.prototype['owner'] = undefined;
+
+/**
+ * @member {module:model/Account} creator
+ */
+Snippet.prototype['creator'] = undefined;
+
+/**
+ * @member {Boolean} is_private
+ */
+Snippet.prototype['is_private'] = undefined;
 
 
 // Implement ModelObject interface:
@@ -137,38 +137,38 @@ Snippet.prototype['updated_on'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement SnippetAllOf interface:
 /**
- * @member {Date} created_on
- */
-SnippetAllOf.prototype['created_on'] = undefined;
-/**
- * @member {module:model/Account} creator
- */
-SnippetAllOf.prototype['creator'] = undefined;
-/**
  * @member {Number} id
  */
 SnippetAllOf.prototype['id'] = undefined;
 /**
- * @member {Boolean} is_private
+ * @member {String} title
  */
-SnippetAllOf.prototype['is_private'] = undefined;
-/**
- * @member {module:model/Account} owner
- */
-SnippetAllOf.prototype['owner'] = undefined;
+SnippetAllOf.prototype['title'] = undefined;
 /**
  * The DVCS used to store the snippet.
  * @member {module:model/SnippetAllOf.ScmEnum} scm
  */
 SnippetAllOf.prototype['scm'] = undefined;
 /**
- * @member {String} title
+ * @member {Date} created_on
  */
-SnippetAllOf.prototype['title'] = undefined;
+SnippetAllOf.prototype['created_on'] = undefined;
 /**
  * @member {Date} updated_on
  */
 SnippetAllOf.prototype['updated_on'] = undefined;
+/**
+ * @member {module:model/Account} owner
+ */
+SnippetAllOf.prototype['owner'] = undefined;
+/**
+ * @member {module:model/Account} creator
+ */
+SnippetAllOf.prototype['creator'] = undefined;
+/**
+ * @member {Boolean} is_private
+ */
+SnippetAllOf.prototype['is_private'] = undefined;
 
 
 

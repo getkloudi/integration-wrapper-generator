@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,38 +54,8 @@
       //expect(instance).to.be.a(Bitbucket.SnippetAllOf);
     });
 
-    it('should have the property createdOn (base name: "created_on")', function() {
-      // uncomment below and update the code to test the property createdOn
-      //var instane = new Bitbucket.SnippetAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property creator (base name: "creator")', function() {
-      // uncomment below and update the code to test the property creator
-      //var instane = new Bitbucket.SnippetAllOf();
-      //expect(instance).to.be();
-    });
-
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
-      //var instane = new Bitbucket.SnippetAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isPrivate (base name: "is_private")', function() {
-      // uncomment below and update the code to test the property isPrivate
-      //var instane = new Bitbucket.SnippetAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property owner (base name: "owner")', function() {
-      // uncomment below and update the code to test the property owner
-      //var instane = new Bitbucket.SnippetAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property scm (base name: "scm")', function() {
-      // uncomment below and update the code to test the property scm
       //var instane = new Bitbucket.SnippetAllOf();
       //expect(instance).to.be();
     });
@@ -96,8 +66,38 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property scm (base name: "scm")', function() {
+      // uncomment below and update the code to test the property scm
+      //var instane = new Bitbucket.SnippetAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdOn (base name: "created_on")', function() {
+      // uncomment below and update the code to test the property createdOn
+      //var instane = new Bitbucket.SnippetAllOf();
+      //expect(instance).to.be();
+    });
+
     it('should have the property updatedOn (base name: "updated_on")', function() {
       // uncomment below and update the code to test the property updatedOn
+      //var instane = new Bitbucket.SnippetAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property owner (base name: "owner")', function() {
+      // uncomment below and update the code to test the property owner
+      //var instane = new Bitbucket.SnippetAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property creator (base name: "creator")', function() {
+      // uncomment below and update the code to test the property creator
+      //var instane = new Bitbucket.SnippetAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property isPrivate (base name: "is_private")', function() {
+      // uncomment below and update the code to test the property isPrivate
       //var instane = new Bitbucket.SnippetAllOf();
       //expect(instance).to.be();
     });

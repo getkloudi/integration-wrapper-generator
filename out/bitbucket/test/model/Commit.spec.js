@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property author (base name: "author")', function() {
-      // uncomment below and update the code to test the property author
+    it('should have the property hash (base name: "hash")', function() {
+      // uncomment below and update the code to test the property hash
       //var instane = new Bitbucket.Commit();
       //expect(instance).to.be();
     });
@@ -72,8 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property hash (base name: "hash")', function() {
-      // uncomment below and update the code to test the property hash
+    it('should have the property author (base name: "author")', function() {
+      // uncomment below and update the code to test the property author
       //var instane = new Bitbucket.Commit();
       //expect(instance).to.be();
     });
@@ -84,26 +84,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property summary (base name: "summary")', function() {
+      // uncomment below and update the code to test the property summary
+      //var instane = new Bitbucket.Commit();
+      //expect(instance).to.be();
+    });
+
     it('should have the property parents (base name: "parents")', function() {
       // uncomment below and update the code to test the property parents
       //var instane = new Bitbucket.Commit();
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property repository (base name: "repository")', function() {
+      // uncomment below and update the code to test the property repository
       //var instane = new Bitbucket.Commit();
       //expect(instance).to.be();
     });
 
     it('should have the property participants (base name: "participants")', function() {
       // uncomment below and update the code to test the property participants
-      //var instane = new Bitbucket.Commit();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property repository (base name: "repository")', function() {
-      // uncomment below and update the code to test the property repository
       //var instane = new Bitbucket.Commit();
       //expect(instance).to.be();
     });

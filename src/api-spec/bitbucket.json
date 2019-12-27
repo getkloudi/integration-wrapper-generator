@@ -192,6 +192,25 @@
   "host": "api.bitbucket.org",
   "swagger": "2.0",
   "definitions": {
+    "hookbody": {
+      "type": "object",
+      "properties": {
+        "property": {
+          "events": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "paginated_files": {
       "type": "object",
       "description": "A paginated list of commit_file objects.",
@@ -2544,7 +2563,7 @@
               ]
             },
             "subject": {
-              "$ref": "#/definitions/object"
+              "$ref": "#/definitions/account"
             },
             "active": {
               "type": "boolean"
@@ -10885,6 +10904,9 @@
           "description": "This can either be the workspace ID (slug) or the workspace UUID\nsurrounded by curly-braces, for example: `{workspace UUID}`.\n",
           "in": "path",
           "name": "workspace"
+        },
+        {
+          "$ref": "#/components/parameters/page"
         }
       ],
       "get": {
@@ -14443,7 +14465,16 @@
             }
           }
         },
-        "parameters": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/hookBody"
+            }
+          }
+        ],
         "description": "Creates a new webhook on the specified repository.\n\nExample:\n\n```\n$ curl -X POST -u credentials -H 'Content-Type: application/json'           https://api.bitbucket.org/2.0/repositories/username/slug/hooks           -d '\n    {\n      \"description\": \"Webhook Description\",\n      \"url\": \"https://example.com/\",\n      \"active\": true,\n      \"events\": [\n        \"repo:push\",\n        \"issue:created\",\n        \"issue:updated\"\n      ]\n    }'\n```\n\nNote that this call requires the webhook scope, as well as any scope\nthat applies to the events that the webhook subscribes to. In the\nexample above that means: `webhook`, `repository` and `issue`.\n\nAlso note that the `url` must properly resolve and cannot be an\ninternal, non-routed address."
       },
       "parameters": [
@@ -21261,6 +21292,15 @@
         ],
         "description": "Deletes a snippet and returns an empty response."
       }
+    }
+  },
+  "parameters": {
+    "page": {
+      "name": "page",
+      "in": "query",
+      "type": "integer",
+      "description": "Page number of the current results. This is an optional element that is not provided in all responses.",
+      "default": 1
     }
   },
   "x-atlassian-narrative": {

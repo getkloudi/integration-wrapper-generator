@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
+import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 
 /**
  * The AccountAllOfLinks model module.
@@ -48,23 +48,23 @@ class AccountAllOfLinks {
         if (data) {
             obj = obj || new AccountAllOfLinks();
 
-            if (data.hasOwnProperty('avatar')) {
-                obj['avatar'] = AccountAllOfLinksAvatar.constructFromObject(data['avatar']);
-            }
-            if (data.hasOwnProperty('followers')) {
-                obj['followers'] = AccountAllOfLinksAvatar.constructFromObject(data['followers']);
-            }
-            if (data.hasOwnProperty('following')) {
-                obj['following'] = AccountAllOfLinksAvatar.constructFromObject(data['following']);
+            if (data.hasOwnProperty('self')) {
+                obj['self'] = SubjectTypesRepositoryEvents.constructFromObject(data['self']);
             }
             if (data.hasOwnProperty('html')) {
-                obj['html'] = AccountAllOfLinksAvatar.constructFromObject(data['html']);
+                obj['html'] = SubjectTypesRepositoryEvents.constructFromObject(data['html']);
+            }
+            if (data.hasOwnProperty('avatar')) {
+                obj['avatar'] = SubjectTypesRepositoryEvents.constructFromObject(data['avatar']);
+            }
+            if (data.hasOwnProperty('followers')) {
+                obj['followers'] = SubjectTypesRepositoryEvents.constructFromObject(data['followers']);
+            }
+            if (data.hasOwnProperty('following')) {
+                obj['following'] = SubjectTypesRepositoryEvents.constructFromObject(data['following']);
             }
             if (data.hasOwnProperty('repositories')) {
-                obj['repositories'] = AccountAllOfLinksAvatar.constructFromObject(data['repositories']);
-            }
-            if (data.hasOwnProperty('self')) {
-                obj['self'] = AccountAllOfLinksAvatar.constructFromObject(data['self']);
+                obj['repositories'] = SubjectTypesRepositoryEvents.constructFromObject(data['repositories']);
             }
         }
         return obj;
@@ -74,34 +74,34 @@ class AccountAllOfLinks {
 }
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} avatar
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
-AccountAllOfLinks.prototype['avatar'] = undefined;
+AccountAllOfLinks.prototype['self'] = undefined;
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} followers
- */
-AccountAllOfLinks.prototype['followers'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} following
- */
-AccountAllOfLinks.prototype['following'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} html
+ * @member {module:model/SubjectTypesRepositoryEvents} html
  */
 AccountAllOfLinks.prototype['html'] = undefined;
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} repositories
+ * @member {module:model/SubjectTypesRepositoryEvents} avatar
  */
-AccountAllOfLinks.prototype['repositories'] = undefined;
+AccountAllOfLinks.prototype['avatar'] = undefined;
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} self
+ * @member {module:model/SubjectTypesRepositoryEvents} followers
  */
-AccountAllOfLinks.prototype['self'] = undefined;
+AccountAllOfLinks.prototype['followers'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} following
+ */
+AccountAllOfLinks.prototype['following'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} repositories
+ */
+AccountAllOfLinks.prototype['repositories'] = undefined;
 
 
 

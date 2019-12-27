@@ -6,11 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**hookEventsGet**](WebhooksApi.md#hookEventsGet) | **GET** /hook_events | 
 [**hookEventsSubjectTypeGet**](WebhooksApi.md#hookEventsSubjectTypeGet) | **GET** /hook_events/{subject_type} | 
-[**repositoriesUsernameRepoSlugHooksGet**](WebhooksApi.md#repositoriesUsernameRepoSlugHooksGet) | **GET** /repositories/{username}/{repo_slug}/hooks | 
-[**repositoriesUsernameRepoSlugHooksPost**](WebhooksApi.md#repositoriesUsernameRepoSlugHooksPost) | **POST** /repositories/{username}/{repo_slug}/hooks | 
-[**repositoriesUsernameRepoSlugHooksUidDelete**](WebhooksApi.md#repositoriesUsernameRepoSlugHooksUidDelete) | **DELETE** /repositories/{username}/{repo_slug}/hooks/{uid} | 
-[**repositoriesUsernameRepoSlugHooksUidGet**](WebhooksApi.md#repositoriesUsernameRepoSlugHooksUidGet) | **GET** /repositories/{username}/{repo_slug}/hooks/{uid} | 
-[**repositoriesUsernameRepoSlugHooksUidPut**](WebhooksApi.md#repositoriesUsernameRepoSlugHooksUidPut) | **PUT** /repositories/{username}/{repo_slug}/hooks/{uid} | 
+[**repositoriesWorkspaceRepoSlugHooksGet**](WebhooksApi.md#repositoriesWorkspaceRepoSlugHooksGet) | **GET** /repositories/{workspace}/{repo_slug}/hooks | 
+[**repositoriesWorkspaceRepoSlugHooksPost**](WebhooksApi.md#repositoriesWorkspaceRepoSlugHooksPost) | **POST** /repositories/{workspace}/{repo_slug}/hooks | 
+[**repositoriesWorkspaceRepoSlugHooksUidDelete**](WebhooksApi.md#repositoriesWorkspaceRepoSlugHooksUidDelete) | **DELETE** /repositories/{workspace}/{repo_slug}/hooks/{uid} | 
+[**repositoriesWorkspaceRepoSlugHooksUidGet**](WebhooksApi.md#repositoriesWorkspaceRepoSlugHooksUidGet) | **GET** /repositories/{workspace}/{repo_slug}/hooks/{uid} | 
+[**repositoriesWorkspaceRepoSlugHooksUidPut**](WebhooksApi.md#repositoriesWorkspaceRepoSlugHooksUidPut) | **PUT** /repositories/{workspace}/{repo_slug}/hooks/{uid} | 
 [**teamsUsernameHooksGet**](WebhooksApi.md#teamsUsernameHooksGet) | **GET** /teams/{username}/hooks | 
 [**teamsUsernameHooksPost**](WebhooksApi.md#teamsUsernameHooksPost) | **POST** /teams/{username}/hooks | 
 [**teamsUsernameHooksUidDelete**](WebhooksApi.md#teamsUsernameHooksUidDelete) | **DELETE** /teams/{username}/hooks/{uid} | 
@@ -136,9 +136,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugHooksGet
+## repositoriesWorkspaceRepoSlugHooksGet
 
-> PaginatedWebhookSubscriptions repositoriesUsernameRepoSlugHooksGet(username, repoSlug)
+> PaginatedWebhookSubscriptions repositoriesWorkspaceRepoSlugHooksGet(workspace, repoSlug)
 
 
 
@@ -163,9 +163,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-apiInstance.repositoriesUsernameRepoSlugHooksGet(username, repoSlug, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+apiInstance.repositoriesWorkspaceRepoSlugHooksGet(workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -179,8 +179,8 @@ apiInstance.repositoriesUsernameRepoSlugHooksGet(username, repoSlug, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
 
 ### Return type
 
@@ -196,9 +196,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugHooksPost
+## repositoriesWorkspaceRepoSlugHooksPost
 
-> WebhookSubscription repositoriesUsernameRepoSlugHooksPost(username, repoSlug)
+> WebhookSubscription repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, body)
 
 
 
@@ -223,9 +223,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-apiInstance.repositoriesUsernameRepoSlugHooksPost(username, repoSlug, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+let body = new Bitbucket.HookBody(); // HookBody | 
+apiInstance.repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -239,8 +240,9 @@ apiInstance.repositoriesUsernameRepoSlugHooksPost(username, repoSlug, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
+ **body** | **HookBody**|  | 
 
 ### Return type
 
@@ -252,13 +254,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugHooksUidDelete
+## repositoriesWorkspaceRepoSlugHooksUidDelete
 
-> repositoriesUsernameRepoSlugHooksUidDelete(username, repoSlug, uid)
+> repositoriesWorkspaceRepoSlugHooksUidDelete(workspace, repoSlug, uid)
 
 
 
@@ -283,10 +285,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
 let uid = "uid_example"; // String | The installed webhook's id
-apiInstance.repositoriesUsernameRepoSlugHooksUidDelete(username, repoSlug, uid, (error, data, response) => {
+apiInstance.repositoriesWorkspaceRepoSlugHooksUidDelete(workspace, repoSlug, uid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -300,8 +302,8 @@ apiInstance.repositoriesUsernameRepoSlugHooksUidDelete(username, repoSlug, uid, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type
@@ -318,9 +320,9 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugHooksUidGet
+## repositoriesWorkspaceRepoSlugHooksUidGet
 
-> WebhookSubscription repositoriesUsernameRepoSlugHooksUidGet(username, repoSlug, uid)
+> WebhookSubscription repositoriesWorkspaceRepoSlugHooksUidGet(workspace, repoSlug, uid)
 
 
 
@@ -345,10 +347,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
 let uid = "uid_example"; // String | The installed webhook's id.
-apiInstance.repositoriesUsernameRepoSlugHooksUidGet(username, repoSlug, uid, (error, data, response) => {
+apiInstance.repositoriesWorkspaceRepoSlugHooksUidGet(workspace, repoSlug, uid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -362,8 +364,8 @@ apiInstance.repositoriesUsernameRepoSlugHooksUidGet(username, repoSlug, uid, (er
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
  **uid** | **String**| The installed webhook&#39;s id. | 
 
 ### Return type
@@ -380,9 +382,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugHooksUidPut
+## repositoriesWorkspaceRepoSlugHooksUidPut
 
-> WebhookSubscription repositoriesUsernameRepoSlugHooksUidPut(username, repoSlug, uid)
+> WebhookSubscription repositoriesWorkspaceRepoSlugHooksUidPut(workspace, repoSlug, uid)
 
 
 
@@ -407,10 +409,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
 let uid = "uid_example"; // String | The installed webhook's id
-apiInstance.repositoriesUsernameRepoSlugHooksUidPut(username, repoSlug, uid, (error, data, response) => {
+apiInstance.repositoriesWorkspaceRepoSlugHooksUidPut(workspace, repoSlug, uid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -424,8 +426,8 @@ apiInstance.repositoriesUsernameRepoSlugHooksUidPut(username, repoSlug, uid, (er
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type
@@ -469,7 +471,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.teamsUsernameHooksGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -484,7 +486,7 @@ apiInstance.teamsUsernameHooksGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -527,7 +529,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.teamsUsernameHooksPost(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -542,7 +544,7 @@ apiInstance.teamsUsernameHooksPost(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -585,7 +587,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id
 apiInstance.teamsUsernameHooksUidDelete(username, uid, (error, data, response) => {
   if (error) {
@@ -601,7 +603,7 @@ apiInstance.teamsUsernameHooksUidDelete(username, uid, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type
@@ -645,7 +647,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id.
 apiInstance.teamsUsernameHooksUidGet(username, uid, (error, data, response) => {
   if (error) {
@@ -661,7 +663,7 @@ apiInstance.teamsUsernameHooksUidGet(username, uid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id. | 
 
 ### Return type
@@ -705,7 +707,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id
 apiInstance.teamsUsernameHooksUidPut(username, uid, (error, data, response) => {
   if (error) {
@@ -721,7 +723,7 @@ apiInstance.teamsUsernameHooksUidPut(username, uid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type
@@ -744,7 +746,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns a paginated list of webhooks installed on this user account.
+Returns a paginated list of webhooks installed on this user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -765,7 +767,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.usersUsernameHooksGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -780,7 +782,7 @@ apiInstance.usersUsernameHooksGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -802,7 +804,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new webhook on the specified user account.  Account-level webhooks are fired for events from all repositories belonging to that account.  Note that one can only register webhooks on one&#39;s own account, not that of others.
+Creates a new webhook on the specified user account.  Account-level webhooks are fired for events from all repositories belonging to that account.  Note that one can only register webhooks on one&#39;s own account, not that of others.  Also, note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -823,7 +825,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.usersUsernameHooksPost(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -838,7 +840,7 @@ apiInstance.usersUsernameHooksPost(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -860,7 +862,7 @@ Name | Type | Description  | Notes
 
 
 
-Deletes the specified webhook subscription from the given user account.
+Deletes the specified webhook subscription from the given user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -881,7 +883,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id
 apiInstance.usersUsernameHooksUidDelete(username, uid, (error, data, response) => {
   if (error) {
@@ -897,7 +899,7 @@ apiInstance.usersUsernameHooksUidDelete(username, uid, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type
@@ -920,7 +922,7 @@ null (empty response body)
 
 
 
-Returns the webhook with the specified id installed on the given user account.
+Returns the webhook with the specified id installed on the given user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -941,7 +943,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id.
 apiInstance.usersUsernameHooksUidGet(username, uid, (error, data, response) => {
   if (error) {
@@ -957,7 +959,7 @@ apiInstance.usersUsernameHooksUidGet(username, uid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id. | 
 
 ### Return type
@@ -980,7 +982,7 @@ Name | Type | Description  | Notes
 
 
 
-Updates the specified webhook subscription.  The following properties can be mutated:  * &#x60;description&#x60; * &#x60;url&#x60; * &#x60;active&#x60; * &#x60;events&#x60;
+Updates the specified webhook subscription.  The following properties can be mutated:  * &#x60;description&#x60; * &#x60;url&#x60; * &#x60;active&#x60; * &#x60;events&#x60;  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -1001,7 +1003,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.WebhooksApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id
 apiInstance.usersUsernameHooksUidPut(username, uid, (error, data, response) => {
   if (error) {
@@ -1017,7 +1019,7 @@ apiInstance.usersUsernameHooksUidPut(username, uid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type

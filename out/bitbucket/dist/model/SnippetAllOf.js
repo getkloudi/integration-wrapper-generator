@@ -59,36 +59,36 @@ function () {
       if (data) {
         obj = obj || new SnippetAllOf();
 
-        if (data.hasOwnProperty('created_on')) {
-          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
-        }
-
-        if (data.hasOwnProperty('creator')) {
-          obj['creator'] = _Account["default"].constructFromObject(data['creator']);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
-        }
-
-        if (data.hasOwnProperty('is_private')) {
-          obj['is_private'] = _ApiClient["default"].convertToType(data['is_private'], 'Boolean');
-        }
-
-        if (data.hasOwnProperty('owner')) {
-          obj['owner'] = _Account["default"].constructFromObject(data['owner']);
-        }
-
-        if (data.hasOwnProperty('scm')) {
-          obj['scm'] = _ApiClient["default"].convertToType(data['scm'], 'String');
         }
 
         if (data.hasOwnProperty('title')) {
           obj['title'] = _ApiClient["default"].convertToType(data['title'], 'String');
         }
 
+        if (data.hasOwnProperty('scm')) {
+          obj['scm'] = _ApiClient["default"].convertToType(data['scm'], 'String');
+        }
+
+        if (data.hasOwnProperty('created_on')) {
+          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
+        }
+
         if (data.hasOwnProperty('updated_on')) {
           obj['updated_on'] = _ApiClient["default"].convertToType(data['updated_on'], 'Date');
+        }
+
+        if (data.hasOwnProperty('owner')) {
+          obj['owner'] = _Account["default"].constructFromObject(data['owner']);
+        }
+
+        if (data.hasOwnProperty('creator')) {
+          obj['creator'] = _Account["default"].constructFromObject(data['creator']);
+        }
+
+        if (data.hasOwnProperty('is_private')) {
+          obj['is_private'] = _ApiClient["default"].convertToType(data['is_private'], 'Boolean');
         }
       }
 
@@ -99,31 +99,16 @@ function () {
   return SnippetAllOf;
 }();
 /**
- * @member {Date} created_on
- */
-
-
-SnippetAllOf.prototype['created_on'] = undefined;
-/**
- * @member {module:model/Account} creator
- */
-
-SnippetAllOf.prototype['creator'] = undefined;
-/**
  * @member {Number} id
  */
 
+
 SnippetAllOf.prototype['id'] = undefined;
 /**
- * @member {Boolean} is_private
+ * @member {String} title
  */
 
-SnippetAllOf.prototype['is_private'] = undefined;
-/**
- * @member {module:model/Account} owner
- */
-
-SnippetAllOf.prototype['owner'] = undefined;
+SnippetAllOf.prototype['title'] = undefined;
 /**
  * The DVCS used to store the snippet.
  * @member {module:model/SnippetAllOf.ScmEnum} scm
@@ -131,15 +116,30 @@ SnippetAllOf.prototype['owner'] = undefined;
 
 SnippetAllOf.prototype['scm'] = undefined;
 /**
- * @member {String} title
+ * @member {Date} created_on
  */
 
-SnippetAllOf.prototype['title'] = undefined;
+SnippetAllOf.prototype['created_on'] = undefined;
 /**
  * @member {Date} updated_on
  */
 
 SnippetAllOf.prototype['updated_on'] = undefined;
+/**
+ * @member {module:model/Account} owner
+ */
+
+SnippetAllOf.prototype['owner'] = undefined;
+/**
+ * @member {module:model/Account} creator
+ */
+
+SnippetAllOf.prototype['creator'] = undefined;
+/**
+ * @member {Boolean} is_private
+ */
+
+SnippetAllOf.prototype['is_private'] = undefined;
 /**
  * Allowed values for the <code>scm</code> property.
  * @enum {String}

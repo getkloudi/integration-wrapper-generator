@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(Bitbucket.UserAllOf);
     });
 
-    it('should have the property accountId (base name: "account_id")', function() {
-      // uncomment below and update the code to test the property accountId
+    it('should have the property isStaff (base name: "is_staff")', function() {
+      // uncomment below and update the code to test the property isStaff
       //var instane = new Bitbucket.UserAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property isStaff (base name: "is_staff")', function() {
-      // uncomment below and update the code to test the property isStaff
+    it('should have the property accountId (base name: "account_id")', function() {
+      // uncomment below and update the code to test the property accountId
       //var instane = new Bitbucket.UserAllOf();
       //expect(instance).to.be();
     });

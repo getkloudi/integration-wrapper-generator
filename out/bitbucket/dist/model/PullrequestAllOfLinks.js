@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AccountAllOfLinksAvatar = _interopRequireDefault(require("./AccountAllOfLinksAvatar"));
+var _SubjectTypesRepositoryEvents = _interopRequireDefault(require("./SubjectTypesRepositoryEvents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -58,40 +58,44 @@ function () {
       if (data) {
         obj = obj || new PullrequestAllOfLinks();
 
-        if (data.hasOwnProperty('activity')) {
-          obj['activity'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['activity']);
-        }
-
-        if (data.hasOwnProperty('approve')) {
-          obj['approve'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['approve']);
-        }
-
-        if (data.hasOwnProperty('comments')) {
-          obj['comments'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['comments']);
-        }
-
-        if (data.hasOwnProperty('commits')) {
-          obj['commits'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['commits']);
-        }
-
-        if (data.hasOwnProperty('decline')) {
-          obj['decline'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['decline']);
-        }
-
-        if (data.hasOwnProperty('diff')) {
-          obj['diff'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['diff']);
+        if (data.hasOwnProperty('self')) {
+          obj['self'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['self']);
         }
 
         if (data.hasOwnProperty('html')) {
-          obj['html'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['html']);
+          obj['html'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['html']);
+        }
+
+        if (data.hasOwnProperty('commits')) {
+          obj['commits'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['commits']);
+        }
+
+        if (data.hasOwnProperty('approve')) {
+          obj['approve'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['approve']);
+        }
+
+        if (data.hasOwnProperty('diff')) {
+          obj['diff'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['diff']);
+        }
+
+        if (data.hasOwnProperty('diffstat')) {
+          obj['diffstat'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['diffstat']);
+        }
+
+        if (data.hasOwnProperty('comments')) {
+          obj['comments'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['comments']);
+        }
+
+        if (data.hasOwnProperty('activity')) {
+          obj['activity'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['activity']);
         }
 
         if (data.hasOwnProperty('merge')) {
-          obj['merge'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['merge']);
+          obj['merge'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['merge']);
         }
 
-        if (data.hasOwnProperty('self')) {
-          obj['self'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['self']);
+        if (data.hasOwnProperty('decline')) {
+          obj['decline'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['decline']);
         }
       }
 
@@ -102,50 +106,55 @@ function () {
   return PullrequestAllOfLinks;
 }();
 /**
- * @member {module:model/AccountAllOfLinksAvatar} activity
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
 
 
-PullrequestAllOfLinks.prototype['activity'] = undefined;
+PullrequestAllOfLinks.prototype['self'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} approve
- */
-
-PullrequestAllOfLinks.prototype['approve'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} comments
- */
-
-PullrequestAllOfLinks.prototype['comments'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} commits
- */
-
-PullrequestAllOfLinks.prototype['commits'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} decline
- */
-
-PullrequestAllOfLinks.prototype['decline'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} diff
- */
-
-PullrequestAllOfLinks.prototype['diff'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} html
+ * @member {module:model/SubjectTypesRepositoryEvents} html
  */
 
 PullrequestAllOfLinks.prototype['html'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} merge
+ * @member {module:model/SubjectTypesRepositoryEvents} commits
+ */
+
+PullrequestAllOfLinks.prototype['commits'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} approve
+ */
+
+PullrequestAllOfLinks.prototype['approve'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} diff
+ */
+
+PullrequestAllOfLinks.prototype['diff'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} diffstat
+ */
+
+PullrequestAllOfLinks.prototype['diffstat'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} comments
+ */
+
+PullrequestAllOfLinks.prototype['comments'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} activity
+ */
+
+PullrequestAllOfLinks.prototype['activity'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} merge
  */
 
 PullrequestAllOfLinks.prototype['merge'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} self
+ * @member {module:model/SubjectTypesRepositoryEvents} decline
  */
 
-PullrequestAllOfLinks.prototype['self'] = undefined;
+PullrequestAllOfLinks.prototype['decline'] = undefined;
 var _default = PullrequestAllOfLinks;
 exports["default"] = _default;

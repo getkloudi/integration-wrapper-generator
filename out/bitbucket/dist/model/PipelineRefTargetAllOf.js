@@ -61,16 +61,16 @@ function () {
       if (data) {
         obj = obj || new PipelineRefTargetAllOf();
 
-        if (data.hasOwnProperty('commit')) {
-          obj['commit'] = _Commit["default"].constructFromObject(data['commit']);
+        if (data.hasOwnProperty('ref_type')) {
+          obj['ref_type'] = _ApiClient["default"].convertToType(data['ref_type'], 'String');
         }
 
         if (data.hasOwnProperty('ref_name')) {
           obj['ref_name'] = _ApiClient["default"].convertToType(data['ref_name'], 'String');
         }
 
-        if (data.hasOwnProperty('ref_type')) {
-          obj['ref_type'] = _ApiClient["default"].convertToType(data['ref_type'], 'String');
+        if (data.hasOwnProperty('commit')) {
+          obj['commit'] = _Commit["default"].constructFromObject(data['commit']);
         }
 
         if (data.hasOwnProperty('selector')) {
@@ -85,11 +85,12 @@ function () {
   return PipelineRefTargetAllOf;
 }();
 /**
- * @member {module:model/Commit} commit
+ * The type of reference (branch/tag).
+ * @member {module:model/PipelineRefTargetAllOf.RefTypeEnum} ref_type
  */
 
 
-PipelineRefTargetAllOf.prototype['commit'] = undefined;
+PipelineRefTargetAllOf.prototype['ref_type'] = undefined;
 /**
  * The name of the reference.
  * @member {String} ref_name
@@ -97,11 +98,10 @@ PipelineRefTargetAllOf.prototype['commit'] = undefined;
 
 PipelineRefTargetAllOf.prototype['ref_name'] = undefined;
 /**
- * The type of reference (branch/tag).
- * @member {module:model/PipelineRefTargetAllOf.RefTypeEnum} ref_type
+ * @member {module:model/Commit} commit
  */
 
-PipelineRefTargetAllOf.prototype['ref_type'] = undefined;
+PipelineRefTargetAllOf.prototype['commit'] = undefined;
 /**
  * @member {module:model/PipelineSelector} selector
  */

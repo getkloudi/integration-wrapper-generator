@@ -4,17 +4,17 @@ All URIs are relative to *https://api.bitbucket.org/2.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet**](CommitstatusesApi.md#repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet) | **GET** /repositories/{username}/{repo_slug}/commit/{node}/statuses/build/{key} | 
-[**repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut**](CommitstatusesApi.md#repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut) | **PUT** /repositories/{username}/{repo_slug}/commit/{node}/statuses/build/{key} | 
-[**repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost**](CommitstatusesApi.md#repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost) | **POST** /repositories/{username}/{repo_slug}/commit/{node}/statuses/build | 
-[**repositoriesUsernameRepoSlugCommitNodeStatusesGet**](CommitstatusesApi.md#repositoriesUsernameRepoSlugCommitNodeStatusesGet) | **GET** /repositories/{username}/{repo_slug}/commit/{node}/statuses | 
-[**repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet**](CommitstatusesApi.md#repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet) | **GET** /repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/statuses | 
+[**repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet**](CommitstatusesApi.md#repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet) | **GET** /repositories/{workspace}/{repo_slug}/commit/{node}/statuses/build/{key} | 
+[**repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut**](CommitstatusesApi.md#repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut) | **PUT** /repositories/{workspace}/{repo_slug}/commit/{node}/statuses/build/{key} | 
+[**repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost**](CommitstatusesApi.md#repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost) | **POST** /repositories/{workspace}/{repo_slug}/commit/{node}/statuses/build | 
+[**repositoriesWorkspaceRepoSlugCommitNodeStatusesGet**](CommitstatusesApi.md#repositoriesWorkspaceRepoSlugCommitNodeStatusesGet) | **GET** /repositories/{workspace}/{repo_slug}/commit/{node}/statuses | 
+[**repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet**](CommitstatusesApi.md#repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet) | **GET** /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/statuses | 
 
 
 
-## repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet
+## repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet
 
-> Commitstatus repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet(username, repoSlug, node, key)
+> Commitstatus repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet(node, key, workspace, repoSlug)
 
 
 
@@ -39,11 +39,11 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.CommitstatusesApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-let node = "node_example"; // String | The commit's SHA1
+let node = "node_example"; // String | The commit's SHA1.
 let key = "key_example"; // String | The build status' unique key
-apiInstance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet(username, repoSlug, node, key, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet(node, key, workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -57,10 +57,10 @@ apiInstance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet(username, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
- **node** | **String**| The commit&#39;s SHA1 | 
+ **node** | **String**| The commit&#39;s SHA1. | 
  **key** | **String**| The build status&#39; unique key | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
 
 ### Return type
 
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut
+## repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut
 
-> Commitstatus repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut(username, repoSlug, node, key, opts)
+> Commitstatus repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut(node, key, workspace, repoSlug, opts)
 
 
 
@@ -103,14 +103,14 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.CommitstatusesApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-let node = "node_example"; // String | The commit's SHA1
-let key = "key_example"; // String | The commit status' unique key
+let node = "node_example"; // String | The commit's SHA1.
+let key = "key_example"; // String | The build status' unique key
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
 let opts = {
   'body': new Bitbucket.Commitstatus() // Commitstatus | The updated build status object
 };
-apiInstance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut(username, repoSlug, node, key, opts, (error, data, response) => {
+apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut(node, key, workspace, repoSlug, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -124,10 +124,10 @@ apiInstance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut(username, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
- **node** | **String**| The commit&#39;s SHA1 | 
- **key** | **String**| The commit status&#39; unique key | 
+ **node** | **String**| The commit&#39;s SHA1. | 
+ **key** | **String**| The build status&#39; unique key | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
  **body** | [**Commitstatus**](Commitstatus.md)| The updated build status object | [optional] 
 
 ### Return type
@@ -144,9 +144,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost
+## repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost
 
-> Commitstatus repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost(username, repoSlug, node)
+> Commitstatus repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost(node, workspace, repoSlug, opts)
 
 
 
@@ -171,10 +171,13 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.CommitstatusesApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-let node = "node_example"; // String | The commit's SHA1
-apiInstance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost(username, repoSlug, node, (error, data, response) => {
+let node = "node_example"; // String | The commit's SHA1.
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+let opts = {
+  'body': new Bitbucket.Commitstatus() // Commitstatus | The new commit status object.
+};
+apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost(node, workspace, repoSlug, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -188,9 +191,10 @@ apiInstance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost(username, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
- **node** | **String**| The commit&#39;s SHA1 | 
+ **node** | **String**| The commit&#39;s SHA1. | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
+ **body** | [**Commitstatus**](Commitstatus.md)| The new commit status object. | [optional] 
 
 ### Return type
 
@@ -202,13 +206,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugCommitNodeStatusesGet
+## repositoriesWorkspaceRepoSlugCommitNodeStatusesGet
 
-> PaginatedCommitstatuses repositoriesUsernameRepoSlugCommitNodeStatusesGet(username, repoSlug, node)
+> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug)
 
 
 
@@ -233,10 +237,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.CommitstatusesApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-let node = "node_example"; // String | The commit's SHA1
-apiInstance.repositoriesUsernameRepoSlugCommitNodeStatusesGet(username, repoSlug, node, (error, data, response) => {
+let node = "node_example"; // String | The commit's SHA1.
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -250,9 +254,9 @@ apiInstance.repositoriesUsernameRepoSlugCommitNodeStatusesGet(username, repoSlug
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
- **node** | **String**| The commit&#39;s SHA1 | 
+ **node** | **String**| The commit&#39;s SHA1. | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
 
 ### Return type
 
@@ -268,9 +272,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet
+## repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet
 
-> PaginatedCommitstatuses repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet(username, repoSlug, pullRequestId)
+> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug)
 
 
 
@@ -295,10 +299,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.CommitstatusesApi();
-let username = "username_example"; // String | 
-let repoSlug = "repoSlug_example"; // String | 
-let pullRequestId = 56; // Number | The pull request's id
-apiInstance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet(username, repoSlug, pullRequestId, (error, data, response) => {
+let pullRequestId = 56; // Number | The id of the pull request.
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -312,9 +316,9 @@ apiInstance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet(use
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
- **repoSlug** | **String**|  | 
- **pullRequestId** | **Number**| The pull request&#39;s id | 
+ **pullRequestId** | **Number**| The id of the pull request. | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
 
 ### Return type
 

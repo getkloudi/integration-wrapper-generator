@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(Bitbucket.CommitstatusAllOf);
     });
 
-    it('should have the property createdOn (base name: "created_on")', function() {
-      // uncomment below and update the code to test the property createdOn
+    it('should have the property links (base name: "links")', function() {
+      // uncomment below and update the code to test the property links
       //var instane = new Bitbucket.CommitstatusAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
+    it('should have the property uuid (base name: "uuid")', function() {
+      // uncomment below and update the code to test the property uuid
       //var instane = new Bitbucket.CommitstatusAllOf();
       //expect(instance).to.be();
     });
@@ -72,32 +72,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "links")', function() {
-      // uncomment below and update the code to test the property links
-      //var instane = new Bitbucket.CommitstatusAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new Bitbucket.CommitstatusAllOf();
-      //expect(instance).to.be();
-    });
-
     it('should have the property refname (base name: "refname")', function() {
       // uncomment below and update the code to test the property refname
-      //var instane = new Bitbucket.CommitstatusAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new Bitbucket.CommitstatusAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property updatedOn (base name: "updated_on")', function() {
-      // uncomment below and update the code to test the property updatedOn
       //var instane = new Bitbucket.CommitstatusAllOf();
       //expect(instance).to.be();
     });
@@ -108,8 +84,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property uuid (base name: "uuid")', function() {
-      // uncomment below and update the code to test the property uuid
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
+      //var instane = new Bitbucket.CommitstatusAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new Bitbucket.CommitstatusAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new Bitbucket.CommitstatusAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdOn (base name: "created_on")', function() {
+      // uncomment below and update the code to test the property createdOn
+      //var instane = new Bitbucket.CommitstatusAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedOn (base name: "updated_on")', function() {
+      // uncomment below and update the code to test the property updatedOn
       //var instane = new Bitbucket.CommitstatusAllOf();
       //expect(instance).to.be();
     });

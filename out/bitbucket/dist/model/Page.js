@@ -56,8 +56,8 @@ function () {
       if (data) {
         obj = obj || new Page();
 
-        if (data.hasOwnProperty('next')) {
-          obj['next'] = _ApiClient["default"].convertToType(data['next'], 'String');
+        if (data.hasOwnProperty('size')) {
+          obj['size'] = _ApiClient["default"].convertToType(data['size'], 'Number');
         }
 
         if (data.hasOwnProperty('page')) {
@@ -68,12 +68,12 @@ function () {
           obj['pagelen'] = _ApiClient["default"].convertToType(data['pagelen'], 'Number');
         }
 
-        if (data.hasOwnProperty('previous')) {
-          obj['previous'] = _ApiClient["default"].convertToType(data['previous'], 'String');
+        if (data.hasOwnProperty('next')) {
+          obj['next'] = _ApiClient["default"].convertToType(data['next'], 'String');
         }
 
-        if (data.hasOwnProperty('size')) {
-          obj['size'] = _ApiClient["default"].convertToType(data['size'], 'Number');
+        if (data.hasOwnProperty('previous')) {
+          obj['previous'] = _ApiClient["default"].convertToType(data['previous'], 'String');
         }
       }
 
@@ -84,12 +84,12 @@ function () {
   return Page;
 }();
 /**
- * Link to the next page if it exists. The last page of a collection does not have this value. Use this link to navigate the result set and refrain from constructing your own URLs.
- * @member {String} next
+ * Total number of objects in the response. This is an optional element that is not provided in all responses, as it can be expensive to compute.
+ * @member {Number} size
  */
 
 
-Page.prototype['next'] = undefined;
+Page.prototype['size'] = undefined;
 /**
  * Page number of the current results. This is an optional element that is not provided in all responses.
  * @member {Number} page
@@ -103,16 +103,16 @@ Page.prototype['page'] = undefined;
 
 Page.prototype['pagelen'] = undefined;
 /**
+ * Link to the next page if it exists. The last page of a collection does not have this value. Use this link to navigate the result set and refrain from constructing your own URLs.
+ * @member {String} next
+ */
+
+Page.prototype['next'] = undefined;
+/**
  * Link to previous page if it exists. A collections first page does not have this value. This is an optional element that is not provided in all responses. Some result sets strictly support forward navigation and never provide previous links. Clients must anticipate that backwards navigation is not always available. Use this link to navigate the result set and refrain from constructing your own URLs.
  * @member {String} previous
  */
 
 Page.prototype['previous'] = undefined;
-/**
- * Total number of objects in the response. This is an optional element that is not provided in all responses, as it can be expensive to compute.
- * @member {Number} size
- */
-
-Page.prototype['size'] = undefined;
 var _default = Page;
 exports["default"] = _default;

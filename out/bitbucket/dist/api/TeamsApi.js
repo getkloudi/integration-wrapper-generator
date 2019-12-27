@@ -201,7 +201,7 @@ function () {
 
     /**
      * Returns a paginated list of webhooks installed on this team.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~teamsUsernameHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedWebhookSubscriptions}
      */
@@ -237,7 +237,7 @@ function () {
 
     /**
      * Creates a new webhook on the specified team.  Team webhooks are fired for events from all repositories belonging to that team account.  Note that only admins can install webhooks on teams.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~teamsUsernameHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
@@ -273,7 +273,7 @@ function () {
 
     /**
      * Deletes the specified webhook subscription from the given team account.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/TeamsApi~teamsUsernameHooksUidDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -315,7 +315,7 @@ function () {
 
     /**
      * Returns the webhook with the specified id installed on the given team account.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id.
      * @param {module:api/TeamsApi~teamsUsernameHooksUidGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
@@ -358,7 +358,7 @@ function () {
 
     /**
      * Updates the specified webhook subscription.  The following properties can be mutated:  * `description` * `url` * `active` * `events`
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/TeamsApi~teamsUsernameHooksUidPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
@@ -400,8 +400,8 @@ function () {
      */
 
     /**
-     * All members of a team.  Returns all members of the specified team. Any member of any of the team's groups is considered a member of the team. This includes users in groups that may not actually have access to any of the team's repositories.  Note that members using the \"private profile\" feature are not included.
-     * @param {String} username 
+     * Returns all members of the specified team. Any member of any of the team's groups is considered a member of the team. This includes users in groups that may not actually have access to any of the team's repositories.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~teamsUsernameMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
@@ -437,7 +437,7 @@ function () {
 
     /**
      * All repositories owned by a user/team. This includes private repositories, but filtered down to the ones that the calling user has access to.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~teamsUsernameRepositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
@@ -464,6 +464,42 @@ function () {
       return this.apiClient.callApi('/teams/{username}/repositories', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the usersUsernameMembersGet operation.
+     * @callback module:api/TeamsApi~usersUsernameMembersGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns all members of the specified team. Any member of any of the team's groups is considered a member of the team. This includes users in groups that may not actually have access to any of the team's repositories.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
+     * @param {module:api/TeamsApi~usersUsernameMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/User}
+     */
+
+  }, {
+    key: "usersUsernameMembersGet",
+    value: function usersUsernameMembersGet(username, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling usersUsernameMembersGet");
+      }
+
+      var pathParams = {
+        'username': username
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key', 'basic', 'oauth2'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _User["default"];
+      return this.apiClient.callApi('/users/{username}/members', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the usersUsernameRepositoriesGet operation.
      * @callback module:api/TeamsApi~usersUsernameRepositoriesGetCallback
      * @param {String} error Error message, if any.
@@ -473,7 +509,7 @@ function () {
 
     /**
      * All repositories owned by a user/team. This includes private repositories, but filtered down to the ones that the calling user has access to.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~usersUsernameRepositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */

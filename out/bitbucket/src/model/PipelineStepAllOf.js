@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -51,29 +51,26 @@ class PipelineStepAllOf {
         if (data) {
             obj = obj || new PipelineStepAllOf();
 
-            if (data.hasOwnProperty('completed_on')) {
-                obj['completed_on'] = ApiClient.convertToType(data['completed_on'], 'Date');
-            }
-            if (data.hasOwnProperty('image')) {
-                obj['image'] = PipelineImage.constructFromObject(data['image']);
-            }
-            if (data.hasOwnProperty('logByteCount')) {
-                obj['logByteCount'] = ApiClient.convertToType(data['logByteCount'], 'Number');
-            }
-            if (data.hasOwnProperty('script_commands')) {
-                obj['script_commands'] = ApiClient.convertToType(data['script_commands'], [PipelineCommand]);
-            }
-            if (data.hasOwnProperty('setup_commands')) {
-                obj['setup_commands'] = ApiClient.convertToType(data['setup_commands'], [PipelineCommand]);
+            if (data.hasOwnProperty('uuid')) {
+                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
             if (data.hasOwnProperty('started_on')) {
                 obj['started_on'] = ApiClient.convertToType(data['started_on'], 'Date');
             }
+            if (data.hasOwnProperty('completed_on')) {
+                obj['completed_on'] = ApiClient.convertToType(data['completed_on'], 'Date');
+            }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = PipelineStepState.constructFromObject(data['state']);
             }
-            if (data.hasOwnProperty('uuid')) {
-                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
+            if (data.hasOwnProperty('image')) {
+                obj['image'] = PipelineImage.constructFromObject(data['image']);
+            }
+            if (data.hasOwnProperty('setup_commands')) {
+                obj['setup_commands'] = ApiClient.convertToType(data['setup_commands'], [PipelineCommand]);
+            }
+            if (data.hasOwnProperty('script_commands')) {
+                obj['script_commands'] = ApiClient.convertToType(data['script_commands'], [PipelineCommand]);
             }
         }
         return obj;
@@ -83,33 +80,10 @@ class PipelineStepAllOf {
 }
 
 /**
- * The timestamp when the step execution was completed. This is not set if the step is still in progress.
- * @member {Date} completed_on
+ * The UUID identifying the step.
+ * @member {String} uuid
  */
-PipelineStepAllOf.prototype['completed_on'] = undefined;
-
-/**
- * @member {module:model/PipelineImage} image
- */
-PipelineStepAllOf.prototype['image'] = undefined;
-
-/**
- * The amount of bytes of the log file that is available.
- * @member {Number} logByteCount
- */
-PipelineStepAllOf.prototype['logByteCount'] = undefined;
-
-/**
- * The list of build commands. These commands are executed in the build container.
- * @member {Array.<module:model/PipelineCommand>} script_commands
- */
-PipelineStepAllOf.prototype['script_commands'] = undefined;
-
-/**
- * The list of commands that are executed as part of the setup phase of the build. These commands are executed outside the build container.
- * @member {Array.<module:model/PipelineCommand>} setup_commands
- */
-PipelineStepAllOf.prototype['setup_commands'] = undefined;
+PipelineStepAllOf.prototype['uuid'] = undefined;
 
 /**
  * The timestamp when the step execution was started. This is not set when the step hasn't executed yet.
@@ -118,15 +92,32 @@ PipelineStepAllOf.prototype['setup_commands'] = undefined;
 PipelineStepAllOf.prototype['started_on'] = undefined;
 
 /**
+ * The timestamp when the step execution was completed. This is not set if the step is still in progress.
+ * @member {Date} completed_on
+ */
+PipelineStepAllOf.prototype['completed_on'] = undefined;
+
+/**
  * @member {module:model/PipelineStepState} state
  */
 PipelineStepAllOf.prototype['state'] = undefined;
 
 /**
- * The UUID identifying the step.
- * @member {String} uuid
+ * @member {module:model/PipelineImage} image
  */
-PipelineStepAllOf.prototype['uuid'] = undefined;
+PipelineStepAllOf.prototype['image'] = undefined;
+
+/**
+ * The list of commands that are executed as part of the setup phase of the build. These commands are executed outside the build container.
+ * @member {Array.<module:model/PipelineCommand>} setup_commands
+ */
+PipelineStepAllOf.prototype['setup_commands'] = undefined;
+
+/**
+ * The list of build commands. These commands are executed in the build container.
+ * @member {Array.<module:model/PipelineCommand>} script_commands
+ */
+PipelineStepAllOf.prototype['script_commands'] = undefined;
 
 
 

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -57,14 +57,14 @@ class PipelineKnownHost {
             ModelObject.constructFromObject(data, obj);
             PipelineKnownHostAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('uuid')) {
+                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
+            }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
             if (data.hasOwnProperty('public_key')) {
                 obj['public_key'] = PipelineSshPublicKey.constructFromObject(data['public_key']);
-            }
-            if (data.hasOwnProperty('uuid')) {
-                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
         }
         return obj;
@@ -72,6 +72,12 @@ class PipelineKnownHost {
 
 
 }
+
+/**
+ * The UUID identifying the known host.
+ * @member {String} uuid
+ */
+PipelineKnownHost.prototype['uuid'] = undefined;
 
 /**
  * The hostname of the known host.
@@ -84,12 +90,6 @@ PipelineKnownHost.prototype['hostname'] = undefined;
  */
 PipelineKnownHost.prototype['public_key'] = undefined;
 
-/**
- * The UUID identifying the known host.
- * @member {String} uuid
- */
-PipelineKnownHost.prototype['uuid'] = undefined;
-
 
 // Implement ModelObject interface:
 /**
@@ -97,6 +97,11 @@ PipelineKnownHost.prototype['uuid'] = undefined;
  */
 ModelObject.prototype['type'] = undefined;
 // Implement PipelineKnownHostAllOf interface:
+/**
+ * The UUID identifying the known host.
+ * @member {String} uuid
+ */
+PipelineKnownHostAllOf.prototype['uuid'] = undefined;
 /**
  * The hostname of the known host.
  * @member {String} hostname
@@ -106,11 +111,6 @@ PipelineKnownHostAllOf.prototype['hostname'] = undefined;
  * @member {module:model/PipelineSshPublicKey} public_key
  */
 PipelineKnownHostAllOf.prototype['public_key'] = undefined;
-/**
- * The UUID identifying the known host.
- * @member {String} uuid
- */
-PipelineKnownHostAllOf.prototype['uuid'] = undefined;
 
 
 

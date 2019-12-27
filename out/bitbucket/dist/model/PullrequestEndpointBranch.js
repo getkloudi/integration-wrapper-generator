@@ -59,6 +59,14 @@ function () {
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
+
+        if (data.hasOwnProperty('merge_strategies')) {
+          obj['merge_strategies'] = _ApiClient["default"].convertToType(data['merge_strategies'], ['String']);
+        }
+
+        if (data.hasOwnProperty('default_merge_strategy')) {
+          obj['default_merge_strategy'] = _ApiClient["default"].convertToType(data['default_merge_strategy'], 'String');
+        }
       }
 
       return obj;
@@ -73,5 +81,42 @@ function () {
 
 
 PullrequestEndpointBranch.prototype['name'] = undefined;
+/**
+ * Available merge strategies, when this endpoint is the destination of the pull request.
+ * @member {Array.<module:model/PullrequestEndpointBranch.MergeStrategiesEnum>} merge_strategies
+ */
+
+PullrequestEndpointBranch.prototype['merge_strategies'] = undefined;
+/**
+ * The default merge strategy, when this endpoint is the destination of the pull request.
+ * @member {String} default_merge_strategy
+ */
+
+PullrequestEndpointBranch.prototype['default_merge_strategy'] = undefined;
+/**
+ * Allowed values for the <code>mergeStrategies</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+PullrequestEndpointBranch['MergeStrategiesEnum'] = {
+  /**
+   * value: "merge_commit"
+   * @const
+   */
+  "merge_commit": "merge_commit",
+
+  /**
+   * value: "squash"
+   * @const
+   */
+  "squash": "squash",
+
+  /**
+   * value: "fast_forward"
+   * @const
+   */
+  "fast_forward": "fast_forward"
+};
 var _default = PullrequestEndpointBranch;
 exports["default"] = _default;

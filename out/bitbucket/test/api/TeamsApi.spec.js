@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -152,6 +152,16 @@
       it('should call teamsUsernameRepositoriesGet successfully', function(done) {
         //uncomment below and update the code to test teamsUsernameRepositoriesGet
         //instance.teamsUsernameRepositoriesGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('usersUsernameMembersGet', function() {
+      it('should call usersUsernameMembersGet successfully', function(done) {
+        //uncomment below and update the code to test usersUsernameMembersGet
+        //instance.usersUsernameMembersGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

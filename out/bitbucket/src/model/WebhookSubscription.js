@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Account from './Account';
 import ModelObject from './ModelObject';
 import WebhookSubscriptionAllOf from './WebhookSubscriptionAllOf';
 
@@ -56,29 +57,29 @@ class WebhookSubscription {
             ModelObject.constructFromObject(data, obj);
             WebhookSubscriptionAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('uuid')) {
+                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
+            }
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
+            if (data.hasOwnProperty('subject_type')) {
+                obj['subject_type'] = ApiClient.convertToType(data['subject_type'], 'String');
+            }
+            if (data.hasOwnProperty('subject')) {
+                obj['subject'] = Account.constructFromObject(data['subject']);
+            }
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
             if (data.hasOwnProperty('events')) {
                 obj['events'] = ApiClient.convertToType(data['events'], ['String']);
-            }
-            if (data.hasOwnProperty('subject')) {
-                obj['subject'] = Object.constructFromObject(data['subject']);
-            }
-            if (data.hasOwnProperty('subject_type')) {
-                obj['subject_type'] = ApiClient.convertToType(data['subject_type'], 'String');
-            }
-            if (data.hasOwnProperty('url')) {
-                obj['url'] = ApiClient.convertToType(data['url'], 'String');
-            }
-            if (data.hasOwnProperty('uuid')) {
-                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
         }
         return obj;
@@ -86,6 +87,35 @@ class WebhookSubscription {
 
 
 }
+
+/**
+ * The webhook's id
+ * @member {String} uuid
+ */
+WebhookSubscription.prototype['uuid'] = undefined;
+
+/**
+ * The URL events get delivered to.
+ * @member {String} url
+ */
+WebhookSubscription.prototype['url'] = undefined;
+
+/**
+ * A user-defined description of the webhook.
+ * @member {String} description
+ */
+WebhookSubscription.prototype['description'] = undefined;
+
+/**
+ * The type of entity, which is `repository` in the case of webhook subscriptions on repositories.
+ * @member {module:model/WebhookSubscription.SubjectTypeEnum} subject_type
+ */
+WebhookSubscription.prototype['subject_type'] = undefined;
+
+/**
+ * @member {module:model/Account} subject
+ */
+WebhookSubscription.prototype['subject'] = undefined;
 
 /**
  * @member {Boolean} active
@@ -98,39 +128,10 @@ WebhookSubscription.prototype['active'] = undefined;
 WebhookSubscription.prototype['created_at'] = undefined;
 
 /**
- * A user-defined description of the webhook.
- * @member {String} description
- */
-WebhookSubscription.prototype['description'] = undefined;
-
-/**
  * The events this webhook is subscribed to.
  * @member {Array.<module:model/WebhookSubscription.EventsEnum>} events
  */
 WebhookSubscription.prototype['events'] = undefined;
-
-/**
- * @member {Object} subject
- */
-WebhookSubscription.prototype['subject'] = undefined;
-
-/**
- * The type of entity, which is `repository` in the case of webhook subscriptions on repositories.
- * @member {module:model/WebhookSubscription.SubjectTypeEnum} subject_type
- */
-WebhookSubscription.prototype['subject_type'] = undefined;
-
-/**
- * The URL events get delivered to.
- * @member {String} url
- */
-WebhookSubscription.prototype['url'] = undefined;
-
-/**
- * The webhook's id
- * @member {String} uuid
- */
-WebhookSubscription.prototype['uuid'] = undefined;
 
 
 // Implement ModelObject interface:
@@ -140,6 +141,30 @@ WebhookSubscription.prototype['uuid'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement WebhookSubscriptionAllOf interface:
 /**
+ * The webhook's id
+ * @member {String} uuid
+ */
+WebhookSubscriptionAllOf.prototype['uuid'] = undefined;
+/**
+ * The URL events get delivered to.
+ * @member {String} url
+ */
+WebhookSubscriptionAllOf.prototype['url'] = undefined;
+/**
+ * A user-defined description of the webhook.
+ * @member {String} description
+ */
+WebhookSubscriptionAllOf.prototype['description'] = undefined;
+/**
+ * The type of entity, which is `repository` in the case of webhook subscriptions on repositories.
+ * @member {module:model/WebhookSubscriptionAllOf.SubjectTypeEnum} subject_type
+ */
+WebhookSubscriptionAllOf.prototype['subject_type'] = undefined;
+/**
+ * @member {module:model/Account} subject
+ */
+WebhookSubscriptionAllOf.prototype['subject'] = undefined;
+/**
  * @member {Boolean} active
  */
 WebhookSubscriptionAllOf.prototype['active'] = undefined;
@@ -148,35 +173,44 @@ WebhookSubscriptionAllOf.prototype['active'] = undefined;
  */
 WebhookSubscriptionAllOf.prototype['created_at'] = undefined;
 /**
- * A user-defined description of the webhook.
- * @member {String} description
- */
-WebhookSubscriptionAllOf.prototype['description'] = undefined;
-/**
  * The events this webhook is subscribed to.
  * @member {Array.<module:model/WebhookSubscriptionAllOf.EventsEnum>} events
  */
 WebhookSubscriptionAllOf.prototype['events'] = undefined;
-/**
- * @member {Object} subject
- */
-WebhookSubscriptionAllOf.prototype['subject'] = undefined;
-/**
- * The type of entity, which is `repository` in the case of webhook subscriptions on repositories.
- * @member {module:model/WebhookSubscriptionAllOf.SubjectTypeEnum} subject_type
- */
-WebhookSubscriptionAllOf.prototype['subject_type'] = undefined;
-/**
- * The URL events get delivered to.
- * @member {String} url
- */
-WebhookSubscriptionAllOf.prototype['url'] = undefined;
-/**
- * The webhook's id
- * @member {String} uuid
- */
-WebhookSubscriptionAllOf.prototype['uuid'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>subject_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+WebhookSubscription['SubjectTypeEnum'] = {
+
+    /**
+     * value: "workspace"
+     * @const
+     */
+    "workspace": "workspace",
+
+    /**
+     * value: "user"
+     * @const
+     */
+    "user": "user",
+
+    /**
+     * value: "repository"
+     * @const
+     */
+    "repository": "repository",
+
+    /**
+     * value: "team"
+     * @const
+     */
+    "team": "team"
+};
 
 
 /**
@@ -323,33 +357,6 @@ WebhookSubscription['EventsEnum'] = {
      * @const
      */
     "repo:commit_comment_created": "repo:commit_comment_created"
-};
-
-
-/**
- * Allowed values for the <code>subject_type</code> property.
- * @enum {String}
- * @readonly
- */
-WebhookSubscription['SubjectTypeEnum'] = {
-
-    /**
-     * value: "user"
-     * @const
-     */
-    "user": "user",
-
-    /**
-     * value: "repository"
-     * @const
-     */
-    "repository": "repository",
-
-    /**
-     * value: "team"
-     * @const
-     */
-    "team": "team"
 };
 
 

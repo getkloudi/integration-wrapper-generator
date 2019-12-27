@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**avatar** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**followers** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**following** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**html** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**repositories** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**self** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
+**self** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**html** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**avatar** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**followers** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**following** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**repositories** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
 
 

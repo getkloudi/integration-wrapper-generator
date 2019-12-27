@@ -57,12 +57,12 @@ function () {
       if (data) {
         obj = obj || new PipelineSshPublicKeyAllOf();
 
-        if (data.hasOwnProperty('key')) {
-          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
-        }
-
         if (data.hasOwnProperty('key_type')) {
           obj['key_type'] = _ApiClient["default"].convertToType(data['key_type'], 'String');
+        }
+
+        if (data.hasOwnProperty('key')) {
+          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
         }
 
         if (data.hasOwnProperty('md5_fingerprint')) {
@@ -81,18 +81,18 @@ function () {
   return PipelineSshPublicKeyAllOf;
 }();
 /**
- * The base64 encoded public key.
- * @member {String} key
- */
-
-
-PipelineSshPublicKeyAllOf.prototype['key'] = undefined;
-/**
  * The type of the public key.
  * @member {String} key_type
  */
 
+
 PipelineSshPublicKeyAllOf.prototype['key_type'] = undefined;
+/**
+ * The base64 encoded public key.
+ * @member {String} key
+ */
+
+PipelineSshPublicKeyAllOf.prototype['key'] = undefined;
 /**
  * The MD5 fingerprint of the public key.
  * @member {String} md5_fingerprint

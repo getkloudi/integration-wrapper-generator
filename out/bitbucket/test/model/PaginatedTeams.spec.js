@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(Bitbucket.PaginatedTeams);
     });
 
-    it('should have the property next (base name: "next")', function() {
-      // uncomment below and update the code to test the property next
+    it('should have the property size (base name: "size")', function() {
+      // uncomment below and update the code to test the property size
       //var instane = new Bitbucket.PaginatedTeams();
       //expect(instance).to.be();
     });
@@ -72,14 +72,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property previous (base name: "previous")', function() {
-      // uncomment below and update the code to test the property previous
+    it('should have the property next (base name: "next")', function() {
+      // uncomment below and update the code to test the property next
       //var instane = new Bitbucket.PaginatedTeams();
       //expect(instance).to.be();
     });
 
-    it('should have the property size (base name: "size")', function() {
-      // uncomment below and update the code to test the property size
+    it('should have the property previous (base name: "previous")', function() {
+      // uncomment below and update the code to test the property previous
       //var instane = new Bitbucket.PaginatedTeams();
       //expect(instance).to.be();
     });

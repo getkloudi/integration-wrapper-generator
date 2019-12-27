@@ -11,7 +11,11 @@ var _Author = _interopRequireDefault(require("./Author"));
 
 var _Commit = _interopRequireDefault(require("./Commit"));
 
-var _TagLinks = _interopRequireDefault(require("./TagLinks"));
+var _Ref = _interopRequireDefault(require("./Ref"));
+
+var _RefLinks = _interopRequireDefault(require("./RefLinks"));
+
+var _TagAllOf = _interopRequireDefault(require("./TagAllOf"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -31,12 +35,17 @@ var Tag =
 function () {
   /**
    * Constructs a new <code>Tag</code>.
-   * A tag object, representing a tag in a repository.
    * @alias module:model/Tag
+   * @implements module:model/Ref
+   * @implements module:model/TagAllOf
    * @param type {String} 
    */
   function Tag(type) {
     _classCallCheck(this, Tag);
+
+    _Ref["default"].initialize(this, type);
+
+    _TagAllOf["default"].initialize(this);
 
     Tag.initialize(this, type);
   }
@@ -66,32 +75,36 @@ function () {
       if (data) {
         obj = obj || new Tag();
 
-        if (data.hasOwnProperty('date')) {
-          obj['date'] = _ApiClient["default"].convertToType(data['date'], 'Date');
+        _Ref["default"].constructFromObject(data, obj);
+
+        _TagAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
 
         if (data.hasOwnProperty('links')) {
-          obj['links'] = _TagLinks["default"].constructFromObject(data['links']);
-        }
-
-        if (data.hasOwnProperty('message')) {
-          obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
+          obj['links'] = _RefLinks["default"].constructFromObject(data['links']);
         }
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
-        if (data.hasOwnProperty('tagger')) {
-          obj['tagger'] = _Author["default"].constructFromObject(data['tagger']);
-        }
-
         if (data.hasOwnProperty('target')) {
           obj['target'] = _Commit["default"].constructFromObject(data['target']);
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
+        if (data.hasOwnProperty('message')) {
+          obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
+        }
+
+        if (data.hasOwnProperty('date')) {
+          obj['date'] = _ApiClient["default"].convertToType(data['date'], 'Date');
+        }
+
+        if (data.hasOwnProperty('tagger')) {
+          obj['tagger'] = _Author["default"].constructFromObject(data['tagger']);
         }
       }
 
@@ -102,17 +115,27 @@ function () {
   return Tag;
 }();
 /**
- * The date that the tag was created, if available
- * @member {Date} date
+ * @member {String} type
  */
 
 
-Tag.prototype['date'] = undefined;
+Tag.prototype['type'] = undefined;
 /**
- * @member {module:model/TagLinks} links
+ * @member {module:model/RefLinks} links
  */
 
 Tag.prototype['links'] = undefined;
+/**
+ * The name of the ref.
+ * @member {String} name
+ */
+
+Tag.prototype['name'] = undefined;
+/**
+ * @member {module:model/Commit} target
+ */
+
+Tag.prototype['target'] = undefined;
 /**
  * The message associated with the tag, if available.
  * @member {String} message
@@ -120,25 +143,55 @@ Tag.prototype['links'] = undefined;
 
 Tag.prototype['message'] = undefined;
 /**
- * The name of the tag.
- * @member {String} name
+ * The date that the tag was created, if available
+ * @member {Date} date
  */
 
-Tag.prototype['name'] = undefined;
+Tag.prototype['date'] = undefined;
 /**
  * @member {module:model/Author} tagger
  */
 
-Tag.prototype['tagger'] = undefined;
-/**
- * @member {module:model/Commit} target
- */
+Tag.prototype['tagger'] = undefined; // Implement Ref interface:
 
-Tag.prototype['target'] = undefined;
 /**
  * @member {String} type
  */
 
-Tag.prototype['type'] = undefined;
+_Ref["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/RefLinks} links
+ */
+
+_Ref["default"].prototype['links'] = undefined;
+/**
+ * The name of the ref.
+ * @member {String} name
+ */
+
+_Ref["default"].prototype['name'] = undefined;
+/**
+ * @member {module:model/Commit} target
+ */
+
+_Ref["default"].prototype['target'] = undefined; // Implement TagAllOf interface:
+
+/**
+ * The message associated with the tag, if available.
+ * @member {String} message
+ */
+
+_TagAllOf["default"].prototype['message'] = undefined;
+/**
+ * The date that the tag was created, if available
+ * @member {Date} date
+ */
+
+_TagAllOf["default"].prototype['date'] = undefined;
+/**
+ * @member {module:model/Author} tagger
+ */
+
+_TagAllOf["default"].prototype['tagger'] = undefined;
 var _default = Tag;
 exports["default"] = _default;

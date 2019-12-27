@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,6 +54,36 @@
       //expect(instance).to.be.a(Bitbucket.WebhookSubscription);
     });
 
+    it('should have the property uuid (base name: "uuid")', function() {
+      // uncomment below and update the code to test the property uuid
+      //var instane = new Bitbucket.WebhookSubscription();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instane = new Bitbucket.WebhookSubscription();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new Bitbucket.WebhookSubscription();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subjectType (base name: "subject_type")', function() {
+      // uncomment below and update the code to test the property subjectType
+      //var instane = new Bitbucket.WebhookSubscription();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property subject (base name: "subject")', function() {
+      // uncomment below and update the code to test the property subject
+      //var instane = new Bitbucket.WebhookSubscription();
+      //expect(instance).to.be();
+    });
+
     it('should have the property active (base name: "active")', function() {
       // uncomment below and update the code to test the property active
       //var instane = new Bitbucket.WebhookSubscription();
@@ -66,38 +96,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new Bitbucket.WebhookSubscription();
-      //expect(instance).to.be();
-    });
-
     it('should have the property events (base name: "events")', function() {
       // uncomment below and update the code to test the property events
-      //var instane = new Bitbucket.WebhookSubscription();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property subject (base name: "subject")', function() {
-      // uncomment below and update the code to test the property subject
-      //var instane = new Bitbucket.WebhookSubscription();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property subjectType (base name: "subject_type")', function() {
-      // uncomment below and update the code to test the property subjectType
-      //var instane = new Bitbucket.WebhookSubscription();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property url (base name: "url")', function() {
-      // uncomment below and update the code to test the property url
-      //var instane = new Bitbucket.WebhookSubscription();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property uuid (base name: "uuid")', function() {
-      // uncomment below and update the code to test the property uuid
       //var instane = new Bitbucket.WebhookSubscription();
       //expect(instance).to.be();
     });

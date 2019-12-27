@@ -11,6 +11,8 @@ var _PipelineState = _interopRequireDefault(require("./PipelineState"));
 
 var _PipelineStateInProgressAllOf = _interopRequireDefault(require("./PipelineStateInProgressAllOf"));
 
+var _PipelineStateInProgressStage = _interopRequireDefault(require("./PipelineStateInProgressStage"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80,6 +82,10 @@ function () {
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
+
+        if (data.hasOwnProperty('stage')) {
+          obj['stage'] = _PipelineStateInProgressStage["default"].constructFromObject(data['stage']);
+        }
       }
 
       return obj;
@@ -99,7 +105,12 @@ PipelineStateInProgress.prototype['type'] = undefined;
  * @member {module:model/PipelineStateInProgress.NameEnum} name
  */
 
-PipelineStateInProgress.prototype['name'] = undefined; // Implement PipelineState interface:
+PipelineStateInProgress.prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineStateInProgressStage} stage
+ */
+
+PipelineStateInProgress.prototype['stage'] = undefined; // Implement PipelineState interface:
 
 /**
  * @member {String} type
@@ -113,6 +124,11 @@ _PipelineState["default"].prototype['type'] = undefined; // Implement PipelineSt
  */
 
 _PipelineStateInProgressAllOf["default"].prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineStateInProgressStage} stage
+ */
+
+_PipelineStateInProgressAllOf["default"].prototype['stage'] = undefined;
 /**
  * Allowed values for the <code>name</code> property.
  * @enum {String}

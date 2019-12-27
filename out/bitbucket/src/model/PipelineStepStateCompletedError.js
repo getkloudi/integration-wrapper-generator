@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -59,11 +59,11 @@ class PipelineStepStateCompletedError {
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
-            if (data.hasOwnProperty('error')) {
-                obj['error'] = PipelineStepError.constructFromObject(data['error']);
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('error')) {
+                obj['error'] = PipelineStepError.constructFromObject(data['error']);
             }
         }
         return obj;
@@ -78,15 +78,15 @@ class PipelineStepStateCompletedError {
 PipelineStepStateCompletedError.prototype['type'] = undefined;
 
 /**
- * @member {module:model/PipelineStepError} error
- */
-PipelineStepStateCompletedError.prototype['error'] = undefined;
-
-/**
  * The name of the result (ERROR)
  * @member {module:model/PipelineStepStateCompletedError.NameEnum} name
  */
 PipelineStepStateCompletedError.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/PipelineStepError} error
+ */
+PipelineStepStateCompletedError.prototype['error'] = undefined;
 
 
 // Implement PipelineStepStateCompletedResult interface:
@@ -96,14 +96,14 @@ PipelineStepStateCompletedError.prototype['name'] = undefined;
 PipelineStepStateCompletedResult.prototype['type'] = undefined;
 // Implement PipelineStepStateCompletedErrorAllOf interface:
 /**
- * @member {module:model/PipelineStepError} error
- */
-PipelineStepStateCompletedErrorAllOf.prototype['error'] = undefined;
-/**
  * The name of the result (ERROR)
  * @member {module:model/PipelineStepStateCompletedErrorAllOf.NameEnum} name
  */
 PipelineStepStateCompletedErrorAllOf.prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineStepError} error
+ */
+PipelineStepStateCompletedErrorAllOf.prototype['error'] = undefined;
 
 
 

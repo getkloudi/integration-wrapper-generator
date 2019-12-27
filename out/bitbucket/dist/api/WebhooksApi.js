@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Error = _interopRequireDefault(require("../model/Error"));
 
+var _HookBody = _interopRequireDefault(require("../model/HookBody"));
+
 var _PaginatedHookEvents = _interopRequireDefault(require("../model/PaginatedHookEvents"));
 
 var _PaginatedWebhookSubscriptions = _interopRequireDefault(require("../model/PaginatedWebhookSubscriptions"));
@@ -111,8 +113,8 @@ function () {
       return this.apiClient.callApi('/hook_events/{subject_type}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugHooksGet operation.
-     * @callback module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugHooksGet operation.
+     * @callback module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedWebhookSubscriptions} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -120,28 +122,28 @@ function () {
 
     /**
      * Returns a paginated list of webhooks installed on this repository.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedWebhookSubscriptions}
      */
 
   }, {
-    key: "repositoriesUsernameRepoSlugHooksGet",
-    value: function repositoriesUsernameRepoSlugHooksGet(username, repoSlug, callback) {
-      var postBody = null; // verify the required parameter 'username' is set
+    key: "repositoriesWorkspaceRepoSlugHooksGet",
+    value: function repositoriesWorkspaceRepoSlugHooksGet(workspace, repoSlug, callback) {
+      var postBody = null; // verify the required parameter 'workspace' is set
 
-      if (username === undefined || username === null) {
-        throw new _Error["default"]("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugHooksGet");
+      if (workspace === undefined || workspace === null) {
+        throw new _Error["default"]("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugHooksGet");
       } // verify the required parameter 'repoSlug' is set
 
 
       if (repoSlug === undefined || repoSlug === null) {
-        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugHooksGet");
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugHooksGet");
       }
 
       var pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       var queryParams = {};
@@ -151,11 +153,11 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PaginatedWebhookSubscriptions["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/hooks', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/hooks', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugHooksPost operation.
-     * @callback module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksPostCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugHooksPost operation.
+     * @callback module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WebhookSubscription} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -163,42 +165,48 @@ function () {
 
     /**
      * Creates a new webhook on the specified repository.  Example:  ``` $ curl -X POST -u credentials -H 'Content-Type: application/json'           https://api.bitbucket.org/2.0/repositories/username/slug/hooks           -d '     {       \"description\": \"Webhook Description\",       \"url\": \"https://example.com/\",       \"active\": true,       \"events\": [         \"repo:push\",         \"issue:created\",         \"issue:updated\"       ]     }' ```  Note that this call requires the webhook scope, as well as any scope that applies to the events that the webhook subscribes to. In the example above that means: `webhook`, `repository` and `issue`.  Also note that the `url` must properly resolve and cannot be an internal, non-routed address.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:model/HookBody} body 
+     * @param {module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
 
   }, {
-    key: "repositoriesUsernameRepoSlugHooksPost",
-    value: function repositoriesUsernameRepoSlugHooksPost(username, repoSlug, callback) {
-      var postBody = null; // verify the required parameter 'username' is set
+    key: "repositoriesWorkspaceRepoSlugHooksPost",
+    value: function repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, body, callback) {
+      var postBody = body; // verify the required parameter 'workspace' is set
 
-      if (username === undefined || username === null) {
-        throw new _Error["default"]("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugHooksPost");
+      if (workspace === undefined || workspace === null) {
+        throw new _Error["default"]("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugHooksPost");
       } // verify the required parameter 'repoSlug' is set
 
 
       if (repoSlug === undefined || repoSlug === null) {
-        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugHooksPost");
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugHooksPost");
+      } // verify the required parameter 'body' is set
+
+
+      if (body === undefined || body === null) {
+        throw new _Error["default"]("Missing the required parameter 'body' when calling repositoriesWorkspaceRepoSlugHooksPost");
       }
 
       var pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       var queryParams = {};
       var headerParams = {};
       var formParams = {};
       var authNames = ['api_key', 'basic', 'oauth2'];
-      var contentTypes = [];
+      var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _WebhookSubscription["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/hooks', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/hooks', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugHooksUidDelete operation.
-     * @callback module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksUidDeleteCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugHooksUidDelete operation.
+     * @callback module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksUidDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -206,33 +214,33 @@ function () {
 
     /**
      * Deletes the specified webhook subscription from the given repository.
-     * @param {String} username 
-     * @param {String} repoSlug 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
      * @param {String} uid The installed webhook's id
-     * @param {module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksUidDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksUidDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
 
   }, {
-    key: "repositoriesUsernameRepoSlugHooksUidDelete",
-    value: function repositoriesUsernameRepoSlugHooksUidDelete(username, repoSlug, uid, callback) {
-      var postBody = null; // verify the required parameter 'username' is set
+    key: "repositoriesWorkspaceRepoSlugHooksUidDelete",
+    value: function repositoriesWorkspaceRepoSlugHooksUidDelete(workspace, repoSlug, uid, callback) {
+      var postBody = null; // verify the required parameter 'workspace' is set
 
-      if (username === undefined || username === null) {
-        throw new _Error["default"]("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugHooksUidDelete");
+      if (workspace === undefined || workspace === null) {
+        throw new _Error["default"]("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugHooksUidDelete");
       } // verify the required parameter 'repoSlug' is set
 
 
       if (repoSlug === undefined || repoSlug === null) {
-        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugHooksUidDelete");
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugHooksUidDelete");
       } // verify the required parameter 'uid' is set
 
 
       if (uid === undefined || uid === null) {
-        throw new _Error["default"]("Missing the required parameter 'uid' when calling repositoriesUsernameRepoSlugHooksUidDelete");
+        throw new _Error["default"]("Missing the required parameter 'uid' when calling repositoriesWorkspaceRepoSlugHooksUidDelete");
       }
 
       var pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug,
         'uid': uid
       };
@@ -243,11 +251,11 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/hooks/{uid}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/hooks/{uid}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugHooksUidGet operation.
-     * @callback module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksUidGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugHooksUidGet operation.
+     * @callback module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksUidGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WebhookSubscription} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -255,34 +263,34 @@ function () {
 
     /**
      * Returns the webhook with the specified id installed on the specified repository.
-     * @param {String} username 
-     * @param {String} repoSlug 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
      * @param {String} uid The installed webhook's id.
-     * @param {module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksUidGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksUidGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
 
   }, {
-    key: "repositoriesUsernameRepoSlugHooksUidGet",
-    value: function repositoriesUsernameRepoSlugHooksUidGet(username, repoSlug, uid, callback) {
-      var postBody = null; // verify the required parameter 'username' is set
+    key: "repositoriesWorkspaceRepoSlugHooksUidGet",
+    value: function repositoriesWorkspaceRepoSlugHooksUidGet(workspace, repoSlug, uid, callback) {
+      var postBody = null; // verify the required parameter 'workspace' is set
 
-      if (username === undefined || username === null) {
-        throw new _Error["default"]("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugHooksUidGet");
+      if (workspace === undefined || workspace === null) {
+        throw new _Error["default"]("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugHooksUidGet");
       } // verify the required parameter 'repoSlug' is set
 
 
       if (repoSlug === undefined || repoSlug === null) {
-        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugHooksUidGet");
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugHooksUidGet");
       } // verify the required parameter 'uid' is set
 
 
       if (uid === undefined || uid === null) {
-        throw new _Error["default"]("Missing the required parameter 'uid' when calling repositoriesUsernameRepoSlugHooksUidGet");
+        throw new _Error["default"]("Missing the required parameter 'uid' when calling repositoriesWorkspaceRepoSlugHooksUidGet");
       }
 
       var pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug,
         'uid': uid
       };
@@ -293,11 +301,11 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _WebhookSubscription["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/hooks/{uid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/hooks/{uid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugHooksUidPut operation.
-     * @callback module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksUidPutCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugHooksUidPut operation.
+     * @callback module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksUidPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/WebhookSubscription} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -305,34 +313,34 @@ function () {
 
     /**
      * Updates the specified webhook subscription.  The following properties can be mutated:  * `description` * `url` * `active` * `events`
-     * @param {String} username 
-     * @param {String} repoSlug 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
      * @param {String} uid The installed webhook's id
-     * @param {module:api/WebhooksApi~repositoriesUsernameRepoSlugHooksUidPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksUidPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
 
   }, {
-    key: "repositoriesUsernameRepoSlugHooksUidPut",
-    value: function repositoriesUsernameRepoSlugHooksUidPut(username, repoSlug, uid, callback) {
-      var postBody = null; // verify the required parameter 'username' is set
+    key: "repositoriesWorkspaceRepoSlugHooksUidPut",
+    value: function repositoriesWorkspaceRepoSlugHooksUidPut(workspace, repoSlug, uid, callback) {
+      var postBody = null; // verify the required parameter 'workspace' is set
 
-      if (username === undefined || username === null) {
-        throw new _Error["default"]("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugHooksUidPut");
+      if (workspace === undefined || workspace === null) {
+        throw new _Error["default"]("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugHooksUidPut");
       } // verify the required parameter 'repoSlug' is set
 
 
       if (repoSlug === undefined || repoSlug === null) {
-        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugHooksUidPut");
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugHooksUidPut");
       } // verify the required parameter 'uid' is set
 
 
       if (uid === undefined || uid === null) {
-        throw new _Error["default"]("Missing the required parameter 'uid' when calling repositoriesUsernameRepoSlugHooksUidPut");
+        throw new _Error["default"]("Missing the required parameter 'uid' when calling repositoriesWorkspaceRepoSlugHooksUidPut");
       }
 
       var pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug,
         'uid': uid
       };
@@ -343,7 +351,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _WebhookSubscription["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/hooks/{uid}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/hooks/{uid}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the teamsUsernameHooksGet operation.
@@ -355,7 +363,7 @@ function () {
 
     /**
      * Returns a paginated list of webhooks installed on this team.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/WebhooksApi~teamsUsernameHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedWebhookSubscriptions}
      */
@@ -391,7 +399,7 @@ function () {
 
     /**
      * Creates a new webhook on the specified team.  Team webhooks are fired for events from all repositories belonging to that team account.  Note that only admins can install webhooks on teams.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/WebhooksApi~teamsUsernameHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
@@ -427,7 +435,7 @@ function () {
 
     /**
      * Deletes the specified webhook subscription from the given team account.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/WebhooksApi~teamsUsernameHooksUidDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -469,7 +477,7 @@ function () {
 
     /**
      * Returns the webhook with the specified id installed on the given team account.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id.
      * @param {module:api/WebhooksApi~teamsUsernameHooksUidGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
@@ -512,7 +520,7 @@ function () {
 
     /**
      * Updates the specified webhook subscription.  The following properties can be mutated:  * `description` * `url` * `active` * `events`
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/WebhooksApi~teamsUsernameHooksUidPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
@@ -554,8 +562,8 @@ function () {
      */
 
     /**
-     * Returns a paginated list of webhooks installed on this user account.
-     * @param {String} username 
+     * Returns a paginated list of webhooks installed on this user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/WebhooksApi~usersUsernameHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedWebhookSubscriptions}
      */
@@ -590,8 +598,8 @@ function () {
      */
 
     /**
-     * Creates a new webhook on the specified user account.  Account-level webhooks are fired for events from all repositories belonging to that account.  Note that one can only register webhooks on one's own account, not that of others.
-     * @param {String} username 
+     * Creates a new webhook on the specified user account.  Account-level webhooks are fired for events from all repositories belonging to that account.  Note that one can only register webhooks on one's own account, not that of others.  Also, note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/WebhooksApi~usersUsernameHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
@@ -626,8 +634,8 @@ function () {
      */
 
     /**
-     * Deletes the specified webhook subscription from the given user account.
-     * @param {String} username 
+     * Deletes the specified webhook subscription from the given user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/WebhooksApi~usersUsernameHooksUidDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -668,8 +676,8 @@ function () {
      */
 
     /**
-     * Returns the webhook with the specified id installed on the given user account.
-     * @param {String} username 
+     * Returns the webhook with the specified id installed on the given user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id.
      * @param {module:api/WebhooksApi~usersUsernameHooksUidGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
@@ -711,8 +719,8 @@ function () {
      */
 
     /**
-     * Updates the specified webhook subscription.  The following properties can be mutated:  * `description` * `url` * `active` * `events`
-     * @param {String} username 
+     * Updates the specified webhook subscription.  The following properties can be mutated:  * `description` * `url` * `active` * `events`  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/WebhooksApi~usersUsernameHooksUidPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}

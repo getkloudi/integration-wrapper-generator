@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BranchrestrictionAllOfLinks from './BranchrestrictionAllOfLinks';
+import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks';
 import ComponentAllOf from './ComponentAllOf';
 import ModelObject from './ModelObject';
 
@@ -57,14 +57,14 @@ class Component {
             ModelObject.constructFromObject(data, obj);
             ComponentAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
             if (data.hasOwnProperty('links')) {
-                obj['links'] = BranchrestrictionAllOfLinks.constructFromObject(data['links']);
+                obj['links'] = BranchingModelSettingsAllOfLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
         }
         return obj;
@@ -74,12 +74,7 @@ class Component {
 }
 
 /**
- * @member {Number} id
- */
-Component.prototype['id'] = undefined;
-
-/**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 Component.prototype['links'] = undefined;
 
@@ -87,6 +82,11 @@ Component.prototype['links'] = undefined;
  * @member {String} name
  */
 Component.prototype['name'] = undefined;
+
+/**
+ * @member {Number} id
+ */
+Component.prototype['id'] = undefined;
 
 
 // Implement ModelObject interface:
@@ -96,17 +96,17 @@ Component.prototype['name'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement ComponentAllOf interface:
 /**
- * @member {Number} id
- */
-ComponentAllOf.prototype['id'] = undefined;
-/**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 ComponentAllOf.prototype['links'] = undefined;
 /**
  * @member {String} name
  */
 ComponentAllOf.prototype['name'] = undefined;
+/**
+ * @member {Number} id
+ */
+ComponentAllOf.prototype['id'] = undefined;
 
 
 

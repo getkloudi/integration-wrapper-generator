@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | 
-**author** | [**Author**](Author.md) |  | [optional] 
-**_date** | **Date** |  | [optional] 
 **hash** | **String** |  | [optional] 
+**_date** | **Date** |  | [optional] 
+**author** | [**Author**](Author.md) |  | [optional] 
 **message** | **String** |  | [optional] 
+**summary** | [**PullrequestAllOfRenderedTitle**](PullrequestAllOfRenderedTitle.md) |  | [optional] 
 **parents** | [**[BaseCommit]**](BaseCommit.md) |  | [optional] 
-**links** | [**CommitAllOfLinks**](CommitAllOfLinks.md) |  | [optional] 
-**participants** | [**[Participant]**](Participant.md) |  | [optional] 
 **repository** | [**Repository**](Repository.md) |  | [optional] 
+**participants** | [**[Participant]**](Participant.md) |  | [optional] 
 
 

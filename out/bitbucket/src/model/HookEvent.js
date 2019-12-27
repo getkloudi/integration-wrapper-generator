@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,17 +48,17 @@ class HookEvent {
         if (data) {
             obj = obj || new HookEvent();
 
-            if (data.hasOwnProperty('category')) {
-                obj['category'] = ApiClient.convertToType(data['category'], 'String');
-            }
-            if (data.hasOwnProperty('description')) {
-                obj['description'] = ApiClient.convertToType(data['description'], 'String');
-            }
             if (data.hasOwnProperty('event')) {
                 obj['event'] = ApiClient.convertToType(data['event'], 'String');
             }
+            if (data.hasOwnProperty('category')) {
+                obj['category'] = ApiClient.convertToType(data['category'], 'String');
+            }
             if (data.hasOwnProperty('label')) {
                 obj['label'] = ApiClient.convertToType(data['label'], 'String');
+            }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
         }
         return obj;
@@ -68,28 +68,28 @@ class HookEvent {
 }
 
 /**
- * The category this event belongs to.
- * @member {String} category
- */
-HookEvent.prototype['category'] = undefined;
-
-/**
- * More detailed description of the webhook event type.
- * @member {String} description
- */
-HookEvent.prototype['description'] = undefined;
-
-/**
  * The event identifier.
  * @member {module:model/HookEvent.EventEnum} event
  */
 HookEvent.prototype['event'] = undefined;
 
 /**
+ * The category this event belongs to.
+ * @member {String} category
+ */
+HookEvent.prototype['category'] = undefined;
+
+/**
  * Summary of the webhook event type.
  * @member {String} label
  */
 HookEvent.prototype['label'] = undefined;
+
+/**
+ * More detailed description of the webhook event type.
+ * @member {String} description
+ */
+HookEvent.prototype['description'] = undefined;
 
 
 

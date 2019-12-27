@@ -78,8 +78,24 @@ function () {
 
         _ProjectAllOf["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('created_on')) {
-          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
+        if (data.hasOwnProperty('links')) {
+          obj['links'] = _ProjectAllOfLinks["default"].constructFromObject(data['links']);
+        }
+
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        }
+
+        if (data.hasOwnProperty('key')) {
+          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
+        }
+
+        if (data.hasOwnProperty('owner')) {
+          obj['owner'] = _Team["default"].constructFromObject(data['owner']);
+        }
+
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('description')) {
@@ -90,28 +106,12 @@ function () {
           obj['is_private'] = _ApiClient["default"].convertToType(data['is_private'], 'Boolean');
         }
 
-        if (data.hasOwnProperty('key')) {
-          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
-        }
-
-        if (data.hasOwnProperty('links')) {
-          obj['links'] = _ProjectAllOfLinks["default"].constructFromObject(data['links']);
-        }
-
-        if (data.hasOwnProperty('name')) {
-          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
-        }
-
-        if (data.hasOwnProperty('owner')) {
-          obj['owner'] = _Team["default"].constructFromObject(data['owner']);
+        if (data.hasOwnProperty('created_on')) {
+          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
         }
 
         if (data.hasOwnProperty('updated_on')) {
           obj['updated_on'] = _ApiClient["default"].convertToType(data['updated_on'], 'Date');
-        }
-
-        if (data.hasOwnProperty('uuid')) {
-          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
         }
       }
 
@@ -122,11 +122,34 @@ function () {
   return Project;
 }();
 /**
- * @member {Date} created_on
+ * @member {module:model/ProjectAllOfLinks} links
  */
 
 
-Project.prototype['created_on'] = undefined;
+Project.prototype['links'] = undefined;
+/**
+ * The project's immutable id.
+ * @member {String} uuid
+ */
+
+Project.prototype['uuid'] = undefined;
+/**
+ * The project's key.
+ * @member {String} key
+ */
+
+Project.prototype['key'] = undefined;
+/**
+ * @member {module:model/Team} owner
+ */
+
+Project.prototype['owner'] = undefined;
+/**
+ * The name of the project.
+ * @member {String} name
+ */
+
+Project.prototype['name'] = undefined;
 /**
  * @member {String} description
  */
@@ -139,38 +162,15 @@ Project.prototype['description'] = undefined;
 
 Project.prototype['is_private'] = undefined;
 /**
- * The project's key.
- * @member {String} key
+ * @member {Date} created_on
  */
 
-Project.prototype['key'] = undefined;
-/**
- * @member {module:model/ProjectAllOfLinks} links
- */
-
-Project.prototype['links'] = undefined;
-/**
- * The name of the project.
- * @member {String} name
- */
-
-Project.prototype['name'] = undefined;
-/**
- * @member {module:model/Team} owner
- */
-
-Project.prototype['owner'] = undefined;
+Project.prototype['created_on'] = undefined;
 /**
  * @member {Date} updated_on
  */
 
-Project.prototype['updated_on'] = undefined;
-/**
- * The project's immutable id.
- * @member {String} uuid
- */
-
-Project.prototype['uuid'] = undefined; // Implement ModelObject interface:
+Project.prototype['updated_on'] = undefined; // Implement ModelObject interface:
 
 /**
  * @member {String} type
@@ -179,10 +179,33 @@ Project.prototype['uuid'] = undefined; // Implement ModelObject interface:
 _ModelObject["default"].prototype['type'] = undefined; // Implement ProjectAllOf interface:
 
 /**
- * @member {Date} created_on
+ * @member {module:model/ProjectAllOfLinks} links
  */
 
-_ProjectAllOf["default"].prototype['created_on'] = undefined;
+_ProjectAllOf["default"].prototype['links'] = undefined;
+/**
+ * The project's immutable id.
+ * @member {String} uuid
+ */
+
+_ProjectAllOf["default"].prototype['uuid'] = undefined;
+/**
+ * The project's key.
+ * @member {String} key
+ */
+
+_ProjectAllOf["default"].prototype['key'] = undefined;
+/**
+ * @member {module:model/Team} owner
+ */
+
+_ProjectAllOf["default"].prototype['owner'] = undefined;
+/**
+ * The name of the project.
+ * @member {String} name
+ */
+
+_ProjectAllOf["default"].prototype['name'] = undefined;
 /**
  * @member {String} description
  */
@@ -195,37 +218,14 @@ _ProjectAllOf["default"].prototype['description'] = undefined;
 
 _ProjectAllOf["default"].prototype['is_private'] = undefined;
 /**
- * The project's key.
- * @member {String} key
+ * @member {Date} created_on
  */
 
-_ProjectAllOf["default"].prototype['key'] = undefined;
-/**
- * @member {module:model/ProjectAllOfLinks} links
- */
-
-_ProjectAllOf["default"].prototype['links'] = undefined;
-/**
- * The name of the project.
- * @member {String} name
- */
-
-_ProjectAllOf["default"].prototype['name'] = undefined;
-/**
- * @member {module:model/Team} owner
- */
-
-_ProjectAllOf["default"].prototype['owner'] = undefined;
+_ProjectAllOf["default"].prototype['created_on'] = undefined;
 /**
  * @member {Date} updated_on
  */
 
 _ProjectAllOf["default"].prototype['updated_on'] = undefined;
-/**
- * The project's immutable id.
- * @member {String} uuid
- */
-
-_ProjectAllOf["default"].prototype['uuid'] = undefined;
 var _default = Project;
 exports["default"] = _default;

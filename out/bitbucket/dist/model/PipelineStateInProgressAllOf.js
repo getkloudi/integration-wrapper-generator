@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _PipelineStateInProgressStage = _interopRequireDefault(require("./PipelineStateInProgressStage"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -60,6 +62,10 @@ function () {
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
+
+        if (data.hasOwnProperty('stage')) {
+          obj['stage'] = _PipelineStateInProgressStage["default"].constructFromObject(data['stage']);
+        }
       }
 
       return obj;
@@ -75,6 +81,11 @@ function () {
 
 
 PipelineStateInProgressAllOf.prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineStateInProgressStage} stage
+ */
+
+PipelineStateInProgressAllOf.prototype['stage'] = undefined;
 /**
  * Allowed values for the <code>name</code> property.
  * @enum {String}

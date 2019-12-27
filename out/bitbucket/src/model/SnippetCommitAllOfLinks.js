@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
+import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 
 /**
  * The SnippetCommitAllOfLinks model module.
@@ -48,14 +48,14 @@ class SnippetCommitAllOfLinks {
         if (data) {
             obj = obj || new SnippetCommitAllOfLinks();
 
-            if (data.hasOwnProperty('diff')) {
-                obj['diff'] = AccountAllOfLinksAvatar.constructFromObject(data['diff']);
+            if (data.hasOwnProperty('self')) {
+                obj['self'] = SubjectTypesRepositoryEvents.constructFromObject(data['self']);
             }
             if (data.hasOwnProperty('html')) {
-                obj['html'] = AccountAllOfLinksAvatar.constructFromObject(data['html']);
+                obj['html'] = SubjectTypesRepositoryEvents.constructFromObject(data['html']);
             }
-            if (data.hasOwnProperty('self')) {
-                obj['self'] = AccountAllOfLinksAvatar.constructFromObject(data['self']);
+            if (data.hasOwnProperty('diff')) {
+                obj['diff'] = SubjectTypesRepositoryEvents.constructFromObject(data['diff']);
             }
         }
         return obj;
@@ -65,19 +65,19 @@ class SnippetCommitAllOfLinks {
 }
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} diff
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
-SnippetCommitAllOfLinks.prototype['diff'] = undefined;
+SnippetCommitAllOfLinks.prototype['self'] = undefined;
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} html
+ * @member {module:model/SubjectTypesRepositoryEvents} html
  */
 SnippetCommitAllOfLinks.prototype['html'] = undefined;
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} self
+ * @member {module:model/SubjectTypesRepositoryEvents} diff
  */
-SnippetCommitAllOfLinks.prototype['self'] = undefined;
+SnippetCommitAllOfLinks.prototype['diff'] = undefined;
 
 
 

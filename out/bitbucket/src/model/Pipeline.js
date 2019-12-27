@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -61,14 +61,11 @@ class Pipeline {
             ModelObject.constructFromObject(data, obj);
             PipelineAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('build_seconds_used')) {
-                obj['build_seconds_used'] = ApiClient.convertToType(data['build_seconds_used'], 'Number');
+            if (data.hasOwnProperty('uuid')) {
+                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
-            if (data.hasOwnProperty('completed_on')) {
-                obj['completed_on'] = ApiClient.convertToType(data['completed_on'], 'Date');
-            }
-            if (data.hasOwnProperty('created_on')) {
-                obj['created_on'] = ApiClient.convertToType(data['created_on'], 'Date');
+            if (data.hasOwnProperty('build_number')) {
+                obj['build_number'] = ApiClient.convertToType(data['build_number'], 'Number');
             }
             if (data.hasOwnProperty('creator')) {
                 obj['creator'] = Account.constructFromObject(data['creator']);
@@ -76,17 +73,23 @@ class Pipeline {
             if (data.hasOwnProperty('repository')) {
                 obj['repository'] = Repository.constructFromObject(data['repository']);
             }
-            if (data.hasOwnProperty('state')) {
-                obj['state'] = PipelineState.constructFromObject(data['state']);
-            }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = PipelineTarget.constructFromObject(data['target']);
             }
             if (data.hasOwnProperty('trigger')) {
                 obj['trigger'] = PipelineTrigger.constructFromObject(data['trigger']);
             }
-            if (data.hasOwnProperty('uuid')) {
-                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
+            if (data.hasOwnProperty('state')) {
+                obj['state'] = PipelineState.constructFromObject(data['state']);
+            }
+            if (data.hasOwnProperty('created_on')) {
+                obj['created_on'] = ApiClient.convertToType(data['created_on'], 'Date');
+            }
+            if (data.hasOwnProperty('completed_on')) {
+                obj['completed_on'] = ApiClient.convertToType(data['completed_on'], 'Date');
+            }
+            if (data.hasOwnProperty('build_seconds_used')) {
+                obj['build_seconds_used'] = ApiClient.convertToType(data['build_seconds_used'], 'Number');
             }
         }
         return obj;
@@ -96,22 +99,16 @@ class Pipeline {
 }
 
 /**
- * The number of build seconds used by this pipeline.
- * @member {Number} build_seconds_used
+ * The UUID identifying the pipeline.
+ * @member {String} uuid
  */
-Pipeline.prototype['build_seconds_used'] = undefined;
+Pipeline.prototype['uuid'] = undefined;
 
 /**
- * The timestamp when the Pipeline was completed. This is not set if the pipeline is still in progress.
- * @member {Date} completed_on
+ * The build number of the pipeline.
+ * @member {Number} build_number
  */
-Pipeline.prototype['completed_on'] = undefined;
-
-/**
- * The timestamp when the pipeline was created.
- * @member {Date} created_on
- */
-Pipeline.prototype['created_on'] = undefined;
+Pipeline.prototype['build_number'] = undefined;
 
 /**
  * @member {module:model/Account} creator
@@ -124,11 +121,6 @@ Pipeline.prototype['creator'] = undefined;
 Pipeline.prototype['repository'] = undefined;
 
 /**
- * @member {module:model/PipelineState} state
- */
-Pipeline.prototype['state'] = undefined;
-
-/**
  * @member {module:model/PipelineTarget} target
  */
 Pipeline.prototype['target'] = undefined;
@@ -139,10 +131,27 @@ Pipeline.prototype['target'] = undefined;
 Pipeline.prototype['trigger'] = undefined;
 
 /**
- * The UUID identifying the pipeline.
- * @member {String} uuid
+ * @member {module:model/PipelineState} state
  */
-Pipeline.prototype['uuid'] = undefined;
+Pipeline.prototype['state'] = undefined;
+
+/**
+ * The timestamp when the pipeline was created.
+ * @member {Date} created_on
+ */
+Pipeline.prototype['created_on'] = undefined;
+
+/**
+ * The timestamp when the Pipeline was completed. This is not set if the pipeline is still in progress.
+ * @member {Date} completed_on
+ */
+Pipeline.prototype['completed_on'] = undefined;
+
+/**
+ * The number of build seconds used by this pipeline.
+ * @member {Number} build_seconds_used
+ */
+Pipeline.prototype['build_seconds_used'] = undefined;
 
 
 // Implement ModelObject interface:
@@ -152,20 +161,15 @@ Pipeline.prototype['uuid'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement PipelineAllOf interface:
 /**
- * The number of build seconds used by this pipeline.
- * @member {Number} build_seconds_used
+ * The UUID identifying the pipeline.
+ * @member {String} uuid
  */
-PipelineAllOf.prototype['build_seconds_used'] = undefined;
+PipelineAllOf.prototype['uuid'] = undefined;
 /**
- * The timestamp when the Pipeline was completed. This is not set if the pipeline is still in progress.
- * @member {Date} completed_on
+ * The build number of the pipeline.
+ * @member {Number} build_number
  */
-PipelineAllOf.prototype['completed_on'] = undefined;
-/**
- * The timestamp when the pipeline was created.
- * @member {Date} created_on
- */
-PipelineAllOf.prototype['created_on'] = undefined;
+PipelineAllOf.prototype['build_number'] = undefined;
 /**
  * @member {module:model/Account} creator
  */
@@ -175,10 +179,6 @@ PipelineAllOf.prototype['creator'] = undefined;
  */
 PipelineAllOf.prototype['repository'] = undefined;
 /**
- * @member {module:model/PipelineState} state
- */
-PipelineAllOf.prototype['state'] = undefined;
-/**
  * @member {module:model/PipelineTarget} target
  */
 PipelineAllOf.prototype['target'] = undefined;
@@ -187,10 +187,24 @@ PipelineAllOf.prototype['target'] = undefined;
  */
 PipelineAllOf.prototype['trigger'] = undefined;
 /**
- * The UUID identifying the pipeline.
- * @member {String} uuid
+ * @member {module:model/PipelineState} state
  */
-PipelineAllOf.prototype['uuid'] = undefined;
+PipelineAllOf.prototype['state'] = undefined;
+/**
+ * The timestamp when the pipeline was created.
+ * @member {Date} created_on
+ */
+PipelineAllOf.prototype['created_on'] = undefined;
+/**
+ * The timestamp when the Pipeline was completed. This is not set if the pipeline is still in progress.
+ * @member {Date} completed_on
+ */
+PipelineAllOf.prototype['completed_on'] = undefined;
+/**
+ * The number of build seconds used by this pipeline.
+ * @member {Number} build_seconds_used
+ */
+PipelineAllOf.prototype['build_seconds_used'] = undefined;
 
 
 

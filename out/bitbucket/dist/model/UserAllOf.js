@@ -57,12 +57,12 @@ function () {
       if (data) {
         obj = obj || new UserAllOf();
 
-        if (data.hasOwnProperty('account_id')) {
-          obj['account_id'] = _ApiClient["default"].convertToType(data['account_id'], 'String');
-        }
-
         if (data.hasOwnProperty('is_staff')) {
           obj['is_staff'] = _ApiClient["default"].convertToType(data['is_staff'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('account_id')) {
+          obj['account_id'] = _ApiClient["default"].convertToType(data['account_id'], 'String');
         }
       }
 
@@ -73,16 +73,16 @@ function () {
   return UserAllOf;
 }();
 /**
+ * @member {Boolean} is_staff
+ */
+
+
+UserAllOf.prototype['is_staff'] = undefined;
+/**
  * The user's Atlassian account ID.
  * @member {String} account_id
  */
 
-
 UserAllOf.prototype['account_id'] = undefined;
-/**
- * @member {Boolean} is_staff
- */
-
-UserAllOf.prototype['is_staff'] = undefined;
 var _default = UserAllOf;
 exports["default"] = _default;

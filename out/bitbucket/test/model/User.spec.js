@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -60,18 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property createdOn (base name: "created_on")', function() {
-      // uncomment below and update the code to test the property createdOn
-      //var instane = new Bitbucket.User();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property displayName (base name: "display_name")', function() {
-      // uncomment below and update the code to test the property displayName
-      //var instane = new Bitbucket.User();
-      //expect(instance).to.be();
-    });
-
     it('should have the property links (base name: "links")', function() {
       // uncomment below and update the code to test the property links
       //var instane = new Bitbucket.User();
@@ -84,8 +72,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property uuid (base name: "uuid")', function() {
-      // uncomment below and update the code to test the property uuid
+    it('should have the property nickname (base name: "nickname")', function() {
+      // uncomment below and update the code to test the property nickname
+      //var instane = new Bitbucket.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property accountStatus (base name: "account_status")', function() {
+      // uncomment below and update the code to test the property accountStatus
+      //var instane = new Bitbucket.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property displayName (base name: "display_name")', function() {
+      // uncomment below and update the code to test the property displayName
       //var instane = new Bitbucket.User();
       //expect(instance).to.be();
     });
@@ -96,14 +96,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property accountId (base name: "account_id")', function() {
-      // uncomment below and update the code to test the property accountId
+    it('should have the property createdOn (base name: "created_on")', function() {
+      // uncomment below and update the code to test the property createdOn
+      //var instane = new Bitbucket.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property uuid (base name: "uuid")', function() {
+      // uncomment below and update the code to test the property uuid
+      //var instane = new Bitbucket.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property has2faEnabled (base name: "has_2fa_enabled")', function() {
+      // uncomment below and update the code to test the property has2faEnabled
       //var instane = new Bitbucket.User();
       //expect(instance).to.be();
     });
 
     it('should have the property isStaff (base name: "is_staff")', function() {
       // uncomment below and update the code to test the property isStaff
+      //var instane = new Bitbucket.User();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property accountId (base name: "account_id")', function() {
+      // uncomment below and update the code to test the property accountId
       //var instane = new Bitbucket.User();
       //expect(instance).to.be();
     });

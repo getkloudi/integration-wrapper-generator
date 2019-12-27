@@ -6,28 +6,28 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**snippetsGet**](SnippetsApi.md#snippetsGet) | **GET** /snippets | 
 [**snippetsPost**](SnippetsApi.md#snippetsPost) | **POST** /snippets | 
-[**snippetsUsernameEncodedIdCommentsCommentIdDelete**](SnippetsApi.md#snippetsUsernameEncodedIdCommentsCommentIdDelete) | **DELETE** /snippets/{username}/{encoded_id}/comments/{comment_id} | 
-[**snippetsUsernameEncodedIdCommentsCommentIdGet**](SnippetsApi.md#snippetsUsernameEncodedIdCommentsCommentIdGet) | **GET** /snippets/{username}/{encoded_id}/comments/{comment_id} | 
-[**snippetsUsernameEncodedIdCommentsCommentIdPut**](SnippetsApi.md#snippetsUsernameEncodedIdCommentsCommentIdPut) | **PUT** /snippets/{username}/{encoded_id}/comments/{comment_id} | 
-[**snippetsUsernameEncodedIdCommentsGet**](SnippetsApi.md#snippetsUsernameEncodedIdCommentsGet) | **GET** /snippets/{username}/{encoded_id}/comments | 
-[**snippetsUsernameEncodedIdCommentsPost**](SnippetsApi.md#snippetsUsernameEncodedIdCommentsPost) | **POST** /snippets/{username}/{encoded_id}/comments | 
-[**snippetsUsernameEncodedIdCommitsGet**](SnippetsApi.md#snippetsUsernameEncodedIdCommitsGet) | **GET** /snippets/{username}/{encoded_id}/commits | 
-[**snippetsUsernameEncodedIdCommitsRevisionGet**](SnippetsApi.md#snippetsUsernameEncodedIdCommitsRevisionGet) | **GET** /snippets/{username}/{encoded_id}/commits/{revision} | 
-[**snippetsUsernameEncodedIdDelete**](SnippetsApi.md#snippetsUsernameEncodedIdDelete) | **DELETE** /snippets/{username}/{encoded_id} | 
-[**snippetsUsernameEncodedIdGet**](SnippetsApi.md#snippetsUsernameEncodedIdGet) | **GET** /snippets/{username}/{encoded_id} | 
-[**snippetsUsernameEncodedIdNodeIdDelete**](SnippetsApi.md#snippetsUsernameEncodedIdNodeIdDelete) | **DELETE** /snippets/{username}/{encoded_id}/{node_id} | 
-[**snippetsUsernameEncodedIdNodeIdFilesPathGet**](SnippetsApi.md#snippetsUsernameEncodedIdNodeIdFilesPathGet) | **GET** /snippets/{username}/{encoded_id}/{node_id}/files/{path} | 
-[**snippetsUsernameEncodedIdNodeIdGet**](SnippetsApi.md#snippetsUsernameEncodedIdNodeIdGet) | **GET** /snippets/{username}/{encoded_id}/{node_id} | 
-[**snippetsUsernameEncodedIdNodeIdPut**](SnippetsApi.md#snippetsUsernameEncodedIdNodeIdPut) | **PUT** /snippets/{username}/{encoded_id}/{node_id} | 
-[**snippetsUsernameEncodedIdPut**](SnippetsApi.md#snippetsUsernameEncodedIdPut) | **PUT** /snippets/{username}/{encoded_id} | 
-[**snippetsUsernameEncodedIdRevisionDiffGet**](SnippetsApi.md#snippetsUsernameEncodedIdRevisionDiffGet) | **GET** /snippets/{username}/{encoded_id}/{revision}/diff | 
-[**snippetsUsernameEncodedIdRevisionPatchGet**](SnippetsApi.md#snippetsUsernameEncodedIdRevisionPatchGet) | **GET** /snippets/{username}/{encoded_id}/{revision}/patch | 
-[**snippetsUsernameEncodedIdWatchDelete**](SnippetsApi.md#snippetsUsernameEncodedIdWatchDelete) | **DELETE** /snippets/{username}/{encoded_id}/watch | 
-[**snippetsUsernameEncodedIdWatchGet**](SnippetsApi.md#snippetsUsernameEncodedIdWatchGet) | **GET** /snippets/{username}/{encoded_id}/watch | 
-[**snippetsUsernameEncodedIdWatchPut**](SnippetsApi.md#snippetsUsernameEncodedIdWatchPut) | **PUT** /snippets/{username}/{encoded_id}/watch | 
-[**snippetsUsernameEncodedIdWatchersGet**](SnippetsApi.md#snippetsUsernameEncodedIdWatchersGet) | **GET** /snippets/{username}/{encoded_id}/watchers | 
-[**snippetsUsernameGet**](SnippetsApi.md#snippetsUsernameGet) | **GET** /snippets/{username} | 
-[**snippetsUsernamePost**](SnippetsApi.md#snippetsUsernamePost) | **POST** /snippets/{username} | 
+[**snippetsWorkspaceEncodedIdCommentsCommentIdDelete**](SnippetsApi.md#snippetsWorkspaceEncodedIdCommentsCommentIdDelete) | **DELETE** /snippets/{workspace}/{encoded_id}/comments/{comment_id} | 
+[**snippetsWorkspaceEncodedIdCommentsCommentIdGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdCommentsCommentIdGet) | **GET** /snippets/{workspace}/{encoded_id}/comments/{comment_id} | 
+[**snippetsWorkspaceEncodedIdCommentsCommentIdPut**](SnippetsApi.md#snippetsWorkspaceEncodedIdCommentsCommentIdPut) | **PUT** /snippets/{workspace}/{encoded_id}/comments/{comment_id} | 
+[**snippetsWorkspaceEncodedIdCommentsGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdCommentsGet) | **GET** /snippets/{workspace}/{encoded_id}/comments | 
+[**snippetsWorkspaceEncodedIdCommentsPost**](SnippetsApi.md#snippetsWorkspaceEncodedIdCommentsPost) | **POST** /snippets/{workspace}/{encoded_id}/comments | 
+[**snippetsWorkspaceEncodedIdCommitsGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdCommitsGet) | **GET** /snippets/{workspace}/{encoded_id}/commits | 
+[**snippetsWorkspaceEncodedIdCommitsRevisionGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdCommitsRevisionGet) | **GET** /snippets/{workspace}/{encoded_id}/commits/{revision} | 
+[**snippetsWorkspaceEncodedIdDelete**](SnippetsApi.md#snippetsWorkspaceEncodedIdDelete) | **DELETE** /snippets/{workspace}/{encoded_id} | 
+[**snippetsWorkspaceEncodedIdGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdGet) | **GET** /snippets/{workspace}/{encoded_id} | 
+[**snippetsWorkspaceEncodedIdNodeIdDelete**](SnippetsApi.md#snippetsWorkspaceEncodedIdNodeIdDelete) | **DELETE** /snippets/{workspace}/{encoded_id}/{node_id} | 
+[**snippetsWorkspaceEncodedIdNodeIdFilesPathGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdNodeIdFilesPathGet) | **GET** /snippets/{workspace}/{encoded_id}/{node_id}/files/{path} | 
+[**snippetsWorkspaceEncodedIdNodeIdGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdNodeIdGet) | **GET** /snippets/{workspace}/{encoded_id}/{node_id} | 
+[**snippetsWorkspaceEncodedIdNodeIdPut**](SnippetsApi.md#snippetsWorkspaceEncodedIdNodeIdPut) | **PUT** /snippets/{workspace}/{encoded_id}/{node_id} | 
+[**snippetsWorkspaceEncodedIdPut**](SnippetsApi.md#snippetsWorkspaceEncodedIdPut) | **PUT** /snippets/{workspace}/{encoded_id} | 
+[**snippetsWorkspaceEncodedIdRevisionDiffGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdRevisionDiffGet) | **GET** /snippets/{workspace}/{encoded_id}/{revision}/diff | 
+[**snippetsWorkspaceEncodedIdRevisionPatchGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdRevisionPatchGet) | **GET** /snippets/{workspace}/{encoded_id}/{revision}/patch | 
+[**snippetsWorkspaceEncodedIdWatchDelete**](SnippetsApi.md#snippetsWorkspaceEncodedIdWatchDelete) | **DELETE** /snippets/{workspace}/{encoded_id}/watch | 
+[**snippetsWorkspaceEncodedIdWatchGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdWatchGet) | **GET** /snippets/{workspace}/{encoded_id}/watch | 
+[**snippetsWorkspaceEncodedIdWatchPut**](SnippetsApi.md#snippetsWorkspaceEncodedIdWatchPut) | **PUT** /snippets/{workspace}/{encoded_id}/watch | 
+[**snippetsWorkspaceEncodedIdWatchersGet**](SnippetsApi.md#snippetsWorkspaceEncodedIdWatchersGet) | **GET** /snippets/{workspace}/{encoded_id}/watchers | 
+[**snippetsWorkspaceGet**](SnippetsApi.md#snippetsWorkspaceGet) | **GET** /snippets/{workspace} | 
+[**snippetsWorkspacePost**](SnippetsApi.md#snippetsWorkspacePost) | **POST** /snippets/{workspace} | 
 
 
 
@@ -149,9 +149,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdCommentsCommentIdDelete
+## snippetsWorkspaceEncodedIdCommentsCommentIdDelete
 
-> snippetsUsernameEncodedIdCommentsCommentIdDelete(username, commentId, encodedId)
+> snippetsWorkspaceEncodedIdCommentsCommentIdDelete(commentId, encodedId, workspace)
 
 
 
@@ -176,10 +176,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
 let commentId = "commentId_example"; // String | 
 let encodedId = "encodedId_example"; // String | 
-apiInstance.snippetsUsernameEncodedIdCommentsCommentIdDelete(username, commentId, encodedId, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+apiInstance.snippetsWorkspaceEncodedIdCommentsCommentIdDelete(commentId, encodedId, workspace, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -193,9 +193,9 @@ apiInstance.snippetsUsernameEncodedIdCommentsCommentIdDelete(username, commentId
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **commentId** | **String**|  | 
  **encodedId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
 
 ### Return type
 
@@ -211,9 +211,9 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdCommentsCommentIdGet
+## snippetsWorkspaceEncodedIdCommentsCommentIdGet
 
-> SnippetComment snippetsUsernameEncodedIdCommentsCommentIdGet(username, commentId, encodedId)
+> SnippetComment snippetsWorkspaceEncodedIdCommentsCommentIdGet(commentId, encodedId, workspace)
 
 
 
@@ -238,10 +238,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
 let commentId = "commentId_example"; // String | 
 let encodedId = "encodedId_example"; // String | 
-apiInstance.snippetsUsernameEncodedIdCommentsCommentIdGet(username, commentId, encodedId, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+apiInstance.snippetsWorkspaceEncodedIdCommentsCommentIdGet(commentId, encodedId, workspace, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -255,9 +255,9 @@ apiInstance.snippetsUsernameEncodedIdCommentsCommentIdGet(username, commentId, e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **commentId** | **String**|  | 
  **encodedId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
 
 ### Return type
 
@@ -273,9 +273,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdCommentsCommentIdPut
+## snippetsWorkspaceEncodedIdCommentsCommentIdPut
 
-> snippetsUsernameEncodedIdCommentsCommentIdPut(username, commentId, encodedId)
+> snippetsWorkspaceEncodedIdCommentsCommentIdPut(commentId, encodedId, workspace)
 
 
 
@@ -300,10 +300,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
 let commentId = "commentId_example"; // String | 
 let encodedId = "encodedId_example"; // String | 
-apiInstance.snippetsUsernameEncodedIdCommentsCommentIdPut(username, commentId, encodedId, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+apiInstance.snippetsWorkspaceEncodedIdCommentsCommentIdPut(commentId, encodedId, workspace, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -317,9 +317,9 @@ apiInstance.snippetsUsernameEncodedIdCommentsCommentIdPut(username, commentId, e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **commentId** | **String**|  | 
  **encodedId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
 
 ### Return type
 
@@ -335,9 +335,9 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdCommentsGet
+## snippetsWorkspaceEncodedIdCommentsGet
 
-> PaginatedSnippetComments snippetsUsernameEncodedIdCommentsGet(username, encodedId)
+> PaginatedSnippetComments snippetsWorkspaceEncodedIdCommentsGet(encodedId, workspace)
 
 
 
@@ -362,9 +362,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
 let encodedId = "encodedId_example"; // String | 
-apiInstance.snippetsUsernameEncodedIdCommentsGet(username, encodedId, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+apiInstance.snippetsWorkspaceEncodedIdCommentsGet(encodedId, workspace, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -378,8 +378,8 @@ apiInstance.snippetsUsernameEncodedIdCommentsGet(username, encodedId, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **encodedId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
 
 ### Return type
 
@@ -395,9 +395,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdCommentsPost
+## snippetsWorkspaceEncodedIdCommentsPost
 
-> Snippet snippetsUsernameEncodedIdCommentsPost(username, encodedId, body)
+> Snippet snippetsWorkspaceEncodedIdCommentsPost(encodedId, workspace, body)
 
 
 
@@ -422,10 +422,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
 let encodedId = "encodedId_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let body = new Bitbucket.Snippet(); // Snippet | The contents of the new comment.
-apiInstance.snippetsUsernameEncodedIdCommentsPost(username, encodedId, body, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdCommentsPost(encodedId, workspace, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -439,8 +439,8 @@ apiInstance.snippetsUsernameEncodedIdCommentsPost(username, encodedId, body, (er
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **encodedId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **body** | [**Snippet**](Snippet.md)| The contents of the new comment. | 
 
 ### Return type
@@ -457,9 +457,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdCommitsGet
+## snippetsWorkspaceEncodedIdCommitsGet
 
-> PaginatedSnippetCommit snippetsUsernameEncodedIdCommitsGet(username, encodedId)
+> PaginatedSnippetCommit snippetsWorkspaceEncodedIdCommitsGet(encodedId, workspace)
 
 
 
@@ -484,9 +484,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
 let encodedId = "encodedId_example"; // String | 
-apiInstance.snippetsUsernameEncodedIdCommitsGet(username, encodedId, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+apiInstance.snippetsWorkspaceEncodedIdCommitsGet(encodedId, workspace, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -500,8 +500,8 @@ apiInstance.snippetsUsernameEncodedIdCommitsGet(username, encodedId, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **encodedId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
 
 ### Return type
 
@@ -517,9 +517,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdCommitsRevisionGet
+## snippetsWorkspaceEncodedIdCommitsRevisionGet
 
-> SnippetCommit snippetsUsernameEncodedIdCommitsRevisionGet(username, encodedId, revision)
+> SnippetCommit snippetsWorkspaceEncodedIdCommitsRevisionGet(encodedId, workspace, revision)
 
 
 
@@ -542,10 +542,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
 let encodedId = "encodedId_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let revision = "revision_example"; // String | 
-apiInstance.snippetsUsernameEncodedIdCommitsRevisionGet(username, encodedId, revision, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdCommitsRevisionGet(encodedId, workspace, revision, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -559,8 +559,8 @@ apiInstance.snippetsUsernameEncodedIdCommitsRevisionGet(username, encodedId, rev
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **encodedId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **revision** | **String**|  | 
 
 ### Return type
@@ -577,9 +577,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdDelete
+## snippetsWorkspaceEncodedIdDelete
 
-> snippetsUsernameEncodedIdDelete(username, encodedId)
+> snippetsWorkspaceEncodedIdDelete(workspace, encodedId)
 
 
 
@@ -604,9 +604,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet's id.
-apiInstance.snippetsUsernameEncodedIdDelete(username, encodedId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdDelete(workspace, encodedId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -620,7 +620,7 @@ apiInstance.snippetsUsernameEncodedIdDelete(username, encodedId, (error, data, r
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet&#39;s id. | 
 
 ### Return type
@@ -637,13 +637,13 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdGet
+## snippetsWorkspaceEncodedIdGet
 
-> Snippet snippetsUsernameEncodedIdGet(username, encodedId)
+> Snippet snippetsWorkspaceEncodedIdGet(workspace, encodedId)
 
 
 
-Retrieves a single snippet.  Snippets support multiple content types:  * application/json * multipart/related * multipart/form-data   application/json ----------------  The default content type of the response is &#x60;application/json&#x60;. Since JSON is always &#x60;utf-8&#x60;, it cannot reliably contain file contents for files that are not text. Therefore, JSON snippet documents only contain the filename and links to the file contents.  This means that in order to retrieve all parts of a snippet, N+1 requests need to be made (where N is the number of files in the snippet).   multipart/related -----------------  To retrieve an entire snippet in a single response, use the &#x60;Accept: multipart/related&#x60; HTTP request header.      $ curl -H \&quot;Accept: multipart/related\&quot; https://api.bitbucket.org/2.0/snippets/evzijst/1  Response:      HTTP/1.1 200 OK     Content-Length: 2214     Content-Type: multipart/related; start&#x3D;\&quot;snippet\&quot;; boundary&#x3D;\&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;\&quot;     MIME-Version: 1.0      --&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;     Content-Type: application/json; charset&#x3D;\&quot;utf-8\&quot;     MIME-Version: 1.0     Content-ID: snippet      {       \&quot;links\&quot;: {         \&quot;self\&quot;: {           \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj\&quot;         },         \&quot;html\&quot;: {           \&quot;href\&quot;: \&quot;https://bitbucket.org/snippets/evzijst/kypj\&quot;         },         \&quot;comments\&quot;: {           \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/comments\&quot;         },         \&quot;watchers\&quot;: {           \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/watchers\&quot;         },         \&quot;commits\&quot;: {           \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/commits\&quot;         }       },       \&quot;id\&quot;: kypj,       \&quot;title\&quot;: \&quot;My snippet\&quot;,       \&quot;created_on\&quot;: \&quot;2014-12-29T22:22:04.790331+00:00\&quot;,       \&quot;updated_on\&quot;: \&quot;2014-12-29T22:22:04.790331+00:00\&quot;,       \&quot;is_private\&quot;: false,       \&quot;files\&quot;: {         \&quot;foo.txt\&quot;: {           \&quot;links\&quot;: {             \&quot;self\&quot;: {               \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/files/367ab19/foo.txt\&quot;             },             \&quot;html\&quot;: {               \&quot;href\&quot;: \&quot;https://bitbucket.org/snippets/evzijst/kypj#file-foo.txt\&quot;             }           }         },         \&quot;image.png\&quot;: {           \&quot;links\&quot;: {             \&quot;self\&quot;: {               \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/files/367ab19/image.png\&quot;             },             \&quot;html\&quot;: {               \&quot;href\&quot;: \&quot;https://bitbucket.org/snippets/evzijst/kypj#file-image.png\&quot;             }           }         }       ],       \&quot;owner\&quot;: {         \&quot;username\&quot;: \&quot;evzijst\&quot;,         \&quot;display_name\&quot;: \&quot;Erik van Zijst\&quot;,         \&quot;uuid\&quot;: \&quot;{d301aafa-d676-4ee0-88be-962be7417567}\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/evzijst\&quot;           },           \&quot;html\&quot;: {             \&quot;href\&quot;: \&quot;https://bitbucket.org/evzijst\&quot;           },           \&quot;avatar\&quot;: {             \&quot;href\&quot;: \&quot;https://bitbucket-staging-assetroot.s3.amazonaws.com/c/photos/2013/Jul/31/erik-avatar-725122544-0_avatar.png\&quot;           }         }       },       \&quot;creator\&quot;: {         \&quot;username\&quot;: \&quot;evzijst\&quot;,         \&quot;display_name\&quot;: \&quot;Erik van Zijst\&quot;,         \&quot;uuid\&quot;: \&quot;{d301aafa-d676-4ee0-88be-962be7417567}\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/evzijst\&quot;           },           \&quot;html\&quot;: {             \&quot;href\&quot;: \&quot;https://bitbucket.org/evzijst\&quot;           },           \&quot;avatar\&quot;: {             \&quot;href\&quot;: \&quot;https://bitbucket-staging-assetroot.s3.amazonaws.com/c/photos/2013/Jul/31/erik-avatar-725122544-0_avatar.png\&quot;           }         }       }     }      --&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;     Content-Type: text/plain; charset&#x3D;\&quot;us-ascii\&quot;     MIME-Version: 1.0     Content-Transfer-Encoding: 7bit     Content-ID: \&quot;foo.txt\&quot;     Content-Disposition: attachment; filename&#x3D;\&quot;foo.txt\&quot;      foo      --&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;     Content-Type: image/png     MIME-Version: 1.0     Content-Transfer-Encoding: base64     Content-ID: \&quot;image.png\&quot;     Content-Disposition: attachment; filename&#x3D;\&quot;image.png\&quot;      iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAYAAAD+MdrbAAABD0lEQVR4Ae3VMUoDQRTG8ccUaW2m     TKONFxArJYJamCvkCnZTaa+VnQdJSBFl2SMsLFrEWNjZBZs0JgiL/+KrhhVmJRbCLPx4O+/DT2TB     cbblJxf+UWFVVRNsEGAtgvJxnLm2H+A5RQ93uIl+3632PZyl/skjfOn9Gvdwmlcw5aPUwimG+NT5     EnNN036IaZePUuIcK533NVfal7/5yjWeot2z9ta1cAczHEf7I+3J0ws9Cgx0fsOFpmlfwKcWPuBQ     73Oc4FHzBaZ8llq4q1mr5B2mOUCt815qYR8eB1hG2VJ7j35q4RofaH7IG+Xrf/PfJhfmwtfFYoIN     AqxFUD6OMxcvkO+UfKfkOyXfKdsv/AYCHMLVkHAFWgAAAABJRU5ErkJggg&#x3D;&#x3D;     --&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;--  multipart/form-data -------------------  As with creating new snippets, &#x60;multipart/form-data&#x60; can be used as an alternative to &#x60;multipart/related&#x60;. However, the inherently flat structure of form-data means that only basic, root-level properties can be returned, while nested elements like &#x60;links&#x60; are omitted:      $ curl -H \&quot;Accept: multipart/form-data\&quot; https://api.bitbucket.org/2.0/snippets/evzijst/kypj  Response:      HTTP/1.1 200 OK     Content-Length: 951     Content-Type: multipart/form-data; boundary&#x3D;----------------------------63a4b224c59f      ------------------------------63a4b224c59f     Content-Disposition: form-data; name&#x3D;\&quot;title\&quot;     Content-Type: text/plain; charset&#x3D;\&quot;utf-8\&quot;      My snippet     ------------------------------63a4b224c59f--     Content-Disposition: attachment; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;foo.txt\&quot;     Content-Type: text/plain      foo      ------------------------------63a4b224c59f     Content-Disposition: attachment; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;image.png\&quot;     Content-Transfer-Encoding: base64     Content-Type: application/octet-stream      iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAYAAAD+MdrbAAABD0lEQVR4Ae3VMUoDQRTG8ccUaW2m     TKONFxArJYJamCvkCnZTaa+VnQdJSBFl2SMsLFrEWNjZBZs0JgiL/+KrhhVmJRbCLPx4O+/DT2TB     cbblJxf+UWFVVRNsEGAtgvJxnLm2H+A5RQ93uIl+3632PZyl/skjfOn9Gvdwmlcw5aPUwimG+NT5     EnNN036IaZePUuIcK533NVfal7/5yjWeot2z9ta1cAczHEf7I+3J0ws9Cgx0fsOFpmlfwKcWPuBQ     73Oc4FHzBaZ8llq4q1mr5B2mOUCt815qYR8eB1hG2VJ7j35q4RofaH7IG+Xrf/PfJhfmwtfFYoIN     AqxFUD6OMxcvkO+UfKfkOyXfKdsv/AYCHMLVkHAFWgAAAABJRU5ErkJggg&#x3D;&#x3D;     ------------------------------5957323a6b76--
+Retrieves a single snippet.  Snippets support multiple content types:  * application/json * multipart/related * multipart/form-data   application/json ----------------  The default content type of the response is &#x60;application/json&#x60;. Since JSON is always &#x60;utf-8&#x60;, it cannot reliably contain file contents for files that are not text. Therefore, JSON snippet documents only contain the filename and links to the file contents.  This means that in order to retrieve all parts of a snippet, N+1 requests need to be made (where N is the number of files in the snippet).   multipart/related -----------------  To retrieve an entire snippet in a single response, use the &#x60;Accept: multipart/related&#x60; HTTP request header.      $ curl -H \&quot;Accept: multipart/related\&quot; https://api.bitbucket.org/2.0/snippets/evzijst/1  Response:      HTTP/1.1 200 OK     Content-Length: 2214     Content-Type: multipart/related; start&#x3D;\&quot;snippet\&quot;; boundary&#x3D;\&quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;\&quot;     MIME-Version: 1.0      --&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;     Content-Type: application/json; charset&#x3D;\&quot;utf-8\&quot;     MIME-Version: 1.0     Content-ID: snippet      {       \&quot;links\&quot;: {         \&quot;self\&quot;: {           \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj\&quot;         },         \&quot;html\&quot;: {           \&quot;href\&quot;: \&quot;https://bitbucket.org/snippets/evzijst/kypj\&quot;         },         \&quot;comments\&quot;: {           \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/comments\&quot;         },         \&quot;watchers\&quot;: {           \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/watchers\&quot;         },         \&quot;commits\&quot;: {           \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/commits\&quot;         }       },       \&quot;id\&quot;: kypj,       \&quot;title\&quot;: \&quot;My snippet\&quot;,       \&quot;created_on\&quot;: \&quot;2014-12-29T22:22:04.790331+00:00\&quot;,       \&quot;updated_on\&quot;: \&quot;2014-12-29T22:22:04.790331+00:00\&quot;,       \&quot;is_private\&quot;: false,       \&quot;files\&quot;: {         \&quot;foo.txt\&quot;: {           \&quot;links\&quot;: {             \&quot;self\&quot;: {               \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/files/367ab19/foo.txt\&quot;             },             \&quot;html\&quot;: {               \&quot;href\&quot;: \&quot;https://bitbucket.org/snippets/evzijst/kypj#file-foo.txt\&quot;             }           }         },         \&quot;image.png\&quot;: {           \&quot;links\&quot;: {             \&quot;self\&quot;: {               \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/snippets/evzijst/kypj/files/367ab19/image.png\&quot;             },             \&quot;html\&quot;: {               \&quot;href\&quot;: \&quot;https://bitbucket.org/snippets/evzijst/kypj#file-image.png\&quot;             }           }         }       ],       \&quot;owner\&quot;: {         \&quot;username\&quot;: \&quot;evzijst\&quot;,         \&quot;nickname\&quot;: \&quot;evzijst\&quot;,         \&quot;display_name\&quot;: \&quot;Erik van Zijst\&quot;,         \&quot;uuid\&quot;: \&quot;{d301aafa-d676-4ee0-88be-962be7417567}\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/evzijst\&quot;           },           \&quot;html\&quot;: {             \&quot;href\&quot;: \&quot;https://bitbucket.org/evzijst\&quot;           },           \&quot;avatar\&quot;: {             \&quot;href\&quot;: \&quot;https://bitbucket-staging-assetroot.s3.amazonaws.com/c/photos/2013/Jul/31/erik-avatar-725122544-0_avatar.png\&quot;           }         }       },       \&quot;creator\&quot;: {         \&quot;username\&quot;: \&quot;evzijst\&quot;,         \&quot;nickname\&quot;: \&quot;evzijst\&quot;,         \&quot;display_name\&quot;: \&quot;Erik van Zijst\&quot;,         \&quot;uuid\&quot;: \&quot;{d301aafa-d676-4ee0-88be-962be7417567}\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/evzijst\&quot;           },           \&quot;html\&quot;: {             \&quot;href\&quot;: \&quot;https://bitbucket.org/evzijst\&quot;           },           \&quot;avatar\&quot;: {             \&quot;href\&quot;: \&quot;https://bitbucket-staging-assetroot.s3.amazonaws.com/c/photos/2013/Jul/31/erik-avatar-725122544-0_avatar.png\&quot;           }         }       }     }      --&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;     Content-Type: text/plain; charset&#x3D;\&quot;us-ascii\&quot;     MIME-Version: 1.0     Content-Transfer-Encoding: 7bit     Content-ID: \&quot;foo.txt\&quot;     Content-Disposition: attachment; filename&#x3D;\&quot;foo.txt\&quot;      foo      --&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;     Content-Type: image/png     MIME-Version: 1.0     Content-Transfer-Encoding: base64     Content-ID: \&quot;image.png\&quot;     Content-Disposition: attachment; filename&#x3D;\&quot;image.png\&quot;      iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAYAAAD+MdrbAAABD0lEQVR4Ae3VMUoDQRTG8ccUaW2m     TKONFxArJYJamCvkCnZTaa+VnQdJSBFl2SMsLFrEWNjZBZs0JgiL/+KrhhVmJRbCLPx4O+/DT2TB     cbblJxf+UWFVVRNsEGAtgvJxnLm2H+A5RQ93uIl+3632PZyl/skjfOn9Gvdwmlcw5aPUwimG+NT5     EnNN036IaZePUuIcK533NVfal7/5yjWeot2z9ta1cAczHEf7I+3J0ws9Cgx0fsOFpmlfwKcWPuBQ     73Oc4FHzBaZ8llq4q1mr5B2mOUCt815qYR8eB1hG2VJ7j35q4RofaH7IG+Xrf/PfJhfmwtfFYoIN     AqxFUD6OMxcvkO+UfKfkOyXfKdsv/AYCHMLVkHAFWgAAAABJRU5ErkJggg&#x3D;&#x3D;     --&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;1438169132528273974&#x3D;&#x3D;--  multipart/form-data -------------------  As with creating new snippets, &#x60;multipart/form-data&#x60; can be used as an alternative to &#x60;multipart/related&#x60;. However, the inherently flat structure of form-data means that only basic, root-level properties can be returned, while nested elements like &#x60;links&#x60; are omitted:      $ curl -H \&quot;Accept: multipart/form-data\&quot; https://api.bitbucket.org/2.0/snippets/evzijst/kypj  Response:      HTTP/1.1 200 OK     Content-Length: 951     Content-Type: multipart/form-data; boundary&#x3D;----------------------------63a4b224c59f      ------------------------------63a4b224c59f     Content-Disposition: form-data; name&#x3D;\&quot;title\&quot;     Content-Type: text/plain; charset&#x3D;\&quot;utf-8\&quot;      My snippet     ------------------------------63a4b224c59f--     Content-Disposition: attachment; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;foo.txt\&quot;     Content-Type: text/plain      foo      ------------------------------63a4b224c59f     Content-Disposition: attachment; name&#x3D;\&quot;file\&quot;; filename&#x3D;\&quot;image.png\&quot;     Content-Transfer-Encoding: base64     Content-Type: application/octet-stream      iVBORw0KGgoAAAANSUhEUgAAABQAAAAoCAYAAAD+MdrbAAABD0lEQVR4Ae3VMUoDQRTG8ccUaW2m     TKONFxArJYJamCvkCnZTaa+VnQdJSBFl2SMsLFrEWNjZBZs0JgiL/+KrhhVmJRbCLPx4O+/DT2TB     cbblJxf+UWFVVRNsEGAtgvJxnLm2H+A5RQ93uIl+3632PZyl/skjfOn9Gvdwmlcw5aPUwimG+NT5     EnNN036IaZePUuIcK533NVfal7/5yjWeot2z9ta1cAczHEf7I+3J0ws9Cgx0fsOFpmlfwKcWPuBQ     73Oc4FHzBaZ8llq4q1mr5B2mOUCt815qYR8eB1hG2VJ7j35q4RofaH7IG+Xrf/PfJhfmwtfFYoIN     AqxFUD6OMxcvkO+UfKfkOyXfKdsv/AYCHMLVkHAFWgAAAABJRU5ErkJggg&#x3D;&#x3D;     ------------------------------5957323a6b76--
 
 ### Example
 
@@ -664,9 +664,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet's id.
-apiInstance.snippetsUsernameEncodedIdGet(username, encodedId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdGet(workspace, encodedId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -680,7 +680,7 @@ apiInstance.snippetsUsernameEncodedIdGet(username, encodedId, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet&#39;s id. | 
 
 ### Return type
@@ -697,9 +697,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, multipart/related, multipart/form-data
 
 
-## snippetsUsernameEncodedIdNodeIdDelete
+## snippetsWorkspaceEncodedIdNodeIdDelete
 
-> snippetsUsernameEncodedIdNodeIdDelete(username, nodeId, encodedId)
+> snippetsWorkspaceEncodedIdNodeIdDelete(nodeId, workspace, encodedId)
 
 
 
@@ -724,10 +724,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
 let nodeId = "nodeId_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet's id.
-apiInstance.snippetsUsernameEncodedIdNodeIdDelete(username, nodeId, encodedId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdNodeIdDelete(nodeId, workspace, encodedId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -741,8 +741,8 @@ apiInstance.snippetsUsernameEncodedIdNodeIdDelete(username, nodeId, encodedId, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **nodeId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet&#39;s id. | 
 
 ### Return type
@@ -759,9 +759,9 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdNodeIdFilesPathGet
+## snippetsWorkspaceEncodedIdNodeIdFilesPathGet
 
-> snippetsUsernameEncodedIdNodeIdFilesPathGet(username, path, nodeId, encodedId)
+> snippetsWorkspaceEncodedIdNodeIdFilesPathGet(path, nodeId, encodedId, workspace)
 
 
 
@@ -786,11 +786,11 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
 let path = "path_example"; // String | 
 let nodeId = "nodeId_example"; // String | 
 let encodedId = "encodedId_example"; // String | 
-apiInstance.snippetsUsernameEncodedIdNodeIdFilesPathGet(username, path, nodeId, encodedId, (error, data, response) => {
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+apiInstance.snippetsWorkspaceEncodedIdNodeIdFilesPathGet(path, nodeId, encodedId, workspace, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -804,10 +804,10 @@ apiInstance.snippetsUsernameEncodedIdNodeIdFilesPathGet(username, path, nodeId, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
  **path** | **String**|  | 
  **nodeId** | **String**|  | 
  **encodedId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
 
 ### Return type
 
@@ -823,9 +823,9 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdNodeIdGet
+## snippetsWorkspaceEncodedIdNodeIdGet
 
-> Snippet snippetsUsernameEncodedIdNodeIdGet(username, encodedId, nodeId)
+> Snippet snippetsWorkspaceEncodedIdNodeIdGet(workspace, encodedId, nodeId)
 
 
 
@@ -850,10 +850,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet's id.
 let nodeId = "nodeId_example"; // String | A commit revision (SHA1).
-apiInstance.snippetsUsernameEncodedIdNodeIdGet(username, encodedId, nodeId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdNodeIdGet(workspace, encodedId, nodeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -867,7 +867,7 @@ apiInstance.snippetsUsernameEncodedIdNodeIdGet(username, encodedId, nodeId, (err
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet&#39;s id. | 
  **nodeId** | **String**| A commit revision (SHA1). | 
 
@@ -885,9 +885,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, multipart/related, multipart/form-data
 
 
-## snippetsUsernameEncodedIdNodeIdPut
+## snippetsWorkspaceEncodedIdNodeIdPut
 
-> Snippet snippetsUsernameEncodedIdNodeIdPut(username, encodedId, nodeId)
+> Snippet snippetsWorkspaceEncodedIdNodeIdPut(workspace, encodedId, nodeId)
 
 
 
@@ -912,10 +912,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet's id.
 let nodeId = "nodeId_example"; // String | A commit revision (SHA1).
-apiInstance.snippetsUsernameEncodedIdNodeIdPut(username, encodedId, nodeId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdNodeIdPut(workspace, encodedId, nodeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -929,7 +929,7 @@ apiInstance.snippetsUsernameEncodedIdNodeIdPut(username, encodedId, nodeId, (err
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet&#39;s id. | 
  **nodeId** | **String**| A commit revision (SHA1). | 
 
@@ -947,9 +947,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, multipart/related, multipart/form-data
 
 
-## snippetsUsernameEncodedIdPut
+## snippetsWorkspaceEncodedIdPut
 
-> Snippet snippetsUsernameEncodedIdPut(username, encodedId)
+> Snippet snippetsWorkspaceEncodedIdPut(workspace, encodedId)
 
 
 
@@ -974,9 +974,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet's id.
-apiInstance.snippetsUsernameEncodedIdPut(username, encodedId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdPut(workspace, encodedId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -990,7 +990,7 @@ apiInstance.snippetsUsernameEncodedIdPut(username, encodedId, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet&#39;s id. | 
 
 ### Return type
@@ -1007,9 +1007,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, multipart/related, multipart/form-data
 
 
-## snippetsUsernameEncodedIdRevisionDiffGet
+## snippetsWorkspaceEncodedIdRevisionDiffGet
 
-> snippetsUsernameEncodedIdRevisionDiffGet(username, encodedId, revision, opts)
+> snippetsWorkspaceEncodedIdRevisionDiffGet(workspace, encodedId, revision, opts)
 
 
 
@@ -1034,13 +1034,13 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet id.
 let revision = "revision_example"; // String | A revspec expression. This can simply be a commit SHA1, a ref name, or a compare expression like `staging..production`.
 let opts = {
   'path': "path_example" // String | When used, only one the diff of the specified file will be returned.
 };
-apiInstance.snippetsUsernameEncodedIdRevisionDiffGet(username, encodedId, revision, opts, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdRevisionDiffGet(workspace, encodedId, revision, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1054,7 +1054,7 @@ apiInstance.snippetsUsernameEncodedIdRevisionDiffGet(username, encodedId, revisi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet id. | 
  **revision** | **String**| A revspec expression. This can simply be a commit SHA1, a ref name, or a compare expression like &#x60;staging..production&#x60;. | 
  **path** | **String**| When used, only one the diff of the specified file will be returned. | [optional] 
@@ -1073,9 +1073,9 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdRevisionPatchGet
+## snippetsWorkspaceEncodedIdRevisionPatchGet
 
-> snippetsUsernameEncodedIdRevisionPatchGet(username, encodedId, revision)
+> snippetsWorkspaceEncodedIdRevisionPatchGet(workspace, encodedId, revision)
 
 
 
@@ -1100,10 +1100,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet id.
 let revision = "revision_example"; // String | A revspec expression. This can simply be a commit SHA1, a ref name, or a compare expression like `staging..production`.
-apiInstance.snippetsUsernameEncodedIdRevisionPatchGet(username, encodedId, revision, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdRevisionPatchGet(workspace, encodedId, revision, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1117,7 +1117,7 @@ apiInstance.snippetsUsernameEncodedIdRevisionPatchGet(username, encodedId, revis
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet id. | 
  **revision** | **String**| A revspec expression. This can simply be a commit SHA1, a ref name, or a compare expression like &#x60;staging..production&#x60;. | 
 
@@ -1135,9 +1135,9 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdWatchDelete
+## snippetsWorkspaceEncodedIdWatchDelete
 
-> PaginatedUsers snippetsUsernameEncodedIdWatchDelete(username, encodedId)
+> PaginatedUsers snippetsWorkspaceEncodedIdWatchDelete(workspace, encodedId)
 
 
 
@@ -1162,9 +1162,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet id.
-apiInstance.snippetsUsernameEncodedIdWatchDelete(username, encodedId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdWatchDelete(workspace, encodedId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1178,7 +1178,7 @@ apiInstance.snippetsUsernameEncodedIdWatchDelete(username, encodedId, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet id. | 
 
 ### Return type
@@ -1195,9 +1195,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdWatchGet
+## snippetsWorkspaceEncodedIdWatchGet
 
-> PaginatedUsers snippetsUsernameEncodedIdWatchGet(username, encodedId)
+> PaginatedUsers snippetsWorkspaceEncodedIdWatchGet(workspace, encodedId)
 
 
 
@@ -1222,9 +1222,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet id.
-apiInstance.snippetsUsernameEncodedIdWatchGet(username, encodedId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdWatchGet(workspace, encodedId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1238,7 +1238,7 @@ apiInstance.snippetsUsernameEncodedIdWatchGet(username, encodedId, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet id. | 
 
 ### Return type
@@ -1255,9 +1255,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdWatchPut
+## snippetsWorkspaceEncodedIdWatchPut
 
-> PaginatedUsers snippetsUsernameEncodedIdWatchPut(username, encodedId)
+> PaginatedUsers snippetsWorkspaceEncodedIdWatchPut(workspace, encodedId)
 
 
 
@@ -1282,9 +1282,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet id.
-apiInstance.snippetsUsernameEncodedIdWatchPut(username, encodedId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdWatchPut(workspace, encodedId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1298,7 +1298,7 @@ apiInstance.snippetsUsernameEncodedIdWatchPut(username, encodedId, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet id. | 
 
 ### Return type
@@ -1315,9 +1315,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameEncodedIdWatchersGet
+## snippetsWorkspaceEncodedIdWatchersGet
 
-> PaginatedUsers snippetsUsernameEncodedIdWatchersGet(username, encodedId)
+> PaginatedUsers snippetsWorkspaceEncodedIdWatchersGet(workspace, encodedId)
 
 
 
@@ -1342,9 +1342,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let encodedId = "encodedId_example"; // String | The snippet id.
-apiInstance.snippetsUsernameEncodedIdWatchersGet(username, encodedId, (error, data, response) => {
+apiInstance.snippetsWorkspaceEncodedIdWatchersGet(workspace, encodedId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1358,7 +1358,7 @@ apiInstance.snippetsUsernameEncodedIdWatchersGet(username, encodedId, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **encodedId** | **String**| The snippet id. | 
 
 ### Return type
@@ -1375,13 +1375,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernameGet
+## snippetsWorkspaceGet
 
-> PaginatedSnippets snippetsUsernameGet(username, opts)
+> PaginatedSnippets snippetsWorkspaceGet(workspace, username, opts)
 
 
 
-Identical to &#x60;/snippets&#x60;, except that the result is further filtered by the snippet owner and only those that are owned by &#x60;{username}&#x60; are returned.
+Identical to &#x60;/snippets&#x60;, except that the result is further filtered by the snippet owner and only those that are owned by &#x60;{workspace}&#x60; are returned.
 
 ### Example
 
@@ -1402,11 +1402,12 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let username = "username_example"; // String | Limits the result to snippets owned by this user.
 let opts = {
   'role': "role_example" // String | Filter down the result based on the authenticated user's role (`owner`, `contributor`, or `member`).
 };
-apiInstance.snippetsUsernameGet(username, opts, (error, data, response) => {
+apiInstance.snippetsWorkspaceGet(workspace, username, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1420,6 +1421,7 @@ apiInstance.snippetsUsernameGet(username, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **username** | **String**| Limits the result to snippets owned by this user. | 
  **role** | **String**| Filter down the result based on the authenticated user&#39;s role (&#x60;owner&#x60;, &#x60;contributor&#x60;, or &#x60;member&#x60;). | [optional] 
 
@@ -1437,13 +1439,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## snippetsUsernamePost
+## snippetsWorkspacePost
 
-> Snippet snippetsUsernamePost(username, body)
+> Snippet snippetsWorkspacePost(workspace, body)
 
 
 
-Identical to &#x60;/snippets&#x60;, except that the new snippet will be created under the account specified in the path parameter &#x60;{username}&#x60;.
+Identical to &#x60;/snippets&#x60;, except that the new snippet will be created under the account specified in the path parameter &#x60;{workspace}&#x60;.
 
 ### Example
 
@@ -1464,9 +1466,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.SnippetsApi();
-let username = "username_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let body = new Bitbucket.Snippet(); // Snippet | The new snippet object.
-apiInstance.snippetsUsernamePost(username, body, (error, data, response) => {
+apiInstance.snippetsWorkspacePost(workspace, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1480,7 +1482,7 @@ apiInstance.snippetsUsernamePost(username, body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **body** | [**Snippet**](Snippet.md)| The new snippet object. | 
 
 ### Return type

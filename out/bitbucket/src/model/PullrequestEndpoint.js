@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -50,14 +50,14 @@ class PullrequestEndpoint {
         if (data) {
             obj = obj || new PullrequestEndpoint();
 
+            if (data.hasOwnProperty('repository')) {
+                obj['repository'] = Repository.constructFromObject(data['repository']);
+            }
             if (data.hasOwnProperty('branch')) {
                 obj['branch'] = PullrequestEndpointBranch.constructFromObject(data['branch']);
             }
             if (data.hasOwnProperty('commit')) {
                 obj['commit'] = PullrequestAllOfMergeCommit.constructFromObject(data['commit']);
-            }
-            if (data.hasOwnProperty('repository')) {
-                obj['repository'] = Repository.constructFromObject(data['repository']);
             }
         }
         return obj;
@@ -65,6 +65,11 @@ class PullrequestEndpoint {
 
 
 }
+
+/**
+ * @member {module:model/Repository} repository
+ */
+PullrequestEndpoint.prototype['repository'] = undefined;
 
 /**
  * @member {module:model/PullrequestEndpointBranch} branch
@@ -75,11 +80,6 @@ PullrequestEndpoint.prototype['branch'] = undefined;
  * @member {module:model/PullrequestAllOfMergeCommit} commit
  */
 PullrequestEndpoint.prototype['commit'] = undefined;
-
-/**
- * @member {module:model/Repository} repository
- */
-PullrequestEndpoint.prototype['repository'] = undefined;
 
 
 

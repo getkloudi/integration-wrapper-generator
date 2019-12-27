@@ -79,14 +79,6 @@ function () {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
 
-        if (data.hasOwnProperty('created_on')) {
-          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
-        }
-
-        if (data.hasOwnProperty('display_name')) {
-          obj['display_name'] = _ApiClient["default"].convertToType(data['display_name'], 'String');
-        }
-
         if (data.hasOwnProperty('links')) {
           obj['links'] = _AccountAllOfLinks["default"].constructFromObject(data['links']);
         }
@@ -95,20 +87,40 @@ function () {
           obj['username'] = _ApiClient["default"].convertToType(data['username'], 'String');
         }
 
-        if (data.hasOwnProperty('uuid')) {
-          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        if (data.hasOwnProperty('nickname')) {
+          obj['nickname'] = _ApiClient["default"].convertToType(data['nickname'], 'String');
+        }
+
+        if (data.hasOwnProperty('account_status')) {
+          obj['account_status'] = _ApiClient["default"].convertToType(data['account_status'], 'String');
+        }
+
+        if (data.hasOwnProperty('display_name')) {
+          obj['display_name'] = _ApiClient["default"].convertToType(data['display_name'], 'String');
         }
 
         if (data.hasOwnProperty('website')) {
           obj['website'] = _ApiClient["default"].convertToType(data['website'], 'String');
         }
 
-        if (data.hasOwnProperty('account_id')) {
-          obj['account_id'] = _ApiClient["default"].convertToType(data['account_id'], 'String');
+        if (data.hasOwnProperty('created_on')) {
+          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
+        }
+
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        }
+
+        if (data.hasOwnProperty('has_2fa_enabled')) {
+          obj['has_2fa_enabled'] = _ApiClient["default"].convertToType(data['has_2fa_enabled'], 'Boolean');
         }
 
         if (data.hasOwnProperty('is_staff')) {
           obj['is_staff'] = _ApiClient["default"].convertToType(data['is_staff'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('account_id')) {
+          obj['account_id'] = _ApiClient["default"].convertToType(data['account_id'], 'String');
         }
       }
 
@@ -125,16 +137,6 @@ function () {
 
 User.prototype['type'] = undefined;
 /**
- * @member {Date} created_on
- */
-
-User.prototype['created_on'] = undefined;
-/**
- * @member {String} display_name
- */
-
-User.prototype['display_name'] = undefined;
-/**
  * @member {module:model/AccountAllOfLinks} links
  */
 
@@ -145,42 +147,59 @@ User.prototype['links'] = undefined;
 
 User.prototype['username'] = undefined;
 /**
- * @member {String} uuid
+ * Account name defined by the owner. Should be used instead of the \"username\" field. Note that \"nickname\" cannot be used in place of \"username\" in URLs and queries, as \"nickname\" is not guaranteed to be unique.
+ * @member {String} nickname
  */
 
-User.prototype['uuid'] = undefined;
+User.prototype['nickname'] = undefined;
+/**
+ * The status of the account. Currently the only possible value is \"active\", but more values may be added in the future.
+ * @member {String} account_status
+ */
+
+User.prototype['account_status'] = undefined;
+/**
+ * @member {String} display_name
+ */
+
+User.prototype['display_name'] = undefined;
 /**
  * @member {String} website
  */
 
 User.prototype['website'] = undefined;
 /**
- * The user's Atlassian account ID.
- * @member {String} account_id
+ * @member {Date} created_on
  */
 
-User.prototype['account_id'] = undefined;
+User.prototype['created_on'] = undefined;
+/**
+ * @member {String} uuid
+ */
+
+User.prototype['uuid'] = undefined;
+/**
+ * @member {Boolean} has_2fa_enabled
+ */
+
+User.prototype['has_2fa_enabled'] = undefined;
 /**
  * @member {Boolean} is_staff
  */
 
-User.prototype['is_staff'] = undefined; // Implement Account interface:
+User.prototype['is_staff'] = undefined;
+/**
+ * The user's Atlassian account ID.
+ * @member {String} account_id
+ */
+
+User.prototype['account_id'] = undefined; // Implement Account interface:
 
 /**
  * @member {String} type
  */
 
 _Account["default"].prototype['type'] = undefined;
-/**
- * @member {Date} created_on
- */
-
-_Account["default"].prototype['created_on'] = undefined;
-/**
- * @member {String} display_name
- */
-
-_Account["default"].prototype['display_name'] = undefined;
 /**
  * @member {module:model/AccountAllOfLinks} links
  */
@@ -192,26 +211,53 @@ _Account["default"].prototype['links'] = undefined;
 
 _Account["default"].prototype['username'] = undefined;
 /**
+ * Account name defined by the owner. Should be used instead of the \"username\" field. Note that \"nickname\" cannot be used in place of \"username\" in URLs and queries, as \"nickname\" is not guaranteed to be unique.
+ * @member {String} nickname
+ */
+
+_Account["default"].prototype['nickname'] = undefined;
+/**
+ * The status of the account. Currently the only possible value is \"active\", but more values may be added in the future.
+ * @member {String} account_status
+ */
+
+_Account["default"].prototype['account_status'] = undefined;
+/**
+ * @member {String} display_name
+ */
+
+_Account["default"].prototype['display_name'] = undefined;
+/**
+ * @member {String} website
+ */
+
+_Account["default"].prototype['website'] = undefined;
+/**
+ * @member {Date} created_on
+ */
+
+_Account["default"].prototype['created_on'] = undefined;
+/**
  * @member {String} uuid
  */
 
 _Account["default"].prototype['uuid'] = undefined;
 /**
- * @member {String} website
+ * @member {Boolean} has_2fa_enabled
  */
 
-_Account["default"].prototype['website'] = undefined; // Implement UserAllOf interface:
+_Account["default"].prototype['has_2fa_enabled'] = undefined; // Implement UserAllOf interface:
 
+/**
+ * @member {Boolean} is_staff
+ */
+
+_UserAllOf["default"].prototype['is_staff'] = undefined;
 /**
  * The user's Atlassian account ID.
  * @member {String} account_id
  */
 
 _UserAllOf["default"].prototype['account_id'] = undefined;
-/**
- * @member {Boolean} is_staff
- */
-
-_UserAllOf["default"].prototype['is_staff'] = undefined;
 var _default = User;
 exports["default"] = _default;

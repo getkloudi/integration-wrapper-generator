@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -50,17 +50,17 @@ class PullrequestMergeParameters {
         if (data) {
             obj = obj || new PullrequestMergeParameters();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('message')) {
+                obj['message'] = ApiClient.convertToType(data['message'], 'String');
+            }
             if (data.hasOwnProperty('close_source_branch')) {
                 obj['close_source_branch'] = ApiClient.convertToType(data['close_source_branch'], 'Boolean');
             }
             if (data.hasOwnProperty('merge_strategy')) {
                 obj['merge_strategy'] = ApiClient.convertToType(data['merge_strategy'], 'String');
-            }
-            if (data.hasOwnProperty('message')) {
-                obj['message'] = ApiClient.convertToType(data['message'], 'String');
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
         }
         return obj;
@@ -68,6 +68,17 @@ class PullrequestMergeParameters {
 
 
 }
+
+/**
+ * @member {String} type
+ */
+PullrequestMergeParameters.prototype['type'] = undefined;
+
+/**
+ * The commit message that will be used on the resulting commit.
+ * @member {String} message
+ */
+PullrequestMergeParameters.prototype['message'] = undefined;
 
 /**
  * Whether the source branch should be deleted. If this is not provided, we fallback to the value used when the pull request was created, which defaults to False
@@ -81,17 +92,6 @@ PullrequestMergeParameters.prototype['close_source_branch'] = undefined;
  * @default 'merge_commit'
  */
 PullrequestMergeParameters.prototype['merge_strategy'] = 'merge_commit';
-
-/**
- * The commit message that will be used on the resulting commit.
- * @member {String} message
- */
-PullrequestMergeParameters.prototype['message'] = undefined;
-
-/**
- * @member {String} type
- */
-PullrequestMergeParameters.prototype['type'] = undefined;
 
 
 
@@ -114,7 +114,13 @@ PullrequestMergeParameters['MergeStrategyEnum'] = {
      * value: "squash"
      * @const
      */
-    "squash": "squash"
+    "squash": "squash",
+
+    /**
+     * value: "fast_forward"
+     * @const
+     */
+    "fast_forward": "fast_forward"
 };
 
 

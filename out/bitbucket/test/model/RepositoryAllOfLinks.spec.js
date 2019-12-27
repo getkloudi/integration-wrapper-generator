@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,38 +54,8 @@
       //expect(instance).to.be.a(Bitbucket.RepositoryAllOfLinks);
     });
 
-    it('should have the property avatar (base name: "avatar")', function() {
-      // uncomment below and update the code to test the property avatar
-      //var instane = new Bitbucket.RepositoryAllOfLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property clone (base name: "clone")', function() {
-      // uncomment below and update the code to test the property clone
-      //var instane = new Bitbucket.RepositoryAllOfLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property commits (base name: "commits")', function() {
-      // uncomment below and update the code to test the property commits
-      //var instane = new Bitbucket.RepositoryAllOfLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property downloads (base name: "downloads")', function() {
-      // uncomment below and update the code to test the property downloads
-      //var instane = new Bitbucket.RepositoryAllOfLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property forks (base name: "forks")', function() {
-      // uncomment below and update the code to test the property forks
-      //var instane = new Bitbucket.RepositoryAllOfLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property hooks (base name: "hooks")', function() {
-      // uncomment below and update the code to test the property hooks
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new Bitbucket.RepositoryAllOfLinks();
       //expect(instance).to.be();
     });
@@ -96,20 +66,50 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property avatar (base name: "avatar")', function() {
+      // uncomment below and update the code to test the property avatar
+      //var instane = new Bitbucket.RepositoryAllOfLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property pullrequests (base name: "pullrequests")', function() {
       // uncomment below and update the code to test the property pullrequests
       //var instane = new Bitbucket.RepositoryAllOfLinks();
       //expect(instance).to.be();
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property commits (base name: "commits")', function() {
+      // uncomment below and update the code to test the property commits
+      //var instane = new Bitbucket.RepositoryAllOfLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property forks (base name: "forks")', function() {
+      // uncomment below and update the code to test the property forks
       //var instane = new Bitbucket.RepositoryAllOfLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property watchers (base name: "watchers")', function() {
       // uncomment below and update the code to test the property watchers
+      //var instane = new Bitbucket.RepositoryAllOfLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property downloads (base name: "downloads")', function() {
+      // uncomment below and update the code to test the property downloads
+      //var instane = new Bitbucket.RepositoryAllOfLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property clone (base name: "clone")', function() {
+      // uncomment below and update the code to test the property clone
+      //var instane = new Bitbucket.RepositoryAllOfLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property hooks (base name: "hooks")', function() {
+      // uncomment below and update the code to test the property hooks
       //var instane = new Bitbucket.RepositoryAllOfLinks();
       //expect(instance).to.be();
     });

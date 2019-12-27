@@ -79,12 +79,12 @@ function () {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
 
-        if (data.hasOwnProperty('error')) {
-          obj['error'] = _PipelineStepError["default"].constructFromObject(data['error']);
-        }
-
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('error')) {
+          obj['error'] = _PipelineStepError["default"].constructFromObject(data['error']);
         }
       }
 
@@ -101,16 +101,16 @@ function () {
 
 PipelineStepStateCompletedError.prototype['type'] = undefined;
 /**
- * @member {module:model/PipelineStepError} error
- */
-
-PipelineStepStateCompletedError.prototype['error'] = undefined;
-/**
  * The name of the result (ERROR)
  * @member {module:model/PipelineStepStateCompletedError.NameEnum} name
  */
 
-PipelineStepStateCompletedError.prototype['name'] = undefined; // Implement PipelineStepStateCompletedResult interface:
+PipelineStepStateCompletedError.prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineStepError} error
+ */
+
+PipelineStepStateCompletedError.prototype['error'] = undefined; // Implement PipelineStepStateCompletedResult interface:
 
 /**
  * @member {String} type
@@ -119,16 +119,16 @@ PipelineStepStateCompletedError.prototype['name'] = undefined; // Implement Pipe
 _PipelineStepStateCompletedResult["default"].prototype['type'] = undefined; // Implement PipelineStepStateCompletedErrorAllOf interface:
 
 /**
- * @member {module:model/PipelineStepError} error
- */
-
-_PipelineStepStateCompletedErrorAllOf["default"].prototype['error'] = undefined;
-/**
  * The name of the result (ERROR)
  * @member {module:model/PipelineStepStateCompletedErrorAllOf.NameEnum} name
  */
 
 _PipelineStepStateCompletedErrorAllOf["default"].prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineStepError} error
+ */
+
+_PipelineStepStateCompletedErrorAllOf["default"].prototype['error'] = undefined;
 /**
  * Allowed values for the <code>name</code> property.
  * @enum {String}

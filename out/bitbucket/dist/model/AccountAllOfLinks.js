@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AccountAllOfLinksAvatar = _interopRequireDefault(require("./AccountAllOfLinksAvatar"));
+var _SubjectTypesRepositoryEvents = _interopRequireDefault(require("./SubjectTypesRepositoryEvents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -58,28 +58,28 @@ function () {
       if (data) {
         obj = obj || new AccountAllOfLinks();
 
-        if (data.hasOwnProperty('avatar')) {
-          obj['avatar'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['avatar']);
-        }
-
-        if (data.hasOwnProperty('followers')) {
-          obj['followers'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['followers']);
-        }
-
-        if (data.hasOwnProperty('following')) {
-          obj['following'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['following']);
+        if (data.hasOwnProperty('self')) {
+          obj['self'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['self']);
         }
 
         if (data.hasOwnProperty('html')) {
-          obj['html'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['html']);
+          obj['html'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['html']);
+        }
+
+        if (data.hasOwnProperty('avatar')) {
+          obj['avatar'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['avatar']);
+        }
+
+        if (data.hasOwnProperty('followers')) {
+          obj['followers'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['followers']);
+        }
+
+        if (data.hasOwnProperty('following')) {
+          obj['following'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['following']);
         }
 
         if (data.hasOwnProperty('repositories')) {
-          obj['repositories'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['repositories']);
-        }
-
-        if (data.hasOwnProperty('self')) {
-          obj['self'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['self']);
+          obj['repositories'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['repositories']);
         }
       }
 
@@ -90,35 +90,35 @@ function () {
   return AccountAllOfLinks;
 }();
 /**
- * @member {module:model/AccountAllOfLinksAvatar} avatar
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
 
 
-AccountAllOfLinks.prototype['avatar'] = undefined;
+AccountAllOfLinks.prototype['self'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} followers
- */
-
-AccountAllOfLinks.prototype['followers'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} following
- */
-
-AccountAllOfLinks.prototype['following'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} html
+ * @member {module:model/SubjectTypesRepositoryEvents} html
  */
 
 AccountAllOfLinks.prototype['html'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} repositories
+ * @member {module:model/SubjectTypesRepositoryEvents} avatar
+ */
+
+AccountAllOfLinks.prototype['avatar'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} followers
+ */
+
+AccountAllOfLinks.prototype['followers'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} following
+ */
+
+AccountAllOfLinks.prototype['following'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} repositories
  */
 
 AccountAllOfLinks.prototype['repositories'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} self
- */
-
-AccountAllOfLinks.prototype['self'] = undefined;
 var _default = AccountAllOfLinks;
 exports["default"] = _default;

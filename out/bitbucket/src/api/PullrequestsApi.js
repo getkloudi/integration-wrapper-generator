@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -15,8 +15,11 @@
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
 import PaginatedCommitstatuses from '../model/PaginatedCommitstatuses';
+import PaginatedPullrequestComments from '../model/PaginatedPullrequestComments';
 import PaginatedPullrequests from '../model/PaginatedPullrequests';
+import Participant from '../model/Participant';
 import Pullrequest from '../model/Pullrequest';
+import PullrequestComment from '../model/PullrequestComment';
 import PullrequestMergeParameters from '../model/PullrequestMergeParameters';
 
 /**
@@ -39,8 +42,114 @@ export default class PullrequestsApi {
 
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugDefaultReviewersGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugDefaultReviewersGetCallback
+     * Callback function to receive the result of the getPullrequestsForCommit operation.
+     * @callback module:api/PullrequestsApi~getPullrequestsForCommitCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedPullrequests} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns a paginated list of all pull requests as part of which this commit was reviewed. Pull Request Commit Links app must be installed first before using this API; installation automatically occurs when 'Go to pull request' is clicked from the web interface for a commit's details.
+     * @param {String} username The account; either the UUID in curly braces, or the account_id
+     * @param {String} repoSlug The repository; either the UUID in curly braces, or the slug
+     * @param {String} commit The SHA1 of the commit
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page Which page to retrieve (default to 1)
+     * @param {Number} opts.pagelen How many pull requests to retrieve per page (default to 30)
+     * @param {module:api/PullrequestsApi~getPullrequestsForCommitCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedPullrequests}
+     */
+    getPullrequestsForCommit(username, repoSlug, commit, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling getPullrequestsForCommit");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling getPullrequestsForCommit");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling getPullrequestsForCommit");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit
+      };
+      let queryParams = {
+        'page': opts['page'],
+        'pagelen': opts['pagelen']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaginatedPullrequests;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/pullrequests', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the pullrequestsSelectedUserGet operation.
+     * @callback module:api/PullrequestsApi~pullrequestsSelectedUserGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedPullrequests} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns all pull requests authored by the specified user.  By default only open pull requests are returned. This can be controlled using the `state` query parameter. To retrieve pull requests that are in one of multiple states, repeat the `state` parameter for each individual state.  This endpoint also supports filtering and sorting of the results. See [filtering and sorting](../../../../meta/filtering) for more details.
+     * @param {String} selectedUser This can either be the username of the pull request author, the author's UUID surrounded by curly-braces, for example: `{account UUID}`, or the author's Atlassian ID. 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.state Only return pull requests that are in this state. This parameter can be repeated.
+     * @param {module:api/PullrequestsApi~pullrequestsSelectedUserGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedPullrequests}
+     */
+    pullrequestsSelectedUserGet(selectedUser, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'selectedUser' is set
+      if (selectedUser === undefined || selectedUser === null) {
+        throw new Error("Missing the required parameter 'selectedUser' when calling pullrequestsSelectedUserGet");
+      }
+
+      let pathParams = {
+        'selected_user': selectedUser
+      };
+      let queryParams = {
+        'state': opts['state']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaginatedPullrequests;
+      return this.apiClient.callApi(
+        '/pullrequests/{selected_user}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugDefaultReviewersGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugDefaultReviewersGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -48,23 +157,23 @@ export default class PullrequestsApi {
 
     /**
      * Returns the repository's default reviewers.  These are the users that are automatically added as reviewers on every new pull request that is created.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugDefaultReviewersGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugDefaultReviewersGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    repositoriesUsernameRepoSlugDefaultReviewersGet(username, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugDefaultReviewersGet(workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugDefaultReviewersGet");
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugDefaultReviewersGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugDefaultReviewersGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugDefaultReviewersGet");
       }
 
       let pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -79,15 +188,15 @@ export default class PullrequestsApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/default-reviewers', 'GET',
+        '/repositories/{workspace}/{repo_slug}/default-reviewers', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDelete operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDeleteCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDelete operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDeleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Error} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -95,30 +204,30 @@ export default class PullrequestsApi {
 
     /**
      * Removes a default reviewer from the repository.
-     * @param {String} username 
-     * @param {String} targetUsername 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} targetUsername This can either be the username or the UUID of the default reviewer, surrounded by curly-braces, for example: `{account UUID}`. 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
-    repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDelete(username, targetUsername, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDelete(targetUsername, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDelete");
-      }
       // verify the required parameter 'targetUsername' is set
       if (targetUsername === undefined || targetUsername === null) {
-        throw new Error("Missing the required parameter 'targetUsername' when calling repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDelete");
+        throw new Error("Missing the required parameter 'targetUsername' when calling repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDelete");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDelete");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDelete");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDelete");
       }
 
       let pathParams = {
-        'username': username,
         'target_username': targetUsername,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -133,15 +242,15 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Error;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/default-reviewers/{target_username}', 'DELETE',
+        '/repositories/{workspace}/{repo_slug}/default-reviewers/{target_username}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Error} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -149,30 +258,30 @@ export default class PullrequestsApi {
 
     /**
      * Returns the specified reviewer.  This can be used to test whether a user is among the repository's default reviewers list. A 404 indicates that that specified user is not a default reviewer.
-     * @param {String} username 
-     * @param {String} targetUsername 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} targetUsername This can either be the username or the UUID of the default reviewer, surrounded by curly-braces, for example: `{account UUID}`. 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
-    repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGet(username, targetUsername, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGet(targetUsername, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGet");
-      }
       // verify the required parameter 'targetUsername' is set
       if (targetUsername === undefined || targetUsername === null) {
-        throw new Error("Missing the required parameter 'targetUsername' when calling repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGet");
+        throw new Error("Missing the required parameter 'targetUsername' when calling repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGet");
       }
 
       let pathParams = {
-        'username': username,
         'target_username': targetUsername,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -187,15 +296,15 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Error;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/default-reviewers/{target_username}', 'GET',
+        '/repositories/{workspace}/{repo_slug}/default-reviewers/{target_username}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePut operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePutCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePut operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Error} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -203,30 +312,30 @@ export default class PullrequestsApi {
 
     /**
      * Adds the specified user to the repository's list of default reviewers.  This method is idempotent. Adding a user a second time has no effect.
-     * @param {String} username 
-     * @param {String} targetUsername 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} targetUsername This can either be the username or the UUID of the default reviewer, surrounded by curly-braces, for example: `{account UUID}`. 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
-    repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePut(username, targetUsername, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePut(targetUsername, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePut");
-      }
       // verify the required parameter 'targetUsername' is set
       if (targetUsername === undefined || targetUsername === null) {
-        throw new Error("Missing the required parameter 'targetUsername' when calling repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePut");
+        throw new Error("Missing the required parameter 'targetUsername' when calling repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePut");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePut");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePut");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePut");
       }
 
       let pathParams = {
-        'username': username,
         'target_username': targetUsername,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -241,39 +350,45 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Error;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/default-reviewers/{target_username}', 'PUT',
+        '/repositories/{workspace}/{repo_slug}/default-reviewers/{target_username}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsActivityGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsActivityGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsActivityGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsActivityGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Returns a paginated list of the pull request's activity log.  This includes comments that were made by the reviewers, updates and approvals.
-     * @param {String} username This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. 
+     * Returns a paginated list of the pull request's activity log.  This includes comments that were made by the reviewers, updates and approvals.  Comments created on a file or a line of code have an inline property.  Comment example: ``` {     \"pagelen\": 20,     \"values\": [         {             \"comment\": {                 \"links\": {                     \"self\": {                         \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695/comments/118571088\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695/_/diff#comment-118571088\"                     }                 },                 \"deleted\": false,                 \"pullrequest\": {                     \"type\": \"pullrequest\",                     \"id\": 5695,                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                         }                     },                     \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"                 },                 \"content\": {                     \"raw\": \"inline with to a dn from lines\",                     \"markup\": \"markdown\",                     \"html\": \"<p>inline with to a dn from lines</p>\",                     \"type\": \"rendered\"                 },                 \"created_on\": \"2019-09-27T00:33:46.039178+00:00\",                 \"user\": {                     \"display_name\": \"Name Lastname\",                     \"uuid\": \"{}\",                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/users/%7B%7D\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/%7B%7D/\"                         },                         \"avatar\": {                             \"href\": \"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/:/128\"                         }                     },                     \"type\": \"user\",                     \"nickname\": \"Name\",                     \"account_id\": \"\"                 },                 \"created_on\": \"2019-09-27T00:33:46.039178+00:00\",                 \"user\": {                     \"display_name\": \"Name Lastname\",                     \"uuid\": \"{}\",                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/users/%7B%7D\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/%7B%7D/\"                         },                         \"avatar\": {                             \"href\": \"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/:/128\"                         }                     },                     \"type\": \"user\",                     \"nickname\": \"Name\",                     \"account_id\": \"\"                 },                 \"updated_on\": \"2019-09-27T00:33:46.055384+00:00\",                 \"inline\": {                     \"context_lines\": \"\",                     \"to\": null,                     \"path\": \"\",                     \"outdated\": false,                     \"from\": 211                 },                 \"type\": \"pullrequest_comment\",                 \"id\": 118571088             },             \"pull_request\": {                 \"type\": \"pullrequest\",                 \"id\": 5695,                 \"links\": {                     \"self\": {                         \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                     }                 },                 \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"             }         }     ] } ```  Updates include a state property of OPEN, MERGED, or DECLINED.  Update example: ``` {     \"pagelen\": 20,     \"values\": [         {             \"update\": {                 \"description\": \"\",                 \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\",                 \"destination\": {                     \"commit\": {                         \"type\": \"commit\",                         \"hash\": \"6a2c16e4a152\",                         \"links\": {                             \"self\": {                                 \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/commit/6a2c16e4a152\"                             },                             \"html\": {                                 \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/commits/6a2c16e4a152\"                             }                         }                     },                     \"branch\": {                         \"name\": \"master\"                     },                     \"repository\": {                         \"name\": \"Atlaskit-MK-2\",                         \"type\": \"repository\",                         \"full_name\": \"atlassian/atlaskit-mk-2\",                         \"links\": {                             \"self\": {                                 \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2\"                             },                             \"html\": {                                 \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2\"                             },                             \"avatar\": {                                 \"href\": \"https://bytebucket.org/ravatar/%7B%7D?ts=js\"                             }                         },                         \"uuid\": \"{}\"                     }                 },                 \"reason\": \"\",                 \"source\": {                     \"commit\": {                         \"type\": \"commit\",                         \"hash\": \"728c8bad1813\",                         \"links\": {                             \"self\": {                                 \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/commit/728c8bad1813\"                             },                             \"html\": {                                 \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/commits/728c8bad1813\"                             }                         }                     },                     \"branch\": {                         \"name\": \"username/NONE-add-onClick-prop-for-accessibility\"                     },                     \"repository\": {                         \"name\": \"Atlaskit-MK-2\",                         \"type\": \"repository\",                         \"full_name\": \"atlassian/atlaskit-mk-2\",                         \"links\": {                             \"self\": {                                 \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2\"                             },                             \"html\": {                                 \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2\"                             },                             \"avatar\": {                                 \"href\": \"https://bytebucket.org/ravatar/%7B%7D?ts=js\"                             }                         },                         \"uuid\": \"{}\"                     }                 },                 \"state\": \"OPEN\",                 \"author\": {                     \"display_name\": \"Name Lastname\",                     \"uuid\": \"{}\",                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/users/%7B%7D\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/%7B%7D/\"                         },                         \"avatar\": {                             \"href\": \"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/:/128\"                         }                     },                     \"type\": \"user\",                     \"nickname\": \"Name\",                     \"account_id\": \"\"                 },                 \"date\": \"2019-05-10T06:48:25.305565+00:00\"             },             \"pull_request\": {                 \"type\": \"pullrequest\",                 \"id\": 5695,                 \"links\": {                     \"self\": {                         \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                     }                 },                 \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"             }         }     ] } ```  Approval example: ``` {     \"pagelen\": 20,     \"values\": [         {             \"approval\": {                 \"date\": \"2019-09-27T00:37:19.849534+00:00\",                 \"pullrequest\": {                     \"type\": \"pullrequest\",                     \"id\": 5695,                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                         }                     },                     \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"                 },                 \"user\": {                     \"display_name\": \"Name Lastname\",                     \"uuid\": \"{}\",                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/users/%7B%7D\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/%7B%7D/\"                         },                         \"avatar\": {                             \"href\": \"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/:/128\"                         }                     },                     \"type\": \"user\",                     \"nickname\": \"Name\",                     \"account_id\": \"\"                 }             },             \"pull_request\": {                 \"type\": \"pullrequest\",                 \"id\": 5695,                 \"links\": {                     \"self\": {                         \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                     }                 },                 \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"             }         }     ] } ```
+     * @param {Number} pullRequestId The id of the pull request.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsActivityGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsActivityGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    repositoriesUsernameRepoSlugPullrequestsActivityGet(username, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsActivityGet(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsActivityGet");
+      // verify the required parameter 'pullRequestId' is set
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsActivityGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsActivityGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsActivityGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsActivityGet");
       }
 
       let pathParams = {
-        'username': username,
+        'pull_request_id': pullRequestId,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -288,43 +403,43 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/activity', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/activity', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedPullrequests} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Returns a paginated list of all pull requests on the specified repository. By default only open pull requests are returned. This can be controlled using the `state` query parameter. To retrieve pull requests that are in one of multiple states, repeat the `state` parameter for each individual state.  This endpoint also supports filtering and sorting of the results. See [filtering and sorting](../../../../meta/filtering) for more details.
-     * @param {String} username This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. 
+     * Returns all pull requests on the specified repository.  By default only open pull requests are returned. This can be controlled using the `state` query parameter. To retrieve pull requests that are in one of multiple states, repeat the `state` parameter for each individual state.  This endpoint also supports filtering and sorting of the results. See [filtering and sorting](../../../../meta/filtering) for more details.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.state Only return pull requests that are in this state. This parameter can be repeated.
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedPullrequests}
      */
-    repositoriesUsernameRepoSlugPullrequestsGet(username, repoSlug, opts, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsGet(workspace, repoSlug, opts, callback) {
       opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsGet");
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsGet");
       }
 
       let pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -340,43 +455,43 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = PaginatedPullrequests;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPost operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPostCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPost operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Pullrequest} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Creates a new pull request.
-     * @param {String} username This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. 
+     * Creates a new pull request where the destination repository is this repository and the author is the authenticated user.  The minimum required fields to create a pull request are `title` and `source`, specified by a branch name.  ``` curl https://api.bitbucket.org/2.0/repositories/my-username/my-repository/pullrequests \\     -u my-username:my-password \\     --request POST \\     --header 'Content-Type: application/json' \\     --data '{         \"title\": \"My Title\",         \"source\": {             \"branch\": {                 \"name\": \"staging\"             }         }     }' ```  If the pull request's `destination` is not specified, it will default to the `repository.mainbranch`. To open a pull request to a different branch, say from a feature branch to a staging branch, specify a `destination` (same format as the `source`):  ``` {     \"title\": \"My Title\",     \"source\": {         \"branch\": {             \"name\": \"my-feature-branch\"         }     },     \"destination\": {         \"branch\": {             \"name\": \"staging\"         }     } } ```  Reviewers can be specified by adding an array of user objects as the `reviewers` property.  ``` {     \"title\": \"My Title\",     \"source\": {         \"branch\": {             \"name\": \"my-feature-branch\"         }     },     \"reviewers\": [         {             \"uuid\": \"{504c3b62-8120-4f0c-a7bc-87800b9d6f70}\"         }     ] } ```  Other fields:  * `description` - a string * `close_source_branch` - boolean that specifies if the source branch should be closed upon merging
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
      * @param {Object} opts Optional parameters
      * @param {module:model/Pullrequest} opts.body The new pull request.  The request URL you POST to becomes the destination repository URL. For this reason, you must specify an explicit source repository in the request object if you want to pull from a different repository (fork).  Since not all elements are required or even mutable, you only need to include the elements you want to initialize, such as the source branch and the title.
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Pullrequest}
      */
-    repositoriesUsernameRepoSlugPullrequestsPost(username, repoSlug, opts, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPost(workspace, repoSlug, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPost");
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPost");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPost");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPost");
       }
 
       let pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -391,46 +506,46 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Pullrequest;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests', 'POST',
+        '/repositories/{workspace}/{repo_slug}/pullrequests', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Returns a paginated list of the pull request's activity log.  This includes comments that were made by the reviewers, updates and approvals.
-     * @param {String} username This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. 
+     * Returns a paginated list of the pull request's activity log.  This includes comments that were made by the reviewers, updates and approvals.  Comments created on a file or a line of code have an inline property.  Comment example: ``` {     \"pagelen\": 20,     \"values\": [         {             \"comment\": {                 \"links\": {                     \"self\": {                         \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695/comments/118571088\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695/_/diff#comment-118571088\"                     }                 },                 \"deleted\": false,                 \"pullrequest\": {                     \"type\": \"pullrequest\",                     \"id\": 5695,                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                         }                     },                     \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"                 },                 \"content\": {                     \"raw\": \"inline with to a dn from lines\",                     \"markup\": \"markdown\",                     \"html\": \"<p>inline with to a dn from lines</p>\",                     \"type\": \"rendered\"                 },                 \"created_on\": \"2019-09-27T00:33:46.039178+00:00\",                 \"user\": {                     \"display_name\": \"Name Lastname\",                     \"uuid\": \"{}\",                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/users/%7B%7D\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/%7B%7D/\"                         },                         \"avatar\": {                             \"href\": \"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/:/128\"                         }                     },                     \"type\": \"user\",                     \"nickname\": \"Name\",                     \"account_id\": \"\"                 },                 \"created_on\": \"2019-09-27T00:33:46.039178+00:00\",                 \"user\": {                     \"display_name\": \"Name Lastname\",                     \"uuid\": \"{}\",                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/users/%7B%7D\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/%7B%7D/\"                         },                         \"avatar\": {                             \"href\": \"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/:/128\"                         }                     },                     \"type\": \"user\",                     \"nickname\": \"Name\",                     \"account_id\": \"\"                 },                 \"updated_on\": \"2019-09-27T00:33:46.055384+00:00\",                 \"inline\": {                     \"context_lines\": \"\",                     \"to\": null,                     \"path\": \"\",                     \"outdated\": false,                     \"from\": 211                 },                 \"type\": \"pullrequest_comment\",                 \"id\": 118571088             },             \"pull_request\": {                 \"type\": \"pullrequest\",                 \"id\": 5695,                 \"links\": {                     \"self\": {                         \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                     }                 },                 \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"             }         }     ] } ```  Updates include a state property of OPEN, MERGED, or DECLINED.  Update example: ``` {     \"pagelen\": 20,     \"values\": [         {             \"update\": {                 \"description\": \"\",                 \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\",                 \"destination\": {                     \"commit\": {                         \"type\": \"commit\",                         \"hash\": \"6a2c16e4a152\",                         \"links\": {                             \"self\": {                                 \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/commit/6a2c16e4a152\"                             },                             \"html\": {                                 \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/commits/6a2c16e4a152\"                             }                         }                     },                     \"branch\": {                         \"name\": \"master\"                     },                     \"repository\": {                         \"name\": \"Atlaskit-MK-2\",                         \"type\": \"repository\",                         \"full_name\": \"atlassian/atlaskit-mk-2\",                         \"links\": {                             \"self\": {                                 \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2\"                             },                             \"html\": {                                 \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2\"                             },                             \"avatar\": {                                 \"href\": \"https://bytebucket.org/ravatar/%7B%7D?ts=js\"                             }                         },                         \"uuid\": \"{}\"                     }                 },                 \"reason\": \"\",                 \"source\": {                     \"commit\": {                         \"type\": \"commit\",                         \"hash\": \"728c8bad1813\",                         \"links\": {                             \"self\": {                                 \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/commit/728c8bad1813\"                             },                             \"html\": {                                 \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/commits/728c8bad1813\"                             }                         }                     },                     \"branch\": {                         \"name\": \"username/NONE-add-onClick-prop-for-accessibility\"                     },                     \"repository\": {                         \"name\": \"Atlaskit-MK-2\",                         \"type\": \"repository\",                         \"full_name\": \"atlassian/atlaskit-mk-2\",                         \"links\": {                             \"self\": {                                 \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2\"                             },                             \"html\": {                                 \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2\"                             },                             \"avatar\": {                                 \"href\": \"https://bytebucket.org/ravatar/%7B%7D?ts=js\"                             }                         },                         \"uuid\": \"{}\"                     }                 },                 \"state\": \"OPEN\",                 \"author\": {                     \"display_name\": \"Name Lastname\",                     \"uuid\": \"{}\",                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/users/%7B%7D\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/%7B%7D/\"                         },                         \"avatar\": {                             \"href\": \"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/:/128\"                         }                     },                     \"type\": \"user\",                     \"nickname\": \"Name\",                     \"account_id\": \"\"                 },                 \"date\": \"2019-05-10T06:48:25.305565+00:00\"             },             \"pull_request\": {                 \"type\": \"pullrequest\",                 \"id\": 5695,                 \"links\": {                     \"self\": {                         \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                     }                 },                 \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"             }         }     ] } ```  Approval example: ``` {     \"pagelen\": 20,     \"values\": [         {             \"approval\": {                 \"date\": \"2019-09-27T00:37:19.849534+00:00\",                 \"pullrequest\": {                     \"type\": \"pullrequest\",                     \"id\": 5695,                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                         }                     },                     \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"                 },                 \"user\": {                     \"display_name\": \"Name Lastname\",                     \"uuid\": \"{}\",                     \"links\": {                         \"self\": {                             \"href\": \"https://bitbucket.org/!api/2.0/users/%7B%7D\"                         },                         \"html\": {                             \"href\": \"https://bitbucket.org/%7B%7D/\"                         },                         \"avatar\": {                             \"href\": \"https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/:/128\"                         }                     },                     \"type\": \"user\",                     \"nickname\": \"Name\",                     \"account_id\": \"\"                 }             },             \"pull_request\": {                 \"type\": \"pullrequest\",                 \"id\": 5695,                 \"links\": {                     \"self\": {                         \"href\": \"https://bitbucket.org/!api/2.0/repositories/atlassian/atlaskit-mk-2/pullrequests/5695\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/atlassian/atlaskit-mk-2/pull-requests/5695\"                     }                 },                 \"title\": \"username/NONE: small change from onFocus to onClick to handle tabbing through the page and not expand the editor unless a click event triggers it\"             }         }     ] } ```
+     * @param {Number} pullRequestId The id of the pull request.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-     * @param {Number} pullRequestId The id of the pull request. 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGet(username, repoSlug, pullRequestId, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGet(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGet");
+      // verify the required parameter 'pullRequestId' is set
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGet");
-      }
-      // verify the required parameter 'pullRequestId' is set
-      if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGet");
       }
 
       let pathParams = {
-        'username': username,
-        'repo_slug': repoSlug,
-        'pull_request_id': pullRequestId
+        'pull_request_id': pullRequestId,
+        'workspace': workspace,
+        'repo_slug': repoSlug
       };
       let queryParams = {
       };
@@ -444,46 +559,45 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/activity', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/activity', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDelete operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDeleteCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDelete operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDeleteCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Error} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Redact the authenticated user's approval of the specified pull request.
-     * @param {String} username 
      * @param {String} pullRequestId 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Error}
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDelete(username, pullRequestId, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDelete(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDelete");
-      }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDelete");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDelete");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDelete");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDelete");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDelete");
       }
 
       let pathParams = {
-        'username': username,
         'pull_request_id': pullRequestId,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -496,48 +610,48 @@ export default class PullrequestsApi {
       let authNames = ['api_key', 'basic', 'oauth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Error;
+      let returnType = null;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/approve', 'DELETE',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePost operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePostCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePost operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePostCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Error} data The data returned by the service call.
+     * @param {module:model/Participant} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Approve the specified pull request as the authenticated user.
-     * @param {String} username 
      * @param {String} pullRequestId 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Error}
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Participant}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePost(username, pullRequestId, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePost(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePost");
-      }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePost");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePost");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePost");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePost");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePost");
       }
 
       let pathParams = {
-        'username': username,
         'pull_request_id': pullRequestId,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -550,54 +664,113 @@ export default class PullrequestsApi {
       let authNames = ['api_key', 'basic', 'oauth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Error;
+      let returnType = Participant;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/approve', 'POST',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/approve', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDeleteCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Error} data The data returned by the service call.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes a specific pull request comment.
+     * @param {String} pullRequestId 
+     * @param {String} commentId 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete(pullRequestId, commentId, workspace, repoSlug, callback) {
+      let postBody = null;
+      // verify the required parameter 'pullRequestId' is set
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete");
+      }
+      // verify the required parameter 'commentId' is set
+      if (commentId === undefined || commentId === null) {
+        throw new Error("Missing the required parameter 'commentId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete");
+      }
+
+      let pathParams = {
+        'pull_request_id': pullRequestId,
+        'comment_id': commentId,
+        'workspace': workspace,
+        'repo_slug': repoSlug
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PullrequestComment} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Returns a specific pull request comment.
-     * @param {String} username 
      * @param {String} pullRequestId 
      * @param {String} commentId 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Error}
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PullrequestComment}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet(username, pullRequestId, commentId, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet(pullRequestId, commentId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet");
-      }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet");
       }
       // verify the required parameter 'commentId' is set
       if (commentId === undefined || commentId === null) {
-        throw new Error("Missing the required parameter 'commentId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet");
+        throw new Error("Missing the required parameter 'commentId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet");
       }
 
       let pathParams = {
-        'username': username,
         'pull_request_id': pullRequestId,
         'comment_id': commentId,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -610,49 +783,114 @@ export default class PullrequestsApi {
       let authNames = ['api_key', 'basic', 'oauth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Error;
+      let returnType = PullrequestComment;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPutCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Error} data The data returned by the service call.
+     * @param {module:model/PullrequestComment} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates a specific pull request comment.
+     * @param {String} pullRequestId 
+     * @param {String} commentId 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:model/PullrequestComment} body The contents of the updated comment.
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PullrequestComment}
+     */
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut(pullRequestId, commentId, workspace, repoSlug, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'pullRequestId' is set
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut");
+      }
+      // verify the required parameter 'commentId' is set
+      if (commentId === undefined || commentId === null) {
+        throw new Error("Missing the required parameter 'commentId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut");
+      }
+
+      let pathParams = {
+        'pull_request_id': pullRequestId,
+        'comment_id': commentId,
+        'workspace': workspace,
+        'repo_slug': repoSlug
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PullrequestComment;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments/{comment_id}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedPullrequestComments} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Returns a paginated list of the pull request's comments.  This includes both global, inline comments and replies.  The default sorting is oldest to newest and can be overridden with the `sort` query parameter.  This endpoint also supports filtering and sorting of the results. See [filtering and sorting](../../../../../../meta/filtering) for more details.
-     * @param {String} username 
-     * @param {String} pullRequestId 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Error}
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Number} pullRequestId The id of the pull request.
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedPullrequestComments}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGet(username, pullRequestId, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGet(workspace, repoSlug, pullRequestId, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGet");
-      }
-      // verify the required parameter 'pullRequestId' is set
-      if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGet");
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGet");
+      }
+      // verify the required parameter 'pullRequestId' is set
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGet");
       }
 
       let pathParams = {
-        'username': username,
-        'pull_request_id': pullRequestId,
-        'repo_slug': repoSlug
+        'workspace': workspace,
+        'repo_slug': repoSlug,
+        'pull_request_id': pullRequestId
       };
       let queryParams = {
       };
@@ -664,17 +902,76 @@ export default class PullrequestsApi {
       let authNames = ['api_key', 'basic', 'oauth2'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Error;
+      let returnType = PaginatedPullrequestComments;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/comments', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPostCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PullrequestComment} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates a new pull request comment.  Returns the newly created pull request comment.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Number} pullRequestId The id of the pull request.
+     * @param {module:model/PullrequestComment} body The comment object.
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PullrequestComment}
+     */
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost(workspace, repoSlug, pullRequestId, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost");
+      }
+      // verify the required parameter 'pullRequestId' is set
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost");
+      }
+
+      let pathParams = {
+        'workspace': workspace,
+        'repo_slug': repoSlug,
+        'pull_request_id': pullRequestId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PullrequestComment;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/comments', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Error} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -682,30 +979,30 @@ export default class PullrequestsApi {
 
     /**
      * Returns a paginated list of the pull request's commits.  These are the commits that are being merged into the destination branch when the pull requests gets accepted.
-     * @param {String} username 
      * @param {String} pullRequestId 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGet(username, pullRequestId, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGet(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGet");
-      }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGet");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGet");
       }
 
       let pathParams = {
-        'username': username,
         'pull_request_id': pullRequestId,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -720,15 +1017,15 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Error;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/commits', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/commits', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePost operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePostCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePost operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Pullrequest} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -736,30 +1033,30 @@ export default class PullrequestsApi {
 
     /**
      * Declines the pull request.
-     * @param {String} username 
      * @param {String} pullRequestId 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Pullrequest}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePost(username, pullRequestId, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePost(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePost");
-      }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePost");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePost");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePost");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePost");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePost");
       }
 
       let pathParams = {
-        'username': username,
         'pull_request_id': pullRequestId,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -774,45 +1071,45 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Pullrequest;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/decline', 'POST',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/decline', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Error} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * @param {String} username 
+     * Redirects to the [repository diff](../../diff/%7Bspec%7D) with the revspec that corresponds to the pull request.
      * @param {String} pullRequestId 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Error}
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGet(username, pullRequestId, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGet(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGet");
-      }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGet");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGet");
       }
 
       let pathParams = {
-        'username': username,
         'pull_request_id': pullRequestId,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -824,18 +1121,71 @@ export default class PullrequestsApi {
 
       let authNames = ['api_key', 'basic', 'oauth2'];
       let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = Error;
+      let accepts = [];
+      let returnType = null;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/diff', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diff', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGetCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Redirects to the [repository diffstat](../../diffstat/%7Bspec%7D) with the revspec that corresponds to the pull request.
+     * @param {String} pullRequestId 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGetCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet(pullRequestId, workspace, repoSlug, callback) {
+      let postBody = null;
+      // verify the required parameter 'pullRequestId' is set
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet");
+      }
+
+      let pathParams = {
+        'pull_request_id': pullRequestId,
+        'workspace': workspace,
+        'repo_slug': repoSlug
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diffstat', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Pullrequest} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -843,29 +1193,29 @@ export default class PullrequestsApi {
 
     /**
      * Returns the specified pull request.
-     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{user UUID}`. 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-     * @param {Number} pullRequestId The id of the pull request. 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Number} pullRequestId The id of the pull request.
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Pullrequest}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdGet(username, repoSlug, pullRequestId, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet(workspace, repoSlug, pullRequestId, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdGet");
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet");
       }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdGet");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet");
       }
 
       let pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug,
         'pull_request_id': pullRequestId
       };
@@ -881,15 +1231,15 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Pullrequest;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePost operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePostCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Pullrequest} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -897,33 +1247,33 @@ export default class PullrequestsApi {
 
     /**
      * Merges the pull request.
-     * @param {String} username 
      * @param {String} pullRequestId 
-     * @param {String} repoSlug 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
      * @param {Object} opts Optional parameters
      * @param {module:model/PullrequestMergeParameters} opts.body 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Pullrequest}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePost(username, pullRequestId, repoSlug, opts, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost(pullRequestId, workspace, repoSlug, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePost");
-      }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePost");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePost");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost");
       }
 
       let pathParams = {
-        'username': username,
         'pull_request_id': pullRequestId,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -938,45 +1288,45 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Pullrequest;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/merge', 'POST',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Error} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * @param {String} username 
      * @param {String} pullRequestId 
-     * @param {String} repoSlug 
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGet(username, pullRequestId, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGet");
-      }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGet");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet");
       }
 
       let pathParams = {
-        'username': username,
         'pull_request_id': pullRequestId,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -991,15 +1341,15 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Error;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/patch', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/patch', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdPut operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdPutCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Pullrequest} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1007,32 +1357,32 @@ export default class PullrequestsApi {
 
     /**
      * Mutates the specified pull request.  This can be used to change the pull request's branches or description.  Only open pull requests can be mutated.
-     * @param {String} username This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-     * @param {Number} pullRequestId The id of the open pull request. 
+     * @param {Number} pullRequestId The id of the pull request.
      * @param {Object} opts Optional parameters
      * @param {module:model/Pullrequest} opts.body The pull request that is to be updated.
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Pullrequest}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdPut(username, repoSlug, pullRequestId, opts, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut(workspace, repoSlug, pullRequestId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdPut");
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdPut");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut");
       }
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdPut");
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut");
       }
 
       let pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug,
         'pull_request_id': pullRequestId
       };
@@ -1048,15 +1398,15 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = Pullrequest;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}', 'PUT',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet operation.
-     * @callback module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedCommitstatuses} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1064,31 +1414,31 @@ export default class PullrequestsApi {
 
     /**
      * Returns all statuses (e.g. build results) for the given pull request.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {Number} pullRequestId The pull request's id
-     * @param {module:api/PullrequestsApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Number} pullRequestId The id of the pull request.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCommitstatuses}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet(username, repoSlug, pullRequestId, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet");
+      // verify the required parameter 'pullRequestId' is set
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet");
-      }
-      // verify the required parameter 'pullRequestId' is set
-      if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet");
       }
 
       let pathParams = {
-        'username': username,
-        'repo_slug': repoSlug,
-        'pull_request_id': pullRequestId
+        'pull_request_id': pullRequestId,
+        'workspace': workspace,
+        'repo_slug': repoSlug
       };
       let queryParams = {
       };
@@ -1102,7 +1452,7 @@ export default class PullrequestsApi {
       let accepts = ['application/json'];
       let returnType = PaginatedCommitstatuses;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/statuses', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/statuses', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

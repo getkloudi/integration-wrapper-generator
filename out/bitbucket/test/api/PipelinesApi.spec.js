@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,6 +48,16 @@
   }
 
   describe('PipelinesApi', function() {
+    describe('createDeploymentVariable', function() {
+      it('should call createDeploymentVariable successfully', function(done) {
+        //uncomment below and update the code to test createDeploymentVariable
+        //instance.createDeploymentVariable(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createPipelineForRepository', function() {
       it('should call createPipelineForRepository successfully', function(done) {
         //uncomment below and update the code to test createPipelineForRepository
@@ -88,10 +98,30 @@
         done();
       });
     });
+    describe('createRepositoryPipelineSchedule', function() {
+      it('should call createRepositoryPipelineSchedule successfully', function(done) {
+        //uncomment below and update the code to test createRepositoryPipelineSchedule
+        //instance.createRepositoryPipelineSchedule(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createRepositoryPipelineVariable', function() {
       it('should call createRepositoryPipelineVariable successfully', function(done) {
         //uncomment below and update the code to test createRepositoryPipelineVariable
         //instance.createRepositoryPipelineVariable(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteDeploymentVariable', function() {
+      it('should call deleteDeploymentVariable successfully', function(done) {
+        //uncomment below and update the code to test deleteDeploymentVariable
+        //instance.deleteDeploymentVariable(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -138,10 +168,30 @@
         done();
       });
     });
+    describe('deleteRepositoryPipelineSchedule', function() {
+      it('should call deleteRepositoryPipelineSchedule successfully', function(done) {
+        //uncomment below and update the code to test deleteRepositoryPipelineSchedule
+        //instance.deleteRepositoryPipelineSchedule(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteRepositoryPipelineVariable', function() {
       it('should call deleteRepositoryPipelineVariable successfully', function(done) {
         //uncomment below and update the code to test deleteRepositoryPipelineVariable
         //instance.deleteRepositoryPipelineVariable(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getDeploymentVariables', function() {
+      it('should call getDeploymentVariables successfully', function(done) {
+        //uncomment below and update the code to test getDeploymentVariables
+        //instance.getDeploymentVariables(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -268,6 +318,36 @@
         done();
       });
     });
+    describe('getRepositoryPipelineSchedule', function() {
+      it('should call getRepositoryPipelineSchedule successfully', function(done) {
+        //uncomment below and update the code to test getRepositoryPipelineSchedule
+        //instance.getRepositoryPipelineSchedule(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getRepositoryPipelineScheduleExecutions', function() {
+      it('should call getRepositoryPipelineScheduleExecutions successfully', function(done) {
+        //uncomment below and update the code to test getRepositoryPipelineScheduleExecutions
+        //instance.getRepositoryPipelineScheduleExecutions(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getRepositoryPipelineSchedules', function() {
+      it('should call getRepositoryPipelineSchedules successfully', function(done) {
+        //uncomment below and update the code to test getRepositoryPipelineSchedules
+        //instance.getRepositoryPipelineSchedules(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getRepositoryPipelineSshKeyPair', function() {
       it('should call getRepositoryPipelineSshKeyPair successfully', function(done) {
         //uncomment below and update the code to test getRepositoryPipelineSshKeyPair
@@ -308,6 +388,16 @@
         done();
       });
     });
+    describe('updateDeploymentVariable', function() {
+      it('should call updateDeploymentVariable successfully', function(done) {
+        //uncomment below and update the code to test updateDeploymentVariable
+        //instance.updateDeploymentVariable(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updatePipelineVariableForTeam', function() {
       it('should call updatePipelineVariableForTeam successfully', function(done) {
         //uncomment below and update the code to test updatePipelineVariableForTeam
@@ -322,6 +412,16 @@
       it('should call updatePipelineVariableForUser successfully', function(done) {
         //uncomment below and update the code to test updatePipelineVariableForUser
         //instance.updatePipelineVariableForUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateRepositoryBuildNumber', function() {
+      it('should call updateRepositoryBuildNumber successfully', function(done) {
+        //uncomment below and update the code to test updateRepositoryBuildNumber
+        //instance.updateRepositoryBuildNumber(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -352,6 +452,16 @@
       it('should call updateRepositoryPipelineKnownHost successfully', function(done) {
         //uncomment below and update the code to test updateRepositoryPipelineKnownHost
         //instance.updateRepositoryPipelineKnownHost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateRepositoryPipelineSchedule', function() {
+      it('should call updateRepositoryPipelineSchedule successfully', function(done) {
+        //uncomment below and update the code to test updateRepositoryPipelineSchedule
+        //instance.updateRepositoryPipelineSchedule(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import Author from './Author';
 import BaseCommit from './BaseCommit';
+import PullrequestAllOfRenderedTitle from './PullrequestAllOfRenderedTitle';
 import Snippet from './Snippet';
 import SnippetCommitAllOf from './SnippetCommitAllOf';
 import SnippetCommitAllOfLinks from './SnippetCommitAllOfLinks';
@@ -61,17 +62,20 @@ class SnippetCommit {
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
-            if (data.hasOwnProperty('author')) {
-                obj['author'] = Author.constructFromObject(data['author']);
+            if (data.hasOwnProperty('hash')) {
+                obj['hash'] = ApiClient.convertToType(data['hash'], 'String');
             }
             if (data.hasOwnProperty('date')) {
                 obj['date'] = ApiClient.convertToType(data['date'], 'Date');
             }
-            if (data.hasOwnProperty('hash')) {
-                obj['hash'] = ApiClient.convertToType(data['hash'], 'String');
+            if (data.hasOwnProperty('author')) {
+                obj['author'] = Author.constructFromObject(data['author']);
             }
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
+            }
+            if (data.hasOwnProperty('summary')) {
+                obj['summary'] = PullrequestAllOfRenderedTitle.constructFromObject(data['summary']);
             }
             if (data.hasOwnProperty('parents')) {
                 obj['parents'] = ApiClient.convertToType(data['parents'], [BaseCommit]);
@@ -95,9 +99,9 @@ class SnippetCommit {
 SnippetCommit.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Author} author
+ * @member {String} hash
  */
-SnippetCommit.prototype['author'] = undefined;
+SnippetCommit.prototype['hash'] = undefined;
 
 /**
  * @member {Date} date
@@ -105,14 +109,19 @@ SnippetCommit.prototype['author'] = undefined;
 SnippetCommit.prototype['date'] = undefined;
 
 /**
- * @member {String} hash
+ * @member {module:model/Author} author
  */
-SnippetCommit.prototype['hash'] = undefined;
+SnippetCommit.prototype['author'] = undefined;
 
 /**
  * @member {String} message
  */
 SnippetCommit.prototype['message'] = undefined;
+
+/**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+SnippetCommit.prototype['summary'] = undefined;
 
 /**
  * @member {Array.<module:model/BaseCommit>} parents
@@ -136,21 +145,25 @@ SnippetCommit.prototype['snippet'] = undefined;
  */
 BaseCommit.prototype['type'] = undefined;
 /**
- * @member {module:model/Author} author
+ * @member {String} hash
  */
-BaseCommit.prototype['author'] = undefined;
+BaseCommit.prototype['hash'] = undefined;
 /**
  * @member {Date} date
  */
 BaseCommit.prototype['date'] = undefined;
 /**
- * @member {String} hash
+ * @member {module:model/Author} author
  */
-BaseCommit.prototype['hash'] = undefined;
+BaseCommit.prototype['author'] = undefined;
 /**
  * @member {String} message
  */
 BaseCommit.prototype['message'] = undefined;
+/**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+BaseCommit.prototype['summary'] = undefined;
 /**
  * @member {Array.<module:model/BaseCommit>} parents
  */

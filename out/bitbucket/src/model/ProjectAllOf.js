@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -50,8 +50,20 @@ class ProjectAllOf {
         if (data) {
             obj = obj || new ProjectAllOf();
 
-            if (data.hasOwnProperty('created_on')) {
-                obj['created_on'] = ApiClient.convertToType(data['created_on'], 'Date');
+            if (data.hasOwnProperty('links')) {
+                obj['links'] = ProjectAllOfLinks.constructFromObject(data['links']);
+            }
+            if (data.hasOwnProperty('uuid')) {
+                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
+            }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
+            }
+            if (data.hasOwnProperty('owner')) {
+                obj['owner'] = Team.constructFromObject(data['owner']);
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -59,23 +71,11 @@ class ProjectAllOf {
             if (data.hasOwnProperty('is_private')) {
                 obj['is_private'] = ApiClient.convertToType(data['is_private'], 'Boolean');
             }
-            if (data.hasOwnProperty('key')) {
-                obj['key'] = ApiClient.convertToType(data['key'], 'String');
-            }
-            if (data.hasOwnProperty('links')) {
-                obj['links'] = ProjectAllOfLinks.constructFromObject(data['links']);
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('owner')) {
-                obj['owner'] = Team.constructFromObject(data['owner']);
+            if (data.hasOwnProperty('created_on')) {
+                obj['created_on'] = ApiClient.convertToType(data['created_on'], 'Date');
             }
             if (data.hasOwnProperty('updated_on')) {
                 obj['updated_on'] = ApiClient.convertToType(data['updated_on'], 'Date');
-            }
-            if (data.hasOwnProperty('uuid')) {
-                obj['uuid'] = ApiClient.convertToType(data['uuid'], 'String');
             }
         }
         return obj;
@@ -85,9 +85,32 @@ class ProjectAllOf {
 }
 
 /**
- * @member {Date} created_on
+ * @member {module:model/ProjectAllOfLinks} links
  */
-ProjectAllOf.prototype['created_on'] = undefined;
+ProjectAllOf.prototype['links'] = undefined;
+
+/**
+ * The project's immutable id.
+ * @member {String} uuid
+ */
+ProjectAllOf.prototype['uuid'] = undefined;
+
+/**
+ * The project's key.
+ * @member {String} key
+ */
+ProjectAllOf.prototype['key'] = undefined;
+
+/**
+ * @member {module:model/Team} owner
+ */
+ProjectAllOf.prototype['owner'] = undefined;
+
+/**
+ * The name of the project.
+ * @member {String} name
+ */
+ProjectAllOf.prototype['name'] = undefined;
 
 /**
  * @member {String} description
@@ -101,37 +124,14 @@ ProjectAllOf.prototype['description'] = undefined;
 ProjectAllOf.prototype['is_private'] = undefined;
 
 /**
- * The project's key.
- * @member {String} key
+ * @member {Date} created_on
  */
-ProjectAllOf.prototype['key'] = undefined;
-
-/**
- * @member {module:model/ProjectAllOfLinks} links
- */
-ProjectAllOf.prototype['links'] = undefined;
-
-/**
- * The name of the project.
- * @member {String} name
- */
-ProjectAllOf.prototype['name'] = undefined;
-
-/**
- * @member {module:model/Team} owner
- */
-ProjectAllOf.prototype['owner'] = undefined;
+ProjectAllOf.prototype['created_on'] = undefined;
 
 /**
  * @member {Date} updated_on
  */
 ProjectAllOf.prototype['updated_on'] = undefined;
-
-/**
- * The project's immutable id.
- * @member {String} uuid
- */
-ProjectAllOf.prototype['uuid'] = undefined;
 
 
 

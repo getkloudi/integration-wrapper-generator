@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AccountAllOfLinksAvatar = _interopRequireDefault(require("./AccountAllOfLinksAvatar"));
+var _SubjectTypesRepositoryEvents = _interopRequireDefault(require("./SubjectTypesRepositoryEvents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -58,44 +58,44 @@ function () {
       if (data) {
         obj = obj || new RepositoryAllOfLinks();
 
-        if (data.hasOwnProperty('avatar')) {
-          obj['avatar'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['avatar']);
-        }
-
-        if (data.hasOwnProperty('clone')) {
-          obj['clone'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['clone']);
-        }
-
-        if (data.hasOwnProperty('commits')) {
-          obj['commits'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['commits']);
-        }
-
-        if (data.hasOwnProperty('downloads')) {
-          obj['downloads'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['downloads']);
-        }
-
-        if (data.hasOwnProperty('forks')) {
-          obj['forks'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['forks']);
-        }
-
-        if (data.hasOwnProperty('hooks')) {
-          obj['hooks'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['hooks']);
+        if (data.hasOwnProperty('self')) {
+          obj['self'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['self']);
         }
 
         if (data.hasOwnProperty('html')) {
-          obj['html'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['html']);
+          obj['html'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['html']);
+        }
+
+        if (data.hasOwnProperty('avatar')) {
+          obj['avatar'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['avatar']);
         }
 
         if (data.hasOwnProperty('pullrequests')) {
-          obj['pullrequests'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['pullrequests']);
+          obj['pullrequests'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['pullrequests']);
         }
 
-        if (data.hasOwnProperty('self')) {
-          obj['self'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['self']);
+        if (data.hasOwnProperty('commits')) {
+          obj['commits'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['commits']);
+        }
+
+        if (data.hasOwnProperty('forks')) {
+          obj['forks'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['forks']);
         }
 
         if (data.hasOwnProperty('watchers')) {
-          obj['watchers'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['watchers']);
+          obj['watchers'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['watchers']);
+        }
+
+        if (data.hasOwnProperty('downloads')) {
+          obj['downloads'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['downloads']);
+        }
+
+        if (data.hasOwnProperty('clone')) {
+          obj['clone'] = _ApiClient["default"].convertToType(data['clone'], [_SubjectTypesRepositoryEvents["default"]]);
+        }
+
+        if (data.hasOwnProperty('hooks')) {
+          obj['hooks'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['hooks']);
         }
       }
 
@@ -106,55 +106,55 @@ function () {
   return RepositoryAllOfLinks;
 }();
 /**
- * @member {module:model/AccountAllOfLinksAvatar} avatar
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
 
 
-RepositoryAllOfLinks.prototype['avatar'] = undefined;
+RepositoryAllOfLinks.prototype['self'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} clone
- */
-
-RepositoryAllOfLinks.prototype['clone'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} commits
- */
-
-RepositoryAllOfLinks.prototype['commits'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} downloads
- */
-
-RepositoryAllOfLinks.prototype['downloads'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} forks
- */
-
-RepositoryAllOfLinks.prototype['forks'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} hooks
- */
-
-RepositoryAllOfLinks.prototype['hooks'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} html
+ * @member {module:model/SubjectTypesRepositoryEvents} html
  */
 
 RepositoryAllOfLinks.prototype['html'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} pullrequests
+ * @member {module:model/SubjectTypesRepositoryEvents} avatar
+ */
+
+RepositoryAllOfLinks.prototype['avatar'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} pullrequests
  */
 
 RepositoryAllOfLinks.prototype['pullrequests'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} self
+ * @member {module:model/SubjectTypesRepositoryEvents} commits
  */
 
-RepositoryAllOfLinks.prototype['self'] = undefined;
+RepositoryAllOfLinks.prototype['commits'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} watchers
+ * @member {module:model/SubjectTypesRepositoryEvents} forks
+ */
+
+RepositoryAllOfLinks.prototype['forks'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} watchers
  */
 
 RepositoryAllOfLinks.prototype['watchers'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} downloads
+ */
+
+RepositoryAllOfLinks.prototype['downloads'] = undefined;
+/**
+ * @member {Array.<module:model/SubjectTypesRepositoryEvents>} clone
+ */
+
+RepositoryAllOfLinks.prototype['clone'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} hooks
+ */
+
+RepositoryAllOfLinks.prototype['hooks'] = undefined;
 var _default = RepositoryAllOfLinks;
 exports["default"] = _default;

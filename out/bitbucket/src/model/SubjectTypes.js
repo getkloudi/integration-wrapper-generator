@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -52,11 +52,11 @@ class SubjectTypes {
             if (data.hasOwnProperty('repository')) {
                 obj['repository'] = SubjectTypesRepository.constructFromObject(data['repository']);
             }
-            if (data.hasOwnProperty('team')) {
-                obj['team'] = SubjectTypesRepository.constructFromObject(data['team']);
-            }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = SubjectTypesRepository.constructFromObject(data['user']);
+            }
+            if (data.hasOwnProperty('team')) {
+                obj['team'] = SubjectTypesRepository.constructFromObject(data['team']);
             }
         }
         return obj;
@@ -71,14 +71,14 @@ class SubjectTypes {
 SubjectTypes.prototype['repository'] = undefined;
 
 /**
- * @member {module:model/SubjectTypesRepository} team
- */
-SubjectTypes.prototype['team'] = undefined;
-
-/**
  * @member {module:model/SubjectTypesRepository} user
  */
 SubjectTypes.prototype['user'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepository} team
+ */
+SubjectTypes.prototype['team'] = undefined;
 
 
 

@@ -7,8 +7,6 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CommitAllOfLinks = _interopRequireDefault(require("./CommitAllOfLinks"));
-
 var _Participant = _interopRequireDefault(require("./Participant"));
 
 var _Repository = _interopRequireDefault(require("./Repository"));
@@ -63,16 +61,12 @@ function () {
       if (data) {
         obj = obj || new CommitAllOf();
 
-        if (data.hasOwnProperty('links')) {
-          obj['links'] = _CommitAllOfLinks["default"].constructFromObject(data['links']);
+        if (data.hasOwnProperty('repository')) {
+          obj['repository'] = _Repository["default"].constructFromObject(data['repository']);
         }
 
         if (data.hasOwnProperty('participants')) {
           obj['participants'] = _ApiClient["default"].convertToType(data['participants'], [_Participant["default"]]);
-        }
-
-        if (data.hasOwnProperty('repository')) {
-          obj['repository'] = _Repository["default"].constructFromObject(data['repository']);
         }
       }
 
@@ -83,20 +77,15 @@ function () {
   return CommitAllOf;
 }();
 /**
- * @member {module:model/CommitAllOfLinks} links
+ * @member {module:model/Repository} repository
  */
 
 
-CommitAllOf.prototype['links'] = undefined;
+CommitAllOf.prototype['repository'] = undefined;
 /**
  * @member {Array.<module:model/Participant>} participants
  */
 
 CommitAllOf.prototype['participants'] = undefined;
-/**
- * @member {module:model/Repository} repository
- */
-
-CommitAllOf.prototype['repository'] = undefined;
 var _default = CommitAllOf;
 exports["default"] = _default;

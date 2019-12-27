@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**avatar** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**html** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
+**html** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**avatar** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
 
 

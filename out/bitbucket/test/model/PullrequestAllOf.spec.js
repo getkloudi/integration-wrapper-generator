@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,8 +54,74 @@
       //expect(instance).to.be.a(Bitbucket.PullrequestAllOf);
     });
 
+    it('should have the property links (base name: "links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rendered (base name: "rendered")', function() {
+      // uncomment below and update the code to test the property rendered
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property summary (base name: "summary")', function() {
+      // uncomment below and update the code to test the property summary
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
     it('should have the property author (base name: "author")', function() {
       // uncomment below and update the code to test the property author
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property source (base name: "source")', function() {
+      // uncomment below and update the code to test the property source
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property destination (base name: "destination")', function() {
+      // uncomment below and update the code to test the property destination
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property mergeCommit (base name: "merge_commit")', function() {
+      // uncomment below and update the code to test the property mergeCommit
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property commentCount (base name: "comment_count")', function() {
+      // uncomment below and update the code to test the property commentCount
+      //var instane = new Bitbucket.PullrequestAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property taskCount (base name: "task_count")', function() {
+      // uncomment below and update the code to test the property taskCount
       //var instane = new Bitbucket.PullrequestAllOf();
       //expect(instance).to.be();
     });
@@ -72,8 +138,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property commentCount (base name: "comment_count")', function() {
-      // uncomment below and update the code to test the property commentCount
+    it('should have the property reason (base name: "reason")', function() {
+      // uncomment below and update the code to test the property reason
       //var instane = new Bitbucket.PullrequestAllOf();
       //expect(instance).to.be();
     });
@@ -84,38 +150,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property destination (base name: "destination")', function() {
-      // uncomment below and update the code to test the property destination
-      //var instane = new Bitbucket.PullrequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new Bitbucket.PullrequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property links (base name: "links")', function() {
-      // uncomment below and update the code to test the property links
-      //var instane = new Bitbucket.PullrequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property mergeCommit (base name: "merge_commit")', function() {
-      // uncomment below and update the code to test the property mergeCommit
-      //var instane = new Bitbucket.PullrequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property participants (base name: "participants")', function() {
-      // uncomment below and update the code to test the property participants
-      //var instane = new Bitbucket.PullrequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reason (base name: "reason")', function() {
-      // uncomment below and update the code to test the property reason
+    it('should have the property updatedOn (base name: "updated_on")', function() {
+      // uncomment below and update the code to test the property updatedOn
       //var instane = new Bitbucket.PullrequestAllOf();
       //expect(instance).to.be();
     });
@@ -126,32 +162,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property source (base name: "source")', function() {
-      // uncomment below and update the code to test the property source
-      //var instane = new Bitbucket.PullrequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new Bitbucket.PullrequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property taskCount (base name: "task_count")', function() {
-      // uncomment below and update the code to test the property taskCount
-      //var instane = new Bitbucket.PullrequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property title (base name: "title")', function() {
-      // uncomment below and update the code to test the property title
-      //var instane = new Bitbucket.PullrequestAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property updatedOn (base name: "updated_on")', function() {
-      // uncomment below and update the code to test the property updatedOn
+    it('should have the property participants (base name: "participants")', function() {
+      // uncomment below and update the code to test the property participants
       //var instane = new Bitbucket.PullrequestAllOf();
       //expect(instance).to.be();
     });

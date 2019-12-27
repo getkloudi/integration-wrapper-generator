@@ -76,16 +76,20 @@ function () {
 
         _ParticipantAllOf["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('approved')) {
-          obj['approved'] = _ApiClient["default"].convertToType(data['approved'], 'Boolean');
+        if (data.hasOwnProperty('user')) {
+          obj['user'] = _User["default"].constructFromObject(data['user']);
         }
 
         if (data.hasOwnProperty('role')) {
           obj['role'] = _ApiClient["default"].convertToType(data['role'], 'String');
         }
 
-        if (data.hasOwnProperty('user')) {
-          obj['user'] = _User["default"].constructFromObject(data['user']);
+        if (data.hasOwnProperty('approved')) {
+          obj['approved'] = _ApiClient["default"].convertToType(data['approved'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('participated_on')) {
+          obj['participated_on'] = _ApiClient["default"].convertToType(data['participated_on'], 'Date');
         }
       }
 
@@ -96,21 +100,27 @@ function () {
   return Participant;
 }();
 /**
- * @member {Boolean} approved
+ * @member {module:model/User} user
  */
 
 
-Participant.prototype['approved'] = undefined;
+Participant.prototype['user'] = undefined;
 /**
  * @member {module:model/Participant.RoleEnum} role
  */
 
 Participant.prototype['role'] = undefined;
 /**
- * @member {module:model/User} user
+ * @member {Boolean} approved
  */
 
-Participant.prototype['user'] = undefined; // Implement ModelObject interface:
+Participant.prototype['approved'] = undefined;
+/**
+ * The ISO8601 timestamp of the participant's action. For approvers, this is the time of their approval. For commenters and pull request reviewers who are not approvers, this is the time they last commented, or null if they have not commented.
+ * @member {Date} participated_on
+ */
+
+Participant.prototype['participated_on'] = undefined; // Implement ModelObject interface:
 
 /**
  * @member {String} type
@@ -119,20 +129,26 @@ Participant.prototype['user'] = undefined; // Implement ModelObject interface:
 _ModelObject["default"].prototype['type'] = undefined; // Implement ParticipantAllOf interface:
 
 /**
- * @member {Boolean} approved
+ * @member {module:model/User} user
  */
 
-_ParticipantAllOf["default"].prototype['approved'] = undefined;
+_ParticipantAllOf["default"].prototype['user'] = undefined;
 /**
  * @member {module:model/ParticipantAllOf.RoleEnum} role
  */
 
 _ParticipantAllOf["default"].prototype['role'] = undefined;
 /**
- * @member {module:model/User} user
+ * @member {Boolean} approved
  */
 
-_ParticipantAllOf["default"].prototype['user'] = undefined;
+_ParticipantAllOf["default"].prototype['approved'] = undefined;
+/**
+ * The ISO8601 timestamp of the participant's action. For approvers, this is the time of their approval. For commenters and pull request reviewers who are not approvers, this is the time they last commented, or null if they have not commented.
+ * @member {Date} participated_on
+ */
+
+_ParticipantAllOf["default"].prototype['participated_on'] = undefined;
 /**
  * Allowed values for the <code>role</code> property.
  * @enum {String}

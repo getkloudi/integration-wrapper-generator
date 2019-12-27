@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -58,23 +58,23 @@ class Group {
             ModelObject.constructFromObject(data, obj);
             GroupAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('full_slug')) {
-                obj['full_slug'] = ApiClient.convertToType(data['full_slug'], 'String');
-            }
             if (data.hasOwnProperty('links')) {
                 obj['links'] = GroupAllOfLinks.constructFromObject(data['links']);
-            }
-            if (data.hasOwnProperty('members')) {
-                obj['members'] = ApiClient.convertToType(data['members'], 'Number');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('owner')) {
                 obj['owner'] = Account.constructFromObject(data['owner']);
             }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
             if (data.hasOwnProperty('slug')) {
                 obj['slug'] = ApiClient.convertToType(data['slug'], 'String');
+            }
+            if (data.hasOwnProperty('full_slug')) {
+                obj['full_slug'] = ApiClient.convertToType(data['full_slug'], 'String');
+            }
+            if (data.hasOwnProperty('members')) {
+                obj['members'] = ApiClient.convertToType(data['members'], 'Number');
             }
         }
         return obj;
@@ -84,26 +84,9 @@ class Group {
 }
 
 /**
- * The concatenation of the owner's username and the group's slug, separated with a colon (e.g. `acme:developers`) 
- * @member {String} full_slug
- */
-Group.prototype['full_slug'] = undefined;
-
-/**
  * @member {module:model/GroupAllOfLinks} links
  */
 Group.prototype['links'] = undefined;
-
-/**
- * The number of members in this group
- * @member {Number} members
- */
-Group.prototype['members'] = undefined;
-
-/**
- * @member {String} name
- */
-Group.prototype['name'] = undefined;
 
 /**
  * @member {module:model/Account} owner
@@ -111,10 +94,27 @@ Group.prototype['name'] = undefined;
 Group.prototype['owner'] = undefined;
 
 /**
+ * @member {String} name
+ */
+Group.prototype['name'] = undefined;
+
+/**
  * The \"sluggified\" version of the group's name. This contains only ASCII characters and can therefore be slightly different than the name
  * @member {String} slug
  */
 Group.prototype['slug'] = undefined;
+
+/**
+ * The concatenation of the owner's username and the group's slug, separated with a colon (e.g. `acme:developers`) 
+ * @member {String} full_slug
+ */
+Group.prototype['full_slug'] = undefined;
+
+/**
+ * The number of members in this group
+ * @member {Number} members
+ */
+Group.prototype['members'] = undefined;
 
 
 // Implement ModelObject interface:
@@ -124,32 +124,32 @@ Group.prototype['slug'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement GroupAllOf interface:
 /**
- * The concatenation of the owner's username and the group's slug, separated with a colon (e.g. `acme:developers`) 
- * @member {String} full_slug
- */
-GroupAllOf.prototype['full_slug'] = undefined;
-/**
  * @member {module:model/GroupAllOfLinks} links
  */
 GroupAllOf.prototype['links'] = undefined;
-/**
- * The number of members in this group
- * @member {Number} members
- */
-GroupAllOf.prototype['members'] = undefined;
-/**
- * @member {String} name
- */
-GroupAllOf.prototype['name'] = undefined;
 /**
  * @member {module:model/Account} owner
  */
 GroupAllOf.prototype['owner'] = undefined;
 /**
+ * @member {String} name
+ */
+GroupAllOf.prototype['name'] = undefined;
+/**
  * The \"sluggified\" version of the group's name. This contains only ASCII characters and can therefore be slightly different than the name
  * @member {String} slug
  */
 GroupAllOf.prototype['slug'] = undefined;
+/**
+ * The concatenation of the owner's username and the group's slug, separated with a colon (e.g. `acme:developers`) 
+ * @member {String} full_slug
+ */
+GroupAllOf.prototype['full_slug'] = undefined;
+/**
+ * The number of members in this group
+ * @member {Number} members
+ */
+GroupAllOf.prototype['members'] = undefined;
 
 
 

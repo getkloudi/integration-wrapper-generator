@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,8 +54,8 @@
       //expect(instance).to.be.a(Bitbucket.BranchrestrictionAllOf);
     });
 
-    it('should have the property groups (base name: "groups")', function() {
-      // uncomment below and update the code to test the property groups
+    it('should have the property links (base name: "links")', function() {
+      // uncomment below and update the code to test the property links
       //var instane = new Bitbucket.BranchrestrictionAllOf();
       //expect(instance).to.be();
     });
@@ -72,14 +72,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property links (base name: "links")', function() {
-      // uncomment below and update the code to test the property links
+    it('should have the property branchMatchKind (base name: "branch_match_kind")', function() {
+      // uncomment below and update the code to test the property branchMatchKind
+      //var instane = new Bitbucket.BranchrestrictionAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property branchType (base name: "branch_type")', function() {
+      // uncomment below and update the code to test the property branchType
+      //var instane = new Bitbucket.BranchrestrictionAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property pattern (base name: "pattern")', function() {
+      // uncomment below and update the code to test the property pattern
       //var instane = new Bitbucket.BranchrestrictionAllOf();
       //expect(instance).to.be();
     });
 
     it('should have the property users (base name: "users")', function() {
       // uncomment below and update the code to test the property users
+      //var instane = new Bitbucket.BranchrestrictionAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property groups (base name: "groups")', function() {
+      // uncomment below and update the code to test the property groups
       //var instane = new Bitbucket.BranchrestrictionAllOf();
       //expect(instance).to.be();
     });

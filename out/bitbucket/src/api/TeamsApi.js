@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -216,7 +216,7 @@ export default class TeamsApi {
 
     /**
      * Returns a paginated list of webhooks installed on this team.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~teamsUsernameHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedWebhookSubscriptions}
      */
@@ -258,7 +258,7 @@ export default class TeamsApi {
 
     /**
      * Creates a new webhook on the specified team.  Team webhooks are fired for events from all repositories belonging to that team account.  Note that only admins can install webhooks on teams.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~teamsUsernameHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
@@ -300,7 +300,7 @@ export default class TeamsApi {
 
     /**
      * Deletes the specified webhook subscription from the given team account.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/TeamsApi~teamsUsernameHooksUidDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -347,7 +347,7 @@ export default class TeamsApi {
 
     /**
      * Returns the webhook with the specified id installed on the given team account.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id.
      * @param {module:api/TeamsApi~teamsUsernameHooksUidGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
@@ -395,7 +395,7 @@ export default class TeamsApi {
 
     /**
      * Updates the specified webhook subscription.  The following properties can be mutated:  * `description` * `url` * `active` * `events`
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/TeamsApi~teamsUsernameHooksUidPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
@@ -442,8 +442,8 @@ export default class TeamsApi {
      */
 
     /**
-     * All members of a team.  Returns all members of the specified team. Any member of any of the team's groups is considered a member of the team. This includes users in groups that may not actually have access to any of the team's repositories.  Note that members using the \"private profile\" feature are not included.
-     * @param {String} username 
+     * Returns all members of the specified team. Any member of any of the team's groups is considered a member of the team. This includes users in groups that may not actually have access to any of the team's repositories.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~teamsUsernameMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
@@ -485,7 +485,7 @@ export default class TeamsApi {
 
     /**
      * All repositories owned by a user/team. This includes private repositories, but filtered down to the ones that the calling user has access to.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~teamsUsernameRepositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
@@ -518,6 +518,48 @@ export default class TeamsApi {
     }
 
     /**
+     * Callback function to receive the result of the usersUsernameMembersGet operation.
+     * @callback module:api/TeamsApi~usersUsernameMembersGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/User} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns all members of the specified team. Any member of any of the team's groups is considered a member of the team. This includes users in groups that may not actually have access to any of the team's repositories.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
+     * @param {module:api/TeamsApi~usersUsernameMembersGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/User}
+     */
+    usersUsernameMembersGet(username, callback) {
+      let postBody = null;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling usersUsernameMembersGet");
+      }
+
+      let pathParams = {
+        'username': username
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = User;
+      return this.apiClient.callApi(
+        '/users/{username}/members', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the usersUsernameRepositoriesGet operation.
      * @callback module:api/TeamsApi~usersUsernameRepositoriesGetCallback
      * @param {String} error Error message, if any.
@@ -527,7 +569,7 @@ export default class TeamsApi {
 
     /**
      * All repositories owned by a user/team. This includes private repositories, but filtered down to the ones that the calling user has access to.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/TeamsApi~usersUsernameRepositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */

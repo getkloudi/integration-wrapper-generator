@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**category** | **String** | The category this event belongs to. | [optional] 
-**description** | **String** | More detailed description of the webhook event type. | [optional] 
 **event** | **String** | The event identifier. | [optional] 
+**category** | **String** | The category this event belongs to. | [optional] 
 **label** | **String** | Summary of the webhook event type. | [optional] 
+**description** | **String** | More detailed description of the webhook event type. | [optional] 
 
 
 

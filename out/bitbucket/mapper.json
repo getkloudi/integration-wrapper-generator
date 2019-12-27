@@ -7,11 +7,10 @@
     "map": [
       {
         "input": {
-          "key": "body.integration"
+          "key": "body.integration.authAccessToken"
         },
         "transform": {
-          "type": "FUNCTION",
-          "name": "getRefreshedAccessToken"
+          "type": "ONE-TO-ONE"
         },
         "output": {
           "key": "accessToken"
@@ -46,21 +45,10 @@
         },
         "transform": {
           "type": "FUNCTION",
-          "name": "tansformThirdPartyProjectsToRepoAndOwner"
+          "name": "tansformThirdPartyProjectsToWorkspaceAndRepoSlug"
         },
         "output": {
           "parent": "projects"
-        }
-      },
-      {
-        "input": {
-          "key": "params.size"
-        },
-        "transform": {
-          "type": "ONE-TO-ONE"
-        },
-        "output": {
-          "key": "opts.size"
         }
       },
       {
@@ -76,35 +64,124 @@
       },
       {
         "input": {
-          "key": "params.pagelen"
+          "key": "params.page"
         },
         "transform": {
           "type": "ONE-TO-ONE"
         },
         "output": {
-          "key": "opts.pagelen"
+          "key": "skip"
+        }
+      }
+    ]
+  },
+  {
+    "type": "RESPONSE",
+    "entity": "PROJECTS",
+    "integration": "BITBUCKET",
+    "method": "GET",
+    "map": [
+      {
+        "input": {
+          "key": "name"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectName"
         }
       },
       {
         "input": {
-          "key": "params.next"
+          "key": "full_name"
         },
         "transform": {
-          "type": "ONE-TO-ONE"
+          "type": "FUNCTION",
+          "name": "splitAndGetLastElement",
+          "params": [
+            "/",
+            " ",
+            "-",
+            "_"
+          ]
         },
         "output": {
-          "key": "opts.next"
+          "key": "projectId"
         }
       },
       {
         "input": {
-          "key": "params.previous"
+          "key": "description"
         },
         "transform": {
           "type": "ONE-TO-ONE"
         },
         "output": {
-          "key": "opts.previous"
+          "key": "projectDescription"
+        }
+      },
+      {
+        "input": {
+          "key": "links.html.href"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectRef"
+        }
+      },
+      {
+        "input": {
+          "key": "links.avatar.href"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectIcon"
+        }
+      },
+      {
+        "input": {
+          "key": "full_name"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "splitAndGetFirstElement",
+          "params": [
+            "/"
+          ]
+        },
+        "output": {
+          "key": "organizationId"
+        }
+      },
+      {
+        "input": {
+          "key": "updated_on"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "updatedOn"
+        }
+      },
+      {
+        "input": {
+          "key": "language"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transforToInfoTableMetrics",
+          "params": [
+            "Language"
+          ]
+        },
+        "output": {
+          "parent": "metrics"
         }
       }
     ]

@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _BranchrestrictionAllOfLinks = _interopRequireDefault(require("./BranchrestrictionAllOfLinks"));
+var _BranchingModelSettingsAllOfLinks = _interopRequireDefault(require("./BranchingModelSettingsAllOfLinks"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -60,7 +60,7 @@ function () {
         obj = obj || new IssueAttachmentAllOf();
 
         if (data.hasOwnProperty('links')) {
-          obj['links'] = _BranchrestrictionAllOfLinks["default"].constructFromObject(data['links']);
+          obj['links'] = _BranchingModelSettingsAllOfLinks["default"].constructFromObject(data['links']);
         }
 
         if (data.hasOwnProperty('name')) {
@@ -75,7 +75,7 @@ function () {
   return IssueAttachmentAllOf;
 }();
 /**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 
 

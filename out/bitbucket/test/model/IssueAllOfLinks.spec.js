@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,14 +54,8 @@
       //expect(instance).to.be.a(Bitbucket.IssueAllOfLinks);
     });
 
-    it('should have the property attachments (base name: "attachments")', function() {
-      // uncomment below and update the code to test the property attachments
-      //var instane = new Bitbucket.IssueAllOfLinks();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property comments (base name: "comments")', function() {
-      // uncomment below and update the code to test the property comments
+    it('should have the property self (base name: "self")', function() {
+      // uncomment below and update the code to test the property self
       //var instane = new Bitbucket.IssueAllOfLinks();
       //expect(instance).to.be();
     });
@@ -72,20 +66,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property self (base name: "self")', function() {
-      // uncomment below and update the code to test the property self
+    it('should have the property comments (base name: "comments")', function() {
+      // uncomment below and update the code to test the property comments
       //var instane = new Bitbucket.IssueAllOfLinks();
       //expect(instance).to.be();
     });
 
-    it('should have the property vote (base name: "vote")', function() {
-      // uncomment below and update the code to test the property vote
+    it('should have the property attachments (base name: "attachments")', function() {
+      // uncomment below and update the code to test the property attachments
       //var instane = new Bitbucket.IssueAllOfLinks();
       //expect(instance).to.be();
     });
 
     it('should have the property watch (base name: "watch")', function() {
       // uncomment below and update the code to test the property watch
+      //var instane = new Bitbucket.IssueAllOfLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property vote (base name: "vote")', function() {
+      // uncomment below and update the code to test the property vote
       //var instane = new Bitbucket.IssueAllOfLinks();
       //expect(instance).to.be();
     });

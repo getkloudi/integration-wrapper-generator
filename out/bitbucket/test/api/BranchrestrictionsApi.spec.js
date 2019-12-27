@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,50 +48,50 @@
   }
 
   describe('BranchrestrictionsApi', function() {
-    describe('repositoriesUsernameRepoSlugBranchRestrictionsGet', function() {
-      it('should call repositoriesUsernameRepoSlugBranchRestrictionsGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugBranchRestrictionsGet
-        //instance.repositoriesUsernameRepoSlugBranchRestrictionsGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugBranchRestrictionsGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugBranchRestrictionsGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugBranchRestrictionsGet
+        //instance.repositoriesWorkspaceRepoSlugBranchRestrictionsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugBranchRestrictionsIdDelete', function() {
-      it('should call repositoriesUsernameRepoSlugBranchRestrictionsIdDelete successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugBranchRestrictionsIdDelete
-        //instance.repositoriesUsernameRepoSlugBranchRestrictionsIdDelete(function(error) {
+    describe('repositoriesWorkspaceRepoSlugBranchRestrictionsIdDelete', function() {
+      it('should call repositoriesWorkspaceRepoSlugBranchRestrictionsIdDelete successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugBranchRestrictionsIdDelete
+        //instance.repositoriesWorkspaceRepoSlugBranchRestrictionsIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugBranchRestrictionsIdGet', function() {
-      it('should call repositoriesUsernameRepoSlugBranchRestrictionsIdGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugBranchRestrictionsIdGet
-        //instance.repositoriesUsernameRepoSlugBranchRestrictionsIdGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugBranchRestrictionsIdGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugBranchRestrictionsIdGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugBranchRestrictionsIdGet
+        //instance.repositoriesWorkspaceRepoSlugBranchRestrictionsIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugBranchRestrictionsIdPut', function() {
-      it('should call repositoriesUsernameRepoSlugBranchRestrictionsIdPut successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugBranchRestrictionsIdPut
-        //instance.repositoriesUsernameRepoSlugBranchRestrictionsIdPut(function(error) {
+    describe('repositoriesWorkspaceRepoSlugBranchRestrictionsIdPut', function() {
+      it('should call repositoriesWorkspaceRepoSlugBranchRestrictionsIdPut successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugBranchRestrictionsIdPut
+        //instance.repositoriesWorkspaceRepoSlugBranchRestrictionsIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugBranchRestrictionsPost', function() {
-      it('should call repositoriesUsernameRepoSlugBranchRestrictionsPost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugBranchRestrictionsPost
-        //instance.repositoriesUsernameRepoSlugBranchRestrictionsPost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugBranchRestrictionsPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugBranchRestrictionsPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugBranchRestrictionsPost
+        //instance.repositoriesWorkspaceRepoSlugBranchRestrictionsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

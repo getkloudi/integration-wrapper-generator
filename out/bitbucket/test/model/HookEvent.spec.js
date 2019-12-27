@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,26 +54,26 @@
       //expect(instance).to.be.a(Bitbucket.HookEvent);
     });
 
-    it('should have the property category (base name: "category")', function() {
-      // uncomment below and update the code to test the property category
-      //var instane = new Bitbucket.HookEvent();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property description (base name: "description")', function() {
-      // uncomment below and update the code to test the property description
-      //var instane = new Bitbucket.HookEvent();
-      //expect(instance).to.be();
-    });
-
     it('should have the property event (base name: "event")', function() {
       // uncomment below and update the code to test the property event
       //var instane = new Bitbucket.HookEvent();
       //expect(instance).to.be();
     });
 
+    it('should have the property category (base name: "category")', function() {
+      // uncomment below and update the code to test the property category
+      //var instane = new Bitbucket.HookEvent();
+      //expect(instance).to.be();
+    });
+
     it('should have the property label (base name: "label")', function() {
       // uncomment below and update the code to test the property label
+      //var instane = new Bitbucket.HookEvent();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
       //var instane = new Bitbucket.HookEvent();
       //expect(instance).to.be();
     });

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -68,220 +68,220 @@
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdCommentsCommentIdDelete', function() {
-      it('should call snippetsUsernameEncodedIdCommentsCommentIdDelete successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdCommentsCommentIdDelete
-        //instance.snippetsUsernameEncodedIdCommentsCommentIdDelete(function(error) {
+    describe('snippetsWorkspaceEncodedIdCommentsCommentIdDelete', function() {
+      it('should call snippetsWorkspaceEncodedIdCommentsCommentIdDelete successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdCommentsCommentIdDelete
+        //instance.snippetsWorkspaceEncodedIdCommentsCommentIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdCommentsCommentIdGet', function() {
-      it('should call snippetsUsernameEncodedIdCommentsCommentIdGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdCommentsCommentIdGet
-        //instance.snippetsUsernameEncodedIdCommentsCommentIdGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdCommentsCommentIdGet', function() {
+      it('should call snippetsWorkspaceEncodedIdCommentsCommentIdGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdCommentsCommentIdGet
+        //instance.snippetsWorkspaceEncodedIdCommentsCommentIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdCommentsCommentIdPut', function() {
-      it('should call snippetsUsernameEncodedIdCommentsCommentIdPut successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdCommentsCommentIdPut
-        //instance.snippetsUsernameEncodedIdCommentsCommentIdPut(function(error) {
+    describe('snippetsWorkspaceEncodedIdCommentsCommentIdPut', function() {
+      it('should call snippetsWorkspaceEncodedIdCommentsCommentIdPut successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdCommentsCommentIdPut
+        //instance.snippetsWorkspaceEncodedIdCommentsCommentIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdCommentsGet', function() {
-      it('should call snippetsUsernameEncodedIdCommentsGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdCommentsGet
-        //instance.snippetsUsernameEncodedIdCommentsGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdCommentsGet', function() {
+      it('should call snippetsWorkspaceEncodedIdCommentsGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdCommentsGet
+        //instance.snippetsWorkspaceEncodedIdCommentsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdCommentsPost', function() {
-      it('should call snippetsUsernameEncodedIdCommentsPost successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdCommentsPost
-        //instance.snippetsUsernameEncodedIdCommentsPost(function(error) {
+    describe('snippetsWorkspaceEncodedIdCommentsPost', function() {
+      it('should call snippetsWorkspaceEncodedIdCommentsPost successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdCommentsPost
+        //instance.snippetsWorkspaceEncodedIdCommentsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdCommitsGet', function() {
-      it('should call snippetsUsernameEncodedIdCommitsGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdCommitsGet
-        //instance.snippetsUsernameEncodedIdCommitsGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdCommitsGet', function() {
+      it('should call snippetsWorkspaceEncodedIdCommitsGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdCommitsGet
+        //instance.snippetsWorkspaceEncodedIdCommitsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdCommitsRevisionGet', function() {
-      it('should call snippetsUsernameEncodedIdCommitsRevisionGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdCommitsRevisionGet
-        //instance.snippetsUsernameEncodedIdCommitsRevisionGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdCommitsRevisionGet', function() {
+      it('should call snippetsWorkspaceEncodedIdCommitsRevisionGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdCommitsRevisionGet
+        //instance.snippetsWorkspaceEncodedIdCommitsRevisionGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdDelete', function() {
-      it('should call snippetsUsernameEncodedIdDelete successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdDelete
-        //instance.snippetsUsernameEncodedIdDelete(function(error) {
+    describe('snippetsWorkspaceEncodedIdDelete', function() {
+      it('should call snippetsWorkspaceEncodedIdDelete successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdDelete
+        //instance.snippetsWorkspaceEncodedIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdGet', function() {
-      it('should call snippetsUsernameEncodedIdGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdGet
-        //instance.snippetsUsernameEncodedIdGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdGet', function() {
+      it('should call snippetsWorkspaceEncodedIdGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdGet
+        //instance.snippetsWorkspaceEncodedIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdNodeIdDelete', function() {
-      it('should call snippetsUsernameEncodedIdNodeIdDelete successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdNodeIdDelete
-        //instance.snippetsUsernameEncodedIdNodeIdDelete(function(error) {
+    describe('snippetsWorkspaceEncodedIdNodeIdDelete', function() {
+      it('should call snippetsWorkspaceEncodedIdNodeIdDelete successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdNodeIdDelete
+        //instance.snippetsWorkspaceEncodedIdNodeIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdNodeIdFilesPathGet', function() {
-      it('should call snippetsUsernameEncodedIdNodeIdFilesPathGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdNodeIdFilesPathGet
-        //instance.snippetsUsernameEncodedIdNodeIdFilesPathGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdNodeIdFilesPathGet', function() {
+      it('should call snippetsWorkspaceEncodedIdNodeIdFilesPathGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdNodeIdFilesPathGet
+        //instance.snippetsWorkspaceEncodedIdNodeIdFilesPathGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdNodeIdGet', function() {
-      it('should call snippetsUsernameEncodedIdNodeIdGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdNodeIdGet
-        //instance.snippetsUsernameEncodedIdNodeIdGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdNodeIdGet', function() {
+      it('should call snippetsWorkspaceEncodedIdNodeIdGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdNodeIdGet
+        //instance.snippetsWorkspaceEncodedIdNodeIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdNodeIdPut', function() {
-      it('should call snippetsUsernameEncodedIdNodeIdPut successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdNodeIdPut
-        //instance.snippetsUsernameEncodedIdNodeIdPut(function(error) {
+    describe('snippetsWorkspaceEncodedIdNodeIdPut', function() {
+      it('should call snippetsWorkspaceEncodedIdNodeIdPut successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdNodeIdPut
+        //instance.snippetsWorkspaceEncodedIdNodeIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdPut', function() {
-      it('should call snippetsUsernameEncodedIdPut successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdPut
-        //instance.snippetsUsernameEncodedIdPut(function(error) {
+    describe('snippetsWorkspaceEncodedIdPut', function() {
+      it('should call snippetsWorkspaceEncodedIdPut successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdPut
+        //instance.snippetsWorkspaceEncodedIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdRevisionDiffGet', function() {
-      it('should call snippetsUsernameEncodedIdRevisionDiffGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdRevisionDiffGet
-        //instance.snippetsUsernameEncodedIdRevisionDiffGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdRevisionDiffGet', function() {
+      it('should call snippetsWorkspaceEncodedIdRevisionDiffGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdRevisionDiffGet
+        //instance.snippetsWorkspaceEncodedIdRevisionDiffGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdRevisionPatchGet', function() {
-      it('should call snippetsUsernameEncodedIdRevisionPatchGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdRevisionPatchGet
-        //instance.snippetsUsernameEncodedIdRevisionPatchGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdRevisionPatchGet', function() {
+      it('should call snippetsWorkspaceEncodedIdRevisionPatchGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdRevisionPatchGet
+        //instance.snippetsWorkspaceEncodedIdRevisionPatchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdWatchDelete', function() {
-      it('should call snippetsUsernameEncodedIdWatchDelete successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdWatchDelete
-        //instance.snippetsUsernameEncodedIdWatchDelete(function(error) {
+    describe('snippetsWorkspaceEncodedIdWatchDelete', function() {
+      it('should call snippetsWorkspaceEncodedIdWatchDelete successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdWatchDelete
+        //instance.snippetsWorkspaceEncodedIdWatchDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdWatchGet', function() {
-      it('should call snippetsUsernameEncodedIdWatchGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdWatchGet
-        //instance.snippetsUsernameEncodedIdWatchGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdWatchGet', function() {
+      it('should call snippetsWorkspaceEncodedIdWatchGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdWatchGet
+        //instance.snippetsWorkspaceEncodedIdWatchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdWatchPut', function() {
-      it('should call snippetsUsernameEncodedIdWatchPut successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdWatchPut
-        //instance.snippetsUsernameEncodedIdWatchPut(function(error) {
+    describe('snippetsWorkspaceEncodedIdWatchPut', function() {
+      it('should call snippetsWorkspaceEncodedIdWatchPut successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdWatchPut
+        //instance.snippetsWorkspaceEncodedIdWatchPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameEncodedIdWatchersGet', function() {
-      it('should call snippetsUsernameEncodedIdWatchersGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameEncodedIdWatchersGet
-        //instance.snippetsUsernameEncodedIdWatchersGet(function(error) {
+    describe('snippetsWorkspaceEncodedIdWatchersGet', function() {
+      it('should call snippetsWorkspaceEncodedIdWatchersGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceEncodedIdWatchersGet
+        //instance.snippetsWorkspaceEncodedIdWatchersGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernameGet', function() {
-      it('should call snippetsUsernameGet successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernameGet
-        //instance.snippetsUsernameGet(function(error) {
+    describe('snippetsWorkspaceGet', function() {
+      it('should call snippetsWorkspaceGet successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspaceGet
+        //instance.snippetsWorkspaceGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('snippetsUsernamePost', function() {
-      it('should call snippetsUsernamePost successfully', function(done) {
-        //uncomment below and update the code to test snippetsUsernamePost
-        //instance.snippetsUsernamePost(function(error) {
+    describe('snippetsWorkspacePost', function() {
+      it('should call snippetsWorkspacePost successfully', function(done) {
+        //uncomment below and update the code to test snippetsWorkspacePost
+        //instance.snippetsWorkspacePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -42,31 +42,31 @@ function () {
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
   /**
-   * Callback function to receive the result of the teamsOwnerProjectsGet operation.
-   * @callback module:api/ProjectsApi~teamsOwnerProjectsGetCallback
+   * Callback function to receive the result of the teamsUsernameProjectsGet operation.
+   * @callback module:api/ProjectsApi~teamsUsernameProjectsGetCallback
    * @param {String} error Error message, if any.
    * @param {module:model/PaginatedProjects} data The data returned by the service call.
    * @param {String} response The complete HTTP response.
    */
 
   /**
-   * @param {String} owner The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
-   * @param {module:api/ProjectsApi~teamsOwnerProjectsGetCallback} callback The callback function, accepting three arguments: error, data, response
+   * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
+   * @param {module:api/ProjectsApi~teamsUsernameProjectsGetCallback} callback The callback function, accepting three arguments: error, data, response
    * data is of type: {@link module:model/PaginatedProjects}
    */
 
 
   _createClass(ProjectsApi, [{
-    key: "teamsOwnerProjectsGet",
-    value: function teamsOwnerProjectsGet(owner, callback) {
-      var postBody = null; // verify the required parameter 'owner' is set
+    key: "teamsUsernameProjectsGet",
+    value: function teamsUsernameProjectsGet(username, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
 
-      if (owner === undefined || owner === null) {
-        throw new _Error["default"]("Missing the required parameter 'owner' when calling teamsOwnerProjectsGet");
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling teamsUsernameProjectsGet");
       }
 
       var pathParams = {
-        'owner': owner
+        'username': username
       };
       var queryParams = {};
       var headerParams = {};
@@ -75,11 +75,11 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PaginatedProjects["default"];
-      return this.apiClient.callApi('/teams/{owner}/projects/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/teams/{username}/projects/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the teamsOwnerProjectsPost operation.
-     * @callback module:api/ProjectsApi~teamsOwnerProjectsPostCallback
+     * Callback function to receive the result of the teamsUsernameProjectsPost operation.
+     * @callback module:api/ProjectsApi~teamsUsernameProjectsPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Project} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -87,28 +87,28 @@ function () {
 
     /**
      * Creates a new project.  Note that the avatar has to be embedded as either a data-url or a URL to an external image as shown in the examples below:  ``` $ body=$(cat << EOF {     \"name\": \"Mars Project\",     \"key\": \"MARS\",     \"description\": \"Software for colonizing mars.\",     \"links\": {         \"avatar\": {             \"href\": \"data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/...\"         }     },     \"is_private\": false } EOF ) $ curl -H \"Content-Type: application/json\" \\        -X POST \\        -d \"$body\" \\        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq . {   // Serialized project document } ```  or even:  ``` $ body=$(cat << EOF {     \"name\": \"Mars Project\",     \"key\": \"MARS\",     \"description\": \"Software for colonizing mars.\",     \"links\": {         \"avatar\": {             \"href\": \"http://i.imgur.com/72tRx4w.gif\"         }     },     \"is_private\": false } EOF ) $ curl -H \"Content-Type: application/json\" \\        -X POST \\        -d \"$body\" \\        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq . {   // Serialized project document } ```
-     * @param {String} owner The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:model/Project} body 
-     * @param {module:api/ProjectsApi~teamsOwnerProjectsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ProjectsApi~teamsUsernameProjectsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Project}
      */
 
   }, {
-    key: "teamsOwnerProjectsPost",
-    value: function teamsOwnerProjectsPost(owner, body, callback) {
-      var postBody = body; // verify the required parameter 'owner' is set
+    key: "teamsUsernameProjectsPost",
+    value: function teamsUsernameProjectsPost(username, body, callback) {
+      var postBody = body; // verify the required parameter 'username' is set
 
-      if (owner === undefined || owner === null) {
-        throw new _Error["default"]("Missing the required parameter 'owner' when calling teamsOwnerProjectsPost");
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling teamsUsernameProjectsPost");
       } // verify the required parameter 'body' is set
 
 
       if (body === undefined || body === null) {
-        throw new _Error["default"]("Missing the required parameter 'body' when calling teamsOwnerProjectsPost");
+        throw new _Error["default"]("Missing the required parameter 'body' when calling teamsUsernameProjectsPost");
       }
 
       var pathParams = {
-        'owner': owner
+        'username': username
       };
       var queryParams = {};
       var headerParams = {};
@@ -117,38 +117,38 @@ function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _Project["default"];
-      return this.apiClient.callApi('/teams/{owner}/projects/', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/teams/{username}/projects/', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the teamsOwnerProjectsProjectKeyDelete operation.
-     * @callback module:api/ProjectsApi~teamsOwnerProjectsProjectKeyDeleteCallback
+     * Callback function to receive the result of the teamsUsernameProjectsProjectKeyDelete operation.
+     * @callback module:api/ProjectsApi~teamsUsernameProjectsProjectKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * @param {String} owner The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} projectKey The project in question. This can either be the actual `key` assigned to the project or the `UUID` (surrounded by curly-braces (`{}`)). 
-     * @param {module:api/ProjectsApi~teamsOwnerProjectsProjectKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ProjectsApi~teamsUsernameProjectsProjectKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
 
   }, {
-    key: "teamsOwnerProjectsProjectKeyDelete",
-    value: function teamsOwnerProjectsProjectKeyDelete(owner, projectKey, callback) {
-      var postBody = null; // verify the required parameter 'owner' is set
+    key: "teamsUsernameProjectsProjectKeyDelete",
+    value: function teamsUsernameProjectsProjectKeyDelete(username, projectKey, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
 
-      if (owner === undefined || owner === null) {
-        throw new _Error["default"]("Missing the required parameter 'owner' when calling teamsOwnerProjectsProjectKeyDelete");
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling teamsUsernameProjectsProjectKeyDelete");
       } // verify the required parameter 'projectKey' is set
 
 
       if (projectKey === undefined || projectKey === null) {
-        throw new _Error["default"]("Missing the required parameter 'projectKey' when calling teamsOwnerProjectsProjectKeyDelete");
+        throw new _Error["default"]("Missing the required parameter 'projectKey' when calling teamsUsernameProjectsProjectKeyDelete");
       }
 
       var pathParams = {
-        'owner': owner,
+        'username': username,
         'project_key': projectKey
       };
       var queryParams = {};
@@ -158,39 +158,39 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
-      return this.apiClient.callApi('/teams/{owner}/projects/{project_key}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/teams/{username}/projects/{project_key}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the teamsOwnerProjectsProjectKeyGet operation.
-     * @callback module:api/ProjectsApi~teamsOwnerProjectsProjectKeyGetCallback
+     * Callback function to receive the result of the teamsUsernameProjectsProjectKeyGet operation.
+     * @callback module:api/ProjectsApi~teamsUsernameProjectsProjectKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Project} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * @param {String} owner The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} projectKey The project in question. This can either be the actual `key` assigned to the project or the `UUID` (surrounded by curly-braces (`{}`)). 
-     * @param {module:api/ProjectsApi~teamsOwnerProjectsProjectKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ProjectsApi~teamsUsernameProjectsProjectKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Project}
      */
 
   }, {
-    key: "teamsOwnerProjectsProjectKeyGet",
-    value: function teamsOwnerProjectsProjectKeyGet(owner, projectKey, callback) {
-      var postBody = null; // verify the required parameter 'owner' is set
+    key: "teamsUsernameProjectsProjectKeyGet",
+    value: function teamsUsernameProjectsProjectKeyGet(username, projectKey, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
 
-      if (owner === undefined || owner === null) {
-        throw new _Error["default"]("Missing the required parameter 'owner' when calling teamsOwnerProjectsProjectKeyGet");
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling teamsUsernameProjectsProjectKeyGet");
       } // verify the required parameter 'projectKey' is set
 
 
       if (projectKey === undefined || projectKey === null) {
-        throw new _Error["default"]("Missing the required parameter 'projectKey' when calling teamsOwnerProjectsProjectKeyGet");
+        throw new _Error["default"]("Missing the required parameter 'projectKey' when calling teamsUsernameProjectsProjectKeyGet");
       }
 
       var pathParams = {
-        'owner': owner,
+        'username': username,
         'project_key': projectKey
       };
       var queryParams = {};
@@ -200,11 +200,11 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _Project["default"];
-      return this.apiClient.callApi('/teams/{owner}/projects/{project_key}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/teams/{username}/projects/{project_key}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
-     * Callback function to receive the result of the teamsOwnerProjectsProjectKeyPut operation.
-     * @callback module:api/ProjectsApi~teamsOwnerProjectsProjectKeyPutCallback
+     * Callback function to receive the result of the teamsUsernameProjectsProjectKeyPut operation.
+     * @callback module:api/ProjectsApi~teamsUsernameProjectsProjectKeyPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Project} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -212,34 +212,34 @@ function () {
 
     /**
      * Since this endpoint can be used to both update and to create a project, the request body depends on the intent.  ### Creation  See the POST documentation for the project collection for an example of the request body.  Note: The `key` should not be specified in the body of request (since it is already present in the URL). The `name` is required, everything else is optional.  ### Update  See the POST documentation for the project collection for an example of the request body.  Note: The key is not required in the body (since it is already in the URL). The key may be specified in the body, if the intent is to change the key itself. In such a scenario, the location of the project is changed and is returned in the `Location` header of the response.
-     * @param {String} owner The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} projectKey The project in question. This can either be the actual `key` assigned to the project or the `UUID` (surrounded by curly-braces (`{}`)). 
      * @param {module:model/Project} body 
-     * @param {module:api/ProjectsApi~teamsOwnerProjectsProjectKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/ProjectsApi~teamsUsernameProjectsProjectKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Project}
      */
 
   }, {
-    key: "teamsOwnerProjectsProjectKeyPut",
-    value: function teamsOwnerProjectsProjectKeyPut(owner, projectKey, body, callback) {
-      var postBody = body; // verify the required parameter 'owner' is set
+    key: "teamsUsernameProjectsProjectKeyPut",
+    value: function teamsUsernameProjectsProjectKeyPut(username, projectKey, body, callback) {
+      var postBody = body; // verify the required parameter 'username' is set
 
-      if (owner === undefined || owner === null) {
-        throw new _Error["default"]("Missing the required parameter 'owner' when calling teamsOwnerProjectsProjectKeyPut");
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling teamsUsernameProjectsProjectKeyPut");
       } // verify the required parameter 'projectKey' is set
 
 
       if (projectKey === undefined || projectKey === null) {
-        throw new _Error["default"]("Missing the required parameter 'projectKey' when calling teamsOwnerProjectsProjectKeyPut");
+        throw new _Error["default"]("Missing the required parameter 'projectKey' when calling teamsUsernameProjectsProjectKeyPut");
       } // verify the required parameter 'body' is set
 
 
       if (body === undefined || body === null) {
-        throw new _Error["default"]("Missing the required parameter 'body' when calling teamsOwnerProjectsProjectKeyPut");
+        throw new _Error["default"]("Missing the required parameter 'body' when calling teamsUsernameProjectsProjectKeyPut");
       }
 
       var pathParams = {
-        'owner': owner,
+        'username': username,
         'project_key': projectKey
       };
       var queryParams = {};
@@ -249,7 +249,7 @@ function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _Project["default"];
-      return this.apiClient.callApi('/teams/{owner}/projects/{project_key}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/teams/{username}/projects/{project_key}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
   }]);
 

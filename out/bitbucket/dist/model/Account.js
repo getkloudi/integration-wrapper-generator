@@ -76,14 +76,6 @@ function () {
 
         _AccountAllOf["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('created_on')) {
-          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
-        }
-
-        if (data.hasOwnProperty('display_name')) {
-          obj['display_name'] = _ApiClient["default"].convertToType(data['display_name'], 'String');
-        }
-
         if (data.hasOwnProperty('links')) {
           obj['links'] = _AccountAllOfLinks["default"].constructFromObject(data['links']);
         }
@@ -92,12 +84,32 @@ function () {
           obj['username'] = _ApiClient["default"].convertToType(data['username'], 'String');
         }
 
-        if (data.hasOwnProperty('uuid')) {
-          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        if (data.hasOwnProperty('nickname')) {
+          obj['nickname'] = _ApiClient["default"].convertToType(data['nickname'], 'String');
+        }
+
+        if (data.hasOwnProperty('account_status')) {
+          obj['account_status'] = _ApiClient["default"].convertToType(data['account_status'], 'String');
+        }
+
+        if (data.hasOwnProperty('display_name')) {
+          obj['display_name'] = _ApiClient["default"].convertToType(data['display_name'], 'String');
         }
 
         if (data.hasOwnProperty('website')) {
           obj['website'] = _ApiClient["default"].convertToType(data['website'], 'String');
+        }
+
+        if (data.hasOwnProperty('created_on')) {
+          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
+        }
+
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        }
+
+        if (data.hasOwnProperty('has_2fa_enabled')) {
+          obj['has_2fa_enabled'] = _ApiClient["default"].convertToType(data['has_2fa_enabled'], 'Boolean');
         }
       }
 
@@ -108,19 +120,9 @@ function () {
   return Account;
 }();
 /**
- * @member {Date} created_on
- */
-
-
-Account.prototype['created_on'] = undefined;
-/**
- * @member {String} display_name
- */
-
-Account.prototype['display_name'] = undefined;
-/**
  * @member {module:model/AccountAllOfLinks} links
  */
+
 
 Account.prototype['links'] = undefined;
 /**
@@ -129,15 +131,42 @@ Account.prototype['links'] = undefined;
 
 Account.prototype['username'] = undefined;
 /**
+ * Account name defined by the owner. Should be used instead of the \"username\" field. Note that \"nickname\" cannot be used in place of \"username\" in URLs and queries, as \"nickname\" is not guaranteed to be unique.
+ * @member {String} nickname
+ */
+
+Account.prototype['nickname'] = undefined;
+/**
+ * The status of the account. Currently the only possible value is \"active\", but more values may be added in the future.
+ * @member {String} account_status
+ */
+
+Account.prototype['account_status'] = undefined;
+/**
+ * @member {String} display_name
+ */
+
+Account.prototype['display_name'] = undefined;
+/**
+ * @member {String} website
+ */
+
+Account.prototype['website'] = undefined;
+/**
+ * @member {Date} created_on
+ */
+
+Account.prototype['created_on'] = undefined;
+/**
  * @member {String} uuid
  */
 
 Account.prototype['uuid'] = undefined;
 /**
- * @member {String} website
+ * @member {Boolean} has_2fa_enabled
  */
 
-Account.prototype['website'] = undefined; // Implement ModelObject interface:
+Account.prototype['has_2fa_enabled'] = undefined; // Implement ModelObject interface:
 
 /**
  * @member {String} type
@@ -145,16 +174,6 @@ Account.prototype['website'] = undefined; // Implement ModelObject interface:
 
 _ModelObject["default"].prototype['type'] = undefined; // Implement AccountAllOf interface:
 
-/**
- * @member {Date} created_on
- */
-
-_AccountAllOf["default"].prototype['created_on'] = undefined;
-/**
- * @member {String} display_name
- */
-
-_AccountAllOf["default"].prototype['display_name'] = undefined;
 /**
  * @member {module:model/AccountAllOfLinks} links
  */
@@ -166,14 +185,41 @@ _AccountAllOf["default"].prototype['links'] = undefined;
 
 _AccountAllOf["default"].prototype['username'] = undefined;
 /**
- * @member {String} uuid
+ * Account name defined by the owner. Should be used instead of the \"username\" field. Note that \"nickname\" cannot be used in place of \"username\" in URLs and queries, as \"nickname\" is not guaranteed to be unique.
+ * @member {String} nickname
  */
 
-_AccountAllOf["default"].prototype['uuid'] = undefined;
+_AccountAllOf["default"].prototype['nickname'] = undefined;
+/**
+ * The status of the account. Currently the only possible value is \"active\", but more values may be added in the future.
+ * @member {String} account_status
+ */
+
+_AccountAllOf["default"].prototype['account_status'] = undefined;
+/**
+ * @member {String} display_name
+ */
+
+_AccountAllOf["default"].prototype['display_name'] = undefined;
 /**
  * @member {String} website
  */
 
 _AccountAllOf["default"].prototype['website'] = undefined;
+/**
+ * @member {Date} created_on
+ */
+
+_AccountAllOf["default"].prototype['created_on'] = undefined;
+/**
+ * @member {String} uuid
+ */
+
+_AccountAllOf["default"].prototype['uuid'] = undefined;
+/**
+ * @member {Boolean} has_2fa_enabled
+ */
+
+_AccountAllOf["default"].prototype['has_2fa_enabled'] = undefined;
 var _default = Account;
 exports["default"] = _default;

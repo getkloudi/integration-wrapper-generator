@@ -59,28 +59,28 @@ function () {
       if (data) {
         obj = obj || new PaginatedPipelines();
 
-        if (data.hasOwnProperty('next')) {
-          obj['next'] = _ApiClient["default"].convertToType(data['next'], 'String');
-        }
-
         if (data.hasOwnProperty('page')) {
           obj['page'] = _ApiClient["default"].convertToType(data['page'], 'Number');
         }
 
-        if (data.hasOwnProperty('pagelen')) {
-          obj['pagelen'] = _ApiClient["default"].convertToType(data['pagelen'], 'Number');
-        }
-
-        if (data.hasOwnProperty('previous')) {
-          obj['previous'] = _ApiClient["default"].convertToType(data['previous'], 'String');
+        if (data.hasOwnProperty('values')) {
+          obj['values'] = _ApiClient["default"].convertToType(data['values'], [_Pipeline["default"]]);
         }
 
         if (data.hasOwnProperty('size')) {
           obj['size'] = _ApiClient["default"].convertToType(data['size'], 'Number');
         }
 
-        if (data.hasOwnProperty('values')) {
-          obj['values'] = _ApiClient["default"].convertToType(data['values'], [_Pipeline["default"]]);
+        if (data.hasOwnProperty('pagelen')) {
+          obj['pagelen'] = _ApiClient["default"].convertToType(data['pagelen'], 'Number');
+        }
+
+        if (data.hasOwnProperty('next')) {
+          obj['next'] = _ApiClient["default"].convertToType(data['next'], 'String');
+        }
+
+        if (data.hasOwnProperty('previous')) {
+          obj['previous'] = _ApiClient["default"].convertToType(data['previous'], 'String');
         }
       }
 
@@ -91,30 +91,18 @@ function () {
   return PaginatedPipelines;
 }();
 /**
- * Link to the next page if it exists. The last page of a collection does not have this value. Use this link to navigate the result set and refrain from constructing your own URLs.
- * @member {String} next
- */
-
-
-PaginatedPipelines.prototype['next'] = undefined;
-/**
  * Page number of the current results. This is an optional element that is not provided in all responses.
  * @member {Number} page
  */
 
+
 PaginatedPipelines.prototype['page'] = undefined;
 /**
- * Current number of objects on the existing page. The default value is 10 with 100 being the maximum allowed value. Individual APIs may enforce different values.
- * @member {Number} pagelen
+ * The values of the current page.
+ * @member {Array.<module:model/Pipeline>} values
  */
 
-PaginatedPipelines.prototype['pagelen'] = undefined;
-/**
- * Link to previous page if it exists. A collections first page does not have this value. This is an optional element that is not provided in all responses. Some result sets strictly support forward navigation and never provide previous links. Clients must anticipate that backwards navigation is not always available. Use this link to navigate the result set and refrain from constructing your own URLs.
- * @member {String} previous
- */
-
-PaginatedPipelines.prototype['previous'] = undefined;
+PaginatedPipelines.prototype['values'] = undefined;
 /**
  * Total number of objects in the response. This is an optional element that is not provided in all responses, as it can be expensive to compute.
  * @member {Number} size
@@ -122,10 +110,22 @@ PaginatedPipelines.prototype['previous'] = undefined;
 
 PaginatedPipelines.prototype['size'] = undefined;
 /**
- * The values of the current page.
- * @member {Array.<module:model/Pipeline>} values
+ * Current number of objects on the existing page. The default value is 10 with 100 being the maximum allowed value. Individual APIs may enforce different values.
+ * @member {Number} pagelen
  */
 
-PaginatedPipelines.prototype['values'] = undefined;
+PaginatedPipelines.prototype['pagelen'] = undefined;
+/**
+ * Link to the next page if it exists. The last page of a collection does not have this value. Use this link to navigate the result set and refrain from constructing your own URLs.
+ * @member {String} next
+ */
+
+PaginatedPipelines.prototype['next'] = undefined;
+/**
+ * Link to previous page if it exists. A collections first page does not have this value. This is an optional element that is not provided in all responses. Some result sets strictly support forward navigation and never provide previous links. Clients must anticipate that backwards navigation is not always available. Use this link to navigate the result set and refrain from constructing your own URLs.
+ * @member {String} previous
+ */
+
+PaginatedPipelines.prototype['previous'] = undefined;
 var _default = PaginatedPipelines;
 exports["default"] = _default;

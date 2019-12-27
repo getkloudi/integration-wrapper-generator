@@ -74,20 +74,20 @@ function () {
 
         _PipelineVariableAllOf["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('key')) {
-          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
-        }
-
-        if (data.hasOwnProperty('secured')) {
-          obj['secured'] = _ApiClient["default"].convertToType(data['secured'], 'Boolean');
-        }
-
         if (data.hasOwnProperty('uuid')) {
           obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
         }
 
+        if (data.hasOwnProperty('key')) {
+          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
+        }
+
         if (data.hasOwnProperty('value')) {
           obj['value'] = _ApiClient["default"].convertToType(data['value'], 'String');
+        }
+
+        if (data.hasOwnProperty('secured')) {
+          obj['secured'] = _ApiClient["default"].convertToType(data['secured'], 'Boolean');
         }
       }
 
@@ -98,30 +98,30 @@ function () {
   return PipelineVariable;
 }();
 /**
- * The unique name of the variable.
- * @member {String} key
- */
-
-
-PipelineVariable.prototype['key'] = undefined;
-/**
- * If true, this variable will be treated as secured. The value will never be exposed in the logs or the REST API.
- * @member {Boolean} secured
- */
-
-PipelineVariable.prototype['secured'] = undefined;
-/**
  * The UUID identifying the variable.
  * @member {String} uuid
  */
 
+
 PipelineVariable.prototype['uuid'] = undefined;
+/**
+ * The unique name of the variable.
+ * @member {String} key
+ */
+
+PipelineVariable.prototype['key'] = undefined;
 /**
  * The value of the variable. If the variable is secured, this will be empty.
  * @member {String} value
  */
 
-PipelineVariable.prototype['value'] = undefined; // Implement ModelObject interface:
+PipelineVariable.prototype['value'] = undefined;
+/**
+ * If true, this variable will be treated as secured. The value will never be exposed in the logs or the REST API.
+ * @member {Boolean} secured
+ */
+
+PipelineVariable.prototype['secured'] = undefined; // Implement ModelObject interface:
 
 /**
  * @member {String} type
@@ -130,28 +130,28 @@ PipelineVariable.prototype['value'] = undefined; // Implement ModelObject interf
 _ModelObject["default"].prototype['type'] = undefined; // Implement PipelineVariableAllOf interface:
 
 /**
- * The unique name of the variable.
- * @member {String} key
- */
-
-_PipelineVariableAllOf["default"].prototype['key'] = undefined;
-/**
- * If true, this variable will be treated as secured. The value will never be exposed in the logs or the REST API.
- * @member {Boolean} secured
- */
-
-_PipelineVariableAllOf["default"].prototype['secured'] = undefined;
-/**
  * The UUID identifying the variable.
  * @member {String} uuid
  */
 
 _PipelineVariableAllOf["default"].prototype['uuid'] = undefined;
 /**
+ * The unique name of the variable.
+ * @member {String} key
+ */
+
+_PipelineVariableAllOf["default"].prototype['key'] = undefined;
+/**
  * The value of the variable. If the variable is secured, this will be empty.
  * @member {String} value
  */
 
 _PipelineVariableAllOf["default"].prototype['value'] = undefined;
+/**
+ * If true, this variable will be treated as secured. The value will never be exposed in the logs or the REST API.
+ * @member {Boolean} secured
+ */
+
+_PipelineVariableAllOf["default"].prototype['secured'] = undefined;
 var _default = PipelineVariable;
 exports["default"] = _default;

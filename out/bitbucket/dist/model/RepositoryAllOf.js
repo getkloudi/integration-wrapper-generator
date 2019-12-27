@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Account = _interopRequireDefault(require("./Account"));
 
+var _Branch = _interopRequireDefault(require("./Branch"));
+
 var _Project = _interopRequireDefault(require("./Project"));
 
 var _Repository = _interopRequireDefault(require("./Repository"));
@@ -65,20 +67,56 @@ function () {
       if (data) {
         obj = obj || new RepositoryAllOf();
 
-        if (data.hasOwnProperty('created_on')) {
-          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
+        if (data.hasOwnProperty('links')) {
+          obj['links'] = _RepositoryAllOfLinks["default"].constructFromObject(data['links']);
+        }
+
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        }
+
+        if (data.hasOwnProperty('full_name')) {
+          obj['full_name'] = _ApiClient["default"].convertToType(data['full_name'], 'String');
+        }
+
+        if (data.hasOwnProperty('is_private')) {
+          obj['is_private'] = _ApiClient["default"].convertToType(data['is_private'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('parent')) {
+          obj['parent'] = _Repository["default"].constructFromObject(data['parent']);
+        }
+
+        if (data.hasOwnProperty('scm')) {
+          obj['scm'] = _ApiClient["default"].convertToType(data['scm'], 'String');
+        }
+
+        if (data.hasOwnProperty('owner')) {
+          obj['owner'] = _Account["default"].constructFromObject(data['owner']);
+        }
+
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('description')) {
           obj['description'] = _ApiClient["default"].convertToType(data['description'], 'String');
         }
 
-        if (data.hasOwnProperty('fork_policy')) {
-          obj['fork_policy'] = _ApiClient["default"].convertToType(data['fork_policy'], 'String');
+        if (data.hasOwnProperty('created_on')) {
+          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
         }
 
-        if (data.hasOwnProperty('full_name')) {
-          obj['full_name'] = _ApiClient["default"].convertToType(data['full_name'], 'String');
+        if (data.hasOwnProperty('updated_on')) {
+          obj['updated_on'] = _ApiClient["default"].convertToType(data['updated_on'], 'Date');
+        }
+
+        if (data.hasOwnProperty('size')) {
+          obj['size'] = _ApiClient["default"].convertToType(data['size'], 'Number');
+        }
+
+        if (data.hasOwnProperty('language')) {
+          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
         }
 
         if (data.hasOwnProperty('has_issues')) {
@@ -89,48 +127,16 @@ function () {
           obj['has_wiki'] = _ApiClient["default"].convertToType(data['has_wiki'], 'Boolean');
         }
 
-        if (data.hasOwnProperty('is_private')) {
-          obj['is_private'] = _ApiClient["default"].convertToType(data['is_private'], 'Boolean');
-        }
-
-        if (data.hasOwnProperty('language')) {
-          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
-        }
-
-        if (data.hasOwnProperty('links')) {
-          obj['links'] = _RepositoryAllOfLinks["default"].constructFromObject(data['links']);
-        }
-
-        if (data.hasOwnProperty('name')) {
-          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
-        }
-
-        if (data.hasOwnProperty('owner')) {
-          obj['owner'] = _Account["default"].constructFromObject(data['owner']);
-        }
-
-        if (data.hasOwnProperty('parent')) {
-          obj['parent'] = _Repository["default"].constructFromObject(data['parent']);
+        if (data.hasOwnProperty('fork_policy')) {
+          obj['fork_policy'] = _ApiClient["default"].convertToType(data['fork_policy'], 'String');
         }
 
         if (data.hasOwnProperty('project')) {
           obj['project'] = _Project["default"].constructFromObject(data['project']);
         }
 
-        if (data.hasOwnProperty('scm')) {
-          obj['scm'] = _ApiClient["default"].convertToType(data['scm'], 'String');
-        }
-
-        if (data.hasOwnProperty('size')) {
-          obj['size'] = _ApiClient["default"].convertToType(data['size'], 'Number');
-        }
-
-        if (data.hasOwnProperty('updated_on')) {
-          obj['updated_on'] = _ApiClient["default"].convertToType(data['updated_on'], 'Date');
-        }
-
-        if (data.hasOwnProperty('uuid')) {
-          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        if (data.hasOwnProperty('mainbranch')) {
+          obj['mainbranch'] = _Branch["default"].constructFromObject(data['mainbranch']);
         }
       }
 
@@ -141,28 +147,73 @@ function () {
   return RepositoryAllOf;
 }();
 /**
- * @member {Date} created_on
+ * @member {module:model/RepositoryAllOfLinks} links
  */
 
 
-RepositoryAllOf.prototype['created_on'] = undefined;
+RepositoryAllOf.prototype['links'] = undefined;
 /**
- * @member {String} description
+ * The repository's immutable id. This can be used as a substitute for the slug segment in URLs. Doing this guarantees your URLs will survive renaming of the repository by its owner, or even transfer of the repository to a different user.
+ * @member {String} uuid
  */
 
-RepositoryAllOf.prototype['description'] = undefined;
-/**
- *  Controls the rules for forking this repository.  * **allow_forks**: unrestricted forking * **no_public_forks**: restrict forking to private forks (forks cannot   be made public later) * **no_forks**: deny all forking 
- * @member {module:model/RepositoryAllOf.ForkPolicyEnum} fork_policy
- */
-
-RepositoryAllOf.prototype['fork_policy'] = undefined;
+RepositoryAllOf.prototype['uuid'] = undefined;
 /**
  * The concatenation of the repository owner's username and the slugified name, e.g. \"evzijst/interruptingcow\". This is the same string used in Bitbucket URLs.
  * @member {String} full_name
  */
 
 RepositoryAllOf.prototype['full_name'] = undefined;
+/**
+ * @member {Boolean} is_private
+ */
+
+RepositoryAllOf.prototype['is_private'] = undefined;
+/**
+ * @member {module:model/Repository} parent
+ */
+
+RepositoryAllOf.prototype['parent'] = undefined;
+/**
+ * @member {module:model/RepositoryAllOf.ScmEnum} scm
+ */
+
+RepositoryAllOf.prototype['scm'] = undefined;
+/**
+ * @member {module:model/Account} owner
+ */
+
+RepositoryAllOf.prototype['owner'] = undefined;
+/**
+ * @member {String} name
+ */
+
+RepositoryAllOf.prototype['name'] = undefined;
+/**
+ * @member {String} description
+ */
+
+RepositoryAllOf.prototype['description'] = undefined;
+/**
+ * @member {Date} created_on
+ */
+
+RepositoryAllOf.prototype['created_on'] = undefined;
+/**
+ * @member {Date} updated_on
+ */
+
+RepositoryAllOf.prototype['updated_on'] = undefined;
+/**
+ * @member {Number} size
+ */
+
+RepositoryAllOf.prototype['size'] = undefined;
+/**
+ * @member {String} language
+ */
+
+RepositoryAllOf.prototype['language'] = undefined;
 /**
  * @member {Boolean} has_issues
  */
@@ -174,61 +225,40 @@ RepositoryAllOf.prototype['has_issues'] = undefined;
 
 RepositoryAllOf.prototype['has_wiki'] = undefined;
 /**
- * @member {Boolean} is_private
+ *  Controls the rules for forking this repository.  * **allow_forks**: unrestricted forking * **no_public_forks**: restrict forking to private forks (forks cannot   be made public later) * **no_forks**: deny all forking 
+ * @member {module:model/RepositoryAllOf.ForkPolicyEnum} fork_policy
  */
 
-RepositoryAllOf.prototype['is_private'] = undefined;
-/**
- * @member {String} language
- */
-
-RepositoryAllOf.prototype['language'] = undefined;
-/**
- * @member {module:model/RepositoryAllOfLinks} links
- */
-
-RepositoryAllOf.prototype['links'] = undefined;
-/**
- * @member {String} name
- */
-
-RepositoryAllOf.prototype['name'] = undefined;
-/**
- * @member {module:model/Account} owner
- */
-
-RepositoryAllOf.prototype['owner'] = undefined;
-/**
- * @member {module:model/Repository} parent
- */
-
-RepositoryAllOf.prototype['parent'] = undefined;
+RepositoryAllOf.prototype['fork_policy'] = undefined;
 /**
  * @member {module:model/Project} project
  */
 
 RepositoryAllOf.prototype['project'] = undefined;
 /**
- * @member {module:model/RepositoryAllOf.ScmEnum} scm
+ * @member {module:model/Branch} mainbranch
  */
 
-RepositoryAllOf.prototype['scm'] = undefined;
+RepositoryAllOf.prototype['mainbranch'] = undefined;
 /**
- * @member {Number} size
+ * Allowed values for the <code>scm</code> property.
+ * @enum {String}
+ * @readonly
  */
 
-RepositoryAllOf.prototype['size'] = undefined;
-/**
- * @member {Date} updated_on
- */
+RepositoryAllOf['ScmEnum'] = {
+  /**
+   * value: "hg"
+   * @const
+   */
+  "hg": "hg",
 
-RepositoryAllOf.prototype['updated_on'] = undefined;
-/**
- * The repository's immutable id. This can be used as a substitute for the slug segment in URLs. Doing this guarantees your URLs will survive renaming of the repository by its owner, or even transfer of the repository to a different user.
- * @member {String} uuid
- */
-
-RepositoryAllOf.prototype['uuid'] = undefined;
+  /**
+   * value: "git"
+   * @const
+   */
+  "git": "git"
+};
 /**
  * Allowed values for the <code>fork_policy</code> property.
  * @enum {String}
@@ -253,25 +283,6 @@ RepositoryAllOf['ForkPolicyEnum'] = {
    * @const
    */
   "no_forks": "no_forks"
-};
-/**
- * Allowed values for the <code>scm</code> property.
- * @enum {String}
- * @readonly
- */
-
-RepositoryAllOf['ScmEnum'] = {
-  /**
-   * value: "hg"
-   * @const
-   */
-  "hg": "hg",
-
-  /**
-   * value: "git"
-   * @const
-   */
-  "git": "git"
 };
 var _default = RepositoryAllOf;
 exports["default"] = _default;

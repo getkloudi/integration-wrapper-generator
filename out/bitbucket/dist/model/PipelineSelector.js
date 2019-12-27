@@ -74,12 +74,12 @@ function () {
 
         _PipelineSelectorAllOf["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('pattern')) {
-          obj['pattern'] = _ApiClient["default"].convertToType(data['pattern'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
+        }
+
+        if (data.hasOwnProperty('pattern')) {
+          obj['pattern'] = _ApiClient["default"].convertToType(data['pattern'], 'String');
         }
       }
 
@@ -90,18 +90,18 @@ function () {
   return PipelineSelector;
 }();
 /**
- * The name of the matching pipeline definition.
- * @member {String} pattern
- */
-
-
-PipelineSelector.prototype['pattern'] = undefined;
-/**
  * The type of selector.
  * @member {module:model/PipelineSelector.TypeEnum} type
  */
 
-PipelineSelector.prototype['type'] = undefined; // Implement ModelObject interface:
+
+PipelineSelector.prototype['type'] = undefined;
+/**
+ * The name of the matching pipeline definition.
+ * @member {String} pattern
+ */
+
+PipelineSelector.prototype['pattern'] = undefined; // Implement ModelObject interface:
 
 /**
  * @member {String} type
@@ -110,17 +110,17 @@ PipelineSelector.prototype['type'] = undefined; // Implement ModelObject interfa
 _ModelObject["default"].prototype['type'] = undefined; // Implement PipelineSelectorAllOf interface:
 
 /**
- * The name of the matching pipeline definition.
- * @member {String} pattern
- */
-
-_PipelineSelectorAllOf["default"].prototype['pattern'] = undefined;
-/**
  * The type of selector.
  * @member {module:model/PipelineSelectorAllOf.TypeEnum} type
  */
 
 _PipelineSelectorAllOf["default"].prototype['type'] = undefined;
+/**
+ * The name of the matching pipeline definition.
+ * @member {String} pattern
+ */
+
+_PipelineSelectorAllOf["default"].prototype['pattern'] = undefined;
 /**
  * Allowed values for the <code>type</code> property.
  * @enum {String}

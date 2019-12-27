@@ -364,6 +364,48 @@ function () {
       var returnType = _Error["default"];
       return this.apiClient.callApi('/addon', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
+    /**
+     * Callback function to receive the result of the addonUsersTargetUserEventsEventKeyPost operation.
+     * @callback module:api/AddonApi~addonUsersTargetUserEventsEventKeyPostCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * POST a new custom event.  The data within the event body will be hydrated by Bitbucket. For example, the following event submission would result in subscribers for the event receiving the full repository object corresponding to the UUID.  ``` $ curl -X POST -H \"Content-Type: application/json\" -d '{     \"mynumdata\": \"12345\",     \"repository\": {         \"type\": \"repository\",         \"uuid\": \"{be95aa1f-c0b2-47f6-99d1-bf5d3a0f850f}\" }}' https://api.bitbucket.org/2.0/addon/users/myuser/events/com.example.app%3Amyevent ```  Use the optional `fields` property of the custom event Connect module where the event is defined to add additional fields to the expanded payload sent to listeners.  For example, the `customEvents` module in the app descriptor for the previous example would look like this:  ``` 'modules': {     'customEvents': {         'com.example.app:myevent': {             'schema': {                 'properties': {                     'mynumdata': {'type': 'number'},                     'repository': {'$ref': '#/definitions/repository'}                 }             },             'fields': ['repository.owner']         }     } } ```  By specifying fields as above, the repository owner will also be sent to subscribers of the event.
+     * @param {String} targetUser The account the app is installed in.  This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
+     * @param {String} eventKey The key of the event, which corresponds to an event defined in the connect app descriptor. 
+     * @param {module:api/AddonApi~addonUsersTargetUserEventsEventKeyPostCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+
+  }, {
+    key: "addonUsersTargetUserEventsEventKeyPost",
+    value: function addonUsersTargetUserEventsEventKeyPost(targetUser, eventKey, callback) {
+      var postBody = null; // verify the required parameter 'targetUser' is set
+
+      if (targetUser === undefined || targetUser === null) {
+        throw new _Error["default"]("Missing the required parameter 'targetUser' when calling addonUsersTargetUserEventsEventKeyPost");
+      } // verify the required parameter 'eventKey' is set
+
+
+      if (eventKey === undefined || eventKey === null) {
+        throw new _Error["default"]("Missing the required parameter 'eventKey' when calling addonUsersTargetUserEventsEventKeyPost");
+      }
+
+      var pathParams = {
+        'target_user': targetUser,
+        'event_key': eventKey
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key', 'basic', 'oauth2'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
+      return this.apiClient.callApi('/addon/users/{target_user}/events/{event_key}', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
   }]);
 
   return AddonApi;

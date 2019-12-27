@@ -57,20 +57,20 @@ function () {
       if (data) {
         obj = obj || new HookEvent();
 
-        if (data.hasOwnProperty('category')) {
-          obj['category'] = _ApiClient["default"].convertToType(data['category'], 'String');
-        }
-
-        if (data.hasOwnProperty('description')) {
-          obj['description'] = _ApiClient["default"].convertToType(data['description'], 'String');
-        }
-
         if (data.hasOwnProperty('event')) {
           obj['event'] = _ApiClient["default"].convertToType(data['event'], 'String');
         }
 
+        if (data.hasOwnProperty('category')) {
+          obj['category'] = _ApiClient["default"].convertToType(data['category'], 'String');
+        }
+
         if (data.hasOwnProperty('label')) {
           obj['label'] = _ApiClient["default"].convertToType(data['label'], 'String');
+        }
+
+        if (data.hasOwnProperty('description')) {
+          obj['description'] = _ApiClient["default"].convertToType(data['description'], 'String');
         }
       }
 
@@ -81,30 +81,30 @@ function () {
   return HookEvent;
 }();
 /**
- * The category this event belongs to.
- * @member {String} category
- */
-
-
-HookEvent.prototype['category'] = undefined;
-/**
- * More detailed description of the webhook event type.
- * @member {String} description
- */
-
-HookEvent.prototype['description'] = undefined;
-/**
  * The event identifier.
  * @member {module:model/HookEvent.EventEnum} event
  */
 
+
 HookEvent.prototype['event'] = undefined;
+/**
+ * The category this event belongs to.
+ * @member {String} category
+ */
+
+HookEvent.prototype['category'] = undefined;
 /**
  * Summary of the webhook event type.
  * @member {String} label
  */
 
 HookEvent.prototype['label'] = undefined;
+/**
+ * More detailed description of the webhook event type.
+ * @member {String} description
+ */
+
+HookEvent.prototype['description'] = undefined;
 /**
  * Allowed values for the <code>event</code> property.
  * @enum {String}

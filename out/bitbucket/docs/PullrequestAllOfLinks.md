@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activity** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**approve** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**comments** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**commits** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**decline** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**diff** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**html** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**merge** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
-**self** | [**AccountAllOfLinksAvatar**](AccountAllOfLinksAvatar.md) |  | [optional] 
+**self** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**html** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**commits** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**approve** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**diff** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**diffstat** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**comments** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**activity** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**merge** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
+**decline** | [**SubjectTypesRepositoryEvents**](SubjectTypesRepositoryEvents.md) |  | [optional] 
 
 

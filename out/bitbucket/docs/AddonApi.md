@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**addonLinkersLinkerKeyValuesPost**](AddonApi.md#addonLinkersLinkerKeyValuesPost) | **POST** /addon/linkers/{linker_key}/values | 
 [**addonLinkersLinkerKeyValuesPut**](AddonApi.md#addonLinkersLinkerKeyValuesPut) | **PUT** /addon/linkers/{linker_key}/values | 
 [**addonPut**](AddonApi.md#addonPut) | **PUT** /addon | 
+[**addonUsersTargetUserEventsEventKeyPost**](AddonApi.md#addonUsersTargetUserEventsEventKeyPost) | **POST** /addon/users/{target_user}/events/{event_key} | 
 
 
 
@@ -563,4 +564,64 @@ This endpoint does not need any parameter.
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## addonUsersTargetUserEventsEventKeyPost
+
+> addonUsersTargetUserEventsEventKeyPost(targetUser, eventKey)
+
+
+
+POST a new custom event.  The data within the event body will be hydrated by Bitbucket. For example, the following event submission would result in subscribers for the event receiving the full repository object corresponding to the UUID.  &#x60;&#x60;&#x60; $ curl -X POST -H \&quot;Content-Type: application/json\&quot; -d &#39;{     \&quot;mynumdata\&quot;: \&quot;12345\&quot;,     \&quot;repository\&quot;: {         \&quot;type\&quot;: \&quot;repository\&quot;,         \&quot;uuid\&quot;: \&quot;{be95aa1f-c0b2-47f6-99d1-bf5d3a0f850f}\&quot; }}&#39; https://api.bitbucket.org/2.0/addon/users/myuser/events/com.example.app%3Amyevent &#x60;&#x60;&#x60;  Use the optional &#x60;fields&#x60; property of the custom event Connect module where the event is defined to add additional fields to the expanded payload sent to listeners.  For example, the &#x60;customEvents&#x60; module in the app descriptor for the previous example would look like this:  &#x60;&#x60;&#x60; &#39;modules&#39;: {     &#39;customEvents&#39;: {         &#39;com.example.app:myevent&#39;: {             &#39;schema&#39;: {                 &#39;properties&#39;: {                     &#39;mynumdata&#39;: {&#39;type&#39;: &#39;number&#39;},                     &#39;repository&#39;: {&#39;$ref&#39;: &#39;#/definitions/repository&#39;}                 }             },             &#39;fields&#39;: [&#39;repository.owner&#39;]         }     } } &#x60;&#x60;&#x60;  By specifying fields as above, the repository owner will also be sent to subscribers of the event.
+
+### Example
+
+```javascript
+import Bitbucket from 'bitbucket';
+let defaultClient = Bitbucket.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
+// Configure OAuth2 access token for authorization: oauth2
+let oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new Bitbucket.AddonApi();
+let targetUser = "targetUser_example"; // String | The account the app is installed in.  This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
+let eventKey = "eventKey_example"; // String | The key of the event, which corresponds to an event defined in the connect app descriptor. 
+apiInstance.addonUsersTargetUserEventsEventKeyPost(targetUser, eventKey, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **targetUser** | **String**| The account the app is installed in.  This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
+ **eventKey** | **String**| The key of the event, which corresponds to an event defined in the connect app descriptor.  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key), [basic](../README.md#basic), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 

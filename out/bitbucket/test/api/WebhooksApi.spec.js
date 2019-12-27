@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -68,50 +68,50 @@
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksGet', function() {
-      it('should call repositoriesUsernameRepoSlugHooksGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksGet
-        //instance.repositoriesUsernameRepoSlugHooksGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksGet
+        //instance.repositoriesWorkspaceRepoSlugHooksGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksPost', function() {
-      it('should call repositoriesUsernameRepoSlugHooksPost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksPost
-        //instance.repositoriesUsernameRepoSlugHooksPost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksPost
+        //instance.repositoriesWorkspaceRepoSlugHooksPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksUidDelete', function() {
-      it('should call repositoriesUsernameRepoSlugHooksUidDelete successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksUidDelete
-        //instance.repositoriesUsernameRepoSlugHooksUidDelete(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksUidDelete', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksUidDelete successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksUidDelete
+        //instance.repositoriesWorkspaceRepoSlugHooksUidDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksUidGet', function() {
-      it('should call repositoriesUsernameRepoSlugHooksUidGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksUidGet
-        //instance.repositoriesUsernameRepoSlugHooksUidGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksUidGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksUidGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksUidGet
+        //instance.repositoriesWorkspaceRepoSlugHooksUidGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksUidPut', function() {
-      it('should call repositoriesUsernameRepoSlugHooksUidPut successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksUidPut
-        //instance.repositoriesUsernameRepoSlugHooksUidPut(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksUidPut', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksUidPut successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksUidPut
+        //instance.repositoriesWorkspaceRepoSlugHooksUidPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

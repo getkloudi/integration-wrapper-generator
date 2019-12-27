@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -58,180 +58,230 @@
         done();
       });
     });
-    describe('repositoriesUsernameGet', function() {
-      it('should call repositoriesUsernameGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameGet
-        //instance.repositoriesUsernameGet(function(error) {
+    describe('repositoriesWorkspaceGet', function() {
+      it('should call repositoriesWorkspaceGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceGet
+        //instance.repositoriesWorkspaceGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet', function() {
-      it('should call repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet
-        //instance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet
+        //instance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut', function() {
-      it('should call repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut
-        //instance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut(function(error) {
+    describe('repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut', function() {
+      it('should call repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut
+        //instance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost', function() {
-      it('should call repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost
-        //instance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost
+        //instance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugCommitNodeStatusesGet', function() {
-      it('should call repositoriesUsernameRepoSlugCommitNodeStatusesGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugCommitNodeStatusesGet
-        //instance.repositoriesUsernameRepoSlugCommitNodeStatusesGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugCommitNodeStatusesGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugCommitNodeStatusesGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugCommitNodeStatusesGet
+        //instance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugDelete', function() {
-      it('should call repositoriesUsernameRepoSlugDelete successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugDelete
-        //instance.repositoriesUsernameRepoSlugDelete(function(error) {
+    describe('repositoriesWorkspaceRepoSlugDelete', function() {
+      it('should call repositoriesWorkspaceRepoSlugDelete successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugDelete
+        //instance.repositoriesWorkspaceRepoSlugDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugForksGet', function() {
-      it('should call repositoriesUsernameRepoSlugForksGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugForksGet
-        //instance.repositoriesUsernameRepoSlugForksGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugFilehistoryNodePathGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugFilehistoryNodePathGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugFilehistoryNodePathGet
+        //instance.repositoriesWorkspaceRepoSlugFilehistoryNodePathGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugGet', function() {
-      it('should call repositoriesUsernameRepoSlugGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugGet
-        //instance.repositoriesUsernameRepoSlugGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugForksGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugForksGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugForksGet
+        //instance.repositoriesWorkspaceRepoSlugForksGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksGet', function() {
-      it('should call repositoriesUsernameRepoSlugHooksGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksGet
-        //instance.repositoriesUsernameRepoSlugHooksGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugForksPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugForksPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugForksPost
+        //instance.repositoriesWorkspaceRepoSlugForksPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksPost', function() {
-      it('should call repositoriesUsernameRepoSlugHooksPost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksPost
-        //instance.repositoriesUsernameRepoSlugHooksPost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugGet
+        //instance.repositoriesWorkspaceRepoSlugGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksUidDelete', function() {
-      it('should call repositoriesUsernameRepoSlugHooksUidDelete successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksUidDelete
-        //instance.repositoriesUsernameRepoSlugHooksUidDelete(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksGet
+        //instance.repositoriesWorkspaceRepoSlugHooksGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksUidGet', function() {
-      it('should call repositoriesUsernameRepoSlugHooksUidGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksUidGet
-        //instance.repositoriesUsernameRepoSlugHooksUidGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksPost
+        //instance.repositoriesWorkspaceRepoSlugHooksPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugHooksUidPut', function() {
-      it('should call repositoriesUsernameRepoSlugHooksUidPut successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugHooksUidPut
-        //instance.repositoriesUsernameRepoSlugHooksUidPut(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksUidDelete', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksUidDelete successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksUidDelete
+        //instance.repositoriesWorkspaceRepoSlugHooksUidDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPost', function() {
-      it('should call repositoriesUsernameRepoSlugPost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPost
-        //instance.repositoriesUsernameRepoSlugPost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksUidGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksUidGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksUidGet
+        //instance.repositoriesWorkspaceRepoSlugHooksUidGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugHooksUidPut', function() {
+      it('should call repositoriesWorkspaceRepoSlugHooksUidPut successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugHooksUidPut
+        //instance.repositoriesWorkspaceRepoSlugHooksUidPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPut', function() {
-      it('should call repositoriesUsernameRepoSlugPut successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPut
-        //instance.repositoriesUsernameRepoSlugPut(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPost
+        //instance.repositoriesWorkspaceRepoSlugPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugSrcNodePathGet', function() {
-      it('should call repositoriesUsernameRepoSlugSrcNodePathGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugSrcNodePathGet
-        //instance.repositoriesUsernameRepoSlugSrcNodePathGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugWatchersGet', function() {
-      it('should call repositoriesUsernameRepoSlugWatchersGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugWatchersGet
-        //instance.repositoriesUsernameRepoSlugWatchersGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPut', function() {
+      it('should call repositoriesWorkspaceRepoSlugPut successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPut
+        //instance.repositoriesWorkspaceRepoSlugPut(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugSrcGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugSrcGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugSrcGet
+        //instance.repositoriesWorkspaceRepoSlugSrcGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugSrcNodePathGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugSrcNodePathGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugSrcNodePathGet
+        //instance.repositoriesWorkspaceRepoSlugSrcNodePathGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugSrcPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugSrcPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugSrcPost
+        //instance.repositoriesWorkspaceRepoSlugSrcPost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugWatchersGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugWatchersGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugWatchersGet
+        //instance.repositoriesWorkspaceRepoSlugWatchersGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('userPermissionsRepositoriesGet', function() {
+      it('should call userPermissionsRepositoriesGet successfully', function(done) {
+        //uncomment below and update the code to test userPermissionsRepositoriesGet
+        //instance.userPermissionsRepositoriesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

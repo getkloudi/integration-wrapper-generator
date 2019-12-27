@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**links** | [**BranchrestrictionAllOfLinks**](BranchrestrictionAllOfLinks.md) |  | [optional] 
+**links** | [**BranchingModelSettingsAllOfLinks**](BranchingModelSettingsAllOfLinks.md) |  | [optional] 
 **name** | **String** |  | [optional] 
 
 

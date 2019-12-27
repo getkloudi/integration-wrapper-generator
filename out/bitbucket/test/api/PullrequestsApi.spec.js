@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,200 +48,260 @@
   }
 
   describe('PullrequestsApi', function() {
-    describe('repositoriesUsernameRepoSlugDefaultReviewersGet', function() {
-      it('should call repositoriesUsernameRepoSlugDefaultReviewersGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugDefaultReviewersGet
-        //instance.repositoriesUsernameRepoSlugDefaultReviewersGet(function(error) {
+    describe('getPullrequestsForCommit', function() {
+      it('should call getPullrequestsForCommit successfully', function(done) {
+        //uncomment below and update the code to test getPullrequestsForCommit
+        //instance.getPullrequestsForCommit(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDelete', function() {
-      it('should call repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDelete successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDelete
-        //instance.repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameDelete(function(error) {
+    describe('pullrequestsSelectedUserGet', function() {
+      it('should call pullrequestsSelectedUserGet successfully', function(done) {
+        //uncomment below and update the code to test pullrequestsSelectedUserGet
+        //instance.pullrequestsSelectedUserGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGet', function() {
-      it('should call repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGet
-        //instance.repositoriesUsernameRepoSlugDefaultReviewersTargetUsernameGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugDefaultReviewersGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugDefaultReviewersGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugDefaultReviewersGet
+        //instance.repositoriesWorkspaceRepoSlugDefaultReviewersGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePut', function() {
-      it('should call repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePut successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePut
-        //instance.repositoriesUsernameRepoSlugDefaultReviewersTargetUsernamePut(function(error) {
+    describe('repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDelete', function() {
+      it('should call repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDelete successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDelete
+        //instance.repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsActivityGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsActivityGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsActivityGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsActivityGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGet
+        //instance.repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernameGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePut', function() {
+      it('should call repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePut successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePut
+        //instance.repositoriesWorkspaceRepoSlugDefaultReviewersTargetUsernamePut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPost', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPost
-        //instance.repositoriesUsernameRepoSlugPullrequestsPost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsActivityGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsActivityGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsActivityGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsActivityGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdActivityGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDelete', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDelete successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDelete
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdApproveDelete(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPost
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePost', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePost
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdApprovePost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdActivityGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDelete', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDelete successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDelete
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApproveDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommentsGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePost', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePost
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdApprovePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdCommitsGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePost', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePost
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdDeclinePost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdDiffGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsCommentIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePost', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePost
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdMergePost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommentsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdPatchGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdCommitsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdPut', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdPut successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdPut
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdPut(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePost', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePost
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDeclinePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

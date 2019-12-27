@@ -7,8 +7,6 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _PipelineLogRange = _interopRequireDefault(require("./PipelineLogRange"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -59,16 +57,12 @@ function () {
       if (data) {
         obj = obj || new PipelineCommand();
 
-        if (data.hasOwnProperty('command')) {
-          obj['command'] = _ApiClient["default"].convertToType(data['command'], 'String');
-        }
-
-        if (data.hasOwnProperty('log_range')) {
-          obj['log_range'] = _PipelineLogRange["default"].constructFromObject(data['log_range']);
-        }
-
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('command')) {
+          obj['command'] = _ApiClient["default"].convertToType(data['command'], 'String');
         }
       }
 
@@ -79,22 +73,17 @@ function () {
   return PipelineCommand;
 }();
 /**
- * The executable command.
- * @member {String} command
- */
-
-
-PipelineCommand.prototype['command'] = undefined;
-/**
- * @member {module:model/PipelineLogRange} log_range
- */
-
-PipelineCommand.prototype['log_range'] = undefined;
-/**
  * The name of the command.
  * @member {String} name
  */
 
+
 PipelineCommand.prototype['name'] = undefined;
+/**
+ * The executable command.
+ * @member {String} command
+ */
+
+PipelineCommand.prototype['command'] = undefined;
 var _default = PipelineCommand;
 exports["default"] = _default;

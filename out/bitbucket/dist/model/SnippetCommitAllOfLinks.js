@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AccountAllOfLinksAvatar = _interopRequireDefault(require("./AccountAllOfLinksAvatar"));
+var _SubjectTypesRepositoryEvents = _interopRequireDefault(require("./SubjectTypesRepositoryEvents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -58,16 +58,16 @@ function () {
       if (data) {
         obj = obj || new SnippetCommitAllOfLinks();
 
-        if (data.hasOwnProperty('diff')) {
-          obj['diff'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['diff']);
+        if (data.hasOwnProperty('self')) {
+          obj['self'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['self']);
         }
 
         if (data.hasOwnProperty('html')) {
-          obj['html'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['html']);
+          obj['html'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['html']);
         }
 
-        if (data.hasOwnProperty('self')) {
-          obj['self'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['self']);
+        if (data.hasOwnProperty('diff')) {
+          obj['diff'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['diff']);
         }
       }
 
@@ -78,20 +78,20 @@ function () {
   return SnippetCommitAllOfLinks;
 }();
 /**
- * @member {module:model/AccountAllOfLinksAvatar} diff
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
 
 
-SnippetCommitAllOfLinks.prototype['diff'] = undefined;
+SnippetCommitAllOfLinks.prototype['self'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} html
+ * @member {module:model/SubjectTypesRepositoryEvents} html
  */
 
 SnippetCommitAllOfLinks.prototype['html'] = undefined;
 /**
- * @member {module:model/AccountAllOfLinksAvatar} self
+ * @member {module:model/SubjectTypesRepositoryEvents} diff
  */
 
-SnippetCommitAllOfLinks.prototype['self'] = undefined;
+SnippetCommitAllOfLinks.prototype['diff'] = undefined;
 var _default = SnippetCommitAllOfLinks;
 exports["default"] = _default;

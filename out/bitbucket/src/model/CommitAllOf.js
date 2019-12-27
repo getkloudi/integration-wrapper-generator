@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import CommitAllOfLinks from './CommitAllOfLinks';
 import Participant from './Participant';
 import Repository from './Repository';
 
@@ -51,14 +50,11 @@ class CommitAllOf {
         if (data) {
             obj = obj || new CommitAllOf();
 
-            if (data.hasOwnProperty('links')) {
-                obj['links'] = CommitAllOfLinks.constructFromObject(data['links']);
+            if (data.hasOwnProperty('repository')) {
+                obj['repository'] = Repository.constructFromObject(data['repository']);
             }
             if (data.hasOwnProperty('participants')) {
                 obj['participants'] = ApiClient.convertToType(data['participants'], [Participant]);
-            }
-            if (data.hasOwnProperty('repository')) {
-                obj['repository'] = Repository.constructFromObject(data['repository']);
             }
         }
         return obj;
@@ -68,19 +64,14 @@ class CommitAllOf {
 }
 
 /**
- * @member {module:model/CommitAllOfLinks} links
+ * @member {module:model/Repository} repository
  */
-CommitAllOf.prototype['links'] = undefined;
+CommitAllOf.prototype['repository'] = undefined;
 
 /**
  * @member {Array.<module:model/Participant>} participants
  */
 CommitAllOf.prototype['participants'] = undefined;
-
-/**
- * @member {module:model/Repository} repository
- */
-CommitAllOf.prototype['repository'] = undefined;
 
 
 

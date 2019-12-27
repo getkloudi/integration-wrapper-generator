@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -68,14 +68,6 @@ class Team {
  */
 Account.prototype['type'] = undefined;
 /**
- * @member {Date} created_on
- */
-Account.prototype['created_on'] = undefined;
-/**
- * @member {String} display_name
- */
-Account.prototype['display_name'] = undefined;
-/**
  * @member {module:model/AccountAllOfLinks} links
  */
 Account.prototype['links'] = undefined;
@@ -84,13 +76,35 @@ Account.prototype['links'] = undefined;
  */
 Account.prototype['username'] = undefined;
 /**
- * @member {String} uuid
+ * Account name defined by the owner. Should be used instead of the \"username\" field. Note that \"nickname\" cannot be used in place of \"username\" in URLs and queries, as \"nickname\" is not guaranteed to be unique.
+ * @member {String} nickname
  */
-Account.prototype['uuid'] = undefined;
+Account.prototype['nickname'] = undefined;
+/**
+ * The status of the account. Currently the only possible value is \"active\", but more values may be added in the future.
+ * @member {String} account_status
+ */
+Account.prototype['account_status'] = undefined;
+/**
+ * @member {String} display_name
+ */
+Account.prototype['display_name'] = undefined;
 /**
  * @member {String} website
  */
 Account.prototype['website'] = undefined;
+/**
+ * @member {Date} created_on
+ */
+Account.prototype['created_on'] = undefined;
+/**
+ * @member {String} uuid
+ */
+Account.prototype['uuid'] = undefined;
+/**
+ * @member {Boolean} has_2fa_enabled
+ */
+Account.prototype['has_2fa_enabled'] = undefined;
 
 
 

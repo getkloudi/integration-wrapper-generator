@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(Bitbucket.PipelineSshPublicKey);
     });
 
-    it('should have the property key (base name: "key")', function() {
-      // uncomment below and update the code to test the property key
+    it('should have the property keyType (base name: "key_type")', function() {
+      // uncomment below and update the code to test the property keyType
       //var instane = new Bitbucket.PipelineSshPublicKey();
       //expect(instance).to.be();
     });
 
-    it('should have the property keyType (base name: "key_type")', function() {
-      // uncomment below and update the code to test the property keyType
+    it('should have the property key (base name: "key")', function() {
+      // uncomment below and update the code to test the property key
       //var instane = new Bitbucket.PipelineSshPublicKey();
       //expect(instance).to.be();
     });

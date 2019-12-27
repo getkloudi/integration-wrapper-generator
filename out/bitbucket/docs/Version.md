@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | [optional] 
-**links** | [**BranchrestrictionAllOfLinks**](BranchrestrictionAllOfLinks.md) |  | [optional] 
+**links** | [**BranchingModelSettingsAllOfLinks**](BranchingModelSettingsAllOfLinks.md) |  | [optional] 
 **name** | **String** |  | [optional] 
+**id** | **Number** |  | [optional] 
 
 

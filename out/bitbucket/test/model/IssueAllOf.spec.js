@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,32 +54,8 @@
       //expect(instance).to.be.a(Bitbucket.IssueAllOf);
     });
 
-    it('should have the property assignee (base name: "assignee")', function() {
-      // uncomment below and update the code to test the property assignee
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property component (base name: "component")', function() {
-      // uncomment below and update the code to test the property component
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property content (base name: "content")', function() {
-      // uncomment below and update the code to test the property content
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdOn (base name: "created_on")', function() {
-      // uncomment below and update the code to test the property createdOn
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property editedOn (base name: "edited_on")', function() {
-      // uncomment below and update the code to test the property editedOn
+    it('should have the property links (base name: "links")', function() {
+      // uncomment below and update the code to test the property links
       //var instane = new Bitbucket.IssueAllOf();
       //expect(instance).to.be();
     });
@@ -90,44 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property kind (base name: "kind")', function() {
-      // uncomment below and update the code to test the property kind
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property links (base name: "links")', function() {
-      // uncomment below and update the code to test the property links
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property milestone (base name: "milestone")', function() {
-      // uncomment below and update the code to test the property milestone
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property priority (base name: "priority")', function() {
-      // uncomment below and update the code to test the property priority
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property reporter (base name: "reporter")', function() {
-      // uncomment below and update the code to test the property reporter
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
     it('should have the property repository (base name: "repository")', function() {
       // uncomment below and update the code to test the property repository
-      //var instane = new Bitbucket.IssueAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
       //var instane = new Bitbucket.IssueAllOf();
       //expect(instance).to.be();
     });
@@ -138,8 +78,56 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property reporter (base name: "reporter")', function() {
+      // uncomment below and update the code to test the property reporter
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property assignee (base name: "assignee")', function() {
+      // uncomment below and update the code to test the property assignee
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdOn (base name: "created_on")', function() {
+      // uncomment below and update the code to test the property createdOn
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
     it('should have the property updatedOn (base name: "updated_on")', function() {
       // uncomment below and update the code to test the property updatedOn
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property editedOn (base name: "edited_on")', function() {
+      // uncomment below and update the code to test the property editedOn
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property kind (base name: "kind")', function() {
+      // uncomment below and update the code to test the property kind
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property priority (base name: "priority")', function() {
+      // uncomment below and update the code to test the property priority
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property milestone (base name: "milestone")', function() {
+      // uncomment below and update the code to test the property milestone
       //var instane = new Bitbucket.IssueAllOf();
       //expect(instance).to.be();
     });
@@ -150,8 +138,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property component (base name: "component")', function() {
+      // uncomment below and update the code to test the property component
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
     it('should have the property votes (base name: "votes")', function() {
       // uncomment below and update the code to test the property votes
+      //var instane = new Bitbucket.IssueAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property content (base name: "content")', function() {
+      // uncomment below and update the code to test the property content
       //var instane = new Bitbucket.IssueAllOf();
       //expect(instance).to.be();
     });

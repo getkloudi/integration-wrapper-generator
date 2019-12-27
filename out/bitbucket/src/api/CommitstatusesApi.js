@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -37,8 +37,8 @@ export default class CommitstatusesApi {
 
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet operation.
-     * @callback module:api/CommitstatusesApi~repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet operation.
+     * @callback module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Commitstatus} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -46,37 +46,37 @@ export default class CommitstatusesApi {
 
     /**
      * Returns the specified build status for a commit.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {String} node The commit's SHA1
+     * @param {String} node The commit's SHA1.
      * @param {String} key The build status' unique key
-     * @param {module:api/CommitstatusesApi~repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Commitstatus}
      */
-    repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet(username, repoSlug, node, key, callback) {
+    repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet(node, key, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet");
-      }
-      // verify the required parameter 'repoSlug' is set
-      if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet");
-      }
       // verify the required parameter 'node' is set
       if (node === undefined || node === null) {
-        throw new Error("Missing the required parameter 'node' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet");
+        throw new Error("Missing the required parameter 'node' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet");
       }
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet");
+        throw new Error("Missing the required parameter 'key' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet");
       }
 
       let pathParams = {
-        'username': username,
-        'repo_slug': repoSlug,
         'node': node,
-        'key': key
+        'key': key,
+        'workspace': workspace,
+        'repo_slug': repoSlug
       };
       let queryParams = {
       };
@@ -90,15 +90,15 @@ export default class CommitstatusesApi {
       let accepts = ['application/json'];
       let returnType = Commitstatus;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/commit/{node}/statuses/build/{key}', 'GET',
+        '/repositories/{workspace}/{repo_slug}/commit/{node}/statuses/build/{key}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut operation.
-     * @callback module:api/CommitstatusesApi~repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPutCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut operation.
+     * @callback module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Commitstatus} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -106,40 +106,40 @@ export default class CommitstatusesApi {
 
     /**
      * Used to update the current status of a build status object on the specific commit.  This operation can also be used to change other properties of the build status:  * `state` * `name` * `description` * `url` * `refname`  The `key` cannot be changed.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {String} node The commit's SHA1
-     * @param {String} key The commit status' unique key
+     * @param {String} node The commit's SHA1.
+     * @param {String} key The build status' unique key
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
      * @param {Object} opts Optional parameters
      * @param {module:model/Commitstatus} opts.body The updated build status object
-     * @param {module:api/CommitstatusesApi~repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Commitstatus}
      */
-    repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut(username, repoSlug, node, key, opts, callback) {
+    repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut(node, key, workspace, repoSlug, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut");
-      }
-      // verify the required parameter 'repoSlug' is set
-      if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut");
-      }
       // verify the required parameter 'node' is set
       if (node === undefined || node === null) {
-        throw new Error("Missing the required parameter 'node' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut");
+        throw new Error("Missing the required parameter 'node' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut");
       }
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut");
+        throw new Error("Missing the required parameter 'key' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut");
       }
 
       let pathParams = {
-        'username': username,
-        'repo_slug': repoSlug,
         'node': node,
-        'key': key
+        'key': key,
+        'workspace': workspace,
+        'repo_slug': repoSlug
       };
       let queryParams = {
       };
@@ -153,15 +153,15 @@ export default class CommitstatusesApi {
       let accepts = ['application/json'];
       let returnType = Commitstatus;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/commit/{node}/statuses/build/{key}', 'PUT',
+        '/repositories/{workspace}/{repo_slug}/commit/{node}/statuses/build/{key}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost operation.
-     * @callback module:api/CommitstatusesApi~repositoriesUsernameRepoSlugCommitNodeStatusesBuildPostCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost operation.
+     * @callback module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Commitstatus} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -169,31 +169,34 @@ export default class CommitstatusesApi {
 
     /**
      * Creates a new build status against the specified commit.  If the specified key already exists, the existing status object will be overwritten.  When creating a new commit status, you can use a URI template for the URL. Templates are URLs that contain variable names that Bitbucket will evaluate at runtime whenever the URL is displayed anywhere similar to parameter substitution in [Bitbucket Connect](https://developer.atlassian.com/bitbucket/concepts/context-parameters.html). For example, one could use `https://foo.com/builds/{repository.full_name}` which Bitbucket will turn into `https://foo.com/builds/foo/bar` at render time. The context variables available are `repository` and `commit`.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {String} node The commit's SHA1
-     * @param {module:api/CommitstatusesApi~repositoriesUsernameRepoSlugCommitNodeStatusesBuildPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} node The commit's SHA1.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Commitstatus} opts.body The new commit status object.
+     * @param {module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Commitstatus}
      */
-    repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost(username, repoSlug, node, callback) {
-      let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost");
+    repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost(node, workspace, repoSlug, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'node' is set
+      if (node === undefined || node === null) {
+        throw new Error("Missing the required parameter 'node' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost");
-      }
-      // verify the required parameter 'node' is set
-      if (node === undefined || node === null) {
-        throw new Error("Missing the required parameter 'node' when calling repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost");
       }
 
       let pathParams = {
-        'username': username,
-        'repo_slug': repoSlug,
-        'node': node
+        'node': node,
+        'workspace': workspace,
+        'repo_slug': repoSlug
       };
       let queryParams = {
       };
@@ -203,19 +206,19 @@ export default class CommitstatusesApi {
       };
 
       let authNames = ['api_key', 'basic', 'oauth2'];
-      let contentTypes = [];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Commitstatus;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/commit/{node}/statuses/build', 'POST',
+        '/repositories/{workspace}/{repo_slug}/commit/{node}/statuses/build', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugCommitNodeStatusesGet operation.
-     * @callback module:api/CommitstatusesApi~repositoriesUsernameRepoSlugCommitNodeStatusesGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugCommitNodeStatusesGet operation.
+     * @callback module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedCommitstatuses} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -223,31 +226,31 @@ export default class CommitstatusesApi {
 
     /**
      * Returns all statuses (e.g. build results) for a specific commit.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {String} node The commit's SHA1
-     * @param {module:api/CommitstatusesApi~repositoriesUsernameRepoSlugCommitNodeStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} node The commit's SHA1.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCommitstatuses}
      */
-    repositoriesUsernameRepoSlugCommitNodeStatusesGet(username, repoSlug, node, callback) {
+    repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugCommitNodeStatusesGet");
+      // verify the required parameter 'node' is set
+      if (node === undefined || node === null) {
+        throw new Error("Missing the required parameter 'node' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugCommitNodeStatusesGet");
-      }
-      // verify the required parameter 'node' is set
-      if (node === undefined || node === null) {
-        throw new Error("Missing the required parameter 'node' when calling repositoriesUsernameRepoSlugCommitNodeStatusesGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugCommitNodeStatusesGet");
       }
 
       let pathParams = {
-        'username': username,
-        'repo_slug': repoSlug,
-        'node': node
+        'node': node,
+        'workspace': workspace,
+        'repo_slug': repoSlug
       };
       let queryParams = {
       };
@@ -261,15 +264,15 @@ export default class CommitstatusesApi {
       let accepts = ['application/json'];
       let returnType = PaginatedCommitstatuses;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/commit/{node}/statuses', 'GET',
+        '/repositories/{workspace}/{repo_slug}/commit/{node}/statuses', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet operation.
-     * @callback module:api/CommitstatusesApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet operation.
+     * @callback module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaginatedCommitstatuses} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -277,31 +280,31 @@ export default class CommitstatusesApi {
 
     /**
      * Returns all statuses (e.g. build results) for the given pull request.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {Number} pullRequestId The pull request's id
-     * @param {module:api/CommitstatusesApi~repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {Number} pullRequestId The id of the pull request.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCommitstatuses}
      */
-    repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet(username, repoSlug, pullRequestId, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet");
+      // verify the required parameter 'pullRequestId' is set
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet");
-      }
-      // verify the required parameter 'pullRequestId' is set
-      if (pullRequestId === undefined || pullRequestId === null) {
-        throw new Error("Missing the required parameter 'pullRequestId' when calling repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet");
       }
 
       let pathParams = {
-        'username': username,
-        'repo_slug': repoSlug,
-        'pull_request_id': pullRequestId
+        'pull_request_id': pullRequestId,
+        'workspace': workspace,
+        'repo_slug': repoSlug
       };
       let queryParams = {
       };
@@ -315,7 +318,7 @@ export default class CommitstatusesApi {
       let accepts = ['application/json'];
       let returnType = PaginatedCommitstatuses;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/pullrequests/{pull_request_id}/statuses', 'GET',
+        '/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/statuses', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

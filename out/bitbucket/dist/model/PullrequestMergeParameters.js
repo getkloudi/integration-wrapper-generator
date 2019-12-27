@@ -60,20 +60,20 @@ function () {
       if (data) {
         obj = obj || new PullrequestMergeParameters();
 
-        if (data.hasOwnProperty('close_source_branch')) {
-          obj['close_source_branch'] = _ApiClient["default"].convertToType(data['close_source_branch'], 'Boolean');
-        }
-
-        if (data.hasOwnProperty('merge_strategy')) {
-          obj['merge_strategy'] = _ApiClient["default"].convertToType(data['merge_strategy'], 'String');
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
 
         if (data.hasOwnProperty('message')) {
           obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
+        if (data.hasOwnProperty('close_source_branch')) {
+          obj['close_source_branch'] = _ApiClient["default"].convertToType(data['close_source_branch'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('merge_strategy')) {
+          obj['merge_strategy'] = _ApiClient["default"].convertToType(data['merge_strategy'], 'String');
         }
       }
 
@@ -84,10 +84,21 @@ function () {
   return PullrequestMergeParameters;
 }();
 /**
+ * @member {String} type
+ */
+
+
+PullrequestMergeParameters.prototype['type'] = undefined;
+/**
+ * The commit message that will be used on the resulting commit.
+ * @member {String} message
+ */
+
+PullrequestMergeParameters.prototype['message'] = undefined;
+/**
  * Whether the source branch should be deleted. If this is not provided, we fallback to the value used when the pull request was created, which defaults to False
  * @member {Boolean} close_source_branch
  */
-
 
 PullrequestMergeParameters.prototype['close_source_branch'] = undefined;
 /**
@@ -97,17 +108,6 @@ PullrequestMergeParameters.prototype['close_source_branch'] = undefined;
  */
 
 PullrequestMergeParameters.prototype['merge_strategy'] = 'merge_commit';
-/**
- * The commit message that will be used on the resulting commit.
- * @member {String} message
- */
-
-PullrequestMergeParameters.prototype['message'] = undefined;
-/**
- * @member {String} type
- */
-
-PullrequestMergeParameters.prototype['type'] = undefined;
 /**
  * Allowed values for the <code>merge_strategy</code> property.
  * @enum {String}
@@ -125,7 +125,13 @@ PullrequestMergeParameters['MergeStrategyEnum'] = {
    * value: "squash"
    * @const
    */
-  "squash": "squash"
+  "squash": "squash",
+
+  /**
+   * value: "fast_forward"
+   * @const
+   */
+  "fast_forward": "fast_forward"
 };
 var _default = PullrequestMergeParameters;
 exports["default"] = _default;

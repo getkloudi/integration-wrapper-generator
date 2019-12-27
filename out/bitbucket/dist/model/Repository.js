@@ -9,6 +9,8 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Account = _interopRequireDefault(require("./Account"));
 
+var _Branch = _interopRequireDefault(require("./Branch"));
+
 var _ModelObject = _interopRequireDefault(require("./ModelObject"));
 
 var _Project = _interopRequireDefault(require("./Project"));
@@ -80,20 +82,56 @@ function () {
 
         _RepositoryAllOf["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('created_on')) {
-          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
+        if (data.hasOwnProperty('links')) {
+          obj['links'] = _RepositoryAllOfLinks["default"].constructFromObject(data['links']);
+        }
+
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        }
+
+        if (data.hasOwnProperty('full_name')) {
+          obj['full_name'] = _ApiClient["default"].convertToType(data['full_name'], 'String');
+        }
+
+        if (data.hasOwnProperty('is_private')) {
+          obj['is_private'] = _ApiClient["default"].convertToType(data['is_private'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('parent')) {
+          obj['parent'] = Repository.constructFromObject(data['parent']);
+        }
+
+        if (data.hasOwnProperty('scm')) {
+          obj['scm'] = _ApiClient["default"].convertToType(data['scm'], 'String');
+        }
+
+        if (data.hasOwnProperty('owner')) {
+          obj['owner'] = _Account["default"].constructFromObject(data['owner']);
+        }
+
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('description')) {
           obj['description'] = _ApiClient["default"].convertToType(data['description'], 'String');
         }
 
-        if (data.hasOwnProperty('fork_policy')) {
-          obj['fork_policy'] = _ApiClient["default"].convertToType(data['fork_policy'], 'String');
+        if (data.hasOwnProperty('created_on')) {
+          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
         }
 
-        if (data.hasOwnProperty('full_name')) {
-          obj['full_name'] = _ApiClient["default"].convertToType(data['full_name'], 'String');
+        if (data.hasOwnProperty('updated_on')) {
+          obj['updated_on'] = _ApiClient["default"].convertToType(data['updated_on'], 'Date');
+        }
+
+        if (data.hasOwnProperty('size')) {
+          obj['size'] = _ApiClient["default"].convertToType(data['size'], 'Number');
+        }
+
+        if (data.hasOwnProperty('language')) {
+          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
         }
 
         if (data.hasOwnProperty('has_issues')) {
@@ -104,48 +142,16 @@ function () {
           obj['has_wiki'] = _ApiClient["default"].convertToType(data['has_wiki'], 'Boolean');
         }
 
-        if (data.hasOwnProperty('is_private')) {
-          obj['is_private'] = _ApiClient["default"].convertToType(data['is_private'], 'Boolean');
-        }
-
-        if (data.hasOwnProperty('language')) {
-          obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
-        }
-
-        if (data.hasOwnProperty('links')) {
-          obj['links'] = _RepositoryAllOfLinks["default"].constructFromObject(data['links']);
-        }
-
-        if (data.hasOwnProperty('name')) {
-          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
-        }
-
-        if (data.hasOwnProperty('owner')) {
-          obj['owner'] = _Account["default"].constructFromObject(data['owner']);
-        }
-
-        if (data.hasOwnProperty('parent')) {
-          obj['parent'] = Repository.constructFromObject(data['parent']);
+        if (data.hasOwnProperty('fork_policy')) {
+          obj['fork_policy'] = _ApiClient["default"].convertToType(data['fork_policy'], 'String');
         }
 
         if (data.hasOwnProperty('project')) {
           obj['project'] = _Project["default"].constructFromObject(data['project']);
         }
 
-        if (data.hasOwnProperty('scm')) {
-          obj['scm'] = _ApiClient["default"].convertToType(data['scm'], 'String');
-        }
-
-        if (data.hasOwnProperty('size')) {
-          obj['size'] = _ApiClient["default"].convertToType(data['size'], 'Number');
-        }
-
-        if (data.hasOwnProperty('updated_on')) {
-          obj['updated_on'] = _ApiClient["default"].convertToType(data['updated_on'], 'Date');
-        }
-
-        if (data.hasOwnProperty('uuid')) {
-          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        if (data.hasOwnProperty('mainbranch')) {
+          obj['mainbranch'] = _Branch["default"].constructFromObject(data['mainbranch']);
         }
       }
 
@@ -156,28 +162,73 @@ function () {
   return Repository;
 }();
 /**
- * @member {Date} created_on
+ * @member {module:model/RepositoryAllOfLinks} links
  */
 
 
-Repository.prototype['created_on'] = undefined;
+Repository.prototype['links'] = undefined;
 /**
- * @member {String} description
+ * The repository's immutable id. This can be used as a substitute for the slug segment in URLs. Doing this guarantees your URLs will survive renaming of the repository by its owner, or even transfer of the repository to a different user.
+ * @member {String} uuid
  */
 
-Repository.prototype['description'] = undefined;
-/**
- *  Controls the rules for forking this repository.  * **allow_forks**: unrestricted forking * **no_public_forks**: restrict forking to private forks (forks cannot   be made public later) * **no_forks**: deny all forking 
- * @member {module:model/Repository.ForkPolicyEnum} fork_policy
- */
-
-Repository.prototype['fork_policy'] = undefined;
+Repository.prototype['uuid'] = undefined;
 /**
  * The concatenation of the repository owner's username and the slugified name, e.g. \"evzijst/interruptingcow\". This is the same string used in Bitbucket URLs.
  * @member {String} full_name
  */
 
 Repository.prototype['full_name'] = undefined;
+/**
+ * @member {Boolean} is_private
+ */
+
+Repository.prototype['is_private'] = undefined;
+/**
+ * @member {module:model/Repository} parent
+ */
+
+Repository.prototype['parent'] = undefined;
+/**
+ * @member {module:model/Repository.ScmEnum} scm
+ */
+
+Repository.prototype['scm'] = undefined;
+/**
+ * @member {module:model/Account} owner
+ */
+
+Repository.prototype['owner'] = undefined;
+/**
+ * @member {String} name
+ */
+
+Repository.prototype['name'] = undefined;
+/**
+ * @member {String} description
+ */
+
+Repository.prototype['description'] = undefined;
+/**
+ * @member {Date} created_on
+ */
+
+Repository.prototype['created_on'] = undefined;
+/**
+ * @member {Date} updated_on
+ */
+
+Repository.prototype['updated_on'] = undefined;
+/**
+ * @member {Number} size
+ */
+
+Repository.prototype['size'] = undefined;
+/**
+ * @member {String} language
+ */
+
+Repository.prototype['language'] = undefined;
 /**
  * @member {Boolean} has_issues
  */
@@ -189,61 +240,21 @@ Repository.prototype['has_issues'] = undefined;
 
 Repository.prototype['has_wiki'] = undefined;
 /**
- * @member {Boolean} is_private
+ *  Controls the rules for forking this repository.  * **allow_forks**: unrestricted forking * **no_public_forks**: restrict forking to private forks (forks cannot   be made public later) * **no_forks**: deny all forking 
+ * @member {module:model/Repository.ForkPolicyEnum} fork_policy
  */
 
-Repository.prototype['is_private'] = undefined;
-/**
- * @member {String} language
- */
-
-Repository.prototype['language'] = undefined;
-/**
- * @member {module:model/RepositoryAllOfLinks} links
- */
-
-Repository.prototype['links'] = undefined;
-/**
- * @member {String} name
- */
-
-Repository.prototype['name'] = undefined;
-/**
- * @member {module:model/Account} owner
- */
-
-Repository.prototype['owner'] = undefined;
-/**
- * @member {module:model/Repository} parent
- */
-
-Repository.prototype['parent'] = undefined;
+Repository.prototype['fork_policy'] = undefined;
 /**
  * @member {module:model/Project} project
  */
 
 Repository.prototype['project'] = undefined;
 /**
- * @member {module:model/Repository.ScmEnum} scm
+ * @member {module:model/Branch} mainbranch
  */
 
-Repository.prototype['scm'] = undefined;
-/**
- * @member {Number} size
- */
-
-Repository.prototype['size'] = undefined;
-/**
- * @member {Date} updated_on
- */
-
-Repository.prototype['updated_on'] = undefined;
-/**
- * The repository's immutable id. This can be used as a substitute for the slug segment in URLs. Doing this guarantees your URLs will survive renaming of the repository by its owner, or even transfer of the repository to a different user.
- * @member {String} uuid
- */
-
-Repository.prototype['uuid'] = undefined; // Implement ModelObject interface:
+Repository.prototype['mainbranch'] = undefined; // Implement ModelObject interface:
 
 /**
  * @member {String} type
@@ -252,27 +263,72 @@ Repository.prototype['uuid'] = undefined; // Implement ModelObject interface:
 _ModelObject["default"].prototype['type'] = undefined; // Implement RepositoryAllOf interface:
 
 /**
- * @member {Date} created_on
+ * @member {module:model/RepositoryAllOfLinks} links
  */
 
-_RepositoryAllOf["default"].prototype['created_on'] = undefined;
+_RepositoryAllOf["default"].prototype['links'] = undefined;
 /**
- * @member {String} description
+ * The repository's immutable id. This can be used as a substitute for the slug segment in URLs. Doing this guarantees your URLs will survive renaming of the repository by its owner, or even transfer of the repository to a different user.
+ * @member {String} uuid
  */
 
-_RepositoryAllOf["default"].prototype['description'] = undefined;
-/**
- *  Controls the rules for forking this repository.  * **allow_forks**: unrestricted forking * **no_public_forks**: restrict forking to private forks (forks cannot   be made public later) * **no_forks**: deny all forking 
- * @member {module:model/RepositoryAllOf.ForkPolicyEnum} fork_policy
- */
-
-_RepositoryAllOf["default"].prototype['fork_policy'] = undefined;
+_RepositoryAllOf["default"].prototype['uuid'] = undefined;
 /**
  * The concatenation of the repository owner's username and the slugified name, e.g. \"evzijst/interruptingcow\". This is the same string used in Bitbucket URLs.
  * @member {String} full_name
  */
 
 _RepositoryAllOf["default"].prototype['full_name'] = undefined;
+/**
+ * @member {Boolean} is_private
+ */
+
+_RepositoryAllOf["default"].prototype['is_private'] = undefined;
+/**
+ * @member {module:model/Repository} parent
+ */
+
+_RepositoryAllOf["default"].prototype['parent'] = undefined;
+/**
+ * @member {module:model/RepositoryAllOf.ScmEnum} scm
+ */
+
+_RepositoryAllOf["default"].prototype['scm'] = undefined;
+/**
+ * @member {module:model/Account} owner
+ */
+
+_RepositoryAllOf["default"].prototype['owner'] = undefined;
+/**
+ * @member {String} name
+ */
+
+_RepositoryAllOf["default"].prototype['name'] = undefined;
+/**
+ * @member {String} description
+ */
+
+_RepositoryAllOf["default"].prototype['description'] = undefined;
+/**
+ * @member {Date} created_on
+ */
+
+_RepositoryAllOf["default"].prototype['created_on'] = undefined;
+/**
+ * @member {Date} updated_on
+ */
+
+_RepositoryAllOf["default"].prototype['updated_on'] = undefined;
+/**
+ * @member {Number} size
+ */
+
+_RepositoryAllOf["default"].prototype['size'] = undefined;
+/**
+ * @member {String} language
+ */
+
+_RepositoryAllOf["default"].prototype['language'] = undefined;
 /**
  * @member {Boolean} has_issues
  */
@@ -284,61 +340,40 @@ _RepositoryAllOf["default"].prototype['has_issues'] = undefined;
 
 _RepositoryAllOf["default"].prototype['has_wiki'] = undefined;
 /**
- * @member {Boolean} is_private
+ *  Controls the rules for forking this repository.  * **allow_forks**: unrestricted forking * **no_public_forks**: restrict forking to private forks (forks cannot   be made public later) * **no_forks**: deny all forking 
+ * @member {module:model/RepositoryAllOf.ForkPolicyEnum} fork_policy
  */
 
-_RepositoryAllOf["default"].prototype['is_private'] = undefined;
-/**
- * @member {String} language
- */
-
-_RepositoryAllOf["default"].prototype['language'] = undefined;
-/**
- * @member {module:model/RepositoryAllOfLinks} links
- */
-
-_RepositoryAllOf["default"].prototype['links'] = undefined;
-/**
- * @member {String} name
- */
-
-_RepositoryAllOf["default"].prototype['name'] = undefined;
-/**
- * @member {module:model/Account} owner
- */
-
-_RepositoryAllOf["default"].prototype['owner'] = undefined;
-/**
- * @member {module:model/Repository} parent
- */
-
-_RepositoryAllOf["default"].prototype['parent'] = undefined;
+_RepositoryAllOf["default"].prototype['fork_policy'] = undefined;
 /**
  * @member {module:model/Project} project
  */
 
 _RepositoryAllOf["default"].prototype['project'] = undefined;
 /**
- * @member {module:model/RepositoryAllOf.ScmEnum} scm
+ * @member {module:model/Branch} mainbranch
  */
 
-_RepositoryAllOf["default"].prototype['scm'] = undefined;
+_RepositoryAllOf["default"].prototype['mainbranch'] = undefined;
 /**
- * @member {Number} size
+ * Allowed values for the <code>scm</code> property.
+ * @enum {String}
+ * @readonly
  */
 
-_RepositoryAllOf["default"].prototype['size'] = undefined;
-/**
- * @member {Date} updated_on
- */
+Repository['ScmEnum'] = {
+  /**
+   * value: "hg"
+   * @const
+   */
+  "hg": "hg",
 
-_RepositoryAllOf["default"].prototype['updated_on'] = undefined;
-/**
- * The repository's immutable id. This can be used as a substitute for the slug segment in URLs. Doing this guarantees your URLs will survive renaming of the repository by its owner, or even transfer of the repository to a different user.
- * @member {String} uuid
- */
-
-_RepositoryAllOf["default"].prototype['uuid'] = undefined;
+  /**
+   * value: "git"
+   * @const
+   */
+  "git": "git"
+};
 /**
  * Allowed values for the <code>fork_policy</code> property.
  * @enum {String}
@@ -363,25 +398,6 @@ Repository['ForkPolicyEnum'] = {
    * @const
    */
   "no_forks": "no_forks"
-};
-/**
- * Allowed values for the <code>scm</code> property.
- * @enum {String}
- * @readonly
- */
-
-Repository['ScmEnum'] = {
-  /**
-   * value: "hg"
-   * @const
-   */
-  "hg": "hg",
-
-  /**
-   * value: "git"
-   * @const
-   */
-  "git": "git"
 };
 var _default = Repository;
 exports["default"] = _default;

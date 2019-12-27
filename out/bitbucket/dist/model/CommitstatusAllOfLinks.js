@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AccountAllOfLinksAvatar = _interopRequireDefault(require("./AccountAllOfLinksAvatar"));
+var _SubjectTypesRepositoryEvents = _interopRequireDefault(require("./SubjectTypesRepositoryEvents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -58,12 +58,12 @@ function () {
       if (data) {
         obj = obj || new CommitstatusAllOfLinks();
 
-        if (data.hasOwnProperty('commit')) {
-          obj['commit'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['commit']);
+        if (data.hasOwnProperty('self')) {
+          obj['self'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['self']);
         }
 
-        if (data.hasOwnProperty('self')) {
-          obj['self'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['self']);
+        if (data.hasOwnProperty('commit')) {
+          obj['commit'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['commit']);
         }
       }
 
@@ -74,15 +74,15 @@ function () {
   return CommitstatusAllOfLinks;
 }();
 /**
- * @member {module:model/AccountAllOfLinksAvatar} commit
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
 
-
-CommitstatusAllOfLinks.prototype['commit'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} self
- */
 
 CommitstatusAllOfLinks.prototype['self'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} commit
+ */
+
+CommitstatusAllOfLinks.prototype['commit'] = undefined;
 var _default = CommitstatusAllOfLinks;
 exports["default"] = _default;

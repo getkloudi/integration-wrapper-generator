@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,50 +48,50 @@
   }
 
   describe('ProjectsApi', function() {
-    describe('teamsOwnerProjectsGet', function() {
-      it('should call teamsOwnerProjectsGet successfully', function(done) {
-        //uncomment below and update the code to test teamsOwnerProjectsGet
-        //instance.teamsOwnerProjectsGet(function(error) {
+    describe('teamsUsernameProjectsGet', function() {
+      it('should call teamsUsernameProjectsGet successfully', function(done) {
+        //uncomment below and update the code to test teamsUsernameProjectsGet
+        //instance.teamsUsernameProjectsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('teamsOwnerProjectsPost', function() {
-      it('should call teamsOwnerProjectsPost successfully', function(done) {
-        //uncomment below and update the code to test teamsOwnerProjectsPost
-        //instance.teamsOwnerProjectsPost(function(error) {
+    describe('teamsUsernameProjectsPost', function() {
+      it('should call teamsUsernameProjectsPost successfully', function(done) {
+        //uncomment below and update the code to test teamsUsernameProjectsPost
+        //instance.teamsUsernameProjectsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('teamsOwnerProjectsProjectKeyDelete', function() {
-      it('should call teamsOwnerProjectsProjectKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test teamsOwnerProjectsProjectKeyDelete
-        //instance.teamsOwnerProjectsProjectKeyDelete(function(error) {
+    describe('teamsUsernameProjectsProjectKeyDelete', function() {
+      it('should call teamsUsernameProjectsProjectKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test teamsUsernameProjectsProjectKeyDelete
+        //instance.teamsUsernameProjectsProjectKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('teamsOwnerProjectsProjectKeyGet', function() {
-      it('should call teamsOwnerProjectsProjectKeyGet successfully', function(done) {
-        //uncomment below and update the code to test teamsOwnerProjectsProjectKeyGet
-        //instance.teamsOwnerProjectsProjectKeyGet(function(error) {
+    describe('teamsUsernameProjectsProjectKeyGet', function() {
+      it('should call teamsUsernameProjectsProjectKeyGet successfully', function(done) {
+        //uncomment below and update the code to test teamsUsernameProjectsProjectKeyGet
+        //instance.teamsUsernameProjectsProjectKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('teamsOwnerProjectsProjectKeyPut', function() {
-      it('should call teamsOwnerProjectsProjectKeyPut successfully', function(done) {
-        //uncomment below and update the code to test teamsOwnerProjectsProjectKeyPut
-        //instance.teamsOwnerProjectsProjectKeyPut(function(error) {
+    describe('teamsUsernameProjectsProjectKeyPut', function() {
+      it('should call teamsUsernameProjectsProjectKeyPut successfully', function(done) {
+        //uncomment below and update the code to test teamsUsernameProjectsProjectKeyPut
+        //instance.teamsUsernameProjectsProjectKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

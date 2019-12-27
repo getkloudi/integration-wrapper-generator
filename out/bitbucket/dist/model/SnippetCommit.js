@@ -11,6 +11,8 @@ var _Author = _interopRequireDefault(require("./Author"));
 
 var _BaseCommit = _interopRequireDefault(require("./BaseCommit"));
 
+var _PullrequestAllOfRenderedTitle = _interopRequireDefault(require("./PullrequestAllOfRenderedTitle"));
+
 var _Snippet = _interopRequireDefault(require("./Snippet"));
 
 var _SnippetCommitAllOf = _interopRequireDefault(require("./SnippetCommitAllOf"));
@@ -83,20 +85,24 @@ function () {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
 
-        if (data.hasOwnProperty('author')) {
-          obj['author'] = _Author["default"].constructFromObject(data['author']);
+        if (data.hasOwnProperty('hash')) {
+          obj['hash'] = _ApiClient["default"].convertToType(data['hash'], 'String');
         }
 
         if (data.hasOwnProperty('date')) {
           obj['date'] = _ApiClient["default"].convertToType(data['date'], 'Date');
         }
 
-        if (data.hasOwnProperty('hash')) {
-          obj['hash'] = _ApiClient["default"].convertToType(data['hash'], 'String');
+        if (data.hasOwnProperty('author')) {
+          obj['author'] = _Author["default"].constructFromObject(data['author']);
         }
 
         if (data.hasOwnProperty('message')) {
           obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
+        }
+
+        if (data.hasOwnProperty('summary')) {
+          obj['summary'] = _PullrequestAllOfRenderedTitle["default"].constructFromObject(data['summary']);
         }
 
         if (data.hasOwnProperty('parents')) {
@@ -125,25 +131,30 @@ function () {
 
 SnippetCommit.prototype['type'] = undefined;
 /**
- * @member {module:model/Author} author
+ * @member {String} hash
  */
 
-SnippetCommit.prototype['author'] = undefined;
+SnippetCommit.prototype['hash'] = undefined;
 /**
  * @member {Date} date
  */
 
 SnippetCommit.prototype['date'] = undefined;
 /**
- * @member {String} hash
+ * @member {module:model/Author} author
  */
 
-SnippetCommit.prototype['hash'] = undefined;
+SnippetCommit.prototype['author'] = undefined;
 /**
  * @member {String} message
  */
 
 SnippetCommit.prototype['message'] = undefined;
+/**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+
+SnippetCommit.prototype['summary'] = undefined;
 /**
  * @member {Array.<module:model/BaseCommit>} parents
  */
@@ -166,25 +177,30 @@ SnippetCommit.prototype['snippet'] = undefined; // Implement BaseCommit interfac
 
 _BaseCommit["default"].prototype['type'] = undefined;
 /**
- * @member {module:model/Author} author
+ * @member {String} hash
  */
 
-_BaseCommit["default"].prototype['author'] = undefined;
+_BaseCommit["default"].prototype['hash'] = undefined;
 /**
  * @member {Date} date
  */
 
 _BaseCommit["default"].prototype['date'] = undefined;
 /**
- * @member {String} hash
+ * @member {module:model/Author} author
  */
 
-_BaseCommit["default"].prototype['hash'] = undefined;
+_BaseCommit["default"].prototype['author'] = undefined;
 /**
  * @member {String} message
  */
 
 _BaseCommit["default"].prototype['message'] = undefined;
+/**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+
+_BaseCommit["default"].prototype['summary'] = undefined;
 /**
  * @member {Array.<module:model/BaseCommit>} parents
  */

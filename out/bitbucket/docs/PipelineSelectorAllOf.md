@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pattern** | **String** | The name of the matching pipeline definition. | [optional] 
 **type** | **String** | The type of selector. | [optional] 
+**pattern** | **String** | The name of the matching pipeline definition. | [optional] 
 
 
 

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,11 +48,11 @@ class PipelineSshPublicKeyAllOf {
         if (data) {
             obj = obj || new PipelineSshPublicKeyAllOf();
 
-            if (data.hasOwnProperty('key')) {
-                obj['key'] = ApiClient.convertToType(data['key'], 'String');
-            }
             if (data.hasOwnProperty('key_type')) {
                 obj['key_type'] = ApiClient.convertToType(data['key_type'], 'String');
+            }
+            if (data.hasOwnProperty('key')) {
+                obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
             if (data.hasOwnProperty('md5_fingerprint')) {
                 obj['md5_fingerprint'] = ApiClient.convertToType(data['md5_fingerprint'], 'String');
@@ -68,16 +68,16 @@ class PipelineSshPublicKeyAllOf {
 }
 
 /**
- * The base64 encoded public key.
- * @member {String} key
- */
-PipelineSshPublicKeyAllOf.prototype['key'] = undefined;
-
-/**
  * The type of the public key.
  * @member {String} key_type
  */
 PipelineSshPublicKeyAllOf.prototype['key_type'] = undefined;
+
+/**
+ * The base64 encoded public key.
+ * @member {String} key
+ */
+PipelineSshPublicKeyAllOf.prototype['key'] = undefined;
 
 /**
  * The MD5 fingerprint of the public key.

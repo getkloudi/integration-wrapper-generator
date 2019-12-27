@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -16,56 +16,125 @@ import ApiClient from './ApiClient';
 import Account from './model/Account';
 import AccountAllOf from './model/AccountAllOf';
 import AccountAllOfLinks from './model/AccountAllOfLinks';
-import AccountAllOfLinksAvatar from './model/AccountAllOfLinksAvatar';
 import Author from './model/Author';
 import AuthorAllOf from './model/AuthorAllOf';
 import BaseCommit from './model/BaseCommit';
 import BaseCommitAllOf from './model/BaseCommitAllOf';
+import Branch from './model/Branch';
+import BranchingModel from './model/BranchingModel';
+import BranchingModelAllOf from './model/BranchingModelAllOf';
+import BranchingModelAllOfBranchTypes from './model/BranchingModelAllOfBranchTypes';
+import BranchingModelAllOfDevelopment from './model/BranchingModelAllOfDevelopment';
+import BranchingModelSettings from './model/BranchingModelSettings';
+import BranchingModelSettingsAllOf from './model/BranchingModelSettingsAllOf';
+import BranchingModelSettingsAllOfBranchTypes from './model/BranchingModelSettingsAllOfBranchTypes';
+import BranchingModelSettingsAllOfDevelopment from './model/BranchingModelSettingsAllOfDevelopment';
+import BranchingModelSettingsAllOfLinks from './model/BranchingModelSettingsAllOfLinks';
+import BranchingModelSettingsAllOfProduction from './model/BranchingModelSettingsAllOfProduction';
 import Branchrestriction from './model/Branchrestriction';
 import BranchrestrictionAllOf from './model/BranchrestrictionAllOf';
-import BranchrestrictionAllOfLinks from './model/BranchrestrictionAllOfLinks';
+import Comment from './model/Comment';
+import CommentAllOf from './model/CommentAllOf';
+import CommentAllOfInline from './model/CommentAllOfInline';
+import CommentAllOfLinks from './model/CommentAllOfLinks';
 import Commit from './model/Commit';
 import CommitAllOf from './model/CommitAllOf';
-import CommitAllOfLinks from './model/CommitAllOfLinks';
+import CommitComment from './model/CommitComment';
+import CommitCommentAllOf from './model/CommitCommentAllOf';
+import CommitFile from './model/CommitFile';
 import Commitstatus from './model/Commitstatus';
 import CommitstatusAllOf from './model/CommitstatusAllOf';
 import CommitstatusAllOfLinks from './model/CommitstatusAllOfLinks';
 import Component from './model/Component';
 import ComponentAllOf from './model/ComponentAllOf';
+import DdevReport from './model/DdevReport';
+import DeployKey from './model/DeployKey';
+import DeployKeyAllOf from './model/DeployKeyAllOf';
+import Deployment from './model/Deployment';
+import DeploymentAllOf from './model/DeploymentAllOf';
+import DeploymentEnvironment from './model/DeploymentEnvironment';
+import DeploymentEnvironmentAllOf from './model/DeploymentEnvironmentAllOf';
+import DeploymentRelease from './model/DeploymentRelease';
+import DeploymentReleaseAllOf from './model/DeploymentReleaseAllOf';
+import DeploymentState from './model/DeploymentState';
+import DeploymentStateCompleted from './model/DeploymentStateCompleted';
+import DeploymentStateCompletedAllOf from './model/DeploymentStateCompletedAllOf';
+import DeploymentStateCompletedStatus from './model/DeploymentStateCompletedStatus';
+import DeploymentStateCompletedStatusFailed from './model/DeploymentStateCompletedStatusFailed';
+import DeploymentStateCompletedStatusFailedAllOf from './model/DeploymentStateCompletedStatusFailedAllOf';
+import DeploymentStateCompletedStatusStopped from './model/DeploymentStateCompletedStatusStopped';
+import DeploymentStateCompletedStatusStoppedAllOf from './model/DeploymentStateCompletedStatusStoppedAllOf';
+import DeploymentStateCompletedStatusSuccessful from './model/DeploymentStateCompletedStatusSuccessful';
+import DeploymentStateCompletedStatusSuccessfulAllOf from './model/DeploymentStateCompletedStatusSuccessfulAllOf';
+import DeploymentStateInProgress from './model/DeploymentStateInProgress';
+import DeploymentStateInProgressAllOf from './model/DeploymentStateInProgressAllOf';
+import DeploymentStateUndeployed from './model/DeploymentStateUndeployed';
+import DeploymentStateUndeployedAllOf from './model/DeploymentStateUndeployedAllOf';
+import DeploymentVariable from './model/DeploymentVariable';
+import DeploymentVariableAllOf from './model/DeploymentVariableAllOf';
+import DeploymentsDdevDeploymentEnvironment from './model/DeploymentsDdevDeploymentEnvironment';
+import DeploymentsStgWestDeploymentEnvironment from './model/DeploymentsStgWestDeploymentEnvironment';
+import Diffstat from './model/Diffstat';
 import Error from './model/Error';
 import ErrorError from './model/ErrorError';
 import Group from './model/Group';
 import GroupAllOf from './model/GroupAllOf';
 import GroupAllOfLinks from './model/GroupAllOfLinks';
 import HookEvent from './model/HookEvent';
+import Hookbody from './model/Hookbody';
 import Issue from './model/Issue';
 import IssueAllOf from './model/IssueAllOf';
-import IssueAllOfContent from './model/IssueAllOfContent';
 import IssueAllOfLinks from './model/IssueAllOfLinks';
 import IssueAttachment from './model/IssueAttachment';
 import IssueAttachmentAllOf from './model/IssueAttachmentAllOf';
+import IssueChange from './model/IssueChange';
+import IssueChangeChanges from './model/IssueChangeChanges';
+import IssueChangeChangesAssignee from './model/IssueChangeChangesAssignee';
+import IssueChangeLinks from './model/IssueChangeLinks';
+import IssueComment from './model/IssueComment';
+import IssueCommentAllOf from './model/IssueCommentAllOf';
+import IssueJobStatus from './model/IssueJobStatus';
 import Milestone from './model/Milestone';
 import MilestoneAllOf from './model/MilestoneAllOf';
 import ModelObject from './model/ModelObject';
 import Page from './model/Page';
+import PaginatedBranches from './model/PaginatedBranches';
 import PaginatedBranchrestrictions from './model/PaginatedBranchrestrictions';
+import PaginatedCommitComments from './model/PaginatedCommitComments';
 import PaginatedCommitstatuses from './model/PaginatedCommitstatuses';
 import PaginatedComponents from './model/PaginatedComponents';
+import PaginatedDeployKeys from './model/PaginatedDeployKeys';
+import PaginatedDeploymentVariable from './model/PaginatedDeploymentVariable';
+import PaginatedDeployments from './model/PaginatedDeployments';
+import PaginatedDiffstats from './model/PaginatedDiffstats';
+import PaginatedEnvironments from './model/PaginatedEnvironments';
+import PaginatedFiles from './model/PaginatedFiles';
 import PaginatedHookEvents from './model/PaginatedHookEvents';
 import PaginatedIssueAttachments from './model/PaginatedIssueAttachments';
+import PaginatedIssueComments from './model/PaginatedIssueComments';
 import PaginatedIssues from './model/PaginatedIssues';
+import PaginatedLogEntries from './model/PaginatedLogEntries';
 import PaginatedMilestones from './model/PaginatedMilestones';
 import PaginatedPipelineKnownHosts from './model/PaginatedPipelineKnownHosts';
+import PaginatedPipelineScheduleExecutions from './model/PaginatedPipelineScheduleExecutions';
+import PaginatedPipelineSchedules from './model/PaginatedPipelineSchedules';
 import PaginatedPipelineSteps from './model/PaginatedPipelineSteps';
 import PaginatedPipelineVariables from './model/PaginatedPipelineVariables';
 import PaginatedPipelines from './model/PaginatedPipelines';
 import PaginatedProjects from './model/PaginatedProjects';
+import PaginatedPullrequestComments from './model/PaginatedPullrequestComments';
 import PaginatedPullrequests from './model/PaginatedPullrequests';
+import PaginatedRefs from './model/PaginatedRefs';
 import PaginatedRepositories from './model/PaginatedRepositories';
+import PaginatedRepositoryPermissions from './model/PaginatedRepositoryPermissions';
 import PaginatedSnippetComments from './model/PaginatedSnippetComments';
 import PaginatedSnippetCommit from './model/PaginatedSnippetCommit';
 import PaginatedSnippets from './model/PaginatedSnippets';
+import PaginatedSshUserKeys from './model/PaginatedSshUserKeys';
+import PaginatedTags from './model/PaginatedTags';
+import PaginatedTeamPermissions from './model/PaginatedTeamPermissions';
 import PaginatedTeams from './model/PaginatedTeams';
+import PaginatedTreeentries from './model/PaginatedTreeentries';
 import PaginatedUsers from './model/PaginatedUsers';
 import PaginatedVersions from './model/PaginatedVersions';
 import PaginatedWebhookSubscriptions from './model/PaginatedWebhookSubscriptions';
@@ -73,6 +142,8 @@ import Participant from './model/Participant';
 import ParticipantAllOf from './model/ParticipantAllOf';
 import Pipeline from './model/Pipeline';
 import PipelineAllOf from './model/PipelineAllOf';
+import PipelineBuildNumber from './model/PipelineBuildNumber';
+import PipelineBuildNumberAllOf from './model/PipelineBuildNumberAllOf';
 import PipelineCommand from './model/PipelineCommand';
 import PipelineCommitTarget from './model/PipelineCommitTarget';
 import PipelineCommitTargetAllOf from './model/PipelineCommitTargetAllOf';
@@ -81,9 +152,15 @@ import PipelineErrorAllOf from './model/PipelineErrorAllOf';
 import PipelineImage from './model/PipelineImage';
 import PipelineKnownHost from './model/PipelineKnownHost';
 import PipelineKnownHostAllOf from './model/PipelineKnownHostAllOf';
-import PipelineLogRange from './model/PipelineLogRange';
 import PipelineRefTarget from './model/PipelineRefTarget';
 import PipelineRefTargetAllOf from './model/PipelineRefTargetAllOf';
+import PipelineSchedule from './model/PipelineSchedule';
+import PipelineScheduleAllOf from './model/PipelineScheduleAllOf';
+import PipelineScheduleExecution from './model/PipelineScheduleExecution';
+import PipelineScheduleExecutionErrored from './model/PipelineScheduleExecutionErrored';
+import PipelineScheduleExecutionErroredAllOf from './model/PipelineScheduleExecutionErroredAllOf';
+import PipelineScheduleExecutionExecuted from './model/PipelineScheduleExecutionExecuted';
+import PipelineScheduleExecutionExecutedAllOf from './model/PipelineScheduleExecutionExecutedAllOf';
 import PipelineSelector from './model/PipelineSelector';
 import PipelineSelectorAllOf from './model/PipelineSelectorAllOf';
 import PipelineSshKeyPair from './model/PipelineSshKeyPair';
@@ -95,6 +172,8 @@ import PipelineStateCompleted from './model/PipelineStateCompleted';
 import PipelineStateCompletedAllOf from './model/PipelineStateCompletedAllOf';
 import PipelineStateCompletedError from './model/PipelineStateCompletedError';
 import PipelineStateCompletedErrorAllOf from './model/PipelineStateCompletedErrorAllOf';
+import PipelineStateCompletedExpired from './model/PipelineStateCompletedExpired';
+import PipelineStateCompletedExpiredAllOf from './model/PipelineStateCompletedExpiredAllOf';
 import PipelineStateCompletedFailed from './model/PipelineStateCompletedFailed';
 import PipelineStateCompletedFailedAllOf from './model/PipelineStateCompletedFailedAllOf';
 import PipelineStateCompletedResult from './model/PipelineStateCompletedResult';
@@ -104,6 +183,11 @@ import PipelineStateCompletedSuccessful from './model/PipelineStateCompletedSucc
 import PipelineStateCompletedSuccessfulAllOf from './model/PipelineStateCompletedSuccessfulAllOf';
 import PipelineStateInProgress from './model/PipelineStateInProgress';
 import PipelineStateInProgressAllOf from './model/PipelineStateInProgressAllOf';
+import PipelineStateInProgressPaused from './model/PipelineStateInProgressPaused';
+import PipelineStateInProgressPausedAllOf from './model/PipelineStateInProgressPausedAllOf';
+import PipelineStateInProgressRunning from './model/PipelineStateInProgressRunning';
+import PipelineStateInProgressRunningAllOf from './model/PipelineStateInProgressRunningAllOf';
+import PipelineStateInProgressStage from './model/PipelineStateInProgressStage';
 import PipelineStatePending from './model/PipelineStatePending';
 import PipelineStatePendingAllOf from './model/PipelineStatePendingAllOf';
 import PipelineStep from './model/PipelineStep';
@@ -115,8 +199,12 @@ import PipelineStepStateCompleted from './model/PipelineStepStateCompleted';
 import PipelineStepStateCompletedAllOf from './model/PipelineStepStateCompletedAllOf';
 import PipelineStepStateCompletedError from './model/PipelineStepStateCompletedError';
 import PipelineStepStateCompletedErrorAllOf from './model/PipelineStepStateCompletedErrorAllOf';
+import PipelineStepStateCompletedExpired from './model/PipelineStepStateCompletedExpired';
+import PipelineStepStateCompletedExpiredAllOf from './model/PipelineStepStateCompletedExpiredAllOf';
 import PipelineStepStateCompletedFailed from './model/PipelineStepStateCompletedFailed';
 import PipelineStepStateCompletedFailedAllOf from './model/PipelineStepStateCompletedFailedAllOf';
+import PipelineStepStateCompletedNotRun from './model/PipelineStepStateCompletedNotRun';
+import PipelineStepStateCompletedNotRunAllOf from './model/PipelineStepStateCompletedNotRunAllOf';
 import PipelineStepStateCompletedResult from './model/PipelineStepStateCompletedResult';
 import PipelineStepStateCompletedStopped from './model/PipelineStepStateCompletedStopped';
 import PipelineStepStateCompletedStoppedAllOf from './model/PipelineStepStateCompletedStoppedAllOf';
@@ -126,6 +214,8 @@ import PipelineStepStateInProgress from './model/PipelineStepStateInProgress';
 import PipelineStepStateInProgressAllOf from './model/PipelineStepStateInProgressAllOf';
 import PipelineStepStatePending from './model/PipelineStepStatePending';
 import PipelineStepStatePendingAllOf from './model/PipelineStepStatePendingAllOf';
+import PipelineStepStateReady from './model/PipelineStepStateReady';
+import PipelineStepStateReadyAllOf from './model/PipelineStepStateReadyAllOf';
 import PipelineTarget from './model/PipelineTarget';
 import PipelineTrigger from './model/PipelineTrigger';
 import PipelineTriggerManual from './model/PipelineTriggerManual';
@@ -134,6 +224,8 @@ import PipelineVariable from './model/PipelineVariable';
 import PipelineVariableAllOf from './model/PipelineVariableAllOf';
 import PipelinesConfig from './model/PipelinesConfig';
 import PipelinesConfigAllOf from './model/PipelinesConfigAllOf';
+import PipelinesDdevPipelineStep from './model/PipelinesDdevPipelineStep';
+import PipelinesStgWestPipelineStep from './model/PipelinesStgWestPipelineStep';
 import Project from './model/Project';
 import ProjectAllOf from './model/ProjectAllOf';
 import ProjectAllOfLinks from './model/ProjectAllOfLinks';
@@ -141,12 +233,24 @@ import Pullrequest from './model/Pullrequest';
 import PullrequestAllOf from './model/PullrequestAllOf';
 import PullrequestAllOfLinks from './model/PullrequestAllOfLinks';
 import PullrequestAllOfMergeCommit from './model/PullrequestAllOfMergeCommit';
+import PullrequestAllOfRendered from './model/PullrequestAllOfRendered';
+import PullrequestAllOfRenderedTitle from './model/PullrequestAllOfRenderedTitle';
+import PullrequestComment from './model/PullrequestComment';
+import PullrequestCommentAllOf from './model/PullrequestCommentAllOf';
 import PullrequestEndpoint from './model/PullrequestEndpoint';
 import PullrequestEndpointBranch from './model/PullrequestEndpointBranch';
 import PullrequestMergeParameters from './model/PullrequestMergeParameters';
+import Ref from './model/Ref';
+import RefLinks from './model/RefLinks';
 import Repository from './model/Repository';
 import RepositoryAllOf from './model/RepositoryAllOf';
 import RepositoryAllOfLinks from './model/RepositoryAllOfLinks';
+import RepositoryPermission from './model/RepositoryPermission';
+import SearchCodeSearchResult from './model/SearchCodeSearchResult';
+import SearchContentMatch from './model/SearchContentMatch';
+import SearchLine from './model/SearchLine';
+import SearchResultPage from './model/SearchResultPage';
+import SearchSegment from './model/SearchSegment';
 import Snippet from './model/Snippet';
 import SnippetAllOf from './model/SnippetAllOf';
 import SnippetComment from './model/SnippetComment';
@@ -154,11 +258,19 @@ import SnippetCommentAllOf from './model/SnippetCommentAllOf';
 import SnippetCommit from './model/SnippetCommit';
 import SnippetCommitAllOf from './model/SnippetCommitAllOf';
 import SnippetCommitAllOfLinks from './model/SnippetCommitAllOfLinks';
+import SshAccountKey from './model/SshAccountKey';
+import SshAccountKeyAllOf from './model/SshAccountKeyAllOf';
+import SshKey from './model/SshKey';
+import SshKeyAllOf from './model/SshKeyAllOf';
+import StgWestReport from './model/StgWestReport';
 import SubjectTypes from './model/SubjectTypes';
 import SubjectTypesRepository from './model/SubjectTypesRepository';
+import SubjectTypesRepositoryEvents from './model/SubjectTypesRepositoryEvents';
 import Tag from './model/Tag';
-import TagLinks from './model/TagLinks';
+import TagAllOf from './model/TagAllOf';
 import Team from './model/Team';
+import TeamPermission from './model/TeamPermission';
+import Treeentry from './model/Treeentry';
 import User from './model/User';
 import UserAllOf from './model/UserAllOf';
 import Version from './model/Version';
@@ -166,18 +278,26 @@ import VersionAllOf from './model/VersionAllOf';
 import WebhookSubscription from './model/WebhookSubscription';
 import WebhookSubscriptionAllOf from './model/WebhookSubscriptionAllOf';
 import AddonApi from './api/AddonApi';
+import BranchingModelApi from './api/BranchingModelApi';
 import BranchrestrictionsApi from './api/BranchrestrictionsApi';
 import CommitsApi from './api/CommitsApi';
 import CommitstatusesApi from './api/CommitstatusesApi';
+import DefaultApi from './api/DefaultApi';
+import DeployApi from './api/DeployApi';
+import DeploymentsApi from './api/DeploymentsApi';
 import DownloadsApi from './api/DownloadsApi';
 import IssueTrackerApi from './api/IssueTrackerApi';
 import PipelinesApi from './api/PipelinesApi';
 import ProjectsApi from './api/ProjectsApi';
+import PropertiesApi from './api/PropertiesApi';
 import PullrequestsApi from './api/PullrequestsApi';
 import RefsApi from './api/RefsApi';
 import RepositoriesApi from './api/RepositoriesApi';
+import SearchApi from './api/SearchApi';
+import SnippetApi from './api/SnippetApi';
 import SnippetsApi from './api/SnippetsApi';
 import SourceApi from './api/SourceApi';
+import SshApi from './api/SshApi';
 import TeamsApi from './api/TeamsApi';
 import UsersApi from './api/UsersApi';
 import WebhooksApi from './api/WebhooksApi';
@@ -240,12 +360,6 @@ export {
     AccountAllOfLinks,
 
     /**
-     * The AccountAllOfLinksAvatar model constructor.
-     * @property {module:model/AccountAllOfLinksAvatar}
-     */
-    AccountAllOfLinksAvatar,
-
-    /**
      * The Author model constructor.
      * @property {module:model/Author}
      */
@@ -270,6 +384,72 @@ export {
     BaseCommitAllOf,
 
     /**
+     * The Branch model constructor.
+     * @property {module:model/Branch}
+     */
+    Branch,
+
+    /**
+     * The BranchingModel model constructor.
+     * @property {module:model/BranchingModel}
+     */
+    BranchingModel,
+
+    /**
+     * The BranchingModelAllOf model constructor.
+     * @property {module:model/BranchingModelAllOf}
+     */
+    BranchingModelAllOf,
+
+    /**
+     * The BranchingModelAllOfBranchTypes model constructor.
+     * @property {module:model/BranchingModelAllOfBranchTypes}
+     */
+    BranchingModelAllOfBranchTypes,
+
+    /**
+     * The BranchingModelAllOfDevelopment model constructor.
+     * @property {module:model/BranchingModelAllOfDevelopment}
+     */
+    BranchingModelAllOfDevelopment,
+
+    /**
+     * The BranchingModelSettings model constructor.
+     * @property {module:model/BranchingModelSettings}
+     */
+    BranchingModelSettings,
+
+    /**
+     * The BranchingModelSettingsAllOf model constructor.
+     * @property {module:model/BranchingModelSettingsAllOf}
+     */
+    BranchingModelSettingsAllOf,
+
+    /**
+     * The BranchingModelSettingsAllOfBranchTypes model constructor.
+     * @property {module:model/BranchingModelSettingsAllOfBranchTypes}
+     */
+    BranchingModelSettingsAllOfBranchTypes,
+
+    /**
+     * The BranchingModelSettingsAllOfDevelopment model constructor.
+     * @property {module:model/BranchingModelSettingsAllOfDevelopment}
+     */
+    BranchingModelSettingsAllOfDevelopment,
+
+    /**
+     * The BranchingModelSettingsAllOfLinks model constructor.
+     * @property {module:model/BranchingModelSettingsAllOfLinks}
+     */
+    BranchingModelSettingsAllOfLinks,
+
+    /**
+     * The BranchingModelSettingsAllOfProduction model constructor.
+     * @property {module:model/BranchingModelSettingsAllOfProduction}
+     */
+    BranchingModelSettingsAllOfProduction,
+
+    /**
      * The Branchrestriction model constructor.
      * @property {module:model/Branchrestriction}
      */
@@ -282,10 +462,28 @@ export {
     BranchrestrictionAllOf,
 
     /**
-     * The BranchrestrictionAllOfLinks model constructor.
-     * @property {module:model/BranchrestrictionAllOfLinks}
+     * The Comment model constructor.
+     * @property {module:model/Comment}
      */
-    BranchrestrictionAllOfLinks,
+    Comment,
+
+    /**
+     * The CommentAllOf model constructor.
+     * @property {module:model/CommentAllOf}
+     */
+    CommentAllOf,
+
+    /**
+     * The CommentAllOfInline model constructor.
+     * @property {module:model/CommentAllOfInline}
+     */
+    CommentAllOfInline,
+
+    /**
+     * The CommentAllOfLinks model constructor.
+     * @property {module:model/CommentAllOfLinks}
+     */
+    CommentAllOfLinks,
 
     /**
      * The Commit model constructor.
@@ -300,10 +498,22 @@ export {
     CommitAllOf,
 
     /**
-     * The CommitAllOfLinks model constructor.
-     * @property {module:model/CommitAllOfLinks}
+     * The CommitComment model constructor.
+     * @property {module:model/CommitComment}
      */
-    CommitAllOfLinks,
+    CommitComment,
+
+    /**
+     * The CommitCommentAllOf model constructor.
+     * @property {module:model/CommitCommentAllOf}
+     */
+    CommitCommentAllOf,
+
+    /**
+     * The CommitFile model constructor.
+     * @property {module:model/CommitFile}
+     */
+    CommitFile,
 
     /**
      * The Commitstatus model constructor.
@@ -334,6 +544,174 @@ export {
      * @property {module:model/ComponentAllOf}
      */
     ComponentAllOf,
+
+    /**
+     * The DdevReport model constructor.
+     * @property {module:model/DdevReport}
+     */
+    DdevReport,
+
+    /**
+     * The DeployKey model constructor.
+     * @property {module:model/DeployKey}
+     */
+    DeployKey,
+
+    /**
+     * The DeployKeyAllOf model constructor.
+     * @property {module:model/DeployKeyAllOf}
+     */
+    DeployKeyAllOf,
+
+    /**
+     * The Deployment model constructor.
+     * @property {module:model/Deployment}
+     */
+    Deployment,
+
+    /**
+     * The DeploymentAllOf model constructor.
+     * @property {module:model/DeploymentAllOf}
+     */
+    DeploymentAllOf,
+
+    /**
+     * The DeploymentEnvironment model constructor.
+     * @property {module:model/DeploymentEnvironment}
+     */
+    DeploymentEnvironment,
+
+    /**
+     * The DeploymentEnvironmentAllOf model constructor.
+     * @property {module:model/DeploymentEnvironmentAllOf}
+     */
+    DeploymentEnvironmentAllOf,
+
+    /**
+     * The DeploymentRelease model constructor.
+     * @property {module:model/DeploymentRelease}
+     */
+    DeploymentRelease,
+
+    /**
+     * The DeploymentReleaseAllOf model constructor.
+     * @property {module:model/DeploymentReleaseAllOf}
+     */
+    DeploymentReleaseAllOf,
+
+    /**
+     * The DeploymentState model constructor.
+     * @property {module:model/DeploymentState}
+     */
+    DeploymentState,
+
+    /**
+     * The DeploymentStateCompleted model constructor.
+     * @property {module:model/DeploymentStateCompleted}
+     */
+    DeploymentStateCompleted,
+
+    /**
+     * The DeploymentStateCompletedAllOf model constructor.
+     * @property {module:model/DeploymentStateCompletedAllOf}
+     */
+    DeploymentStateCompletedAllOf,
+
+    /**
+     * The DeploymentStateCompletedStatus model constructor.
+     * @property {module:model/DeploymentStateCompletedStatus}
+     */
+    DeploymentStateCompletedStatus,
+
+    /**
+     * The DeploymentStateCompletedStatusFailed model constructor.
+     * @property {module:model/DeploymentStateCompletedStatusFailed}
+     */
+    DeploymentStateCompletedStatusFailed,
+
+    /**
+     * The DeploymentStateCompletedStatusFailedAllOf model constructor.
+     * @property {module:model/DeploymentStateCompletedStatusFailedAllOf}
+     */
+    DeploymentStateCompletedStatusFailedAllOf,
+
+    /**
+     * The DeploymentStateCompletedStatusStopped model constructor.
+     * @property {module:model/DeploymentStateCompletedStatusStopped}
+     */
+    DeploymentStateCompletedStatusStopped,
+
+    /**
+     * The DeploymentStateCompletedStatusStoppedAllOf model constructor.
+     * @property {module:model/DeploymentStateCompletedStatusStoppedAllOf}
+     */
+    DeploymentStateCompletedStatusStoppedAllOf,
+
+    /**
+     * The DeploymentStateCompletedStatusSuccessful model constructor.
+     * @property {module:model/DeploymentStateCompletedStatusSuccessful}
+     */
+    DeploymentStateCompletedStatusSuccessful,
+
+    /**
+     * The DeploymentStateCompletedStatusSuccessfulAllOf model constructor.
+     * @property {module:model/DeploymentStateCompletedStatusSuccessfulAllOf}
+     */
+    DeploymentStateCompletedStatusSuccessfulAllOf,
+
+    /**
+     * The DeploymentStateInProgress model constructor.
+     * @property {module:model/DeploymentStateInProgress}
+     */
+    DeploymentStateInProgress,
+
+    /**
+     * The DeploymentStateInProgressAllOf model constructor.
+     * @property {module:model/DeploymentStateInProgressAllOf}
+     */
+    DeploymentStateInProgressAllOf,
+
+    /**
+     * The DeploymentStateUndeployed model constructor.
+     * @property {module:model/DeploymentStateUndeployed}
+     */
+    DeploymentStateUndeployed,
+
+    /**
+     * The DeploymentStateUndeployedAllOf model constructor.
+     * @property {module:model/DeploymentStateUndeployedAllOf}
+     */
+    DeploymentStateUndeployedAllOf,
+
+    /**
+     * The DeploymentVariable model constructor.
+     * @property {module:model/DeploymentVariable}
+     */
+    DeploymentVariable,
+
+    /**
+     * The DeploymentVariableAllOf model constructor.
+     * @property {module:model/DeploymentVariableAllOf}
+     */
+    DeploymentVariableAllOf,
+
+    /**
+     * The DeploymentsDdevDeploymentEnvironment model constructor.
+     * @property {module:model/DeploymentsDdevDeploymentEnvironment}
+     */
+    DeploymentsDdevDeploymentEnvironment,
+
+    /**
+     * The DeploymentsStgWestDeploymentEnvironment model constructor.
+     * @property {module:model/DeploymentsStgWestDeploymentEnvironment}
+     */
+    DeploymentsStgWestDeploymentEnvironment,
+
+    /**
+     * The Diffstat model constructor.
+     * @property {module:model/Diffstat}
+     */
+    Diffstat,
 
     /**
      * The Error model constructor.
@@ -372,6 +750,12 @@ export {
     HookEvent,
 
     /**
+     * The Hookbody model constructor.
+     * @property {module:model/Hookbody}
+     */
+    Hookbody,
+
+    /**
      * The Issue model constructor.
      * @property {module:model/Issue}
      */
@@ -382,12 +766,6 @@ export {
      * @property {module:model/IssueAllOf}
      */
     IssueAllOf,
-
-    /**
-     * The IssueAllOfContent model constructor.
-     * @property {module:model/IssueAllOfContent}
-     */
-    IssueAllOfContent,
 
     /**
      * The IssueAllOfLinks model constructor.
@@ -406,6 +784,48 @@ export {
      * @property {module:model/IssueAttachmentAllOf}
      */
     IssueAttachmentAllOf,
+
+    /**
+     * The IssueChange model constructor.
+     * @property {module:model/IssueChange}
+     */
+    IssueChange,
+
+    /**
+     * The IssueChangeChanges model constructor.
+     * @property {module:model/IssueChangeChanges}
+     */
+    IssueChangeChanges,
+
+    /**
+     * The IssueChangeChangesAssignee model constructor.
+     * @property {module:model/IssueChangeChangesAssignee}
+     */
+    IssueChangeChangesAssignee,
+
+    /**
+     * The IssueChangeLinks model constructor.
+     * @property {module:model/IssueChangeLinks}
+     */
+    IssueChangeLinks,
+
+    /**
+     * The IssueComment model constructor.
+     * @property {module:model/IssueComment}
+     */
+    IssueComment,
+
+    /**
+     * The IssueCommentAllOf model constructor.
+     * @property {module:model/IssueCommentAllOf}
+     */
+    IssueCommentAllOf,
+
+    /**
+     * The IssueJobStatus model constructor.
+     * @property {module:model/IssueJobStatus}
+     */
+    IssueJobStatus,
 
     /**
      * The Milestone model constructor.
@@ -432,10 +852,22 @@ export {
     Page,
 
     /**
+     * The PaginatedBranches model constructor.
+     * @property {module:model/PaginatedBranches}
+     */
+    PaginatedBranches,
+
+    /**
      * The PaginatedBranchrestrictions model constructor.
      * @property {module:model/PaginatedBranchrestrictions}
      */
     PaginatedBranchrestrictions,
+
+    /**
+     * The PaginatedCommitComments model constructor.
+     * @property {module:model/PaginatedCommitComments}
+     */
+    PaginatedCommitComments,
 
     /**
      * The PaginatedCommitstatuses model constructor.
@@ -450,6 +882,42 @@ export {
     PaginatedComponents,
 
     /**
+     * The PaginatedDeployKeys model constructor.
+     * @property {module:model/PaginatedDeployKeys}
+     */
+    PaginatedDeployKeys,
+
+    /**
+     * The PaginatedDeploymentVariable model constructor.
+     * @property {module:model/PaginatedDeploymentVariable}
+     */
+    PaginatedDeploymentVariable,
+
+    /**
+     * The PaginatedDeployments model constructor.
+     * @property {module:model/PaginatedDeployments}
+     */
+    PaginatedDeployments,
+
+    /**
+     * The PaginatedDiffstats model constructor.
+     * @property {module:model/PaginatedDiffstats}
+     */
+    PaginatedDiffstats,
+
+    /**
+     * The PaginatedEnvironments model constructor.
+     * @property {module:model/PaginatedEnvironments}
+     */
+    PaginatedEnvironments,
+
+    /**
+     * The PaginatedFiles model constructor.
+     * @property {module:model/PaginatedFiles}
+     */
+    PaginatedFiles,
+
+    /**
      * The PaginatedHookEvents model constructor.
      * @property {module:model/PaginatedHookEvents}
      */
@@ -462,10 +930,22 @@ export {
     PaginatedIssueAttachments,
 
     /**
+     * The PaginatedIssueComments model constructor.
+     * @property {module:model/PaginatedIssueComments}
+     */
+    PaginatedIssueComments,
+
+    /**
      * The PaginatedIssues model constructor.
      * @property {module:model/PaginatedIssues}
      */
     PaginatedIssues,
+
+    /**
+     * The PaginatedLogEntries model constructor.
+     * @property {module:model/PaginatedLogEntries}
+     */
+    PaginatedLogEntries,
 
     /**
      * The PaginatedMilestones model constructor.
@@ -478,6 +958,18 @@ export {
      * @property {module:model/PaginatedPipelineKnownHosts}
      */
     PaginatedPipelineKnownHosts,
+
+    /**
+     * The PaginatedPipelineScheduleExecutions model constructor.
+     * @property {module:model/PaginatedPipelineScheduleExecutions}
+     */
+    PaginatedPipelineScheduleExecutions,
+
+    /**
+     * The PaginatedPipelineSchedules model constructor.
+     * @property {module:model/PaginatedPipelineSchedules}
+     */
+    PaginatedPipelineSchedules,
 
     /**
      * The PaginatedPipelineSteps model constructor.
@@ -504,16 +996,34 @@ export {
     PaginatedProjects,
 
     /**
+     * The PaginatedPullrequestComments model constructor.
+     * @property {module:model/PaginatedPullrequestComments}
+     */
+    PaginatedPullrequestComments,
+
+    /**
      * The PaginatedPullrequests model constructor.
      * @property {module:model/PaginatedPullrequests}
      */
     PaginatedPullrequests,
 
     /**
+     * The PaginatedRefs model constructor.
+     * @property {module:model/PaginatedRefs}
+     */
+    PaginatedRefs,
+
+    /**
      * The PaginatedRepositories model constructor.
      * @property {module:model/PaginatedRepositories}
      */
     PaginatedRepositories,
+
+    /**
+     * The PaginatedRepositoryPermissions model constructor.
+     * @property {module:model/PaginatedRepositoryPermissions}
+     */
+    PaginatedRepositoryPermissions,
 
     /**
      * The PaginatedSnippetComments model constructor.
@@ -534,10 +1044,34 @@ export {
     PaginatedSnippets,
 
     /**
+     * The PaginatedSshUserKeys model constructor.
+     * @property {module:model/PaginatedSshUserKeys}
+     */
+    PaginatedSshUserKeys,
+
+    /**
+     * The PaginatedTags model constructor.
+     * @property {module:model/PaginatedTags}
+     */
+    PaginatedTags,
+
+    /**
+     * The PaginatedTeamPermissions model constructor.
+     * @property {module:model/PaginatedTeamPermissions}
+     */
+    PaginatedTeamPermissions,
+
+    /**
      * The PaginatedTeams model constructor.
      * @property {module:model/PaginatedTeams}
      */
     PaginatedTeams,
+
+    /**
+     * The PaginatedTreeentries model constructor.
+     * @property {module:model/PaginatedTreeentries}
+     */
+    PaginatedTreeentries,
 
     /**
      * The PaginatedUsers model constructor.
@@ -580,6 +1114,18 @@ export {
      * @property {module:model/PipelineAllOf}
      */
     PipelineAllOf,
+
+    /**
+     * The PipelineBuildNumber model constructor.
+     * @property {module:model/PipelineBuildNumber}
+     */
+    PipelineBuildNumber,
+
+    /**
+     * The PipelineBuildNumberAllOf model constructor.
+     * @property {module:model/PipelineBuildNumberAllOf}
+     */
+    PipelineBuildNumberAllOf,
 
     /**
      * The PipelineCommand model constructor.
@@ -630,12 +1176,6 @@ export {
     PipelineKnownHostAllOf,
 
     /**
-     * The PipelineLogRange model constructor.
-     * @property {module:model/PipelineLogRange}
-     */
-    PipelineLogRange,
-
-    /**
      * The PipelineRefTarget model constructor.
      * @property {module:model/PipelineRefTarget}
      */
@@ -646,6 +1186,48 @@ export {
      * @property {module:model/PipelineRefTargetAllOf}
      */
     PipelineRefTargetAllOf,
+
+    /**
+     * The PipelineSchedule model constructor.
+     * @property {module:model/PipelineSchedule}
+     */
+    PipelineSchedule,
+
+    /**
+     * The PipelineScheduleAllOf model constructor.
+     * @property {module:model/PipelineScheduleAllOf}
+     */
+    PipelineScheduleAllOf,
+
+    /**
+     * The PipelineScheduleExecution model constructor.
+     * @property {module:model/PipelineScheduleExecution}
+     */
+    PipelineScheduleExecution,
+
+    /**
+     * The PipelineScheduleExecutionErrored model constructor.
+     * @property {module:model/PipelineScheduleExecutionErrored}
+     */
+    PipelineScheduleExecutionErrored,
+
+    /**
+     * The PipelineScheduleExecutionErroredAllOf model constructor.
+     * @property {module:model/PipelineScheduleExecutionErroredAllOf}
+     */
+    PipelineScheduleExecutionErroredAllOf,
+
+    /**
+     * The PipelineScheduleExecutionExecuted model constructor.
+     * @property {module:model/PipelineScheduleExecutionExecuted}
+     */
+    PipelineScheduleExecutionExecuted,
+
+    /**
+     * The PipelineScheduleExecutionExecutedAllOf model constructor.
+     * @property {module:model/PipelineScheduleExecutionExecutedAllOf}
+     */
+    PipelineScheduleExecutionExecutedAllOf,
 
     /**
      * The PipelineSelector model constructor.
@@ -714,6 +1296,18 @@ export {
     PipelineStateCompletedErrorAllOf,
 
     /**
+     * The PipelineStateCompletedExpired model constructor.
+     * @property {module:model/PipelineStateCompletedExpired}
+     */
+    PipelineStateCompletedExpired,
+
+    /**
+     * The PipelineStateCompletedExpiredAllOf model constructor.
+     * @property {module:model/PipelineStateCompletedExpiredAllOf}
+     */
+    PipelineStateCompletedExpiredAllOf,
+
+    /**
      * The PipelineStateCompletedFailed model constructor.
      * @property {module:model/PipelineStateCompletedFailed}
      */
@@ -766,6 +1360,36 @@ export {
      * @property {module:model/PipelineStateInProgressAllOf}
      */
     PipelineStateInProgressAllOf,
+
+    /**
+     * The PipelineStateInProgressPaused model constructor.
+     * @property {module:model/PipelineStateInProgressPaused}
+     */
+    PipelineStateInProgressPaused,
+
+    /**
+     * The PipelineStateInProgressPausedAllOf model constructor.
+     * @property {module:model/PipelineStateInProgressPausedAllOf}
+     */
+    PipelineStateInProgressPausedAllOf,
+
+    /**
+     * The PipelineStateInProgressRunning model constructor.
+     * @property {module:model/PipelineStateInProgressRunning}
+     */
+    PipelineStateInProgressRunning,
+
+    /**
+     * The PipelineStateInProgressRunningAllOf model constructor.
+     * @property {module:model/PipelineStateInProgressRunningAllOf}
+     */
+    PipelineStateInProgressRunningAllOf,
+
+    /**
+     * The PipelineStateInProgressStage model constructor.
+     * @property {module:model/PipelineStateInProgressStage}
+     */
+    PipelineStateInProgressStage,
 
     /**
      * The PipelineStatePending model constructor.
@@ -834,6 +1458,18 @@ export {
     PipelineStepStateCompletedErrorAllOf,
 
     /**
+     * The PipelineStepStateCompletedExpired model constructor.
+     * @property {module:model/PipelineStepStateCompletedExpired}
+     */
+    PipelineStepStateCompletedExpired,
+
+    /**
+     * The PipelineStepStateCompletedExpiredAllOf model constructor.
+     * @property {module:model/PipelineStepStateCompletedExpiredAllOf}
+     */
+    PipelineStepStateCompletedExpiredAllOf,
+
+    /**
      * The PipelineStepStateCompletedFailed model constructor.
      * @property {module:model/PipelineStepStateCompletedFailed}
      */
@@ -844,6 +1480,18 @@ export {
      * @property {module:model/PipelineStepStateCompletedFailedAllOf}
      */
     PipelineStepStateCompletedFailedAllOf,
+
+    /**
+     * The PipelineStepStateCompletedNotRun model constructor.
+     * @property {module:model/PipelineStepStateCompletedNotRun}
+     */
+    PipelineStepStateCompletedNotRun,
+
+    /**
+     * The PipelineStepStateCompletedNotRunAllOf model constructor.
+     * @property {module:model/PipelineStepStateCompletedNotRunAllOf}
+     */
+    PipelineStepStateCompletedNotRunAllOf,
 
     /**
      * The PipelineStepStateCompletedResult model constructor.
@@ -900,6 +1548,18 @@ export {
     PipelineStepStatePendingAllOf,
 
     /**
+     * The PipelineStepStateReady model constructor.
+     * @property {module:model/PipelineStepStateReady}
+     */
+    PipelineStepStateReady,
+
+    /**
+     * The PipelineStepStateReadyAllOf model constructor.
+     * @property {module:model/PipelineStepStateReadyAllOf}
+     */
+    PipelineStepStateReadyAllOf,
+
+    /**
      * The PipelineTarget model constructor.
      * @property {module:model/PipelineTarget}
      */
@@ -948,6 +1608,18 @@ export {
     PipelinesConfigAllOf,
 
     /**
+     * The PipelinesDdevPipelineStep model constructor.
+     * @property {module:model/PipelinesDdevPipelineStep}
+     */
+    PipelinesDdevPipelineStep,
+
+    /**
+     * The PipelinesStgWestPipelineStep model constructor.
+     * @property {module:model/PipelinesStgWestPipelineStep}
+     */
+    PipelinesStgWestPipelineStep,
+
+    /**
      * The Project model constructor.
      * @property {module:model/Project}
      */
@@ -990,6 +1662,30 @@ export {
     PullrequestAllOfMergeCommit,
 
     /**
+     * The PullrequestAllOfRendered model constructor.
+     * @property {module:model/PullrequestAllOfRendered}
+     */
+    PullrequestAllOfRendered,
+
+    /**
+     * The PullrequestAllOfRenderedTitle model constructor.
+     * @property {module:model/PullrequestAllOfRenderedTitle}
+     */
+    PullrequestAllOfRenderedTitle,
+
+    /**
+     * The PullrequestComment model constructor.
+     * @property {module:model/PullrequestComment}
+     */
+    PullrequestComment,
+
+    /**
+     * The PullrequestCommentAllOf model constructor.
+     * @property {module:model/PullrequestCommentAllOf}
+     */
+    PullrequestCommentAllOf,
+
+    /**
      * The PullrequestEndpoint model constructor.
      * @property {module:model/PullrequestEndpoint}
      */
@@ -1008,6 +1704,18 @@ export {
     PullrequestMergeParameters,
 
     /**
+     * The Ref model constructor.
+     * @property {module:model/Ref}
+     */
+    Ref,
+
+    /**
+     * The RefLinks model constructor.
+     * @property {module:model/RefLinks}
+     */
+    RefLinks,
+
+    /**
      * The Repository model constructor.
      * @property {module:model/Repository}
      */
@@ -1024,6 +1732,42 @@ export {
      * @property {module:model/RepositoryAllOfLinks}
      */
     RepositoryAllOfLinks,
+
+    /**
+     * The RepositoryPermission model constructor.
+     * @property {module:model/RepositoryPermission}
+     */
+    RepositoryPermission,
+
+    /**
+     * The SearchCodeSearchResult model constructor.
+     * @property {module:model/SearchCodeSearchResult}
+     */
+    SearchCodeSearchResult,
+
+    /**
+     * The SearchContentMatch model constructor.
+     * @property {module:model/SearchContentMatch}
+     */
+    SearchContentMatch,
+
+    /**
+     * The SearchLine model constructor.
+     * @property {module:model/SearchLine}
+     */
+    SearchLine,
+
+    /**
+     * The SearchResultPage model constructor.
+     * @property {module:model/SearchResultPage}
+     */
+    SearchResultPage,
+
+    /**
+     * The SearchSegment model constructor.
+     * @property {module:model/SearchSegment}
+     */
+    SearchSegment,
 
     /**
      * The Snippet model constructor.
@@ -1068,6 +1812,36 @@ export {
     SnippetCommitAllOfLinks,
 
     /**
+     * The SshAccountKey model constructor.
+     * @property {module:model/SshAccountKey}
+     */
+    SshAccountKey,
+
+    /**
+     * The SshAccountKeyAllOf model constructor.
+     * @property {module:model/SshAccountKeyAllOf}
+     */
+    SshAccountKeyAllOf,
+
+    /**
+     * The SshKey model constructor.
+     * @property {module:model/SshKey}
+     */
+    SshKey,
+
+    /**
+     * The SshKeyAllOf model constructor.
+     * @property {module:model/SshKeyAllOf}
+     */
+    SshKeyAllOf,
+
+    /**
+     * The StgWestReport model constructor.
+     * @property {module:model/StgWestReport}
+     */
+    StgWestReport,
+
+    /**
      * The SubjectTypes model constructor.
      * @property {module:model/SubjectTypes}
      */
@@ -1080,22 +1854,40 @@ export {
     SubjectTypesRepository,
 
     /**
+     * The SubjectTypesRepositoryEvents model constructor.
+     * @property {module:model/SubjectTypesRepositoryEvents}
+     */
+    SubjectTypesRepositoryEvents,
+
+    /**
      * The Tag model constructor.
      * @property {module:model/Tag}
      */
     Tag,
 
     /**
-     * The TagLinks model constructor.
-     * @property {module:model/TagLinks}
+     * The TagAllOf model constructor.
+     * @property {module:model/TagAllOf}
      */
-    TagLinks,
+    TagAllOf,
 
     /**
      * The Team model constructor.
      * @property {module:model/Team}
      */
     Team,
+
+    /**
+     * The TeamPermission model constructor.
+     * @property {module:model/TeamPermission}
+     */
+    TeamPermission,
+
+    /**
+     * The Treeentry model constructor.
+     * @property {module:model/Treeentry}
+     */
+    Treeentry,
 
     /**
      * The User model constructor.
@@ -1140,6 +1932,12 @@ export {
     AddonApi,
 
     /**
+    * The BranchingModelApi service constructor.
+    * @property {module:api/BranchingModelApi}
+    */
+    BranchingModelApi,
+
+    /**
     * The BranchrestrictionsApi service constructor.
     * @property {module:api/BranchrestrictionsApi}
     */
@@ -1156,6 +1954,24 @@ export {
     * @property {module:api/CommitstatusesApi}
     */
     CommitstatusesApi,
+
+    /**
+    * The DefaultApi service constructor.
+    * @property {module:api/DefaultApi}
+    */
+    DefaultApi,
+
+    /**
+    * The DeployApi service constructor.
+    * @property {module:api/DeployApi}
+    */
+    DeployApi,
+
+    /**
+    * The DeploymentsApi service constructor.
+    * @property {module:api/DeploymentsApi}
+    */
+    DeploymentsApi,
 
     /**
     * The DownloadsApi service constructor.
@@ -1182,6 +1998,12 @@ export {
     ProjectsApi,
 
     /**
+    * The PropertiesApi service constructor.
+    * @property {module:api/PropertiesApi}
+    */
+    PropertiesApi,
+
+    /**
     * The PullrequestsApi service constructor.
     * @property {module:api/PullrequestsApi}
     */
@@ -1200,6 +2022,18 @@ export {
     RepositoriesApi,
 
     /**
+    * The SearchApi service constructor.
+    * @property {module:api/SearchApi}
+    */
+    SearchApi,
+
+    /**
+    * The SnippetApi service constructor.
+    * @property {module:api/SnippetApi}
+    */
+    SnippetApi,
+
+    /**
     * The SnippetsApi service constructor.
     * @property {module:api/SnippetsApi}
     */
@@ -1210,6 +2044,12 @@ export {
     * @property {module:api/SourceApi}
     */
     SourceApi,
+
+    /**
+    * The SshApi service constructor.
+    * @property {module:api/SshApi}
+    */
+    SshApi,
 
     /**
     * The TeamsApi service constructor.

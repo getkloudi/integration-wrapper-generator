@@ -79,12 +79,12 @@ function () {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
 
-        if (data.hasOwnProperty('error')) {
-          obj['error'] = _PipelineError["default"].constructFromObject(data['error']);
-        }
-
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('error')) {
+          obj['error'] = _PipelineError["default"].constructFromObject(data['error']);
         }
       }
 
@@ -101,16 +101,16 @@ function () {
 
 PipelineStateCompletedError.prototype['type'] = undefined;
 /**
- * @member {module:model/PipelineError} error
- */
-
-PipelineStateCompletedError.prototype['error'] = undefined;
-/**
  * The name of the result (ERROR)
  * @member {module:model/PipelineStateCompletedError.NameEnum} name
  */
 
-PipelineStateCompletedError.prototype['name'] = undefined; // Implement PipelineStateCompletedResult interface:
+PipelineStateCompletedError.prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineError} error
+ */
+
+PipelineStateCompletedError.prototype['error'] = undefined; // Implement PipelineStateCompletedResult interface:
 
 /**
  * @member {String} type
@@ -119,16 +119,16 @@ PipelineStateCompletedError.prototype['name'] = undefined; // Implement Pipeline
 _PipelineStateCompletedResult["default"].prototype['type'] = undefined; // Implement PipelineStateCompletedErrorAllOf interface:
 
 /**
- * @member {module:model/PipelineError} error
- */
-
-_PipelineStateCompletedErrorAllOf["default"].prototype['error'] = undefined;
-/**
  * The name of the result (ERROR)
  * @member {module:model/PipelineStateCompletedErrorAllOf.NameEnum} name
  */
 
 _PipelineStateCompletedErrorAllOf["default"].prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineError} error
+ */
+
+_PipelineStateCompletedErrorAllOf["default"].prototype['error'] = undefined;
 /**
  * Allowed values for the <code>name</code> property.
  * @enum {String}

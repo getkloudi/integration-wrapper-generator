@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AccountAllOfLinksAvatar = _interopRequireDefault(require("./AccountAllOfLinksAvatar"));
+var _SubjectTypesRepositoryEvents = _interopRequireDefault(require("./SubjectTypesRepositoryEvents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -58,12 +58,12 @@ function () {
       if (data) {
         obj = obj || new GroupAllOfLinks();
 
-        if (data.hasOwnProperty('html')) {
-          obj['html'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['html']);
+        if (data.hasOwnProperty('self')) {
+          obj['self'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['self']);
         }
 
-        if (data.hasOwnProperty('self')) {
-          obj['self'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['self']);
+        if (data.hasOwnProperty('html')) {
+          obj['html'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['html']);
         }
       }
 
@@ -74,15 +74,15 @@ function () {
   return GroupAllOfLinks;
 }();
 /**
- * @member {module:model/AccountAllOfLinksAvatar} html
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
 
-
-GroupAllOfLinks.prototype['html'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} self
- */
 
 GroupAllOfLinks.prototype['self'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} html
+ */
+
+GroupAllOfLinks.prototype['html'] = undefined;
 var _default = GroupAllOfLinks;
 exports["default"] = _default;

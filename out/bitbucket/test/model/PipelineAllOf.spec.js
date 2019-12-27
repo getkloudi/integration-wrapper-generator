@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,20 +54,14 @@
       //expect(instance).to.be.a(Bitbucket.PipelineAllOf);
     });
 
-    it('should have the property buildSecondsUsed (base name: "build_seconds_used")', function() {
-      // uncomment below and update the code to test the property buildSecondsUsed
+    it('should have the property uuid (base name: "uuid")', function() {
+      // uncomment below and update the code to test the property uuid
       //var instane = new Bitbucket.PipelineAllOf();
       //expect(instance).to.be();
     });
 
-    it('should have the property completedOn (base name: "completed_on")', function() {
-      // uncomment below and update the code to test the property completedOn
-      //var instane = new Bitbucket.PipelineAllOf();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property createdOn (base name: "created_on")', function() {
-      // uncomment below and update the code to test the property createdOn
+    it('should have the property buildNumber (base name: "build_number")', function() {
+      // uncomment below and update the code to test the property buildNumber
       //var instane = new Bitbucket.PipelineAllOf();
       //expect(instance).to.be();
     });
@@ -84,12 +78,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property state (base name: "state")', function() {
-      // uncomment below and update the code to test the property state
-      //var instane = new Bitbucket.PipelineAllOf();
-      //expect(instance).to.be();
-    });
-
     it('should have the property target (base name: "target")', function() {
       // uncomment below and update the code to test the property target
       //var instane = new Bitbucket.PipelineAllOf();
@@ -102,8 +90,26 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property uuid (base name: "uuid")', function() {
-      // uncomment below and update the code to test the property uuid
+    it('should have the property state (base name: "state")', function() {
+      // uncomment below and update the code to test the property state
+      //var instane = new Bitbucket.PipelineAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property createdOn (base name: "created_on")', function() {
+      // uncomment below and update the code to test the property createdOn
+      //var instane = new Bitbucket.PipelineAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property completedOn (base name: "completed_on")', function() {
+      // uncomment below and update the code to test the property completedOn
+      //var instane = new Bitbucket.PipelineAllOf();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property buildSecondsUsed (base name: "build_seconds_used")', function() {
+      // uncomment below and update the code to test the property buildSecondsUsed
       //var instane = new Bitbucket.PipelineAllOf();
       //expect(instance).to.be();
     });

@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _BranchrestrictionAllOfLinks = _interopRequireDefault(require("./BranchrestrictionAllOfLinks"));
+var _BranchingModelSettingsAllOfLinks = _interopRequireDefault(require("./BranchingModelSettingsAllOfLinks"));
 
 var _ComponentAllOf = _interopRequireDefault(require("./ComponentAllOf"));
 
@@ -76,16 +76,16 @@ function () {
 
         _ComponentAllOf["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
-        }
-
         if (data.hasOwnProperty('links')) {
-          obj['links'] = _BranchrestrictionAllOfLinks["default"].constructFromObject(data['links']);
+          obj['links'] = _BranchingModelSettingsAllOfLinks["default"].constructFromObject(data['links']);
         }
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
         }
       }
 
@@ -96,21 +96,21 @@ function () {
   return Component;
 }();
 /**
- * @member {Number} id
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 
-
-Component.prototype['id'] = undefined;
-/**
- * @member {module:model/BranchrestrictionAllOfLinks} links
- */
 
 Component.prototype['links'] = undefined;
 /**
  * @member {String} name
  */
 
-Component.prototype['name'] = undefined; // Implement ModelObject interface:
+Component.prototype['name'] = undefined;
+/**
+ * @member {Number} id
+ */
+
+Component.prototype['id'] = undefined; // Implement ModelObject interface:
 
 /**
  * @member {String} type
@@ -119,12 +119,7 @@ Component.prototype['name'] = undefined; // Implement ModelObject interface:
 _ModelObject["default"].prototype['type'] = undefined; // Implement ComponentAllOf interface:
 
 /**
- * @member {Number} id
- */
-
-_ComponentAllOf["default"].prototype['id'] = undefined;
-/**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 
 _ComponentAllOf["default"].prototype['links'] = undefined;
@@ -133,5 +128,10 @@ _ComponentAllOf["default"].prototype['links'] = undefined;
  */
 
 _ComponentAllOf["default"].prototype['name'] = undefined;
+/**
+ * @member {Number} id
+ */
+
+_ComponentAllOf["default"].prototype['id'] = undefined;
 var _default = Component;
 exports["default"] = _default;

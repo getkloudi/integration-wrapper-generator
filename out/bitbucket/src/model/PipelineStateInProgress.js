@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -14,6 +14,7 @@
 import ApiClient from '../ApiClient';
 import PipelineState from './PipelineState';
 import PipelineStateInProgressAllOf from './PipelineStateInProgressAllOf';
+import PipelineStateInProgressStage from './PipelineStateInProgressStage';
 
 /**
  * The PipelineStateInProgress model module.
@@ -61,6 +62,9 @@ class PipelineStateInProgress {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('stage')) {
+                obj['stage'] = PipelineStateInProgressStage.constructFromObject(data['stage']);
+            }
         }
         return obj;
     }
@@ -79,6 +83,11 @@ PipelineStateInProgress.prototype['type'] = undefined;
  */
 PipelineStateInProgress.prototype['name'] = undefined;
 
+/**
+ * @member {module:model/PipelineStateInProgressStage} stage
+ */
+PipelineStateInProgress.prototype['stage'] = undefined;
+
 
 // Implement PipelineState interface:
 /**
@@ -91,6 +100,10 @@ PipelineState.prototype['type'] = undefined;
  * @member {module:model/PipelineStateInProgressAllOf.NameEnum} name
  */
 PipelineStateInProgressAllOf.prototype['name'] = undefined;
+/**
+ * @member {module:model/PipelineStateInProgressStage} stage
+ */
+PipelineStateInProgressAllOf.prototype['stage'] = undefined;
 
 
 

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
+import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 
 /**
  * The GroupAllOfLinks model module.
@@ -48,11 +48,11 @@ class GroupAllOfLinks {
         if (data) {
             obj = obj || new GroupAllOfLinks();
 
-            if (data.hasOwnProperty('html')) {
-                obj['html'] = AccountAllOfLinksAvatar.constructFromObject(data['html']);
-            }
             if (data.hasOwnProperty('self')) {
-                obj['self'] = AccountAllOfLinksAvatar.constructFromObject(data['self']);
+                obj['self'] = SubjectTypesRepositoryEvents.constructFromObject(data['self']);
+            }
+            if (data.hasOwnProperty('html')) {
+                obj['html'] = SubjectTypesRepositoryEvents.constructFromObject(data['html']);
             }
         }
         return obj;
@@ -62,14 +62,14 @@ class GroupAllOfLinks {
 }
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} html
- */
-GroupAllOfLinks.prototype['html'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} self
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
 GroupAllOfLinks.prototype['self'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} html
+ */
+GroupAllOfLinks.prototype['html'] = undefined;
 
 
 

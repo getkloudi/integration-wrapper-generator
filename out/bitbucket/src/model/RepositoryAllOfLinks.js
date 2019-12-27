@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
+import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 
 /**
  * The RepositoryAllOfLinks model module.
@@ -48,35 +48,35 @@ class RepositoryAllOfLinks {
         if (data) {
             obj = obj || new RepositoryAllOfLinks();
 
-            if (data.hasOwnProperty('avatar')) {
-                obj['avatar'] = AccountAllOfLinksAvatar.constructFromObject(data['avatar']);
-            }
-            if (data.hasOwnProperty('clone')) {
-                obj['clone'] = AccountAllOfLinksAvatar.constructFromObject(data['clone']);
-            }
-            if (data.hasOwnProperty('commits')) {
-                obj['commits'] = AccountAllOfLinksAvatar.constructFromObject(data['commits']);
-            }
-            if (data.hasOwnProperty('downloads')) {
-                obj['downloads'] = AccountAllOfLinksAvatar.constructFromObject(data['downloads']);
-            }
-            if (data.hasOwnProperty('forks')) {
-                obj['forks'] = AccountAllOfLinksAvatar.constructFromObject(data['forks']);
-            }
-            if (data.hasOwnProperty('hooks')) {
-                obj['hooks'] = AccountAllOfLinksAvatar.constructFromObject(data['hooks']);
+            if (data.hasOwnProperty('self')) {
+                obj['self'] = SubjectTypesRepositoryEvents.constructFromObject(data['self']);
             }
             if (data.hasOwnProperty('html')) {
-                obj['html'] = AccountAllOfLinksAvatar.constructFromObject(data['html']);
+                obj['html'] = SubjectTypesRepositoryEvents.constructFromObject(data['html']);
+            }
+            if (data.hasOwnProperty('avatar')) {
+                obj['avatar'] = SubjectTypesRepositoryEvents.constructFromObject(data['avatar']);
             }
             if (data.hasOwnProperty('pullrequests')) {
-                obj['pullrequests'] = AccountAllOfLinksAvatar.constructFromObject(data['pullrequests']);
+                obj['pullrequests'] = SubjectTypesRepositoryEvents.constructFromObject(data['pullrequests']);
             }
-            if (data.hasOwnProperty('self')) {
-                obj['self'] = AccountAllOfLinksAvatar.constructFromObject(data['self']);
+            if (data.hasOwnProperty('commits')) {
+                obj['commits'] = SubjectTypesRepositoryEvents.constructFromObject(data['commits']);
+            }
+            if (data.hasOwnProperty('forks')) {
+                obj['forks'] = SubjectTypesRepositoryEvents.constructFromObject(data['forks']);
             }
             if (data.hasOwnProperty('watchers')) {
-                obj['watchers'] = AccountAllOfLinksAvatar.constructFromObject(data['watchers']);
+                obj['watchers'] = SubjectTypesRepositoryEvents.constructFromObject(data['watchers']);
+            }
+            if (data.hasOwnProperty('downloads')) {
+                obj['downloads'] = SubjectTypesRepositoryEvents.constructFromObject(data['downloads']);
+            }
+            if (data.hasOwnProperty('clone')) {
+                obj['clone'] = ApiClient.convertToType(data['clone'], [SubjectTypesRepositoryEvents]);
+            }
+            if (data.hasOwnProperty('hooks')) {
+                obj['hooks'] = SubjectTypesRepositoryEvents.constructFromObject(data['hooks']);
             }
         }
         return obj;
@@ -86,54 +86,54 @@ class RepositoryAllOfLinks {
 }
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} avatar
- */
-RepositoryAllOfLinks.prototype['avatar'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} clone
- */
-RepositoryAllOfLinks.prototype['clone'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} commits
- */
-RepositoryAllOfLinks.prototype['commits'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} downloads
- */
-RepositoryAllOfLinks.prototype['downloads'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} forks
- */
-RepositoryAllOfLinks.prototype['forks'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} hooks
- */
-RepositoryAllOfLinks.prototype['hooks'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} html
- */
-RepositoryAllOfLinks.prototype['html'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} pullrequests
- */
-RepositoryAllOfLinks.prototype['pullrequests'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} self
+ * @member {module:model/SubjectTypesRepositoryEvents} self
  */
 RepositoryAllOfLinks.prototype['self'] = undefined;
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} watchers
+ * @member {module:model/SubjectTypesRepositoryEvents} html
+ */
+RepositoryAllOfLinks.prototype['html'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} avatar
+ */
+RepositoryAllOfLinks.prototype['avatar'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} pullrequests
+ */
+RepositoryAllOfLinks.prototype['pullrequests'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} commits
+ */
+RepositoryAllOfLinks.prototype['commits'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} forks
+ */
+RepositoryAllOfLinks.prototype['forks'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} watchers
  */
 RepositoryAllOfLinks.prototype['watchers'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} downloads
+ */
+RepositoryAllOfLinks.prototype['downloads'] = undefined;
+
+/**
+ * @member {Array.<module:model/SubjectTypesRepositoryEvents>} clone
+ */
+RepositoryAllOfLinks.prototype['clone'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} hooks
+ */
+RepositoryAllOfLinks.prototype['hooks'] = undefined;
 
 
 

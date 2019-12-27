@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BranchrestrictionAllOfLinks from './BranchrestrictionAllOfLinks';
+import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks';
 import ModelObject from './ModelObject';
 import VersionAllOf from './VersionAllOf';
 
@@ -57,14 +57,14 @@ class Version {
             ModelObject.constructFromObject(data, obj);
             VersionAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
             if (data.hasOwnProperty('links')) {
-                obj['links'] = BranchrestrictionAllOfLinks.constructFromObject(data['links']);
+                obj['links'] = BranchingModelSettingsAllOfLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
         }
         return obj;
@@ -74,12 +74,7 @@ class Version {
 }
 
 /**
- * @member {Number} id
- */
-Version.prototype['id'] = undefined;
-
-/**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 Version.prototype['links'] = undefined;
 
@@ -87,6 +82,11 @@ Version.prototype['links'] = undefined;
  * @member {String} name
  */
 Version.prototype['name'] = undefined;
+
+/**
+ * @member {Number} id
+ */
+Version.prototype['id'] = undefined;
 
 
 // Implement ModelObject interface:
@@ -96,17 +96,17 @@ Version.prototype['name'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement VersionAllOf interface:
 /**
- * @member {Number} id
- */
-VersionAllOf.prototype['id'] = undefined;
-/**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 VersionAllOf.prototype['links'] = undefined;
 /**
  * @member {String} name
  */
 VersionAllOf.prototype['name'] = undefined;
+/**
+ * @member {Number} id
+ */
+VersionAllOf.prototype['id'] = undefined;
 
 
 

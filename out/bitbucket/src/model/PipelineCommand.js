@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import PipelineLogRange from './PipelineLogRange';
 
 /**
  * The PipelineCommand model module.
@@ -49,14 +48,11 @@ class PipelineCommand {
         if (data) {
             obj = obj || new PipelineCommand();
 
-            if (data.hasOwnProperty('command')) {
-                obj['command'] = ApiClient.convertToType(data['command'], 'String');
-            }
-            if (data.hasOwnProperty('log_range')) {
-                obj['log_range'] = PipelineLogRange.constructFromObject(data['log_range']);
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('command')) {
+                obj['command'] = ApiClient.convertToType(data['command'], 'String');
             }
         }
         return obj;
@@ -66,21 +62,16 @@ class PipelineCommand {
 }
 
 /**
- * The executable command.
- * @member {String} command
- */
-PipelineCommand.prototype['command'] = undefined;
-
-/**
- * @member {module:model/PipelineLogRange} log_range
- */
-PipelineCommand.prototype['log_range'] = undefined;
-
-/**
  * The name of the command.
  * @member {String} name
  */
 PipelineCommand.prototype['name'] = undefined;
+
+/**
+ * The executable command.
+ * @member {String} command
+ */
+PipelineCommand.prototype['command'] = undefined;
 
 
 

@@ -63,12 +63,12 @@ function () {
           obj['repository'] = _SubjectTypesRepository["default"].constructFromObject(data['repository']);
         }
 
-        if (data.hasOwnProperty('team')) {
-          obj['team'] = _SubjectTypesRepository["default"].constructFromObject(data['team']);
-        }
-
         if (data.hasOwnProperty('user')) {
           obj['user'] = _SubjectTypesRepository["default"].constructFromObject(data['user']);
+        }
+
+        if (data.hasOwnProperty('team')) {
+          obj['team'] = _SubjectTypesRepository["default"].constructFromObject(data['team']);
         }
       }
 
@@ -85,14 +85,14 @@ function () {
 
 SubjectTypes.prototype['repository'] = undefined;
 /**
- * @member {module:model/SubjectTypesRepository} team
- */
-
-SubjectTypes.prototype['team'] = undefined;
-/**
  * @member {module:model/SubjectTypesRepository} user
  */
 
 SubjectTypes.prototype['user'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepository} team
+ */
+
+SubjectTypes.prototype['team'] = undefined;
 var _default = SubjectTypes;
 exports["default"] = _default;

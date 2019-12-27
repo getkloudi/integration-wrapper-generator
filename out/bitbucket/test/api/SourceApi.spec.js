@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,10 +48,40 @@
   }
 
   describe('SourceApi', function() {
-    describe('repositoriesUsernameRepoSlugSrcNodePathGet', function() {
-      it('should call repositoriesUsernameRepoSlugSrcNodePathGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugSrcNodePathGet
-        //instance.repositoriesUsernameRepoSlugSrcNodePathGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugFilehistoryNodePathGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugFilehistoryNodePathGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugFilehistoryNodePathGet
+        //instance.repositoriesWorkspaceRepoSlugFilehistoryNodePathGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugSrcGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugSrcGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugSrcGet
+        //instance.repositoriesWorkspaceRepoSlugSrcGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugSrcNodePathGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugSrcNodePathGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugSrcNodePathGet
+        //instance.repositoriesWorkspaceRepoSlugSrcNodePathGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('repositoriesWorkspaceRepoSlugSrcPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugSrcPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugSrcPost
+        //instance.repositoriesWorkspaceRepoSlugSrcPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

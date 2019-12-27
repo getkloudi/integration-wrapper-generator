@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import PipelineStateInProgressStage from './PipelineStateInProgressStage';
 
 /**
  * The PipelineStateInProgressAllOf model module.
@@ -51,6 +52,9 @@ class PipelineStateInProgressAllOf {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
+            if (data.hasOwnProperty('stage')) {
+                obj['stage'] = PipelineStateInProgressStage.constructFromObject(data['stage']);
+            }
         }
         return obj;
     }
@@ -63,6 +67,11 @@ class PipelineStateInProgressAllOf {
  * @member {module:model/PipelineStateInProgressAllOf.NameEnum} name
  */
 PipelineStateInProgressAllOf.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/PipelineStateInProgressStage} stage
+ */
+PipelineStateInProgressAllOf.prototype['stage'] = undefined;
 
 
 

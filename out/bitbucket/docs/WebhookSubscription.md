@@ -4,14 +4,29 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**uuid** | **String** | The webhook&#39;s id | [optional] 
+**url** | **String** | The URL events get delivered to. | [optional] 
+**description** | **String** | A user-defined description of the webhook. | [optional] 
+**subjectType** | **String** | The type of entity, which is &#x60;repository&#x60; in the case of webhook subscriptions on repositories. | [optional] 
+**subject** | [**Account**](Account.md) |  | [optional] 
 **active** | **Boolean** |  | [optional] 
 **createdAt** | **Date** |  | [optional] 
-**description** | **String** | A user-defined description of the webhook. | [optional] 
 **events** | **[String]** | The events this webhook is subscribed to. | [optional] 
-**subject** | **Object** |  | [optional] 
-**subjectType** | **String** | The type of entity, which is &#x60;repository&#x60; in the case of webhook subscriptions on repositories. | [optional] 
-**url** | **String** | The URL events get delivered to. | [optional] 
-**uuid** | **String** | The webhook&#39;s id | [optional] 
+
+
+
+## Enum: SubjectTypeEnum
+
+
+* `workspace` (value: `"workspace"`)
+
+* `user` (value: `"user"`)
+
+* `repository` (value: `"repository"`)
+
+* `team` (value: `"team"`)
+
+
 
 
 
@@ -63,19 +78,6 @@ Name | Type | Description | Notes
 * `repo:transfer` (value: `"repo:transfer"`)
 
 * `repo:commit_comment_created` (value: `"repo:commit_comment_created"`)
-
-
-
-
-
-## Enum: SubjectTypeEnum
-
-
-* `user` (value: `"user"`)
-
-* `repository` (value: `"repository"`)
-
-* `team` (value: `"team"`)
 
 
 

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,40 +48,40 @@
   }
 
   describe('DownloadsApi', function() {
-    describe('repositoriesUsernameRepoSlugDownloadsFilenameDelete', function() {
-      it('should call repositoriesUsernameRepoSlugDownloadsFilenameDelete successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugDownloadsFilenameDelete
-        //instance.repositoriesUsernameRepoSlugDownloadsFilenameDelete(function(error) {
+    describe('repositoriesWorkspaceRepoSlugDownloadsFilenameDelete', function() {
+      it('should call repositoriesWorkspaceRepoSlugDownloadsFilenameDelete successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugDownloadsFilenameDelete
+        //instance.repositoriesWorkspaceRepoSlugDownloadsFilenameDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugDownloadsFilenameGet', function() {
-      it('should call repositoriesUsernameRepoSlugDownloadsFilenameGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugDownloadsFilenameGet
-        //instance.repositoriesUsernameRepoSlugDownloadsFilenameGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugDownloadsFilenameGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugDownloadsFilenameGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugDownloadsFilenameGet
+        //instance.repositoriesWorkspaceRepoSlugDownloadsFilenameGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugDownloadsGet', function() {
-      it('should call repositoriesUsernameRepoSlugDownloadsGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugDownloadsGet
-        //instance.repositoriesUsernameRepoSlugDownloadsGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugDownloadsGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugDownloadsGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugDownloadsGet
+        //instance.repositoriesWorkspaceRepoSlugDownloadsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugDownloadsPost', function() {
-      it('should call repositoriesUsernameRepoSlugDownloadsPost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugDownloadsPost
-        //instance.repositoriesUsernameRepoSlugDownloadsPost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugDownloadsPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugDownloadsPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugDownloadsPost
+        //instance.repositoriesWorkspaceRepoSlugDownloadsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

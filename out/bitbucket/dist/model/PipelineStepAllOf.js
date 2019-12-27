@@ -63,36 +63,32 @@ function () {
       if (data) {
         obj = obj || new PipelineStepAllOf();
 
-        if (data.hasOwnProperty('completed_on')) {
-          obj['completed_on'] = _ApiClient["default"].convertToType(data['completed_on'], 'Date');
-        }
-
-        if (data.hasOwnProperty('image')) {
-          obj['image'] = _PipelineImage["default"].constructFromObject(data['image']);
-        }
-
-        if (data.hasOwnProperty('logByteCount')) {
-          obj['logByteCount'] = _ApiClient["default"].convertToType(data['logByteCount'], 'Number');
-        }
-
-        if (data.hasOwnProperty('script_commands')) {
-          obj['script_commands'] = _ApiClient["default"].convertToType(data['script_commands'], [_PipelineCommand["default"]]);
-        }
-
-        if (data.hasOwnProperty('setup_commands')) {
-          obj['setup_commands'] = _ApiClient["default"].convertToType(data['setup_commands'], [_PipelineCommand["default"]]);
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
         }
 
         if (data.hasOwnProperty('started_on')) {
           obj['started_on'] = _ApiClient["default"].convertToType(data['started_on'], 'Date');
         }
 
+        if (data.hasOwnProperty('completed_on')) {
+          obj['completed_on'] = _ApiClient["default"].convertToType(data['completed_on'], 'Date');
+        }
+
         if (data.hasOwnProperty('state')) {
           obj['state'] = _PipelineStepState["default"].constructFromObject(data['state']);
         }
 
-        if (data.hasOwnProperty('uuid')) {
-          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        if (data.hasOwnProperty('image')) {
+          obj['image'] = _PipelineImage["default"].constructFromObject(data['image']);
+        }
+
+        if (data.hasOwnProperty('setup_commands')) {
+          obj['setup_commands'] = _ApiClient["default"].convertToType(data['setup_commands'], [_PipelineCommand["default"]]);
+        }
+
+        if (data.hasOwnProperty('script_commands')) {
+          obj['script_commands'] = _ApiClient["default"].convertToType(data['script_commands'], [_PipelineCommand["default"]]);
         }
       }
 
@@ -103,35 +99,12 @@ function () {
   return PipelineStepAllOf;
 }();
 /**
- * The timestamp when the step execution was completed. This is not set if the step is still in progress.
- * @member {Date} completed_on
+ * The UUID identifying the step.
+ * @member {String} uuid
  */
 
 
-PipelineStepAllOf.prototype['completed_on'] = undefined;
-/**
- * @member {module:model/PipelineImage} image
- */
-
-PipelineStepAllOf.prototype['image'] = undefined;
-/**
- * The amount of bytes of the log file that is available.
- * @member {Number} logByteCount
- */
-
-PipelineStepAllOf.prototype['logByteCount'] = undefined;
-/**
- * The list of build commands. These commands are executed in the build container.
- * @member {Array.<module:model/PipelineCommand>} script_commands
- */
-
-PipelineStepAllOf.prototype['script_commands'] = undefined;
-/**
- * The list of commands that are executed as part of the setup phase of the build. These commands are executed outside the build container.
- * @member {Array.<module:model/PipelineCommand>} setup_commands
- */
-
-PipelineStepAllOf.prototype['setup_commands'] = undefined;
+PipelineStepAllOf.prototype['uuid'] = undefined;
 /**
  * The timestamp when the step execution was started. This is not set when the step hasn't executed yet.
  * @member {Date} started_on
@@ -139,15 +112,32 @@ PipelineStepAllOf.prototype['setup_commands'] = undefined;
 
 PipelineStepAllOf.prototype['started_on'] = undefined;
 /**
+ * The timestamp when the step execution was completed. This is not set if the step is still in progress.
+ * @member {Date} completed_on
+ */
+
+PipelineStepAllOf.prototype['completed_on'] = undefined;
+/**
  * @member {module:model/PipelineStepState} state
  */
 
 PipelineStepAllOf.prototype['state'] = undefined;
 /**
- * The UUID identifying the step.
- * @member {String} uuid
+ * @member {module:model/PipelineImage} image
  */
 
-PipelineStepAllOf.prototype['uuid'] = undefined;
+PipelineStepAllOf.prototype['image'] = undefined;
+/**
+ * The list of commands that are executed as part of the setup phase of the build. These commands are executed outside the build container.
+ * @member {Array.<module:model/PipelineCommand>} setup_commands
+ */
+
+PipelineStepAllOf.prototype['setup_commands'] = undefined;
+/**
+ * The list of build commands. These commands are executed in the build container.
+ * @member {Array.<module:model/PipelineCommand>} script_commands
+ */
+
+PipelineStepAllOf.prototype['script_commands'] = undefined;
 var _default = PipelineStepAllOf;
 exports["default"] = _default;

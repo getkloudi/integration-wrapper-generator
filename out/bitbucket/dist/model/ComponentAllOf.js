@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _BranchrestrictionAllOfLinks = _interopRequireDefault(require("./BranchrestrictionAllOfLinks"));
+var _BranchingModelSettingsAllOfLinks = _interopRequireDefault(require("./BranchingModelSettingsAllOfLinks"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -59,16 +59,16 @@ function () {
       if (data) {
         obj = obj || new ComponentAllOf();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
-        }
-
         if (data.hasOwnProperty('links')) {
-          obj['links'] = _BranchrestrictionAllOfLinks["default"].constructFromObject(data['links']);
+          obj['links'] = _BranchingModelSettingsAllOfLinks["default"].constructFromObject(data['links']);
         }
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
         }
       }
 
@@ -79,14 +79,9 @@ function () {
   return ComponentAllOf;
 }();
 /**
- * @member {Number} id
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 
-
-ComponentAllOf.prototype['id'] = undefined;
-/**
- * @member {module:model/BranchrestrictionAllOfLinks} links
- */
 
 ComponentAllOf.prototype['links'] = undefined;
 /**
@@ -94,5 +89,10 @@ ComponentAllOf.prototype['links'] = undefined;
  */
 
 ComponentAllOf.prototype['name'] = undefined;
+/**
+ * @member {Number} id
+ */
+
+ComponentAllOf.prototype['id'] = undefined;
 var _default = ComponentAllOf;
 exports["default"] = _default;

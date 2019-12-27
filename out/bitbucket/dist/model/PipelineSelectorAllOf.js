@@ -57,12 +57,12 @@ function () {
       if (data) {
         obj = obj || new PipelineSelectorAllOf();
 
-        if (data.hasOwnProperty('pattern')) {
-          obj['pattern'] = _ApiClient["default"].convertToType(data['pattern'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
+        }
+
+        if (data.hasOwnProperty('pattern')) {
+          obj['pattern'] = _ApiClient["default"].convertToType(data['pattern'], 'String');
         }
       }
 
@@ -73,18 +73,18 @@ function () {
   return PipelineSelectorAllOf;
 }();
 /**
- * The name of the matching pipeline definition.
- * @member {String} pattern
- */
-
-
-PipelineSelectorAllOf.prototype['pattern'] = undefined;
-/**
  * The type of selector.
  * @member {module:model/PipelineSelectorAllOf.TypeEnum} type
  */
 
+
 PipelineSelectorAllOf.prototype['type'] = undefined;
+/**
+ * The name of the matching pipeline definition.
+ * @member {String} pattern
+ */
+
+PipelineSelectorAllOf.prototype['pattern'] = undefined;
 /**
  * Allowed values for the <code>type</code> property.
  * @enum {String}

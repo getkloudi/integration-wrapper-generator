@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AccountAllOfLinksAvatar = _interopRequireDefault(require("./AccountAllOfLinksAvatar"));
+var _SubjectTypesRepositoryEvents = _interopRequireDefault(require("./SubjectTypesRepositoryEvents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -59,7 +59,7 @@ function () {
         obj = obj || new SubjectTypesRepository();
 
         if (data.hasOwnProperty('events')) {
-          obj['events'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['events']);
+          obj['events'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['events']);
         }
       }
 
@@ -70,7 +70,7 @@ function () {
   return SubjectTypesRepository;
 }();
 /**
- * @member {module:model/AccountAllOfLinksAvatar} events
+ * @member {module:model/SubjectTypesRepositoryEvents} events
  */
 
 

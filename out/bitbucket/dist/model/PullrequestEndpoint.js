@@ -62,16 +62,16 @@ function () {
       if (data) {
         obj = obj || new PullrequestEndpoint();
 
+        if (data.hasOwnProperty('repository')) {
+          obj['repository'] = _Repository["default"].constructFromObject(data['repository']);
+        }
+
         if (data.hasOwnProperty('branch')) {
           obj['branch'] = _PullrequestEndpointBranch["default"].constructFromObject(data['branch']);
         }
 
         if (data.hasOwnProperty('commit')) {
           obj['commit'] = _PullrequestAllOfMergeCommit["default"].constructFromObject(data['commit']);
-        }
-
-        if (data.hasOwnProperty('repository')) {
-          obj['repository'] = _Repository["default"].constructFromObject(data['repository']);
         }
       }
 
@@ -82,9 +82,14 @@ function () {
   return PullrequestEndpoint;
 }();
 /**
- * @member {module:model/PullrequestEndpointBranch} branch
+ * @member {module:model/Repository} repository
  */
 
+
+PullrequestEndpoint.prototype['repository'] = undefined;
+/**
+ * @member {module:model/PullrequestEndpointBranch} branch
+ */
 
 PullrequestEndpoint.prototype['branch'] = undefined;
 /**
@@ -92,10 +97,5 @@ PullrequestEndpoint.prototype['branch'] = undefined;
  */
 
 PullrequestEndpoint.prototype['commit'] = undefined;
-/**
- * @member {module:model/Repository} repository
- */
-
-PullrequestEndpoint.prototype['repository'] = undefined;
 var _default = PullrequestEndpoint;
 exports["default"] = _default;

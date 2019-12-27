@@ -57,20 +57,20 @@ function () {
       if (data) {
         obj = obj || new PipelineVariableAllOf();
 
-        if (data.hasOwnProperty('key')) {
-          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
-        }
-
-        if (data.hasOwnProperty('secured')) {
-          obj['secured'] = _ApiClient["default"].convertToType(data['secured'], 'Boolean');
-        }
-
         if (data.hasOwnProperty('uuid')) {
           obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
         }
 
+        if (data.hasOwnProperty('key')) {
+          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
+        }
+
         if (data.hasOwnProperty('value')) {
           obj['value'] = _ApiClient["default"].convertToType(data['value'], 'String');
+        }
+
+        if (data.hasOwnProperty('secured')) {
+          obj['secured'] = _ApiClient["default"].convertToType(data['secured'], 'Boolean');
         }
       }
 
@@ -81,29 +81,29 @@ function () {
   return PipelineVariableAllOf;
 }();
 /**
- * The unique name of the variable.
- * @member {String} key
- */
-
-
-PipelineVariableAllOf.prototype['key'] = undefined;
-/**
- * If true, this variable will be treated as secured. The value will never be exposed in the logs or the REST API.
- * @member {Boolean} secured
- */
-
-PipelineVariableAllOf.prototype['secured'] = undefined;
-/**
  * The UUID identifying the variable.
  * @member {String} uuid
  */
 
+
 PipelineVariableAllOf.prototype['uuid'] = undefined;
+/**
+ * The unique name of the variable.
+ * @member {String} key
+ */
+
+PipelineVariableAllOf.prototype['key'] = undefined;
 /**
  * The value of the variable. If the variable is secured, this will be empty.
  * @member {String} value
  */
 
 PipelineVariableAllOf.prototype['value'] = undefined;
+/**
+ * If true, this variable will be treated as secured. The value will never be exposed in the logs or the REST API.
+ * @member {Boolean} secured
+ */
+
+PipelineVariableAllOf.prototype['secured'] = undefined;
 var _default = PipelineVariableAllOf;
 exports["default"] = _default;

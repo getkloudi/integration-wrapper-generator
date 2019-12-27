@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _BranchrestrictionAllOfLinks = _interopRequireDefault(require("./BranchrestrictionAllOfLinks"));
+var _BranchingModelSettingsAllOfLinks = _interopRequireDefault(require("./BranchingModelSettingsAllOfLinks"));
 
 var _IssueAttachmentAllOf = _interopRequireDefault(require("./IssueAttachmentAllOf"));
 
@@ -77,7 +77,7 @@ function () {
         _IssueAttachmentAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
-          obj['links'] = _BranchrestrictionAllOfLinks["default"].constructFromObject(data['links']);
+          obj['links'] = _BranchingModelSettingsAllOfLinks["default"].constructFromObject(data['links']);
         }
 
         if (data.hasOwnProperty('name')) {
@@ -92,7 +92,7 @@ function () {
   return IssueAttachment;
 }();
 /**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 
 
@@ -110,7 +110,7 @@ IssueAttachment.prototype['name'] = undefined; // Implement ModelObject interfac
 _ModelObject["default"].prototype['type'] = undefined; // Implement IssueAttachmentAllOf interface:
 
 /**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 
 _IssueAttachmentAllOf["default"].prototype['links'] = undefined;

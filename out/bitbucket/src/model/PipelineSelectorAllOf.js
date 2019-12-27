@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,11 +48,11 @@ class PipelineSelectorAllOf {
         if (data) {
             obj = obj || new PipelineSelectorAllOf();
 
-            if (data.hasOwnProperty('pattern')) {
-                obj['pattern'] = ApiClient.convertToType(data['pattern'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('pattern')) {
+                obj['pattern'] = ApiClient.convertToType(data['pattern'], 'String');
             }
         }
         return obj;
@@ -62,16 +62,16 @@ class PipelineSelectorAllOf {
 }
 
 /**
- * The name of the matching pipeline definition.
- * @member {String} pattern
- */
-PipelineSelectorAllOf.prototype['pattern'] = undefined;
-
-/**
  * The type of selector.
  * @member {module:model/PipelineSelectorAllOf.TypeEnum} type
  */
 PipelineSelectorAllOf.prototype['type'] = undefined;
+
+/**
+ * The name of the matching pipeline definition.
+ * @member {String} pattern
+ */
+PipelineSelectorAllOf.prototype['pattern'] = undefined;
 
 
 

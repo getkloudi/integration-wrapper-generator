@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
+import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 
 /**
  * The SubjectTypesRepository model module.
@@ -49,7 +49,7 @@ class SubjectTypesRepository {
             obj = obj || new SubjectTypesRepository();
 
             if (data.hasOwnProperty('events')) {
-                obj['events'] = AccountAllOfLinksAvatar.constructFromObject(data['events']);
+                obj['events'] = SubjectTypesRepositoryEvents.constructFromObject(data['events']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class SubjectTypesRepository {
 }
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} events
+ * @member {module:model/SubjectTypesRepositoryEvents} events
  */
 SubjectTypesRepository.prototype['events'] = undefined;
 

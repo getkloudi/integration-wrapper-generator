@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -49,14 +49,14 @@ class ErrorError {
         if (data) {
             obj = obj || new ErrorError();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], Object);
+            if (data.hasOwnProperty('message')) {
+                obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
             if (data.hasOwnProperty('detail')) {
                 obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
             }
-            if (data.hasOwnProperty('message')) {
-                obj['message'] = ApiClient.convertToType(data['message'], 'String');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], Object);
             }
         }
         return obj;
@@ -66,10 +66,9 @@ class ErrorError {
 }
 
 /**
- * Optional structured data that is endpoint-specific.
- * @member {Object} data
+ * @member {String} message
  */
-ErrorError.prototype['data'] = undefined;
+ErrorError.prototype['message'] = undefined;
 
 /**
  * @member {String} detail
@@ -77,9 +76,10 @@ ErrorError.prototype['data'] = undefined;
 ErrorError.prototype['detail'] = undefined;
 
 /**
- * @member {String} message
+ * Optional structured data that is endpoint-specific.
+ * @member {Object} data
  */
-ErrorError.prototype['message'] = undefined;
+ErrorError.prototype['data'] = undefined;
 
 
 

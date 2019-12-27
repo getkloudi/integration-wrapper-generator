@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**teamsUsernameHooksUidPut**](TeamsApi.md#teamsUsernameHooksUidPut) | **PUT** /teams/{username}/hooks/{uid} | 
 [**teamsUsernameMembersGet**](TeamsApi.md#teamsUsernameMembersGet) | **GET** /teams/{username}/members | 
 [**teamsUsernameRepositoriesGet**](TeamsApi.md#teamsUsernameRepositoriesGet) | **GET** /teams/{username}/repositories | 
+[**usersUsernameMembersGet**](TeamsApi.md#usersUsernameMembersGet) | **GET** /users/{username}/members | 
 [**usersUsernameRepositoriesGet**](TeamsApi.md#usersUsernameRepositoriesGet) | **GET** /users/{username}/repositories | 
 
 
@@ -280,7 +281,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.TeamsApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.teamsUsernameHooksGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -295,7 +296,7 @@ apiInstance.teamsUsernameHooksGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -338,7 +339,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.TeamsApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.teamsUsernameHooksPost(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -353,7 +354,7 @@ apiInstance.teamsUsernameHooksPost(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -396,7 +397,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.TeamsApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id
 apiInstance.teamsUsernameHooksUidDelete(username, uid, (error, data, response) => {
   if (error) {
@@ -412,7 +413,7 @@ apiInstance.teamsUsernameHooksUidDelete(username, uid, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type
@@ -456,7 +457,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.TeamsApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id.
 apiInstance.teamsUsernameHooksUidGet(username, uid, (error, data, response) => {
   if (error) {
@@ -472,7 +473,7 @@ apiInstance.teamsUsernameHooksUidGet(username, uid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id. | 
 
 ### Return type
@@ -516,7 +517,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.TeamsApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id
 apiInstance.teamsUsernameHooksUidPut(username, uid, (error, data, response) => {
   if (error) {
@@ -532,7 +533,7 @@ apiInstance.teamsUsernameHooksUidPut(username, uid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type
@@ -555,7 +556,7 @@ Name | Type | Description  | Notes
 
 
 
-All members of a team.  Returns all members of the specified team. Any member of any of the team&#39;s groups is considered a member of the team. This includes users in groups that may not actually have access to any of the team&#39;s repositories.  Note that members using the \&quot;private profile\&quot; feature are not included.
+Returns all members of the specified team. Any member of any of the team&#39;s groups is considered a member of the team. This includes users in groups that may not actually have access to any of the team&#39;s repositories.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
 
 ### Example
 
@@ -576,7 +577,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.TeamsApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.teamsUsernameMembersGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -591,7 +592,7 @@ apiInstance.teamsUsernameMembersGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -634,7 +635,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.TeamsApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.teamsUsernameRepositoriesGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -649,11 +650,69 @@ apiInstance.teamsUsernameRepositoriesGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
 [**Error**](Error.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [basic](../README.md#basic), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## usersUsernameMembersGet
+
+> User usersUsernameMembersGet(username)
+
+
+
+Returns all members of the specified team. Any member of any of the team&#39;s groups is considered a member of the team. This includes users in groups that may not actually have access to any of the team&#39;s repositories.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
+
+### Example
+
+```javascript
+import Bitbucket from 'bitbucket';
+let defaultClient = Bitbucket.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
+// Configure OAuth2 access token for authorization: oauth2
+let oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new Bitbucket.TeamsApi();
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
+apiInstance.usersUsernameMembersGet(username, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
+
+### Return type
+
+[**User**](User.md)
 
 ### Authorization
 
@@ -692,7 +751,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.TeamsApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.usersUsernameRepositoriesGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -707,7 +766,7 @@ apiInstance.usersUsernameRepositoriesGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 

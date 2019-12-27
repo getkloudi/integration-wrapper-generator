@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,7 +48,7 @@ export default class UsersApi {
 
     /**
      * All repositories owned by a user/team. This includes private repositories, but filtered down to the ones that the calling user has access to.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/UsersApi~teamsUsernameRepositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
@@ -203,7 +203,7 @@ export default class UsersApi {
      */
 
     /**
-     * Returns the list of accounts that are following this team.
+     * Returns the list of accounts that are following this user.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
      * @param {String} username The account's username
      * @param {module:api/UsersApi~usersUsernameFollowersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUsers}
@@ -245,7 +245,7 @@ export default class UsersApi {
      */
 
     /**
-     * Returns the list of accounts this user is following.
+     * Returns the list of accounts this user is following.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
      * @param {String} username The user's username
      * @param {module:api/UsersApi~usersUsernameFollowingGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedUsers}
@@ -287,8 +287,8 @@ export default class UsersApi {
      */
 
     /**
-     * Gets the public information associated with a user account.  If the user's profile is private, `location`, `website` and `created_on` elements are omitted.
-     * @param {String} username The account's username or UUID.
+     * Gets the public information associated with a user account.  If the user's profile is private, `location`, `website` and `created_on` elements are omitted.  Note that the user object returned by this operation is changing significantly, due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#changes-to-bitbucket-user-objects) for details.
+     * @param {String} username The account's UUID, account_id, or username. Note that username has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
      * @param {module:api/UsersApi~usersUsernameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/User}
      */
@@ -329,8 +329,8 @@ export default class UsersApi {
      */
 
     /**
-     * Returns a paginated list of webhooks installed on this user account.
-     * @param {String} username 
+     * Returns a paginated list of webhooks installed on this user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/UsersApi~usersUsernameHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedWebhookSubscriptions}
      */
@@ -371,8 +371,8 @@ export default class UsersApi {
      */
 
     /**
-     * Creates a new webhook on the specified user account.  Account-level webhooks are fired for events from all repositories belonging to that account.  Note that one can only register webhooks on one's own account, not that of others.
-     * @param {String} username 
+     * Creates a new webhook on the specified user account.  Account-level webhooks are fired for events from all repositories belonging to that account.  Note that one can only register webhooks on one's own account, not that of others.  Also, note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/UsersApi~usersUsernameHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
@@ -413,8 +413,8 @@ export default class UsersApi {
      */
 
     /**
-     * Deletes the specified webhook subscription from the given user account.
-     * @param {String} username 
+     * Deletes the specified webhook subscription from the given user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/UsersApi~usersUsernameHooksUidDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -460,8 +460,8 @@ export default class UsersApi {
      */
 
     /**
-     * Returns the webhook with the specified id installed on the given user account.
-     * @param {String} username 
+     * Returns the webhook with the specified id installed on the given user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id.
      * @param {module:api/UsersApi~usersUsernameHooksUidGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
@@ -508,8 +508,8 @@ export default class UsersApi {
      */
 
     /**
-     * Updates the specified webhook subscription.  The following properties can be mutated:  * `description` * `url` * `active` * `events`
-     * @param {String} username 
+     * Updates the specified webhook subscription.  The following properties can be mutated:  * `description` * `url` * `active` * `events`  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account's UUID or account_id instead.
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {String} uid The installed webhook's id
      * @param {module:api/UsersApi~usersUsernameHooksUidPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
@@ -557,7 +557,7 @@ export default class UsersApi {
 
     /**
      * All repositories owned by a user/team. This includes private repositories, but filtered down to the ones that the calling user has access to.
-     * @param {String} username 
+     * @param {String} username This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
      * @param {module:api/UsersApi~usersUsernameRepositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */

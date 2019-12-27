@@ -47,7 +47,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.UsersApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.teamsUsernameRepositoriesGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -62,7 +62,7 @@ apiInstance.teamsUsernameRepositoriesGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -250,7 +250,7 @@ This endpoint does not need any parameter.
 
 
 
-Returns the list of accounts that are following this team.
+Returns the list of accounts that are following this user.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
 
 ### Example
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns the list of accounts this user is following.
+Returns the list of accounts this user is following.  This operation has been deprecated due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/) for details.
 
 ### Example
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 
 
-Gets the public information associated with a user account.  If the user&#39;s profile is private, &#x60;location&#x60;, &#x60;website&#x60; and &#x60;created_on&#x60; elements are omitted.
+Gets the public information associated with a user account.  If the user&#39;s profile is private, &#x60;location&#x60;, &#x60;website&#x60; and &#x60;created_on&#x60; elements are omitted.  Note that the user object returned by this operation is changing significantly, due to privacy changes. See the [announcement](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#changes-to-bitbucket-user-objects) for details.
 
 ### Example
 
@@ -387,7 +387,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.UsersApi();
-let username = "username_example"; // String | The account's username or UUID.
+let username = "username_example"; // String | The account's UUID, account_id, or username. Note that username has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
 apiInstance.usersUsernameGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -402,7 +402,7 @@ apiInstance.usersUsernameGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**| The account&#39;s username or UUID. | 
+ **username** | **String**| The account&#39;s UUID, account_id, or username. Note that username has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). | 
 
 ### Return type
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns a paginated list of webhooks installed on this user account.
+Returns a paginated list of webhooks installed on this user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -445,7 +445,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.UsersApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.usersUsernameHooksGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -460,7 +460,7 @@ apiInstance.usersUsernameHooksGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 
 
-Creates a new webhook on the specified user account.  Account-level webhooks are fired for events from all repositories belonging to that account.  Note that one can only register webhooks on one&#39;s own account, not that of others.
+Creates a new webhook on the specified user account.  Account-level webhooks are fired for events from all repositories belonging to that account.  Note that one can only register webhooks on one&#39;s own account, not that of others.  Also, note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -503,7 +503,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.UsersApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.usersUsernameHooksPost(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -518,7 +518,7 @@ apiInstance.usersUsernameHooksPost(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 
 
-Deletes the specified webhook subscription from the given user account.
+Deletes the specified webhook subscription from the given user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -561,7 +561,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.UsersApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id
 apiInstance.usersUsernameHooksUidDelete(username, uid, (error, data, response) => {
   if (error) {
@@ -577,7 +577,7 @@ apiInstance.usersUsernameHooksUidDelete(username, uid, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type
@@ -600,7 +600,7 @@ null (empty response body)
 
 
 
-Returns the webhook with the specified id installed on the given user account.
+Returns the webhook with the specified id installed on the given user account.  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -621,7 +621,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.UsersApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id.
 apiInstance.usersUsernameHooksUidGet(username, uid, (error, data, response) => {
   if (error) {
@@ -637,7 +637,7 @@ apiInstance.usersUsernameHooksUidGet(username, uid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id. | 
 
 ### Return type
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
 
 
 
-Updates the specified webhook subscription.  The following properties can be mutated:  * &#x60;description&#x60; * &#x60;url&#x60; * &#x60;active&#x60; * &#x60;events&#x60;
+Updates the specified webhook subscription.  The following properties can be mutated:  * &#x60;description&#x60; * &#x60;url&#x60; * &#x60;active&#x60; * &#x60;events&#x60;  Note that the username path parameter has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis). Use the account&#39;s UUID or account_id instead.
 
 ### Example
 
@@ -681,7 +681,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.UsersApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let uid = "uid_example"; // String | The installed webhook's id
 apiInstance.usersUsernameHooksUidPut(username, uid, (error, data, response) => {
   if (error) {
@@ -697,7 +697,7 @@ apiInstance.usersUsernameHooksUidPut(username, uid, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type
@@ -741,7 +741,7 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.UsersApi();
-let username = "username_example"; // String | 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 apiInstance.usersUsernameRepositoriesGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -756,7 +756,7 @@ apiInstance.usersUsernameRepositoriesGet(username, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **username** | **String**|  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 

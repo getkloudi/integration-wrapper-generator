@@ -4,17 +4,17 @@ All URIs are relative to *https://api.bitbucket.org/2.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**teamsOwnerProjectsGet**](ProjectsApi.md#teamsOwnerProjectsGet) | **GET** /teams/{owner}/projects/ | 
-[**teamsOwnerProjectsPost**](ProjectsApi.md#teamsOwnerProjectsPost) | **POST** /teams/{owner}/projects/ | 
-[**teamsOwnerProjectsProjectKeyDelete**](ProjectsApi.md#teamsOwnerProjectsProjectKeyDelete) | **DELETE** /teams/{owner}/projects/{project_key} | 
-[**teamsOwnerProjectsProjectKeyGet**](ProjectsApi.md#teamsOwnerProjectsProjectKeyGet) | **GET** /teams/{owner}/projects/{project_key} | 
-[**teamsOwnerProjectsProjectKeyPut**](ProjectsApi.md#teamsOwnerProjectsProjectKeyPut) | **PUT** /teams/{owner}/projects/{project_key} | 
+[**teamsUsernameProjectsGet**](ProjectsApi.md#teamsUsernameProjectsGet) | **GET** /teams/{username}/projects/ | 
+[**teamsUsernameProjectsPost**](ProjectsApi.md#teamsUsernameProjectsPost) | **POST** /teams/{username}/projects/ | 
+[**teamsUsernameProjectsProjectKeyDelete**](ProjectsApi.md#teamsUsernameProjectsProjectKeyDelete) | **DELETE** /teams/{username}/projects/{project_key} | 
+[**teamsUsernameProjectsProjectKeyGet**](ProjectsApi.md#teamsUsernameProjectsProjectKeyGet) | **GET** /teams/{username}/projects/{project_key} | 
+[**teamsUsernameProjectsProjectKeyPut**](ProjectsApi.md#teamsUsernameProjectsProjectKeyPut) | **PUT** /teams/{username}/projects/{project_key} | 
 
 
 
-## teamsOwnerProjectsGet
+## teamsUsernameProjectsGet
 
-> PaginatedProjects teamsOwnerProjectsGet(owner)
+> PaginatedProjects teamsUsernameProjectsGet(username)
 
 
 
@@ -37,8 +37,8 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.ProjectsApi();
-let owner = "owner_example"; // String | The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
-apiInstance.teamsOwnerProjectsGet(owner, (error, data, response) => {
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
+apiInstance.teamsUsernameProjectsGet(username, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -52,7 +52,7 @@ apiInstance.teamsOwnerProjectsGet(owner, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **owner** | **String**| The team which owns the project. This can either be the &#x60;username&#x60; of the team or the &#x60;UUID&#x60; of the team (surrounded by curly-braces (&#x60;{}&#x60;)).  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
 
 ### Return type
 
@@ -68,9 +68,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## teamsOwnerProjectsPost
+## teamsUsernameProjectsPost
 
-> Project teamsOwnerProjectsPost(owner, body)
+> Project teamsUsernameProjectsPost(username, body)
 
 
 
@@ -95,9 +95,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.ProjectsApi();
-let owner = "owner_example"; // String | The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let body = new Bitbucket.Project(); // Project | 
-apiInstance.teamsOwnerProjectsPost(owner, body, (error, data, response) => {
+apiInstance.teamsUsernameProjectsPost(username, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -111,7 +111,7 @@ apiInstance.teamsOwnerProjectsPost(owner, body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **owner** | **String**| The team which owns the project. This can either be the &#x60;username&#x60; of the team or the &#x60;UUID&#x60; of the team (surrounded by curly-braces (&#x60;{}&#x60;)).  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **body** | [**Project**](Project.md)|  | 
 
 ### Return type
@@ -128,9 +128,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## teamsOwnerProjectsProjectKeyDelete
+## teamsUsernameProjectsProjectKeyDelete
 
-> teamsOwnerProjectsProjectKeyDelete(owner, projectKey)
+> teamsUsernameProjectsProjectKeyDelete(username, projectKey)
 
 
 
@@ -153,9 +153,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.ProjectsApi();
-let owner = "owner_example"; // String | The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let projectKey = "projectKey_example"; // String | The project in question. This can either be the actual `key` assigned to the project or the `UUID` (surrounded by curly-braces (`{}`)). 
-apiInstance.teamsOwnerProjectsProjectKeyDelete(owner, projectKey, (error, data, response) => {
+apiInstance.teamsUsernameProjectsProjectKeyDelete(username, projectKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -169,7 +169,7 @@ apiInstance.teamsOwnerProjectsProjectKeyDelete(owner, projectKey, (error, data, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **owner** | **String**| The team which owns the project. This can either be the &#x60;username&#x60; of the team or the &#x60;UUID&#x60; of the team (surrounded by curly-braces (&#x60;{}&#x60;)).  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **projectKey** | **String**| The project in question. This can either be the actual &#x60;key&#x60; assigned to the project or the &#x60;UUID&#x60; (surrounded by curly-braces (&#x60;{}&#x60;)).  | 
 
 ### Return type
@@ -186,9 +186,9 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## teamsOwnerProjectsProjectKeyGet
+## teamsUsernameProjectsProjectKeyGet
 
-> Project teamsOwnerProjectsProjectKeyGet(owner, projectKey)
+> Project teamsUsernameProjectsProjectKeyGet(username, projectKey)
 
 
 
@@ -211,9 +211,9 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.ProjectsApi();
-let owner = "owner_example"; // String | The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let projectKey = "projectKey_example"; // String | The project in question. This can either be the actual `key` assigned to the project or the `UUID` (surrounded by curly-braces (`{}`)). 
-apiInstance.teamsOwnerProjectsProjectKeyGet(owner, projectKey, (error, data, response) => {
+apiInstance.teamsUsernameProjectsProjectKeyGet(username, projectKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -227,7 +227,7 @@ apiInstance.teamsOwnerProjectsProjectKeyGet(owner, projectKey, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **owner** | **String**| The team which owns the project. This can either be the &#x60;username&#x60; of the team or the &#x60;UUID&#x60; of the team (surrounded by curly-braces (&#x60;{}&#x60;)).  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **projectKey** | **String**| The project in question. This can either be the actual &#x60;key&#x60; assigned to the project or the &#x60;UUID&#x60; (surrounded by curly-braces (&#x60;{}&#x60;)).  | 
 
 ### Return type
@@ -244,9 +244,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## teamsOwnerProjectsProjectKeyPut
+## teamsUsernameProjectsProjectKeyPut
 
-> Project teamsOwnerProjectsProjectKeyPut(owner, projectKey, body)
+> Project teamsUsernameProjectsProjectKeyPut(username, projectKey, body)
 
 
 
@@ -271,10 +271,10 @@ let oauth2 = defaultClient.authentications['oauth2'];
 oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.ProjectsApi();
-let owner = "owner_example"; // String | The team which owns the project. This can either be the `username` of the team or the `UUID` of the team (surrounded by curly-braces (`{}`)). 
+let username = "username_example"; // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. 
 let projectKey = "projectKey_example"; // String | The project in question. This can either be the actual `key` assigned to the project or the `UUID` (surrounded by curly-braces (`{}`)). 
 let body = new Bitbucket.Project(); // Project | 
-apiInstance.teamsOwnerProjectsProjectKeyPut(owner, projectKey, body, (error, data, response) => {
+apiInstance.teamsUsernameProjectsProjectKeyPut(username, projectKey, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -288,7 +288,7 @@ apiInstance.teamsOwnerProjectsProjectKeyPut(owner, projectKey, body, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **owner** | **String**| The team which owns the project. This can either be the &#x60;username&#x60; of the team or the &#x60;UUID&#x60; of the team (surrounded by curly-braces (&#x60;{}&#x60;)).  | 
+ **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
  **projectKey** | **String**| The project in question. This can either be the actual &#x60;key&#x60; assigned to the project or the &#x60;UUID&#x60; (surrounded by curly-braces (&#x60;{}&#x60;)).  | 
  **body** | [**Project**](Project.md)|  | 
 

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AccountAllOfLinksAvatar from './AccountAllOfLinksAvatar';
+import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 
 /**
  * The ProjectAllOfLinks model module.
@@ -48,11 +48,11 @@ class ProjectAllOfLinks {
         if (data) {
             obj = obj || new ProjectAllOfLinks();
 
-            if (data.hasOwnProperty('avatar')) {
-                obj['avatar'] = AccountAllOfLinksAvatar.constructFromObject(data['avatar']);
-            }
             if (data.hasOwnProperty('html')) {
-                obj['html'] = AccountAllOfLinksAvatar.constructFromObject(data['html']);
+                obj['html'] = SubjectTypesRepositoryEvents.constructFromObject(data['html']);
+            }
+            if (data.hasOwnProperty('avatar')) {
+                obj['avatar'] = SubjectTypesRepositoryEvents.constructFromObject(data['avatar']);
             }
         }
         return obj;
@@ -62,14 +62,14 @@ class ProjectAllOfLinks {
 }
 
 /**
- * @member {module:model/AccountAllOfLinksAvatar} avatar
- */
-ProjectAllOfLinks.prototype['avatar'] = undefined;
-
-/**
- * @member {module:model/AccountAllOfLinksAvatar} html
+ * @member {module:model/SubjectTypesRepositoryEvents} html
  */
 ProjectAllOfLinks.prototype['html'] = undefined;
+
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} avatar
+ */
+ProjectAllOfLinks.prototype['avatar'] = undefined;
 
 
 

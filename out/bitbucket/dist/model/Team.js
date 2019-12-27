@@ -84,16 +84,6 @@ function () {
 
 _Account["default"].prototype['type'] = undefined;
 /**
- * @member {Date} created_on
- */
-
-_Account["default"].prototype['created_on'] = undefined;
-/**
- * @member {String} display_name
- */
-
-_Account["default"].prototype['display_name'] = undefined;
-/**
  * @member {module:model/AccountAllOfLinks} links
  */
 
@@ -104,14 +94,41 @@ _Account["default"].prototype['links'] = undefined;
 
 _Account["default"].prototype['username'] = undefined;
 /**
- * @member {String} uuid
+ * Account name defined by the owner. Should be used instead of the \"username\" field. Note that \"nickname\" cannot be used in place of \"username\" in URLs and queries, as \"nickname\" is not guaranteed to be unique.
+ * @member {String} nickname
  */
 
-_Account["default"].prototype['uuid'] = undefined;
+_Account["default"].prototype['nickname'] = undefined;
+/**
+ * The status of the account. Currently the only possible value is \"active\", but more values may be added in the future.
+ * @member {String} account_status
+ */
+
+_Account["default"].prototype['account_status'] = undefined;
+/**
+ * @member {String} display_name
+ */
+
+_Account["default"].prototype['display_name'] = undefined;
 /**
  * @member {String} website
  */
 
 _Account["default"].prototype['website'] = undefined;
+/**
+ * @member {Date} created_on
+ */
+
+_Account["default"].prototype['created_on'] = undefined;
+/**
+ * @member {String} uuid
+ */
+
+_Account["default"].prototype['uuid'] = undefined;
+/**
+ * @member {Boolean} has_2fa_enabled
+ */
+
+_Account["default"].prototype['has_2fa_enabled'] = undefined;
 var _default = Team;
 exports["default"] = _default;

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import BranchrestrictionAllOfLinks from './BranchrestrictionAllOfLinks';
+import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks';
 import IssueAttachmentAllOf from './IssueAttachmentAllOf';
 import ModelObject from './ModelObject';
 
@@ -58,7 +58,7 @@ class IssueAttachment {
             IssueAttachmentAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
-                obj['links'] = BranchrestrictionAllOfLinks.constructFromObject(data['links']);
+                obj['links'] = BranchingModelSettingsAllOfLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -71,7 +71,7 @@ class IssueAttachment {
 }
 
 /**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 IssueAttachment.prototype['links'] = undefined;
 
@@ -88,7 +88,7 @@ IssueAttachment.prototype['name'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement IssueAttachmentAllOf interface:
 /**
- * @member {module:model/BranchrestrictionAllOfLinks} links
+ * @member {module:model/BranchingModelSettingsAllOfLinks} links
  */
 IssueAttachmentAllOf.prototype['links'] = undefined;
 /**

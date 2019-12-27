@@ -84,16 +84,12 @@ function () {
 
         _PipelineAllOf["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('build_seconds_used')) {
-          obj['build_seconds_used'] = _ApiClient["default"].convertToType(data['build_seconds_used'], 'Number');
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
         }
 
-        if (data.hasOwnProperty('completed_on')) {
-          obj['completed_on'] = _ApiClient["default"].convertToType(data['completed_on'], 'Date');
-        }
-
-        if (data.hasOwnProperty('created_on')) {
-          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
+        if (data.hasOwnProperty('build_number')) {
+          obj['build_number'] = _ApiClient["default"].convertToType(data['build_number'], 'Number');
         }
 
         if (data.hasOwnProperty('creator')) {
@@ -104,10 +100,6 @@ function () {
           obj['repository'] = _Repository["default"].constructFromObject(data['repository']);
         }
 
-        if (data.hasOwnProperty('state')) {
-          obj['state'] = _PipelineState["default"].constructFromObject(data['state']);
-        }
-
         if (data.hasOwnProperty('target')) {
           obj['target'] = _PipelineTarget["default"].constructFromObject(data['target']);
         }
@@ -116,8 +108,20 @@ function () {
           obj['trigger'] = _PipelineTrigger["default"].constructFromObject(data['trigger']);
         }
 
-        if (data.hasOwnProperty('uuid')) {
-          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        if (data.hasOwnProperty('state')) {
+          obj['state'] = _PipelineState["default"].constructFromObject(data['state']);
+        }
+
+        if (data.hasOwnProperty('created_on')) {
+          obj['created_on'] = _ApiClient["default"].convertToType(data['created_on'], 'Date');
+        }
+
+        if (data.hasOwnProperty('completed_on')) {
+          obj['completed_on'] = _ApiClient["default"].convertToType(data['completed_on'], 'Date');
+        }
+
+        if (data.hasOwnProperty('build_seconds_used')) {
+          obj['build_seconds_used'] = _ApiClient["default"].convertToType(data['build_seconds_used'], 'Number');
         }
       }
 
@@ -128,24 +132,18 @@ function () {
   return Pipeline;
 }();
 /**
- * The number of build seconds used by this pipeline.
- * @member {Number} build_seconds_used
+ * The UUID identifying the pipeline.
+ * @member {String} uuid
  */
 
 
-Pipeline.prototype['build_seconds_used'] = undefined;
+Pipeline.prototype['uuid'] = undefined;
 /**
- * The timestamp when the Pipeline was completed. This is not set if the pipeline is still in progress.
- * @member {Date} completed_on
+ * The build number of the pipeline.
+ * @member {Number} build_number
  */
 
-Pipeline.prototype['completed_on'] = undefined;
-/**
- * The timestamp when the pipeline was created.
- * @member {Date} created_on
- */
-
-Pipeline.prototype['created_on'] = undefined;
+Pipeline.prototype['build_number'] = undefined;
 /**
  * @member {module:model/Account} creator
  */
@@ -157,11 +155,6 @@ Pipeline.prototype['creator'] = undefined;
 
 Pipeline.prototype['repository'] = undefined;
 /**
- * @member {module:model/PipelineState} state
- */
-
-Pipeline.prototype['state'] = undefined;
-/**
  * @member {module:model/PipelineTarget} target
  */
 
@@ -172,11 +165,28 @@ Pipeline.prototype['target'] = undefined;
 
 Pipeline.prototype['trigger'] = undefined;
 /**
- * The UUID identifying the pipeline.
- * @member {String} uuid
+ * @member {module:model/PipelineState} state
  */
 
-Pipeline.prototype['uuid'] = undefined; // Implement ModelObject interface:
+Pipeline.prototype['state'] = undefined;
+/**
+ * The timestamp when the pipeline was created.
+ * @member {Date} created_on
+ */
+
+Pipeline.prototype['created_on'] = undefined;
+/**
+ * The timestamp when the Pipeline was completed. This is not set if the pipeline is still in progress.
+ * @member {Date} completed_on
+ */
+
+Pipeline.prototype['completed_on'] = undefined;
+/**
+ * The number of build seconds used by this pipeline.
+ * @member {Number} build_seconds_used
+ */
+
+Pipeline.prototype['build_seconds_used'] = undefined; // Implement ModelObject interface:
 
 /**
  * @member {String} type
@@ -185,23 +195,17 @@ Pipeline.prototype['uuid'] = undefined; // Implement ModelObject interface:
 _ModelObject["default"].prototype['type'] = undefined; // Implement PipelineAllOf interface:
 
 /**
- * The number of build seconds used by this pipeline.
- * @member {Number} build_seconds_used
+ * The UUID identifying the pipeline.
+ * @member {String} uuid
  */
 
-_PipelineAllOf["default"].prototype['build_seconds_used'] = undefined;
+_PipelineAllOf["default"].prototype['uuid'] = undefined;
 /**
- * The timestamp when the Pipeline was completed. This is not set if the pipeline is still in progress.
- * @member {Date} completed_on
+ * The build number of the pipeline.
+ * @member {Number} build_number
  */
 
-_PipelineAllOf["default"].prototype['completed_on'] = undefined;
-/**
- * The timestamp when the pipeline was created.
- * @member {Date} created_on
- */
-
-_PipelineAllOf["default"].prototype['created_on'] = undefined;
+_PipelineAllOf["default"].prototype['build_number'] = undefined;
 /**
  * @member {module:model/Account} creator
  */
@@ -213,11 +217,6 @@ _PipelineAllOf["default"].prototype['creator'] = undefined;
 
 _PipelineAllOf["default"].prototype['repository'] = undefined;
 /**
- * @member {module:model/PipelineState} state
- */
-
-_PipelineAllOf["default"].prototype['state'] = undefined;
-/**
  * @member {module:model/PipelineTarget} target
  */
 
@@ -228,10 +227,27 @@ _PipelineAllOf["default"].prototype['target'] = undefined;
 
 _PipelineAllOf["default"].prototype['trigger'] = undefined;
 /**
- * The UUID identifying the pipeline.
- * @member {String} uuid
+ * @member {module:model/PipelineState} state
  */
 
-_PipelineAllOf["default"].prototype['uuid'] = undefined;
+_PipelineAllOf["default"].prototype['state'] = undefined;
+/**
+ * The timestamp when the pipeline was created.
+ * @member {Date} created_on
+ */
+
+_PipelineAllOf["default"].prototype['created_on'] = undefined;
+/**
+ * The timestamp when the Pipeline was completed. This is not set if the pipeline is still in progress.
+ * @member {Date} completed_on
+ */
+
+_PipelineAllOf["default"].prototype['completed_on'] = undefined;
+/**
+ * The number of build seconds used by this pipeline.
+ * @member {Number} build_seconds_used
+ */
+
+_PipelineAllOf["default"].prototype['build_seconds_used'] = undefined;
 var _default = Pipeline;
 exports["default"] = _default;

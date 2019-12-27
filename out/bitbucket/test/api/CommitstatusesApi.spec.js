@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -48,50 +48,50 @@
   }
 
   describe('CommitstatusesApi', function() {
-    describe('repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet', function() {
-      it('should call repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet
-        //instance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet
+        //instance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut', function() {
-      it('should call repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut
-        //instance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildKeyPut(function(error) {
+    describe('repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut', function() {
+      it('should call repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut
+        //instance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost', function() {
-      it('should call repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost
-        //instance.repositoriesUsernameRepoSlugCommitNodeStatusesBuildPost(function(error) {
+    describe('repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost', function() {
+      it('should call repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost
+        //instance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugCommitNodeStatusesGet', function() {
-      it('should call repositoriesUsernameRepoSlugCommitNodeStatusesGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugCommitNodeStatusesGet
-        //instance.repositoriesUsernameRepoSlugCommitNodeStatusesGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugCommitNodeStatusesGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugCommitNodeStatusesGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugCommitNodeStatusesGet
+        //instance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet', function() {
-      it('should call repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet successfully', function(done) {
-        //uncomment below and update the code to test repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet
-        //instance.repositoriesUsernameRepoSlugPullrequestsPullRequestIdStatusesGet(function(error) {
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import Author from './Author';
 import BaseCommitAllOf from './BaseCommitAllOf';
 import ModelObject from './ModelObject';
+import PullrequestAllOfRenderedTitle from './PullrequestAllOfRenderedTitle';
 
 /**
  * The BaseCommit model module.
@@ -57,17 +58,20 @@ class BaseCommit {
             ModelObject.constructFromObject(data, obj);
             BaseCommitAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('author')) {
-                obj['author'] = Author.constructFromObject(data['author']);
+            if (data.hasOwnProperty('hash')) {
+                obj['hash'] = ApiClient.convertToType(data['hash'], 'String');
             }
             if (data.hasOwnProperty('date')) {
                 obj['date'] = ApiClient.convertToType(data['date'], 'Date');
             }
-            if (data.hasOwnProperty('hash')) {
-                obj['hash'] = ApiClient.convertToType(data['hash'], 'String');
+            if (data.hasOwnProperty('author')) {
+                obj['author'] = Author.constructFromObject(data['author']);
             }
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
+            }
+            if (data.hasOwnProperty('summary')) {
+                obj['summary'] = PullrequestAllOfRenderedTitle.constructFromObject(data['summary']);
             }
             if (data.hasOwnProperty('parents')) {
                 obj['parents'] = ApiClient.convertToType(data['parents'], [BaseCommit]);
@@ -80,9 +84,9 @@ class BaseCommit {
 }
 
 /**
- * @member {module:model/Author} author
+ * @member {String} hash
  */
-BaseCommit.prototype['author'] = undefined;
+BaseCommit.prototype['hash'] = undefined;
 
 /**
  * @member {Date} date
@@ -90,14 +94,19 @@ BaseCommit.prototype['author'] = undefined;
 BaseCommit.prototype['date'] = undefined;
 
 /**
- * @member {String} hash
+ * @member {module:model/Author} author
  */
-BaseCommit.prototype['hash'] = undefined;
+BaseCommit.prototype['author'] = undefined;
 
 /**
  * @member {String} message
  */
 BaseCommit.prototype['message'] = undefined;
+
+/**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+BaseCommit.prototype['summary'] = undefined;
 
 /**
  * @member {Array.<module:model/BaseCommit>} parents
@@ -112,21 +121,25 @@ BaseCommit.prototype['parents'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement BaseCommitAllOf interface:
 /**
- * @member {module:model/Author} author
+ * @member {String} hash
  */
-BaseCommitAllOf.prototype['author'] = undefined;
+BaseCommitAllOf.prototype['hash'] = undefined;
 /**
  * @member {Date} date
  */
 BaseCommitAllOf.prototype['date'] = undefined;
 /**
- * @member {String} hash
+ * @member {module:model/Author} author
  */
-BaseCommitAllOf.prototype['hash'] = undefined;
+BaseCommitAllOf.prototype['author'] = undefined;
 /**
  * @member {String} message
  */
 BaseCommitAllOf.prototype['message'] = undefined;
+/**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+BaseCommitAllOf.prototype['summary'] = undefined;
 /**
  * @member {Array.<module:model/BaseCommit>} parents
  */

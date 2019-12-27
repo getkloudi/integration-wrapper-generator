@@ -7,9 +7,17 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _DeploymentVariable = _interopRequireDefault(require("../model/DeploymentVariable"));
+
 var _Error = _interopRequireDefault(require("../model/Error"));
 
+var _PaginatedDeploymentVariable = _interopRequireDefault(require("../model/PaginatedDeploymentVariable"));
+
 var _PaginatedPipelineKnownHosts = _interopRequireDefault(require("../model/PaginatedPipelineKnownHosts"));
+
+var _PaginatedPipelineScheduleExecutions = _interopRequireDefault(require("../model/PaginatedPipelineScheduleExecutions"));
+
+var _PaginatedPipelineSchedules = _interopRequireDefault(require("../model/PaginatedPipelineSchedules"));
 
 var _PaginatedPipelineSteps = _interopRequireDefault(require("../model/PaginatedPipelineSteps"));
 
@@ -19,7 +27,11 @@ var _PaginatedPipelines = _interopRequireDefault(require("../model/PaginatedPipe
 
 var _Pipeline = _interopRequireDefault(require("../model/Pipeline"));
 
+var _PipelineBuildNumber = _interopRequireDefault(require("../model/PipelineBuildNumber"));
+
 var _PipelineKnownHost = _interopRequireDefault(require("../model/PipelineKnownHost"));
+
+var _PipelineSchedule = _interopRequireDefault(require("../model/PipelineSchedule"));
 
 var _PipelineSshKeyPair = _interopRequireDefault(require("../model/PipelineSshKeyPair"));
 
@@ -58,24 +70,87 @@ function () {
     this.apiClient = apiClient || _ApiClient["default"].instance;
   }
   /**
-   * Callback function to receive the result of the createPipelineForRepository operation.
-   * @callback module:api/PipelinesApi~createPipelineForRepositoryCallback
+   * Callback function to receive the result of the createDeploymentVariable operation.
+   * @callback module:api/PipelinesApi~createDeploymentVariableCallback
    * @param {String} error Error message, if any.
-   * @param {module:model/Pipeline} data The data returned by the service call.
+   * @param {module:model/DeploymentVariable} data The data returned by the service call.
    * @param {String} response The complete HTTP response.
    */
 
   /**
-   * Endpoint to create and initiate a pipeline.  There are a couple of different options to initiate a pipeline, where the payload of the request will determine which type of pipeline will be instantiated. # Trigger a Pipeline for a branch or tag One way to trigger pipelines is by specifying the reference for which you want to trigger a pipeline (e.g. a branch or tag).  The specified reference will be used to determine which pipeline definition from the `bitbucket-pipelines.yml` file will be applied to initiate the pipeline. The pipeline will then do a clone of the repository and checkout the latest revision of the specified reference.  ### Example  ``` $ curl -X POST -is -u username:password \\   -H 'Content-Type: application/json' \\  https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \\   -d '   {     \"target\": {       \"ref_type\": \"branch\",        \"type\": \"pipeline_ref_target\",        \"ref_name\": \"master\"     }   }' ``` # Trigger a Pipeline for a commit on a branch or tag You can initiate a pipeline for a specific commit and in the context of a specified reference (e.g. a branch, tag or bookmark). The specified reference will be used to determine which pipeline definition from the bitbucket-pipelines.yml file will be applied to initiate the pipeline. The pipeline will clone the repository and then do a checkout the specified reference.   The following reference types are supported:  * `branch`  * `named_branch` * `bookmark`   * `tag`  ### Example  ``` $ curl -X POST -is -u username:password \\   -H 'Content-Type: application/json' \\   https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \\   -d '   {     \"target\": {       \"commit\": {         \"type\": \"commit\",          \"hash\": \"ce5b7431602f7cbba007062eeb55225c6e18e956\"       },        \"ref_type\": \"branch\",        \"type\": \"pipeline_ref_target\",        \"ref_name\": \"master\"     }   }' ``` # Trigger a specific pipeline definition for a commit You can trigger a specific pipeline that is defined in your `bitbucket-pipelines.yml` file for a specific commit.  In addition to the commit revision, you specify the type and pattern of the selector that identifies the pipeline definition. The resulting pipeline will then clone the repository and checkout the specified revision.  ### Example  ``` $ curl -X POST -is -u username:password \\   -H 'Content-Type: application/json' \\  https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \\  -d '   {      \"target\": {       \"commit\": {          \"hash\":\"a3c4e02c9a3755eccdc3764e6ea13facdf30f923\",          \"type\":\"commit\"        },         \"selector\": {            \"type\":\"custom\",               \"pattern\":\"Deploy to production\"           },         \"type\":\"pipeline_commit_target\"    }   }' ``` # Trigger a specific pipeline definition for a commit on a branch or tag You can trigger a specific pipeline that is defined in your `bitbucket-pipelines.yml` file for a specific commit in the context of a specified reference.  In addition to the commit revision, you specify the type and pattern of the selector that identifies the pipeline definition, as well as the reference information. The resulting pipeline will then clone the repository a checkout the specified reference.  ### Example  ``` $ curl -X POST -is -u username:password \\   -H 'Content-Type: application/json' \\  https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \\  -d '   {      \"target\": {       \"commit\": {          \"hash\":\"a3c4e02c9a3755eccdc3764e6ea13facdf30f923\",          \"type\":\"commit\"        },        \"selector\": {           \"type\": \"custom\",           \"pattern\": \"Deploy to production\"        },        \"type\": \"pipeline_ref_target\",        \"ref_name\": \"master\",        \"ref_type\": \"branch\"      }   }' ``` 
+   * Create a deployment environment level variable.
    * @param {String} username The account.
    * @param {String} repoSlug The repository.
-   * @param {module:model/Pipeline} body The pipeline to initiate.
-   * @param {module:api/PipelinesApi~createPipelineForRepositoryCallback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/Pipeline}
+   * @param {String} environmentUuid The environment.
+   * @param {String} variableUuid The UUID of the variable to update.
+   * @param {module:model/DeploymentVariable} body The variable to create
+   * @param {module:api/PipelinesApi~createDeploymentVariableCallback} callback The callback function, accepting three arguments: error, data, response
+   * data is of type: {@link module:model/DeploymentVariable}
    */
 
 
   _createClass(PipelinesApi, [{
+    key: "createDeploymentVariable",
+    value: function createDeploymentVariable(username, repoSlug, environmentUuid, variableUuid, body, callback) {
+      var postBody = body; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling createDeploymentVariable");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling createDeploymentVariable");
+      } // verify the required parameter 'environmentUuid' is set
+
+
+      if (environmentUuid === undefined || environmentUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'environmentUuid' when calling createDeploymentVariable");
+      } // verify the required parameter 'variableUuid' is set
+
+
+      if (variableUuid === undefined || variableUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'variableUuid' when calling createDeploymentVariable");
+      } // verify the required parameter 'body' is set
+
+
+      if (body === undefined || body === null) {
+        throw new _Error["default"]("Missing the required parameter 'body' when calling createDeploymentVariable");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'environment_uuid': environmentUuid,
+        'variable_uuid': variableUuid
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _DeploymentVariable["default"];
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the createPipelineForRepository operation.
+     * @callback module:api/PipelinesApi~createPipelineForRepositoryCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Pipeline} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Endpoint to create and initiate a pipeline.  There are a couple of different options to initiate a pipeline, where the payload of the request will determine which type of pipeline will be instantiated. # Trigger a Pipeline for a branch One way to trigger pipelines is by specifying the branch for which you want to trigger a pipeline.  The specified branch will be used to determine which pipeline definition from the `bitbucket-pipelines.yml` file will be applied to initiate the pipeline. The pipeline will then do a clone of the repository and checkout the latest revision of the specified branch.  ### Example  ``` $ curl -X POST -is -u username:password \\   -H 'Content-Type: application/json' \\  https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \\   -d '   {     \"target\": {       \"ref_type\": \"branch\",        \"type\": \"pipeline_ref_target\",        \"ref_name\": \"master\"     }   }' ``` # Trigger a Pipeline for a commit on a branch or tag You can initiate a pipeline for a specific commit and in the context of a specified reference (e.g. a branch, tag or bookmark). The specified reference will be used to determine which pipeline definition from the bitbucket-pipelines.yml file will be applied to initiate the pipeline. The pipeline will clone the repository and then do a checkout the specified reference.   The following reference types are supported:  * `branch`  * `named_branch` * `bookmark`   * `tag`  ### Example  ``` $ curl -X POST -is -u username:password \\   -H 'Content-Type: application/json' \\   https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \\   -d '   {     \"target\": {       \"commit\": {         \"type\": \"commit\",          \"hash\": \"ce5b7431602f7cbba007062eeb55225c6e18e956\"       },        \"ref_type\": \"branch\",        \"type\": \"pipeline_ref_target\",        \"ref_name\": \"master\"     }   }' ``` # Trigger a specific pipeline definition for a commit You can trigger a specific pipeline that is defined in your `bitbucket-pipelines.yml` file for a specific commit.  In addition to the commit revision, you specify the type and pattern of the selector that identifies the pipeline definition. The resulting pipeline will then clone the repository and checkout the specified revision.  ### Example  ``` $ curl -X POST -is -u username:password \\   -H 'Content-Type: application/json' \\  https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \\  -d '   {      \"target\": {       \"commit\": {          \"hash\":\"a3c4e02c9a3755eccdc3764e6ea13facdf30f923\",          \"type\":\"commit\"        },         \"selector\": {            \"type\":\"custom\",               \"pattern\":\"Deploy to production\"           },         \"type\":\"pipeline_commit_target\"    }   }' ``` # Trigger a specific pipeline definition for a commit on a branch or tag You can trigger a specific pipeline that is defined in your `bitbucket-pipelines.yml` file for a specific commit in the context of a specified reference.  In addition to the commit revision, you specify the type and pattern of the selector that identifies the pipeline definition, as well as the reference information. The resulting pipeline will then clone the repository a checkout the specified reference.  ### Example  ``` $ curl -X POST -is -u username:password \\   -H 'Content-Type: application/json' \\  https://api.bitbucket.org/2.0/repositories/jeroendr/meat-demo2/pipelines/ \\  -d '   {      \"target\": {       \"commit\": {          \"hash\":\"a3c4e02c9a3755eccdc3764e6ea13facdf30f923\",          \"type\":\"commit\"        },        \"selector\": {           \"type\": \"custom\",           \"pattern\": \"Deploy to production\"        },        \"type\": \"pipeline_ref_target\",        \"ref_name\": \"master\",        \"ref_type\": \"branch\"      }   }' ```   # Trigger a custom pipeline with variables In addition to triggering a custom pipeline that is defined in your `bitbucket-pipelines.yml` file as shown in the examples above, you can specify variables that will be available for your build. In the request, provide a list of variables, specifying the following for each variable: key, value, and whether it should be secured or not (this field is optional and defaults to not secured).  ### Example  ``` $ curl -X POST -is -u username:password \\   -H 'Content-Type: application/json' \\  https://api.bitbucket.org/2.0/repositories/{workspace}/{repo_slug}/pipelines/ \\  -d '   {     \"target\": {       \"type\": \"pipeline_ref_target\",       \"ref_type\": \"branch\",       \"ref_name\": \"master\",       \"selector\": {         \"type\": \"custom\",         \"pattern\": \"Deploy to production\"       }     },     \"variables\": [       {         \"key\": \"var1key\",         \"value\": \"var1value\",         \"secured\": true       },       {         \"key\": \"var2key\",         \"value\": \"var2value\"       }     ]   }' ``` 
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {module:model/Pipeline} body The pipeline to initiate.
+     * @param {module:api/PipelinesApi~createPipelineForRepositoryCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Pipeline}
+     */
+
+  }, {
     key: "createPipelineForRepository",
     value: function createPipelineForRepository(username, repoSlug, body, callback) {
       var postBody = body; // verify the required parameter 'username' is set
@@ -105,7 +180,7 @@ function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _Pipeline["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines/', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines/', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the createPipelineVariableForTeam operation.
@@ -232,7 +307,56 @@ function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _PipelineKnownHost["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/ssh/known_hosts/', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the createRepositoryPipelineSchedule operation.
+     * @callback module:api/PipelinesApi~createRepositoryPipelineScheduleCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PipelineSchedule} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a schedule for the given repository.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {module:model/PipelineSchedule} body The schedule to create.
+     * @param {module:api/PipelinesApi~createRepositoryPipelineScheduleCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PipelineSchedule}
+     */
+
+  }, {
+    key: "createRepositoryPipelineSchedule",
+    value: function createRepositoryPipelineSchedule(username, repoSlug, body, callback) {
+      var postBody = body; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling createRepositoryPipelineSchedule");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling createRepositoryPipelineSchedule");
+      } // verify the required parameter 'body' is set
+
+
+      if (body === undefined || body === null) {
+        throw new _Error["default"]("Missing the required parameter 'body' when calling createRepositoryPipelineSchedule");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _PipelineSchedule["default"];
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the createRepositoryPipelineVariable operation.
@@ -281,7 +405,63 @@ function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _PipelineVariable["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/variables/', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/variables/', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the deleteDeploymentVariable operation.
+     * @callback module:api/PipelinesApi~deleteDeploymentVariableCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a deployment environment level variable.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} environmentUuid The environment.
+     * @param {String} variableUuid The UUID of the variable to delete.
+     * @param {module:api/PipelinesApi~deleteDeploymentVariableCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+
+  }, {
+    key: "deleteDeploymentVariable",
+    value: function deleteDeploymentVariable(username, repoSlug, environmentUuid, variableUuid, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling deleteDeploymentVariable");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling deleteDeploymentVariable");
+      } // verify the required parameter 'environmentUuid' is set
+
+
+      if (environmentUuid === undefined || environmentUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'environmentUuid' when calling deleteDeploymentVariable");
+      } // verify the required parameter 'variableUuid' is set
+
+
+      if (variableUuid === undefined || variableUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'variableUuid' when calling deleteDeploymentVariable");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'environment_uuid': environmentUuid,
+        'variable_uuid': variableUuid
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables/{variable_uuid}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the deletePipelineVariableForTeam operation.
@@ -407,7 +587,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/ssh/key_pair', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/key_pair', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the deleteRepositoryPipelineKnownHost operation.
@@ -456,7 +636,56 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the deleteRepositoryPipelineSchedule operation.
+     * @callback module:api/PipelinesApi~deleteRepositoryPipelineScheduleCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete a schedule.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} scheduleUuid The uuid of the schedule.
+     * @param {module:api/PipelinesApi~deleteRepositoryPipelineScheduleCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+
+  }, {
+    key: "deleteRepositoryPipelineSchedule",
+    value: function deleteRepositoryPipelineSchedule(username, repoSlug, scheduleUuid, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling deleteRepositoryPipelineSchedule");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling deleteRepositoryPipelineSchedule");
+      } // verify the required parameter 'scheduleUuid' is set
+
+
+      if (scheduleUuid === undefined || scheduleUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'scheduleUuid' when calling deleteRepositoryPipelineSchedule");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'schedule_uuid': scheduleUuid
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the deleteRepositoryPipelineVariable operation.
@@ -505,7 +734,57 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/variables/{variable_uuid}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/variables/{variable_uuid}', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the getDeploymentVariables operation.
+     * @callback module:api/PipelinesApi~getDeploymentVariablesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedDeploymentVariable} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Find deployment environment level variables.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} environmentUuid The environment.
+     * @param {module:api/PipelinesApi~getDeploymentVariablesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedDeploymentVariable}
+     */
+
+  }, {
+    key: "getDeploymentVariables",
+    value: function getDeploymentVariables(username, repoSlug, environmentUuid, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling getDeploymentVariables");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling getDeploymentVariables");
+      } // verify the required parameter 'environmentUuid' is set
+
+
+      if (environmentUuid === undefined || environmentUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'environmentUuid' when calling getDeploymentVariables");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'environment_uuid': environmentUuid
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _PaginatedDeploymentVariable["default"];
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getPipelineForRepository operation.
@@ -555,7 +834,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _Pipeline["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines/{pipeline_uuid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getPipelineStepForRepository operation.
@@ -612,7 +891,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PipelineStep["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getPipelineStepLogForRepository operation.
@@ -666,9 +945,9 @@ function () {
       var formParams = {};
       var authNames = [];
       var contentTypes = [];
-      var accepts = ['text/plain'];
+      var accepts = ['application/octet-stream'];
       var returnType = null;
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/log', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/{step_uuid}/log', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getPipelineStepsForRepository operation.
@@ -718,7 +997,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PaginatedPipelineSteps["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines/{pipeline_uuid}/steps/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/steps/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getPipelineVariableForTeam operation.
@@ -919,7 +1198,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PaginatedPipelines["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getRepositoryPipelineConfig operation.
@@ -962,7 +1241,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PipelinesConfig["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getRepositoryPipelineKnownHost operation.
@@ -1012,7 +1291,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PipelineKnownHost["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getRepositoryPipelineKnownHosts operation.
@@ -1055,7 +1334,143 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PaginatedPipelineKnownHosts["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/ssh/known_hosts/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the getRepositoryPipelineSchedule operation.
+     * @callback module:api/PipelinesApi~getRepositoryPipelineScheduleCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PipelineSchedule} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve a schedule by its UUID.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} scheduleUuid The uuid of the schedule.
+     * @param {module:api/PipelinesApi~getRepositoryPipelineScheduleCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PipelineSchedule}
+     */
+
+  }, {
+    key: "getRepositoryPipelineSchedule",
+    value: function getRepositoryPipelineSchedule(username, repoSlug, scheduleUuid, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling getRepositoryPipelineSchedule");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling getRepositoryPipelineSchedule");
+      } // verify the required parameter 'scheduleUuid' is set
+
+
+      if (scheduleUuid === undefined || scheduleUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'scheduleUuid' when calling getRepositoryPipelineSchedule");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'schedule_uuid': scheduleUuid
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _PipelineSchedule["default"];
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the getRepositoryPipelineScheduleExecutions operation.
+     * @callback module:api/PipelinesApi~getRepositoryPipelineScheduleExecutionsCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedPipelineScheduleExecutions} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve the executions of a given schedule.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {module:api/PipelinesApi~getRepositoryPipelineScheduleExecutionsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedPipelineScheduleExecutions}
+     */
+
+  }, {
+    key: "getRepositoryPipelineScheduleExecutions",
+    value: function getRepositoryPipelineScheduleExecutions(username, repoSlug, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling getRepositoryPipelineScheduleExecutions");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling getRepositoryPipelineScheduleExecutions");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _PaginatedPipelineScheduleExecutions["default"];
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}/executions/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the getRepositoryPipelineSchedules operation.
+     * @callback module:api/PipelinesApi~getRepositoryPipelineSchedulesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedPipelineSchedules} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve the configured schedules for the given repository.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {module:api/PipelinesApi~getRepositoryPipelineSchedulesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedPipelineSchedules}
+     */
+
+  }, {
+    key: "getRepositoryPipelineSchedules",
+    value: function getRepositoryPipelineSchedules(username, repoSlug, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling getRepositoryPipelineSchedules");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling getRepositoryPipelineSchedules");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _PaginatedPipelineSchedules["default"];
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getRepositoryPipelineSshKeyPair operation.
@@ -1098,7 +1513,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PipelineSshKeyPair["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/ssh/key_pair', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/key_pair', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getRepositoryPipelineVariable operation.
@@ -1148,7 +1563,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PipelineVariable["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/variables/{variable_uuid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/variables/{variable_uuid}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the getRepositoryPipelineVariables operation.
@@ -1191,7 +1606,7 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = _PaginatedPipelineVariables["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/variables/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/variables/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the stopPipeline operation.
@@ -1240,7 +1655,70 @@ function () {
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines/{pipeline_uuid}/stopPipeline', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines/{pipeline_uuid}/stopPipeline', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the updateDeploymentVariable operation.
+     * @callback module:api/PipelinesApi~updateDeploymentVariableCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DeploymentVariable} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a deployment environment level variable.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} environmentUuid The environment.
+     * @param {String} variableUuid The UUID of the variable to update.
+     * @param {module:model/DeploymentVariable} body The updated deployment variable.
+     * @param {module:api/PipelinesApi~updateDeploymentVariableCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DeploymentVariable}
+     */
+
+  }, {
+    key: "updateDeploymentVariable",
+    value: function updateDeploymentVariable(username, repoSlug, environmentUuid, variableUuid, body, callback) {
+      var postBody = body; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling updateDeploymentVariable");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling updateDeploymentVariable");
+      } // verify the required parameter 'environmentUuid' is set
+
+
+      if (environmentUuid === undefined || environmentUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'environmentUuid' when calling updateDeploymentVariable");
+      } // verify the required parameter 'variableUuid' is set
+
+
+      if (variableUuid === undefined || variableUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'variableUuid' when calling updateDeploymentVariable");
+      } // verify the required parameter 'body' is set
+
+
+      if (body === undefined || body === null) {
+        throw new _Error["default"]("Missing the required parameter 'body' when calling updateDeploymentVariable");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'environment_uuid': environmentUuid,
+        'variable_uuid': variableUuid
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _DeploymentVariable["default"];
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/deployments_config/environments/{environment_uuid}/variables/{variable_uuid}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the updatePipelineVariableForTeam operation.
@@ -1341,6 +1819,55 @@ function () {
       return this.apiClient.callApi('/users/{username}/pipelines_config/variables/{variable_uuid}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the updateRepositoryBuildNumber operation.
+     * @callback module:api/PipelinesApi~updateRepositoryBuildNumberCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PipelineBuildNumber} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update the next build number that should be assigned to a pipeline. The next build number that will be configured has to be strictly higher than the current latest build number for this repository.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {module:model/PipelineBuildNumber} body The build number to update.
+     * @param {module:api/PipelinesApi~updateRepositoryBuildNumberCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PipelineBuildNumber}
+     */
+
+  }, {
+    key: "updateRepositoryBuildNumber",
+    value: function updateRepositoryBuildNumber(username, repoSlug, body, callback) {
+      var postBody = body; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling updateRepositoryBuildNumber");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling updateRepositoryBuildNumber");
+      } // verify the required parameter 'body' is set
+
+
+      if (body === undefined || body === null) {
+        throw new _Error["default"]("Missing the required parameter 'body' when calling updateRepositoryBuildNumber");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _PipelineBuildNumber["default"];
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/build_number', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the updateRepositoryPipelineConfig operation.
      * @callback module:api/PipelinesApi~updateRepositoryPipelineConfigCallback
      * @param {String} error Error message, if any.
@@ -1387,7 +1914,7 @@ function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _PipelinesConfig["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the updateRepositoryPipelineKeyPair operation.
@@ -1436,7 +1963,7 @@ function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _PipelineSshKeyPair["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/ssh/key_pair', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/key_pair', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the updateRepositoryPipelineKnownHost operation.
@@ -1492,7 +2019,63 @@ function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _PipelineKnownHost["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/ssh/known_hosts/{known_host_uuid}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the updateRepositoryPipelineSchedule operation.
+     * @callback module:api/PipelinesApi~updateRepositoryPipelineScheduleCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PipelineSchedule} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a schedule.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} scheduleUuid The uuid of the schedule.
+     * @param {module:model/PipelineSchedule} body The schedule to update.
+     * @param {module:api/PipelinesApi~updateRepositoryPipelineScheduleCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PipelineSchedule}
+     */
+
+  }, {
+    key: "updateRepositoryPipelineSchedule",
+    value: function updateRepositoryPipelineSchedule(username, repoSlug, scheduleUuid, body, callback) {
+      var postBody = body; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling updateRepositoryPipelineSchedule");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling updateRepositoryPipelineSchedule");
+      } // verify the required parameter 'scheduleUuid' is set
+
+
+      if (scheduleUuid === undefined || scheduleUuid === null) {
+        throw new _Error["default"]("Missing the required parameter 'scheduleUuid' when calling updateRepositoryPipelineSchedule");
+      } // verify the required parameter 'body' is set
+
+
+      if (body === undefined || body === null) {
+        throw new _Error["default"]("Missing the required parameter 'body' when calling updateRepositoryPipelineSchedule");
+      }
+
+      var pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'schedule_uuid': scheduleUuid
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = _PipelineSchedule["default"];
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/schedules/{schedule_uuid}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the updateRepositoryPipelineVariable operation.
@@ -1548,7 +2131,7 @@ function () {
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = _PipelineVariable["default"];
-      return this.apiClient.callApi('/repositories/{username}/{repo_slug}/pipelines_config/variables/{variable_uuid}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pipelines_config/variables/{variable_uuid}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
   }]);
 

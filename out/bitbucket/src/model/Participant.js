@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -57,14 +57,17 @@ class Participant {
             ModelObject.constructFromObject(data, obj);
             ParticipantAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('approved')) {
-                obj['approved'] = ApiClient.convertToType(data['approved'], 'Boolean');
+            if (data.hasOwnProperty('user')) {
+                obj['user'] = User.constructFromObject(data['user']);
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
             }
-            if (data.hasOwnProperty('user')) {
-                obj['user'] = User.constructFromObject(data['user']);
+            if (data.hasOwnProperty('approved')) {
+                obj['approved'] = ApiClient.convertToType(data['approved'], 'Boolean');
+            }
+            if (data.hasOwnProperty('participated_on')) {
+                obj['participated_on'] = ApiClient.convertToType(data['participated_on'], 'Date');
             }
         }
         return obj;
@@ -74,9 +77,9 @@ class Participant {
 }
 
 /**
- * @member {Boolean} approved
+ * @member {module:model/User} user
  */
-Participant.prototype['approved'] = undefined;
+Participant.prototype['user'] = undefined;
 
 /**
  * @member {module:model/Participant.RoleEnum} role
@@ -84,9 +87,15 @@ Participant.prototype['approved'] = undefined;
 Participant.prototype['role'] = undefined;
 
 /**
- * @member {module:model/User} user
+ * @member {Boolean} approved
  */
-Participant.prototype['user'] = undefined;
+Participant.prototype['approved'] = undefined;
+
+/**
+ * The ISO8601 timestamp of the participant's action. For approvers, this is the time of their approval. For commenters and pull request reviewers who are not approvers, this is the time they last commented, or null if they have not commented.
+ * @member {Date} participated_on
+ */
+Participant.prototype['participated_on'] = undefined;
 
 
 // Implement ModelObject interface:
@@ -96,17 +105,22 @@ Participant.prototype['user'] = undefined;
 ModelObject.prototype['type'] = undefined;
 // Implement ParticipantAllOf interface:
 /**
- * @member {Boolean} approved
+ * @member {module:model/User} user
  */
-ParticipantAllOf.prototype['approved'] = undefined;
+ParticipantAllOf.prototype['user'] = undefined;
 /**
  * @member {module:model/ParticipantAllOf.RoleEnum} role
  */
 ParticipantAllOf.prototype['role'] = undefined;
 /**
- * @member {module:model/User} user
+ * @member {Boolean} approved
  */
-ParticipantAllOf.prototype['user'] = undefined;
+ParticipantAllOf.prototype['approved'] = undefined;
+/**
+ * The ISO8601 timestamp of the participant's action. For approvers, this is the time of their approval. For commenters and pull request reviewers who are not approvers, this is the time they last commented, or null if they have not commented.
+ * @member {Date} participated_on
+ */
+ParticipantAllOf.prototype['participated_on'] = undefined;
 
 
 

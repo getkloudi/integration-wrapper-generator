@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -35,8 +35,8 @@ export default class DownloadsApi {
 
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugDownloadsFilenameDelete operation.
-     * @callback module:api/DownloadsApi~repositoriesUsernameRepoSlugDownloadsFilenameDeleteCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugDownloadsFilenameDelete operation.
+     * @callback module:api/DownloadsApi~repositoriesWorkspaceRepoSlugDownloadsFilenameDeleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Error} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -44,30 +44,30 @@ export default class DownloadsApi {
 
     /**
      * Deletes the specified download artifact from the repository.
-     * @param {String} username 
      * @param {String} filename 
-     * @param {String} repoSlug 
-     * @param {module:api/DownloadsApi~repositoriesUsernameRepoSlugDownloadsFilenameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/DownloadsApi~repositoriesWorkspaceRepoSlugDownloadsFilenameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
-    repositoriesUsernameRepoSlugDownloadsFilenameDelete(username, filename, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugDownloadsFilenameDelete(filename, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugDownloadsFilenameDelete");
-      }
       // verify the required parameter 'filename' is set
       if (filename === undefined || filename === null) {
-        throw new Error("Missing the required parameter 'filename' when calling repositoriesUsernameRepoSlugDownloadsFilenameDelete");
+        throw new Error("Missing the required parameter 'filename' when calling repositoriesWorkspaceRepoSlugDownloadsFilenameDelete");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugDownloadsFilenameDelete");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugDownloadsFilenameDelete");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugDownloadsFilenameDelete");
       }
 
       let pathParams = {
-        'username': username,
         'filename': filename,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -82,15 +82,15 @@ export default class DownloadsApi {
       let accepts = ['application/json'];
       let returnType = Error;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/downloads/{filename}', 'DELETE',
+        '/repositories/{workspace}/{repo_slug}/downloads/{filename}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugDownloadsFilenameGet operation.
-     * @callback module:api/DownloadsApi~repositoriesUsernameRepoSlugDownloadsFilenameGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugDownloadsFilenameGet operation.
+     * @callback module:api/DownloadsApi~repositoriesWorkspaceRepoSlugDownloadsFilenameGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Error} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -98,30 +98,30 @@ export default class DownloadsApi {
 
     /**
      * Return a redirect to the contents of a download artifact.  This endpoint returns the actual file contents and not the artifact's metadata.      $ curl -s -L https://api.bitbucket.org/2.0/repositories/evzijst/git-tests/downloads/hello.txt     Hello World
-     * @param {String} username 
      * @param {String} filename 
-     * @param {String} repoSlug 
-     * @param {module:api/DownloadsApi~repositoriesUsernameRepoSlugDownloadsFilenameGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/DownloadsApi~repositoriesWorkspaceRepoSlugDownloadsFilenameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
-    repositoriesUsernameRepoSlugDownloadsFilenameGet(username, filename, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugDownloadsFilenameGet(filename, workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugDownloadsFilenameGet");
-      }
       // verify the required parameter 'filename' is set
       if (filename === undefined || filename === null) {
-        throw new Error("Missing the required parameter 'filename' when calling repositoriesUsernameRepoSlugDownloadsFilenameGet");
+        throw new Error("Missing the required parameter 'filename' when calling repositoriesWorkspaceRepoSlugDownloadsFilenameGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugDownloadsFilenameGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugDownloadsFilenameGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugDownloadsFilenameGet");
       }
 
       let pathParams = {
-        'username': username,
         'filename': filename,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -136,15 +136,15 @@ export default class DownloadsApi {
       let accepts = ['application/json'];
       let returnType = Error;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/downloads/{filename}', 'GET',
+        '/repositories/{workspace}/{repo_slug}/downloads/{filename}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugDownloadsGet operation.
-     * @callback module:api/DownloadsApi~repositoriesUsernameRepoSlugDownloadsGetCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugDownloadsGet operation.
+     * @callback module:api/DownloadsApi~repositoriesWorkspaceRepoSlugDownloadsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Error} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -152,24 +152,24 @@ export default class DownloadsApi {
 
     /**
      * Returns a list of download links associated with the repository.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {module:api/DownloadsApi~repositoriesUsernameRepoSlugDownloadsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/DownloadsApi~repositoriesWorkspaceRepoSlugDownloadsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
-    repositoriesUsernameRepoSlugDownloadsGet(username, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugDownloadsGet(workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugDownloadsGet");
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugDownloadsGet");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugDownloadsGet");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugDownloadsGet");
       }
 
       let pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -184,15 +184,15 @@ export default class DownloadsApi {
       let accepts = ['application/json'];
       let returnType = Error;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/downloads', 'GET',
+        '/repositories/{workspace}/{repo_slug}/downloads', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the repositoriesUsernameRepoSlugDownloadsPost operation.
-     * @callback module:api/DownloadsApi~repositoriesUsernameRepoSlugDownloadsPostCallback
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugDownloadsPost operation.
+     * @callback module:api/DownloadsApi~repositoriesWorkspaceRepoSlugDownloadsPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Error} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -200,24 +200,24 @@ export default class DownloadsApi {
 
     /**
      * Upload new download artifacts.  To upload files, perform a `multipart/form-data` POST containing one or more `files` fields:      $ echo Hello World > hello.txt     $ curl -s -u evzijst -X POST https://api.bitbucket.org/2.0/repositories/evzijst/git-tests/downloads -F files=@hello.txt  When a file is uploaded with the same name as an existing artifact, then the existing file will be replaced.
-     * @param {String} username 
-     * @param {String} repoSlug 
-     * @param {module:api/DownloadsApi~repositoriesUsernameRepoSlugDownloadsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/DownloadsApi~repositoriesWorkspaceRepoSlugDownloadsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Error}
      */
-    repositoriesUsernameRepoSlugDownloadsPost(username, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugDownloadsPost(workspace, repoSlug, callback) {
       let postBody = null;
-      // verify the required parameter 'username' is set
-      if (username === undefined || username === null) {
-        throw new Error("Missing the required parameter 'username' when calling repositoriesUsernameRepoSlugDownloadsPost");
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugDownloadsPost");
       }
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
-        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesUsernameRepoSlugDownloadsPost");
+        throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugDownloadsPost");
       }
 
       let pathParams = {
-        'username': username,
+        'workspace': workspace,
         'repo_slug': repoSlug
       };
       let queryParams = {
@@ -232,7 +232,7 @@ export default class DownloadsApi {
       let accepts = ['application/json'];
       let returnType = Error;
       return this.apiClient.callApi(
-        '/repositories/{username}/{repo_slug}/downloads', 'POST',
+        '/repositories/{workspace}/{repo_slug}/downloads', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

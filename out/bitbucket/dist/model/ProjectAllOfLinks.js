@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AccountAllOfLinksAvatar = _interopRequireDefault(require("./AccountAllOfLinksAvatar"));
+var _SubjectTypesRepositoryEvents = _interopRequireDefault(require("./SubjectTypesRepositoryEvents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -58,12 +58,12 @@ function () {
       if (data) {
         obj = obj || new ProjectAllOfLinks();
 
-        if (data.hasOwnProperty('avatar')) {
-          obj['avatar'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['avatar']);
+        if (data.hasOwnProperty('html')) {
+          obj['html'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['html']);
         }
 
-        if (data.hasOwnProperty('html')) {
-          obj['html'] = _AccountAllOfLinksAvatar["default"].constructFromObject(data['html']);
+        if (data.hasOwnProperty('avatar')) {
+          obj['avatar'] = _SubjectTypesRepositoryEvents["default"].constructFromObject(data['avatar']);
         }
       }
 
@@ -74,15 +74,15 @@ function () {
   return ProjectAllOfLinks;
 }();
 /**
- * @member {module:model/AccountAllOfLinksAvatar} avatar
+ * @member {module:model/SubjectTypesRepositoryEvents} html
  */
 
-
-ProjectAllOfLinks.prototype['avatar'] = undefined;
-/**
- * @member {module:model/AccountAllOfLinksAvatar} html
- */
 
 ProjectAllOfLinks.prototype['html'] = undefined;
+/**
+ * @member {module:model/SubjectTypesRepositoryEvents} avatar
+ */
+
+ProjectAllOfLinks.prototype['avatar'] = undefined;
 var _default = ProjectAllOfLinks;
 exports["default"] = _default;

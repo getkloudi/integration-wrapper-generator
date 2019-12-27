@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -14,7 +14,9 @@
 import ApiClient from '../ApiClient';
 import Author from './Author';
 import Commit from './Commit';
-import TagLinks from './TagLinks';
+import Ref from './Ref';
+import RefLinks from './RefLinks';
+import TagAllOf from './TagAllOf';
 
 /**
  * The Tag model module.
@@ -24,12 +26,13 @@ import TagLinks from './TagLinks';
 class Tag {
     /**
      * Constructs a new <code>Tag</code>.
-     * A tag object, representing a tag in a repository.
      * @alias module:model/Tag
+     * @implements module:model/Ref
+     * @implements module:model/TagAllOf
      * @param type {String} 
      */
     constructor(type) { 
-        
+        Ref.initialize(this, type);TagAllOf.initialize(this);
         Tag.initialize(this, type);
     }
 
@@ -52,27 +55,29 @@ class Tag {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Tag();
+            Ref.constructFromObject(data, obj);
+            TagAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('date')) {
-                obj['date'] = ApiClient.convertToType(data['date'], 'Date');
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('links')) {
-                obj['links'] = TagLinks.constructFromObject(data['links']);
-            }
-            if (data.hasOwnProperty('message')) {
-                obj['message'] = ApiClient.convertToType(data['message'], 'String');
+                obj['links'] = RefLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('tagger')) {
-                obj['tagger'] = Author.constructFromObject(data['tagger']);
-            }
             if (data.hasOwnProperty('target')) {
                 obj['target'] = Commit.constructFromObject(data['target']);
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            if (data.hasOwnProperty('message')) {
+                obj['message'] = ApiClient.convertToType(data['message'], 'String');
+            }
+            if (data.hasOwnProperty('date')) {
+                obj['date'] = ApiClient.convertToType(data['date'], 'Date');
+            }
+            if (data.hasOwnProperty('tagger')) {
+                obj['tagger'] = Author.constructFromObject(data['tagger']);
             }
         }
         return obj;
@@ -82,15 +87,25 @@ class Tag {
 }
 
 /**
- * The date that the tag was created, if available
- * @member {Date} date
+ * @member {String} type
  */
-Tag.prototype['date'] = undefined;
+Tag.prototype['type'] = undefined;
 
 /**
- * @member {module:model/TagLinks} links
+ * @member {module:model/RefLinks} links
  */
 Tag.prototype['links'] = undefined;
+
+/**
+ * The name of the ref.
+ * @member {String} name
+ */
+Tag.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/Commit} target
+ */
+Tag.prototype['target'] = undefined;
 
 /**
  * The message associated with the tag, if available.
@@ -99,27 +114,50 @@ Tag.prototype['links'] = undefined;
 Tag.prototype['message'] = undefined;
 
 /**
- * The name of the tag.
- * @member {String} name
+ * The date that the tag was created, if available
+ * @member {Date} date
  */
-Tag.prototype['name'] = undefined;
+Tag.prototype['date'] = undefined;
 
 /**
  * @member {module:model/Author} tagger
  */
 Tag.prototype['tagger'] = undefined;
 
-/**
- * @member {module:model/Commit} target
- */
-Tag.prototype['target'] = undefined;
 
+// Implement Ref interface:
 /**
  * @member {String} type
  */
-Tag.prototype['type'] = undefined;
-
-
+Ref.prototype['type'] = undefined;
+/**
+ * @member {module:model/RefLinks} links
+ */
+Ref.prototype['links'] = undefined;
+/**
+ * The name of the ref.
+ * @member {String} name
+ */
+Ref.prototype['name'] = undefined;
+/**
+ * @member {module:model/Commit} target
+ */
+Ref.prototype['target'] = undefined;
+// Implement TagAllOf interface:
+/**
+ * The message associated with the tag, if available.
+ * @member {String} message
+ */
+TagAllOf.prototype['message'] = undefined;
+/**
+ * The date that the tag was created, if available
+ * @member {Date} date
+ */
+TagAllOf.prototype['date'] = undefined;
+/**
+ * @member {module:model/Author} tagger
+ */
+TagAllOf.prototype['tagger'] = undefined;
 
 
 

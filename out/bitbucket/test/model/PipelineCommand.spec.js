@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -54,20 +54,14 @@
       //expect(instance).to.be.a(Bitbucket.PipelineCommand);
     });
 
-    it('should have the property command (base name: "command")', function() {
-      // uncomment below and update the code to test the property command
-      //var instane = new Bitbucket.PipelineCommand();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property logRange (base name: "log_range")', function() {
-      // uncomment below and update the code to test the property logRange
-      //var instane = new Bitbucket.PipelineCommand();
-      //expect(instance).to.be();
-    });
-
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
+      //var instane = new Bitbucket.PipelineCommand();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property command (base name: "command")', function() {
+      // uncomment below and update the code to test the property command
       //var instane = new Bitbucket.PipelineCommand();
       //expect(instance).to.be();
     });

@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -49,8 +49,8 @@ class PaginatedTeams {
         if (data) {
             obj = obj || new PaginatedTeams();
 
-            if (data.hasOwnProperty('next')) {
-                obj['next'] = ApiClient.convertToType(data['next'], 'String');
+            if (data.hasOwnProperty('size')) {
+                obj['size'] = ApiClient.convertToType(data['size'], 'Number');
             }
             if (data.hasOwnProperty('page')) {
                 obj['page'] = ApiClient.convertToType(data['page'], 'Number');
@@ -58,11 +58,11 @@ class PaginatedTeams {
             if (data.hasOwnProperty('pagelen')) {
                 obj['pagelen'] = ApiClient.convertToType(data['pagelen'], 'Number');
             }
+            if (data.hasOwnProperty('next')) {
+                obj['next'] = ApiClient.convertToType(data['next'], 'String');
+            }
             if (data.hasOwnProperty('previous')) {
                 obj['previous'] = ApiClient.convertToType(data['previous'], 'String');
-            }
-            if (data.hasOwnProperty('size')) {
-                obj['size'] = ApiClient.convertToType(data['size'], 'Number');
             }
             if (data.hasOwnProperty('values')) {
                 obj['values'] = ApiClient.convertToType(data['values'], [Team]);
@@ -75,10 +75,10 @@ class PaginatedTeams {
 }
 
 /**
- * Link to the next page if it exists. The last page of a collection does not have this value. Use this link to navigate the result set and refrain from constructing your own URLs.
- * @member {String} next
+ * Total number of objects in the response. This is an optional element that is not provided in all responses, as it can be expensive to compute.
+ * @member {Number} size
  */
-PaginatedTeams.prototype['next'] = undefined;
+PaginatedTeams.prototype['size'] = undefined;
 
 /**
  * Page number of the current results. This is an optional element that is not provided in all responses.
@@ -93,16 +93,16 @@ PaginatedTeams.prototype['page'] = undefined;
 PaginatedTeams.prototype['pagelen'] = undefined;
 
 /**
+ * Link to the next page if it exists. The last page of a collection does not have this value. Use this link to navigate the result set and refrain from constructing your own URLs.
+ * @member {String} next
+ */
+PaginatedTeams.prototype['next'] = undefined;
+
+/**
  * Link to previous page if it exists. A collections first page does not have this value. This is an optional element that is not provided in all responses. Some result sets strictly support forward navigation and never provide previous links. Clients must anticipate that backwards navigation is not always available. Use this link to navigate the result set and refrain from constructing your own URLs.
  * @member {String} previous
  */
 PaginatedTeams.prototype['previous'] = undefined;
-
-/**
- * Total number of objects in the response. This is an optional element that is not provided in all responses, as it can be expensive to compute.
- * @member {Number} size
- */
-PaginatedTeams.prototype['size'] = undefined;
 
 /**
  * @member {Array.<module:model/Team>} values

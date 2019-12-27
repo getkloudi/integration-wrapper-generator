@@ -59,16 +59,16 @@ function () {
       if (data) {
         obj = obj || new ErrorError();
 
-        if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], Object);
+        if (data.hasOwnProperty('message')) {
+          obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
         }
 
         if (data.hasOwnProperty('detail')) {
           obj['detail'] = _ApiClient["default"].convertToType(data['detail'], 'String');
         }
 
-        if (data.hasOwnProperty('message')) {
-          obj['message'] = _ApiClient["default"].convertToType(data['message'], 'String');
+        if (data.hasOwnProperty('data')) {
+          obj['data'] = _ApiClient["default"].convertToType(data['data'], Object);
         }
       }
 
@@ -79,21 +79,21 @@ function () {
   return ErrorError;
 }();
 /**
- * Optional structured data that is endpoint-specific.
- * @member {Object} data
+ * @member {String} message
  */
 
 
-ErrorError.prototype['data'] = undefined;
+ErrorError.prototype['message'] = undefined;
 /**
  * @member {String} detail
  */
 
 ErrorError.prototype['detail'] = undefined;
 /**
- * @member {String} message
+ * Optional structured data that is endpoint-specific.
+ * @member {Object} data
  */
 
-ErrorError.prototype['message'] = undefined;
+ErrorError.prototype['data'] = undefined;
 var _default = ErrorError;
 exports["default"] = _default;

@@ -59,16 +59,16 @@ function () {
       if (data) {
         obj = obj || new PipelineKnownHostAllOf();
 
+        if (data.hasOwnProperty('uuid')) {
+          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
+        }
+
         if (data.hasOwnProperty('hostname')) {
           obj['hostname'] = _ApiClient["default"].convertToType(data['hostname'], 'String');
         }
 
         if (data.hasOwnProperty('public_key')) {
           obj['public_key'] = _PipelineSshPublicKey["default"].constructFromObject(data['public_key']);
-        }
-
-        if (data.hasOwnProperty('uuid')) {
-          obj['uuid'] = _ApiClient["default"].convertToType(data['uuid'], 'String');
         }
       }
 
@@ -79,10 +79,16 @@ function () {
   return PipelineKnownHostAllOf;
 }();
 /**
+ * The UUID identifying the known host.
+ * @member {String} uuid
+ */
+
+
+PipelineKnownHostAllOf.prototype['uuid'] = undefined;
+/**
  * The hostname of the known host.
  * @member {String} hostname
  */
-
 
 PipelineKnownHostAllOf.prototype['hostname'] = undefined;
 /**
@@ -90,11 +96,5 @@ PipelineKnownHostAllOf.prototype['hostname'] = undefined;
  */
 
 PipelineKnownHostAllOf.prototype['public_key'] = undefined;
-/**
- * The UUID identifying the known host.
- * @member {String} uuid
- */
-
-PipelineKnownHostAllOf.prototype['uuid'] = undefined;
 var _default = PipelineKnownHostAllOf;
 exports["default"] = _default;

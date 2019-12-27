@@ -81,16 +81,16 @@ function () {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
 
-        if (data.hasOwnProperty('commit')) {
-          obj['commit'] = _Commit["default"].constructFromObject(data['commit']);
+        if (data.hasOwnProperty('ref_type')) {
+          obj['ref_type'] = _ApiClient["default"].convertToType(data['ref_type'], 'String');
         }
 
         if (data.hasOwnProperty('ref_name')) {
           obj['ref_name'] = _ApiClient["default"].convertToType(data['ref_name'], 'String');
         }
 
-        if (data.hasOwnProperty('ref_type')) {
-          obj['ref_type'] = _ApiClient["default"].convertToType(data['ref_type'], 'String');
+        if (data.hasOwnProperty('commit')) {
+          obj['commit'] = _Commit["default"].constructFromObject(data['commit']);
         }
 
         if (data.hasOwnProperty('selector')) {
@@ -111,10 +111,11 @@ function () {
 
 PipelineRefTarget.prototype['type'] = undefined;
 /**
- * @member {module:model/Commit} commit
+ * The type of reference (branch/tag).
+ * @member {module:model/PipelineRefTarget.RefTypeEnum} ref_type
  */
 
-PipelineRefTarget.prototype['commit'] = undefined;
+PipelineRefTarget.prototype['ref_type'] = undefined;
 /**
  * The name of the reference.
  * @member {String} ref_name
@@ -122,11 +123,10 @@ PipelineRefTarget.prototype['commit'] = undefined;
 
 PipelineRefTarget.prototype['ref_name'] = undefined;
 /**
- * The type of reference (branch/tag).
- * @member {module:model/PipelineRefTarget.RefTypeEnum} ref_type
+ * @member {module:model/Commit} commit
  */
 
-PipelineRefTarget.prototype['ref_type'] = undefined;
+PipelineRefTarget.prototype['commit'] = undefined;
 /**
  * @member {module:model/PipelineSelector} selector
  */
@@ -140,10 +140,11 @@ PipelineRefTarget.prototype['selector'] = undefined; // Implement PipelineTarget
 _PipelineTarget["default"].prototype['type'] = undefined; // Implement PipelineRefTargetAllOf interface:
 
 /**
- * @member {module:model/Commit} commit
+ * The type of reference (branch/tag).
+ * @member {module:model/PipelineRefTargetAllOf.RefTypeEnum} ref_type
  */
 
-_PipelineRefTargetAllOf["default"].prototype['commit'] = undefined;
+_PipelineRefTargetAllOf["default"].prototype['ref_type'] = undefined;
 /**
  * The name of the reference.
  * @member {String} ref_name
@@ -151,11 +152,10 @@ _PipelineRefTargetAllOf["default"].prototype['commit'] = undefined;
 
 _PipelineRefTargetAllOf["default"].prototype['ref_name'] = undefined;
 /**
- * The type of reference (branch/tag).
- * @member {module:model/PipelineRefTargetAllOf.RefTypeEnum} ref_type
+ * @member {module:model/Commit} commit
  */
 
-_PipelineRefTargetAllOf["default"].prototype['ref_type'] = undefined;
+_PipelineRefTargetAllOf["default"].prototype['commit'] = undefined;
 /**
  * @member {module:model/PipelineSelector} selector
  */

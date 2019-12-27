@@ -1,5 +1,5 @@
 /**
- * Bitbucket
+ * Bitbucket API
  * Code against the Bitbucket API to automate simple tasks, embed Bitbucket data into your own site, build mobile or desktop apps, or even add custom UI add-ons into Bitbucket itself using the Connect framework.
  *
  * The version of the OpenAPI document: 2.0
@@ -16,6 +16,8 @@ import Account from './Account';
 import Participant from './Participant';
 import PullrequestAllOfLinks from './PullrequestAllOfLinks';
 import PullrequestAllOfMergeCommit from './PullrequestAllOfMergeCommit';
+import PullrequestAllOfRendered from './PullrequestAllOfRendered';
+import PullrequestAllOfRenderedTitle from './PullrequestAllOfRenderedTitle';
 import PullrequestEndpoint from './PullrequestEndpoint';
 
 /**
@@ -53,8 +55,41 @@ class PullrequestAllOf {
         if (data) {
             obj = obj || new PullrequestAllOf();
 
+            if (data.hasOwnProperty('links')) {
+                obj['links'] = PullrequestAllOfLinks.constructFromObject(data['links']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+            }
+            if (data.hasOwnProperty('title')) {
+                obj['title'] = ApiClient.convertToType(data['title'], 'String');
+            }
+            if (data.hasOwnProperty('rendered')) {
+                obj['rendered'] = PullrequestAllOfRendered.constructFromObject(data['rendered']);
+            }
+            if (data.hasOwnProperty('summary')) {
+                obj['summary'] = PullrequestAllOfRenderedTitle.constructFromObject(data['summary']);
+            }
+            if (data.hasOwnProperty('state')) {
+                obj['state'] = ApiClient.convertToType(data['state'], 'String');
+            }
             if (data.hasOwnProperty('author')) {
                 obj['author'] = Account.constructFromObject(data['author']);
+            }
+            if (data.hasOwnProperty('source')) {
+                obj['source'] = PullrequestEndpoint.constructFromObject(data['source']);
+            }
+            if (data.hasOwnProperty('destination')) {
+                obj['destination'] = PullrequestEndpoint.constructFromObject(data['destination']);
+            }
+            if (data.hasOwnProperty('merge_commit')) {
+                obj['merge_commit'] = PullrequestAllOfMergeCommit.constructFromObject(data['merge_commit']);
+            }
+            if (data.hasOwnProperty('comment_count')) {
+                obj['comment_count'] = ApiClient.convertToType(data['comment_count'], 'Number');
+            }
+            if (data.hasOwnProperty('task_count')) {
+                obj['task_count'] = ApiClient.convertToType(data['task_count'], 'Number');
             }
             if (data.hasOwnProperty('close_source_branch')) {
                 obj['close_source_branch'] = ApiClient.convertToType(data['close_source_branch'], 'Boolean');
@@ -62,47 +97,20 @@ class PullrequestAllOf {
             if (data.hasOwnProperty('closed_by')) {
                 obj['closed_by'] = Account.constructFromObject(data['closed_by']);
             }
-            if (data.hasOwnProperty('comment_count')) {
-                obj['comment_count'] = ApiClient.convertToType(data['comment_count'], 'Number');
+            if (data.hasOwnProperty('reason')) {
+                obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
             }
             if (data.hasOwnProperty('created_on')) {
                 obj['created_on'] = ApiClient.convertToType(data['created_on'], 'Date');
             }
-            if (data.hasOwnProperty('destination')) {
-                obj['destination'] = PullrequestEndpoint.constructFromObject(data['destination']);
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-            }
-            if (data.hasOwnProperty('links')) {
-                obj['links'] = PullrequestAllOfLinks.constructFromObject(data['links']);
-            }
-            if (data.hasOwnProperty('merge_commit')) {
-                obj['merge_commit'] = PullrequestAllOfMergeCommit.constructFromObject(data['merge_commit']);
-            }
-            if (data.hasOwnProperty('participants')) {
-                obj['participants'] = ApiClient.convertToType(data['participants'], [Participant]);
-            }
-            if (data.hasOwnProperty('reason')) {
-                obj['reason'] = ApiClient.convertToType(data['reason'], 'String');
+            if (data.hasOwnProperty('updated_on')) {
+                obj['updated_on'] = ApiClient.convertToType(data['updated_on'], 'Date');
             }
             if (data.hasOwnProperty('reviewers')) {
                 obj['reviewers'] = ApiClient.convertToType(data['reviewers'], [Account]);
             }
-            if (data.hasOwnProperty('source')) {
-                obj['source'] = PullrequestEndpoint.constructFromObject(data['source']);
-            }
-            if (data.hasOwnProperty('state')) {
-                obj['state'] = ApiClient.convertToType(data['state'], 'String');
-            }
-            if (data.hasOwnProperty('task_count')) {
-                obj['task_count'] = ApiClient.convertToType(data['task_count'], 'Number');
-            }
-            if (data.hasOwnProperty('title')) {
-                obj['title'] = ApiClient.convertToType(data['title'], 'String');
-            }
-            if (data.hasOwnProperty('updated_on')) {
-                obj['updated_on'] = ApiClient.convertToType(data['updated_on'], 'Date');
+            if (data.hasOwnProperty('participants')) {
+                obj['participants'] = ApiClient.convertToType(data['participants'], [Participant]);
             }
         }
         return obj;
@@ -112,9 +120,69 @@ class PullrequestAllOf {
 }
 
 /**
+ * @member {module:model/PullrequestAllOfLinks} links
+ */
+PullrequestAllOf.prototype['links'] = undefined;
+
+/**
+ * The pull request's unique ID. Note that pull request IDs are only unique within their associated repository.
+ * @member {Number} id
+ */
+PullrequestAllOf.prototype['id'] = undefined;
+
+/**
+ * Title of the pull request.
+ * @member {String} title
+ */
+PullrequestAllOf.prototype['title'] = undefined;
+
+/**
+ * @member {module:model/PullrequestAllOfRendered} rendered
+ */
+PullrequestAllOf.prototype['rendered'] = undefined;
+
+/**
+ * @member {module:model/PullrequestAllOfRenderedTitle} summary
+ */
+PullrequestAllOf.prototype['summary'] = undefined;
+
+/**
+ * The pull request's current status.
+ * @member {module:model/PullrequestAllOf.StateEnum} state
+ */
+PullrequestAllOf.prototype['state'] = undefined;
+
+/**
  * @member {module:model/Account} author
  */
 PullrequestAllOf.prototype['author'] = undefined;
+
+/**
+ * @member {module:model/PullrequestEndpoint} source
+ */
+PullrequestAllOf.prototype['source'] = undefined;
+
+/**
+ * @member {module:model/PullrequestEndpoint} destination
+ */
+PullrequestAllOf.prototype['destination'] = undefined;
+
+/**
+ * @member {module:model/PullrequestAllOfMergeCommit} merge_commit
+ */
+PullrequestAllOf.prototype['merge_commit'] = undefined;
+
+/**
+ * The number of comments for a specific pull request.
+ * @member {Number} comment_count
+ */
+PullrequestAllOf.prototype['comment_count'] = undefined;
+
+/**
+ * The number of open tasks for a specific pull request.
+ * @member {Number} task_count
+ */
+PullrequestAllOf.prototype['task_count'] = undefined;
 
 /**
  * A boolean flag indicating if merging the pull request closes the source branch.
@@ -128,10 +196,10 @@ PullrequestAllOf.prototype['close_source_branch'] = undefined;
 PullrequestAllOf.prototype['closed_by'] = undefined;
 
 /**
- * The number of comments for a specific pull request.
- * @member {Number} comment_count
+ * Explains why a pull request was declined. This field is only applicable to pull requests in rejected state.
+ * @member {String} reason
  */
-PullrequestAllOf.prototype['comment_count'] = undefined;
+PullrequestAllOf.prototype['reason'] = undefined;
 
 /**
  * The ISO8601 timestamp the request was created.
@@ -140,37 +208,10 @@ PullrequestAllOf.prototype['comment_count'] = undefined;
 PullrequestAllOf.prototype['created_on'] = undefined;
 
 /**
- * @member {module:model/PullrequestEndpoint} destination
+ * The ISO8601 timestamp the request was last updated.
+ * @member {Date} updated_on
  */
-PullrequestAllOf.prototype['destination'] = undefined;
-
-/**
- * The pull request's unique ID. Note that pull request IDs are only unique within their associated repository.
- * @member {Number} id
- */
-PullrequestAllOf.prototype['id'] = undefined;
-
-/**
- * @member {module:model/PullrequestAllOfLinks} links
- */
-PullrequestAllOf.prototype['links'] = undefined;
-
-/**
- * @member {module:model/PullrequestAllOfMergeCommit} merge_commit
- */
-PullrequestAllOf.prototype['merge_commit'] = undefined;
-
-/**
- *         The list of users that are collaborating on this pull request.         Collaborators are user that:          * are added to the pull request as a reviewer (part of the reviewers           list)         * are not explicit reviewers, but have commented on the pull request         * are not explicit reviewers, but have approved the pull request          Each user is wrapped in an object that indicates the user's role and         whether they have approved the pull request. For performance reasons,         the API only returns this list when an API requests a pull request by         id.         
- * @member {Array.<module:model/Participant>} participants
- */
-PullrequestAllOf.prototype['participants'] = undefined;
-
-/**
- * Explains why a pull request was declined. This field is only applicable to pull requests in rejected state.
- * @member {String} reason
- */
-PullrequestAllOf.prototype['reason'] = undefined;
+PullrequestAllOf.prototype['updated_on'] = undefined;
 
 /**
  * The list of users that were added as reviewers on this pull request when it was created. For performance reasons, the API only includes this list on a pull request's `self` URL.
@@ -179,33 +220,10 @@ PullrequestAllOf.prototype['reason'] = undefined;
 PullrequestAllOf.prototype['reviewers'] = undefined;
 
 /**
- * @member {module:model/PullrequestEndpoint} source
+ *         The list of users that are collaborating on this pull request.         Collaborators are user that:          * are added to the pull request as a reviewer (part of the reviewers           list)         * are not explicit reviewers, but have commented on the pull request         * are not explicit reviewers, but have approved the pull request          Each user is wrapped in an object that indicates the user's role and         whether they have approved the pull request. For performance reasons,         the API only returns this list when an API requests a pull request by         id.         
+ * @member {Array.<module:model/Participant>} participants
  */
-PullrequestAllOf.prototype['source'] = undefined;
-
-/**
- * The pull request's current status.
- * @member {module:model/PullrequestAllOf.StateEnum} state
- */
-PullrequestAllOf.prototype['state'] = undefined;
-
-/**
- * The number of open tasks for a specific pull request.
- * @member {Number} task_count
- */
-PullrequestAllOf.prototype['task_count'] = undefined;
-
-/**
- * Title of the pull request.
- * @member {String} title
- */
-PullrequestAllOf.prototype['title'] = undefined;
-
-/**
- * The ISO8601 timestamp the request was last updated.
- * @member {Date} updated_on
- */
-PullrequestAllOf.prototype['updated_on'] = undefined;
+PullrequestAllOf.prototype['participants'] = undefined;
 
 
 

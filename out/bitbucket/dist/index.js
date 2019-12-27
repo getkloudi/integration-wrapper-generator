@@ -27,12 +27,6 @@ Object.defineProperty(exports, "AccountAllOfLinks", {
     return _AccountAllOfLinks["default"];
   }
 });
-Object.defineProperty(exports, "AccountAllOfLinksAvatar", {
-  enumerable: true,
-  get: function get() {
-    return _AccountAllOfLinksAvatar["default"];
-  }
-});
 Object.defineProperty(exports, "Author", {
   enumerable: true,
   get: function get() {
@@ -57,6 +51,72 @@ Object.defineProperty(exports, "BaseCommitAllOf", {
     return _BaseCommitAllOf["default"];
   }
 });
+Object.defineProperty(exports, "Branch", {
+  enumerable: true,
+  get: function get() {
+    return _Branch["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModel", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModel["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModelAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModelAllOfBranchTypes", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelAllOfBranchTypes["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModelAllOfDevelopment", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelAllOfDevelopment["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModelSettings", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelSettings["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModelSettingsAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelSettingsAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModelSettingsAllOfBranchTypes", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelSettingsAllOfBranchTypes["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModelSettingsAllOfDevelopment", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelSettingsAllOfDevelopment["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModelSettingsAllOfLinks", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelSettingsAllOfLinks["default"];
+  }
+});
+Object.defineProperty(exports, "BranchingModelSettingsAllOfProduction", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelSettingsAllOfProduction["default"];
+  }
+});
 Object.defineProperty(exports, "Branchrestriction", {
   enumerable: true,
   get: function get() {
@@ -69,10 +129,28 @@ Object.defineProperty(exports, "BranchrestrictionAllOf", {
     return _BranchrestrictionAllOf["default"];
   }
 });
-Object.defineProperty(exports, "BranchrestrictionAllOfLinks", {
+Object.defineProperty(exports, "Comment", {
   enumerable: true,
   get: function get() {
-    return _BranchrestrictionAllOfLinks["default"];
+    return _Comment["default"];
+  }
+});
+Object.defineProperty(exports, "CommentAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _CommentAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "CommentAllOfInline", {
+  enumerable: true,
+  get: function get() {
+    return _CommentAllOfInline["default"];
+  }
+});
+Object.defineProperty(exports, "CommentAllOfLinks", {
+  enumerable: true,
+  get: function get() {
+    return _CommentAllOfLinks["default"];
   }
 });
 Object.defineProperty(exports, "Commit", {
@@ -87,10 +165,22 @@ Object.defineProperty(exports, "CommitAllOf", {
     return _CommitAllOf["default"];
   }
 });
-Object.defineProperty(exports, "CommitAllOfLinks", {
+Object.defineProperty(exports, "CommitComment", {
   enumerable: true,
   get: function get() {
-    return _CommitAllOfLinks["default"];
+    return _CommitComment["default"];
+  }
+});
+Object.defineProperty(exports, "CommitCommentAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _CommitCommentAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "CommitFile", {
+  enumerable: true,
+  get: function get() {
+    return _CommitFile["default"];
   }
 });
 Object.defineProperty(exports, "Commitstatus", {
@@ -121,6 +211,174 @@ Object.defineProperty(exports, "ComponentAllOf", {
   enumerable: true,
   get: function get() {
     return _ComponentAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DdevReport", {
+  enumerable: true,
+  get: function get() {
+    return _DdevReport["default"];
+  }
+});
+Object.defineProperty(exports, "DeployKey", {
+  enumerable: true,
+  get: function get() {
+    return _DeployKey["default"];
+  }
+});
+Object.defineProperty(exports, "DeployKeyAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeployKeyAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "Deployment", {
+  enumerable: true,
+  get: function get() {
+    return _Deployment["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentEnvironment", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentEnvironment["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentEnvironmentAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentEnvironmentAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentRelease", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentRelease["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentReleaseAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentReleaseAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentState", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentState["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateCompleted", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateCompleted["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateCompletedAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateCompletedAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateCompletedStatus", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateCompletedStatus["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateCompletedStatusFailed", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateCompletedStatusFailed["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateCompletedStatusFailedAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateCompletedStatusFailedAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateCompletedStatusStopped", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateCompletedStatusStopped["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateCompletedStatusStoppedAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateCompletedStatusStoppedAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateCompletedStatusSuccessful", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateCompletedStatusSuccessful["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateCompletedStatusSuccessfulAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateCompletedStatusSuccessfulAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateInProgress", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateInProgress["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateInProgressAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateInProgressAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateUndeployed", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateUndeployed["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentStateUndeployedAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentStateUndeployedAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentVariable", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentVariable["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentVariableAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentVariableAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentsDdevDeploymentEnvironment", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentsDdevDeploymentEnvironment["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentsStgWestDeploymentEnvironment", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentsStgWestDeploymentEnvironment["default"];
+  }
+});
+Object.defineProperty(exports, "Diffstat", {
+  enumerable: true,
+  get: function get() {
+    return _Diffstat["default"];
   }
 });
 Object.defineProperty(exports, "Error", {
@@ -159,6 +417,12 @@ Object.defineProperty(exports, "HookEvent", {
     return _HookEvent["default"];
   }
 });
+Object.defineProperty(exports, "Hookbody", {
+  enumerable: true,
+  get: function get() {
+    return _Hookbody["default"];
+  }
+});
 Object.defineProperty(exports, "Issue", {
   enumerable: true,
   get: function get() {
@@ -169,12 +433,6 @@ Object.defineProperty(exports, "IssueAllOf", {
   enumerable: true,
   get: function get() {
     return _IssueAllOf["default"];
-  }
-});
-Object.defineProperty(exports, "IssueAllOfContent", {
-  enumerable: true,
-  get: function get() {
-    return _IssueAllOfContent["default"];
   }
 });
 Object.defineProperty(exports, "IssueAllOfLinks", {
@@ -193,6 +451,48 @@ Object.defineProperty(exports, "IssueAttachmentAllOf", {
   enumerable: true,
   get: function get() {
     return _IssueAttachmentAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "IssueChange", {
+  enumerable: true,
+  get: function get() {
+    return _IssueChange["default"];
+  }
+});
+Object.defineProperty(exports, "IssueChangeChanges", {
+  enumerable: true,
+  get: function get() {
+    return _IssueChangeChanges["default"];
+  }
+});
+Object.defineProperty(exports, "IssueChangeChangesAssignee", {
+  enumerable: true,
+  get: function get() {
+    return _IssueChangeChangesAssignee["default"];
+  }
+});
+Object.defineProperty(exports, "IssueChangeLinks", {
+  enumerable: true,
+  get: function get() {
+    return _IssueChangeLinks["default"];
+  }
+});
+Object.defineProperty(exports, "IssueComment", {
+  enumerable: true,
+  get: function get() {
+    return _IssueComment["default"];
+  }
+});
+Object.defineProperty(exports, "IssueCommentAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _IssueCommentAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "IssueJobStatus", {
+  enumerable: true,
+  get: function get() {
+    return _IssueJobStatus["default"];
   }
 });
 Object.defineProperty(exports, "Milestone", {
@@ -219,10 +519,22 @@ Object.defineProperty(exports, "Page", {
     return _Page["default"];
   }
 });
+Object.defineProperty(exports, "PaginatedBranches", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedBranches["default"];
+  }
+});
 Object.defineProperty(exports, "PaginatedBranchrestrictions", {
   enumerable: true,
   get: function get() {
     return _PaginatedBranchrestrictions["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedCommitComments", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedCommitComments["default"];
   }
 });
 Object.defineProperty(exports, "PaginatedCommitstatuses", {
@@ -237,6 +549,42 @@ Object.defineProperty(exports, "PaginatedComponents", {
     return _PaginatedComponents["default"];
   }
 });
+Object.defineProperty(exports, "PaginatedDeployKeys", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedDeployKeys["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedDeploymentVariable", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedDeploymentVariable["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedDeployments", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedDeployments["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedDiffstats", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedDiffstats["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedEnvironments", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedEnvironments["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedFiles", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedFiles["default"];
+  }
+});
 Object.defineProperty(exports, "PaginatedHookEvents", {
   enumerable: true,
   get: function get() {
@@ -249,10 +597,22 @@ Object.defineProperty(exports, "PaginatedIssueAttachments", {
     return _PaginatedIssueAttachments["default"];
   }
 });
+Object.defineProperty(exports, "PaginatedIssueComments", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedIssueComments["default"];
+  }
+});
 Object.defineProperty(exports, "PaginatedIssues", {
   enumerable: true,
   get: function get() {
     return _PaginatedIssues["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedLogEntries", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedLogEntries["default"];
   }
 });
 Object.defineProperty(exports, "PaginatedMilestones", {
@@ -265,6 +625,18 @@ Object.defineProperty(exports, "PaginatedPipelineKnownHosts", {
   enumerable: true,
   get: function get() {
     return _PaginatedPipelineKnownHosts["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedPipelineScheduleExecutions", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedPipelineScheduleExecutions["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedPipelineSchedules", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedPipelineSchedules["default"];
   }
 });
 Object.defineProperty(exports, "PaginatedPipelineSteps", {
@@ -291,16 +663,34 @@ Object.defineProperty(exports, "PaginatedProjects", {
     return _PaginatedProjects["default"];
   }
 });
+Object.defineProperty(exports, "PaginatedPullrequestComments", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedPullrequestComments["default"];
+  }
+});
 Object.defineProperty(exports, "PaginatedPullrequests", {
   enumerable: true,
   get: function get() {
     return _PaginatedPullrequests["default"];
   }
 });
+Object.defineProperty(exports, "PaginatedRefs", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedRefs["default"];
+  }
+});
 Object.defineProperty(exports, "PaginatedRepositories", {
   enumerable: true,
   get: function get() {
     return _PaginatedRepositories["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedRepositoryPermissions", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedRepositoryPermissions["default"];
   }
 });
 Object.defineProperty(exports, "PaginatedSnippetComments", {
@@ -321,10 +711,34 @@ Object.defineProperty(exports, "PaginatedSnippets", {
     return _PaginatedSnippets["default"];
   }
 });
+Object.defineProperty(exports, "PaginatedSshUserKeys", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedSshUserKeys["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedTags", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedTags["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedTeamPermissions", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedTeamPermissions["default"];
+  }
+});
 Object.defineProperty(exports, "PaginatedTeams", {
   enumerable: true,
   get: function get() {
     return _PaginatedTeams["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedTreeentries", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedTreeentries["default"];
   }
 });
 Object.defineProperty(exports, "PaginatedUsers", {
@@ -367,6 +781,18 @@ Object.defineProperty(exports, "PipelineAllOf", {
   enumerable: true,
   get: function get() {
     return _PipelineAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineBuildNumber", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineBuildNumber["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineBuildNumberAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineBuildNumberAllOf["default"];
   }
 });
 Object.defineProperty(exports, "PipelineCommand", {
@@ -417,12 +843,6 @@ Object.defineProperty(exports, "PipelineKnownHostAllOf", {
     return _PipelineKnownHostAllOf["default"];
   }
 });
-Object.defineProperty(exports, "PipelineLogRange", {
-  enumerable: true,
-  get: function get() {
-    return _PipelineLogRange["default"];
-  }
-});
 Object.defineProperty(exports, "PipelineRefTarget", {
   enumerable: true,
   get: function get() {
@@ -433,6 +853,48 @@ Object.defineProperty(exports, "PipelineRefTargetAllOf", {
   enumerable: true,
   get: function get() {
     return _PipelineRefTargetAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineSchedule", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineSchedule["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineScheduleAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineScheduleAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineScheduleExecution", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineScheduleExecution["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineScheduleExecutionErrored", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineScheduleExecutionErrored["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineScheduleExecutionErroredAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineScheduleExecutionErroredAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineScheduleExecutionExecuted", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineScheduleExecutionExecuted["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineScheduleExecutionExecutedAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineScheduleExecutionExecutedAllOf["default"];
   }
 });
 Object.defineProperty(exports, "PipelineSelector", {
@@ -501,6 +963,18 @@ Object.defineProperty(exports, "PipelineStateCompletedErrorAllOf", {
     return _PipelineStateCompletedErrorAllOf["default"];
   }
 });
+Object.defineProperty(exports, "PipelineStateCompletedExpired", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStateCompletedExpired["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStateCompletedExpiredAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStateCompletedExpiredAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "PipelineStateCompletedFailed", {
   enumerable: true,
   get: function get() {
@@ -553,6 +1027,36 @@ Object.defineProperty(exports, "PipelineStateInProgressAllOf", {
   enumerable: true,
   get: function get() {
     return _PipelineStateInProgressAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStateInProgressPaused", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStateInProgressPaused["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStateInProgressPausedAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStateInProgressPausedAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStateInProgressRunning", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStateInProgressRunning["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStateInProgressRunningAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStateInProgressRunningAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStateInProgressStage", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStateInProgressStage["default"];
   }
 });
 Object.defineProperty(exports, "PipelineStatePending", {
@@ -621,6 +1125,18 @@ Object.defineProperty(exports, "PipelineStepStateCompletedErrorAllOf", {
     return _PipelineStepStateCompletedErrorAllOf["default"];
   }
 });
+Object.defineProperty(exports, "PipelineStepStateCompletedExpired", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStepStateCompletedExpired["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStepStateCompletedExpiredAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStepStateCompletedExpiredAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "PipelineStepStateCompletedFailed", {
   enumerable: true,
   get: function get() {
@@ -631,6 +1147,18 @@ Object.defineProperty(exports, "PipelineStepStateCompletedFailedAllOf", {
   enumerable: true,
   get: function get() {
     return _PipelineStepStateCompletedFailedAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStepStateCompletedNotRun", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStepStateCompletedNotRun["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStepStateCompletedNotRunAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStepStateCompletedNotRunAllOf["default"];
   }
 });
 Object.defineProperty(exports, "PipelineStepStateCompletedResult", {
@@ -687,6 +1215,18 @@ Object.defineProperty(exports, "PipelineStepStatePendingAllOf", {
     return _PipelineStepStatePendingAllOf["default"];
   }
 });
+Object.defineProperty(exports, "PipelineStepStateReady", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStepStateReady["default"];
+  }
+});
+Object.defineProperty(exports, "PipelineStepStateReadyAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PipelineStepStateReadyAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "PipelineTarget", {
   enumerable: true,
   get: function get() {
@@ -735,6 +1275,18 @@ Object.defineProperty(exports, "PipelinesConfigAllOf", {
     return _PipelinesConfigAllOf["default"];
   }
 });
+Object.defineProperty(exports, "PipelinesDdevPipelineStep", {
+  enumerable: true,
+  get: function get() {
+    return _PipelinesDdevPipelineStep["default"];
+  }
+});
+Object.defineProperty(exports, "PipelinesStgWestPipelineStep", {
+  enumerable: true,
+  get: function get() {
+    return _PipelinesStgWestPipelineStep["default"];
+  }
+});
 Object.defineProperty(exports, "Project", {
   enumerable: true,
   get: function get() {
@@ -777,6 +1329,30 @@ Object.defineProperty(exports, "PullrequestAllOfMergeCommit", {
     return _PullrequestAllOfMergeCommit["default"];
   }
 });
+Object.defineProperty(exports, "PullrequestAllOfRendered", {
+  enumerable: true,
+  get: function get() {
+    return _PullrequestAllOfRendered["default"];
+  }
+});
+Object.defineProperty(exports, "PullrequestAllOfRenderedTitle", {
+  enumerable: true,
+  get: function get() {
+    return _PullrequestAllOfRenderedTitle["default"];
+  }
+});
+Object.defineProperty(exports, "PullrequestComment", {
+  enumerable: true,
+  get: function get() {
+    return _PullrequestComment["default"];
+  }
+});
+Object.defineProperty(exports, "PullrequestCommentAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _PullrequestCommentAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "PullrequestEndpoint", {
   enumerable: true,
   get: function get() {
@@ -795,6 +1371,18 @@ Object.defineProperty(exports, "PullrequestMergeParameters", {
     return _PullrequestMergeParameters["default"];
   }
 });
+Object.defineProperty(exports, "Ref", {
+  enumerable: true,
+  get: function get() {
+    return _Ref["default"];
+  }
+});
+Object.defineProperty(exports, "RefLinks", {
+  enumerable: true,
+  get: function get() {
+    return _RefLinks["default"];
+  }
+});
 Object.defineProperty(exports, "Repository", {
   enumerable: true,
   get: function get() {
@@ -811,6 +1399,42 @@ Object.defineProperty(exports, "RepositoryAllOfLinks", {
   enumerable: true,
   get: function get() {
     return _RepositoryAllOfLinks["default"];
+  }
+});
+Object.defineProperty(exports, "RepositoryPermission", {
+  enumerable: true,
+  get: function get() {
+    return _RepositoryPermission["default"];
+  }
+});
+Object.defineProperty(exports, "SearchCodeSearchResult", {
+  enumerable: true,
+  get: function get() {
+    return _SearchCodeSearchResult["default"];
+  }
+});
+Object.defineProperty(exports, "SearchContentMatch", {
+  enumerable: true,
+  get: function get() {
+    return _SearchContentMatch["default"];
+  }
+});
+Object.defineProperty(exports, "SearchLine", {
+  enumerable: true,
+  get: function get() {
+    return _SearchLine["default"];
+  }
+});
+Object.defineProperty(exports, "SearchResultPage", {
+  enumerable: true,
+  get: function get() {
+    return _SearchResultPage["default"];
+  }
+});
+Object.defineProperty(exports, "SearchSegment", {
+  enumerable: true,
+  get: function get() {
+    return _SearchSegment["default"];
   }
 });
 Object.defineProperty(exports, "Snippet", {
@@ -855,6 +1479,36 @@ Object.defineProperty(exports, "SnippetCommitAllOfLinks", {
     return _SnippetCommitAllOfLinks["default"];
   }
 });
+Object.defineProperty(exports, "SshAccountKey", {
+  enumerable: true,
+  get: function get() {
+    return _SshAccountKey["default"];
+  }
+});
+Object.defineProperty(exports, "SshAccountKeyAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _SshAccountKeyAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "SshKey", {
+  enumerable: true,
+  get: function get() {
+    return _SshKey["default"];
+  }
+});
+Object.defineProperty(exports, "SshKeyAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _SshKeyAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "StgWestReport", {
+  enumerable: true,
+  get: function get() {
+    return _StgWestReport["default"];
+  }
+});
 Object.defineProperty(exports, "SubjectTypes", {
   enumerable: true,
   get: function get() {
@@ -867,22 +1521,40 @@ Object.defineProperty(exports, "SubjectTypesRepository", {
     return _SubjectTypesRepository["default"];
   }
 });
+Object.defineProperty(exports, "SubjectTypesRepositoryEvents", {
+  enumerable: true,
+  get: function get() {
+    return _SubjectTypesRepositoryEvents["default"];
+  }
+});
 Object.defineProperty(exports, "Tag", {
   enumerable: true,
   get: function get() {
     return _Tag["default"];
   }
 });
-Object.defineProperty(exports, "TagLinks", {
+Object.defineProperty(exports, "TagAllOf", {
   enumerable: true,
   get: function get() {
-    return _TagLinks["default"];
+    return _TagAllOf["default"];
   }
 });
 Object.defineProperty(exports, "Team", {
   enumerable: true,
   get: function get() {
     return _Team["default"];
+  }
+});
+Object.defineProperty(exports, "TeamPermission", {
+  enumerable: true,
+  get: function get() {
+    return _TeamPermission["default"];
+  }
+});
+Object.defineProperty(exports, "Treeentry", {
+  enumerable: true,
+  get: function get() {
+    return _Treeentry["default"];
   }
 });
 Object.defineProperty(exports, "User", {
@@ -927,6 +1599,12 @@ Object.defineProperty(exports, "AddonApi", {
     return _AddonApi["default"];
   }
 });
+Object.defineProperty(exports, "BranchingModelApi", {
+  enumerable: true,
+  get: function get() {
+    return _BranchingModelApi["default"];
+  }
+});
 Object.defineProperty(exports, "BranchrestrictionsApi", {
   enumerable: true,
   get: function get() {
@@ -943,6 +1621,24 @@ Object.defineProperty(exports, "CommitstatusesApi", {
   enumerable: true,
   get: function get() {
     return _CommitstatusesApi["default"];
+  }
+});
+Object.defineProperty(exports, "DefaultApi", {
+  enumerable: true,
+  get: function get() {
+    return _DefaultApi["default"];
+  }
+});
+Object.defineProperty(exports, "DeployApi", {
+  enumerable: true,
+  get: function get() {
+    return _DeployApi["default"];
+  }
+});
+Object.defineProperty(exports, "DeploymentsApi", {
+  enumerable: true,
+  get: function get() {
+    return _DeploymentsApi["default"];
   }
 });
 Object.defineProperty(exports, "DownloadsApi", {
@@ -969,6 +1665,12 @@ Object.defineProperty(exports, "ProjectsApi", {
     return _ProjectsApi["default"];
   }
 });
+Object.defineProperty(exports, "PropertiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _PropertiesApi["default"];
+  }
+});
 Object.defineProperty(exports, "PullrequestsApi", {
   enumerable: true,
   get: function get() {
@@ -987,6 +1689,18 @@ Object.defineProperty(exports, "RepositoriesApi", {
     return _RepositoriesApi["default"];
   }
 });
+Object.defineProperty(exports, "SearchApi", {
+  enumerable: true,
+  get: function get() {
+    return _SearchApi["default"];
+  }
+});
+Object.defineProperty(exports, "SnippetApi", {
+  enumerable: true,
+  get: function get() {
+    return _SnippetApi["default"];
+  }
+});
 Object.defineProperty(exports, "SnippetsApi", {
   enumerable: true,
   get: function get() {
@@ -997,6 +1711,12 @@ Object.defineProperty(exports, "SourceApi", {
   enumerable: true,
   get: function get() {
     return _SourceApi["default"];
+  }
+});
+Object.defineProperty(exports, "SshApi", {
+  enumerable: true,
+  get: function get() {
+    return _SshApi["default"];
   }
 });
 Object.defineProperty(exports, "TeamsApi", {
@@ -1026,8 +1746,6 @@ var _AccountAllOf = _interopRequireDefault(require("./model/AccountAllOf"));
 
 var _AccountAllOfLinks = _interopRequireDefault(require("./model/AccountAllOfLinks"));
 
-var _AccountAllOfLinksAvatar = _interopRequireDefault(require("./model/AccountAllOfLinksAvatar"));
-
 var _Author = _interopRequireDefault(require("./model/Author"));
 
 var _AuthorAllOf = _interopRequireDefault(require("./model/AuthorAllOf"));
@@ -1036,17 +1754,49 @@ var _BaseCommit = _interopRequireDefault(require("./model/BaseCommit"));
 
 var _BaseCommitAllOf = _interopRequireDefault(require("./model/BaseCommitAllOf"));
 
+var _Branch = _interopRequireDefault(require("./model/Branch"));
+
+var _BranchingModel = _interopRequireDefault(require("./model/BranchingModel"));
+
+var _BranchingModelAllOf = _interopRequireDefault(require("./model/BranchingModelAllOf"));
+
+var _BranchingModelAllOfBranchTypes = _interopRequireDefault(require("./model/BranchingModelAllOfBranchTypes"));
+
+var _BranchingModelAllOfDevelopment = _interopRequireDefault(require("./model/BranchingModelAllOfDevelopment"));
+
+var _BranchingModelSettings = _interopRequireDefault(require("./model/BranchingModelSettings"));
+
+var _BranchingModelSettingsAllOf = _interopRequireDefault(require("./model/BranchingModelSettingsAllOf"));
+
+var _BranchingModelSettingsAllOfBranchTypes = _interopRequireDefault(require("./model/BranchingModelSettingsAllOfBranchTypes"));
+
+var _BranchingModelSettingsAllOfDevelopment = _interopRequireDefault(require("./model/BranchingModelSettingsAllOfDevelopment"));
+
+var _BranchingModelSettingsAllOfLinks = _interopRequireDefault(require("./model/BranchingModelSettingsAllOfLinks"));
+
+var _BranchingModelSettingsAllOfProduction = _interopRequireDefault(require("./model/BranchingModelSettingsAllOfProduction"));
+
 var _Branchrestriction = _interopRequireDefault(require("./model/Branchrestriction"));
 
 var _BranchrestrictionAllOf = _interopRequireDefault(require("./model/BranchrestrictionAllOf"));
 
-var _BranchrestrictionAllOfLinks = _interopRequireDefault(require("./model/BranchrestrictionAllOfLinks"));
+var _Comment = _interopRequireDefault(require("./model/Comment"));
+
+var _CommentAllOf = _interopRequireDefault(require("./model/CommentAllOf"));
+
+var _CommentAllOfInline = _interopRequireDefault(require("./model/CommentAllOfInline"));
+
+var _CommentAllOfLinks = _interopRequireDefault(require("./model/CommentAllOfLinks"));
 
 var _Commit = _interopRequireDefault(require("./model/Commit"));
 
 var _CommitAllOf = _interopRequireDefault(require("./model/CommitAllOf"));
 
-var _CommitAllOfLinks = _interopRequireDefault(require("./model/CommitAllOfLinks"));
+var _CommitComment = _interopRequireDefault(require("./model/CommitComment"));
+
+var _CommitCommentAllOf = _interopRequireDefault(require("./model/CommitCommentAllOf"));
+
+var _CommitFile = _interopRequireDefault(require("./model/CommitFile"));
 
 var _Commitstatus = _interopRequireDefault(require("./model/Commitstatus"));
 
@@ -1057,6 +1807,62 @@ var _CommitstatusAllOfLinks = _interopRequireDefault(require("./model/Commitstat
 var _Component = _interopRequireDefault(require("./model/Component"));
 
 var _ComponentAllOf = _interopRequireDefault(require("./model/ComponentAllOf"));
+
+var _DdevReport = _interopRequireDefault(require("./model/DdevReport"));
+
+var _DeployKey = _interopRequireDefault(require("./model/DeployKey"));
+
+var _DeployKeyAllOf = _interopRequireDefault(require("./model/DeployKeyAllOf"));
+
+var _Deployment = _interopRequireDefault(require("./model/Deployment"));
+
+var _DeploymentAllOf = _interopRequireDefault(require("./model/DeploymentAllOf"));
+
+var _DeploymentEnvironment = _interopRequireDefault(require("./model/DeploymentEnvironment"));
+
+var _DeploymentEnvironmentAllOf = _interopRequireDefault(require("./model/DeploymentEnvironmentAllOf"));
+
+var _DeploymentRelease = _interopRequireDefault(require("./model/DeploymentRelease"));
+
+var _DeploymentReleaseAllOf = _interopRequireDefault(require("./model/DeploymentReleaseAllOf"));
+
+var _DeploymentState = _interopRequireDefault(require("./model/DeploymentState"));
+
+var _DeploymentStateCompleted = _interopRequireDefault(require("./model/DeploymentStateCompleted"));
+
+var _DeploymentStateCompletedAllOf = _interopRequireDefault(require("./model/DeploymentStateCompletedAllOf"));
+
+var _DeploymentStateCompletedStatus = _interopRequireDefault(require("./model/DeploymentStateCompletedStatus"));
+
+var _DeploymentStateCompletedStatusFailed = _interopRequireDefault(require("./model/DeploymentStateCompletedStatusFailed"));
+
+var _DeploymentStateCompletedStatusFailedAllOf = _interopRequireDefault(require("./model/DeploymentStateCompletedStatusFailedAllOf"));
+
+var _DeploymentStateCompletedStatusStopped = _interopRequireDefault(require("./model/DeploymentStateCompletedStatusStopped"));
+
+var _DeploymentStateCompletedStatusStoppedAllOf = _interopRequireDefault(require("./model/DeploymentStateCompletedStatusStoppedAllOf"));
+
+var _DeploymentStateCompletedStatusSuccessful = _interopRequireDefault(require("./model/DeploymentStateCompletedStatusSuccessful"));
+
+var _DeploymentStateCompletedStatusSuccessfulAllOf = _interopRequireDefault(require("./model/DeploymentStateCompletedStatusSuccessfulAllOf"));
+
+var _DeploymentStateInProgress = _interopRequireDefault(require("./model/DeploymentStateInProgress"));
+
+var _DeploymentStateInProgressAllOf = _interopRequireDefault(require("./model/DeploymentStateInProgressAllOf"));
+
+var _DeploymentStateUndeployed = _interopRequireDefault(require("./model/DeploymentStateUndeployed"));
+
+var _DeploymentStateUndeployedAllOf = _interopRequireDefault(require("./model/DeploymentStateUndeployedAllOf"));
+
+var _DeploymentVariable = _interopRequireDefault(require("./model/DeploymentVariable"));
+
+var _DeploymentVariableAllOf = _interopRequireDefault(require("./model/DeploymentVariableAllOf"));
+
+var _DeploymentsDdevDeploymentEnvironment = _interopRequireDefault(require("./model/DeploymentsDdevDeploymentEnvironment"));
+
+var _DeploymentsStgWestDeploymentEnvironment = _interopRequireDefault(require("./model/DeploymentsStgWestDeploymentEnvironment"));
+
+var _Diffstat = _interopRequireDefault(require("./model/Diffstat"));
 
 var _Error = _interopRequireDefault(require("./model/Error"));
 
@@ -1070,17 +1876,31 @@ var _GroupAllOfLinks = _interopRequireDefault(require("./model/GroupAllOfLinks")
 
 var _HookEvent = _interopRequireDefault(require("./model/HookEvent"));
 
+var _Hookbody = _interopRequireDefault(require("./model/Hookbody"));
+
 var _Issue = _interopRequireDefault(require("./model/Issue"));
 
 var _IssueAllOf = _interopRequireDefault(require("./model/IssueAllOf"));
-
-var _IssueAllOfContent = _interopRequireDefault(require("./model/IssueAllOfContent"));
 
 var _IssueAllOfLinks = _interopRequireDefault(require("./model/IssueAllOfLinks"));
 
 var _IssueAttachment = _interopRequireDefault(require("./model/IssueAttachment"));
 
 var _IssueAttachmentAllOf = _interopRequireDefault(require("./model/IssueAttachmentAllOf"));
+
+var _IssueChange = _interopRequireDefault(require("./model/IssueChange"));
+
+var _IssueChangeChanges = _interopRequireDefault(require("./model/IssueChangeChanges"));
+
+var _IssueChangeChangesAssignee = _interopRequireDefault(require("./model/IssueChangeChangesAssignee"));
+
+var _IssueChangeLinks = _interopRequireDefault(require("./model/IssueChangeLinks"));
+
+var _IssueComment = _interopRequireDefault(require("./model/IssueComment"));
+
+var _IssueCommentAllOf = _interopRequireDefault(require("./model/IssueCommentAllOf"));
+
+var _IssueJobStatus = _interopRequireDefault(require("./model/IssueJobStatus"));
 
 var _Milestone = _interopRequireDefault(require("./model/Milestone"));
 
@@ -1090,21 +1910,45 @@ var _ModelObject = _interopRequireDefault(require("./model/ModelObject"));
 
 var _Page = _interopRequireDefault(require("./model/Page"));
 
+var _PaginatedBranches = _interopRequireDefault(require("./model/PaginatedBranches"));
+
 var _PaginatedBranchrestrictions = _interopRequireDefault(require("./model/PaginatedBranchrestrictions"));
+
+var _PaginatedCommitComments = _interopRequireDefault(require("./model/PaginatedCommitComments"));
 
 var _PaginatedCommitstatuses = _interopRequireDefault(require("./model/PaginatedCommitstatuses"));
 
 var _PaginatedComponents = _interopRequireDefault(require("./model/PaginatedComponents"));
 
+var _PaginatedDeployKeys = _interopRequireDefault(require("./model/PaginatedDeployKeys"));
+
+var _PaginatedDeploymentVariable = _interopRequireDefault(require("./model/PaginatedDeploymentVariable"));
+
+var _PaginatedDeployments = _interopRequireDefault(require("./model/PaginatedDeployments"));
+
+var _PaginatedDiffstats = _interopRequireDefault(require("./model/PaginatedDiffstats"));
+
+var _PaginatedEnvironments = _interopRequireDefault(require("./model/PaginatedEnvironments"));
+
+var _PaginatedFiles = _interopRequireDefault(require("./model/PaginatedFiles"));
+
 var _PaginatedHookEvents = _interopRequireDefault(require("./model/PaginatedHookEvents"));
 
 var _PaginatedIssueAttachments = _interopRequireDefault(require("./model/PaginatedIssueAttachments"));
 
+var _PaginatedIssueComments = _interopRequireDefault(require("./model/PaginatedIssueComments"));
+
 var _PaginatedIssues = _interopRequireDefault(require("./model/PaginatedIssues"));
+
+var _PaginatedLogEntries = _interopRequireDefault(require("./model/PaginatedLogEntries"));
 
 var _PaginatedMilestones = _interopRequireDefault(require("./model/PaginatedMilestones"));
 
 var _PaginatedPipelineKnownHosts = _interopRequireDefault(require("./model/PaginatedPipelineKnownHosts"));
+
+var _PaginatedPipelineScheduleExecutions = _interopRequireDefault(require("./model/PaginatedPipelineScheduleExecutions"));
+
+var _PaginatedPipelineSchedules = _interopRequireDefault(require("./model/PaginatedPipelineSchedules"));
 
 var _PaginatedPipelineSteps = _interopRequireDefault(require("./model/PaginatedPipelineSteps"));
 
@@ -1114,9 +1958,15 @@ var _PaginatedPipelines = _interopRequireDefault(require("./model/PaginatedPipel
 
 var _PaginatedProjects = _interopRequireDefault(require("./model/PaginatedProjects"));
 
+var _PaginatedPullrequestComments = _interopRequireDefault(require("./model/PaginatedPullrequestComments"));
+
 var _PaginatedPullrequests = _interopRequireDefault(require("./model/PaginatedPullrequests"));
 
+var _PaginatedRefs = _interopRequireDefault(require("./model/PaginatedRefs"));
+
 var _PaginatedRepositories = _interopRequireDefault(require("./model/PaginatedRepositories"));
+
+var _PaginatedRepositoryPermissions = _interopRequireDefault(require("./model/PaginatedRepositoryPermissions"));
 
 var _PaginatedSnippetComments = _interopRequireDefault(require("./model/PaginatedSnippetComments"));
 
@@ -1124,7 +1974,15 @@ var _PaginatedSnippetCommit = _interopRequireDefault(require("./model/PaginatedS
 
 var _PaginatedSnippets = _interopRequireDefault(require("./model/PaginatedSnippets"));
 
+var _PaginatedSshUserKeys = _interopRequireDefault(require("./model/PaginatedSshUserKeys"));
+
+var _PaginatedTags = _interopRequireDefault(require("./model/PaginatedTags"));
+
+var _PaginatedTeamPermissions = _interopRequireDefault(require("./model/PaginatedTeamPermissions"));
+
 var _PaginatedTeams = _interopRequireDefault(require("./model/PaginatedTeams"));
+
+var _PaginatedTreeentries = _interopRequireDefault(require("./model/PaginatedTreeentries"));
 
 var _PaginatedUsers = _interopRequireDefault(require("./model/PaginatedUsers"));
 
@@ -1139,6 +1997,10 @@ var _ParticipantAllOf = _interopRequireDefault(require("./model/ParticipantAllOf
 var _Pipeline = _interopRequireDefault(require("./model/Pipeline"));
 
 var _PipelineAllOf = _interopRequireDefault(require("./model/PipelineAllOf"));
+
+var _PipelineBuildNumber = _interopRequireDefault(require("./model/PipelineBuildNumber"));
+
+var _PipelineBuildNumberAllOf = _interopRequireDefault(require("./model/PipelineBuildNumberAllOf"));
 
 var _PipelineCommand = _interopRequireDefault(require("./model/PipelineCommand"));
 
@@ -1156,11 +2018,23 @@ var _PipelineKnownHost = _interopRequireDefault(require("./model/PipelineKnownHo
 
 var _PipelineKnownHostAllOf = _interopRequireDefault(require("./model/PipelineKnownHostAllOf"));
 
-var _PipelineLogRange = _interopRequireDefault(require("./model/PipelineLogRange"));
-
 var _PipelineRefTarget = _interopRequireDefault(require("./model/PipelineRefTarget"));
 
 var _PipelineRefTargetAllOf = _interopRequireDefault(require("./model/PipelineRefTargetAllOf"));
+
+var _PipelineSchedule = _interopRequireDefault(require("./model/PipelineSchedule"));
+
+var _PipelineScheduleAllOf = _interopRequireDefault(require("./model/PipelineScheduleAllOf"));
+
+var _PipelineScheduleExecution = _interopRequireDefault(require("./model/PipelineScheduleExecution"));
+
+var _PipelineScheduleExecutionErrored = _interopRequireDefault(require("./model/PipelineScheduleExecutionErrored"));
+
+var _PipelineScheduleExecutionErroredAllOf = _interopRequireDefault(require("./model/PipelineScheduleExecutionErroredAllOf"));
+
+var _PipelineScheduleExecutionExecuted = _interopRequireDefault(require("./model/PipelineScheduleExecutionExecuted"));
+
+var _PipelineScheduleExecutionExecutedAllOf = _interopRequireDefault(require("./model/PipelineScheduleExecutionExecutedAllOf"));
 
 var _PipelineSelector = _interopRequireDefault(require("./model/PipelineSelector"));
 
@@ -1184,6 +2058,10 @@ var _PipelineStateCompletedError = _interopRequireDefault(require("./model/Pipel
 
 var _PipelineStateCompletedErrorAllOf = _interopRequireDefault(require("./model/PipelineStateCompletedErrorAllOf"));
 
+var _PipelineStateCompletedExpired = _interopRequireDefault(require("./model/PipelineStateCompletedExpired"));
+
+var _PipelineStateCompletedExpiredAllOf = _interopRequireDefault(require("./model/PipelineStateCompletedExpiredAllOf"));
+
 var _PipelineStateCompletedFailed = _interopRequireDefault(require("./model/PipelineStateCompletedFailed"));
 
 var _PipelineStateCompletedFailedAllOf = _interopRequireDefault(require("./model/PipelineStateCompletedFailedAllOf"));
@@ -1201,6 +2079,16 @@ var _PipelineStateCompletedSuccessfulAllOf = _interopRequireDefault(require("./m
 var _PipelineStateInProgress = _interopRequireDefault(require("./model/PipelineStateInProgress"));
 
 var _PipelineStateInProgressAllOf = _interopRequireDefault(require("./model/PipelineStateInProgressAllOf"));
+
+var _PipelineStateInProgressPaused = _interopRequireDefault(require("./model/PipelineStateInProgressPaused"));
+
+var _PipelineStateInProgressPausedAllOf = _interopRequireDefault(require("./model/PipelineStateInProgressPausedAllOf"));
+
+var _PipelineStateInProgressRunning = _interopRequireDefault(require("./model/PipelineStateInProgressRunning"));
+
+var _PipelineStateInProgressRunningAllOf = _interopRequireDefault(require("./model/PipelineStateInProgressRunningAllOf"));
+
+var _PipelineStateInProgressStage = _interopRequireDefault(require("./model/PipelineStateInProgressStage"));
 
 var _PipelineStatePending = _interopRequireDefault(require("./model/PipelineStatePending"));
 
@@ -1224,9 +2112,17 @@ var _PipelineStepStateCompletedError = _interopRequireDefault(require("./model/P
 
 var _PipelineStepStateCompletedErrorAllOf = _interopRequireDefault(require("./model/PipelineStepStateCompletedErrorAllOf"));
 
+var _PipelineStepStateCompletedExpired = _interopRequireDefault(require("./model/PipelineStepStateCompletedExpired"));
+
+var _PipelineStepStateCompletedExpiredAllOf = _interopRequireDefault(require("./model/PipelineStepStateCompletedExpiredAllOf"));
+
 var _PipelineStepStateCompletedFailed = _interopRequireDefault(require("./model/PipelineStepStateCompletedFailed"));
 
 var _PipelineStepStateCompletedFailedAllOf = _interopRequireDefault(require("./model/PipelineStepStateCompletedFailedAllOf"));
+
+var _PipelineStepStateCompletedNotRun = _interopRequireDefault(require("./model/PipelineStepStateCompletedNotRun"));
+
+var _PipelineStepStateCompletedNotRunAllOf = _interopRequireDefault(require("./model/PipelineStepStateCompletedNotRunAllOf"));
 
 var _PipelineStepStateCompletedResult = _interopRequireDefault(require("./model/PipelineStepStateCompletedResult"));
 
@@ -1246,6 +2142,10 @@ var _PipelineStepStatePending = _interopRequireDefault(require("./model/Pipeline
 
 var _PipelineStepStatePendingAllOf = _interopRequireDefault(require("./model/PipelineStepStatePendingAllOf"));
 
+var _PipelineStepStateReady = _interopRequireDefault(require("./model/PipelineStepStateReady"));
+
+var _PipelineStepStateReadyAllOf = _interopRequireDefault(require("./model/PipelineStepStateReadyAllOf"));
+
 var _PipelineTarget = _interopRequireDefault(require("./model/PipelineTarget"));
 
 var _PipelineTrigger = _interopRequireDefault(require("./model/PipelineTrigger"));
@@ -1262,6 +2162,10 @@ var _PipelinesConfig = _interopRequireDefault(require("./model/PipelinesConfig")
 
 var _PipelinesConfigAllOf = _interopRequireDefault(require("./model/PipelinesConfigAllOf"));
 
+var _PipelinesDdevPipelineStep = _interopRequireDefault(require("./model/PipelinesDdevPipelineStep"));
+
+var _PipelinesStgWestPipelineStep = _interopRequireDefault(require("./model/PipelinesStgWestPipelineStep"));
+
 var _Project = _interopRequireDefault(require("./model/Project"));
 
 var _ProjectAllOf = _interopRequireDefault(require("./model/ProjectAllOf"));
@@ -1276,17 +2180,41 @@ var _PullrequestAllOfLinks = _interopRequireDefault(require("./model/Pullrequest
 
 var _PullrequestAllOfMergeCommit = _interopRequireDefault(require("./model/PullrequestAllOfMergeCommit"));
 
+var _PullrequestAllOfRendered = _interopRequireDefault(require("./model/PullrequestAllOfRendered"));
+
+var _PullrequestAllOfRenderedTitle = _interopRequireDefault(require("./model/PullrequestAllOfRenderedTitle"));
+
+var _PullrequestComment = _interopRequireDefault(require("./model/PullrequestComment"));
+
+var _PullrequestCommentAllOf = _interopRequireDefault(require("./model/PullrequestCommentAllOf"));
+
 var _PullrequestEndpoint = _interopRequireDefault(require("./model/PullrequestEndpoint"));
 
 var _PullrequestEndpointBranch = _interopRequireDefault(require("./model/PullrequestEndpointBranch"));
 
 var _PullrequestMergeParameters = _interopRequireDefault(require("./model/PullrequestMergeParameters"));
 
+var _Ref = _interopRequireDefault(require("./model/Ref"));
+
+var _RefLinks = _interopRequireDefault(require("./model/RefLinks"));
+
 var _Repository = _interopRequireDefault(require("./model/Repository"));
 
 var _RepositoryAllOf = _interopRequireDefault(require("./model/RepositoryAllOf"));
 
 var _RepositoryAllOfLinks = _interopRequireDefault(require("./model/RepositoryAllOfLinks"));
+
+var _RepositoryPermission = _interopRequireDefault(require("./model/RepositoryPermission"));
+
+var _SearchCodeSearchResult = _interopRequireDefault(require("./model/SearchCodeSearchResult"));
+
+var _SearchContentMatch = _interopRequireDefault(require("./model/SearchContentMatch"));
+
+var _SearchLine = _interopRequireDefault(require("./model/SearchLine"));
+
+var _SearchResultPage = _interopRequireDefault(require("./model/SearchResultPage"));
+
+var _SearchSegment = _interopRequireDefault(require("./model/SearchSegment"));
 
 var _Snippet = _interopRequireDefault(require("./model/Snippet"));
 
@@ -1302,15 +2230,31 @@ var _SnippetCommitAllOf = _interopRequireDefault(require("./model/SnippetCommitA
 
 var _SnippetCommitAllOfLinks = _interopRequireDefault(require("./model/SnippetCommitAllOfLinks"));
 
+var _SshAccountKey = _interopRequireDefault(require("./model/SshAccountKey"));
+
+var _SshAccountKeyAllOf = _interopRequireDefault(require("./model/SshAccountKeyAllOf"));
+
+var _SshKey = _interopRequireDefault(require("./model/SshKey"));
+
+var _SshKeyAllOf = _interopRequireDefault(require("./model/SshKeyAllOf"));
+
+var _StgWestReport = _interopRequireDefault(require("./model/StgWestReport"));
+
 var _SubjectTypes = _interopRequireDefault(require("./model/SubjectTypes"));
 
 var _SubjectTypesRepository = _interopRequireDefault(require("./model/SubjectTypesRepository"));
 
+var _SubjectTypesRepositoryEvents = _interopRequireDefault(require("./model/SubjectTypesRepositoryEvents"));
+
 var _Tag = _interopRequireDefault(require("./model/Tag"));
 
-var _TagLinks = _interopRequireDefault(require("./model/TagLinks"));
+var _TagAllOf = _interopRequireDefault(require("./model/TagAllOf"));
 
 var _Team = _interopRequireDefault(require("./model/Team"));
+
+var _TeamPermission = _interopRequireDefault(require("./model/TeamPermission"));
+
+var _Treeentry = _interopRequireDefault(require("./model/Treeentry"));
 
 var _User = _interopRequireDefault(require("./model/User"));
 
@@ -1326,11 +2270,19 @@ var _WebhookSubscriptionAllOf = _interopRequireDefault(require("./model/WebhookS
 
 var _AddonApi = _interopRequireDefault(require("./api/AddonApi"));
 
+var _BranchingModelApi = _interopRequireDefault(require("./api/BranchingModelApi"));
+
 var _BranchrestrictionsApi = _interopRequireDefault(require("./api/BranchrestrictionsApi"));
 
 var _CommitsApi = _interopRequireDefault(require("./api/CommitsApi"));
 
 var _CommitstatusesApi = _interopRequireDefault(require("./api/CommitstatusesApi"));
+
+var _DefaultApi = _interopRequireDefault(require("./api/DefaultApi"));
+
+var _DeployApi = _interopRequireDefault(require("./api/DeployApi"));
+
+var _DeploymentsApi = _interopRequireDefault(require("./api/DeploymentsApi"));
 
 var _DownloadsApi = _interopRequireDefault(require("./api/DownloadsApi"));
 
@@ -1340,15 +2292,23 @@ var _PipelinesApi = _interopRequireDefault(require("./api/PipelinesApi"));
 
 var _ProjectsApi = _interopRequireDefault(require("./api/ProjectsApi"));
 
+var _PropertiesApi = _interopRequireDefault(require("./api/PropertiesApi"));
+
 var _PullrequestsApi = _interopRequireDefault(require("./api/PullrequestsApi"));
 
 var _RefsApi = _interopRequireDefault(require("./api/RefsApi"));
 
 var _RepositoriesApi = _interopRequireDefault(require("./api/RepositoriesApi"));
 
+var _SearchApi = _interopRequireDefault(require("./api/SearchApi"));
+
+var _SnippetApi = _interopRequireDefault(require("./api/SnippetApi"));
+
 var _SnippetsApi = _interopRequireDefault(require("./api/SnippetsApi"));
 
 var _SourceApi = _interopRequireDefault(require("./api/SourceApi"));
+
+var _SshApi = _interopRequireDefault(require("./api/SshApi"));
 
 var _TeamsApi = _interopRequireDefault(require("./api/TeamsApi"));
 
