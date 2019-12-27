@@ -32,7 +32,10 @@ async function executeCommand(argv) {
       `out/${projectName}/`,
       `${projectName.charAt(0).toUpperCase()}${projectName
         .slice(1)
-        .toLowerCase()}Service.js`
+        .toLowerCase()}Service.js`,
+      `${projectName.charAt(0).toUpperCase()}${projectName
+          .slice(1)
+          .toLowerCase()}Service.csv`
     );
 
     console.log("Command Execution completed");
@@ -43,8 +46,9 @@ async function executeCommand(argv) {
 
 // This function is used to parse the files generated,
 // fetch required api.md files and fetch code snippets from it.
-async function parseFilesAndGenerateCodeFile(path, fileName) {
+async function parseFilesAndGenerateCodeFile(path, fileName, csvFileName) {
   const fileNameWithPath = `${path}${fileName}`;
+  const csvFileNameWithPath = `${path}${csvFileName}`;
   // Fetch all files names with *api.md in the name
   let findCommand = await execShellCommand(`find ${path}* -name "*Api.md"`);
   let findCommandArray = findCommand.trim().split("\n");
@@ -53,10 +57,12 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
 
   // Start writing file with empty string
   fs.writeFileSync(`${fileNameWithPath}`, "");
+  fs.writeFileSync(`${csvFileNameWithPath}`, "");
 
   var functionWithParams = [];
   var codeBlocks = [];
   var codeComments = [];
+  var functionNamesWithTypeAndApi = [];
 
   for (let j = 0; j < findCommandArray.length; j++) {
     let file = findCommandArray[j];
@@ -65,10 +71,15 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
 
     functionWithParams.push(...functions.getFunctionWithParams(fileContents));
 
+    functionNamesWithTypeAndApi.push(...functions.getFunctionNamesWithTypeAndApi(fileContents));
+
     codeBlocks.push(...functions.getCodeBlocks(fileContents));
 
     codeComments.push(...functions.getCodeComments(fileContents));
   }
+
+  // Generate CSV File
+  functions.generateCSVFile(csvFileNameWithPath, functionNamesWithTypeAndApi, functionWithParams, codeComments);
 
   // Generate getter functions and start class code
   functions.startCodeFile(fileNameWithPath, fileName);
@@ -77,12 +88,13 @@ async function parseFilesAndGenerateCodeFile(path, fileName) {
     let functionType = functionsTypes[i];
     codeBlocks,
     functionWithParams,
-    codeComments = functions.generateCodeFile(
+    codeComments, functionNamesWithTypeAndApi = functions.generateCodeFile(
       codeBlocks,
       functionWithParams,
       codeComments,
       fileNameWithPath,
-      functionType
+      functionType,
+      functionNamesWithTypeAndApi
     );
   }
 
