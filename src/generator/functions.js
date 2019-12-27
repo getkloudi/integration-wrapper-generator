@@ -337,6 +337,14 @@ exports.startCodeFile = function(filePath, fileName) {
       return;
     }
 
+    async getAccessToken(integration) {
+      //TODO: Add custom getAccessToken functionality here
+    }
+
+    getNextPaginationURIFromResponse(response) {
+      //TODO: Add custom getNextPaginationURIFromResponse functionality here
+    }
+
     async connect(authParams) {
       //TODO: Add custom connect functionality here
     }
