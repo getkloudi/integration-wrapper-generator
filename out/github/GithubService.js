@@ -144,17 +144,20 @@ class GithubService {
         }
       }
     );
-
     const apiKey = res.data.access_token;
     const apiKeyPrefix = "token";
+    let orgs = [],
+      incomingOptions = { opts: {} };
 
     const user = await this.get("USER", {
       apiKey: apiKey,
-      apiKeyPrefix: apiKeyPrefix
+      apiKeyPrefix: apiKeyPrefix,
+      opts: {
+        perPage: incomingOptions.opts.perPage,
+        page: incomingOptions.opts.page
+      }
     });
 
-    let orgs,
-      incomingOptions = { opts: {} };
     while (true) {
       let res = await this.get("USER_ORGS", {
         apiKey: apiKey,
@@ -166,7 +169,7 @@ class GithubService {
       incomingOptions.opts = this.getNextPaginationURIFromResponse(
         res.response
       );
-      orgs = res.data.map(item => item.login);
+      orgs = orgs.concat(res.data.map(item => item.login));
       if (!incomingOptions.opts || !incomingOptions.opts.page) break;
     }
     const data = {
