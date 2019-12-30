@@ -112,7 +112,8 @@ async function parseFilesAndGenerateCodeFile(path, fileName, csvFileName) {
       functionWithParams,
       codeComments,
       fileNameWithPath,
-      "unknownHTTPMethod"
+      "unknownHTTPMethod",
+      functionNamesWithTypeAndApi
     );
   }
 
