@@ -27,10 +27,8 @@ async function executeCommand(argv) {
     // parse the api md files
     console.log("Parsing md api files generated");
     await parseFilesAndGenerateCodeFile(
-      `out/${projectName}/`,
-      `${projectName.charAt(0).toUpperCase()}${projectName
-        .slice(1)
-        .toLowerCase()}Service.js`,
+      `out/${projectName.toLowerCase()}/`,
+      `${projectName}Service.js`,
       `${projectName.toLowerCase()}.csv`
     );
 
