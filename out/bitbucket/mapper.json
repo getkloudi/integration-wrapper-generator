@@ -53,7 +53,7 @@
       },
       {
         "input": {
-          "key": "params.page"
+          "key": "query.page"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -64,7 +64,7 @@
       },
       {
         "input": {
-          "key": "params.page"
+          "key": "query.page"
         },
         "transform": {
           "type": "ONE-TO-ONE"
