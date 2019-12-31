@@ -17,25 +17,27 @@ exports.getFunctionNamesWithTypeAndApi = function getFunctionNames(contents) {
       let x;
       while ((x = regex.functionNamesRegex.exec(innerFunctionExp)) !== null) {
         if (!x[0]) continue;
-        functionNameWithTypeAndApi['functionName'] = x[0];
+        functionNameWithTypeAndApi["functionName"] = x[0];
       }
     }
 
     // Get the function type
-    let functionType = '';
+    let functionType = "";
     while ((w = regex.functionTypeRegex.exec(functionExp)) !== null) {
       if (!w[0]) continue;
-      if (w[0].split('**').length > 1) {
-        functionType = w[0].split('**')[1];
+      if (w[0].split("**").length > 1) {
+        functionType = w[0].split("**")[1];
       }
     }
 
-    functionNameWithTypeAndApi['functionType'] = functionType;
+    functionNameWithTypeAndApi["functionType"] = functionType;
     // get the function API
     let apiIndex = functionExp.indexOf(`${functionType}** `);
 
-    let api = functionExp.substring(apiIndex, functionExp.length - 1).split(' ')[1];
-    functionNameWithTypeAndApi['functionApi'] = api;
+    let api = functionExp
+      .substring(apiIndex, functionExp.length - 1)
+      .split(" ")[1];
+    functionNameWithTypeAndApi["functionApi"] = api;
 
     functionNamesWithTypeAndApi.push(functionNameWithTypeAndApi);
   }
@@ -122,7 +124,7 @@ exports.getCodeBlocks = function getCodeBlocks(contents) {
   return codeBlocks;
 };
 
-exports.getCodeComments = function (contents, functionWithParams) {
+exports.getCodeComments = function(contents, functionWithParams) {
   let codeComments = [];
 
   let v;
@@ -138,8 +140,8 @@ exports.getCodeComments = function (contents, functionWithParams) {
     let startIndex = contents.indexOf(v[0]);
     let comment = contents.substring(startIndex, contents.length - 1);
 
-    startIndex = comment.indexOf('\n')
-    let endIndex = comment.indexOf('### ');
+    startIndex = comment.indexOf("\n");
+    let endIndex = comment.indexOf("### ");
 
     comment = comment.substring(startIndex + 1, endIndex);
 
@@ -160,14 +162,20 @@ exports.generateCodeFile = function generateCodeFile(
   // Apend the switch case to the top of the file
   fs.appendFileSync(
     fileName,
-    createSwitchfunction(functionWithParams, functionType, codeComments, functionNamesWithTypeAndApi)
+    createSwitchfunction(
+      functionWithParams,
+      functionType,
+      codeComments,
+      functionNamesWithTypeAndApi
+    )
   );
 
   let positionsToRemove = [];
   // Create a new file
   for (let i = 0; i < codeBlocks.length; i++) {
     if (
-      functionType.toUpperCase() !== functionNamesWithTypeAndApi[i]['functionType']
+      functionType.toUpperCase() !==
+      functionNamesWithTypeAndApi[i]["functionType"]
     ) {
       continue;
     } else {
@@ -241,10 +249,12 @@ exports.generateCodeFile = function generateCodeFile(
         // Join the sub string generated above after commenting out variables containing _example
         codeBlock = codeBlock.replace(
           substring,
-          `${splitSubstring.join(
-            "\n"
-          )}\n\nObject.keys(incomingOptions.opts).forEach(key =>incomingOptions.opts[key] === undefined && delete incomingOptions.opts[key]
-          )\nincomingOptions.opts = Object.assign(opts, incomingOptions.opts)\n\n`
+          `${splitSubstring.join("\n")}\n\n
+          if(incomingOptions.opts)\n
+          Object.keys(incomingOptions.opts).forEach(key =>incomingOptions.opts[key] === undefined && delete incomingOptions.opts[key]
+          )\n
+          else\ndelete incomingOptions.opts
+          incomingOptions.opts = Object.assign(opts, incomingOptions.opts)\n\n`
         );
       }
 
@@ -295,10 +305,12 @@ exports.generateCodeFile = function generateCodeFile(
     functionNamesWithTypeAndApi.splice(positionsToRemove[i], 1);
   }
 
-  return codeBlocks, functionWithParams, codeComments, functionNamesWithTypeAndApi;
+  return (
+    codeBlocks, functionWithParams, codeComments, functionNamesWithTypeAndApi
+  );
 };
 
-exports.startCodeFile = function (filePath, fileName) {
+exports.startCodeFile = function(filePath, fileName) {
   let fileNameWithoutExtension = fileName.split(".")[0];
 
   // Generate fileContent
@@ -419,7 +431,7 @@ exports.startCodeFile = function (filePath, fileName) {
   fs.appendFileSync(filePath, fileContent);
 };
 
-exports.endCodeFile = function (filePath, fileName) {
+exports.endCodeFile = function(filePath, fileName) {
   let fileNameWithoutExtension = fileName.split(".")[0];
 
   let fileContent = `
@@ -428,14 +440,20 @@ exports.endCodeFile = function (filePath, fileName) {
   fs.appendFileSync(filePath, fileContent);
 };
 
-function createSwitchfunction(functionWithParams, functionType, codeComments, functionNamesWithTypeAndApi) {
+function createSwitchfunction(
+  functionWithParams,
+  functionType,
+  codeComments,
+  functionNamesWithTypeAndApi
+) {
   // Return the switch function to be created;
   let switchCode = "";
   for (let i = 0; i < functionWithParams.length; i++) {
     let currentFunction = functionWithParams[i];
 
     if (
-      functionType.toUpperCase() !== functionNamesWithTypeAndApi[i]['functionType']
+      functionType.toUpperCase() !==
+      functionNamesWithTypeAndApi[i]["functionType"]
     ) {
       continue;
     }
@@ -495,13 +513,19 @@ function createSwitchfunction(functionWithParams, functionType, codeComments, fu
   return code;
 }
 
-exports.generateCSVFile = function (fileName, functionNamesWithTypeAndApi, functionWithParams, codeComments) {
-  let content = 'api,http-method,description,functionName,functionParameters\n';
+exports.generateCSVFile = function(
+  fileName,
+  functionNamesWithTypeAndApi,
+  functionWithParams,
+  codeComments
+) {
+  let content = "api,http-method,description,functionName,functionParameters\n";
   for (let i = 0; i < functionNamesWithTypeAndApi.length; i++) {
-    content = `${content}${functionNamesWithTypeAndApi[i]['functionApi']},${functionNamesWithTypeAndApi[i]['functionType']},"${codeComments[i]}",${functionNamesWithTypeAndApi[i]['functionName']},${functionWithParams[i]['functionParams'].join(' ')}\n`
+    content = `${content}${functionNamesWithTypeAndApi[i]["functionApi"]},${
+      functionNamesWithTypeAndApi[i]["functionType"]
+    },"${codeComments[i]}",${
+      functionNamesWithTypeAndApi[i]["functionName"]
+    },${functionWithParams[i]["functionParams"].join(" ")}\n`;
   }
-  fs.appendFileSync(
-    fileName,
-    content
-  );
-}
+  fs.appendFileSync(fileName, content);
+};
