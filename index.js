@@ -8,6 +8,9 @@ async function executeCommand(argv) {
     let projectName = `${argv.name}`;
     let openApiFilePath = `${argv.spec}`;
     let version = `${argv.v ? argv.v : `1.0.0`}`;
+    let allowUndefinedOpts = argv.allowUndefinedOpts
+      ? argv.allowUndefinedOpts
+      : false;
 
     console.log(`Removing ${projectName} directory from out/ folder`);
     // Remove the directory for the project name after execution
@@ -29,7 +32,8 @@ async function executeCommand(argv) {
     await parseFilesAndGenerateCodeFile(
       `out/${projectName.toLowerCase()}/`,
       `${projectName}Service.js`,
-      `${projectName.toLowerCase()}.csv`
+      `${projectName.toLowerCase()}.csv`,
+      allowUndefinedOpts
     );
 
     console.log("Command Execution completed");
@@ -40,7 +44,12 @@ async function executeCommand(argv) {
 
 // This function is used to parse the files generated,
 // fetch required api.md files and fetch code snippets from it.
-async function parseFilesAndGenerateCodeFile(path, fileName, csvFileName) {
+async function parseFilesAndGenerateCodeFile(
+  path,
+  fileName,
+  csvFileName,
+  allowUndefinedOpts
+) {
   const fileNameWithPath = `${path}${fileName}`;
   const csvFileNameWithPath = `${path}${csvFileName}`;
   // Fetch all files names with *api.md in the name
@@ -99,7 +108,8 @@ async function parseFilesAndGenerateCodeFile(path, fileName, csvFileName) {
         codeComments,
         fileNameWithPath,
         functionType,
-        functionNamesWithTypeAndApi
+        functionNamesWithTypeAndApi,
+        allowUndefinedOpts
       ));
   }
 
@@ -111,7 +121,8 @@ async function parseFilesAndGenerateCodeFile(path, fileName, csvFileName) {
       codeComments,
       fileNameWithPath,
       "unknownHTTPMethod",
-      functionNamesWithTypeAndApi
+      functionNamesWithTypeAndApi,
+      allowUndefinedOpts
     );
   }
 
@@ -124,9 +135,14 @@ var argv = require("yargs")
   .usage("Usage: $0 -name [str] -spec [path]")
   .demandOption(["name", "spec"])
   .string("v")
+  .boolean("allowUndefinedOpts")
   .describe("name", "Name of the API tool you are generating code for")
   .describe("spec", "Path of OpenAPI v3 spec of the API tool")
   .describe("v", "Version of the API being generated")
+  .describe(
+    "allowUndefinedOpts",
+    "allowUndefinedOpts is an internal configuration used to see whether we should allow or not allow undefined incomingOptions.opts"
+  )
   .help()
   .alias("h", "help").argv;
 executeCommand(argv);

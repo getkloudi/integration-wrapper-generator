@@ -157,7 +157,8 @@ exports.generateCodeFile = function generateCodeFile(
   codeComments,
   fileName,
   functionType,
-  functionNamesWithTypeAndApi
+  functionNamesWithTypeAndApi,
+  allowUndefinedOpts
 ) {
   // Apend the switch case to the top of the file
   fs.appendFileSync(
@@ -247,15 +248,25 @@ exports.generateCodeFile = function generateCodeFile(
         }
 
         // Join the sub string generated above after commenting out variables containing _example
-        codeBlock = codeBlock.replace(
-          substring,
-          `${splitSubstring.join("\n")}\n\n
+
+        //By default remove undefined variables before merging the two. In case the allowUndefinedOpts is true then don't perform this check.
+        if (!allowUndefinedOpts)
+          codeBlock = codeBlock.replace(
+            substring,
+            `${splitSubstring.join("\n")}\n\n
           if(incomingOptions.opts)\n
           Object.keys(incomingOptions.opts).forEach(key =>incomingOptions.opts[key] === undefined && delete incomingOptions.opts[key]
           )\n
           else\ndelete incomingOptions.opts
           incomingOptions.opts = Object.assign(opts, incomingOptions.opts)\n\n`
-        );
+          );
+        else
+          codeBlock = codeBlock.replace(
+            substring,
+            `${splitSubstring.join("\n")}\n\n
+          if(!incomingOptions.opts)\ndelete incomingOptions.opts
+          incomingOptions.opts = Object.assign(opts, incomingOptions.opts)\n\n`
+          );
       }
 
       // incomingOptions change
