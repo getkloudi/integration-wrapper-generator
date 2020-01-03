@@ -1,0 +1,46 @@
+[
+  {
+    "type": "REQUEST",
+    "entity": "ACTION_DESCRIBE_REGIONS",
+    "integration": "AMAZON_EC2",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.regions"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformRegionsToURLFormat"
+        },
+        "output": {
+          "key": "region"
+        }
+      },
+      {
+        "input": {
+          "key": ""
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "getSignatureV4Headers"
+        },
+        "output": {
+          "key": "opts"
+        }
+      },
+      {
+        "input": {
+          "key": ""
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "getSignatureV4AuthorizationHeader"
+        },
+        "output": {
+          "key": "apiKey"
+        }
+      }
+    ]
+  }
+]
