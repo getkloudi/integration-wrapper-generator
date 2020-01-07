@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UnassignIpv6AddressesResult model module.
  * @module model/UnassignIpv6AddressesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UnassignIpv6AddressesResult {
     /**

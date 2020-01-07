@@ -17,7 +17,7 @@ import VpcEndpointConnection from './VpcEndpointConnection';
 /**
  * The DescribeVpcEndpointConnectionsResult model module.
  * @module model/DescribeVpcEndpointConnectionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcEndpointConnectionsResult {
     /**

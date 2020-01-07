@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The S3Storage model module.
  * @module model/S3Storage
- * @version 1.0.0
+ * @version 1.1.0
  */
 class S3Storage {
     /**

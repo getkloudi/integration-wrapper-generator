@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribePublicIpv4PoolsRequest model module.
  * @module model/DescribePublicIpv4PoolsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribePublicIpv4PoolsRequest {
     /**

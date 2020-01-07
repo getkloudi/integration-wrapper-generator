@@ -34,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NetworkInterface model module.
  * @module model/NetworkInterface
- * @version 1.0.0
+ * @version 1.1.0
  */
 var NetworkInterface =
 /*#__PURE__*/

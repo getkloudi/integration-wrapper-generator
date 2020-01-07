@@ -17,7 +17,7 @@ import PermissionGroup from './PermissionGroup';
 /**
  * The LoadPermission model module.
  * @module model/LoadPermission
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LoadPermission {
     /**

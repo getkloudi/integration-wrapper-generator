@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScheduledInstancesEbs model module.
  * @module model/ScheduledInstancesEbs
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScheduledInstancesEbs {
     /**

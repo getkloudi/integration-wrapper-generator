@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetPasswordDataResult model module.
  * @module model/GetPasswordDataResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetPasswordDataResult =
 /*#__PURE__*/

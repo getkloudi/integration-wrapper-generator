@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteSecurityGroupRequest model module.
  * @module model/DeleteSecurityGroupRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteSecurityGroupRequest =
 /*#__PURE__*/

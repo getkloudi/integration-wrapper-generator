@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreditSpecificationRequest model module.
  * @module model/CreditSpecificationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreditSpecificationRequest =
 /*#__PURE__*/

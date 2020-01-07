@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateRouteResult model module.
  * @module model/CreateRouteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateRouteResult =
 /*#__PURE__*/

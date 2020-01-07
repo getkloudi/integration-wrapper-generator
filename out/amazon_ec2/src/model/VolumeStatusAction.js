@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VolumeStatusAction model module.
  * @module model/VolumeStatusAction
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VolumeStatusAction {
     /**

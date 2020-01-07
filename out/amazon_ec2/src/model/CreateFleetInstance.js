@@ -20,7 +20,7 @@ import PlatformValues from './PlatformValues';
 /**
  * The CreateFleetInstance model module.
  * @module model/CreateFleetInstance
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateFleetInstance {
     /**

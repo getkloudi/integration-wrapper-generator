@@ -17,7 +17,7 @@ import TrafficMirrorSessionField from './TrafficMirrorSessionField';
 /**
  * The ModifyTrafficMirrorSessionRequest model module.
  * @module model/ModifyTrafficMirrorSessionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyTrafficMirrorSessionRequest {
     /**

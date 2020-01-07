@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LaunchTemplateConfig model module.
  * @module model/LaunchTemplateConfig
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LaunchTemplateConfig =
 /*#__PURE__*/

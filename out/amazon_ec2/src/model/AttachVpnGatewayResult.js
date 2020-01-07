@@ -17,7 +17,7 @@ import VpcAttachment from './VpcAttachment';
 /**
  * The AttachVpnGatewayResult model module.
  * @module model/AttachVpnGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AttachVpnGatewayResult {
     /**

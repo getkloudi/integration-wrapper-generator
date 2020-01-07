@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeNetworkInterfaceAttributeResult model module.
  * @module model/DescribeNetworkInterfaceAttributeResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeNetworkInterfaceAttributeResult =
 /*#__PURE__*/

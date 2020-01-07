@@ -18,7 +18,7 @@ import HostTenancy from './HostTenancy';
 /**
  * The ModifyInstancePlacementRequest model module.
  * @module model/ModifyInstancePlacementRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyInstancePlacementRequest {
     /**

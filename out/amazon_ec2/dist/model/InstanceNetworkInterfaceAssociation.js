@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceNetworkInterfaceAssociation model module.
  * @module model/InstanceNetworkInterfaceAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceNetworkInterfaceAssociation =
 /*#__PURE__*/

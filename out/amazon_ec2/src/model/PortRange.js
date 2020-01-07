@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PortRange model module.
  * @module model/PortRange
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PortRange {
     /**

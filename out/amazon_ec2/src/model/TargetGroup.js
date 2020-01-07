@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetGroup model module.
  * @module model/TargetGroup
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TargetGroup {
     /**

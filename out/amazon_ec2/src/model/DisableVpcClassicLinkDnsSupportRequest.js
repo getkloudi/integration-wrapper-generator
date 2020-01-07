@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DisableVpcClassicLinkDnsSupportRequest model module.
  * @module model/DisableVpcClassicLinkDnsSupportRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisableVpcClassicLinkDnsSupportRequest {
     /**

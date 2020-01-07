@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnableTransitGatewayRouteTablePropagationRequest model module.
  * @module model/EnableTransitGatewayRouteTablePropagationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class EnableTransitGatewayRouteTablePropagationRequest {
     /**

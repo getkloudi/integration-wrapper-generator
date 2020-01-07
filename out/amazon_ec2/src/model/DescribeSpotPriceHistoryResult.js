@@ -17,7 +17,7 @@ import SpotPrice from './SpotPrice';
 /**
  * The DescribeSpotPriceHistoryResult model module.
  * @module model/DescribeSpotPriceHistoryResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSpotPriceHistoryResult {
     /**

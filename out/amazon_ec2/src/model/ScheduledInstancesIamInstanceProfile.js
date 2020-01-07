@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScheduledInstancesIamInstanceProfile model module.
  * @module model/ScheduledInstancesIamInstanceProfile
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScheduledInstancesIamInstanceProfile {
     /**

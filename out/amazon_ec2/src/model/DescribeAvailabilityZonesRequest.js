@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeAvailabilityZonesRequest model module.
  * @module model/DescribeAvailabilityZonesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeAvailabilityZonesRequest {
     /**

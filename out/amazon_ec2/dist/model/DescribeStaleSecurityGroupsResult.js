@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeStaleSecurityGroupsResult model module.
  * @module model/DescribeStaleSecurityGroupsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeStaleSecurityGroupsResult =
 /*#__PURE__*/

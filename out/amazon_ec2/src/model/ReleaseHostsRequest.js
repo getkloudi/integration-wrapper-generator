@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReleaseHostsRequest model module.
  * @module model/ReleaseHostsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReleaseHostsRequest {
     /**

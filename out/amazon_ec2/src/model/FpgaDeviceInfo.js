@@ -17,7 +17,7 @@ import FpgaDeviceMemoryInfo from './FpgaDeviceMemoryInfo';
 /**
  * The FpgaDeviceInfo model module.
  * @module model/FpgaDeviceInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class FpgaDeviceInfo {
     /**

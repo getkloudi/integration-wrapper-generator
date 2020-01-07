@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeLocalGatewayVirtualInterfacesRequest model module.
  * @module model/DescribeLocalGatewayVirtualInterfacesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeLocalGatewayVirtualInterfacesRequest =
 /*#__PURE__*/

@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Subnet model module.
  * @module model/Subnet
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Subnet =
 /*#__PURE__*/

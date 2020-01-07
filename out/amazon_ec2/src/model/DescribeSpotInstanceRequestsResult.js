@@ -17,7 +17,7 @@ import SpotInstanceRequest from './SpotInstanceRequest';
 /**
  * The DescribeSpotInstanceRequestsResult model module.
  * @module model/DescribeSpotInstanceRequestsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSpotInstanceRequestsResult {
     /**

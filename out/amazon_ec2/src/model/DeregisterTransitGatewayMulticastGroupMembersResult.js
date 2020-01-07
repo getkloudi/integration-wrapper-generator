@@ -17,7 +17,7 @@ import TransitGatewayMulticastDeregisteredGroupMembers from './TransitGatewayMul
 /**
  * The DeregisterTransitGatewayMulticastGroupMembersResult model module.
  * @module model/DeregisterTransitGatewayMulticastGroupMembersResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeregisterTransitGatewayMulticastGroupMembersResult {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteRouteTableRequest model module.
  * @module model/DeleteRouteTableRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteRouteTableRequest {
     /**

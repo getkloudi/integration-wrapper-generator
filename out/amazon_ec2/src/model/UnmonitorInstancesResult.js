@@ -17,7 +17,7 @@ import InstanceMonitoring from './InstanceMonitoring';
 /**
  * The UnmonitorInstancesResult model module.
  * @module model/UnmonitorInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UnmonitorInstancesResult {
     /**

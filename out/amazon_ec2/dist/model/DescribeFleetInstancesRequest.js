@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeFleetInstancesRequest model module.
  * @module model/DescribeFleetInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeFleetInstancesRequest =
 /*#__PURE__*/

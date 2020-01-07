@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteSubnetRequest model module.
  * @module model/DeleteSubnetRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteSubnetRequest {
     /**

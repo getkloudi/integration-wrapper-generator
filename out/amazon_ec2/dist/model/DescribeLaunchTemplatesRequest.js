@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeLaunchTemplatesRequest model module.
  * @module model/DescribeLaunchTemplatesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeLaunchTemplatesRequest =
 /*#__PURE__*/

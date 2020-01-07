@@ -17,7 +17,7 @@ import NetworkInterfaceAttribute from './NetworkInterfaceAttribute';
 /**
  * The DescribeNetworkInterfaceAttributeRequest model module.
  * @module model/DescribeNetworkInterfaceAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeNetworkInterfaceAttributeRequest {
     /**

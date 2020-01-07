@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateVolumePermission model module.
  * @module model/CreateVolumePermission
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateVolumePermission =
 /*#__PURE__*/

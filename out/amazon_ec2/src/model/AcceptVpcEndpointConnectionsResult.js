@@ -17,7 +17,7 @@ import UnsuccessfulItem from './UnsuccessfulItem';
 /**
  * The AcceptVpcEndpointConnectionsResult model module.
  * @module model/AcceptVpcEndpointConnectionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AcceptVpcEndpointConnectionsResult {
     /**

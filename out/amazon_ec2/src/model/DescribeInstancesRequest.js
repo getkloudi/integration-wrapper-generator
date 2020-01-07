@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeInstancesRequest model module.
  * @module model/DescribeInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeInstancesRequest {
     /**

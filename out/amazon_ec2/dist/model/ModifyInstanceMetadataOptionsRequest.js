@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyInstanceMetadataOptionsRequest model module.
  * @module model/ModifyInstanceMetadataOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyInstanceMetadataOptionsRequest =
 /*#__PURE__*/

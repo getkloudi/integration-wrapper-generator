@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SpotFleetMonitoring model module.
  * @module model/SpotFleetMonitoring
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SpotFleetMonitoring =
 /*#__PURE__*/

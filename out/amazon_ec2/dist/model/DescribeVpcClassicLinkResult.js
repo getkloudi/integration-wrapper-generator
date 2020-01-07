@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeVpcClassicLinkResult model module.
  * @module model/DescribeVpcClassicLinkResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeVpcClassicLinkResult =
 /*#__PURE__*/

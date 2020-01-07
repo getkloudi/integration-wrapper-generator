@@ -17,7 +17,7 @@ import IpPermission from './IpPermission';
 /**
  * The AuthorizeSecurityGroupEgressRequest model module.
  * @module model/AuthorizeSecurityGroupEgressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AuthorizeSecurityGroupEgressRequest {
     /**

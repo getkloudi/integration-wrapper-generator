@@ -17,7 +17,7 @@ import TransitGatewayMulticastDomain from './TransitGatewayMulticastDomain';
 /**
  * The DeleteTransitGatewayMulticastDomainResult model module.
  * @module model/DeleteTransitGatewayMulticastDomainResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteTransitGatewayMulticastDomainResult {
     /**

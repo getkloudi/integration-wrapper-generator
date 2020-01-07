@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeSnapshotAttributeResult model module.
  * @module model/DescribeSnapshotAttributeResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeSnapshotAttributeResult =
 /*#__PURE__*/

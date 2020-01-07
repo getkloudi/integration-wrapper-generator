@@ -17,7 +17,7 @@ import TrafficMirrorFilterRule from './TrafficMirrorFilterRule';
 /**
  * The ModifyTrafficMirrorFilterRuleResult model module.
  * @module model/ModifyTrafficMirrorFilterRuleResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyTrafficMirrorFilterRuleResult {
     /**

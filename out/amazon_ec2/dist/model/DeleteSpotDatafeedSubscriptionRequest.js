@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteSpotDatafeedSubscriptionRequest model module.
  * @module model/DeleteSpotDatafeedSubscriptionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteSpotDatafeedSubscriptionRequest =
 /*#__PURE__*/

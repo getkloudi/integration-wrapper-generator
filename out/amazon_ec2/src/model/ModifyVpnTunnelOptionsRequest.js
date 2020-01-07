@@ -17,7 +17,7 @@ import ModifyVpnTunnelOptionsSpecification from './ModifyVpnTunnelOptionsSpecifi
 /**
  * The ModifyVpnTunnelOptionsRequest model module.
  * @module model/ModifyVpnTunnelOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyVpnTunnelOptionsRequest {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ResetImageAttributeRequest model module.
  * @module model/ResetImageAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ResetImageAttributeRequest =
 /*#__PURE__*/

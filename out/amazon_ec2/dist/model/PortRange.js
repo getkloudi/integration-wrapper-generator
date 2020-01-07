@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PortRange model module.
  * @module model/PortRange
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PortRange =
 /*#__PURE__*/

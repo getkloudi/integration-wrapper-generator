@@ -24,7 +24,7 @@ import Tag from './Tag';
 /**
  * The SpotInstanceRequest model module.
  * @module model/SpotInstanceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SpotInstanceRequest {
     /**

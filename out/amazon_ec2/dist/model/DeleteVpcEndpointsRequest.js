@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteVpcEndpointsRequest model module.
  * @module model/DeleteVpcEndpointsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteVpcEndpointsRequest =
 /*#__PURE__*/

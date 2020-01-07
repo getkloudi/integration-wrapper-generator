@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteVpnGatewayRequest model module.
  * @module model/DeleteVpnGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteVpnGatewayRequest {
     /**

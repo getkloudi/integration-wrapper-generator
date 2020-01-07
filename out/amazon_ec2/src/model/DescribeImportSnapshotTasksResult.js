@@ -17,7 +17,7 @@ import ImportSnapshotTask from './ImportSnapshotTask';
 /**
  * The DescribeImportSnapshotTasksResult model module.
  * @module model/DescribeImportSnapshotTasksResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeImportSnapshotTasksResult {
     /**

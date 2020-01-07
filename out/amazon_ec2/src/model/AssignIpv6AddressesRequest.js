@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssignIpv6AddressesRequest model module.
  * @module model/AssignIpv6AddressesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssignIpv6AddressesRequest {
     /**

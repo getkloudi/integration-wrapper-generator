@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteInternetGatewayRequest model module.
  * @module model/DeleteInternetGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteInternetGatewayRequest {
     /**

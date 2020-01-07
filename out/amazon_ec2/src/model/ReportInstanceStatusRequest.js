@@ -18,7 +18,7 @@ import ReportStatusType from './ReportStatusType';
 /**
  * The ReportInstanceStatusRequest model module.
  * @module model/ReportInstanceStatusRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReportInstanceStatusRequest {
     /**

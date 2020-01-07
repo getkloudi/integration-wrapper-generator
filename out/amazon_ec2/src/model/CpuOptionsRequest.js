@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CpuOptionsRequest model module.
  * @module model/CpuOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CpuOptionsRequest {
     /**

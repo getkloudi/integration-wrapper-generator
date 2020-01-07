@@ -18,7 +18,7 @@ import IamInstanceProfileAssociationState from './IamInstanceProfileAssociationS
 /**
  * The IamInstanceProfileAssociation model module.
  * @module model/IamInstanceProfileAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class IamInstanceProfileAssociation {
     /**

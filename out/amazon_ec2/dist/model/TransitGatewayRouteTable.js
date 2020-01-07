@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TransitGatewayRouteTable model module.
  * @module model/TransitGatewayRouteTable
- * @version 1.0.0
+ * @version 1.1.0
  */
 var TransitGatewayRouteTable =
 /*#__PURE__*/

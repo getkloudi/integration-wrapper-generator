@@ -23,7 +23,7 @@ import SpotPlacement from './SpotPlacement';
 /**
  * The LaunchSpecification model module.
  * @module model/LaunchSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchSpecification {
     /**

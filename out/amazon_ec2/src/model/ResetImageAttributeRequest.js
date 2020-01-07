@@ -17,7 +17,7 @@ import ResetImageAttributeName from './ResetImageAttributeName';
 /**
  * The ResetImageAttributeRequest model module.
  * @module model/ResetImageAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ResetImageAttributeRequest {
     /**

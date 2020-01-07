@@ -17,7 +17,7 @@ import DomainType from './DomainType';
 /**
  * The AllocateAddressRequest model module.
  * @module model/AllocateAddressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AllocateAddressRequest {
     /**

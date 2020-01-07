@@ -17,7 +17,7 @@ import ByoipCidrState from './ByoipCidrState';
 /**
  * The ByoipCidr model module.
  * @module model/ByoipCidr
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ByoipCidr {
     /**

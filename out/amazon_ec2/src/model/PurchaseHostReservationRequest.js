@@ -17,7 +17,7 @@ import CurrencyCodeValues from './CurrencyCodeValues';
 /**
  * The PurchaseHostReservationRequest model module.
  * @module model/PurchaseHostReservationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PurchaseHostReservationRequest {
     /**

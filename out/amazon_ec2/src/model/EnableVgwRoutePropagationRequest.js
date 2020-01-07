@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnableVgwRoutePropagationRequest model module.
  * @module model/EnableVgwRoutePropagationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class EnableVgwRoutePropagationRequest {
     /**

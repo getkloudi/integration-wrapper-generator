@@ -18,7 +18,7 @@ import SuccessfulQueuedPurchaseDeletion from './SuccessfulQueuedPurchaseDeletion
 /**
  * The DeleteQueuedReservedInstancesResult model module.
  * @module model/DeleteQueuedReservedInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteQueuedReservedInstancesResult {
     /**

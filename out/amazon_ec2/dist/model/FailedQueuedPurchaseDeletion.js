@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FailedQueuedPurchaseDeletion model module.
  * @module model/FailedQueuedPurchaseDeletion
- * @version 1.0.0
+ * @version 1.1.0
  */
 var FailedQueuedPurchaseDeletion =
 /*#__PURE__*/

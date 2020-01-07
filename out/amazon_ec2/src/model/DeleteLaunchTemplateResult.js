@@ -17,7 +17,7 @@ import LaunchTemplate from './LaunchTemplate';
 /**
  * The DeleteLaunchTemplateResult model module.
  * @module model/DeleteLaunchTemplateResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteLaunchTemplateResult {
     /**

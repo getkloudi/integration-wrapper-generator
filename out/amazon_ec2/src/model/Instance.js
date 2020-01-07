@@ -40,7 +40,7 @@ import VirtualizationType from './VirtualizationType';
 /**
  * The Instance model module.
  * @module model/Instance
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Instance {
     /**

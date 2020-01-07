@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DisableFastSnapshotRestoreErrorItem model module.
  * @module model/DisableFastSnapshotRestoreErrorItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DisableFastSnapshotRestoreErrorItem =
 /*#__PURE__*/

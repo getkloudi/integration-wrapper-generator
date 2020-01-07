@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceBlockDeviceMappingSpecification model module.
  * @module model/InstanceBlockDeviceMappingSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceBlockDeviceMappingSpecification =
 /*#__PURE__*/

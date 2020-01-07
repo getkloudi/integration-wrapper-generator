@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ImageAttribute model module.
  * @module model/ImageAttribute
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ImageAttribute =
 /*#__PURE__*/

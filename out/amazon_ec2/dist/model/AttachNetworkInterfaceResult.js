@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AttachNetworkInterfaceResult model module.
  * @module model/AttachNetworkInterfaceResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AttachNetworkInterfaceResult =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DisassociateSubnetCidrBlockRequest model module.
  * @module model/DisassociateSubnetCidrBlockRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DisassociateSubnetCidrBlockRequest =
 /*#__PURE__*/

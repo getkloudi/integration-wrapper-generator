@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteLocalGatewayRouteResult model module.
  * @module model/DeleteLocalGatewayRouteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteLocalGatewayRouteResult =
 /*#__PURE__*/

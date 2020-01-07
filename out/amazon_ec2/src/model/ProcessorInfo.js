@@ -17,7 +17,7 @@ import ArchitectureType from './ArchitectureType';
 /**
  * The ProcessorInfo model module.
  * @module model/ProcessorInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ProcessorInfo {
     /**

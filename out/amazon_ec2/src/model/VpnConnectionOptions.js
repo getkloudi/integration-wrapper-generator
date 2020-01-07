@@ -17,7 +17,7 @@ import TunnelOption from './TunnelOption';
 /**
  * The VpnConnectionOptions model module.
  * @module model/VpnConnectionOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpnConnectionOptions {
     /**

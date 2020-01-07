@@ -17,7 +17,7 @@ import ExportTask from './ExportTask';
 /**
  * The CreateInstanceExportTaskResult model module.
  * @module model/CreateInstanceExportTaskResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateInstanceExportTaskResult {
     /**

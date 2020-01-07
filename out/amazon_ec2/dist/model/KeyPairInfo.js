@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The KeyPairInfo model module.
  * @module model/KeyPairInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 var KeyPairInfo =
 /*#__PURE__*/

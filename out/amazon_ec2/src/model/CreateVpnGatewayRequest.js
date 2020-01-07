@@ -17,7 +17,7 @@ import GatewayType from './GatewayType';
 /**
  * The CreateVpnGatewayRequest model module.
  * @module model/CreateVpnGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateVpnGatewayRequest {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LaunchTemplateIamInstanceProfileSpecificationRequest model module.
  * @module model/LaunchTemplateIamInstanceProfileSpecificationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateIamInstanceProfileSpecificationRequest {
     /**

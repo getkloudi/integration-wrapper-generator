@@ -17,7 +17,7 @@ import UnlimitedSupportedInstanceFamily from './UnlimitedSupportedInstanceFamily
 /**
  * The InstanceFamilyCreditSpecification model module.
  * @module model/InstanceFamilyCreditSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceFamilyCreditSpecification {
     /**

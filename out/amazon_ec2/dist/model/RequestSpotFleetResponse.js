@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RequestSpotFleetResponse model module.
  * @module model/RequestSpotFleetResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RequestSpotFleetResponse =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeVpcEndpointConnectionNotificationsRequest model module.
  * @module model/DescribeVpcEndpointConnectionNotificationsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcEndpointConnectionNotificationsRequest {
     /**

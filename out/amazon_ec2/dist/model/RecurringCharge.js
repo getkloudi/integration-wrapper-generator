@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RecurringCharge model module.
  * @module model/RecurringCharge
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RecurringCharge =
 /*#__PURE__*/

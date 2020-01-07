@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateClientVpnRouteRequest model module.
  * @module model/CreateClientVpnRouteRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateClientVpnRouteRequest {
     /**

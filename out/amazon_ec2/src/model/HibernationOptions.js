@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HibernationOptions model module.
  * @module model/HibernationOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class HibernationOptions {
     /**

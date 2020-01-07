@@ -17,7 +17,7 @@ import TransitGateway from './TransitGateway';
 /**
  * The DeleteTransitGatewayResult model module.
  * @module model/DeleteTransitGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteTransitGatewayResult {
     /**

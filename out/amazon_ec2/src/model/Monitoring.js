@@ -17,7 +17,7 @@ import MonitoringState from './MonitoringState';
 /**
  * The Monitoring model module.
  * @module model/Monitoring
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Monitoring {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AcceptTransitGatewayPeeringAttachmentResult model module.
  * @module model/AcceptTransitGatewayPeeringAttachmentResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AcceptTransitGatewayPeeringAttachmentResult =
 /*#__PURE__*/

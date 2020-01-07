@@ -18,7 +18,7 @@ import Purchase from './Purchase';
 /**
  * The GetHostReservationPurchasePreviewResult model module.
  * @module model/GetHostReservationPurchasePreviewResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetHostReservationPurchasePreviewResult {
     /**

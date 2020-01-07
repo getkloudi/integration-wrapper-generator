@@ -19,7 +19,7 @@ import Tag from './Tag';
 /**
  * The NetworkAcl model module.
  * @module model/NetworkAcl
- * @version 1.0.0
+ * @version 1.1.0
  */
 class NetworkAcl {
     /**

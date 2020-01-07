@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeLaunchTemplateVersionsResult model module.
  * @module model/DescribeLaunchTemplateVersionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeLaunchTemplateVersionsResult =
 /*#__PURE__*/

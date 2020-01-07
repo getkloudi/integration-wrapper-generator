@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateNatGatewayRequest model module.
  * @module model/CreateNatGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateNatGatewayRequest {
     /**

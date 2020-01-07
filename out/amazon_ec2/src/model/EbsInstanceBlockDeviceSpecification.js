@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EbsInstanceBlockDeviceSpecification model module.
  * @module model/EbsInstanceBlockDeviceSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class EbsInstanceBlockDeviceSpecification {
     /**

@@ -17,7 +17,7 @@ import InstanceHealthStatus from './InstanceHealthStatus';
 /**
  * The ActiveInstance model module.
  * @module model/ActiveInstance
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ActiveInstance {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DisableTransitGatewayRouteTablePropagationRequest model module.
  * @module model/DisableTransitGatewayRouteTablePropagationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DisableTransitGatewayRouteTablePropagationRequest =
 /*#__PURE__*/

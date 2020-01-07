@@ -18,7 +18,7 @@ import VolumeType from './VolumeType';
 /**
  * The CreateVolumeRequest model module.
  * @module model/CreateVolumeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateVolumeRequest {
     /**

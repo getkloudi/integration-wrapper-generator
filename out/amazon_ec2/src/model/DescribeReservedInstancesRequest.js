@@ -19,7 +19,7 @@ import OfferingTypeValues from './OfferingTypeValues';
 /**
  * The DescribeReservedInstancesRequest model module.
  * @module model/DescribeReservedInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeReservedInstancesRequest {
     /**

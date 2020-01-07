@@ -19,7 +19,7 @@ import TargetReservationValue from './TargetReservationValue';
 /**
  * The GetReservedInstancesExchangeQuoteResult model module.
  * @module model/GetReservedInstancesExchangeQuoteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetReservedInstancesExchangeQuoteResult {
     /**

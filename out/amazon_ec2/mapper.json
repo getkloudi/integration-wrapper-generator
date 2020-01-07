@@ -1,7 +1,7 @@
 [
   {
     "type": "REQUEST",
-    "entity": "ACTION_DESCRIBE_REGIONS",
+    "entity": "ALL",
     "integration": "AMAZON_EC2",
     "method": "GET|POST",
     "map": [
@@ -19,11 +19,11 @@
       },
       {
         "input": {
-          "key": ""
+          "key": "query"
         },
         "transform": {
           "type": "FUNCTION",
-          "name": "getSignatureV4Headers"
+          "name": "transformQueryParmsToOpts"
         },
         "output": {
           "key": "opts"

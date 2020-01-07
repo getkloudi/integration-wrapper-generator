@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CopyFpgaImageResult model module.
  * @module model/CopyFpgaImageResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CopyFpgaImageResult =
 /*#__PURE__*/

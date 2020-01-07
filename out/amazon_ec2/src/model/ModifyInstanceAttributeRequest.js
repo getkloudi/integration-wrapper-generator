@@ -21,7 +21,7 @@ import InstanceBlockDeviceMappingSpecification from './InstanceBlockDeviceMappin
 /**
  * The ModifyInstanceAttributeRequest model module.
  * @module model/ModifyInstanceAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyInstanceAttributeRequest {
     /**

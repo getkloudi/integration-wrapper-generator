@@ -17,7 +17,7 @@ import VpcTenancy from './VpcTenancy';
 /**
  * The ModifyVpcTenancyRequest model module.
  * @module model/ModifyVpcTenancyRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyVpcTenancyRequest {
     /**

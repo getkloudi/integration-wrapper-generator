@@ -19,7 +19,7 @@ import NetworkInterfaceAttachmentChanges from './NetworkInterfaceAttachmentChang
 /**
  * The ModifyNetworkInterfaceAttributeRequest model module.
  * @module model/ModifyNetworkInterfaceAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyNetworkInterfaceAttributeRequest {
     /**

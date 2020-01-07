@@ -17,7 +17,7 @@ import TransitGatewayRoute from './TransitGatewayRoute';
 /**
  * The SearchTransitGatewayRoutesResult model module.
  * @module model/SearchTransitGatewayRoutesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchTransitGatewayRoutesResult {
     /**

@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeLaunchTemplateVersionsRequest model module.
  * @module model/DescribeLaunchTemplateVersionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeLaunchTemplateVersionsRequest {
     /**

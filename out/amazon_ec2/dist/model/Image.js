@@ -40,7 +40,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Image model module.
  * @module model/Image
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Image =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import InstanceType from './InstanceType';
 /**
  * The LaunchTemplateOverrides model module.
  * @module model/LaunchTemplateOverrides
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateOverrides {
     /**

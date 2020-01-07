@@ -17,7 +17,7 @@ import Tag from './Tag';
 /**
  * The LaunchTemplate model module.
  * @module model/LaunchTemplate
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplate {
     /**

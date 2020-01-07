@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssociateSubnetCidrBlockRequest model module.
  * @module model/AssociateSubnetCidrBlockRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AssociateSubnetCidrBlockRequest =
 /*#__PURE__*/

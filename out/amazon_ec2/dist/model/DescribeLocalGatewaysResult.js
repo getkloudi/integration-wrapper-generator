@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeLocalGatewaysResult model module.
  * @module model/DescribeLocalGatewaysResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeLocalGatewaysResult =
 /*#__PURE__*/

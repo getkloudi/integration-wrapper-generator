@@ -17,7 +17,7 @@ import Vpc from './Vpc';
 /**
  * The CreateDefaultVpcResult model module.
  * @module model/CreateDefaultVpcResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateDefaultVpcResult {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSpotDatafeedSubscriptionRequest model module.
  * @module model/CreateSpotDatafeedSubscriptionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateSpotDatafeedSubscriptionRequest {
     /**

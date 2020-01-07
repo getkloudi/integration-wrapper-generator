@@ -19,7 +19,7 @@ import DirectoryServiceAuthentication from './DirectoryServiceAuthentication';
 /**
  * The ClientVpnAuthentication model module.
  * @module model/ClientVpnAuthentication
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ClientVpnAuthentication {
     /**

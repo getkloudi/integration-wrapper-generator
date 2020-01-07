@@ -17,7 +17,7 @@ import InstanceTypeInfo from './InstanceTypeInfo';
 /**
  * The DescribeInstanceTypesResult model module.
  * @module model/DescribeInstanceTypesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeInstanceTypesResult {
     /**

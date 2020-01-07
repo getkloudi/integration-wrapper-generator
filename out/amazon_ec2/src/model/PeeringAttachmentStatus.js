@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PeeringAttachmentStatus model module.
  * @module model/PeeringAttachmentStatus
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PeeringAttachmentStatus {
     /**

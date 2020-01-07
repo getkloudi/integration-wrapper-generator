@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TransitGatewayAssociation model module.
  * @module model/TransitGatewayAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 var TransitGatewayAssociation =
 /*#__PURE__*/

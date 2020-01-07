@@ -17,7 +17,7 @@ import AttributeBooleanValue from './AttributeBooleanValue';
 /**
  * The ModifySubnetAttributeRequest model module.
  * @module model/ModifySubnetAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifySubnetAttributeRequest {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CopyFpgaImageResult model module.
  * @module model/CopyFpgaImageResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CopyFpgaImageResult {
     /**

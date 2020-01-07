@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InferenceDeviceInfo model module.
  * @module model/InferenceDeviceInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InferenceDeviceInfo =
 /*#__PURE__*/

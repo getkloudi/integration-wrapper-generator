@@ -17,7 +17,7 @@ import ByoipCidr from './ByoipCidr';
 /**
  * The WithdrawByoipCidrResult model module.
  * @module model/WithdrawByoipCidrResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class WithdrawByoipCidrResult {
     /**

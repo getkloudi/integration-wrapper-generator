@@ -17,7 +17,7 @@ import AttachmentStatus from './AttachmentStatus';
 /**
  * The InstanceNetworkInterfaceAttachment model module.
  * @module model/InstanceNetworkInterfaceAttachment
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceNetworkInterfaceAttachment {
     /**

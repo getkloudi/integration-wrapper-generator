@@ -20,7 +20,7 @@ import Tag from './Tag';
 /**
  * The ConversionTask model module.
  * @module model/ConversionTask
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ConversionTask {
     /**

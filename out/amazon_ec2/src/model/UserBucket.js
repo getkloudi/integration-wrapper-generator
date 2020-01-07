@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserBucket model module.
  * @module model/UserBucket
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UserBucket {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StopInstancesRequest model module.
  * @module model/StopInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var StopInstancesRequest =
 /*#__PURE__*/

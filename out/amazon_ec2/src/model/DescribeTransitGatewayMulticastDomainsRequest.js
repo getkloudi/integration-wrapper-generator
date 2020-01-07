@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeTransitGatewayMulticastDomainsRequest model module.
  * @module model/DescribeTransitGatewayMulticastDomainsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTransitGatewayMulticastDomainsRequest {
     /**

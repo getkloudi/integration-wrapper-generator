@@ -17,7 +17,7 @@ import LaunchTemplateEbsBlockDevice from './LaunchTemplateEbsBlockDevice';
 /**
  * The LaunchTemplateBlockDeviceMapping model module.
  * @module model/LaunchTemplateBlockDeviceMapping
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateBlockDeviceMapping {
     /**

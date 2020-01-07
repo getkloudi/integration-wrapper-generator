@@ -18,7 +18,7 @@ import TagSpecification from './TagSpecification';
 /**
  * The CreateLaunchTemplateRequest model module.
  * @module model/CreateLaunchTemplateRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateLaunchTemplateRequest {
     /**

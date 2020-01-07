@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MemoryInfo model module.
  * @module model/MemoryInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class MemoryInfo {
     /**

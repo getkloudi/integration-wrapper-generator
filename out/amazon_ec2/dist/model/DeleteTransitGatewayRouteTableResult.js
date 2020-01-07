@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteTransitGatewayRouteTableResult model module.
  * @module model/DeleteTransitGatewayRouteTableResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteTransitGatewayRouteTableResult =
 /*#__PURE__*/

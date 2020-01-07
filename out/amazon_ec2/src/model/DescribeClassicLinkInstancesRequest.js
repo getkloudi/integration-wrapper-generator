@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeClassicLinkInstancesRequest model module.
  * @module model/DescribeClassicLinkInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeClassicLinkInstancesRequest {
     /**

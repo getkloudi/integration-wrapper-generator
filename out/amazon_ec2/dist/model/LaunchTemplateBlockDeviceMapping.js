@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LaunchTemplateBlockDeviceMapping model module.
  * @module model/LaunchTemplateBlockDeviceMapping
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LaunchTemplateBlockDeviceMapping =
 /*#__PURE__*/

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteTransitGatewayPeeringAttachmentResult model module.
  * @module model/DeleteTransitGatewayPeeringAttachmentResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteTransitGatewayPeeringAttachmentResult =
 /*#__PURE__*/

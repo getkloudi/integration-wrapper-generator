@@ -17,7 +17,7 @@ import TransitGatewayPropagation from './TransitGatewayPropagation';
 /**
  * The DisableTransitGatewayRouteTablePropagationResult model module.
  * @module model/DisableTransitGatewayRouteTablePropagationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisableTransitGatewayRouteTablePropagationResult {
     /**

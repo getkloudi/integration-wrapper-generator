@@ -17,7 +17,7 @@ import UserBucket from './UserBucket';
 /**
  * The SnapshotDiskContainer model module.
  * @module model/SnapshotDiskContainer
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SnapshotDiskContainer {
     /**

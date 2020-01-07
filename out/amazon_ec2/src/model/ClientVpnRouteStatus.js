@@ -17,7 +17,7 @@ import ClientVpnRouteStatusCode from './ClientVpnRouteStatusCode';
 /**
  * The ClientVpnRouteStatus model module.
  * @module model/ClientVpnRouteStatus
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ClientVpnRouteStatus {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateTransitGatewayVpcAttachmentResult model module.
  * @module model/CreateTransitGatewayVpcAttachmentResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateTransitGatewayVpcAttachmentResult =
 /*#__PURE__*/

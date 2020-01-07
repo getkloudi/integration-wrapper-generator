@@ -17,7 +17,7 @@ import InterfacePermissionType from './InterfacePermissionType';
 /**
  * The CreateNetworkInterfacePermissionRequest model module.
  * @module model/CreateNetworkInterfacePermissionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateNetworkInterfacePermissionRequest {
     /**

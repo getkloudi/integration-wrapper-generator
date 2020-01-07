@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceStateChange model module.
  * @module model/InstanceStateChange
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceStateChange =
 /*#__PURE__*/

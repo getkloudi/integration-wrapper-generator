@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ExportTransitGatewayRoutesResult model module.
  * @module model/ExportTransitGatewayRoutesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ExportTransitGatewayRoutesResult =
 /*#__PURE__*/

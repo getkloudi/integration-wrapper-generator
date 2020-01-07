@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ResetFpgaImageAttributeResult model module.
  * @module model/ResetFpgaImageAttributeResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ResetFpgaImageAttributeResult =
 /*#__PURE__*/

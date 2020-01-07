@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LicenseConfigurationRequest model module.
  * @module model/LicenseConfigurationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LicenseConfigurationRequest =
 /*#__PURE__*/

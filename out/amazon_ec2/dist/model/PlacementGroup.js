@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PlacementGroup model module.
  * @module model/PlacementGroup
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PlacementGroup =
 /*#__PURE__*/

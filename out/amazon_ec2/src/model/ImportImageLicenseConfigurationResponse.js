@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ImportImageLicenseConfigurationResponse model module.
  * @module model/ImportImageLicenseConfigurationResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ImportImageLicenseConfigurationResponse {
     /**

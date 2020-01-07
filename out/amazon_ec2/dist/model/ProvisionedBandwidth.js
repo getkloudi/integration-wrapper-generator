@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ProvisionedBandwidth model module.
  * @module model/ProvisionedBandwidth
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ProvisionedBandwidth =
 /*#__PURE__*/

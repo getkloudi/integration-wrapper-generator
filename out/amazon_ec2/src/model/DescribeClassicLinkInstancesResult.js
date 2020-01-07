@@ -17,7 +17,7 @@ import ClassicLinkInstance from './ClassicLinkInstance';
 /**
  * The DescribeClassicLinkInstancesResult model module.
  * @module model/DescribeClassicLinkInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeClassicLinkInstancesResult {
     /**

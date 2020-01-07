@@ -17,7 +17,7 @@ import VpcEndpoint from './VpcEndpoint';
 /**
  * The CreateVpcEndpointResult model module.
  * @module model/CreateVpcEndpointResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateVpcEndpointResult {
     /**

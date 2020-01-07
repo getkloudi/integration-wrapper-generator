@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyInstancePlacementResult model module.
  * @module model/ModifyInstancePlacementResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyInstancePlacementResult =
 /*#__PURE__*/

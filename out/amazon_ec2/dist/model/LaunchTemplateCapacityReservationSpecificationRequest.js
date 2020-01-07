@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LaunchTemplateCapacityReservationSpecificationRequest model module.
  * @module model/LaunchTemplateCapacityReservationSpecificationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LaunchTemplateCapacityReservationSpecificationRequest =
 /*#__PURE__*/

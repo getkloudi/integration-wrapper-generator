@@ -17,7 +17,7 @@ import ScheduledInstancesLaunchSpecification from './ScheduledInstancesLaunchSpe
 /**
  * The RunScheduledInstancesRequest model module.
  * @module model/RunScheduledInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RunScheduledInstancesRequest {
     /**

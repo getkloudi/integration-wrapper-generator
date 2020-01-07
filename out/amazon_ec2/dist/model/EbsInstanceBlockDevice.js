@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EbsInstanceBlockDevice model module.
  * @module model/EbsInstanceBlockDevice
- * @version 1.0.0
+ * @version 1.1.0
  */
 var EbsInstanceBlockDevice =
 /*#__PURE__*/

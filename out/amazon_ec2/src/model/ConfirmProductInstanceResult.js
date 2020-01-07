@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfirmProductInstanceResult model module.
  * @module model/ConfirmProductInstanceResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ConfirmProductInstanceResult {
     /**

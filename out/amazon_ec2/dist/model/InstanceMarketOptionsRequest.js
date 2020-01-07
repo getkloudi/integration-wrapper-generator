@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceMarketOptionsRequest model module.
  * @module model/InstanceMarketOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceMarketOptionsRequest =
 /*#__PURE__*/

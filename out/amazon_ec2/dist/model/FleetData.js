@@ -40,7 +40,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FleetData model module.
  * @module model/FleetData
- * @version 1.0.0
+ * @version 1.1.0
  */
 var FleetData =
 /*#__PURE__*/

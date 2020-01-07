@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RegisterImageRequest model module.
  * @module model/RegisterImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RegisterImageRequest =
 /*#__PURE__*/

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyInstanceCreditSpecificationResult model module.
  * @module model/ModifyInstanceCreditSpecificationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyInstanceCreditSpecificationResult =
 /*#__PURE__*/

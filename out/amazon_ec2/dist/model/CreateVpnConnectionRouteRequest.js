@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateVpnConnectionRouteRequest model module.
  * @module model/CreateVpnConnectionRouteRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateVpnConnectionRouteRequest =
 /*#__PURE__*/

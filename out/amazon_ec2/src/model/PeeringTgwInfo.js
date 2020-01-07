@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PeeringTgwInfo model module.
  * @module model/PeeringTgwInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PeeringTgwInfo {
     /**

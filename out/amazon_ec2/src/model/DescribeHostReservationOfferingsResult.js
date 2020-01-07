@@ -17,7 +17,7 @@ import HostOffering from './HostOffering';
 /**
  * The DescribeHostReservationOfferingsResult model module.
  * @module model/DescribeHostReservationOfferingsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeHostReservationOfferingsResult {
     /**

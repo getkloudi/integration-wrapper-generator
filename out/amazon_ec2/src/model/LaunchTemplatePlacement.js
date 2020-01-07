@@ -17,7 +17,7 @@ import Tenancy from './Tenancy';
 /**
  * The LaunchTemplatePlacement model module.
  * @module model/LaunchTemplatePlacement
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplatePlacement {
     /**

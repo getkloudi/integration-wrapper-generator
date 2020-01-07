@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeSubnetsRequest model module.
  * @module model/DescribeSubnetsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeSubnetsRequest =
 /*#__PURE__*/

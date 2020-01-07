@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScheduledInstancesMonitoring model module.
  * @module model/ScheduledInstancesMonitoring
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScheduledInstancesMonitoring {
     /**

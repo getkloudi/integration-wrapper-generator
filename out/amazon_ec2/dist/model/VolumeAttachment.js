@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VolumeAttachment model module.
  * @module model/VolumeAttachment
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VolumeAttachment =
 /*#__PURE__*/

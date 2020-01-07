@@ -18,7 +18,7 @@ import Tag from './Tag';
 /**
  * The ServiceDetail model module.
  * @module model/ServiceDetail
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ServiceDetail {
     /**

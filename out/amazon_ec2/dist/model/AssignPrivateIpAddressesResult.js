@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssignPrivateIpAddressesResult model module.
  * @module model/AssignPrivateIpAddressesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AssignPrivateIpAddressesResult =
 /*#__PURE__*/

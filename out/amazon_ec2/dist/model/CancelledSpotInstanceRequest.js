@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CancelledSpotInstanceRequest model module.
  * @module model/CancelledSpotInstanceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CancelledSpotInstanceRequest =
 /*#__PURE__*/

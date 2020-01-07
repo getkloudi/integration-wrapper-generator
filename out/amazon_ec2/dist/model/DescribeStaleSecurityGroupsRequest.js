@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeStaleSecurityGroupsRequest model module.
  * @module model/DescribeStaleSecurityGroupsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeStaleSecurityGroupsRequest =
 /*#__PURE__*/

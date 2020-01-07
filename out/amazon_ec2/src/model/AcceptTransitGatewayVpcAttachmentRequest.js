@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AcceptTransitGatewayVpcAttachmentRequest model module.
  * @module model/AcceptTransitGatewayVpcAttachmentRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AcceptTransitGatewayVpcAttachmentRequest {
     /**

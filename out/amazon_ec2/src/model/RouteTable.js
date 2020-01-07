@@ -20,7 +20,7 @@ import Tag from './Tag';
 /**
  * The RouteTable model module.
  * @module model/RouteTable
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RouteTable {
     /**

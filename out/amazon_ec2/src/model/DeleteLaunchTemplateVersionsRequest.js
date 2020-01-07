@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteLaunchTemplateVersionsRequest model module.
  * @module model/DeleteLaunchTemplateVersionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteLaunchTemplateVersionsRequest {
     /**

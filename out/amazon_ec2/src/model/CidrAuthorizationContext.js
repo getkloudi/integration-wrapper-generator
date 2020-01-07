@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CidrAuthorizationContext model module.
  * @module model/CidrAuthorizationContext
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CidrAuthorizationContext {
     /**

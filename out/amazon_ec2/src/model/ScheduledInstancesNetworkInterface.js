@@ -18,7 +18,7 @@ import ScheduledInstancesPrivateIpAddressConfig from './ScheduledInstancesPrivat
 /**
  * The ScheduledInstancesNetworkInterface model module.
  * @module model/ScheduledInstancesNetworkInterface
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScheduledInstancesNetworkInterface {
     /**

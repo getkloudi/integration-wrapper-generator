@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SpotPrice model module.
  * @module model/SpotPrice
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SpotPrice =
 /*#__PURE__*/

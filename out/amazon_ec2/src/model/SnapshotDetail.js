@@ -17,7 +17,7 @@ import UserBucketDetails from './UserBucketDetails';
 /**
  * The SnapshotDetail model module.
  * @module model/SnapshotDetail
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SnapshotDetail {
     /**

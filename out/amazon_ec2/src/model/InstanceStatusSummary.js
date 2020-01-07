@@ -18,7 +18,7 @@ import SummaryStatus from './SummaryStatus';
 /**
  * The InstanceStatusSummary model module.
  * @module model/InstanceStatusSummary
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceStatusSummary {
     /**

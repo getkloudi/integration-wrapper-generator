@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MemoryInfo model module.
  * @module model/MemoryInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 var MemoryInfo =
 /*#__PURE__*/

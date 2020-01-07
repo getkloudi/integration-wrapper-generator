@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ReplaceNetworkAclAssociationResult model module.
  * @module model/ReplaceNetworkAclAssociationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ReplaceNetworkAclAssociationResult =
 /*#__PURE__*/

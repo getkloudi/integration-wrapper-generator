@@ -18,7 +18,7 @@ import SpotMarketOptions from './SpotMarketOptions';
 /**
  * The InstanceMarketOptionsRequest model module.
  * @module model/InstanceMarketOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceMarketOptionsRequest {
     /**

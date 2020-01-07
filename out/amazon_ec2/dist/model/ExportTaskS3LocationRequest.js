@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ExportTaskS3LocationRequest model module.
  * @module model/ExportTaskS3LocationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ExportTaskS3LocationRequest =
 /*#__PURE__*/

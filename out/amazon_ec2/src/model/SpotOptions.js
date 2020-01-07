@@ -18,7 +18,7 @@ import SpotInstanceInterruptionBehavior from './SpotInstanceInterruptionBehavior
 /**
  * The SpotOptions model module.
  * @module model/SpotOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SpotOptions {
     /**

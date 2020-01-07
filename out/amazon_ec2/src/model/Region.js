@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Region model module.
  * @module model/Region
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Region {
     /**

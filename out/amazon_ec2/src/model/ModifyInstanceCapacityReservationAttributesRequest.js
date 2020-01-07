@@ -17,7 +17,7 @@ import CapacityReservationSpecification from './CapacityReservationSpecification
 /**
  * The ModifyInstanceCapacityReservationAttributesRequest model module.
  * @module model/ModifyInstanceCapacityReservationAttributesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyInstanceCapacityReservationAttributesRequest {
     /**

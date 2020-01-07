@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VpcCidrBlockState model module.
  * @module model/VpcCidrBlockState
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VpcCidrBlockState =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Phase2IntegrityAlgorithmsRequestListValue model module.
  * @module model/Phase2IntegrityAlgorithmsRequestListValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Phase2IntegrityAlgorithmsRequestListValue {
     /**

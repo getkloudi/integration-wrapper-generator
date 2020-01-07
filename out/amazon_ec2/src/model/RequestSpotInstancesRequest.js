@@ -19,7 +19,7 @@ import SpotInstanceType from './SpotInstanceType';
 /**
  * The RequestSpotInstancesRequest model module.
  * @module model/RequestSpotInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RequestSpotInstancesRequest {
     /**

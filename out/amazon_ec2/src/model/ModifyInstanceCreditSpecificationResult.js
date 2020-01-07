@@ -18,7 +18,7 @@ import UnsuccessfulInstanceCreditSpecificationItem from './UnsuccessfulInstanceC
 /**
  * The ModifyInstanceCreditSpecificationResult model module.
  * @module model/ModifyInstanceCreditSpecificationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyInstanceCreditSpecificationResult {
     /**

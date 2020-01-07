@@ -17,7 +17,7 @@ import InstanceCreditSpecificationRequest from './InstanceCreditSpecificationReq
 /**
  * The ModifyInstanceCreditSpecificationRequest model module.
  * @module model/ModifyInstanceCreditSpecificationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyInstanceCreditSpecificationRequest {
     /**

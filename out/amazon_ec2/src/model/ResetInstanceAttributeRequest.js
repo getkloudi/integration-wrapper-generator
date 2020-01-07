@@ -17,7 +17,7 @@ import InstanceAttributeName from './InstanceAttributeName';
 /**
  * The ResetInstanceAttributeRequest model module.
  * @module model/ResetInstanceAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ResetInstanceAttributeRequest {
     /**

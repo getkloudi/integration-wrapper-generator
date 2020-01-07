@@ -17,7 +17,7 @@ import MovingAddressStatus from './MovingAddressStatus';
 /**
  * The DescribeMovingAddressesResult model module.
  * @module model/DescribeMovingAddressesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeMovingAddressesResult {
     /**

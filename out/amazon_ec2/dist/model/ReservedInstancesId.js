@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ReservedInstancesId model module.
  * @module model/ReservedInstancesId
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ReservedInstancesId =
 /*#__PURE__*/

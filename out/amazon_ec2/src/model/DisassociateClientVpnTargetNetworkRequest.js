@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DisassociateClientVpnTargetNetworkRequest model module.
  * @module model/DisassociateClientVpnTargetNetworkRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisassociateClientVpnTargetNetworkRequest {
     /**

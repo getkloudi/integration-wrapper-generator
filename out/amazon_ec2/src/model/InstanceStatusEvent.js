@@ -17,7 +17,7 @@ import EventCode from './EventCode';
 /**
  * The InstanceStatusEvent model module.
  * @module model/InstanceStatusEvent
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceStatusEvent {
     /**

@@ -21,7 +21,7 @@ import UserData from './UserData';
 /**
  * The ImportInstanceLaunchSpecification model module.
  * @module model/ImportInstanceLaunchSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ImportInstanceLaunchSpecification {
     /**

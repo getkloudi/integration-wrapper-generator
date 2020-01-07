@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyTransitGatewayVpcAttachmentRequestOptions model module.
  * @module model/ModifyTransitGatewayVpcAttachmentRequestOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyTransitGatewayVpcAttachmentRequestOptions =
 /*#__PURE__*/

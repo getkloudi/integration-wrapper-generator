@@ -17,7 +17,7 @@ import TransitGatewayMulticastRegisteredGroupMembers from './TransitGatewayMulti
 /**
  * The RegisterTransitGatewayMulticastGroupMembersResult model module.
  * @module model/RegisterTransitGatewayMulticastGroupMembersResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RegisterTransitGatewayMulticastGroupMembersResult {
     /**

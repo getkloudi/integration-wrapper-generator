@@ -17,7 +17,7 @@ import IamInstanceProfileSpecification from './IamInstanceProfileSpecification';
 /**
  * The ReplaceIamInstanceProfileAssociationRequest model module.
  * @module model/ReplaceIamInstanceProfileAssociationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReplaceIamInstanceProfileAssociationRequest {
     /**

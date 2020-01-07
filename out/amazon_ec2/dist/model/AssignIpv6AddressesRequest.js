@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssignIpv6AddressesRequest model module.
  * @module model/AssignIpv6AddressesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AssignIpv6AddressesRequest =
 /*#__PURE__*/

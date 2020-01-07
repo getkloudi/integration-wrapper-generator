@@ -17,7 +17,7 @@ import InstanceNetworkInterfaceAssociation from './InstanceNetworkInterfaceAssoc
 /**
  * The InstancePrivateIpAddress model module.
  * @module model/InstancePrivateIpAddress
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstancePrivateIpAddress {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateVpcEndpointResult model module.
  * @module model/CreateVpcEndpointResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateVpcEndpointResult =
 /*#__PURE__*/

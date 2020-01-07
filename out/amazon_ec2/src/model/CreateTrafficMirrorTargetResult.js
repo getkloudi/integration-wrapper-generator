@@ -17,7 +17,7 @@ import TrafficMirrorTarget from './TrafficMirrorTarget';
 /**
  * The CreateTrafficMirrorTargetResult model module.
  * @module model/CreateTrafficMirrorTargetResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTrafficMirrorTargetResult {
     /**

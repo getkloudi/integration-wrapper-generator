@@ -18,7 +18,7 @@ import VpnStaticRouteSource from './VpnStaticRouteSource';
 /**
  * The VpnStaticRoute model module.
  * @module model/VpnStaticRoute
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpnStaticRoute {
     /**

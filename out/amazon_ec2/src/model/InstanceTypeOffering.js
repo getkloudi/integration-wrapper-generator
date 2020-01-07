@@ -18,7 +18,7 @@ import LocationType from './LocationType';
 /**
  * The InstanceTypeOffering model module.
  * @module model/InstanceTypeOffering
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceTypeOffering {
     /**

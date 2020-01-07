@@ -17,7 +17,7 @@ import NetworkAcl from './NetworkAcl';
 /**
  * The CreateNetworkAclResult model module.
  * @module model/CreateNetworkAclResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateNetworkAclResult {
     /**

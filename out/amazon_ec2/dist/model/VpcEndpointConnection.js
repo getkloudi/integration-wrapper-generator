@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VpcEndpointConnection model module.
  * @module model/VpcEndpointConnection
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VpcEndpointConnection =
 /*#__PURE__*/

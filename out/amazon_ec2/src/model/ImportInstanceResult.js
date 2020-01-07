@@ -17,7 +17,7 @@ import ConversionTask from './ConversionTask';
 /**
  * The ImportInstanceResult model module.
  * @module model/ImportInstanceResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ImportInstanceResult {
     /**

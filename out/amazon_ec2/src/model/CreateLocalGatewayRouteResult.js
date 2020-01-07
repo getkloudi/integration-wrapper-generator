@@ -17,7 +17,7 @@ import LocalGatewayRoute from './LocalGatewayRoute';
 /**
  * The CreateLocalGatewayRouteResult model module.
  * @module model/CreateLocalGatewayRouteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateLocalGatewayRouteResult {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResetNetworkInterfaceAttributeRequest model module.
  * @module model/ResetNetworkInterfaceAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ResetNetworkInterfaceAttributeRequest {
     /**

@@ -17,7 +17,7 @@ import SubnetCidrBlockState from './SubnetCidrBlockState';
 /**
  * The SubnetIpv6CidrBlockAssociation model module.
  * @module model/SubnetIpv6CidrBlockAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SubnetIpv6CidrBlockAssociation {
     /**

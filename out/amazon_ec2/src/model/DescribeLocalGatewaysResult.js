@@ -17,7 +17,7 @@ import LocalGateway from './LocalGateway';
 /**
  * The DescribeLocalGatewaysResult model module.
  * @module model/DescribeLocalGatewaysResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeLocalGatewaysResult {
     /**

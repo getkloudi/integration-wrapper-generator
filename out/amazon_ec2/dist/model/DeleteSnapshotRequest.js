@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteSnapshotRequest model module.
  * @module model/DeleteSnapshotRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteSnapshotRequest =
 /*#__PURE__*/

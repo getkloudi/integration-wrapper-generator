@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TerminateInstancesRequest model module.
  * @module model/TerminateInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TerminateInstancesRequest {
     /**

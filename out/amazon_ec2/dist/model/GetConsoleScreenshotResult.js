@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetConsoleScreenshotResult model module.
  * @module model/GetConsoleScreenshotResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetConsoleScreenshotResult =
 /*#__PURE__*/

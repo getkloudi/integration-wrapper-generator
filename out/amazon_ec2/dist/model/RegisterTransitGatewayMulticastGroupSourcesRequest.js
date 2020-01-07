@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RegisterTransitGatewayMulticastGroupSourcesRequest model module.
  * @module model/RegisterTransitGatewayMulticastGroupSourcesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RegisterTransitGatewayMulticastGroupSourcesRequest =
 /*#__PURE__*/

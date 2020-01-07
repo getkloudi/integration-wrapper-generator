@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UserBucket model module.
  * @module model/UserBucket
- * @version 1.0.0
+ * @version 1.1.0
  */
 var UserBucket =
 /*#__PURE__*/

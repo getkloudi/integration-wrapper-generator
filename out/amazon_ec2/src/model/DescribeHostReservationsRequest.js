@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeHostReservationsRequest model module.
  * @module model/DescribeHostReservationsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeHostReservationsRequest {
     /**

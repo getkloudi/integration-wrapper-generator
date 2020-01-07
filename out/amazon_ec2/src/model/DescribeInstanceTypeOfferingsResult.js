@@ -17,7 +17,7 @@ import InstanceTypeOffering from './InstanceTypeOffering';
 /**
  * The DescribeInstanceTypeOfferingsResult model module.
  * @module model/DescribeInstanceTypeOfferingsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeInstanceTypeOfferingsResult {
     /**

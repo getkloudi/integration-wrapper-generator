@@ -17,7 +17,7 @@ import RouteTableAssociationState from './RouteTableAssociationState';
 /**
  * The RouteTableAssociation model module.
  * @module model/RouteTableAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RouteTableAssociation {
     /**

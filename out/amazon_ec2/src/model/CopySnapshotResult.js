@@ -17,7 +17,7 @@ import Tag from './Tag';
 /**
  * The CopySnapshotResult model module.
  * @module model/CopySnapshotResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CopySnapshotResult {
     /**

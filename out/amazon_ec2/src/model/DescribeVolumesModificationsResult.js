@@ -17,7 +17,7 @@ import VolumeModification from './VolumeModification';
 /**
  * The DescribeVolumesModificationsResult model module.
  * @module model/DescribeVolumesModificationsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVolumesModificationsResult {
     /**

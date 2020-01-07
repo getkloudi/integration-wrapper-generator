@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteTransitGatewayRequest model module.
  * @module model/DeleteTransitGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteTransitGatewayRequest =
 /*#__PURE__*/

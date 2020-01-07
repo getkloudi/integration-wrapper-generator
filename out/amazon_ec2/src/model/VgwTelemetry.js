@@ -17,7 +17,7 @@ import TelemetryStatus from './TelemetryStatus';
 /**
  * The VgwTelemetry model module.
  * @module model/VgwTelemetry
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VgwTelemetry {
     /**

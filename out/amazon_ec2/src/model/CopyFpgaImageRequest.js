@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CopyFpgaImageRequest model module.
  * @module model/CopyFpgaImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CopyFpgaImageRequest {
     /**

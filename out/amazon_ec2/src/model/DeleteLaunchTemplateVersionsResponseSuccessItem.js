@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteLaunchTemplateVersionsResponseSuccessItem model module.
  * @module model/DeleteLaunchTemplateVersionsResponseSuccessItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteLaunchTemplateVersionsResponseSuccessItem {
     /**

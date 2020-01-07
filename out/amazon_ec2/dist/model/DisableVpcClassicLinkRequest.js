@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DisableVpcClassicLinkRequest model module.
  * @module model/DisableVpcClassicLinkRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DisableVpcClassicLinkRequest =
 /*#__PURE__*/

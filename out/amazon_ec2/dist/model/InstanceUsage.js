@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceUsage model module.
  * @module model/InstanceUsage
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceUsage =
 /*#__PURE__*/

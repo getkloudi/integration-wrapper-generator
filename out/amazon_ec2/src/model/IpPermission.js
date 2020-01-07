@@ -20,7 +20,7 @@ import UserIdGroupPair from './UserIdGroupPair';
 /**
  * The IpPermission model module.
  * @module model/IpPermission
- * @version 1.0.0
+ * @version 1.1.0
  */
 class IpPermission {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeHostReservationOfferingsRequest model module.
  * @module model/DescribeHostReservationOfferingsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeHostReservationOfferingsRequest =
 /*#__PURE__*/

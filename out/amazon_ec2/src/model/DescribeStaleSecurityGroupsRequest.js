@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeStaleSecurityGroupsRequest model module.
  * @module model/DescribeStaleSecurityGroupsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeStaleSecurityGroupsRequest {
     /**

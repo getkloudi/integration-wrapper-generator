@@ -17,7 +17,7 @@ import NetworkInterfaceAssociation from './NetworkInterfaceAssociation';
 /**
  * The NetworkInterfacePrivateIpAddress model module.
  * @module model/NetworkInterfacePrivateIpAddress
- * @version 1.0.0
+ * @version 1.1.0
  */
 class NetworkInterfacePrivateIpAddress {
     /**

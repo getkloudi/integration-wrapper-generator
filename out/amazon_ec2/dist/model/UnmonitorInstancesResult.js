@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UnmonitorInstancesResult model module.
  * @module model/UnmonitorInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var UnmonitorInstancesResult =
 /*#__PURE__*/

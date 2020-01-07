@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModifyVpcEndpointConnectionNotificationResult model module.
  * @module model/ModifyVpcEndpointConnectionNotificationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyVpcEndpointConnectionNotificationResult {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AllocateHostsResult model module.
  * @module model/AllocateHostsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AllocateHostsResult =
 /*#__PURE__*/

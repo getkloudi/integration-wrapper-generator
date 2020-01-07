@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssociateTransitGatewayRouteTableRequest model module.
  * @module model/AssociateTransitGatewayRouteTableRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AssociateTransitGatewayRouteTableRequest =
 /*#__PURE__*/

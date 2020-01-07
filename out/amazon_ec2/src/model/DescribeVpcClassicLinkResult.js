@@ -17,7 +17,7 @@ import VpcClassicLink from './VpcClassicLink';
 /**
  * The DescribeVpcClassicLinkResult model module.
  * @module model/DescribeVpcClassicLinkResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcClassicLinkResult {
     /**

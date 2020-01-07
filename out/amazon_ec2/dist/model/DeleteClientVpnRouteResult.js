@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteClientVpnRouteResult model module.
  * @module model/DeleteClientVpnRouteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteClientVpnRouteResult =
 /*#__PURE__*/

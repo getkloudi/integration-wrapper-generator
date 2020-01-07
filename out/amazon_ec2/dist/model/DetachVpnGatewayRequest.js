@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DetachVpnGatewayRequest model module.
  * @module model/DetachVpnGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DetachVpnGatewayRequest =
 /*#__PURE__*/

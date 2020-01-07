@@ -19,7 +19,7 @@ import PlatformValues from './PlatformValues';
 /**
  * The ImportInstanceRequest model module.
  * @module model/ImportInstanceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ImportInstanceRequest {
     /**

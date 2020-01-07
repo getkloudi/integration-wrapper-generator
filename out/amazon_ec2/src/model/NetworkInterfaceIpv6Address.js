@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The NetworkInterfaceIpv6Address model module.
  * @module model/NetworkInterfaceIpv6Address
- * @version 1.0.0
+ * @version 1.1.0
  */
 class NetworkInterfaceIpv6Address {
     /**

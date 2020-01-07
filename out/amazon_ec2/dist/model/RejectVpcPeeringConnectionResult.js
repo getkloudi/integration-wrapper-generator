@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RejectVpcPeeringConnectionResult model module.
  * @module model/RejectVpcPeeringConnectionResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RejectVpcPeeringConnectionResult =
 /*#__PURE__*/

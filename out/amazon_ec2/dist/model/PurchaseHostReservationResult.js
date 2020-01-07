@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PurchaseHostReservationResult model module.
  * @module model/PurchaseHostReservationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PurchaseHostReservationResult =
 /*#__PURE__*/

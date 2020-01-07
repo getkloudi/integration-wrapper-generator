@@ -18,7 +18,7 @@ import Instance from './Instance';
 /**
  * The Reservation model module.
  * @module model/Reservation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Reservation {
     /**

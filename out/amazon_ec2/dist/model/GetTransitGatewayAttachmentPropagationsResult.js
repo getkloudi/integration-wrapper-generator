@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetTransitGatewayAttachmentPropagationsResult model module.
  * @module model/GetTransitGatewayAttachmentPropagationsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetTransitGatewayAttachmentPropagationsResult =
 /*#__PURE__*/

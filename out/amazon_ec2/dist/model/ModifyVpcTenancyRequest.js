@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyVpcTenancyRequest model module.
  * @module model/ModifyVpcTenancyRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyVpcTenancyRequest =
 /*#__PURE__*/

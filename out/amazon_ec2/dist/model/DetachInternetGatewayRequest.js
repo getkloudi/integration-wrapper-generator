@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DetachInternetGatewayRequest model module.
  * @module model/DetachInternetGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DetachInternetGatewayRequest =
 /*#__PURE__*/

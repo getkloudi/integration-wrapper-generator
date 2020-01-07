@@ -17,7 +17,7 @@ import AccountAttributeName from './AccountAttributeName';
 /**
  * The DescribeAccountAttributesRequest model module.
  * @module model/DescribeAccountAttributesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeAccountAttributesRequest {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SnapshotTaskDetail model module.
  * @module model/SnapshotTaskDetail
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SnapshotTaskDetail =
 /*#__PURE__*/

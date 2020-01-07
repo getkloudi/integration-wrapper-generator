@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeClientVpnRoutesRequest model module.
  * @module model/DescribeClientVpnRoutesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeClientVpnRoutesRequest {
     /**

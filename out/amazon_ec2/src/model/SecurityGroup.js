@@ -18,7 +18,7 @@ import Tag from './Tag';
 /**
  * The SecurityGroup model module.
  * @module model/SecurityGroup
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SecurityGroup {
     /**

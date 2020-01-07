@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateLocalGatewayRouteRequest model module.
  * @module model/CreateLocalGatewayRouteRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateLocalGatewayRouteRequest =
 /*#__PURE__*/

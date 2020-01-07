@@ -17,7 +17,7 @@ import HistoryRecordEntry from './HistoryRecordEntry';
 /**
  * The DescribeFleetHistoryResult model module.
  * @module model/DescribeFleetHistoryResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeFleetHistoryResult {
     /**

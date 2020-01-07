@@ -17,7 +17,7 @@ import Snapshot from './Snapshot';
 /**
  * The DescribeSnapshotsResult model module.
  * @module model/DescribeSnapshotsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSnapshotsResult {
     /**

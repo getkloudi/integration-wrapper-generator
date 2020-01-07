@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateNetworkAclRequest model module.
  * @module model/CreateNetworkAclRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateNetworkAclRequest =
 /*#__PURE__*/

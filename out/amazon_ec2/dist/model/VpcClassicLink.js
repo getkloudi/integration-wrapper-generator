@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VpcClassicLink model module.
  * @module model/VpcClassicLink
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VpcClassicLink =
 /*#__PURE__*/

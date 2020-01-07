@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeletePlacementGroupRequest model module.
  * @module model/DeletePlacementGroupRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeletePlacementGroupRequest =
 /*#__PURE__*/

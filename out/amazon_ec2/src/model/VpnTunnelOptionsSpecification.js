@@ -23,7 +23,7 @@ import Phase2IntegrityAlgorithmsRequestListValue from './Phase2IntegrityAlgorith
 /**
  * The VpnTunnelOptionsSpecification model module.
  * @module model/VpnTunnelOptionsSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpnTunnelOptionsSpecification {
     /**

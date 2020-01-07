@@ -17,7 +17,7 @@ import AccountAttributeValue from './AccountAttributeValue';
 /**
  * The AccountAttribute model module.
  * @module model/AccountAttribute
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AccountAttribute {
     /**

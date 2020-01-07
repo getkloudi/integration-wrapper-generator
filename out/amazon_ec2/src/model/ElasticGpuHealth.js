@@ -17,7 +17,7 @@ import ElasticGpuStatus from './ElasticGpuStatus';
 /**
  * The ElasticGpuHealth model module.
  * @module model/ElasticGpuHealth
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ElasticGpuHealth {
     /**

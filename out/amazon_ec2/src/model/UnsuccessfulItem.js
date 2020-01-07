@@ -17,7 +17,7 @@ import UnsuccessfulItemError from './UnsuccessfulItemError';
 /**
  * The UnsuccessfulItem model module.
  * @module model/UnsuccessfulItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UnsuccessfulItem {
     /**

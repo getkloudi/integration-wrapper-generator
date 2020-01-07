@@ -17,7 +17,7 @@ import FleetCapacityReservationUsageStrategy from './FleetCapacityReservationUsa
 /**
  * The CapacityReservationOptions model module.
  * @module model/CapacityReservationOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CapacityReservationOptions {
     /**

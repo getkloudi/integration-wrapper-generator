@@ -17,7 +17,7 @@ import SubnetIpv6CidrBlockAssociation from './SubnetIpv6CidrBlockAssociation';
 /**
  * The DisassociateSubnetCidrBlockResult model module.
  * @module model/DisassociateSubnetCidrBlockResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisassociateSubnetCidrBlockResult {
     /**

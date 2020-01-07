@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteFlowLogsRequest model module.
  * @module model/DeleteFlowLogsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteFlowLogsRequest =
 /*#__PURE__*/

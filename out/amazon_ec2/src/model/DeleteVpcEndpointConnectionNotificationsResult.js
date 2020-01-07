@@ -17,7 +17,7 @@ import UnsuccessfulItem from './UnsuccessfulItem';
 /**
  * The DeleteVpcEndpointConnectionNotificationsResult model module.
  * @module model/DeleteVpcEndpointConnectionNotificationsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteVpcEndpointConnectionNotificationsResult {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttachInternetGatewayRequest model module.
  * @module model/AttachInternetGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AttachInternetGatewayRequest {
     /**

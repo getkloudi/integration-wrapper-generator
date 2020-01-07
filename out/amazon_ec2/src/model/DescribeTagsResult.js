@@ -17,7 +17,7 @@ import TagDescription from './TagDescription';
 /**
  * The DescribeTagsResult model module.
  * @module model/DescribeTagsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTagsResult {
     /**

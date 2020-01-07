@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestSpotFleetResponse model module.
  * @module model/RequestSpotFleetResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RequestSpotFleetResponse {
     /**

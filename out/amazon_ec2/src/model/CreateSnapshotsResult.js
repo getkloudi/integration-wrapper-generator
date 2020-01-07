@@ -17,7 +17,7 @@ import SnapshotInfo from './SnapshotInfo';
 /**
  * The CreateSnapshotsResult model module.
  * @module model/CreateSnapshotsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateSnapshotsResult {
     /**

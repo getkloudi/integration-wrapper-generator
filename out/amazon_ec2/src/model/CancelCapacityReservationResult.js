@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CancelCapacityReservationResult model module.
  * @module model/CancelCapacityReservationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CancelCapacityReservationResult {
     /**

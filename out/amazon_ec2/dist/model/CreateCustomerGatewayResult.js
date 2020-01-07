@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateCustomerGatewayResult model module.
  * @module model/CreateCustomerGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateCustomerGatewayResult =
 /*#__PURE__*/

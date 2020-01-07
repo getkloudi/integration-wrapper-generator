@@ -17,7 +17,7 @@ import PlacementGroup from './PlacementGroup';
 /**
  * The DescribePlacementGroupsResult model module.
  * @module model/DescribePlacementGroupsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribePlacementGroupsResult {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScheduledInstancesIpv6Address model module.
  * @module model/ScheduledInstancesIpv6Address
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScheduledInstancesIpv6Address {
     /**

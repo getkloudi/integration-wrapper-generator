@@ -17,7 +17,7 @@ import TransitGatewayMulticastRegisteredGroupSources from './TransitGatewayMulti
 /**
  * The RegisterTransitGatewayMulticastGroupSourcesResult model module.
  * @module model/RegisterTransitGatewayMulticastGroupSourcesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RegisterTransitGatewayMulticastGroupSourcesResult {
     /**

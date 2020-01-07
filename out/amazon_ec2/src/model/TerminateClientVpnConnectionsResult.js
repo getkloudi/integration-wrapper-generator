@@ -17,7 +17,7 @@ import TerminateConnectionStatus from './TerminateConnectionStatus';
 /**
  * The TerminateClientVpnConnectionsResult model module.
  * @module model/TerminateClientVpnConnectionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TerminateClientVpnConnectionsResult {
     /**

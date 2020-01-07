@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteTagsRequest model module.
  * @module model/DeleteTagsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteTagsRequest =
 /*#__PURE__*/

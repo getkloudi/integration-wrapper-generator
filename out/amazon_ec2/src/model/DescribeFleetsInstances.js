@@ -20,7 +20,7 @@ import PlatformValues from './PlatformValues';
 /**
  * The DescribeFleetsInstances model module.
  * @module model/DescribeFleetsInstances
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeFleetsInstances {
     /**

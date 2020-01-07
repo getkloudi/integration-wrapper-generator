@@ -17,7 +17,7 @@ import InternetGateway from './InternetGateway';
 /**
  * The DescribeInternetGatewaysResult model module.
  * @module model/DescribeInternetGatewaysResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeInternetGatewaysResult {
     /**

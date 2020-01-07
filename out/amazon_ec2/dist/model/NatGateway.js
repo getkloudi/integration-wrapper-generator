@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NatGateway model module.
  * @module model/NatGateway
- * @version 1.0.0
+ * @version 1.1.0
  */
 var NatGateway =
 /*#__PURE__*/

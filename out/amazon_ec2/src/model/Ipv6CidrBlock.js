@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Ipv6CidrBlock model module.
  * @module model/Ipv6CidrBlock
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Ipv6CidrBlock {
     /**

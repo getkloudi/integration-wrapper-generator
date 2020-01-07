@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PlacementResponse model module.
  * @module model/PlacementResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PlacementResponse =
 /*#__PURE__*/

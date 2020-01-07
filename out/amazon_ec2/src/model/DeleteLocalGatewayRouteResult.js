@@ -17,7 +17,7 @@ import LocalGatewayRoute from './LocalGatewayRoute';
 /**
  * The DeleteLocalGatewayRouteResult model module.
  * @module model/DeleteLocalGatewayRouteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteLocalGatewayRouteResult {
     /**

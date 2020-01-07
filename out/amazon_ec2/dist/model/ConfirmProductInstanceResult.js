@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ConfirmProductInstanceResult model module.
  * @module model/ConfirmProductInstanceResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ConfirmProductInstanceResult =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PlacementResponse model module.
  * @module model/PlacementResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PlacementResponse {
     /**

@@ -18,7 +18,7 @@ import FleetLaunchTemplateSpecificationRequest from './FleetLaunchTemplateSpecif
 /**
  * The FleetLaunchTemplateConfigRequest model module.
  * @module model/FleetLaunchTemplateConfigRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class FleetLaunchTemplateConfigRequest {
     /**

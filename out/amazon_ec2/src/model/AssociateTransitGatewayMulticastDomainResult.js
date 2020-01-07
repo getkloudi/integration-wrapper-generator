@@ -17,7 +17,7 @@ import TransitGatewayMulticastDomainAssociations from './TransitGatewayMulticast
 /**
  * The AssociateTransitGatewayMulticastDomainResult model module.
  * @module model/AssociateTransitGatewayMulticastDomainResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssociateTransitGatewayMulticastDomainResult {
     /**

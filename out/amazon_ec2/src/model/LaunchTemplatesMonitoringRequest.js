@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LaunchTemplatesMonitoringRequest model module.
  * @module model/LaunchTemplatesMonitoringRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplatesMonitoringRequest {
     /**

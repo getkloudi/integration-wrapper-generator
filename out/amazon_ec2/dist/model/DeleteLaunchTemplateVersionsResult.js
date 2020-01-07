@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteLaunchTemplateVersionsResult model module.
  * @module model/DeleteLaunchTemplateVersionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteLaunchTemplateVersionsResult =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import AttributeBooleanValue from './AttributeBooleanValue';
 /**
  * The DescribeVpcAttributeResult model module.
  * @module model/DescribeVpcAttributeResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcAttributeResult {
     /**

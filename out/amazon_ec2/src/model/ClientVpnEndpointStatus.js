@@ -17,7 +17,7 @@ import ClientVpnEndpointStatusCode from './ClientVpnEndpointStatusCode';
 /**
  * The ClientVpnEndpointStatus model module.
  * @module model/ClientVpnEndpointStatus
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ClientVpnEndpointStatus {
     /**

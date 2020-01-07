@@ -19,7 +19,7 @@ import SlotDateTimeRangeRequest from './SlotDateTimeRangeRequest';
 /**
  * The DescribeScheduledInstanceAvailabilityRequest model module.
  * @module model/DescribeScheduledInstanceAvailabilityRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeScheduledInstanceAvailabilityRequest {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeLocalGatewayVirtualInterfaceGroupsResult model module.
  * @module model/DescribeLocalGatewayVirtualInterfaceGroupsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeLocalGatewayVirtualInterfaceGroupsResult =
 /*#__PURE__*/

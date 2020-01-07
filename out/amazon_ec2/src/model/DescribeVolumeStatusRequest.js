@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeVolumeStatusRequest model module.
  * @module model/DescribeVolumeStatusRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVolumeStatusRequest {
     /**

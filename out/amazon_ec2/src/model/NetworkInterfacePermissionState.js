@@ -17,7 +17,7 @@ import NetworkInterfacePermissionStateCode from './NetworkInterfacePermissionSta
 /**
  * The NetworkInterfacePermissionState model module.
  * @module model/NetworkInterfacePermissionState
- * @version 1.0.0
+ * @version 1.1.0
  */
 class NetworkInterfacePermissionState {
     /**

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SpotMarketOptions model module.
  * @module model/SpotMarketOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SpotMarketOptions =
 /*#__PURE__*/

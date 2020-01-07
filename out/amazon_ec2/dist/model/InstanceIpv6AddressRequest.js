@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceIpv6AddressRequest model module.
  * @module model/InstanceIpv6AddressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceIpv6AddressRequest =
 /*#__PURE__*/

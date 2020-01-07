@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeIdentityIdFormatResult model module.
  * @module model/DescribeIdentityIdFormatResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeIdentityIdFormatResult =
 /*#__PURE__*/

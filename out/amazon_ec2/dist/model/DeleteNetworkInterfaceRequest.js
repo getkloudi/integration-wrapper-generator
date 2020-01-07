@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteNetworkInterfaceRequest model module.
  * @module model/DeleteNetworkInterfaceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteNetworkInterfaceRequest =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnableFastSnapshotRestoresRequest model module.
  * @module model/EnableFastSnapshotRestoresRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class EnableFastSnapshotRestoresRequest {
     /**

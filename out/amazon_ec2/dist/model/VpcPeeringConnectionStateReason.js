@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VpcPeeringConnectionStateReason model module.
  * @module model/VpcPeeringConnectionStateReason
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VpcPeeringConnectionStateReason =
 /*#__PURE__*/

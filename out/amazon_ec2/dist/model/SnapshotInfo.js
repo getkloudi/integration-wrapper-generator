@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SnapshotInfo model module.
  * @module model/SnapshotInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SnapshotInfo =
 /*#__PURE__*/

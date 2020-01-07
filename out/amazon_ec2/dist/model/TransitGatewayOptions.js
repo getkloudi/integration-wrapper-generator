@@ -30,7 +30,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TransitGatewayOptions model module.
  * @module model/TransitGatewayOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 var TransitGatewayOptions =
 /*#__PURE__*/

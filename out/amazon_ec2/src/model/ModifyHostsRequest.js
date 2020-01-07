@@ -18,7 +18,7 @@ import HostRecovery from './HostRecovery';
 /**
  * The ModifyHostsRequest model module.
  * @module model/ModifyHostsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyHostsRequest {
     /**

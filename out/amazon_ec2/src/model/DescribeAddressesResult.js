@@ -17,7 +17,7 @@ import Address from './Address';
 /**
  * The DescribeAddressesResult model module.
  * @module model/DescribeAddressesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeAddressesResult {
     /**

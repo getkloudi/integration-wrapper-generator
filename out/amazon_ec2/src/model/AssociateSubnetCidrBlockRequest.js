@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssociateSubnetCidrBlockRequest model module.
  * @module model/AssociateSubnetCidrBlockRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssociateSubnetCidrBlockRequest {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateInternetGatewayResult model module.
  * @module model/CreateInternetGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateInternetGatewayResult =
 /*#__PURE__*/

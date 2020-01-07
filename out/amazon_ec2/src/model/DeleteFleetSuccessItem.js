@@ -17,7 +17,7 @@ import FleetStateCode from './FleetStateCode';
 /**
  * The DeleteFleetSuccessItem model module.
  * @module model/DeleteFleetSuccessItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteFleetSuccessItem {
     /**

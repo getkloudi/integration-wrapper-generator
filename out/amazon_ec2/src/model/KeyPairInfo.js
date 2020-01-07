@@ -17,7 +17,7 @@ import Tag from './Tag';
 /**
  * The KeyPairInfo model module.
  * @module model/KeyPairInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class KeyPairInfo {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateRouteResult model module.
  * @module model/CreateRouteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateRouteResult {
     /**

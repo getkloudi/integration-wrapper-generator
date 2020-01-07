@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LaunchTemplateElasticInferenceAccelerator model module.
  * @module model/LaunchTemplateElasticInferenceAccelerator
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LaunchTemplateElasticInferenceAccelerator =
 /*#__PURE__*/

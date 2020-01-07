@@ -1,7 +1,7 @@
 {
-  "name": "Amazon_EC2",
-  "version": "1.0.0",
-  "description": "fullnameAmazon_Elastic_Compute_Cloud_fullname_pAmazon_Elastic_Compute_Cloud__Amazon_EC2_provides_secure_and_resizable_computing_capacity_in_the_AWS_cloud__Using_Amazon_EC2_eliminates_the_need_to_invest_in_hardware_up_front_so_you_can_develop_and_deploy_applications_faster__p_pTo_learn_more_see_the_following_resources_p_ul_li_pAmazon_EC2_a_hrefhttp__aws_amazon_com_ec2AmazonEC2_product_page_a_a_hrefhttp__aws_amazon_com_documentation_ec2Amazon_EC2_documentation_a__p__li_li_pAmazon_EBS_a_hrefhttp__aws_amazon_com_ebsAmazon_EBS_product_page_a_a_hrefhttps__docs_aws_amazon_com_AWSEC2_latest_UserGuide_AmazonEBS_htmlAmazon_EBS_documentation_a__p__li_li_pAmazon_VPC_a_hrefhttp__aws_amazon_com_vpcAmazon_VPC_product_page_a_a_hrefhttp__aws_amazon_com_documentation_vpcAmazon_VPC_documentation_a__p__li_li_pAWS_VPN_a_hrefhttp__aws_amazon_com_vpnAWS_VPN_product_page_a_a_hrefhttp__aws_amazon_com_documentation_vpnAWS_VPN_documentation_a__p__li__ul",
+  "name": "amazon_ec2",
+  "version": "1.1.0",
+  "description": "Amazon_Elastic_Compute_Cloud_",
   "license": "Apache 2.0 License",
   "main": "dist/index.js",
   "scripts": {

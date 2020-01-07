@@ -18,7 +18,7 @@ import BlockDeviceMapping from './BlockDeviceMapping';
 /**
  * The RegisterImageRequest model module.
  * @module model/RegisterImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RegisterImageRequest {
     /**

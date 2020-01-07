@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeScheduledInstancesRequest model module.
  * @module model/DescribeScheduledInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeScheduledInstancesRequest =
 /*#__PURE__*/

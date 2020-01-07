@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyClientVpnEndpointResult model module.
  * @module model/ModifyClientVpnEndpointResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyClientVpnEndpointResult =
 /*#__PURE__*/

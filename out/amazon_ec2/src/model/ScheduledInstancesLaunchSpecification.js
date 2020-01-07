@@ -21,7 +21,7 @@ import ScheduledInstancesPlacement from './ScheduledInstancesPlacement';
 /**
  * The ScheduledInstancesLaunchSpecification model module.
  * @module model/ScheduledInstancesLaunchSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScheduledInstancesLaunchSpecification {
     /**

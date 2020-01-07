@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteNatGatewayRequest model module.
  * @module model/DeleteNatGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteNatGatewayRequest =
 /*#__PURE__*/

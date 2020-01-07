@@ -17,7 +17,7 @@ import TagSpecification from './TagSpecification';
 /**
  * The CreateTrafficMirrorTargetRequest model module.
  * @module model/CreateTrafficMirrorTargetRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTrafficMirrorTargetRequest {
     /**

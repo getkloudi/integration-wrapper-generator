@@ -17,7 +17,7 @@ import NetworkAcl from './NetworkAcl';
 /**
  * The DescribeNetworkAclsResult model module.
  * @module model/DescribeNetworkAclsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeNetworkAclsResult {
     /**

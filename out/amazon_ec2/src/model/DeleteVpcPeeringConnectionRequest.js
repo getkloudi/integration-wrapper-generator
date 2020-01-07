@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteVpcPeeringConnectionRequest model module.
  * @module model/DeleteVpcPeeringConnectionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteVpcPeeringConnectionRequest {
     /**

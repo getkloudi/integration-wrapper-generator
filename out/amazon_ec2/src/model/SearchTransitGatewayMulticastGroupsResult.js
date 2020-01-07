@@ -17,7 +17,7 @@ import TransitGatewayMulticastGroup from './TransitGatewayMulticastGroup';
 /**
  * The SearchTransitGatewayMulticastGroupsResult model module.
  * @module model/SearchTransitGatewayMulticastGroupsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchTransitGatewayMulticastGroupsResult {
     /**

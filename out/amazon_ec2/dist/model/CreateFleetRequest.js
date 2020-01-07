@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFleetRequest model module.
  * @module model/CreateFleetRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateFleetRequest =
 /*#__PURE__*/

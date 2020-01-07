@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AuthorizeClientVpnIngressRequest model module.
  * @module model/AuthorizeClientVpnIngressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AuthorizeClientVpnIngressRequest =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LocalGatewayVirtualInterface model module.
  * @module model/LocalGatewayVirtualInterface
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LocalGatewayVirtualInterface =
 /*#__PURE__*/

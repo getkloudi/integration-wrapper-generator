@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetCapacityReservationUsageRequest model module.
  * @module model/GetCapacityReservationUsageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetCapacityReservationUsageRequest =
 /*#__PURE__*/

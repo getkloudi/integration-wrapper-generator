@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssociateTransitGatewayRouteTableRequest model module.
  * @module model/AssociateTransitGatewayRouteTableRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssociateTransitGatewayRouteTableRequest {
     /**

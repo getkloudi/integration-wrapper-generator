@@ -17,7 +17,7 @@ import SpotInstanceRequest from './SpotInstanceRequest';
 /**
  * The RequestSpotInstancesResult model module.
  * @module model/RequestSpotInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RequestSpotInstancesResult {
     /**

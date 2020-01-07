@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeDhcpOptionsRequest model module.
  * @module model/DescribeDhcpOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeDhcpOptionsRequest {
     /**

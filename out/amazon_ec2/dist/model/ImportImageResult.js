@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ImportImageResult model module.
  * @module model/ImportImageResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ImportImageResult =
 /*#__PURE__*/

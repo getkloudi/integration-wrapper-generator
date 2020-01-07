@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateSnapshotsRequest model module.
  * @module model/CreateSnapshotsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateSnapshotsRequest =
 /*#__PURE__*/

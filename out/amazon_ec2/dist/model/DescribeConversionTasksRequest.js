@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeConversionTasksRequest model module.
  * @module model/DescribeConversionTasksRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeConversionTasksRequest =
 /*#__PURE__*/

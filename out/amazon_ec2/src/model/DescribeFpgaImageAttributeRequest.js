@@ -17,7 +17,7 @@ import FpgaImageAttributeName from './FpgaImageAttributeName';
 /**
  * The DescribeFpgaImageAttributeRequest model module.
  * @module model/DescribeFpgaImageAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeFpgaImageAttributeRequest {
     /**

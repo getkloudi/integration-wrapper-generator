@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DisassociateTransitGatewayMulticastDomainRequest model module.
  * @module model/DisassociateTransitGatewayMulticastDomainRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DisassociateTransitGatewayMulticastDomainRequest =
 /*#__PURE__*/

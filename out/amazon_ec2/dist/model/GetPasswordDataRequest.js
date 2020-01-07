@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetPasswordDataRequest model module.
  * @module model/GetPasswordDataRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetPasswordDataRequest =
 /*#__PURE__*/

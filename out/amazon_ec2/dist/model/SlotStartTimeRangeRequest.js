@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SlotStartTimeRangeRequest model module.
  * @module model/SlotStartTimeRangeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SlotStartTimeRangeRequest =
 /*#__PURE__*/

@@ -19,7 +19,7 @@ import VpcPeeringConnectionVpcInfo from './VpcPeeringConnectionVpcInfo';
 /**
  * The VpcPeeringConnection model module.
  * @module model/VpcPeeringConnection
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpcPeeringConnection {
     /**

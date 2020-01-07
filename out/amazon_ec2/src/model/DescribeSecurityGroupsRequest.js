@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeSecurityGroupsRequest model module.
  * @module model/DescribeSecurityGroupsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSecurityGroupsRequest {
     /**

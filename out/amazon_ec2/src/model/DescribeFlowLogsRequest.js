@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeFlowLogsRequest model module.
  * @module model/DescribeFlowLogsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeFlowLogsRequest {
     /**

@@ -17,7 +17,7 @@ import ModifyTransitGatewayVpcAttachmentRequestOptions from './ModifyTransitGate
 /**
  * The ModifyTransitGatewayVpcAttachmentRequest model module.
  * @module model/ModifyTransitGatewayVpcAttachmentRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyTransitGatewayVpcAttachmentRequest {
     /**

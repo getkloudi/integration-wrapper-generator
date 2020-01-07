@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FpgaDeviceInfo model module.
  * @module model/FpgaDeviceInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 var FpgaDeviceInfo =
 /*#__PURE__*/

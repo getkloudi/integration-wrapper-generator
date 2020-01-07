@@ -23,7 +23,7 @@ import Phase2IntegrityAlgorithmsListValue from './Phase2IntegrityAlgorithmsListV
 /**
  * The TunnelOption model module.
  * @module model/TunnelOption
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TunnelOption {
     /**

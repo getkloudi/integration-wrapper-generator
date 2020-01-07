@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ReservationValue model module.
  * @module model/ReservationValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ReservationValue =
 /*#__PURE__*/

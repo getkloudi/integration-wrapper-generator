@@ -17,7 +17,7 @@ import TransitGatewayMulticastDomain from './TransitGatewayMulticastDomain';
 /**
  * The CreateTransitGatewayMulticastDomainResult model module.
  * @module model/CreateTransitGatewayMulticastDomainResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTransitGatewayMulticastDomainResult {
     /**

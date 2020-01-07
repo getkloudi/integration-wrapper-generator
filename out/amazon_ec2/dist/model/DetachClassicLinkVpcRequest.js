@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DetachClassicLinkVpcRequest model module.
  * @module model/DetachClassicLinkVpcRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DetachClassicLinkVpcRequest =
 /*#__PURE__*/

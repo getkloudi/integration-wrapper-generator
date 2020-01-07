@@ -17,7 +17,7 @@ import LaunchTemplateErrorCode from './LaunchTemplateErrorCode';
 /**
  * The ResponseError model module.
  * @module model/ResponseError
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ResponseError {
     /**

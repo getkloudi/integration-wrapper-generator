@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PropagatingVgw model module.
  * @module model/PropagatingVgw
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PropagatingVgw =
 /*#__PURE__*/

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LaunchTemplateTagSpecification model module.
  * @module model/LaunchTemplateTagSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LaunchTemplateTagSpecification =
 /*#__PURE__*/

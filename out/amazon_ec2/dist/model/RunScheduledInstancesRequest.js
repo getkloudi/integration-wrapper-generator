@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RunScheduledInstancesRequest model module.
  * @module model/RunScheduledInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RunScheduledInstancesRequest =
 /*#__PURE__*/

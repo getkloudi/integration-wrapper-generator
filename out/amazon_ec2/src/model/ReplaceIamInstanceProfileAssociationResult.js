@@ -17,7 +17,7 @@ import IamInstanceProfileAssociation from './IamInstanceProfileAssociation';
 /**
  * The ReplaceIamInstanceProfileAssociationResult model module.
  * @module model/ReplaceIamInstanceProfileAssociationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReplaceIamInstanceProfileAssociationResult {
     /**

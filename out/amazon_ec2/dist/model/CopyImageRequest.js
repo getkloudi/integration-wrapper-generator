@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CopyImageRequest model module.
  * @module model/CopyImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CopyImageRequest =
 /*#__PURE__*/

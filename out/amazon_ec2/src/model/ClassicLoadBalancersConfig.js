@@ -17,7 +17,7 @@ import ClassicLoadBalancer from './ClassicLoadBalancer';
 /**
  * The ClassicLoadBalancersConfig model module.
  * @module model/ClassicLoadBalancersConfig
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ClassicLoadBalancersConfig {
     /**

@@ -17,7 +17,7 @@ import InstanceStatusEvent from './InstanceStatusEvent';
 /**
  * The ModifyInstanceEventStartTimeResult model module.
  * @module model/ModifyInstanceEventStartTimeResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyInstanceEventStartTimeResult {
     /**

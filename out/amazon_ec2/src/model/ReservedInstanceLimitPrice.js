@@ -17,7 +17,7 @@ import CurrencyCodeValues from './CurrencyCodeValues';
 /**
  * The ReservedInstanceLimitPrice model module.
  * @module model/ReservedInstanceLimitPrice
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReservedInstanceLimitPrice {
     /**

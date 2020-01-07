@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeImagesRequest model module.
  * @module model/DescribeImagesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeImagesRequest =
 /*#__PURE__*/

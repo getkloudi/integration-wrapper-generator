@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IdFormat model module.
  * @module model/IdFormat
- * @version 1.0.0
+ * @version 1.1.0
  */
 class IdFormat {
     /**

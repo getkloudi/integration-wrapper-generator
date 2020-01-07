@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeregisterTransitGatewayMulticastGroupMembersResult model module.
  * @module model/DeregisterTransitGatewayMulticastGroupMembersResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeregisterTransitGatewayMulticastGroupMembersResult =
 /*#__PURE__*/

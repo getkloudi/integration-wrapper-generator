@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeTransitGatewayVpcAttachmentsRequest model module.
  * @module model/DescribeTransitGatewayVpcAttachmentsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTransitGatewayVpcAttachmentsRequest {
     /**

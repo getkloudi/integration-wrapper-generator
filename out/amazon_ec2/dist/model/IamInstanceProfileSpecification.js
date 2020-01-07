@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IamInstanceProfileSpecification model module.
  * @module model/IamInstanceProfileSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var IamInstanceProfileSpecification =
 /*#__PURE__*/

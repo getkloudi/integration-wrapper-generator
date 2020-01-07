@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AttachVolumeRequest model module.
  * @module model/AttachVolumeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AttachVolumeRequest =
 /*#__PURE__*/

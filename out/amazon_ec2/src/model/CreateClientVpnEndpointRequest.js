@@ -20,7 +20,7 @@ import TransportProtocol from './TransportProtocol';
 /**
  * The CreateClientVpnEndpointRequest model module.
  * @module model/CreateClientVpnEndpointRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateClientVpnEndpointRequest {
     /**

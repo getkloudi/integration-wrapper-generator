@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LaunchTemplateHibernationOptions model module.
  * @module model/LaunchTemplateHibernationOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateHibernationOptions {
     /**

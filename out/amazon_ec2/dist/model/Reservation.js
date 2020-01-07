@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Reservation model module.
  * @module model/Reservation
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Reservation =
 /*#__PURE__*/

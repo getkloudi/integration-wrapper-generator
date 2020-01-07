@@ -17,7 +17,7 @@ import ExportEnvironment from './ExportEnvironment';
 /**
  * The InstanceExportDetails model module.
  * @module model/InstanceExportDetails
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceExportDetails {
     /**

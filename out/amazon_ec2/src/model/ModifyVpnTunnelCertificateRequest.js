@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModifyVpnTunnelCertificateRequest model module.
  * @module model/ModifyVpnTunnelCertificateRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyVpnTunnelCertificateRequest {
     /**

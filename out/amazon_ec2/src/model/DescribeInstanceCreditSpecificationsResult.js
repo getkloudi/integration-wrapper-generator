@@ -17,7 +17,7 @@ import InstanceCreditSpecification from './InstanceCreditSpecification';
 /**
  * The DescribeInstanceCreditSpecificationsResult model module.
  * @module model/DescribeInstanceCreditSpecificationsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeInstanceCreditSpecificationsResult {
     /**

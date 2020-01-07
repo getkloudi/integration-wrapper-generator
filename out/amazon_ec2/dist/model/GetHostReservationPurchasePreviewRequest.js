@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetHostReservationPurchasePreviewRequest model module.
  * @module model/GetHostReservationPurchasePreviewRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetHostReservationPurchasePreviewRequest =
 /*#__PURE__*/

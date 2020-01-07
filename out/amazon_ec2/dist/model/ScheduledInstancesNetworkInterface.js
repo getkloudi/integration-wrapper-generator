@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ScheduledInstancesNetworkInterface model module.
  * @module model/ScheduledInstancesNetworkInterface
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ScheduledInstancesNetworkInterface =
 /*#__PURE__*/

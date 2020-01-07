@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DetachClassicLinkVpcRequest model module.
  * @module model/DetachClassicLinkVpcRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DetachClassicLinkVpcRequest {
     /**

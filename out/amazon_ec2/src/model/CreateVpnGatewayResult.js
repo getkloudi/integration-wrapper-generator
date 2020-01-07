@@ -17,7 +17,7 @@ import VpnGateway from './VpnGateway';
 /**
  * The CreateVpnGatewayResult model module.
  * @module model/CreateVpnGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateVpnGatewayResult {
     /**

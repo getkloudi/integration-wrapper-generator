@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CancelReservedInstancesListingResult model module.
  * @module model/CancelReservedInstancesListingResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CancelReservedInstancesListingResult =
 /*#__PURE__*/

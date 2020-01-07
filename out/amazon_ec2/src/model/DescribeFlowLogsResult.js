@@ -17,7 +17,7 @@ import FlowLog from './FlowLog';
 /**
  * The DescribeFlowLogsResult model module.
  * @module model/DescribeFlowLogsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeFlowLogsResult {
     /**

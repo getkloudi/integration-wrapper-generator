@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssociateVpcCidrBlockResult model module.
  * @module model/AssociateVpcCidrBlockResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AssociateVpcCidrBlockResult =
 /*#__PURE__*/

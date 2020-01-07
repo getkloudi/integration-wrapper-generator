@@ -17,7 +17,7 @@ import ReservedInstances from './ReservedInstances';
 /**
  * The DescribeReservedInstancesResult model module.
  * @module model/DescribeReservedInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeReservedInstancesResult {
     /**

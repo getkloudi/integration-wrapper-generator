@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TransitGatewayMulticastRegisteredGroupMembers model module.
  * @module model/TransitGatewayMulticastRegisteredGroupMembers
- * @version 1.0.0
+ * @version 1.1.0
  */
 var TransitGatewayMulticastRegisteredGroupMembers =
 /*#__PURE__*/

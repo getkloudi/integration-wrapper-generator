@@ -17,7 +17,7 @@ import TagSpecification from './TagSpecification';
 /**
  * The CopySnapshotRequest model module.
  * @module model/CopySnapshotRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CopySnapshotRequest {
     /**

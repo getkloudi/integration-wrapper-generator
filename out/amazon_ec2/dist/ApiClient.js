@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
  * @module ApiClient
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 /**
@@ -422,118 +422,43 @@ function () {
   }, {
     key: "callApi",
     value: function callApi(path, httpMethod, pathParams, queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts, returnType, apiBasePath, callback) {
-      var _this3 = this;
-
       var url = this.buildUrl(path, pathParams, apiBasePath);
-      var request = (0, _superagent["default"])(httpMethod, url);
 
-      if (this.plugins !== null) {
-        for (var index in this.plugins) {
-          if (this.plugins.hasOwnProperty(index)) {
-            request.use(this.plugins[index]);
-          }
-        }
-      } // apply authentications
-
-
-      this.applyAuthToRequest(request, authNames); // set query parameters
-
-      if (httpMethod.toUpperCase() === "GET" && this.cache === false) {
-        queryParams["_"] = new Date().getTime();
+      for (var _i = 0, _Object$keys = Object.keys(queryParams); _i < _Object$keys.length; _i++) {
+        var key = _Object$keys[_i];
+        if (JSON.stringify(queryParams[key]) === '"null"') delete queryParams[key];
       }
 
-      request.query(this.normalizeParams(queryParams)); // set header parameters
+      var aws4Req = require("../request").getRequest(path, httpMethod, pathParams.region, this.normalizeParams(queryParams), this.authentications[authNames[0]]);
 
-      request.set(this.defaultHeaders).set(this.normalizeParams(headerParams)); // set requestAgent if it is set by user
+      var request = require("http").request(aws4Req, function (response) {
+        var data = null;
+        response.on("data", function (chunk) {
+          if (!data) data = chunk;else data += chunk;
+        });
+        response.on("end", function () {
+          if (callback) {
+            var par = url.split("?");
 
-      if (this.requestAgent) {
-        request.agent(this.requestAgent);
-      } // set request timeout
+            if (par.length > 1) {
+              var action = par[1].split("=");
 
+              if (action.length > 1) {
+                var _ = require("../parser");
 
-      request.timeout(this.timeout);
-      var contentType = this.jsonPreferredMime(contentTypes);
-
-      if (contentType) {
-        // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
-        if (contentType != "multipart/form-data") {
-          request.type(contentType);
-        }
-      } else if (!request.header["Content-Type"]) {
-        request.type("application/json");
-      }
-
-      if (contentType === "application/x-www-form-urlencoded") {
-        request.send(_querystring["default"].stringify(this.normalizeParams(formParams)));
-      } else if (contentType == "multipart/form-data") {
-        var _formParams = this.normalizeParams(formParams);
-
-        for (var key in _formParams) {
-          if (_formParams.hasOwnProperty(key)) {
-            if (this.isFileParam(_formParams[key])) {
-              // file field
-              request.attach(key, _formParams[key]);
-            } else {
-              request.field(key, _formParams[key]);
-            }
-          }
-        }
-      } else if (bodyParam !== null && bodyParam !== undefined) {
-        request.send(bodyParam);
-      }
-
-      var accept = this.jsonPreferredMime(accepts);
-
-      if (accept) {
-        request.accept(accept);
-      }
-
-      if (returnType === "Blob") {
-        request.responseType("blob");
-      } else if (returnType === "String") {
-        request.responseType("string");
-      } // Attach previously saved cookies, if enabled
-
-
-      if (this.enableCookies) {
-        if (typeof window === "undefined") {
-          this.agent._attachCookies(request);
-        } else {
-          request.withCredentials();
-        }
-      }
-
-      request.end(function (error, response) {
-        if (callback) {
-          var data = null;
-
-          if (!error) {
-            try {
-              var par = url.split("?");
-
-              if (par.length > 1) {
-                var action = par[1].split("=");
-
-                if (action.length > 1) {
-                  var _ = require("./parser");
-
-                  response.text = _.toJson(action[1], response.text);
-                }
+                data = _.toJson(action[1], data);
               }
-
-              data = _this3.deserialize(response, returnType);
-
-              if (_this3.enableCookies && typeof window === "undefined") {
-                _this3.agent._saveCookies(response);
-              }
-            } catch (err) {
-              error = err;
             }
-          }
 
-          callback(error, data, response);
-        }
+            callback(null, data, response);
+          }
+        });
       });
+
+      request.on("error", function (err) {
+        callback(err, null, request);
+      });
+      request.end();
       return request;
     }
     /**

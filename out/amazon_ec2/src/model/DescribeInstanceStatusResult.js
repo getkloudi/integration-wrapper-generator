@@ -17,7 +17,7 @@ import InstanceStatus from './InstanceStatus';
 /**
  * The DescribeInstanceStatusResult model module.
  * @module model/DescribeInstanceStatusResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeInstanceStatusResult {
     /**

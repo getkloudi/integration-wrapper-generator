@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CancelCapacityReservationRequest model module.
  * @module model/CancelCapacityReservationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CancelCapacityReservationRequest =
 /*#__PURE__*/

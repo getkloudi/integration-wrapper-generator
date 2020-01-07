@@ -17,7 +17,7 @@ import GpuDeviceInfo from './GpuDeviceInfo';
 /**
  * The GpuInfo model module.
  * @module model/GpuInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GpuInfo {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssociateAddressResult model module.
  * @module model/AssociateAddressResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AssociateAddressResult =
 /*#__PURE__*/

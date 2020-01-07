@@ -17,7 +17,7 @@ import AvailabilityZone from './AvailabilityZone';
 /**
  * The DescribeAvailabilityZonesResult model module.
  * @module model/DescribeAvailabilityZonesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeAvailabilityZonesResult {
     /**

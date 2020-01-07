@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PublicIpv4PoolRange model module.
  * @module model/PublicIpv4PoolRange
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PublicIpv4PoolRange {
     /**

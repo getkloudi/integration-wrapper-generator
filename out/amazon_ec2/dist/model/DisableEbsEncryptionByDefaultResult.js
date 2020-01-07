@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DisableEbsEncryptionByDefaultResult model module.
  * @module model/DisableEbsEncryptionByDefaultResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DisableEbsEncryptionByDefaultResult =
 /*#__PURE__*/

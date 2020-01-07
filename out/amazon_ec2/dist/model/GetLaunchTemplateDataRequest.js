@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetLaunchTemplateDataRequest model module.
  * @module model/GetLaunchTemplateDataRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetLaunchTemplateDataRequest =
 /*#__PURE__*/

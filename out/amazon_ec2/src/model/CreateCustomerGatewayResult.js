@@ -17,7 +17,7 @@ import CustomerGateway from './CustomerGateway';
 /**
  * The CreateCustomerGatewayResult model module.
  * @module model/CreateCustomerGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateCustomerGatewayResult {
     /**

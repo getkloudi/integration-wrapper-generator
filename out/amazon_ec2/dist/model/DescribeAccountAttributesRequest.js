@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeAccountAttributesRequest model module.
  * @module model/DescribeAccountAttributesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeAccountAttributesRequest =
 /*#__PURE__*/

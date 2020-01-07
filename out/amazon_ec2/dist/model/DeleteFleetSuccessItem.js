@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteFleetSuccessItem model module.
  * @module model/DeleteFleetSuccessItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteFleetSuccessItem =
 /*#__PURE__*/

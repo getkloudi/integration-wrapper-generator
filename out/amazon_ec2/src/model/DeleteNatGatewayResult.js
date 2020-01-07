@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteNatGatewayResult model module.
  * @module model/DeleteNatGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteNatGatewayResult {
     /**

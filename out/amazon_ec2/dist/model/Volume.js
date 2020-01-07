@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Volume model module.
  * @module model/Volume
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Volume =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import AllowedPrincipal from './AllowedPrincipal';
 /**
  * The DescribeVpcEndpointServicePermissionsResult model module.
  * @module model/DescribeVpcEndpointServicePermissionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcEndpointServicePermissionsResult {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeregisterTransitGatewayMulticastGroupMembersRequest model module.
  * @module model/DeregisterTransitGatewayMulticastGroupMembersRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeregisterTransitGatewayMulticastGroupMembersRequest {
     /**

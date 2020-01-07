@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteTrafficMirrorSessionRequest model module.
  * @module model/DeleteTrafficMirrorSessionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteTrafficMirrorSessionRequest =
 /*#__PURE__*/

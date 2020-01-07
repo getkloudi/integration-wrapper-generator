@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ReplaceIamInstanceProfileAssociationRequest model module.
  * @module model/ReplaceIamInstanceProfileAssociationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ReplaceIamInstanceProfileAssociationRequest =
 /*#__PURE__*/

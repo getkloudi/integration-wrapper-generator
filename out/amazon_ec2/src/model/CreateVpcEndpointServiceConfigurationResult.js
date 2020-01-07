@@ -17,7 +17,7 @@ import ServiceConfiguration from './ServiceConfiguration';
 /**
  * The CreateVpcEndpointServiceConfigurationResult model module.
  * @module model/CreateVpcEndpointServiceConfigurationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateVpcEndpointServiceConfigurationResult {
     /**

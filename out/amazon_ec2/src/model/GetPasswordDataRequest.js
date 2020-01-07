@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetPasswordDataRequest model module.
  * @module model/GetPasswordDataRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetPasswordDataRequest {
     /**

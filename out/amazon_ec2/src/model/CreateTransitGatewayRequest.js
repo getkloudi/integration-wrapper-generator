@@ -18,7 +18,7 @@ import TransitGatewayRequestOptions from './TransitGatewayRequestOptions';
 /**
  * The CreateTransitGatewayRequest model module.
  * @module model/CreateTransitGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTransitGatewayRequest {
     /**

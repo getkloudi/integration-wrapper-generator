@@ -18,7 +18,7 @@ import TransitGatewayRouteTableState from './TransitGatewayRouteTableState';
 /**
  * The TransitGatewayRouteTable model module.
  * @module model/TransitGatewayRouteTable
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayRouteTable {
     /**

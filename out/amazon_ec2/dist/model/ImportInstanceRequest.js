@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ImportInstanceRequest model module.
  * @module model/ImportInstanceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ImportInstanceRequest =
 /*#__PURE__*/

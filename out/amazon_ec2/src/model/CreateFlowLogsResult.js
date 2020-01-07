@@ -17,7 +17,7 @@ import UnsuccessfulItem from './UnsuccessfulItem';
 /**
  * The CreateFlowLogsResult model module.
  * @module model/CreateFlowLogsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateFlowLogsResult {
     /**

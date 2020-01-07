@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RejectTransitGatewayPeeringAttachmentRequest model module.
  * @module model/RejectTransitGatewayPeeringAttachmentRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RejectTransitGatewayPeeringAttachmentRequest {
     /**

@@ -17,7 +17,7 @@ import Volume from './Volume';
 /**
  * The DescribeVolumesResult model module.
  * @module model/DescribeVolumesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVolumesResult {
     /**

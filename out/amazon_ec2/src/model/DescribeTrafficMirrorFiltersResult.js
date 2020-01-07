@@ -17,7 +17,7 @@ import TrafficMirrorFilter from './TrafficMirrorFilter';
 /**
  * The DescribeTrafficMirrorFiltersResult model module.
  * @module model/DescribeTrafficMirrorFiltersResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTrafficMirrorFiltersResult {
     /**

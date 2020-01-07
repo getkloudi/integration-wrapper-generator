@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeElasticGpusRequest model module.
  * @module model/DescribeElasticGpusRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeElasticGpusRequest =
 /*#__PURE__*/

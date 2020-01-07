@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateNetworkAclResult model module.
  * @module model/CreateNetworkAclResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateNetworkAclResult =
 /*#__PURE__*/

@@ -27,7 +27,7 @@ import VirtualizationType from './VirtualizationType';
 /**
  * The Image model module.
  * @module model/Image
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Image {
     /**

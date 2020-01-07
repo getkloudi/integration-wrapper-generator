@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeVpnConnectionsResult model module.
  * @module model/DescribeVpnConnectionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeVpnConnectionsResult =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstanceCapacity model module.
  * @module model/InstanceCapacity
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceCapacity {
     /**

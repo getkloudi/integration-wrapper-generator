@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GroupIdentifier model module.
  * @module model/GroupIdentifier
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GroupIdentifier =
 /*#__PURE__*/

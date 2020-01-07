@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ElasticGpuAssociation model module.
  * @module model/ElasticGpuAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ElasticGpuAssociation {
     /**

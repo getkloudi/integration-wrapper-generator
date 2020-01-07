@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LoadBalancersConfig model module.
  * @module model/LoadBalancersConfig
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LoadBalancersConfig =
 /*#__PURE__*/

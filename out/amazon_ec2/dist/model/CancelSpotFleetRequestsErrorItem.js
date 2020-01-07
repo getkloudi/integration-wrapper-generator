@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CancelSpotFleetRequestsErrorItem model module.
  * @module model/CancelSpotFleetRequestsErrorItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CancelSpotFleetRequestsErrorItem =
 /*#__PURE__*/

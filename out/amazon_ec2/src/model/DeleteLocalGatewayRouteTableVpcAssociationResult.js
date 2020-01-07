@@ -17,7 +17,7 @@ import LocalGatewayRouteTableVpcAssociation from './LocalGatewayRouteTableVpcAss
 /**
  * The DeleteLocalGatewayRouteTableVpcAssociationResult model module.
  * @module model/DeleteLocalGatewayRouteTableVpcAssociationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteLocalGatewayRouteTableVpcAssociationResult {
     /**

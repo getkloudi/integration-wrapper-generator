@@ -18,7 +18,7 @@ import ConnectionNotificationType from './ConnectionNotificationType';
 /**
  * The ConnectionNotification model module.
  * @module model/ConnectionNotification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ConnectionNotification {
     /**

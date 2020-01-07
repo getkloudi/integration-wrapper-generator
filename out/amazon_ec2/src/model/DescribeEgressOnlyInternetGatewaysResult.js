@@ -17,7 +17,7 @@ import EgressOnlyInternetGateway from './EgressOnlyInternetGateway';
 /**
  * The DescribeEgressOnlyInternetGatewaysResult model module.
  * @module model/DescribeEgressOnlyInternetGatewaysResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeEgressOnlyInternetGatewaysResult {
     /**

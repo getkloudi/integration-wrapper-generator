@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeClientVpnAuthorizationRulesRequest model module.
  * @module model/DescribeClientVpnAuthorizationRulesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeClientVpnAuthorizationRulesRequest {
     /**

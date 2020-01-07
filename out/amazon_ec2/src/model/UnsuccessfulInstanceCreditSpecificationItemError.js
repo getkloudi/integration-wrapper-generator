@@ -17,7 +17,7 @@ import UnsuccessfulInstanceCreditSpecificationErrorCode from './UnsuccessfulInst
 /**
  * The UnsuccessfulInstanceCreditSpecificationItemError model module.
  * @module model/UnsuccessfulInstanceCreditSpecificationItemError
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UnsuccessfulInstanceCreditSpecificationItemError {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResetEbsDefaultKmsKeyIdRequest model module.
  * @module model/ResetEbsDefaultKmsKeyIdRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ResetEbsDefaultKmsKeyIdRequest {
     /**

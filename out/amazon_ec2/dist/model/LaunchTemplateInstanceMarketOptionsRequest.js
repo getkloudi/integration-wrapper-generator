@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LaunchTemplateInstanceMarketOptionsRequest model module.
  * @module model/LaunchTemplateInstanceMarketOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LaunchTemplateInstanceMarketOptionsRequest =
 /*#__PURE__*/

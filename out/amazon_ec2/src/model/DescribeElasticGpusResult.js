@@ -17,7 +17,7 @@ import ElasticGpus from './ElasticGpus';
 /**
  * The DescribeElasticGpusResult model module.
  * @module model/DescribeElasticGpusResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeElasticGpusResult {
     /**

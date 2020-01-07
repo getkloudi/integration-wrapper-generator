@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnableVpcClassicLinkDnsSupportRequest model module.
  * @module model/EnableVpcClassicLinkDnsSupportRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class EnableVpcClassicLinkDnsSupportRequest {
     /**

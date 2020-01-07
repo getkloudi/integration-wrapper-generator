@@ -18,7 +18,7 @@ import SpotInstanceType from './SpotInstanceType';
 /**
  * The SpotMarketOptions model module.
  * @module model/SpotMarketOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SpotMarketOptions {
     /**

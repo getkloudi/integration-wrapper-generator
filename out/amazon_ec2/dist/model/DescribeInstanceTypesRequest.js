@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeInstanceTypesRequest model module.
  * @module model/DescribeInstanceTypesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeInstanceTypesRequest =
 /*#__PURE__*/

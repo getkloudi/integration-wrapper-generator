@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LocalGatewayRouteTableVirtualInterfaceGroupAssociation model module.
  * @module model/LocalGatewayRouteTableVirtualInterfaceGroupAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LocalGatewayRouteTableVirtualInterfaceGroupAssociation =
 /*#__PURE__*/

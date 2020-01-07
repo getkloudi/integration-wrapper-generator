@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The HostReservation model module.
  * @module model/HostReservation
- * @version 1.0.0
+ * @version 1.1.0
  */
 var HostReservation =
 /*#__PURE__*/

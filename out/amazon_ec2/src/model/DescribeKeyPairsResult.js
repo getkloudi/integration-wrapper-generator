@@ -17,7 +17,7 @@ import KeyPairInfo from './KeyPairInfo';
 /**
  * The DescribeKeyPairsResult model module.
  * @module model/DescribeKeyPairsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeKeyPairsResult {
     /**

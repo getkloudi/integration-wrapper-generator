@@ -20,7 +20,7 @@ import TransitGatewayAttachmentState from './TransitGatewayAttachmentState';
 /**
  * The TransitGatewayPeeringAttachment model module.
  * @module model/TransitGatewayPeeringAttachment
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayPeeringAttachment {
     /**

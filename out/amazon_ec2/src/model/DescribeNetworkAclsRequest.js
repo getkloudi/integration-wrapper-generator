@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeNetworkAclsRequest model module.
  * @module model/DescribeNetworkAclsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeNetworkAclsRequest {
     /**

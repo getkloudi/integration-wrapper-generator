@@ -18,7 +18,7 @@ import Ipv6SupportValue from './Ipv6SupportValue';
 /**
  * The CreateTransitGatewayVpcAttachmentRequestOptions model module.
  * @module model/CreateTransitGatewayVpcAttachmentRequestOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTransitGatewayVpcAttachmentRequestOptions {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCapacityReservationUsageRequest model module.
  * @module model/GetCapacityReservationUsageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetCapacityReservationUsageRequest {
     /**

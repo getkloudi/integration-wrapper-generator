@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetConsoleOutputRequest model module.
  * @module model/GetConsoleOutputRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetConsoleOutputRequest =
 /*#__PURE__*/

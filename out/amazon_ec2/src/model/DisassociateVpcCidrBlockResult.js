@@ -18,7 +18,7 @@ import VpcIpv6CidrBlockAssociation from './VpcIpv6CidrBlockAssociation';
 /**
  * The DisassociateVpcCidrBlockResult model module.
  * @module model/DisassociateVpcCidrBlockResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisassociateVpcCidrBlockResult {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTrafficMirrorFilterResult model module.
  * @module model/DeleteTrafficMirrorFilterResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteTrafficMirrorFilterResult {
     /**

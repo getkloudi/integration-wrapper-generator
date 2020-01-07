@@ -18,7 +18,7 @@ import ExportTaskS3LocationRequest from './ExportTaskS3LocationRequest';
 /**
  * The ExportImageRequest model module.
  * @module model/ExportImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExportImageRequest {
     /**

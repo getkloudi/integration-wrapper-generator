@@ -17,7 +17,7 @@ import Subnet from './Subnet';
 /**
  * The DescribeSubnetsResult model module.
  * @module model/DescribeSubnetsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSubnetsResult {
     /**

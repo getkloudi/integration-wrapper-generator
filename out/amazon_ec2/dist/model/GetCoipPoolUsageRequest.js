@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetCoipPoolUsageRequest model module.
  * @module model/GetCoipPoolUsageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetCoipPoolUsageRequest =
 /*#__PURE__*/

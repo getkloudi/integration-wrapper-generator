@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateNatGatewayResult model module.
  * @module model/CreateNatGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateNatGatewayResult =
 /*#__PURE__*/

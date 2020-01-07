@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HostInstance model module.
  * @module model/HostInstance
- * @version 1.0.0
+ * @version 1.1.0
  */
 class HostInstance {
     /**

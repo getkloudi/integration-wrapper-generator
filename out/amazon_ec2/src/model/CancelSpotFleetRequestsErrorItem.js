@@ -17,7 +17,7 @@ import CancelSpotFleetRequestsError from './CancelSpotFleetRequestsError';
 /**
  * The CancelSpotFleetRequestsErrorItem model module.
  * @module model/CancelSpotFleetRequestsErrorItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CancelSpotFleetRequestsErrorItem {
     /**

@@ -17,7 +17,7 @@ import ListingState from './ListingState';
 /**
  * The InstanceCount model module.
  * @module model/InstanceCount
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceCount {
     /**

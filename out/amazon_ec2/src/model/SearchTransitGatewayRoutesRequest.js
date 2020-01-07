@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The SearchTransitGatewayRoutesRequest model module.
  * @module model/SearchTransitGatewayRoutesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchTransitGatewayRoutesRequest {
     /**

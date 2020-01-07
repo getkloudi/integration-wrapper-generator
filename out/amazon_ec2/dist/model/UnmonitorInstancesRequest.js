@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UnmonitorInstancesRequest model module.
  * @module model/UnmonitorInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var UnmonitorInstancesRequest =
 /*#__PURE__*/

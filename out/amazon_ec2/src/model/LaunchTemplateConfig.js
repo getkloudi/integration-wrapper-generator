@@ -18,7 +18,7 @@ import LaunchTemplateOverrides from './LaunchTemplateOverrides';
 /**
  * The LaunchTemplateConfig model module.
  * @module model/LaunchTemplateConfig
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateConfig {
     /**

@@ -17,7 +17,7 @@ import Region from './Region';
 /**
  * The DescribeRegionsResult model module.
  * @module model/DescribeRegionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeRegionsResult {
     /**

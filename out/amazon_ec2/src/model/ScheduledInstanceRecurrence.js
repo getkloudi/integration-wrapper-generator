@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ScheduledInstanceRecurrence model module.
  * @module model/ScheduledInstanceRecurrence
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ScheduledInstanceRecurrence {
     /**

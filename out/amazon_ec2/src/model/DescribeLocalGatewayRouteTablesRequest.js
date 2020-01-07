@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeLocalGatewayRouteTablesRequest model module.
  * @module model/DescribeLocalGatewayRouteTablesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeLocalGatewayRouteTablesRequest {
     /**

@@ -17,7 +17,7 @@ import Status from './Status';
 /**
  * The MoveAddressToVpcResult model module.
  * @module model/MoveAddressToVpcResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class MoveAddressToVpcResult {
     /**

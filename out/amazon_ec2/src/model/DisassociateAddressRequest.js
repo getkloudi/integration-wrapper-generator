@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DisassociateAddressRequest model module.
  * @module model/DisassociateAddressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisassociateAddressRequest {
     /**

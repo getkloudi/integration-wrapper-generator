@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SuccessfulQueuedPurchaseDeletion model module.
  * @module model/SuccessfulQueuedPurchaseDeletion
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SuccessfulQueuedPurchaseDeletion {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DnsServersOptionsModifyStructure model module.
  * @module model/DnsServersOptionsModifyStructure
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DnsServersOptionsModifyStructure {
     /**

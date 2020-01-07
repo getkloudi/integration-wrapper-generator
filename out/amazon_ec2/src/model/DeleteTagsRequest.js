@@ -17,7 +17,7 @@ import Tag from './Tag';
 /**
  * The DeleteTagsRequest model module.
  * @module model/DeleteTagsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteTagsRequest {
     /**

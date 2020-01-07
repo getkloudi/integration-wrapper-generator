@@ -17,7 +17,7 @@ import EbsBlockDevice from './EbsBlockDevice';
 /**
  * The BlockDeviceMapping model module.
  * @module model/BlockDeviceMapping
- * @version 1.0.0
+ * @version 1.1.0
  */
 class BlockDeviceMapping {
     /**

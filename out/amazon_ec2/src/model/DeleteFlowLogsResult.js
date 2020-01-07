@@ -17,7 +17,7 @@ import UnsuccessfulItem from './UnsuccessfulItem';
 /**
  * The DeleteFlowLogsResult model module.
  * @module model/DeleteFlowLogsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteFlowLogsResult {
     /**

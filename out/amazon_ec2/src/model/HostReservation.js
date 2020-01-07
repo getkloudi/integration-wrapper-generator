@@ -20,7 +20,7 @@ import Tag from './Tag';
 /**
  * The HostReservation model module.
  * @module model/HostReservation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class HostReservation {
     /**

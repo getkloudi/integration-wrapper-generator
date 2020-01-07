@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeExportImageTasksResult model module.
  * @module model/DescribeExportImageTasksResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeExportImageTasksResult =
 /*#__PURE__*/

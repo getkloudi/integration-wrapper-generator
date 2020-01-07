@@ -17,7 +17,7 @@ import TagSpecification from './TagSpecification';
 /**
  * The CreateTransitGatewayPeeringAttachmentRequest model module.
  * @module model/CreateTransitGatewayPeeringAttachmentRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTransitGatewayPeeringAttachmentRequest {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeScheduledInstancesResult model module.
  * @module model/DescribeScheduledInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeScheduledInstancesResult =
 /*#__PURE__*/

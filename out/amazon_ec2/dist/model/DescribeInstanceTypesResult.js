@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeInstanceTypesResult model module.
  * @module model/DescribeInstanceTypesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeInstanceTypesResult =
 /*#__PURE__*/

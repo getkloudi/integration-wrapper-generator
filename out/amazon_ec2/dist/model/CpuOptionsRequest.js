@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CpuOptionsRequest model module.
  * @module model/CpuOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CpuOptionsRequest =
 /*#__PURE__*/

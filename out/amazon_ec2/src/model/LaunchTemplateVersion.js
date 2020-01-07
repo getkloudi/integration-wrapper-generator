@@ -17,7 +17,7 @@ import ResponseLaunchTemplateData from './ResponseLaunchTemplateData';
 /**
  * The LaunchTemplateVersion model module.
  * @module model/LaunchTemplateVersion
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateVersion {
     /**

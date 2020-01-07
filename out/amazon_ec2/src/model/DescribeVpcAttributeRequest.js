@@ -17,7 +17,7 @@ import VpcAttributeName from './VpcAttributeName';
 /**
  * The DescribeVpcAttributeRequest model module.
  * @module model/DescribeVpcAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcAttributeRequest {
     /**

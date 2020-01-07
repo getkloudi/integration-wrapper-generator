@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateVpcEndpointServiceConfigurationRequest model module.
  * @module model/CreateVpcEndpointServiceConfigurationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateVpcEndpointServiceConfigurationRequest {
     /**

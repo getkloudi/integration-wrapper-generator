@@ -18,7 +18,7 @@ import Tag from './Tag';
 /**
  * The DhcpOptions model module.
  * @module model/DhcpOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DhcpOptions {
     /**

@@ -18,7 +18,7 @@ import ProductCode from './ProductCode';
 /**
  * The FpgaImageAttribute model module.
  * @module model/FpgaImageAttribute
- * @version 1.0.0
+ * @version 1.1.0
  */
 class FpgaImageAttribute {
     /**

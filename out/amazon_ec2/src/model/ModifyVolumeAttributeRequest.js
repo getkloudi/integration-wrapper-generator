@@ -17,7 +17,7 @@ import AttributeBooleanValue from './AttributeBooleanValue';
 /**
  * The ModifyVolumeAttributeRequest model module.
  * @module model/ModifyVolumeAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyVolumeAttributeRequest {
     /**

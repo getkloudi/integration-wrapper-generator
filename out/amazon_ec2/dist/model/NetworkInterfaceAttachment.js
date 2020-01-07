@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NetworkInterfaceAttachment model module.
  * @module model/NetworkInterfaceAttachment
- * @version 1.0.0
+ * @version 1.1.0
  */
 var NetworkInterfaceAttachment =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import VpcPeeringConnection from './VpcPeeringConnection';
 /**
  * The AcceptVpcPeeringConnectionResult model module.
  * @module model/AcceptVpcPeeringConnectionResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AcceptVpcPeeringConnectionResult {
     /**

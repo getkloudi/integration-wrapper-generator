@@ -17,7 +17,7 @@ import PlacementGroupStrategy from './PlacementGroupStrategy';
 /**
  * The PlacementGroupInfo model module.
  * @module model/PlacementGroupInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PlacementGroupInfo {
     /**

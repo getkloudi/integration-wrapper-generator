@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SendDiagnosticInterruptRequest model module.
  * @module model/SendDiagnosticInterruptRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SendDiagnosticInterruptRequest {
     /**

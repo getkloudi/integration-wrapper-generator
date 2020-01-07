@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateDefaultSubnetRequest model module.
  * @module model/CreateDefaultSubnetRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateDefaultSubnetRequest =
 /*#__PURE__*/

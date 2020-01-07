@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CopyImageRequest model module.
  * @module model/CopyImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CopyImageRequest {
     /**

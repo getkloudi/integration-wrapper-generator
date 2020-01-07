@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PurchaseReservedInstancesOfferingResult model module.
  * @module model/PurchaseReservedInstancesOfferingResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PurchaseReservedInstancesOfferingResult =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import RouteTableAssociationState from './RouteTableAssociationState';
 /**
  * The AssociateRouteTableResult model module.
  * @module model/AssociateRouteTableResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssociateRouteTableResult {
     /**

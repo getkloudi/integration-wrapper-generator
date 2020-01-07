@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ImportInstanceVolumeDetailItem model module.
  * @module model/ImportInstanceVolumeDetailItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ImportInstanceVolumeDetailItem =
 /*#__PURE__*/

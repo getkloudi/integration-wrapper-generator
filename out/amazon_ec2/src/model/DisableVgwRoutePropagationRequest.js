@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DisableVgwRoutePropagationRequest model module.
  * @module model/DisableVgwRoutePropagationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisableVgwRoutePropagationRequest {
     /**

@@ -18,7 +18,7 @@ import TargetGroupsConfig from './TargetGroupsConfig';
 /**
  * The LoadBalancersConfig model module.
  * @module model/LoadBalancersConfig
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LoadBalancersConfig {
     /**

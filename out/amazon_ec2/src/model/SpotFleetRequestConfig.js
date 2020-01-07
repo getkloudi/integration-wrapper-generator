@@ -19,7 +19,7 @@ import SpotFleetRequestConfigData from './SpotFleetRequestConfigData';
 /**
  * The SpotFleetRequestConfig model module.
  * @module model/SpotFleetRequestConfig
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SpotFleetRequestConfig {
     /**

@@ -17,7 +17,7 @@ import ClientVpnConnection from './ClientVpnConnection';
 /**
  * The DescribeClientVpnConnectionsResult model module.
  * @module model/DescribeClientVpnConnectionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeClientVpnConnectionsResult {
     /**

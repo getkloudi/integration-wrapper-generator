@@ -17,7 +17,7 @@ import TransitGatewayPeeringAttachment from './TransitGatewayPeeringAttachment';
 /**
  * The CreateTransitGatewayPeeringAttachmentResult model module.
  * @module model/CreateTransitGatewayPeeringAttachmentResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTransitGatewayPeeringAttachmentResult {
     /**

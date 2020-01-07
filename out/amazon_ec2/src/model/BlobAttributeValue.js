@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BlobAttributeValue model module.
  * @module model/BlobAttributeValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 class BlobAttributeValue {
     /**

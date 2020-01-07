@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ScheduledInstancesIamInstanceProfile model module.
  * @module model/ScheduledInstancesIamInstanceProfile
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ScheduledInstancesIamInstanceProfile =
 /*#__PURE__*/

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VpcIpv6CidrBlockAssociation model module.
  * @module model/VpcIpv6CidrBlockAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VpcIpv6CidrBlockAssociation =
 /*#__PURE__*/

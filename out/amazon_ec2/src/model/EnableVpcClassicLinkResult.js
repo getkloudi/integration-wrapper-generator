@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnableVpcClassicLinkResult model module.
  * @module model/EnableVpcClassicLinkResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class EnableVpcClassicLinkResult {
     /**

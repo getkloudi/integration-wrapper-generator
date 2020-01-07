@@ -17,7 +17,7 @@ import FpgaImageStateCode from './FpgaImageStateCode';
 /**
  * The FpgaImageState model module.
  * @module model/FpgaImageState
- * @version 1.0.0
+ * @version 1.1.0
  */
 class FpgaImageState {
     /**

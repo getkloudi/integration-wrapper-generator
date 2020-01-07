@@ -17,7 +17,7 @@ import DiskType from './DiskType';
 /**
  * The DiskInfo model module.
  * @module model/DiskInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DiskInfo {
     /**

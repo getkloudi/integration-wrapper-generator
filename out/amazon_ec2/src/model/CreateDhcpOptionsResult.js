@@ -17,7 +17,7 @@ import DhcpOptions from './DhcpOptions';
 /**
  * The CreateDhcpOptionsResult model module.
  * @module model/CreateDhcpOptionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateDhcpOptionsResult {
     /**

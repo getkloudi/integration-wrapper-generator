@@ -25,7 +25,7 @@ import Tenancy from './Tenancy';
 /**
  * The ReservedInstancesOffering model module.
  * @module model/ReservedInstancesOffering
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReservedInstancesOffering {
     /**

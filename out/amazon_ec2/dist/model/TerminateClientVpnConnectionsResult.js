@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TerminateClientVpnConnectionsResult model module.
  * @module model/TerminateClientVpnConnectionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var TerminateClientVpnConnectionsResult =
 /*#__PURE__*/

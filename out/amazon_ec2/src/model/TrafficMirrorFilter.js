@@ -19,7 +19,7 @@ import TrafficMirrorNetworkService from './TrafficMirrorNetworkService';
 /**
  * The TrafficMirrorFilter model module.
  * @module model/TrafficMirrorFilter
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TrafficMirrorFilter {
     /**

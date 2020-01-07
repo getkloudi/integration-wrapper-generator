@@ -17,7 +17,7 @@ import AuthorizationRule from './AuthorizationRule';
 /**
  * The DescribeClientVpnAuthorizationRulesResult model module.
  * @module model/DescribeClientVpnAuthorizationRulesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeClientVpnAuthorizationRulesResult {
     /**

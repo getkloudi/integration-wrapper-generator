@@ -18,7 +18,7 @@ import FleetOnDemandAllocationStrategy from './FleetOnDemandAllocationStrategy';
 /**
  * The OnDemandOptionsRequest model module.
  * @module model/OnDemandOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class OnDemandOptionsRequest {
     /**

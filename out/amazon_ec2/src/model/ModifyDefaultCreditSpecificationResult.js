@@ -17,7 +17,7 @@ import InstanceFamilyCreditSpecification from './InstanceFamilyCreditSpecificati
 /**
  * The ModifyDefaultCreditSpecificationResult model module.
  * @module model/ModifyDefaultCreditSpecificationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyDefaultCreditSpecificationResult {
     /**

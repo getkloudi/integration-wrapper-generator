@@ -18,7 +18,7 @@ import Tag from './Tag';
 /**
  * The InternetGateway model module.
  * @module model/InternetGateway
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InternetGateway {
     /**

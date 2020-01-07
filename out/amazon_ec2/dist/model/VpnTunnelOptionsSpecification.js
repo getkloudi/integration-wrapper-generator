@@ -32,7 +32,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VpnTunnelOptionsSpecification model module.
  * @module model/VpnTunnelOptionsSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VpnTunnelOptionsSpecification =
 /*#__PURE__*/

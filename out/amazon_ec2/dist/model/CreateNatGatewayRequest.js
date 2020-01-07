@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateNatGatewayRequest model module.
  * @module model/CreateNatGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateNatGatewayRequest =
 /*#__PURE__*/

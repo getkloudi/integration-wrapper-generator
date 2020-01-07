@@ -18,7 +18,7 @@ import SpotInstanceStateFault from './SpotInstanceStateFault';
 /**
  * The SpotDatafeedSubscription model module.
  * @module model/SpotDatafeedSubscription
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SpotDatafeedSubscription {
     /**

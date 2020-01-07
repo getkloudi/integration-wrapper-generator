@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeVpcClassicLinkDnsSupportRequest model module.
  * @module model/DescribeVpcClassicLinkDnsSupportRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeVpcClassicLinkDnsSupportRequest =
 /*#__PURE__*/

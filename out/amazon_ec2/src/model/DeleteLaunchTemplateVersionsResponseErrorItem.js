@@ -17,7 +17,7 @@ import ResponseError from './ResponseError';
 /**
  * The DeleteLaunchTemplateVersionsResponseErrorItem model module.
  * @module model/DeleteLaunchTemplateVersionsResponseErrorItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteLaunchTemplateVersionsResponseErrorItem {
     /**

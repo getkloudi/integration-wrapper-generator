@@ -17,7 +17,7 @@ import FastSnapshotRestoreStateCode from './FastSnapshotRestoreStateCode';
 /**
  * The EnableFastSnapshotRestoreSuccessItem model module.
  * @module model/EnableFastSnapshotRestoreSuccessItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class EnableFastSnapshotRestoreSuccessItem {
     /**

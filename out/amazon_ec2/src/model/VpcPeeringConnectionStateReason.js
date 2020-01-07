@@ -17,7 +17,7 @@ import VpcPeeringConnectionStateReasonCode from './VpcPeeringConnectionStateReas
 /**
  * The VpcPeeringConnectionStateReason model module.
  * @module model/VpcPeeringConnectionStateReason
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpcPeeringConnectionStateReason {
     /**

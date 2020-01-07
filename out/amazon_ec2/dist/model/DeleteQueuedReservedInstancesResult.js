@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteQueuedReservedInstancesResult model module.
  * @module model/DeleteQueuedReservedInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteQueuedReservedInstancesResult =
 /*#__PURE__*/

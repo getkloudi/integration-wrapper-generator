@@ -17,7 +17,7 @@ import ServiceDetail from './ServiceDetail';
 /**
  * The DescribeVpcEndpointServicesResult model module.
  * @module model/DescribeVpcEndpointServicesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcEndpointServicesResult {
     /**

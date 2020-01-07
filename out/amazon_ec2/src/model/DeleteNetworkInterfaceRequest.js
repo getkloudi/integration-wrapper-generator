@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteNetworkInterfaceRequest model module.
  * @module model/DeleteNetworkInterfaceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteNetworkInterfaceRequest {
     /**

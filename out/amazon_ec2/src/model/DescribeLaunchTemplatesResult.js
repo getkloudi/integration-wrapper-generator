@@ -17,7 +17,7 @@ import LaunchTemplate from './LaunchTemplate';
 /**
  * The DescribeLaunchTemplatesResult model module.
  * @module model/DescribeLaunchTemplatesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeLaunchTemplatesResult {
     /**

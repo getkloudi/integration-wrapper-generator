@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteVpcEndpointsRequest model module.
  * @module model/DeleteVpcEndpointsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteVpcEndpointsRequest {
     /**

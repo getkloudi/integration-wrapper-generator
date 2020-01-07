@@ -19,7 +19,7 @@ import ImportImageLicenseConfigurationRequest from './ImportImageLicenseConfigur
 /**
  * The ImportImageRequest model module.
  * @module model/ImportImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ImportImageRequest {
     /**

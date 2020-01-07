@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateDefaultVpcResult model module.
  * @module model/CreateDefaultVpcResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateDefaultVpcResult =
 /*#__PURE__*/

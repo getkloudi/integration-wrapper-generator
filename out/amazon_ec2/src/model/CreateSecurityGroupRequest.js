@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateSecurityGroupRequest model module.
  * @module model/CreateSecurityGroupRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateSecurityGroupRequest {
     /**

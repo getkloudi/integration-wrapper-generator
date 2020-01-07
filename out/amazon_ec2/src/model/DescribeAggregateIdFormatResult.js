@@ -17,7 +17,7 @@ import IdFormat from './IdFormat';
 /**
  * The DescribeAggregateIdFormatResult model module.
  * @module model/DescribeAggregateIdFormatResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeAggregateIdFormatResult {
     /**

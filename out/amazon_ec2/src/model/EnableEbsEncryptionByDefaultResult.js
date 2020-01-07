@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnableEbsEncryptionByDefaultResult model module.
  * @module model/EnableEbsEncryptionByDefaultResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class EnableEbsEncryptionByDefaultResult {
     /**

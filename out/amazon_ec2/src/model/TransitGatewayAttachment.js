@@ -20,7 +20,7 @@ import TransitGatewayAttachmentState from './TransitGatewayAttachmentState';
 /**
  * The TransitGatewayAttachment model module.
  * @module model/TransitGatewayAttachment
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayAttachment {
     /**

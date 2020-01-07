@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyInstanceEventStartTimeRequest model module.
  * @module model/ModifyInstanceEventStartTimeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyInstanceEventStartTimeRequest =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import LoadPermissionRequest from './LoadPermissionRequest';
 /**
  * The LoadPermissionModifications model module.
  * @module model/LoadPermissionModifications
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LoadPermissionModifications {
     /**

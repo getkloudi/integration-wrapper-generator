@@ -17,7 +17,7 @@ import FpgaImageAttribute from './FpgaImageAttribute';
 /**
  * The ModifyFpgaImageAttributeResult model module.
  * @module model/ModifyFpgaImageAttributeResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyFpgaImageAttributeResult {
     /**

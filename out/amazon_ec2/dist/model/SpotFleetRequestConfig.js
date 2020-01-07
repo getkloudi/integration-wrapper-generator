@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SpotFleetRequestConfig model module.
  * @module model/SpotFleetRequestConfig
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SpotFleetRequestConfig =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LocalGatewayRouteTable model module.
  * @module model/LocalGatewayRouteTable
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LocalGatewayRouteTable {
     /**

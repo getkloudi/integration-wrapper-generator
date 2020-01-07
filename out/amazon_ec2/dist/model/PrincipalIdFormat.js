@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PrincipalIdFormat model module.
  * @module model/PrincipalIdFormat
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PrincipalIdFormat =
 /*#__PURE__*/

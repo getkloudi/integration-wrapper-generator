@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Phase1EncryptionAlgorithmsListValue model module.
  * @module model/Phase1EncryptionAlgorithmsListValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Phase1EncryptionAlgorithmsListValue {
     /**

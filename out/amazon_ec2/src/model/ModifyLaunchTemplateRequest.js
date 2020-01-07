@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModifyLaunchTemplateRequest model module.
  * @module model/ModifyLaunchTemplateRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyLaunchTemplateRequest {
     /**

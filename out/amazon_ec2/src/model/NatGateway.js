@@ -20,7 +20,7 @@ import Tag from './Tag';
 /**
  * The NatGateway model module.
  * @module model/NatGateway
- * @version 1.0.0
+ * @version 1.1.0
  */
 class NatGateway {
     /**

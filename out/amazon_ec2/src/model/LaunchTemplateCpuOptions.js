@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LaunchTemplateCpuOptions model module.
  * @module model/LaunchTemplateCpuOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateCpuOptions {
     /**

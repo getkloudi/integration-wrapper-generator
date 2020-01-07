@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NetworkInterfacePrivateIpAddress model module.
  * @module model/NetworkInterfacePrivateIpAddress
- * @version 1.0.0
+ * @version 1.1.0
  */
 var NetworkInterfacePrivateIpAddress =
 /*#__PURE__*/

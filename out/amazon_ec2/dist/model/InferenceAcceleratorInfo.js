@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InferenceAcceleratorInfo model module.
  * @module model/InferenceAcceleratorInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InferenceAcceleratorInfo =
 /*#__PURE__*/

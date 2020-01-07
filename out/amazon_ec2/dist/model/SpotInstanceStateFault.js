@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SpotInstanceStateFault model module.
  * @module model/SpotInstanceStateFault
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SpotInstanceStateFault =
 /*#__PURE__*/

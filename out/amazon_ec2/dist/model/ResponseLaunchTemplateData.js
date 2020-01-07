@@ -50,7 +50,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ResponseLaunchTemplateData model module.
  * @module model/ResponseLaunchTemplateData
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ResponseLaunchTemplateData =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ import LaunchTemplateAndOverridesResponse from './LaunchTemplateAndOverridesResp
 /**
  * The CreateFleetError model module.
  * @module model/CreateFleetError
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateFleetError {
     /**

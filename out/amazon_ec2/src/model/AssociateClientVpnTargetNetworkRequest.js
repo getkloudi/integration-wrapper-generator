@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssociateClientVpnTargetNetworkRequest model module.
  * @module model/AssociateClientVpnTargetNetworkRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssociateClientVpnTargetNetworkRequest {
     /**

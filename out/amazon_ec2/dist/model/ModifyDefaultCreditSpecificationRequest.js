@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyDefaultCreditSpecificationRequest model module.
  * @module model/ModifyDefaultCreditSpecificationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyDefaultCreditSpecificationRequest =
 /*#__PURE__*/

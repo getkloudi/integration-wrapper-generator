@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DirectoryServiceAuthenticationRequest model module.
  * @module model/DirectoryServiceAuthenticationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DirectoryServiceAuthenticationRequest {
     /**

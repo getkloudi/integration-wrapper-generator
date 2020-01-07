@@ -22,7 +22,7 @@ import VpnEcmpSupportValue from './VpnEcmpSupportValue';
 /**
  * The TransitGatewayOptions model module.
  * @module model/TransitGatewayOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayOptions {
     /**

@@ -17,7 +17,7 @@ import StaleIpPermission from './StaleIpPermission';
 /**
  * The StaleSecurityGroup model module.
  * @module model/StaleSecurityGroup
- * @version 1.0.0
+ * @version 1.1.0
  */
 class StaleSecurityGroup {
     /**

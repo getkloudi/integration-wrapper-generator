@@ -18,7 +18,7 @@ import PlacementResponse from './PlacementResponse';
 /**
  * The FleetLaunchTemplateOverrides model module.
  * @module model/FleetLaunchTemplateOverrides
- * @version 1.0.0
+ * @version 1.1.0
  */
 class FleetLaunchTemplateOverrides {
     /**

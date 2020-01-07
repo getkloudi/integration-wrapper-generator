@@ -17,7 +17,7 @@ import AssociationStatus from './AssociationStatus';
 /**
  * The DisassociateClientVpnTargetNetworkResult model module.
  * @module model/DisassociateClientVpnTargetNetworkResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisassociateClientVpnTargetNetworkResult {
     /**

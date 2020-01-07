@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CapacityReservationSpecificationResponse model module.
  * @module model/CapacityReservationSpecificationResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CapacityReservationSpecificationResponse =
 /*#__PURE__*/

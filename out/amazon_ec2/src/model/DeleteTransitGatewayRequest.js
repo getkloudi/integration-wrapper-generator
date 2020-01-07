@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteTransitGatewayRequest model module.
  * @module model/DeleteTransitGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteTransitGatewayRequest {
     /**

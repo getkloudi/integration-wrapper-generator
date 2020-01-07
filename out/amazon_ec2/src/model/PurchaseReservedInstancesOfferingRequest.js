@@ -17,7 +17,7 @@ import ReservedInstanceLimitPrice from './ReservedInstanceLimitPrice';
 /**
  * The PurchaseReservedInstancesOfferingRequest model module.
  * @module model/PurchaseReservedInstancesOfferingRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PurchaseReservedInstancesOfferingRequest {
     /**

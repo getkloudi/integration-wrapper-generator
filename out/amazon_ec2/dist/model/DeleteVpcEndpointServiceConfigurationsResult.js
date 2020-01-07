@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteVpcEndpointServiceConfigurationsResult model module.
  * @module model/DeleteVpcEndpointServiceConfigurationsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteVpcEndpointServiceConfigurationsResult =
 /*#__PURE__*/

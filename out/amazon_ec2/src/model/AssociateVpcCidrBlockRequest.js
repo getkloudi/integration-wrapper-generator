@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssociateVpcCidrBlockRequest model module.
  * @module model/AssociateVpcCidrBlockRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssociateVpcCidrBlockRequest {
     /**

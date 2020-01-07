@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Phase2EncryptionAlgorithmsRequestListValue model module.
  * @module model/Phase2EncryptionAlgorithmsRequestListValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Phase2EncryptionAlgorithmsRequestListValue =
 /*#__PURE__*/

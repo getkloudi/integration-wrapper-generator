@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PurchaseReservedInstancesOfferingResult model module.
  * @module model/PurchaseReservedInstancesOfferingResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PurchaseReservedInstancesOfferingResult {
     /**

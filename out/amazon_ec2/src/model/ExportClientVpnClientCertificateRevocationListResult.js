@@ -17,7 +17,7 @@ import ClientCertificateRevocationListStatus from './ClientCertificateRevocation
 /**
  * The ExportClientVpnClientCertificateRevocationListResult model module.
  * @module model/ExportClientVpnClientCertificateRevocationListResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExportClientVpnClientCertificateRevocationListResult {
     /**

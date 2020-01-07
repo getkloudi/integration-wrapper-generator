@@ -17,7 +17,7 @@ import TagSpecification from './TagSpecification';
 /**
  * The CreateTransitGatewayRouteTableRequest model module.
  * @module model/CreateTransitGatewayRouteTableRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTransitGatewayRouteTableRequest {
     /**

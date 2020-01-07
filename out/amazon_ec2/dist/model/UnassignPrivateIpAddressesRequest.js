@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UnassignPrivateIpAddressesRequest model module.
  * @module model/UnassignPrivateIpAddressesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var UnassignPrivateIpAddressesRequest =
 /*#__PURE__*/

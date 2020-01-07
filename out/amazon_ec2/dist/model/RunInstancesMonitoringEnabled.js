@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RunInstancesMonitoringEnabled model module.
  * @module model/RunInstancesMonitoringEnabled
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RunInstancesMonitoringEnabled =
 /*#__PURE__*/

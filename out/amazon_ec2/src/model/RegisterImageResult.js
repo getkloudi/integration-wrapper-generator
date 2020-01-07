@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RegisterImageResult model module.
  * @module model/RegisterImageResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RegisterImageResult {
     /**

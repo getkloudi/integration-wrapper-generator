@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeTransitGatewaysRequest model module.
  * @module model/DescribeTransitGatewaysRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTransitGatewaysRequest {
     /**

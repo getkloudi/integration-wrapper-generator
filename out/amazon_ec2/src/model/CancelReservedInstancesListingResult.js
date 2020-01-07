@@ -17,7 +17,7 @@ import ReservedInstancesListing from './ReservedInstancesListing';
 /**
  * The CancelReservedInstancesListingResult model module.
  * @module model/CancelReservedInstancesListingResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CancelReservedInstancesListingResult {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IamInstanceProfile model module.
  * @module model/IamInstanceProfile
- * @version 1.0.0
+ * @version 1.1.0
  */
 class IamInstanceProfile {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateTrafficMirrorFilterResult model module.
  * @module model/CreateTrafficMirrorFilterResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateTrafficMirrorFilterResult =
 /*#__PURE__*/

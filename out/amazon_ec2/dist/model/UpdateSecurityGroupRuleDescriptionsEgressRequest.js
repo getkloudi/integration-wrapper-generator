@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UpdateSecurityGroupRuleDescriptionsEgressRequest model module.
  * @module model/UpdateSecurityGroupRuleDescriptionsEgressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var UpdateSecurityGroupRuleDescriptionsEgressRequest =
 /*#__PURE__*/

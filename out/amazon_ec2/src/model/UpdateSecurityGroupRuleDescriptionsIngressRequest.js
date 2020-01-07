@@ -17,7 +17,7 @@ import IpPermission from './IpPermission';
 /**
  * The UpdateSecurityGroupRuleDescriptionsIngressRequest model module.
  * @module model/UpdateSecurityGroupRuleDescriptionsIngressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UpdateSecurityGroupRuleDescriptionsIngressRequest {
     /**

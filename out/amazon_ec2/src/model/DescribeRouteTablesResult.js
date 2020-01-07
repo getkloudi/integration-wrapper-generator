@@ -17,7 +17,7 @@ import RouteTable from './RouteTable';
 /**
  * The DescribeRouteTablesResult model module.
  * @module model/DescribeRouteTablesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeRouteTablesResult {
     /**

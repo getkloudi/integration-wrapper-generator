@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteLaunchTemplateRequest model module.
  * @module model/DeleteLaunchTemplateRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteLaunchTemplateRequest =
 /*#__PURE__*/

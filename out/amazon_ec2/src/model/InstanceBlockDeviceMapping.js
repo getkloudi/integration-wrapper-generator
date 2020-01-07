@@ -17,7 +17,7 @@ import EbsInstanceBlockDevice from './EbsInstanceBlockDevice';
 /**
  * The InstanceBlockDeviceMapping model module.
  * @module model/InstanceBlockDeviceMapping
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceBlockDeviceMapping {
     /**

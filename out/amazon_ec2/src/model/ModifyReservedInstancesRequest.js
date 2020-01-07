@@ -17,7 +17,7 @@ import ReservedInstancesConfiguration from './ReservedInstancesConfiguration';
 /**
  * The ModifyReservedInstancesRequest model module.
  * @module model/ModifyReservedInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyReservedInstancesRequest {
     /**

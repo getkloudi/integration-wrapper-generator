@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteFleetsRequest model module.
  * @module model/DeleteFleetsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteFleetsRequest =
 /*#__PURE__*/

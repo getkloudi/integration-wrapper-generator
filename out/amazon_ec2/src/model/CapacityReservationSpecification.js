@@ -18,7 +18,7 @@ import CapacityReservationTarget from './CapacityReservationTarget';
 /**
  * The CapacityReservationSpecification model module.
  * @module model/CapacityReservationSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CapacityReservationSpecification {
     /**

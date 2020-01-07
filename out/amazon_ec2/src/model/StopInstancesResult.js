@@ -17,7 +17,7 @@ import InstanceStateChange from './InstanceStateChange';
 /**
  * The StopInstancesResult model module.
  * @module model/StopInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class StopInstancesResult {
     /**

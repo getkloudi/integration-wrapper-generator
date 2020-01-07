@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeReservedInstancesListingsRequest model module.
  * @module model/DescribeReservedInstancesListingsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeReservedInstancesListingsRequest =
 /*#__PURE__*/

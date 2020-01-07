@@ -17,7 +17,7 @@ import FleetData from './FleetData';
 /**
  * The DescribeFleetsResult model module.
  * @module model/DescribeFleetsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeFleetsResult {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyVpcEndpointConnectionNotificationResult model module.
  * @module model/ModifyVpcEndpointConnectionNotificationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyVpcEndpointConnectionNotificationResult =
 /*#__PURE__*/

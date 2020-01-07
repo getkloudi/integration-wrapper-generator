@@ -17,7 +17,7 @@ import ExcessCapacityTerminationPolicy from './ExcessCapacityTerminationPolicy';
 /**
  * The ModifySpotFleetRequestRequest model module.
  * @module model/ModifySpotFleetRequestRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifySpotFleetRequestRequest {
     /**

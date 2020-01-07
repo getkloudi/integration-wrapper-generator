@@ -17,7 +17,7 @@ import Status from './Status';
 /**
  * The RestoreAddressToClassicResult model module.
  * @module model/RestoreAddressToClassicResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RestoreAddressToClassicResult {
     /**

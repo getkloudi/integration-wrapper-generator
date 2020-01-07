@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IKEVersionsListValue model module.
  * @module model/IKEVersionsListValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 var IKEVersionsListValue =
 /*#__PURE__*/

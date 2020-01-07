@@ -21,7 +21,7 @@ import VpcEndpointType from './VpcEndpointType';
 /**
  * The VpcEndpoint model module.
  * @module model/VpcEndpoint
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpcEndpoint {
     /**

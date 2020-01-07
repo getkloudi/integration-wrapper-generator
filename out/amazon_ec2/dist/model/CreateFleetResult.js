@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFleetResult model module.
  * @module model/CreateFleetResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateFleetResult =
 /*#__PURE__*/

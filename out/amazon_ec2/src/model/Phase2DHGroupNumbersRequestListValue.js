@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Phase2DHGroupNumbersRequestListValue model module.
  * @module model/Phase2DHGroupNumbersRequestListValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Phase2DHGroupNumbersRequestListValue {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeVpcEndpointConnectionsRequest model module.
  * @module model/DescribeVpcEndpointConnectionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeVpcEndpointConnectionsRequest =
 /*#__PURE__*/

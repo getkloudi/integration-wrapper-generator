@@ -17,7 +17,7 @@ import AttributeValue from './AttributeValue';
 /**
  * The DhcpConfiguration model module.
  * @module model/DhcpConfiguration
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DhcpConfiguration {
     /**

@@ -17,7 +17,7 @@ import CreateVolumePermission from './CreateVolumePermission';
 /**
  * The CreateVolumePermissionModifications model module.
  * @module model/CreateVolumePermissionModifications
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateVolumePermissionModifications {
     /**

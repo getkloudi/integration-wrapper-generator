@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClassicLinkDnsSupport model module.
  * @module model/ClassicLinkDnsSupport
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ClassicLinkDnsSupport {
     /**

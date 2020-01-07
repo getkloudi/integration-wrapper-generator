@@ -17,7 +17,7 @@ import IpPermission from './IpPermission';
 /**
  * The RevokeSecurityGroupIngressRequest model module.
  * @module model/RevokeSecurityGroupIngressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RevokeSecurityGroupIngressRequest {
     /**

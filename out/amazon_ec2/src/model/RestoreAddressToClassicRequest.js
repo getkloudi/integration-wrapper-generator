@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RestoreAddressToClassicRequest model module.
  * @module model/RestoreAddressToClassicRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RestoreAddressToClassicRequest {
     /**

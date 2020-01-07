@@ -22,7 +22,7 @@ import VpnStaticRoute from './VpnStaticRoute';
 /**
  * The VpnConnection model module.
  * @module model/VpnConnection
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpnConnection {
     /**

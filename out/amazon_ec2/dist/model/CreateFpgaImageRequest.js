@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFpgaImageRequest model module.
  * @module model/CreateFpgaImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateFpgaImageRequest =
 /*#__PURE__*/

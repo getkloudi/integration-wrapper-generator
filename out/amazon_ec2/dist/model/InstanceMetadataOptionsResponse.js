@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceMetadataOptionsResponse model module.
  * @module model/InstanceMetadataOptionsResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceMetadataOptionsResponse =
 /*#__PURE__*/

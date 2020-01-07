@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Phase2DHGroupNumbersListValue model module.
  * @module model/Phase2DHGroupNumbersListValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Phase2DHGroupNumbersListValue =
 /*#__PURE__*/

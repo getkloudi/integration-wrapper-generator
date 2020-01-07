@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteFlowLogsResult model module.
  * @module model/DeleteFlowLogsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteFlowLogsResult =
 /*#__PURE__*/

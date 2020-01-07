@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DisableVpcClassicLinkResult model module.
  * @module model/DisableVpcClassicLinkResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DisableVpcClassicLinkResult =
 /*#__PURE__*/

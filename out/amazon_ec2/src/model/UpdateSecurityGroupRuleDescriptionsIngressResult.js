@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateSecurityGroupRuleDescriptionsIngressResult model module.
  * @module model/UpdateSecurityGroupRuleDescriptionsIngressResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class UpdateSecurityGroupRuleDescriptionsIngressResult {
     /**

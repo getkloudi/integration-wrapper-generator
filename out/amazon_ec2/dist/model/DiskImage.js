@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DiskImage model module.
  * @module model/DiskImage
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DiskImage =
 /*#__PURE__*/

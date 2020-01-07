@@ -18,7 +18,7 @@ import DnsServersOptionsModifyStructure from './DnsServersOptionsModifyStructure
 /**
  * The ModifyClientVpnEndpointRequest model module.
  * @module model/ModifyClientVpnEndpointRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyClientVpnEndpointRequest {
     /**

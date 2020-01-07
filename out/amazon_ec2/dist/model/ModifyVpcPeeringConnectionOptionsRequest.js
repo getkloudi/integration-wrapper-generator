@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyVpcPeeringConnectionOptionsRequest model module.
  * @module model/ModifyVpcPeeringConnectionOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyVpcPeeringConnectionOptionsRequest =
 /*#__PURE__*/

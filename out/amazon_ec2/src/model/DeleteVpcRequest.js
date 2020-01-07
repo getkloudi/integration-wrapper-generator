@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteVpcRequest model module.
  * @module model/DeleteVpcRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteVpcRequest {
     /**

@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyImageAttributeRequest model module.
  * @module model/ModifyImageAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyImageAttributeRequest =
 /*#__PURE__*/

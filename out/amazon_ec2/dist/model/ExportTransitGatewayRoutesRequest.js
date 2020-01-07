@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ExportTransitGatewayRoutesRequest model module.
  * @module model/ExportTransitGatewayRoutesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ExportTransitGatewayRoutesRequest =
 /*#__PURE__*/

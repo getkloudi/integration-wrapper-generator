@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PciId model module.
  * @module model/PciId
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PciId =
 /*#__PURE__*/

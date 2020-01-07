@@ -18,7 +18,7 @@ import TransitGatewayAttachmentResourceType from './TransitGatewayAttachmentReso
 /**
  * The TransitGatewayMulticastGroup model module.
  * @module model/TransitGatewayMulticastGroup
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayMulticastGroup {
     /**

@@ -18,7 +18,7 @@ import SpotInstanceType from './SpotInstanceType';
 /**
  * The LaunchTemplateSpotMarketOptionsRequest model module.
  * @module model/LaunchTemplateSpotMarketOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateSpotMarketOptionsRequest {
     /**

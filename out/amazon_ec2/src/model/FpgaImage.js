@@ -20,7 +20,7 @@ import Tag from './Tag';
 /**
  * The FpgaImage model module.
  * @module model/FpgaImage
- * @version 1.0.0
+ * @version 1.1.0
  */
 class FpgaImage {
     /**

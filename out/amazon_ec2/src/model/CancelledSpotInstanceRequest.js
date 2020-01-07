@@ -17,7 +17,7 @@ import CancelSpotInstanceRequestState from './CancelSpotInstanceRequestState';
 /**
  * The CancelledSpotInstanceRequest model module.
  * @module model/CancelledSpotInstanceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CancelledSpotInstanceRequest {
     /**

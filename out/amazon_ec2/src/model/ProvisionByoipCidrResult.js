@@ -17,7 +17,7 @@ import ByoipCidr from './ByoipCidr';
 /**
  * The ProvisionByoipCidrResult model module.
  * @module model/ProvisionByoipCidrResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ProvisionByoipCidrResult {
     /**

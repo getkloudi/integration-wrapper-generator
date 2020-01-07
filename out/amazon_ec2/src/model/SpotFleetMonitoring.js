@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SpotFleetMonitoring model module.
  * @module model/SpotFleetMonitoring
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SpotFleetMonitoring {
     /**

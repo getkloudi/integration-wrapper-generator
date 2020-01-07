@@ -17,7 +17,7 @@ import Reservation from './Reservation';
 /**
  * The DescribeInstancesResult model module.
  * @module model/DescribeInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeInstancesResult {
     /**

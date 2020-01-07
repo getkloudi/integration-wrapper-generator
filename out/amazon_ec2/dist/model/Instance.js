@@ -66,7 +66,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Instance model module.
  * @module model/Instance
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Instance =
 /*#__PURE__*/

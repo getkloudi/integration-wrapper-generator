@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeTrafficMirrorTargetsRequest model module.
  * @module model/DescribeTrafficMirrorTargetsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTrafficMirrorTargetsRequest {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ResetEbsDefaultKmsKeyIdResult model module.
  * @module model/ResetEbsDefaultKmsKeyIdResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ResetEbsDefaultKmsKeyIdResult =
 /*#__PURE__*/

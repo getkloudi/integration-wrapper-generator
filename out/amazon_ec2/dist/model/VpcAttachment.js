@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VpcAttachment model module.
  * @module model/VpcAttachment
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VpcAttachment =
 /*#__PURE__*/

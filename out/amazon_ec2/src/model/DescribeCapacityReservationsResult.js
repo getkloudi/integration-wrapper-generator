@@ -17,7 +17,7 @@ import CapacityReservation from './CapacityReservation';
 /**
  * The DescribeCapacityReservationsResult model module.
  * @module model/DescribeCapacityReservationsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeCapacityReservationsResult {
     /**

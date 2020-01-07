@@ -28,7 +28,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceAttribute model module.
  * @module model/InstanceAttribute
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceAttribute =
 /*#__PURE__*/

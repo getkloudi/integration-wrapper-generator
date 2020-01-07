@@ -18,7 +18,7 @@ import TransitGatewayMulticastDomainState from './TransitGatewayMulticastDomainS
 /**
  * The TransitGatewayMulticastDomain model module.
  * @module model/TransitGatewayMulticastDomain
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayMulticastDomain {
     /**

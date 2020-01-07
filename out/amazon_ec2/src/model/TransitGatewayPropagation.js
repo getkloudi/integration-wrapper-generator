@@ -18,7 +18,7 @@ import TransitGatewayPropagationState from './TransitGatewayPropagationState';
 /**
  * The TransitGatewayPropagation model module.
  * @module model/TransitGatewayPropagation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayPropagation {
     /**

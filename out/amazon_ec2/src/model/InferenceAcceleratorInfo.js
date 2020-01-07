@@ -17,7 +17,7 @@ import InferenceDeviceInfo from './InferenceDeviceInfo';
 /**
  * The InferenceAcceleratorInfo model module.
  * @module model/InferenceAcceleratorInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InferenceAcceleratorInfo {
     /**

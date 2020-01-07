@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateClientVpnEndpointRequest model module.
  * @module model/CreateClientVpnEndpointRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateClientVpnEndpointRequest =
 /*#__PURE__*/

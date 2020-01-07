@@ -17,7 +17,7 @@ import TransitGateway from './TransitGateway';
 /**
  * The DescribeTransitGatewaysResult model module.
  * @module model/DescribeTransitGatewaysResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTransitGatewaysResult {
     /**

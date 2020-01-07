@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReplaceTransitGatewayRouteRequest model module.
  * @module model/ReplaceTransitGatewayRouteRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReplaceTransitGatewayRouteRequest {
     /**

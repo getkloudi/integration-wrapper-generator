@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LoadPermissionModifications model module.
  * @module model/LoadPermissionModifications
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LoadPermissionModifications =
 /*#__PURE__*/

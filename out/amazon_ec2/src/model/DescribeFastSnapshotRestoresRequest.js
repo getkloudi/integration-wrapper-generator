@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeFastSnapshotRestoresRequest model module.
  * @module model/DescribeFastSnapshotRestoresRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeFastSnapshotRestoresRequest {
     /**

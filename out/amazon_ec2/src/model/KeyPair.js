@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KeyPair model module.
  * @module model/KeyPair
- * @version 1.0.0
+ * @version 1.1.0
  */
 class KeyPair {
     /**

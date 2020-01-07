@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The SearchLocalGatewayRoutesRequest model module.
  * @module model/SearchLocalGatewayRoutesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SearchLocalGatewayRoutesRequest {
     /**

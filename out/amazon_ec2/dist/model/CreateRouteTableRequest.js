@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateRouteTableRequest model module.
  * @module model/CreateRouteTableRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateRouteTableRequest =
 /*#__PURE__*/

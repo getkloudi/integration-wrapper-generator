@@ -18,7 +18,7 @@ import Tag from './Tag';
 /**
  * The ImportSnapshotTask model module.
  * @module model/ImportSnapshotTask
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ImportSnapshotTask {
     /**

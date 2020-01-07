@@ -17,7 +17,7 @@ import AssignedPrivateIpAddress from './AssignedPrivateIpAddress';
 /**
  * The AssignPrivateIpAddressesResult model module.
  * @module model/AssignPrivateIpAddressesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssignPrivateIpAddressesResult {
     /**

@@ -17,7 +17,7 @@ import TransitGatewayVpcAttachment from './TransitGatewayVpcAttachment';
 /**
  * The ModifyTransitGatewayVpcAttachmentResult model module.
  * @module model/ModifyTransitGatewayVpcAttachmentResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyTransitGatewayVpcAttachmentResult {
     /**

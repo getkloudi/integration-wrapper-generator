@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The GetTransitGatewayMulticastDomainAssociationsRequest model module.
  * @module model/GetTransitGatewayMulticastDomainAssociationsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetTransitGatewayMulticastDomainAssociationsRequest {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NetworkInterfaceIpv6Address model module.
  * @module model/NetworkInterfaceIpv6Address
- * @version 1.0.0
+ * @version 1.1.0
  */
 var NetworkInterfaceIpv6Address =
 /*#__PURE__*/

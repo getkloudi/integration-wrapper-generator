@@ -18,7 +18,7 @@ import EbsOptimizedSupport from './EbsOptimizedSupport';
 /**
  * The EbsInfo model module.
  * @module model/EbsInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class EbsInfo {
     /**

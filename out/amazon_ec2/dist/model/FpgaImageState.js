@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FpgaImageState model module.
  * @module model/FpgaImageState
- * @version 1.0.0
+ * @version 1.1.0
  */
 var FpgaImageState =
 /*#__PURE__*/

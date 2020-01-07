@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyLaunchTemplateRequest model module.
  * @module model/ModifyLaunchTemplateRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyLaunchTemplateRequest =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ import DiskImageFormat from './DiskImageFormat';
 /**
  * The ExportToS3Task model module.
  * @module model/ExportToS3Task
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExportToS3Task {
     /**

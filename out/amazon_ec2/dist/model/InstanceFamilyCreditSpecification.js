@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceFamilyCreditSpecification model module.
  * @module model/InstanceFamilyCreditSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceFamilyCreditSpecification =
 /*#__PURE__*/

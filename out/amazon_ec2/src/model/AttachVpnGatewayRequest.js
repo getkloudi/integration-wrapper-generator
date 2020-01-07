@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttachVpnGatewayRequest model module.
  * @module model/AttachVpnGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AttachVpnGatewayRequest {
     /**

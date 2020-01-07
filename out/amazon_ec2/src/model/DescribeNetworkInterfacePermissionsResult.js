@@ -17,7 +17,7 @@ import NetworkInterfacePermission from './NetworkInterfacePermission';
 /**
  * The DescribeNetworkInterfacePermissionsResult model module.
  * @module model/DescribeNetworkInterfacePermissionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeNetworkInterfacePermissionsResult {
     /**

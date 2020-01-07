@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AcceptReservedInstancesExchangeQuoteResult model module.
  * @module model/AcceptReservedInstancesExchangeQuoteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AcceptReservedInstancesExchangeQuoteResult =
 /*#__PURE__*/

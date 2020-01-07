@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IKEVersionsRequestListValue model module.
  * @module model/IKEVersionsRequestListValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 class IKEVersionsRequestListValue {
     /**

@@ -17,7 +17,7 @@ import PrefixList from './PrefixList';
 /**
  * The DescribePrefixListsResult model module.
  * @module model/DescribePrefixListsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribePrefixListsResult {
     /**

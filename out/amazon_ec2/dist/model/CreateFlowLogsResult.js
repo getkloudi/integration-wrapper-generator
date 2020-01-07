@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFlowLogsResult model module.
  * @module model/CreateFlowLogsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateFlowLogsResult =
 /*#__PURE__*/

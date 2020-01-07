@@ -30,7 +30,7 @@ import VCpuInfo from './VCpuInfo';
 /**
  * The InstanceTypeInfo model module.
  * @module model/InstanceTypeInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceTypeInfo {
     /**

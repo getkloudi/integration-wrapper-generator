@@ -18,7 +18,7 @@ import DeleteFleetSuccessItem from './DeleteFleetSuccessItem';
 /**
  * The DeleteFleetsResult model module.
  * @module model/DeleteFleetsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteFleetsResult {
     /**

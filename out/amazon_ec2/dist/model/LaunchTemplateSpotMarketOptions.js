@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LaunchTemplateSpotMarketOptions model module.
  * @module model/LaunchTemplateSpotMarketOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LaunchTemplateSpotMarketOptions =
 /*#__PURE__*/

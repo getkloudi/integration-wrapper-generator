@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CancelConversionRequest model module.
  * @module model/CancelConversionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CancelConversionRequest {
     /**

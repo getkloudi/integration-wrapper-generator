@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssociationStatus model module.
  * @module model/AssociationStatus
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AssociationStatus =
 /*#__PURE__*/

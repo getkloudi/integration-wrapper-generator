@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VolumeStatusAction model module.
  * @module model/VolumeStatusAction
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VolumeStatusAction =
 /*#__PURE__*/

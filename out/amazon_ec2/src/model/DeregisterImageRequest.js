@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeregisterImageRequest model module.
  * @module model/DeregisterImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeregisterImageRequest {
     /**

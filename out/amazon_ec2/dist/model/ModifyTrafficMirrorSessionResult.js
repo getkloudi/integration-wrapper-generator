@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyTrafficMirrorSessionResult model module.
  * @module model/ModifyTrafficMirrorSessionResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyTrafficMirrorSessionResult =
 /*#__PURE__*/

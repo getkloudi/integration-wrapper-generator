@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteDhcpOptionsRequest model module.
  * @module model/DeleteDhcpOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteDhcpOptionsRequest {
     /**

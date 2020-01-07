@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateNetworkInterfaceRequest model module.
  * @module model/CreateNetworkInterfaceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateNetworkInterfaceRequest =
 /*#__PURE__*/

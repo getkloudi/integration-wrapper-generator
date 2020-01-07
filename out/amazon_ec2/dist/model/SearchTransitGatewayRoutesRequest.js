@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchTransitGatewayRoutesRequest model module.
  * @module model/SearchTransitGatewayRoutesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SearchTransitGatewayRoutesRequest =
 /*#__PURE__*/

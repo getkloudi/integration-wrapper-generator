@@ -17,7 +17,7 @@ import ExportTaskS3Location from './ExportTaskS3Location';
 /**
  * The ExportImageTask model module.
  * @module model/ExportImageTask
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExportImageTask {
     /**

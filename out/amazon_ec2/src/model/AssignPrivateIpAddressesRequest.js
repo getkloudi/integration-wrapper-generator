@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AssignPrivateIpAddressesRequest model module.
  * @module model/AssignPrivateIpAddressesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssignPrivateIpAddressesRequest {
     /**

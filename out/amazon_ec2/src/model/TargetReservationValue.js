@@ -18,7 +18,7 @@ import TargetConfiguration from './TargetConfiguration';
 /**
  * The TargetReservationValue model module.
  * @module model/TargetReservationValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TargetReservationValue {
     /**

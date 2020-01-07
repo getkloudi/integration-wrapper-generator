@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The GetTransitGatewayRouteTablePropagationsRequest model module.
  * @module model/GetTransitGatewayRouteTablePropagationsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetTransitGatewayRouteTablePropagationsRequest {
     /**

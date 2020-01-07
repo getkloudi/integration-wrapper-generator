@@ -17,7 +17,7 @@ import InstanceMonitoring from './InstanceMonitoring';
 /**
  * The MonitorInstancesResult model module.
  * @module model/MonitorInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class MonitorInstancesResult {
     /**

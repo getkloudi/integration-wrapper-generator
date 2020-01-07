@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ImportImageLicenseConfigurationResponse model module.
  * @module model/ImportImageLicenseConfigurationResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ImportImageLicenseConfigurationResponse =
 /*#__PURE__*/

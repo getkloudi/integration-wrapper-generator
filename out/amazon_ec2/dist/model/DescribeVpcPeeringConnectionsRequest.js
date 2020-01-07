@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeVpcPeeringConnectionsRequest model module.
  * @module model/DescribeVpcPeeringConnectionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeVpcPeeringConnectionsRequest =
 /*#__PURE__*/

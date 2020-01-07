@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeInstanceCreditSpecificationsResult model module.
  * @module model/DescribeInstanceCreditSpecificationsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeInstanceCreditSpecificationsResult =
 /*#__PURE__*/

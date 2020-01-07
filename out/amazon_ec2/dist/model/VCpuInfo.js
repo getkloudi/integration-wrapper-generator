@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VCpuInfo model module.
  * @module model/VCpuInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VCpuInfo =
 /*#__PURE__*/

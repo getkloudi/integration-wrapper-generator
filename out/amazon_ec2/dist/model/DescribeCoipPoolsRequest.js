@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeCoipPoolsRequest model module.
  * @module model/DescribeCoipPoolsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeCoipPoolsRequest =
 /*#__PURE__*/

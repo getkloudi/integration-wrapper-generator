@@ -17,7 +17,7 @@ import TransitGatewayRouteTable from './TransitGatewayRouteTable';
 /**
  * The DescribeTransitGatewayRouteTablesResult model module.
  * @module model/DescribeTransitGatewayRouteTablesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTransitGatewayRouteTablesResult {
     /**

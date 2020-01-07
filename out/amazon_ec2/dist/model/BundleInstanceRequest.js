@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BundleInstanceRequest model module.
  * @module model/BundleInstanceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var BundleInstanceRequest =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteCustomerGatewayRequest model module.
  * @module model/DeleteCustomerGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteCustomerGatewayRequest {
     /**

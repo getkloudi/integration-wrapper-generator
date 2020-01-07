@@ -17,7 +17,7 @@ import VolumeStatusName from './VolumeStatusName';
 /**
  * The VolumeStatusDetails model module.
  * @module model/VolumeStatusDetails
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VolumeStatusDetails {
     /**

@@ -17,7 +17,7 @@ import ClientCertificateRevocationListStatusCode from './ClientCertificateRevoca
 /**
  * The ClientCertificateRevocationListStatus model module.
  * @module model/ClientCertificateRevocationListStatus
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ClientCertificateRevocationListStatus {
     /**

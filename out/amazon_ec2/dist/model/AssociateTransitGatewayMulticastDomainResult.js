@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssociateTransitGatewayMulticastDomainResult model module.
  * @module model/AssociateTransitGatewayMulticastDomainResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AssociateTransitGatewayMulticastDomainResult =
 /*#__PURE__*/

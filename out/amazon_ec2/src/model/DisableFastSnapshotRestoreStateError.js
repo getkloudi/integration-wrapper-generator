@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DisableFastSnapshotRestoreStateError model module.
  * @module model/DisableFastSnapshotRestoreStateError
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisableFastSnapshotRestoreStateError {
     /**

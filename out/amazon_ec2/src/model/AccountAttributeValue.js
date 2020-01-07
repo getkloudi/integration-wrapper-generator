@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AccountAttributeValue model module.
  * @module model/AccountAttributeValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AccountAttributeValue {
     /**

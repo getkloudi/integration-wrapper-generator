@@ -23,7 +23,7 @@ import VpnProtocol from './VpnProtocol';
 /**
  * The ClientVpnEndpoint model module.
  * @module model/ClientVpnEndpoint
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ClientVpnEndpoint {
     /**

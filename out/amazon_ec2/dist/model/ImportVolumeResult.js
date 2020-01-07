@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ImportVolumeResult model module.
  * @module model/ImportVolumeResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ImportVolumeResult =
 /*#__PURE__*/

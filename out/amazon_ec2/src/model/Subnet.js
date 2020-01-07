@@ -19,7 +19,7 @@ import Tag from './Tag';
 /**
  * The Subnet model module.
  * @module model/Subnet
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Subnet {
     /**

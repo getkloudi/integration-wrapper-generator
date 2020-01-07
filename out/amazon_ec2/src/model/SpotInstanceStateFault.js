@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SpotInstanceStateFault model module.
  * @module model/SpotInstanceStateFault
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SpotInstanceStateFault {
     /**

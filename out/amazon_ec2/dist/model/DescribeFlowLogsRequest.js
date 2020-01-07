@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeFlowLogsRequest model module.
  * @module model/DescribeFlowLogsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeFlowLogsRequest =
 /*#__PURE__*/

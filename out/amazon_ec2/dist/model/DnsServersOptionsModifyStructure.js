@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DnsServersOptionsModifyStructure model module.
  * @module model/DnsServersOptionsModifyStructure
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DnsServersOptionsModifyStructure =
 /*#__PURE__*/

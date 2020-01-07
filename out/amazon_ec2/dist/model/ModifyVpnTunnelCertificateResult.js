@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyVpnTunnelCertificateResult model module.
  * @module model/ModifyVpnTunnelCertificateResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyVpnTunnelCertificateResult =
 /*#__PURE__*/

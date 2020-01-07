@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeTransitGatewayRouteTablesRequest model module.
  * @module model/DescribeTransitGatewayRouteTablesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeTransitGatewayRouteTablesRequest =
 /*#__PURE__*/

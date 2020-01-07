@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateSpotDatafeedSubscriptionResult model module.
  * @module model/CreateSpotDatafeedSubscriptionResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateSpotDatafeedSubscriptionResult =
 /*#__PURE__*/

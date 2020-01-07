@@ -17,7 +17,7 @@ import InstanceStateName from './InstanceStateName';
 /**
  * The InstanceState model module.
  * @module model/InstanceState
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceState {
     /**

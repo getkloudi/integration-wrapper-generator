@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateEgressOnlyInternetGatewayResult model module.
  * @module model/CreateEgressOnlyInternetGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateEgressOnlyInternetGatewayResult =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import TransitGatewayAttachment from './TransitGatewayAttachment';
 /**
  * The DescribeTransitGatewayAttachmentsResult model module.
  * @module model/DescribeTransitGatewayAttachmentsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTransitGatewayAttachmentsResult {
     /**

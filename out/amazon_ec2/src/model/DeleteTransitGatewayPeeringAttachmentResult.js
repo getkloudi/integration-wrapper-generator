@@ -17,7 +17,7 @@ import TransitGatewayPeeringAttachment from './TransitGatewayPeeringAttachment';
 /**
  * The DeleteTransitGatewayPeeringAttachmentResult model module.
  * @module model/DeleteTransitGatewayPeeringAttachmentResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteTransitGatewayPeeringAttachmentResult {
     /**

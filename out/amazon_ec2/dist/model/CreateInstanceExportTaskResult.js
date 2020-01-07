@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateInstanceExportTaskResult model module.
  * @module model/CreateInstanceExportTaskResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateInstanceExportTaskResult =
 /*#__PURE__*/

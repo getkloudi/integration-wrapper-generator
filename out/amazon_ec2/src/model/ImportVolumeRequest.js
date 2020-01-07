@@ -18,7 +18,7 @@ import VolumeDetail from './VolumeDetail';
 /**
  * The ImportVolumeRequest model module.
  * @module model/ImportVolumeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ImportVolumeRequest {
     /**

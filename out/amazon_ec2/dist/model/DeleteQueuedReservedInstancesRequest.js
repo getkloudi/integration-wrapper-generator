@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteQueuedReservedInstancesRequest model module.
  * @module model/DeleteQueuedReservedInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteQueuedReservedInstancesRequest =
 /*#__PURE__*/

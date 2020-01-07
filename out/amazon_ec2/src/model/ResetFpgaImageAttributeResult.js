@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResetFpgaImageAttributeResult model module.
  * @module model/ResetFpgaImageAttributeResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ResetFpgaImageAttributeResult {
     /**

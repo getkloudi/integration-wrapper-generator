@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ExportImageTask model module.
  * @module model/ExportImageTask
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ExportImageTask =
 /*#__PURE__*/

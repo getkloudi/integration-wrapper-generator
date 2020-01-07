@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TransitGatewayMulticastGroup model module.
  * @module model/TransitGatewayMulticastGroup
- * @version 1.0.0
+ * @version 1.1.0
  */
 var TransitGatewayMulticastGroup =
 /*#__PURE__*/

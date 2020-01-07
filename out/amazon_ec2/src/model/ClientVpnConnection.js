@@ -17,7 +17,7 @@ import ClientVpnConnectionStatus from './ClientVpnConnectionStatus';
 /**
  * The ClientVpnConnection model module.
  * @module model/ClientVpnConnection
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ClientVpnConnection {
     /**

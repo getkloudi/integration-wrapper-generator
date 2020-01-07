@@ -17,7 +17,7 @@ import FleetEventType from './FleetEventType';
 /**
  * The DescribeFleetHistoryRequest model module.
  * @module model/DescribeFleetHistoryRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeFleetHistoryRequest {
     /**

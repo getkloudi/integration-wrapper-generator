@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeSpotFleetInstancesRequest model module.
  * @module model/DescribeSpotFleetInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSpotFleetInstancesRequest {
     /**

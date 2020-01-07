@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ApplySecurityGroupsToClientVpnTargetNetworkRequest model module.
  * @module model/ApplySecurityGroupsToClientVpnTargetNetworkRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ApplySecurityGroupsToClientVpnTargetNetworkRequest =
 /*#__PURE__*/

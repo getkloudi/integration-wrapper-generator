@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteLaunchTemplateVersionsResponseErrorItem model module.
  * @module model/DeleteLaunchTemplateVersionsResponseErrorItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteLaunchTemplateVersionsResponseErrorItem =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteQueuedReservedInstancesRequest model module.
  * @module model/DeleteQueuedReservedInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteQueuedReservedInstancesRequest {
     /**

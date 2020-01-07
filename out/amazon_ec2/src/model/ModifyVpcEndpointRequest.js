@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModifyVpcEndpointRequest model module.
  * @module model/ModifyVpcEndpointRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyVpcEndpointRequest {
     /**

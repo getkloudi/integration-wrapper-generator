@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ExportClientVpnClientConfigurationRequest model module.
  * @module model/ExportClientVpnClientConfigurationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ExportClientVpnClientConfigurationRequest =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import SecurityGroup from './SecurityGroup';
 /**
  * The DescribeSecurityGroupsResult model module.
  * @module model/DescribeSecurityGroupsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSecurityGroupsResult {
     /**

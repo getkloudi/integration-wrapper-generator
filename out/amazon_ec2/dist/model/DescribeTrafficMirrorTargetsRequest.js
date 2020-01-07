@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeTrafficMirrorTargetsRequest model module.
  * @module model/DescribeTrafficMirrorTargetsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeTrafficMirrorTargetsRequest =
 /*#__PURE__*/

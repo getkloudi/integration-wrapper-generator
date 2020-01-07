@@ -17,7 +17,7 @@ import EgressOnlyInternetGateway from './EgressOnlyInternetGateway';
 /**
  * The CreateEgressOnlyInternetGatewayResult model module.
  * @module model/CreateEgressOnlyInternetGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateEgressOnlyInternetGatewayResult {
     /**

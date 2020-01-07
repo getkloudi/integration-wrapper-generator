@@ -17,7 +17,7 @@ import ClientVpnRouteStatus from './ClientVpnRouteStatus';
 /**
  * The DeleteClientVpnRouteResult model module.
  * @module model/DeleteClientVpnRouteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteClientVpnRouteResult {
     /**

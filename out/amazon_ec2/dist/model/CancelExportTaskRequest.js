@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CancelExportTaskRequest model module.
  * @module model/CancelExportTaskRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CancelExportTaskRequest =
 /*#__PURE__*/

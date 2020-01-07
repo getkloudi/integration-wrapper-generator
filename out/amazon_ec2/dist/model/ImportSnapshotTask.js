@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ImportSnapshotTask model module.
  * @module model/ImportSnapshotTask
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ImportSnapshotTask =
 /*#__PURE__*/

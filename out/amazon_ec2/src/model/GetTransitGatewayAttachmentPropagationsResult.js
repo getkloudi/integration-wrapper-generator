@@ -17,7 +17,7 @@ import TransitGatewayAttachmentPropagation from './TransitGatewayAttachmentPropa
 /**
  * The GetTransitGatewayAttachmentPropagationsResult model module.
  * @module model/GetTransitGatewayAttachmentPropagationsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetTransitGatewayAttachmentPropagationsResult {
     /**

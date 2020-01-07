@@ -18,7 +18,7 @@ import VolumeDetail from './VolumeDetail';
 /**
  * The DiskImage model module.
  * @module model/DiskImage
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DiskImage {
     /**

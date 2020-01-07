@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EnableEbsEncryptionByDefaultRequest model module.
  * @module model/EnableEbsEncryptionByDefaultRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var EnableEbsEncryptionByDefaultRequest =
 /*#__PURE__*/

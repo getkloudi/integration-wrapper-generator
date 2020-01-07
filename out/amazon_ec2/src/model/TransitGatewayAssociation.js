@@ -18,7 +18,7 @@ import TransitGatewayAttachmentResourceType from './TransitGatewayAttachmentReso
 /**
  * The TransitGatewayAssociation model module.
  * @module model/TransitGatewayAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayAssociation {
     /**

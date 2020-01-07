@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ElasticGpuSpecification model module.
  * @module model/ElasticGpuSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ElasticGpuSpecification =
 /*#__PURE__*/

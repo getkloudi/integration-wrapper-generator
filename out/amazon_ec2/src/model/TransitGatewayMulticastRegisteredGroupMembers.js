@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TransitGatewayMulticastRegisteredGroupMembers model module.
  * @module model/TransitGatewayMulticastRegisteredGroupMembers
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayMulticastRegisteredGroupMembers {
     /**

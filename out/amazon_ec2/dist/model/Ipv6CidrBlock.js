@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Ipv6CidrBlock model module.
  * @module model/Ipv6CidrBlock
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Ipv6CidrBlock =
 /*#__PURE__*/

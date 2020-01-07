@@ -17,7 +17,7 @@ import Vpc from './Vpc';
 /**
  * The DescribeVpcsResult model module.
  * @module model/DescribeVpcsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcsResult {
     /**

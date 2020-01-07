@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceExportDetails model module.
  * @module model/InstanceExportDetails
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceExportDetails =
 /*#__PURE__*/

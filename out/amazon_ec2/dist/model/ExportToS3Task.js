@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ExportToS3Task model module.
  * @module model/ExportToS3Task
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ExportToS3Task =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ import Tag from './Tag';
 /**
  * The LaunchTemplateTagSpecificationRequest model module.
  * @module model/LaunchTemplateTagSpecificationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateTagSpecificationRequest {
     /**

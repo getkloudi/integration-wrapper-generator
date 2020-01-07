@@ -17,7 +17,7 @@ import LocalGatewayRouteTableVpcAssociation from './LocalGatewayRouteTableVpcAss
 /**
  * The CreateLocalGatewayRouteTableVpcAssociationResult model module.
  * @module model/CreateLocalGatewayRouteTableVpcAssociationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateLocalGatewayRouteTableVpcAssociationResult {
     /**

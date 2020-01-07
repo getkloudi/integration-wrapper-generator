@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PurchaseRequest model module.
  * @module model/PurchaseRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PurchaseRequest {
     /**

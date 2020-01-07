@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VolumeStatusItem model module.
  * @module model/VolumeStatusItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VolumeStatusItem =
 /*#__PURE__*/

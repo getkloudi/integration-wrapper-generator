@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLocalGatewayRouteTableVpcAssociationRequest model module.
  * @module model/CreateLocalGatewayRouteTableVpcAssociationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateLocalGatewayRouteTableVpcAssociationRequest {
     /**

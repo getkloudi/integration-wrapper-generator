@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StorageLocation model module.
  * @module model/StorageLocation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class StorageLocation {
     /**

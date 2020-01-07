@@ -17,7 +17,7 @@ import LocalGatewayRouteTable from './LocalGatewayRouteTable';
 /**
  * The DescribeLocalGatewayRouteTablesResult model module.
  * @module model/DescribeLocalGatewayRouteTablesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeLocalGatewayRouteTablesResult {
     /**

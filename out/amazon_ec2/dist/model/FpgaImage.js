@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FpgaImage model module.
  * @module model/FpgaImage
- * @version 1.0.0
+ * @version 1.1.0
  */
 var FpgaImage =
 /*#__PURE__*/

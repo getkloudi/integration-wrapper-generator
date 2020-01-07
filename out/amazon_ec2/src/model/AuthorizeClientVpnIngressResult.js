@@ -17,7 +17,7 @@ import ClientVpnAuthorizationRuleStatus from './ClientVpnAuthorizationRuleStatus
 /**
  * The AuthorizeClientVpnIngressResult model module.
  * @module model/AuthorizeClientVpnIngressResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AuthorizeClientVpnIngressResult {
     /**

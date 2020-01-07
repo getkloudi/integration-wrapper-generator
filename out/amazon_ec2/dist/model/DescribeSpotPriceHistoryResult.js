@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeSpotPriceHistoryResult model module.
  * @module model/DescribeSpotPriceHistoryResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeSpotPriceHistoryResult =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CapacityReservationTarget model module.
  * @module model/CapacityReservationTarget
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CapacityReservationTarget {
     /**

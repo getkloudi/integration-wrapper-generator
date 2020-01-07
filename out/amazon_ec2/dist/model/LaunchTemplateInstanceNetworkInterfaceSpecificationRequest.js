@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LaunchTemplateInstanceNetworkInterfaceSpecificationRequest model module.
  * @module model/LaunchTemplateInstanceNetworkInterfaceSpecificationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LaunchTemplateInstanceNetworkInterfaceSpecificationRequest =
 /*#__PURE__*/

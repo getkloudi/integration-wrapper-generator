@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribePublicIpv4PoolsRequest model module.
  * @module model/DescribePublicIpv4PoolsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribePublicIpv4PoolsRequest =
 /*#__PURE__*/

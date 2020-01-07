@@ -17,7 +17,7 @@ import AttachmentStatus from './AttachmentStatus';
 /**
  * The InternetGatewayAttachment model module.
  * @module model/InternetGatewayAttachment
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InternetGatewayAttachment {
     /**

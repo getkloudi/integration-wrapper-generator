@@ -17,7 +17,7 @@ import VolumeType from './VolumeType';
 /**
  * The LaunchTemplateEbsBlockDeviceRequest model module.
  * @module model/LaunchTemplateEbsBlockDeviceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateEbsBlockDeviceRequest {
     /**

@@ -18,7 +18,7 @@ import State from './State';
 /**
  * The VpcEndpointConnection model module.
  * @module model/VpcEndpointConnection
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpcEndpointConnection {
     /**

@@ -17,7 +17,7 @@ import AttachmentStatus from './AttachmentStatus';
 /**
  * The VpcAttachment model module.
  * @module model/VpcAttachment
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpcAttachment {
     /**

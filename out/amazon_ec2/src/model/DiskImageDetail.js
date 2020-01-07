@@ -17,7 +17,7 @@ import DiskImageFormat from './DiskImageFormat';
 /**
  * The DiskImageDetail model module.
  * @module model/DiskImageDetail
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DiskImageDetail {
     /**

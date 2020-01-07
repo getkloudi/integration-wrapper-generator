@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RevokeSecurityGroupIngressRequest model module.
  * @module model/RevokeSecurityGroupIngressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RevokeSecurityGroupIngressRequest =
 /*#__PURE__*/

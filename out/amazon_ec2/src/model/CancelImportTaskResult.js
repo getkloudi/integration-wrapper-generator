@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CancelImportTaskResult model module.
  * @module model/CancelImportTaskResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CancelImportTaskResult {
     /**

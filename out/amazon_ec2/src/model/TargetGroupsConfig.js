@@ -17,7 +17,7 @@ import TargetGroup from './TargetGroup';
 /**
  * The TargetGroupsConfig model module.
  * @module model/TargetGroupsConfig
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TargetGroupsConfig {
     /**

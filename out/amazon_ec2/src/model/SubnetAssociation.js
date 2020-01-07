@@ -17,7 +17,7 @@ import TransitGatewayMulitcastDomainAssociationState from './TransitGatewayMulit
 /**
  * The SubnetAssociation model module.
  * @module model/SubnetAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class SubnetAssociation {
     /**

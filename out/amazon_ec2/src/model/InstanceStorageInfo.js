@@ -17,7 +17,7 @@ import DiskInfo from './DiskInfo';
 /**
  * The InstanceStorageInfo model module.
  * @module model/InstanceStorageInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceStorageInfo {
     /**

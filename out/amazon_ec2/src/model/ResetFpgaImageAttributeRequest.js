@@ -17,7 +17,7 @@ import ResetFpgaImageAttributeName from './ResetFpgaImageAttributeName';
 /**
  * The ResetFpgaImageAttributeRequest model module.
  * @module model/ResetFpgaImageAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ResetFpgaImageAttributeRequest {
     /**

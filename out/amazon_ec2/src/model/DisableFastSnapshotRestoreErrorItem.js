@@ -17,7 +17,7 @@ import DisableFastSnapshotRestoreStateErrorItem from './DisableFastSnapshotResto
 /**
  * The DisableFastSnapshotRestoreErrorItem model module.
  * @module model/DisableFastSnapshotRestoreErrorItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisableFastSnapshotRestoreErrorItem {
     /**

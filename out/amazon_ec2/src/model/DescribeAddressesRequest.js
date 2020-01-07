@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeAddressesRequest model module.
  * @module model/DescribeAddressesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeAddressesRequest {
     /**

@@ -34,7 +34,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Host model module.
  * @module model/Host
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Host =
 /*#__PURE__*/

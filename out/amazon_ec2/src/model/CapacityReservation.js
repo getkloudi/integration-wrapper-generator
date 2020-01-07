@@ -22,7 +22,7 @@ import Tag from './Tag';
 /**
  * The CapacityReservation model module.
  * @module model/CapacityReservation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CapacityReservation {
     /**

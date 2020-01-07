@@ -19,7 +19,7 @@ import PrivateIpAddressSpecification from './PrivateIpAddressSpecification';
 /**
  * The CreateNetworkInterfaceRequest model module.
  * @module model/CreateNetworkInterfaceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateNetworkInterfaceRequest {
     /**

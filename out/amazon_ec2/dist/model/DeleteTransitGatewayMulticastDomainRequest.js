@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteTransitGatewayMulticastDomainRequest model module.
  * @module model/DeleteTransitGatewayMulticastDomainRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteTransitGatewayMulticastDomainRequest =
 /*#__PURE__*/

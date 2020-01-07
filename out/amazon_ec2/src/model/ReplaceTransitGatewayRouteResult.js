@@ -17,7 +17,7 @@ import TransitGatewayRoute from './TransitGatewayRoute';
 /**
  * The ReplaceTransitGatewayRouteResult model module.
  * @module model/ReplaceTransitGatewayRouteResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReplaceTransitGatewayRouteResult {
     /**

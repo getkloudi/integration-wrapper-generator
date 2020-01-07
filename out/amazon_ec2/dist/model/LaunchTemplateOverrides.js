@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The LaunchTemplateOverrides model module.
  * @module model/LaunchTemplateOverrides
- * @version 1.0.0
+ * @version 1.1.0
  */
 var LaunchTemplateOverrides =
 /*#__PURE__*/

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GetLaunchTemplateDataResult model module.
  * @module model/GetLaunchTemplateDataResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var GetLaunchTemplateDataResult =
 /*#__PURE__*/

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DisassociateClientVpnTargetNetworkResult model module.
  * @module model/DisassociateClientVpnTargetNetworkResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DisassociateClientVpnTargetNetworkResult =
 /*#__PURE__*/

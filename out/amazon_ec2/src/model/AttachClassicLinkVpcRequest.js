@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttachClassicLinkVpcRequest model module.
  * @module model/AttachClassicLinkVpcRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AttachClassicLinkVpcRequest {
     /**

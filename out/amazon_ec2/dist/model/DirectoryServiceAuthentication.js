@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DirectoryServiceAuthentication model module.
  * @module model/DirectoryServiceAuthentication
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DirectoryServiceAuthentication =
 /*#__PURE__*/

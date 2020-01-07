@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The GetCoipPoolUsageRequest model module.
  * @module model/GetCoipPoolUsageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetCoipPoolUsageRequest {
     /**

@@ -17,7 +17,7 @@ import ExportImageTask from './ExportImageTask';
 /**
  * The DescribeExportImageTasksResult model module.
  * @module model/DescribeExportImageTasksResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeExportImageTasksResult {
     /**

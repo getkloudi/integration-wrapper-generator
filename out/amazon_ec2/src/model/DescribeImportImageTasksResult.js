@@ -17,7 +17,7 @@ import ImportImageTask from './ImportImageTask';
 /**
  * The DescribeImportImageTasksResult model module.
  * @module model/DescribeImportImageTasksResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeImportImageTasksResult {
     /**

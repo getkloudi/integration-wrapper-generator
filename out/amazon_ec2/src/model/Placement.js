@@ -17,7 +17,7 @@ import Tenancy from './Tenancy';
 /**
  * The Placement model module.
  * @module model/Placement
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Placement {
     /**

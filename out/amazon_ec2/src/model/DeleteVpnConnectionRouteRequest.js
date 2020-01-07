@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteVpnConnectionRouteRequest model module.
  * @module model/DeleteVpnConnectionRouteRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteVpnConnectionRouteRequest {
     /**

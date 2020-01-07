@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest model module.
  * @module model/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest {
     /**

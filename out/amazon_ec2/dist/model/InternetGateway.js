@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InternetGateway model module.
  * @module model/InternetGateway
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InternetGateway =
 /*#__PURE__*/

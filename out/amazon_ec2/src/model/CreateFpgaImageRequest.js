@@ -18,7 +18,7 @@ import TagSpecification from './TagSpecification';
 /**
  * The CreateFpgaImageRequest model module.
  * @module model/CreateFpgaImageRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateFpgaImageRequest {
     /**

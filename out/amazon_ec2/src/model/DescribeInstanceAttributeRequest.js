@@ -17,7 +17,7 @@ import InstanceAttributeName from './InstanceAttributeName';
 /**
  * The DescribeInstanceAttributeRequest model module.
  * @module model/DescribeInstanceAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeInstanceAttributeRequest {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceSpecification model module.
  * @module model/InstanceSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceSpecification =
 /*#__PURE__*/

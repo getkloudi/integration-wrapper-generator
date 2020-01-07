@@ -30,7 +30,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceNetworkInterface model module.
  * @module model/InstanceNetworkInterface
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceNetworkInterface =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import StaleSecurityGroup from './StaleSecurityGroup';
 /**
  * The DescribeStaleSecurityGroupsResult model module.
  * @module model/DescribeStaleSecurityGroupsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeStaleSecurityGroupsResult {
     /**

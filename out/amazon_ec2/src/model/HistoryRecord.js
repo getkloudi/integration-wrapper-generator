@@ -18,7 +18,7 @@ import EventType from './EventType';
 /**
  * The HistoryRecord model module.
  * @module model/HistoryRecord
- * @version 1.0.0
+ * @version 1.1.0
  */
 class HistoryRecord {
     /**

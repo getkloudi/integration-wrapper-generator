@@ -17,7 +17,7 @@ import ReservedInstancesOffering from './ReservedInstancesOffering';
 /**
  * The DescribeReservedInstancesOfferingsResult model module.
  * @module model/DescribeReservedInstancesOfferingsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeReservedInstancesOfferingsResult {
     /**

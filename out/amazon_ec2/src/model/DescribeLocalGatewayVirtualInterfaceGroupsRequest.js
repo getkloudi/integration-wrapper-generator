@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeLocalGatewayVirtualInterfaceGroupsRequest model module.
  * @module model/DescribeLocalGatewayVirtualInterfaceGroupsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeLocalGatewayVirtualInterfaceGroupsRequest {
     /**

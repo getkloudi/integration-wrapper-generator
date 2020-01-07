@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Phase1IntegrityAlgorithmsRequestListValue model module.
  * @module model/Phase1IntegrityAlgorithmsRequestListValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Phase1IntegrityAlgorithmsRequestListValue =
 /*#__PURE__*/

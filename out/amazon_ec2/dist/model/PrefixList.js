@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PrefixList model module.
  * @module model/PrefixList
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PrefixList =
 /*#__PURE__*/

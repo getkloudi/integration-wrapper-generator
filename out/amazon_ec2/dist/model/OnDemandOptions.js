@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The OnDemandOptions model module.
  * @module model/OnDemandOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 var OnDemandOptions =
 /*#__PURE__*/

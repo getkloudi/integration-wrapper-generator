@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateTrafficMirrorFilterRuleRequest model module.
  * @module model/CreateTrafficMirrorFilterRuleRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateTrafficMirrorFilterRuleRequest =
 /*#__PURE__*/

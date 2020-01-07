@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TagSpecification model module.
  * @module model/TagSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var TagSpecification =
 /*#__PURE__*/

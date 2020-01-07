@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceMonitoring model module.
  * @module model/InstanceMonitoring
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceMonitoring =
 /*#__PURE__*/

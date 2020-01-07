@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DetachInternetGatewayRequest model module.
  * @module model/DetachInternetGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DetachInternetGatewayRequest {
     /**

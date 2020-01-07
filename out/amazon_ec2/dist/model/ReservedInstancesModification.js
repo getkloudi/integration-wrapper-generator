@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ReservedInstancesModification model module.
  * @module model/ReservedInstancesModification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ReservedInstancesModification =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import EndDateType from './EndDateType';
 /**
  * The ModifyCapacityReservationRequest model module.
  * @module model/ModifyCapacityReservationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyCapacityReservationRequest {
     /**

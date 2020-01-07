@@ -17,7 +17,7 @@ import BatchState from './BatchState';
 /**
  * The CancelSpotFleetRequestsSuccessItem model module.
  * @module model/CancelSpotFleetRequestsSuccessItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CancelSpotFleetRequestsSuccessItem {
     /**

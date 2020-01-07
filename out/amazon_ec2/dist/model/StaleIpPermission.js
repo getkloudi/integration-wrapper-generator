@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StaleIpPermission model module.
  * @module model/StaleIpPermission
- * @version 1.0.0
+ * @version 1.1.0
  */
 var StaleIpPermission =
 /*#__PURE__*/

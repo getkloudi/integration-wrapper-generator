@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AuthorizeSecurityGroupIngressRequest model module.
  * @module model/AuthorizeSecurityGroupIngressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AuthorizeSecurityGroupIngressRequest =
 /*#__PURE__*/

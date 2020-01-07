@@ -17,7 +17,7 @@ import S3Storage from './S3Storage';
 /**
  * The Storage model module.
  * @module model/Storage
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Storage {
     /**

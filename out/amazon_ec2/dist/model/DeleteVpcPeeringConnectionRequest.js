@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteVpcPeeringConnectionRequest model module.
  * @module model/DeleteVpcPeeringConnectionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteVpcPeeringConnectionRequest =
 /*#__PURE__*/

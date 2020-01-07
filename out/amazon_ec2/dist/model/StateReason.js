@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StateReason model module.
  * @module model/StateReason
- * @version 1.0.0
+ * @version 1.1.0
  */
 var StateReason =
 /*#__PURE__*/

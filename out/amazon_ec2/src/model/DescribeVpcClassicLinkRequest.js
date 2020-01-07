@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeVpcClassicLinkRequest model module.
  * @module model/DescribeVpcClassicLinkRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcClassicLinkRequest {
     /**

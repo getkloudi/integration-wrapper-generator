@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ResetSnapshotAttributeRequest model module.
  * @module model/ResetSnapshotAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ResetSnapshotAttributeRequest =
 /*#__PURE__*/

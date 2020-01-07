@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportTaskS3Location model module.
  * @module model/ExportTaskS3Location
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExportTaskS3Location {
     /**

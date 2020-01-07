@@ -17,7 +17,7 @@ import TransitGatewayAssociationState from './TransitGatewayAssociationState';
 /**
  * The TransitGatewayAttachmentAssociation model module.
  * @module model/TransitGatewayAttachmentAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGatewayAttachmentAssociation {
     /**

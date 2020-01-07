@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StartInstancesRequest model module.
  * @module model/StartInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var StartInstancesRequest =
 /*#__PURE__*/

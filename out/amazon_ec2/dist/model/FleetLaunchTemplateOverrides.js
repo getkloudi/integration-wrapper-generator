@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FleetLaunchTemplateOverrides model module.
  * @module model/FleetLaunchTemplateOverrides
- * @version 1.0.0
+ * @version 1.1.0
  */
 var FleetLaunchTemplateOverrides =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteVolumeRequest model module.
  * @module model/DeleteVolumeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteVolumeRequest =
 /*#__PURE__*/

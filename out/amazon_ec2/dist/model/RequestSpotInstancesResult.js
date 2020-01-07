@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RequestSpotInstancesResult model module.
  * @module model/RequestSpotInstancesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RequestSpotInstancesResult =
 /*#__PURE__*/

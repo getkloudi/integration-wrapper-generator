@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InstanceTypeOffering model module.
  * @module model/InstanceTypeOffering
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InstanceTypeOffering =
 /*#__PURE__*/

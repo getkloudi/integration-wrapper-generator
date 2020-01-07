@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AuthorizeClientVpnIngressRequest model module.
  * @module model/AuthorizeClientVpnIngressRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AuthorizeClientVpnIngressRequest {
     /**

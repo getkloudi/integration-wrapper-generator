@@ -17,7 +17,7 @@ import IdFormat from './IdFormat';
 /**
  * The PrincipalIdFormat model module.
  * @module model/PrincipalIdFormat
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PrincipalIdFormat {
     /**

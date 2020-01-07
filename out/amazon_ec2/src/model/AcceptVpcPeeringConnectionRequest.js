@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AcceptVpcPeeringConnectionRequest model module.
  * @module model/AcceptVpcPeeringConnectionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AcceptVpcPeeringConnectionRequest {
     /**

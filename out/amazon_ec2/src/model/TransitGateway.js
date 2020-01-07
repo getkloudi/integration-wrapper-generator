@@ -19,7 +19,7 @@ import TransitGatewayState from './TransitGatewayState';
 /**
  * The TransitGateway model module.
  * @module model/TransitGateway
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TransitGateway {
     /**

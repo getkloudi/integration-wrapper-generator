@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StopInstancesRequest model module.
  * @module model/StopInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class StopInstancesRequest {
     /**

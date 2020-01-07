@@ -18,7 +18,7 @@ import ExportToS3TaskSpecification from './ExportToS3TaskSpecification';
 /**
  * The CreateInstanceExportTaskRequest model module.
  * @module model/CreateInstanceExportTaskRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateInstanceExportTaskRequest {
     /**

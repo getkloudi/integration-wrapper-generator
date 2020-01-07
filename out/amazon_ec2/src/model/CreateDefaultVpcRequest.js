@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateDefaultVpcRequest model module.
  * @module model/CreateDefaultVpcRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateDefaultVpcRequest {
     /**

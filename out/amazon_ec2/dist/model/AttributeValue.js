@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AttributeValue model module.
  * @module model/AttributeValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AttributeValue =
 /*#__PURE__*/

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AttachNetworkInterfaceRequest model module.
  * @module model/AttachNetworkInterfaceRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AttachNetworkInterfaceRequest {
     /**

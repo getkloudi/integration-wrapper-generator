@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModifyVpnConnectionRequest model module.
  * @module model/ModifyVpnConnectionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyVpnConnectionRequest {
     /**

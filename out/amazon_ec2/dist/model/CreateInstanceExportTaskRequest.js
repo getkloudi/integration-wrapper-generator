@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateInstanceExportTaskRequest model module.
  * @module model/CreateInstanceExportTaskRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateInstanceExportTaskRequest =
 /*#__PURE__*/

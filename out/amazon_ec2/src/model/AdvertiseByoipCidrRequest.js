@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AdvertiseByoipCidrRequest model module.
  * @module model/AdvertiseByoipCidrRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AdvertiseByoipCidrRequest {
     /**

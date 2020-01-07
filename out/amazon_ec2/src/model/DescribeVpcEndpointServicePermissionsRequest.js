@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeVpcEndpointServicePermissionsRequest model module.
  * @module model/DescribeVpcEndpointServicePermissionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcEndpointServicePermissionsRequest {
     /**

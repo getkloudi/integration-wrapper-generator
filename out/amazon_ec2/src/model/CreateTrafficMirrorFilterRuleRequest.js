@@ -19,7 +19,7 @@ import TrafficMirrorRuleAction from './TrafficMirrorRuleAction';
 /**
  * The CreateTrafficMirrorFilterRuleRequest model module.
  * @module model/CreateTrafficMirrorFilterRuleRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTrafficMirrorFilterRuleRequest {
     /**

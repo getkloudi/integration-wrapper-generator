@@ -17,7 +17,7 @@ import PurchaseRequest from './PurchaseRequest';
 /**
  * The PurchaseScheduledInstancesRequest model module.
  * @module model/PurchaseScheduledInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PurchaseScheduledInstancesRequest {
     /**

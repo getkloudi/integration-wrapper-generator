@@ -17,7 +17,7 @@ import TagSpecification from './TagSpecification';
 /**
  * The CreateTransitGatewayMulticastDomainRequest model module.
  * @module model/CreateTransitGatewayMulticastDomainRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateTransitGatewayMulticastDomainRequest {
     /**

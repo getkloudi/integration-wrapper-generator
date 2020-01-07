@@ -17,7 +17,7 @@ import ConnectionNotification from './ConnectionNotification';
 /**
  * The CreateVpcEndpointConnectionNotificationResult model module.
  * @module model/CreateVpcEndpointConnectionNotificationResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateVpcEndpointConnectionNotificationResult {
     /**

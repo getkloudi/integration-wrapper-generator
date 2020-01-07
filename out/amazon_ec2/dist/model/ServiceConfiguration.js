@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ServiceConfiguration model module.
  * @module model/ServiceConfiguration
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ServiceConfiguration =
 /*#__PURE__*/

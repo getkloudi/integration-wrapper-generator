@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RejectVpcEndpointConnectionsRequest model module.
  * @module model/RejectVpcEndpointConnectionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var RejectVpcEndpointConnectionsRequest =
 /*#__PURE__*/

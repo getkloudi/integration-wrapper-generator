@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FleetLaunchTemplateSpecification model module.
  * @module model/FleetLaunchTemplateSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class FleetLaunchTemplateSpecification {
     /**

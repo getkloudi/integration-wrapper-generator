@@ -17,7 +17,7 @@ import ByoipCidr from './ByoipCidr';
 /**
  * The AdvertiseByoipCidrResult model module.
  * @module model/AdvertiseByoipCidrResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AdvertiseByoipCidrResult {
     /**

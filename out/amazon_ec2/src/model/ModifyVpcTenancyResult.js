@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModifyVpcTenancyResult model module.
  * @module model/ModifyVpcTenancyResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyVpcTenancyResult {
     /**

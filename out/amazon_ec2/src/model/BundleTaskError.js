@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BundleTaskError model module.
  * @module model/BundleTaskError
- * @version 1.0.0
+ * @version 1.1.0
  */
 class BundleTaskError {
     /**

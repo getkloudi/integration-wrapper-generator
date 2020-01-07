@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ConnectionLogOptions model module.
  * @module model/ConnectionLogOptions
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ConnectionLogOptions =
 /*#__PURE__*/

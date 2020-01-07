@@ -23,7 +23,7 @@ import TargetCapacitySpecificationRequest from './TargetCapacitySpecificationReq
 /**
  * The CreateFleetRequest model module.
  * @module model/CreateFleetRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateFleetRequest {
     /**

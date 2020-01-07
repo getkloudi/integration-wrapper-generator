@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AllocateHostsRequest model module.
  * @module model/AllocateHostsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AllocateHostsRequest =
 /*#__PURE__*/

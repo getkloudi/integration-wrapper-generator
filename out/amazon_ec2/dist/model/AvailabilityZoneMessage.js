@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AvailabilityZoneMessage model module.
  * @module model/AvailabilityZoneMessage
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AvailabilityZoneMessage =
 /*#__PURE__*/

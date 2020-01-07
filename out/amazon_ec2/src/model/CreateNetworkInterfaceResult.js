@@ -17,7 +17,7 @@ import NetworkInterface from './NetworkInterface';
 /**
  * The CreateNetworkInterfaceResult model module.
  * @module model/CreateNetworkInterfaceResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateNetworkInterfaceResult {
     /**

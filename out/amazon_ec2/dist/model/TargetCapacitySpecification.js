@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TargetCapacitySpecification model module.
  * @module model/TargetCapacitySpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var TargetCapacitySpecification =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import ClientVpnRoute from './ClientVpnRoute';
 /**
  * The DescribeClientVpnRoutesResult model module.
  * @module model/DescribeClientVpnRoutesResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeClientVpnRoutesResult {
     /**

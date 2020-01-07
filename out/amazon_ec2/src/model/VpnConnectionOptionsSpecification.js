@@ -17,7 +17,7 @@ import VpnTunnelOptionsSpecification from './VpnTunnelOptionsSpecification';
 /**
  * The VpnConnectionOptionsSpecification model module.
  * @module model/VpnConnectionOptionsSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VpnConnectionOptionsSpecification {
     /**

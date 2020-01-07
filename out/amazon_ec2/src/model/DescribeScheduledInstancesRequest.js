@@ -18,7 +18,7 @@ import SlotStartTimeRangeRequest from './SlotStartTimeRangeRequest';
 /**
  * The DescribeScheduledInstancesRequest model module.
  * @module model/DescribeScheduledInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeScheduledInstancesRequest {
     /**

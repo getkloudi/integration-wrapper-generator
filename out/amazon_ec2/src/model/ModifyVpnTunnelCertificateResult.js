@@ -17,7 +17,7 @@ import VpnConnection from './VpnConnection';
 /**
  * The ModifyVpnTunnelCertificateResult model module.
  * @module model/ModifyVpnTunnelCertificateResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyVpnTunnelCertificateResult {
     /**

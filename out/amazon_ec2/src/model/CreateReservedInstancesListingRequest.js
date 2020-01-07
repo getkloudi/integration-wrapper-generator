@@ -17,7 +17,7 @@ import PriceScheduleSpecification from './PriceScheduleSpecification';
 /**
  * The CreateReservedInstancesListingRequest model module.
  * @module model/CreateReservedInstancesListingRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateReservedInstancesListingRequest {
     /**

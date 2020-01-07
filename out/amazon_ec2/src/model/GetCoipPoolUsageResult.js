@@ -17,7 +17,7 @@ import CoipAddressUsage from './CoipAddressUsage';
 /**
  * The GetCoipPoolUsageResult model module.
  * @module model/GetCoipPoolUsageResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetCoipPoolUsageResult {
     /**

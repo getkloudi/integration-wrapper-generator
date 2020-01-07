@@ -18,7 +18,7 @@ import PrivateIpAddressSpecification from './PrivateIpAddressSpecification';
 /**
  * The InstanceNetworkInterfaceSpecification model module.
  * @module model/InstanceNetworkInterfaceSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceNetworkInterfaceSpecification {
     /**

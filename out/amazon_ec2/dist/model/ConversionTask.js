@@ -26,7 +26,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ConversionTask model module.
  * @module model/ConversionTask
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ConversionTask =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeImportSnapshotTasksRequest model module.
  * @module model/DescribeImportSnapshotTasksRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeImportSnapshotTasksRequest {
     /**

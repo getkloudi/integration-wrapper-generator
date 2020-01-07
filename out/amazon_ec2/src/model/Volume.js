@@ -20,7 +20,7 @@ import VolumeType from './VolumeType';
 /**
  * The Volume model module.
  * @module model/Volume
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Volume {
     /**

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FlowLog model module.
  * @module model/FlowLog
- * @version 1.0.0
+ * @version 1.1.0
  */
 var FlowLog =
 /*#__PURE__*/

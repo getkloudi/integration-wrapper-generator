@@ -17,7 +17,7 @@ import UserBucket from './UserBucket';
 /**
  * The ImageDiskContainer model module.
  * @module model/ImageDiskContainer
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ImageDiskContainer {
     /**

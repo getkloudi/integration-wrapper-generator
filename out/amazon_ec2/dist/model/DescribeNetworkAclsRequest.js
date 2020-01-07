@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeNetworkAclsRequest model module.
  * @module model/DescribeNetworkAclsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeNetworkAclsRequest =
 /*#__PURE__*/

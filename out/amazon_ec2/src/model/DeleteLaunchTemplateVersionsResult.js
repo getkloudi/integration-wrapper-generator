@@ -18,7 +18,7 @@ import DeleteLaunchTemplateVersionsResponseSuccessItem from './DeleteLaunchTempl
 /**
  * The DeleteLaunchTemplateVersionsResult model module.
  * @module model/DeleteLaunchTemplateVersionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteLaunchTemplateVersionsResult {
     /**

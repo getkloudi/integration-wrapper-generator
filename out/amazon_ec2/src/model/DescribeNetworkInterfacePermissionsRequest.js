@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeNetworkInterfacePermissionsRequest model module.
  * @module model/DescribeNetworkInterfacePermissionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeNetworkInterfacePermissionsRequest {
     /**

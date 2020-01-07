@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GpuDeviceMemoryInfo model module.
  * @module model/GpuDeviceMemoryInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GpuDeviceMemoryInfo {
     /**

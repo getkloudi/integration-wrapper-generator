@@ -17,7 +17,7 @@ import InstanceCapacity from './InstanceCapacity';
 /**
  * The AvailableCapacity model module.
  * @module model/AvailableCapacity
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AvailableCapacity {
     /**

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SpotDatafeedSubscription model module.
  * @module model/SpotDatafeedSubscription
- * @version 1.0.0
+ * @version 1.1.0
  */
 var SpotDatafeedSubscription =
 /*#__PURE__*/

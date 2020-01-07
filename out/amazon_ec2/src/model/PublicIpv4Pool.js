@@ -17,7 +17,7 @@ import PublicIpv4PoolRange from './PublicIpv4PoolRange';
 /**
  * The PublicIpv4Pool model module.
  * @module model/PublicIpv4Pool
- * @version 1.0.0
+ * @version 1.1.0
  */
 class PublicIpv4Pool {
     /**

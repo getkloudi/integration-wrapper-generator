@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NetworkInterfacePermissionState model module.
  * @module model/NetworkInterfacePermissionState
- * @version 1.0.0
+ * @version 1.1.0
  */
 var NetworkInterfacePermissionState =
 /*#__PURE__*/

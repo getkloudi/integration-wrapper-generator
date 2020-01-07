@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeNetworkInterfacePermissionsResult model module.
  * @module model/DescribeNetworkInterfacePermissionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeNetworkInterfacePermissionsResult =
 /*#__PURE__*/

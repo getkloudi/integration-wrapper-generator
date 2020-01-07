@@ -17,7 +17,7 @@ import CancelBatchErrorCode from './CancelBatchErrorCode';
 /**
  * The CancelSpotFleetRequestsError model module.
  * @module model/CancelSpotFleetRequestsError
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CancelSpotFleetRequestsError {
     /**

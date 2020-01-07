@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateLocalGatewayRouteRequest model module.
  * @module model/CreateLocalGatewayRouteRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateLocalGatewayRouteRequest {
     /**

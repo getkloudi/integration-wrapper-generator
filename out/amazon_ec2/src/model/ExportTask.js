@@ -20,7 +20,7 @@ import Tag from './Tag';
 /**
  * The ExportTask model module.
  * @module model/ExportTask
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ExportTask {
     /**

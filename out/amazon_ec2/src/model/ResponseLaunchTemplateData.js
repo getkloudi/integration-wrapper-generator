@@ -32,7 +32,7 @@ import ShutdownBehavior from './ShutdownBehavior';
 /**
  * The ResponseLaunchTemplateData model module.
  * @module model/ResponseLaunchTemplateData
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ResponseLaunchTemplateData {
     /**

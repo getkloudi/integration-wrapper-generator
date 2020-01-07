@@ -19,7 +19,7 @@ import AvailabilityZoneState from './AvailabilityZoneState';
 /**
  * The AvailabilityZone model module.
  * @module model/AvailabilityZone
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AvailabilityZone {
     /**

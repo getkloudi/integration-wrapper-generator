@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeAggregateIdFormatResult model module.
  * @module model/DescribeAggregateIdFormatResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeAggregateIdFormatResult =
 /*#__PURE__*/

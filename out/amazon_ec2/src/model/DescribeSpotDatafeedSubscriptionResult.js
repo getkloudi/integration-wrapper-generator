@@ -17,7 +17,7 @@ import SpotDatafeedSubscription from './SpotDatafeedSubscription';
 /**
  * The DescribeSpotDatafeedSubscriptionResult model module.
  * @module model/DescribeSpotDatafeedSubscriptionResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSpotDatafeedSubscriptionResult {
     /**

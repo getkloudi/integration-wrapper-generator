@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UnassignIpv6AddressesRequest model module.
  * @module model/UnassignIpv6AddressesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var UnassignIpv6AddressesRequest =
 /*#__PURE__*/

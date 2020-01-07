@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RunInstancesMonitoringEnabled model module.
  * @module model/RunInstancesMonitoringEnabled
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RunInstancesMonitoringEnabled {
     /**

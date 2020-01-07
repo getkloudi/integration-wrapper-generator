@@ -17,7 +17,7 @@ import PlacementStrategy from './PlacementStrategy';
 /**
  * The CreatePlacementGroupRequest model module.
  * @module model/CreatePlacementGroupRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreatePlacementGroupRequest {
     /**

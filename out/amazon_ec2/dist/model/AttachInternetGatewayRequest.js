@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AttachInternetGatewayRequest model module.
  * @module model/AttachInternetGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AttachInternetGatewayRequest =
 /*#__PURE__*/

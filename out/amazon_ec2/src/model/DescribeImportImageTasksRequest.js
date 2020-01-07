@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeImportImageTasksRequest model module.
  * @module model/DescribeImportImageTasksRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeImportImageTasksRequest {
     /**

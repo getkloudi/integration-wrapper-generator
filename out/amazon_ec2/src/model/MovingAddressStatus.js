@@ -17,7 +17,7 @@ import MoveStatus from './MoveStatus';
 /**
  * The MovingAddressStatus model module.
  * @module model/MovingAddressStatus
- * @version 1.0.0
+ * @version 1.1.0
  */
 class MovingAddressStatus {
     /**

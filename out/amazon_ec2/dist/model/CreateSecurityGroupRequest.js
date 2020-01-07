@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateSecurityGroupRequest model module.
  * @module model/CreateSecurityGroupRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var CreateSecurityGroupRequest =
 /*#__PURE__*/

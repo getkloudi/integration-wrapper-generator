@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeleteFlowLogsRequest model module.
  * @module model/DeleteFlowLogsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteFlowLogsRequest {
     /**

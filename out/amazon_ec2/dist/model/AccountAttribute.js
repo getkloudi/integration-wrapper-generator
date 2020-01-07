@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AccountAttribute model module.
  * @module model/AccountAttribute
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AccountAttribute =
 /*#__PURE__*/

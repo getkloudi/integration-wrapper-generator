@@ -17,7 +17,7 @@ import ClientVpnAuthorizationRuleStatus from './ClientVpnAuthorizationRuleStatus
 /**
  * The RevokeClientVpnIngressResult model module.
  * @module model/RevokeClientVpnIngressResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RevokeClientVpnIngressResult {
     /**

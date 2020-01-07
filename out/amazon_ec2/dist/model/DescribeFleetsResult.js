@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeFleetsResult model module.
  * @module model/DescribeFleetsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeFleetsResult =
 /*#__PURE__*/

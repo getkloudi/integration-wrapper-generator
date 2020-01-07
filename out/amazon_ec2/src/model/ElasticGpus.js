@@ -19,7 +19,7 @@ import Tag from './Tag';
 /**
  * The ElasticGpus model module.
  * @module model/ElasticGpus
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ElasticGpus {
     /**

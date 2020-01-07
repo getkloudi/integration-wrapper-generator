@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ClientData model module.
  * @module model/ClientData
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ClientData =
 /*#__PURE__*/

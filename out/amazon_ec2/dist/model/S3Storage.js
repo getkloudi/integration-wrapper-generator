@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The S3Storage model module.
  * @module model/S3Storage
- * @version 1.0.0
+ * @version 1.1.0
  */
 var S3Storage =
 /*#__PURE__*/

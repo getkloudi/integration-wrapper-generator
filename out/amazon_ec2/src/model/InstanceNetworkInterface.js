@@ -22,7 +22,7 @@ import NetworkInterfaceStatus from './NetworkInterfaceStatus';
 /**
  * The InstanceNetworkInterface model module.
  * @module model/InstanceNetworkInterface
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InstanceNetworkInterface {
     /**

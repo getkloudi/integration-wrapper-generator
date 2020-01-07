@@ -18,7 +18,7 @@ import DiskImageVolumeDescription from './DiskImageVolumeDescription';
 /**
  * The ImportInstanceVolumeDetailItem model module.
  * @module model/ImportInstanceVolumeDetailItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ImportInstanceVolumeDetailItem {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ElasticInferenceAcceleratorAssociation model module.
  * @module model/ElasticInferenceAcceleratorAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ElasticInferenceAcceleratorAssociation {
     /**

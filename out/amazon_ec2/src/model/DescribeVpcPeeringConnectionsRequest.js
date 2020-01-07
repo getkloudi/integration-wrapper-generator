@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeVpcPeeringConnectionsRequest model module.
  * @module model/DescribeVpcPeeringConnectionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeVpcPeeringConnectionsRequest {
     /**

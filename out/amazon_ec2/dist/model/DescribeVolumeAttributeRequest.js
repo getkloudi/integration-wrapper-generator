@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeVolumeAttributeRequest model module.
  * @module model/DescribeVolumeAttributeRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeVolumeAttributeRequest =
 /*#__PURE__*/

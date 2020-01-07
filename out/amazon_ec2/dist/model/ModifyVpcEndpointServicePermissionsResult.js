@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ModifyVpcEndpointServicePermissionsResult model module.
  * @module model/ModifyVpcEndpointServicePermissionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ModifyVpcEndpointServicePermissionsResult =
 /*#__PURE__*/

@@ -17,7 +17,7 @@ import UnsuccessfulItem from './UnsuccessfulItem';
 /**
  * The DeleteVpcEndpointServiceConfigurationsResult model module.
  * @module model/DeleteVpcEndpointServiceConfigurationsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteVpcEndpointServiceConfigurationsResult {
     /**

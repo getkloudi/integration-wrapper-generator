@@ -17,7 +17,7 @@ import TargetNetwork from './TargetNetwork';
 /**
  * The DescribeClientVpnTargetNetworksResult model module.
  * @module model/DescribeClientVpnTargetNetworksResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeClientVpnTargetNetworksResult {
     /**

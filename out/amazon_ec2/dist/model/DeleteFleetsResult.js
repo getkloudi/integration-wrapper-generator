@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteFleetsResult model module.
  * @module model/DeleteFleetsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteFleetsResult =
 /*#__PURE__*/

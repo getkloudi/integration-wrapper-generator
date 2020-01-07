@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeFpgaImagesRequest model module.
  * @module model/DescribeFpgaImagesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeFpgaImagesRequest =
 /*#__PURE__*/

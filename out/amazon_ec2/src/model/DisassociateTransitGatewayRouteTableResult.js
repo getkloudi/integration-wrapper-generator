@@ -17,7 +17,7 @@ import TransitGatewayAssociation from './TransitGatewayAssociation';
 /**
  * The DisassociateTransitGatewayRouteTableResult model module.
  * @module model/DisassociateTransitGatewayRouteTableResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisassociateTransitGatewayRouteTableResult {
     /**

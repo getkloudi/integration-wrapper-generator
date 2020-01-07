@@ -24,7 +24,7 @@ import Tag from './Tag';
 /**
  * The NetworkInterface model module.
  * @module model/NetworkInterface
- * @version 1.0.0
+ * @version 1.1.0
  */
 class NetworkInterface {
     /**

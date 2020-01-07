@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DisassociateIamInstanceProfileRequest model module.
  * @module model/DisassociateIamInstanceProfileRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DisassociateIamInstanceProfileRequest {
     /**

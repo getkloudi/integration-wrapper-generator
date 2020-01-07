@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LaunchTemplateElasticInferenceAcceleratorResponse model module.
  * @module model/LaunchTemplateElasticInferenceAcceleratorResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateElasticInferenceAcceleratorResponse {
     /**

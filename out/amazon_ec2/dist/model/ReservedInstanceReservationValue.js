@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ReservedInstanceReservationValue model module.
  * @module model/ReservedInstanceReservationValue
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ReservedInstanceReservationValue =
 /*#__PURE__*/

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PublicIpv4Pool model module.
  * @module model/PublicIpv4Pool
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PublicIpv4Pool =
 /*#__PURE__*/

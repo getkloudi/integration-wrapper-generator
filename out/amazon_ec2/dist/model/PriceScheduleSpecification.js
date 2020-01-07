@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PriceScheduleSpecification model module.
  * @module model/PriceScheduleSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PriceScheduleSpecification =
 /*#__PURE__*/

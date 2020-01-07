@@ -17,7 +17,7 @@ import DeleteFleetErrorCode from './DeleteFleetErrorCode';
 /**
  * The DeleteFleetError model module.
  * @module model/DeleteFleetError
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DeleteFleetError {
     /**

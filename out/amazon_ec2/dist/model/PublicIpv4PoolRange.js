@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PublicIpv4PoolRange model module.
  * @module model/PublicIpv4PoolRange
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PublicIpv4PoolRange =
 /*#__PURE__*/

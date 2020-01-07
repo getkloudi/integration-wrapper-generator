@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteNetworkAclRequest model module.
  * @module model/DeleteNetworkAclRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DeleteNetworkAclRequest =
 /*#__PURE__*/

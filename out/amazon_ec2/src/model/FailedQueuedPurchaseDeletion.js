@@ -17,7 +17,7 @@ import DeleteQueuedReservedInstancesError from './DeleteQueuedReservedInstancesE
 /**
  * The FailedQueuedPurchaseDeletion model module.
  * @module model/FailedQueuedPurchaseDeletion
- * @version 1.0.0
+ * @version 1.1.0
  */
 class FailedQueuedPurchaseDeletion {
     /**

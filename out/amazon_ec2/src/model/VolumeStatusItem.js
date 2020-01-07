@@ -19,7 +19,7 @@ import VolumeStatusInfo from './VolumeStatusInfo';
 /**
  * The VolumeStatusItem model module.
  * @module model/VolumeStatusItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class VolumeStatusItem {
     /**

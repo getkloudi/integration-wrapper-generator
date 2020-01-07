@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeDhcpOptionsResult model module.
  * @module model/DescribeDhcpOptionsResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeDhcpOptionsResult =
 /*#__PURE__*/

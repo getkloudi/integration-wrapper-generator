@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApplySecurityGroupsToClientVpnTargetNetworkResult model module.
  * @module model/ApplySecurityGroupsToClientVpnTargetNetworkResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ApplySecurityGroupsToClientVpnTargetNetworkResult {
     /**

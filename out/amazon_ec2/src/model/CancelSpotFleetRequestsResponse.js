@@ -18,7 +18,7 @@ import CancelSpotFleetRequestsSuccessItem from './CancelSpotFleetRequestsSuccess
 /**
  * The CancelSpotFleetRequestsResponse model module.
  * @module model/CancelSpotFleetRequestsResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CancelSpotFleetRequestsResponse {
     /**

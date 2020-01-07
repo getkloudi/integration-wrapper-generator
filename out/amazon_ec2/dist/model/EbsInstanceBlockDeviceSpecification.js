@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EbsInstanceBlockDeviceSpecification model module.
  * @module model/EbsInstanceBlockDeviceSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 var EbsInstanceBlockDeviceSpecification =
 /*#__PURE__*/

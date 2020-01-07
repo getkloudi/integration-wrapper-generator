@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Region model module.
  * @module model/Region
- * @version 1.0.0
+ * @version 1.1.0
  */
 var Region =
 /*#__PURE__*/

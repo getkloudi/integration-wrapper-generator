@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PlacementGroupInfo model module.
  * @module model/PlacementGroupInfo
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PlacementGroupInfo =
 /*#__PURE__*/

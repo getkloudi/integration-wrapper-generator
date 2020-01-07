@@ -17,7 +17,7 @@ import DefaultTargetCapacityType from './DefaultTargetCapacityType';
 /**
  * The TargetCapacitySpecificationRequest model module.
  * @module model/TargetCapacitySpecificationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TargetCapacitySpecificationRequest {
     /**

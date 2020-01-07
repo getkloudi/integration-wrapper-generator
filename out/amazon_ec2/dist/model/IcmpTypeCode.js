@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IcmpTypeCode model module.
  * @module model/IcmpTypeCode
- * @version 1.0.0
+ * @version 1.1.0
  */
 var IcmpTypeCode =
 /*#__PURE__*/

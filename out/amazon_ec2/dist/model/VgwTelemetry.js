@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VgwTelemetry model module.
  * @module model/VgwTelemetry
- * @version 1.0.0
+ * @version 1.1.0
  */
 var VgwTelemetry =
 /*#__PURE__*/

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StorageLocation model module.
  * @module model/StorageLocation
- * @version 1.0.0
+ * @version 1.1.0
  */
 var StorageLocation =
 /*#__PURE__*/

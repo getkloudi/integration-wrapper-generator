@@ -18,7 +18,7 @@ import InstanceType from './InstanceType';
 /**
  * The DescribeSpotPriceHistoryRequest model module.
  * @module model/DescribeSpotPriceHistoryRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSpotPriceHistoryRequest {
     /**

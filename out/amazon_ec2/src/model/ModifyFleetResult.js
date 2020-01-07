@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ModifyFleetResult model module.
  * @module model/ModifyFleetResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyFleetResult {
     /**

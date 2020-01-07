@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TargetConfigurationRequest model module.
  * @module model/TargetConfigurationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class TargetConfigurationRequest {
     /**

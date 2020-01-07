@@ -18,7 +18,7 @@ import MarketType from './MarketType';
 /**
  * The LaunchTemplateInstanceMarketOptionsRequest model module.
  * @module model/LaunchTemplateInstanceMarketOptionsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class LaunchTemplateInstanceMarketOptionsRequest {
     /**

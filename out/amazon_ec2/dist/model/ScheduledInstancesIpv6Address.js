@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ScheduledInstancesIpv6Address model module.
  * @module model/ScheduledInstancesIpv6Address
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ScheduledInstancesIpv6Address =
 /*#__PURE__*/

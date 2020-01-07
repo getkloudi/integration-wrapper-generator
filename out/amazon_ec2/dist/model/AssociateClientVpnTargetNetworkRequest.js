@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AssociateClientVpnTargetNetworkRequest model module.
  * @module model/AssociateClientVpnTargetNetworkRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AssociateClientVpnTargetNetworkRequest =
 /*#__PURE__*/

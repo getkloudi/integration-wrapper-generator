@@ -17,7 +17,7 @@ import ConversionTask from './ConversionTask';
 /**
  * The DescribeConversionTasksResult model module.
  * @module model/DescribeConversionTasksResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeConversionTasksResult {
     /**

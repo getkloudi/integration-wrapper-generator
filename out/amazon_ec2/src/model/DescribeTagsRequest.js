@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeTagsRequest model module.
  * @module model/DescribeTagsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeTagsRequest {
     /**

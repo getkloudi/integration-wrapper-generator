@@ -19,7 +19,7 @@ import RuleAction from './RuleAction';
 /**
  * The NetworkAclEntry model module.
  * @module model/NetworkAclEntry
- * @version 1.0.0
+ * @version 1.1.0
  */
 class NetworkAclEntry {
     /**

@@ -19,7 +19,7 @@ import RuleAction from './RuleAction';
 /**
  * The ReplaceNetworkAclEntryRequest model module.
  * @module model/ReplaceNetworkAclEntryRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReplaceNetworkAclEntryRequest {
     /**

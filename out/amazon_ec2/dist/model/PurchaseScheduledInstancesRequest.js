@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PurchaseScheduledInstancesRequest model module.
  * @module model/PurchaseScheduledInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var PurchaseScheduledInstancesRequest =
 /*#__PURE__*/

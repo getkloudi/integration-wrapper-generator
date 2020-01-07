@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReservedInstancesId model module.
  * @module model/ReservedInstancesId
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ReservedInstancesId {
     /**

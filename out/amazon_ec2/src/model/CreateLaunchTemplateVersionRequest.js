@@ -17,7 +17,7 @@ import RequestLaunchTemplateData from './RequestLaunchTemplateData';
 /**
  * The CreateLaunchTemplateVersionRequest model module.
  * @module model/CreateLaunchTemplateVersionRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateLaunchTemplateVersionRequest {
     /**

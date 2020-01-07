@@ -18,7 +18,7 @@ import CreateFleetInstance from './CreateFleetInstance';
 /**
  * The CreateFleetResult model module.
  * @module model/CreateFleetResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateFleetResult {
     /**

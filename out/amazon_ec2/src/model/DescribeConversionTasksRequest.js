@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DescribeConversionTasksRequest model module.
  * @module model/DescribeConversionTasksRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeConversionTasksRequest {
     /**

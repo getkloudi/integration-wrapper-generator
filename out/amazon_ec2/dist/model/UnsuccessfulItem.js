@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UnsuccessfulItem model module.
  * @module model/UnsuccessfulItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 var UnsuccessfulItem =
 /*#__PURE__*/

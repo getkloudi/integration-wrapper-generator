@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AttachVpnGatewayRequest model module.
  * @module model/AttachVpnGatewayRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AttachVpnGatewayRequest =
 /*#__PURE__*/

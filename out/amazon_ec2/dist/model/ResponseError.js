@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ResponseError model module.
  * @module model/ResponseError
- * @version 1.0.0
+ * @version 1.1.0
  */
 var ResponseError =
 /*#__PURE__*/

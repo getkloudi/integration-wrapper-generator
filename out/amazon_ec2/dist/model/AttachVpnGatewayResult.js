@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AttachVpnGatewayResult model module.
  * @module model/AttachVpnGatewayResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var AttachVpnGatewayResult =
 /*#__PURE__*/

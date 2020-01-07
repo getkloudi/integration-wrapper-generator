@@ -21,7 +21,7 @@ import TagSpecification from './TagSpecification';
 /**
  * The CreateCapacityReservationRequest model module.
  * @module model/CreateCapacityReservationRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateCapacityReservationRequest {
     /**

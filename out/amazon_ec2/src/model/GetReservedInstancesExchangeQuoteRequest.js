@@ -17,7 +17,7 @@ import TargetConfigurationRequest from './TargetConfigurationRequest';
 /**
  * The GetReservedInstancesExchangeQuoteRequest model module.
  * @module model/GetReservedInstancesExchangeQuoteRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class GetReservedInstancesExchangeQuoteRequest {
     /**

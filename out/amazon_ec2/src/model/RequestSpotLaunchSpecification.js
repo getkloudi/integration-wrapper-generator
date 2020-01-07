@@ -22,7 +22,7 @@ import SpotPlacement from './SpotPlacement';
 /**
  * The RequestSpotLaunchSpecification model module.
  * @module model/RequestSpotLaunchSpecification
- * @version 1.0.0
+ * @version 1.1.0
  */
 class RequestSpotLaunchSpecification {
     /**

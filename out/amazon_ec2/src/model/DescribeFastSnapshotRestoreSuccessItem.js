@@ -17,7 +17,7 @@ import FastSnapshotRestoreStateCode from './FastSnapshotRestoreStateCode';
 /**
  * The DescribeFastSnapshotRestoreSuccessItem model module.
  * @module model/DescribeFastSnapshotRestoreSuccessItem
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeFastSnapshotRestoreSuccessItem {
     /**

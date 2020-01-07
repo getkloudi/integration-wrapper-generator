@@ -17,7 +17,7 @@ import TrafficMirrorSession from './TrafficMirrorSession';
 /**
  * The ModifyTrafficMirrorSessionResult model module.
  * @module model/ModifyTrafficMirrorSessionResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 class ModifyTrafficMirrorSessionResult {
     /**

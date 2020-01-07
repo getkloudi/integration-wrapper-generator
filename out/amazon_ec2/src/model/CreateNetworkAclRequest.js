@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateNetworkAclRequest model module.
  * @module model/CreateNetworkAclRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateNetworkAclRequest {
     /**

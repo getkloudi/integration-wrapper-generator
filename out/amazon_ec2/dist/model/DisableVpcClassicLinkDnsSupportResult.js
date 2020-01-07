@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DisableVpcClassicLinkDnsSupportResult model module.
  * @module model/DisableVpcClassicLinkDnsSupportResult
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DisableVpcClassicLinkDnsSupportResult =
 /*#__PURE__*/

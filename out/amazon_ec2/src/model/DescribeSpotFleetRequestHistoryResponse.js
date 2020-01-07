@@ -17,7 +17,7 @@ import HistoryRecord from './HistoryRecord';
 /**
  * The DescribeSpotFleetRequestHistoryResponse model module.
  * @module model/DescribeSpotFleetRequestHistoryResponse
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeSpotFleetRequestHistoryResponse {
     /**

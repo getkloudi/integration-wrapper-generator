@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IamInstanceProfileAssociation model module.
  * @module model/IamInstanceProfileAssociation
- * @version 1.0.0
+ * @version 1.1.0
  */
 var IamInstanceProfileAssociation =
 /*#__PURE__*/

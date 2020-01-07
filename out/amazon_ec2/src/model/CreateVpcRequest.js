@@ -17,7 +17,7 @@ import Tenancy from './Tenancy';
 /**
  * The CreateVpcRequest model module.
  * @module model/CreateVpcRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class CreateVpcRequest {
     /**

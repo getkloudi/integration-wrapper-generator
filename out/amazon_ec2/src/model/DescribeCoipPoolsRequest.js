@@ -17,7 +17,7 @@ import Filter from './Filter';
 /**
  * The DescribeCoipPoolsRequest model module.
  * @module model/DescribeCoipPoolsRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 class DescribeCoipPoolsRequest {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DescribeClassicLinkInstancesRequest model module.
  * @module model/DescribeClassicLinkInstancesRequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var DescribeClassicLinkInstancesRequest =
 /*#__PURE__*/

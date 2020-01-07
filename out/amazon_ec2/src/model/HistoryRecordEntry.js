@@ -18,7 +18,7 @@ import FleetEventType from './FleetEventType';
 /**
  * The HistoryRecordEntry model module.
  * @module model/HistoryRecordEntry
- * @version 1.0.0
+ * @version 1.1.0
  */
 class HistoryRecordEntry {
     /**

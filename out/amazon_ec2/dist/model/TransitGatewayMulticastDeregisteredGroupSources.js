@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TransitGatewayMulticastDeregisteredGroupSources model module.
  * @module model/TransitGatewayMulticastDeregisteredGroupSources
- * @version 1.0.0
+ * @version 1.1.0
  */
 var TransitGatewayMulticastDeregisteredGroupSources =
 /*#__PURE__*/

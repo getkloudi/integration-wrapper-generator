@@ -17,7 +17,7 @@ import AssociationStatusCode from './AssociationStatusCode';
 /**
  * The AssociationStatus model module.
  * @module model/AssociationStatus
- * @version 1.0.0
+ * @version 1.1.0
  */
 class AssociationStatus {
     /**

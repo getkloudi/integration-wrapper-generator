@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EnableVolumeIORequest model module.
  * @module model/EnableVolumeIORequest
- * @version 1.0.0
+ * @version 1.1.0
  */
 var EnableVolumeIORequest =
 /*#__PURE__*/
