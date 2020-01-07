@@ -19,4 +19,5 @@ While building aws-ec2 following steps needs to be taken care of
 1. allowUndefinedOpts needs to be set true
 2. Once we have performed the code generation command we need to go and edit the buildPath to .ec2{region}.
 This is done because current openapi-generator only supports v2 and v2 doesn't have multiple paths option.
-3. Please refer mapper.json to see how authentication needs to happen for aws-ec2. Very tricky and uncalled for steps.
+3. Once we have performed the code generation command we need to go and add parser.js & util.js and ec2-2016-11-15.min.json so that we can parse the XML response in JSON format.
+4. Please refer mapper.json to see how authentication needs to happen for aws-ec2. Very tricky and uncalled for steps.

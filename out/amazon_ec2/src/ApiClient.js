@@ -472,6 +472,14 @@ class ApiClient {
         var data = null;
         if (!error) {
           try {
+            const par = url.split("?");
+            if (par.length > 1) {
+              const action = par[1].split("=");
+              if (action.length > 1) {
+                const _ = require("./parser");
+                response.text = _.toJson(action[1], response.text);
+              }
+            }
             data = this.deserialize(response, returnType);
             if (this.enableCookies && typeof window === "undefined") {
               this.agent._saveCookies(response);

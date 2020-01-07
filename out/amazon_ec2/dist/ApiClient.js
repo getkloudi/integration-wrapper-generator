@@ -509,6 +509,18 @@ function () {
 
           if (!error) {
             try {
+              var par = url.split("?");
+
+              if (par.length > 1) {
+                var action = par[1].split("=");
+
+                if (action.length > 1) {
+                  var _ = require("./parser");
+
+                  response.text = _.toJson(action[1], response.text);
+                }
+              }
+
               data = _this3.deserialize(response, returnType);
 
               if (_this3.enableCookies && typeof window === "undefined") {
