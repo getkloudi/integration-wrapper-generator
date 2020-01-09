@@ -19,7 +19,7 @@ staging:
     - chmod 700 ~/.ssh
     - ssh-keyscan "$STAGING_SSH_HOST" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - rsync -ap --no-perms out/ ubuntu@"$STAGING_SSH_HOST":~/integrations-io-server/app/services/third-party --delete
+    - rsync -ap --no-perms out/ ubuntu@"$STAGING_SSH_HOST":~/minions/integrations-io/app/services/third-party --delete
     - ssh-add <(echo "$STAGING_SSH_KEY")
     - ssh ubuntu@"$STAGING_SSH_HOST" 'bash -s' < deploy.staging.sh
 
@@ -35,6 +35,6 @@ production:
     - chmod 700 ~/.ssh
     - ssh-keyscan "$PRODUCTION_SSH_HOST" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
-    - rsync -ap --no-perms out/ ubuntu@"$PRODUCTION_SSH_HOST":~/integrations-io-server/app/services/third-party --delete
+    - rsync -ap --no-perms out/ ubuntu@"$PRODUCTION_SSH_HOST":~/minions/integrations-io/app/services/third-party --delete
     - ssh-add <(echo "$PRODUCTION_SSH_KEY")
     - ssh ubuntu@"$PRODUCTION_SSH_HOST" 'bash -s' < deploy.production.sh

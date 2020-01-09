@@ -1,4 +1,4 @@
-cd integrations-io-server
+cd ~/minions/integrations-io/
 git pull
 echo "Restarting server using pm"
-pm2 reload integrations-io-server
+pm2 reload minion:integrations-io
