@@ -152,10 +152,10 @@ module.exports.toJson = (action, xml) => {
 
   if (data) {
     var data = parseXml(data, model.operations[action].output);
-    if (data.ResponseMetadata) {
-      data.ResponseMetadata = parseXml(result.ResponseMetadata[0], {});
-    }
-    return data;
+    // // if (data.ResponseMetadata) {
+    //   data.ResponseMetadata = parseXml(result.ResponseMetadata[0], {});
+    // }
+    return data[Object.keys(data)[0]];
   } else if (error) {
     throw util.error(error, { code: "XMLParserError", retryable: true });
   } else {
