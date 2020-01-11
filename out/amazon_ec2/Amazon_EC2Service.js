@@ -1,7 +1,6 @@
 const Axios = require("axios");
 const ErrorHelper = require("../../../helpers/ErrorHelper");
 const nconf = require("nconf");
-// const qs = require("querystring");
 
 class Amazon_EC2Service {
   get name() {
@@ -41,7 +40,7 @@ class Amazon_EC2Service {
   }
 
   get requiredAuthParams() {
-    return ["regions", "accessKey", "secretKey"];
+    return ["region", "accessKey", "secretKey"];
   }
 
   get primaryAction() {
@@ -68,36 +67,14 @@ class Amazon_EC2Service {
   }
 
   async connect(authParams) {
-    if (authParams.accessKey && authParams.secretKey && authParams.regions) {
-      let regions = [];
-      // if (authParams.regions.includes("all"))
-      //   regions = regions.concat([
-      //     "us-east-1",
-      //     "us-east-2",
-      //     "us-west-1",
-      //     "us-west-2",
-      //     "us-gov-west-1",
-      //     "us-gov-east-1",
-      //     "ca-central-1",
-      //     "eu-north-1",
-      //     "eu-west-1",
-      //     "eu-west-2",
-      //     "eu-west-3",
-      //     "eu-central-1",
-      //     "ap-northeast-1",
-      //     "ap-northeast-2",
-      //     "ap-northeast-3",
-      //     "ap-southeast-1",
-      //     "ap-southeast-2",
-      //     "ap-south-1",
-      //     "sa-east-1"
-      //   ]);
-      // else
-      regions = "ap-south-1";
+    if (authParams.accessKey && authParams.secretKey) {
+      let defaultRegion;
+      if (authParams.region) defaultRegion = region;
+      else defaultRegion = "us-east-1";
       return {
         integrationSpecificParams: {
           secretKey: authParams.secretKey,
-          regions: regions
+          defaultRegion: defaultRegion
         },
         accessToken: authParams.accessKey
       };
@@ -110,19 +87,7 @@ class Amazon_EC2Service {
   }
 
   async getThirdPartyProjects(incomingOptions) {
-    // incomingOptions.regions = "ap-south-1.";
-    // incomingOptions.action = "DescribeRegions";
-    // incomingOptions.version = "2016-11-15";
-    // console.log(incomingOptions);
-    let res;
-    try {
-      res = await this.get("ACTION_DESCRIBE_REGIONS", incomingOptions);
-      console.log(res);
-      return ["Ok"];
-    } catch (error) {
-      console.log(error);
-      return ["Error"];
-    }
+    //TODO: Add custom getThirdPartyProjects functionality here
   }
 
   async registerWebhooks(incomingOptions) {
