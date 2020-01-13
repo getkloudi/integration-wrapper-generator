@@ -1,7 +1,7 @@
 const _ = require("lodash");
 
-module.exports.transformRegionsToURLFormat = regions => {
-  return regions ? `${regions}.` : ``;
+module.exports.transformRegionsToURLFormat = region => {
+  return region ? `${region}.` : `us-east-1.`;
 };
 
 module.exports.transformQueryParmsToOpts = query => {

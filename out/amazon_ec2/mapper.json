@@ -7,7 +7,7 @@
     "map": [
       {
         "input": {
-          "key": "body.integration.integrationSpecificParams.regions"
+          "key": "body.integration.integrationSpecificParams.defaultRegion"
         },
         "transform": {
           "type": "FUNCTION",
