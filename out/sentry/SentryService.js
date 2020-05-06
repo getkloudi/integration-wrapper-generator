@@ -1,19 +1,19 @@
-const Axios = require("axios");
-const qs = require("querystring");
-const nconf = require("nconf");
-const ErrorHelper = require("../../../helpers/ErrorHelper");
-const parseLinkHeader = require("parse-link-header");
+const Axios = require('axios');
+const qs = require('querystring');
+const nconf = require('nconf');
+const ErrorHelper = require('../../../helpers/ErrorHelper');
+const parseLinkHeader = require('parse-link-header');
 class SentryService {
   get name() {
-    return "SENTRY";
+    return 'SENTRY';
   }
 
   get description() {
-    return "Open-source error tracking that helps developers monitor and fix crashes in real time.";
+    return 'Open-source error tracking that helps developers monitor and fix crashes in real time.';
   }
 
   get icon() {
-    return "sentry.svg";
+    return 'sentry.svg';
   }
 
   get categroy() {
@@ -21,11 +21,11 @@ class SentryService {
   }
 
   get apiEndpoint() {
-    return "https://sentry.io/api/0";
+    return 'https://sentry.io/api/0';
   }
 
   get authMethod() {
-    return "API_TOKEN";
+    return 'API_TOKEN';
   }
 
   get authEndpoint() {
@@ -33,48 +33,48 @@ class SentryService {
   }
 
   get apiTokenURL() {
-    return "https://sentry.io/api/";
+    return 'https://sentry.io/settings/account/api/auth-tokens/new-token/';
   }
 
   get requiredAuthParams() {
-    return ["auth_token"];
+    return ['auth_token'];
   }
 
   get webhooks() {
-    return ["issue"];
+    return ['issue'];
   }
 
   get webhookToTasksMap() {
     return [
       {
-        name: "task.pepper.SYNC_SENTRY_ISSUE",
-        webhook: "issue"
+        name: 'task.pepper.SYNC_SENTRY_ISSUE',
+        webhook: 'issue',
       },
       {
-        name: "task.pepper.SYNC_SENTRY_ISSUE_EVENT",
-        webhook: "issue_event"
-      }
+        name: 'task.pepper.SYNC_SENTRY_ISSUE_EVENT',
+        webhook: 'issue_event',
+      },
     ];
   }
 
   get primaryAction() {
     return {
-      type: "INPUT_API_TOKEN_PARAMS",
-      requiredAuthParams: this.requiredAuthParams
+      type: 'INPUT_API_TOKEN_PARAMS',
+      requiredAuthParams: this.requiredAuthParams,
     };
   }
 
   get entities() {
-    return ["PROJECT", "ISSUES", "MEMBERS"];
+    return ['PROJECT', 'ISSUES', 'MEMBERS'];
   }
 
   async connect(authParams) {
     if (authParams.auth_token) {
       return {
-        accessToken: authParams.auth_token
+        accessToken: authParams.auth_token,
       };
     } else {
-      throw ErrorHelper.getError("auth_token missing", 400);
+      throw ErrorHelper.getError('auth_token missing', 400);
     }
   }
 
@@ -88,46 +88,46 @@ class SentryService {
   }
 
   async syncIntegrationEntities(integration, incomingOptions) {
-    const taskUri = nconf.get("TASK_API_URI");
-    const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
+    const taskUri = nconf.get('TASK_API_URI');
+    const authToken = nconf.get('PEPPER_TASK_API_ACCESS_TOKEN');
 
     try {
       const res = await Axios.default.post(
         taskUri,
         {
           pepper_task: [
-            "task.pepper.SYNC_LEGACY_SENTRY_ISSUES",
-            "task.pepper.SYNC_SENTRY_TEAM_MEMBERS"
+            'task.pepper.SYNC_LEGACY_SENTRY_ISSUES',
+            'task.pepper.SYNC_SENTRY_TEAM_MEMBERS',
           ],
           project_id: incomingOptions.projectId,
           user_id: incomingOptions.userId,
           third_party_project_id: incomingOptions.projectId,
-          third_party_organization_id: incomingOptions.organizationId
+          third_party_organization_id: incomingOptions.organizationId,
         },
         {
           headers: {
-            Authorization: authToken
-          }
+            Authorization: authToken,
+          },
         }
       );
-      return { data: "Ok" };
+      return { data: 'Ok' };
     } catch (error) {
       console.error(error.response);
-      return { data: "ERROR" };
+      return { data: 'ERROR' };
     }
   }
 
   async get(entity, options) {
     switch (entity.toUpperCase()) {
-      case "PROJECTS":
+      case 'PROJECTS':
         return await this.getProjects(options);
-      case "ISSUES":
+      case 'ISSUES':
         return await this.getIssues(options);
-      case "ISSUE":
+      case 'ISSUE':
         return await this.getIssueFromID(options);
-      case "EVENTS":
+      case 'EVENTS':
         return await this.getEventsForAnIssue(options);
-      case "MEMBERS":
+      case 'MEMBERS':
         return await this.getMembers(options);
       default:
         throw ErrorHelper.getError(`Entity ${entity} not supported`, 400);
@@ -136,7 +136,7 @@ class SentryService {
 
   async put(entity, options) {
     switch (entity.toUpperCase()) {
-      case "ISSUE":
+      case 'ISSUE':
         return await this.updateIssue(options);
       default:
         throw ErrorHelper.getError(`Entity ${entity} not supported`, 400);
@@ -145,7 +145,7 @@ class SentryService {
 
   async post(entity, options) {
     switch (entity.toUpperCase()) {
-      case "ISSUES":
+      case 'ISSUES':
         return await this.updateIssues(options);
       default:
         throw ErrorHelper.getError(`Entity ${entity} not supported`, 400);
@@ -155,19 +155,19 @@ class SentryService {
   async getProjects(options) {
     const projects = await Axios.default.get(`${this.apiEndpoint}/projects/`, {
       headers: {
-        Authorization: `Bearer ${options.integration.authAccessToken}`
-      }
+        Authorization: `Bearer ${options.integration.authAccessToken}`,
+      },
     });
 
     let data = [];
     for (let index = 0; index < projects.data.length; ++index) {
-      if (projects.data[index].status === "active") {
+      if (projects.data[index].status === 'active') {
         const stats = await Axios.default.get(
           `${this.apiEndpoint}/projects/${projects.data[index].organization.slug}/${projects.data[index].slug}/stats/?stat=received&resolution=1d`,
           {
             headers: {
-              Authorization: `Bearer ${options.integration.authAccessToken}`
-            }
+              Authorization: `Bearer ${options.integration.authAccessToken}`,
+            },
           }
         );
         let description = projects.data[index].platform;
@@ -182,14 +182,14 @@ class SentryService {
           organizationId: projects.data[index].organization.slug,
           metrics: [
             {
-              key: "# of events received in 24 hours",
-              value: `${stats.data[0][1]}`
-            }
-          ]
+              key: '# of events received in 24 hours',
+              value: `${stats.data[0][1]}`,
+            },
+          ],
         });
       }
     }
-    data.sort(function(a, b) {
+    data.sort(function (a, b) {
       if (parseInt(a.metrics[0].value) > parseInt(b.metrics[0].value))
         return -1;
       else if (parseInt(a.metrics[0].value) < parseInt(b.metrics[0].value))
@@ -208,22 +208,22 @@ class SentryService {
       }/issues/?${params ? params : ``}&statsPeriod=`,
       {
         headers: {
-          Authorization: `Bearer ${options.integration.authAccessToken}`
-        }
+          Authorization: `Bearer ${options.integration.authAccessToken}`,
+        },
       }
     );
     let issues = res.data;
-    let parsedHeader = parseLinkHeader(res.headers["link"]);
+    let parsedHeader = parseLinkHeader(res.headers['link']);
     try {
       let count = 0;
-      while (parsedHeader.next.results == "true" && count < 10) {
+      while (parsedHeader.next.results == 'true' && count < 10) {
         const res = await Axios.default.get(parsedHeader.next.url, {
           headers: {
-            Authorization: `Bearer ${options.integration.authAccessToken}`
-          }
+            Authorization: `Bearer ${options.integration.authAccessToken}`,
+          },
         });
         issues = issues.concat(res.data);
-        parsedHeader = parseLinkHeader(res.headers["link"]);
+        parsedHeader = parseLinkHeader(res.headers['link']);
         count++;
       }
     } catch (error) {
@@ -237,26 +237,26 @@ class SentryService {
       `${this.apiEndpoint}/projects/${options.thirdPartyOrganizationId}/${options.thirdPartyProjectId}/members/`,
       {
         headers: {
-          Authorization: `Bearer ${options.integration.authAccessToken}`
-        }
+          Authorization: `Bearer ${options.integration.authAccessToken}`,
+        },
       }
     );
     let members = res.data;
-    let parsedHeader = parseLinkHeader(res.headers["link"]);
+    let parsedHeader = parseLinkHeader(res.headers['link']);
     try {
       let count = 0;
       while (
         parsedHeader &&
         parsedHeader.next &&
-        parsedHeader.next.results == "true"
+        parsedHeader.next.results == 'true'
       ) {
         const res = await Axios.default.get(parsedHeader.next.url, {
           headers: {
-            Authorization: `Bearer ${options.integration.authAccessToken}`
-          }
+            Authorization: `Bearer ${options.integration.authAccessToken}`,
+          },
         });
         members = members.concat(res.data);
-        parsedHeader = parseLinkHeader(res.headers["link"]);
+        parsedHeader = parseLinkHeader(res.headers['link']);
         count++;
       }
     } catch (error) {
@@ -270,12 +270,12 @@ class SentryService {
       !options.integration.thirdPartyProjects ||
       options.integration.thirdPartyProjects.length == 0
     ) {
-      console.error("No third party projects present");
-      return { data: "Error" };
+      console.error('No third party projects present');
+      return { data: 'Error' };
     }
 
-    const taskUri = nconf.get("TASK_API_URI");
-    const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
+    const taskUri = nconf.get('TASK_API_URI');
+    const authToken = nconf.get('PEPPER_TASK_API_ACCESS_TOKEN');
 
     try {
       const res = await Axios.default.post(
@@ -290,18 +290,18 @@ class SentryService {
           third_party_project_id:
             options.integration.thirdPartyProjects[0].projectId,
           third_party_organization_id:
-            options.integration.thirdPartyProjects[0].projectId
+            options.integration.thirdPartyProjects[0].projectId,
         },
         {
           headers: {
-            Authorization: authToken
-          }
+            Authorization: authToken,
+          },
         }
       );
-      return { data: "Ok" };
+      return { data: 'Ok' };
     } catch (error) {
       console.error(error.response || error);
-      return { data: "ERROR" };
+      return { data: 'ERROR' };
     }
   }
 
@@ -310,28 +310,28 @@ class SentryService {
       !options.integration.thirdPartyProjects ||
       options.integration.thirdPartyProjects.length == 0
     ) {
-      console.error("No third party projects present");
-      return { data: "Error" };
+      console.error('No third party projects present');
+      return { data: 'Error' };
     }
 
     let params = {};
     const optionKeys = Object.keys(options);
-    if (optionKeys.includes("hasSeen")) params = { hasSeen: options.hasSeen };
-    if (optionKeys.includes("status"))
+    if (optionKeys.includes('hasSeen')) params = { hasSeen: options.hasSeen };
+    if (optionKeys.includes('status'))
       params = { hasSeen: true, status: options.status };
 
-    if (Object.keys(params) <= 0) return { data: "Nothing to update" };
+    if (Object.keys(params) <= 0) return { data: 'Nothing to update' };
     try {
       const data = await Axios.default.put(
         `${this.apiEndpoint}/issues/${options.sentry.id}/`,
         params,
         {
           headers: {
-            Authorization: `Bearer ${options.integration.authAccessToken}`
-          }
+            Authorization: `Bearer ${options.integration.authAccessToken}`,
+          },
         }
       );
-      return { data: "Ok" };
+      return { data: 'Ok' };
     } catch (error) {
       console.error(error.response.data || error.response || error);
       return { data: error.response.data };
@@ -341,28 +341,28 @@ class SentryService {
   async createProject(options) {}
 
   async getEventsForAnIssue(options) {
-    if (!options.issueID) throw Error("Incorrect request");
+    if (!options.issueID) throw Error('Incorrect request');
     let events = [],
       uri = `${this.apiEndpoint}/issues/${options.issueID}/events/`;
-    if (options.latest.toLowerCase() === "true") uri += `latest/`;
+    if (options.latest.toLowerCase() === 'true') uri += `latest/`;
     uri += `?full=1`;
     const res = await Axios.default.get(uri, {
       headers: {
-        Authorization: `Bearer ${options.integration.authAccessToken}`
-      }
+        Authorization: `Bearer ${options.integration.authAccessToken}`,
+      },
     });
     events.push(res.data);
     return { data: events };
   }
 
   async getIssueFromID(options) {
-    if (!options.id) throw Error("options.id is missing from the request body");
+    if (!options.id) throw Error('options.id is missing from the request body');
     const res = await Axios.default.get(
       `${this.apiEndpoint}/issues/${options.id}/?statsPeriod=`,
       {
         headers: {
-          Authorization: `Bearer ${options.integration.authAccessToken}`
-        }
+          Authorization: `Bearer ${options.integration.authAccessToken}`,
+        },
       }
     );
     return { data: res.data, response: res };
