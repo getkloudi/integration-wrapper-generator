@@ -101,7 +101,7 @@
   },
   {
     "type": "REQUEST",
-    "entity": "PROJECTS|WEBHOOKS",
+    "entity": "PROJECTS|WEBHOOKS|ISSUES",
     "integration": "JIRA",
     "method": "GET|POST",
     "map": [
@@ -130,46 +130,36 @@
       },
       {
         "input": {
-          "key": "query.page"
+          "key": "body.integration.integrationSpecificParams.cloudId"
         },
         "transform": {
           "type": "ONE-TO-ONE"
         },
         "output": {
-          "key": "opts.page"
+          "key": "cloudid"
         }
       },
       {
         "input": {
-          "key": "query.per_page"
+          "key": "body.integration.integrationSpecificParams.cloudDomainName"
         },
         "transform": {
-          "type": "ONE-TO-ONE"
+          "type": "FUNCTION",
+          "name": "tansformDomainToAtlassianDomain"
         },
         "output": {
-          "key": "opts.perPage"
+          "key": "cloudDomainName"
         }
       },
       {
         "input": {
-          "key": "query.page"
+          "key": "body.integration.integrationSpecificParams.authAccessTokenExpiresAt"
         },
         "transform": {
           "type": "ONE-TO-ONE"
         },
         "output": {
-          "key": "skip"
-        }
-      },
-      {
-        "input": {
-          "key": "query.per_page"
-        },
-        "transform": {
-          "type": "ONE-TO-ONE"
-        },
-        "output": {
-          "key": "limit"
+          "key": "authAccessTokenExpiresAt"
         }
       }
     ]

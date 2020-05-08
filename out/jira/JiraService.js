@@ -117,6 +117,8 @@ class JiraService {
         },
       }
     );
+    const cloudDomainName = response.data[0].name,
+      cloudId = response.data[0].id;
     return {
       accessToken: accessToken,
       // refreshToken: authRes.data.refresh_token,
@@ -129,8 +131,6 @@ class JiraService {
         cloudId: cloudId,
       },
     };
-
-    // PROJECT_SEARCH;
   }
 
   async getThirdPartyProjects(incomingOptions) {
