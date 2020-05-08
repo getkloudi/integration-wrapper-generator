@@ -48,6 +48,14 @@
       "type": "oauth2"
     }
   },
+  "security": [
+    {
+      "OAuth": []
+    },
+    {
+      "Basic": []
+    }
+  ],
   "paths": {
     "/application-properties": {
       "get": {

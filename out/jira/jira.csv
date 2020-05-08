@@ -1,0 +1,1901 @@
+api,http-method,description,functionName,functionParameters
+/application-properties/advanced-settings,GET,"
+
+
+Returns the application properties that are accessible on the Advanced Settings page. To navigate to the Advanced Settings page in Jira, choose the Jira icon &gt; Jira settings &gt; System, General Configuration and then click Advanced Settings (in the upper right).
+
+",applicationPropertiesAdvancedSettingsGet,
+/application-properties,GET,"
+
+
+Returns all application properties or a single application property.
+
+",applicationPropertiesGet,opts
+/application-properties/{id},PUT,"
+
+
+Changes the value of an application property. For example, you can change the value of the jira.clone.prefix from its default value of CLONE - to Clone - if you prefer sentence case capitalization. Editable properties are described below along with their default values.
+
+",applicationPropertiesIdPut,id opts
+/applicationrole,GET,"
+
+
+Returns all application roles. In Jira, application roles are managed using the Application access configuration page.
+
+",applicationroleGet,
+/applicationrole/{key},GET,"
+
+
+Returns an application role.
+
+",applicationroleKeyGet,key
+/attachment/{id},DELETE,"
+
+
+Deletes an attachment from an issue.
+
+",attachmentIdDelete,id
+/attachment/{id}/expand/human,GET,"
+
+
+Returns the metadata for the contents of an attachment, if it is an archive, and metadata for the attachment itself. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned and metadata for the ZIP archive. Currently, only the ZIP archive format is supported.
+
+",attachmentIdExpandHumanGet,id
+/attachment/{id}/expand/raw,GET,"
+
+
+Returns the metadata for the contents of an attachment, if it is an archive. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned. Currently, only the ZIP archive format is supported.
+
+",attachmentIdExpandRawGet,id
+/attachment/{id},GET,"
+
+
+Returns the metadata for an attachment. Note that the attachment itself is not returned.
+
+",attachmentIdGet,id
+/attachment/meta,GET,"
+
+
+Returns the global attachment settings, that is, whether attachments are enabled and the maximum attachment size allowed.
+
+",attachmentMetaGet,
+/auditing/record,GET,"
+
+
+Returns a list of audit records. The list can be filtered to include items:
+
+",auditingRecordGet,opts
+/avatar/{type}/system,GET,"
+
+
+Returns a list of system avatar details by owner type, where the owner types are issue type, project, or user.
+
+",avatarTypeSystemGet,type
+/comment/{commentId}/properties,GET,"
+
+
+Returns the keys of all the properties of a comment.
+
+",commentCommentIdPropertiesGet,commentId
+/comment/{commentId}/properties/{propertyKey},DELETE,"
+
+
+Deletes a comment property.
+
+",commentCommentIdPropertiesPropertyKeyDelete,commentId propertyKey
+/comment/{commentId}/properties/{propertyKey},GET,"
+
+
+Returns the value of a comment property.
+
+",commentCommentIdPropertiesPropertyKeyGet,commentId propertyKey
+/comment/{commentId}/properties/{propertyKey},PUT,"
+
+
+Creates or updates the value of a property for a comment. Use this resource to store custom data against a comment.
+
+",commentCommentIdPropertiesPropertyKeyPut,commentId propertyKey
+/comment/list,POST,"
+
+
+Returns the comments for a list of comment IDs.
+
+",commentListPost,opts
+/component/{id},DELETE,"
+
+
+Deletes a component. Permissions required: Any of the following:
+
+",componentIdDelete,id opts
+/component/{id},GET,"
+
+
+Returns a component. Permissions required: Browse projects project permission.
+
+",componentIdGet,id
+/component/{id},PUT,"
+
+
+Modifies a component. Any fields included in the request are overwritten. If leadUserName is an empty string (\&quot;\&quot;) the component lead is removed. Permissions required: Any of the following:
+
+",componentIdPut,id opts
+/component/{id}/relatedIssueCounts,GET,"
+
+
+Returns the counts of issues assigned to the component. Permissions required: Permission to access Jira.
+
+",componentIdRelatedIssueCountsGet,id
+/component,POST,"
+
+
+Creates a component. Use components to provide containers for issues within a project. Permissions required: Any of the following:
+
+",componentPost,opts
+/configuration,GET,"
+
+
+Returns the global settings in Jira. These settings determine whether optional features (for example, sub-tasks, time tracking, and others) are enabled. If time tracking is enabled, this method also returns the time tracking configuration.
+
+",configurationGet,
+/configuration/timetracking,DELETE,"
+
+
+Disables time tracking.
+
+",configurationTimetrackingDelete,
+/configuration/timetracking,GET,"
+
+
+Returns the time tracking provider that is currently selected. Note that if time tracking is disabled, then a successful but empty response is returned.
+
+",configurationTimetrackingGet,
+/configuration/timetracking/list,GET,"
+
+
+Returns all time tracking providers. By default, Jira only has one time tracking provider: JIRA provided time tracking. However, you can install other time tracking providers via apps from the Atlassian Marketplace. For more information on time tracking providers, see the documentation for the Time Tracking Provider module.
+
+",configurationTimetrackingListGet,
+/configuration/timetracking/options,GET,"
+
+
+Returns the time tracking settings. This includes settings such as the time format, default time unit, and others. For more information, see Configuring time tracking.
+
+",configurationTimetrackingOptionsGet,
+/configuration/timetracking/options,PUT,"
+
+
+Sets the time tracking settings.
+
+",configurationTimetrackingOptionsPut,opts
+/configuration/timetracking,PUT,"
+
+
+Selects a time tracking provider.
+
+",configurationTimetrackingPut,opts
+/customFieldOption/{id},GET,"
+
+
+Returns a custom field option. For example, an option in a cascading select list.
+
+",customFieldOptionIdGet,id
+/dashboard/{dashboardId}/items/{itemId}/properties,GET,"
+
+
+Returns the keys of all properties for a dashboard item.
+
+",dashboardDashboardIdItemsItemIdPropertiesGet,dashboardId itemId
+/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},DELETE,"
+
+
+Deletes a dashboard item property.
+
+",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete,dashboardId itemId propertyKey
+/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},GET,"
+
+
+Returns the key and value of a dashboard item property.
+
+",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet,dashboardId itemId propertyKey
+/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},PUT,"
+
+
+Sets the value of a dashboard item property. Use this resource in apps to store custom data against a dashboard item.
+
+",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut,dashboardId itemId propertyKey
+/dashboard,GET,"
+
+
+Returns a list of dashboards owned by or shared with the user. The list may be filtered to include only favorite or owned dashboards.
+
+",dashboardGet,opts
+/dashboard/{id},GET,"
+
+
+Returns a dashboard.
+
+",dashboardIdGet,id
+/expression/eval,POST,"
+
+
+Evaluates a Jira expression and returns its value.
+
+",expressionEvalPost,opts
+/field/{fieldKey}/option,GET,"
+
+
+Returns all options defined for a select list issue field. A select list issue field is a type of issue field that allows a user to select an value from a list of options.
+
+",fieldFieldKeyOptionGet,fieldKey opts
+/field/{fieldKey}/option/{optionId},DELETE,"
+
+
+Deletes an option from a select list issue field.
+
+",fieldFieldKeyOptionOptionIdDelete,fieldKey optionId
+/field/{fieldKey}/option/{optionId},GET,"
+
+
+Returns an option from a select list issue field.
+
+",fieldFieldKeyOptionOptionIdGet,fieldKey optionId
+/field/{fieldKey}/option/{optionId}/issue,DELETE,"
+
+
+Deselects a select list issue field option in all issues that it has been selected in. A different option can be selected to replace the deselected option. The update can also be limited to a smaller set of issues by using a JQL query.
+
+",fieldFieldKeyOptionOptionIdIssueDelete,fieldKey optionId opts
+/field/{fieldKey}/option/{optionId},PUT,"
+
+
+Updates an option for a select list issue field. If the option does not exist, a new option is created.
+
+",fieldFieldKeyOptionOptionIdPut,fieldKey optionId opts
+/field/{fieldKey}/option,POST,"
+
+
+Creates an option for a select list issue field.
+
+",fieldFieldKeyOptionPost,fieldKey opts
+/field/{fieldKey}/option/suggestions/edit,GET,"
+
+
+Returns options defined for a select list issue field that can be viewed and selected by the currently logged in user.
+
+",fieldFieldKeyOptionSuggestionsEditGet,fieldKey opts
+/field/{fieldKey}/option/suggestions/search,GET,"
+
+
+Returns options defined for a select list issue field that can be viewed by the currently logged in user.
+
+",fieldFieldKeyOptionSuggestionsSearchGet,fieldKey opts
+/field,GET,"
+
+
+Returns all issue fields in Jira, both system and custom fields.
+
+",fieldGet,
+/field,POST,"
+
+
+Creates a custom field.
+
+",fieldPost,opts
+/filter/defaultShareScope,GET,"
+
+
+Returns the default sharing settings for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
+
+",filterDefaultShareScopeGet,
+/filter/defaultShareScope,PUT,"
+
+
+Sets the default sharing for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
+
+",filterDefaultShareScopePut,opts
+/filter/favourite,GET,"
+
+
+Returns the favorite filters of the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
+
+",filterFavouriteGet,opts
+/filter,GET,"
+
+
+Returns all filters. Deprecated, use Search for filters that supports search and pagination. Permissions required: None, however only the following filters are returned:
+
+",filterGet,opts
+/filter/{id}/columns,DELETE,"
+
+
+Reset the user&#39;s column configuration for the filter to the default. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
+
+",filterIdColumnsDelete,id
+/filter/{id}/columns,GET,"
+
+
+Returns the columns configured for a filter. The column configuration is used when the filter&#39;s results are viewed in List View with the Columns set to Filter. Permissions required: None, however the calling user must have permission to view the filter.
+
+",filterIdColumnsGet,id
+/filter/{id}/columns,PUT,"
+
+
+Sets the columns for a filter. Only navigable fields can be set as columns. Use Get fields to get the list fields in Jira. A navigable field has navigable set to true. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
+
+",filterIdColumnsPut,id
+/filter/{id},DELETE,"
+
+
+Delete a filter. Permissions required: Permission to log in to Jira, however the following rules govern what a user can delete:
+
+",filterIdDelete,id
+/filter/{id}/favourite,DELETE,"
+
+
+Removes a filter as a favorite for the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
+
+",filterIdFavouriteDelete,id opts
+/filter/{id}/favourite,PUT,"
+
+
+Add a filter as a favorite for the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
+
+",filterIdFavouritePut,id opts
+/filter/{id},GET,"
+
+
+Returns a filter. Permissions required: None, however the calling user must have permission view the filter.
+
+",filterIdGet,id opts
+/filter/{id}/permission,GET,"
+
+
+Returns the share permissions for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.
+
+",filterIdPermissionGet,id
+/filter/{id}/permission/{permissionId},DELETE,"
+
+
+Deletes a share permission from a filter. Permissions required: Permission to log in to Jira (i.e., member of the users group) and the calling user must own the filter.
+
+",filterIdPermissionPermissionIdDelete,id permissionId
+/filter/{id}/permission/{permissionId},GET,"
+
+
+Returns a share permission for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.
+
+",filterIdPermissionPermissionIdGet,id permissionId
+/filter/{id}/permission,POST,"
+
+
+Add a share permissions to a filter. If you add a global share permission (i.e., all logged-in users or the public) it will overwrite all share permissions for the filter.Be aware that this method uses different objects for updating share permissions compared to Update filter. Permissions required: Share dashboards and filters global permission and the calling user must own the filter.
+
+",filterIdPermissionPost,id opts
+/filter/{id},PUT,"
+
+
+Updates an existing filter. Use this method to update a filter&#39;s name, description, JQL, or sharing. Permissions required: Permission to log in to Jira, however the following rules govern what a user can update:
+
+",filterIdPut,id opts
+/filter/my,GET,"
+
+
+Returns the filters owned by the calling user. If includeFavourites is true, the user&#39;s favorite filters are also returned. Permissions required: Permission to log in to Jira (i.e., member of the users group).
+
+",filterMyGet,opts
+/filter,POST,"
+
+
+Creates a new filter. The new filter is not shared and not selected as a favorite. Permissions required: Permission to log in to Jira.
+
+",filterPost,opts
+/filter/search,GET,"
+
+
+Search for filters. This method is similar to Get filters except that you can refine the results to include filters that have specific attributes. For example, filters with a particular name. Permissions required: None, however only the following filters are returned (if no search parameters are set):
+
+",filterSearchGet,opts
+/group,DELETE,"
+
+
+Deletes a group.
+
+",groupDelete,opts
+/group,GET,"
+
+
+This resource is deprecated, use group/member.
+
+",groupGet,opts
+/group/member,GET,"
+
+
+Returns all users in a group. Users are ordered by username.
+
+",groupMemberGet,opts
+/group,POST,"
+
+
+Creates a group.
+
+",groupPost,opts
+/group/user,DELETE,"
+
+
+Removes a user from a group. Permissions required: Administer Jira global permission.
+
+",groupUserDelete,opts
+/group/user,POST,"
+
+
+Adds a user to a group.
+
+",groupUserPost,opts
+/groups/picker,GET,"
+
+
+Returns a list of groups whose names contain a query string. A list of group names can be provided to exclude groups from the results.
+
+",groupsPickerGet,opts
+/groupuserpicker,GET,"
+
+
+Returns a list of users and groups matching a string. The string is used:
+
+",groupuserpickerGet,opts
+/issue/bulk,POST,"
+
+
+Creates issues and, where the option to create sub-tasks is enabled in Jira, sub-tasks. Transitions may be applied, to move the issues or sub-tasks to a workflow step other than the default start step, and issue properties set.
+
+",issueBulkPost,opts
+/issue/createmeta,GET,"
+
+
+Returns details of projects, issue types within projects, and, when requested, the create screen fields for each issue type for the user. Use the information to populate the requests in Create issue and Create issues.
+
+",issueCreatemetaGet,opts
+/issue/{issueIdOrKey}/assignee,PUT,"
+
+
+Assigns an issue to a user. Use this operation when the calling user does not have the Edit Issues permission but has the Assign issue permission for the project that the issue is in.
+
+",issueIssueIdOrKeyAssigneePut,issueIdOrKey opts
+/issue/{issueIdOrKey}/attachments,POST,"
+
+
+Adds one or more attachments to an issue. Attachments are posted as multipart/form-data (RFC 1867).
+
+",issueIssueIdOrKeyAttachmentsPost,issueIdOrKey
+/issue/{issueIdOrKey}/changelog,GET,"
+
+
+Returns a paginated list of all updates of an issue, sorted by date, starting from the oldest.
+
+",issueIssueIdOrKeyChangelogGet,issueIdOrKey opts
+/issue/{issueIdOrKey}/comment,GET,"
+
+
+to get comments for
+
+",issueIssueIdOrKeyCommentGet,issueIdOrKey opts
+/issue/{issueIdOrKey}/comment/{id},DELETE,"
+
+
+a string containing the issue id or key the comment belongs to
+
+",issueIssueIdOrKeyCommentIdDelete,id issueIdOrKey
+/issue/{issueIdOrKey}/comment/{id},GET,"
+
+
+of the issue the comment belongs to
+
+",issueIssueIdOrKeyCommentIdGet,id issueIdOrKey opts
+/issue/{issueIdOrKey}/comment/{id},PUT,"
+
+
+a string containing the issue id or key the comment belongs to
+
+",issueIssueIdOrKeyCommentIdPut,id issueIdOrKey opts
+/issue/{issueIdOrKey}/comment,POST,"
+
+
+a string containing the issue id or key the comment will be added to
+
+",issueIssueIdOrKeyCommentPost,issueIdOrKey opts
+/issue/{issueIdOrKey},DELETE,"
+
+
+Deletes an issue.
+
+",issueIssueIdOrKeyDelete,issueIdOrKey opts
+/issue/{issueIdOrKey}/editmeta,GET,"
+
+
+Returns the edit screen fields for an issue that are visible to and editable by the user. Use the information to populate the requests in Edit issue.
+
+",issueIssueIdOrKeyEditmetaGet,issueIdOrKey opts
+/issue/{issueIdOrKey},GET,"
+
+
+Returns the details for an issue.
+
+",issueIssueIdOrKeyGet,issueIdOrKey opts
+/issue/{issueIdOrKey}/notify,POST,"
+
+
+Creates an email notification for an issue and adds it to the mail queue.
+
+",issueIssueIdOrKeyNotifyPost,issueIdOrKey opts
+/issue/{issueIdOrKey}/properties,GET,"
+
+
+Returns the URIs and keys of an issue&#39;s properties.
+
+",issueIssueIdOrKeyPropertiesGet,issueIdOrKey
+/issue/{issueIdOrKey}/properties/{propertyKey},DELETE,"
+
+
+Deletes an issue&#39;s property.
+
+",issueIssueIdOrKeyPropertiesPropertyKeyDelete,issueIdOrKey propertyKey
+/issue/{issueIdOrKey}/properties/{propertyKey},GET,"
+
+
+Returns the key and value of an issue&#39;s property.
+
+",issueIssueIdOrKeyPropertiesPropertyKeyGet,issueIdOrKey propertyKey
+/issue/{issueIdOrKey}/properties/{propertyKey},PUT,"
+
+
+Sets the value of an issue&#39;s property. Use this resource to store custom data against an issue.
+
+",issueIssueIdOrKeyPropertiesPropertyKeyPut,issueIdOrKey propertyKey
+/issue/{issueIdOrKey},PUT,"
+
+
+Edits an issue. A transition may be applied and issue properties updated as part of the edit.
+
+",issueIssueIdOrKeyPut,issueIdOrKey opts
+/issue/{issueIdOrKey}/remotelink,DELETE,"
+
+
+Deletes the remote issue link from the issue using the link&#39;s global ID.
+
+",issueIssueIdOrKeyRemotelinkDelete,issueIdOrKey opts
+/issue/{issueIdOrKey}/remotelink,GET,"
+
+
+Returns the remote issue links for an issue. When a remote issue link global ID is provided the record with that global ID is returned, otherwise all remote issue links are returned.
+
+",issueIssueIdOrKeyRemotelinkGet,issueIdOrKey opts
+/issue/{issueIdOrKey}/remotelink/{linkId},DELETE,"
+
+
+Deletes a remote issue link from an issue.
+
+",issueIssueIdOrKeyRemotelinkLinkIdDelete,issueIdOrKey linkId
+/issue/{issueIdOrKey}/remotelink/{linkId},GET,"
+
+
+Returns a remote issue link for an issue.
+
+",issueIssueIdOrKeyRemotelinkLinkIdGet,issueIdOrKey linkId
+/issue/{issueIdOrKey}/remotelink/{linkId},PUT,"
+
+
+Updates a remote issue link for an issue.
+
+",issueIssueIdOrKeyRemotelinkLinkIdPut,issueIdOrKey linkId opts
+/issue/{issueIdOrKey}/remotelink,POST,"
+
+
+Creates or updates a remote issue link for an issue.
+
+",issueIssueIdOrKeyRemotelinkPost,issueIdOrKey opts
+/issue/{issueIdOrKey}/transitions,GET,"
+
+
+Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue&#39;s status.
+
+",issueIssueIdOrKeyTransitionsGet,issueIdOrKey opts
+/issue/{issueIdOrKey}/transitions,POST,"
+
+
+Performs an issue transition and, if the transition has a screen, updates the fields from the transition screen. Optionally, issue properties can be set.
+
+",issueIssueIdOrKeyTransitionsPost,issueIdOrKey opts
+/issue/{issueIdOrKey}/votes,DELETE,"
+
+
+Deletes a user&#39;s vote from an issue. This is the equivalent of the user clicking Unvote on an issue in Jira.
+
+",issueIssueIdOrKeyVotesDelete,issueIdOrKey
+/issue/{issueIdOrKey}/votes,GET,"
+
+
+Returns details about the votes on an issue.
+
+",issueIssueIdOrKeyVotesGet,issueIdOrKey
+/issue/{issueIdOrKey}/votes,POST,"
+
+
+Adds the user&#39;s vote to an issue. This is the equivalent of the user clicking Vote on an issue in Jira.
+
+",issueIssueIdOrKeyVotesPost,issueIdOrKey
+/issue/{issueIdOrKey}/watchers,DELETE,"
+
+
+Deletes a user as a watcher of an issue.
+
+",issueIssueIdOrKeyWatchersDelete,issueIdOrKey opts
+/issue/{issueIdOrKey}/watchers,GET,"
+
+
+Returns the watchers for an issue.
+
+",issueIssueIdOrKeyWatchersGet,issueIdOrKey
+/issue/{issueIdOrKey}/watchers,POST,"
+
+
+Adds a user as a watcher of an issue. If no user is specified the calling user is added.
+
+",issueIssueIdOrKeyWatchersPost,issueIdOrKey
+/issue/{issueIdOrKey}/worklog,GET,"
+
+
+Returns all worklogs for an issue.
+
+",issueIssueIdOrKeyWorklogGet,issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog/{id},DELETE,"
+
+
+Deletes a worklog from an issue.
+
+",issueIssueIdOrKeyWorklogIdDelete,id issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog/{id},GET,"
+
+
+Returns a worklog.
+
+",issueIssueIdOrKeyWorklogIdGet,id issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog/{id},PUT,"
+
+
+Updates a worklog.
+
+",issueIssueIdOrKeyWorklogIdPut,id issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog,POST,"
+
+
+Adds a worklog to an issue.
+
+",issueIssueIdOrKeyWorklogPost,issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties,GET,"
+
+
+Returns the keys of all properties for a worklog.
+
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesGet,issueIdOrKey worklogId
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},DELETE,"
+
+
+Deletes a worklog property.
+
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete,issueIdOrKey propertyKey worklogId
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},GET,"
+
+
+Returns the value of a worklog property.
+
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet,issueIdOrKey propertyKey worklogId
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},PUT,"
+
+
+Sets the value of a worklog property. Use this operation to store custom data against the worklog.
+
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut,issueIdOrKey propertyKey worklogId
+/issueLink/{linkId},DELETE,"
+
+
+Deletes an issue link.
+
+",issueLinkLinkIdDelete,linkId
+/issueLink/{linkId},GET,"
+
+
+Returns an issue link.
+
+",issueLinkLinkIdGet,linkId
+/issueLink,POST,"
+
+
+Creates a link between two issues. Use this operation to indicate a relationship between two issues and optionally add a comment to the from (outward) issue. To use this resource the site must have Issue Linking enabled.
+
+",issueLinkPost,opts
+/issueLinkType,GET,"
+
+
+Returns a list of all issue link types.
+
+",issueLinkTypeGet,
+/issueLinkType/{issueLinkTypeId},DELETE,"
+
+
+Deletes an issue link type.
+
+",issueLinkTypeIssueLinkTypeIdDelete,issueLinkTypeId
+/issueLinkType/{issueLinkTypeId},GET,"
+
+
+Returns an issue link type.
+
+",issueLinkTypeIssueLinkTypeIdGet,issueLinkTypeId
+/issueLinkType/{issueLinkTypeId},PUT,"
+
+
+Updates an issue link type.
+
+",issueLinkTypeIssueLinkTypeIdPut,issueLinkTypeId opts
+/issueLinkType,POST,"
+
+
+Creates an issue link type. Use this operation to create descriptions of the reasons why issues are linked. The issue link type consists of a name and descriptions for a link&#39;s inward and outward relationships.
+
+",issueLinkTypePost,opts
+/issue/picker,GET,"
+
+
+Returns a list of suggested issues matching the auto-completion query for the user executing this request. This operation checks the user&#39;s history and browsing context to return issue suggestions.
+
+",issuePickerGet,opts
+/issue,POST,"
+
+
+Creates an issue or, where the option to create sub-tasks is enabled in Jira, a sub-task. A transition may be applied, to move the issue or sub-task to a workflow step other than the default start step, and issue properties set.
+
+",issuePost,opts
+/issue/properties/{propertyKey},DELETE,"
+
+
+Deletes a property value from multiple issues. The issues to be updated can be specified by filter criteria.
+
+",issuePropertiesPropertyKeyDelete,propertyKey opts
+/issue/properties/{propertyKey},PUT,"
+
+
+Sets a property value on multiple issues. The issues to be updated can be specified by a filter.
+
+",issuePropertiesPropertyKeyPut,propertyKey opts
+/issuesecurityschemes,GET,"
+
+
+Returns all issue security schemes.
+
+",issuesecurityschemesGet,
+/issuesecurityschemes/{id},GET,"
+
+
+Returns an issue security scheme along with its security levels.
+
+",issuesecurityschemesIdGet,id
+/issuetype,GET,"
+
+
+Returns all issue types. Permissions required: Permission to access Jira, however, only issue types that are visible to the user are returned.
+
+",issuetypeGet,
+/issuetype/{id}/alternatives,GET,"
+
+
+Returns a list of issue types that can be used to replace the issue type. The alternative issue types are those assigned to the same workflow scheme, field configuration scheme, and screen scheme. Permissions required: Permission to access Jira.
+
+",issuetypeIdAlternativesGet,id
+/issuetype/{id}/avatar2,POST,"
+
+
+Loads an avatar for the issue type.
+
+",issuetypeIdAvatar2Post,id opts
+/issuetype/{id},DELETE,"
+
+
+Deletes the issue type. If the issue type is in use, all uses are updated with the alternative issue type (alternativeIssueTypeId). A list of alternative issue types can be obtained from the Get alternative issue types resource. Permissions required: Administer Jira global permission.
+
+",issuetypeIdDelete,id opts
+/issuetype/{id},GET,"
+
+
+Returns an issue type. Permissions required:
+
+",issuetypeIdGet,id
+/issuetype/{id},PUT,"
+
+
+Updates the issue type. Permissions required: Administer Jira global permission.
+
+",issuetypeIdPut,id opts
+/issuetype/{issueTypeId}/properties,GET,"
+
+
+Returns all the issue type property keys of the issue type. Permissions required:
+
+",issuetypeIssueTypeIdPropertiesGet,issueTypeId
+/issuetype/{issueTypeId}/properties/{propertyKey},DELETE,"
+
+
+Deletes the issue type property. Permissions required: Administer Jira global permission.
+
+",issuetypeIssueTypeIdPropertiesPropertyKeyDelete,issueTypeId propertyKey
+/issuetype/{issueTypeId}/properties/{propertyKey},GET,"
+
+
+Returns the key and value of the issue type property. Permissions required:
+
+",issuetypeIssueTypeIdPropertiesPropertyKeyGet,issueTypeId propertyKey
+/issuetype/{issueTypeId}/properties/{propertyKey},PUT,"
+
+
+Creates or updates the value of the issue type property. Use this resource to store and update data against an issue type. The value of the request body must be a valid, non-empty JSON blob. The maximum length of the property value is 32768 bytes. Permissions required: Administer Jira global permission.
+
+",issuetypeIssueTypeIdPropertiesPropertyKeyPut,issueTypeId propertyKey
+/issuetype,POST,"
+
+
+Creates an issue type and adds it to the default issue type scheme. Permissions required: Administer Jira global permission.
+
+",issuetypePost,opts
+/jql/autocompletedata,GET,"
+
+
+Returns reference data for JQL searches. This is a downloadable version of the documentation provided in Advanced searching - fields reference and Advanced searching - functions reference, along with a list of JQL-reserved words. Use this information to assist with the programmatic creation of JQL queries or the validation of queries built in a custom query builder.
+
+",jqlAutocompletedataGet,
+/jql/autocompletedata/suggestions,GET,"
+
+
+Returns the JQL search auto complete suggestions for a field.
+
+",jqlAutocompletedataSuggestionsGet,opts
+/jql/pdcleaner,POST,"
+
+
+The query strings having personal data that need to be migrated. There should be at most 100 queries.
+
+",jqlPdcleanerPost,opts
+/mypermissions,GET,"
+
+
+Returns a list of permissions indicating which permissions the user has. Details of the user&#39;s permissions can be obtained in a global, project, or issue context.
+
+",mypermissionsGet,opts
+/mypreferences,DELETE,"
+
+
+Deletes a preference of the user, which restores the default value of system defined settings.
+
+",mypreferencesDelete,opts
+/mypreferences,GET,"
+
+
+Returns the value of a preference of the user.
+
+",mypreferencesGet,opts
+/mypreferences/locale,DELETE,"
+
+
+Deletes the locale of the current user, which restores the default setting.
+
+",mypreferencesLocaleDelete,
+/mypreferences/locale,GET,"
+
+
+Returns the locale for the current user.
+
+",mypreferencesLocaleGet,
+/mypreferences/locale,PUT,"
+
+
+Sets the locale of the current user. The requested locale must be one supported by the instance of Jira.
+
+",mypreferencesLocalePut,opts
+/mypreferences,PUT,"
+
+
+Creates a preference for the user or updates its value. An arbitrary preference can be created with the value containing up to 255 characters. In addition, the following keys define system preferences that can be set or created:
+
+",mypreferencesPut,opts
+/myself,GET,"
+
+
+Returns details for the authenticated user.
+
+",myselfGet,opts
+/notificationscheme,GET,"
+
+
+Returns a paginated list of notification schemes in order by display name.
+
+",notificationschemeGet,opts
+/notificationscheme/{id},GET,"
+
+
+Returns a notification scheme, including the list of events and the recipients who will receive notifications for those events.
+
+",notificationschemeIdGet,id opts
+/permissions,GET,"
+
+
+Returns all permissions, including:
+
+",permissionsGet,
+/permissions/project,POST,"
+
+
+Returns all the projects where the user is granted a list of project permissions.
+
+",permissionsProjectPost,opts
+/permissionscheme,GET,"
+
+
+Returns all permission schemes.
+
+",permissionschemeGet,opts
+/permissionscheme,POST,"
+
+
+Creates a new permission scheme. You can create a permission scheme with or without defining a set of permission grants. Permissions required: Administer Jira global permission.
+
+",permissionschemePost,opts
+/permissionscheme/{schemeId},DELETE,"
+
+
+Deletes a permission scheme. Permissions required: Administer Jira global permission.
+
+",permissionschemeSchemeIdDelete,schemeId
+/permissionscheme/{schemeId},GET,"
+
+
+Returns a permission scheme. Permissions required: Permission to log in to Jira.
+
+",permissionschemeSchemeIdGet,schemeId opts
+/permissionscheme/{schemeId}/permission,GET,"
+
+
+Returns all permission grants for a permission scheme. Permissions required: Permission to log in to Jira.
+
+",permissionschemeSchemeIdPermissionGet,schemeId opts
+/permissionscheme/{schemeId}/permission/{permissionId},DELETE,"
+
+
+Deletes a permission grant from a permission scheme. See About permission schemes and grants for more details. Permissions required: Administer Jira global permission.
+
+",permissionschemeSchemeIdPermissionPermissionIdDelete,permissionId schemeId
+/permissionscheme/{schemeId}/permission/{permissionId},GET,"
+
+
+Returns a permission grant. Permissions required: Permission to log in to Jira.
+
+",permissionschemeSchemeIdPermissionPermissionIdGet,permissionId schemeId opts
+/permissionscheme/{schemeId}/permission,POST,"
+
+
+Creates a new permission grant in the given permission scheme. Permissions required: Administer Jira global permission.
+
+",permissionschemeSchemeIdPermissionPost,schemeId opts
+/permissionscheme/{schemeId},PUT,"
+
+
+Updates a permission scheme. Below are some important things to note when using this resource:
+
+",permissionschemeSchemeIdPut,schemeId opts
+/priority,GET,"
+
+
+Returns the list of all issue priorities.
+
+",priorityGet,
+/priority/{id},GET,"
+
+
+Returns an issue priority.
+
+",priorityIdGet,id
+/projectCategory,GET,"
+
+
+Returns all project categories.
+
+",projectCategoryGet,
+/projectCategory/{id},DELETE,"
+
+
+Deletes a project category.
+
+",projectCategoryIdDelete,id
+/projectCategory/{id},GET,"
+
+
+Returns a project category.
+
+",projectCategoryIdGet,id
+/projectCategory/{id},PUT,"
+
+
+Updates a project category.
+
+",projectCategoryIdPut,id opts
+/projectCategory,POST,"
+
+
+Creates a project category.
+
+",projectCategoryPost,opts
+/project,GET,"
+
+
+Returns all projects visible to the currently logged in user. Deprecated, use Get projects paginated that supports search and pagination. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, it returns all projects that are visible for anonymous users.
+
+",projectGet,opts
+/project,POST,"
+
+
+Creates a new project.
+
+",projectPost,opts
+/project/{projectIdOrKey}/avatar2,POST,"
+
+
+Loads an avatar for a project.
+
+",projectProjectIdOrKeyAvatar2Post,projectIdOrKey opts
+/project/{projectIdOrKey}/avatar/{id},DELETE,"
+
+
+Deletes a custom avatar from a project. Note that system avatars cannot be deleted.
+
+",projectProjectIdOrKeyAvatarIdDelete,id projectIdOrKey
+/project/{projectIdOrKey}/avatar,PUT,"
+
+
+Sets the avatar displayed for a project.
+
+",projectProjectIdOrKeyAvatarPut,projectIdOrKey opts
+/project/{projectIdOrKey}/avatars,GET,"
+
+
+Returns all project avatars, grouped by system and custom avatars.
+
+",projectProjectIdOrKeyAvatarsGet,projectIdOrKey
+/project/{projectIdOrKey}/component,GET,"
+
+
+Returns a paginated representation of all components existing in a single project. See the Get project components resource if you want to get a full list of versions without pagination.
+
+",projectProjectIdOrKeyComponentGet,projectIdOrKey opts
+/project/{projectIdOrKey}/components,GET,"
+
+
+Returns all components existing in a single project. See the Get project components paginated resource if you want to get a full list of components with pagination.
+
+",projectProjectIdOrKeyComponentsGet,projectIdOrKey
+/project/{projectIdOrKey},DELETE,"
+
+
+Deletes an existing project.
+
+",projectProjectIdOrKeyDelete,projectIdOrKey
+/project/{projectIdOrKey},GET,"
+
+
+Returns the project details for the specified project.
+
+",projectProjectIdOrKeyGet,projectIdOrKey opts
+/project/{projectIdOrKey}/properties,GET,"
+
+
+Returns all project property keys for the project.
+
+",projectProjectIdOrKeyPropertiesGet,projectIdOrKey
+/project/{projectIdOrKey}/properties/{propertyKey},DELETE,"
+
+
+Removes the property from the project.
+
+",projectProjectIdOrKeyPropertiesPropertyKeyDelete,projectIdOrKey propertyKey
+/project/{projectIdOrKey}/properties/{propertyKey},GET,"
+
+
+Returns the value of the project property.
+
+",projectProjectIdOrKeyPropertiesPropertyKeyGet,projectIdOrKey propertyKey
+/project/{projectIdOrKey}/properties/{propertyKey},PUT,"
+
+
+Sets the value of the project property. You can use project properties to store custom data against the project.
+
+",projectProjectIdOrKeyPropertiesPropertyKeyPut,projectIdOrKey propertyKey
+/project/{projectIdOrKey},PUT,"
+
+
+Updates the project details of an existing project.
+
+",projectProjectIdOrKeyPut,projectIdOrKey opts
+/project/{projectIdOrKey}/role,GET,"
+
+
+Returns a list of project roles for the project.
+
+",projectProjectIdOrKeyRoleGet,projectIdOrKey
+/project/{projectIdOrKey}/role/{id},DELETE,"
+
+
+Deletes actors from a project role for the project.
+
+",projectProjectIdOrKeyRoleIdDelete,id projectIdOrKey opts
+/project/{projectIdOrKey}/role/{id},GET,"
+
+
+Returns the project role&#39;s details and actors associated with the project. The list of actors is sorted by display name.
+
+",projectProjectIdOrKeyRoleIdGet,id projectIdOrKey
+/project/{projectIdOrKey}/role/{id},POST,"
+
+
+Adds additional actors to a project role for the project.
+
+",projectProjectIdOrKeyRoleIdPost,id projectIdOrKey opts
+/project/{projectIdOrKey}/role/{id},PUT,"
+
+
+Associates actors with the project role for the project, replacing all existing actors.
+
+",projectProjectIdOrKeyRoleIdPut,id projectIdOrKey opts
+/project/{projectIdOrKey}/roledetails,GET,"
+
+
+Returns all project roles and the details for each role. Note that the list of project roles is common to all projects.
+
+",projectProjectIdOrKeyRoledetailsGet,projectIdOrKey
+/project/{projectIdOrKey}/statuses,GET,"
+
+
+Returns the valid statuses for a project. The statuses are grouped by issue type, as each project has a set of valid issue types and each issue type has a set of valid statuses.
+
+",projectProjectIdOrKeyStatusesGet,projectIdOrKey
+/project/{projectIdOrKey}/type/{newProjectTypeKey},PUT,"
+
+
+Updates the project type.
+
+",projectProjectIdOrKeyTypeNewProjectTypeKeyPut,newProjectTypeKey projectIdOrKey
+/project/{projectIdOrKey}/version,GET,"
+
+
+Returns a paginated representation of all versions existing in a single project. See the Get project versions resource if you want to get a full list of versions without pagination.
+
+",projectProjectIdOrKeyVersionGet,projectIdOrKey opts
+/project/{projectIdOrKey}/versions,GET,"
+
+
+Returns all versions existing in a single project. The response is not paginated. Use Get project versions paginated if you want to get the versions in a project with pagination.
+
+",projectProjectIdOrKeyVersionsGet,projectIdOrKey opts
+/project/{projectKeyOrId}/issuesecuritylevelscheme,GET,"
+
+
+Returns the issue security scheme associated with the project.
+
+",projectProjectKeyOrIdIssuesecuritylevelschemeGet,projectKeyOrId
+/project/{projectKeyOrId}/notificationscheme,GET,"
+
+
+Gets a notification scheme associated with the project. See the Get notification scheme resource for more information about notification schemes.
+
+",projectProjectKeyOrIdNotificationschemeGet,projectKeyOrId opts
+/project/{projectKeyOrId}/permissionscheme,GET,"
+
+
+Gets the permission scheme associated with the project.
+
+",projectProjectKeyOrIdPermissionschemeGet,projectKeyOrId opts
+/project/{projectKeyOrId}/permissionscheme,PUT,"
+
+
+Associates a permission scheme with a particular project. See Managing project permissions for more information about permission schemes.
+
+",projectProjectKeyOrIdPermissionschemePut,projectKeyOrId opts
+/project/{projectKeyOrId}/securitylevel,GET,"
+
+
+Returns all issue security levels for the project that the currently authenticated user has access to. If the user does not have permission to see an issue security level, then that level is not returned. If the user lacks the Set Issue Security permission, then an empty list is returned.
+
+",projectProjectKeyOrIdSecuritylevelGet,projectKeyOrId
+/project/search,GET,"
+
+
+Returns projects visible to the currently logged in user. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, then all projects visible to anonymous users are returned.
+
+",projectSearchGet,opts
+/project/type,GET,"
+
+
+Returns all project types, whether or not the instance has a valid license for each type.
+
+",projectTypeGet,
+/project/type/{projectTypeKey}/accessible,GET,"
+
+
+Returns a project type if it is accessible to the logged in user.
+
+",projectTypeProjectTypeKeyAccessibleGet,projectTypeKey
+/project/type/{projectTypeKey},GET,"
+
+
+Returns a project type.
+
+",projectTypeProjectTypeKeyGet,projectTypeKey
+/projectvalidate/key,GET,"
+
+
+Validates a project key by confirming the key is a valid string and not in use.
+
+",projectvalidateKeyGet,opts
+/projectvalidate/validProjectKey,GET,"
+
+
+Validates a project key and, if the key is invalid or in use, generates a valid random string for the project key.
+
+",projectvalidateValidProjectKeyGet,opts
+/projectvalidate/validProjectName,GET,"
+
+
+Checks that a project name isn&#39;t in use. If the name isn&#39;t in use, the passed string is returned. If the name is in use, this operation attempts to generate a valid project name based on the one supplied, usually by adding a sequence number. If a valid project name cannot be generated, a 404 response is returned.
+
+",projectvalidateValidProjectNameGet,opts
+/resolution,GET,"
+
+
+Returns a list of all issue resolution values.
+
+",resolutionGet,
+/resolution/{id},GET,"
+
+
+Returns an issue resolution value.
+
+",resolutionIdGet,id
+/role,GET,"
+
+
+Gets a list of all project roles, complete with project role details and default actors.
+
+",roleGet,
+/role/{id}/actors,DELETE,"
+
+
+Removes default actors from the project role. You may remove either a group or user, but you cannot remove a group and a user in the same request.
+
+",roleIdActorsDelete,id opts
+/role/{id}/actors,GET,"
+
+
+Returns the default actors for the project role.
+
+",roleIdActorsGet,id
+/role/{id}/actors,POST,"
+
+
+Adds default actors to the given role. You may add either groups or users, but you cannot add groups and users in the same request.
+
+",roleIdActorsPost,id opts
+/role/{id},DELETE,"
+
+
+Deletes a project role. You must specify a replacement project role if you wish to delete a project role that is in use.
+
+",roleIdDelete,id opts
+/role/{id},GET,"
+
+
+Gets the project role details and the default actors associated with the role. The list of default actors is sorted by display name.
+
+",roleIdGet,id
+/role/{id},POST,"
+
+
+Update either the project role&#39;s name or its description.
+
+",roleIdPost,id opts
+/role/{id},PUT,"
+
+
+Update the project role&#39;s name and description. You must include both a name and a description in the request.
+
+",roleIdPut,id opts
+/role,POST,"
+
+
+Creates a new project role with no default actors. You can use the Add default actors to project role the project method to add default actors to the project role after creating it.
+
+",rolePost,opts
+/screens/addToDefault/{fieldId},POST,"
+
+
+Adds a field to the default tab of the default screen.
+
+",screensAddToDefaultFieldIdPost,fieldId
+/screens,GET,"
+
+
+Returns all screens.
+
+",screensGet,opts
+/screens/{screenId}/availableFields,GET,"
+
+
+Returns the fields that can be added to a tab on a screen.
+
+",screensScreenIdAvailableFieldsGet,screenId
+/screens/{screenId}/tabs,GET,"
+
+
+Returns the list of tabs for a screen.
+
+",screensScreenIdTabsGet,screenId opts
+/screens/{screenId}/tabs,POST,"
+
+
+Creates a tab for a screen.
+
+",screensScreenIdTabsPost,screenId opts
+/screens/{screenId}/tabs/{tabId},DELETE,"
+
+
+Deletes a screen tab.
+
+",screensScreenIdTabsTabIdDelete,screenId tabId
+/screens/{screenId}/tabs/{tabId}/fields,GET,"
+
+
+Returns all fields for a screen tab.
+
+",screensScreenIdTabsTabIdFieldsGet,screenId tabId opts
+/screens/{screenId}/tabs/{tabId}/fields/{id},DELETE,"
+
+
+Removes a field from a screen tab.
+
+",screensScreenIdTabsTabIdFieldsIdDelete,id screenId tabId
+/screens/{screenId}/tabs/{tabId}/fields/{id}/move,POST,"
+
+
+Moves a screen tab field.
+
+",screensScreenIdTabsTabIdFieldsIdMovePost,id screenId tabId opts
+/screens/{screenId}/tabs/{tabId}/fields,POST,"
+
+
+Adds a field to a screen tab.
+
+",screensScreenIdTabsTabIdFieldsPost,screenId tabId opts
+/screens/{screenId}/tabs/{tabId}/move/{pos},POST,"
+
+
+Moves a screen tab.
+
+",screensScreenIdTabsTabIdMovePosPost,pos screenId tabId
+/screens/{screenId}/tabs/{tabId},PUT,"
+
+
+Updates the name of a screen tab.
+
+",screensScreenIdTabsTabIdPut,screenId tabId opts
+/search,GET,"
+
+
+Searches for issues using JQL. Permissions required: Permission to access Jira.
+
+",searchGet,opts
+/search,POST,"
+
+
+Searches for issues using JQL. Permissions required: Permission to access Jira.
+
+",searchPost,opts
+/securitylevel/{id},GET,"
+
+
+Returns details of an issue security level.
+
+",securitylevelIdGet,id
+/serverInfo,GET,"
+
+
+Returns information about the Jira instance.
+
+",serverInfoGet,
+/settings/columns,GET,"
+
+
+Returns the default issue navigator columns.
+
+",settingsColumnsGet,
+/settings/columns,PUT,"
+
+
+Sets the default issue navigator columns.
+
+",settingsColumnsPut,
+/status,GET,"
+
+
+Returns a list of all statuses associated with workflows.
+
+",statusGet,
+/status/{idOrName},GET,"
+
+
+Returns a status. The status must be associated with a workflow to be returned.
+
+",statusIdOrNameGet,idOrName
+/statuscategory,GET,"
+
+
+Returns a list of all status categories.
+
+",statuscategoryGet,
+/statuscategory/{idOrKey},GET,"
+
+
+Returns a status category. Status categories provided a mechanism for categorizing statuses.
+
+",statuscategoryIdOrKeyGet,idOrKey
+/task/{taskId}/cancel,POST,"
+
+
+Cancels a task.
+
+",taskTaskIdCancelPost,taskId
+/task/{taskId},GET,"
+
+
+Returns the status of a long-running asynchronous task.
+
+",taskTaskIdGet,taskId
+/universal_avatar/type/{type}/owner/{entityId},GET,"
+
+
+Returns the system and custom avatars for a project or issue type.
+
+",universalAvatarTypeTypeOwnerEntityIdGet,entityId type
+/universal_avatar/type/{type}/owner/{entityId},POST,"
+
+
+Loads a custom avatar for a project or issue type.
+
+",universalAvatarTypeTypeOwnerEntityIdPost,entityId type opts
+/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id},DELETE,"
+
+
+Deletes an avatar from a project or issue type.
+
+",universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete,id owningObjectId type
+/user/assignable/multiProjectSearch,GET,"
+
+
+Returns a list of users who fulfill both of these criteria:
+
+",userAssignableMultiProjectSearchGet,opts
+/user/assignable/search,GET,"
+
+
+Returns a list of users that can be assigned to an issue. Use this method to find the list of users who can be assigned to:
+
+",userAssignableSearchGet,opts
+/user/bulk,GET,"
+
+
+Returns details of users specified in a list of usernames or keys. Permissions required: Administer Jira global permission. Users with permission to access Jira can call this method, but empty search results are returned.
+
+",userBulkGet,opts
+/user/columns,DELETE,"
+
+
+Resets the default issue table columns for the user to the system default. If a username is not passed, the calling user&#39;s default columns are reset. Permissions required:
+
+",userColumnsDelete,opts
+/user/columns,GET,"
+
+
+Returns the default issue table columns for the user. If a username is not passed in the request, the calling user&#39;s details are returned. Permissions required:
+
+",userColumnsGet,opts
+/user/columns,PUT,"
+
+
+Sets the default issue table columns for the user. If a username is not passed, the calling user&#39;s default columns are set. If no column details are sent, then all default columns are removed. The parameters for this resource are expressed as HTML form data. For example, in curl: curl -X PUT -d username&#x3D;&lt;username&gt; -d columns&#x3D;summary -d columns&#x3D;description &lt;url&gt; Permissions required:
+
+",userColumnsPut,opts
+/user,DELETE,"
+
+
+Deletes a user. Permissions required: Site administration (i.e., member of the site-admin group).
+
+",userDelete,opts
+/user,GET,"
+
+
+Returns a user. Permissions required: None.
+
+",userGet,opts
+/user/groups,GET,"
+
+
+Returns the groups to which a user belongs. Permissions required: Browse users and groups global permission.
+
+",userGroupsGet,opts
+/user/permission/search,GET,"
+
+
+Returns a list of users who fulfill both of these criteria:
+
+",userPermissionSearchGet,opts
+/user/picker,GET,"
+
+
+Returns a list of users whose attributes match the query term. The returned object includes the html field where the matched query term is highlighted with the HTML strong tag. A list of account IDs can be provided to exclude users from the results. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but will only get search results for an exact name match.
+
+",userPickerGet,opts
+/user,POST,"
+
+
+Creates a user. This resource is retained for legacy compatibility. As soon as a more suitable alternative is available this resource will be deprecated. The option is provided to set or generate a password for the user. When using the option to generate a password, by omitting password from the request, include \&quot;notification\&quot;: \&quot;true\&quot; to ensure the user is sent an email advising them that their account has been created. This email includes a link for the user to set their password. If the notification isn&#39;t sent for a generated password, the user will need to be sent a reset password request from Jira. Permissions required: Administer Jira global permission
+
+",userPost,opts
+/user/properties,GET,"
+
+
+Returns the keys of all properties for a user. Permissions required:
+
+",userPropertiesGet,opts
+/user/properties/{propertyKey},DELETE,"
+
+
+Deletes a property from a user. Permissions required:
+
+",userPropertiesPropertyKeyDelete,propertyKey opts
+/user/properties/{propertyKey},GET,"
+
+
+Returns the value of a user&#39;s property. If no property key is provided Get user property keys is called. Permissions required:
+
+",userPropertiesPropertyKeyGet,propertyKey opts
+/user/properties/{propertyKey},PUT,"
+
+
+Sets the value of a user&#39;s property. Use this resource to store custom data against a user. Permissions required:
+
+",userPropertiesPropertyKeyPut,propertyKey opts
+/user/search,GET,"
+
+
+Returns a list of users that match the search string and property. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but empty search results are returned.
+
+",userSearchGet,opts
+/user/search/query,GET,"
+
+
+Finds users using a structured query and returns user details. Permissions required: Browse users and groups global permission. The available queries statements are:
+
+",userSearchQueryGet,opts
+/user/search/query/key,GET,"
+
+
+Finds users using a structured query and returns a list of user keys. Permissions required: Browse users and groups global permission. The available query statements are:
+
+",userSearchQueryKeyGet,opts
+/user/viewissue/search,GET,"
+
+
+Returns a list of users who fulfill both of these criteria:
+
+",userViewissueSearchGet,opts
+/version/{id},DELETE,"
+
+
+Deletes a project version. Deprecated, use Delete and replace version that supports swapping version values in custom fields, in addition to the swapping for fixVersion and affectedVersion provided in this resource. Alternative versions can be provided to update issues that use the deleted version in fixVersion or affectedVersion. If alternatives are not provided, occurrences of fixVersion and affectedVersion that contain the deleted version are cleared. Permissions required: Administer Jira global permission or Administer Projects project permission.
+
+",versionIdDelete,id opts
+/version/{id},GET,"
+
+
+Returns a project version. Permissions required: Browse projects project permission
+
+",versionIdGet,id opts
+/version/{id}/mergeto/{moveIssuesTo},PUT,"
+
+
+Merges two project versions. The merge is completed by deleting the version specified in id and replacing any occurrences of its ID in fixVersion with the version ID specified in moveIssuesTo. Consider using Delete and replace version instead. This resource supports swapping version values in fixVersion, affectedVersion, and custom fields. Permissions required: Administer Jira global permission or Administer Projects project permission.
+
+",versionIdMergetoMoveIssuesToPut,id moveIssuesTo
+/version/{id}/move,POST,"
+
+
+Modifies the version&#39;s sequence within the project, which affects the display order of the versions in Jira. Permissions required: Administer Jira global permission or Administer Projects project permission.
+
+",versionIdMovePost,id opts
+/version/{id},PUT,"
+
+
+Modifies a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.
+
+",versionIdPut,id opts
+/version/{id}/relatedIssueCounts,GET,"
+
+
+Returns the following counts for a version:
+
+",versionIdRelatedIssueCountsGet,id
+/version/{id}/removeAndSwap,POST,"
+
+
+Deletes a project version. Permissions required: Administer Jira global permission or Administer Projects project permission. Alternative versions can be provided to update issues that use the deleted version in fixVersion, affectedVersion, or any version picker custom fields. If alternatives are not provided, occurrences of fixVersion, affectedVersion, and any version picker custom field, that contain the deleted version, are cleared. Any replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
+
+",versionIdRemoveAndSwapPost,id opts
+/version/{id}/unresolvedIssueCount,GET,"
+
+
+Returns counts of the issues and unresolved issues for the project version. Permissions required: Browse projects project permission
+
+",versionIdUnresolvedIssueCountGet,id
+/version,POST,"
+
+
+Creates a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.
+
+",versionPost,opts
+/version/remotelink,GET,"
+
+
+the global ID of the remote resource that is linked to the versions
+
+",versionRemotelinkGet,opts
+/version/{versionId}/remotelink,DELETE,"
+
+
+The version for which to delete ALL existing remote version links
+
+",versionVersionIdRemotelinkDelete,versionId
+/version/{versionId}/remotelink,GET,"
+
+
+a String containing the version ID
+
+",versionVersionIdRemotelinkGet,versionId
+/version/{versionId}/remotelink/{globalId},DELETE,"
+
+
+The version ID of the remote link
+
+",versionVersionIdRemotelinkGlobalIdDelete,globalId versionId
+/version/{versionId}/remotelink/{globalId},GET,"
+
+
+A REST sub-resource representing a remote version link
+
+",versionVersionIdRemotelinkGlobalIdGet,globalId versionId
+/version/{versionId}/remotelink/{globalId},POST,"
+
+
+",versionVersionIdRemotelinkGlobalIdPost,globalId versionId
+/version/{versionId}/remotelink,POST,"
+
+
+Create a remote version link via POST. The link&#39;s global ID will be taken from the JSON payload if provided; otherwise, it will be generated.
+
+",versionVersionIdRemotelinkPost,versionId
+/workflow,GET,"
+
+
+Returns all workflows in Jira or a single workflow.
+
+",workflowGet,opts
+/workflow/transitions/{transitionId}/properties,DELETE,"
+
+
+Deletes a property from a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
+
+",workflowTransitionsTransitionIdPropertiesDelete,transitionId opts
+/workflow/transitions/{transitionId}/properties,GET,"
+
+
+Returns the properties on a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
+
+",workflowTransitionsTransitionIdPropertiesGet,transitionId opts
+/workflow/transitions/{transitionId}/properties,POST,"
+
+
+Adds a property to a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
+
+",workflowTransitionsTransitionIdPropertiesPost,transitionId opts
+/workflow/transitions/{transitionId}/properties,PUT,"
+
+
+Updates a workflow transition by changing the property value. Trying to update a property that does not exist results in a new property being added to the transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
+
+",workflowTransitionsTransitionIdPropertiesPut,transitionId opts
+/workflowscheme/{id}/createdraft,POST,"
+
+
+Create a draft workflow scheme from an active workflow scheme, by copying the active workflow scheme. Note that an active workflow scheme can only have one draft workflow scheme at any given time.
+
+",workflowschemeIdCreatedraftPost,id
+/workflowscheme/{id}/default,DELETE,"
+
+
+Resets the default workflow for a workflow scheme. That is, the default workflow is set to Jira&#39;s system workflow (the jira workflow).
+
+",workflowschemeIdDefaultDelete,id opts
+/workflowscheme/{id}/default,GET,"
+
+
+Returns the default workflow for a workflow scheme. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has All Unassigned Issue Types listed in its issue types for the workflow scheme in Jira.
+
+",workflowschemeIdDefaultGet,id opts
+/workflowscheme/{id}/default,PUT,"
+
+
+Sets the default workflow for a workflow scheme.
+
+",workflowschemeIdDefaultPut,id opts
+/workflowscheme/{id},DELETE,"
+
+
+Deletes a workflow scheme. Note that a workflow scheme cannot be deleted if it is active (that is, being used by at least one project).
+
+",workflowschemeIdDelete,id
+/workflowscheme/{id}/draft/default,DELETE,"
+
+
+Resets the default workflow for a workflow scheme&#39;s draft. That is, the default workflow is set to Jira&#39;s system workflow (the jira workflow).
+
+",workflowschemeIdDraftDefaultDelete,id
+/workflowscheme/{id}/draft/default,GET,"
+
+
+Returns the default workflow for a workflow scheme&#39;s draft. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has All Unassigned Issue Types listed in its issue types for the workflow scheme in Jira.
+
+",workflowschemeIdDraftDefaultGet,id
+/workflowscheme/{id}/draft/default,PUT,"
+
+
+Sets the default workflow for a workflow scheme&#39;s draft.
+
+",workflowschemeIdDraftDefaultPut,id opts
+/workflowscheme/{id}/draft,DELETE,"
+
+
+Deletes a draft workflow scheme.
+
+",workflowschemeIdDraftDelete,id
+/workflowscheme/{id}/draft,GET,"
+
+
+Returns the draft workflow scheme for an active workflow scheme. Draft workflow schemes allow changes to be made to the active workflow schemes: When an active workflow scheme is updated, a draft copy is created. The draft is modified, then the changes in the draft are copied back to the active workflow scheme. See Configuring workflow schemes for more information.Note that:
+
+",workflowschemeIdDraftGet,id
+/workflowscheme/{id}/draft/issuetype/{issueType},DELETE,"
+
+
+Deletes the issue type-workflow mapping for an issue type in a workflow scheme&#39;s draft.
+
+",workflowschemeIdDraftIssuetypeIssueTypeDelete,id issueType
+/workflowscheme/{id}/draft/issuetype/{issueType},GET,"
+
+
+Returns the issue type-workflow mapping for an issue type in a workflow scheme&#39;s draft.
+
+",workflowschemeIdDraftIssuetypeIssueTypeGet,id issueType
+/workflowscheme/{id}/draft/issuetype/{issueType},PUT,"
+
+
+Sets the workflow for an issue type in a workflow scheme&#39;s draft.
+
+",workflowschemeIdDraftIssuetypeIssueTypePut,id issueType opts
+/workflowscheme/{id}/draft,PUT,"
+
+
+Updates a draft workflow scheme. If a draft workflow scheme does not exist for the active workflow scheme, then a draft is created. Note that an active workflow scheme can only have one draft workflow scheme at any given time.
+
+",workflowschemeIdDraftPut,id opts
+/workflowscheme/{id}/draft/workflow,DELETE,"
+
+
+Deletes the workflow-issue type mapping for a workflow in a workflow scheme&#39;s draft.
+
+",workflowschemeIdDraftWorkflowDelete,id opts
+/workflowscheme/{id}/draft/workflow,GET,"
+
+
+Returns the workflow-issue type mappings for a workflow scheme&#39;s draft.
+
+",workflowschemeIdDraftWorkflowGet,id opts
+/workflowscheme/{id}/draft/workflow,PUT,"
+
+
+Sets the issue types for a workflow in a workflow scheme&#39;s draft. The workflow can also be set as the default workflow for the draft workflow scheme. Unmapped issues types are mapped to the default workflow.
+
+",workflowschemeIdDraftWorkflowPut,id opts
+/workflowscheme/{id},GET,"
+
+
+Returns a workflow scheme.
+
+",workflowschemeIdGet,id opts
+/workflowscheme/{id}/issuetype/{issueType},DELETE,"
+
+
+Deletes the issue type-workflow mapping for an issue type in a workflow scheme.
+
+",workflowschemeIdIssuetypeIssueTypeDelete,id issueType opts
+/workflowscheme/{id}/issuetype/{issueType},GET,"
+
+
+Returns the issue type-workflow mapping for an issue type in a workflow scheme.
+
+",workflowschemeIdIssuetypeIssueTypeGet,id issueType opts
+/workflowscheme/{id}/issuetype/{issueType},PUT,"
+
+
+Sets the workflow for an issue type in a workflow scheme.
+
+",workflowschemeIdIssuetypeIssueTypePut,id issueType opts
+/workflowscheme/{id},PUT,"
+
+
+Updates a workflow scheme, including the name, default workflow, issue type to project mappings, and more. If the workflow scheme is active (that is, being used by at least one project), then a draft workflow scheme is created or updated instead, provided that updateDraftIfNeeded is set to true.
+
+",workflowschemeIdPut,id opts
+/workflowscheme/{id}/workflow,DELETE,"
+
+
+Deletes the workflow-issue type mapping for a workflow in a workflow scheme.
+
+",workflowschemeIdWorkflowDelete,id opts
+/workflowscheme/{id}/workflow,GET,"
+
+
+Returns the workflow-issue type mappings for a workflow scheme.
+
+",workflowschemeIdWorkflowGet,id opts
+/workflowscheme/{id}/workflow,PUT,"
+
+
+Sets the issue types for a workflow in a workflow scheme. The workflow can also be set as the default workflow for the workflow scheme. Unmapped issues types are mapped to the default workflow.
+
+",workflowschemeIdWorkflowPut,id opts
+/workflowscheme,POST,"
+
+
+Creates a workflow scheme.
+
+",workflowschemePost,opts
+/worklog/deleted,GET,"
+
+
+Returns a list of IDs and delete timestamps for worklogs deleted after a date and time.
+
+",worklogDeletedGet,opts
+/worklog/list,POST,"
+
+
+Returns worklog details for a list of worklog IDs.
+
+",worklogListPost,opts
+/worklog/updated,GET,"
+
+
+Returns a list of IDs and update timestamps for worklogs updated after a date and time.
+
+",worklogUpdatedGet,opts
