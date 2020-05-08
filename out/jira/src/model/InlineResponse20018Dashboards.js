@@ -18,7 +18,7 @@ import InlineResponse20018SharePermissions from './InlineResponse20018SharePermi
 /**
  * The InlineResponse20018Dashboards model module.
  * @module model/InlineResponse20018Dashboards
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20018Dashboards {
     /**

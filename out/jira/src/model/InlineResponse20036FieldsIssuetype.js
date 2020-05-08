@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20036FieldsIssuetype model module.
  * @module model/InlineResponse20036FieldsIssuetype
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20036FieldsIssuetype {
     /**

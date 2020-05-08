@@ -17,7 +17,7 @@ import InlineResponse2009Author from './InlineResponse2009Author';
 /**
  * The InlineResponse20037FieldsWatcher model module.
  * @module model/InlineResponse20037FieldsWatcher
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20037FieldsWatcher {
     /**

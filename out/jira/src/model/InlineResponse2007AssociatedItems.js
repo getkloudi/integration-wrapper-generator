@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse2007AssociatedItems model module.
  * @module model/InlineResponse2007AssociatedItems
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse2007AssociatedItems {
     /**

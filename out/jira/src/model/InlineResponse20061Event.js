@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20061Event model module.
  * @module model/InlineResponse20061Event
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20061Event {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20058PermissionsEDITISSUE model module.
  * @module model/InlineResponse20058PermissionsEDITISSUE
- * @version 1.3.0
+ * @version 1.3.1
  */
 var InlineResponse20058PermissionsEDITISSUE = /*#__PURE__*/function () {
   /**

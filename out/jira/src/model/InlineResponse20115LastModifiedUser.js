@@ -18,7 +18,7 @@ import InlineResponse20060ApplicationRoles from './InlineResponse20060Applicatio
 /**
  * The InlineResponse20115LastModifiedUser model module.
  * @module model/InlineResponse20115LastModifiedUser
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20115LastModifiedUser {
     /**

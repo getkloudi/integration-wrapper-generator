@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse2004AuthorAvatarUrls model module.
  * @module model/InlineResponse2004AuthorAvatarUrls
- * @version 1.3.0
+ * @version 1.3.1
  */
 var InlineResponse2004AuthorAvatarUrls = /*#__PURE__*/function () {
   /**

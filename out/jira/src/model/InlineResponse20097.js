@@ -17,7 +17,7 @@ import InlineResponse20097CustomFieldUsage from './InlineResponse20097CustomFiel
 /**
  * The InlineResponse20097 model module.
  * @module model/InlineResponse20097
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20097 {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20050InwardIssueFieldsIssuetype model module.
  * @module model/InlineResponse20050InwardIssueFieldsIssuetype
- * @version 1.3.0
+ * @version 1.3.1
  */
 var InlineResponse20050InwardIssueFieldsIssuetype = /*#__PURE__*/function () {
   /**

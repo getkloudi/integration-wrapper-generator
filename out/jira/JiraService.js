@@ -134,6 +134,12 @@ class JiraService {
   }
 
   async getThirdPartyProjects(incomingOptions) {
+    console.log(incomingOptions);
+    const res = await this.get('PROJECT_SEARCH', incomingOptions);
+    console.log(res.data);
+    // incomingOptions.opts = this.getNextPaginationURIFromResponse(
+    //   res.response
+    // );
     //TODO: Add custom getThirdPartyProjects functionality here
   }
 

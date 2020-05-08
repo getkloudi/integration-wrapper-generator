@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueIssueIdOrKeyRemotelinkObjectIcon model module.
  * @module model/IssueIssueIdOrKeyRemotelinkObjectIcon
- * @version 1.3.0
+ * @version 1.3.1
  */
 var IssueIssueIdOrKeyRemotelinkObjectIcon = /*#__PURE__*/function () {
   /**

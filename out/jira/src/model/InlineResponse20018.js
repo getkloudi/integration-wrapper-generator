@@ -17,7 +17,7 @@ import InlineResponse20018Dashboards from './InlineResponse20018Dashboards';
 /**
  * The InlineResponse20018 model module.
  * @module model/InlineResponse20018
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20018 {
     /**

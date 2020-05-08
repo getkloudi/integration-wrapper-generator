@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IssueIssueIdOrKeyRemotelinkObjectStatusIcon model module.
  * @module model/IssueIssueIdOrKeyRemotelinkObjectStatusIcon
- * @version 1.3.0
+ * @version 1.3.1
  */
 class IssueIssueIdOrKeyRemotelinkObjectStatusIcon {
     /**

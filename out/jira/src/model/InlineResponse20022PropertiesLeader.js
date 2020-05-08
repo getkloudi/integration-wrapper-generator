@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20022PropertiesLeader model module.
  * @module model/InlineResponse20022PropertiesLeader
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20022PropertiesLeader {
     /**

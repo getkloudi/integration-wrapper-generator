@@ -17,7 +17,7 @@ import InlineResponse20056Results from './InlineResponse20056Results';
 /**
  * The InlineResponse20056 model module.
  * @module model/InlineResponse20056
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20056 {
     /**

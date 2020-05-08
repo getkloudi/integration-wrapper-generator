@@ -17,7 +17,7 @@ import FilterIdPermissionProjectProjectCategory from './FilterIdPermissionProjec
 /**
  * The InlineResponse20053 model module.
  * @module model/InlineResponse20053
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20053 {
     /**

@@ -17,7 +17,7 @@ import InlineResponse2004Author from './InlineResponse2004Author';
 /**
  * The InlineResponse20029Values model module.
  * @module model/InlineResponse20029Values
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20029Values {
     /**

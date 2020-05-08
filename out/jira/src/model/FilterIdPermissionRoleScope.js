@@ -17,7 +17,7 @@ import FilterIdPermissionRoleScopeProject from './FilterIdPermissionRoleScopePro
 /**
  * The FilterIdPermissionRoleScope model module.
  * @module model/FilterIdPermissionRoleScope
- * @version 1.3.0
+ * @version 1.3.1
  */
 class FilterIdPermissionRoleScope {
     /**

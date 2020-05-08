@@ -18,7 +18,7 @@ import InlineResponse2004AuthorAvatarUrls from './InlineResponse2004AuthorAvatar
 /**
  * The FilterIdPermissionProject model module.
  * @module model/FilterIdPermissionProject
- * @version 1.3.0
+ * @version 1.3.1
  */
 class FilterIdPermissionProject {
     /**

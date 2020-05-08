@@ -19,7 +19,7 @@ import InlineResponse20050InwardIssueFieldsStatus from './InlineResponse20050Inw
 /**
  * The InlineResponse20050InwardIssueFields model module.
  * @module model/InlineResponse20050InwardIssueFields
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20050InwardIssueFields {
     /**

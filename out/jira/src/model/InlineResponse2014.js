@@ -17,7 +17,7 @@ import InlineResponse2014Issues from './InlineResponse2014Issues';
 /**
  * The InlineResponse2014 model module.
  * @module model/InlineResponse2014
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse2014 {
     /**

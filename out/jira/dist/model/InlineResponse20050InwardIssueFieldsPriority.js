@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20050InwardIssueFieldsPriority model module.
  * @module model/InlineResponse20050InwardIssueFieldsPriority
- * @version 1.3.0
+ * @version 1.3.1
  */
 var InlineResponse20050InwardIssueFieldsPriority = /*#__PURE__*/function () {
   /**

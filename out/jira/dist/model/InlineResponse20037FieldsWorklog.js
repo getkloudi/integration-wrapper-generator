@@ -24,7 +24,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20037FieldsWorklog model module.
  * @module model/InlineResponse20037FieldsWorklog
- * @version 1.3.0
+ * @version 1.3.1
  */
 var InlineResponse20037FieldsWorklog = /*#__PURE__*/function () {
   /**

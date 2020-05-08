@@ -18,7 +18,7 @@ import InlineResponse20060ApplicationRoles from './InlineResponse20060Applicatio
 /**
  * The InlineResponse20092Values model module.
  * @module model/InlineResponse20092Values
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20092Values {
     /**

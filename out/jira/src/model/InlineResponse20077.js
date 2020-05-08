@@ -17,7 +17,7 @@ import ProjectProjectIdOrKeyStatusesStatuses from './ProjectProjectIdOrKeyStatus
 /**
  * The InlineResponse20077 model module.
  * @module model/InlineResponse20077
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20077 {
     /**

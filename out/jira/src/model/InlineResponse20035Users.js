@@ -17,7 +17,7 @@ import InlineResponse20035UsersUsers from './InlineResponse20035UsersUsers';
 /**
  * The InlineResponse20035Users model module.
  * @module model/InlineResponse20035Users
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20035Users {
     /**

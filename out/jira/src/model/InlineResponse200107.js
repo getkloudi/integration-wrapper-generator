@@ -19,7 +19,7 @@ import InlineResponse2009Visibility from './InlineResponse2009Visibility';
 /**
  * The InlineResponse200107 model module.
  * @module model/InlineResponse200107
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse200107 {
     /**

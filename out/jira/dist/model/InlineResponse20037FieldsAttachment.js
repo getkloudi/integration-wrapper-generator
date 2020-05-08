@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20037FieldsAttachment model module.
  * @module model/InlineResponse20037FieldsAttachment
- * @version 1.3.0
+ * @version 1.3.1
  */
 var InlineResponse20037FieldsAttachment = /*#__PURE__*/function () {
   /**

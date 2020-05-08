@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse2007AssociatedItems model module.
  * @module model/InlineResponse2007AssociatedItems
- * @version 1.3.0
+ * @version 1.3.1
  */
 var InlineResponse2007AssociatedItems = /*#__PURE__*/function () {
   /**

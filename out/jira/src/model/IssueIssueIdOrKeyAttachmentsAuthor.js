@@ -17,7 +17,7 @@ import InlineResponse2004AuthorAvatarUrls from './InlineResponse2004AuthorAvatar
 /**
  * The IssueIssueIdOrKeyAttachmentsAuthor model module.
  * @module model/IssueIssueIdOrKeyAttachmentsAuthor
- * @version 1.3.0
+ * @version 1.3.1
  */
 class IssueIssueIdOrKeyAttachmentsAuthor {
     /**

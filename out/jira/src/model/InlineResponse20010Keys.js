@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20010Keys model module.
  * @module model/InlineResponse20010Keys
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20010Keys {
     /**

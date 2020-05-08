@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse303ResultErrors model module.
  * @module model/InlineResponse303ResultErrors
- * @version 1.3.0
+ * @version 1.3.1
  */
 var InlineResponse303ResultErrors = /*#__PURE__*/function () {
   /**

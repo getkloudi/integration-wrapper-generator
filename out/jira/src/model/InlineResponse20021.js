@@ -17,7 +17,7 @@ import FieldSchema from './FieldSchema';
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20021 {
     /**

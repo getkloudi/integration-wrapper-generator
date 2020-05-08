@@ -17,7 +17,7 @@ import InlineResponse2018Holder from './InlineResponse2018Holder';
 /**
  * The InlineResponse2018Permissions model module.
  * @module model/InlineResponse2018Permissions
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse2018Permissions {
     /**

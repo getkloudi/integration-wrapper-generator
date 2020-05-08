@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20113 model module.
  * @module model/InlineResponse20113
- * @version 1.3.0
+ * @version 1.3.1
  */
 var InlineResponse20113 = /*#__PURE__*/function () {
   /**

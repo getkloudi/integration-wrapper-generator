@@ -17,7 +17,7 @@ import FilterIdPermissionRoleScope from './FilterIdPermissionRoleScope';
 /**
  * The InlineResponse20071IssueTypes model module.
  * @module model/InlineResponse20071IssueTypes
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20071IssueTypes {
     /**

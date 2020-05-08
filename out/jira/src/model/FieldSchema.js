@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FieldSchema model module.
  * @module model/FieldSchema
- * @version 1.3.0
+ * @version 1.3.1
  */
 class FieldSchema {
     /**

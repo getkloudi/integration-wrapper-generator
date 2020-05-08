@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse2018Holder model module.
  * @module model/InlineResponse2018Holder
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse2018Holder {
     /**

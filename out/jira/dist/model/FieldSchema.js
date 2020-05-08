@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FieldSchema model module.
  * @module model/FieldSchema
- * @version 1.3.0
+ * @version 1.3.1
  */
 var FieldSchema = /*#__PURE__*/function () {
   /**

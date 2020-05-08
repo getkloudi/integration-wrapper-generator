@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineObject41 model module.
  * @module model/InlineObject41
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineObject41 {
     /**

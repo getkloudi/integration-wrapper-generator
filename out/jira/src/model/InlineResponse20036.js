@@ -17,7 +17,7 @@ import InlineResponse20036Projects from './InlineResponse20036Projects';
 /**
  * The InlineResponse20036 model module.
  * @module model/InlineResponse20036
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20036 {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20063PermissionsBULKCHANGE model module.
  * @module model/InlineResponse20063PermissionsBULKCHANGE
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20063PermissionsBULKCHANGE {
     /**

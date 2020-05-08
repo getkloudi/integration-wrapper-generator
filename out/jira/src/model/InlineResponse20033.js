@@ -17,7 +17,7 @@ import InlineResponse20033Values from './InlineResponse20033Values';
 /**
  * The InlineResponse20033 model module.
  * @module model/InlineResponse20033
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20033 {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The FilterIdPermissionRoleScope model module.
  * @module model/FilterIdPermissionRoleScope
- * @version 1.3.0
+ * @version 1.3.1
  */
 var FilterIdPermissionRoleScope = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ import InlineResponse20037FieldsType from './InlineResponse20037FieldsType';
 /**
  * The InlineResponse20037FieldsIssuelinks model module.
  * @module model/InlineResponse20037FieldsIssuelinks
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20037FieldsIssuelinks {
     /**

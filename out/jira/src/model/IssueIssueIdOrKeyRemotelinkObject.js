@@ -18,7 +18,7 @@ import IssueIssueIdOrKeyRemotelinkObjectStatus from './IssueIssueIdOrKeyRemoteli
 /**
  * The IssueIssueIdOrKeyRemotelinkObject model module.
  * @module model/IssueIssueIdOrKeyRemotelinkObject
- * @version 1.3.0
+ * @version 1.3.1
  */
 class IssueIssueIdOrKeyRemotelinkObject {
     /**

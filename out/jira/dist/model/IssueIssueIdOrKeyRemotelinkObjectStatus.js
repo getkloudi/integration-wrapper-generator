@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueIssueIdOrKeyRemotelinkObjectStatus model module.
  * @module model/IssueIssueIdOrKeyRemotelinkObjectStatus
- * @version 1.3.0
+ * @version 1.3.1
  */
 var IssueIssueIdOrKeyRemotelinkObjectStatus = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IssueIssueIdOrKeyRemotelinkApplication model module.
  * @module model/IssueIssueIdOrKeyRemotelinkApplication
- * @version 1.3.0
+ * @version 1.3.1
  */
 class IssueIssueIdOrKeyRemotelinkApplication {
     /**

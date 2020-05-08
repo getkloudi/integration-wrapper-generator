@@ -17,7 +17,7 @@ import InlineResponse20095Links from './InlineResponse20095Links';
 /**
  * The InlineResponse20095 model module.
  * @module model/InlineResponse20095
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20095 {
     /**

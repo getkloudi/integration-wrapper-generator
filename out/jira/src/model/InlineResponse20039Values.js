@@ -18,7 +18,7 @@ import IssueIssueIdOrKeyAttachmentsAuthor from './IssueIssueIdOrKeyAttachmentsAu
 /**
  * The InlineResponse20039Values model module.
  * @module model/InlineResponse20039Values
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20039Values {
     /**

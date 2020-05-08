@@ -18,7 +18,7 @@ import IssueIssueIdOrKeyRemotelinkObject from './IssueIssueIdOrKeyRemotelinkObje
 /**
  * The InlineResponse20044 model module.
  * @module model/InlineResponse20044
- * @version 1.3.0
+ * @version 1.3.1
  */
 class InlineResponse20044 {
     /**

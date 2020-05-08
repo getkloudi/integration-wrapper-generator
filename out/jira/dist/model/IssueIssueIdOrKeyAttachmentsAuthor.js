@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueIssueIdOrKeyAttachmentsAuthor model module.
  * @module model/IssueIssueIdOrKeyAttachmentsAuthor
- * @version 1.3.0
+ * @version 1.3.1
  */
 var IssueIssueIdOrKeyAttachmentsAuthor = /*#__PURE__*/function () {
   /**
