@@ -17,7 +17,7 @@ import InlineResponse303ResultErrors from './InlineResponse303ResultErrors';
 /**
  * The InlineResponse303Result model module.
  * @module model/InlineResponse303Result
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse303Result {
     /**

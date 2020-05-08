@@ -17,7 +17,7 @@ import InlineResponse20050InwardIssueFieldsStatusStatusCategory from './InlineRe
 /**
  * The InlineResponse20050InwardIssueFieldsStatus model module.
  * @module model/InlineResponse20050InwardIssueFieldsStatus
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20050InwardIssueFieldsStatus {
     /**

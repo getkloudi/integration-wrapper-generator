@@ -17,7 +17,7 @@ import CloudidRestApi3FieldSchema from './CloudidRestApi3FieldSchema';
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20021 {
     /**

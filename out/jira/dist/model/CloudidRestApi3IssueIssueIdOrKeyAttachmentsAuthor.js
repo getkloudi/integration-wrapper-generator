@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor model module.
  * @module model/CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor
- * @version 1.1.0
+ * @version 1.2.0
  */
 var CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor = /*#__PURE__*/function () {
   /**

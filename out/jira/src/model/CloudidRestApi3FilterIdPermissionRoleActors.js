@@ -17,7 +17,7 @@ import CloudidRestApi3FilterIdPermissionRoleActorGroup from './CloudidRestApi3Fi
 /**
  * The CloudidRestApi3FilterIdPermissionRoleActors model module.
  * @module model/CloudidRestApi3FilterIdPermissionRoleActors
- * @version 1.1.0
+ * @version 1.2.0
  */
 class CloudidRestApi3FilterIdPermissionRoleActors {
     /**

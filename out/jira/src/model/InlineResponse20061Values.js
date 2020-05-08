@@ -17,7 +17,7 @@ import InlineResponse20061NotificationSchemeEvents from './InlineResponse20061No
 /**
  * The InlineResponse20061Values model module.
  * @module model/InlineResponse20061Values
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20061Values {
     /**

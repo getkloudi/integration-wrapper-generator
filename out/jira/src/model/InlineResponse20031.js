@@ -18,7 +18,7 @@ import CloudidRestApi3FilterIdPermissionRole from './CloudidRestApi3FilterIdPerm
 /**
  * The InlineResponse20031 model module.
  * @module model/InlineResponse20031
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20031 {
     /**

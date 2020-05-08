@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CloudidRestApi3FilterIdPermissionRoleActors model module.
  * @module model/CloudidRestApi3FilterIdPermissionRoleActors
- * @version 1.1.0
+ * @version 1.2.0
  */
 var CloudidRestApi3FilterIdPermissionRoleActors = /*#__PURE__*/function () {
   /**

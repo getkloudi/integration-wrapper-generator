@@ -18,7 +18,7 @@ import InlineResponse2004AuthorAvatarUrls from './InlineResponse2004AuthorAvatar
 /**
  * The CloudidRestApi3FilterIdPermissionProject model module.
  * @module model/CloudidRestApi3FilterIdPermissionProject
- * @version 1.1.0
+ * @version 1.2.0
  */
 class CloudidRestApi3FilterIdPermissionProject {
     /**

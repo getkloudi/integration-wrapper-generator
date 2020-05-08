@@ -17,7 +17,7 @@ import InlineResponse20050Type from './InlineResponse20050Type';
 /**
  * The InlineResponse20051 model module.
  * @module model/InlineResponse20051
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20051 {
     /**

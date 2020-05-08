@@ -17,7 +17,7 @@ import CloudidRestApi3FilterIdPermissionRoleScopeProject from './CloudidRestApi3
 /**
  * The CloudidRestApi3FilterIdPermissionRoleScope model module.
  * @module model/CloudidRestApi3FilterIdPermissionRoleScope
- * @version 1.1.0
+ * @version 1.2.0
  */
 class CloudidRestApi3FilterIdPermissionRoleScope {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20055VisibleFunctionNames model module.
  * @module model/InlineResponse20055VisibleFunctionNames
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20055VisibleFunctionNames {
     /**

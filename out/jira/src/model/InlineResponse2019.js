@@ -17,7 +17,7 @@ import InlineResponse2018Holder from './InlineResponse2018Holder';
 /**
  * The InlineResponse2019 model module.
  * @module model/InlineResponse2019
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse2019 {
     /**

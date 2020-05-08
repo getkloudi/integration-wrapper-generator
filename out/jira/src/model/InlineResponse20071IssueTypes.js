@@ -17,7 +17,7 @@ import CloudidRestApi3FilterIdPermissionRoleScope from './CloudidRestApi3FilterI
 /**
  * The InlineResponse20071IssueTypes model module.
  * @module model/InlineResponse20071IssueTypes
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20071IssueTypes {
     /**

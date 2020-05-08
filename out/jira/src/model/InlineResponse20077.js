@@ -17,7 +17,7 @@ import CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses from './CloudidRestA
 /**
  * The InlineResponse20077 model module.
  * @module model/InlineResponse20077
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20077 {
     /**

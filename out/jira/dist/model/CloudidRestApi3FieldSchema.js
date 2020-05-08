@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CloudidRestApi3FieldSchema model module.
  * @module model/CloudidRestApi3FieldSchema
- * @version 1.1.0
+ * @version 1.2.0
  */
 var CloudidRestApi3FieldSchema = /*#__PURE__*/function () {
   /**

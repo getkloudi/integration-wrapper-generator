@@ -18,7 +18,7 @@ import InlineResponse20037FieldsType1 from './InlineResponse20037FieldsType1';
 /**
  * The InlineResponse20037FieldsSubTasks model module.
  * @module model/InlineResponse20037FieldsSubTasks
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20037FieldsSubTasks {
     /**

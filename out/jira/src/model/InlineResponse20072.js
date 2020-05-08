@@ -17,7 +17,7 @@ import InlineResponse2008System from './InlineResponse2008System';
 /**
  * The InlineResponse20072 model module.
  * @module model/InlineResponse20072
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20072 {
     /**

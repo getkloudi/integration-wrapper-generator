@@ -18,7 +18,7 @@ import InlineResponse20039Items from './InlineResponse20039Items';
 /**
  * The InlineResponse20039Values model module.
  * @module model/InlineResponse20039Values
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20039Values {
     /**

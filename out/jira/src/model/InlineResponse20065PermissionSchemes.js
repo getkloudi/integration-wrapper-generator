@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20065PermissionSchemes model module.
  * @module model/InlineResponse20065PermissionSchemes
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20065PermissionSchemes {
     /**

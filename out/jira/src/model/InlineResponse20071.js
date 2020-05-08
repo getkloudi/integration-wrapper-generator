@@ -22,7 +22,7 @@ import InlineResponse20071Roles from './InlineResponse20071Roles';
 /**
  * The InlineResponse20071 model module.
  * @module model/InlineResponse20071
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20071 {
     /**

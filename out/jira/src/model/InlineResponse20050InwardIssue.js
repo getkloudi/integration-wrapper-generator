@@ -17,7 +17,7 @@ import InlineResponse20050InwardIssueFields from './InlineResponse20050InwardIss
 /**
  * The InlineResponse20050InwardIssue model module.
  * @module model/InlineResponse20050InwardIssue
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20050InwardIssue {
     /**

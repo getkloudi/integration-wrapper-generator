@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CloudidRestApi3FilterIdPermissionProject model module.
  * @module model/CloudidRestApi3FilterIdPermissionProject
- * @version 1.1.0
+ * @version 1.2.0
  */
 var CloudidRestApi3FilterIdPermissionProject = /*#__PURE__*/function () {
   /**

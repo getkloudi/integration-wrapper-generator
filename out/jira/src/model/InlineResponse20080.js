@@ -17,7 +17,7 @@ import CloudidRestApi3FilterIdPermissionProjectProjectCategory from './CloudidRe
 /**
  * The InlineResponse20080 model module.
  * @module model/InlineResponse20080
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20080 {
     /**

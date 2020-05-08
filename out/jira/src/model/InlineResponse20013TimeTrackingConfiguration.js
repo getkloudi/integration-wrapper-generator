@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20013TimeTrackingConfiguration model module.
  * @module model/InlineResponse20013TimeTrackingConfiguration
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20013TimeTrackingConfiguration {
     /**

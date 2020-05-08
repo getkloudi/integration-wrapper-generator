@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20115OriginalIssueTypeMappings model module.
  * @module model/InlineResponse20115OriginalIssueTypeMappings
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20115OriginalIssueTypeMappings {
     /**

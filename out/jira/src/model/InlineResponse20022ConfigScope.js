@@ -17,7 +17,7 @@ import InlineResponse20022ConfigScopeProjects2 from './InlineResponse20022Config
 /**
  * The InlineResponse20022ConfigScope model module.
  * @module model/InlineResponse20022ConfigScope
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20022ConfigScope {
     /**

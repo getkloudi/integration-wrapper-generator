@@ -17,7 +17,7 @@ import InlineResponse2007Records from './InlineResponse2007Records';
 /**
  * The InlineResponse2007 model module.
  * @module model/InlineResponse2007
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse2007 {
     /**

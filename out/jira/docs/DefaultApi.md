@@ -326,7 +326,7 @@ Method | HTTP request | Description
 
 ## cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet
 
-> [InlineResponse200] cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet()
+> [InlineResponse200] cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet(cloudid)
 
 
 
@@ -342,7 +342,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -353,7 +354,10 @@ apiInstance.cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet((error, data
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -371,7 +375,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3ApplicationPropertiesGet
 
-> [InlineResponse200] cloudidRestApi3ApplicationPropertiesGet(opts)
+> [InlineResponse200] cloudidRestApi3ApplicationPropertiesGet(cloudid, opts)
 
 
 
@@ -387,12 +391,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example", // String | The key of the application property.
   'keyFilter': "keyFilter_example", // String | When a key isn't provided, this filters the list of results by the application property key using a regular expression. For example, using jira.lf.* will return all application properties with keys that start with jira.lf..
   'permissionLevel': "permissionLevel_example" // String | The permission level of all items being returned in the list.
 };
-apiInstance.cloudidRestApi3ApplicationPropertiesGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ApplicationPropertiesGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -406,6 +411,7 @@ apiInstance.cloudidRestApi3ApplicationPropertiesGet(opts, (error, data, response
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **key** | **String**| The key of the application property. | [optional] 
  **keyFilter** | **String**| When a key isn&#39;t provided, this filters the list of results by the application property key using a regular expression. For example, using jira.lf.* will return all application properties with keys that start with jira.lf.. | [optional] 
  **permissionLevel** | **String**| The permission level of all items being returned in the list. | [optional] 
@@ -426,7 +432,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ApplicationPropertiesIdPut
 
-> cloudidRestApi3ApplicationPropertiesIdPut(id, opts)
+> cloudidRestApi3ApplicationPropertiesIdPut(cloudid, id, opts)
 
 
 
@@ -442,11 +448,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The key of the application property to update.
 let opts = {
   'body': new Jira.InlineObject() // InlineObject | 
 };
-apiInstance.cloudidRestApi3ApplicationPropertiesIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ApplicationPropertiesIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -460,6 +467,7 @@ apiInstance.cloudidRestApi3ApplicationPropertiesIdPut(id, opts, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The key of the application property to update. | 
  **body** | [**InlineObject**](InlineObject.md)|  | [optional] 
 
@@ -479,7 +487,7 @@ null (empty response body)
 
 ## cloudidRestApi3ApplicationroleGet
 
-> [InlineResponse2001] cloudidRestApi3ApplicationroleGet()
+> [InlineResponse2001] cloudidRestApi3ApplicationroleGet(cloudid)
 
 
 
@@ -495,7 +503,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ApplicationroleGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ApplicationroleGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -506,7 +515,10 @@ apiInstance.cloudidRestApi3ApplicationroleGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -524,7 +536,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3ApplicationroleKeyGet
 
-> InlineResponse2002 cloudidRestApi3ApplicationroleKeyGet(key)
+> InlineResponse2002 cloudidRestApi3ApplicationroleKeyGet(cloudid, key)
 
 
 
@@ -540,8 +552,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let key = "key_example"; // String | The key of the application role. Use the Get all application roles method to get the key for each application role.
-apiInstance.cloudidRestApi3ApplicationroleKeyGet(key, (error, data, response) => {
+apiInstance.cloudidRestApi3ApplicationroleKeyGet(cloudid, key, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -555,6 +568,7 @@ apiInstance.cloudidRestApi3ApplicationroleKeyGet(key, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **key** | **String**| The key of the application role. Use the Get all application roles method to get the key for each application role. | 
 
 ### Return type
@@ -573,7 +587,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3AttachmentIdDelete
 
-> cloudidRestApi3AttachmentIdDelete(id)
+> cloudidRestApi3AttachmentIdDelete(cloudid, id)
 
 
 
@@ -589,8 +603,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.cloudidRestApi3AttachmentIdDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3AttachmentIdDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -604,6 +619,7 @@ apiInstance.cloudidRestApi3AttachmentIdDelete(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the attachment. | 
 
 ### Return type
@@ -622,7 +638,7 @@ null (empty response body)
 
 ## cloudidRestApi3AttachmentIdExpandHumanGet
 
-> InlineResponse2005 cloudidRestApi3AttachmentIdExpandHumanGet(id)
+> InlineResponse2005 cloudidRestApi3AttachmentIdExpandHumanGet(cloudid, id)
 
 
 
@@ -638,8 +654,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.cloudidRestApi3AttachmentIdExpandHumanGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3AttachmentIdExpandHumanGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -653,6 +670,7 @@ apiInstance.cloudidRestApi3AttachmentIdExpandHumanGet(id, (error, data, response
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the attachment. | 
 
 ### Return type
@@ -671,7 +689,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3AttachmentIdExpandRawGet
 
-> InlineResponse2006 cloudidRestApi3AttachmentIdExpandRawGet(id)
+> InlineResponse2006 cloudidRestApi3AttachmentIdExpandRawGet(cloudid, id)
 
 
 
@@ -687,8 +705,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.cloudidRestApi3AttachmentIdExpandRawGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3AttachmentIdExpandRawGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -702,6 +721,7 @@ apiInstance.cloudidRestApi3AttachmentIdExpandRawGet(id, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the attachment. | 
 
 ### Return type
@@ -720,7 +740,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3AttachmentIdGet
 
-> InlineResponse2004 cloudidRestApi3AttachmentIdGet(id)
+> InlineResponse2004 cloudidRestApi3AttachmentIdGet(cloudid, id)
 
 
 
@@ -736,8 +756,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.cloudidRestApi3AttachmentIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3AttachmentIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -751,6 +772,7 @@ apiInstance.cloudidRestApi3AttachmentIdGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the attachment. | 
 
 ### Return type
@@ -769,7 +791,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3AttachmentMetaGet
 
-> InlineResponse2003 cloudidRestApi3AttachmentMetaGet()
+> InlineResponse2003 cloudidRestApi3AttachmentMetaGet(cloudid)
 
 
 
@@ -785,7 +807,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3AttachmentMetaGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3AttachmentMetaGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -796,7 +819,10 @@ apiInstance.cloudidRestApi3AttachmentMetaGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -814,7 +840,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3AuditingRecordGet
 
-> InlineResponse2007 cloudidRestApi3AuditingRecordGet(opts)
+> InlineResponse2007 cloudidRestApi3AuditingRecordGet(cloudid, opts)
 
 
 
@@ -830,6 +856,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'filter': "filter_example", // String | The query string.
   'from': "from_example", // String | The date and time on or after which returned audit records must have been created. If to is provided from must be before to or the result set will be empty.
@@ -837,7 +864,7 @@ let opts = {
   'offset': 56, // Number | The number of records to skip before returning the first result.
   'to': "to_example" // String | The date and time on or before which returned audit results must have been created. If from is provided to must be after from or the result set will be empty.
 };
-apiInstance.cloudidRestApi3AuditingRecordGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3AuditingRecordGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -851,6 +878,7 @@ apiInstance.cloudidRestApi3AuditingRecordGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **filter** | **String**| The query string. | [optional] 
  **from** | **String**| The date and time on or after which returned audit records must have been created. If to is provided from must be before to or the result set will be empty. | [optional] 
  **limit** | **Number**| The maximum number of results to return. The maximum is 1000. | [optional] 
@@ -873,7 +901,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3AvatarTypeSystemGet
 
-> InlineResponse2008 cloudidRestApi3AvatarTypeSystemGet(type)
+> InlineResponse2008 cloudidRestApi3AvatarTypeSystemGet(cloudid, type)
 
 
 
@@ -889,8 +917,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let type = "type_example"; // String | The avatar type.
-apiInstance.cloudidRestApi3AvatarTypeSystemGet(type, (error, data, response) => {
+apiInstance.cloudidRestApi3AvatarTypeSystemGet(cloudid, type, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -904,6 +933,7 @@ apiInstance.cloudidRestApi3AvatarTypeSystemGet(type, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **type** | **String**| The avatar type. | 
 
 ### Return type
@@ -922,7 +952,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3CommentCommentIdPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3CommentCommentIdPropertiesGet(commentId)
+> InlineResponse20010 cloudidRestApi3CommentCommentIdPropertiesGet(cloudid, commentId)
 
 
 
@@ -938,8 +968,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let commentId = "commentId_example"; // String | The ID of the comment.
-apiInstance.cloudidRestApi3CommentCommentIdPropertiesGet(commentId, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentCommentIdPropertiesGet(cloudid, commentId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -953,6 +984,7 @@ apiInstance.cloudidRestApi3CommentCommentIdPropertiesGet(commentId, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **commentId** | **String**| The ID of the comment. | 
 
 ### Return type
@@ -971,7 +1003,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete
 
-> cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(commentId, propertyKey)
+> cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(cloudid, commentId, propertyKey)
 
 
 
@@ -987,9 +1019,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let commentId = "commentId_example"; // String | The ID of the comment.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(commentId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(cloudid, commentId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1003,6 +1036,7 @@ apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(commentId
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **commentId** | **String**| The ID of the comment. | 
  **propertyKey** | **String**| The key of the property. | 
 
@@ -1022,7 +1056,7 @@ null (empty response body)
 
 ## cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(commentId, propertyKey)
+> InlineResponse20011 cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(cloudid, commentId, propertyKey)
 
 
 
@@ -1038,9 +1072,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let commentId = "commentId_example"; // String | The ID of the comment.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(commentId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(cloudid, commentId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1054,6 +1089,7 @@ apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(commentId, p
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **commentId** | **String**| The ID of the comment. | 
  **propertyKey** | **String**| The key of the property. | 
 
@@ -1073,7 +1109,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut
 
-> cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(commentId, propertyKey)
+> cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(cloudid, commentId, propertyKey)
 
 
 
@@ -1089,9 +1125,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let commentId = "commentId_example"; // String | The ID of the comment.
 let propertyKey = "propertyKey_example"; // String | The key of the property. The maximum length is 255 characters.
-apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(commentId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(cloudid, commentId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1105,6 +1142,7 @@ apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(commentId, p
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **commentId** | **String**| The ID of the comment. | 
  **propertyKey** | **String**| The key of the property. The maximum length is 255 characters. | 
 
@@ -1124,7 +1162,7 @@ null (empty response body)
 
 ## cloudidRestApi3CommentListPost
 
-> InlineResponse2009 cloudidRestApi3CommentListPost(opts)
+> InlineResponse2009 cloudidRestApi3CommentListPost(cloudid, opts)
 
 
 
@@ -1140,11 +1178,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about comments in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject1() // InlineObject1 | 
 };
-apiInstance.cloudidRestApi3CommentListPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentListPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1158,6 +1197,7 @@ apiInstance.cloudidRestApi3CommentListPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about comments in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **body** | [**InlineObject1**](InlineObject1.md)|  | [optional] 
 
@@ -1177,7 +1217,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ComponentIdDelete
 
-> cloudidRestApi3ComponentIdDelete(id, opts)
+> cloudidRestApi3ComponentIdDelete(cloudid, id, opts)
 
 
 
@@ -1193,11 +1233,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the component.
 let opts = {
   'moveIssuesTo': "moveIssuesTo_example" // String | The ID of the component to replace the deleted component. If this value is null no replacement is made.
 };
-apiInstance.cloudidRestApi3ComponentIdDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentIdDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1211,6 +1252,7 @@ apiInstance.cloudidRestApi3ComponentIdDelete(id, opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the component. | 
  **moveIssuesTo** | **String**| The ID of the component to replace the deleted component. If this value is null no replacement is made. | [optional] 
 
@@ -1230,7 +1272,7 @@ null (empty response body)
 
 ## cloudidRestApi3ComponentIdGet
 
-> InlineResponse201 cloudidRestApi3ComponentIdGet(id)
+> InlineResponse201 cloudidRestApi3ComponentIdGet(cloudid, id)
 
 
 
@@ -1246,8 +1288,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the component.
-apiInstance.cloudidRestApi3ComponentIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1261,6 +1304,7 @@ apiInstance.cloudidRestApi3ComponentIdGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the component. | 
 
 ### Return type
@@ -1279,7 +1323,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ComponentIdPut
 
-> cloudidRestApi3ComponentIdPut(id, opts)
+> cloudidRestApi3ComponentIdPut(cloudid, id, opts)
 
 
 
@@ -1295,11 +1339,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | 
 let opts = {
   'body': new Jira.InlineObject3() // InlineObject3 | 
 };
-apiInstance.cloudidRestApi3ComponentIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1313,6 +1358,7 @@ apiInstance.cloudidRestApi3ComponentIdPut(id, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**|  | 
  **body** | [**InlineObject3**](InlineObject3.md)|  | [optional] 
 
@@ -1332,7 +1378,7 @@ null (empty response body)
 
 ## cloudidRestApi3ComponentIdRelatedIssueCountsGet
 
-> InlineResponse20012 cloudidRestApi3ComponentIdRelatedIssueCountsGet(id)
+> InlineResponse20012 cloudidRestApi3ComponentIdRelatedIssueCountsGet(cloudid, id)
 
 
 
@@ -1348,8 +1394,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the component.
-apiInstance.cloudidRestApi3ComponentIdRelatedIssueCountsGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentIdRelatedIssueCountsGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1363,6 +1410,7 @@ apiInstance.cloudidRestApi3ComponentIdRelatedIssueCountsGet(id, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the component. | 
 
 ### Return type
@@ -1381,7 +1429,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ComponentPost
 
-> InlineResponse201 cloudidRestApi3ComponentPost(opts)
+> InlineResponse201 cloudidRestApi3ComponentPost(cloudid, opts)
 
 
 
@@ -1397,10 +1445,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject2() // InlineObject2 | 
 };
-apiInstance.cloudidRestApi3ComponentPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1414,6 +1463,7 @@ apiInstance.cloudidRestApi3ComponentPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject2**](InlineObject2.md)|  | [optional] 
 
 ### Return type
@@ -1432,7 +1482,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ConfigurationGet
 
-> InlineResponse20013 cloudidRestApi3ConfigurationGet()
+> InlineResponse20013 cloudidRestApi3ConfigurationGet(cloudid)
 
 
 
@@ -1448,7 +1498,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ConfigurationGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ConfigurationGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1459,7 +1510,10 @@ apiInstance.cloudidRestApi3ConfigurationGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -1477,7 +1531,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3ConfigurationTimetrackingDelete
 
-> cloudidRestApi3ConfigurationTimetrackingDelete()
+> cloudidRestApi3ConfigurationTimetrackingDelete(cloudid)
 
 
 
@@ -1493,7 +1547,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ConfigurationTimetrackingDelete((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ConfigurationTimetrackingDelete(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1504,7 +1559,10 @@ apiInstance.cloudidRestApi3ConfigurationTimetrackingDelete((error, data, respons
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -1522,7 +1580,7 @@ null (empty response body)
 
 ## cloudidRestApi3ConfigurationTimetrackingGet
 
-> InlineResponse20014 cloudidRestApi3ConfigurationTimetrackingGet()
+> InlineResponse20014 cloudidRestApi3ConfigurationTimetrackingGet(cloudid)
 
 
 
@@ -1538,7 +1596,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ConfigurationTimetrackingGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ConfigurationTimetrackingGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1549,7 +1608,10 @@ apiInstance.cloudidRestApi3ConfigurationTimetrackingGet((error, data, response) 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -1567,7 +1629,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3ConfigurationTimetrackingListGet
 
-> [InlineResponse20015] cloudidRestApi3ConfigurationTimetrackingListGet()
+> [InlineResponse20015] cloudidRestApi3ConfigurationTimetrackingListGet(cloudid)
 
 
 
@@ -1583,7 +1645,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ConfigurationTimetrackingListGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ConfigurationTimetrackingListGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1594,7 +1657,10 @@ apiInstance.cloudidRestApi3ConfigurationTimetrackingListGet((error, data, respon
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -1612,7 +1678,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3ConfigurationTimetrackingOptionsGet
 
-> InlineResponse20016 cloudidRestApi3ConfigurationTimetrackingOptionsGet()
+> InlineResponse20016 cloudidRestApi3ConfigurationTimetrackingOptionsGet(cloudid)
 
 
 
@@ -1628,7 +1694,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1639,7 +1706,10 @@ apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsGet((error, data, res
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -1657,7 +1727,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3ConfigurationTimetrackingOptionsPut
 
-> InlineResponse20016 cloudidRestApi3ConfigurationTimetrackingOptionsPut(opts)
+> InlineResponse20016 cloudidRestApi3ConfigurationTimetrackingOptionsPut(cloudid, opts)
 
 
 
@@ -1673,10 +1743,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject5() // InlineObject5 | 
 };
-apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsPut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsPut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1690,6 +1761,7 @@ apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsPut(opts, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
 
 ### Return type
@@ -1708,7 +1780,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ConfigurationTimetrackingPut
 
-> cloudidRestApi3ConfigurationTimetrackingPut(opts)
+> cloudidRestApi3ConfigurationTimetrackingPut(cloudid, opts)
 
 
 
@@ -1724,10 +1796,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject4() // InlineObject4 | 
 };
-apiInstance.cloudidRestApi3ConfigurationTimetrackingPut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ConfigurationTimetrackingPut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1741,6 +1814,7 @@ apiInstance.cloudidRestApi3ConfigurationTimetrackingPut(opts, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject4**](InlineObject4.md)|  | [optional] 
 
 ### Return type
@@ -1759,7 +1833,7 @@ null (empty response body)
 
 ## cloudidRestApi3CustomFieldOptionIdGet
 
-> InlineResponse20017 cloudidRestApi3CustomFieldOptionIdGet(id)
+> InlineResponse20017 cloudidRestApi3CustomFieldOptionIdGet(cloudid, id)
 
 
 
@@ -1775,8 +1849,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the custom field option. To find this ID, configure the custom field and edit its options in Jira. Click the option and its ID will show in the URL as the selectedParentOptionId parameter.
-apiInstance.cloudidRestApi3CustomFieldOptionIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3CustomFieldOptionIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1790,6 +1865,7 @@ apiInstance.cloudidRestApi3CustomFieldOptionIdGet(id, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the custom field option. To find this ID, configure the custom field and edit its options in Jira. Click the option and its ID will show in the URL as the selectedParentOptionId parameter. | 
 
 ### Return type
@@ -1808,7 +1884,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(dashboardId, itemId)
+> InlineResponse20010 cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(cloudid, dashboardId, itemId)
 
 
 
@@ -1824,9 +1900,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
-apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(dashboardId, itemId, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(cloudid, dashboardId, itemId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1840,6 +1917,7 @@ apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(dashboar
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **dashboardId** | **String**| The ID of the dashboard. | 
  **itemId** | **String**| The ID of the dashboard item. | 
 
@@ -1859,7 +1937,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete
 
-> cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(dashboardId, itemId, propertyKey)
+> cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(cloudid, dashboardId, itemId, propertyKey)
 
 
 
@@ -1875,10 +1953,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
 let propertyKey = "propertyKey_example"; // String | The key of the dashboard item property.
-apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(dashboardId, itemId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(cloudid, dashboardId, itemId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1892,6 +1971,7 @@ apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyD
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **dashboardId** | **String**| The ID of the dashboard. | 
  **itemId** | **String**| The ID of the dashboard item. | 
  **propertyKey** | **String**| The key of the dashboard item property. | 
@@ -1912,7 +1992,7 @@ null (empty response body)
 
 ## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(dashboardId, itemId, propertyKey)
+> InlineResponse20011 cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(cloudid, dashboardId, itemId, propertyKey)
 
 
 
@@ -1928,10 +2008,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
 let propertyKey = "propertyKey_example"; // String | The key of the dashboard item property.
-apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(dashboardId, itemId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(cloudid, dashboardId, itemId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1945,6 +2026,7 @@ apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyG
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **dashboardId** | **String**| The ID of the dashboard. | 
  **itemId** | **String**| The ID of the dashboard item. | 
  **propertyKey** | **String**| The key of the dashboard item property. | 
@@ -1965,7 +2047,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut
 
-> cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(dashboardId, itemId, propertyKey)
+> cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(cloudid, dashboardId, itemId, propertyKey)
 
 
 
@@ -1981,10 +2063,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
 let propertyKey = "propertyKey_example"; // String | The key of the dashboard item property. The maximum length of the key is 255 bytes.
-apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(dashboardId, itemId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(cloudid, dashboardId, itemId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1998,6 +2081,7 @@ apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **dashboardId** | **String**| The ID of the dashboard. | 
  **itemId** | **String**| The ID of the dashboard item. | 
  **propertyKey** | **String**| The key of the dashboard item property. The maximum length of the key is 255 bytes. | 
@@ -2018,7 +2102,7 @@ null (empty response body)
 
 ## cloudidRestApi3DashboardGet
 
-> InlineResponse20018 cloudidRestApi3DashboardGet(opts)
+> InlineResponse20018 cloudidRestApi3DashboardGet(cloudid, opts)
 
 
 
@@ -2034,12 +2118,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'filter': "filter_example", // String | The filter applied to the list of dashboards. Valid values are:
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1000.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3DashboardGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2053,6 +2138,7 @@ apiInstance.cloudidRestApi3DashboardGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **filter** | **String**| The filter applied to the list of dashboards. Valid values are: | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 1000. | [optional] 
  **startAt** | **Number**| The index of the first item to return in a page of results (page offset). | [optional] 
@@ -2073,7 +2159,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3DashboardIdGet
 
-> InlineResponse20019 cloudidRestApi3DashboardIdGet(id)
+> InlineResponse20019 cloudidRestApi3DashboardIdGet(cloudid, id)
 
 
 
@@ -2089,8 +2175,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the dashboard.
-apiInstance.cloudidRestApi3DashboardIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2104,6 +2191,7 @@ apiInstance.cloudidRestApi3DashboardIdGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the dashboard. | 
 
 ### Return type
@@ -2122,7 +2210,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ExpressionEvalPost
 
-> InlineResponse20020 cloudidRestApi3ExpressionEvalPost(opts)
+> InlineResponse20020 cloudidRestApi3ExpressionEvalPost(cloudid, opts)
 
 
 
@@ -2138,11 +2226,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject6() // InlineObject6 | 
 };
-apiInstance.cloudidRestApi3ExpressionEvalPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ExpressionEvalPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2156,6 +2245,7 @@ apiInstance.cloudidRestApi3ExpressionEvalPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **body** | [**InlineObject6**](InlineObject6.md)|  | [optional] 
 
@@ -2175,7 +2265,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FieldFieldKeyOptionGet
 
-> InlineResponse20022 cloudidRestApi3FieldFieldKeyOptionGet(fieldKey, opts)
+> InlineResponse20022 cloudidRestApi3FieldFieldKeyOptionGet(cloudid, fieldKey, opts)
 
 
 
@@ -2191,12 +2281,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. For example, 20.
   'startAt': 56 // Number | The starting index of the returned objects. For example, 1.
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionGet(fieldKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionGet(cloudid, fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2210,6 +2301,7 @@ apiInstance.cloudidRestApi3FieldFieldKeyOptionGet(fieldKey, opts, (error, data, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldKey** | **String**| The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field. | 
  **maxResults** | **Number**| The maximum number of items to return per page. For example, 20. | [optional] 
  **startAt** | **Number**| The starting index of the returned objects. For example, 1. | [optional] 
@@ -2230,7 +2322,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FieldFieldKeyOptionOptionIdDelete
 
-> cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(fieldKey, optionId)
+> cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(cloudid, fieldKey, optionId)
 
 
 
@@ -2246,9 +2338,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let optionId = 56; // Number | The ID of the option to be deleted. For example, 3.
-apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(fieldKey, optionId, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(cloudid, fieldKey, optionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2262,6 +2355,7 @@ apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(fieldKey, optionId,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldKey** | **String**| The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field. | 
  **optionId** | **Number**| The ID of the option to be deleted. For example, 3. | 
 
@@ -2281,7 +2375,7 @@ null (empty response body)
 
 ## cloudidRestApi3FieldFieldKeyOptionOptionIdGet
 
-> InlineResponse20025 cloudidRestApi3FieldFieldKeyOptionOptionIdGet(fieldKey, optionId)
+> InlineResponse20025 cloudidRestApi3FieldFieldKeyOptionOptionIdGet(cloudid, fieldKey, optionId)
 
 
 
@@ -2297,9 +2391,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let optionId = 56; // Number | The ID of the option to be returned. For example, 3.
-apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdGet(fieldKey, optionId, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdGet(cloudid, fieldKey, optionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2313,6 +2408,7 @@ apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdGet(fieldKey, optionId, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldKey** | **String**| The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field. | 
  **optionId** | **Number**| The ID of the option to be returned. For example, 3. | 
 
@@ -2332,7 +2428,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete
 
-> cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(fieldKey, optionId, opts)
+> cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(cloudid, fieldKey, optionId, opts)
 
 
 
@@ -2348,13 +2444,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let optionId = 56; // Number | The ID of the option to be deselected. For example, 3.
 let opts = {
   'jql': "jql_example", // String | A JQL query that specifies the issues to be updated. For example, project=10000.
   'replaceWith': 56 // Number | The ID of the option that will replace the currently selected option. For example, 2.
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(fieldKey, optionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(cloudid, fieldKey, optionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2368,6 +2465,7 @@ apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(fieldKey, opti
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldKey** | **String**| The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field. | 
  **optionId** | **Number**| The ID of the option to be deselected. For example, 3. | 
  **jql** | **String**| A JQL query that specifies the issues to be updated. For example, project&#x3D;10000. | [optional] 
@@ -2389,7 +2487,7 @@ null (empty response body)
 
 ## cloudidRestApi3FieldFieldKeyOptionOptionIdPut
 
-> InlineResponse20025 cloudidRestApi3FieldFieldKeyOptionOptionIdPut(fieldKey, optionId, opts)
+> InlineResponse20025 cloudidRestApi3FieldFieldKeyOptionOptionIdPut(cloudid, fieldKey, optionId, opts)
 
 
 
@@ -2405,12 +2503,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let optionId = 56; // Number | The ID of the option to be updated. For example, 3.
 let opts = {
   'body': new Jira.InlineObject9() // InlineObject9 | 
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdPut(fieldKey, optionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdPut(cloudid, fieldKey, optionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2424,6 +2523,7 @@ apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdPut(fieldKey, optionId, op
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldKey** | **String**| The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field. | 
  **optionId** | **Number**| The ID of the option to be updated. For example, 3. | 
  **body** | [**InlineObject9**](InlineObject9.md)|  | [optional] 
@@ -2444,7 +2544,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FieldFieldKeyOptionPost
 
-> InlineResponse20023 cloudidRestApi3FieldFieldKeyOptionPost(fieldKey, opts)
+> InlineResponse20023 cloudidRestApi3FieldFieldKeyOptionPost(cloudid, fieldKey, opts)
 
 
 
@@ -2460,11 +2560,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | 
 let opts = {
   'body': new Jira.InlineObject8() // InlineObject8 | 
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionPost(fieldKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionPost(cloudid, fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2478,6 +2579,7 @@ apiInstance.cloudidRestApi3FieldFieldKeyOptionPost(fieldKey, opts, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldKey** | **String**|  | 
  **body** | [**InlineObject8**](InlineObject8.md)|  | [optional] 
 
@@ -2497,7 +2599,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet
 
-> InlineResponse20024 cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(fieldKey, opts)
+> InlineResponse20024 cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(cloudid, fieldKey, opts)
 
 
 
@@ -2513,13 +2615,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. For example, 20.
   'projectId': 56, // Number | Filters the results to options that are only available in the specified project. For example, 10000.
   'startAt': 56 // Number | The starting index of the returned objects. For example, 1.
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(fieldKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(cloudid, fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2533,6 +2636,7 @@ apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(fieldKey, opts,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldKey** | **String**| The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field. | 
  **maxResults** | **Number**| The maximum number of items to return per page. For example, 20. | [optional] 
  **projectId** | **Number**| Filters the results to options that are only available in the specified project. For example, 10000. | [optional] 
@@ -2554,7 +2658,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet
 
-> InlineResponse20024 cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(fieldKey, opts)
+> InlineResponse20024 cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(cloudid, fieldKey, opts)
 
 
 
@@ -2570,13 +2674,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. For example, 20.
   'projectId': 56, // Number | Filters the results to options that are only available in the specified project. For example, 10000.
   'startAt': 56 // Number | The starting index of the returned objects. For example, 1.
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(fieldKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(cloudid, fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2590,6 +2695,7 @@ apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(fieldKey, opt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldKey** | **String**| The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field. | 
  **maxResults** | **Number**| The maximum number of items to return per page. For example, 20. | [optional] 
  **projectId** | **Number**| Filters the results to options that are only available in the specified project. For example, 10000. | [optional] 
@@ -2611,7 +2717,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FieldGet
 
-> [InlineResponse20021] cloudidRestApi3FieldGet()
+> [InlineResponse20021] cloudidRestApi3FieldGet(cloudid)
 
 
 
@@ -2627,7 +2733,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3FieldGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3FieldGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2638,7 +2745,10 @@ apiInstance.cloudidRestApi3FieldGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -2656,7 +2766,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3FieldPost
 
-> InlineResponse2011 cloudidRestApi3FieldPost(opts)
+> InlineResponse2011 cloudidRestApi3FieldPost(cloudid, opts)
 
 
 
@@ -2672,10 +2782,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject7() // InlineObject7 | 
 };
-apiInstance.cloudidRestApi3FieldPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2689,6 +2800,7 @@ apiInstance.cloudidRestApi3FieldPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject7**](InlineObject7.md)|  | [optional] 
 
 ### Return type
@@ -2707,7 +2819,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterDefaultShareScopeGet
 
-> InlineResponse20027 cloudidRestApi3FilterDefaultShareScopeGet()
+> InlineResponse20027 cloudidRestApi3FilterDefaultShareScopeGet(cloudid)
 
 
 
@@ -2723,7 +2835,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3FilterDefaultShareScopeGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3FilterDefaultShareScopeGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2734,7 +2847,10 @@ apiInstance.cloudidRestApi3FilterDefaultShareScopeGet((error, data, response) =>
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -2752,7 +2868,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3FilterDefaultShareScopePut
 
-> InlineResponse20027 cloudidRestApi3FilterDefaultShareScopePut(opts)
+> InlineResponse20027 cloudidRestApi3FilterDefaultShareScopePut(cloudid, opts)
 
 
 
@@ -2768,10 +2884,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject11() // InlineObject11 | 
 };
-apiInstance.cloudidRestApi3FilterDefaultShareScopePut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterDefaultShareScopePut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2785,6 +2902,7 @@ apiInstance.cloudidRestApi3FilterDefaultShareScopePut(opts, (error, data, respon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject11**](InlineObject11.md)|  | [optional] 
 
 ### Return type
@@ -2803,7 +2921,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterFavouriteGet
 
-> [InlineResponse20028] cloudidRestApi3FilterFavouriteGet(opts)
+> [InlineResponse20028] cloudidRestApi3FilterFavouriteGet(cloudid, opts)
 
 
 
@@ -2819,10 +2937,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterFavouriteGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterFavouriteGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2836,6 +2955,7 @@ apiInstance.cloudidRestApi3FilterFavouriteGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
 ### Return type
@@ -2854,7 +2974,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterGet
 
-> InlineResponse20026 cloudidRestApi3FilterGet(opts)
+> InlineResponse20026 cloudidRestApi3FilterGet(cloudid, opts)
 
 
 
@@ -2870,10 +2990,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2887,6 +3008,7 @@ apiInstance.cloudidRestApi3FilterGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
 ### Return type
@@ -2905,7 +3027,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterIdColumnsDelete
 
-> cloudidRestApi3FilterIdColumnsDelete(id)
+> cloudidRestApi3FilterIdColumnsDelete(cloudid, id)
 
 
 
@@ -2921,8 +3043,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
-apiInstance.cloudidRestApi3FilterIdColumnsDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdColumnsDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2936,6 +3059,7 @@ apiInstance.cloudidRestApi3FilterIdColumnsDelete(id, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter. | 
 
 ### Return type
@@ -2954,7 +3078,7 @@ null (empty response body)
 
 ## cloudidRestApi3FilterIdColumnsGet
 
-> [InlineResponse20030] cloudidRestApi3FilterIdColumnsGet(id)
+> [InlineResponse20030] cloudidRestApi3FilterIdColumnsGet(cloudid, id)
 
 
 
@@ -2970,8 +3094,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
-apiInstance.cloudidRestApi3FilterIdColumnsGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdColumnsGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2985,6 +3110,7 @@ apiInstance.cloudidRestApi3FilterIdColumnsGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter. | 
 
 ### Return type
@@ -3003,7 +3129,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterIdColumnsPut
 
-> cloudidRestApi3FilterIdColumnsPut(id)
+> cloudidRestApi3FilterIdColumnsPut(cloudid, id)
 
 
 
@@ -3019,8 +3145,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
-apiInstance.cloudidRestApi3FilterIdColumnsPut(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdColumnsPut(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3034,6 +3161,7 @@ apiInstance.cloudidRestApi3FilterIdColumnsPut(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter. | 
 
 ### Return type
@@ -3052,7 +3180,7 @@ null (empty response body)
 
 ## cloudidRestApi3FilterIdDelete
 
-> cloudidRestApi3FilterIdDelete(id)
+> cloudidRestApi3FilterIdDelete(cloudid, id)
 
 
 
@@ -3068,8 +3196,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter to delete.
-apiInstance.cloudidRestApi3FilterIdDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3083,6 +3212,7 @@ apiInstance.cloudidRestApi3FilterIdDelete(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter to delete. | 
 
 ### Return type
@@ -3101,7 +3231,7 @@ null (empty response body)
 
 ## cloudidRestApi3FilterIdFavouriteDelete
 
-> InlineResponse20026 cloudidRestApi3FilterIdFavouriteDelete(id, opts)
+> InlineResponse20026 cloudidRestApi3FilterIdFavouriteDelete(cloudid, id, opts)
 
 
 
@@ -3117,11 +3247,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterIdFavouriteDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdFavouriteDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3135,6 +3266,7 @@ apiInstance.cloudidRestApi3FilterIdFavouriteDelete(id, opts, (error, data, respo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter. | 
  **expand** | **String**| Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
@@ -3154,7 +3286,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterIdFavouritePut
 
-> InlineResponse20026 cloudidRestApi3FilterIdFavouritePut(id, opts)
+> InlineResponse20026 cloudidRestApi3FilterIdFavouritePut(cloudid, id, opts)
 
 
 
@@ -3170,11 +3302,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterIdFavouritePut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdFavouritePut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3188,6 +3321,7 @@ apiInstance.cloudidRestApi3FilterIdFavouritePut(id, opts, (error, data, response
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter. | 
  **expand** | **String**| Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
@@ -3207,7 +3341,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterIdGet
 
-> InlineResponse20026 cloudidRestApi3FilterIdGet(id, opts)
+> InlineResponse20026 cloudidRestApi3FilterIdGet(cloudid, id, opts)
 
 
 
@@ -3223,11 +3357,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter to return.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterIdGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3241,6 +3376,7 @@ apiInstance.cloudidRestApi3FilterIdGet(id, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter to return. | 
  **expand** | **String**| Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
@@ -3260,7 +3396,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterIdPermissionGet
 
-> [InlineResponse20031] cloudidRestApi3FilterIdPermissionGet(id)
+> [InlineResponse20031] cloudidRestApi3FilterIdPermissionGet(cloudid, id)
 
 
 
@@ -3276,8 +3412,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
-apiInstance.cloudidRestApi3FilterIdPermissionGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPermissionGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3291,6 +3428,7 @@ apiInstance.cloudidRestApi3FilterIdPermissionGet(id, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter. | 
 
 ### Return type
@@ -3309,7 +3447,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterIdPermissionPermissionIdDelete
 
-> cloudidRestApi3FilterIdPermissionPermissionIdDelete(id, permissionId)
+> cloudidRestApi3FilterIdPermissionPermissionIdDelete(cloudid, id, permissionId)
 
 
 
@@ -3325,9 +3463,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
 let permissionId = 56; // Number | The ID of the share permission.
-apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdDelete(id, permissionId, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdDelete(cloudid, id, permissionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3341,6 +3480,7 @@ apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdDelete(id, permissionId
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter. | 
  **permissionId** | **Number**| The ID of the share permission. | 
 
@@ -3360,7 +3500,7 @@ null (empty response body)
 
 ## cloudidRestApi3FilterIdPermissionPermissionIdGet
 
-> InlineResponse20032 cloudidRestApi3FilterIdPermissionPermissionIdGet(id, permissionId)
+> InlineResponse20032 cloudidRestApi3FilterIdPermissionPermissionIdGet(cloudid, id, permissionId)
 
 
 
@@ -3376,9 +3516,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
 let permissionId = 56; // Number | The ID of the share permission.
-apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdGet(id, permissionId, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdGet(cloudid, id, permissionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3392,6 +3533,7 @@ apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdGet(id, permissionId, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter. | 
  **permissionId** | **Number**| The ID of the share permission. | 
 
@@ -3411,7 +3553,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterIdPermissionPost
 
-> [InlineResponse20031] cloudidRestApi3FilterIdPermissionPost(id, opts)
+> [InlineResponse20031] cloudidRestApi3FilterIdPermissionPost(cloudid, id, opts)
 
 
 
@@ -3427,11 +3569,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
 let opts = {
   'body': new Jira.InlineObject13() // InlineObject13 | 
 };
-apiInstance.cloudidRestApi3FilterIdPermissionPost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPermissionPost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3445,6 +3588,7 @@ apiInstance.cloudidRestApi3FilterIdPermissionPost(id, opts, (error, data, respon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter. | 
  **body** | [**InlineObject13**](InlineObject13.md)|  | [optional] 
 
@@ -3464,7 +3608,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterIdPut
 
-> InlineResponse20026 cloudidRestApi3FilterIdPut(id, opts)
+> InlineResponse20026 cloudidRestApi3FilterIdPut(cloudid, id, opts)
 
 
 
@@ -3480,12 +3624,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter to update.
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject12() // InlineObject12 | 
 };
-apiInstance.cloudidRestApi3FilterIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3499,6 +3644,7 @@ apiInstance.cloudidRestApi3FilterIdPut(id, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the filter to update. | 
  **expand** | **String**| Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **body** | [**InlineObject12**](InlineObject12.md)|  | [optional] 
@@ -3519,7 +3665,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterMyGet
 
-> [InlineResponse20028] cloudidRestApi3FilterMyGet(opts)
+> [InlineResponse20028] cloudidRestApi3FilterMyGet(cloudid, opts)
 
 
 
@@ -3535,11 +3681,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
   'includeFavourites': true // Boolean | Include the user's favorite filters in the response.
 };
-apiInstance.cloudidRestApi3FilterMyGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterMyGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3553,6 +3700,7 @@ apiInstance.cloudidRestApi3FilterMyGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **includeFavourites** | **Boolean**| Include the user&#39;s favorite filters in the response. | [optional] 
 
@@ -3572,7 +3720,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterPost
 
-> InlineResponse20026 cloudidRestApi3FilterPost(opts)
+> InlineResponse20026 cloudidRestApi3FilterPost(cloudid, opts)
 
 
 
@@ -3588,11 +3736,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject10() // InlineObject10 | 
 };
-apiInstance.cloudidRestApi3FilterPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3606,6 +3755,7 @@ apiInstance.cloudidRestApi3FilterPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **body** | [**InlineObject10**](InlineObject10.md)|  | [optional] 
 
@@ -3625,7 +3775,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3FilterSearchGet
 
-> InlineResponse20029 cloudidRestApi3FilterSearchGet(opts)
+> InlineResponse20029 cloudidRestApi3FilterSearchGet(cloudid, opts)
 
 
 
@@ -3641,6 +3791,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example", // String | Returns filters with an owner that exactly matches accountId of the owner. This parameter cannot be used with the owner parameter.
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
@@ -3652,7 +3803,7 @@ let opts = {
   'projectId': 56, // Number | Returns filters that are shared with a project that has an ID that exactly matches projectId.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset). The base index is 0.
 };
-apiInstance.cloudidRestApi3FilterSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3666,6 +3817,7 @@ apiInstance.cloudidRestApi3FilterSearchGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountId** | **String**| Returns filters with an owner that exactly matches accountId of the owner. This parameter cannot be used with the owner parameter. | [optional] 
  **expand** | **String**| Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **filterName** | **String**| Returns filters with a name that partially matches filterName. | [optional] 
@@ -3692,7 +3844,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3GroupDelete
 
-> cloudidRestApi3GroupDelete(opts)
+> cloudidRestApi3GroupDelete(cloudid, opts)
 
 
 
@@ -3708,11 +3860,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'groupname': "groupname_example", // String | The name of the group.
   'swapGroup': "swapGroup_example" // String | The group to transfer restrictions to. Only comments and worklogs are transferred. If restrictions are not transferred, comments and worklogs will be inaccessible after the deletion.
 };
-apiInstance.cloudidRestApi3GroupDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3726,6 +3879,7 @@ apiInstance.cloudidRestApi3GroupDelete(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **groupname** | **String**| The name of the group. | [optional] 
  **swapGroup** | **String**| The group to transfer restrictions to. Only comments and worklogs are transferred. If restrictions are not transferred, comments and worklogs will be inaccessible after the deletion. | [optional] 
 
@@ -3745,7 +3899,7 @@ null (empty response body)
 
 ## cloudidRestApi3GroupGet
 
-> cloudidRestApi3GroupGet(opts)
+> cloudidRestApi3GroupGet(cloudid, opts)
 
 
 
@@ -3761,11 +3915,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | List of fields to expand.
   'groupname': "groupname_example" // String | The name of the group.
 };
-apiInstance.cloudidRestApi3GroupGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3779,6 +3934,7 @@ apiInstance.cloudidRestApi3GroupGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| List of fields to expand. | [optional] 
  **groupname** | **String**| The name of the group. | [optional] 
 
@@ -3798,7 +3954,7 @@ null (empty response body)
 
 ## cloudidRestApi3GroupMemberGet
 
-> InlineResponse20033 cloudidRestApi3GroupMemberGet(opts)
+> InlineResponse20033 cloudidRestApi3GroupMemberGet(cloudid, opts)
 
 
 
@@ -3814,13 +3970,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'groupname': "groupname_example", // String | The name of the group.
   'includeInactiveUsers': true, // Boolean | Include inactive users.
   'maxResults': 56, // Number | The maximum number of users to return per page.
   'startAt': 56 // Number | The index of the first user to return.
 };
-apiInstance.cloudidRestApi3GroupMemberGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupMemberGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3834,6 +3991,7 @@ apiInstance.cloudidRestApi3GroupMemberGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **groupname** | **String**| The name of the group. | [optional] 
  **includeInactiveUsers** | **Boolean**| Include inactive users. | [optional] 
  **maxResults** | **Number**| The maximum number of users to return per page. | [optional] 
@@ -3855,7 +4013,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3GroupPost
 
-> InlineResponse2012 cloudidRestApi3GroupPost(opts)
+> InlineResponse2012 cloudidRestApi3GroupPost(cloudid, opts)
 
 
 
@@ -3871,10 +4029,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject14() // InlineObject14 | 
 };
-apiInstance.cloudidRestApi3GroupPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3888,6 +4047,7 @@ apiInstance.cloudidRestApi3GroupPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject14**](InlineObject14.md)|  | [optional] 
 
 ### Return type
@@ -3906,7 +4066,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3GroupUserDelete
 
-> cloudidRestApi3GroupUserDelete(opts)
+> cloudidRestApi3GroupUserDelete(cloudid, opts)
 
 
 
@@ -3922,12 +4082,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountid': "accountid_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
   'groupname': "groupname_example", // String | The name of the group.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3GroupUserDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupUserDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3941,6 +4102,7 @@ apiInstance.cloudidRestApi3GroupUserDelete(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountid** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified. | [optional] 
  **groupname** | **String**| The name of the group. | [optional] 
  **username** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified. | [optional] 
@@ -3961,7 +4123,7 @@ null (empty response body)
 
 ## cloudidRestApi3GroupUserPost
 
-> cloudidRestApi3GroupUserPost(opts)
+> cloudidRestApi3GroupUserPost(cloudid, opts)
 
 
 
@@ -3977,11 +4139,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'groupname': "groupname_example", // String | The name of the group.
   'body': new Jira.InlineObject15() // InlineObject15 | 
 };
-apiInstance.cloudidRestApi3GroupUserPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupUserPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3995,6 +4158,7 @@ apiInstance.cloudidRestApi3GroupUserPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **groupname** | **String**| The name of the group. | [optional] 
  **body** | [**InlineObject15**](InlineObject15.md)|  | [optional] 
 
@@ -4014,7 +4178,7 @@ null (empty response body)
 
 ## cloudidRestApi3GroupsPickerGet
 
-> InlineResponse20034 cloudidRestApi3GroupsPickerGet(opts)
+> InlineResponse20034 cloudidRestApi3GroupsPickerGet(cloudid, opts)
 
 
 
@@ -4030,6 +4194,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example", // String | Parameter not in use.
   'exclude': ["null"], // [String] | A list of groups to exclude from the result.
@@ -4037,7 +4202,7 @@ let opts = {
   'query': "query_example", // String | The string to find in group names.
   'userName': "userName_example" // String | Parameter not in use.
 };
-apiInstance.cloudidRestApi3GroupsPickerGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupsPickerGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4051,6 +4216,7 @@ apiInstance.cloudidRestApi3GroupsPickerGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountId** | **String**| Parameter not in use. | [optional] 
  **exclude** | [**[String]**](String.md)| A list of groups to exclude from the result. | [optional] 
  **maxResults** | **Number**| The maximum number of groups to return. The maximum number of groups that can be returned is limited by the system property jira.ajax.autocomplete.limit. | [optional] 
@@ -4073,7 +4239,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3GroupuserpickerGet
 
-> InlineResponse20035 cloudidRestApi3GroupuserpickerGet(opts)
+> InlineResponse20035 cloudidRestApi3GroupuserpickerGet(cloudid, opts)
 
 
 
@@ -4089,6 +4255,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'avatarSize': "avatarSize_example", // String | The size of the avatar to return. If an invalid value is provided, the default value is used.
   'caseInsensitive': true, // Boolean | Indicates whether the search for groups should be case insensitive.
@@ -4100,7 +4267,7 @@ let opts = {
   'query': "query_example", // String | The search string.
   'showAvatar': true // Boolean | Indicates whether the user avatar should be returned. If an invalid value is provided, the default value is used.
 };
-apiInstance.cloudidRestApi3GroupuserpickerGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupuserpickerGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4114,6 +4281,7 @@ apiInstance.cloudidRestApi3GroupuserpickerGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **avatarSize** | **String**| The size of the avatar to return. If an invalid value is provided, the default value is used. | [optional] 
  **caseInsensitive** | **Boolean**| Indicates whether the search for groups should be case insensitive. | [optional] 
  **excludeConnectAddons** | **Boolean**| Indicates whether Connect app users and groups should be excluded from the search results. If an invalid value is provided, the default value is used. | [optional] 
@@ -4140,7 +4308,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueBulkPost
 
-> InlineResponse2014 cloudidRestApi3IssueBulkPost(opts)
+> InlineResponse2014 cloudidRestApi3IssueBulkPost(cloudid, opts)
 
 
 
@@ -4156,10 +4324,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject17() // InlineObject17 | 
 };
-apiInstance.cloudidRestApi3IssueBulkPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueBulkPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4173,6 +4342,7 @@ apiInstance.cloudidRestApi3IssueBulkPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject17**](InlineObject17.md)|  | [optional] 
 
 ### Return type
@@ -4191,7 +4361,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueCreatemetaGet
 
-> InlineResponse20036 cloudidRestApi3IssueCreatemetaGet(opts)
+> InlineResponse20036 cloudidRestApi3IssueCreatemetaGet(cloudid, opts)
 
 
 
@@ -4207,6 +4377,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about in the response. This parameter accepts multiple values separated by a comma:
   'issuetypeIds': ["null"], // [String] | Comma-separated list of issue type IDs. May be specified multiple times and with issuetypeNames.
@@ -4214,7 +4385,7 @@ let opts = {
   'projectIds': ["null"], // [String] | Comma-separated list of project IDs. May be specified multiple times and with projectKeys.
   'projectKeys': ["null"] // [String] | Comma-separated list of project keys. May be specified multiple times and with projectIds.
 };
-apiInstance.cloudidRestApi3IssueCreatemetaGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueCreatemetaGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4228,6 +4399,7 @@ apiInstance.cloudidRestApi3IssueCreatemetaGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **issuetypeIds** | [**[String]**](String.md)| Comma-separated list of issue type IDs. May be specified multiple times and with issuetypeNames. | [optional] 
  **issuetypeNames** | [**[String]**](String.md)| Comma-separated list of issue type names. May be specified multiple times and with issuetypeIds. | [optional] 
@@ -4250,7 +4422,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyAssigneePut
 
-> cloudidRestApi3IssueIssueIdOrKeyAssigneePut(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyAssigneePut(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4266,11 +4438,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue to be assigned.
 let opts = {
   'body': new Jira.InlineObject21() // InlineObject21 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyAssigneePut(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyAssigneePut(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4284,6 +4457,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyAssigneePut(issueIdOrKey, opts, (err
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue to be assigned. | 
  **body** | [**InlineObject21**](InlineObject21.md)|  | [optional] 
 
@@ -4303,7 +4477,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost
 
-> [InlineResponse20038] cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(issueIdOrKey)
+> [InlineResponse20038] cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(cloudid, issueIdOrKey)
 
 
 
@@ -4319,8 +4493,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue that attachments are added to.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4334,6 +4509,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(issueIdOrKey, (error
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue that attachments are added to. | 
 
 ### Return type
@@ -4352,7 +4528,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyChangelogGet
 
-> InlineResponse20039 cloudidRestApi3IssueIssueIdOrKeyChangelogGet(issueIdOrKey, opts)
+> InlineResponse20039 cloudidRestApi3IssueIssueIdOrKeyChangelogGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4368,12 +4544,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | ID or key of the issue.
 let opts = {
   'maxResults': 56, // Number | Maximum number of items to return per page. See Pagination section for more details.
   'startAt': 56 // Number | Page offset, ie. index of the first item returned in the page of results. Base index: 0.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyChangelogGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyChangelogGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4387,6 +4564,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyChangelogGet(issueIdOrKey, opts, (er
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| ID or key of the issue. | 
  **maxResults** | **Number**| Maximum number of items to return per page. See Pagination section for more details. | [optional] 
  **startAt** | **Number**| Page offset, ie. index of the first item returned in the page of results. Base index: 0. | [optional] 
@@ -4407,7 +4585,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyCommentGet
 
-> InlineResponse20040 cloudidRestApi3IssueIssueIdOrKeyCommentGet(issueIdOrKey, opts)
+> InlineResponse20040 cloudidRestApi3IssueIssueIdOrKeyCommentGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4423,6 +4601,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | to get comments for
 let opts = {
   'expand': "expand_example", // String | optional flags: renderedBody (provides body rendered in HTML)
@@ -4430,7 +4609,7 @@ let opts = {
   'orderBy': "orderBy_example", // String | ordering of the results.
   'startAt': 56 // Number | the page offset, if not specified then defaults to 0
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4444,6 +4623,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentGet(issueIdOrKey, opts, (erro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| to get comments for | 
  **expand** | **String**| optional flags: renderedBody (provides body rendered in HTML) | [optional] 
  **maxResults** | **Number**| how many results on the page should be included. Defaults to 50. | [optional] 
@@ -4466,7 +4646,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(id, issueIdOrKey)
+> cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(cloudid, id, issueIdOrKey)
 
 
 
@@ -4482,9 +4662,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | id of the comment to be deleted
 let issueIdOrKey = "issueIdOrKey_example"; // String | a string containing the issue id or key the comment belongs to
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(id, issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(cloudid, id, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4498,6 +4679,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(id, issueIdOrKey, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| id of the comment to be deleted | 
  **issueIdOrKey** | **String**| a string containing the issue id or key the comment belongs to | 
 
@@ -4517,7 +4699,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyCommentIdGet
 
-> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(id, issueIdOrKey, opts)
+> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -4533,12 +4715,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | the ID of the comment to request
 let issueIdOrKey = "issueIdOrKey_example"; // String | of the issue the comment belongs to
 let opts = {
   'expand': "expand_example" // String | optional flags: renderedBody (provides body rendered in HTML)
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4552,6 +4735,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(id, issueIdOrKey, opts,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| the ID of the comment to request | 
  **issueIdOrKey** | **String**| of the issue the comment belongs to | 
  **expand** | **String**| optional flags: renderedBody (provides body rendered in HTML) | [optional] 
@@ -4572,7 +4756,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyCommentIdPut
 
-> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(id, issueIdOrKey, opts)
+> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -4588,13 +4772,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | id of the comment to be updated
 let issueIdOrKey = "issueIdOrKey_example"; // String | a string containing the issue id or key the comment belongs to
 let opts = {
   'expand': "expand_example", // String | optional flags: renderedBody (provides body rendered in HTML)
   'body': new Jira.InlineObject23() // InlineObject23 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4608,6 +4793,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(id, issueIdOrKey, opts,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| id of the comment to be updated | 
  **issueIdOrKey** | **String**| a string containing the issue id or key the comment belongs to | 
  **expand** | **String**| optional flags: renderedBody (provides body rendered in HTML) | [optional] 
@@ -4629,7 +4815,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyCommentPost
 
-> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentPost(issueIdOrKey, opts)
+> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4645,12 +4831,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | a string containing the issue id or key the comment will be added to
 let opts = {
   'expand': "expand_example", // String | optional flags: renderedBody (provides body rendered in HTML)
   'body': new Jira.InlineObject22() // InlineObject22 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4664,6 +4851,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentPost(issueIdOrKey, opts, (err
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| a string containing the issue id or key the comment will be added to | 
  **expand** | **String**| optional flags: renderedBody (provides body rendered in HTML) | [optional] 
  **body** | [**InlineObject22**](InlineObject22.md)|  | [optional] 
@@ -4684,7 +4872,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyDelete(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyDelete(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4700,11 +4888,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'deleteSubtasks': "deleteSubtasks_example" // String | Indicates whether the issue's sub-tasks are deleted when the issue is deleted.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyDelete(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyDelete(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4718,6 +4907,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyDelete(issueIdOrKey, opts, (error, d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **deleteSubtasks** | **String**| Indicates whether the issue&#39;s sub-tasks are deleted when the issue is deleted. | [optional] 
 
@@ -4737,7 +4927,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyEditmetaGet
 
-> InlineResponse20041 cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(issueIdOrKey, opts)
+> InlineResponse20041 cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4753,12 +4943,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'overrideEditableFlag': true, // Boolean | Indicates whether non-editable fields should be returned. Available to connect app users with admin permissions.
   'overrideScreenSecurity': true // Boolean | Indicates whether hidden fields should be returned. Available to connect app users with admin permissions.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4772,6 +4963,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(issueIdOrKey, opts, (err
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **overrideEditableFlag** | **Boolean**| Indicates whether non-editable fields should be returned. Available to connect app users with admin permissions. | [optional] 
  **overrideScreenSecurity** | **Boolean**| Indicates whether hidden fields should be returned. Available to connect app users with admin permissions. | [optional] 
@@ -4792,7 +4984,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyGet
 
-> InlineResponse20037 cloudidRestApi3IssueIssueIdOrKeyGet(issueIdOrKey, opts)
+> InlineResponse20037 cloudidRestApi3IssueIssueIdOrKeyGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4808,6 +5000,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue. For example, JRACLOUD-1549.
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about the issues in the response. This parameter accepts multiple values separated by a comma:
@@ -4816,7 +5009,7 @@ let opts = {
   'properties': ["null"], // [String] | A comma-separated list of issue properties to return for the issue. Allowed values:
   'updateHistory': true // Boolean | Indicates whether the project in which the issue is created is added to the user's Recently viewed project list, as shown under Projects in Jira. This also populates the JQL issues search lastViewed field.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4830,6 +5023,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyGet(issueIdOrKey, opts, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. For example, JRACLOUD-1549. | 
  **expand** | **String**| Use expand to include additional information about the issues in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **fields** | [**[String]**](String.md)| A comma-separated list of fields to return for the issue. Use it to retrieve a subset of fields. Allowed values: | [optional] 
@@ -4853,7 +5047,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyNotifyPost
 
-> cloudidRestApi3IssueIssueIdOrKeyNotifyPost(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyNotifyPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4869,11 +5063,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | ID or key of the issue that the notification is sent for.
 let opts = {
   'body': new Jira.InlineObject24() // InlineObject24 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyNotifyPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyNotifyPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4887,6 +5082,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyNotifyPost(issueIdOrKey, opts, (erro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| ID or key of the issue that the notification is sent for. | 
  **body** | [**InlineObject24**](InlineObject24.md)|  | [optional] 
 
@@ -4906,7 +5102,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(issueIdOrKey)
+> InlineResponse20010 cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(cloudid, issueIdOrKey)
 
 
 
@@ -4922,8 +5118,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The key or ID of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4937,6 +5134,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(issueIdOrKey, (error, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The key or ID of the issue. | 
 
 ### Return type
@@ -4955,7 +5153,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey)
+> cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey)
 
 
 
@@ -4971,9 +5169,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The key or ID of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4987,6 +5186,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(issueIdO
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The key or ID of the issue. | 
  **propertyKey** | **String**| The key of the property. | 
 
@@ -5006,7 +5206,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(issueIdOrKey, propertyKey)
+> InlineResponse20011 cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey)
 
 
 
@@ -5022,9 +5222,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The key or ID of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5038,6 +5239,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(issueIdOrKe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The key or ID of the issue. | 
  **propertyKey** | **String**| The key of the property. | 
 
@@ -5057,7 +5259,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut
 
-> cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(issueIdOrKey, propertyKey)
+> cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey)
 
 
 
@@ -5073,9 +5275,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the issue property. The maximum length is 255 characters.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5089,6 +5292,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(issueIdOrKe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **propertyKey** | **String**| The key of the issue property. The maximum length is 255 characters. | 
 
@@ -5108,7 +5312,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyPut
 
-> cloudidRestApi3IssueIssueIdOrKeyPut(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyPut(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5124,6 +5328,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'notifyUsers': true, // Boolean | Indicates whether a notification email about the issue update is sent to all watchers. To disable the notification, administer Jira or administer project permissions are required. If the user doesn't have the necessary permission the request is ignored.
@@ -5131,7 +5336,7 @@ let opts = {
   'overrideScreenSecurity': true, // Boolean | Indicates whether screen security should be overridden to enable hidden fields to be edited. Available to Connect app users with admin permissions.
   'body': new Jira.InlineObject20() // InlineObject20 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPut(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPut(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5145,6 +5350,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyPut(issueIdOrKey, opts, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **notifyUsers** | **Boolean**| Indicates whether a notification email about the issue update is sent to all watchers. To disable the notification, administer Jira or administer project permissions are required. If the user doesn&#39;t have the necessary permission the request is ignored. | [optional] 
  **overrideEditableFlag** | **Boolean**| Indicates whether screen security should be overridden to enable uneditable fields to be edited. Available to Connect app users with admin permissions. | [optional] 
@@ -5167,7 +5373,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5183,11 +5389,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'globalId': "globalId_example" // String | The global ID of a remote issue link.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5201,6 +5408,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(issueIdOrKey, opts,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **globalId** | **String**| The global ID of a remote issue link. | [optional] 
 
@@ -5220,7 +5428,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet
 
-> [InlineResponse20042] cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(issueIdOrKey, opts)
+> [InlineResponse20042] cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5236,11 +5444,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'globalId': "globalId_example" // String | The global ID of the remote issue link.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5254,6 +5463,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(issueIdOrKey, opts, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **globalId** | **String**| The global ID of the remote issue link. | [optional] 
 
@@ -5273,7 +5483,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(issueIdOrKey, linkId)
+> cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(cloudid, issueIdOrKey, linkId)
 
 
 
@@ -5289,9 +5499,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let linkId = "linkId_example"; // String | The ID of a remote issue link.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(issueIdOrKey, linkId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(cloudid, issueIdOrKey, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5305,6 +5516,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(issueIdOrKey,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **linkId** | **String**| The ID of a remote issue link. | 
 
@@ -5324,7 +5536,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet
 
-> InlineResponse20044 cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(issueIdOrKey, linkId)
+> InlineResponse20044 cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(cloudid, issueIdOrKey, linkId)
 
 
 
@@ -5340,9 +5552,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let linkId = "linkId_example"; // String | The ID of the remote issue link.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(issueIdOrKey, linkId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(cloudid, issueIdOrKey, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5356,6 +5569,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(issueIdOrKey, li
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **linkId** | **String**| The ID of the remote issue link. | 
 
@@ -5375,7 +5589,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut
 
-> cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(issueIdOrKey, linkId, opts)
+> cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(cloudid, issueIdOrKey, linkId, opts)
 
 
 
@@ -5391,12 +5605,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let linkId = "linkId_example"; // String | The ID of the remote issue link.
 let opts = {
   'body': new Jira.InlineObject26() // InlineObject26 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(issueIdOrKey, linkId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(cloudid, issueIdOrKey, linkId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5410,6 +5625,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(issueIdOrKey, li
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **linkId** | **String**| The ID of the remote issue link. | 
  **body** | [**InlineObject26**](InlineObject26.md)|  | [optional] 
@@ -5430,7 +5646,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost
 
-> InlineResponse20043 cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(issueIdOrKey, opts)
+> InlineResponse20043 cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5446,11 +5662,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'body': new Jira.InlineObject25() // InlineObject25 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5464,6 +5681,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(issueIdOrKey, opts, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **body** | [**InlineObject25**](InlineObject25.md)|  | [optional] 
 
@@ -5483,7 +5701,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyTransitionsGet
 
-> InlineResponse20045 cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(issueIdOrKey, opts)
+> InlineResponse20045 cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5499,13 +5717,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about in the response. This parameter accepts multiple values separated by a comma:
   'skipRemoteOnlyCondition': true, // Boolean | Indicates whether transitions with the condition Hide From User Condition are included in the response.
   'transitionId': "transitionId_example" // String | The ID of the transition.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5519,6 +5738,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(issueIdOrKey, opts, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **expand** | **String**| Use expand to include additional information about in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **skipRemoteOnlyCondition** | **Boolean**| Indicates whether transitions with the condition Hide From User Condition are included in the response. | [optional] 
@@ -5540,7 +5760,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyTransitionsPost
 
-> cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5556,11 +5776,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'body': new Jira.InlineObject27() // InlineObject27 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5574,6 +5795,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(issueIdOrKey, opts, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **body** | [**InlineObject27**](InlineObject27.md)|  | [optional] 
 
@@ -5593,7 +5815,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyVotesDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyVotesDelete(issueIdOrKey)
+> cloudidRestApi3IssueIssueIdOrKeyVotesDelete(cloudid, issueIdOrKey)
 
 
 
@@ -5609,8 +5831,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesDelete(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesDelete(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5624,6 +5847,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesDelete(issueIdOrKey, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
 
 ### Return type
@@ -5642,7 +5866,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyVotesGet
 
-> InlineResponse20046 cloudidRestApi3IssueIssueIdOrKeyVotesGet(issueIdOrKey)
+> InlineResponse20046 cloudidRestApi3IssueIssueIdOrKeyVotesGet(cloudid, issueIdOrKey)
 
 
 
@@ -5658,8 +5882,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesGet(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesGet(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5673,6 +5898,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesGet(issueIdOrKey, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
 
 ### Return type
@@ -5691,7 +5917,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyVotesPost
 
-> cloudidRestApi3IssueIssueIdOrKeyVotesPost(issueIdOrKey)
+> cloudidRestApi3IssueIssueIdOrKeyVotesPost(cloudid, issueIdOrKey)
 
 
 
@@ -5707,8 +5933,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesPost(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesPost(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5722,6 +5949,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesPost(issueIdOrKey, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
 
 ### Return type
@@ -5740,7 +5968,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyWatchersDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5756,12 +5984,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'accountId': "accountId_example", // String | The account ID of the user. Required if username is omitted, otherwise must be omitted.
   'username': "username_example" // String | The name of the user. Required if accountId is omitted, otherwise must be omitted.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5775,6 +6004,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(issueIdOrKey, opts, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **accountId** | **String**| The account ID of the user. Required if username is omitted, otherwise must be omitted. | [optional] 
  **username** | **String**| The name of the user. Required if accountId is omitted, otherwise must be omitted. | [optional] 
@@ -5795,7 +6025,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyWatchersGet
 
-> InlineResponse20047 cloudidRestApi3IssueIssueIdOrKeyWatchersGet(issueIdOrKey)
+> InlineResponse20047 cloudidRestApi3IssueIssueIdOrKeyWatchersGet(cloudid, issueIdOrKey)
 
 
 
@@ -5811,8 +6041,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersGet(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersGet(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5826,6 +6057,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersGet(issueIdOrKey, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
 
 ### Return type
@@ -5844,7 +6076,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyWatchersPost
 
-> cloudidRestApi3IssueIssueIdOrKeyWatchersPost(issueIdOrKey)
+> cloudidRestApi3IssueIssueIdOrKeyWatchersPost(cloudid, issueIdOrKey)
 
 
 
@@ -5860,8 +6092,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersPost(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersPost(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5875,6 +6108,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersPost(issueIdOrKey, (error, d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
 
 ### Return type
@@ -5893,7 +6127,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyWorklogGet
 
-> InlineResponse20048 cloudidRestApi3IssueIssueIdOrKeyWorklogGet(issueIdOrKey, opts)
+> InlineResponse20048 cloudidRestApi3IssueIssueIdOrKeyWorklogGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5909,13 +6143,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about worklogs in the response. This parameter accepts multiple values separated by a comma:
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1048576.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5929,6 +6164,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogGet(issueIdOrKey, opts, (erro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **expand** | **String**| Use expand to include additional information about worklogs in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 1048576. | [optional] 
@@ -5950,7 +6186,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(id, issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -5966,6 +6202,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the worklog.
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
@@ -5975,7 +6212,7 @@ let opts = {
   'notifyUsers': true, // Boolean | Indicates whether users watching the issue are notified by email.
   'overrideEditableFlag': true // Boolean | Indicates whether the work log entry should be added to the issue even if the issue is not editable, because jira.issue.editable set to false or missing. For example, the issue is closed. Only connect app users with admin permissions can use this flag.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5989,6 +6226,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(id, issueIdOrKey, op
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the worklog. | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **adjustEstimate** | **String**| Defines how to update the issue&#39;s time estimate, the options are: | [optional] 
@@ -6013,7 +6251,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet
 
-> InlineResponse20049 cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(id, issueIdOrKey, opts)
+> InlineResponse20049 cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -6029,12 +6267,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the worklog.
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about work logs in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6048,6 +6287,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(id, issueIdOrKey, opts,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the worklog. | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **expand** | **String**| Use expand to include additional information about work logs in the response. This parameter accepts multiple values separated by a comma: | [optional] 
@@ -6068,7 +6308,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut
 
-> InlineResponse20049 cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(id, issueIdOrKey, opts)
+> InlineResponse20049 cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -6084,6 +6324,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the worklog.
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key the issue.
 let opts = {
@@ -6094,7 +6335,7 @@ let opts = {
   'overrideEditableFlag': true, // Boolean | Indicates whether the worklog should be added to the issue even if the issue is not editable, for example, because the issue is closed. Only connect app users with admin permissions can use this flag.
   'body': new Jira.InlineObject29() // InlineObject29 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6108,6 +6349,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(id, issueIdOrKey, opts,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the worklog. | 
  **issueIdOrKey** | **String**| The ID or key the issue. | 
  **adjustEstimate** | **String**| Defines how to update the issue&#39;s time estimate, the options are: | [optional] 
@@ -6133,7 +6375,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyWorklogPost
 
-> cloudidRestApi3IssueIssueIdOrKeyWorklogPost(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyWorklogPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -6149,6 +6391,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key the issue.
 let opts = {
   'adjustEstimate': "adjustEstimate_example", // String | Defines how to update the issue's time estimate, the options are:
@@ -6159,7 +6402,7 @@ let opts = {
   'reduceBy': "reduceBy_example", // String | The amount to reduce the issue's remaining estimate by, as days (#d), hours (#h), or minutes (#m). For example, 2d. Required when adjustEstimate is manual.
   'body': new Jira.InlineObject28() // InlineObject28 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6173,6 +6416,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogPost(issueIdOrKey, opts, (err
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key the issue. | 
  **adjustEstimate** | **String**| Defines how to update the issue&#39;s time estimate, the options are: | [optional] 
  **expand** | **String**| Use expand to include additional information about work logs in the response. This parameter accepts multiple values separated by a comma: | [optional] 
@@ -6198,7 +6442,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(issueIdOrKey, worklogId)
+> InlineResponse20010 cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(cloudid, issueIdOrKey, worklogId)
 
 
 
@@ -6214,9 +6458,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(issueIdOrKey, worklogId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(cloudid, issueIdOrKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6230,6 +6475,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(issueI
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **worklogId** | **String**| The ID of the worklog. | 
 
@@ -6249,7 +6495,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, worklogId)
+> cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey, worklogId)
 
 
 
@@ -6265,10 +6511,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6282,6 +6529,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **propertyKey** | **String**| The key of the property. | 
  **worklogId** | **String**| The ID of the worklog. | 
@@ -6302,7 +6550,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, worklogId)
+> InlineResponse20011 cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey, worklogId)
 
 
 
@@ -6318,10 +6566,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6335,6 +6584,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **propertyKey** | **String**| The key of the property. | 
  **worklogId** | **String**| The ID of the worklog. | 
@@ -6355,7 +6605,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut
 
-> cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, worklogId)
+> cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey, worklogId)
 
 
 
@@ -6371,10 +6621,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the issue property. The maximum length is 255 characters.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6388,6 +6639,7 @@ apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueIdOrKey** | **String**| The ID or key of the issue. | 
  **propertyKey** | **String**| The key of the issue property. The maximum length is 255 characters. | 
  **worklogId** | **String**| The ID of the worklog. | 
@@ -6408,7 +6660,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueLinkLinkIdDelete
 
-> cloudidRestApi3IssueLinkLinkIdDelete(linkId)
+> cloudidRestApi3IssueLinkLinkIdDelete(cloudid, linkId)
 
 
 
@@ -6424,8 +6676,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let linkId = "linkId_example"; // String | The ID of the issue link.
-apiInstance.cloudidRestApi3IssueLinkLinkIdDelete(linkId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkLinkIdDelete(cloudid, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6439,6 +6692,7 @@ apiInstance.cloudidRestApi3IssueLinkLinkIdDelete(linkId, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **linkId** | **String**| The ID of the issue link. | 
 
 ### Return type
@@ -6457,7 +6711,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueLinkLinkIdGet
 
-> InlineResponse20050 cloudidRestApi3IssueLinkLinkIdGet(linkId)
+> InlineResponse20050 cloudidRestApi3IssueLinkLinkIdGet(cloudid, linkId)
 
 
 
@@ -6473,8 +6727,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let linkId = "linkId_example"; // String | The ID of the issue link.
-apiInstance.cloudidRestApi3IssueLinkLinkIdGet(linkId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkLinkIdGet(cloudid, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6488,6 +6743,7 @@ apiInstance.cloudidRestApi3IssueLinkLinkIdGet(linkId, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **linkId** | **String**| The ID of the issue link. | 
 
 ### Return type
@@ -6506,7 +6762,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueLinkPost
 
-> cloudidRestApi3IssueLinkPost(opts)
+> cloudidRestApi3IssueLinkPost(cloudid, opts)
 
 
 
@@ -6522,10 +6778,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject30() // InlineObject30 | 
 };
-apiInstance.cloudidRestApi3IssueLinkPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6539,6 +6796,7 @@ apiInstance.cloudidRestApi3IssueLinkPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject30**](InlineObject30.md)|  | [optional] 
 
 ### Return type
@@ -6557,7 +6815,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueLinkTypeGet
 
-> InlineResponse20051 cloudidRestApi3IssueLinkTypeGet()
+> InlineResponse20051 cloudidRestApi3IssueLinkTypeGet(cloudid)
 
 
 
@@ -6573,7 +6831,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3IssueLinkTypeGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3IssueLinkTypeGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6584,7 +6843,10 @@ apiInstance.cloudidRestApi3IssueLinkTypeGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -6602,7 +6864,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete
 
-> cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(issueLinkTypeId)
+> cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(cloudid, issueLinkTypeId)
 
 
 
@@ -6618,8 +6880,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueLinkTypeId = "issueLinkTypeId_example"; // String | The ID of the issue link type.
-apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(issueLinkTypeId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(cloudid, issueLinkTypeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6633,6 +6896,7 @@ apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(issueLinkTypeId, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueLinkTypeId** | **String**| The ID of the issue link type. | 
 
 ### Return type
@@ -6651,7 +6915,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet
 
-> InlineResponse2016 cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(issueLinkTypeId)
+> InlineResponse2016 cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(cloudid, issueLinkTypeId)
 
 
 
@@ -6667,8 +6931,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueLinkTypeId = "issueLinkTypeId_example"; // String | The ID of the issue link type.
-apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(issueLinkTypeId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(cloudid, issueLinkTypeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6682,6 +6947,7 @@ apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(issueLinkTypeId, (err
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueLinkTypeId** | **String**| The ID of the issue link type. | 
 
 ### Return type
@@ -6700,7 +6966,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut
 
-> InlineResponse2016 cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(issueLinkTypeId, opts)
+> InlineResponse2016 cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(cloudid, issueLinkTypeId, opts)
 
 
 
@@ -6716,11 +6982,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueLinkTypeId = "issueLinkTypeId_example"; // String | The ID of the issue link type.
 let opts = {
   'body': new Jira.InlineObject32() // InlineObject32 | 
 };
-apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(issueLinkTypeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(cloudid, issueLinkTypeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6734,6 +7001,7 @@ apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(issueLinkTypeId, opts
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueLinkTypeId** | **String**| The ID of the issue link type. | 
  **body** | [**InlineObject32**](InlineObject32.md)|  | [optional] 
 
@@ -6753,7 +7021,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssueLinkTypePost
 
-> InlineResponse2016 cloudidRestApi3IssueLinkTypePost(opts)
+> InlineResponse2016 cloudidRestApi3IssueLinkTypePost(cloudid, opts)
 
 
 
@@ -6769,10 +7037,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject31() // InlineObject31 | 
 };
-apiInstance.cloudidRestApi3IssueLinkTypePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkTypePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6786,6 +7055,7 @@ apiInstance.cloudidRestApi3IssueLinkTypePost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject31**](InlineObject31.md)|  | [optional] 
 
 ### Return type
@@ -6804,7 +7074,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssuePickerGet
 
-> cloudidRestApi3IssuePickerGet(opts)
+> cloudidRestApi3IssuePickerGet(cloudid, opts)
 
 
 
@@ -6820,6 +7090,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'currentIssueKey': "currentIssueKey_example", // String | Key of the issue defining search context. The issue defining a context is excluded from the search results.
   'currentJQL': "currentJQL_example", // String | JQL that defines the search context. Only issues matching this JQL query are included in the results. Note that username and userkey have been deprecated as search terms for this parameter. See the migration guide for details. Use accountId instead.
@@ -6828,7 +7099,7 @@ let opts = {
   'showSubTaskParent': true, // Boolean | Set to false to exclude parent issue from the suggestions list if search is performed in the context of a sub-task.
   'showSubTasks': true // Boolean | Set to false to exclude subtasks from the suggestions list.
 };
-apiInstance.cloudidRestApi3IssuePickerGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuePickerGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6842,6 +7113,7 @@ apiInstance.cloudidRestApi3IssuePickerGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **currentIssueKey** | **String**| Key of the issue defining search context. The issue defining a context is excluded from the search results. | [optional] 
  **currentJQL** | **String**| JQL that defines the search context. Only issues matching this JQL query are included in the results. Note that username and userkey have been deprecated as search terms for this parameter. See the migration guide for details. Use accountId instead. | [optional] 
  **currentProjectId** | **String**| ID of a project defining search context. Only issues belonging to a given project are suggested. | [optional] 
@@ -6865,7 +7137,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssuePost
 
-> InlineResponse2013 cloudidRestApi3IssuePost(opts)
+> InlineResponse2013 cloudidRestApi3IssuePost(cloudid, opts)
 
 
 
@@ -6881,11 +7153,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'updateHistory': true, // Boolean | Indicates whether the project in which the issue is created is added to the user's Recently viewed project list, as shown under Projects in Jira.
   'body': new Jira.InlineObject16() // InlineObject16 | 
 };
-apiInstance.cloudidRestApi3IssuePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6899,6 +7172,7 @@ apiInstance.cloudidRestApi3IssuePost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **updateHistory** | **Boolean**| Indicates whether the project in which the issue is created is added to the user&#39;s Recently viewed project list, as shown under Projects in Jira. | [optional] 
  **body** | [**InlineObject16**](InlineObject16.md)|  | [optional] 
 
@@ -6918,7 +7192,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssuePropertiesPropertyKeyDelete
 
-> cloudidRestApi3IssuePropertiesPropertyKeyDelete(propertyKey, opts)
+> cloudidRestApi3IssuePropertiesPropertyKeyDelete(cloudid, propertyKey, opts)
 
 
 
@@ -6934,11 +7208,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let propertyKey = "propertyKey_example"; // String | The key of the property.
 let opts = {
   'body': new Jira.InlineObject19() // InlineObject19 | 
 };
-apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyDelete(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyDelete(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6952,6 +7227,7 @@ apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyDelete(propertyKey, opts, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **propertyKey** | **String**| The key of the property. | 
  **body** | [**InlineObject19**](InlineObject19.md)|  | [optional] 
 
@@ -6971,7 +7247,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssuePropertiesPropertyKeyPut
 
-> cloudidRestApi3IssuePropertiesPropertyKeyPut(propertyKey, opts)
+> cloudidRestApi3IssuePropertiesPropertyKeyPut(cloudid, propertyKey, opts)
 
 
 
@@ -6987,11 +7263,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let propertyKey = "propertyKey_example"; // String | The key of the property. The maximum length is 255 characters.
 let opts = {
   'body': new Jira.InlineObject18() // InlineObject18 | 
 };
-apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyPut(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyPut(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7005,6 +7282,7 @@ apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyPut(propertyKey, opts, (err
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **propertyKey** | **String**| The key of the property. The maximum length is 255 characters. | 
  **body** | [**InlineObject18**](InlineObject18.md)|  | [optional] 
 
@@ -7024,7 +7302,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssuesecurityschemesGet
 
-> InlineResponse20052 cloudidRestApi3IssuesecurityschemesGet()
+> InlineResponse20052 cloudidRestApi3IssuesecurityschemesGet(cloudid)
 
 
 
@@ -7040,7 +7318,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3IssuesecurityschemesGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3IssuesecurityschemesGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7051,7 +7330,10 @@ apiInstance.cloudidRestApi3IssuesecurityschemesGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -7069,7 +7351,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3IssuesecurityschemesIdGet
 
-> InlineResponse20053 cloudidRestApi3IssuesecurityschemesIdGet(id)
+> InlineResponse20053 cloudidRestApi3IssuesecurityschemesIdGet(cloudid, id)
 
 
 
@@ -7085,8 +7367,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the issue security scheme. Use the Get issue security schemes operation to get a list of issue security scheme IDs.
-apiInstance.cloudidRestApi3IssuesecurityschemesIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuesecurityschemesIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7100,6 +7383,7 @@ apiInstance.cloudidRestApi3IssuesecurityschemesIdGet(id, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the issue security scheme. Use the Get issue security schemes operation to get a list of issue security scheme IDs. | 
 
 ### Return type
@@ -7118,7 +7402,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssuetypeGet
 
-> [InlineResponse20050InwardIssueFieldsIssuetype] cloudidRestApi3IssuetypeGet()
+> [InlineResponse20050InwardIssueFieldsIssuetype] cloudidRestApi3IssuetypeGet(cloudid)
 
 
 
@@ -7134,7 +7418,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3IssuetypeGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3IssuetypeGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7145,7 +7430,10 @@ apiInstance.cloudidRestApi3IssuetypeGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -7163,7 +7451,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3IssuetypeIdAlternativesGet
 
-> [InlineResponse20050InwardIssueFieldsIssuetype] cloudidRestApi3IssuetypeIdAlternativesGet(id)
+> [InlineResponse20050InwardIssueFieldsIssuetype] cloudidRestApi3IssuetypeIdAlternativesGet(cloudid, id)
 
 
 
@@ -7179,8 +7467,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3IssuetypeIdAlternativesGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdAlternativesGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7194,6 +7483,7 @@ apiInstance.cloudidRestApi3IssuetypeIdAlternativesGet(id, (error, data, response
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the issue type. | 
 
 ### Return type
@@ -7212,7 +7502,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssuetypeIdAvatar2Post
 
-> InlineResponse2017 cloudidRestApi3IssuetypeIdAvatar2Post(id, opts)
+> InlineResponse2017 cloudidRestApi3IssuetypeIdAvatar2Post(cloudid, id, opts)
 
 
 
@@ -7228,13 +7518,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue type.
 let opts = {
   'size': 56, // Number | The length of each side of the crop region.
   'x': 56, // Number | The X coordinate of the top-left corner of the crop region.
   'y': 56 // Number | The Y coordinate of the top-left corner of the crop region.
 };
-apiInstance.cloudidRestApi3IssuetypeIdAvatar2Post(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdAvatar2Post(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7248,6 +7539,7 @@ apiInstance.cloudidRestApi3IssuetypeIdAvatar2Post(id, opts, (error, data, respon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the issue type. | 
  **size** | **Number**| The length of each side of the crop region. | [optional] 
  **x** | **Number**| The X coordinate of the top-left corner of the crop region. | [optional] 
@@ -7269,7 +7561,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssuetypeIdDelete
 
-> cloudidRestApi3IssuetypeIdDelete(id, opts)
+> cloudidRestApi3IssuetypeIdDelete(cloudid, id, opts)
 
 
 
@@ -7285,11 +7577,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue type.
 let opts = {
   'alternativeIssueTypeId': "alternativeIssueTypeId_example" // String | The ID of the replacement issue type.
 };
-apiInstance.cloudidRestApi3IssuetypeIdDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7303,6 +7596,7 @@ apiInstance.cloudidRestApi3IssuetypeIdDelete(id, opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the issue type. | 
  **alternativeIssueTypeId** | **String**| The ID of the replacement issue type. | [optional] 
 
@@ -7322,7 +7616,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssuetypeIdGet
 
-> InlineResponse20054 cloudidRestApi3IssuetypeIdGet(id)
+> InlineResponse20054 cloudidRestApi3IssuetypeIdGet(cloudid, id)
 
 
 
@@ -7338,8 +7632,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3IssuetypeIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7353,6 +7648,7 @@ apiInstance.cloudidRestApi3IssuetypeIdGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the issue type. | 
 
 ### Return type
@@ -7371,7 +7667,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssuetypeIdPut
 
-> cloudidRestApi3IssuetypeIdPut(id, opts)
+> cloudidRestApi3IssuetypeIdPut(cloudid, id, opts)
 
 
 
@@ -7387,11 +7683,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue type.
 let opts = {
   'body': new Jira.InlineObject34() // InlineObject34 | 
 };
-apiInstance.cloudidRestApi3IssuetypeIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7405,6 +7702,7 @@ apiInstance.cloudidRestApi3IssuetypeIdPut(id, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the issue type. | 
  **body** | [**InlineObject34**](InlineObject34.md)|  | [optional] 
 
@@ -7424,7 +7722,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(issueTypeId)
+> InlineResponse20010 cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(cloudid, issueTypeId)
 
 
 
@@ -7440,8 +7738,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(issueTypeId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(cloudid, issueTypeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7455,6 +7754,7 @@ apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(issueTypeId, (error
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueTypeId** | **String**| The ID of the issue type. | 
 
 ### Return type
@@ -7473,7 +7773,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete
 
-> cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(issueTypeId, propertyKey)
+> cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(cloudid, issueTypeId, propertyKey)
 
 
 
@@ -7489,9 +7789,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
 let propertyKey = "propertyKey_example"; // String | The key of the property. Use Get issue type property keys to get a list of all issue type property keys.
-apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(issueTypeId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(cloudid, issueTypeId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7505,6 +7806,7 @@ apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(issue
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueTypeId** | **String**| The ID of the issue type. | 
  **propertyKey** | **String**| The key of the property. Use Get issue type property keys to get a list of all issue type property keys. | 
 
@@ -7524,7 +7826,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(issueTypeId, propertyKey)
+> InlineResponse20011 cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(cloudid, issueTypeId, propertyKey)
 
 
 
@@ -7540,9 +7842,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
 let propertyKey = "propertyKey_example"; // String | The key of the property. Use Get issue type property keys to get a list of all issue type property keys.
-apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(issueTypeId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(cloudid, issueTypeId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7556,6 +7859,7 @@ apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(issueTyp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueTypeId** | **String**| The ID of the issue type. | 
  **propertyKey** | **String**| The key of the property. Use Get issue type property keys to get a list of all issue type property keys. | 
 
@@ -7575,7 +7879,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut
 
-> cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(issueTypeId, propertyKey)
+> cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(cloudid, issueTypeId, propertyKey)
 
 
 
@@ -7591,9 +7895,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
 let propertyKey = "propertyKey_example"; // String | The key of the issue type property. The maximum length of the key is 255 bytes.
-apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(issueTypeId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(cloudid, issueTypeId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7607,6 +7912,7 @@ apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(issueTyp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueTypeId** | **String**| The ID of the issue type. | 
  **propertyKey** | **String**| The key of the issue type property. The maximum length of the key is 255 bytes. | 
 
@@ -7626,7 +7932,7 @@ null (empty response body)
 
 ## cloudidRestApi3IssuetypePost
 
-> cloudidRestApi3IssuetypePost(opts)
+> cloudidRestApi3IssuetypePost(cloudid, opts)
 
 
 
@@ -7642,10 +7948,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject33() // InlineObject33 | 
 };
-apiInstance.cloudidRestApi3IssuetypePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7659,6 +7966,7 @@ apiInstance.cloudidRestApi3IssuetypePost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject33**](InlineObject33.md)|  | [optional] 
 
 ### Return type
@@ -7677,7 +7985,7 @@ null (empty response body)
 
 ## cloudidRestApi3JqlAutocompletedataGet
 
-> InlineResponse20055 cloudidRestApi3JqlAutocompletedataGet()
+> InlineResponse20055 cloudidRestApi3JqlAutocompletedataGet(cloudid)
 
 
 
@@ -7693,7 +8001,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3JqlAutocompletedataGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3JqlAutocompletedataGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7704,7 +8013,10 @@ apiInstance.cloudidRestApi3JqlAutocompletedataGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -7722,7 +8034,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3JqlAutocompletedataSuggestionsGet
 
-> InlineResponse20056 cloudidRestApi3JqlAutocompletedataSuggestionsGet(opts)
+> InlineResponse20056 cloudidRestApi3JqlAutocompletedataSuggestionsGet(cloudid, opts)
 
 
 
@@ -7738,13 +8050,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'fieldName': "fieldName_example", // String | The name of the field.
   'fieldValue': "fieldValue_example", // String | The partial field item name entered by the user.
   'predicateName': "predicateName_example", // String | The name of the CHANGED operator predicate for which the suggestions are generated. The valid predicate operators are by, from, and to.
   'predicateValue': "predicateValue_example" // String | The partial predicate item name entered by the user.
 };
-apiInstance.cloudidRestApi3JqlAutocompletedataSuggestionsGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3JqlAutocompletedataSuggestionsGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7758,6 +8071,7 @@ apiInstance.cloudidRestApi3JqlAutocompletedataSuggestionsGet(opts, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldName** | **String**| The name of the field. | [optional] 
  **fieldValue** | **String**| The partial field item name entered by the user. | [optional] 
  **predicateName** | **String**| The name of the CHANGED operator predicate for which the suggestions are generated. The valid predicate operators are by, from, and to. | [optional] 
@@ -7779,7 +8093,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3JqlPdcleanerPost
 
-> InlineResponse20057 cloudidRestApi3JqlPdcleanerPost(opts)
+> InlineResponse20057 cloudidRestApi3JqlPdcleanerPost(cloudid, opts)
 
 
 
@@ -7795,10 +8109,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject35() // InlineObject35 | 
 };
-apiInstance.cloudidRestApi3JqlPdcleanerPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3JqlPdcleanerPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7812,6 +8127,7 @@ apiInstance.cloudidRestApi3JqlPdcleanerPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject35**](InlineObject35.md)|  | [optional] 
 
 ### Return type
@@ -7830,7 +8146,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3MypermissionsGet
 
-> InlineResponse20058 cloudidRestApi3MypermissionsGet(opts)
+> InlineResponse20058 cloudidRestApi3MypermissionsGet(cloudid, opts)
 
 
 
@@ -7846,6 +8162,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'issueId': "issueId_example", // String | The ID of the issue.
   'issueKey': "issueKey_example", // String | The key of the issue. Ignored if issueId is provided.
@@ -7853,7 +8170,7 @@ let opts = {
   'projectId': "projectId_example", // String | The ID of project.
   'projectKey': "projectKey_example" // String | The key of project. Ignored if projectId is provided.
 };
-apiInstance.cloudidRestApi3MypermissionsGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypermissionsGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7867,6 +8184,7 @@ apiInstance.cloudidRestApi3MypermissionsGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueId** | **String**| The ID of the issue. | [optional] 
  **issueKey** | **String**| The key of the issue. Ignored if issueId is provided. | [optional] 
  **permissions** | **String**| A comma separated list of permission keys. Omitting this parameter is deprecated. To get the list of available permissions, use Get all permissions. Note that deprecated keys cannot be used. Deprecated keys are not returned by Get all permissions but are returned by this operation if permissions is omitted. | [optional] 
@@ -7889,7 +8207,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3MypreferencesDelete
 
-> cloudidRestApi3MypreferencesDelete(opts)
+> cloudidRestApi3MypreferencesDelete(cloudid, opts)
 
 
 
@@ -7905,10 +8223,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The key of the preference.
 };
-apiInstance.cloudidRestApi3MypreferencesDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7922,6 +8241,7 @@ apiInstance.cloudidRestApi3MypreferencesDelete(opts, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **key** | **String**| The key of the preference. | [optional] 
 
 ### Return type
@@ -7940,7 +8260,7 @@ null (empty response body)
 
 ## cloudidRestApi3MypreferencesGet
 
-> cloudidRestApi3MypreferencesGet(opts)
+> cloudidRestApi3MypreferencesGet(cloudid, opts)
 
 
 
@@ -7956,10 +8276,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The key of the preference.
 };
-apiInstance.cloudidRestApi3MypreferencesGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7973,6 +8294,7 @@ apiInstance.cloudidRestApi3MypreferencesGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **key** | **String**| The key of the preference. | [optional] 
 
 ### Return type
@@ -7991,7 +8313,7 @@ null (empty response body)
 
 ## cloudidRestApi3MypreferencesLocaleDelete
 
-> cloudidRestApi3MypreferencesLocaleDelete()
+> cloudidRestApi3MypreferencesLocaleDelete(cloudid)
 
 
 
@@ -8007,7 +8329,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3MypreferencesLocaleDelete((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3MypreferencesLocaleDelete(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8018,7 +8341,10 @@ apiInstance.cloudidRestApi3MypreferencesLocaleDelete((error, data, response) => 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -8036,7 +8362,7 @@ null (empty response body)
 
 ## cloudidRestApi3MypreferencesLocaleGet
 
-> InlineResponse20059 cloudidRestApi3MypreferencesLocaleGet()
+> InlineResponse20059 cloudidRestApi3MypreferencesLocaleGet(cloudid)
 
 
 
@@ -8052,7 +8378,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3MypreferencesLocaleGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3MypreferencesLocaleGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8063,7 +8390,10 @@ apiInstance.cloudidRestApi3MypreferencesLocaleGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -8081,7 +8411,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3MypreferencesLocalePut
 
-> cloudidRestApi3MypreferencesLocalePut(opts)
+> cloudidRestApi3MypreferencesLocalePut(cloudid, opts)
 
 
 
@@ -8097,10 +8427,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject36() // InlineObject36 | 
 };
-apiInstance.cloudidRestApi3MypreferencesLocalePut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesLocalePut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8114,6 +8445,7 @@ apiInstance.cloudidRestApi3MypreferencesLocalePut(opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject36**](InlineObject36.md)|  | [optional] 
 
 ### Return type
@@ -8132,7 +8464,7 @@ null (empty response body)
 
 ## cloudidRestApi3MypreferencesPut
 
-> cloudidRestApi3MypreferencesPut(opts)
+> cloudidRestApi3MypreferencesPut(cloudid, opts)
 
 
 
@@ -8148,10 +8480,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The key of the preference. Maximum length is 255 characters.
 };
-apiInstance.cloudidRestApi3MypreferencesPut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesPut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8165,6 +8498,7 @@ apiInstance.cloudidRestApi3MypreferencesPut(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **key** | **String**| The key of the preference. Maximum length is 255 characters. | [optional] 
 
 ### Return type
@@ -8183,7 +8517,7 @@ null (empty response body)
 
 ## cloudidRestApi3MyselfGet
 
-> InlineResponse20060 cloudidRestApi3MyselfGet(opts)
+> InlineResponse20060 cloudidRestApi3MyselfGet(cloudid, opts)
 
 
 
@@ -8199,10 +8533,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about user in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3MyselfGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MyselfGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8216,6 +8551,7 @@ apiInstance.cloudidRestApi3MyselfGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about user in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
 ### Return type
@@ -8234,7 +8570,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3NotificationschemeGet
 
-> InlineResponse20061 cloudidRestApi3NotificationschemeGet(opts)
+> InlineResponse20061 cloudidRestApi3NotificationschemeGet(cloudid, opts)
 
 
 
@@ -8250,12 +8586,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
   'maxResults': 56, // Number | The maximum number of items to return per page. Max is 50.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset). The base index is 0.
 };
-apiInstance.cloudidRestApi3NotificationschemeGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3NotificationschemeGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8269,6 +8606,7 @@ apiInstance.cloudidRestApi3NotificationschemeGet(opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Max is 50. | [optional] 
  **startAt** | **Number**| The index of the first item to return in a page of results (page offset). The base index is 0. | [optional] 
@@ -8289,7 +8627,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3NotificationschemeIdGet
 
-> InlineResponse20062 cloudidRestApi3NotificationschemeIdGet(id, opts)
+> InlineResponse20062 cloudidRestApi3NotificationschemeIdGet(cloudid, id, opts)
 
 
 
@@ -8305,11 +8643,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the notification scheme. Use Get notification schemes paginated to get a list of notification scheme IDs.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3NotificationschemeIdGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3NotificationschemeIdGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8323,6 +8662,7 @@ apiInstance.cloudidRestApi3NotificationschemeIdGet(id, opts, (error, data, respo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the notification scheme. Use Get notification schemes paginated to get a list of notification scheme IDs. | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
@@ -8342,7 +8682,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3PermissionsGet
 
-> InlineResponse20063 cloudidRestApi3PermissionsGet()
+> InlineResponse20063 cloudidRestApi3PermissionsGet(cloudid)
 
 
 
@@ -8358,7 +8698,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3PermissionsGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3PermissionsGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8369,7 +8710,10 @@ apiInstance.cloudidRestApi3PermissionsGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -8387,7 +8731,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3PermissionsProjectPost
 
-> InlineResponse20064 cloudidRestApi3PermissionsProjectPost(opts)
+> InlineResponse20064 cloudidRestApi3PermissionsProjectPost(cloudid, opts)
 
 
 
@@ -8403,10 +8747,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject37() // InlineObject37 | 
 };
-apiInstance.cloudidRestApi3PermissionsProjectPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionsProjectPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8420,6 +8765,7 @@ apiInstance.cloudidRestApi3PermissionsProjectPost(opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject37**](InlineObject37.md)|  | [optional] 
 
 ### Return type
@@ -8438,7 +8784,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3PermissionschemeGet
 
-> InlineResponse20065 cloudidRestApi3PermissionschemeGet(opts)
+> InlineResponse20065 cloudidRestApi3PermissionschemeGet(cloudid, opts)
 
 
 
@@ -8454,10 +8800,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
 };
-apiInstance.cloudidRestApi3PermissionschemeGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8471,6 +8818,7 @@ apiInstance.cloudidRestApi3PermissionschemeGet(opts, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value: | [optional] 
 
 ### Return type
@@ -8489,7 +8837,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3PermissionschemePost
 
-> InlineResponse2018 cloudidRestApi3PermissionschemePost(opts)
+> InlineResponse2018 cloudidRestApi3PermissionschemePost(cloudid, opts)
 
 
 
@@ -8505,11 +8853,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
   'body': new Jira.InlineObject38() // InlineObject38 | 
 };
-apiInstance.cloudidRestApi3PermissionschemePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8523,6 +8872,7 @@ apiInstance.cloudidRestApi3PermissionschemePost(opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value: | [optional] 
  **body** | [**InlineObject38**](InlineObject38.md)|  | [optional] 
 
@@ -8542,7 +8892,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3PermissionschemeSchemeIdDelete
 
-> cloudidRestApi3PermissionschemeSchemeIdDelete(schemeId)
+> cloudidRestApi3PermissionschemeSchemeIdDelete(cloudid, schemeId)
 
 
 
@@ -8558,8 +8908,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let schemeId = 56; // Number | The ID of the permission scheme being deleted (e.g., 10000).
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdDelete(schemeId, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdDelete(cloudid, schemeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8573,6 +8924,7 @@ apiInstance.cloudidRestApi3PermissionschemeSchemeIdDelete(schemeId, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **schemeId** | **Number**| The ID of the permission scheme being deleted (e.g., 10000). | 
 
 ### Return type
@@ -8591,7 +8943,7 @@ null (empty response body)
 
 ## cloudidRestApi3PermissionschemeSchemeIdGet
 
-> InlineResponse2018 cloudidRestApi3PermissionschemeSchemeIdGet(schemeId, opts)
+> InlineResponse2018 cloudidRestApi3PermissionschemeSchemeIdGet(cloudid, schemeId, opts)
 
 
 
@@ -8607,11 +8959,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let schemeId = 56; // Number | The ID of the permission scheme to return (e.g., 10000).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdGet(schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdGet(cloudid, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8625,6 +8978,7 @@ apiInstance.cloudidRestApi3PermissionschemeSchemeIdGet(schemeId, opts, (error, d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **schemeId** | **Number**| The ID of the permission scheme to return (e.g., 10000). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value: | [optional] 
 
@@ -8644,7 +8998,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3PermissionschemeSchemeIdPermissionGet
 
-> InlineResponse20066 cloudidRestApi3PermissionschemeSchemeIdPermissionGet(schemeId, opts)
+> InlineResponse20066 cloudidRestApi3PermissionschemeSchemeIdPermissionGet(cloudid, schemeId, opts)
 
 
 
@@ -8660,11 +9014,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let schemeId = 56; // Number | The ID of the permission scheme (e.g., 10010).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionGet(schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionGet(cloudid, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8678,6 +9033,7 @@ apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionGet(schemeId, opts,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **schemeId** | **Number**| The ID of the permission scheme (e.g., 10010). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value: | [optional] 
 
@@ -8697,7 +9053,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete
 
-> cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(permissionId, schemeId)
+> cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(cloudid, permissionId, schemeId)
 
 
 
@@ -8713,9 +9069,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let permissionId = 56; // Number | The ID of the permission grant to delete (e.g., 10847).
 let schemeId = 56; // Number | The ID of the permission scheme to delete the permission grant from (e.g., 10000).
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(permissionId, schemeId, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(cloudid, permissionId, schemeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8729,6 +9086,7 @@ apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **permissionId** | **Number**| The ID of the permission grant to delete (e.g., 10847). | 
  **schemeId** | **Number**| The ID of the permission scheme to delete the permission grant from (e.g., 10000). | 
 
@@ -8748,7 +9106,7 @@ null (empty response body)
 
 ## cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet
 
-> InlineResponse2019 cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(permissionId, schemeId, opts)
+> InlineResponse2019 cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(cloudid, permissionId, schemeId, opts)
 
 
 
@@ -8764,12 +9122,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let permissionId = 56; // Number | The ID of the permission grant (e.g., 10000).
 let schemeId = 56; // Number | The ID of the permission scheme (e.g., 10010).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(permissionId, schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(cloudid, permissionId, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8783,6 +9142,7 @@ apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(per
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **permissionId** | **Number**| The ID of the permission grant (e.g., 10000). | 
  **schemeId** | **Number**| The ID of the permission scheme (e.g., 10010). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value: | [optional] 
@@ -8803,7 +9163,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3PermissionschemeSchemeIdPermissionPost
 
-> InlineResponse2019 cloudidRestApi3PermissionschemeSchemeIdPermissionPost(schemeId, opts)
+> InlineResponse2019 cloudidRestApi3PermissionschemeSchemeIdPermissionPost(cloudid, schemeId, opts)
 
 
 
@@ -8819,12 +9179,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let schemeId = 56; // Number | The ID of the permission scheme in which to create a new permission grant.
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
   'body': new Jira.InlineObject40() // InlineObject40 | 
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPost(schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPost(cloudid, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8838,6 +9199,7 @@ apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPost(schemeId, opts
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **schemeId** | **Number**| The ID of the permission scheme in which to create a new permission grant. | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value: | [optional] 
  **body** | [**InlineObject40**](InlineObject40.md)|  | [optional] 
@@ -8858,7 +9220,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3PermissionschemeSchemeIdPut
 
-> InlineResponse2018 cloudidRestApi3PermissionschemeSchemeIdPut(schemeId, opts)
+> InlineResponse2018 cloudidRestApi3PermissionschemeSchemeIdPut(cloudid, schemeId, opts)
 
 
 
@@ -8874,12 +9236,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let schemeId = 56; // Number | The ID of the permission scheme to update (e.g., 10000).
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
   'body': new Jira.InlineObject39() // InlineObject39 | 
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPut(schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPut(cloudid, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8893,6 +9256,7 @@ apiInstance.cloudidRestApi3PermissionschemeSchemeIdPut(schemeId, opts, (error, d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **schemeId** | **Number**| The ID of the permission scheme to update (e.g., 10000). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value: | [optional] 
  **body** | [**InlineObject39**](InlineObject39.md)|  | [optional] 
@@ -8913,7 +9277,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3PriorityGet
 
-> [InlineResponse20050InwardIssueFieldsPriority] cloudidRestApi3PriorityGet()
+> [InlineResponse20050InwardIssueFieldsPriority] cloudidRestApi3PriorityGet(cloudid)
 
 
 
@@ -8929,7 +9293,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3PriorityGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3PriorityGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8940,7 +9305,10 @@ apiInstance.cloudidRestApi3PriorityGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -8958,7 +9326,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3PriorityIdGet
 
-> InlineResponse20067 cloudidRestApi3PriorityIdGet(id)
+> InlineResponse20067 cloudidRestApi3PriorityIdGet(cloudid, id)
 
 
 
@@ -8974,8 +9342,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue priority.
-apiInstance.cloudidRestApi3PriorityIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3PriorityIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8989,6 +9358,7 @@ apiInstance.cloudidRestApi3PriorityIdGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the issue priority. | 
 
 ### Return type
@@ -9007,7 +9377,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectCategoryGet
 
-> [CloudidRestApi3FilterIdPermissionProjectProjectCategory] cloudidRestApi3ProjectCategoryGet()
+> [CloudidRestApi3FilterIdPermissionProjectProjectCategory] cloudidRestApi3ProjectCategoryGet(cloudid)
 
 
 
@@ -9023,7 +9393,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ProjectCategoryGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ProjectCategoryGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9034,7 +9405,10 @@ apiInstance.cloudidRestApi3ProjectCategoryGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -9052,7 +9426,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3ProjectCategoryIdDelete
 
-> cloudidRestApi3ProjectCategoryIdDelete(id)
+> cloudidRestApi3ProjectCategoryIdDelete(cloudid, id)
 
 
 
@@ -9068,8 +9442,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | ID of the project category to delete.
-apiInstance.cloudidRestApi3ProjectCategoryIdDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectCategoryIdDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9083,6 +9458,7 @@ apiInstance.cloudidRestApi3ProjectCategoryIdDelete(id, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| ID of the project category to delete. | 
 
 ### Return type
@@ -9101,7 +9477,7 @@ null (empty response body)
 
 ## cloudidRestApi3ProjectCategoryIdGet
 
-> InlineResponse20112 cloudidRestApi3ProjectCategoryIdGet(id)
+> InlineResponse20112 cloudidRestApi3ProjectCategoryIdGet(cloudid, id)
 
 
 
@@ -9117,8 +9493,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project category.
-apiInstance.cloudidRestApi3ProjectCategoryIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectCategoryIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9132,6 +9509,7 @@ apiInstance.cloudidRestApi3ProjectCategoryIdGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project category. | 
 
 ### Return type
@@ -9150,7 +9528,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectCategoryIdPut
 
-> InlineResponse20112 cloudidRestApi3ProjectCategoryIdPut(id, opts)
+> InlineResponse20112 cloudidRestApi3ProjectCategoryIdPut(cloudid, id, opts)
 
 
 
@@ -9166,11 +9544,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | 
 let opts = {
   'body': new Jira.InlineObject48() // InlineObject48 | 
 };
-apiInstance.cloudidRestApi3ProjectCategoryIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectCategoryIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9184,6 +9563,7 @@ apiInstance.cloudidRestApi3ProjectCategoryIdPut(id, opts, (error, data, response
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**|  | 
  **body** | [**InlineObject48**](InlineObject48.md)|  | [optional] 
 
@@ -9203,7 +9583,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectCategoryPost
 
-> InlineResponse20112 cloudidRestApi3ProjectCategoryPost(opts)
+> InlineResponse20112 cloudidRestApi3ProjectCategoryPost(cloudid, opts)
 
 
 
@@ -9219,10 +9599,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject47() // InlineObject47 | 
 };
-apiInstance.cloudidRestApi3ProjectCategoryPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectCategoryPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9236,6 +9617,7 @@ apiInstance.cloudidRestApi3ProjectCategoryPost(opts, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject47**](InlineObject47.md)|  | [optional] 
 
 ### Return type
@@ -9254,7 +9636,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectGet
 
-> [CloudidRestApi3FilterIdPermissionProject] cloudidRestApi3ProjectGet(opts)
+> [CloudidRestApi3FilterIdPermissionProject] cloudidRestApi3ProjectGet(cloudid, opts)
 
 
 
@@ -9270,11 +9652,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
   'recent': 56 // Number | Returns the most recently accessed projects for the current user. You may specify the number of results to return up to a maximum of 20. If no user is logged in, then the recently accessed projects will be returned based on the current HTTP session.
 };
-apiInstance.cloudidRestApi3ProjectGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9288,6 +9671,7 @@ apiInstance.cloudidRestApi3ProjectGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **recent** | **Number**| Returns the most recently accessed projects for the current user. You may specify the number of results to return up to a maximum of 20. If no user is logged in, then the recently accessed projects will be returned based on the current HTTP session. | [optional] 
 
@@ -9307,7 +9691,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectPost
 
-> InlineResponse20110 cloudidRestApi3ProjectPost(opts)
+> InlineResponse20110 cloudidRestApi3ProjectPost(cloudid, opts)
 
 
 
@@ -9323,10 +9707,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject41() // InlineObject41 | 
 };
-apiInstance.cloudidRestApi3ProjectPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9340,6 +9725,7 @@ apiInstance.cloudidRestApi3ProjectPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject41**](InlineObject41.md)|  | [optional] 
 
 ### Return type
@@ -9358,7 +9744,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post
 
-> InlineResponse20111 cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(projectIdOrKey, opts)
+> InlineResponse20111 cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(cloudid, projectIdOrKey, opts)
 
 
 
@@ -9374,13 +9760,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The ID or (case-sensitive) key of the project.
 let opts = {
   'size': 56, // Number | The length of each side of the crop region.
   'x': 56, // Number | The X coordinate of the top-left corner of the crop region.
   'y': 56 // Number | The Y coordinate of the top-left corner of the crop region.
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9394,6 +9781,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(projectIdOrKey, opts
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The ID or (case-sensitive) key of the project. | 
  **size** | **Number**| The length of each side of the crop region. | [optional] 
  **x** | **Number**| The X coordinate of the top-left corner of the crop region. | [optional] 
@@ -9415,7 +9803,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete
 
-> cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(id, projectIdOrKey)
+> cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(cloudid, id, projectIdOrKey)
 
 
 
@@ -9431,9 +9819,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the avatar.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or (case-sensitive) key.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(id, projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(cloudid, id, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9447,6 +9836,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(id, projectIdOrKe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the avatar. | 
  **projectIdOrKey** | **String**| The project ID or (case-sensitive) key. | 
 
@@ -9466,7 +9856,7 @@ null (empty response body)
 
 ## cloudidRestApi3ProjectProjectIdOrKeyAvatarPut
 
-> cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(projectIdOrKey, opts)
+> cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(cloudid, projectIdOrKey, opts)
 
 
 
@@ -9482,11 +9872,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The ID or (case-sensitive) key of the project.
 let opts = {
   'body': new Jira.InlineObject43() // InlineObject43 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9500,6 +9891,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(projectIdOrKey, opts, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The ID or (case-sensitive) key of the project. | 
  **body** | [**InlineObject43**](InlineObject43.md)|  | [optional] 
 
@@ -9519,7 +9911,7 @@ null (empty response body)
 
 ## cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet
 
-> InlineResponse20072 cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(projectIdOrKey)
+> InlineResponse20072 cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(cloudid, projectIdOrKey)
 
 
 
@@ -9535,8 +9927,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The ID or (case-sensitive) key of the project.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9550,6 +9943,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(projectIdOrKey, (erro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The ID or (case-sensitive) key of the project. | 
 
 ### Return type
@@ -9568,7 +9962,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyComponentGet
 
-> InlineResponse20073 cloudidRestApi3ProjectProjectIdOrKeyComponentGet(projectIdOrKey, opts)
+> InlineResponse20073 cloudidRestApi3ProjectProjectIdOrKeyComponentGet(cloudid, projectIdOrKey, opts)
 
 
 
@@ -9584,6 +9978,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'maxResults': 56, // Number | The maximum number of components to return per page. Max 50.
@@ -9591,7 +9986,7 @@ let opts = {
   'query': "query_example", // String | Filter the results using a literal string. Components with a matching name or description are returned (case insensitive).
   'startAt': 56 // Number | The starting index of the returned list of components. The base index is 0.
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentGet(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9605,6 +10000,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentGet(projectIdOrKey, opt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **maxResults** | **Number**| The maximum number of components to return per page. Max 50. | [optional] 
  **orderBy** | **String**| Order the results by a particular field: | [optional] 
@@ -9627,7 +10023,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyComponentsGet
 
-> [InlineResponse20074] cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(projectIdOrKey)
+> [InlineResponse20074] cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(cloudid, projectIdOrKey)
 
 
 
@@ -9643,8 +10039,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9658,6 +10055,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(projectIdOrKey, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
 
 ### Return type
@@ -9676,7 +10074,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyDelete
 
-> cloudidRestApi3ProjectProjectIdOrKeyDelete(projectIdOrKey)
+> cloudidRestApi3ProjectProjectIdOrKeyDelete(cloudid, projectIdOrKey)
 
 
 
@@ -9692,8 +10090,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyDelete(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyDelete(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9707,6 +10106,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyDelete(projectIdOrKey, (error, d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
 
 ### Return type
@@ -9725,7 +10125,7 @@ null (empty response body)
 
 ## cloudidRestApi3ProjectProjectIdOrKeyGet
 
-> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyGet(projectIdOrKey, opts)
+> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyGet(cloudid, projectIdOrKey, opts)
 
 
 
@@ -9741,11 +10141,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default:
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyGet(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9759,6 +10160,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyGet(projectIdOrKey, opts, (error
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default: | [optional] 
 
@@ -9778,7 +10180,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(projectIdOrKey)
+> InlineResponse20010 cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(cloudid, projectIdOrKey)
 
 
 
@@ -9794,8 +10196,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9809,6 +10212,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(projectIdOrKey, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
 
 ### Return type
@@ -9827,7 +10231,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete
 
-> cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(projectIdOrKey, propertyKey)
+> cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(cloudid, projectIdOrKey, propertyKey)
 
 
 
@@ -9843,9 +10247,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let propertyKey = "propertyKey_example"; // String | The project property key. Use Get project property keys to get a list of all project property keys.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(projectIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(cloudid, projectIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9859,6 +10264,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(proj
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **propertyKey** | **String**| The project property key. Use Get project property keys to get a list of all project property keys. | 
 
@@ -9878,7 +10284,7 @@ null (empty response body)
 
 ## cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(projectIdOrKey, propertyKey)
+> InlineResponse20011 cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(cloudid, projectIdOrKey, propertyKey)
 
 
 
@@ -9894,9 +10300,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let propertyKey = "propertyKey_example"; // String | The project property key. Use Get project property keys to get a list of all project property keys.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(projectIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(cloudid, projectIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9910,6 +10317,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(project
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **propertyKey** | **String**| The project property key. Use Get project property keys to get a list of all project property keys. | 
 
@@ -9929,7 +10337,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut
 
-> cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(projectIdOrKey, propertyKey)
+> cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(cloudid, projectIdOrKey, propertyKey)
 
 
 
@@ -9945,9 +10353,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let propertyKey = "propertyKey_example"; // String | The key of the project property. The maximum length is 255 bytes.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(projectIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(cloudid, projectIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9961,6 +10370,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(project
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **propertyKey** | **String**| The key of the project property. The maximum length is 255 bytes. | 
 
@@ -9980,7 +10390,7 @@ null (empty response body)
 
 ## cloudidRestApi3ProjectProjectIdOrKeyPut
 
-> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyPut(projectIdOrKey, opts)
+> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyPut(cloudid, projectIdOrKey, opts)
 
 
 
@@ -9996,12 +10406,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default:
   'body': new Jira.InlineObject42() // InlineObject42 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPut(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPut(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10015,6 +10426,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPut(projectIdOrKey, opts, (error
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default: | [optional] 
  **body** | [**InlineObject42**](InlineObject42.md)|  | [optional] 
@@ -10035,7 +10447,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyRoleGet
 
-> InlineResponse20075 cloudidRestApi3ProjectProjectIdOrKeyRoleGet(projectIdOrKey)
+> InlineResponse20075 cloudidRestApi3ProjectProjectIdOrKeyRoleGet(cloudid, projectIdOrKey)
 
 
 
@@ -10051,8 +10463,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10066,6 +10479,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleGet(projectIdOrKey, (error, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
 
 ### Return type
@@ -10084,7 +10498,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete
 
-> cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(id, projectIdOrKey, opts)
+> cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(cloudid, id, projectIdOrKey, opts)
 
 
 
@@ -10100,13 +10514,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'group': "group_example", // String | The name of the group to remove from the project role.
   'user': "user_example" // String | The user account ID of the user to remove from the project role.
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(id, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(cloudid, id, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10120,6 +10535,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(id, projectIdOrKey,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **group** | **String**| The name of the group to remove from the project role. | [optional] 
@@ -10141,7 +10557,7 @@ null (empty response body)
 
 ## cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet
 
-> InlineResponse20076 cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(id, projectIdOrKey)
+> InlineResponse20076 cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(cloudid, id, projectIdOrKey)
 
 
 
@@ -10157,9 +10573,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(id, projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(cloudid, id, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10173,6 +10590,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(id, projectIdOrKey, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
 
@@ -10192,7 +10610,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost
 
-> cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(id, projectIdOrKey, opts)
+> cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(cloudid, id, projectIdOrKey, opts)
 
 
 
@@ -10208,12 +10626,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'body': new Jira.InlineObject45() // InlineObject45 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(id, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(cloudid, id, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10227,6 +10646,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(id, projectIdOrKey, o
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **body** | [**InlineObject45**](InlineObject45.md)|  | [optional] 
@@ -10247,7 +10667,7 @@ null (empty response body)
 
 ## cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut
 
-> InlineResponse20076 cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(id, projectIdOrKey, opts)
+> InlineResponse20076 cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(cloudid, id, projectIdOrKey, opts)
 
 
 
@@ -10263,12 +10683,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'body': new Jira.InlineObject44() // InlineObject44 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(id, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(cloudid, id, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10282,6 +10703,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(id, projectIdOrKey, op
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **body** | [**InlineObject44**](InlineObject44.md)|  | [optional] 
@@ -10302,7 +10724,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet
 
-> [CloudidRestApi3FilterIdPermissionRole] cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(projectIdOrKey)
+> [CloudidRestApi3FilterIdPermissionRole] cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(cloudid, projectIdOrKey)
 
 
 
@@ -10318,8 +10740,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10333,6 +10756,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(projectIdOrKey, (
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
 
 ### Return type
@@ -10351,7 +10775,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyStatusesGet
 
-> [InlineResponse20077] cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(projectIdOrKey)
+> [InlineResponse20077] cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(cloudid, projectIdOrKey)
 
 
 
@@ -10367,8 +10791,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10382,6 +10807,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(projectIdOrKey, (err
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
 
 ### Return type
@@ -10400,7 +10826,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut
 
-> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(newProjectTypeKey, projectIdOrKey)
+> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(cloudid, newProjectTypeKey, projectIdOrKey)
 
 
 
@@ -10416,9 +10842,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let newProjectTypeKey = "newProjectTypeKey_example"; // String | The key of the new project type.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(newProjectTypeKey, projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(cloudid, newProjectTypeKey, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10432,6 +10859,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(newProj
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **newProjectTypeKey** | **String**| The key of the new project type. | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
 
@@ -10451,7 +10879,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyVersionGet
 
-> InlineResponse20078 cloudidRestApi3ProjectProjectIdOrKeyVersionGet(projectIdOrKey, opts)
+> InlineResponse20078 cloudidRestApi3ProjectProjectIdOrKeyVersionGet(cloudid, projectIdOrKey, opts)
 
 
 
@@ -10467,6 +10895,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
@@ -10476,7 +10905,7 @@ let opts = {
   'startAt': 56, // Number | The starting index of the returned list of versions (page offset). The base index is 0.
   'status': "status_example" // String | A comma separated string used to filter the results by version status.
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionGet(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10490,6 +10919,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionGet(projectIdOrKey, opts,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **maxResults** | **Number**| The maximum number of versions to return per page. Max 50. | [optional] 
@@ -10514,7 +10944,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectIdOrKeyVersionsGet
 
-> [InlineResponse20078Values] cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(projectIdOrKey, opts)
+> [InlineResponse20078Values] cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(cloudid, projectIdOrKey, opts)
 
 
 
@@ -10530,11 +10960,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10548,6 +10979,7 @@ apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(projectIdOrKey, opts
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectIdOrKey** | **String**| The project ID or project key (case sensitive). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
@@ -10567,7 +10999,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet
 
-> InlineResponse20053 cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(projectKeyOrId)
+> InlineResponse20053 cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(cloudid, projectKeyOrId)
 
 
 
@@ -10583,8 +11015,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(projectKeyOrId, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(cloudid, projectKeyOrId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10598,6 +11031,7 @@ apiInstance.cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(proj
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectKeyOrId** | **String**| The project ID or project key (case sensitive). | 
 
 ### Return type
@@ -10616,7 +11050,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet
 
-> InlineResponse20062 cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(projectKeyOrId, opts)
+> InlineResponse20062 cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(cloudid, projectKeyOrId, opts)
 
 
 
@@ -10632,11 +11066,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(projectKeyOrId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(cloudid, projectKeyOrId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10650,6 +11085,7 @@ apiInstance.cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(projectKey
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectKeyOrId** | **String**| The project ID or project key (case sensitive). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
@@ -10669,7 +11105,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet
 
-> InlineResponse20079 cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(projectKeyOrId, opts)
+> InlineResponse20079 cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(cloudid, projectKeyOrId, opts)
 
 
 
@@ -10685,11 +11121,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
 };
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(projectKeyOrId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(cloudid, projectKeyOrId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10703,6 +11140,7 @@ apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(projectKeyOr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectKeyOrId** | **String**| The project ID or project key (case sensitive). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value: | [optional] 
 
@@ -10722,7 +11160,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut
 
-> InlineResponse20079 cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(projectKeyOrId, opts)
+> InlineResponse20079 cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(cloudid, projectKeyOrId, opts)
 
 
 
@@ -10738,12 +11176,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or project key (case sensitive).
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
   'body': new Jira.InlineObject46() // InlineObject46 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(projectKeyOrId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(cloudid, projectKeyOrId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10757,6 +11196,7 @@ apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(projectKeyOr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectKeyOrId** | **String**| The project ID or project key (case sensitive). | 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value: | [optional] 
  **body** | [**InlineObject46**](InlineObject46.md)|  | [optional] 
@@ -10777,7 +11217,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet
 
-> InlineResponse20080 cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(projectKeyOrId)
+> InlineResponse20080 cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(cloudid, projectKeyOrId)
 
 
 
@@ -10793,8 +11233,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(projectKeyOrId, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(cloudid, projectKeyOrId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10808,6 +11249,7 @@ apiInstance.cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(projectKeyOrId,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectKeyOrId** | **String**| The project ID or project key (case sensitive). | 
 
 ### Return type
@@ -10826,7 +11268,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectSearchGet
 
-> InlineResponse20068 cloudidRestApi3ProjectSearchGet(opts)
+> InlineResponse20068 cloudidRestApi3ProjectSearchGet(cloudid, opts)
 
 
 
@@ -10842,6 +11284,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'action': "action_example", // String | Filter results by projects for which the calling user has permission to perform the given action. The view action corresponds with the Browse projects project permission, and the edit action corresponds with Administer project permissions.
   'categoryId': 56, // Number | The ID of the project's category. A complete list of category IDs can be found using the Get all project categories resource.
@@ -10852,7 +11295,7 @@ let opts = {
   'startAt': 56, // Number | The starting index of the first item returned in the page of results (page offset). The base index is 0.
   'typeKey': "typeKey_example" // String | Orders results by the project type. This parameter accepts multiple values separated by a comma. Valid values are business, service_desk, and software.
 };
-apiInstance.cloudidRestApi3ProjectSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10866,6 +11309,7 @@ apiInstance.cloudidRestApi3ProjectSearchGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **action** | **String**| Filter results by projects for which the calling user has permission to perform the given action. The view action corresponds with the Browse projects project permission, and the edit action corresponds with Administer project permissions. | [optional] 
  **categoryId** | **Number**| The ID of the project&#39;s category. A complete list of category IDs can be found using the Get all project categories resource. | [optional] 
  **expand** | **String**| Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma: | [optional] 
@@ -10891,7 +11335,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectTypeGet
 
-> [InlineResponse20069] cloudidRestApi3ProjectTypeGet()
+> [InlineResponse20069] cloudidRestApi3ProjectTypeGet(cloudid)
 
 
 
@@ -10907,7 +11351,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ProjectTypeGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ProjectTypeGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10918,7 +11363,10 @@ apiInstance.cloudidRestApi3ProjectTypeGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -10936,7 +11384,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet
 
-> InlineResponse20070 cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(projectTypeKey)
+> InlineResponse20070 cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(cloudid, projectTypeKey)
 
 
 
@@ -10952,8 +11400,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectTypeKey = "projectTypeKey_example"; // String | The key of the project type.
-apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(projectTypeKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(cloudid, projectTypeKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10967,6 +11416,7 @@ apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(projectTypeKey
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectTypeKey** | **String**| The key of the project type. | 
 
 ### Return type
@@ -10985,7 +11435,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectTypeProjectTypeKeyGet
 
-> InlineResponse20070 cloudidRestApi3ProjectTypeProjectTypeKeyGet(projectTypeKey)
+> InlineResponse20070 cloudidRestApi3ProjectTypeProjectTypeKeyGet(cloudid, projectTypeKey)
 
 
 
@@ -11001,8 +11451,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let projectTypeKey = "projectTypeKey_example"; // String | The key of the project type.
-apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyGet(projectTypeKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyGet(cloudid, projectTypeKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11016,6 +11467,7 @@ apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyGet(projectTypeKey, (error, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **projectTypeKey** | **String**| The key of the project type. | 
 
 ### Return type
@@ -11034,7 +11486,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectvalidateKeyGet
 
-> InlineResponse20081 cloudidRestApi3ProjectvalidateKeyGet(opts)
+> InlineResponse20081 cloudidRestApi3ProjectvalidateKeyGet(cloudid, opts)
 
 
 
@@ -11050,10 +11502,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The project key.
 };
-apiInstance.cloudidRestApi3ProjectvalidateKeyGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectvalidateKeyGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11067,6 +11520,7 @@ apiInstance.cloudidRestApi3ProjectvalidateKeyGet(opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **key** | **String**| The project key. | [optional] 
 
 ### Return type
@@ -11085,7 +11539,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectvalidateValidProjectKeyGet
 
-> InlineResponse20082 cloudidRestApi3ProjectvalidateValidProjectKeyGet(opts)
+> InlineResponse20082 cloudidRestApi3ProjectvalidateValidProjectKeyGet(cloudid, opts)
 
 
 
@@ -11101,10 +11555,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The project key.
 };
-apiInstance.cloudidRestApi3ProjectvalidateValidProjectKeyGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectvalidateValidProjectKeyGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11118,6 +11573,7 @@ apiInstance.cloudidRestApi3ProjectvalidateValidProjectKeyGet(opts, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **key** | **String**| The project key. | [optional] 
 
 ### Return type
@@ -11136,7 +11592,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ProjectvalidateValidProjectNameGet
 
-> InlineResponse20083 cloudidRestApi3ProjectvalidateValidProjectNameGet(opts)
+> InlineResponse20083 cloudidRestApi3ProjectvalidateValidProjectNameGet(cloudid, opts)
 
 
 
@@ -11152,10 +11608,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'name': "name_example" // String | The project name.
 };
-apiInstance.cloudidRestApi3ProjectvalidateValidProjectNameGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectvalidateValidProjectNameGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11169,6 +11626,7 @@ apiInstance.cloudidRestApi3ProjectvalidateValidProjectNameGet(opts, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **name** | **String**| The project name. | [optional] 
 
 ### Return type
@@ -11187,7 +11645,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ResolutionGet
 
-> [CloudidRestApi3FilterIdPermissionProjectProjectCategory] cloudidRestApi3ResolutionGet()
+> [CloudidRestApi3FilterIdPermissionProjectProjectCategory] cloudidRestApi3ResolutionGet(cloudid)
 
 
 
@@ -11203,7 +11661,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ResolutionGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ResolutionGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11214,7 +11673,10 @@ apiInstance.cloudidRestApi3ResolutionGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -11232,7 +11694,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3ResolutionIdGet
 
-> InlineResponse20112 cloudidRestApi3ResolutionIdGet(id)
+> InlineResponse20112 cloudidRestApi3ResolutionIdGet(cloudid, id)
 
 
 
@@ -11248,8 +11710,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue resolution value.
-apiInstance.cloudidRestApi3ResolutionIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ResolutionIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11263,6 +11726,7 @@ apiInstance.cloudidRestApi3ResolutionIdGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the issue resolution value. | 
 
 ### Return type
@@ -11281,7 +11745,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3RoleGet
 
-> [CloudidRestApi3FilterIdPermissionRole] cloudidRestApi3RoleGet()
+> [CloudidRestApi3FilterIdPermissionRole] cloudidRestApi3RoleGet(cloudid)
 
 
 
@@ -11297,7 +11761,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3RoleGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3RoleGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11308,7 +11773,10 @@ apiInstance.cloudidRestApi3RoleGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -11326,7 +11794,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3RoleIdActorsDelete
 
-> InlineResponse20084 cloudidRestApi3RoleIdActorsDelete(id, opts)
+> InlineResponse20084 cloudidRestApi3RoleIdActorsDelete(cloudid, id, opts)
 
 
 
@@ -11342,12 +11810,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let opts = {
   'group': "group_example", // String | The group name of the group to be removed as a default actor.
   'user': "user_example" // String | The user account ID of the user to remove as a default actor.
 };
-apiInstance.cloudidRestApi3RoleIdActorsDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdActorsDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11361,6 +11830,7 @@ apiInstance.cloudidRestApi3RoleIdActorsDelete(id, opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
  **group** | **String**| The group name of the group to be removed as a default actor. | [optional] 
  **user** | **String**| The user account ID of the user to remove as a default actor. | [optional] 
@@ -11381,7 +11851,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3RoleIdActorsGet
 
-> InlineResponse20084 cloudidRestApi3RoleIdActorsGet(id)
+> InlineResponse20084 cloudidRestApi3RoleIdActorsGet(cloudid, id)
 
 
 
@@ -11397,8 +11867,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
-apiInstance.cloudidRestApi3RoleIdActorsGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdActorsGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11412,6 +11883,7 @@ apiInstance.cloudidRestApi3RoleIdActorsGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
 
 ### Return type
@@ -11430,7 +11902,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3RoleIdActorsPost
 
-> InlineResponse20084 cloudidRestApi3RoleIdActorsPost(id, opts)
+> InlineResponse20084 cloudidRestApi3RoleIdActorsPost(cloudid, id, opts)
 
 
 
@@ -11446,11 +11918,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let opts = {
   'body': new Jira.InlineObject52() // InlineObject52 | 
 };
-apiInstance.cloudidRestApi3RoleIdActorsPost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdActorsPost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11464,6 +11937,7 @@ apiInstance.cloudidRestApi3RoleIdActorsPost(id, opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
  **body** | [**InlineObject52**](InlineObject52.md)|  | [optional] 
 
@@ -11483,7 +11957,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3RoleIdDelete
 
-> cloudidRestApi3RoleIdDelete(id, opts)
+> cloudidRestApi3RoleIdDelete(cloudid, id, opts)
 
 
 
@@ -11499,11 +11973,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role to delete. Use Get all project roles to get a list of project role IDs.
 let opts = {
   'swap': 56 // Number | The ID of the project role that will replace the one being deleted.
 };
-apiInstance.cloudidRestApi3RoleIdDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11517,6 +11992,7 @@ apiInstance.cloudidRestApi3RoleIdDelete(id, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role to delete. Use Get all project roles to get a list of project role IDs. | 
  **swap** | **Number**| The ID of the project role that will replace the one being deleted. | [optional] 
 
@@ -11536,7 +12012,7 @@ null (empty response body)
 
 ## cloudidRestApi3RoleIdGet
 
-> InlineResponse20076 cloudidRestApi3RoleIdGet(id)
+> InlineResponse20076 cloudidRestApi3RoleIdGet(cloudid, id)
 
 
 
@@ -11552,8 +12028,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
-apiInstance.cloudidRestApi3RoleIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11567,6 +12044,7 @@ apiInstance.cloudidRestApi3RoleIdGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
 
 ### Return type
@@ -11585,7 +12063,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3RoleIdPost
 
-> InlineResponse20076 cloudidRestApi3RoleIdPost(id, opts)
+> InlineResponse20076 cloudidRestApi3RoleIdPost(cloudid, id, opts)
 
 
 
@@ -11601,11 +12079,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let opts = {
   'body': new Jira.InlineObject51() // InlineObject51 | 
 };
-apiInstance.cloudidRestApi3RoleIdPost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdPost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11619,6 +12098,7 @@ apiInstance.cloudidRestApi3RoleIdPost(id, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
  **body** | [**InlineObject51**](InlineObject51.md)|  | [optional] 
 
@@ -11638,7 +12118,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3RoleIdPut
 
-> InlineResponse20076 cloudidRestApi3RoleIdPut(id, opts)
+> InlineResponse20076 cloudidRestApi3RoleIdPut(cloudid, id, opts)
 
 
 
@@ -11654,11 +12134,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let opts = {
   'body': new Jira.InlineObject50() // InlineObject50 | 
 };
-apiInstance.cloudidRestApi3RoleIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11672,6 +12153,7 @@ apiInstance.cloudidRestApi3RoleIdPut(id, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the project role. Use Get all project roles to get a list of project role IDs. | 
  **body** | [**InlineObject50**](InlineObject50.md)|  | [optional] 
 
@@ -11691,7 +12173,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3RolePost
 
-> InlineResponse20079 cloudidRestApi3RolePost(opts)
+> InlineResponse20079 cloudidRestApi3RolePost(cloudid, opts)
 
 
 
@@ -11707,10 +12189,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject49() // InlineObject49 | 
 };
-apiInstance.cloudidRestApi3RolePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RolePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11724,6 +12207,7 @@ apiInstance.cloudidRestApi3RolePost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject49**](InlineObject49.md)|  | [optional] 
 
 ### Return type
@@ -11742,7 +12226,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ScreensAddToDefaultFieldIdPost
 
-> cloudidRestApi3ScreensAddToDefaultFieldIdPost(fieldId)
+> cloudidRestApi3ScreensAddToDefaultFieldIdPost(cloudid, fieldId)
 
 
 
@@ -11758,8 +12242,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let fieldId = "fieldId_example"; // String | The ID of the field.
-apiInstance.cloudidRestApi3ScreensAddToDefaultFieldIdPost(fieldId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensAddToDefaultFieldIdPost(cloudid, fieldId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11773,6 +12258,7 @@ apiInstance.cloudidRestApi3ScreensAddToDefaultFieldIdPost(fieldId, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **fieldId** | **String**| The ID of the field. | 
 
 ### Return type
@@ -11791,7 +12277,7 @@ null (empty response body)
 
 ## cloudidRestApi3ScreensGet
 
-> cloudidRestApi3ScreensGet(opts)
+> cloudidRestApi3ScreensGet(cloudid, opts)
 
 
 
@@ -11807,11 +12293,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 100.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3ScreensGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11825,6 +12312,7 @@ apiInstance.cloudidRestApi3ScreensGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 100. | [optional] 
  **startAt** | **Number**| The index of the first item to return in a page of results (page offset). | [optional] 
 
@@ -11844,7 +12332,7 @@ null (empty response body)
 
 ## cloudidRestApi3ScreensScreenIdAvailableFieldsGet
 
-> cloudidRestApi3ScreensScreenIdAvailableFieldsGet(screenId)
+> cloudidRestApi3ScreensScreenIdAvailableFieldsGet(cloudid, screenId)
 
 
 
@@ -11860,8 +12348,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let screenId = 56; // Number | The ID of the screen.
-apiInstance.cloudidRestApi3ScreensScreenIdAvailableFieldsGet(screenId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdAvailableFieldsGet(cloudid, screenId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11875,6 +12364,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdAvailableFieldsGet(screenId, (error, d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **screenId** | **Number**| The ID of the screen. | 
 
 ### Return type
@@ -11893,7 +12383,7 @@ null (empty response body)
 
 ## cloudidRestApi3ScreensScreenIdTabsGet
 
-> cloudidRestApi3ScreensScreenIdTabsGet(screenId, opts)
+> cloudidRestApi3ScreensScreenIdTabsGet(cloudid, screenId, opts)
 
 
 
@@ -11909,11 +12399,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let screenId = 56; // Number | The ID of the screen.
 let opts = {
   'projectKey': "projectKey_example" // String | The key of the project.
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsGet(screenId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsGet(cloudid, screenId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11927,6 +12418,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdTabsGet(screenId, opts, (error, data, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **screenId** | **Number**| The ID of the screen. | 
  **projectKey** | **String**| The key of the project. | [optional] 
 
@@ -11946,7 +12438,7 @@ null (empty response body)
 
 ## cloudidRestApi3ScreensScreenIdTabsPost
 
-> InlineResponse20085 cloudidRestApi3ScreensScreenIdTabsPost(screenId, opts)
+> InlineResponse20085 cloudidRestApi3ScreensScreenIdTabsPost(cloudid, screenId, opts)
 
 
 
@@ -11962,11 +12454,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let screenId = 56; // Number | The ID of the screen.
 let opts = {
   'body': new Jira.InlineObject53() // InlineObject53 | 
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsPost(screenId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsPost(cloudid, screenId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11980,6 +12473,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdTabsPost(screenId, opts, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **screenId** | **Number**| The ID of the screen. | 
  **body** | [**InlineObject53**](InlineObject53.md)|  | [optional] 
 
@@ -11999,7 +12493,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ScreensScreenIdTabsTabIdDelete
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdDelete(screenId, tabId)
+> cloudidRestApi3ScreensScreenIdTabsTabIdDelete(cloudid, screenId, tabId)
 
 
 
@@ -12015,9 +12509,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdDelete(screenId, tabId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdDelete(cloudid, screenId, tabId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12031,6 +12526,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdDelete(screenId, tabId, (erro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **screenId** | **Number**| The ID of the screen. | 
  **tabId** | **Number**| The ID of the screen tab. | 
 
@@ -12050,7 +12546,7 @@ null (empty response body)
 
 ## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(screenId, tabId, opts)
+> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(cloudid, screenId, tabId, opts)
 
 
 
@@ -12066,12 +12562,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'projectKey': "projectKey_example" // String | The key of the project.
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(screenId, tabId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(cloudid, screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12085,6 +12582,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(screenId, tabId, op
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **screenId** | **Number**| The ID of the screen. | 
  **tabId** | **Number**| The ID of the screen tab. | 
  **projectKey** | **String**| The key of the project. | [optional] 
@@ -12105,7 +12603,7 @@ null (empty response body)
 
 ## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(id, screenId, tabId)
+> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(cloudid, id, screenId, tabId)
 
 
 
@@ -12121,10 +12619,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the field.
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(id, screenId, tabId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(cloudid, id, screenId, tabId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12138,6 +12637,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(id, screenId, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the field. | 
  **screenId** | **Number**| The ID of the screen. | 
  **tabId** | **Number**| The ID of the screen tab. | 
@@ -12158,7 +12658,7 @@ null (empty response body)
 
 ## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(id, screenId, tabId, opts)
+> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(cloudid, id, screenId, tabId, opts)
 
 
 
@@ -12174,13 +12674,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the field.
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'body': new Jira.InlineObject56() // InlineObject56 | 
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(id, screenId, tabId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(cloudid, id, screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12194,6 +12695,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(id, screenId
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the field. | 
  **screenId** | **Number**| The ID of the screen. | 
  **tabId** | **Number**| The ID of the screen tab. | 
@@ -12215,7 +12717,7 @@ null (empty response body)
 
 ## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost
 
-> InlineResponse20086 cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(screenId, tabId, opts)
+> InlineResponse20086 cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(cloudid, screenId, tabId, opts)
 
 
 
@@ -12231,12 +12733,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'body': new Jira.InlineObject55() // InlineObject55 | 
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(screenId, tabId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(cloudid, screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12250,6 +12753,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(screenId, tabId, o
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **screenId** | **Number**| The ID of the screen. | 
  **tabId** | **Number**| The ID of the screen tab. | 
  **body** | [**InlineObject55**](InlineObject55.md)|  | [optional] 
@@ -12270,7 +12774,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(pos, screenId, tabId)
+> cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(cloudid, pos, screenId, tabId)
 
 
 
@@ -12286,10 +12790,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let pos = 56; // Number | The position of tab. The base index is 0.
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(pos, screenId, tabId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(cloudid, pos, screenId, tabId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12303,6 +12808,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(pos, screenId, ta
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **pos** | **Number**| The position of tab. The base index is 0. | 
  **screenId** | **Number**| The ID of the screen. | 
  **tabId** | **Number**| The ID of the screen tab. | 
@@ -12323,7 +12829,7 @@ null (empty response body)
 
 ## cloudidRestApi3ScreensScreenIdTabsTabIdPut
 
-> InlineResponse20085 cloudidRestApi3ScreensScreenIdTabsTabIdPut(screenId, tabId, opts)
+> InlineResponse20085 cloudidRestApi3ScreensScreenIdTabsTabIdPut(cloudid, screenId, tabId, opts)
 
 
 
@@ -12339,12 +12845,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'body': new Jira.InlineObject54() // InlineObject54 | 
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdPut(screenId, tabId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdPut(cloudid, screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12358,6 +12865,7 @@ apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdPut(screenId, tabId, opts, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **screenId** | **Number**| The ID of the screen. | 
  **tabId** | **Number**| The ID of the screen tab. | 
  **body** | [**InlineObject54**](InlineObject54.md)|  | [optional] 
@@ -12378,7 +12886,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3SearchGet
 
-> InlineResponse20087 cloudidRestApi3SearchGet(opts)
+> InlineResponse20087 cloudidRestApi3SearchGet(cloudid, opts)
 
 
 
@@ -12394,6 +12902,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about issues in the response. This parameter accepts multiple values separated by a comma:
   'fields': ["null"], // [String] | A comma-separated list of fields to return for each issue, use it to retrieve a subset of fields. Allowed values:
@@ -12404,7 +12913,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in the page of results (page offset).
   'validateQuery': "validateQuery_example" // String | Determines how to validate the JQL query and treat the validation results. Supported values are:
 };
-apiInstance.cloudidRestApi3SearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3SearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12418,6 +12927,7 @@ apiInstance.cloudidRestApi3SearchGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about issues in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **fields** | [**[String]**](String.md)| A comma-separated list of fields to return for each issue, use it to retrieve a subset of fields. Allowed values: | [optional] 
  **fieldsByKeys** | **Boolean**| Reference fields by their key (rather than ID). | [optional] 
@@ -12443,7 +12953,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3SearchPost
 
-> InlineResponse20087 cloudidRestApi3SearchPost(opts)
+> InlineResponse20087 cloudidRestApi3SearchPost(cloudid, opts)
 
 
 
@@ -12459,10 +12969,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject57() // InlineObject57 | 
 };
-apiInstance.cloudidRestApi3SearchPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3SearchPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12476,6 +12987,7 @@ apiInstance.cloudidRestApi3SearchPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject57**](InlineObject57.md)|  | [optional] 
 
 ### Return type
@@ -12494,7 +13006,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3SecuritylevelIdGet
 
-> InlineResponse20112 cloudidRestApi3SecuritylevelIdGet(id)
+> InlineResponse20112 cloudidRestApi3SecuritylevelIdGet(cloudid, id)
 
 
 
@@ -12510,8 +13022,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue security level.
-apiInstance.cloudidRestApi3SecuritylevelIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3SecuritylevelIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12525,6 +13038,7 @@ apiInstance.cloudidRestApi3SecuritylevelIdGet(id, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the issue security level. | 
 
 ### Return type
@@ -12543,7 +13057,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3ServerInfoGet
 
-> InlineResponse20088 cloudidRestApi3ServerInfoGet()
+> InlineResponse20088 cloudidRestApi3ServerInfoGet(cloudid)
 
 
 
@@ -12559,7 +13073,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3ServerInfoGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3ServerInfoGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12570,7 +13085,10 @@ apiInstance.cloudidRestApi3ServerInfoGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -12588,7 +13106,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3SettingsColumnsGet
 
-> [InlineResponse20030] cloudidRestApi3SettingsColumnsGet()
+> [InlineResponse20030] cloudidRestApi3SettingsColumnsGet(cloudid)
 
 
 
@@ -12604,7 +13122,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3SettingsColumnsGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3SettingsColumnsGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12615,7 +13134,10 @@ apiInstance.cloudidRestApi3SettingsColumnsGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -12633,7 +13155,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3SettingsColumnsPut
 
-> cloudidRestApi3SettingsColumnsPut()
+> cloudidRestApi3SettingsColumnsPut(cloudid)
 
 
 
@@ -12649,7 +13171,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3SettingsColumnsPut((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3SettingsColumnsPut(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12660,7 +13183,10 @@ apiInstance.cloudidRestApi3SettingsColumnsPut((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -12678,7 +13204,7 @@ null (empty response body)
 
 ## cloudidRestApi3StatusGet
 
-> [InlineResponse20045To] cloudidRestApi3StatusGet()
+> [InlineResponse20045To] cloudidRestApi3StatusGet(cloudid)
 
 
 
@@ -12694,7 +13220,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3StatusGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3StatusGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12705,7 +13232,10 @@ apiInstance.cloudidRestApi3StatusGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -12723,7 +13253,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3StatusIdOrNameGet
 
-> InlineResponse20089 cloudidRestApi3StatusIdOrNameGet(idOrName)
+> InlineResponse20089 cloudidRestApi3StatusIdOrNameGet(cloudid, idOrName)
 
 
 
@@ -12739,8 +13269,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let idOrName = "idOrName_example"; // String | The ID or name of the status.
-apiInstance.cloudidRestApi3StatusIdOrNameGet(idOrName, (error, data, response) => {
+apiInstance.cloudidRestApi3StatusIdOrNameGet(cloudid, idOrName, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12754,6 +13285,7 @@ apiInstance.cloudidRestApi3StatusIdOrNameGet(idOrName, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **idOrName** | **String**| The ID or name of the status. | 
 
 ### Return type
@@ -12772,7 +13304,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3StatuscategoryGet
 
-> [InlineResponse20045ToStatusCategory] cloudidRestApi3StatuscategoryGet()
+> [InlineResponse20045ToStatusCategory] cloudidRestApi3StatuscategoryGet(cloudid)
 
 
 
@@ -12788,7 +13320,8 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.cloudidRestApi3StatuscategoryGet((error, data, response) => {
+let cloudid = null; // Object | Cloudi of the project
+apiInstance.cloudidRestApi3StatuscategoryGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12799,7 +13332,10 @@ apiInstance.cloudidRestApi3StatuscategoryGet((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
 
 ### Return type
 
@@ -12817,7 +13353,7 @@ This endpoint does not need any parameter.
 
 ## cloudidRestApi3StatuscategoryIdOrKeyGet
 
-> InlineResponse20090 cloudidRestApi3StatuscategoryIdOrKeyGet(idOrKey)
+> InlineResponse20090 cloudidRestApi3StatuscategoryIdOrKeyGet(cloudid, idOrKey)
 
 
 
@@ -12833,8 +13369,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let idOrKey = "idOrKey_example"; // String | The ID or key of the status category.
-apiInstance.cloudidRestApi3StatuscategoryIdOrKeyGet(idOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3StatuscategoryIdOrKeyGet(cloudid, idOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12848,6 +13385,7 @@ apiInstance.cloudidRestApi3StatuscategoryIdOrKeyGet(idOrKey, (error, data, respo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **idOrKey** | **String**| The ID or key of the status category. | 
 
 ### Return type
@@ -12866,7 +13404,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3TaskTaskIdCancelPost
 
-> cloudidRestApi3TaskTaskIdCancelPost(taskId)
+> cloudidRestApi3TaskTaskIdCancelPost(cloudid, taskId)
 
 
 
@@ -12882,8 +13420,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let taskId = "taskId_example"; // String | The ID of the task.
-apiInstance.cloudidRestApi3TaskTaskIdCancelPost(taskId, (error, data, response) => {
+apiInstance.cloudidRestApi3TaskTaskIdCancelPost(cloudid, taskId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12897,6 +13436,7 @@ apiInstance.cloudidRestApi3TaskTaskIdCancelPost(taskId, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **taskId** | **String**| The ID of the task. | 
 
 ### Return type
@@ -12915,7 +13455,7 @@ null (empty response body)
 
 ## cloudidRestApi3TaskTaskIdGet
 
-> InlineResponse20091 cloudidRestApi3TaskTaskIdGet(taskId)
+> InlineResponse20091 cloudidRestApi3TaskTaskIdGet(cloudid, taskId)
 
 
 
@@ -12931,8 +13471,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let taskId = "taskId_example"; // String | The ID of the task.
-apiInstance.cloudidRestApi3TaskTaskIdGet(taskId, (error, data, response) => {
+apiInstance.cloudidRestApi3TaskTaskIdGet(cloudid, taskId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12946,6 +13487,7 @@ apiInstance.cloudidRestApi3TaskTaskIdGet(taskId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **taskId** | **String**| The ID of the task. | 
 
 ### Return type
@@ -12964,7 +13506,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet
 
-> InlineResponse20072 cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(entityId, type)
+> InlineResponse20072 cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(cloudid, entityId, type)
 
 
 
@@ -12980,9 +13522,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let entityId = "entityId_example"; // String | The ID of the entity item.
 let type = "type_example"; // String | The type of the entity. Valid values are project and issuetype.
-apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(entityId, type, (error, data, response) => {
+apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(cloudid, entityId, type, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12996,6 +13539,7 @@ apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(entityId, typ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **entityId** | **String**| The ID of the entity item. | 
  **type** | **String**| The type of the entity. Valid values are project and issuetype. | 
 
@@ -13015,7 +13559,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost
 
-> InlineResponse2017 cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(entityId, type, opts)
+> InlineResponse2017 cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(cloudid, entityId, type, opts)
 
 
 
@@ -13031,6 +13575,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let entityId = "entityId_example"; // String | The ID of the entity item.
 let type = "type_example"; // String | The type of the entity. Valid values are project and issuetype.
 let opts = {
@@ -13038,7 +13583,7 @@ let opts = {
   'x': 56, // Number | The X coordinate of the top-left corner of the crop region.
   'y': 56 // Number | The Y coordinate of the top-left corner of the crop region.
 };
-apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(entityId, type, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(cloudid, entityId, type, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13052,6 +13597,7 @@ apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(entityId, ty
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **entityId** | **String**| The ID of the entity item. | 
  **type** | **String**| The type of the entity. Valid values are project and issuetype. | 
  **size** | **Number**| The length of each side of the crop region. | [optional] 
@@ -13074,7 +13620,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete
 
-> cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(id, owningObjectId, type)
+> cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(cloudid, id, owningObjectId, type)
 
 
 
@@ -13090,10 +13636,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the avatar.
 let owningObjectId = "owningObjectId_example"; // String | The ID of the entity item.
 let type = "type_example"; // String | The type of the entity. Valid values are project and issuetype.
-apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(id, owningObjectId, type, (error, data, response) => {
+apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(cloudid, id, owningObjectId, type, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13107,6 +13654,7 @@ apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDel
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the avatar. | 
  **owningObjectId** | **String**| The ID of the entity item. | 
  **type** | **String**| The type of the entity. Valid values are project and issuetype. | 
@@ -13127,7 +13675,7 @@ null (empty response body)
 
 ## cloudidRestApi3UserAssignableMultiProjectSearchGet
 
-> [InlineResponse2004Author] cloudidRestApi3UserAssignableMultiProjectSearchGet(opts)
+> [InlineResponse2004Author] cloudidRestApi3UserAssignableMultiProjectSearchGet(cloudid, opts)
 
 
 
@@ -13143,6 +13691,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1000.
   'projectKeys': "projectKeys_example", // String | A comma-separated list of project keys (case sensitive).
@@ -13150,7 +13699,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark.
 };
-apiInstance.cloudidRestApi3UserAssignableMultiProjectSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserAssignableMultiProjectSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13164,6 +13713,7 @@ apiInstance.cloudidRestApi3UserAssignableMultiProjectSearchGet(opts, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 1000. | [optional] 
  **projectKeys** | **String**| A comma-separated list of project keys (case sensitive). | [optional] 
  **query** | **String**| A query string that is matched against user attributes, such as key, name, displayName, and emailAddress, to find relevant users. The string can match any part of the attribute&#39;s value. For example, query&#x3D;john matches a user with a displayName of John Smith and a user with an emailAddress of jane.johnson@example.com. | [optional] 
@@ -13186,7 +13736,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserAssignableSearchGet
 
-> InlineResponse20060 cloudidRestApi3UserAssignableSearchGet(opts)
+> InlineResponse20060 cloudidRestApi3UserAssignableSearchGet(cloudid, opts)
 
 
 
@@ -13202,6 +13752,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'actionDescriptorId': 56, // Number | The ID of the transition.
   'issueKey': "issueKey_example", // String | The key of the issue. Required, unless project is specified.
@@ -13211,7 +13762,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserAssignableSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserAssignableSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13225,6 +13776,7 @@ apiInstance.cloudidRestApi3UserAssignableSearchGet(opts, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **actionDescriptorId** | **Number**| The ID of the transition. | [optional] 
  **issueKey** | **String**| The key of the issue. Required, unless project is specified. | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 1000. | [optional] 
@@ -13249,7 +13801,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserBulkGet
 
-> InlineResponse20092 cloudidRestApi3UserBulkGet(opts)
+> InlineResponse20092 cloudidRestApi3UserBulkGet(cloudid, opts)
 
 
 
@@ -13265,13 +13817,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': ["null"], // [String] | Comma-separated list of user keys. Required if username isn't provided.
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 200.
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': ["null"] // [String] | Comma-separated list of usernames. Required if key isn't provided.
 };
-apiInstance.cloudidRestApi3UserBulkGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserBulkGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13285,6 +13838,7 @@ apiInstance.cloudidRestApi3UserBulkGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **key** | [**[String]**](String.md)| Comma-separated list of user keys. Required if username isn&#39;t provided. | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 200. | [optional] 
  **startAt** | **Number**| The index of the first item to return in a page of results (page offset). | [optional] 
@@ -13306,7 +13860,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserColumnsDelete
 
-> cloudidRestApi3UserColumnsDelete(opts)
+> cloudidRestApi3UserColumnsDelete(cloudid, opts)
 
 
 
@@ -13322,11 +13876,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserColumnsDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserColumnsDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13340,6 +13895,7 @@ apiInstance.cloudidRestApi3UserColumnsDelete(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountId** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified. | [optional] 
  **username** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified. | [optional] 
 
@@ -13359,7 +13915,7 @@ null (empty response body)
 
 ## cloudidRestApi3UserColumnsGet
 
-> cloudidRestApi3UserColumnsGet(opts)
+> cloudidRestApi3UserColumnsGet(cloudid, opts)
 
 
 
@@ -13375,11 +13931,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserColumnsGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserColumnsGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13393,6 +13950,7 @@ apiInstance.cloudidRestApi3UserColumnsGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountId** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified. | [optional] 
  **username** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified. | [optional] 
 
@@ -13412,7 +13970,7 @@ null (empty response body)
 
 ## cloudidRestApi3UserColumnsPut
 
-> cloudidRestApi3UserColumnsPut(opts)
+> cloudidRestApi3UserColumnsPut(cloudid, opts)
 
 
 
@@ -13428,10 +13986,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example" // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
 };
-apiInstance.cloudidRestApi3UserColumnsPut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserColumnsPut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13445,6 +14004,7 @@ apiInstance.cloudidRestApi3UserColumnsPut(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountId** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified. | [optional] 
 
 ### Return type
@@ -13463,7 +14023,7 @@ null (empty response body)
 
 ## cloudidRestApi3UserDelete
 
-> cloudidRestApi3UserDelete(opts)
+> cloudidRestApi3UserDelete(cloudid, opts)
 
 
 
@@ -13479,12 +14039,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
   'key': "key_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13498,6 +14059,7 @@ apiInstance.cloudidRestApi3UserDelete(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountId** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified. | [optional] 
  **key** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified. | [optional] 
  **username** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified. | [optional] 
@@ -13518,7 +14080,7 @@ null (empty response body)
 
 ## cloudidRestApi3UserGet
 
-> InlineResponse20060 cloudidRestApi3UserGet(opts)
+> InlineResponse20060 cloudidRestApi3UserGet(cloudid, opts)
 
 
 
@@ -13534,13 +14096,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
   'expand': "expand_example", // String | Use expand to include additional information about users in the response. This parameter accepts multiple values separated by a comma:
   'key': "key_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13554,6 +14117,7 @@ apiInstance.cloudidRestApi3UserGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountId** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified. | [optional] 
  **expand** | **String**| Use expand to include additional information about users in the response. This parameter accepts multiple values separated by a comma: | [optional] 
  **key** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified. | [optional] 
@@ -13575,7 +14139,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserGroupsGet
 
-> InlineResponse20093 cloudidRestApi3UserGroupsGet(opts)
+> InlineResponse20093 cloudidRestApi3UserGroupsGet(cloudid, opts)
 
 
 
@@ -13591,12 +14155,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example", // String | The account ID of the user.
   'key': "key_example", // String | The key of the user.
   'username': "username_example" // String | The username of the user. Deprecated in favour of accountId.
 };
-apiInstance.cloudidRestApi3UserGroupsGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserGroupsGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13610,6 +14175,7 @@ apiInstance.cloudidRestApi3UserGroupsGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountId** | **String**| The account ID of the user. | [optional] 
  **key** | **String**| The key of the user. | [optional] 
  **username** | **String**| The username of the user. Deprecated in favour of accountId. | [optional] 
@@ -13630,7 +14196,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserPermissionSearchGet
 
-> [InlineResponse2004Author] cloudidRestApi3UserPermissionSearchGet(opts)
+> [InlineResponse2004Author] cloudidRestApi3UserPermissionSearchGet(cloudid, opts)
 
 
 
@@ -13646,6 +14212,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'issueKey': "issueKey_example", // String | The issue key for the issue.
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1000.
@@ -13655,7 +14222,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark.
 };
-apiInstance.cloudidRestApi3UserPermissionSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPermissionSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13669,6 +14236,7 @@ apiInstance.cloudidRestApi3UserPermissionSearchGet(opts, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueKey** | **String**| The issue key for the issue. | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 1000. | [optional] 
  **permissions** | **String**| A comma-separated list of permissions. The valid permissions are: | [optional] 
@@ -13693,7 +14261,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserPickerGet
 
-> InlineResponse20094 cloudidRestApi3UserPickerGet(opts)
+> InlineResponse20094 cloudidRestApi3UserPickerGet(cloudid, opts)
 
 
 
@@ -13709,6 +14277,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'exclude': ["null"], // [String] | This parameter has been deprecated due to privacy changes. Use excludeAccountIds instead. See the migration guide for details. A comma-separated list of usernames to exclude from the search results.
   'excludeAccountIds': ["null"], // [String] | A comma-separated list of account IDs to exclude from the search results.
@@ -13716,7 +14285,7 @@ let opts = {
   'query': "query_example", // String | A search input that is matched against appropriate user attributes to find relevant users.
   'showAvatar': true // Boolean | Include the URI to the user's avatar.
 };
-apiInstance.cloudidRestApi3UserPickerGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPickerGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13730,6 +14299,7 @@ apiInstance.cloudidRestApi3UserPickerGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **exclude** | [**[String]**](String.md)| This parameter has been deprecated due to privacy changes. Use excludeAccountIds instead. See the migration guide for details. A comma-separated list of usernames to exclude from the search results. | [optional] 
  **excludeAccountIds** | [**[String]**](String.md)| A comma-separated list of account IDs to exclude from the search results. | [optional] 
  **maxResults** | **Number**| The maximum number of items to return. Maximum is 1000. The total number of matched users is returned in total. | [optional] 
@@ -13752,7 +14322,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserPost
 
-> InlineResponse20060 cloudidRestApi3UserPost(opts)
+> InlineResponse20060 cloudidRestApi3UserPost(cloudid, opts)
 
 
 
@@ -13768,10 +14338,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject58() // InlineObject58 | 
 };
-apiInstance.cloudidRestApi3UserPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13785,6 +14356,7 @@ apiInstance.cloudidRestApi3UserPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject58**](InlineObject58.md)|  | [optional] 
 
 ### Return type
@@ -13803,7 +14375,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3UserPropertiesGet(opts)
+> InlineResponse20010 cloudidRestApi3UserPropertiesGet(cloudid, opts)
 
 
 
@@ -13819,12 +14391,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserPropertiesGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPropertiesGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13838,6 +14411,7 @@ apiInstance.cloudidRestApi3UserPropertiesGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **accountId** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified. | [optional] 
  **userKey** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified. | [optional] 
  **username** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified. | [optional] 
@@ -13858,7 +14432,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserPropertiesPropertyKeyDelete
 
-> cloudidRestApi3UserPropertiesPropertyKeyDelete(propertyKey, opts)
+> cloudidRestApi3UserPropertiesPropertyKeyDelete(cloudid, propertyKey, opts)
 
 
 
@@ -13874,13 +14448,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let propertyKey = "propertyKey_example"; // String | The key of the user's property.
 let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserPropertiesPropertyKeyDelete(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPropertiesPropertyKeyDelete(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13894,6 +14469,7 @@ apiInstance.cloudidRestApi3UserPropertiesPropertyKeyDelete(propertyKey, opts, (e
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **propertyKey** | **String**| The key of the user&#39;s property. | 
  **accountId** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified. | [optional] 
  **userKey** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. | [optional] 
@@ -13915,7 +14491,7 @@ null (empty response body)
 
 ## cloudidRestApi3UserPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3UserPropertiesPropertyKeyGet(propertyKey, opts)
+> InlineResponse20011 cloudidRestApi3UserPropertiesPropertyKeyGet(cloudid, propertyKey, opts)
 
 
 
@@ -13931,13 +14507,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let propertyKey = "propertyKey_example"; // String | The key of the user's property.
 let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserPropertiesPropertyKeyGet(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPropertiesPropertyKeyGet(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13951,6 +14528,7 @@ apiInstance.cloudidRestApi3UserPropertiesPropertyKeyGet(propertyKey, opts, (erro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **propertyKey** | **String**| The key of the user&#39;s property. | 
  **accountId** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified. | [optional] 
  **userKey** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. | [optional] 
@@ -13972,7 +14550,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserPropertiesPropertyKeyPut
 
-> cloudidRestApi3UserPropertiesPropertyKeyPut(propertyKey, opts)
+> cloudidRestApi3UserPropertiesPropertyKeyPut(cloudid, propertyKey, opts)
 
 
 
@@ -13988,13 +14566,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let propertyKey = "propertyKey_example"; // String | The key of the user's property. The maximum length of the key is 255 bytes.
 let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserPropertiesPropertyKeyPut(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPropertiesPropertyKeyPut(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14008,6 +14587,7 @@ apiInstance.cloudidRestApi3UserPropertiesPropertyKeyPut(propertyKey, opts, (erro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **propertyKey** | **String**| The key of the user&#39;s property. The maximum length of the key is 255 bytes. | 
  **accountId** | **String**| The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified. | [optional] 
  **userKey** | **String**| This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified. | [optional] 
@@ -14029,7 +14609,7 @@ null (empty response body)
 
 ## cloudidRestApi3UserSearchGet
 
-> [InlineResponse2004Author] cloudidRestApi3UserSearchGet(opts)
+> [InlineResponse2004Author] cloudidRestApi3UserSearchGet(cloudid, opts)
 
 
 
@@ -14045,6 +14625,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'includeActive': true, // Boolean | Include active users.
   'includeInactive': true, // Boolean | Include inactive users.
@@ -14054,7 +14635,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14068,6 +14649,7 @@ apiInstance.cloudidRestApi3UserSearchGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **includeActive** | **Boolean**| Include active users. | [optional] 
  **includeInactive** | **Boolean**| Include inactive users. | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 1000. | [optional] 
@@ -14092,7 +14674,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3UserSearchQueryGet
 
-> cloudidRestApi3UserSearchQueryGet(opts)
+> cloudidRestApi3UserSearchQueryGet(cloudid, opts)
 
 
 
@@ -14108,13 +14690,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'includeInactive': true, // Boolean | Include inactive users in the results.
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1000.
   'query': "query_example", // String | The search query.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3UserSearchQueryGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserSearchQueryGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14128,6 +14711,7 @@ apiInstance.cloudidRestApi3UserSearchQueryGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **includeInactive** | **Boolean**| Include inactive users in the results. | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 1000. | [optional] 
  **query** | **String**| The search query. | [optional] 
@@ -14149,7 +14733,7 @@ null (empty response body)
 
 ## cloudidRestApi3UserSearchQueryKeyGet
 
-> cloudidRestApi3UserSearchQueryKeyGet(opts)
+> cloudidRestApi3UserSearchQueryKeyGet(cloudid, opts)
 
 
 
@@ -14165,13 +14749,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'includeInactive': true, // Boolean | Include inactive users in the results.
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1000.
   'query': "query_example", // String | The search query.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3UserSearchQueryKeyGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserSearchQueryKeyGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14185,6 +14770,7 @@ apiInstance.cloudidRestApi3UserSearchQueryKeyGet(opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **includeInactive** | **Boolean**| Include inactive users in the results. | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 1000. | [optional] 
  **query** | **String**| The search query. | [optional] 
@@ -14206,7 +14792,7 @@ null (empty response body)
 
 ## cloudidRestApi3UserViewissueSearchGet
 
-> [InlineResponse2004Author] cloudidRestApi3UserViewissueSearchGet(opts)
+> [InlineResponse2004Author] cloudidRestApi3UserViewissueSearchGet(cloudid, opts)
 
 
 
@@ -14222,6 +14808,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'issueKey': "issueKey_example", // String | The issue key for the issue. Required, unless projectKey is specified.
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1000.
@@ -14230,7 +14817,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserViewissueSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserViewissueSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14244,6 +14831,7 @@ apiInstance.cloudidRestApi3UserViewissueSearchGet(opts, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **issueKey** | **String**| The issue key for the issue. Required, unless projectKey is specified. | [optional] 
  **maxResults** | **Number**| The maximum number of items to return per page. Maximum is 1000. | [optional] 
  **projectKey** | **String**| The project key for the project (case sensitive). Required, unless issueKey is specified. | [optional] 
@@ -14267,7 +14855,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3VersionIdDelete
 
-> cloudidRestApi3VersionIdDelete(id, opts)
+> cloudidRestApi3VersionIdDelete(cloudid, id, opts)
 
 
 
@@ -14283,12 +14871,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version.
 let opts = {
   'moveAffectedIssuesTo': "moveAffectedIssuesTo_example", // String | The ID of the version to update affectedVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
   'moveFixIssuesTo': "moveFixIssuesTo_example" // String | The ID of the version to update fixVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
 };
-apiInstance.cloudidRestApi3VersionIdDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14302,6 +14891,7 @@ apiInstance.cloudidRestApi3VersionIdDelete(id, opts, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the version. | 
  **moveAffectedIssuesTo** | **String**| The ID of the version to update affectedVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted. | [optional] 
  **moveFixIssuesTo** | **String**| The ID of the version to update fixVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted. | [optional] 
@@ -14322,7 +14912,7 @@ null (empty response body)
 
 ## cloudidRestApi3VersionIdGet
 
-> InlineResponse20096 cloudidRestApi3VersionIdGet(id, opts)
+> InlineResponse20096 cloudidRestApi3VersionIdGet(cloudid, id, opts)
 
 
 
@@ -14338,11 +14928,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about version in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3VersionIdGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14356,6 +14947,7 @@ apiInstance.cloudidRestApi3VersionIdGet(id, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the version. | 
  **expand** | **String**| Use expand to include additional information about version in the response. This parameter accepts multiple values separated by a comma: | [optional] 
 
@@ -14375,7 +14967,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3VersionIdMergetoMoveIssuesToPut
 
-> cloudidRestApi3VersionIdMergetoMoveIssuesToPut(id, moveIssuesTo)
+> cloudidRestApi3VersionIdMergetoMoveIssuesToPut(cloudid, id, moveIssuesTo)
 
 
 
@@ -14391,9 +14983,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version to delete.
 let moveIssuesTo = "moveIssuesTo_example"; // String | The ID of the version to merge into.
-apiInstance.cloudidRestApi3VersionIdMergetoMoveIssuesToPut(id, moveIssuesTo, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdMergetoMoveIssuesToPut(cloudid, id, moveIssuesTo, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14407,6 +15000,7 @@ apiInstance.cloudidRestApi3VersionIdMergetoMoveIssuesToPut(id, moveIssuesTo, (er
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the version to delete. | 
  **moveIssuesTo** | **String**| The ID of the version to merge into. | 
 
@@ -14426,7 +15020,7 @@ null (empty response body)
 
 ## cloudidRestApi3VersionIdMovePost
 
-> InlineResponse20096 cloudidRestApi3VersionIdMovePost(id, opts)
+> InlineResponse20096 cloudidRestApi3VersionIdMovePost(cloudid, id, opts)
 
 
 
@@ -14442,11 +15036,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version to be moved.
 let opts = {
   'body': new Jira.InlineObject61() // InlineObject61 | 
 };
-apiInstance.cloudidRestApi3VersionIdMovePost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdMovePost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14460,6 +15055,7 @@ apiInstance.cloudidRestApi3VersionIdMovePost(id, opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the version to be moved. | 
  **body** | [**InlineObject61**](InlineObject61.md)|  | [optional] 
 
@@ -14479,7 +15075,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3VersionIdPut
 
-> cloudidRestApi3VersionIdPut(id, opts)
+> cloudidRestApi3VersionIdPut(cloudid, id, opts)
 
 
 
@@ -14495,11 +15091,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version.
 let opts = {
   'body': new Jira.InlineObject60() // InlineObject60 | 
 };
-apiInstance.cloudidRestApi3VersionIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14513,6 +15110,7 @@ apiInstance.cloudidRestApi3VersionIdPut(id, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the version. | 
  **body** | [**InlineObject60**](InlineObject60.md)|  | [optional] 
 
@@ -14532,7 +15130,7 @@ null (empty response body)
 
 ## cloudidRestApi3VersionIdRelatedIssueCountsGet
 
-> InlineResponse20097 cloudidRestApi3VersionIdRelatedIssueCountsGet(id)
+> InlineResponse20097 cloudidRestApi3VersionIdRelatedIssueCountsGet(cloudid, id)
 
 
 
@@ -14548,8 +15146,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version.
-apiInstance.cloudidRestApi3VersionIdRelatedIssueCountsGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdRelatedIssueCountsGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14563,6 +15162,7 @@ apiInstance.cloudidRestApi3VersionIdRelatedIssueCountsGet(id, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the version. | 
 
 ### Return type
@@ -14581,7 +15181,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3VersionIdRemoveAndSwapPost
 
-> cloudidRestApi3VersionIdRemoveAndSwapPost(id, opts)
+> cloudidRestApi3VersionIdRemoveAndSwapPost(cloudid, id, opts)
 
 
 
@@ -14597,11 +15197,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version.
 let opts = {
   'body': new Jira.InlineObject62() // InlineObject62 | 
 };
-apiInstance.cloudidRestApi3VersionIdRemoveAndSwapPost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdRemoveAndSwapPost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14615,6 +15216,7 @@ apiInstance.cloudidRestApi3VersionIdRemoveAndSwapPost(id, opts, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the version. | 
  **body** | [**InlineObject62**](InlineObject62.md)|  | [optional] 
 
@@ -14634,7 +15236,7 @@ null (empty response body)
 
 ## cloudidRestApi3VersionIdUnresolvedIssueCountGet
 
-> InlineResponse20098 cloudidRestApi3VersionIdUnresolvedIssueCountGet(id)
+> InlineResponse20098 cloudidRestApi3VersionIdUnresolvedIssueCountGet(cloudid, id)
 
 
 
@@ -14650,8 +15252,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version.
-apiInstance.cloudidRestApi3VersionIdUnresolvedIssueCountGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdUnresolvedIssueCountGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14665,6 +15268,7 @@ apiInstance.cloudidRestApi3VersionIdUnresolvedIssueCountGet(id, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **String**| The ID of the version. | 
 
 ### Return type
@@ -14683,7 +15287,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3VersionPost
 
-> InlineResponse20113 cloudidRestApi3VersionPost(opts)
+> InlineResponse20113 cloudidRestApi3VersionPost(cloudid, opts)
 
 
 
@@ -14699,10 +15303,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject59() // InlineObject59 | 
 };
-apiInstance.cloudidRestApi3VersionPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14716,6 +15321,7 @@ apiInstance.cloudidRestApi3VersionPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject59**](InlineObject59.md)|  | [optional] 
 
 ### Return type
@@ -14734,7 +15340,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3VersionRemotelinkGet
 
-> InlineResponse20095 cloudidRestApi3VersionRemotelinkGet(opts)
+> InlineResponse20095 cloudidRestApi3VersionRemotelinkGet(cloudid, opts)
 
 
 
@@ -14750,10 +15356,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'globalId': "globalId_example" // String | the global ID of the remote resource that is linked to the versions
 };
-apiInstance.cloudidRestApi3VersionRemotelinkGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionRemotelinkGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14767,6 +15374,7 @@ apiInstance.cloudidRestApi3VersionRemotelinkGet(opts, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **globalId** | **String**| the global ID of the remote resource that is linked to the versions | [optional] 
 
 ### Return type
@@ -14785,7 +15393,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3VersionVersionIdRemotelinkDelete
 
-> cloudidRestApi3VersionVersionIdRemotelinkDelete(versionId)
+> cloudidRestApi3VersionVersionIdRemotelinkDelete(cloudid, versionId)
 
 
 
@@ -14801,8 +15409,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let versionId = "versionId_example"; // String | The version for which to delete ALL existing remote version links
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkDelete(versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkDelete(cloudid, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14816,6 +15425,7 @@ apiInstance.cloudidRestApi3VersionVersionIdRemotelinkDelete(versionId, (error, d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **versionId** | **String**| The version for which to delete ALL existing remote version links | 
 
 ### Return type
@@ -14834,7 +15444,7 @@ null (empty response body)
 
 ## cloudidRestApi3VersionVersionIdRemotelinkGet
 
-> InlineResponse20095 cloudidRestApi3VersionVersionIdRemotelinkGet(versionId)
+> InlineResponse20095 cloudidRestApi3VersionVersionIdRemotelinkGet(cloudid, versionId)
 
 
 
@@ -14850,8 +15460,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let versionId = "versionId_example"; // String | a String containing the version ID
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGet(versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGet(cloudid, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14865,6 +15476,7 @@ apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGet(versionId, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **versionId** | **String**| a String containing the version ID | 
 
 ### Return type
@@ -14883,7 +15495,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete
 
-> cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(globalId, versionId)
+> cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(cloudid, globalId, versionId)
 
 
 
@@ -14899,9 +15511,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let globalId = "globalId_example"; // String | The global ID of the remote link
 let versionId = "versionId_example"; // String | The version ID of the remote link
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(globalId, versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(cloudid, globalId, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14915,6 +15528,7 @@ apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(globalId, ve
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **globalId** | **String**| The global ID of the remote link | 
  **versionId** | **String**| The version ID of the remote link | 
 
@@ -14934,7 +15548,7 @@ null (empty response body)
 
 ## cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet
 
-> InlineResponse20099 cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(globalId, versionId)
+> InlineResponse20099 cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(cloudid, globalId, versionId)
 
 
 
@@ -14950,9 +15564,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let globalId = "globalId_example"; // String | The id of the remote issue link to be returned. If {@code null} (not provided) all remote links for the issue are returned.
 let versionId = "versionId_example"; // String | a String containing the version id
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(globalId, versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(cloudid, globalId, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14966,6 +15581,7 @@ apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(globalId, versi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **globalId** | **String**| The id of the remote issue link to be returned. If {@code null} (not provided) all remote links for the issue are returned. | 
  **versionId** | **String**| a String containing the version id | 
 
@@ -14985,7 +15601,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost
 
-> cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(globalId, versionId)
+> cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(cloudid, globalId, versionId)
 
 
 
@@ -14999,9 +15615,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let globalId = "globalId_example"; // String | 
 let versionId = "versionId_example"; // String | 
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(globalId, versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(cloudid, globalId, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15015,6 +15632,7 @@ apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(globalId, vers
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **globalId** | **String**|  | 
  **versionId** | **String**|  | 
 
@@ -15034,7 +15652,7 @@ null (empty response body)
 
 ## cloudidRestApi3VersionVersionIdRemotelinkPost
 
-> cloudidRestApi3VersionVersionIdRemotelinkPost(versionId)
+> cloudidRestApi3VersionVersionIdRemotelinkPost(cloudid, versionId)
 
 
 
@@ -15050,8 +15668,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let versionId = "versionId_example"; // String | 
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkPost(versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkPost(cloudid, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15065,6 +15684,7 @@ apiInstance.cloudidRestApi3VersionVersionIdRemotelinkPost(versionId, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **versionId** | **String**|  | 
 
 ### Return type
@@ -15083,7 +15703,7 @@ null (empty response body)
 
 ## cloudidRestApi3WorkflowGet
 
-> [InlineResponse200100] cloudidRestApi3WorkflowGet(opts)
+> [InlineResponse200100] cloudidRestApi3WorkflowGet(cloudid, opts)
 
 
 
@@ -15099,10 +15719,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'workflowName': "workflowName_example" // String | The name of the workflow to be returned. Only one workflow can be specified.
 };
-apiInstance.cloudidRestApi3WorkflowGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15116,6 +15737,7 @@ apiInstance.cloudidRestApi3WorkflowGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **workflowName** | **String**| The name of the workflow to be returned. Only one workflow can be specified. | [optional] 
 
 ### Return type
@@ -15134,7 +15756,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete
 
-> cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(transitionId, opts)
+> cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(cloudid, transitionId, opts)
 
 
 
@@ -15150,13 +15772,14 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let transitionId = 56; // Number | The ID of the transition. To get the ID, view the workflow in text mode in the Jira admin settings. The ID is shown next to the transition.
 let opts = {
   'key': "key_example", // String | The name of the transition property to delete, also known as the name of the property.
   'workflowMode': "workflowMode_example", // String | The workflow status. Set to live for inactive workflows or draft for draft workflows. Active workflows cannot be edited.
   'workflowName': "workflowName_example" // String | The name of the workflow that the transition belongs to.
 };
-apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(transitionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(cloudid, transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15170,6 +15793,7 @@ apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(trans
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **transitionId** | **Number**| The ID of the transition. To get the ID, view the workflow in text mode in the Jira admin settings. The ID is shown next to the transition. | 
  **key** | **String**| The name of the transition property to delete, also known as the name of the property. | [optional] 
  **workflowMode** | **String**| The workflow status. Set to live for inactive workflows or draft for draft workflows. Active workflows cannot be edited. | [optional] 
@@ -15191,7 +15815,7 @@ null (empty response body)
 
 ## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet
 
-> [InlineResponse200101] cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(transitionId, opts)
+> [InlineResponse200101] cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(cloudid, transitionId, opts)
 
 
 
@@ -15207,6 +15831,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let transitionId = 56; // Number | The ID of the transition. To get the ID, view the workflow in text mode in the Jira administration console. The ID is shown next to the transition.
 let opts = {
   'includeReservedKeys': true, // Boolean | Some properties with keys that have the jira. prefix are reserved, i.e., not editable. To include these properties in the results, set this parameter to true.
@@ -15214,7 +15839,7 @@ let opts = {
   'workflowMode': "workflowMode_example", // String | The workflow status. Set to live for active and inactive workflows, or draft for draft workflows.
   'workflowName': "workflowName_example" // String | The name of the workflow that the transition belongs to.
 };
-apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(transitionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(cloudid, transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15228,6 +15853,7 @@ apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(transiti
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **transitionId** | **Number**| The ID of the transition. To get the ID, view the workflow in text mode in the Jira administration console. The ID is shown next to the transition. | 
  **includeReservedKeys** | **Boolean**| Some properties with keys that have the jira. prefix are reserved, i.e., not editable. To include these properties in the results, set this parameter to true. | [optional] 
  **key** | **String**| The key of the property being returned, also known as the name of the property. If this parameter is not specified, all properties on the transition are returned. | [optional] 
@@ -15250,7 +15876,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost
 
-> InlineResponse200102 cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(transitionId, opts)
+> InlineResponse200102 cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(cloudid, transitionId, opts)
 
 
 
@@ -15266,6 +15892,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let transitionId = 56; // Number | The ID of the transition. To get the ID, view the workflow in text mode in the Jira admin settings. The ID is shown next to the transition.
 let opts = {
   'key': "key_example", // String | The key of the property being added, also known as the name of the property. Set this to the same value as the key defined in the request body.
@@ -15273,7 +15900,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow that the transition belongs to.
   'body': new Jira.InlineObject64() // InlineObject64 | 
 };
-apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(transitionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(cloudid, transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15287,6 +15914,7 @@ apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(transit
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **transitionId** | **Number**| The ID of the transition. To get the ID, view the workflow in text mode in the Jira admin settings. The ID is shown next to the transition. | 
  **key** | **String**| The key of the property being added, also known as the name of the property. Set this to the same value as the key defined in the request body. | [optional] 
  **workflowMode** | **String**| The workflow status. Set to live for inactive workflows or draft for draft workflows. Active workflows cannot be edited. | [optional] 
@@ -15309,7 +15937,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut
 
-> InlineResponse200102 cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(transitionId, opts)
+> InlineResponse200102 cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(cloudid, transitionId, opts)
 
 
 
@@ -15325,6 +15953,7 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let transitionId = 56; // Number | The ID of the transition. To get the ID, view the workflow in text mode in the Jira admin settings. The ID is shown next to the transition.
 let opts = {
   'key': "key_example", // String | The key of the property being updated, also known as the name of the property. Set this to the same value as the key defined in the request body.
@@ -15332,7 +15961,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow that the transition belongs to.
   'body': new Jira.InlineObject63() // InlineObject63 | 
 };
-apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(transitionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(cloudid, transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15346,6 +15975,7 @@ apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(transiti
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **transitionId** | **Number**| The ID of the transition. To get the ID, view the workflow in text mode in the Jira admin settings. The ID is shown next to the transition. | 
  **key** | **String**| The key of the property being updated, also known as the name of the property. Set this to the same value as the key defined in the request body. | [optional] 
  **workflowMode** | **String**| The workflow status. Set to live for inactive workflows or draft for draft workflows. Active workflows cannot be edited. | [optional] 
@@ -15368,7 +15998,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdCreatedraftPost
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdCreatedraftPost(id)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdCreatedraftPost(cloudid, id)
 
 
 
@@ -15384,8 +16014,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the active workflow scheme that the draft is created from.
-apiInstance.cloudidRestApi3WorkflowschemeIdCreatedraftPost(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdCreatedraftPost(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15399,6 +16030,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdCreatedraftPost(id, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the active workflow scheme that the draft is created from. | 
 
 ### Return type
@@ -15417,7 +16049,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDefaultDelete
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDefaultDelete(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDefaultDelete(cloudid, id, opts)
 
 
 
@@ -15433,11 +16065,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'updateDraftIfNeeded': true // Boolean | Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDefaultDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDefaultDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15451,6 +16084,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDefaultDelete(id, opts, (error, data,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. | 
  **updateDraftIfNeeded** | **Boolean**| Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false. | [optional] 
 
@@ -15470,7 +16104,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDefaultGet
 
-> InlineResponse200103 cloudidRestApi3WorkflowschemeIdDefaultGet(id, opts)
+> InlineResponse200103 cloudidRestApi3WorkflowschemeIdDefaultGet(cloudid, id, opts)
 
 
 
@@ -15486,11 +16120,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'returnDraftIfExists': true // Boolean | Set to true to return the default workflow for the workflow scheme's draft rather than scheme itself. If the workflow scheme does not have a draft, then the default workflow for the workflow scheme is returned.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDefaultGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDefaultGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15504,6 +16139,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDefaultGet(id, opts, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. | 
  **returnDraftIfExists** | **Boolean**| Set to true to return the default workflow for the workflow scheme&#39;s draft rather than scheme itself. If the workflow scheme does not have a draft, then the default workflow for the workflow scheme is returned. | [optional] 
 
@@ -15523,7 +16159,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDefaultPut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDefaultPut(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDefaultPut(cloudid, id, opts)
 
 
 
@@ -15539,11 +16175,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'body': new Jira.InlineObject67() // InlineObject67 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDefaultPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDefaultPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15557,6 +16194,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDefaultPut(id, opts, (error, data, re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. | 
  **body** | [**InlineObject67**](InlineObject67.md)|  | [optional] 
 
@@ -15576,7 +16214,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDelete
 
-> cloudidRestApi3WorkflowschemeIdDelete(id)
+> cloudidRestApi3WorkflowschemeIdDelete(cloudid, id)
 
 
 
@@ -15592,8 +16230,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).
-apiInstance.cloudidRestApi3WorkflowschemeIdDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15607,6 +16246,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDelete(id, (error, data, response) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId&#x3D;10301). | 
 
 ### Return type
@@ -15625,7 +16265,7 @@ null (empty response body)
 
 ## cloudidRestApi3WorkflowschemeIdDraftDefaultDelete
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(id)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(cloudid, id)
 
 
 
@@ -15641,8 +16281,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15656,6 +16297,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(id, (error, data, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme that the draft belongs to. | 
 
 ### Return type
@@ -15674,7 +16316,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDraftDefaultGet
 
-> InlineResponse200103 cloudidRestApi3WorkflowschemeIdDraftDefaultGet(id)
+> InlineResponse200103 cloudidRestApi3WorkflowschemeIdDraftDefaultGet(cloudid, id)
 
 
 
@@ -15690,8 +16332,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15705,6 +16348,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultGet(id, (error, data, res
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme that the draft belongs to. | 
 
 ### Return type
@@ -15723,7 +16367,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDraftDefaultPut
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftDefaultPut(id, opts)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftDefaultPut(cloudid, id, opts)
 
 
 
@@ -15739,11 +16383,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let opts = {
   'body': new Jira.InlineObject69() // InlineObject69 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15757,6 +16402,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultPut(id, opts, (error, dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme that the draft belongs to. | 
  **body** | [**InlineObject69**](InlineObject69.md)|  | [optional] 
 
@@ -15776,7 +16422,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDraftDelete
 
-> cloudidRestApi3WorkflowschemeIdDraftDelete(id)
+> cloudidRestApi3WorkflowschemeIdDraftDelete(cloudid, id)
 
 
 
@@ -15792,8 +16438,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the active workflow scheme that the draft was originally created from.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15807,6 +16454,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftDelete(id, (error, data, respons
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the active workflow scheme that the draft was originally created from. | 
 
 ### Return type
@@ -15825,7 +16473,7 @@ null (empty response body)
 
 ## cloudidRestApi3WorkflowschemeIdDraftGet
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftGet(id)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftGet(cloudid, id)
 
 
 
@@ -15841,8 +16489,9 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the active workflow scheme that the draft was originally created from.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15856,6 +16505,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftGet(id, (error, data, response) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the active workflow scheme that the draft was originally created from. | 
 
 ### Return type
@@ -15874,7 +16524,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(id, issueType)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(cloudid, id, issueType)
 
 
 
@@ -15890,9 +16540,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let issueType = "issueType_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(id, issueType, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(cloudid, id, issueType, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15906,6 +16557,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(id, iss
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme that the draft belongs to. | 
  **issueType** | **String**| The ID of the issue type. | 
 
@@ -15925,7 +16577,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet
 
-> InlineResponse200104 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(id, issueType)
+> InlineResponse200104 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(cloudid, id, issueType)
 
 
 
@@ -15941,9 +16593,10 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let issueType = "issueType_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(id, issueType, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(cloudid, id, issueType, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15957,6 +16610,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(id, issueT
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme that the draft belongs to. | 
  **issueType** | **String**| The ID of the issue type. | 
 
@@ -15976,7 +16630,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(id, issueType, opts)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(cloudid, id, issueType, opts)
 
 
 
@@ -15992,12 +16646,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'body': new Jira.InlineObject70() // InlineObject70 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(id, issueType, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(cloudid, id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16011,6 +16666,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(id, issueT
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme that the draft belongs to. | 
  **issueType** | **String**| The ID of the issue type. | 
  **body** | [**InlineObject70**](InlineObject70.md)|  | [optional] 
@@ -16031,7 +16687,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDraftPut
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftPut(id, opts)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftPut(cloudid, id, opts)
 
 
 
@@ -16047,11 +16703,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the active workflow scheme that the draft was originally created from.
 let opts = {
   'body': new Jira.InlineObject68() // InlineObject68 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16065,6 +16722,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftPut(id, opts, (error, data, resp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the active workflow scheme that the draft was originally created from. | 
  **body** | [**InlineObject68**](InlineObject68.md)|  | [optional] 
 
@@ -16084,7 +16742,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete
 
-> cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(id, opts)
+> cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(cloudid, id, opts)
 
 
 
@@ -16100,11 +16758,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let opts = {
   'workflowName': "workflowName_example" // String | The name of the workflow.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16118,6 +16777,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(id, opts, (error,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme that the draft belongs to. | 
  **workflowName** | **String**| The name of the workflow. | [optional] 
 
@@ -16137,7 +16797,7 @@ null (empty response body)
 
 ## cloudidRestApi3WorkflowschemeIdDraftWorkflowGet
 
-> InlineResponse200105 cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(id, opts)
+> InlineResponse200105 cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(cloudid, id, opts)
 
 
 
@@ -16153,11 +16813,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let opts = {
   'workflowName': "workflowName_example" // String | The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16171,6 +16832,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(id, opts, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme that the draft belongs to. | 
  **workflowName** | **String**| The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow. | [optional] 
 
@@ -16190,7 +16852,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdDraftWorkflowPut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(cloudid, id, opts)
 
 
 
@@ -16206,12 +16868,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow.
   'body': new Jira.InlineObject71() // InlineObject71 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16225,6 +16888,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(id, opts, (error, da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme that the draft belongs to. | 
  **workflowName** | **String**| The name of the workflow. | [optional] 
  **body** | [**InlineObject71**](InlineObject71.md)|  | [optional] 
@@ -16245,7 +16909,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdGet
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdGet(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdGet(cloudid, id, opts)
 
 
 
@@ -16261,11 +16925,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).
 let opts = {
   'returnDraftIfExists': true // Boolean | Returns the workflow scheme's draft rather than scheme itself, if set to true. If the workflow scheme does not have a draft, then the workflow scheme is returned.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16279,6 +16944,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdGet(id, opts, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId&#x3D;10301). | 
  **returnDraftIfExists** | **Boolean**| Returns the workflow scheme&#39;s draft rather than scheme itself, if set to true. If the workflow scheme does not have a draft, then the workflow scheme is returned. | [optional] 
 
@@ -16298,7 +16964,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(id, issueType, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(cloudid, id, issueType, opts)
 
 
 
@@ -16314,12 +16980,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme.
 let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'updateDraftIfNeeded': true // Boolean | Set to true to create or update the draft of a workflow scheme and update the mapping in the draft, when the workflow scheme cannot be edited. Defaults to false.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(id, issueType, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(cloudid, id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16333,6 +17000,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(id, issueTyp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. | 
  **issueType** | **String**| The ID of the issue type. | 
  **updateDraftIfNeeded** | **Boolean**| Set to true to create or update the draft of a workflow scheme and update the mapping in the draft, when the workflow scheme cannot be edited. Defaults to false. | [optional] 
@@ -16353,7 +17021,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet
 
-> InlineResponse200104 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(id, issueType, opts)
+> InlineResponse200104 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(cloudid, id, issueType, opts)
 
 
 
@@ -16369,12 +17037,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme.
 let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'returnDraftIfExists': true // Boolean | Returns the mapping from the workflow scheme's draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(id, issueType, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(cloudid, id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16388,6 +17057,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(id, issueType, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. | 
  **issueType** | **String**| The ID of the issue type. | 
  **returnDraftIfExists** | **Boolean**| Returns the mapping from the workflow scheme&#39;s draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned. | [optional] 
@@ -16408,7 +17078,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(id, issueType, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(cloudid, id, issueType, opts)
 
 
 
@@ -16424,12 +17094,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme.
 let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'body': new Jira.InlineObject72() // InlineObject72 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(id, issueType, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(cloudid, id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16443,6 +17114,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(id, issueType, 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. | 
  **issueType** | **String**| The ID of the issue type. | 
  **body** | [**InlineObject72**](InlineObject72.md)|  | [optional] 
@@ -16463,7 +17135,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdPut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdPut(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdPut(cloudid, id, opts)
 
 
 
@@ -16479,11 +17151,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).
 let opts = {
   'body': new Jira.InlineObject66() // InlineObject66 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16497,6 +17170,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdPut(id, opts, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId&#x3D;10301). | 
  **body** | [**InlineObject66**](InlineObject66.md)|  | [optional] 
 
@@ -16516,7 +17190,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdWorkflowDelete
 
-> cloudidRestApi3WorkflowschemeIdWorkflowDelete(id, opts)
+> cloudidRestApi3WorkflowschemeIdWorkflowDelete(cloudid, id, opts)
 
 
 
@@ -16532,12 +17206,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'updateDraftIfNeeded': true, // Boolean | Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false.
   'workflowName': "workflowName_example" // String | The name of the workflow.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16551,6 +17226,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowDelete(id, opts, (error, data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. | 
  **updateDraftIfNeeded** | **Boolean**| Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false. | [optional] 
  **workflowName** | **String**| The name of the workflow. | [optional] 
@@ -16571,7 +17247,7 @@ null (empty response body)
 
 ## cloudidRestApi3WorkflowschemeIdWorkflowGet
 
-> InlineResponse200105 cloudidRestApi3WorkflowschemeIdWorkflowGet(id, opts)
+> InlineResponse200105 cloudidRestApi3WorkflowschemeIdWorkflowGet(cloudid, id, opts)
 
 
 
@@ -16587,12 +17263,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'returnDraftIfExists': true, // Boolean | Returns the mapping from the workflow scheme's draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned.
   'workflowName': "workflowName_example" // String | The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16606,6 +17283,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowGet(id, opts, (error, data, r
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. | 
  **returnDraftIfExists** | **Boolean**| Returns the mapping from the workflow scheme&#39;s draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned. | [optional] 
  **workflowName** | **String**| The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow. | [optional] 
@@ -16626,7 +17304,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemeIdWorkflowPut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdWorkflowPut(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdWorkflowPut(cloudid, id, opts)
 
 
 
@@ -16642,12 +17320,13 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow.
   'body': new Jira.InlineObject73() // InlineObject73 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16661,6 +17340,7 @@ apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowPut(id, opts, (error, data, r
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **id** | **Number**| The ID of the workflow scheme. | 
  **workflowName** | **String**| The name of the workflow. | [optional] 
  **body** | [**InlineObject73**](InlineObject73.md)|  | [optional] 
@@ -16681,7 +17361,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorkflowschemePost
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemePost(opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemePost(cloudid, opts)
 
 
 
@@ -16697,10 +17377,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject65() // InlineObject65 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16714,6 +17395,7 @@ apiInstance.cloudidRestApi3WorkflowschemePost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **body** | [**InlineObject65**](InlineObject65.md)|  | [optional] 
 
 ### Return type
@@ -16732,7 +17414,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorklogDeletedGet
 
-> InlineResponse200106 cloudidRestApi3WorklogDeletedGet(opts)
+> InlineResponse200106 cloudidRestApi3WorklogDeletedGet(cloudid, opts)
 
 
 
@@ -16748,10 +17430,11 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'since': 56 // Number | The date and time, in UNIX timestamp format, after which deleted worklogs are returned.
 };
-apiInstance.cloudidRestApi3WorklogDeletedGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorklogDeletedGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16765,6 +17448,7 @@ apiInstance.cloudidRestApi3WorklogDeletedGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **since** | **Number**| The date and time, in UNIX timestamp format, after which deleted worklogs are returned. | [optional] 
 
 ### Return type
@@ -16783,7 +17467,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorklogListPost
 
-> [InlineResponse200107] cloudidRestApi3WorklogListPost(opts)
+> [InlineResponse200107] cloudidRestApi3WorklogListPost(cloudid, opts)
 
 
 
@@ -16799,11 +17483,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog.
   'body': new Jira.InlineObject74() // InlineObject74 | 
 };
-apiInstance.cloudidRestApi3WorklogListPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorklogListPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16817,6 +17502,7 @@ apiInstance.cloudidRestApi3WorklogListPost(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog. | [optional] 
  **body** | [**InlineObject74**](InlineObject74.md)|  | [optional] 
 
@@ -16836,7 +17522,7 @@ Name | Type | Description  | Notes
 
 ## cloudidRestApi3WorklogUpdatedGet
 
-> InlineResponse200106 cloudidRestApi3WorklogUpdatedGet(opts)
+> InlineResponse200106 cloudidRestApi3WorklogUpdatedGet(cloudid, opts)
 
 
 
@@ -16852,11 +17538,12 @@ let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
+let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog.
   'since': 56 // Number | The date and time, in UNIX timestamp format, after which updated worklogs are returned.
 };
-apiInstance.cloudidRestApi3WorklogUpdatedGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorklogUpdatedGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16870,6 +17557,7 @@ apiInstance.cloudidRestApi3WorklogUpdatedGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **cloudid** | [**Object**](.md)| Cloudi of the project | 
  **expand** | **String**| Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog. | [optional] 
  **since** | **Number**| The date and time, in UNIX timestamp format, after which updated worklogs are returned. | [optional] 
 

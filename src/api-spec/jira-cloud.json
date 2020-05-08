@@ -52,11 +52,25 @@
       "OAuth": []
     }
   ],
+  "parameters": {
+    "cloudid": {
+      "in": "path",
+      "name": "cloudid",
+      "required": true,
+      "schema": {
+        "type": "string"
+      },
+      "description": "Cloudi of the project"
+    }
+  },
   "paths": {
     "/{cloudid}/rest/api/3/application-properties": {
       "get": {
         "description": "Returns all application properties or a single application property.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The key of the application property.",
             "in": "query",
@@ -133,7 +147,11 @@
     "/{cloudid}/rest/api/3/application-properties/advanced-settings": {
       "get": {
         "description": "Returns the application properties that are accessible on the Advanced Settings page. To navigate to the Advanced Settings page in Jira, choose the Jira icon > Jira settings > System, General Configuration and then click Advanced Settings (in the upper right).",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -193,6 +211,9 @@
         "description": "Changes the value of an application property. For example, you can change the value of the jira.clone.prefix from its default value of CLONE - to Clone - if you prefer sentence case capitalization. Editable properties are described below along with their default values.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -227,7 +248,11 @@
     "/{cloudid}/rest/api/3/applicationrole": {
       "get": {
         "description": "Returns all application roles. In Jira, application roles are managed using the Application access configuration page.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -309,6 +334,9 @@
       "get": {
         "description": "Returns an application role.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The key of the application role. Use the Get all application roles method to get the key for each application role.",
             "in": "path",
@@ -392,7 +420,11 @@
     "/{cloudid}/rest/api/3/attachment/meta": {
       "get": {
         "description": "Returns the global attachment settings, that is, whether attachments are enabled and the maximum attachment size allowed.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -421,6 +453,9 @@
         "description": "Deletes an attachment from an issue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the attachment.",
             "in": "path",
             "name": "id",
@@ -437,6 +472,9 @@
       "get": {
         "description": "Returns the metadata for an attachment. Note that the attachment itself is not returned.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the attachment.",
             "in": "path",
@@ -568,6 +606,9 @@
         "description": "Returns the metadata for the contents of an attachment, if it is an archive, and metadata for the attachment itself. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned and metadata for the ZIP archive. Currently, only the ZIP archive format is supported.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the attachment.",
             "in": "path",
             "name": "id",
@@ -649,6 +690,9 @@
         "description": "Returns the metadata for the contents of an attachment, if it is an archive. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned. Currently, only the ZIP archive format is supported.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the attachment.",
             "in": "path",
             "name": "id",
@@ -709,6 +753,9 @@
       "get": {
         "description": "Returns a list of audit records. The list can be filtered to include items:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The query string.",
             "in": "query",
@@ -917,6 +964,9 @@
         "description": "Returns a list of system avatar details by owner type, where the owner types are issue type, project, or user.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The avatar type.",
             "in": "path",
             "name": "type",
@@ -999,6 +1049,9 @@
       "post": {
         "description": "Returns the comments for a list of comment IDs.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -1217,6 +1270,9 @@
         "description": "Returns the keys of all the properties of a comment.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the comment.",
             "in": "path",
             "name": "commentId",
@@ -1266,6 +1322,9 @@
         "description": "Deletes a comment property.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the comment.",
             "in": "path",
             "name": "commentId",
@@ -1289,6 +1348,9 @@
       "get": {
         "description": "Returns the value of a comment property.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the comment.",
             "in": "path",
@@ -1345,6 +1407,9 @@
         "description": "Creates or updates the value of a property for a comment. Use this resource to store custom data against a comment.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the comment.",
             "in": "path",
             "name": "commentId",
@@ -1370,6 +1435,9 @@
       "post": {
         "description": "Creates a component. Use components to provide containers for issues within a project. Permissions required: Any of the following:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -1684,6 +1752,9 @@
         "description": "Deletes a component. Permissions required: Any of the following:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the component.",
             "in": "path",
             "name": "id",
@@ -1706,6 +1777,9 @@
       "get": {
         "description": "Returns a component. Permissions required: Browse projects project permission.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the component.",
             "in": "path",
@@ -1970,6 +2044,9 @@
         "description": "Modifies a component. Any fields included in the request are overwritten. If leadUserName is an empty string (\"\") the component lead is removed. Permissions required: Any of the following:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -2043,6 +2120,9 @@
         "description": "Returns the counts of issues assigned to the component. Permissions required: Permission to access Jira.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the component.",
             "in": "path",
             "name": "id",
@@ -2077,7 +2157,11 @@
     "/{cloudid}/rest/api/3/configuration": {
       "get": {
         "description": "Returns the global settings in Jira. These settings determine whether optional features (for example, sub-tasks, time tracking, and others) are enabled. If time tracking is enabled, this method also returns the time tracking configuration.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -2150,7 +2234,11 @@
     "/{cloudid}/rest/api/3/configuration/timetracking": {
       "delete": {
         "description": "Disables time tracking.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "204": {
             "description": "Returned if the request is successful."
@@ -2159,7 +2247,11 @@
       },
       "get": {
         "description": "Returns the time tracking provider that is currently selected. Note that if time tracking is disabled, then a successful but empty response is returned.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful and time tracking is enabled.",
@@ -2193,6 +2285,9 @@
         "description": "Selects a time tracking provider.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -2220,7 +2315,11 @@
     "/{cloudid}/rest/api/3/configuration/timetracking/list": {
       "get": {
         "description": "Returns all time tracking providers. By default, Jira only has one time tracking provider: JIRA provided time tracking. However, you can install other time tracking providers via apps from the Atlassian Marketplace. For more information on time tracking providers, see the documentation for the Time Tracking Provider module.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -2259,7 +2358,11 @@
     "/{cloudid}/rest/api/3/configuration/timetracking/options": {
       "get": {
         "description": "Returns the time tracking settings. This includes settings such as the time format, default time unit, and others. For more information, see Configuring time tracking.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -2295,6 +2398,9 @@
       "put": {
         "description": "Sets the time tracking settings.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -2370,6 +2476,9 @@
         "description": "Returns a custom field option. For example, an option in a cascading select list.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the custom field option. To find this ID, configure the custom field and edit its options in Jira. Click the option and its ID will show in the URL as the selectedParentOptionId parameter.",
             "in": "path",
             "name": "id",
@@ -2406,6 +2515,9 @@
       "get": {
         "description": "Returns a list of dashboards owned by or shared with the user. The list may be filtered to include only favorite or owned dashboards.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The filter applied to the list of dashboards. Valid values are:",
             "enum": [
@@ -2603,6 +2715,9 @@
         "description": "Returns the keys of all properties for a dashboard item.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the dashboard.",
             "in": "path",
             "name": "dashboardId",
@@ -2659,6 +2774,9 @@
         "description": "Deletes a dashboard item property.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the dashboard.",
             "in": "path",
             "name": "dashboardId",
@@ -2689,6 +2807,9 @@
       "get": {
         "description": "Returns the key and value of a dashboard item property.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the dashboard.",
             "in": "path",
@@ -2752,6 +2873,9 @@
         "description": "Sets the value of a dashboard item property. Use this resource in apps to store custom data against a dashboard item.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the dashboard.",
             "in": "path",
             "name": "dashboardId",
@@ -2784,6 +2908,9 @@
       "get": {
         "description": "Returns a dashboard.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the dashboard.",
             "in": "path",
@@ -2856,6 +2983,9 @@
       "post": {
         "description": "Evaluates a Jira expression and returns its value.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -2985,7 +3115,11 @@
     "/{cloudid}/rest/api/3/field": {
       "get": {
         "description": "Returns all issue fields in Jira, both system and custom fields.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the requested fields are returned.",
@@ -3064,6 +3198,9 @@
       "post": {
         "description": "Creates a custom field.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -3188,6 +3325,9 @@
       "get": {
         "description": "Returns all options defined for a select list issue field. A select list issue field is a type of issue field that allows a user to select an value from a list of options.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.",
             "in": "path",
@@ -3368,6 +3508,9 @@
         "description": "Creates an option for a select list issue field.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -3516,6 +3659,9 @@
         "description": "Returns options defined for a select list issue field that can be viewed and selected by the currently logged in user.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.",
             "in": "path",
             "name": "fieldKey",
@@ -3646,6 +3792,9 @@
       "get": {
         "description": "Returns options defined for a select list issue field that can be viewed by the currently logged in user.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.",
             "in": "path",
@@ -3778,6 +3927,9 @@
         "description": "Deletes an option from a select list issue field.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.",
             "in": "path",
             "name": "fieldKey",
@@ -3801,6 +3953,9 @@
       "get": {
         "description": "Returns an option from a select list issue field.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.",
             "in": "path",
@@ -3939,6 +4094,9 @@
       "put": {
         "description": "Updates an option for a select list issue field. If the option does not exist, a new option is created.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -4100,6 +4258,9 @@
         "description": "Deselects a select list issue field option in all issues that it has been selected in. A different option can be selected to replace the deselected option. The update can also be limited to a smaller set of issues by using a JQL query.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.",
             "in": "path",
             "name": "fieldKey",
@@ -4211,6 +4372,9 @@
       "get": {
         "description": "Returns all filters. Deprecated, use Search for filters that supports search and pagination. Permissions required: None, however only the following filters are returned:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -4385,6 +4549,9 @@
       "post": {
         "description": "Creates a new filter. The new filter is not shared and not selected as a favorite. Permissions required: Permission to log in to Jira.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -4594,7 +4761,11 @@
     "/{cloudid}/rest/api/3/filter/defaultShareScope": {
       "get": {
         "description": "Returns the default sharing settings for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -4617,6 +4788,9 @@
       "put": {
         "description": "Sets the default sharing for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -4660,6 +4834,9 @@
       "get": {
         "description": "Returns the favorite filters of the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group).",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -4841,6 +5018,9 @@
       "get": {
         "description": "Returns the filters owned by the calling user. If includeFavourites is true, the user's favorite filters are also returned. Permissions required: Permission to log in to Jira (i.e., member of the users group).",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -5028,6 +5208,9 @@
       "get": {
         "description": "Search for filters. This method is similar to Get filters except that you can refine the results to include filters that have specific attributes. For example, filters with a particular name. Permissions required: None, however only the following filters are returned (if no search parameters are set):",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Returns filters with an owner that exactly matches accountId of the owner. This parameter cannot be used with the owner parameter.",
             "in": "query",
@@ -5269,6 +5452,9 @@
         "description": "Delete a filter. Permissions required: Permission to log in to Jira, however the following rules govern what a user can delete:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the filter to delete.",
             "in": "path",
             "name": "id",
@@ -5285,6 +5471,9 @@
       "get": {
         "description": "Returns a filter. Permissions required: None, however the calling user must have permission view the filter.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -5466,6 +5655,9 @@
       "put": {
         "description": "Updates an existing filter. Use this method to update a filter's name, description, JQL, or sharing. Permissions required: Permission to log in to Jira, however the following rules govern what a user can update:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -5684,6 +5876,9 @@
         "description": "Reset the user's column configuration for the filter to the default. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the filter.",
             "in": "path",
             "name": "id",
@@ -5700,6 +5895,9 @@
       "get": {
         "description": "Returns the columns configured for a filter. The column configuration is used when the filter's results are viewed in List View with the Columns set to Filter. Permissions required: None, however the calling user must have permission to view the filter.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the filter.",
             "in": "path",
@@ -5741,6 +5939,9 @@
         "description": "Sets the columns for a filter. Only navigable fields can be set as columns. Use Get fields to get the list fields in Jira. A navigable field has navigable set to true. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the filter.",
             "in": "path",
             "name": "id",
@@ -5759,6 +5960,9 @@
       "delete": {
         "description": "Removes a filter as a favorite for the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -5940,6 +6144,9 @@
       "put": {
         "description": "Add a filter as a favorite for the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -6123,6 +6330,9 @@
       "get": {
         "description": "Returns the share permissions for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the filter.",
             "in": "path",
@@ -6356,6 +6566,9 @@
       "post": {
         "description": "Add a share permissions to a filter. If you add a global share permission (i.e., all logged-in users or the public) it will overwrite all share permissions for the filter.Be aware that this method uses different objects for updating share permissions compared to Update filter. Permissions required: Share dashboards and filters global permission and the calling user must own the filter.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -6624,6 +6837,9 @@
         "description": "Deletes a share permission from a filter. Permissions required: Permission to log in to Jira (i.e., member of the users group) and the calling user must own the filter.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the filter.",
             "in": "path",
             "name": "id",
@@ -6647,6 +6863,9 @@
       "get": {
         "description": "Returns a share permission for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the filter.",
             "in": "path",
@@ -6691,6 +6910,9 @@
         "description": "Deletes a group.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The name of the group.",
             "in": "query",
             "name": "groupname",
@@ -6713,6 +6935,9 @@
         "description": "This resource is deprecated, use group/member.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "List of fields to expand.",
             "in": "query",
             "name": "expand",
@@ -6734,6 +6959,9 @@
       "post": {
         "description": "Creates a group.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -6837,6 +7065,9 @@
       "get": {
         "description": "Returns all users in a group. Users are ordered by username.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The name of the group.",
             "in": "query",
@@ -6963,6 +7194,9 @@
         "description": "Removes a user from a group. Permissions required: Administer Jira global permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.",
             "in": "query",
             "name": "accountid",
@@ -6990,6 +7224,9 @@
       "post": {
         "description": "Adds a user to a group.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -7025,6 +7262,9 @@
       "get": {
         "description": "Returns a list of groups whose names contain a query string. A list of group names can be provided to exclude groups from the results.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Parameter not in use.",
             "in": "query",
@@ -7109,6 +7349,9 @@
       "get": {
         "description": "Returns a list of users and groups matching a string. The string is used:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The size of the avatar to return. If an invalid value is provided, the default value is used.",
             "in": "query",
@@ -7288,6 +7531,9 @@
         "description": "Creates an issue or, where the option to create sub-tasks is enabled in Jira, a sub-task. A transition may be applied, to move the issue or sub-task to a workflow step other than the default start step, and issue properties set.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -7361,6 +7607,9 @@
         "description": "Creates issues and, where the option to create sub-tasks is enabled in Jira, sub-tasks. Transitions may be applied, to move the issues or sub-tasks to a workflow step other than the default start step, and issue properties set.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -7429,6 +7678,9 @@
       "get": {
         "description": "Returns details of projects, issue types within projects, and, when requested, the create screen fields for each issue type for the user. Use the information to populate the requests in Create issue and Create issues.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -7636,6 +7888,9 @@
         "description": "Returns a list of suggested issues matching the auto-completion query for the user executing this request. This operation checks the user's history and browsing context to return issue suggestions.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Key of the issue defining search context. The issue defining a context is excluded from the search results.",
             "in": "query",
             "name": "currentIssueKey",
@@ -7684,6 +7939,9 @@
         "description": "Deletes a property value from multiple issues. The issues to be updated can be specified by filter criteria.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -7721,6 +7979,9 @@
         "description": "Sets a property value on multiple issues. The issues to be updated can be specified by a filter.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -7757,6 +8018,9 @@
         "description": "Deletes an issue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Indicates whether the issue's sub-tasks are deleted when the issue is deleted.",
             "in": "query",
             "name": "deleteSubtasks",
@@ -7779,6 +8043,9 @@
       "get": {
         "description": "Returns the details for an issue.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about the issues in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -8749,6 +9016,9 @@
         "description": "Edits an issue. A transition may be applied and issue properties updated as part of the edit.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -8817,6 +9087,9 @@
       "put": {
         "description": "Assigns an issue to a user. Use this operation when the calling user does not have the Edit Issues permission but has the Assign issue permission for the project that the issue is in.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -8889,6 +9162,9 @@
       "post": {
         "description": "Adds one or more attachments to an issue. Attachments are posted as multipart/form-data (RFC 1867).",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID or key of the issue that attachments are added to.",
             "in": "path",
@@ -9035,6 +9311,9 @@
       "get": {
         "description": "Returns a paginated list of all updates of an issue, sorted by date, starting from the oldest.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "ID or key of the issue.",
             "in": "path",
@@ -9233,6 +9512,9 @@
       "get": {
         "description": "to get comments for",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "optional flags: renderedBody (provides body rendered in HTML)",
             "in": "query",
@@ -9450,6 +9732,9 @@
         "description": "a string containing the issue id or key the comment will be added to",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -9658,6 +9943,9 @@
         "description": "a string containing the issue id or key the comment belongs to",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "id of the comment to be deleted",
             "in": "path",
             "name": "id",
@@ -9681,6 +9969,9 @@
       "get": {
         "description": "of the issue the comment belongs to",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "optional flags: renderedBody (provides body rendered in HTML)",
             "in": "query",
@@ -9866,6 +10157,9 @@
       "put": {
         "description": "a string containing the issue id or key the comment belongs to",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -10082,6 +10376,9 @@
         "description": "Returns the edit screen fields for an issue that are visible to and editable by the user. Use the information to populate the requests in Edit issue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID or key of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -10201,6 +10498,9 @@
         "description": "Creates an email notification for an issue and adds it to the mail queue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -10246,6 +10546,9 @@
       "get": {
         "description": "Returns the URIs and keys of an issue's properties.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The key or ID of the issue.",
             "in": "path",
@@ -10296,6 +10599,9 @@
         "description": "Deletes an issue's property.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The key or ID of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -10319,6 +10625,9 @@
       "get": {
         "description": "Returns the key and value of an issue's property.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The key or ID of the issue.",
             "in": "path",
@@ -10375,6 +10684,9 @@
         "description": "Sets the value of an issue's property. Use this resource to store custom data against an issue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID or key of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -10401,6 +10713,9 @@
         "description": "Deletes the remote issue link from the issue using the link's global ID.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The global ID of a remote issue link.",
             "in": "query",
             "name": "globalId",
@@ -10423,6 +10738,9 @@
       "get": {
         "description": "Returns the remote issue links for an issue. When a remote issue link global ID is provided the record with that global ID is returned, otherwise all remote issue links are returned.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The global ID of the remote issue link.",
             "in": "query",
@@ -10573,6 +10891,9 @@
         "description": "Creates or updates a remote issue link for an issue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -10634,6 +10955,9 @@
         "description": "Deletes a remote issue link from an issue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID or key of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -10657,6 +10981,9 @@
       "get": {
         "description": "Returns a remote issue link for an issue.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID or key of the issue.",
             "in": "path",
@@ -10803,6 +11130,9 @@
         "description": "Updates a remote issue link for an issue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -10853,6 +11183,9 @@
       "get": {
         "description": "Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue's status.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -11083,6 +11416,9 @@
         "description": "Performs an issue transition and, if the transition has a screen, updates the fields from the transition screen. Optionally, issue properties can be set.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -11134,6 +11470,9 @@
         "description": "Deletes a user's vote from an issue. This is the equivalent of the user clicking Unvote on an issue in Jira.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID or key of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -11150,6 +11489,9 @@
       "get": {
         "description": "Returns details about the votes on an issue.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID or key of the issue.",
             "in": "path",
@@ -11257,6 +11599,9 @@
         "description": "Adds the user's vote to an issue. This is the equivalent of the user clicking Vote on an issue in Jira.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID or key of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -11275,6 +11620,9 @@
       "delete": {
         "description": "Deletes a user as a watcher of an issue.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The account ID of the user. Required if username is omitted, otherwise must be omitted.",
             "in": "query",
@@ -11304,6 +11652,9 @@
       "get": {
         "description": "Returns the watchers for an issue.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID or key of the issue.",
             "in": "path",
@@ -11374,6 +11725,9 @@
         "description": "Adds a user as a watcher of an issue. If no user is specified the calling user is added.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID or key of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -11392,6 +11746,9 @@
       "get": {
         "description": "Returns all worklogs for an issue.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about worklogs in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -11620,6 +11977,9 @@
         "description": "Adds a worklog to an issue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Defines how to update the issue's time estimate, the options are:",
             "enum": [
               "new",
@@ -11731,6 +12091,9 @@
         "description": "Deletes a worklog from an issue.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Defines how to update the issue's time estimate, the options are:",
             "enum": [
               "new",
@@ -11793,6 +12156,9 @@
       "get": {
         "description": "Returns a worklog.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about work logs in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -11995,6 +12361,9 @@
       "put": {
         "description": "Updates a worklog.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Defines how to update the issue's time estimate, the options are:",
             "enum": [
@@ -12276,6 +12645,9 @@
         "description": "Returns the keys of all properties for a worklog.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID or key of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -12332,6 +12704,9 @@
         "description": "Deletes a worklog property.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID or key of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -12362,6 +12737,9 @@
       "get": {
         "description": "Returns the value of a worklog property.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID or key of the issue.",
             "in": "path",
@@ -12425,6 +12803,9 @@
         "description": "Sets the value of a worklog property. Use this operation to store custom data against the worklog.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID or key of the issue.",
             "in": "path",
             "name": "issueIdOrKey",
@@ -12457,6 +12838,9 @@
       "post": {
         "description": "Creates a link between two issues. Use this operation to indicate a relationship between two issues and optionally add a comment to the from (outward) issue. To use this resource the site must have Issue Linking enabled.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -12495,6 +12879,9 @@
         "description": "Deletes an issue link.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the issue link.",
             "in": "path",
             "name": "linkId",
@@ -12511,6 +12898,9 @@
       "get": {
         "description": "Returns an issue link.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the issue link.",
             "in": "path",
@@ -12946,7 +13336,11 @@
     "/{cloudid}/rest/api/3/issueLinkType": {
       "get": {
         "description": "Returns a list of all issue link types.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -13001,6 +13395,9 @@
       "post": {
         "description": "Creates an issue link type. Use this operation to create descriptions of the reasons why issues are linked. The issue link type consists of a name and descriptions for a link's inward and outward relationships.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -13072,6 +13469,9 @@
         "description": "Deletes an issue link type.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the issue link type.",
             "in": "path",
             "name": "issueLinkTypeId",
@@ -13088,6 +13488,9 @@
       "get": {
         "description": "Returns an issue link type.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the issue link type.",
             "in": "path",
@@ -13138,6 +13541,9 @@
       "put": {
         "description": "Updates an issue link type.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -13214,7 +13620,11 @@
     "/{cloudid}/rest/api/3/issuesecurityschemes": {
       "get": {
         "description": "Returns all issue security schemes.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -13269,6 +13679,9 @@
       "get": {
         "description": "Returns an issue security scheme along with its security levels.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the issue security scheme. Use the Get issue security schemes operation to get a list of issue security scheme IDs.",
             "in": "path",
@@ -13350,7 +13763,11 @@
     "/{cloudid}/rest/api/3/issuetype": {
       "get": {
         "description": "Returns all issue types. Permissions required: Permission to access Jira, however, only issue types that are visible to the user are returned.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -13433,6 +13850,9 @@
         "description": "Creates an issue type and adds it to the default issue type scheme. Permissions required: Administer Jira global permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -13470,6 +13890,9 @@
         "description": "Deletes the issue type. If the issue type is in use, all uses are updated with the alternative issue type (alternativeIssueTypeId). A list of alternative issue types can be obtained from the Get alternative issue types resource. Permissions required: Administer Jira global permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the replacement issue type.",
             "in": "query",
             "name": "alternativeIssueTypeId",
@@ -13492,6 +13915,9 @@
       "get": {
         "description": "Returns an issue type. Permissions required:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the issue type.",
             "in": "path",
@@ -13551,6 +13977,9 @@
         "description": "Updates the issue type. Permissions required: Administer Jira global permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -13590,6 +14019,9 @@
       "get": {
         "description": "Returns a list of issue types that can be used to replace the issue type. The alternative issue types are those assigned to the same workflow scheme, field configuration scheme, and screen scheme. Permissions required: Permission to access Jira.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the issue type.",
             "in": "path",
@@ -13682,6 +14114,9 @@
         "description": "Loads an avatar for the issue type.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the issue type.",
             "in": "path",
             "name": "id",
@@ -13772,6 +14207,9 @@
         "description": "Returns all the issue type property keys of the issue type. Permissions required:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the issue type.",
             "in": "path",
             "name": "issueTypeId",
@@ -13821,6 +14259,9 @@
         "description": "Deletes the issue type property. Permissions required: Administer Jira global permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the issue type.",
             "in": "path",
             "name": "issueTypeId",
@@ -13844,6 +14285,9 @@
       "get": {
         "description": "Returns the key and value of the issue type property. Permissions required:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the issue type.",
             "in": "path",
@@ -13900,6 +14344,9 @@
         "description": "Creates or updates the value of the issue type property. Use this resource to store and update data against an issue type. The value of the request body must be a valid, non-empty JSON blob. The maximum length of the property value is 32768 bytes. Permissions required: Administer Jira global permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the issue type.",
             "in": "path",
             "name": "issueTypeId",
@@ -13924,7 +14371,11 @@
     "/{cloudid}/rest/api/3/jql/autocompletedata": {
       "get": {
         "description": "Returns reference data for JQL searches. This is a downloadable version of the documentation provided in Advanced searching - fields reference and Advanced searching - functions reference, along with a list of JQL-reserved words. Use this information to assist with the programmatic creation of JQL queries or the validation of queries built in a custom query builder.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -14039,6 +14490,9 @@
         "description": "Returns the JQL search auto complete suggestions for a field.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The name of the field.",
             "in": "query",
             "name": "fieldName",
@@ -14105,6 +14559,9 @@
         "description": "The query strings having personal data that need to be migrated. There should be at most 100 queries.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -14147,6 +14604,9 @@
       "get": {
         "description": "Returns a list of permissions indicating which permissions the user has. Details of the user's permissions can be obtained in a global, project, or issue context.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the issue.",
             "in": "query",
@@ -14243,6 +14703,9 @@
         "description": "Deletes a preference of the user, which restores the default value of system defined settings.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The key of the preference.",
             "in": "query",
             "name": "key",
@@ -14258,6 +14721,9 @@
       "get": {
         "description": "Returns the value of a preference of the user.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The key of the preference.",
             "in": "query",
@@ -14275,6 +14741,9 @@
         "description": "Creates a preference for the user or updates its value. An arbitrary preference can be created with the value containing up to 255 characters. In addition, the following keys define system preferences that can be set or created:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The key of the preference. Maximum length is 255 characters.",
             "in": "query",
             "name": "key",
@@ -14291,7 +14760,11 @@
     "/{cloudid}/rest/api/3/mypreferences/locale": {
       "delete": {
         "description": "Deletes the locale of the current user, which restores the default setting.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "204": {
             "description": "Returned if the request is successful."
@@ -14300,7 +14773,11 @@
       },
       "get": {
         "description": "Returns the locale for the current user.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -14323,6 +14800,9 @@
       "put": {
         "description": "Sets the locale of the current user. The requested locale must be one supported by the instance of Jira.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -14348,6 +14828,9 @@
       "get": {
         "description": "Returns details for the authenticated user.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about user in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -14483,6 +14966,9 @@
       "get": {
         "description": "Returns a paginated list of notification schemes in order by display name.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -14659,6 +15145,9 @@
         "description": "Returns a notification scheme, including the list of events and the recipients who will receive notifications for those events.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
               "all",
@@ -14800,7 +15289,11 @@
     "/{cloudid}/rest/api/3/permissions": {
       "get": {
         "description": "Returns all permissions, including:",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -14856,6 +15349,9 @@
       "post": {
         "description": "Returns all the projects where the user is granted a list of project permissions.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -14913,6 +15409,9 @@
       "get": {
         "description": "Returns all permission schemes.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:",
             "enum": [
@@ -14976,6 +15475,9 @@
       "post": {
         "description": "Creates a new permission scheme. You can create a permission scheme with or without defining a set of permission grants. Permissions required: Administer Jira global permission.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -15106,6 +15608,9 @@
         "description": "Deletes a permission scheme. Permissions required: Administer Jira global permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the permission scheme being deleted (e.g., 10000).",
             "in": "path",
             "name": "schemeId",
@@ -15122,6 +15627,9 @@
       "get": {
         "description": "Returns a permission scheme. Permissions required: Permission to log in to Jira.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:",
             "enum": [
@@ -15228,6 +15736,9 @@
       "put": {
         "description": "Updates a permission scheme. Below are some important things to note when using this resource:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -15365,6 +15876,9 @@
         "description": "Returns all permission grants for a permission scheme. Permissions required: Permission to log in to Jira.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:",
             "enum": [
               "permissions",
@@ -15456,6 +15970,9 @@
       "post": {
         "description": "Creates a new permission grant in the given permission scheme. Permissions required: Administer Jira global permission.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -15552,6 +16069,9 @@
         "description": "Deletes a permission grant from a permission scheme. See About permission schemes and grants for more details. Permissions required: Administer Jira global permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the permission grant to delete (e.g., 10847).",
             "in": "path",
             "name": "permissionId",
@@ -15575,6 +16095,9 @@
       "get": {
         "description": "Returns a permission grant. Permissions required: Permission to log in to Jira.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:",
             "enum": [
@@ -15659,7 +16182,11 @@
     "/{cloudid}/rest/api/3/priority": {
       "get": {
         "description": "Returns the list of all issue priorities.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -15714,6 +16241,9 @@
       "get": {
         "description": "Returns an issue priority.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the issue priority.",
             "in": "path",
@@ -15771,6 +16301,9 @@
       "get": {
         "description": "Returns all projects visible to the currently logged in user. Deprecated, use Get projects paginated that supports search and pagination. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, it returns all projects that are visible for anonymous users.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -15898,6 +16431,9 @@
         "description": "Creates a new project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -16017,6 +16553,9 @@
       "get": {
         "description": "Returns projects visible to the currently logged in user. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, then all projects visible to anonymous users are returned.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Filter results by projects for which the calling user has permission to perform the given action. The view action corresponds with the Browse projects project permission, and the edit action corresponds with Administer project permissions.",
             "in": "query",
@@ -16218,7 +16757,11 @@
     "/{cloudid}/rest/api/3/project/type": {
       "get": {
         "description": "Returns all project types, whether or not the instance has a valid license for each type.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -16268,6 +16811,9 @@
       "get": {
         "description": "Returns a project type.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The key of the project type.",
             "in": "path",
@@ -16321,6 +16867,9 @@
         "description": "Returns a project type if it is accessible to the logged in user.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The key of the project type.",
             "in": "path",
             "name": "projectTypeKey",
@@ -16373,6 +16922,9 @@
         "description": "Deletes an existing project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
             "name": "projectIdOrKey",
@@ -16389,6 +16941,9 @@
       "get": {
         "description": "Returns the project details for the specified project.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default:",
             "enum": [
@@ -16933,6 +17488,9 @@
       "put": {
         "description": "Updates the project details of an existing project.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -17566,6 +18124,9 @@
         "description": "Sets the avatar displayed for a project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -17598,6 +18159,9 @@
         "description": "Deletes a custom avatar from a project. Note that system avatars cannot be deleted.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the avatar.",
             "in": "path",
             "name": "id",
@@ -17623,6 +18187,9 @@
       "post": {
         "description": "Loads an avatar for a project.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID or (case-sensitive) key of the project.",
             "in": "path",
@@ -17685,6 +18252,9 @@
       "get": {
         "description": "Returns all project avatars, grouped by system and custom avatars.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID or (case-sensitive) key of the project.",
             "in": "path",
@@ -17824,6 +18394,9 @@
       "get": {
         "description": "Returns a paginated representation of all components existing in a single project. See the Get project components resource if you want to get a full list of versions without pagination.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The maximum number of components to return per page. Max 50.",
             "in": "query",
@@ -18159,6 +18732,9 @@
         "description": "Returns all components existing in a single project. See the Get project components paginated resource if you want to get a full list of components with pagination.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
             "name": "projectIdOrKey",
@@ -18429,6 +19005,9 @@
         "description": "Returns all project property keys for the project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
             "name": "projectIdOrKey",
@@ -18478,6 +19057,9 @@
         "description": "Removes the property from the project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
             "name": "projectIdOrKey",
@@ -18501,6 +19083,9 @@
       "get": {
         "description": "Returns the value of the project property.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
@@ -18557,6 +19142,9 @@
         "description": "Sets the value of the project property. You can use project properties to store custom data against the project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
             "name": "projectIdOrKey",
@@ -18582,6 +19170,9 @@
       "get": {
         "description": "Returns a list of project roles for the project.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
@@ -18625,6 +19216,9 @@
         "description": "Deletes actors from a project role for the project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The name of the group to remove from the project role.",
             "in": "query",
             "name": "group",
@@ -18660,6 +19254,9 @@
       "get": {
         "description": "Returns the project role's details and actors associated with the project. The list of actors is sorted by display name.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the project role. Use Get all project roles to get a list of project role IDs.",
             "in": "path",
@@ -18786,6 +19383,9 @@
         "description": "Adds additional actors to a project role for the project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -18832,6 +19432,9 @@
       "put": {
         "description": "Associates actors with the project role for the project, replacing all existing actors.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -18977,6 +19580,9 @@
         "description": "Returns all project roles and the details for each role. Note that the list of project roles is common to all projects.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
             "name": "projectIdOrKey",
@@ -19102,6 +19708,9 @@
         "description": "Returns the valid statuses for a project. The statuses are grouped by issue type, as each project has a set of valid issue types and each issue type has a set of valid statuses.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
             "name": "projectIdOrKey",
@@ -19189,6 +19798,9 @@
       "put": {
         "description": "Updates the project type.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The key of the new project type.",
             "in": "path",
@@ -19731,6 +20343,9 @@
         "description": "Returns a paginated representation of all versions existing in a single project. See the Get project versions resource if you want to get a full list of versions without pagination.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
               "issuesstatus",
@@ -19890,6 +20505,9 @@
         "description": "Returns all versions existing in a single project. The response is not paginated. Use Get project versions paginated if you want to get the versions in a project with pagination.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
               "operations"
@@ -19977,6 +20595,9 @@
         "description": "Returns the issue security scheme associated with the project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
             "name": "projectKeyOrId",
@@ -20058,6 +20679,9 @@
       "get": {
         "description": "Gets a notification scheme associated with the project. See the Get notification scheme resource for more information about notification schemes.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -20202,6 +20826,9 @@
         "description": "Gets the permission scheme associated with the project.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:",
             "enum": [
               "all",
@@ -20259,6 +20886,9 @@
       "put": {
         "description": "Associates a permission scheme with a particular project. See Managing project permissions for more information about permission schemes.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -20333,6 +20963,9 @@
         "description": "Returns all issue security levels for the project that the currently authenticated user has access to. If the user does not have permission to see an issue security level, then that level is not returned. If the user lacks the Set Issue Security permission, then an empty list is returned.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project ID or project key (case sensitive).",
             "in": "path",
             "name": "projectKeyOrId",
@@ -20390,7 +21023,11 @@
     "/{cloudid}/rest/api/3/projectCategory": {
       "get": {
         "description": "Returns all project categories.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -20433,6 +21070,9 @@
       "post": {
         "description": "Creates a project category.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -20491,6 +21131,9 @@
         "description": "Deletes a project category.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "ID of the project category to delete.",
             "in": "path",
             "name": "id",
@@ -20507,6 +21150,9 @@
       "get": {
         "description": "Returns a project category.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the project category.",
             "in": "path",
@@ -20552,6 +21198,9 @@
       "put": {
         "description": "Updates a project category.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -20616,6 +21265,9 @@
         "description": "Validates a project key by confirming the key is a valid string and not in use.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project key.",
             "in": "query",
             "name": "key",
@@ -20662,6 +21314,9 @@
         "description": "Validates a project key and, if the key is invalid or in use, generates a valid random string for the project key.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The project key.",
             "in": "query",
             "name": "key",
@@ -20707,6 +21362,9 @@
       "get": {
         "description": "Checks that a project name isn't in use. If the name isn't in use, the passed string is returned. If the name is in use, this operation attempts to generate a valid project name based on the one supplied, usually by adding a sequence number. If a valid project name cannot be generated, a 404 response is returned.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The project name.",
             "in": "query",
@@ -20862,7 +21520,11 @@
     "/{cloudid}/rest/api/3/resolution": {
       "get": {
         "description": "Returns a list of all issue resolution values.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -20907,6 +21569,9 @@
       "get": {
         "description": "Returns an issue resolution value.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the issue resolution value.",
             "in": "path",
@@ -20953,7 +21618,11 @@
     "/{cloudid}/rest/api/3/role": {
       "get": {
         "description": "Gets a list of all project roles, complete with project role details and default actors.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -21070,6 +21739,9 @@
         "description": "Creates a new project role with no default actors. You can use the Add default actors to project role the project method to add default actors to the project role after creating it.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -21126,6 +21798,9 @@
         "description": "Deletes a project role. You must specify a replacement project role if you wish to delete a project role that is in use.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the project role to delete. Use Get all project roles to get a list of project role IDs.",
             "in": "path",
             "name": "id",
@@ -21148,6 +21823,9 @@
       "get": {
         "description": "Gets the project role details and the default actors associated with the role. The list of default actors is sorted by display name.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the project role. Use Get all project roles to get a list of project role IDs.",
             "in": "path",
@@ -21266,6 +21944,9 @@
       "post": {
         "description": "Update either the project role's name or its description.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -21401,6 +22082,9 @@
       "put": {
         "description": "Update the project role's name and description. You must include both a name and a description in the request.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -21539,6 +22223,9 @@
         "description": "Removes default actors from the project role. You may remove either a group or user, but you cannot remove a group and a user in the same request.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The group name of the group to be removed as a default actor.",
             "in": "query",
             "name": "group",
@@ -21624,6 +22311,9 @@
         "description": "Returns the default actors for the project role.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the project role. Use Get all project roles to get a list of project role IDs.",
             "in": "path",
             "name": "id",
@@ -21696,6 +22386,9 @@
       "post": {
         "description": "Adds default actors to the given role. You may add either groups or users, but you cannot add groups and users in the same request.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -21794,6 +22487,9 @@
         "description": "Returns all screens.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The maximum number of items to return per page. Maximum is 100.",
             "in": "query",
             "name": "maxResults",
@@ -21818,6 +22514,9 @@
         "description": "Adds a field to the default tab of the default screen.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the field.",
             "in": "path",
             "name": "fieldId",
@@ -21837,6 +22536,9 @@
         "description": "Returns the fields that can be added to a tab on a screen.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the screen.",
             "in": "path",
             "name": "screenId",
@@ -21855,6 +22557,9 @@
       "get": {
         "description": "Returns the list of tabs for a screen.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The key of the project.",
             "in": "query",
@@ -21878,6 +22583,9 @@
       "post": {
         "description": "Creates a tab for a screen.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -21928,6 +22636,9 @@
         "description": "Deletes a screen tab.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the screen.",
             "in": "path",
             "name": "screenId",
@@ -21951,6 +22662,9 @@
       "put": {
         "description": "Updates the name of a screen tab.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -22008,6 +22722,9 @@
         "description": "Returns all fields for a screen tab.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The key of the project.",
             "in": "query",
             "name": "projectKey",
@@ -22037,6 +22754,9 @@
       "post": {
         "description": "Adds a field to a screen tab.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -22095,6 +22815,9 @@
         "description": "Removes a field from a screen tab.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the field.",
             "in": "path",
             "name": "id",
@@ -22127,6 +22850,9 @@
       "post": {
         "description": "Moves a screen tab field.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -22184,6 +22910,9 @@
         "description": "Moves a screen tab.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The position of tab. The base index is 0.",
             "in": "path",
             "name": "pos",
@@ -22216,6 +22945,9 @@
       "get": {
         "description": "Searches for issues using JQL. Permissions required: Permission to access Jira.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about issues in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -22369,6 +23101,9 @@
         "description": "Searches for issues using JQL. Permissions required: Permission to access Jira.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -22501,6 +23236,9 @@
         "description": "Returns details of an issue security level.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the issue security level.",
             "in": "path",
             "name": "id",
@@ -22546,7 +23284,11 @@
     "/{cloudid}/rest/api/3/serverInfo": {
       "get": {
         "description": "Returns information about the Jira instance.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returns if the request is successful.",
@@ -22606,7 +23348,11 @@
     "/{cloudid}/rest/api/3/settings/columns": {
       "get": {
         "description": "Returns the default issue navigator columns.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -22638,7 +23384,11 @@
       },
       "put": {
         "description": "Sets the default issue navigator columns.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful."
@@ -22649,7 +23399,11 @@
     "/{cloudid}/rest/api/3/status": {
       "get": {
         "description": "Returns a list of all statuses associated with workflows.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -22731,6 +23485,9 @@
       "get": {
         "description": "Returns a status. The status must be associated with a workflow to be returned.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID or name of the status.",
             "in": "path",
@@ -22814,7 +23571,11 @@
     "/{cloudid}/rest/api/3/statuscategory": {
       "get": {
         "description": "Returns a list of all status categories.",
-        "parameters": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Returned if the request is successful.",
@@ -22863,6 +23624,9 @@
       "get": {
         "description": "Returns a status category. Status categories provided a mechanism for categorizing statuses.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID or key of the status category.",
             "in": "path",
@@ -22914,6 +23678,9 @@
       "get": {
         "description": "Returns the status of a long-running asynchronous task.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the task.",
             "in": "path",
@@ -22995,6 +23762,9 @@
         "description": "Cancels a task.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the task.",
             "in": "path",
             "name": "taskId",
@@ -23013,6 +23783,9 @@
       "get": {
         "description": "Returns the system and custom avatars for a project or issue type.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the entity item.",
             "in": "path",
@@ -23158,6 +23931,9 @@
         "description": "Loads a custom avatar for a project or issue type.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the entity item.",
             "in": "path",
             "name": "entityId",
@@ -23255,6 +24031,9 @@
         "description": "Deletes an avatar from a project or issue type.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the avatar.",
             "in": "path",
             "name": "id",
@@ -23288,6 +24067,9 @@
         "description": "Deletes a user. Permissions required: Site administration (i.e., member of the site-admin group).",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.",
             "in": "query",
             "name": "accountId",
@@ -23315,6 +24097,9 @@
       "get": {
         "description": "Returns a user. Permissions required: None.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.",
             "in": "query",
@@ -23466,6 +24251,9 @@
       "post": {
         "description": "Creates a user. This resource is retained for legacy compatibility. As soon as a more suitable alternative is available this resource will be deprecated. The option is provided to set or generate a password for the user. When using the option to generate a password, by omitting password from the request, include \"notification\": \"true\" to ensure the user is sent an email advising them that their account has been created. This email includes a link for the user to set their password. If the notification isn't sent for a generated password, the user will need to be sent a reset password request from Jira. Permissions required: Administer Jira global permission",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -23632,6 +24420,9 @@
         "description": "Returns a list of users who fulfill both of these criteria:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The maximum number of items to return per page. Maximum is 1000.",
             "in": "query",
             "name": "maxResults",
@@ -23743,6 +24534,9 @@
       "get": {
         "description": "Returns a list of users that can be assigned to an issue. Use this method to find the list of users who can be assigned to:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the transition.",
             "in": "query",
@@ -23910,6 +24704,9 @@
       "get": {
         "description": "Returns details of users specified in a list of usernames or keys. Permissions required: Administer Jira global permission. Users with permission to access Jira can call this method, but empty search results are returned.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Comma-separated list of user keys. Required if username isn't provided.",
             "in": "query",
@@ -24091,6 +24888,9 @@
         "description": "Resets the default issue table columns for the user to the system default. If a username is not passed, the calling user's default columns are reset. Permissions required:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.",
             "in": "query",
             "name": "accountId",
@@ -24112,6 +24912,9 @@
       "get": {
         "description": "Returns the default issue table columns for the user. If a username is not passed in the request, the calling user's details are returned. Permissions required:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.",
             "in": "query",
@@ -24135,6 +24938,9 @@
         "description": "Sets the default issue table columns for the user. If a username is not passed, the calling user's default columns are set. If no column details are sent, then all default columns are removed. The parameters for this resource are expressed as HTML form data. For example, in curl: curl -X PUT -d username=<username> -d columns=summary -d columns=description <url> Permissions required:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.",
             "in": "query",
             "name": "accountId",
@@ -24152,6 +24958,9 @@
       "get": {
         "description": "Returns the groups to which a user belongs. Permissions required: Browse users and groups global permission.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The account ID of the user.",
             "in": "query",
@@ -24200,6 +25009,9 @@
       "get": {
         "description": "Returns a list of users who fulfill both of these criteria:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The issue key for the issue.",
             "in": "query",
@@ -24325,6 +25137,9 @@
         "description": "Returns a list of users whose attributes match the query term. The returned object includes the html field where the matched query term is highlighted with the HTML strong tag. A list of account IDs can be provided to exclude users from the results. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but will only get search results for an exact name match.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "This parameter has been deprecated due to privacy changes. Use excludeAccountIds instead. See the migration guide for details. A comma-separated list of usernames to exclude from the search results.",
             "in": "query",
             "items": {
@@ -24432,6 +25247,9 @@
         "description": "Returns the keys of all properties for a user. Permissions required:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.",
             "in": "query",
             "name": "accountId",
@@ -24492,6 +25310,9 @@
         "description": "Deletes a property from a user. Permissions required:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.",
             "in": "query",
             "name": "accountId",
@@ -24526,6 +25347,9 @@
       "get": {
         "description": "Returns the value of a user's property. If no property key is provided Get user property keys is called. Permissions required:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.",
             "in": "query",
@@ -24593,6 +25417,9 @@
         "description": "Sets the value of a user's property. Use this resource to store custom data against a user. Permissions required:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.",
             "in": "query",
             "name": "accountId",
@@ -24629,6 +25456,9 @@
       "get": {
         "description": "Returns a list of users that match the search string and property. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but empty search results are returned.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Include active users.",
             "in": "query",
@@ -24754,6 +25584,9 @@
         "description": "Finds users using a structured query and returns user details. Permissions required: Browse users and groups global permission. The available queries statements are:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Include inactive users in the results.",
             "in": "query",
             "name": "includeInactive",
@@ -24790,6 +25623,9 @@
         "description": "Finds users using a structured query and returns a list of user keys. Permissions required: Browse users and groups global permission. The available query statements are:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "Include inactive users in the results.",
             "in": "query",
             "name": "includeInactive",
@@ -24825,6 +25661,9 @@
       "get": {
         "description": "Returns a list of users who fulfill both of these criteria:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The issue key for the issue. Required, unless projectKey is specified.",
             "in": "query",
@@ -24943,6 +25782,9 @@
       "post": {
         "description": "Creates a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -25063,6 +25905,9 @@
         "description": "the global ID of the remote resource that is linked to the versions",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "the global ID of the remote resource that is linked to the versions",
             "in": "query",
             "name": "globalId",
@@ -25134,6 +25979,9 @@
         "description": "Deletes a project version. Deprecated, use Delete and replace version that supports swapping version values in custom fields, in addition to the swapping for fixVersion and affectedVersion provided in this resource. Alternative versions can be provided to update issues that use the deleted version in fixVersion or affectedVersion. If alternatives are not provided, occurrences of fixVersion and affectedVersion that contain the deleted version are cleared. Permissions required: Administer Jira global permission or Administer Projects project permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the version.",
             "in": "path",
             "name": "id",
@@ -25162,6 +26010,9 @@
       "get": {
         "description": "Returns a project version. Permissions required: Browse projects project permission",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about version in the response. This parameter accepts multiple values separated by a comma:",
             "enum": [
@@ -25245,6 +26096,9 @@
         "description": "Modifies a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -25326,6 +26180,9 @@
         "description": "Merges two project versions. The merge is completed by deleting the version specified in id and replacing any occurrences of its ID in fixVersion with the version ID specified in moveIssuesTo. Consider using Delete and replace version instead. This resource supports swapping version values in fixVersion, affectedVersion, and custom fields. Permissions required: Administer Jira global permission or Administer Projects project permission.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the version to delete.",
             "in": "path",
             "name": "id",
@@ -25351,6 +26208,9 @@
       "post": {
         "description": "Modifies the version's sequence within the project, which affects the display order of the versions in Jira. Permissions required: Administer Jira global permission or Administer Projects project permission.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -25448,6 +26308,9 @@
         "description": "Returns the following counts for a version:",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the version.",
             "in": "path",
             "name": "id",
@@ -25517,6 +26380,9 @@
         "description": "Deletes a project version. Permissions required: Administer Jira global permission or Administer Projects project permission. Alternative versions can be provided to update issues that use the deleted version in fixVersion, affectedVersion, or any version picker custom fields. If alternatives are not provided, occurrences of fixVersion, affectedVersion, and any version picker custom field, that contain the deleted version, are cleared. Any replacement version must be in the same project as the version being deleted and cannot be the version being deleted.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "body",
             "name": "body",
             "schema": {
@@ -25560,6 +26426,9 @@
         "description": "Returns counts of the issues and unresolved issues for the project version. Permissions required: Browse projects project permission",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the version.",
             "in": "path",
             "name": "id",
@@ -25600,6 +26469,9 @@
         "description": "The version for which to delete ALL existing remote version links",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The version for which to delete ALL existing remote version links",
             "in": "path",
             "name": "versionId",
@@ -25616,6 +26488,9 @@
       "get": {
         "description": "a String containing the version ID",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "a String containing the version ID",
             "in": "path",
@@ -25687,6 +26562,9 @@
         "description": "Create a remote version link via POST. The link's global ID will be taken from the JSON payload if provided; otherwise, it will be generated.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "path",
             "name": "versionId",
             "required": true,
@@ -25704,6 +26582,9 @@
       "delete": {
         "description": "The version ID of the remote link",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The global ID of the remote link",
             "in": "path",
@@ -25728,6 +26609,9 @@
       "get": {
         "description": "A REST sub-resource representing a remote version link",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The id of the remote issue link to be returned. If {@code null} (not provided) all remote links for the issue are returned.",
             "in": "path",
@@ -25794,6 +26678,9 @@
       "post": {
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "in": "path",
             "name": "globalId",
             "required": true,
@@ -25817,6 +26704,9 @@
       "get": {
         "description": "Returns all workflows in Jira or a single workflow.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The name of the workflow to be returned. Only one workflow can be specified.",
             "in": "query",
@@ -25882,6 +26772,9 @@
         "description": "Deletes a property from a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The name of the transition property to delete, also known as the name of the property.",
             "in": "query",
             "name": "key",
@@ -25916,6 +26809,9 @@
       "get": {
         "description": "Returns the properties on a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Some properties with keys that have the jira. prefix are reserved, i.e., not editable. To include these properties in the results, set this parameter to true.",
             "in": "query",
@@ -25985,6 +26881,9 @@
       "post": {
         "description": "Adds a property to a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -26060,6 +26959,9 @@
       "put": {
         "description": "Updates a workflow transition by changing the property value. Trying to update a property that does not exist results in a new property being added to the transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -26137,6 +27039,9 @@
       "post": {
         "description": "Creates a workflow scheme.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -26233,6 +27138,9 @@
         "description": "Deletes a workflow scheme. Note that a workflow scheme cannot be deleted if it is active (that is, being used by at least one project).",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).",
             "in": "path",
             "name": "id",
@@ -26249,6 +27157,9 @@
       "get": {
         "description": "Returns a workflow scheme.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).",
             "in": "path",
@@ -26326,6 +27237,9 @@
       "put": {
         "description": "Updates a workflow scheme, including the name, default workflow, issue type to project mappings, and more. If the workflow scheme is active (that is, being used by at least one project), then a draft workflow scheme is created or updated instead, provided that updateDraftIfNeeded is set to true.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -26428,6 +27342,9 @@
       "post": {
         "description": "Create a draft workflow scheme from an active workflow scheme, by copying the active workflow scheme. Note that an active workflow scheme can only have one draft workflow scheme at any given time.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the active workflow scheme that the draft is created from.",
             "in": "path",
@@ -26638,6 +27555,9 @@
         "description": "Resets the default workflow for a workflow scheme. That is, the default workflow is set to Jira's system workflow (the jira workflow).",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme.",
             "in": "path",
             "name": "id",
@@ -26715,6 +27635,9 @@
         "description": "Returns the default workflow for a workflow scheme. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has All Unassigned Issue Types listed in its issue types for the workflow scheme in Jira.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme.",
             "in": "path",
             "name": "id",
@@ -26750,6 +27673,9 @@
       "put": {
         "description": "Sets the default workflow for a workflow scheme.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -26841,6 +27767,9 @@
         "description": "Deletes a draft workflow scheme.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the active workflow scheme that the draft was originally created from.",
             "in": "path",
             "name": "id",
@@ -26857,6 +27786,9 @@
       "get": {
         "description": "Returns the draft workflow scheme for an active workflow scheme. Draft workflow schemes allow changes to be made to the active workflow schemes: When an active workflow scheme is updated, a draft copy is created. The draft is modified, then the changes in the draft are copied back to the active workflow scheme. See Configuring workflow schemes for more information.Note that:",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the active workflow scheme that the draft was originally created from.",
             "in": "path",
@@ -27064,6 +27996,9 @@
       "put": {
         "description": "Updates a draft workflow scheme. If a draft workflow scheme does not exist for the active workflow scheme, then a draft is created. Note that an active workflow scheme can only have one draft workflow scheme at any given time.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -27303,6 +28238,9 @@
         "description": "Resets the default workflow for a workflow scheme's draft. That is, the default workflow is set to Jira's system workflow (the jira workflow).",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme that the draft belongs to.",
             "in": "path",
             "name": "id",
@@ -27510,6 +28448,9 @@
         "description": "Returns the default workflow for a workflow scheme's draft. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has All Unassigned Issue Types listed in its issue types for the workflow scheme in Jira.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme that the draft belongs to.",
             "in": "path",
             "name": "id",
@@ -27539,6 +28480,9 @@
       "put": {
         "description": "Sets the default workflow for a workflow scheme's draft.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -27766,6 +28710,9 @@
         "description": "Deletes the issue type-workflow mapping for an issue type in a workflow scheme's draft.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme that the draft belongs to.",
             "in": "path",
             "name": "id",
@@ -27980,6 +28927,9 @@
         "description": "Returns the issue type-workflow mapping for an issue type in a workflow scheme's draft.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme that the draft belongs to.",
             "in": "path",
             "name": "id",
@@ -28021,6 +28971,9 @@
       "put": {
         "description": "Sets the workflow for an issue type in a workflow scheme's draft.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -28259,6 +29212,9 @@
         "description": "Deletes the workflow-issue type mapping for a workflow in a workflow scheme's draft.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme that the draft belongs to.",
             "in": "path",
             "name": "id",
@@ -28281,6 +29237,9 @@
       "get": {
         "description": "Returns the workflow-issue type mappings for a workflow scheme's draft.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the workflow scheme that the draft belongs to.",
             "in": "path",
@@ -28328,6 +29287,9 @@
       "put": {
         "description": "Sets the issue types for a workflow in a workflow scheme's draft. The workflow can also be set as the default workflow for the draft workflow scheme. Unmapped issues types are mapped to the default workflow.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -28436,6 +29398,9 @@
         "description": "Deletes the issue type-workflow mapping for an issue type in a workflow scheme.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme.",
             "in": "path",
             "name": "id",
@@ -28520,6 +29485,9 @@
         "description": "Returns the issue type-workflow mapping for an issue type in a workflow scheme.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme.",
             "in": "path",
             "name": "id",
@@ -28567,6 +29535,9 @@
       "put": {
         "description": "Sets the workflow for an issue type in a workflow scheme.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -28669,6 +29640,9 @@
         "description": "Deletes the workflow-issue type mapping for a workflow in a workflow scheme.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The ID of the workflow scheme.",
             "in": "path",
             "name": "id",
@@ -28697,6 +29671,9 @@
       "get": {
         "description": "Returns the workflow-issue type mappings for a workflow scheme.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "The ID of the workflow scheme.",
             "in": "path",
@@ -28750,6 +29727,9 @@
       "put": {
         "description": "Sets the issue types for a workflow in a workflow scheme. The workflow can also be set as the default workflow for the workflow scheme. Unmapped issues types are mapped to the default workflow.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -28858,6 +29838,9 @@
         "description": "Returns a list of IDs and delete timestamps for worklogs deleted after a date and time.",
         "parameters": [
           {
+            "$ref": "#/components/parameters/cloudid"
+          },
+          {
             "description": "The date and time, in UNIX timestamp format, after which deleted worklogs are returned.",
             "in": "query",
             "name": "since",
@@ -28931,6 +29914,9 @@
       "post": {
         "description": "Returns worklog details for a list of worklog IDs.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "in": "body",
             "name": "body",
@@ -29139,6 +30125,9 @@
       "get": {
         "description": "Returns a list of IDs and update timestamps for worklogs updated after a date and time.",
         "parameters": [
+          {
+            "$ref": "#/components/parameters/cloudid"
+          },
           {
             "description": "Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog.",
             "in": "query",

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon model module.
  * @module model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon
- * @version 1.1.0
+ * @version 1.2.0
  */
 var CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon = /*#__PURE__*/function () {
   /**

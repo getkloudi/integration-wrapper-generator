@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20037FieldsTimetracking model module.
  * @module model/InlineResponse20037FieldsTimetracking
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20037FieldsTimetracking {
     /**

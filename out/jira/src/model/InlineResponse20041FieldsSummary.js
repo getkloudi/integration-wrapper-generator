@@ -17,7 +17,7 @@ import InlineResponse20041FieldsSummarySchema from './InlineResponse20041FieldsS
 /**
  * The InlineResponse20041FieldsSummary model module.
  * @module model/InlineResponse20041FieldsSummary
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20041FieldsSummary {
     /**

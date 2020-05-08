@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 1.0.0
+* @version 1.2.0
 */
 
 /**
@@ -32,9 +32,9 @@ class ApiClient {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
-         * @default https://jira.atlassian.com/rest/api/3
+         * @default https://api.atlassian.com/ex/jira
          */
-        this.basePath = 'https://jira.atlassian.com/rest/api/3'.replace(/\/+$/, '');
+        this.basePath = 'https://api.atlassian.com/ex/jira'.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.
@@ -554,7 +554,7 @@ class ApiClient {
     hostSettings() {
         return [
             {
-              'url': "https://jira.atlassian.com/rest/api/3",
+              'url': "https://api.atlassian.com/ex/jira/",
               'description': "No description provided",
             }
       ];

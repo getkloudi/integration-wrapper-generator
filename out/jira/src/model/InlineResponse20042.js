@@ -18,7 +18,7 @@ import CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject from './CloudidRestApi3I
 /**
  * The InlineResponse20042 model module.
  * @module model/InlineResponse20042
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20042 {
     /**

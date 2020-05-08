@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20045ToStatusCategory model module.
  * @module model/InlineResponse20045ToStatusCategory
- * @version 1.1.0
+ * @version 1.2.0
  */
 var InlineResponse20045ToStatusCategory = /*#__PURE__*/function () {
   /**

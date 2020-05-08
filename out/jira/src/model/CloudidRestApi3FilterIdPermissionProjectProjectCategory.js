@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CloudidRestApi3FilterIdPermissionProjectProjectCategory model module.
  * @module model/CloudidRestApi3FilterIdPermissionProjectProjectCategory
- * @version 1.1.0
+ * @version 1.2.0
  */
 class CloudidRestApi3FilterIdPermissionProjectProjectCategory {
     /**

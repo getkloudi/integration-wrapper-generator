@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20061Event model module.
  * @module model/InlineResponse20061Event
- * @version 1.1.0
+ * @version 1.2.0
  */
 var InlineResponse20061Event = /*#__PURE__*/function () {
   /**

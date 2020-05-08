@@ -18,7 +18,7 @@ import CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus from './CloudidRes
 /**
  * The CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject model module.
  * @module model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject
- * @version 1.1.0
+ * @version 1.2.0
  */
 class CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject {
     /**

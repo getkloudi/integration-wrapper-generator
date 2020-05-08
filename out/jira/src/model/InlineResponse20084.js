@@ -17,7 +17,7 @@ import CloudidRestApi3FilterIdPermissionRoleActors from './CloudidRestApi3Filter
 /**
  * The InlineResponse20084 model module.
  * @module model/InlineResponse20084
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20084 {
     /**

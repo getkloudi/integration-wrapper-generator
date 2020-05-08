@@ -17,7 +17,7 @@ import InlineResponse20037FieldsWorklog from './InlineResponse20037FieldsWorklog
 /**
  * The InlineResponse20048 model module.
  * @module model/InlineResponse20048
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20048 {
     /**

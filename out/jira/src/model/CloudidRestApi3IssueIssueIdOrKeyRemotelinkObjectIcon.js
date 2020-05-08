@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon model module.
  * @module model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon
- * @version 1.1.0
+ * @version 1.2.0
  */
 class CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon {
     /**

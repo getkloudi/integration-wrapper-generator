@@ -17,7 +17,7 @@ import InlineResponse2018Permissions from './InlineResponse2018Permissions';
 /**
  * The InlineResponse20066 model module.
  * @module model/InlineResponse20066
- * @version 1.1.0
+ * @version 1.2.0
  */
 class InlineResponse20066 {
     /**
