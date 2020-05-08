@@ -18,17 +18,10 @@
       },
       {
         "input": {
-          "key": "full_name"
+          "key": "id"
         },
         "transform": {
-          "type": "FUNCTION",
-          "name": "splitAndGetLastElement",
-          "params": [
-            "/",
-            " ",
-            "-",
-            "_"
-          ]
+          "type": "ONE-TO-ONE"
         },
         "output": {
           "key": "projectId"
@@ -47,7 +40,7 @@
       },
       {
         "input": {
-          "key": "html_url"
+          "key": "self"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -58,43 +51,13 @@
       },
       {
         "input": {
-          "key": "full_name"
-        },
-        "transform": {
-          "type": "FUNCTION",
-          "name": "splitAndGetFirstElement",
-          "params": [
-            "/"
-          ]
-        },
-        "output": {
-          "key": "organizationId"
-        }
-      },
-      {
-        "input": {
-          "key": "updated_at"
+          "key": "avatarUrls['48x48']"
         },
         "transform": {
           "type": "ONE-TO-ONE"
         },
         "output": {
-          "key": "updatedOn"
-        }
-      },
-      {
-        "input": {
-          "key": "language"
-        },
-        "transform": {
-          "type": "FUNCTION",
-          "name": "transforToInfoTableMetrics",
-          "params": [
-            "Language"
-          ]
-        },
-        "output": {
-          "parent": "metrics"
+          "key": "projectIcon"
         }
       }
     ]
@@ -153,13 +116,14 @@
       },
       {
         "input": {
-          "key": "body.integration.integrationSpecificParams.authAccessTokenExpiresAt"
+          "key": "query"
         },
         "transform": {
-          "type": "ONE-TO-ONE"
+          "type": "FUNCTION",
+          "name": "transformQueryParamsToOpts"
         },
         "output": {
-          "key": "authAccessTokenExpiresAt"
+          "key": "opts"
         }
       }
     ]

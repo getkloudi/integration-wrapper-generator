@@ -9,7 +9,12 @@ const ErrorHelper = require('../../../helpers/ErrorHelper');
  */
 
 //As found on https://developer.atlassian.com/cloud/jira/platform/scopes/
-const SCOPES = ['read:jira-work', 'write:jira-work', 'read:jira-user'];
+const SCOPES = [
+  'read:jira-work',
+  'write:jira-work',
+  'read:jira-user',
+  'offline_access',
+];
 
 class JiraService {
   get name() {
@@ -83,11 +88,29 @@ class JiraService {
   }
 
   async getAccessToken(integration) {
-    return integration.authAccessToken;
+    const res = await Axios.default.post(
+      'https://auth.atlassian.com/oauth/token',
+      {
+        grant_type: 'refresh_token',
+        client_id: nconf.get('JIRA_CLIENT_ID'),
+        client_secret: nconf.get('JIRA_CLIENT_SECRET'),
+        refresh_token: integration.authRefreshToken,
+      },
+      { headers: { 'Content-Type': 'application/json' } }
+    );
+    return res.data.access_token;
   }
 
   getNextPaginationURIFromResponse(response) {
-    //TODO: Add custom getNextPaginationURIFromResponse functionality here
+    if (!response.body.nextPage && !response.body.next) return;
+    else if (!!response.body.nextPage)
+      return Object.fromEntries(
+        new URLSearchParams(require('url').parse(response.body.nextPage).query)
+      );
+    else if (!!response.body.next)
+      return Object.fromEntries(
+        new URLSearchParams(require('url').parse(response.body.next).query)
+      );
   }
 
   async connect(authParams) {
@@ -106,7 +129,8 @@ class JiraService {
       { headers: { 'Content-Type': 'application/json' } }
     );
     const accessToken = response.data.access_token,
-      authAccessTokenExpiresAt = Date.now() + response.data.expires_in * 1000;
+      authAccessTokenExpiresAt = Date.now() + response.data.expires_in * 1000,
+      refreshToken = response.data.refresh_token;
 
     response = await Axios.default.get(
       'https://api.atlassian.com/oauth/token/accessible-resources',
@@ -121,11 +145,8 @@ class JiraService {
       cloudId = response.data[0].id;
     return {
       accessToken: accessToken,
-      // refreshToken: authRes.data.refresh_token,
+      refreshToken: refreshToken,
       integrationSpecificParams: {
-        // username: user.data.username,
-        // uuid: user.data.uuid,
-        // team: { usernames: teamUsernames },
         authAccessTokenExpiresAt: authAccessTokenExpiresAt,
         cloudDomainName: cloudDomainName,
         cloudId: cloudId,
@@ -134,13 +155,16 @@ class JiraService {
   }
 
   async getThirdPartyProjects(incomingOptions) {
-    console.log(incomingOptions);
-    const res = await this.get('PROJECT_SEARCH', incomingOptions);
-    console.log(res.data);
-    // incomingOptions.opts = this.getNextPaginationURIFromResponse(
-    //   res.response
-    // );
-    //TODO: Add custom getThirdPartyProjects functionality here
+    let projects = [];
+    while (true) {
+      const res = await this.get('PROJECT_SEARCH', incomingOptions);
+      projects = projects.concat(res.data.values);
+      incomingOptions.opts = this.getNextPaginationURIFromResponse(
+        res.response
+      );
+      if (!incomingOptions.opts) break;
+    }
+    return { data: projects };
   }
 
   async registerWebhooks(incomingOptions) {
