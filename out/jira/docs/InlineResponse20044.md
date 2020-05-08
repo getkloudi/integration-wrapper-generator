@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**application** | [**CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication**](CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication.md) |  | 
+**application** | [**IssueIssueIdOrKeyRemotelinkApplication**](IssueIssueIdOrKeyRemotelinkApplication.md) |  | 
 **globalId** | **String** |  | 
 **id** | **Number** |  | 
-**_object** | [**CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject**](CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject.md) |  | 
+**_object** | [**IssueIssueIdOrKeyRemotelinkObject**](IssueIssueIdOrKeyRemotelinkObject.md) |  | 
 **relationship** | **String** |  | 
 **self** | **String** |  | 
 

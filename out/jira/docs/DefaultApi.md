@@ -1,332 +1,332 @@
 # Jira.DefaultApi
 
-All URIs are relative to *https://api.atlassian.com/ex/jira*
+All URIs are relative to *https://api.atlassian.com/ex/jira//rest/api/3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet**](DefaultApi.md#cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet) | **GET** /{cloudid}/rest/api/3/application-properties/advanced-settings | 
-[**cloudidRestApi3ApplicationPropertiesGet**](DefaultApi.md#cloudidRestApi3ApplicationPropertiesGet) | **GET** /{cloudid}/rest/api/3/application-properties | 
-[**cloudidRestApi3ApplicationPropertiesIdPut**](DefaultApi.md#cloudidRestApi3ApplicationPropertiesIdPut) | **PUT** /{cloudid}/rest/api/3/application-properties/{id} | 
-[**cloudidRestApi3ApplicationroleGet**](DefaultApi.md#cloudidRestApi3ApplicationroleGet) | **GET** /{cloudid}/rest/api/3/applicationrole | 
-[**cloudidRestApi3ApplicationroleKeyGet**](DefaultApi.md#cloudidRestApi3ApplicationroleKeyGet) | **GET** /{cloudid}/rest/api/3/applicationrole/{key} | 
-[**cloudidRestApi3AttachmentIdDelete**](DefaultApi.md#cloudidRestApi3AttachmentIdDelete) | **DELETE** /{cloudid}/rest/api/3/attachment/{id} | 
-[**cloudidRestApi3AttachmentIdExpandHumanGet**](DefaultApi.md#cloudidRestApi3AttachmentIdExpandHumanGet) | **GET** /{cloudid}/rest/api/3/attachment/{id}/expand/human | 
-[**cloudidRestApi3AttachmentIdExpandRawGet**](DefaultApi.md#cloudidRestApi3AttachmentIdExpandRawGet) | **GET** /{cloudid}/rest/api/3/attachment/{id}/expand/raw | 
-[**cloudidRestApi3AttachmentIdGet**](DefaultApi.md#cloudidRestApi3AttachmentIdGet) | **GET** /{cloudid}/rest/api/3/attachment/{id} | 
-[**cloudidRestApi3AttachmentMetaGet**](DefaultApi.md#cloudidRestApi3AttachmentMetaGet) | **GET** /{cloudid}/rest/api/3/attachment/meta | 
-[**cloudidRestApi3AuditingRecordGet**](DefaultApi.md#cloudidRestApi3AuditingRecordGet) | **GET** /{cloudid}/rest/api/3/auditing/record | 
-[**cloudidRestApi3AvatarTypeSystemGet**](DefaultApi.md#cloudidRestApi3AvatarTypeSystemGet) | **GET** /{cloudid}/rest/api/3/avatar/{type}/system | 
-[**cloudidRestApi3CommentCommentIdPropertiesGet**](DefaultApi.md#cloudidRestApi3CommentCommentIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/comment/{commentId}/properties | 
-[**cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey} | 
-[**cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey} | 
-[**cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey} | 
-[**cloudidRestApi3CommentListPost**](DefaultApi.md#cloudidRestApi3CommentListPost) | **POST** /{cloudid}/rest/api/3/comment/list | 
-[**cloudidRestApi3ComponentIdDelete**](DefaultApi.md#cloudidRestApi3ComponentIdDelete) | **DELETE** /{cloudid}/rest/api/3/component/{id} | 
-[**cloudidRestApi3ComponentIdGet**](DefaultApi.md#cloudidRestApi3ComponentIdGet) | **GET** /{cloudid}/rest/api/3/component/{id} | 
-[**cloudidRestApi3ComponentIdPut**](DefaultApi.md#cloudidRestApi3ComponentIdPut) | **PUT** /{cloudid}/rest/api/3/component/{id} | 
-[**cloudidRestApi3ComponentIdRelatedIssueCountsGet**](DefaultApi.md#cloudidRestApi3ComponentIdRelatedIssueCountsGet) | **GET** /{cloudid}/rest/api/3/component/{id}/relatedIssueCounts | 
-[**cloudidRestApi3ComponentPost**](DefaultApi.md#cloudidRestApi3ComponentPost) | **POST** /{cloudid}/rest/api/3/component | 
-[**cloudidRestApi3ConfigurationGet**](DefaultApi.md#cloudidRestApi3ConfigurationGet) | **GET** /{cloudid}/rest/api/3/configuration | 
-[**cloudidRestApi3ConfigurationTimetrackingDelete**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingDelete) | **DELETE** /{cloudid}/rest/api/3/configuration/timetracking | 
-[**cloudidRestApi3ConfigurationTimetrackingGet**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingGet) | **GET** /{cloudid}/rest/api/3/configuration/timetracking | 
-[**cloudidRestApi3ConfigurationTimetrackingListGet**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingListGet) | **GET** /{cloudid}/rest/api/3/configuration/timetracking/list | 
-[**cloudidRestApi3ConfigurationTimetrackingOptionsGet**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingOptionsGet) | **GET** /{cloudid}/rest/api/3/configuration/timetracking/options | 
-[**cloudidRestApi3ConfigurationTimetrackingOptionsPut**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingOptionsPut) | **PUT** /{cloudid}/rest/api/3/configuration/timetracking/options | 
-[**cloudidRestApi3ConfigurationTimetrackingPut**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingPut) | **PUT** /{cloudid}/rest/api/3/configuration/timetracking | 
-[**cloudidRestApi3CustomFieldOptionIdGet**](DefaultApi.md#cloudidRestApi3CustomFieldOptionIdGet) | **GET** /{cloudid}/rest/api/3/customFieldOption/{id} | 
-[**cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet**](DefaultApi.md#cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties | 
-[**cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
-[**cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
-[**cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
-[**cloudidRestApi3DashboardGet**](DefaultApi.md#cloudidRestApi3DashboardGet) | **GET** /{cloudid}/rest/api/3/dashboard | 
-[**cloudidRestApi3DashboardIdGet**](DefaultApi.md#cloudidRestApi3DashboardIdGet) | **GET** /{cloudid}/rest/api/3/dashboard/{id} | 
-[**cloudidRestApi3ExpressionEvalPost**](DefaultApi.md#cloudidRestApi3ExpressionEvalPost) | **POST** /{cloudid}/rest/api/3/expression/eval | 
-[**cloudidRestApi3FieldFieldKeyOptionGet**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionGet) | **GET** /{cloudid}/rest/api/3/field/{fieldKey}/option | 
-[**cloudidRestApi3FieldFieldKeyOptionOptionIdDelete**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionOptionIdDelete) | **DELETE** /{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId} | 
-[**cloudidRestApi3FieldFieldKeyOptionOptionIdGet**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionOptionIdGet) | **GET** /{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId} | 
-[**cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete) | **DELETE** /{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId}/issue | 
-[**cloudidRestApi3FieldFieldKeyOptionOptionIdPut**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionOptionIdPut) | **PUT** /{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId} | 
-[**cloudidRestApi3FieldFieldKeyOptionPost**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionPost) | **POST** /{cloudid}/rest/api/3/field/{fieldKey}/option | 
-[**cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet) | **GET** /{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/edit | 
-[**cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet) | **GET** /{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/search | 
-[**cloudidRestApi3FieldGet**](DefaultApi.md#cloudidRestApi3FieldGet) | **GET** /{cloudid}/rest/api/3/field | 
-[**cloudidRestApi3FieldPost**](DefaultApi.md#cloudidRestApi3FieldPost) | **POST** /{cloudid}/rest/api/3/field | 
-[**cloudidRestApi3FilterDefaultShareScopeGet**](DefaultApi.md#cloudidRestApi3FilterDefaultShareScopeGet) | **GET** /{cloudid}/rest/api/3/filter/defaultShareScope | 
-[**cloudidRestApi3FilterDefaultShareScopePut**](DefaultApi.md#cloudidRestApi3FilterDefaultShareScopePut) | **PUT** /{cloudid}/rest/api/3/filter/defaultShareScope | 
-[**cloudidRestApi3FilterFavouriteGet**](DefaultApi.md#cloudidRestApi3FilterFavouriteGet) | **GET** /{cloudid}/rest/api/3/filter/favourite | 
-[**cloudidRestApi3FilterGet**](DefaultApi.md#cloudidRestApi3FilterGet) | **GET** /{cloudid}/rest/api/3/filter | 
-[**cloudidRestApi3FilterIdColumnsDelete**](DefaultApi.md#cloudidRestApi3FilterIdColumnsDelete) | **DELETE** /{cloudid}/rest/api/3/filter/{id}/columns | 
-[**cloudidRestApi3FilterIdColumnsGet**](DefaultApi.md#cloudidRestApi3FilterIdColumnsGet) | **GET** /{cloudid}/rest/api/3/filter/{id}/columns | 
-[**cloudidRestApi3FilterIdColumnsPut**](DefaultApi.md#cloudidRestApi3FilterIdColumnsPut) | **PUT** /{cloudid}/rest/api/3/filter/{id}/columns | 
-[**cloudidRestApi3FilterIdDelete**](DefaultApi.md#cloudidRestApi3FilterIdDelete) | **DELETE** /{cloudid}/rest/api/3/filter/{id} | 
-[**cloudidRestApi3FilterIdFavouriteDelete**](DefaultApi.md#cloudidRestApi3FilterIdFavouriteDelete) | **DELETE** /{cloudid}/rest/api/3/filter/{id}/favourite | 
-[**cloudidRestApi3FilterIdFavouritePut**](DefaultApi.md#cloudidRestApi3FilterIdFavouritePut) | **PUT** /{cloudid}/rest/api/3/filter/{id}/favourite | 
-[**cloudidRestApi3FilterIdGet**](DefaultApi.md#cloudidRestApi3FilterIdGet) | **GET** /{cloudid}/rest/api/3/filter/{id} | 
-[**cloudidRestApi3FilterIdPermissionGet**](DefaultApi.md#cloudidRestApi3FilterIdPermissionGet) | **GET** /{cloudid}/rest/api/3/filter/{id}/permission | 
-[**cloudidRestApi3FilterIdPermissionPermissionIdDelete**](DefaultApi.md#cloudidRestApi3FilterIdPermissionPermissionIdDelete) | **DELETE** /{cloudid}/rest/api/3/filter/{id}/permission/{permissionId} | 
-[**cloudidRestApi3FilterIdPermissionPermissionIdGet**](DefaultApi.md#cloudidRestApi3FilterIdPermissionPermissionIdGet) | **GET** /{cloudid}/rest/api/3/filter/{id}/permission/{permissionId} | 
-[**cloudidRestApi3FilterIdPermissionPost**](DefaultApi.md#cloudidRestApi3FilterIdPermissionPost) | **POST** /{cloudid}/rest/api/3/filter/{id}/permission | 
-[**cloudidRestApi3FilterIdPut**](DefaultApi.md#cloudidRestApi3FilterIdPut) | **PUT** /{cloudid}/rest/api/3/filter/{id} | 
-[**cloudidRestApi3FilterMyGet**](DefaultApi.md#cloudidRestApi3FilterMyGet) | **GET** /{cloudid}/rest/api/3/filter/my | 
-[**cloudidRestApi3FilterPost**](DefaultApi.md#cloudidRestApi3FilterPost) | **POST** /{cloudid}/rest/api/3/filter | 
-[**cloudidRestApi3FilterSearchGet**](DefaultApi.md#cloudidRestApi3FilterSearchGet) | **GET** /{cloudid}/rest/api/3/filter/search | 
-[**cloudidRestApi3GroupDelete**](DefaultApi.md#cloudidRestApi3GroupDelete) | **DELETE** /{cloudid}/rest/api/3/group | 
-[**cloudidRestApi3GroupGet**](DefaultApi.md#cloudidRestApi3GroupGet) | **GET** /{cloudid}/rest/api/3/group | 
-[**cloudidRestApi3GroupMemberGet**](DefaultApi.md#cloudidRestApi3GroupMemberGet) | **GET** /{cloudid}/rest/api/3/group/member | 
-[**cloudidRestApi3GroupPost**](DefaultApi.md#cloudidRestApi3GroupPost) | **POST** /{cloudid}/rest/api/3/group | 
-[**cloudidRestApi3GroupUserDelete**](DefaultApi.md#cloudidRestApi3GroupUserDelete) | **DELETE** /{cloudid}/rest/api/3/group/user | 
-[**cloudidRestApi3GroupUserPost**](DefaultApi.md#cloudidRestApi3GroupUserPost) | **POST** /{cloudid}/rest/api/3/group/user | 
-[**cloudidRestApi3GroupsPickerGet**](DefaultApi.md#cloudidRestApi3GroupsPickerGet) | **GET** /{cloudid}/rest/api/3/groups/picker | 
-[**cloudidRestApi3GroupuserpickerGet**](DefaultApi.md#cloudidRestApi3GroupuserpickerGet) | **GET** /{cloudid}/rest/api/3/groupuserpicker | 
-[**cloudidRestApi3IssueBulkPost**](DefaultApi.md#cloudidRestApi3IssueBulkPost) | **POST** /{cloudid}/rest/api/3/issue/bulk | 
-[**cloudidRestApi3IssueCreatemetaGet**](DefaultApi.md#cloudidRestApi3IssueCreatemetaGet) | **GET** /{cloudid}/rest/api/3/issue/createmeta | 
-[**cloudidRestApi3IssueIssueIdOrKeyAssigneePut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyAssigneePut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/assignee | 
-[**cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/attachments | 
-[**cloudidRestApi3IssueIssueIdOrKeyChangelogGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyChangelogGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/changelog | 
-[**cloudidRestApi3IssueIssueIdOrKeyCommentGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment | 
-[**cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id} | 
-[**cloudidRestApi3IssueIssueIdOrKeyCommentIdGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentIdGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id} | 
-[**cloudidRestApi3IssueIssueIdOrKeyCommentIdPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentIdPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id} | 
-[**cloudidRestApi3IssueIssueIdOrKeyCommentPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment | 
-[**cloudidRestApi3IssueIssueIdOrKeyDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey} | 
-[**cloudidRestApi3IssueIssueIdOrKeyEditmetaGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyEditmetaGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/editmeta | 
-[**cloudidRestApi3IssueIssueIdOrKeyGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey} | 
-[**cloudidRestApi3IssueIssueIdOrKeyNotifyPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyNotifyPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/notify | 
-[**cloudidRestApi3IssueIssueIdOrKeyPropertiesGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPropertiesGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties | 
-[**cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey} | 
-[**cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey} | 
-[**cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey} | 
-[**cloudidRestApi3IssueIssueIdOrKeyPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey} | 
-[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink | 
-[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink | 
-[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId} | 
-[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId} | 
-[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId} | 
-[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink | 
-[**cloudidRestApi3IssueIssueIdOrKeyTransitionsGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyTransitionsGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/transitions | 
-[**cloudidRestApi3IssueIssueIdOrKeyTransitionsPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyTransitionsPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/transitions | 
-[**cloudidRestApi3IssueIssueIdOrKeyVotesDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyVotesDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes | 
-[**cloudidRestApi3IssueIssueIdOrKeyVotesGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyVotesGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes | 
-[**cloudidRestApi3IssueIssueIdOrKeyVotesPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyVotesPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes | 
-[**cloudidRestApi3IssueIssueIdOrKeyWatchersDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWatchersDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers | 
-[**cloudidRestApi3IssueIssueIdOrKeyWatchersGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWatchersGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers | 
-[**cloudidRestApi3IssueIssueIdOrKeyWatchersPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWatchersPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers | 
-[**cloudidRestApi3IssueIssueIdOrKeyWorklogGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog | 
-[**cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id} | 
-[**cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id} | 
-[**cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id} | 
-[**cloudidRestApi3IssueIssueIdOrKeyWorklogPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog | 
-[**cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties | 
-[**cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
-[**cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
-[**cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
-[**cloudidRestApi3IssueLinkLinkIdDelete**](DefaultApi.md#cloudidRestApi3IssueLinkLinkIdDelete) | **DELETE** /{cloudid}/rest/api/3/issueLink/{linkId} | 
-[**cloudidRestApi3IssueLinkLinkIdGet**](DefaultApi.md#cloudidRestApi3IssueLinkLinkIdGet) | **GET** /{cloudid}/rest/api/3/issueLink/{linkId} | 
-[**cloudidRestApi3IssueLinkPost**](DefaultApi.md#cloudidRestApi3IssueLinkPost) | **POST** /{cloudid}/rest/api/3/issueLink | 
-[**cloudidRestApi3IssueLinkTypeGet**](DefaultApi.md#cloudidRestApi3IssueLinkTypeGet) | **GET** /{cloudid}/rest/api/3/issueLinkType | 
-[**cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete**](DefaultApi.md#cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete) | **DELETE** /{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId} | 
-[**cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet**](DefaultApi.md#cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet) | **GET** /{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId} | 
-[**cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut**](DefaultApi.md#cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut) | **PUT** /{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId} | 
-[**cloudidRestApi3IssueLinkTypePost**](DefaultApi.md#cloudidRestApi3IssueLinkTypePost) | **POST** /{cloudid}/rest/api/3/issueLinkType | 
-[**cloudidRestApi3IssuePickerGet**](DefaultApi.md#cloudidRestApi3IssuePickerGet) | **GET** /{cloudid}/rest/api/3/issue/picker | 
-[**cloudidRestApi3IssuePost**](DefaultApi.md#cloudidRestApi3IssuePost) | **POST** /{cloudid}/rest/api/3/issue | 
-[**cloudidRestApi3IssuePropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3IssuePropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issue/properties/{propertyKey} | 
-[**cloudidRestApi3IssuePropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3IssuePropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/issue/properties/{propertyKey} | 
-[**cloudidRestApi3IssuesecurityschemesGet**](DefaultApi.md#cloudidRestApi3IssuesecurityschemesGet) | **GET** /{cloudid}/rest/api/3/issuesecurityschemes | 
-[**cloudidRestApi3IssuesecurityschemesIdGet**](DefaultApi.md#cloudidRestApi3IssuesecurityschemesIdGet) | **GET** /{cloudid}/rest/api/3/issuesecurityschemes/{id} | 
-[**cloudidRestApi3IssuetypeGet**](DefaultApi.md#cloudidRestApi3IssuetypeGet) | **GET** /{cloudid}/rest/api/3/issuetype | 
-[**cloudidRestApi3IssuetypeIdAlternativesGet**](DefaultApi.md#cloudidRestApi3IssuetypeIdAlternativesGet) | **GET** /{cloudid}/rest/api/3/issuetype/{id}/alternatives | 
-[**cloudidRestApi3IssuetypeIdAvatar2Post**](DefaultApi.md#cloudidRestApi3IssuetypeIdAvatar2Post) | **POST** /{cloudid}/rest/api/3/issuetype/{id}/avatar2 | 
-[**cloudidRestApi3IssuetypeIdDelete**](DefaultApi.md#cloudidRestApi3IssuetypeIdDelete) | **DELETE** /{cloudid}/rest/api/3/issuetype/{id} | 
-[**cloudidRestApi3IssuetypeIdGet**](DefaultApi.md#cloudidRestApi3IssuetypeIdGet) | **GET** /{cloudid}/rest/api/3/issuetype/{id} | 
-[**cloudidRestApi3IssuetypeIdPut**](DefaultApi.md#cloudidRestApi3IssuetypeIdPut) | **PUT** /{cloudid}/rest/api/3/issuetype/{id} | 
-[**cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet**](DefaultApi.md#cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties | 
-[**cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey} | 
-[**cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey} | 
-[**cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey} | 
-[**cloudidRestApi3IssuetypePost**](DefaultApi.md#cloudidRestApi3IssuetypePost) | **POST** /{cloudid}/rest/api/3/issuetype | 
-[**cloudidRestApi3JqlAutocompletedataGet**](DefaultApi.md#cloudidRestApi3JqlAutocompletedataGet) | **GET** /{cloudid}/rest/api/3/jql/autocompletedata | 
-[**cloudidRestApi3JqlAutocompletedataSuggestionsGet**](DefaultApi.md#cloudidRestApi3JqlAutocompletedataSuggestionsGet) | **GET** /{cloudid}/rest/api/3/jql/autocompletedata/suggestions | 
-[**cloudidRestApi3JqlPdcleanerPost**](DefaultApi.md#cloudidRestApi3JqlPdcleanerPost) | **POST** /{cloudid}/rest/api/3/jql/pdcleaner | 
-[**cloudidRestApi3MypermissionsGet**](DefaultApi.md#cloudidRestApi3MypermissionsGet) | **GET** /{cloudid}/rest/api/3/mypermissions | 
-[**cloudidRestApi3MypreferencesDelete**](DefaultApi.md#cloudidRestApi3MypreferencesDelete) | **DELETE** /{cloudid}/rest/api/3/mypreferences | 
-[**cloudidRestApi3MypreferencesGet**](DefaultApi.md#cloudidRestApi3MypreferencesGet) | **GET** /{cloudid}/rest/api/3/mypreferences | 
-[**cloudidRestApi3MypreferencesLocaleDelete**](DefaultApi.md#cloudidRestApi3MypreferencesLocaleDelete) | **DELETE** /{cloudid}/rest/api/3/mypreferences/locale | 
-[**cloudidRestApi3MypreferencesLocaleGet**](DefaultApi.md#cloudidRestApi3MypreferencesLocaleGet) | **GET** /{cloudid}/rest/api/3/mypreferences/locale | 
-[**cloudidRestApi3MypreferencesLocalePut**](DefaultApi.md#cloudidRestApi3MypreferencesLocalePut) | **PUT** /{cloudid}/rest/api/3/mypreferences/locale | 
-[**cloudidRestApi3MypreferencesPut**](DefaultApi.md#cloudidRestApi3MypreferencesPut) | **PUT** /{cloudid}/rest/api/3/mypreferences | 
-[**cloudidRestApi3MyselfGet**](DefaultApi.md#cloudidRestApi3MyselfGet) | **GET** /{cloudid}/rest/api/3/myself | 
-[**cloudidRestApi3NotificationschemeGet**](DefaultApi.md#cloudidRestApi3NotificationschemeGet) | **GET** /{cloudid}/rest/api/3/notificationscheme | 
-[**cloudidRestApi3NotificationschemeIdGet**](DefaultApi.md#cloudidRestApi3NotificationschemeIdGet) | **GET** /{cloudid}/rest/api/3/notificationscheme/{id} | 
-[**cloudidRestApi3PermissionsGet**](DefaultApi.md#cloudidRestApi3PermissionsGet) | **GET** /{cloudid}/rest/api/3/permissions | 
-[**cloudidRestApi3PermissionsProjectPost**](DefaultApi.md#cloudidRestApi3PermissionsProjectPost) | **POST** /{cloudid}/rest/api/3/permissions/project | 
-[**cloudidRestApi3PermissionschemeGet**](DefaultApi.md#cloudidRestApi3PermissionschemeGet) | **GET** /{cloudid}/rest/api/3/permissionscheme | 
-[**cloudidRestApi3PermissionschemePost**](DefaultApi.md#cloudidRestApi3PermissionschemePost) | **POST** /{cloudid}/rest/api/3/permissionscheme | 
-[**cloudidRestApi3PermissionschemeSchemeIdDelete**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdDelete) | **DELETE** /{cloudid}/rest/api/3/permissionscheme/{schemeId} | 
-[**cloudidRestApi3PermissionschemeSchemeIdGet**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdGet) | **GET** /{cloudid}/rest/api/3/permissionscheme/{schemeId} | 
-[**cloudidRestApi3PermissionschemeSchemeIdPermissionGet**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPermissionGet) | **GET** /{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission | 
-[**cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete) | **DELETE** /{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId} | 
-[**cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet) | **GET** /{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId} | 
-[**cloudidRestApi3PermissionschemeSchemeIdPermissionPost**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPermissionPost) | **POST** /{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission | 
-[**cloudidRestApi3PermissionschemeSchemeIdPut**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPut) | **PUT** /{cloudid}/rest/api/3/permissionscheme/{schemeId} | 
-[**cloudidRestApi3PriorityGet**](DefaultApi.md#cloudidRestApi3PriorityGet) | **GET** /{cloudid}/rest/api/3/priority | 
-[**cloudidRestApi3PriorityIdGet**](DefaultApi.md#cloudidRestApi3PriorityIdGet) | **GET** /{cloudid}/rest/api/3/priority/{id} | 
-[**cloudidRestApi3ProjectCategoryGet**](DefaultApi.md#cloudidRestApi3ProjectCategoryGet) | **GET** /{cloudid}/rest/api/3/projectCategory | 
-[**cloudidRestApi3ProjectCategoryIdDelete**](DefaultApi.md#cloudidRestApi3ProjectCategoryIdDelete) | **DELETE** /{cloudid}/rest/api/3/projectCategory/{id} | 
-[**cloudidRestApi3ProjectCategoryIdGet**](DefaultApi.md#cloudidRestApi3ProjectCategoryIdGet) | **GET** /{cloudid}/rest/api/3/projectCategory/{id} | 
-[**cloudidRestApi3ProjectCategoryIdPut**](DefaultApi.md#cloudidRestApi3ProjectCategoryIdPut) | **PUT** /{cloudid}/rest/api/3/projectCategory/{id} | 
-[**cloudidRestApi3ProjectCategoryPost**](DefaultApi.md#cloudidRestApi3ProjectCategoryPost) | **POST** /{cloudid}/rest/api/3/projectCategory | 
-[**cloudidRestApi3ProjectGet**](DefaultApi.md#cloudidRestApi3ProjectGet) | **GET** /{cloudid}/rest/api/3/project | 
-[**cloudidRestApi3ProjectPost**](DefaultApi.md#cloudidRestApi3ProjectPost) | **POST** /{cloudid}/rest/api/3/project | 
-[**cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post) | **POST** /{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar2 | 
-[**cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete) | **DELETE** /{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar/{id} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyAvatarPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyAvatarPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar | 
-[**cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/avatars | 
-[**cloudidRestApi3ProjectProjectIdOrKeyComponentGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyComponentGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/component | 
-[**cloudidRestApi3ProjectProjectIdOrKeyComponentsGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyComponentsGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/components | 
-[**cloudidRestApi3ProjectProjectIdOrKeyDelete**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyDelete) | **DELETE** /{cloudid}/rest/api/3/project/{projectIdOrKey} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/properties | 
-[**cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyRoleGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role | 
-[**cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete) | **DELETE** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost) | **POST** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/roledetails | 
-[**cloudidRestApi3ProjectProjectIdOrKeyStatusesGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyStatusesGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/statuses | 
-[**cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey}/type/{newProjectTypeKey} | 
-[**cloudidRestApi3ProjectProjectIdOrKeyVersionGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyVersionGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/version | 
-[**cloudidRestApi3ProjectProjectIdOrKeyVersionsGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyVersionsGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/versions | 
-[**cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet) | **GET** /{cloudid}/rest/api/3/project/{projectKeyOrId}/issuesecuritylevelscheme | 
-[**cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet) | **GET** /{cloudid}/rest/api/3/project/{projectKeyOrId}/notificationscheme | 
-[**cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet) | **GET** /{cloudid}/rest/api/3/project/{projectKeyOrId}/permissionscheme | 
-[**cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut) | **PUT** /{cloudid}/rest/api/3/project/{projectKeyOrId}/permissionscheme | 
-[**cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet) | **GET** /{cloudid}/rest/api/3/project/{projectKeyOrId}/securitylevel | 
-[**cloudidRestApi3ProjectSearchGet**](DefaultApi.md#cloudidRestApi3ProjectSearchGet) | **GET** /{cloudid}/rest/api/3/project/search | 
-[**cloudidRestApi3ProjectTypeGet**](DefaultApi.md#cloudidRestApi3ProjectTypeGet) | **GET** /{cloudid}/rest/api/3/project/type | 
-[**cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet**](DefaultApi.md#cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet) | **GET** /{cloudid}/rest/api/3/project/type/{projectTypeKey}/accessible | 
-[**cloudidRestApi3ProjectTypeProjectTypeKeyGet**](DefaultApi.md#cloudidRestApi3ProjectTypeProjectTypeKeyGet) | **GET** /{cloudid}/rest/api/3/project/type/{projectTypeKey} | 
-[**cloudidRestApi3ProjectvalidateKeyGet**](DefaultApi.md#cloudidRestApi3ProjectvalidateKeyGet) | **GET** /{cloudid}/rest/api/3/projectvalidate/key | 
-[**cloudidRestApi3ProjectvalidateValidProjectKeyGet**](DefaultApi.md#cloudidRestApi3ProjectvalidateValidProjectKeyGet) | **GET** /{cloudid}/rest/api/3/projectvalidate/validProjectKey | 
-[**cloudidRestApi3ProjectvalidateValidProjectNameGet**](DefaultApi.md#cloudidRestApi3ProjectvalidateValidProjectNameGet) | **GET** /{cloudid}/rest/api/3/projectvalidate/validProjectName | 
-[**cloudidRestApi3ResolutionGet**](DefaultApi.md#cloudidRestApi3ResolutionGet) | **GET** /{cloudid}/rest/api/3/resolution | 
-[**cloudidRestApi3ResolutionIdGet**](DefaultApi.md#cloudidRestApi3ResolutionIdGet) | **GET** /{cloudid}/rest/api/3/resolution/{id} | 
-[**cloudidRestApi3RoleGet**](DefaultApi.md#cloudidRestApi3RoleGet) | **GET** /{cloudid}/rest/api/3/role | 
-[**cloudidRestApi3RoleIdActorsDelete**](DefaultApi.md#cloudidRestApi3RoleIdActorsDelete) | **DELETE** /{cloudid}/rest/api/3/role/{id}/actors | 
-[**cloudidRestApi3RoleIdActorsGet**](DefaultApi.md#cloudidRestApi3RoleIdActorsGet) | **GET** /{cloudid}/rest/api/3/role/{id}/actors | 
-[**cloudidRestApi3RoleIdActorsPost**](DefaultApi.md#cloudidRestApi3RoleIdActorsPost) | **POST** /{cloudid}/rest/api/3/role/{id}/actors | 
-[**cloudidRestApi3RoleIdDelete**](DefaultApi.md#cloudidRestApi3RoleIdDelete) | **DELETE** /{cloudid}/rest/api/3/role/{id} | 
-[**cloudidRestApi3RoleIdGet**](DefaultApi.md#cloudidRestApi3RoleIdGet) | **GET** /{cloudid}/rest/api/3/role/{id} | 
-[**cloudidRestApi3RoleIdPost**](DefaultApi.md#cloudidRestApi3RoleIdPost) | **POST** /{cloudid}/rest/api/3/role/{id} | 
-[**cloudidRestApi3RoleIdPut**](DefaultApi.md#cloudidRestApi3RoleIdPut) | **PUT** /{cloudid}/rest/api/3/role/{id} | 
-[**cloudidRestApi3RolePost**](DefaultApi.md#cloudidRestApi3RolePost) | **POST** /{cloudid}/rest/api/3/role | 
-[**cloudidRestApi3ScreensAddToDefaultFieldIdPost**](DefaultApi.md#cloudidRestApi3ScreensAddToDefaultFieldIdPost) | **POST** /{cloudid}/rest/api/3/screens/addToDefault/{fieldId} | 
-[**cloudidRestApi3ScreensGet**](DefaultApi.md#cloudidRestApi3ScreensGet) | **GET** /{cloudid}/rest/api/3/screens | 
-[**cloudidRestApi3ScreensScreenIdAvailableFieldsGet**](DefaultApi.md#cloudidRestApi3ScreensScreenIdAvailableFieldsGet) | **GET** /{cloudid}/rest/api/3/screens/{screenId}/availableFields | 
-[**cloudidRestApi3ScreensScreenIdTabsGet**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsGet) | **GET** /{cloudid}/rest/api/3/screens/{screenId}/tabs | 
-[**cloudidRestApi3ScreensScreenIdTabsPost**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsPost) | **POST** /{cloudid}/rest/api/3/screens/{screenId}/tabs | 
-[**cloudidRestApi3ScreensScreenIdTabsTabIdDelete**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdDelete) | **DELETE** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId} | 
-[**cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet) | **GET** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields | 
-[**cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete) | **DELETE** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id} | 
-[**cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost) | **POST** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}/move | 
-[**cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost) | **POST** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields | 
-[**cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost) | **POST** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/move/{pos} | 
-[**cloudidRestApi3ScreensScreenIdTabsTabIdPut**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdPut) | **PUT** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId} | 
-[**cloudidRestApi3SearchGet**](DefaultApi.md#cloudidRestApi3SearchGet) | **GET** /{cloudid}/rest/api/3/search | 
-[**cloudidRestApi3SearchPost**](DefaultApi.md#cloudidRestApi3SearchPost) | **POST** /{cloudid}/rest/api/3/search | 
-[**cloudidRestApi3SecuritylevelIdGet**](DefaultApi.md#cloudidRestApi3SecuritylevelIdGet) | **GET** /{cloudid}/rest/api/3/securitylevel/{id} | 
-[**cloudidRestApi3ServerInfoGet**](DefaultApi.md#cloudidRestApi3ServerInfoGet) | **GET** /{cloudid}/rest/api/3/serverInfo | 
-[**cloudidRestApi3SettingsColumnsGet**](DefaultApi.md#cloudidRestApi3SettingsColumnsGet) | **GET** /{cloudid}/rest/api/3/settings/columns | 
-[**cloudidRestApi3SettingsColumnsPut**](DefaultApi.md#cloudidRestApi3SettingsColumnsPut) | **PUT** /{cloudid}/rest/api/3/settings/columns | 
-[**cloudidRestApi3StatusGet**](DefaultApi.md#cloudidRestApi3StatusGet) | **GET** /{cloudid}/rest/api/3/status | 
-[**cloudidRestApi3StatusIdOrNameGet**](DefaultApi.md#cloudidRestApi3StatusIdOrNameGet) | **GET** /{cloudid}/rest/api/3/status/{idOrName} | 
-[**cloudidRestApi3StatuscategoryGet**](DefaultApi.md#cloudidRestApi3StatuscategoryGet) | **GET** /{cloudid}/rest/api/3/statuscategory | 
-[**cloudidRestApi3StatuscategoryIdOrKeyGet**](DefaultApi.md#cloudidRestApi3StatuscategoryIdOrKeyGet) | **GET** /{cloudid}/rest/api/3/statuscategory/{idOrKey} | 
-[**cloudidRestApi3TaskTaskIdCancelPost**](DefaultApi.md#cloudidRestApi3TaskTaskIdCancelPost) | **POST** /{cloudid}/rest/api/3/task/{taskId}/cancel | 
-[**cloudidRestApi3TaskTaskIdGet**](DefaultApi.md#cloudidRestApi3TaskTaskIdGet) | **GET** /{cloudid}/rest/api/3/task/{taskId} | 
-[**cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet**](DefaultApi.md#cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet) | **GET** /{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{entityId} | 
-[**cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost**](DefaultApi.md#cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost) | **POST** /{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{entityId} | 
-[**cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete**](DefaultApi.md#cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete) | **DELETE** /{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id} | 
-[**cloudidRestApi3UserAssignableMultiProjectSearchGet**](DefaultApi.md#cloudidRestApi3UserAssignableMultiProjectSearchGet) | **GET** /{cloudid}/rest/api/3/user/assignable/multiProjectSearch | 
-[**cloudidRestApi3UserAssignableSearchGet**](DefaultApi.md#cloudidRestApi3UserAssignableSearchGet) | **GET** /{cloudid}/rest/api/3/user/assignable/search | 
-[**cloudidRestApi3UserBulkGet**](DefaultApi.md#cloudidRestApi3UserBulkGet) | **GET** /{cloudid}/rest/api/3/user/bulk | 
-[**cloudidRestApi3UserColumnsDelete**](DefaultApi.md#cloudidRestApi3UserColumnsDelete) | **DELETE** /{cloudid}/rest/api/3/user/columns | 
-[**cloudidRestApi3UserColumnsGet**](DefaultApi.md#cloudidRestApi3UserColumnsGet) | **GET** /{cloudid}/rest/api/3/user/columns | 
-[**cloudidRestApi3UserColumnsPut**](DefaultApi.md#cloudidRestApi3UserColumnsPut) | **PUT** /{cloudid}/rest/api/3/user/columns | 
-[**cloudidRestApi3UserDelete**](DefaultApi.md#cloudidRestApi3UserDelete) | **DELETE** /{cloudid}/rest/api/3/user | 
-[**cloudidRestApi3UserGet**](DefaultApi.md#cloudidRestApi3UserGet) | **GET** /{cloudid}/rest/api/3/user | 
-[**cloudidRestApi3UserGroupsGet**](DefaultApi.md#cloudidRestApi3UserGroupsGet) | **GET** /{cloudid}/rest/api/3/user/groups | 
-[**cloudidRestApi3UserPermissionSearchGet**](DefaultApi.md#cloudidRestApi3UserPermissionSearchGet) | **GET** /{cloudid}/rest/api/3/user/permission/search | 
-[**cloudidRestApi3UserPickerGet**](DefaultApi.md#cloudidRestApi3UserPickerGet) | **GET** /{cloudid}/rest/api/3/user/picker | 
-[**cloudidRestApi3UserPost**](DefaultApi.md#cloudidRestApi3UserPost) | **POST** /{cloudid}/rest/api/3/user | 
-[**cloudidRestApi3UserPropertiesGet**](DefaultApi.md#cloudidRestApi3UserPropertiesGet) | **GET** /{cloudid}/rest/api/3/user/properties | 
-[**cloudidRestApi3UserPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3UserPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/user/properties/{propertyKey} | 
-[**cloudidRestApi3UserPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3UserPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/user/properties/{propertyKey} | 
-[**cloudidRestApi3UserPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3UserPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/user/properties/{propertyKey} | 
-[**cloudidRestApi3UserSearchGet**](DefaultApi.md#cloudidRestApi3UserSearchGet) | **GET** /{cloudid}/rest/api/3/user/search | 
-[**cloudidRestApi3UserSearchQueryGet**](DefaultApi.md#cloudidRestApi3UserSearchQueryGet) | **GET** /{cloudid}/rest/api/3/user/search/query | 
-[**cloudidRestApi3UserSearchQueryKeyGet**](DefaultApi.md#cloudidRestApi3UserSearchQueryKeyGet) | **GET** /{cloudid}/rest/api/3/user/search/query/key | 
-[**cloudidRestApi3UserViewissueSearchGet**](DefaultApi.md#cloudidRestApi3UserViewissueSearchGet) | **GET** /{cloudid}/rest/api/3/user/viewissue/search | 
-[**cloudidRestApi3VersionIdDelete**](DefaultApi.md#cloudidRestApi3VersionIdDelete) | **DELETE** /{cloudid}/rest/api/3/version/{id} | 
-[**cloudidRestApi3VersionIdGet**](DefaultApi.md#cloudidRestApi3VersionIdGet) | **GET** /{cloudid}/rest/api/3/version/{id} | 
-[**cloudidRestApi3VersionIdMergetoMoveIssuesToPut**](DefaultApi.md#cloudidRestApi3VersionIdMergetoMoveIssuesToPut) | **PUT** /{cloudid}/rest/api/3/version/{id}/mergeto/{moveIssuesTo} | 
-[**cloudidRestApi3VersionIdMovePost**](DefaultApi.md#cloudidRestApi3VersionIdMovePost) | **POST** /{cloudid}/rest/api/3/version/{id}/move | 
-[**cloudidRestApi3VersionIdPut**](DefaultApi.md#cloudidRestApi3VersionIdPut) | **PUT** /{cloudid}/rest/api/3/version/{id} | 
-[**cloudidRestApi3VersionIdRelatedIssueCountsGet**](DefaultApi.md#cloudidRestApi3VersionIdRelatedIssueCountsGet) | **GET** /{cloudid}/rest/api/3/version/{id}/relatedIssueCounts | 
-[**cloudidRestApi3VersionIdRemoveAndSwapPost**](DefaultApi.md#cloudidRestApi3VersionIdRemoveAndSwapPost) | **POST** /{cloudid}/rest/api/3/version/{id}/removeAndSwap | 
-[**cloudidRestApi3VersionIdUnresolvedIssueCountGet**](DefaultApi.md#cloudidRestApi3VersionIdUnresolvedIssueCountGet) | **GET** /{cloudid}/rest/api/3/version/{id}/unresolvedIssueCount | 
-[**cloudidRestApi3VersionPost**](DefaultApi.md#cloudidRestApi3VersionPost) | **POST** /{cloudid}/rest/api/3/version | 
-[**cloudidRestApi3VersionRemotelinkGet**](DefaultApi.md#cloudidRestApi3VersionRemotelinkGet) | **GET** /{cloudid}/rest/api/3/version/remotelink | 
-[**cloudidRestApi3VersionVersionIdRemotelinkDelete**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkDelete) | **DELETE** /{cloudid}/rest/api/3/version/{versionId}/remotelink | 
-[**cloudidRestApi3VersionVersionIdRemotelinkGet**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkGet) | **GET** /{cloudid}/rest/api/3/version/{versionId}/remotelink | 
-[**cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete) | **DELETE** /{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId} | 
-[**cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet) | **GET** /{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId} | 
-[**cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost) | **POST** /{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId} | 
-[**cloudidRestApi3VersionVersionIdRemotelinkPost**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkPost) | **POST** /{cloudid}/rest/api/3/version/{versionId}/remotelink | 
-[**cloudidRestApi3WorkflowGet**](DefaultApi.md#cloudidRestApi3WorkflowGet) | **GET** /{cloudid}/rest/api/3/workflow | 
-[**cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete**](DefaultApi.md#cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete) | **DELETE** /{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties | 
-[**cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet**](DefaultApi.md#cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties | 
-[**cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost**](DefaultApi.md#cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost) | **POST** /{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties | 
-[**cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut**](DefaultApi.md#cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut) | **PUT** /{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties | 
-[**cloudidRestApi3WorkflowschemeIdCreatedraftPost**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdCreatedraftPost) | **POST** /{cloudid}/rest/api/3/workflowscheme/{id}/createdraft | 
-[**cloudidRestApi3WorkflowschemeIdDefaultDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDefaultDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/default | 
-[**cloudidRestApi3WorkflowschemeIdDefaultGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDefaultGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/default | 
-[**cloudidRestApi3WorkflowschemeIdDefaultPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDefaultPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/default | 
-[**cloudidRestApi3WorkflowschemeIdDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id} | 
-[**cloudidRestApi3WorkflowschemeIdDraftDefaultDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftDefaultDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/default | 
-[**cloudidRestApi3WorkflowschemeIdDraftDefaultGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftDefaultGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/default | 
-[**cloudidRestApi3WorkflowschemeIdDraftDefaultPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftDefaultPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/default | 
-[**cloudidRestApi3WorkflowschemeIdDraftDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/draft | 
-[**cloudidRestApi3WorkflowschemeIdDraftGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/draft | 
-[**cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType} | 
-[**cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType} | 
-[**cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType} | 
-[**cloudidRestApi3WorkflowschemeIdDraftPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/draft | 
-[**cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow | 
-[**cloudidRestApi3WorkflowschemeIdDraftWorkflowGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftWorkflowGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow | 
-[**cloudidRestApi3WorkflowschemeIdDraftWorkflowPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftWorkflowPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow | 
-[**cloudidRestApi3WorkflowschemeIdGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id} | 
-[**cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType} | 
-[**cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType} | 
-[**cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType} | 
-[**cloudidRestApi3WorkflowschemeIdPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id} | 
-[**cloudidRestApi3WorkflowschemeIdWorkflowDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdWorkflowDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/workflow | 
-[**cloudidRestApi3WorkflowschemeIdWorkflowGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdWorkflowGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/workflow | 
-[**cloudidRestApi3WorkflowschemeIdWorkflowPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdWorkflowPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/workflow | 
-[**cloudidRestApi3WorkflowschemePost**](DefaultApi.md#cloudidRestApi3WorkflowschemePost) | **POST** /{cloudid}/rest/api/3/workflowscheme | 
-[**cloudidRestApi3WorklogDeletedGet**](DefaultApi.md#cloudidRestApi3WorklogDeletedGet) | **GET** /{cloudid}/rest/api/3/worklog/deleted | 
-[**cloudidRestApi3WorklogListPost**](DefaultApi.md#cloudidRestApi3WorklogListPost) | **POST** /{cloudid}/rest/api/3/worklog/list | 
-[**cloudidRestApi3WorklogUpdatedGet**](DefaultApi.md#cloudidRestApi3WorklogUpdatedGet) | **GET** /{cloudid}/rest/api/3/worklog/updated | 
+[**applicationPropertiesAdvancedSettingsGet**](DefaultApi.md#applicationPropertiesAdvancedSettingsGet) | **GET** /application-properties/advanced-settings | 
+[**applicationPropertiesGet**](DefaultApi.md#applicationPropertiesGet) | **GET** /application-properties | 
+[**applicationPropertiesIdPut**](DefaultApi.md#applicationPropertiesIdPut) | **PUT** /application-properties/{id} | 
+[**applicationroleGet**](DefaultApi.md#applicationroleGet) | **GET** /applicationrole | 
+[**applicationroleKeyGet**](DefaultApi.md#applicationroleKeyGet) | **GET** /applicationrole/{key} | 
+[**attachmentIdDelete**](DefaultApi.md#attachmentIdDelete) | **DELETE** /attachment/{id} | 
+[**attachmentIdExpandHumanGet**](DefaultApi.md#attachmentIdExpandHumanGet) | **GET** /attachment/{id}/expand/human | 
+[**attachmentIdExpandRawGet**](DefaultApi.md#attachmentIdExpandRawGet) | **GET** /attachment/{id}/expand/raw | 
+[**attachmentIdGet**](DefaultApi.md#attachmentIdGet) | **GET** /attachment/{id} | 
+[**attachmentMetaGet**](DefaultApi.md#attachmentMetaGet) | **GET** /attachment/meta | 
+[**auditingRecordGet**](DefaultApi.md#auditingRecordGet) | **GET** /auditing/record | 
+[**avatarTypeSystemGet**](DefaultApi.md#avatarTypeSystemGet) | **GET** /avatar/{type}/system | 
+[**commentCommentIdPropertiesGet**](DefaultApi.md#commentCommentIdPropertiesGet) | **GET** /comment/{commentId}/properties | 
+[**commentCommentIdPropertiesPropertyKeyDelete**](DefaultApi.md#commentCommentIdPropertiesPropertyKeyDelete) | **DELETE** /comment/{commentId}/properties/{propertyKey} | 
+[**commentCommentIdPropertiesPropertyKeyGet**](DefaultApi.md#commentCommentIdPropertiesPropertyKeyGet) | **GET** /comment/{commentId}/properties/{propertyKey} | 
+[**commentCommentIdPropertiesPropertyKeyPut**](DefaultApi.md#commentCommentIdPropertiesPropertyKeyPut) | **PUT** /comment/{commentId}/properties/{propertyKey} | 
+[**commentListPost**](DefaultApi.md#commentListPost) | **POST** /comment/list | 
+[**componentIdDelete**](DefaultApi.md#componentIdDelete) | **DELETE** /component/{id} | 
+[**componentIdGet**](DefaultApi.md#componentIdGet) | **GET** /component/{id} | 
+[**componentIdPut**](DefaultApi.md#componentIdPut) | **PUT** /component/{id} | 
+[**componentIdRelatedIssueCountsGet**](DefaultApi.md#componentIdRelatedIssueCountsGet) | **GET** /component/{id}/relatedIssueCounts | 
+[**componentPost**](DefaultApi.md#componentPost) | **POST** /component | 
+[**configurationGet**](DefaultApi.md#configurationGet) | **GET** /configuration | 
+[**configurationTimetrackingDelete**](DefaultApi.md#configurationTimetrackingDelete) | **DELETE** /configuration/timetracking | 
+[**configurationTimetrackingGet**](DefaultApi.md#configurationTimetrackingGet) | **GET** /configuration/timetracking | 
+[**configurationTimetrackingListGet**](DefaultApi.md#configurationTimetrackingListGet) | **GET** /configuration/timetracking/list | 
+[**configurationTimetrackingOptionsGet**](DefaultApi.md#configurationTimetrackingOptionsGet) | **GET** /configuration/timetracking/options | 
+[**configurationTimetrackingOptionsPut**](DefaultApi.md#configurationTimetrackingOptionsPut) | **PUT** /configuration/timetracking/options | 
+[**configurationTimetrackingPut**](DefaultApi.md#configurationTimetrackingPut) | **PUT** /configuration/timetracking | 
+[**customFieldOptionIdGet**](DefaultApi.md#customFieldOptionIdGet) | **GET** /customFieldOption/{id} | 
+[**dashboardDashboardIdItemsItemIdPropertiesGet**](DefaultApi.md#dashboardDashboardIdItemsItemIdPropertiesGet) | **GET** /dashboard/{dashboardId}/items/{itemId}/properties | 
+[**dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete**](DefaultApi.md#dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete) | **DELETE** /dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
+[**dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet**](DefaultApi.md#dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet) | **GET** /dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
+[**dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut**](DefaultApi.md#dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut) | **PUT** /dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
+[**dashboardGet**](DefaultApi.md#dashboardGet) | **GET** /dashboard | 
+[**dashboardIdGet**](DefaultApi.md#dashboardIdGet) | **GET** /dashboard/{id} | 
+[**expressionEvalPost**](DefaultApi.md#expressionEvalPost) | **POST** /expression/eval | 
+[**fieldFieldKeyOptionGet**](DefaultApi.md#fieldFieldKeyOptionGet) | **GET** /field/{fieldKey}/option | 
+[**fieldFieldKeyOptionOptionIdDelete**](DefaultApi.md#fieldFieldKeyOptionOptionIdDelete) | **DELETE** /field/{fieldKey}/option/{optionId} | 
+[**fieldFieldKeyOptionOptionIdGet**](DefaultApi.md#fieldFieldKeyOptionOptionIdGet) | **GET** /field/{fieldKey}/option/{optionId} | 
+[**fieldFieldKeyOptionOptionIdIssueDelete**](DefaultApi.md#fieldFieldKeyOptionOptionIdIssueDelete) | **DELETE** /field/{fieldKey}/option/{optionId}/issue | 
+[**fieldFieldKeyOptionOptionIdPut**](DefaultApi.md#fieldFieldKeyOptionOptionIdPut) | **PUT** /field/{fieldKey}/option/{optionId} | 
+[**fieldFieldKeyOptionPost**](DefaultApi.md#fieldFieldKeyOptionPost) | **POST** /field/{fieldKey}/option | 
+[**fieldFieldKeyOptionSuggestionsEditGet**](DefaultApi.md#fieldFieldKeyOptionSuggestionsEditGet) | **GET** /field/{fieldKey}/option/suggestions/edit | 
+[**fieldFieldKeyOptionSuggestionsSearchGet**](DefaultApi.md#fieldFieldKeyOptionSuggestionsSearchGet) | **GET** /field/{fieldKey}/option/suggestions/search | 
+[**fieldGet**](DefaultApi.md#fieldGet) | **GET** /field | 
+[**fieldPost**](DefaultApi.md#fieldPost) | **POST** /field | 
+[**filterDefaultShareScopeGet**](DefaultApi.md#filterDefaultShareScopeGet) | **GET** /filter/defaultShareScope | 
+[**filterDefaultShareScopePut**](DefaultApi.md#filterDefaultShareScopePut) | **PUT** /filter/defaultShareScope | 
+[**filterFavouriteGet**](DefaultApi.md#filterFavouriteGet) | **GET** /filter/favourite | 
+[**filterGet**](DefaultApi.md#filterGet) | **GET** /filter | 
+[**filterIdColumnsDelete**](DefaultApi.md#filterIdColumnsDelete) | **DELETE** /filter/{id}/columns | 
+[**filterIdColumnsGet**](DefaultApi.md#filterIdColumnsGet) | **GET** /filter/{id}/columns | 
+[**filterIdColumnsPut**](DefaultApi.md#filterIdColumnsPut) | **PUT** /filter/{id}/columns | 
+[**filterIdDelete**](DefaultApi.md#filterIdDelete) | **DELETE** /filter/{id} | 
+[**filterIdFavouriteDelete**](DefaultApi.md#filterIdFavouriteDelete) | **DELETE** /filter/{id}/favourite | 
+[**filterIdFavouritePut**](DefaultApi.md#filterIdFavouritePut) | **PUT** /filter/{id}/favourite | 
+[**filterIdGet**](DefaultApi.md#filterIdGet) | **GET** /filter/{id} | 
+[**filterIdPermissionGet**](DefaultApi.md#filterIdPermissionGet) | **GET** /filter/{id}/permission | 
+[**filterIdPermissionPermissionIdDelete**](DefaultApi.md#filterIdPermissionPermissionIdDelete) | **DELETE** /filter/{id}/permission/{permissionId} | 
+[**filterIdPermissionPermissionIdGet**](DefaultApi.md#filterIdPermissionPermissionIdGet) | **GET** /filter/{id}/permission/{permissionId} | 
+[**filterIdPermissionPost**](DefaultApi.md#filterIdPermissionPost) | **POST** /filter/{id}/permission | 
+[**filterIdPut**](DefaultApi.md#filterIdPut) | **PUT** /filter/{id} | 
+[**filterMyGet**](DefaultApi.md#filterMyGet) | **GET** /filter/my | 
+[**filterPost**](DefaultApi.md#filterPost) | **POST** /filter | 
+[**filterSearchGet**](DefaultApi.md#filterSearchGet) | **GET** /filter/search | 
+[**groupDelete**](DefaultApi.md#groupDelete) | **DELETE** /group | 
+[**groupGet**](DefaultApi.md#groupGet) | **GET** /group | 
+[**groupMemberGet**](DefaultApi.md#groupMemberGet) | **GET** /group/member | 
+[**groupPost**](DefaultApi.md#groupPost) | **POST** /group | 
+[**groupUserDelete**](DefaultApi.md#groupUserDelete) | **DELETE** /group/user | 
+[**groupUserPost**](DefaultApi.md#groupUserPost) | **POST** /group/user | 
+[**groupsPickerGet**](DefaultApi.md#groupsPickerGet) | **GET** /groups/picker | 
+[**groupuserpickerGet**](DefaultApi.md#groupuserpickerGet) | **GET** /groupuserpicker | 
+[**issueBulkPost**](DefaultApi.md#issueBulkPost) | **POST** /issue/bulk | 
+[**issueCreatemetaGet**](DefaultApi.md#issueCreatemetaGet) | **GET** /issue/createmeta | 
+[**issueIssueIdOrKeyAssigneePut**](DefaultApi.md#issueIssueIdOrKeyAssigneePut) | **PUT** /issue/{issueIdOrKey}/assignee | 
+[**issueIssueIdOrKeyAttachmentsPost**](DefaultApi.md#issueIssueIdOrKeyAttachmentsPost) | **POST** /issue/{issueIdOrKey}/attachments | 
+[**issueIssueIdOrKeyChangelogGet**](DefaultApi.md#issueIssueIdOrKeyChangelogGet) | **GET** /issue/{issueIdOrKey}/changelog | 
+[**issueIssueIdOrKeyCommentGet**](DefaultApi.md#issueIssueIdOrKeyCommentGet) | **GET** /issue/{issueIdOrKey}/comment | 
+[**issueIssueIdOrKeyCommentIdDelete**](DefaultApi.md#issueIssueIdOrKeyCommentIdDelete) | **DELETE** /issue/{issueIdOrKey}/comment/{id} | 
+[**issueIssueIdOrKeyCommentIdGet**](DefaultApi.md#issueIssueIdOrKeyCommentIdGet) | **GET** /issue/{issueIdOrKey}/comment/{id} | 
+[**issueIssueIdOrKeyCommentIdPut**](DefaultApi.md#issueIssueIdOrKeyCommentIdPut) | **PUT** /issue/{issueIdOrKey}/comment/{id} | 
+[**issueIssueIdOrKeyCommentPost**](DefaultApi.md#issueIssueIdOrKeyCommentPost) | **POST** /issue/{issueIdOrKey}/comment | 
+[**issueIssueIdOrKeyDelete**](DefaultApi.md#issueIssueIdOrKeyDelete) | **DELETE** /issue/{issueIdOrKey} | 
+[**issueIssueIdOrKeyEditmetaGet**](DefaultApi.md#issueIssueIdOrKeyEditmetaGet) | **GET** /issue/{issueIdOrKey}/editmeta | 
+[**issueIssueIdOrKeyGet**](DefaultApi.md#issueIssueIdOrKeyGet) | **GET** /issue/{issueIdOrKey} | 
+[**issueIssueIdOrKeyNotifyPost**](DefaultApi.md#issueIssueIdOrKeyNotifyPost) | **POST** /issue/{issueIdOrKey}/notify | 
+[**issueIssueIdOrKeyPropertiesGet**](DefaultApi.md#issueIssueIdOrKeyPropertiesGet) | **GET** /issue/{issueIdOrKey}/properties | 
+[**issueIssueIdOrKeyPropertiesPropertyKeyDelete**](DefaultApi.md#issueIssueIdOrKeyPropertiesPropertyKeyDelete) | **DELETE** /issue/{issueIdOrKey}/properties/{propertyKey} | 
+[**issueIssueIdOrKeyPropertiesPropertyKeyGet**](DefaultApi.md#issueIssueIdOrKeyPropertiesPropertyKeyGet) | **GET** /issue/{issueIdOrKey}/properties/{propertyKey} | 
+[**issueIssueIdOrKeyPropertiesPropertyKeyPut**](DefaultApi.md#issueIssueIdOrKeyPropertiesPropertyKeyPut) | **PUT** /issue/{issueIdOrKey}/properties/{propertyKey} | 
+[**issueIssueIdOrKeyPut**](DefaultApi.md#issueIssueIdOrKeyPut) | **PUT** /issue/{issueIdOrKey} | 
+[**issueIssueIdOrKeyRemotelinkDelete**](DefaultApi.md#issueIssueIdOrKeyRemotelinkDelete) | **DELETE** /issue/{issueIdOrKey}/remotelink | 
+[**issueIssueIdOrKeyRemotelinkGet**](DefaultApi.md#issueIssueIdOrKeyRemotelinkGet) | **GET** /issue/{issueIdOrKey}/remotelink | 
+[**issueIssueIdOrKeyRemotelinkLinkIdDelete**](DefaultApi.md#issueIssueIdOrKeyRemotelinkLinkIdDelete) | **DELETE** /issue/{issueIdOrKey}/remotelink/{linkId} | 
+[**issueIssueIdOrKeyRemotelinkLinkIdGet**](DefaultApi.md#issueIssueIdOrKeyRemotelinkLinkIdGet) | **GET** /issue/{issueIdOrKey}/remotelink/{linkId} | 
+[**issueIssueIdOrKeyRemotelinkLinkIdPut**](DefaultApi.md#issueIssueIdOrKeyRemotelinkLinkIdPut) | **PUT** /issue/{issueIdOrKey}/remotelink/{linkId} | 
+[**issueIssueIdOrKeyRemotelinkPost**](DefaultApi.md#issueIssueIdOrKeyRemotelinkPost) | **POST** /issue/{issueIdOrKey}/remotelink | 
+[**issueIssueIdOrKeyTransitionsGet**](DefaultApi.md#issueIssueIdOrKeyTransitionsGet) | **GET** /issue/{issueIdOrKey}/transitions | 
+[**issueIssueIdOrKeyTransitionsPost**](DefaultApi.md#issueIssueIdOrKeyTransitionsPost) | **POST** /issue/{issueIdOrKey}/transitions | 
+[**issueIssueIdOrKeyVotesDelete**](DefaultApi.md#issueIssueIdOrKeyVotesDelete) | **DELETE** /issue/{issueIdOrKey}/votes | 
+[**issueIssueIdOrKeyVotesGet**](DefaultApi.md#issueIssueIdOrKeyVotesGet) | **GET** /issue/{issueIdOrKey}/votes | 
+[**issueIssueIdOrKeyVotesPost**](DefaultApi.md#issueIssueIdOrKeyVotesPost) | **POST** /issue/{issueIdOrKey}/votes | 
+[**issueIssueIdOrKeyWatchersDelete**](DefaultApi.md#issueIssueIdOrKeyWatchersDelete) | **DELETE** /issue/{issueIdOrKey}/watchers | 
+[**issueIssueIdOrKeyWatchersGet**](DefaultApi.md#issueIssueIdOrKeyWatchersGet) | **GET** /issue/{issueIdOrKey}/watchers | 
+[**issueIssueIdOrKeyWatchersPost**](DefaultApi.md#issueIssueIdOrKeyWatchersPost) | **POST** /issue/{issueIdOrKey}/watchers | 
+[**issueIssueIdOrKeyWorklogGet**](DefaultApi.md#issueIssueIdOrKeyWorklogGet) | **GET** /issue/{issueIdOrKey}/worklog | 
+[**issueIssueIdOrKeyWorklogIdDelete**](DefaultApi.md#issueIssueIdOrKeyWorklogIdDelete) | **DELETE** /issue/{issueIdOrKey}/worklog/{id} | 
+[**issueIssueIdOrKeyWorklogIdGet**](DefaultApi.md#issueIssueIdOrKeyWorklogIdGet) | **GET** /issue/{issueIdOrKey}/worklog/{id} | 
+[**issueIssueIdOrKeyWorklogIdPut**](DefaultApi.md#issueIssueIdOrKeyWorklogIdPut) | **PUT** /issue/{issueIdOrKey}/worklog/{id} | 
+[**issueIssueIdOrKeyWorklogPost**](DefaultApi.md#issueIssueIdOrKeyWorklogPost) | **POST** /issue/{issueIdOrKey}/worklog | 
+[**issueIssueIdOrKeyWorklogWorklogIdPropertiesGet**](DefaultApi.md#issueIssueIdOrKeyWorklogWorklogIdPropertiesGet) | **GET** /issue/{issueIdOrKey}/worklog/{worklogId}/properties | 
+[**issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete**](DefaultApi.md#issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete) | **DELETE** /issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
+[**issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet**](DefaultApi.md#issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet) | **GET** /issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
+[**issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut**](DefaultApi.md#issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut) | **PUT** /issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
+[**issueLinkLinkIdDelete**](DefaultApi.md#issueLinkLinkIdDelete) | **DELETE** /issueLink/{linkId} | 
+[**issueLinkLinkIdGet**](DefaultApi.md#issueLinkLinkIdGet) | **GET** /issueLink/{linkId} | 
+[**issueLinkPost**](DefaultApi.md#issueLinkPost) | **POST** /issueLink | 
+[**issueLinkTypeGet**](DefaultApi.md#issueLinkTypeGet) | **GET** /issueLinkType | 
+[**issueLinkTypeIssueLinkTypeIdDelete**](DefaultApi.md#issueLinkTypeIssueLinkTypeIdDelete) | **DELETE** /issueLinkType/{issueLinkTypeId} | 
+[**issueLinkTypeIssueLinkTypeIdGet**](DefaultApi.md#issueLinkTypeIssueLinkTypeIdGet) | **GET** /issueLinkType/{issueLinkTypeId} | 
+[**issueLinkTypeIssueLinkTypeIdPut**](DefaultApi.md#issueLinkTypeIssueLinkTypeIdPut) | **PUT** /issueLinkType/{issueLinkTypeId} | 
+[**issueLinkTypePost**](DefaultApi.md#issueLinkTypePost) | **POST** /issueLinkType | 
+[**issuePickerGet**](DefaultApi.md#issuePickerGet) | **GET** /issue/picker | 
+[**issuePost**](DefaultApi.md#issuePost) | **POST** /issue | 
+[**issuePropertiesPropertyKeyDelete**](DefaultApi.md#issuePropertiesPropertyKeyDelete) | **DELETE** /issue/properties/{propertyKey} | 
+[**issuePropertiesPropertyKeyPut**](DefaultApi.md#issuePropertiesPropertyKeyPut) | **PUT** /issue/properties/{propertyKey} | 
+[**issuesecurityschemesGet**](DefaultApi.md#issuesecurityschemesGet) | **GET** /issuesecurityschemes | 
+[**issuesecurityschemesIdGet**](DefaultApi.md#issuesecurityschemesIdGet) | **GET** /issuesecurityschemes/{id} | 
+[**issuetypeGet**](DefaultApi.md#issuetypeGet) | **GET** /issuetype | 
+[**issuetypeIdAlternativesGet**](DefaultApi.md#issuetypeIdAlternativesGet) | **GET** /issuetype/{id}/alternatives | 
+[**issuetypeIdAvatar2Post**](DefaultApi.md#issuetypeIdAvatar2Post) | **POST** /issuetype/{id}/avatar2 | 
+[**issuetypeIdDelete**](DefaultApi.md#issuetypeIdDelete) | **DELETE** /issuetype/{id} | 
+[**issuetypeIdGet**](DefaultApi.md#issuetypeIdGet) | **GET** /issuetype/{id} | 
+[**issuetypeIdPut**](DefaultApi.md#issuetypeIdPut) | **PUT** /issuetype/{id} | 
+[**issuetypeIssueTypeIdPropertiesGet**](DefaultApi.md#issuetypeIssueTypeIdPropertiesGet) | **GET** /issuetype/{issueTypeId}/properties | 
+[**issuetypeIssueTypeIdPropertiesPropertyKeyDelete**](DefaultApi.md#issuetypeIssueTypeIdPropertiesPropertyKeyDelete) | **DELETE** /issuetype/{issueTypeId}/properties/{propertyKey} | 
+[**issuetypeIssueTypeIdPropertiesPropertyKeyGet**](DefaultApi.md#issuetypeIssueTypeIdPropertiesPropertyKeyGet) | **GET** /issuetype/{issueTypeId}/properties/{propertyKey} | 
+[**issuetypeIssueTypeIdPropertiesPropertyKeyPut**](DefaultApi.md#issuetypeIssueTypeIdPropertiesPropertyKeyPut) | **PUT** /issuetype/{issueTypeId}/properties/{propertyKey} | 
+[**issuetypePost**](DefaultApi.md#issuetypePost) | **POST** /issuetype | 
+[**jqlAutocompletedataGet**](DefaultApi.md#jqlAutocompletedataGet) | **GET** /jql/autocompletedata | 
+[**jqlAutocompletedataSuggestionsGet**](DefaultApi.md#jqlAutocompletedataSuggestionsGet) | **GET** /jql/autocompletedata/suggestions | 
+[**jqlPdcleanerPost**](DefaultApi.md#jqlPdcleanerPost) | **POST** /jql/pdcleaner | 
+[**mypermissionsGet**](DefaultApi.md#mypermissionsGet) | **GET** /mypermissions | 
+[**mypreferencesDelete**](DefaultApi.md#mypreferencesDelete) | **DELETE** /mypreferences | 
+[**mypreferencesGet**](DefaultApi.md#mypreferencesGet) | **GET** /mypreferences | 
+[**mypreferencesLocaleDelete**](DefaultApi.md#mypreferencesLocaleDelete) | **DELETE** /mypreferences/locale | 
+[**mypreferencesLocaleGet**](DefaultApi.md#mypreferencesLocaleGet) | **GET** /mypreferences/locale | 
+[**mypreferencesLocalePut**](DefaultApi.md#mypreferencesLocalePut) | **PUT** /mypreferences/locale | 
+[**mypreferencesPut**](DefaultApi.md#mypreferencesPut) | **PUT** /mypreferences | 
+[**myselfGet**](DefaultApi.md#myselfGet) | **GET** /myself | 
+[**notificationschemeGet**](DefaultApi.md#notificationschemeGet) | **GET** /notificationscheme | 
+[**notificationschemeIdGet**](DefaultApi.md#notificationschemeIdGet) | **GET** /notificationscheme/{id} | 
+[**permissionsGet**](DefaultApi.md#permissionsGet) | **GET** /permissions | 
+[**permissionsProjectPost**](DefaultApi.md#permissionsProjectPost) | **POST** /permissions/project | 
+[**permissionschemeGet**](DefaultApi.md#permissionschemeGet) | **GET** /permissionscheme | 
+[**permissionschemePost**](DefaultApi.md#permissionschemePost) | **POST** /permissionscheme | 
+[**permissionschemeSchemeIdDelete**](DefaultApi.md#permissionschemeSchemeIdDelete) | **DELETE** /permissionscheme/{schemeId} | 
+[**permissionschemeSchemeIdGet**](DefaultApi.md#permissionschemeSchemeIdGet) | **GET** /permissionscheme/{schemeId} | 
+[**permissionschemeSchemeIdPermissionGet**](DefaultApi.md#permissionschemeSchemeIdPermissionGet) | **GET** /permissionscheme/{schemeId}/permission | 
+[**permissionschemeSchemeIdPermissionPermissionIdDelete**](DefaultApi.md#permissionschemeSchemeIdPermissionPermissionIdDelete) | **DELETE** /permissionscheme/{schemeId}/permission/{permissionId} | 
+[**permissionschemeSchemeIdPermissionPermissionIdGet**](DefaultApi.md#permissionschemeSchemeIdPermissionPermissionIdGet) | **GET** /permissionscheme/{schemeId}/permission/{permissionId} | 
+[**permissionschemeSchemeIdPermissionPost**](DefaultApi.md#permissionschemeSchemeIdPermissionPost) | **POST** /permissionscheme/{schemeId}/permission | 
+[**permissionschemeSchemeIdPut**](DefaultApi.md#permissionschemeSchemeIdPut) | **PUT** /permissionscheme/{schemeId} | 
+[**priorityGet**](DefaultApi.md#priorityGet) | **GET** /priority | 
+[**priorityIdGet**](DefaultApi.md#priorityIdGet) | **GET** /priority/{id} | 
+[**projectCategoryGet**](DefaultApi.md#projectCategoryGet) | **GET** /projectCategory | 
+[**projectCategoryIdDelete**](DefaultApi.md#projectCategoryIdDelete) | **DELETE** /projectCategory/{id} | 
+[**projectCategoryIdGet**](DefaultApi.md#projectCategoryIdGet) | **GET** /projectCategory/{id} | 
+[**projectCategoryIdPut**](DefaultApi.md#projectCategoryIdPut) | **PUT** /projectCategory/{id} | 
+[**projectCategoryPost**](DefaultApi.md#projectCategoryPost) | **POST** /projectCategory | 
+[**projectGet**](DefaultApi.md#projectGet) | **GET** /project | 
+[**projectPost**](DefaultApi.md#projectPost) | **POST** /project | 
+[**projectProjectIdOrKeyAvatar2Post**](DefaultApi.md#projectProjectIdOrKeyAvatar2Post) | **POST** /project/{projectIdOrKey}/avatar2 | 
+[**projectProjectIdOrKeyAvatarIdDelete**](DefaultApi.md#projectProjectIdOrKeyAvatarIdDelete) | **DELETE** /project/{projectIdOrKey}/avatar/{id} | 
+[**projectProjectIdOrKeyAvatarPut**](DefaultApi.md#projectProjectIdOrKeyAvatarPut) | **PUT** /project/{projectIdOrKey}/avatar | 
+[**projectProjectIdOrKeyAvatarsGet**](DefaultApi.md#projectProjectIdOrKeyAvatarsGet) | **GET** /project/{projectIdOrKey}/avatars | 
+[**projectProjectIdOrKeyComponentGet**](DefaultApi.md#projectProjectIdOrKeyComponentGet) | **GET** /project/{projectIdOrKey}/component | 
+[**projectProjectIdOrKeyComponentsGet**](DefaultApi.md#projectProjectIdOrKeyComponentsGet) | **GET** /project/{projectIdOrKey}/components | 
+[**projectProjectIdOrKeyDelete**](DefaultApi.md#projectProjectIdOrKeyDelete) | **DELETE** /project/{projectIdOrKey} | 
+[**projectProjectIdOrKeyGet**](DefaultApi.md#projectProjectIdOrKeyGet) | **GET** /project/{projectIdOrKey} | 
+[**projectProjectIdOrKeyPropertiesGet**](DefaultApi.md#projectProjectIdOrKeyPropertiesGet) | **GET** /project/{projectIdOrKey}/properties | 
+[**projectProjectIdOrKeyPropertiesPropertyKeyDelete**](DefaultApi.md#projectProjectIdOrKeyPropertiesPropertyKeyDelete) | **DELETE** /project/{projectIdOrKey}/properties/{propertyKey} | 
+[**projectProjectIdOrKeyPropertiesPropertyKeyGet**](DefaultApi.md#projectProjectIdOrKeyPropertiesPropertyKeyGet) | **GET** /project/{projectIdOrKey}/properties/{propertyKey} | 
+[**projectProjectIdOrKeyPropertiesPropertyKeyPut**](DefaultApi.md#projectProjectIdOrKeyPropertiesPropertyKeyPut) | **PUT** /project/{projectIdOrKey}/properties/{propertyKey} | 
+[**projectProjectIdOrKeyPut**](DefaultApi.md#projectProjectIdOrKeyPut) | **PUT** /project/{projectIdOrKey} | 
+[**projectProjectIdOrKeyRoleGet**](DefaultApi.md#projectProjectIdOrKeyRoleGet) | **GET** /project/{projectIdOrKey}/role | 
+[**projectProjectIdOrKeyRoleIdDelete**](DefaultApi.md#projectProjectIdOrKeyRoleIdDelete) | **DELETE** /project/{projectIdOrKey}/role/{id} | 
+[**projectProjectIdOrKeyRoleIdGet**](DefaultApi.md#projectProjectIdOrKeyRoleIdGet) | **GET** /project/{projectIdOrKey}/role/{id} | 
+[**projectProjectIdOrKeyRoleIdPost**](DefaultApi.md#projectProjectIdOrKeyRoleIdPost) | **POST** /project/{projectIdOrKey}/role/{id} | 
+[**projectProjectIdOrKeyRoleIdPut**](DefaultApi.md#projectProjectIdOrKeyRoleIdPut) | **PUT** /project/{projectIdOrKey}/role/{id} | 
+[**projectProjectIdOrKeyRoledetailsGet**](DefaultApi.md#projectProjectIdOrKeyRoledetailsGet) | **GET** /project/{projectIdOrKey}/roledetails | 
+[**projectProjectIdOrKeyStatusesGet**](DefaultApi.md#projectProjectIdOrKeyStatusesGet) | **GET** /project/{projectIdOrKey}/statuses | 
+[**projectProjectIdOrKeyTypeNewProjectTypeKeyPut**](DefaultApi.md#projectProjectIdOrKeyTypeNewProjectTypeKeyPut) | **PUT** /project/{projectIdOrKey}/type/{newProjectTypeKey} | 
+[**projectProjectIdOrKeyVersionGet**](DefaultApi.md#projectProjectIdOrKeyVersionGet) | **GET** /project/{projectIdOrKey}/version | 
+[**projectProjectIdOrKeyVersionsGet**](DefaultApi.md#projectProjectIdOrKeyVersionsGet) | **GET** /project/{projectIdOrKey}/versions | 
+[**projectProjectKeyOrIdIssuesecuritylevelschemeGet**](DefaultApi.md#projectProjectKeyOrIdIssuesecuritylevelschemeGet) | **GET** /project/{projectKeyOrId}/issuesecuritylevelscheme | 
+[**projectProjectKeyOrIdNotificationschemeGet**](DefaultApi.md#projectProjectKeyOrIdNotificationschemeGet) | **GET** /project/{projectKeyOrId}/notificationscheme | 
+[**projectProjectKeyOrIdPermissionschemeGet**](DefaultApi.md#projectProjectKeyOrIdPermissionschemeGet) | **GET** /project/{projectKeyOrId}/permissionscheme | 
+[**projectProjectKeyOrIdPermissionschemePut**](DefaultApi.md#projectProjectKeyOrIdPermissionschemePut) | **PUT** /project/{projectKeyOrId}/permissionscheme | 
+[**projectProjectKeyOrIdSecuritylevelGet**](DefaultApi.md#projectProjectKeyOrIdSecuritylevelGet) | **GET** /project/{projectKeyOrId}/securitylevel | 
+[**projectSearchGet**](DefaultApi.md#projectSearchGet) | **GET** /project/search | 
+[**projectTypeGet**](DefaultApi.md#projectTypeGet) | **GET** /project/type | 
+[**projectTypeProjectTypeKeyAccessibleGet**](DefaultApi.md#projectTypeProjectTypeKeyAccessibleGet) | **GET** /project/type/{projectTypeKey}/accessible | 
+[**projectTypeProjectTypeKeyGet**](DefaultApi.md#projectTypeProjectTypeKeyGet) | **GET** /project/type/{projectTypeKey} | 
+[**projectvalidateKeyGet**](DefaultApi.md#projectvalidateKeyGet) | **GET** /projectvalidate/key | 
+[**projectvalidateValidProjectKeyGet**](DefaultApi.md#projectvalidateValidProjectKeyGet) | **GET** /projectvalidate/validProjectKey | 
+[**projectvalidateValidProjectNameGet**](DefaultApi.md#projectvalidateValidProjectNameGet) | **GET** /projectvalidate/validProjectName | 
+[**resolutionGet**](DefaultApi.md#resolutionGet) | **GET** /resolution | 
+[**resolutionIdGet**](DefaultApi.md#resolutionIdGet) | **GET** /resolution/{id} | 
+[**roleGet**](DefaultApi.md#roleGet) | **GET** /role | 
+[**roleIdActorsDelete**](DefaultApi.md#roleIdActorsDelete) | **DELETE** /role/{id}/actors | 
+[**roleIdActorsGet**](DefaultApi.md#roleIdActorsGet) | **GET** /role/{id}/actors | 
+[**roleIdActorsPost**](DefaultApi.md#roleIdActorsPost) | **POST** /role/{id}/actors | 
+[**roleIdDelete**](DefaultApi.md#roleIdDelete) | **DELETE** /role/{id} | 
+[**roleIdGet**](DefaultApi.md#roleIdGet) | **GET** /role/{id} | 
+[**roleIdPost**](DefaultApi.md#roleIdPost) | **POST** /role/{id} | 
+[**roleIdPut**](DefaultApi.md#roleIdPut) | **PUT** /role/{id} | 
+[**rolePost**](DefaultApi.md#rolePost) | **POST** /role | 
+[**screensAddToDefaultFieldIdPost**](DefaultApi.md#screensAddToDefaultFieldIdPost) | **POST** /screens/addToDefault/{fieldId} | 
+[**screensGet**](DefaultApi.md#screensGet) | **GET** /screens | 
+[**screensScreenIdAvailableFieldsGet**](DefaultApi.md#screensScreenIdAvailableFieldsGet) | **GET** /screens/{screenId}/availableFields | 
+[**screensScreenIdTabsGet**](DefaultApi.md#screensScreenIdTabsGet) | **GET** /screens/{screenId}/tabs | 
+[**screensScreenIdTabsPost**](DefaultApi.md#screensScreenIdTabsPost) | **POST** /screens/{screenId}/tabs | 
+[**screensScreenIdTabsTabIdDelete**](DefaultApi.md#screensScreenIdTabsTabIdDelete) | **DELETE** /screens/{screenId}/tabs/{tabId} | 
+[**screensScreenIdTabsTabIdFieldsGet**](DefaultApi.md#screensScreenIdTabsTabIdFieldsGet) | **GET** /screens/{screenId}/tabs/{tabId}/fields | 
+[**screensScreenIdTabsTabIdFieldsIdDelete**](DefaultApi.md#screensScreenIdTabsTabIdFieldsIdDelete) | **DELETE** /screens/{screenId}/tabs/{tabId}/fields/{id} | 
+[**screensScreenIdTabsTabIdFieldsIdMovePost**](DefaultApi.md#screensScreenIdTabsTabIdFieldsIdMovePost) | **POST** /screens/{screenId}/tabs/{tabId}/fields/{id}/move | 
+[**screensScreenIdTabsTabIdFieldsPost**](DefaultApi.md#screensScreenIdTabsTabIdFieldsPost) | **POST** /screens/{screenId}/tabs/{tabId}/fields | 
+[**screensScreenIdTabsTabIdMovePosPost**](DefaultApi.md#screensScreenIdTabsTabIdMovePosPost) | **POST** /screens/{screenId}/tabs/{tabId}/move/{pos} | 
+[**screensScreenIdTabsTabIdPut**](DefaultApi.md#screensScreenIdTabsTabIdPut) | **PUT** /screens/{screenId}/tabs/{tabId} | 
+[**searchGet**](DefaultApi.md#searchGet) | **GET** /search | 
+[**searchPost**](DefaultApi.md#searchPost) | **POST** /search | 
+[**securitylevelIdGet**](DefaultApi.md#securitylevelIdGet) | **GET** /securitylevel/{id} | 
+[**serverInfoGet**](DefaultApi.md#serverInfoGet) | **GET** /serverInfo | 
+[**settingsColumnsGet**](DefaultApi.md#settingsColumnsGet) | **GET** /settings/columns | 
+[**settingsColumnsPut**](DefaultApi.md#settingsColumnsPut) | **PUT** /settings/columns | 
+[**statusGet**](DefaultApi.md#statusGet) | **GET** /status | 
+[**statusIdOrNameGet**](DefaultApi.md#statusIdOrNameGet) | **GET** /status/{idOrName} | 
+[**statuscategoryGet**](DefaultApi.md#statuscategoryGet) | **GET** /statuscategory | 
+[**statuscategoryIdOrKeyGet**](DefaultApi.md#statuscategoryIdOrKeyGet) | **GET** /statuscategory/{idOrKey} | 
+[**taskTaskIdCancelPost**](DefaultApi.md#taskTaskIdCancelPost) | **POST** /task/{taskId}/cancel | 
+[**taskTaskIdGet**](DefaultApi.md#taskTaskIdGet) | **GET** /task/{taskId} | 
+[**universalAvatarTypeTypeOwnerEntityIdGet**](DefaultApi.md#universalAvatarTypeTypeOwnerEntityIdGet) | **GET** /universal_avatar/type/{type}/owner/{entityId} | 
+[**universalAvatarTypeTypeOwnerEntityIdPost**](DefaultApi.md#universalAvatarTypeTypeOwnerEntityIdPost) | **POST** /universal_avatar/type/{type}/owner/{entityId} | 
+[**universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete**](DefaultApi.md#universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete) | **DELETE** /universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id} | 
+[**userAssignableMultiProjectSearchGet**](DefaultApi.md#userAssignableMultiProjectSearchGet) | **GET** /user/assignable/multiProjectSearch | 
+[**userAssignableSearchGet**](DefaultApi.md#userAssignableSearchGet) | **GET** /user/assignable/search | 
+[**userBulkGet**](DefaultApi.md#userBulkGet) | **GET** /user/bulk | 
+[**userColumnsDelete**](DefaultApi.md#userColumnsDelete) | **DELETE** /user/columns | 
+[**userColumnsGet**](DefaultApi.md#userColumnsGet) | **GET** /user/columns | 
+[**userColumnsPut**](DefaultApi.md#userColumnsPut) | **PUT** /user/columns | 
+[**userDelete**](DefaultApi.md#userDelete) | **DELETE** /user | 
+[**userGet**](DefaultApi.md#userGet) | **GET** /user | 
+[**userGroupsGet**](DefaultApi.md#userGroupsGet) | **GET** /user/groups | 
+[**userPermissionSearchGet**](DefaultApi.md#userPermissionSearchGet) | **GET** /user/permission/search | 
+[**userPickerGet**](DefaultApi.md#userPickerGet) | **GET** /user/picker | 
+[**userPost**](DefaultApi.md#userPost) | **POST** /user | 
+[**userPropertiesGet**](DefaultApi.md#userPropertiesGet) | **GET** /user/properties | 
+[**userPropertiesPropertyKeyDelete**](DefaultApi.md#userPropertiesPropertyKeyDelete) | **DELETE** /user/properties/{propertyKey} | 
+[**userPropertiesPropertyKeyGet**](DefaultApi.md#userPropertiesPropertyKeyGet) | **GET** /user/properties/{propertyKey} | 
+[**userPropertiesPropertyKeyPut**](DefaultApi.md#userPropertiesPropertyKeyPut) | **PUT** /user/properties/{propertyKey} | 
+[**userSearchGet**](DefaultApi.md#userSearchGet) | **GET** /user/search | 
+[**userSearchQueryGet**](DefaultApi.md#userSearchQueryGet) | **GET** /user/search/query | 
+[**userSearchQueryKeyGet**](DefaultApi.md#userSearchQueryKeyGet) | **GET** /user/search/query/key | 
+[**userViewissueSearchGet**](DefaultApi.md#userViewissueSearchGet) | **GET** /user/viewissue/search | 
+[**versionIdDelete**](DefaultApi.md#versionIdDelete) | **DELETE** /version/{id} | 
+[**versionIdGet**](DefaultApi.md#versionIdGet) | **GET** /version/{id} | 
+[**versionIdMergetoMoveIssuesToPut**](DefaultApi.md#versionIdMergetoMoveIssuesToPut) | **PUT** /version/{id}/mergeto/{moveIssuesTo} | 
+[**versionIdMovePost**](DefaultApi.md#versionIdMovePost) | **POST** /version/{id}/move | 
+[**versionIdPut**](DefaultApi.md#versionIdPut) | **PUT** /version/{id} | 
+[**versionIdRelatedIssueCountsGet**](DefaultApi.md#versionIdRelatedIssueCountsGet) | **GET** /version/{id}/relatedIssueCounts | 
+[**versionIdRemoveAndSwapPost**](DefaultApi.md#versionIdRemoveAndSwapPost) | **POST** /version/{id}/removeAndSwap | 
+[**versionIdUnresolvedIssueCountGet**](DefaultApi.md#versionIdUnresolvedIssueCountGet) | **GET** /version/{id}/unresolvedIssueCount | 
+[**versionPost**](DefaultApi.md#versionPost) | **POST** /version | 
+[**versionRemotelinkGet**](DefaultApi.md#versionRemotelinkGet) | **GET** /version/remotelink | 
+[**versionVersionIdRemotelinkDelete**](DefaultApi.md#versionVersionIdRemotelinkDelete) | **DELETE** /version/{versionId}/remotelink | 
+[**versionVersionIdRemotelinkGet**](DefaultApi.md#versionVersionIdRemotelinkGet) | **GET** /version/{versionId}/remotelink | 
+[**versionVersionIdRemotelinkGlobalIdDelete**](DefaultApi.md#versionVersionIdRemotelinkGlobalIdDelete) | **DELETE** /version/{versionId}/remotelink/{globalId} | 
+[**versionVersionIdRemotelinkGlobalIdGet**](DefaultApi.md#versionVersionIdRemotelinkGlobalIdGet) | **GET** /version/{versionId}/remotelink/{globalId} | 
+[**versionVersionIdRemotelinkGlobalIdPost**](DefaultApi.md#versionVersionIdRemotelinkGlobalIdPost) | **POST** /version/{versionId}/remotelink/{globalId} | 
+[**versionVersionIdRemotelinkPost**](DefaultApi.md#versionVersionIdRemotelinkPost) | **POST** /version/{versionId}/remotelink | 
+[**workflowGet**](DefaultApi.md#workflowGet) | **GET** /workflow | 
+[**workflowTransitionsTransitionIdPropertiesDelete**](DefaultApi.md#workflowTransitionsTransitionIdPropertiesDelete) | **DELETE** /workflow/transitions/{transitionId}/properties | 
+[**workflowTransitionsTransitionIdPropertiesGet**](DefaultApi.md#workflowTransitionsTransitionIdPropertiesGet) | **GET** /workflow/transitions/{transitionId}/properties | 
+[**workflowTransitionsTransitionIdPropertiesPost**](DefaultApi.md#workflowTransitionsTransitionIdPropertiesPost) | **POST** /workflow/transitions/{transitionId}/properties | 
+[**workflowTransitionsTransitionIdPropertiesPut**](DefaultApi.md#workflowTransitionsTransitionIdPropertiesPut) | **PUT** /workflow/transitions/{transitionId}/properties | 
+[**workflowschemeIdCreatedraftPost**](DefaultApi.md#workflowschemeIdCreatedraftPost) | **POST** /workflowscheme/{id}/createdraft | 
+[**workflowschemeIdDefaultDelete**](DefaultApi.md#workflowschemeIdDefaultDelete) | **DELETE** /workflowscheme/{id}/default | 
+[**workflowschemeIdDefaultGet**](DefaultApi.md#workflowschemeIdDefaultGet) | **GET** /workflowscheme/{id}/default | 
+[**workflowschemeIdDefaultPut**](DefaultApi.md#workflowschemeIdDefaultPut) | **PUT** /workflowscheme/{id}/default | 
+[**workflowschemeIdDelete**](DefaultApi.md#workflowschemeIdDelete) | **DELETE** /workflowscheme/{id} | 
+[**workflowschemeIdDraftDefaultDelete**](DefaultApi.md#workflowschemeIdDraftDefaultDelete) | **DELETE** /workflowscheme/{id}/draft/default | 
+[**workflowschemeIdDraftDefaultGet**](DefaultApi.md#workflowschemeIdDraftDefaultGet) | **GET** /workflowscheme/{id}/draft/default | 
+[**workflowschemeIdDraftDefaultPut**](DefaultApi.md#workflowschemeIdDraftDefaultPut) | **PUT** /workflowscheme/{id}/draft/default | 
+[**workflowschemeIdDraftDelete**](DefaultApi.md#workflowschemeIdDraftDelete) | **DELETE** /workflowscheme/{id}/draft | 
+[**workflowschemeIdDraftGet**](DefaultApi.md#workflowschemeIdDraftGet) | **GET** /workflowscheme/{id}/draft | 
+[**workflowschemeIdDraftIssuetypeIssueTypeDelete**](DefaultApi.md#workflowschemeIdDraftIssuetypeIssueTypeDelete) | **DELETE** /workflowscheme/{id}/draft/issuetype/{issueType} | 
+[**workflowschemeIdDraftIssuetypeIssueTypeGet**](DefaultApi.md#workflowschemeIdDraftIssuetypeIssueTypeGet) | **GET** /workflowscheme/{id}/draft/issuetype/{issueType} | 
+[**workflowschemeIdDraftIssuetypeIssueTypePut**](DefaultApi.md#workflowschemeIdDraftIssuetypeIssueTypePut) | **PUT** /workflowscheme/{id}/draft/issuetype/{issueType} | 
+[**workflowschemeIdDraftPut**](DefaultApi.md#workflowschemeIdDraftPut) | **PUT** /workflowscheme/{id}/draft | 
+[**workflowschemeIdDraftWorkflowDelete**](DefaultApi.md#workflowschemeIdDraftWorkflowDelete) | **DELETE** /workflowscheme/{id}/draft/workflow | 
+[**workflowschemeIdDraftWorkflowGet**](DefaultApi.md#workflowschemeIdDraftWorkflowGet) | **GET** /workflowscheme/{id}/draft/workflow | 
+[**workflowschemeIdDraftWorkflowPut**](DefaultApi.md#workflowschemeIdDraftWorkflowPut) | **PUT** /workflowscheme/{id}/draft/workflow | 
+[**workflowschemeIdGet**](DefaultApi.md#workflowschemeIdGet) | **GET** /workflowscheme/{id} | 
+[**workflowschemeIdIssuetypeIssueTypeDelete**](DefaultApi.md#workflowschemeIdIssuetypeIssueTypeDelete) | **DELETE** /workflowscheme/{id}/issuetype/{issueType} | 
+[**workflowschemeIdIssuetypeIssueTypeGet**](DefaultApi.md#workflowschemeIdIssuetypeIssueTypeGet) | **GET** /workflowscheme/{id}/issuetype/{issueType} | 
+[**workflowschemeIdIssuetypeIssueTypePut**](DefaultApi.md#workflowschemeIdIssuetypeIssueTypePut) | **PUT** /workflowscheme/{id}/issuetype/{issueType} | 
+[**workflowschemeIdPut**](DefaultApi.md#workflowschemeIdPut) | **PUT** /workflowscheme/{id} | 
+[**workflowschemeIdWorkflowDelete**](DefaultApi.md#workflowschemeIdWorkflowDelete) | **DELETE** /workflowscheme/{id}/workflow | 
+[**workflowschemeIdWorkflowGet**](DefaultApi.md#workflowschemeIdWorkflowGet) | **GET** /workflowscheme/{id}/workflow | 
+[**workflowschemeIdWorkflowPut**](DefaultApi.md#workflowschemeIdWorkflowPut) | **PUT** /workflowscheme/{id}/workflow | 
+[**workflowschemePost**](DefaultApi.md#workflowschemePost) | **POST** /workflowscheme | 
+[**worklogDeletedGet**](DefaultApi.md#worklogDeletedGet) | **GET** /worklog/deleted | 
+[**worklogListPost**](DefaultApi.md#worklogListPost) | **POST** /worklog/list | 
+[**worklogUpdatedGet**](DefaultApi.md#worklogUpdatedGet) | **GET** /worklog/updated | 
 
 
 
-## cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet
+## applicationPropertiesAdvancedSettingsGet
 
-> [InlineResponse200] cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet(cloudid)
+> [InlineResponse200] applicationPropertiesAdvancedSettingsGet(cloudid)
 
 
 
@@ -343,7 +343,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet(cloudid, (error, data, response) => {
+apiInstance.applicationPropertiesAdvancedSettingsGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -373,9 +373,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ApplicationPropertiesGet
+## applicationPropertiesGet
 
-> [InlineResponse200] cloudidRestApi3ApplicationPropertiesGet(cloudid, opts)
+> [InlineResponse200] applicationPropertiesGet(cloudid, opts)
 
 
 
@@ -397,7 +397,7 @@ let opts = {
   'keyFilter': "keyFilter_example", // String | When a key isn't provided, this filters the list of results by the application property key using a regular expression. For example, using jira.lf.* will return all application properties with keys that start with jira.lf..
   'permissionLevel': "permissionLevel_example" // String | The permission level of all items being returned in the list.
 };
-apiInstance.cloudidRestApi3ApplicationPropertiesGet(cloudid, opts, (error, data, response) => {
+apiInstance.applicationPropertiesGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -430,9 +430,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ApplicationPropertiesIdPut
+## applicationPropertiesIdPut
 
-> cloudidRestApi3ApplicationPropertiesIdPut(cloudid, id, opts)
+> applicationPropertiesIdPut(cloudid, id, opts)
 
 
 
@@ -453,7 +453,7 @@ let id = "id_example"; // String | The key of the application property to update
 let opts = {
   'body': new Jira.InlineObject() // InlineObject | 
 };
-apiInstance.cloudidRestApi3ApplicationPropertiesIdPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.applicationPropertiesIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -485,9 +485,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ApplicationroleGet
+## applicationroleGet
 
-> [InlineResponse2001] cloudidRestApi3ApplicationroleGet(cloudid)
+> [InlineResponse2001] applicationroleGet(cloudid)
 
 
 
@@ -504,7 +504,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ApplicationroleGet(cloudid, (error, data, response) => {
+apiInstance.applicationroleGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -534,9 +534,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ApplicationroleKeyGet
+## applicationroleKeyGet
 
-> InlineResponse2002 cloudidRestApi3ApplicationroleKeyGet(cloudid, key)
+> InlineResponse2002 applicationroleKeyGet(cloudid, key)
 
 
 
@@ -554,7 +554,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let key = "key_example"; // String | The key of the application role. Use the Get all application roles method to get the key for each application role.
-apiInstance.cloudidRestApi3ApplicationroleKeyGet(cloudid, key, (error, data, response) => {
+apiInstance.applicationroleKeyGet(cloudid, key, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -585,9 +585,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3AttachmentIdDelete
+## attachmentIdDelete
 
-> cloudidRestApi3AttachmentIdDelete(cloudid, id)
+> attachmentIdDelete(cloudid, id)
 
 
 
@@ -605,7 +605,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.cloudidRestApi3AttachmentIdDelete(cloudid, id, (error, data, response) => {
+apiInstance.attachmentIdDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -636,9 +636,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3AttachmentIdExpandHumanGet
+## attachmentIdExpandHumanGet
 
-> InlineResponse2005 cloudidRestApi3AttachmentIdExpandHumanGet(cloudid, id)
+> InlineResponse2005 attachmentIdExpandHumanGet(cloudid, id)
 
 
 
@@ -656,7 +656,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.cloudidRestApi3AttachmentIdExpandHumanGet(cloudid, id, (error, data, response) => {
+apiInstance.attachmentIdExpandHumanGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -687,9 +687,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3AttachmentIdExpandRawGet
+## attachmentIdExpandRawGet
 
-> InlineResponse2006 cloudidRestApi3AttachmentIdExpandRawGet(cloudid, id)
+> InlineResponse2006 attachmentIdExpandRawGet(cloudid, id)
 
 
 
@@ -707,7 +707,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.cloudidRestApi3AttachmentIdExpandRawGet(cloudid, id, (error, data, response) => {
+apiInstance.attachmentIdExpandRawGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -738,9 +738,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3AttachmentIdGet
+## attachmentIdGet
 
-> InlineResponse2004 cloudidRestApi3AttachmentIdGet(cloudid, id)
+> InlineResponse2004 attachmentIdGet(cloudid, id)
 
 
 
@@ -758,7 +758,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.cloudidRestApi3AttachmentIdGet(cloudid, id, (error, data, response) => {
+apiInstance.attachmentIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -789,9 +789,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3AttachmentMetaGet
+## attachmentMetaGet
 
-> InlineResponse2003 cloudidRestApi3AttachmentMetaGet(cloudid)
+> InlineResponse2003 attachmentMetaGet(cloudid)
 
 
 
@@ -808,7 +808,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3AttachmentMetaGet(cloudid, (error, data, response) => {
+apiInstance.attachmentMetaGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -838,9 +838,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3AuditingRecordGet
+## auditingRecordGet
 
-> InlineResponse2007 cloudidRestApi3AuditingRecordGet(cloudid, opts)
+> InlineResponse2007 auditingRecordGet(cloudid, opts)
 
 
 
@@ -864,7 +864,7 @@ let opts = {
   'offset': 56, // Number | The number of records to skip before returning the first result.
   'to': "to_example" // String | The date and time on or before which returned audit results must have been created. If from is provided to must be after from or the result set will be empty.
 };
-apiInstance.cloudidRestApi3AuditingRecordGet(cloudid, opts, (error, data, response) => {
+apiInstance.auditingRecordGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -899,9 +899,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3AvatarTypeSystemGet
+## avatarTypeSystemGet
 
-> InlineResponse2008 cloudidRestApi3AvatarTypeSystemGet(cloudid, type)
+> InlineResponse2008 avatarTypeSystemGet(cloudid, type)
 
 
 
@@ -919,7 +919,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let type = "type_example"; // String | The avatar type.
-apiInstance.cloudidRestApi3AvatarTypeSystemGet(cloudid, type, (error, data, response) => {
+apiInstance.avatarTypeSystemGet(cloudid, type, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -950,9 +950,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3CommentCommentIdPropertiesGet
+## commentCommentIdPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3CommentCommentIdPropertiesGet(cloudid, commentId)
+> InlineResponse20010 commentCommentIdPropertiesGet(cloudid, commentId)
 
 
 
@@ -970,7 +970,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let commentId = "commentId_example"; // String | The ID of the comment.
-apiInstance.cloudidRestApi3CommentCommentIdPropertiesGet(cloudid, commentId, (error, data, response) => {
+apiInstance.commentCommentIdPropertiesGet(cloudid, commentId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1001,9 +1001,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete
+## commentCommentIdPropertiesPropertyKeyDelete
 
-> cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(cloudid, commentId, propertyKey)
+> commentCommentIdPropertiesPropertyKeyDelete(cloudid, commentId, propertyKey)
 
 
 
@@ -1022,7 +1022,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let commentId = "commentId_example"; // String | The ID of the comment.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(cloudid, commentId, propertyKey, (error, data, response) => {
+apiInstance.commentCommentIdPropertiesPropertyKeyDelete(cloudid, commentId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1054,9 +1054,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet
+## commentCommentIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(cloudid, commentId, propertyKey)
+> InlineResponse20011 commentCommentIdPropertiesPropertyKeyGet(cloudid, commentId, propertyKey)
 
 
 
@@ -1075,7 +1075,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let commentId = "commentId_example"; // String | The ID of the comment.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(cloudid, commentId, propertyKey, (error, data, response) => {
+apiInstance.commentCommentIdPropertiesPropertyKeyGet(cloudid, commentId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1107,9 +1107,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut
+## commentCommentIdPropertiesPropertyKeyPut
 
-> cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(cloudid, commentId, propertyKey)
+> commentCommentIdPropertiesPropertyKeyPut(cloudid, commentId, propertyKey)
 
 
 
@@ -1128,7 +1128,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let commentId = "commentId_example"; // String | The ID of the comment.
 let propertyKey = "propertyKey_example"; // String | The key of the property. The maximum length is 255 characters.
-apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(cloudid, commentId, propertyKey, (error, data, response) => {
+apiInstance.commentCommentIdPropertiesPropertyKeyPut(cloudid, commentId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1160,9 +1160,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3CommentListPost
+## commentListPost
 
-> InlineResponse2009 cloudidRestApi3CommentListPost(cloudid, opts)
+> InlineResponse2009 commentListPost(cloudid, opts)
 
 
 
@@ -1183,7 +1183,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about comments in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject1() // InlineObject1 | 
 };
-apiInstance.cloudidRestApi3CommentListPost(cloudid, opts, (error, data, response) => {
+apiInstance.commentListPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1215,9 +1215,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ComponentIdDelete
+## componentIdDelete
 
-> cloudidRestApi3ComponentIdDelete(cloudid, id, opts)
+> componentIdDelete(cloudid, id, opts)
 
 
 
@@ -1238,7 +1238,7 @@ let id = "id_example"; // String | The ID of the component.
 let opts = {
   'moveIssuesTo': "moveIssuesTo_example" // String | The ID of the component to replace the deleted component. If this value is null no replacement is made.
 };
-apiInstance.cloudidRestApi3ComponentIdDelete(cloudid, id, opts, (error, data, response) => {
+apiInstance.componentIdDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1270,9 +1270,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ComponentIdGet
+## componentIdGet
 
-> InlineResponse201 cloudidRestApi3ComponentIdGet(cloudid, id)
+> InlineResponse201 componentIdGet(cloudid, id)
 
 
 
@@ -1290,7 +1290,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the component.
-apiInstance.cloudidRestApi3ComponentIdGet(cloudid, id, (error, data, response) => {
+apiInstance.componentIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1321,9 +1321,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ComponentIdPut
+## componentIdPut
 
-> cloudidRestApi3ComponentIdPut(cloudid, id, opts)
+> componentIdPut(cloudid, id, opts)
 
 
 
@@ -1344,7 +1344,7 @@ let id = "id_example"; // String |
 let opts = {
   'body': new Jira.InlineObject3() // InlineObject3 | 
 };
-apiInstance.cloudidRestApi3ComponentIdPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.componentIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1376,9 +1376,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ComponentIdRelatedIssueCountsGet
+## componentIdRelatedIssueCountsGet
 
-> InlineResponse20012 cloudidRestApi3ComponentIdRelatedIssueCountsGet(cloudid, id)
+> InlineResponse20012 componentIdRelatedIssueCountsGet(cloudid, id)
 
 
 
@@ -1396,7 +1396,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the component.
-apiInstance.cloudidRestApi3ComponentIdRelatedIssueCountsGet(cloudid, id, (error, data, response) => {
+apiInstance.componentIdRelatedIssueCountsGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1427,9 +1427,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ComponentPost
+## componentPost
 
-> InlineResponse201 cloudidRestApi3ComponentPost(cloudid, opts)
+> InlineResponse201 componentPost(cloudid, opts)
 
 
 
@@ -1449,7 +1449,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject2() // InlineObject2 | 
 };
-apiInstance.cloudidRestApi3ComponentPost(cloudid, opts, (error, data, response) => {
+apiInstance.componentPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1480,9 +1480,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ConfigurationGet
+## configurationGet
 
-> InlineResponse20013 cloudidRestApi3ConfigurationGet(cloudid)
+> InlineResponse20013 configurationGet(cloudid)
 
 
 
@@ -1499,7 +1499,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ConfigurationGet(cloudid, (error, data, response) => {
+apiInstance.configurationGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1529,9 +1529,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ConfigurationTimetrackingDelete
+## configurationTimetrackingDelete
 
-> cloudidRestApi3ConfigurationTimetrackingDelete(cloudid)
+> configurationTimetrackingDelete(cloudid)
 
 
 
@@ -1548,7 +1548,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ConfigurationTimetrackingDelete(cloudid, (error, data, response) => {
+apiInstance.configurationTimetrackingDelete(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1578,9 +1578,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ConfigurationTimetrackingGet
+## configurationTimetrackingGet
 
-> InlineResponse20014 cloudidRestApi3ConfigurationTimetrackingGet(cloudid)
+> InlineResponse20014 configurationTimetrackingGet(cloudid)
 
 
 
@@ -1597,7 +1597,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ConfigurationTimetrackingGet(cloudid, (error, data, response) => {
+apiInstance.configurationTimetrackingGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1627,9 +1627,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ConfigurationTimetrackingListGet
+## configurationTimetrackingListGet
 
-> [InlineResponse20015] cloudidRestApi3ConfigurationTimetrackingListGet(cloudid)
+> [InlineResponse20015] configurationTimetrackingListGet(cloudid)
 
 
 
@@ -1646,7 +1646,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ConfigurationTimetrackingListGet(cloudid, (error, data, response) => {
+apiInstance.configurationTimetrackingListGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1676,9 +1676,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ConfigurationTimetrackingOptionsGet
+## configurationTimetrackingOptionsGet
 
-> InlineResponse20016 cloudidRestApi3ConfigurationTimetrackingOptionsGet(cloudid)
+> InlineResponse20016 configurationTimetrackingOptionsGet(cloudid)
 
 
 
@@ -1695,7 +1695,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsGet(cloudid, (error, data, response) => {
+apiInstance.configurationTimetrackingOptionsGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1725,9 +1725,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ConfigurationTimetrackingOptionsPut
+## configurationTimetrackingOptionsPut
 
-> InlineResponse20016 cloudidRestApi3ConfigurationTimetrackingOptionsPut(cloudid, opts)
+> InlineResponse20016 configurationTimetrackingOptionsPut(cloudid, opts)
 
 
 
@@ -1747,7 +1747,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject5() // InlineObject5 | 
 };
-apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsPut(cloudid, opts, (error, data, response) => {
+apiInstance.configurationTimetrackingOptionsPut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1778,9 +1778,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ConfigurationTimetrackingPut
+## configurationTimetrackingPut
 
-> cloudidRestApi3ConfigurationTimetrackingPut(cloudid, opts)
+> configurationTimetrackingPut(cloudid, opts)
 
 
 
@@ -1800,7 +1800,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject4() // InlineObject4 | 
 };
-apiInstance.cloudidRestApi3ConfigurationTimetrackingPut(cloudid, opts, (error, data, response) => {
+apiInstance.configurationTimetrackingPut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1831,9 +1831,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3CustomFieldOptionIdGet
+## customFieldOptionIdGet
 
-> InlineResponse20017 cloudidRestApi3CustomFieldOptionIdGet(cloudid, id)
+> InlineResponse20017 customFieldOptionIdGet(cloudid, id)
 
 
 
@@ -1851,7 +1851,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the custom field option. To find this ID, configure the custom field and edit its options in Jira. Click the option and its ID will show in the URL as the selectedParentOptionId parameter.
-apiInstance.cloudidRestApi3CustomFieldOptionIdGet(cloudid, id, (error, data, response) => {
+apiInstance.customFieldOptionIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1882,9 +1882,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet
+## dashboardDashboardIdItemsItemIdPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(cloudid, dashboardId, itemId)
+> InlineResponse20010 dashboardDashboardIdItemsItemIdPropertiesGet(cloudid, dashboardId, itemId)
 
 
 
@@ -1903,7 +1903,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
-apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(cloudid, dashboardId, itemId, (error, data, response) => {
+apiInstance.dashboardDashboardIdItemsItemIdPropertiesGet(cloudid, dashboardId, itemId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1935,9 +1935,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete
+## dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete
 
-> cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(cloudid, dashboardId, itemId, propertyKey)
+> dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(cloudid, dashboardId, itemId, propertyKey)
 
 
 
@@ -1957,7 +1957,7 @@ let cloudid = null; // Object | Cloudi of the project
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
 let propertyKey = "propertyKey_example"; // String | The key of the dashboard item property.
-apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(cloudid, dashboardId, itemId, propertyKey, (error, data, response) => {
+apiInstance.dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(cloudid, dashboardId, itemId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1990,9 +1990,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet
+## dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(cloudid, dashboardId, itemId, propertyKey)
+> InlineResponse20011 dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(cloudid, dashboardId, itemId, propertyKey)
 
 
 
@@ -2012,7 +2012,7 @@ let cloudid = null; // Object | Cloudi of the project
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
 let propertyKey = "propertyKey_example"; // String | The key of the dashboard item property.
-apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(cloudid, dashboardId, itemId, propertyKey, (error, data, response) => {
+apiInstance.dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(cloudid, dashboardId, itemId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2045,9 +2045,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut
+## dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut
 
-> cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(cloudid, dashboardId, itemId, propertyKey)
+> dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(cloudid, dashboardId, itemId, propertyKey)
 
 
 
@@ -2067,7 +2067,7 @@ let cloudid = null; // Object | Cloudi of the project
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
 let propertyKey = "propertyKey_example"; // String | The key of the dashboard item property. The maximum length of the key is 255 bytes.
-apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(cloudid, dashboardId, itemId, propertyKey, (error, data, response) => {
+apiInstance.dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(cloudid, dashboardId, itemId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2100,9 +2100,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3DashboardGet
+## dashboardGet
 
-> InlineResponse20018 cloudidRestApi3DashboardGet(cloudid, opts)
+> InlineResponse20018 dashboardGet(cloudid, opts)
 
 
 
@@ -2124,7 +2124,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1000.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3DashboardGet(cloudid, opts, (error, data, response) => {
+apiInstance.dashboardGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2157,9 +2157,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3DashboardIdGet
+## dashboardIdGet
 
-> InlineResponse20019 cloudidRestApi3DashboardIdGet(cloudid, id)
+> InlineResponse20019 dashboardIdGet(cloudid, id)
 
 
 
@@ -2177,7 +2177,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the dashboard.
-apiInstance.cloudidRestApi3DashboardIdGet(cloudid, id, (error, data, response) => {
+apiInstance.dashboardIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2208,9 +2208,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ExpressionEvalPost
+## expressionEvalPost
 
-> InlineResponse20020 cloudidRestApi3ExpressionEvalPost(cloudid, opts)
+> InlineResponse20020 expressionEvalPost(cloudid, opts)
 
 
 
@@ -2231,7 +2231,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject6() // InlineObject6 | 
 };
-apiInstance.cloudidRestApi3ExpressionEvalPost(cloudid, opts, (error, data, response) => {
+apiInstance.expressionEvalPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2263,9 +2263,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FieldFieldKeyOptionGet
+## fieldFieldKeyOptionGet
 
-> InlineResponse20022 cloudidRestApi3FieldFieldKeyOptionGet(cloudid, fieldKey, opts)
+> InlineResponse20022 fieldFieldKeyOptionGet(cloudid, fieldKey, opts)
 
 
 
@@ -2287,7 +2287,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. For example, 20.
   'startAt': 56 // Number | The starting index of the returned objects. For example, 1.
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionGet(cloudid, fieldKey, opts, (error, data, response) => {
+apiInstance.fieldFieldKeyOptionGet(cloudid, fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2320,9 +2320,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FieldFieldKeyOptionOptionIdDelete
+## fieldFieldKeyOptionOptionIdDelete
 
-> cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(cloudid, fieldKey, optionId)
+> fieldFieldKeyOptionOptionIdDelete(cloudid, fieldKey, optionId)
 
 
 
@@ -2341,7 +2341,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let optionId = 56; // Number | The ID of the option to be deleted. For example, 3.
-apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(cloudid, fieldKey, optionId, (error, data, response) => {
+apiInstance.fieldFieldKeyOptionOptionIdDelete(cloudid, fieldKey, optionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2373,9 +2373,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3FieldFieldKeyOptionOptionIdGet
+## fieldFieldKeyOptionOptionIdGet
 
-> InlineResponse20025 cloudidRestApi3FieldFieldKeyOptionOptionIdGet(cloudid, fieldKey, optionId)
+> InlineResponse20025 fieldFieldKeyOptionOptionIdGet(cloudid, fieldKey, optionId)
 
 
 
@@ -2394,7 +2394,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let optionId = 56; // Number | The ID of the option to be returned. For example, 3.
-apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdGet(cloudid, fieldKey, optionId, (error, data, response) => {
+apiInstance.fieldFieldKeyOptionOptionIdGet(cloudid, fieldKey, optionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2426,9 +2426,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete
+## fieldFieldKeyOptionOptionIdIssueDelete
 
-> cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(cloudid, fieldKey, optionId, opts)
+> fieldFieldKeyOptionOptionIdIssueDelete(cloudid, fieldKey, optionId, opts)
 
 
 
@@ -2451,7 +2451,7 @@ let opts = {
   'jql': "jql_example", // String | A JQL query that specifies the issues to be updated. For example, project=10000.
   'replaceWith': 56 // Number | The ID of the option that will replace the currently selected option. For example, 2.
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(cloudid, fieldKey, optionId, opts, (error, data, response) => {
+apiInstance.fieldFieldKeyOptionOptionIdIssueDelete(cloudid, fieldKey, optionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2485,9 +2485,9 @@ null (empty response body)
 - **Accept**: */*
 
 
-## cloudidRestApi3FieldFieldKeyOptionOptionIdPut
+## fieldFieldKeyOptionOptionIdPut
 
-> InlineResponse20025 cloudidRestApi3FieldFieldKeyOptionOptionIdPut(cloudid, fieldKey, optionId, opts)
+> InlineResponse20025 fieldFieldKeyOptionOptionIdPut(cloudid, fieldKey, optionId, opts)
 
 
 
@@ -2509,7 +2509,7 @@ let optionId = 56; // Number | The ID of the option to be updated. For example, 
 let opts = {
   'body': new Jira.InlineObject9() // InlineObject9 | 
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdPut(cloudid, fieldKey, optionId, opts, (error, data, response) => {
+apiInstance.fieldFieldKeyOptionOptionIdPut(cloudid, fieldKey, optionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2542,9 +2542,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FieldFieldKeyOptionPost
+## fieldFieldKeyOptionPost
 
-> InlineResponse20023 cloudidRestApi3FieldFieldKeyOptionPost(cloudid, fieldKey, opts)
+> InlineResponse20023 fieldFieldKeyOptionPost(cloudid, fieldKey, opts)
 
 
 
@@ -2565,7 +2565,7 @@ let fieldKey = "fieldKey_example"; // String |
 let opts = {
   'body': new Jira.InlineObject8() // InlineObject8 | 
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionPost(cloudid, fieldKey, opts, (error, data, response) => {
+apiInstance.fieldFieldKeyOptionPost(cloudid, fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2597,9 +2597,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet
+## fieldFieldKeyOptionSuggestionsEditGet
 
-> InlineResponse20024 cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(cloudid, fieldKey, opts)
+> InlineResponse20024 fieldFieldKeyOptionSuggestionsEditGet(cloudid, fieldKey, opts)
 
 
 
@@ -2622,7 +2622,7 @@ let opts = {
   'projectId': 56, // Number | Filters the results to options that are only available in the specified project. For example, 10000.
   'startAt': 56 // Number | The starting index of the returned objects. For example, 1.
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(cloudid, fieldKey, opts, (error, data, response) => {
+apiInstance.fieldFieldKeyOptionSuggestionsEditGet(cloudid, fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2656,9 +2656,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet
+## fieldFieldKeyOptionSuggestionsSearchGet
 
-> InlineResponse20024 cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(cloudid, fieldKey, opts)
+> InlineResponse20024 fieldFieldKeyOptionSuggestionsSearchGet(cloudid, fieldKey, opts)
 
 
 
@@ -2681,7 +2681,7 @@ let opts = {
   'projectId': 56, // Number | Filters the results to options that are only available in the specified project. For example, 10000.
   'startAt': 56 // Number | The starting index of the returned objects. For example, 1.
 };
-apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(cloudid, fieldKey, opts, (error, data, response) => {
+apiInstance.fieldFieldKeyOptionSuggestionsSearchGet(cloudid, fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2715,9 +2715,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FieldGet
+## fieldGet
 
-> [InlineResponse20021] cloudidRestApi3FieldGet(cloudid)
+> [InlineResponse20021] fieldGet(cloudid)
 
 
 
@@ -2734,7 +2734,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3FieldGet(cloudid, (error, data, response) => {
+apiInstance.fieldGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2764,9 +2764,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FieldPost
+## fieldPost
 
-> InlineResponse2011 cloudidRestApi3FieldPost(cloudid, opts)
+> InlineResponse2011 fieldPost(cloudid, opts)
 
 
 
@@ -2786,7 +2786,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject7() // InlineObject7 | 
 };
-apiInstance.cloudidRestApi3FieldPost(cloudid, opts, (error, data, response) => {
+apiInstance.fieldPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2817,9 +2817,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterDefaultShareScopeGet
+## filterDefaultShareScopeGet
 
-> InlineResponse20027 cloudidRestApi3FilterDefaultShareScopeGet(cloudid)
+> InlineResponse20027 filterDefaultShareScopeGet(cloudid)
 
 
 
@@ -2836,7 +2836,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3FilterDefaultShareScopeGet(cloudid, (error, data, response) => {
+apiInstance.filterDefaultShareScopeGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2866,9 +2866,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterDefaultShareScopePut
+## filterDefaultShareScopePut
 
-> InlineResponse20027 cloudidRestApi3FilterDefaultShareScopePut(cloudid, opts)
+> InlineResponse20027 filterDefaultShareScopePut(cloudid, opts)
 
 
 
@@ -2888,7 +2888,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject11() // InlineObject11 | 
 };
-apiInstance.cloudidRestApi3FilterDefaultShareScopePut(cloudid, opts, (error, data, response) => {
+apiInstance.filterDefaultShareScopePut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2919,9 +2919,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterFavouriteGet
+## filterFavouriteGet
 
-> [InlineResponse20028] cloudidRestApi3FilterFavouriteGet(cloudid, opts)
+> [InlineResponse20028] filterFavouriteGet(cloudid, opts)
 
 
 
@@ -2941,7 +2941,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterFavouriteGet(cloudid, opts, (error, data, response) => {
+apiInstance.filterFavouriteGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2972,9 +2972,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterGet
+## filterGet
 
-> InlineResponse20026 cloudidRestApi3FilterGet(cloudid, opts)
+> InlineResponse20026 filterGet(cloudid, opts)
 
 
 
@@ -2994,7 +2994,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterGet(cloudid, opts, (error, data, response) => {
+apiInstance.filterGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3025,9 +3025,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterIdColumnsDelete
+## filterIdColumnsDelete
 
-> cloudidRestApi3FilterIdColumnsDelete(cloudid, id)
+> filterIdColumnsDelete(cloudid, id)
 
 
 
@@ -3045,7 +3045,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
-apiInstance.cloudidRestApi3FilterIdColumnsDelete(cloudid, id, (error, data, response) => {
+apiInstance.filterIdColumnsDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3076,9 +3076,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3FilterIdColumnsGet
+## filterIdColumnsGet
 
-> [InlineResponse20030] cloudidRestApi3FilterIdColumnsGet(cloudid, id)
+> [InlineResponse20030] filterIdColumnsGet(cloudid, id)
 
 
 
@@ -3096,7 +3096,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
-apiInstance.cloudidRestApi3FilterIdColumnsGet(cloudid, id, (error, data, response) => {
+apiInstance.filterIdColumnsGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3127,9 +3127,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterIdColumnsPut
+## filterIdColumnsPut
 
-> cloudidRestApi3FilterIdColumnsPut(cloudid, id)
+> filterIdColumnsPut(cloudid, id)
 
 
 
@@ -3147,7 +3147,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
-apiInstance.cloudidRestApi3FilterIdColumnsPut(cloudid, id, (error, data, response) => {
+apiInstance.filterIdColumnsPut(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3178,9 +3178,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3FilterIdDelete
+## filterIdDelete
 
-> cloudidRestApi3FilterIdDelete(cloudid, id)
+> filterIdDelete(cloudid, id)
 
 
 
@@ -3198,7 +3198,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter to delete.
-apiInstance.cloudidRestApi3FilterIdDelete(cloudid, id, (error, data, response) => {
+apiInstance.filterIdDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3229,9 +3229,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3FilterIdFavouriteDelete
+## filterIdFavouriteDelete
 
-> InlineResponse20026 cloudidRestApi3FilterIdFavouriteDelete(cloudid, id, opts)
+> InlineResponse20026 filterIdFavouriteDelete(cloudid, id, opts)
 
 
 
@@ -3252,7 +3252,7 @@ let id = 56; // Number | The ID of the filter.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterIdFavouriteDelete(cloudid, id, opts, (error, data, response) => {
+apiInstance.filterIdFavouriteDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3284,9 +3284,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterIdFavouritePut
+## filterIdFavouritePut
 
-> InlineResponse20026 cloudidRestApi3FilterIdFavouritePut(cloudid, id, opts)
+> InlineResponse20026 filterIdFavouritePut(cloudid, id, opts)
 
 
 
@@ -3307,7 +3307,7 @@ let id = 56; // Number | The ID of the filter.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterIdFavouritePut(cloudid, id, opts, (error, data, response) => {
+apiInstance.filterIdFavouritePut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3339,9 +3339,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterIdGet
+## filterIdGet
 
-> InlineResponse20026 cloudidRestApi3FilterIdGet(cloudid, id, opts)
+> InlineResponse20026 filterIdGet(cloudid, id, opts)
 
 
 
@@ -3362,7 +3362,7 @@ let id = 56; // Number | The ID of the filter to return.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3FilterIdGet(cloudid, id, opts, (error, data, response) => {
+apiInstance.filterIdGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3394,9 +3394,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterIdPermissionGet
+## filterIdPermissionGet
 
-> [InlineResponse20031] cloudidRestApi3FilterIdPermissionGet(cloudid, id)
+> [InlineResponse20031] filterIdPermissionGet(cloudid, id)
 
 
 
@@ -3414,7 +3414,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
-apiInstance.cloudidRestApi3FilterIdPermissionGet(cloudid, id, (error, data, response) => {
+apiInstance.filterIdPermissionGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3445,9 +3445,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterIdPermissionPermissionIdDelete
+## filterIdPermissionPermissionIdDelete
 
-> cloudidRestApi3FilterIdPermissionPermissionIdDelete(cloudid, id, permissionId)
+> filterIdPermissionPermissionIdDelete(cloudid, id, permissionId)
 
 
 
@@ -3466,7 +3466,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
 let permissionId = 56; // Number | The ID of the share permission.
-apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdDelete(cloudid, id, permissionId, (error, data, response) => {
+apiInstance.filterIdPermissionPermissionIdDelete(cloudid, id, permissionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3498,9 +3498,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3FilterIdPermissionPermissionIdGet
+## filterIdPermissionPermissionIdGet
 
-> InlineResponse20032 cloudidRestApi3FilterIdPermissionPermissionIdGet(cloudid, id, permissionId)
+> InlineResponse20032 filterIdPermissionPermissionIdGet(cloudid, id, permissionId)
 
 
 
@@ -3519,7 +3519,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the filter.
 let permissionId = 56; // Number | The ID of the share permission.
-apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdGet(cloudid, id, permissionId, (error, data, response) => {
+apiInstance.filterIdPermissionPermissionIdGet(cloudid, id, permissionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3551,9 +3551,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterIdPermissionPost
+## filterIdPermissionPost
 
-> [InlineResponse20031] cloudidRestApi3FilterIdPermissionPost(cloudid, id, opts)
+> [InlineResponse20031] filterIdPermissionPost(cloudid, id, opts)
 
 
 
@@ -3574,7 +3574,7 @@ let id = 56; // Number | The ID of the filter.
 let opts = {
   'body': new Jira.InlineObject13() // InlineObject13 | 
 };
-apiInstance.cloudidRestApi3FilterIdPermissionPost(cloudid, id, opts, (error, data, response) => {
+apiInstance.filterIdPermissionPost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3606,9 +3606,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterIdPut
+## filterIdPut
 
-> InlineResponse20026 cloudidRestApi3FilterIdPut(cloudid, id, opts)
+> InlineResponse20026 filterIdPut(cloudid, id, opts)
 
 
 
@@ -3630,7 +3630,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject12() // InlineObject12 | 
 };
-apiInstance.cloudidRestApi3FilterIdPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.filterIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3663,9 +3663,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterMyGet
+## filterMyGet
 
-> [InlineResponse20028] cloudidRestApi3FilterMyGet(cloudid, opts)
+> [InlineResponse20028] filterMyGet(cloudid, opts)
 
 
 
@@ -3686,7 +3686,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
   'includeFavourites': true // Boolean | Include the user's favorite filters in the response.
 };
-apiInstance.cloudidRestApi3FilterMyGet(cloudid, opts, (error, data, response) => {
+apiInstance.filterMyGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3718,9 +3718,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterPost
+## filterPost
 
-> InlineResponse20026 cloudidRestApi3FilterPost(cloudid, opts)
+> InlineResponse20026 filterPost(cloudid, opts)
 
 
 
@@ -3741,7 +3741,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject10() // InlineObject10 | 
 };
-apiInstance.cloudidRestApi3FilterPost(cloudid, opts, (error, data, response) => {
+apiInstance.filterPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3773,9 +3773,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3FilterSearchGet
+## filterSearchGet
 
-> InlineResponse20029 cloudidRestApi3FilterSearchGet(cloudid, opts)
+> InlineResponse20029 filterSearchGet(cloudid, opts)
 
 
 
@@ -3803,7 +3803,7 @@ let opts = {
   'projectId': 56, // Number | Returns filters that are shared with a project that has an ID that exactly matches projectId.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset). The base index is 0.
 };
-apiInstance.cloudidRestApi3FilterSearchGet(cloudid, opts, (error, data, response) => {
+apiInstance.filterSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3842,9 +3842,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3GroupDelete
+## groupDelete
 
-> cloudidRestApi3GroupDelete(cloudid, opts)
+> groupDelete(cloudid, opts)
 
 
 
@@ -3865,7 +3865,7 @@ let opts = {
   'groupname': "groupname_example", // String | The name of the group.
   'swapGroup': "swapGroup_example" // String | The group to transfer restrictions to. Only comments and worklogs are transferred. If restrictions are not transferred, comments and worklogs will be inaccessible after the deletion.
 };
-apiInstance.cloudidRestApi3GroupDelete(cloudid, opts, (error, data, response) => {
+apiInstance.groupDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3897,9 +3897,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3GroupGet
+## groupGet
 
-> cloudidRestApi3GroupGet(cloudid, opts)
+> groupGet(cloudid, opts)
 
 
 
@@ -3920,7 +3920,7 @@ let opts = {
   'expand': "expand_example", // String | List of fields to expand.
   'groupname': "groupname_example" // String | The name of the group.
 };
-apiInstance.cloudidRestApi3GroupGet(cloudid, opts, (error, data, response) => {
+apiInstance.groupGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3952,9 +3952,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3GroupMemberGet
+## groupMemberGet
 
-> InlineResponse20033 cloudidRestApi3GroupMemberGet(cloudid, opts)
+> InlineResponse20033 groupMemberGet(cloudid, opts)
 
 
 
@@ -3977,7 +3977,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of users to return per page.
   'startAt': 56 // Number | The index of the first user to return.
 };
-apiInstance.cloudidRestApi3GroupMemberGet(cloudid, opts, (error, data, response) => {
+apiInstance.groupMemberGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4011,9 +4011,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3GroupPost
+## groupPost
 
-> InlineResponse2012 cloudidRestApi3GroupPost(cloudid, opts)
+> InlineResponse2012 groupPost(cloudid, opts)
 
 
 
@@ -4033,7 +4033,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject14() // InlineObject14 | 
 };
-apiInstance.cloudidRestApi3GroupPost(cloudid, opts, (error, data, response) => {
+apiInstance.groupPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4064,9 +4064,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3GroupUserDelete
+## groupUserDelete
 
-> cloudidRestApi3GroupUserDelete(cloudid, opts)
+> groupUserDelete(cloudid, opts)
 
 
 
@@ -4088,7 +4088,7 @@ let opts = {
   'groupname': "groupname_example", // String | The name of the group.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3GroupUserDelete(cloudid, opts, (error, data, response) => {
+apiInstance.groupUserDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4121,9 +4121,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3GroupUserPost
+## groupUserPost
 
-> cloudidRestApi3GroupUserPost(cloudid, opts)
+> groupUserPost(cloudid, opts)
 
 
 
@@ -4144,7 +4144,7 @@ let opts = {
   'groupname': "groupname_example", // String | The name of the group.
   'body': new Jira.InlineObject15() // InlineObject15 | 
 };
-apiInstance.cloudidRestApi3GroupUserPost(cloudid, opts, (error, data, response) => {
+apiInstance.groupUserPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4176,9 +4176,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3GroupsPickerGet
+## groupsPickerGet
 
-> InlineResponse20034 cloudidRestApi3GroupsPickerGet(cloudid, opts)
+> InlineResponse20034 groupsPickerGet(cloudid, opts)
 
 
 
@@ -4202,7 +4202,7 @@ let opts = {
   'query': "query_example", // String | The string to find in group names.
   'userName': "userName_example" // String | Parameter not in use.
 };
-apiInstance.cloudidRestApi3GroupsPickerGet(cloudid, opts, (error, data, response) => {
+apiInstance.groupsPickerGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4237,9 +4237,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3GroupuserpickerGet
+## groupuserpickerGet
 
-> InlineResponse20035 cloudidRestApi3GroupuserpickerGet(cloudid, opts)
+> InlineResponse20035 groupuserpickerGet(cloudid, opts)
 
 
 
@@ -4267,7 +4267,7 @@ let opts = {
   'query': "query_example", // String | The search string.
   'showAvatar': true // Boolean | Indicates whether the user avatar should be returned. If an invalid value is provided, the default value is used.
 };
-apiInstance.cloudidRestApi3GroupuserpickerGet(cloudid, opts, (error, data, response) => {
+apiInstance.groupuserpickerGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4306,9 +4306,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueBulkPost
+## issueBulkPost
 
-> InlineResponse2014 cloudidRestApi3IssueBulkPost(cloudid, opts)
+> InlineResponse2014 issueBulkPost(cloudid, opts)
 
 
 
@@ -4328,7 +4328,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject17() // InlineObject17 | 
 };
-apiInstance.cloudidRestApi3IssueBulkPost(cloudid, opts, (error, data, response) => {
+apiInstance.issueBulkPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4359,9 +4359,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueCreatemetaGet
+## issueCreatemetaGet
 
-> InlineResponse20036 cloudidRestApi3IssueCreatemetaGet(cloudid, opts)
+> InlineResponse20036 issueCreatemetaGet(cloudid, opts)
 
 
 
@@ -4385,7 +4385,7 @@ let opts = {
   'projectIds': ["null"], // [String] | Comma-separated list of project IDs. May be specified multiple times and with projectKeys.
   'projectKeys': ["null"] // [String] | Comma-separated list of project keys. May be specified multiple times and with projectIds.
 };
-apiInstance.cloudidRestApi3IssueCreatemetaGet(cloudid, opts, (error, data, response) => {
+apiInstance.issueCreatemetaGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4420,9 +4420,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyAssigneePut
+## issueIssueIdOrKeyAssigneePut
 
-> cloudidRestApi3IssueIssueIdOrKeyAssigneePut(cloudid, issueIdOrKey, opts)
+> issueIssueIdOrKeyAssigneePut(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4443,7 +4443,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'body': new Jira.InlineObject21() // InlineObject21 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyAssigneePut(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyAssigneePut(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4475,9 +4475,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost
+## issueIssueIdOrKeyAttachmentsPost
 
-> [InlineResponse20038] cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(cloudid, issueIdOrKey)
+> [InlineResponse20038] issueIssueIdOrKeyAttachmentsPost(cloudid, issueIdOrKey)
 
 
 
@@ -4495,7 +4495,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue that attachments are added to.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(cloudid, issueIdOrKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyAttachmentsPost(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4526,9 +4526,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyChangelogGet
+## issueIssueIdOrKeyChangelogGet
 
-> InlineResponse20039 cloudidRestApi3IssueIssueIdOrKeyChangelogGet(cloudid, issueIdOrKey, opts)
+> InlineResponse20039 issueIssueIdOrKeyChangelogGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4550,7 +4550,7 @@ let opts = {
   'maxResults': 56, // Number | Maximum number of items to return per page. See Pagination section for more details.
   'startAt': 56 // Number | Page offset, ie. index of the first item returned in the page of results. Base index: 0.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyChangelogGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyChangelogGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4583,9 +4583,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyCommentGet
+## issueIssueIdOrKeyCommentGet
 
-> InlineResponse20040 cloudidRestApi3IssueIssueIdOrKeyCommentGet(cloudid, issueIdOrKey, opts)
+> InlineResponse20040 issueIssueIdOrKeyCommentGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4609,7 +4609,7 @@ let opts = {
   'orderBy': "orderBy_example", // String | ordering of the results.
   'startAt': 56 // Number | the page offset, if not specified then defaults to 0
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyCommentGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4644,9 +4644,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete
+## issueIssueIdOrKeyCommentIdDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(cloudid, id, issueIdOrKey)
+> issueIssueIdOrKeyCommentIdDelete(cloudid, id, issueIdOrKey)
 
 
 
@@ -4665,7 +4665,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | id of the comment to be deleted
 let issueIdOrKey = "issueIdOrKey_example"; // String | a string containing the issue id or key the comment belongs to
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(cloudid, id, issueIdOrKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyCommentIdDelete(cloudid, id, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4697,9 +4697,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyCommentIdGet
+## issueIssueIdOrKeyCommentIdGet
 
-> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(cloudid, id, issueIdOrKey, opts)
+> InlineResponse2015 issueIssueIdOrKeyCommentIdGet(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -4721,7 +4721,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | of the issue the comment 
 let opts = {
   'expand': "expand_example" // String | optional flags: renderedBody (provides body rendered in HTML)
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyCommentIdGet(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4754,9 +4754,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyCommentIdPut
+## issueIssueIdOrKeyCommentIdPut
 
-> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(cloudid, id, issueIdOrKey, opts)
+> InlineResponse2015 issueIssueIdOrKeyCommentIdPut(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -4779,7 +4779,7 @@ let opts = {
   'expand': "expand_example", // String | optional flags: renderedBody (provides body rendered in HTML)
   'body': new Jira.InlineObject23() // InlineObject23 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyCommentIdPut(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4813,9 +4813,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyCommentPost
+## issueIssueIdOrKeyCommentPost
 
-> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentPost(cloudid, issueIdOrKey, opts)
+> InlineResponse2015 issueIssueIdOrKeyCommentPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4837,7 +4837,7 @@ let opts = {
   'expand': "expand_example", // String | optional flags: renderedBody (provides body rendered in HTML)
   'body': new Jira.InlineObject22() // InlineObject22 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyCommentPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4870,9 +4870,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyDelete
+## issueIssueIdOrKeyDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyDelete(cloudid, issueIdOrKey, opts)
+> issueIssueIdOrKeyDelete(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4893,7 +4893,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'deleteSubtasks': "deleteSubtasks_example" // String | Indicates whether the issue's sub-tasks are deleted when the issue is deleted.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyDelete(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyDelete(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4925,9 +4925,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyEditmetaGet
+## issueIssueIdOrKeyEditmetaGet
 
-> InlineResponse20041 cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(cloudid, issueIdOrKey, opts)
+> InlineResponse20041 issueIssueIdOrKeyEditmetaGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -4949,7 +4949,7 @@ let opts = {
   'overrideEditableFlag': true, // Boolean | Indicates whether non-editable fields should be returned. Available to connect app users with admin permissions.
   'overrideScreenSecurity': true // Boolean | Indicates whether hidden fields should be returned. Available to connect app users with admin permissions.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyEditmetaGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4982,9 +4982,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyGet
+## issueIssueIdOrKeyGet
 
-> InlineResponse20037 cloudidRestApi3IssueIssueIdOrKeyGet(cloudid, issueIdOrKey, opts)
+> InlineResponse20037 issueIssueIdOrKeyGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5009,7 +5009,7 @@ let opts = {
   'properties': ["null"], // [String] | A comma-separated list of issue properties to return for the issue. Allowed values:
   'updateHistory': true // Boolean | Indicates whether the project in which the issue is created is added to the user's Recently viewed project list, as shown under Projects in Jira. This also populates the JQL issues search lastViewed field.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5045,9 +5045,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyNotifyPost
+## issueIssueIdOrKeyNotifyPost
 
-> cloudidRestApi3IssueIssueIdOrKeyNotifyPost(cloudid, issueIdOrKey, opts)
+> issueIssueIdOrKeyNotifyPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5068,7 +5068,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | ID or key of the issue th
 let opts = {
   'body': new Jira.InlineObject24() // InlineObject24 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyNotifyPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyNotifyPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5100,9 +5100,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyPropertiesGet
+## issueIssueIdOrKeyPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(cloudid, issueIdOrKey)
+> InlineResponse20010 issueIssueIdOrKeyPropertiesGet(cloudid, issueIdOrKey)
 
 
 
@@ -5120,7 +5120,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The key or ID of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(cloudid, issueIdOrKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyPropertiesGet(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5151,9 +5151,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete
+## issueIssueIdOrKeyPropertiesPropertyKeyDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey)
+> issueIssueIdOrKeyPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey)
 
 
 
@@ -5172,7 +5172,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The key or ID of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5204,9 +5204,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet
+## issueIssueIdOrKeyPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey)
+> InlineResponse20011 issueIssueIdOrKeyPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey)
 
 
 
@@ -5225,7 +5225,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The key or ID of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5257,9 +5257,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut
+## issueIssueIdOrKeyPropertiesPropertyKeyPut
 
-> cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey)
+> issueIssueIdOrKeyPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey)
 
 
 
@@ -5278,7 +5278,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the issue property. The maximum length is 255 characters.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5310,9 +5310,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyPut
+## issueIssueIdOrKeyPut
 
-> cloudidRestApi3IssueIssueIdOrKeyPut(cloudid, issueIdOrKey, opts)
+> issueIssueIdOrKeyPut(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5336,7 +5336,7 @@ let opts = {
   'overrideScreenSecurity': true, // Boolean | Indicates whether screen security should be overridden to enable hidden fields to be edited. Available to Connect app users with admin permissions.
   'body': new Jira.InlineObject20() // InlineObject20 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyPut(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyPut(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5371,9 +5371,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete
+## issueIssueIdOrKeyRemotelinkDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(cloudid, issueIdOrKey, opts)
+> issueIssueIdOrKeyRemotelinkDelete(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5394,7 +5394,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'globalId': "globalId_example" // String | The global ID of a remote issue link.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyRemotelinkDelete(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5426,9 +5426,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet
+## issueIssueIdOrKeyRemotelinkGet
 
-> [InlineResponse20042] cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(cloudid, issueIdOrKey, opts)
+> [InlineResponse20042] issueIssueIdOrKeyRemotelinkGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5449,7 +5449,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'globalId': "globalId_example" // String | The global ID of the remote issue link.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyRemotelinkGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5481,9 +5481,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete
+## issueIssueIdOrKeyRemotelinkLinkIdDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(cloudid, issueIdOrKey, linkId)
+> issueIssueIdOrKeyRemotelinkLinkIdDelete(cloudid, issueIdOrKey, linkId)
 
 
 
@@ -5502,7 +5502,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let linkId = "linkId_example"; // String | The ID of a remote issue link.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(cloudid, issueIdOrKey, linkId, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyRemotelinkLinkIdDelete(cloudid, issueIdOrKey, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5534,9 +5534,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet
+## issueIssueIdOrKeyRemotelinkLinkIdGet
 
-> InlineResponse20044 cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(cloudid, issueIdOrKey, linkId)
+> InlineResponse20044 issueIssueIdOrKeyRemotelinkLinkIdGet(cloudid, issueIdOrKey, linkId)
 
 
 
@@ -5555,7 +5555,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let linkId = "linkId_example"; // String | The ID of the remote issue link.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(cloudid, issueIdOrKey, linkId, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyRemotelinkLinkIdGet(cloudid, issueIdOrKey, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5587,9 +5587,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut
+## issueIssueIdOrKeyRemotelinkLinkIdPut
 
-> cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(cloudid, issueIdOrKey, linkId, opts)
+> issueIssueIdOrKeyRemotelinkLinkIdPut(cloudid, issueIdOrKey, linkId, opts)
 
 
 
@@ -5611,7 +5611,7 @@ let linkId = "linkId_example"; // String | The ID of the remote issue link.
 let opts = {
   'body': new Jira.InlineObject26() // InlineObject26 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(cloudid, issueIdOrKey, linkId, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyRemotelinkLinkIdPut(cloudid, issueIdOrKey, linkId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5644,9 +5644,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost
+## issueIssueIdOrKeyRemotelinkPost
 
-> InlineResponse20043 cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(cloudid, issueIdOrKey, opts)
+> InlineResponse20043 issueIssueIdOrKeyRemotelinkPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5667,7 +5667,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'body': new Jira.InlineObject25() // InlineObject25 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyRemotelinkPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5699,9 +5699,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyTransitionsGet
+## issueIssueIdOrKeyTransitionsGet
 
-> InlineResponse20045 cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(cloudid, issueIdOrKey, opts)
+> InlineResponse20045 issueIssueIdOrKeyTransitionsGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5724,7 +5724,7 @@ let opts = {
   'skipRemoteOnlyCondition': true, // Boolean | Indicates whether transitions with the condition Hide From User Condition are included in the response.
   'transitionId': "transitionId_example" // String | The ID of the transition.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyTransitionsGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5758,9 +5758,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyTransitionsPost
+## issueIssueIdOrKeyTransitionsPost
 
-> cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(cloudid, issueIdOrKey, opts)
+> issueIssueIdOrKeyTransitionsPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5781,7 +5781,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'body': new Jira.InlineObject27() // InlineObject27 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyTransitionsPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5813,9 +5813,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyVotesDelete
+## issueIssueIdOrKeyVotesDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyVotesDelete(cloudid, issueIdOrKey)
+> issueIssueIdOrKeyVotesDelete(cloudid, issueIdOrKey)
 
 
 
@@ -5833,7 +5833,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesDelete(cloudid, issueIdOrKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyVotesDelete(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5864,9 +5864,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyVotesGet
+## issueIssueIdOrKeyVotesGet
 
-> InlineResponse20046 cloudidRestApi3IssueIssueIdOrKeyVotesGet(cloudid, issueIdOrKey)
+> InlineResponse20046 issueIssueIdOrKeyVotesGet(cloudid, issueIdOrKey)
 
 
 
@@ -5884,7 +5884,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesGet(cloudid, issueIdOrKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyVotesGet(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5915,9 +5915,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyVotesPost
+## issueIssueIdOrKeyVotesPost
 
-> cloudidRestApi3IssueIssueIdOrKeyVotesPost(cloudid, issueIdOrKey)
+> issueIssueIdOrKeyVotesPost(cloudid, issueIdOrKey)
 
 
 
@@ -5935,7 +5935,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesPost(cloudid, issueIdOrKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyVotesPost(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5966,9 +5966,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWatchersDelete
+## issueIssueIdOrKeyWatchersDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(cloudid, issueIdOrKey, opts)
+> issueIssueIdOrKeyWatchersDelete(cloudid, issueIdOrKey, opts)
 
 
 
@@ -5990,7 +5990,7 @@ let opts = {
   'accountId': "accountId_example", // String | The account ID of the user. Required if username is omitted, otherwise must be omitted.
   'username': "username_example" // String | The name of the user. Required if accountId is omitted, otherwise must be omitted.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWatchersDelete(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6023,9 +6023,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWatchersGet
+## issueIssueIdOrKeyWatchersGet
 
-> InlineResponse20047 cloudidRestApi3IssueIssueIdOrKeyWatchersGet(cloudid, issueIdOrKey)
+> InlineResponse20047 issueIssueIdOrKeyWatchersGet(cloudid, issueIdOrKey)
 
 
 
@@ -6043,7 +6043,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersGet(cloudid, issueIdOrKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWatchersGet(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6074,9 +6074,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWatchersPost
+## issueIssueIdOrKeyWatchersPost
 
-> cloudidRestApi3IssueIssueIdOrKeyWatchersPost(cloudid, issueIdOrKey)
+> issueIssueIdOrKeyWatchersPost(cloudid, issueIdOrKey)
 
 
 
@@ -6094,7 +6094,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersPost(cloudid, issueIdOrKey, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWatchersPost(cloudid, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6125,9 +6125,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWorklogGet
+## issueIssueIdOrKeyWorklogGet
 
-> InlineResponse20048 cloudidRestApi3IssueIssueIdOrKeyWorklogGet(cloudid, issueIdOrKey, opts)
+> InlineResponse20048 issueIssueIdOrKeyWorklogGet(cloudid, issueIdOrKey, opts)
 
 
 
@@ -6150,7 +6150,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1048576.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWorklogGet(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6184,9 +6184,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete
+## issueIssueIdOrKeyWorklogIdDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(cloudid, id, issueIdOrKey, opts)
+> issueIssueIdOrKeyWorklogIdDelete(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -6212,7 +6212,7 @@ let opts = {
   'notifyUsers': true, // Boolean | Indicates whether users watching the issue are notified by email.
   'overrideEditableFlag': true // Boolean | Indicates whether the work log entry should be added to the issue even if the issue is not editable, because jira.issue.editable set to false or missing. For example, the issue is closed. Only connect app users with admin permissions can use this flag.
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWorklogIdDelete(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6249,9 +6249,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet
+## issueIssueIdOrKeyWorklogIdGet
 
-> InlineResponse20049 cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(cloudid, id, issueIdOrKey, opts)
+> InlineResponse20049 issueIssueIdOrKeyWorklogIdGet(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -6273,7 +6273,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about work logs in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWorklogIdGet(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6306,9 +6306,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut
+## issueIssueIdOrKeyWorklogIdPut
 
-> InlineResponse20049 cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(cloudid, id, issueIdOrKey, opts)
+> InlineResponse20049 issueIssueIdOrKeyWorklogIdPut(cloudid, id, issueIdOrKey, opts)
 
 
 
@@ -6335,7 +6335,7 @@ let opts = {
   'overrideEditableFlag': true, // Boolean | Indicates whether the worklog should be added to the issue even if the issue is not editable, for example, because the issue is closed. Only connect app users with admin permissions can use this flag.
   'body': new Jira.InlineObject29() // InlineObject29 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWorklogIdPut(cloudid, id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6373,9 +6373,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWorklogPost
+## issueIssueIdOrKeyWorklogPost
 
-> cloudidRestApi3IssueIssueIdOrKeyWorklogPost(cloudid, issueIdOrKey, opts)
+> issueIssueIdOrKeyWorklogPost(cloudid, issueIdOrKey, opts)
 
 
 
@@ -6402,7 +6402,7 @@ let opts = {
   'reduceBy': "reduceBy_example", // String | The amount to reduce the issue's remaining estimate by, as days (#d), hours (#h), or minutes (#m). For example, 2d. Required when adjustEstimate is manual.
   'body': new Jira.InlineObject28() // InlineObject28 | 
 };
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWorklogPost(cloudid, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6440,9 +6440,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet
+## issueIssueIdOrKeyWorklogWorklogIdPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(cloudid, issueIdOrKey, worklogId)
+> InlineResponse20010 issueIssueIdOrKeyWorklogWorklogIdPropertiesGet(cloudid, issueIdOrKey, worklogId)
 
 
 
@@ -6461,7 +6461,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(cloudid, issueIdOrKey, worklogId, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWorklogWorklogIdPropertiesGet(cloudid, issueIdOrKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6493,9 +6493,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete
+## issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete
 
-> cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey, worklogId)
+> issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey, worklogId)
 
 
 
@@ -6515,7 +6515,7 @@ let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(cloudid, issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6548,9 +6548,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet
+## issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey, worklogId)
+> InlineResponse20011 issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey, worklogId)
 
 
 
@@ -6570,7 +6570,7 @@ let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(cloudid, issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6603,9 +6603,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut
+## issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut
 
-> cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey, worklogId)
+> issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey, worklogId)
 
 
 
@@ -6625,7 +6625,7 @@ let cloudid = null; // Object | Cloudi of the project
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the issue property. The maximum length is 255 characters.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
+apiInstance.issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(cloudid, issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6658,9 +6658,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueLinkLinkIdDelete
+## issueLinkLinkIdDelete
 
-> cloudidRestApi3IssueLinkLinkIdDelete(cloudid, linkId)
+> issueLinkLinkIdDelete(cloudid, linkId)
 
 
 
@@ -6678,7 +6678,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let linkId = "linkId_example"; // String | The ID of the issue link.
-apiInstance.cloudidRestApi3IssueLinkLinkIdDelete(cloudid, linkId, (error, data, response) => {
+apiInstance.issueLinkLinkIdDelete(cloudid, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6709,9 +6709,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueLinkLinkIdGet
+## issueLinkLinkIdGet
 
-> InlineResponse20050 cloudidRestApi3IssueLinkLinkIdGet(cloudid, linkId)
+> InlineResponse20050 issueLinkLinkIdGet(cloudid, linkId)
 
 
 
@@ -6729,7 +6729,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let linkId = "linkId_example"; // String | The ID of the issue link.
-apiInstance.cloudidRestApi3IssueLinkLinkIdGet(cloudid, linkId, (error, data, response) => {
+apiInstance.issueLinkLinkIdGet(cloudid, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6760,9 +6760,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueLinkPost
+## issueLinkPost
 
-> cloudidRestApi3IssueLinkPost(cloudid, opts)
+> issueLinkPost(cloudid, opts)
 
 
 
@@ -6782,7 +6782,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject30() // InlineObject30 | 
 };
-apiInstance.cloudidRestApi3IssueLinkPost(cloudid, opts, (error, data, response) => {
+apiInstance.issueLinkPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6813,9 +6813,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueLinkTypeGet
+## issueLinkTypeGet
 
-> InlineResponse20051 cloudidRestApi3IssueLinkTypeGet(cloudid)
+> InlineResponse20051 issueLinkTypeGet(cloudid)
 
 
 
@@ -6832,7 +6832,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3IssueLinkTypeGet(cloudid, (error, data, response) => {
+apiInstance.issueLinkTypeGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6862,9 +6862,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete
+## issueLinkTypeIssueLinkTypeIdDelete
 
-> cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(cloudid, issueLinkTypeId)
+> issueLinkTypeIssueLinkTypeIdDelete(cloudid, issueLinkTypeId)
 
 
 
@@ -6882,7 +6882,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueLinkTypeId = "issueLinkTypeId_example"; // String | The ID of the issue link type.
-apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(cloudid, issueLinkTypeId, (error, data, response) => {
+apiInstance.issueLinkTypeIssueLinkTypeIdDelete(cloudid, issueLinkTypeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6913,9 +6913,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet
+## issueLinkTypeIssueLinkTypeIdGet
 
-> InlineResponse2016 cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(cloudid, issueLinkTypeId)
+> InlineResponse2016 issueLinkTypeIssueLinkTypeIdGet(cloudid, issueLinkTypeId)
 
 
 
@@ -6933,7 +6933,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueLinkTypeId = "issueLinkTypeId_example"; // String | The ID of the issue link type.
-apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(cloudid, issueLinkTypeId, (error, data, response) => {
+apiInstance.issueLinkTypeIssueLinkTypeIdGet(cloudid, issueLinkTypeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6964,9 +6964,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut
+## issueLinkTypeIssueLinkTypeIdPut
 
-> InlineResponse2016 cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(cloudid, issueLinkTypeId, opts)
+> InlineResponse2016 issueLinkTypeIssueLinkTypeIdPut(cloudid, issueLinkTypeId, opts)
 
 
 
@@ -6987,7 +6987,7 @@ let issueLinkTypeId = "issueLinkTypeId_example"; // String | The ID of the issue
 let opts = {
   'body': new Jira.InlineObject32() // InlineObject32 | 
 };
-apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(cloudid, issueLinkTypeId, opts, (error, data, response) => {
+apiInstance.issueLinkTypeIssueLinkTypeIdPut(cloudid, issueLinkTypeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7019,9 +7019,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssueLinkTypePost
+## issueLinkTypePost
 
-> InlineResponse2016 cloudidRestApi3IssueLinkTypePost(cloudid, opts)
+> InlineResponse2016 issueLinkTypePost(cloudid, opts)
 
 
 
@@ -7041,7 +7041,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject31() // InlineObject31 | 
 };
-apiInstance.cloudidRestApi3IssueLinkTypePost(cloudid, opts, (error, data, response) => {
+apiInstance.issueLinkTypePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7072,9 +7072,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuePickerGet
+## issuePickerGet
 
-> cloudidRestApi3IssuePickerGet(cloudid, opts)
+> issuePickerGet(cloudid, opts)
 
 
 
@@ -7099,7 +7099,7 @@ let opts = {
   'showSubTaskParent': true, // Boolean | Set to false to exclude parent issue from the suggestions list if search is performed in the context of a sub-task.
   'showSubTasks': true // Boolean | Set to false to exclude subtasks from the suggestions list.
 };
-apiInstance.cloudidRestApi3IssuePickerGet(cloudid, opts, (error, data, response) => {
+apiInstance.issuePickerGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7135,9 +7135,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssuePost
+## issuePost
 
-> InlineResponse2013 cloudidRestApi3IssuePost(cloudid, opts)
+> InlineResponse2013 issuePost(cloudid, opts)
 
 
 
@@ -7158,7 +7158,7 @@ let opts = {
   'updateHistory': true, // Boolean | Indicates whether the project in which the issue is created is added to the user's Recently viewed project list, as shown under Projects in Jira.
   'body': new Jira.InlineObject16() // InlineObject16 | 
 };
-apiInstance.cloudidRestApi3IssuePost(cloudid, opts, (error, data, response) => {
+apiInstance.issuePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7190,9 +7190,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuePropertiesPropertyKeyDelete
+## issuePropertiesPropertyKeyDelete
 
-> cloudidRestApi3IssuePropertiesPropertyKeyDelete(cloudid, propertyKey, opts)
+> issuePropertiesPropertyKeyDelete(cloudid, propertyKey, opts)
 
 
 
@@ -7213,7 +7213,7 @@ let propertyKey = "propertyKey_example"; // String | The key of the property.
 let opts = {
   'body': new Jira.InlineObject19() // InlineObject19 | 
 };
-apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyDelete(cloudid, propertyKey, opts, (error, data, response) => {
+apiInstance.issuePropertiesPropertyKeyDelete(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7245,9 +7245,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssuePropertiesPropertyKeyPut
+## issuePropertiesPropertyKeyPut
 
-> cloudidRestApi3IssuePropertiesPropertyKeyPut(cloudid, propertyKey, opts)
+> issuePropertiesPropertyKeyPut(cloudid, propertyKey, opts)
 
 
 
@@ -7268,7 +7268,7 @@ let propertyKey = "propertyKey_example"; // String | The key of the property. Th
 let opts = {
   'body': new Jira.InlineObject18() // InlineObject18 | 
 };
-apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyPut(cloudid, propertyKey, opts, (error, data, response) => {
+apiInstance.issuePropertiesPropertyKeyPut(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7300,9 +7300,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssuesecurityschemesGet
+## issuesecurityschemesGet
 
-> InlineResponse20052 cloudidRestApi3IssuesecurityschemesGet(cloudid)
+> InlineResponse20052 issuesecurityschemesGet(cloudid)
 
 
 
@@ -7319,7 +7319,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3IssuesecurityschemesGet(cloudid, (error, data, response) => {
+apiInstance.issuesecurityschemesGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7349,9 +7349,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuesecurityschemesIdGet
+## issuesecurityschemesIdGet
 
-> InlineResponse20053 cloudidRestApi3IssuesecurityschemesIdGet(cloudid, id)
+> InlineResponse20053 issuesecurityschemesIdGet(cloudid, id)
 
 
 
@@ -7369,7 +7369,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the issue security scheme. Use the Get issue security schemes operation to get a list of issue security scheme IDs.
-apiInstance.cloudidRestApi3IssuesecurityschemesIdGet(cloudid, id, (error, data, response) => {
+apiInstance.issuesecurityschemesIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7400,9 +7400,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuetypeGet
+## issuetypeGet
 
-> [InlineResponse20050InwardIssueFieldsIssuetype] cloudidRestApi3IssuetypeGet(cloudid)
+> [InlineResponse20050InwardIssueFieldsIssuetype] issuetypeGet(cloudid)
 
 
 
@@ -7419,7 +7419,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3IssuetypeGet(cloudid, (error, data, response) => {
+apiInstance.issuetypeGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7449,9 +7449,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuetypeIdAlternativesGet
+## issuetypeIdAlternativesGet
 
-> [InlineResponse20050InwardIssueFieldsIssuetype] cloudidRestApi3IssuetypeIdAlternativesGet(cloudid, id)
+> [InlineResponse20050InwardIssueFieldsIssuetype] issuetypeIdAlternativesGet(cloudid, id)
 
 
 
@@ -7469,7 +7469,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3IssuetypeIdAlternativesGet(cloudid, id, (error, data, response) => {
+apiInstance.issuetypeIdAlternativesGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7500,9 +7500,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuetypeIdAvatar2Post
+## issuetypeIdAvatar2Post
 
-> InlineResponse2017 cloudidRestApi3IssuetypeIdAvatar2Post(cloudid, id, opts)
+> InlineResponse2017 issuetypeIdAvatar2Post(cloudid, id, opts)
 
 
 
@@ -7525,7 +7525,7 @@ let opts = {
   'x': 56, // Number | The X coordinate of the top-left corner of the crop region.
   'y': 56 // Number | The Y coordinate of the top-left corner of the crop region.
 };
-apiInstance.cloudidRestApi3IssuetypeIdAvatar2Post(cloudid, id, opts, (error, data, response) => {
+apiInstance.issuetypeIdAvatar2Post(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7559,9 +7559,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuetypeIdDelete
+## issuetypeIdDelete
 
-> cloudidRestApi3IssuetypeIdDelete(cloudid, id, opts)
+> issuetypeIdDelete(cloudid, id, opts)
 
 
 
@@ -7582,7 +7582,7 @@ let id = "id_example"; // String | The ID of the issue type.
 let opts = {
   'alternativeIssueTypeId': "alternativeIssueTypeId_example" // String | The ID of the replacement issue type.
 };
-apiInstance.cloudidRestApi3IssuetypeIdDelete(cloudid, id, opts, (error, data, response) => {
+apiInstance.issuetypeIdDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7614,9 +7614,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssuetypeIdGet
+## issuetypeIdGet
 
-> InlineResponse20054 cloudidRestApi3IssuetypeIdGet(cloudid, id)
+> InlineResponse20054 issuetypeIdGet(cloudid, id)
 
 
 
@@ -7634,7 +7634,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3IssuetypeIdGet(cloudid, id, (error, data, response) => {
+apiInstance.issuetypeIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7665,9 +7665,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuetypeIdPut
+## issuetypeIdPut
 
-> cloudidRestApi3IssuetypeIdPut(cloudid, id, opts)
+> issuetypeIdPut(cloudid, id, opts)
 
 
 
@@ -7688,7 +7688,7 @@ let id = "id_example"; // String | The ID of the issue type.
 let opts = {
   'body': new Jira.InlineObject34() // InlineObject34 | 
 };
-apiInstance.cloudidRestApi3IssuetypeIdPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.issuetypeIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7720,9 +7720,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet
+## issuetypeIssueTypeIdPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(cloudid, issueTypeId)
+> InlineResponse20010 issuetypeIssueTypeIdPropertiesGet(cloudid, issueTypeId)
 
 
 
@@ -7740,7 +7740,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(cloudid, issueTypeId, (error, data, response) => {
+apiInstance.issuetypeIssueTypeIdPropertiesGet(cloudid, issueTypeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7771,9 +7771,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete
+## issuetypeIssueTypeIdPropertiesPropertyKeyDelete
 
-> cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(cloudid, issueTypeId, propertyKey)
+> issuetypeIssueTypeIdPropertiesPropertyKeyDelete(cloudid, issueTypeId, propertyKey)
 
 
 
@@ -7792,7 +7792,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
 let propertyKey = "propertyKey_example"; // String | The key of the property. Use Get issue type property keys to get a list of all issue type property keys.
-apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(cloudid, issueTypeId, propertyKey, (error, data, response) => {
+apiInstance.issuetypeIssueTypeIdPropertiesPropertyKeyDelete(cloudid, issueTypeId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7824,9 +7824,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet
+## issuetypeIssueTypeIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(cloudid, issueTypeId, propertyKey)
+> InlineResponse20011 issuetypeIssueTypeIdPropertiesPropertyKeyGet(cloudid, issueTypeId, propertyKey)
 
 
 
@@ -7845,7 +7845,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
 let propertyKey = "propertyKey_example"; // String | The key of the property. Use Get issue type property keys to get a list of all issue type property keys.
-apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(cloudid, issueTypeId, propertyKey, (error, data, response) => {
+apiInstance.issuetypeIssueTypeIdPropertiesPropertyKeyGet(cloudid, issueTypeId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7877,9 +7877,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut
+## issuetypeIssueTypeIdPropertiesPropertyKeyPut
 
-> cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(cloudid, issueTypeId, propertyKey)
+> issuetypeIssueTypeIdPropertiesPropertyKeyPut(cloudid, issueTypeId, propertyKey)
 
 
 
@@ -7898,7 +7898,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
 let propertyKey = "propertyKey_example"; // String | The key of the issue type property. The maximum length of the key is 255 bytes.
-apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(cloudid, issueTypeId, propertyKey, (error, data, response) => {
+apiInstance.issuetypeIssueTypeIdPropertiesPropertyKeyPut(cloudid, issueTypeId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7930,9 +7930,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3IssuetypePost
+## issuetypePost
 
-> cloudidRestApi3IssuetypePost(cloudid, opts)
+> issuetypePost(cloudid, opts)
 
 
 
@@ -7952,7 +7952,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject33() // InlineObject33 | 
 };
-apiInstance.cloudidRestApi3IssuetypePost(cloudid, opts, (error, data, response) => {
+apiInstance.issuetypePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7983,9 +7983,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3JqlAutocompletedataGet
+## jqlAutocompletedataGet
 
-> InlineResponse20055 cloudidRestApi3JqlAutocompletedataGet(cloudid)
+> InlineResponse20055 jqlAutocompletedataGet(cloudid)
 
 
 
@@ -8002,7 +8002,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3JqlAutocompletedataGet(cloudid, (error, data, response) => {
+apiInstance.jqlAutocompletedataGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8032,9 +8032,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3JqlAutocompletedataSuggestionsGet
+## jqlAutocompletedataSuggestionsGet
 
-> InlineResponse20056 cloudidRestApi3JqlAutocompletedataSuggestionsGet(cloudid, opts)
+> InlineResponse20056 jqlAutocompletedataSuggestionsGet(cloudid, opts)
 
 
 
@@ -8057,7 +8057,7 @@ let opts = {
   'predicateName': "predicateName_example", // String | The name of the CHANGED operator predicate for which the suggestions are generated. The valid predicate operators are by, from, and to.
   'predicateValue': "predicateValue_example" // String | The partial predicate item name entered by the user.
 };
-apiInstance.cloudidRestApi3JqlAutocompletedataSuggestionsGet(cloudid, opts, (error, data, response) => {
+apiInstance.jqlAutocompletedataSuggestionsGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8091,9 +8091,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3JqlPdcleanerPost
+## jqlPdcleanerPost
 
-> InlineResponse20057 cloudidRestApi3JqlPdcleanerPost(cloudid, opts)
+> InlineResponse20057 jqlPdcleanerPost(cloudid, opts)
 
 
 
@@ -8113,7 +8113,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject35() // InlineObject35 | 
 };
-apiInstance.cloudidRestApi3JqlPdcleanerPost(cloudid, opts, (error, data, response) => {
+apiInstance.jqlPdcleanerPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8144,9 +8144,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3MypermissionsGet
+## mypermissionsGet
 
-> InlineResponse20058 cloudidRestApi3MypermissionsGet(cloudid, opts)
+> InlineResponse20058 mypermissionsGet(cloudid, opts)
 
 
 
@@ -8170,7 +8170,7 @@ let opts = {
   'projectId': "projectId_example", // String | The ID of project.
   'projectKey': "projectKey_example" // String | The key of project. Ignored if projectId is provided.
 };
-apiInstance.cloudidRestApi3MypermissionsGet(cloudid, opts, (error, data, response) => {
+apiInstance.mypermissionsGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8205,9 +8205,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3MypreferencesDelete
+## mypreferencesDelete
 
-> cloudidRestApi3MypreferencesDelete(cloudid, opts)
+> mypreferencesDelete(cloudid, opts)
 
 
 
@@ -8227,7 +8227,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The key of the preference.
 };
-apiInstance.cloudidRestApi3MypreferencesDelete(cloudid, opts, (error, data, response) => {
+apiInstance.mypreferencesDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8258,9 +8258,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3MypreferencesGet
+## mypreferencesGet
 
-> cloudidRestApi3MypreferencesGet(cloudid, opts)
+> mypreferencesGet(cloudid, opts)
 
 
 
@@ -8280,7 +8280,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The key of the preference.
 };
-apiInstance.cloudidRestApi3MypreferencesGet(cloudid, opts, (error, data, response) => {
+apiInstance.mypreferencesGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8311,9 +8311,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3MypreferencesLocaleDelete
+## mypreferencesLocaleDelete
 
-> cloudidRestApi3MypreferencesLocaleDelete(cloudid)
+> mypreferencesLocaleDelete(cloudid)
 
 
 
@@ -8330,7 +8330,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3MypreferencesLocaleDelete(cloudid, (error, data, response) => {
+apiInstance.mypreferencesLocaleDelete(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8360,9 +8360,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3MypreferencesLocaleGet
+## mypreferencesLocaleGet
 
-> InlineResponse20059 cloudidRestApi3MypreferencesLocaleGet(cloudid)
+> InlineResponse20059 mypreferencesLocaleGet(cloudid)
 
 
 
@@ -8379,7 +8379,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3MypreferencesLocaleGet(cloudid, (error, data, response) => {
+apiInstance.mypreferencesLocaleGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8409,9 +8409,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3MypreferencesLocalePut
+## mypreferencesLocalePut
 
-> cloudidRestApi3MypreferencesLocalePut(cloudid, opts)
+> mypreferencesLocalePut(cloudid, opts)
 
 
 
@@ -8431,7 +8431,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject36() // InlineObject36 | 
 };
-apiInstance.cloudidRestApi3MypreferencesLocalePut(cloudid, opts, (error, data, response) => {
+apiInstance.mypreferencesLocalePut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8462,9 +8462,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3MypreferencesPut
+## mypreferencesPut
 
-> cloudidRestApi3MypreferencesPut(cloudid, opts)
+> mypreferencesPut(cloudid, opts)
 
 
 
@@ -8484,7 +8484,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The key of the preference. Maximum length is 255 characters.
 };
-apiInstance.cloudidRestApi3MypreferencesPut(cloudid, opts, (error, data, response) => {
+apiInstance.mypreferencesPut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8515,9 +8515,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3MyselfGet
+## myselfGet
 
-> InlineResponse20060 cloudidRestApi3MyselfGet(cloudid, opts)
+> InlineResponse20060 myselfGet(cloudid, opts)
 
 
 
@@ -8537,7 +8537,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about user in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3MyselfGet(cloudid, opts, (error, data, response) => {
+apiInstance.myselfGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8568,9 +8568,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3NotificationschemeGet
+## notificationschemeGet
 
-> InlineResponse20061 cloudidRestApi3NotificationschemeGet(cloudid, opts)
+> InlineResponse20061 notificationschemeGet(cloudid, opts)
 
 
 
@@ -8592,7 +8592,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Max is 50.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset). The base index is 0.
 };
-apiInstance.cloudidRestApi3NotificationschemeGet(cloudid, opts, (error, data, response) => {
+apiInstance.notificationschemeGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8625,9 +8625,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3NotificationschemeIdGet
+## notificationschemeIdGet
 
-> InlineResponse20062 cloudidRestApi3NotificationschemeIdGet(cloudid, id, opts)
+> InlineResponse20062 notificationschemeIdGet(cloudid, id, opts)
 
 
 
@@ -8648,7 +8648,7 @@ let id = 56; // Number | The ID of the notification scheme. Use Get notification
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3NotificationschemeIdGet(cloudid, id, opts, (error, data, response) => {
+apiInstance.notificationschemeIdGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8680,9 +8680,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PermissionsGet
+## permissionsGet
 
-> InlineResponse20063 cloudidRestApi3PermissionsGet(cloudid)
+> InlineResponse20063 permissionsGet(cloudid)
 
 
 
@@ -8699,7 +8699,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3PermissionsGet(cloudid, (error, data, response) => {
+apiInstance.permissionsGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8729,9 +8729,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PermissionsProjectPost
+## permissionsProjectPost
 
-> InlineResponse20064 cloudidRestApi3PermissionsProjectPost(cloudid, opts)
+> InlineResponse20064 permissionsProjectPost(cloudid, opts)
 
 
 
@@ -8751,7 +8751,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject37() // InlineObject37 | 
 };
-apiInstance.cloudidRestApi3PermissionsProjectPost(cloudid, opts, (error, data, response) => {
+apiInstance.permissionsProjectPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8782,9 +8782,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PermissionschemeGet
+## permissionschemeGet
 
-> InlineResponse20065 cloudidRestApi3PermissionschemeGet(cloudid, opts)
+> InlineResponse20065 permissionschemeGet(cloudid, opts)
 
 
 
@@ -8804,7 +8804,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
 };
-apiInstance.cloudidRestApi3PermissionschemeGet(cloudid, opts, (error, data, response) => {
+apiInstance.permissionschemeGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8835,9 +8835,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PermissionschemePost
+## permissionschemePost
 
-> InlineResponse2018 cloudidRestApi3PermissionschemePost(cloudid, opts)
+> InlineResponse2018 permissionschemePost(cloudid, opts)
 
 
 
@@ -8858,7 +8858,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
   'body': new Jira.InlineObject38() // InlineObject38 | 
 };
-apiInstance.cloudidRestApi3PermissionschemePost(cloudid, opts, (error, data, response) => {
+apiInstance.permissionschemePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8890,9 +8890,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PermissionschemeSchemeIdDelete
+## permissionschemeSchemeIdDelete
 
-> cloudidRestApi3PermissionschemeSchemeIdDelete(cloudid, schemeId)
+> permissionschemeSchemeIdDelete(cloudid, schemeId)
 
 
 
@@ -8910,7 +8910,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let schemeId = 56; // Number | The ID of the permission scheme being deleted (e.g., 10000).
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdDelete(cloudid, schemeId, (error, data, response) => {
+apiInstance.permissionschemeSchemeIdDelete(cloudid, schemeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8941,9 +8941,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3PermissionschemeSchemeIdGet
+## permissionschemeSchemeIdGet
 
-> InlineResponse2018 cloudidRestApi3PermissionschemeSchemeIdGet(cloudid, schemeId, opts)
+> InlineResponse2018 permissionschemeSchemeIdGet(cloudid, schemeId, opts)
 
 
 
@@ -8964,7 +8964,7 @@ let schemeId = 56; // Number | The ID of the permission scheme to return (e.g., 
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdGet(cloudid, schemeId, opts, (error, data, response) => {
+apiInstance.permissionschemeSchemeIdGet(cloudid, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8996,9 +8996,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PermissionschemeSchemeIdPermissionGet
+## permissionschemeSchemeIdPermissionGet
 
-> InlineResponse20066 cloudidRestApi3PermissionschemeSchemeIdPermissionGet(cloudid, schemeId, opts)
+> InlineResponse20066 permissionschemeSchemeIdPermissionGet(cloudid, schemeId, opts)
 
 
 
@@ -9019,7 +9019,7 @@ let schemeId = 56; // Number | The ID of the permission scheme (e.g., 10010).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionGet(cloudid, schemeId, opts, (error, data, response) => {
+apiInstance.permissionschemeSchemeIdPermissionGet(cloudid, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9051,9 +9051,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete
+## permissionschemeSchemeIdPermissionPermissionIdDelete
 
-> cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(cloudid, permissionId, schemeId)
+> permissionschemeSchemeIdPermissionPermissionIdDelete(cloudid, permissionId, schemeId)
 
 
 
@@ -9072,7 +9072,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let permissionId = 56; // Number | The ID of the permission grant to delete (e.g., 10847).
 let schemeId = 56; // Number | The ID of the permission scheme to delete the permission grant from (e.g., 10000).
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(cloudid, permissionId, schemeId, (error, data, response) => {
+apiInstance.permissionschemeSchemeIdPermissionPermissionIdDelete(cloudid, permissionId, schemeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9104,9 +9104,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet
+## permissionschemeSchemeIdPermissionPermissionIdGet
 
-> InlineResponse2019 cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(cloudid, permissionId, schemeId, opts)
+> InlineResponse2019 permissionschemeSchemeIdPermissionPermissionIdGet(cloudid, permissionId, schemeId, opts)
 
 
 
@@ -9128,7 +9128,7 @@ let schemeId = 56; // Number | The ID of the permission scheme (e.g., 10010).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(cloudid, permissionId, schemeId, opts, (error, data, response) => {
+apiInstance.permissionschemeSchemeIdPermissionPermissionIdGet(cloudid, permissionId, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9161,9 +9161,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PermissionschemeSchemeIdPermissionPost
+## permissionschemeSchemeIdPermissionPost
 
-> InlineResponse2019 cloudidRestApi3PermissionschemeSchemeIdPermissionPost(cloudid, schemeId, opts)
+> InlineResponse2019 permissionschemeSchemeIdPermissionPost(cloudid, schemeId, opts)
 
 
 
@@ -9185,7 +9185,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
   'body': new Jira.InlineObject40() // InlineObject40 | 
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPost(cloudid, schemeId, opts, (error, data, response) => {
+apiInstance.permissionschemeSchemeIdPermissionPost(cloudid, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9218,9 +9218,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PermissionschemeSchemeIdPut
+## permissionschemeSchemeIdPut
 
-> InlineResponse2018 cloudidRestApi3PermissionschemeSchemeIdPut(cloudid, schemeId, opts)
+> InlineResponse2018 permissionschemeSchemeIdPut(cloudid, schemeId, opts)
 
 
 
@@ -9242,7 +9242,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
   'body': new Jira.InlineObject39() // InlineObject39 | 
 };
-apiInstance.cloudidRestApi3PermissionschemeSchemeIdPut(cloudid, schemeId, opts, (error, data, response) => {
+apiInstance.permissionschemeSchemeIdPut(cloudid, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9275,9 +9275,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PriorityGet
+## priorityGet
 
-> [InlineResponse20050InwardIssueFieldsPriority] cloudidRestApi3PriorityGet(cloudid)
+> [InlineResponse20050InwardIssueFieldsPriority] priorityGet(cloudid)
 
 
 
@@ -9294,7 +9294,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3PriorityGet(cloudid, (error, data, response) => {
+apiInstance.priorityGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9324,9 +9324,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3PriorityIdGet
+## priorityIdGet
 
-> InlineResponse20067 cloudidRestApi3PriorityIdGet(cloudid, id)
+> InlineResponse20067 priorityIdGet(cloudid, id)
 
 
 
@@ -9344,7 +9344,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue priority.
-apiInstance.cloudidRestApi3PriorityIdGet(cloudid, id, (error, data, response) => {
+apiInstance.priorityIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9375,9 +9375,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectCategoryGet
+## projectCategoryGet
 
-> [CloudidRestApi3FilterIdPermissionProjectProjectCategory] cloudidRestApi3ProjectCategoryGet(cloudid)
+> [FilterIdPermissionProjectProjectCategory] projectCategoryGet(cloudid)
 
 
 
@@ -9394,7 +9394,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ProjectCategoryGet(cloudid, (error, data, response) => {
+apiInstance.projectCategoryGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9412,7 +9412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CloudidRestApi3FilterIdPermissionProjectProjectCategory]**](CloudidRestApi3FilterIdPermissionProjectProjectCategory.md)
+[**[FilterIdPermissionProjectProjectCategory]**](FilterIdPermissionProjectProjectCategory.md)
 
 ### Authorization
 
@@ -9424,9 +9424,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectCategoryIdDelete
+## projectCategoryIdDelete
 
-> cloudidRestApi3ProjectCategoryIdDelete(cloudid, id)
+> projectCategoryIdDelete(cloudid, id)
 
 
 
@@ -9444,7 +9444,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | ID of the project category to delete.
-apiInstance.cloudidRestApi3ProjectCategoryIdDelete(cloudid, id, (error, data, response) => {
+apiInstance.projectCategoryIdDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9475,9 +9475,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ProjectCategoryIdGet
+## projectCategoryIdGet
 
-> InlineResponse20112 cloudidRestApi3ProjectCategoryIdGet(cloudid, id)
+> InlineResponse20112 projectCategoryIdGet(cloudid, id)
 
 
 
@@ -9495,7 +9495,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project category.
-apiInstance.cloudidRestApi3ProjectCategoryIdGet(cloudid, id, (error, data, response) => {
+apiInstance.projectCategoryIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9526,9 +9526,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectCategoryIdPut
+## projectCategoryIdPut
 
-> InlineResponse20112 cloudidRestApi3ProjectCategoryIdPut(cloudid, id, opts)
+> InlineResponse20112 projectCategoryIdPut(cloudid, id, opts)
 
 
 
@@ -9549,7 +9549,7 @@ let id = 56; // Number |
 let opts = {
   'body': new Jira.InlineObject48() // InlineObject48 | 
 };
-apiInstance.cloudidRestApi3ProjectCategoryIdPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.projectCategoryIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9581,9 +9581,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectCategoryPost
+## projectCategoryPost
 
-> InlineResponse20112 cloudidRestApi3ProjectCategoryPost(cloudid, opts)
+> InlineResponse20112 projectCategoryPost(cloudid, opts)
 
 
 
@@ -9603,7 +9603,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject47() // InlineObject47 | 
 };
-apiInstance.cloudidRestApi3ProjectCategoryPost(cloudid, opts, (error, data, response) => {
+apiInstance.projectCategoryPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9634,9 +9634,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectGet
+## projectGet
 
-> [CloudidRestApi3FilterIdPermissionProject] cloudidRestApi3ProjectGet(cloudid, opts)
+> [FilterIdPermissionProject] projectGet(cloudid, opts)
 
 
 
@@ -9657,7 +9657,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
   'recent': 56 // Number | Returns the most recently accessed projects for the current user. You may specify the number of results to return up to a maximum of 20. If no user is logged in, then the recently accessed projects will be returned based on the current HTTP session.
 };
-apiInstance.cloudidRestApi3ProjectGet(cloudid, opts, (error, data, response) => {
+apiInstance.projectGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9677,7 +9677,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CloudidRestApi3FilterIdPermissionProject]**](CloudidRestApi3FilterIdPermissionProject.md)
+[**[FilterIdPermissionProject]**](FilterIdPermissionProject.md)
 
 ### Authorization
 
@@ -9689,9 +9689,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectPost
+## projectPost
 
-> InlineResponse20110 cloudidRestApi3ProjectPost(cloudid, opts)
+> InlineResponse20110 projectPost(cloudid, opts)
 
 
 
@@ -9711,7 +9711,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject41() // InlineObject41 | 
 };
-apiInstance.cloudidRestApi3ProjectPost(cloudid, opts, (error, data, response) => {
+apiInstance.projectPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9742,9 +9742,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post
+## projectProjectIdOrKeyAvatar2Post
 
-> InlineResponse20111 cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(cloudid, projectIdOrKey, opts)
+> InlineResponse20111 projectProjectIdOrKeyAvatar2Post(cloudid, projectIdOrKey, opts)
 
 
 
@@ -9767,7 +9767,7 @@ let opts = {
   'x': 56, // Number | The X coordinate of the top-left corner of the crop region.
   'y': 56 // Number | The Y coordinate of the top-left corner of the crop region.
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(cloudid, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyAvatar2Post(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9801,9 +9801,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete
+## projectProjectIdOrKeyAvatarIdDelete
 
-> cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(cloudid, id, projectIdOrKey)
+> projectProjectIdOrKeyAvatarIdDelete(cloudid, id, projectIdOrKey)
 
 
 
@@ -9822,7 +9822,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the avatar.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or (case-sensitive) key.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(cloudid, id, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyAvatarIdDelete(cloudid, id, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9854,9 +9854,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyAvatarPut
+## projectProjectIdOrKeyAvatarPut
 
-> cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(cloudid, projectIdOrKey, opts)
+> projectProjectIdOrKeyAvatarPut(cloudid, projectIdOrKey, opts)
 
 
 
@@ -9877,7 +9877,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The ID or (case-sensi
 let opts = {
   'body': new Jira.InlineObject43() // InlineObject43 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(cloudid, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyAvatarPut(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9909,9 +9909,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet
+## projectProjectIdOrKeyAvatarsGet
 
-> InlineResponse20072 cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(cloudid, projectIdOrKey)
+> InlineResponse20072 projectProjectIdOrKeyAvatarsGet(cloudid, projectIdOrKey)
 
 
 
@@ -9929,7 +9929,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The ID or (case-sensitive) key of the project.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(cloudid, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyAvatarsGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9960,9 +9960,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyComponentGet
+## projectProjectIdOrKeyComponentGet
 
-> InlineResponse20073 cloudidRestApi3ProjectProjectIdOrKeyComponentGet(cloudid, projectIdOrKey, opts)
+> InlineResponse20073 projectProjectIdOrKeyComponentGet(cloudid, projectIdOrKey, opts)
 
 
 
@@ -9986,7 +9986,7 @@ let opts = {
   'query': "query_example", // String | Filter the results using a literal string. Components with a matching name or description are returned (case insensitive).
   'startAt': 56 // Number | The starting index of the returned list of components. The base index is 0.
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyComponentGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10021,9 +10021,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyComponentsGet
+## projectProjectIdOrKeyComponentsGet
 
-> [InlineResponse20074] cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(cloudid, projectIdOrKey)
+> [InlineResponse20074] projectProjectIdOrKeyComponentsGet(cloudid, projectIdOrKey)
 
 
 
@@ -10041,7 +10041,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(cloudid, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyComponentsGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10072,9 +10072,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyDelete
+## projectProjectIdOrKeyDelete
 
-> cloudidRestApi3ProjectProjectIdOrKeyDelete(cloudid, projectIdOrKey)
+> projectProjectIdOrKeyDelete(cloudid, projectIdOrKey)
 
 
 
@@ -10092,7 +10092,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyDelete(cloudid, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyDelete(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10123,9 +10123,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyGet
+## projectProjectIdOrKeyGet
 
-> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyGet(cloudid, projectIdOrKey, opts)
+> InlineResponse20071 projectProjectIdOrKeyGet(cloudid, projectIdOrKey, opts)
 
 
 
@@ -10146,7 +10146,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or pro
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default:
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10178,9 +10178,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet
+## projectProjectIdOrKeyPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(cloudid, projectIdOrKey)
+> InlineResponse20010 projectProjectIdOrKeyPropertiesGet(cloudid, projectIdOrKey)
 
 
 
@@ -10198,7 +10198,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(cloudid, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyPropertiesGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10229,9 +10229,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete
+## projectProjectIdOrKeyPropertiesPropertyKeyDelete
 
-> cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(cloudid, projectIdOrKey, propertyKey)
+> projectProjectIdOrKeyPropertiesPropertyKeyDelete(cloudid, projectIdOrKey, propertyKey)
 
 
 
@@ -10250,7 +10250,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let propertyKey = "propertyKey_example"; // String | The project property key. Use Get project property keys to get a list of all project property keys.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(cloudid, projectIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyPropertiesPropertyKeyDelete(cloudid, projectIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10282,9 +10282,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet
+## projectProjectIdOrKeyPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(cloudid, projectIdOrKey, propertyKey)
+> InlineResponse20011 projectProjectIdOrKeyPropertiesPropertyKeyGet(cloudid, projectIdOrKey, propertyKey)
 
 
 
@@ -10303,7 +10303,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let propertyKey = "propertyKey_example"; // String | The project property key. Use Get project property keys to get a list of all project property keys.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(cloudid, projectIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyPropertiesPropertyKeyGet(cloudid, projectIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10335,9 +10335,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut
+## projectProjectIdOrKeyPropertiesPropertyKeyPut
 
-> cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(cloudid, projectIdOrKey, propertyKey)
+> projectProjectIdOrKeyPropertiesPropertyKeyPut(cloudid, projectIdOrKey, propertyKey)
 
 
 
@@ -10356,7 +10356,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let propertyKey = "propertyKey_example"; // String | The key of the project property. The maximum length is 255 bytes.
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(cloudid, projectIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyPropertiesPropertyKeyPut(cloudid, projectIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10388,9 +10388,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyPut
+## projectProjectIdOrKeyPut
 
-> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyPut(cloudid, projectIdOrKey, opts)
+> InlineResponse20071 projectProjectIdOrKeyPut(cloudid, projectIdOrKey, opts)
 
 
 
@@ -10412,7 +10412,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default:
   'body': new Jira.InlineObject42() // InlineObject42 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPut(cloudid, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyPut(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10445,9 +10445,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyRoleGet
+## projectProjectIdOrKeyRoleGet
 
-> InlineResponse20075 cloudidRestApi3ProjectProjectIdOrKeyRoleGet(cloudid, projectIdOrKey)
+> InlineResponse20075 projectProjectIdOrKeyRoleGet(cloudid, projectIdOrKey)
 
 
 
@@ -10465,7 +10465,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleGet(cloudid, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyRoleGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10496,9 +10496,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete
+## projectProjectIdOrKeyRoleIdDelete
 
-> cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(cloudid, id, projectIdOrKey, opts)
+> projectProjectIdOrKeyRoleIdDelete(cloudid, id, projectIdOrKey, opts)
 
 
 
@@ -10521,7 +10521,7 @@ let opts = {
   'group': "group_example", // String | The name of the group to remove from the project role.
   'user': "user_example" // String | The user account ID of the user to remove from the project role.
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(cloudid, id, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyRoleIdDelete(cloudid, id, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10555,9 +10555,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet
+## projectProjectIdOrKeyRoleIdGet
 
-> InlineResponse20076 cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(cloudid, id, projectIdOrKey)
+> InlineResponse20076 projectProjectIdOrKeyRoleIdGet(cloudid, id, projectIdOrKey)
 
 
 
@@ -10576,7 +10576,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(cloudid, id, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyRoleIdGet(cloudid, id, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10608,9 +10608,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost
+## projectProjectIdOrKeyRoleIdPost
 
-> cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(cloudid, id, projectIdOrKey, opts)
+> projectProjectIdOrKeyRoleIdPost(cloudid, id, projectIdOrKey, opts)
 
 
 
@@ -10632,7 +10632,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or pro
 let opts = {
   'body': new Jira.InlineObject45() // InlineObject45 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(cloudid, id, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyRoleIdPost(cloudid, id, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10665,9 +10665,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut
+## projectProjectIdOrKeyRoleIdPut
 
-> InlineResponse20076 cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(cloudid, id, projectIdOrKey, opts)
+> InlineResponse20076 projectProjectIdOrKeyRoleIdPut(cloudid, id, projectIdOrKey, opts)
 
 
 
@@ -10689,7 +10689,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or pro
 let opts = {
   'body': new Jira.InlineObject44() // InlineObject44 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(cloudid, id, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyRoleIdPut(cloudid, id, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10722,9 +10722,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet
+## projectProjectIdOrKeyRoledetailsGet
 
-> [CloudidRestApi3FilterIdPermissionRole] cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(cloudid, projectIdOrKey)
+> [FilterIdPermissionRole] projectProjectIdOrKeyRoledetailsGet(cloudid, projectIdOrKey)
 
 
 
@@ -10742,7 +10742,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(cloudid, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyRoledetailsGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10761,7 +10761,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CloudidRestApi3FilterIdPermissionRole]**](CloudidRestApi3FilterIdPermissionRole.md)
+[**[FilterIdPermissionRole]**](FilterIdPermissionRole.md)
 
 ### Authorization
 
@@ -10773,9 +10773,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyStatusesGet
+## projectProjectIdOrKeyStatusesGet
 
-> [InlineResponse20077] cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(cloudid, projectIdOrKey)
+> [InlineResponse20077] projectProjectIdOrKeyStatusesGet(cloudid, projectIdOrKey)
 
 
 
@@ -10793,7 +10793,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(cloudid, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyStatusesGet(cloudid, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10824,9 +10824,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut
+## projectProjectIdOrKeyTypeNewProjectTypeKeyPut
 
-> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(cloudid, newProjectTypeKey, projectIdOrKey)
+> InlineResponse20071 projectProjectIdOrKeyTypeNewProjectTypeKeyPut(cloudid, newProjectTypeKey, projectIdOrKey)
 
 
 
@@ -10845,7 +10845,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let newProjectTypeKey = "newProjectTypeKey_example"; // String | The key of the new project type.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(cloudid, newProjectTypeKey, projectIdOrKey, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyTypeNewProjectTypeKeyPut(cloudid, newProjectTypeKey, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10877,9 +10877,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyVersionGet
+## projectProjectIdOrKeyVersionGet
 
-> InlineResponse20078 cloudidRestApi3ProjectProjectIdOrKeyVersionGet(cloudid, projectIdOrKey, opts)
+> InlineResponse20078 projectProjectIdOrKeyVersionGet(cloudid, projectIdOrKey, opts)
 
 
 
@@ -10905,7 +10905,7 @@ let opts = {
   'startAt': 56, // Number | The starting index of the returned list of versions (page offset). The base index is 0.
   'status': "status_example" // String | A comma separated string used to filter the results by version status.
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyVersionGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10942,9 +10942,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectIdOrKeyVersionsGet
+## projectProjectIdOrKeyVersionsGet
 
-> [InlineResponse20078Values] cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(cloudid, projectIdOrKey, opts)
+> [InlineResponse20078Values] projectProjectIdOrKeyVersionsGet(cloudid, projectIdOrKey, opts)
 
 
 
@@ -10965,7 +10965,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or pro
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.projectProjectIdOrKeyVersionsGet(cloudid, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10997,9 +10997,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet
+## projectProjectKeyOrIdIssuesecuritylevelschemeGet
 
-> InlineResponse20053 cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(cloudid, projectKeyOrId)
+> InlineResponse20053 projectProjectKeyOrIdIssuesecuritylevelschemeGet(cloudid, projectKeyOrId)
 
 
 
@@ -11017,7 +11017,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(cloudid, projectKeyOrId, (error, data, response) => {
+apiInstance.projectProjectKeyOrIdIssuesecuritylevelschemeGet(cloudid, projectKeyOrId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11048,9 +11048,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet
+## projectProjectKeyOrIdNotificationschemeGet
 
-> InlineResponse20062 cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(cloudid, projectKeyOrId, opts)
+> InlineResponse20062 projectProjectKeyOrIdNotificationschemeGet(cloudid, projectKeyOrId, opts)
 
 
 
@@ -11071,7 +11071,7 @@ let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or pro
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(cloudid, projectKeyOrId, opts, (error, data, response) => {
+apiInstance.projectProjectKeyOrIdNotificationschemeGet(cloudid, projectKeyOrId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11103,9 +11103,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet
+## projectProjectKeyOrIdPermissionschemeGet
 
-> InlineResponse20079 cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(cloudid, projectKeyOrId, opts)
+> InlineResponse20079 projectProjectKeyOrIdPermissionschemeGet(cloudid, projectKeyOrId, opts)
 
 
 
@@ -11126,7 +11126,7 @@ let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or pro
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
 };
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(cloudid, projectKeyOrId, opts, (error, data, response) => {
+apiInstance.projectProjectKeyOrIdPermissionschemeGet(cloudid, projectKeyOrId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11158,9 +11158,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut
+## projectProjectKeyOrIdPermissionschemePut
 
-> InlineResponse20079 cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(cloudid, projectKeyOrId, opts)
+> InlineResponse20079 projectProjectKeyOrIdPermissionschemePut(cloudid, projectKeyOrId, opts)
 
 
 
@@ -11182,7 +11182,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
   'body': new Jira.InlineObject46() // InlineObject46 | 
 };
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(cloudid, projectKeyOrId, opts, (error, data, response) => {
+apiInstance.projectProjectKeyOrIdPermissionschemePut(cloudid, projectKeyOrId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11215,9 +11215,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet
+## projectProjectKeyOrIdSecuritylevelGet
 
-> InlineResponse20080 cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(cloudid, projectKeyOrId)
+> InlineResponse20080 projectProjectKeyOrIdSecuritylevelGet(cloudid, projectKeyOrId)
 
 
 
@@ -11235,7 +11235,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or project key (case sensitive).
-apiInstance.cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(cloudid, projectKeyOrId, (error, data, response) => {
+apiInstance.projectProjectKeyOrIdSecuritylevelGet(cloudid, projectKeyOrId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11266,9 +11266,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectSearchGet
+## projectSearchGet
 
-> InlineResponse20068 cloudidRestApi3ProjectSearchGet(cloudid, opts)
+> InlineResponse20068 projectSearchGet(cloudid, opts)
 
 
 
@@ -11295,7 +11295,7 @@ let opts = {
   'startAt': 56, // Number | The starting index of the first item returned in the page of results (page offset). The base index is 0.
   'typeKey': "typeKey_example" // String | Orders results by the project type. This parameter accepts multiple values separated by a comma. Valid values are business, service_desk, and software.
 };
-apiInstance.cloudidRestApi3ProjectSearchGet(cloudid, opts, (error, data, response) => {
+apiInstance.projectSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11333,9 +11333,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectTypeGet
+## projectTypeGet
 
-> [InlineResponse20069] cloudidRestApi3ProjectTypeGet(cloudid)
+> [InlineResponse20069] projectTypeGet(cloudid)
 
 
 
@@ -11352,7 +11352,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ProjectTypeGet(cloudid, (error, data, response) => {
+apiInstance.projectTypeGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11382,9 +11382,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet
+## projectTypeProjectTypeKeyAccessibleGet
 
-> InlineResponse20070 cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(cloudid, projectTypeKey)
+> InlineResponse20070 projectTypeProjectTypeKeyAccessibleGet(cloudid, projectTypeKey)
 
 
 
@@ -11402,7 +11402,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectTypeKey = "projectTypeKey_example"; // String | The key of the project type.
-apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(cloudid, projectTypeKey, (error, data, response) => {
+apiInstance.projectTypeProjectTypeKeyAccessibleGet(cloudid, projectTypeKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11433,9 +11433,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectTypeProjectTypeKeyGet
+## projectTypeProjectTypeKeyGet
 
-> InlineResponse20070 cloudidRestApi3ProjectTypeProjectTypeKeyGet(cloudid, projectTypeKey)
+> InlineResponse20070 projectTypeProjectTypeKeyGet(cloudid, projectTypeKey)
 
 
 
@@ -11453,7 +11453,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let projectTypeKey = "projectTypeKey_example"; // String | The key of the project type.
-apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyGet(cloudid, projectTypeKey, (error, data, response) => {
+apiInstance.projectTypeProjectTypeKeyGet(cloudid, projectTypeKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11484,9 +11484,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectvalidateKeyGet
+## projectvalidateKeyGet
 
-> InlineResponse20081 cloudidRestApi3ProjectvalidateKeyGet(cloudid, opts)
+> InlineResponse20081 projectvalidateKeyGet(cloudid, opts)
 
 
 
@@ -11506,7 +11506,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The project key.
 };
-apiInstance.cloudidRestApi3ProjectvalidateKeyGet(cloudid, opts, (error, data, response) => {
+apiInstance.projectvalidateKeyGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11537,9 +11537,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectvalidateValidProjectKeyGet
+## projectvalidateValidProjectKeyGet
 
-> InlineResponse20082 cloudidRestApi3ProjectvalidateValidProjectKeyGet(cloudid, opts)
+> InlineResponse20082 projectvalidateValidProjectKeyGet(cloudid, opts)
 
 
 
@@ -11559,7 +11559,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'key': "key_example" // String | The project key.
 };
-apiInstance.cloudidRestApi3ProjectvalidateValidProjectKeyGet(cloudid, opts, (error, data, response) => {
+apiInstance.projectvalidateValidProjectKeyGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11590,9 +11590,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ProjectvalidateValidProjectNameGet
+## projectvalidateValidProjectNameGet
 
-> InlineResponse20083 cloudidRestApi3ProjectvalidateValidProjectNameGet(cloudid, opts)
+> InlineResponse20083 projectvalidateValidProjectNameGet(cloudid, opts)
 
 
 
@@ -11612,7 +11612,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'name': "name_example" // String | The project name.
 };
-apiInstance.cloudidRestApi3ProjectvalidateValidProjectNameGet(cloudid, opts, (error, data, response) => {
+apiInstance.projectvalidateValidProjectNameGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11643,9 +11643,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ResolutionGet
+## resolutionGet
 
-> [CloudidRestApi3FilterIdPermissionProjectProjectCategory] cloudidRestApi3ResolutionGet(cloudid)
+> [FilterIdPermissionProjectProjectCategory] resolutionGet(cloudid)
 
 
 
@@ -11662,7 +11662,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ResolutionGet(cloudid, (error, data, response) => {
+apiInstance.resolutionGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11680,7 +11680,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CloudidRestApi3FilterIdPermissionProjectProjectCategory]**](CloudidRestApi3FilterIdPermissionProjectProjectCategory.md)
+[**[FilterIdPermissionProjectProjectCategory]**](FilterIdPermissionProjectProjectCategory.md)
 
 ### Authorization
 
@@ -11692,9 +11692,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ResolutionIdGet
+## resolutionIdGet
 
-> InlineResponse20112 cloudidRestApi3ResolutionIdGet(cloudid, id)
+> InlineResponse20112 resolutionIdGet(cloudid, id)
 
 
 
@@ -11712,7 +11712,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue resolution value.
-apiInstance.cloudidRestApi3ResolutionIdGet(cloudid, id, (error, data, response) => {
+apiInstance.resolutionIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11743,9 +11743,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3RoleGet
+## roleGet
 
-> [CloudidRestApi3FilterIdPermissionRole] cloudidRestApi3RoleGet(cloudid)
+> [FilterIdPermissionRole] roleGet(cloudid)
 
 
 
@@ -11762,7 +11762,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3RoleGet(cloudid, (error, data, response) => {
+apiInstance.roleGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11780,7 +11780,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CloudidRestApi3FilterIdPermissionRole]**](CloudidRestApi3FilterIdPermissionRole.md)
+[**[FilterIdPermissionRole]**](FilterIdPermissionRole.md)
 
 ### Authorization
 
@@ -11792,9 +11792,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3RoleIdActorsDelete
+## roleIdActorsDelete
 
-> InlineResponse20084 cloudidRestApi3RoleIdActorsDelete(cloudid, id, opts)
+> InlineResponse20084 roleIdActorsDelete(cloudid, id, opts)
 
 
 
@@ -11816,7 +11816,7 @@ let opts = {
   'group': "group_example", // String | The group name of the group to be removed as a default actor.
   'user': "user_example" // String | The user account ID of the user to remove as a default actor.
 };
-apiInstance.cloudidRestApi3RoleIdActorsDelete(cloudid, id, opts, (error, data, response) => {
+apiInstance.roleIdActorsDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11849,9 +11849,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3RoleIdActorsGet
+## roleIdActorsGet
 
-> InlineResponse20084 cloudidRestApi3RoleIdActorsGet(cloudid, id)
+> InlineResponse20084 roleIdActorsGet(cloudid, id)
 
 
 
@@ -11869,7 +11869,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
-apiInstance.cloudidRestApi3RoleIdActorsGet(cloudid, id, (error, data, response) => {
+apiInstance.roleIdActorsGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11900,9 +11900,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3RoleIdActorsPost
+## roleIdActorsPost
 
-> InlineResponse20084 cloudidRestApi3RoleIdActorsPost(cloudid, id, opts)
+> InlineResponse20084 roleIdActorsPost(cloudid, id, opts)
 
 
 
@@ -11923,7 +11923,7 @@ let id = 56; // Number | The ID of the project role. Use Get all project roles t
 let opts = {
   'body': new Jira.InlineObject52() // InlineObject52 | 
 };
-apiInstance.cloudidRestApi3RoleIdActorsPost(cloudid, id, opts, (error, data, response) => {
+apiInstance.roleIdActorsPost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11955,9 +11955,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3RoleIdDelete
+## roleIdDelete
 
-> cloudidRestApi3RoleIdDelete(cloudid, id, opts)
+> roleIdDelete(cloudid, id, opts)
 
 
 
@@ -11978,7 +11978,7 @@ let id = 56; // Number | The ID of the project role to delete. Use Get all proje
 let opts = {
   'swap': 56 // Number | The ID of the project role that will replace the one being deleted.
 };
-apiInstance.cloudidRestApi3RoleIdDelete(cloudid, id, opts, (error, data, response) => {
+apiInstance.roleIdDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12010,9 +12010,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3RoleIdGet
+## roleIdGet
 
-> InlineResponse20076 cloudidRestApi3RoleIdGet(cloudid, id)
+> InlineResponse20076 roleIdGet(cloudid, id)
 
 
 
@@ -12030,7 +12030,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
-apiInstance.cloudidRestApi3RoleIdGet(cloudid, id, (error, data, response) => {
+apiInstance.roleIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12061,9 +12061,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3RoleIdPost
+## roleIdPost
 
-> InlineResponse20076 cloudidRestApi3RoleIdPost(cloudid, id, opts)
+> InlineResponse20076 roleIdPost(cloudid, id, opts)
 
 
 
@@ -12084,7 +12084,7 @@ let id = 56; // Number | The ID of the project role. Use Get all project roles t
 let opts = {
   'body': new Jira.InlineObject51() // InlineObject51 | 
 };
-apiInstance.cloudidRestApi3RoleIdPost(cloudid, id, opts, (error, data, response) => {
+apiInstance.roleIdPost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12116,9 +12116,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3RoleIdPut
+## roleIdPut
 
-> InlineResponse20076 cloudidRestApi3RoleIdPut(cloudid, id, opts)
+> InlineResponse20076 roleIdPut(cloudid, id, opts)
 
 
 
@@ -12139,7 +12139,7 @@ let id = 56; // Number | The ID of the project role. Use Get all project roles t
 let opts = {
   'body': new Jira.InlineObject50() // InlineObject50 | 
 };
-apiInstance.cloudidRestApi3RoleIdPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.roleIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12171,9 +12171,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3RolePost
+## rolePost
 
-> InlineResponse20079 cloudidRestApi3RolePost(cloudid, opts)
+> InlineResponse20079 rolePost(cloudid, opts)
 
 
 
@@ -12193,7 +12193,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject49() // InlineObject49 | 
 };
-apiInstance.cloudidRestApi3RolePost(cloudid, opts, (error, data, response) => {
+apiInstance.rolePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12224,9 +12224,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ScreensAddToDefaultFieldIdPost
+## screensAddToDefaultFieldIdPost
 
-> cloudidRestApi3ScreensAddToDefaultFieldIdPost(cloudid, fieldId)
+> screensAddToDefaultFieldIdPost(cloudid, fieldId)
 
 
 
@@ -12244,7 +12244,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let fieldId = "fieldId_example"; // String | The ID of the field.
-apiInstance.cloudidRestApi3ScreensAddToDefaultFieldIdPost(cloudid, fieldId, (error, data, response) => {
+apiInstance.screensAddToDefaultFieldIdPost(cloudid, fieldId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12275,9 +12275,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ScreensGet
+## screensGet
 
-> cloudidRestApi3ScreensGet(cloudid, opts)
+> screensGet(cloudid, opts)
 
 
 
@@ -12298,7 +12298,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 100.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3ScreensGet(cloudid, opts, (error, data, response) => {
+apiInstance.screensGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12330,9 +12330,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ScreensScreenIdAvailableFieldsGet
+## screensScreenIdAvailableFieldsGet
 
-> cloudidRestApi3ScreensScreenIdAvailableFieldsGet(cloudid, screenId)
+> screensScreenIdAvailableFieldsGet(cloudid, screenId)
 
 
 
@@ -12350,7 +12350,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let screenId = 56; // Number | The ID of the screen.
-apiInstance.cloudidRestApi3ScreensScreenIdAvailableFieldsGet(cloudid, screenId, (error, data, response) => {
+apiInstance.screensScreenIdAvailableFieldsGet(cloudid, screenId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12381,9 +12381,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ScreensScreenIdTabsGet
+## screensScreenIdTabsGet
 
-> cloudidRestApi3ScreensScreenIdTabsGet(cloudid, screenId, opts)
+> screensScreenIdTabsGet(cloudid, screenId, opts)
 
 
 
@@ -12404,7 +12404,7 @@ let screenId = 56; // Number | The ID of the screen.
 let opts = {
   'projectKey': "projectKey_example" // String | The key of the project.
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsGet(cloudid, screenId, opts, (error, data, response) => {
+apiInstance.screensScreenIdTabsGet(cloudid, screenId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12436,9 +12436,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ScreensScreenIdTabsPost
+## screensScreenIdTabsPost
 
-> InlineResponse20085 cloudidRestApi3ScreensScreenIdTabsPost(cloudid, screenId, opts)
+> InlineResponse20085 screensScreenIdTabsPost(cloudid, screenId, opts)
 
 
 
@@ -12459,7 +12459,7 @@ let screenId = 56; // Number | The ID of the screen.
 let opts = {
   'body': new Jira.InlineObject53() // InlineObject53 | 
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsPost(cloudid, screenId, opts, (error, data, response) => {
+apiInstance.screensScreenIdTabsPost(cloudid, screenId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12491,9 +12491,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ScreensScreenIdTabsTabIdDelete
+## screensScreenIdTabsTabIdDelete
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdDelete(cloudid, screenId, tabId)
+> screensScreenIdTabsTabIdDelete(cloudid, screenId, tabId)
 
 
 
@@ -12512,7 +12512,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdDelete(cloudid, screenId, tabId, (error, data, response) => {
+apiInstance.screensScreenIdTabsTabIdDelete(cloudid, screenId, tabId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12544,9 +12544,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet
+## screensScreenIdTabsTabIdFieldsGet
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(cloudid, screenId, tabId, opts)
+> screensScreenIdTabsTabIdFieldsGet(cloudid, screenId, tabId, opts)
 
 
 
@@ -12568,7 +12568,7 @@ let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'projectKey': "projectKey_example" // String | The key of the project.
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(cloudid, screenId, tabId, opts, (error, data, response) => {
+apiInstance.screensScreenIdTabsTabIdFieldsGet(cloudid, screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12601,9 +12601,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete
+## screensScreenIdTabsTabIdFieldsIdDelete
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(cloudid, id, screenId, tabId)
+> screensScreenIdTabsTabIdFieldsIdDelete(cloudid, id, screenId, tabId)
 
 
 
@@ -12623,7 +12623,7 @@ let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the field.
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(cloudid, id, screenId, tabId, (error, data, response) => {
+apiInstance.screensScreenIdTabsTabIdFieldsIdDelete(cloudid, id, screenId, tabId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12656,9 +12656,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost
+## screensScreenIdTabsTabIdFieldsIdMovePost
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(cloudid, id, screenId, tabId, opts)
+> screensScreenIdTabsTabIdFieldsIdMovePost(cloudid, id, screenId, tabId, opts)
 
 
 
@@ -12681,7 +12681,7 @@ let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'body': new Jira.InlineObject56() // InlineObject56 | 
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(cloudid, id, screenId, tabId, opts, (error, data, response) => {
+apiInstance.screensScreenIdTabsTabIdFieldsIdMovePost(cloudid, id, screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12715,9 +12715,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost
+## screensScreenIdTabsTabIdFieldsPost
 
-> InlineResponse20086 cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(cloudid, screenId, tabId, opts)
+> InlineResponse20086 screensScreenIdTabsTabIdFieldsPost(cloudid, screenId, tabId, opts)
 
 
 
@@ -12739,7 +12739,7 @@ let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'body': new Jira.InlineObject55() // InlineObject55 | 
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(cloudid, screenId, tabId, opts, (error, data, response) => {
+apiInstance.screensScreenIdTabsTabIdFieldsPost(cloudid, screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12772,9 +12772,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost
+## screensScreenIdTabsTabIdMovePosPost
 
-> cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(cloudid, pos, screenId, tabId)
+> screensScreenIdTabsTabIdMovePosPost(cloudid, pos, screenId, tabId)
 
 
 
@@ -12794,7 +12794,7 @@ let cloudid = null; // Object | Cloudi of the project
 let pos = 56; // Number | The position of tab. The base index is 0.
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(cloudid, pos, screenId, tabId, (error, data, response) => {
+apiInstance.screensScreenIdTabsTabIdMovePosPost(cloudid, pos, screenId, tabId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12827,9 +12827,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3ScreensScreenIdTabsTabIdPut
+## screensScreenIdTabsTabIdPut
 
-> InlineResponse20085 cloudidRestApi3ScreensScreenIdTabsTabIdPut(cloudid, screenId, tabId, opts)
+> InlineResponse20085 screensScreenIdTabsTabIdPut(cloudid, screenId, tabId, opts)
 
 
 
@@ -12851,7 +12851,7 @@ let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'body': new Jira.InlineObject54() // InlineObject54 | 
 };
-apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdPut(cloudid, screenId, tabId, opts, (error, data, response) => {
+apiInstance.screensScreenIdTabsTabIdPut(cloudid, screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12884,9 +12884,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3SearchGet
+## searchGet
 
-> InlineResponse20087 cloudidRestApi3SearchGet(cloudid, opts)
+> InlineResponse20087 searchGet(cloudid, opts)
 
 
 
@@ -12913,7 +12913,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in the page of results (page offset).
   'validateQuery': "validateQuery_example" // String | Determines how to validate the JQL query and treat the validation results. Supported values are:
 };
-apiInstance.cloudidRestApi3SearchGet(cloudid, opts, (error, data, response) => {
+apiInstance.searchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12951,9 +12951,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3SearchPost
+## searchPost
 
-> InlineResponse20087 cloudidRestApi3SearchPost(cloudid, opts)
+> InlineResponse20087 searchPost(cloudid, opts)
 
 
 
@@ -12973,7 +12973,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject57() // InlineObject57 | 
 };
-apiInstance.cloudidRestApi3SearchPost(cloudid, opts, (error, data, response) => {
+apiInstance.searchPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13004,9 +13004,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3SecuritylevelIdGet
+## securitylevelIdGet
 
-> InlineResponse20112 cloudidRestApi3SecuritylevelIdGet(cloudid, id)
+> InlineResponse20112 securitylevelIdGet(cloudid, id)
 
 
 
@@ -13024,7 +13024,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the issue security level.
-apiInstance.cloudidRestApi3SecuritylevelIdGet(cloudid, id, (error, data, response) => {
+apiInstance.securitylevelIdGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13055,9 +13055,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3ServerInfoGet
+## serverInfoGet
 
-> InlineResponse20088 cloudidRestApi3ServerInfoGet(cloudid)
+> InlineResponse20088 serverInfoGet(cloudid)
 
 
 
@@ -13074,7 +13074,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3ServerInfoGet(cloudid, (error, data, response) => {
+apiInstance.serverInfoGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13104,9 +13104,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3SettingsColumnsGet
+## settingsColumnsGet
 
-> [InlineResponse20030] cloudidRestApi3SettingsColumnsGet(cloudid)
+> [InlineResponse20030] settingsColumnsGet(cloudid)
 
 
 
@@ -13123,7 +13123,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3SettingsColumnsGet(cloudid, (error, data, response) => {
+apiInstance.settingsColumnsGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13153,9 +13153,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3SettingsColumnsPut
+## settingsColumnsPut
 
-> cloudidRestApi3SettingsColumnsPut(cloudid)
+> settingsColumnsPut(cloudid)
 
 
 
@@ -13172,7 +13172,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3SettingsColumnsPut(cloudid, (error, data, response) => {
+apiInstance.settingsColumnsPut(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13202,9 +13202,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3StatusGet
+## statusGet
 
-> [InlineResponse20045To] cloudidRestApi3StatusGet(cloudid)
+> [InlineResponse20045To] statusGet(cloudid)
 
 
 
@@ -13221,7 +13221,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3StatusGet(cloudid, (error, data, response) => {
+apiInstance.statusGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13251,9 +13251,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3StatusIdOrNameGet
+## statusIdOrNameGet
 
-> InlineResponse20089 cloudidRestApi3StatusIdOrNameGet(cloudid, idOrName)
+> InlineResponse20089 statusIdOrNameGet(cloudid, idOrName)
 
 
 
@@ -13271,7 +13271,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let idOrName = "idOrName_example"; // String | The ID or name of the status.
-apiInstance.cloudidRestApi3StatusIdOrNameGet(cloudid, idOrName, (error, data, response) => {
+apiInstance.statusIdOrNameGet(cloudid, idOrName, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13302,9 +13302,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3StatuscategoryGet
+## statuscategoryGet
 
-> [InlineResponse20045ToStatusCategory] cloudidRestApi3StatuscategoryGet(cloudid)
+> [InlineResponse20045ToStatusCategory] statuscategoryGet(cloudid)
 
 
 
@@ -13321,7 +13321,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
-apiInstance.cloudidRestApi3StatuscategoryGet(cloudid, (error, data, response) => {
+apiInstance.statuscategoryGet(cloudid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13351,9 +13351,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3StatuscategoryIdOrKeyGet
+## statuscategoryIdOrKeyGet
 
-> InlineResponse20090 cloudidRestApi3StatuscategoryIdOrKeyGet(cloudid, idOrKey)
+> InlineResponse20090 statuscategoryIdOrKeyGet(cloudid, idOrKey)
 
 
 
@@ -13371,7 +13371,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let idOrKey = "idOrKey_example"; // String | The ID or key of the status category.
-apiInstance.cloudidRestApi3StatuscategoryIdOrKeyGet(cloudid, idOrKey, (error, data, response) => {
+apiInstance.statuscategoryIdOrKeyGet(cloudid, idOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13402,9 +13402,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3TaskTaskIdCancelPost
+## taskTaskIdCancelPost
 
-> cloudidRestApi3TaskTaskIdCancelPost(cloudid, taskId)
+> taskTaskIdCancelPost(cloudid, taskId)
 
 
 
@@ -13422,7 +13422,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let taskId = "taskId_example"; // String | The ID of the task.
-apiInstance.cloudidRestApi3TaskTaskIdCancelPost(cloudid, taskId, (error, data, response) => {
+apiInstance.taskTaskIdCancelPost(cloudid, taskId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13453,9 +13453,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3TaskTaskIdGet
+## taskTaskIdGet
 
-> InlineResponse20091 cloudidRestApi3TaskTaskIdGet(cloudid, taskId)
+> InlineResponse20091 taskTaskIdGet(cloudid, taskId)
 
 
 
@@ -13473,7 +13473,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let taskId = "taskId_example"; // String | The ID of the task.
-apiInstance.cloudidRestApi3TaskTaskIdGet(cloudid, taskId, (error, data, response) => {
+apiInstance.taskTaskIdGet(cloudid, taskId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13504,9 +13504,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet
+## universalAvatarTypeTypeOwnerEntityIdGet
 
-> InlineResponse20072 cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(cloudid, entityId, type)
+> InlineResponse20072 universalAvatarTypeTypeOwnerEntityIdGet(cloudid, entityId, type)
 
 
 
@@ -13525,7 +13525,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let entityId = "entityId_example"; // String | The ID of the entity item.
 let type = "type_example"; // String | The type of the entity. Valid values are project and issuetype.
-apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(cloudid, entityId, type, (error, data, response) => {
+apiInstance.universalAvatarTypeTypeOwnerEntityIdGet(cloudid, entityId, type, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13557,9 +13557,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost
+## universalAvatarTypeTypeOwnerEntityIdPost
 
-> InlineResponse2017 cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(cloudid, entityId, type, opts)
+> InlineResponse2017 universalAvatarTypeTypeOwnerEntityIdPost(cloudid, entityId, type, opts)
 
 
 
@@ -13583,7 +13583,7 @@ let opts = {
   'x': 56, // Number | The X coordinate of the top-left corner of the crop region.
   'y': 56 // Number | The Y coordinate of the top-left corner of the crop region.
 };
-apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(cloudid, entityId, type, opts, (error, data, response) => {
+apiInstance.universalAvatarTypeTypeOwnerEntityIdPost(cloudid, entityId, type, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13618,9 +13618,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete
+## universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete
 
-> cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(cloudid, id, owningObjectId, type)
+> universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(cloudid, id, owningObjectId, type)
 
 
 
@@ -13640,7 +13640,7 @@ let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the avatar.
 let owningObjectId = "owningObjectId_example"; // String | The ID of the entity item.
 let type = "type_example"; // String | The type of the entity. Valid values are project and issuetype.
-apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(cloudid, id, owningObjectId, type, (error, data, response) => {
+apiInstance.universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(cloudid, id, owningObjectId, type, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13673,9 +13673,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3UserAssignableMultiProjectSearchGet
+## userAssignableMultiProjectSearchGet
 
-> [InlineResponse2004Author] cloudidRestApi3UserAssignableMultiProjectSearchGet(cloudid, opts)
+> [InlineResponse2004Author] userAssignableMultiProjectSearchGet(cloudid, opts)
 
 
 
@@ -13699,7 +13699,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark.
 };
-apiInstance.cloudidRestApi3UserAssignableMultiProjectSearchGet(cloudid, opts, (error, data, response) => {
+apiInstance.userAssignableMultiProjectSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13734,9 +13734,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserAssignableSearchGet
+## userAssignableSearchGet
 
-> InlineResponse20060 cloudidRestApi3UserAssignableSearchGet(cloudid, opts)
+> InlineResponse20060 userAssignableSearchGet(cloudid, opts)
 
 
 
@@ -13762,7 +13762,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserAssignableSearchGet(cloudid, opts, (error, data, response) => {
+apiInstance.userAssignableSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13799,9 +13799,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserBulkGet
+## userBulkGet
 
-> InlineResponse20092 cloudidRestApi3UserBulkGet(cloudid, opts)
+> InlineResponse20092 userBulkGet(cloudid, opts)
 
 
 
@@ -13824,7 +13824,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': ["null"] // [String] | Comma-separated list of usernames. Required if key isn't provided.
 };
-apiInstance.cloudidRestApi3UserBulkGet(cloudid, opts, (error, data, response) => {
+apiInstance.userBulkGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13858,9 +13858,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserColumnsDelete
+## userColumnsDelete
 
-> cloudidRestApi3UserColumnsDelete(cloudid, opts)
+> userColumnsDelete(cloudid, opts)
 
 
 
@@ -13881,7 +13881,7 @@ let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserColumnsDelete(cloudid, opts, (error, data, response) => {
+apiInstance.userColumnsDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13913,9 +13913,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3UserColumnsGet
+## userColumnsGet
 
-> cloudidRestApi3UserColumnsGet(cloudid, opts)
+> userColumnsGet(cloudid, opts)
 
 
 
@@ -13936,7 +13936,7 @@ let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserColumnsGet(cloudid, opts, (error, data, response) => {
+apiInstance.userColumnsGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13968,9 +13968,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3UserColumnsPut
+## userColumnsPut
 
-> cloudidRestApi3UserColumnsPut(cloudid, opts)
+> userColumnsPut(cloudid, opts)
 
 
 
@@ -13990,7 +13990,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'accountId': "accountId_example" // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
 };
-apiInstance.cloudidRestApi3UserColumnsPut(cloudid, opts, (error, data, response) => {
+apiInstance.userColumnsPut(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14021,9 +14021,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3UserDelete
+## userDelete
 
-> cloudidRestApi3UserDelete(cloudid, opts)
+> userDelete(cloudid, opts)
 
 
 
@@ -14045,7 +14045,7 @@ let opts = {
   'key': "key_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserDelete(cloudid, opts, (error, data, response) => {
+apiInstance.userDelete(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14078,9 +14078,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3UserGet
+## userGet
 
-> InlineResponse20060 cloudidRestApi3UserGet(cloudid, opts)
+> InlineResponse20060 userGet(cloudid, opts)
 
 
 
@@ -14103,7 +14103,7 @@ let opts = {
   'key': "key_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserGet(cloudid, opts, (error, data, response) => {
+apiInstance.userGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14137,9 +14137,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserGroupsGet
+## userGroupsGet
 
-> InlineResponse20093 cloudidRestApi3UserGroupsGet(cloudid, opts)
+> InlineResponse20093 userGroupsGet(cloudid, opts)
 
 
 
@@ -14161,7 +14161,7 @@ let opts = {
   'key': "key_example", // String | The key of the user.
   'username': "username_example" // String | The username of the user. Deprecated in favour of accountId.
 };
-apiInstance.cloudidRestApi3UserGroupsGet(cloudid, opts, (error, data, response) => {
+apiInstance.userGroupsGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14194,9 +14194,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserPermissionSearchGet
+## userPermissionSearchGet
 
-> [InlineResponse2004Author] cloudidRestApi3UserPermissionSearchGet(cloudid, opts)
+> [InlineResponse2004Author] userPermissionSearchGet(cloudid, opts)
 
 
 
@@ -14222,7 +14222,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark.
 };
-apiInstance.cloudidRestApi3UserPermissionSearchGet(cloudid, opts, (error, data, response) => {
+apiInstance.userPermissionSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14259,9 +14259,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserPickerGet
+## userPickerGet
 
-> InlineResponse20094 cloudidRestApi3UserPickerGet(cloudid, opts)
+> InlineResponse20094 userPickerGet(cloudid, opts)
 
 
 
@@ -14285,7 +14285,7 @@ let opts = {
   'query': "query_example", // String | A search input that is matched against appropriate user attributes to find relevant users.
   'showAvatar': true // Boolean | Include the URI to the user's avatar.
 };
-apiInstance.cloudidRestApi3UserPickerGet(cloudid, opts, (error, data, response) => {
+apiInstance.userPickerGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14320,9 +14320,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserPost
+## userPost
 
-> InlineResponse20060 cloudidRestApi3UserPost(cloudid, opts)
+> InlineResponse20060 userPost(cloudid, opts)
 
 
 
@@ -14342,7 +14342,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject58() // InlineObject58 | 
 };
-apiInstance.cloudidRestApi3UserPost(cloudid, opts, (error, data, response) => {
+apiInstance.userPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14373,9 +14373,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserPropertiesGet
+## userPropertiesGet
 
-> InlineResponse20010 cloudidRestApi3UserPropertiesGet(cloudid, opts)
+> InlineResponse20010 userPropertiesGet(cloudid, opts)
 
 
 
@@ -14397,7 +14397,7 @@ let opts = {
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserPropertiesGet(cloudid, opts, (error, data, response) => {
+apiInstance.userPropertiesGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14430,9 +14430,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserPropertiesPropertyKeyDelete
+## userPropertiesPropertyKeyDelete
 
-> cloudidRestApi3UserPropertiesPropertyKeyDelete(cloudid, propertyKey, opts)
+> userPropertiesPropertyKeyDelete(cloudid, propertyKey, opts)
 
 
 
@@ -14455,7 +14455,7 @@ let opts = {
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserPropertiesPropertyKeyDelete(cloudid, propertyKey, opts, (error, data, response) => {
+apiInstance.userPropertiesPropertyKeyDelete(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14489,9 +14489,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3UserPropertiesPropertyKeyGet
+## userPropertiesPropertyKeyGet
 
-> InlineResponse20011 cloudidRestApi3UserPropertiesPropertyKeyGet(cloudid, propertyKey, opts)
+> InlineResponse20011 userPropertiesPropertyKeyGet(cloudid, propertyKey, opts)
 
 
 
@@ -14514,7 +14514,7 @@ let opts = {
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserPropertiesPropertyKeyGet(cloudid, propertyKey, opts, (error, data, response) => {
+apiInstance.userPropertiesPropertyKeyGet(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14548,9 +14548,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserPropertiesPropertyKeyPut
+## userPropertiesPropertyKeyPut
 
-> cloudidRestApi3UserPropertiesPropertyKeyPut(cloudid, propertyKey, opts)
+> userPropertiesPropertyKeyPut(cloudid, propertyKey, opts)
 
 
 
@@ -14573,7 +14573,7 @@ let opts = {
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.cloudidRestApi3UserPropertiesPropertyKeyPut(cloudid, propertyKey, opts, (error, data, response) => {
+apiInstance.userPropertiesPropertyKeyPut(cloudid, propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14607,9 +14607,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3UserSearchGet
+## userSearchGet
 
-> [InlineResponse2004Author] cloudidRestApi3UserSearchGet(cloudid, opts)
+> [InlineResponse2004Author] userSearchGet(cloudid, opts)
 
 
 
@@ -14635,7 +14635,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserSearchGet(cloudid, opts, (error, data, response) => {
+apiInstance.userSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14672,9 +14672,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3UserSearchQueryGet
+## userSearchQueryGet
 
-> cloudidRestApi3UserSearchQueryGet(cloudid, opts)
+> userSearchQueryGet(cloudid, opts)
 
 
 
@@ -14697,7 +14697,7 @@ let opts = {
   'query': "query_example", // String | The search query.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3UserSearchQueryGet(cloudid, opts, (error, data, response) => {
+apiInstance.userSearchQueryGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14731,9 +14731,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3UserSearchQueryKeyGet
+## userSearchQueryKeyGet
 
-> cloudidRestApi3UserSearchQueryKeyGet(cloudid, opts)
+> userSearchQueryKeyGet(cloudid, opts)
 
 
 
@@ -14756,7 +14756,7 @@ let opts = {
   'query': "query_example", // String | The search query.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.cloudidRestApi3UserSearchQueryKeyGet(cloudid, opts, (error, data, response) => {
+apiInstance.userSearchQueryKeyGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14790,9 +14790,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3UserViewissueSearchGet
+## userViewissueSearchGet
 
-> [InlineResponse2004Author] cloudidRestApi3UserViewissueSearchGet(cloudid, opts)
+> [InlineResponse2004Author] userViewissueSearchGet(cloudid, opts)
 
 
 
@@ -14817,7 +14817,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
 };
-apiInstance.cloudidRestApi3UserViewissueSearchGet(cloudid, opts, (error, data, response) => {
+apiInstance.userViewissueSearchGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14853,9 +14853,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3VersionIdDelete
+## versionIdDelete
 
-> cloudidRestApi3VersionIdDelete(cloudid, id, opts)
+> versionIdDelete(cloudid, id, opts)
 
 
 
@@ -14877,7 +14877,7 @@ let opts = {
   'moveAffectedIssuesTo': "moveAffectedIssuesTo_example", // String | The ID of the version to update affectedVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
   'moveFixIssuesTo': "moveFixIssuesTo_example" // String | The ID of the version to update fixVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
 };
-apiInstance.cloudidRestApi3VersionIdDelete(cloudid, id, opts, (error, data, response) => {
+apiInstance.versionIdDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14910,9 +14910,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3VersionIdGet
+## versionIdGet
 
-> InlineResponse20096 cloudidRestApi3VersionIdGet(cloudid, id, opts)
+> InlineResponse20096 versionIdGet(cloudid, id, opts)
 
 
 
@@ -14933,7 +14933,7 @@ let id = "id_example"; // String | The ID of the version.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about version in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.cloudidRestApi3VersionIdGet(cloudid, id, opts, (error, data, response) => {
+apiInstance.versionIdGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14965,9 +14965,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3VersionIdMergetoMoveIssuesToPut
+## versionIdMergetoMoveIssuesToPut
 
-> cloudidRestApi3VersionIdMergetoMoveIssuesToPut(cloudid, id, moveIssuesTo)
+> versionIdMergetoMoveIssuesToPut(cloudid, id, moveIssuesTo)
 
 
 
@@ -14986,7 +14986,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version to delete.
 let moveIssuesTo = "moveIssuesTo_example"; // String | The ID of the version to merge into.
-apiInstance.cloudidRestApi3VersionIdMergetoMoveIssuesToPut(cloudid, id, moveIssuesTo, (error, data, response) => {
+apiInstance.versionIdMergetoMoveIssuesToPut(cloudid, id, moveIssuesTo, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15018,9 +15018,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3VersionIdMovePost
+## versionIdMovePost
 
-> InlineResponse20096 cloudidRestApi3VersionIdMovePost(cloudid, id, opts)
+> InlineResponse20096 versionIdMovePost(cloudid, id, opts)
 
 
 
@@ -15041,7 +15041,7 @@ let id = "id_example"; // String | The ID of the version to be moved.
 let opts = {
   'body': new Jira.InlineObject61() // InlineObject61 | 
 };
-apiInstance.cloudidRestApi3VersionIdMovePost(cloudid, id, opts, (error, data, response) => {
+apiInstance.versionIdMovePost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15073,9 +15073,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3VersionIdPut
+## versionIdPut
 
-> cloudidRestApi3VersionIdPut(cloudid, id, opts)
+> versionIdPut(cloudid, id, opts)
 
 
 
@@ -15096,7 +15096,7 @@ let id = "id_example"; // String | The ID of the version.
 let opts = {
   'body': new Jira.InlineObject60() // InlineObject60 | 
 };
-apiInstance.cloudidRestApi3VersionIdPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.versionIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15128,9 +15128,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3VersionIdRelatedIssueCountsGet
+## versionIdRelatedIssueCountsGet
 
-> InlineResponse20097 cloudidRestApi3VersionIdRelatedIssueCountsGet(cloudid, id)
+> InlineResponse20097 versionIdRelatedIssueCountsGet(cloudid, id)
 
 
 
@@ -15148,7 +15148,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version.
-apiInstance.cloudidRestApi3VersionIdRelatedIssueCountsGet(cloudid, id, (error, data, response) => {
+apiInstance.versionIdRelatedIssueCountsGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15179,9 +15179,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3VersionIdRemoveAndSwapPost
+## versionIdRemoveAndSwapPost
 
-> cloudidRestApi3VersionIdRemoveAndSwapPost(cloudid, id, opts)
+> versionIdRemoveAndSwapPost(cloudid, id, opts)
 
 
 
@@ -15202,7 +15202,7 @@ let id = "id_example"; // String | The ID of the version.
 let opts = {
   'body': new Jira.InlineObject62() // InlineObject62 | 
 };
-apiInstance.cloudidRestApi3VersionIdRemoveAndSwapPost(cloudid, id, opts, (error, data, response) => {
+apiInstance.versionIdRemoveAndSwapPost(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15234,9 +15234,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3VersionIdUnresolvedIssueCountGet
+## versionIdUnresolvedIssueCountGet
 
-> InlineResponse20098 cloudidRestApi3VersionIdUnresolvedIssueCountGet(cloudid, id)
+> InlineResponse20098 versionIdUnresolvedIssueCountGet(cloudid, id)
 
 
 
@@ -15254,7 +15254,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = "id_example"; // String | The ID of the version.
-apiInstance.cloudidRestApi3VersionIdUnresolvedIssueCountGet(cloudid, id, (error, data, response) => {
+apiInstance.versionIdUnresolvedIssueCountGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15285,9 +15285,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3VersionPost
+## versionPost
 
-> InlineResponse20113 cloudidRestApi3VersionPost(cloudid, opts)
+> InlineResponse20113 versionPost(cloudid, opts)
 
 
 
@@ -15307,7 +15307,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject59() // InlineObject59 | 
 };
-apiInstance.cloudidRestApi3VersionPost(cloudid, opts, (error, data, response) => {
+apiInstance.versionPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15338,9 +15338,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3VersionRemotelinkGet
+## versionRemotelinkGet
 
-> InlineResponse20095 cloudidRestApi3VersionRemotelinkGet(cloudid, opts)
+> InlineResponse20095 versionRemotelinkGet(cloudid, opts)
 
 
 
@@ -15360,7 +15360,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'globalId': "globalId_example" // String | the global ID of the remote resource that is linked to the versions
 };
-apiInstance.cloudidRestApi3VersionRemotelinkGet(cloudid, opts, (error, data, response) => {
+apiInstance.versionRemotelinkGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15391,9 +15391,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3VersionVersionIdRemotelinkDelete
+## versionVersionIdRemotelinkDelete
 
-> cloudidRestApi3VersionVersionIdRemotelinkDelete(cloudid, versionId)
+> versionVersionIdRemotelinkDelete(cloudid, versionId)
 
 
 
@@ -15411,7 +15411,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let versionId = "versionId_example"; // String | The version for which to delete ALL existing remote version links
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkDelete(cloudid, versionId, (error, data, response) => {
+apiInstance.versionVersionIdRemotelinkDelete(cloudid, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15442,9 +15442,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3VersionVersionIdRemotelinkGet
+## versionVersionIdRemotelinkGet
 
-> InlineResponse20095 cloudidRestApi3VersionVersionIdRemotelinkGet(cloudid, versionId)
+> InlineResponse20095 versionVersionIdRemotelinkGet(cloudid, versionId)
 
 
 
@@ -15462,7 +15462,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let versionId = "versionId_example"; // String | a String containing the version ID
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGet(cloudid, versionId, (error, data, response) => {
+apiInstance.versionVersionIdRemotelinkGet(cloudid, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15493,9 +15493,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete
+## versionVersionIdRemotelinkGlobalIdDelete
 
-> cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(cloudid, globalId, versionId)
+> versionVersionIdRemotelinkGlobalIdDelete(cloudid, globalId, versionId)
 
 
 
@@ -15514,7 +15514,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let globalId = "globalId_example"; // String | The global ID of the remote link
 let versionId = "versionId_example"; // String | The version ID of the remote link
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(cloudid, globalId, versionId, (error, data, response) => {
+apiInstance.versionVersionIdRemotelinkGlobalIdDelete(cloudid, globalId, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15546,9 +15546,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet
+## versionVersionIdRemotelinkGlobalIdGet
 
-> InlineResponse20099 cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(cloudid, globalId, versionId)
+> InlineResponse20099 versionVersionIdRemotelinkGlobalIdGet(cloudid, globalId, versionId)
 
 
 
@@ -15567,7 +15567,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let globalId = "globalId_example"; // String | The id of the remote issue link to be returned. If {@code null} (not provided) all remote links for the issue are returned.
 let versionId = "versionId_example"; // String | a String containing the version id
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(cloudid, globalId, versionId, (error, data, response) => {
+apiInstance.versionVersionIdRemotelinkGlobalIdGet(cloudid, globalId, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15599,9 +15599,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost
+## versionVersionIdRemotelinkGlobalIdPost
 
-> cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(cloudid, globalId, versionId)
+> versionVersionIdRemotelinkGlobalIdPost(cloudid, globalId, versionId)
 
 
 
@@ -15618,7 +15618,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let globalId = "globalId_example"; // String | 
 let versionId = "versionId_example"; // String | 
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(cloudid, globalId, versionId, (error, data, response) => {
+apiInstance.versionVersionIdRemotelinkGlobalIdPost(cloudid, globalId, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15650,9 +15650,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3VersionVersionIdRemotelinkPost
+## versionVersionIdRemotelinkPost
 
-> cloudidRestApi3VersionVersionIdRemotelinkPost(cloudid, versionId)
+> versionVersionIdRemotelinkPost(cloudid, versionId)
 
 
 
@@ -15670,7 +15670,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let versionId = "versionId_example"; // String | 
-apiInstance.cloudidRestApi3VersionVersionIdRemotelinkPost(cloudid, versionId, (error, data, response) => {
+apiInstance.versionVersionIdRemotelinkPost(cloudid, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15701,9 +15701,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3WorkflowGet
+## workflowGet
 
-> [InlineResponse200100] cloudidRestApi3WorkflowGet(cloudid, opts)
+> [InlineResponse200100] workflowGet(cloudid, opts)
 
 
 
@@ -15723,7 +15723,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'workflowName': "workflowName_example" // String | The name of the workflow to be returned. Only one workflow can be specified.
 };
-apiInstance.cloudidRestApi3WorkflowGet(cloudid, opts, (error, data, response) => {
+apiInstance.workflowGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15754,9 +15754,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete
+## workflowTransitionsTransitionIdPropertiesDelete
 
-> cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(cloudid, transitionId, opts)
+> workflowTransitionsTransitionIdPropertiesDelete(cloudid, transitionId, opts)
 
 
 
@@ -15779,7 +15779,7 @@ let opts = {
   'workflowMode': "workflowMode_example", // String | The workflow status. Set to live for inactive workflows or draft for draft workflows. Active workflows cannot be edited.
   'workflowName': "workflowName_example" // String | The name of the workflow that the transition belongs to.
 };
-apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(cloudid, transitionId, opts, (error, data, response) => {
+apiInstance.workflowTransitionsTransitionIdPropertiesDelete(cloudid, transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15813,9 +15813,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet
+## workflowTransitionsTransitionIdPropertiesGet
 
-> [InlineResponse200101] cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(cloudid, transitionId, opts)
+> [InlineResponse200101] workflowTransitionsTransitionIdPropertiesGet(cloudid, transitionId, opts)
 
 
 
@@ -15839,7 +15839,7 @@ let opts = {
   'workflowMode': "workflowMode_example", // String | The workflow status. Set to live for active and inactive workflows, or draft for draft workflows.
   'workflowName': "workflowName_example" // String | The name of the workflow that the transition belongs to.
 };
-apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(cloudid, transitionId, opts, (error, data, response) => {
+apiInstance.workflowTransitionsTransitionIdPropertiesGet(cloudid, transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15874,9 +15874,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost
+## workflowTransitionsTransitionIdPropertiesPost
 
-> InlineResponse200102 cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(cloudid, transitionId, opts)
+> InlineResponse200102 workflowTransitionsTransitionIdPropertiesPost(cloudid, transitionId, opts)
 
 
 
@@ -15900,7 +15900,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow that the transition belongs to.
   'body': new Jira.InlineObject64() // InlineObject64 | 
 };
-apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(cloudid, transitionId, opts, (error, data, response) => {
+apiInstance.workflowTransitionsTransitionIdPropertiesPost(cloudid, transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15935,9 +15935,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut
+## workflowTransitionsTransitionIdPropertiesPut
 
-> InlineResponse200102 cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(cloudid, transitionId, opts)
+> InlineResponse200102 workflowTransitionsTransitionIdPropertiesPut(cloudid, transitionId, opts)
 
 
 
@@ -15961,7 +15961,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow that the transition belongs to.
   'body': new Jira.InlineObject63() // InlineObject63 | 
 };
-apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(cloudid, transitionId, opts, (error, data, response) => {
+apiInstance.workflowTransitionsTransitionIdPropertiesPut(cloudid, transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15996,9 +15996,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdCreatedraftPost
+## workflowschemeIdCreatedraftPost
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdCreatedraftPost(cloudid, id)
+> InlineResponse20115 workflowschemeIdCreatedraftPost(cloudid, id)
 
 
 
@@ -16016,7 +16016,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the active workflow scheme that the draft is created from.
-apiInstance.cloudidRestApi3WorkflowschemeIdCreatedraftPost(cloudid, id, (error, data, response) => {
+apiInstance.workflowschemeIdCreatedraftPost(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16047,9 +16047,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDefaultDelete
+## workflowschemeIdDefaultDelete
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDefaultDelete(cloudid, id, opts)
+> InlineResponse20114 workflowschemeIdDefaultDelete(cloudid, id, opts)
 
 
 
@@ -16070,7 +16070,7 @@ let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'updateDraftIfNeeded': true // Boolean | Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDefaultDelete(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdDefaultDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16102,9 +16102,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDefaultGet
+## workflowschemeIdDefaultGet
 
-> InlineResponse200103 cloudidRestApi3WorkflowschemeIdDefaultGet(cloudid, id, opts)
+> InlineResponse200103 workflowschemeIdDefaultGet(cloudid, id, opts)
 
 
 
@@ -16125,7 +16125,7 @@ let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'returnDraftIfExists': true // Boolean | Set to true to return the default workflow for the workflow scheme's draft rather than scheme itself. If the workflow scheme does not have a draft, then the default workflow for the workflow scheme is returned.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDefaultGet(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdDefaultGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16157,9 +16157,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDefaultPut
+## workflowschemeIdDefaultPut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDefaultPut(cloudid, id, opts)
+> InlineResponse20114 workflowschemeIdDefaultPut(cloudid, id, opts)
 
 
 
@@ -16180,7 +16180,7 @@ let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'body': new Jira.InlineObject67() // InlineObject67 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDefaultPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdDefaultPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16212,9 +16212,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDelete
+## workflowschemeIdDelete
 
-> cloudidRestApi3WorkflowschemeIdDelete(cloudid, id)
+> workflowschemeIdDelete(cloudid, id)
 
 
 
@@ -16232,7 +16232,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).
-apiInstance.cloudidRestApi3WorkflowschemeIdDelete(cloudid, id, (error, data, response) => {
+apiInstance.workflowschemeIdDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16263,9 +16263,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3WorkflowschemeIdDraftDefaultDelete
+## workflowschemeIdDraftDefaultDelete
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(cloudid, id)
+> InlineResponse20115 workflowschemeIdDraftDefaultDelete(cloudid, id)
 
 
 
@@ -16283,7 +16283,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(cloudid, id, (error, data, response) => {
+apiInstance.workflowschemeIdDraftDefaultDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16314,9 +16314,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDraftDefaultGet
+## workflowschemeIdDraftDefaultGet
 
-> InlineResponse200103 cloudidRestApi3WorkflowschemeIdDraftDefaultGet(cloudid, id)
+> InlineResponse200103 workflowschemeIdDraftDefaultGet(cloudid, id)
 
 
 
@@ -16334,7 +16334,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultGet(cloudid, id, (error, data, response) => {
+apiInstance.workflowschemeIdDraftDefaultGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16365,9 +16365,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDraftDefaultPut
+## workflowschemeIdDraftDefaultPut
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftDefaultPut(cloudid, id, opts)
+> InlineResponse20115 workflowschemeIdDraftDefaultPut(cloudid, id, opts)
 
 
 
@@ -16388,7 +16388,7 @@ let id = 56; // Number | The ID of the workflow scheme that the draft belongs to
 let opts = {
   'body': new Jira.InlineObject69() // InlineObject69 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdDraftDefaultPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16420,9 +16420,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDraftDelete
+## workflowschemeIdDraftDelete
 
-> cloudidRestApi3WorkflowschemeIdDraftDelete(cloudid, id)
+> workflowschemeIdDraftDelete(cloudid, id)
 
 
 
@@ -16440,7 +16440,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the active workflow scheme that the draft was originally created from.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftDelete(cloudid, id, (error, data, response) => {
+apiInstance.workflowschemeIdDraftDelete(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16471,9 +16471,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3WorkflowschemeIdDraftGet
+## workflowschemeIdDraftGet
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftGet(cloudid, id)
+> InlineResponse20115 workflowschemeIdDraftGet(cloudid, id)
 
 
 
@@ -16491,7 +16491,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the active workflow scheme that the draft was originally created from.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftGet(cloudid, id, (error, data, response) => {
+apiInstance.workflowschemeIdDraftGet(cloudid, id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16522,9 +16522,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete
+## workflowschemeIdDraftIssuetypeIssueTypeDelete
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(cloudid, id, issueType)
+> InlineResponse20115 workflowschemeIdDraftIssuetypeIssueTypeDelete(cloudid, id, issueType)
 
 
 
@@ -16543,7 +16543,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let issueType = "issueType_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(cloudid, id, issueType, (error, data, response) => {
+apiInstance.workflowschemeIdDraftIssuetypeIssueTypeDelete(cloudid, id, issueType, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16575,9 +16575,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet
+## workflowschemeIdDraftIssuetypeIssueTypeGet
 
-> InlineResponse200104 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(cloudid, id, issueType)
+> InlineResponse200104 workflowschemeIdDraftIssuetypeIssueTypeGet(cloudid, id, issueType)
 
 
 
@@ -16596,7 +16596,7 @@ let apiInstance = new Jira.DefaultApi();
 let cloudid = null; // Object | Cloudi of the project
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let issueType = "issueType_example"; // String | The ID of the issue type.
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(cloudid, id, issueType, (error, data, response) => {
+apiInstance.workflowschemeIdDraftIssuetypeIssueTypeGet(cloudid, id, issueType, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16628,9 +16628,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut
+## workflowschemeIdDraftIssuetypeIssueTypePut
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(cloudid, id, issueType, opts)
+> InlineResponse20115 workflowschemeIdDraftIssuetypeIssueTypePut(cloudid, id, issueType, opts)
 
 
 
@@ -16652,7 +16652,7 @@ let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'body': new Jira.InlineObject70() // InlineObject70 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(cloudid, id, issueType, opts, (error, data, response) => {
+apiInstance.workflowschemeIdDraftIssuetypeIssueTypePut(cloudid, id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16685,9 +16685,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDraftPut
+## workflowschemeIdDraftPut
 
-> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftPut(cloudid, id, opts)
+> InlineResponse20115 workflowschemeIdDraftPut(cloudid, id, opts)
 
 
 
@@ -16708,7 +16708,7 @@ let id = 56; // Number | The ID of the active workflow scheme that the draft was
 let opts = {
   'body': new Jira.InlineObject68() // InlineObject68 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdDraftPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16740,9 +16740,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete
+## workflowschemeIdDraftWorkflowDelete
 
-> cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(cloudid, id, opts)
+> workflowschemeIdDraftWorkflowDelete(cloudid, id, opts)
 
 
 
@@ -16763,7 +16763,7 @@ let id = 56; // Number | The ID of the workflow scheme that the draft belongs to
 let opts = {
   'workflowName': "workflowName_example" // String | The name of the workflow.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdDraftWorkflowDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16795,9 +16795,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3WorkflowschemeIdDraftWorkflowGet
+## workflowschemeIdDraftWorkflowGet
 
-> InlineResponse200105 cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(cloudid, id, opts)
+> InlineResponse200105 workflowschemeIdDraftWorkflowGet(cloudid, id, opts)
 
 
 
@@ -16818,7 +16818,7 @@ let id = 56; // Number | The ID of the workflow scheme that the draft belongs to
 let opts = {
   'workflowName': "workflowName_example" // String | The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdDraftWorkflowGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16850,9 +16850,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdDraftWorkflowPut
+## workflowschemeIdDraftWorkflowPut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(cloudid, id, opts)
+> InlineResponse20114 workflowschemeIdDraftWorkflowPut(cloudid, id, opts)
 
 
 
@@ -16874,7 +16874,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow.
   'body': new Jira.InlineObject71() // InlineObject71 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdDraftWorkflowPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16907,9 +16907,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdGet
+## workflowschemeIdGet
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdGet(cloudid, id, opts)
+> InlineResponse20114 workflowschemeIdGet(cloudid, id, opts)
 
 
 
@@ -16930,7 +16930,7 @@ let id = 56; // Number | The ID of the workflow scheme. Find this ID by editing 
 let opts = {
   'returnDraftIfExists': true // Boolean | Returns the workflow scheme's draft rather than scheme itself, if set to true. If the workflow scheme does not have a draft, then the workflow scheme is returned.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdGet(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16962,9 +16962,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete
+## workflowschemeIdIssuetypeIssueTypeDelete
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(cloudid, id, issueType, opts)
+> InlineResponse20114 workflowschemeIdIssuetypeIssueTypeDelete(cloudid, id, issueType, opts)
 
 
 
@@ -16986,7 +16986,7 @@ let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'updateDraftIfNeeded': true // Boolean | Set to true to create or update the draft of a workflow scheme and update the mapping in the draft, when the workflow scheme cannot be edited. Defaults to false.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(cloudid, id, issueType, opts, (error, data, response) => {
+apiInstance.workflowschemeIdIssuetypeIssueTypeDelete(cloudid, id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17019,9 +17019,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet
+## workflowschemeIdIssuetypeIssueTypeGet
 
-> InlineResponse200104 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(cloudid, id, issueType, opts)
+> InlineResponse200104 workflowschemeIdIssuetypeIssueTypeGet(cloudid, id, issueType, opts)
 
 
 
@@ -17043,7 +17043,7 @@ let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'returnDraftIfExists': true // Boolean | Returns the mapping from the workflow scheme's draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(cloudid, id, issueType, opts, (error, data, response) => {
+apiInstance.workflowschemeIdIssuetypeIssueTypeGet(cloudid, id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17076,9 +17076,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut
+## workflowschemeIdIssuetypeIssueTypePut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(cloudid, id, issueType, opts)
+> InlineResponse20114 workflowschemeIdIssuetypeIssueTypePut(cloudid, id, issueType, opts)
 
 
 
@@ -17100,7 +17100,7 @@ let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'body': new Jira.InlineObject72() // InlineObject72 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(cloudid, id, issueType, opts, (error, data, response) => {
+apiInstance.workflowschemeIdIssuetypeIssueTypePut(cloudid, id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17133,9 +17133,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdPut
+## workflowschemeIdPut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdPut(cloudid, id, opts)
+> InlineResponse20114 workflowschemeIdPut(cloudid, id, opts)
 
 
 
@@ -17156,7 +17156,7 @@ let id = 56; // Number | The ID of the workflow scheme. Find this ID by editing 
 let opts = {
   'body': new Jira.InlineObject66() // InlineObject66 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17188,9 +17188,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdWorkflowDelete
+## workflowschemeIdWorkflowDelete
 
-> cloudidRestApi3WorkflowschemeIdWorkflowDelete(cloudid, id, opts)
+> workflowschemeIdWorkflowDelete(cloudid, id, opts)
 
 
 
@@ -17212,7 +17212,7 @@ let opts = {
   'updateDraftIfNeeded': true, // Boolean | Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false.
   'workflowName': "workflowName_example" // String | The name of the workflow.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowDelete(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdWorkflowDelete(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17245,9 +17245,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## cloudidRestApi3WorkflowschemeIdWorkflowGet
+## workflowschemeIdWorkflowGet
 
-> InlineResponse200105 cloudidRestApi3WorkflowschemeIdWorkflowGet(cloudid, id, opts)
+> InlineResponse200105 workflowschemeIdWorkflowGet(cloudid, id, opts)
 
 
 
@@ -17269,7 +17269,7 @@ let opts = {
   'returnDraftIfExists': true, // Boolean | Returns the mapping from the workflow scheme's draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned.
   'workflowName': "workflowName_example" // String | The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow.
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowGet(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdWorkflowGet(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17302,9 +17302,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemeIdWorkflowPut
+## workflowschemeIdWorkflowPut
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemeIdWorkflowPut(cloudid, id, opts)
+> InlineResponse20114 workflowschemeIdWorkflowPut(cloudid, id, opts)
 
 
 
@@ -17326,7 +17326,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow.
   'body': new Jira.InlineObject73() // InlineObject73 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowPut(cloudid, id, opts, (error, data, response) => {
+apiInstance.workflowschemeIdWorkflowPut(cloudid, id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17359,9 +17359,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorkflowschemePost
+## workflowschemePost
 
-> InlineResponse20114 cloudidRestApi3WorkflowschemePost(cloudid, opts)
+> InlineResponse20114 workflowschemePost(cloudid, opts)
 
 
 
@@ -17381,7 +17381,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'body': new Jira.InlineObject65() // InlineObject65 | 
 };
-apiInstance.cloudidRestApi3WorkflowschemePost(cloudid, opts, (error, data, response) => {
+apiInstance.workflowschemePost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17412,9 +17412,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorklogDeletedGet
+## worklogDeletedGet
 
-> InlineResponse200106 cloudidRestApi3WorklogDeletedGet(cloudid, opts)
+> InlineResponse200106 worklogDeletedGet(cloudid, opts)
 
 
 
@@ -17434,7 +17434,7 @@ let cloudid = null; // Object | Cloudi of the project
 let opts = {
   'since': 56 // Number | The date and time, in UNIX timestamp format, after which deleted worklogs are returned.
 };
-apiInstance.cloudidRestApi3WorklogDeletedGet(cloudid, opts, (error, data, response) => {
+apiInstance.worklogDeletedGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17465,9 +17465,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorklogListPost
+## worklogListPost
 
-> [InlineResponse200107] cloudidRestApi3WorklogListPost(cloudid, opts)
+> [InlineResponse200107] worklogListPost(cloudid, opts)
 
 
 
@@ -17488,7 +17488,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog.
   'body': new Jira.InlineObject74() // InlineObject74 | 
 };
-apiInstance.cloudidRestApi3WorklogListPost(cloudid, opts, (error, data, response) => {
+apiInstance.worklogListPost(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17520,9 +17520,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## cloudidRestApi3WorklogUpdatedGet
+## worklogUpdatedGet
 
-> InlineResponse200106 cloudidRestApi3WorklogUpdatedGet(cloudid, opts)
+> InlineResponse200106 worklogUpdatedGet(cloudid, opts)
 
 
 
@@ -17543,7 +17543,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog.
   'since': 56 // Number | The date and time, in UNIX timestamp format, after which updated worklogs are returned.
 };
-apiInstance.cloudidRestApi3WorklogUpdatedGet(cloudid, opts, (error, data, response) => {
+apiInstance.worklogUpdatedGet(cloudid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {

@@ -17,7 +17,7 @@ import InlineResponse2009BodyContent1 from './InlineResponse2009BodyContent1';
 /**
  * The InlineResponse2009Body model module.
  * @module model/InlineResponse2009Body
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse2009Body {
     /**

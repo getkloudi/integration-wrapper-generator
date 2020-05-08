@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import CloudidRestApi3FilterIdPermissionProject from './CloudidRestApi3FilterIdPermissionProject';
-import CloudidRestApi3FilterIdPermissionRole from './CloudidRestApi3FilterIdPermissionRole';
+import FilterIdPermissionProject from './FilterIdPermissionProject';
+import FilterIdPermissionRole from './FilterIdPermissionRole';
 
 /**
  * The InlineResponse20031 model module.
  * @module model/InlineResponse20031
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20031 {
     /**
      * Constructs a new <code>InlineResponse20031</code>.
      * @alias module:model/InlineResponse20031
      * @param id {Number} 
-     * @param project {module:model/CloudidRestApi3FilterIdPermissionProject} 
-     * @param role {module:model/CloudidRestApi3FilterIdPermissionRole} 
+     * @param project {module:model/FilterIdPermissionProject} 
+     * @param role {module:model/FilterIdPermissionRole} 
      * @param type {String} 
      */
     constructor(id, project, role, type) { 
@@ -61,10 +61,10 @@ class InlineResponse20031 {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('project')) {
-                obj['project'] = CloudidRestApi3FilterIdPermissionProject.constructFromObject(data['project']);
+                obj['project'] = FilterIdPermissionProject.constructFromObject(data['project']);
             }
             if (data.hasOwnProperty('role')) {
-                obj['role'] = CloudidRestApi3FilterIdPermissionRole.constructFromObject(data['role']);
+                obj['role'] = FilterIdPermissionRole.constructFromObject(data['role']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -82,12 +82,12 @@ class InlineResponse20031 {
 InlineResponse20031.prototype['id'] = undefined;
 
 /**
- * @member {module:model/CloudidRestApi3FilterIdPermissionProject} project
+ * @member {module:model/FilterIdPermissionProject} project
  */
 InlineResponse20031.prototype['project'] = undefined;
 
 /**
- * @member {module:model/CloudidRestApi3FilterIdPermissionRole} role
+ * @member {module:model/FilterIdPermissionRole} role
  */
 InlineResponse20031.prototype['role'] = undefined;
 

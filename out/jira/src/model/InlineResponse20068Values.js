@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import CloudidRestApi3FilterIdPermissionProjectProjectCategory from './CloudidRestApi3FilterIdPermissionProjectProjectCategory';
+import FilterIdPermissionProjectProjectCategory from './FilterIdPermissionProjectProjectCategory';
 import InlineResponse2004AuthorAvatarUrls from './InlineResponse2004AuthorAvatarUrls';
 
 /**
  * The InlineResponse20068Values model module.
  * @module model/InlineResponse20068Values
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20068Values {
     /**
@@ -74,7 +74,7 @@ class InlineResponse20068Values {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('projectCategory')) {
-                obj['projectCategory'] = CloudidRestApi3FilterIdPermissionProjectProjectCategory.constructFromObject(data['projectCategory']);
+                obj['projectCategory'] = FilterIdPermissionProjectProjectCategory.constructFromObject(data['projectCategory']);
             }
             if (data.hasOwnProperty('self')) {
                 obj['self'] = ApiClient.convertToType(data['self'], 'String');
@@ -113,7 +113,7 @@ InlineResponse20068Values.prototype['key'] = undefined;
 InlineResponse20068Values.prototype['name'] = undefined;
 
 /**
- * @member {module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory} projectCategory
+ * @member {module:model/FilterIdPermissionProjectProjectCategory} projectCategory
  */
 InlineResponse20068Values.prototype['projectCategory'] = undefined;
 

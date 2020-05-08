@@ -17,7 +17,7 @@ import InlineResponse2009Author from './InlineResponse2009Author';
 /**
  * The InlineResponse2012Users model module.
  * @module model/InlineResponse2012Users
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse2012Users {
     /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20065PermissionSchemes model module.
  * @module model/InlineResponse20065PermissionSchemes
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20065PermissionSchemes = /*#__PURE__*/function () {
   /**

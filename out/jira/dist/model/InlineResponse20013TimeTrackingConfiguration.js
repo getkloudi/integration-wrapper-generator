@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20013TimeTrackingConfiguration model module.
  * @module model/InlineResponse20013TimeTrackingConfiguration
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20013TimeTrackingConfiguration = /*#__PURE__*/function () {
   /**

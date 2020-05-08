@@ -17,7 +17,7 @@ import InlineResponse20037FieldsOutwardIssueFieldsStatus from './InlineResponse2
 /**
  * The InlineResponse20037FieldsOutwardIssueFields model module.
  * @module model/InlineResponse20037FieldsOutwardIssueFields
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20037FieldsOutwardIssueFields {
     /**

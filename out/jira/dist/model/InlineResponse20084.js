@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CloudidRestApi3FilterIdPermissionRoleActors = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionRoleActors"));
+var _FilterIdPermissionRoleActors = _interopRequireDefault(require("./FilterIdPermissionRoleActors"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,14 +20,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20084 model module.
  * @module model/InlineResponse20084
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20084 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20084</code>.
    * 
    * @alias module:model/InlineResponse20084
-   * @param actors {Array.<module:model/CloudidRestApi3FilterIdPermissionRoleActors>} 
+   * @param actors {Array.<module:model/FilterIdPermissionRoleActors>} 
    */
   function InlineResponse20084(actors) {
     _classCallCheck(this, InlineResponse20084);
@@ -61,7 +61,7 @@ var InlineResponse20084 = /*#__PURE__*/function () {
         obj = obj || new InlineResponse20084();
 
         if (data.hasOwnProperty('actors')) {
-          obj['actors'] = _ApiClient["default"].convertToType(data['actors'], [_CloudidRestApi3FilterIdPermissionRoleActors["default"]]);
+          obj['actors'] = _ApiClient["default"].convertToType(data['actors'], [_FilterIdPermissionRoleActors["default"]]);
         }
       }
 
@@ -72,7 +72,7 @@ var InlineResponse20084 = /*#__PURE__*/function () {
   return InlineResponse20084;
 }();
 /**
- * @member {Array.<module:model/CloudidRestApi3FilterIdPermissionRoleActors>} actors
+ * @member {Array.<module:model/FilterIdPermissionRoleActors>} actors
  */
 
 

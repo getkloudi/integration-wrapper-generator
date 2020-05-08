@@ -17,7 +17,7 @@ import InlineResponse20020MetaComplexityBeans from './InlineResponse20020MetaCom
 /**
  * The InlineResponse20020MetaComplexity model module.
  * @module model/InlineResponse20020MetaComplexity
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20020MetaComplexity {
     /**

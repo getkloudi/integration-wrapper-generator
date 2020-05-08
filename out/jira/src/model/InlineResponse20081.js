@@ -17,7 +17,7 @@ import InlineResponse20081Errors from './InlineResponse20081Errors';
 /**
  * The InlineResponse20081 model module.
  * @module model/InlineResponse20081
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20081 {
     /**

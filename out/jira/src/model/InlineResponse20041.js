@@ -17,7 +17,7 @@ import InlineResponse20041Fields from './InlineResponse20041Fields';
 /**
  * The InlineResponse20041 model module.
  * @module model/InlineResponse20041
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20041 {
     /**

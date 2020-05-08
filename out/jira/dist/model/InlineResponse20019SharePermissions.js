@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20019SharePermissions model module.
  * @module model/InlineResponse20019SharePermissions
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20019SharePermissions = /*#__PURE__*/function () {
   /**

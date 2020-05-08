@@ -17,7 +17,7 @@ import InlineResponse20018Group from './InlineResponse20018Group';
 /**
  * The InlineResponse20061Notifications model module.
  * @module model/InlineResponse20061Notifications
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20061Notifications {
     /**

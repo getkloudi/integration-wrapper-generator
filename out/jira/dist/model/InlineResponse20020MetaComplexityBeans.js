@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20020MetaComplexityBeans model module.
  * @module model/InlineResponse20020MetaComplexityBeans
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20020MetaComplexityBeans = /*#__PURE__*/function () {
   /**

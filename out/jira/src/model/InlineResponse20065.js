@@ -17,7 +17,7 @@ import InlineResponse20065PermissionSchemes from './InlineResponse20065Permissio
 /**
  * The InlineResponse20065 model module.
  * @module model/InlineResponse20065
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20065 {
     /**

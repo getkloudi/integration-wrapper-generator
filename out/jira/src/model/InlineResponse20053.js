@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import CloudidRestApi3FilterIdPermissionProjectProjectCategory from './CloudidRestApi3FilterIdPermissionProjectProjectCategory';
+import FilterIdPermissionProjectProjectCategory from './FilterIdPermissionProjectProjectCategory';
 
 /**
  * The InlineResponse20053 model module.
  * @module model/InlineResponse20053
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20053 {
     /**
@@ -27,7 +27,7 @@ class InlineResponse20053 {
      * @param defaultSecurityLevelId {Number} 
      * @param description {String} 
      * @param id {Number} 
-     * @param levels {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} 
+     * @param levels {Array.<module:model/FilterIdPermissionProjectProjectCategory>} 
      * @param name {String} 
      * @param self {String} 
      */
@@ -71,7 +71,7 @@ class InlineResponse20053 {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
             }
             if (data.hasOwnProperty('levels')) {
-                obj['levels'] = ApiClient.convertToType(data['levels'], [CloudidRestApi3FilterIdPermissionProjectProjectCategory]);
+                obj['levels'] = ApiClient.convertToType(data['levels'], [FilterIdPermissionProjectProjectCategory]);
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -102,7 +102,7 @@ InlineResponse20053.prototype['description'] = undefined;
 InlineResponse20053.prototype['id'] = undefined;
 
 /**
- * @member {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} levels
+ * @member {Array.<module:model/FilterIdPermissionProjectProjectCategory>} levels
  */
 InlineResponse20053.prototype['levels'] = undefined;
 

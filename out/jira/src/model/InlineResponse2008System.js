@@ -17,7 +17,7 @@ import InlineResponse2004AuthorAvatarUrls from './InlineResponse2004AuthorAvatar
 /**
  * The InlineResponse2008System model module.
  * @module model/InlineResponse2008System
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse2008System {
     /**

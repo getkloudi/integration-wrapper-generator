@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**author** | [**CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor**](CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor.md) |  | 
+**author** | [**IssueIssueIdOrKeyAttachmentsAuthor**](IssueIssueIdOrKeyAttachmentsAuthor.md) |  | 
 **content** | **String** |  | 
 **created** | **String** |  | 
 **filename** | **String** |  | 

@@ -17,7 +17,7 @@ import InlineResponse20058PermissionsEDITISSUE from './InlineResponse20058Permis
 /**
  * The InlineResponse20058Permissions model module.
  * @module model/InlineResponse20058Permissions
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20058Permissions {
     /**

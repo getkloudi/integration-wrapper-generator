@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20114IssueTypeMappings model module.
  * @module model/InlineResponse20114IssueTypeMappings
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20114IssueTypeMappings = /*#__PURE__*/function () {
   /**

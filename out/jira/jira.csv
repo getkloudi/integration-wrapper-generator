@@ -1,1901 +1,1901 @@
 api,http-method,description,functionName,functionParameters
-/{cloudid}/rest/api/3/application-properties/advanced-settings,GET,"
+/application-properties/advanced-settings,GET,"
 
 
 Returns the application properties that are accessible on the Advanced Settings page. To navigate to the Advanced Settings page in Jira, choose the Jira icon &gt; Jira settings &gt; System, General Configuration and then click Advanced Settings (in the upper right).
 
-",cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet,cloudid
-/{cloudid}/rest/api/3/application-properties,GET,"
+",applicationPropertiesAdvancedSettingsGet,cloudid
+/application-properties,GET,"
 
 
 Returns all application properties or a single application property.
 
-",cloudidRestApi3ApplicationPropertiesGet,cloudid opts
-/{cloudid}/rest/api/3/application-properties/{id},PUT,"
+",applicationPropertiesGet,cloudid opts
+/application-properties/{id},PUT,"
 
 
 Changes the value of an application property. For example, you can change the value of the jira.clone.prefix from its default value of CLONE - to Clone - if you prefer sentence case capitalization. Editable properties are described below along with their default values.
 
-",cloudidRestApi3ApplicationPropertiesIdPut,cloudid id opts
-/{cloudid}/rest/api/3/applicationrole,GET,"
+",applicationPropertiesIdPut,cloudid id opts
+/applicationrole,GET,"
 
 
 Returns all application roles. In Jira, application roles are managed using the Application access configuration page.
 
-",cloudidRestApi3ApplicationroleGet,cloudid
-/{cloudid}/rest/api/3/applicationrole/{key},GET,"
+",applicationroleGet,cloudid
+/applicationrole/{key},GET,"
 
 
 Returns an application role.
 
-",cloudidRestApi3ApplicationroleKeyGet,cloudid key
-/{cloudid}/rest/api/3/attachment/{id},DELETE,"
+",applicationroleKeyGet,cloudid key
+/attachment/{id},DELETE,"
 
 
 Deletes an attachment from an issue.
 
-",cloudidRestApi3AttachmentIdDelete,cloudid id
-/{cloudid}/rest/api/3/attachment/{id}/expand/human,GET,"
+",attachmentIdDelete,cloudid id
+/attachment/{id}/expand/human,GET,"
 
 
 Returns the metadata for the contents of an attachment, if it is an archive, and metadata for the attachment itself. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned and metadata for the ZIP archive. Currently, only the ZIP archive format is supported.
 
-",cloudidRestApi3AttachmentIdExpandHumanGet,cloudid id
-/{cloudid}/rest/api/3/attachment/{id}/expand/raw,GET,"
+",attachmentIdExpandHumanGet,cloudid id
+/attachment/{id}/expand/raw,GET,"
 
 
 Returns the metadata for the contents of an attachment, if it is an archive. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned. Currently, only the ZIP archive format is supported.
 
-",cloudidRestApi3AttachmentIdExpandRawGet,cloudid id
-/{cloudid}/rest/api/3/attachment/{id},GET,"
+",attachmentIdExpandRawGet,cloudid id
+/attachment/{id},GET,"
 
 
 Returns the metadata for an attachment. Note that the attachment itself is not returned.
 
-",cloudidRestApi3AttachmentIdGet,cloudid id
-/{cloudid}/rest/api/3/attachment/meta,GET,"
+",attachmentIdGet,cloudid id
+/attachment/meta,GET,"
 
 
 Returns the global attachment settings, that is, whether attachments are enabled and the maximum attachment size allowed.
 
-",cloudidRestApi3AttachmentMetaGet,cloudid
-/{cloudid}/rest/api/3/auditing/record,GET,"
+",attachmentMetaGet,cloudid
+/auditing/record,GET,"
 
 
 Returns a list of audit records. The list can be filtered to include items:
 
-",cloudidRestApi3AuditingRecordGet,cloudid opts
-/{cloudid}/rest/api/3/avatar/{type}/system,GET,"
+",auditingRecordGet,cloudid opts
+/avatar/{type}/system,GET,"
 
 
 Returns a list of system avatar details by owner type, where the owner types are issue type, project, or user.
 
-",cloudidRestApi3AvatarTypeSystemGet,cloudid type
-/{cloudid}/rest/api/3/comment/{commentId}/properties,GET,"
+",avatarTypeSystemGet,cloudid type
+/comment/{commentId}/properties,GET,"
 
 
 Returns the keys of all the properties of a comment.
 
-",cloudidRestApi3CommentCommentIdPropertiesGet,cloudid commentId
-/{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey},DELETE,"
+",commentCommentIdPropertiesGet,cloudid commentId
+/comment/{commentId}/properties/{propertyKey},DELETE,"
 
 
 Deletes a comment property.
 
-",cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete,cloudid commentId propertyKey
-/{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey},GET,"
+",commentCommentIdPropertiesPropertyKeyDelete,cloudid commentId propertyKey
+/comment/{commentId}/properties/{propertyKey},GET,"
 
 
 Returns the value of a comment property.
 
-",cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet,cloudid commentId propertyKey
-/{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey},PUT,"
+",commentCommentIdPropertiesPropertyKeyGet,cloudid commentId propertyKey
+/comment/{commentId}/properties/{propertyKey},PUT,"
 
 
 Creates or updates the value of a property for a comment. Use this resource to store custom data against a comment.
 
-",cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut,cloudid commentId propertyKey
-/{cloudid}/rest/api/3/comment/list,POST,"
+",commentCommentIdPropertiesPropertyKeyPut,cloudid commentId propertyKey
+/comment/list,POST,"
 
 
 Returns the comments for a list of comment IDs.
 
-",cloudidRestApi3CommentListPost,cloudid opts
-/{cloudid}/rest/api/3/component/{id},DELETE,"
+",commentListPost,cloudid opts
+/component/{id},DELETE,"
 
 
 Deletes a component. Permissions required: Any of the following:
 
-",cloudidRestApi3ComponentIdDelete,cloudid id opts
-/{cloudid}/rest/api/3/component/{id},GET,"
+",componentIdDelete,cloudid id opts
+/component/{id},GET,"
 
 
 Returns a component. Permissions required: Browse projects project permission.
 
-",cloudidRestApi3ComponentIdGet,cloudid id
-/{cloudid}/rest/api/3/component/{id},PUT,"
+",componentIdGet,cloudid id
+/component/{id},PUT,"
 
 
 Modifies a component. Any fields included in the request are overwritten. If leadUserName is an empty string (\&quot;\&quot;) the component lead is removed. Permissions required: Any of the following:
 
-",cloudidRestApi3ComponentIdPut,cloudid id opts
-/{cloudid}/rest/api/3/component/{id}/relatedIssueCounts,GET,"
+",componentIdPut,cloudid id opts
+/component/{id}/relatedIssueCounts,GET,"
 
 
 Returns the counts of issues assigned to the component. Permissions required: Permission to access Jira.
 
-",cloudidRestApi3ComponentIdRelatedIssueCountsGet,cloudid id
-/{cloudid}/rest/api/3/component,POST,"
+",componentIdRelatedIssueCountsGet,cloudid id
+/component,POST,"
 
 
 Creates a component. Use components to provide containers for issues within a project. Permissions required: Any of the following:
 
-",cloudidRestApi3ComponentPost,cloudid opts
-/{cloudid}/rest/api/3/configuration,GET,"
+",componentPost,cloudid opts
+/configuration,GET,"
 
 
 Returns the global settings in Jira. These settings determine whether optional features (for example, sub-tasks, time tracking, and others) are enabled. If time tracking is enabled, this method also returns the time tracking configuration.
 
-",cloudidRestApi3ConfigurationGet,cloudid
-/{cloudid}/rest/api/3/configuration/timetracking,DELETE,"
+",configurationGet,cloudid
+/configuration/timetracking,DELETE,"
 
 
 Disables time tracking.
 
-",cloudidRestApi3ConfigurationTimetrackingDelete,cloudid
-/{cloudid}/rest/api/3/configuration/timetracking,GET,"
+",configurationTimetrackingDelete,cloudid
+/configuration/timetracking,GET,"
 
 
 Returns the time tracking provider that is currently selected. Note that if time tracking is disabled, then a successful but empty response is returned.
 
-",cloudidRestApi3ConfigurationTimetrackingGet,cloudid
-/{cloudid}/rest/api/3/configuration/timetracking/list,GET,"
+",configurationTimetrackingGet,cloudid
+/configuration/timetracking/list,GET,"
 
 
 Returns all time tracking providers. By default, Jira only has one time tracking provider: JIRA provided time tracking. However, you can install other time tracking providers via apps from the Atlassian Marketplace. For more information on time tracking providers, see the documentation for the Time Tracking Provider module.
 
-",cloudidRestApi3ConfigurationTimetrackingListGet,cloudid
-/{cloudid}/rest/api/3/configuration/timetracking/options,GET,"
+",configurationTimetrackingListGet,cloudid
+/configuration/timetracking/options,GET,"
 
 
 Returns the time tracking settings. This includes settings such as the time format, default time unit, and others. For more information, see Configuring time tracking.
 
-",cloudidRestApi3ConfigurationTimetrackingOptionsGet,cloudid
-/{cloudid}/rest/api/3/configuration/timetracking/options,PUT,"
+",configurationTimetrackingOptionsGet,cloudid
+/configuration/timetracking/options,PUT,"
 
 
 Sets the time tracking settings.
 
-",cloudidRestApi3ConfigurationTimetrackingOptionsPut,cloudid opts
-/{cloudid}/rest/api/3/configuration/timetracking,PUT,"
+",configurationTimetrackingOptionsPut,cloudid opts
+/configuration/timetracking,PUT,"
 
 
 Selects a time tracking provider.
 
-",cloudidRestApi3ConfigurationTimetrackingPut,cloudid opts
-/{cloudid}/rest/api/3/customFieldOption/{id},GET,"
+",configurationTimetrackingPut,cloudid opts
+/customFieldOption/{id},GET,"
 
 
 Returns a custom field option. For example, an option in a cascading select list.
 
-",cloudidRestApi3CustomFieldOptionIdGet,cloudid id
-/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties,GET,"
+",customFieldOptionIdGet,cloudid id
+/dashboard/{dashboardId}/items/{itemId}/properties,GET,"
 
 
 Returns the keys of all properties for a dashboard item.
 
-",cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet,cloudid dashboardId itemId
-/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},DELETE,"
+",dashboardDashboardIdItemsItemIdPropertiesGet,cloudid dashboardId itemId
+/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},DELETE,"
 
 
 Deletes a dashboard item property.
 
-",cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete,cloudid dashboardId itemId propertyKey
-/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},GET,"
+",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete,cloudid dashboardId itemId propertyKey
+/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},GET,"
 
 
 Returns the key and value of a dashboard item property.
 
-",cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet,cloudid dashboardId itemId propertyKey
-/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},PUT,"
+",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet,cloudid dashboardId itemId propertyKey
+/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},PUT,"
 
 
 Sets the value of a dashboard item property. Use this resource in apps to store custom data against a dashboard item.
 
-",cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut,cloudid dashboardId itemId propertyKey
-/{cloudid}/rest/api/3/dashboard,GET,"
+",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut,cloudid dashboardId itemId propertyKey
+/dashboard,GET,"
 
 
 Returns a list of dashboards owned by or shared with the user. The list may be filtered to include only favorite or owned dashboards.
 
-",cloudidRestApi3DashboardGet,cloudid opts
-/{cloudid}/rest/api/3/dashboard/{id},GET,"
+",dashboardGet,cloudid opts
+/dashboard/{id},GET,"
 
 
 Returns a dashboard.
 
-",cloudidRestApi3DashboardIdGet,cloudid id
-/{cloudid}/rest/api/3/expression/eval,POST,"
+",dashboardIdGet,cloudid id
+/expression/eval,POST,"
 
 
 Evaluates a Jira expression and returns its value.
 
-",cloudidRestApi3ExpressionEvalPost,cloudid opts
-/{cloudid}/rest/api/3/field/{fieldKey}/option,GET,"
+",expressionEvalPost,cloudid opts
+/field/{fieldKey}/option,GET,"
 
 
 Returns all options defined for a select list issue field. A select list issue field is a type of issue field that allows a user to select an value from a list of options.
 
-",cloudidRestApi3FieldFieldKeyOptionGet,cloudid fieldKey opts
-/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId},DELETE,"
+",fieldFieldKeyOptionGet,cloudid fieldKey opts
+/field/{fieldKey}/option/{optionId},DELETE,"
 
 
 Deletes an option from a select list issue field.
 
-",cloudidRestApi3FieldFieldKeyOptionOptionIdDelete,cloudid fieldKey optionId
-/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId},GET,"
+",fieldFieldKeyOptionOptionIdDelete,cloudid fieldKey optionId
+/field/{fieldKey}/option/{optionId},GET,"
 
 
 Returns an option from a select list issue field.
 
-",cloudidRestApi3FieldFieldKeyOptionOptionIdGet,cloudid fieldKey optionId
-/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId}/issue,DELETE,"
+",fieldFieldKeyOptionOptionIdGet,cloudid fieldKey optionId
+/field/{fieldKey}/option/{optionId}/issue,DELETE,"
 
 
 Deselects a select list issue field option in all issues that it has been selected in. A different option can be selected to replace the deselected option. The update can also be limited to a smaller set of issues by using a JQL query.
 
-",cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete,cloudid fieldKey optionId opts
-/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId},PUT,"
+",fieldFieldKeyOptionOptionIdIssueDelete,cloudid fieldKey optionId opts
+/field/{fieldKey}/option/{optionId},PUT,"
 
 
 Updates an option for a select list issue field. If the option does not exist, a new option is created.
 
-",cloudidRestApi3FieldFieldKeyOptionOptionIdPut,cloudid fieldKey optionId opts
-/{cloudid}/rest/api/3/field/{fieldKey}/option,POST,"
+",fieldFieldKeyOptionOptionIdPut,cloudid fieldKey optionId opts
+/field/{fieldKey}/option,POST,"
 
 
 Creates an option for a select list issue field.
 
-",cloudidRestApi3FieldFieldKeyOptionPost,cloudid fieldKey opts
-/{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/edit,GET,"
+",fieldFieldKeyOptionPost,cloudid fieldKey opts
+/field/{fieldKey}/option/suggestions/edit,GET,"
 
 
 Returns options defined for a select list issue field that can be viewed and selected by the currently logged in user.
 
-",cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet,cloudid fieldKey opts
-/{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/search,GET,"
+",fieldFieldKeyOptionSuggestionsEditGet,cloudid fieldKey opts
+/field/{fieldKey}/option/suggestions/search,GET,"
 
 
 Returns options defined for a select list issue field that can be viewed by the currently logged in user.
 
-",cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet,cloudid fieldKey opts
-/{cloudid}/rest/api/3/field,GET,"
+",fieldFieldKeyOptionSuggestionsSearchGet,cloudid fieldKey opts
+/field,GET,"
 
 
 Returns all issue fields in Jira, both system and custom fields.
 
-",cloudidRestApi3FieldGet,cloudid
-/{cloudid}/rest/api/3/field,POST,"
+",fieldGet,cloudid
+/field,POST,"
 
 
 Creates a custom field.
 
-",cloudidRestApi3FieldPost,cloudid opts
-/{cloudid}/rest/api/3/filter/defaultShareScope,GET,"
+",fieldPost,cloudid opts
+/filter/defaultShareScope,GET,"
 
 
 Returns the default sharing settings for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
 
-",cloudidRestApi3FilterDefaultShareScopeGet,cloudid
-/{cloudid}/rest/api/3/filter/defaultShareScope,PUT,"
+",filterDefaultShareScopeGet,cloudid
+/filter/defaultShareScope,PUT,"
 
 
 Sets the default sharing for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
 
-",cloudidRestApi3FilterDefaultShareScopePut,cloudid opts
-/{cloudid}/rest/api/3/filter/favourite,GET,"
+",filterDefaultShareScopePut,cloudid opts
+/filter/favourite,GET,"
 
 
 Returns the favorite filters of the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
 
-",cloudidRestApi3FilterFavouriteGet,cloudid opts
-/{cloudid}/rest/api/3/filter,GET,"
+",filterFavouriteGet,cloudid opts
+/filter,GET,"
 
 
 Returns all filters. Deprecated, use Search for filters that supports search and pagination. Permissions required: None, however only the following filters are returned:
 
-",cloudidRestApi3FilterGet,cloudid opts
-/{cloudid}/rest/api/3/filter/{id}/columns,DELETE,"
+",filterGet,cloudid opts
+/filter/{id}/columns,DELETE,"
 
 
 Reset the user&#39;s column configuration for the filter to the default. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
 
-",cloudidRestApi3FilterIdColumnsDelete,cloudid id
-/{cloudid}/rest/api/3/filter/{id}/columns,GET,"
+",filterIdColumnsDelete,cloudid id
+/filter/{id}/columns,GET,"
 
 
 Returns the columns configured for a filter. The column configuration is used when the filter&#39;s results are viewed in List View with the Columns set to Filter. Permissions required: None, however the calling user must have permission to view the filter.
 
-",cloudidRestApi3FilterIdColumnsGet,cloudid id
-/{cloudid}/rest/api/3/filter/{id}/columns,PUT,"
+",filterIdColumnsGet,cloudid id
+/filter/{id}/columns,PUT,"
 
 
 Sets the columns for a filter. Only navigable fields can be set as columns. Use Get fields to get the list fields in Jira. A navigable field has navigable set to true. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
 
-",cloudidRestApi3FilterIdColumnsPut,cloudid id
-/{cloudid}/rest/api/3/filter/{id},DELETE,"
+",filterIdColumnsPut,cloudid id
+/filter/{id},DELETE,"
 
 
 Delete a filter. Permissions required: Permission to log in to Jira, however the following rules govern what a user can delete:
 
-",cloudidRestApi3FilterIdDelete,cloudid id
-/{cloudid}/rest/api/3/filter/{id}/favourite,DELETE,"
+",filterIdDelete,cloudid id
+/filter/{id}/favourite,DELETE,"
 
 
 Removes a filter as a favorite for the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
 
-",cloudidRestApi3FilterIdFavouriteDelete,cloudid id opts
-/{cloudid}/rest/api/3/filter/{id}/favourite,PUT,"
+",filterIdFavouriteDelete,cloudid id opts
+/filter/{id}/favourite,PUT,"
 
 
 Add a filter as a favorite for the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
 
-",cloudidRestApi3FilterIdFavouritePut,cloudid id opts
-/{cloudid}/rest/api/3/filter/{id},GET,"
+",filterIdFavouritePut,cloudid id opts
+/filter/{id},GET,"
 
 
 Returns a filter. Permissions required: None, however the calling user must have permission view the filter.
 
-",cloudidRestApi3FilterIdGet,cloudid id opts
-/{cloudid}/rest/api/3/filter/{id}/permission,GET,"
+",filterIdGet,cloudid id opts
+/filter/{id}/permission,GET,"
 
 
 Returns the share permissions for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.
 
-",cloudidRestApi3FilterIdPermissionGet,cloudid id
-/{cloudid}/rest/api/3/filter/{id}/permission/{permissionId},DELETE,"
+",filterIdPermissionGet,cloudid id
+/filter/{id}/permission/{permissionId},DELETE,"
 
 
 Deletes a share permission from a filter. Permissions required: Permission to log in to Jira (i.e., member of the users group) and the calling user must own the filter.
 
-",cloudidRestApi3FilterIdPermissionPermissionIdDelete,cloudid id permissionId
-/{cloudid}/rest/api/3/filter/{id}/permission/{permissionId},GET,"
+",filterIdPermissionPermissionIdDelete,cloudid id permissionId
+/filter/{id}/permission/{permissionId},GET,"
 
 
 Returns a share permission for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.
 
-",cloudidRestApi3FilterIdPermissionPermissionIdGet,cloudid id permissionId
-/{cloudid}/rest/api/3/filter/{id}/permission,POST,"
+",filterIdPermissionPermissionIdGet,cloudid id permissionId
+/filter/{id}/permission,POST,"
 
 
 Add a share permissions to a filter. If you add a global share permission (i.e., all logged-in users or the public) it will overwrite all share permissions for the filter.Be aware that this method uses different objects for updating share permissions compared to Update filter. Permissions required: Share dashboards and filters global permission and the calling user must own the filter.
 
-",cloudidRestApi3FilterIdPermissionPost,cloudid id opts
-/{cloudid}/rest/api/3/filter/{id},PUT,"
+",filterIdPermissionPost,cloudid id opts
+/filter/{id},PUT,"
 
 
 Updates an existing filter. Use this method to update a filter&#39;s name, description, JQL, or sharing. Permissions required: Permission to log in to Jira, however the following rules govern what a user can update:
 
-",cloudidRestApi3FilterIdPut,cloudid id opts
-/{cloudid}/rest/api/3/filter/my,GET,"
+",filterIdPut,cloudid id opts
+/filter/my,GET,"
 
 
 Returns the filters owned by the calling user. If includeFavourites is true, the user&#39;s favorite filters are also returned. Permissions required: Permission to log in to Jira (i.e., member of the users group).
 
-",cloudidRestApi3FilterMyGet,cloudid opts
-/{cloudid}/rest/api/3/filter,POST,"
+",filterMyGet,cloudid opts
+/filter,POST,"
 
 
 Creates a new filter. The new filter is not shared and not selected as a favorite. Permissions required: Permission to log in to Jira.
 
-",cloudidRestApi3FilterPost,cloudid opts
-/{cloudid}/rest/api/3/filter/search,GET,"
+",filterPost,cloudid opts
+/filter/search,GET,"
 
 
 Search for filters. This method is similar to Get filters except that you can refine the results to include filters that have specific attributes. For example, filters with a particular name. Permissions required: None, however only the following filters are returned (if no search parameters are set):
 
-",cloudidRestApi3FilterSearchGet,cloudid opts
-/{cloudid}/rest/api/3/group,DELETE,"
+",filterSearchGet,cloudid opts
+/group,DELETE,"
 
 
 Deletes a group.
 
-",cloudidRestApi3GroupDelete,cloudid opts
-/{cloudid}/rest/api/3/group,GET,"
+",groupDelete,cloudid opts
+/group,GET,"
 
 
 This resource is deprecated, use group/member.
 
-",cloudidRestApi3GroupGet,cloudid opts
-/{cloudid}/rest/api/3/group/member,GET,"
+",groupGet,cloudid opts
+/group/member,GET,"
 
 
 Returns all users in a group. Users are ordered by username.
 
-",cloudidRestApi3GroupMemberGet,cloudid opts
-/{cloudid}/rest/api/3/group,POST,"
+",groupMemberGet,cloudid opts
+/group,POST,"
 
 
 Creates a group.
 
-",cloudidRestApi3GroupPost,cloudid opts
-/{cloudid}/rest/api/3/group/user,DELETE,"
+",groupPost,cloudid opts
+/group/user,DELETE,"
 
 
 Removes a user from a group. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3GroupUserDelete,cloudid opts
-/{cloudid}/rest/api/3/group/user,POST,"
+",groupUserDelete,cloudid opts
+/group/user,POST,"
 
 
 Adds a user to a group.
 
-",cloudidRestApi3GroupUserPost,cloudid opts
-/{cloudid}/rest/api/3/groups/picker,GET,"
+",groupUserPost,cloudid opts
+/groups/picker,GET,"
 
 
 Returns a list of groups whose names contain a query string. A list of group names can be provided to exclude groups from the results.
 
-",cloudidRestApi3GroupsPickerGet,cloudid opts
-/{cloudid}/rest/api/3/groupuserpicker,GET,"
+",groupsPickerGet,cloudid opts
+/groupuserpicker,GET,"
 
 
 Returns a list of users and groups matching a string. The string is used:
 
-",cloudidRestApi3GroupuserpickerGet,cloudid opts
-/{cloudid}/rest/api/3/issue/bulk,POST,"
+",groupuserpickerGet,cloudid opts
+/issue/bulk,POST,"
 
 
 Creates issues and, where the option to create sub-tasks is enabled in Jira, sub-tasks. Transitions may be applied, to move the issues or sub-tasks to a workflow step other than the default start step, and issue properties set.
 
-",cloudidRestApi3IssueBulkPost,cloudid opts
-/{cloudid}/rest/api/3/issue/createmeta,GET,"
+",issueBulkPost,cloudid opts
+/issue/createmeta,GET,"
 
 
 Returns details of projects, issue types within projects, and, when requested, the create screen fields for each issue type for the user. Use the information to populate the requests in Create issue and Create issues.
 
-",cloudidRestApi3IssueCreatemetaGet,cloudid opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/assignee,PUT,"
+",issueCreatemetaGet,cloudid opts
+/issue/{issueIdOrKey}/assignee,PUT,"
 
 
 Assigns an issue to a user. Use this operation when the calling user does not have the Edit Issues permission but has the Assign issue permission for the project that the issue is in.
 
-",cloudidRestApi3IssueIssueIdOrKeyAssigneePut,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/attachments,POST,"
+",issueIssueIdOrKeyAssigneePut,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/attachments,POST,"
 
 
 Adds one or more attachments to an issue. Attachments are posted as multipart/form-data (RFC 1867).
 
-",cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost,cloudid issueIdOrKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/changelog,GET,"
+",issueIssueIdOrKeyAttachmentsPost,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/changelog,GET,"
 
 
 Returns a paginated list of all updates of an issue, sorted by date, starting from the oldest.
 
-",cloudidRestApi3IssueIssueIdOrKeyChangelogGet,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment,GET,"
+",issueIssueIdOrKeyChangelogGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/comment,GET,"
 
 
 to get comments for
 
-",cloudidRestApi3IssueIssueIdOrKeyCommentGet,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id},DELETE,"
+",issueIssueIdOrKeyCommentGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/comment/{id},DELETE,"
 
 
 a string containing the issue id or key the comment belongs to
 
-",cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete,cloudid id issueIdOrKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id},GET,"
+",issueIssueIdOrKeyCommentIdDelete,cloudid id issueIdOrKey
+/issue/{issueIdOrKey}/comment/{id},GET,"
 
 
 of the issue the comment belongs to
 
-",cloudidRestApi3IssueIssueIdOrKeyCommentIdGet,cloudid id issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id},PUT,"
+",issueIssueIdOrKeyCommentIdGet,cloudid id issueIdOrKey opts
+/issue/{issueIdOrKey}/comment/{id},PUT,"
 
 
 a string containing the issue id or key the comment belongs to
 
-",cloudidRestApi3IssueIssueIdOrKeyCommentIdPut,cloudid id issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment,POST,"
+",issueIssueIdOrKeyCommentIdPut,cloudid id issueIdOrKey opts
+/issue/{issueIdOrKey}/comment,POST,"
 
 
 a string containing the issue id or key the comment will be added to
 
-",cloudidRestApi3IssueIssueIdOrKeyCommentPost,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey},DELETE,"
+",issueIssueIdOrKeyCommentPost,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey},DELETE,"
 
 
 Deletes an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyDelete,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/editmeta,GET,"
+",issueIssueIdOrKeyDelete,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/editmeta,GET,"
 
 
 Returns the edit screen fields for an issue that are visible to and editable by the user. Use the information to populate the requests in Edit issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyEditmetaGet,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey},GET,"
+",issueIssueIdOrKeyEditmetaGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey},GET,"
 
 
 Returns the details for an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyGet,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/notify,POST,"
+",issueIssueIdOrKeyGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/notify,POST,"
 
 
 Creates an email notification for an issue and adds it to the mail queue.
 
-",cloudidRestApi3IssueIssueIdOrKeyNotifyPost,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties,GET,"
+",issueIssueIdOrKeyNotifyPost,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/properties,GET,"
 
 
 Returns the URIs and keys of an issue&#39;s properties.
 
-",cloudidRestApi3IssueIssueIdOrKeyPropertiesGet,cloudid issueIdOrKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey},DELETE,"
+",issueIssueIdOrKeyPropertiesGet,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/properties/{propertyKey},DELETE,"
 
 
 Deletes an issue&#39;s property.
 
-",cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete,cloudid issueIdOrKey propertyKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey},GET,"
+",issueIssueIdOrKeyPropertiesPropertyKeyDelete,cloudid issueIdOrKey propertyKey
+/issue/{issueIdOrKey}/properties/{propertyKey},GET,"
 
 
 Returns the key and value of an issue&#39;s property.
 
-",cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet,cloudid issueIdOrKey propertyKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey},PUT,"
+",issueIssueIdOrKeyPropertiesPropertyKeyGet,cloudid issueIdOrKey propertyKey
+/issue/{issueIdOrKey}/properties/{propertyKey},PUT,"
 
 
 Sets the value of an issue&#39;s property. Use this resource to store custom data against an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut,cloudid issueIdOrKey propertyKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey},PUT,"
+",issueIssueIdOrKeyPropertiesPropertyKeyPut,cloudid issueIdOrKey propertyKey
+/issue/{issueIdOrKey},PUT,"
 
 
 Edits an issue. A transition may be applied and issue properties updated as part of the edit.
 
-",cloudidRestApi3IssueIssueIdOrKeyPut,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink,DELETE,"
+",issueIssueIdOrKeyPut,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/remotelink,DELETE,"
 
 
 Deletes the remote issue link from the issue using the link&#39;s global ID.
 
-",cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink,GET,"
+",issueIssueIdOrKeyRemotelinkDelete,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/remotelink,GET,"
 
 
 Returns the remote issue links for an issue. When a remote issue link global ID is provided the record with that global ID is returned, otherwise all remote issue links are returned.
 
-",cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId},DELETE,"
+",issueIssueIdOrKeyRemotelinkGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/remotelink/{linkId},DELETE,"
 
 
 Deletes a remote issue link from an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete,cloudid issueIdOrKey linkId
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId},GET,"
+",issueIssueIdOrKeyRemotelinkLinkIdDelete,cloudid issueIdOrKey linkId
+/issue/{issueIdOrKey}/remotelink/{linkId},GET,"
 
 
 Returns a remote issue link for an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet,cloudid issueIdOrKey linkId
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId},PUT,"
+",issueIssueIdOrKeyRemotelinkLinkIdGet,cloudid issueIdOrKey linkId
+/issue/{issueIdOrKey}/remotelink/{linkId},PUT,"
 
 
 Updates a remote issue link for an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut,cloudid issueIdOrKey linkId opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink,POST,"
+",issueIssueIdOrKeyRemotelinkLinkIdPut,cloudid issueIdOrKey linkId opts
+/issue/{issueIdOrKey}/remotelink,POST,"
 
 
 Creates or updates a remote issue link for an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/transitions,GET,"
+",issueIssueIdOrKeyRemotelinkPost,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/transitions,GET,"
 
 
 Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue&#39;s status.
 
-",cloudidRestApi3IssueIssueIdOrKeyTransitionsGet,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/transitions,POST,"
+",issueIssueIdOrKeyTransitionsGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/transitions,POST,"
 
 
 Performs an issue transition and, if the transition has a screen, updates the fields from the transition screen. Optionally, issue properties can be set.
 
-",cloudidRestApi3IssueIssueIdOrKeyTransitionsPost,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes,DELETE,"
+",issueIssueIdOrKeyTransitionsPost,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/votes,DELETE,"
 
 
 Deletes a user&#39;s vote from an issue. This is the equivalent of the user clicking Unvote on an issue in Jira.
 
-",cloudidRestApi3IssueIssueIdOrKeyVotesDelete,cloudid issueIdOrKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes,GET,"
+",issueIssueIdOrKeyVotesDelete,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/votes,GET,"
 
 
 Returns details about the votes on an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyVotesGet,cloudid issueIdOrKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes,POST,"
+",issueIssueIdOrKeyVotesGet,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/votes,POST,"
 
 
 Adds the user&#39;s vote to an issue. This is the equivalent of the user clicking Vote on an issue in Jira.
 
-",cloudidRestApi3IssueIssueIdOrKeyVotesPost,cloudid issueIdOrKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers,DELETE,"
+",issueIssueIdOrKeyVotesPost,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/watchers,DELETE,"
 
 
 Deletes a user as a watcher of an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyWatchersDelete,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers,GET,"
+",issueIssueIdOrKeyWatchersDelete,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/watchers,GET,"
 
 
 Returns the watchers for an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyWatchersGet,cloudid issueIdOrKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers,POST,"
+",issueIssueIdOrKeyWatchersGet,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/watchers,POST,"
 
 
 Adds a user as a watcher of an issue. If no user is specified the calling user is added.
 
-",cloudidRestApi3IssueIssueIdOrKeyWatchersPost,cloudid issueIdOrKey
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog,GET,"
+",issueIssueIdOrKeyWatchersPost,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/worklog,GET,"
 
 
 Returns all worklogs for an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyWorklogGet,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id},DELETE,"
+",issueIssueIdOrKeyWorklogGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog/{id},DELETE,"
 
 
 Deletes a worklog from an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete,cloudid id issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id},GET,"
+",issueIssueIdOrKeyWorklogIdDelete,cloudid id issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog/{id},GET,"
 
 
 Returns a worklog.
 
-",cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet,cloudid id issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id},PUT,"
+",issueIssueIdOrKeyWorklogIdGet,cloudid id issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog/{id},PUT,"
 
 
 Updates a worklog.
 
-",cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut,cloudid id issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog,POST,"
+",issueIssueIdOrKeyWorklogIdPut,cloudid id issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog,POST,"
 
 
 Adds a worklog to an issue.
 
-",cloudidRestApi3IssueIssueIdOrKeyWorklogPost,cloudid issueIdOrKey opts
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties,GET,"
+",issueIssueIdOrKeyWorklogPost,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties,GET,"
 
 
 Returns the keys of all properties for a worklog.
 
-",cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet,cloudid issueIdOrKey worklogId
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},DELETE,"
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesGet,cloudid issueIdOrKey worklogId
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},DELETE,"
 
 
 Deletes a worklog property.
 
-",cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete,cloudid issueIdOrKey propertyKey worklogId
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},GET,"
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete,cloudid issueIdOrKey propertyKey worklogId
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},GET,"
 
 
 Returns the value of a worklog property.
 
-",cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet,cloudid issueIdOrKey propertyKey worklogId
-/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},PUT,"
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet,cloudid issueIdOrKey propertyKey worklogId
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},PUT,"
 
 
 Sets the value of a worklog property. Use this operation to store custom data against the worklog.
 
-",cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut,cloudid issueIdOrKey propertyKey worklogId
-/{cloudid}/rest/api/3/issueLink/{linkId},DELETE,"
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut,cloudid issueIdOrKey propertyKey worklogId
+/issueLink/{linkId},DELETE,"
 
 
 Deletes an issue link.
 
-",cloudidRestApi3IssueLinkLinkIdDelete,cloudid linkId
-/{cloudid}/rest/api/3/issueLink/{linkId},GET,"
+",issueLinkLinkIdDelete,cloudid linkId
+/issueLink/{linkId},GET,"
 
 
 Returns an issue link.
 
-",cloudidRestApi3IssueLinkLinkIdGet,cloudid linkId
-/{cloudid}/rest/api/3/issueLink,POST,"
+",issueLinkLinkIdGet,cloudid linkId
+/issueLink,POST,"
 
 
 Creates a link between two issues. Use this operation to indicate a relationship between two issues and optionally add a comment to the from (outward) issue. To use this resource the site must have Issue Linking enabled.
 
-",cloudidRestApi3IssueLinkPost,cloudid opts
-/{cloudid}/rest/api/3/issueLinkType,GET,"
+",issueLinkPost,cloudid opts
+/issueLinkType,GET,"
 
 
 Returns a list of all issue link types.
 
-",cloudidRestApi3IssueLinkTypeGet,cloudid
-/{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId},DELETE,"
+",issueLinkTypeGet,cloudid
+/issueLinkType/{issueLinkTypeId},DELETE,"
 
 
 Deletes an issue link type.
 
-",cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete,cloudid issueLinkTypeId
-/{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId},GET,"
+",issueLinkTypeIssueLinkTypeIdDelete,cloudid issueLinkTypeId
+/issueLinkType/{issueLinkTypeId},GET,"
 
 
 Returns an issue link type.
 
-",cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet,cloudid issueLinkTypeId
-/{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId},PUT,"
+",issueLinkTypeIssueLinkTypeIdGet,cloudid issueLinkTypeId
+/issueLinkType/{issueLinkTypeId},PUT,"
 
 
 Updates an issue link type.
 
-",cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut,cloudid issueLinkTypeId opts
-/{cloudid}/rest/api/3/issueLinkType,POST,"
+",issueLinkTypeIssueLinkTypeIdPut,cloudid issueLinkTypeId opts
+/issueLinkType,POST,"
 
 
 Creates an issue link type. Use this operation to create descriptions of the reasons why issues are linked. The issue link type consists of a name and descriptions for a link&#39;s inward and outward relationships.
 
-",cloudidRestApi3IssueLinkTypePost,cloudid opts
-/{cloudid}/rest/api/3/issue/picker,GET,"
+",issueLinkTypePost,cloudid opts
+/issue/picker,GET,"
 
 
 Returns a list of suggested issues matching the auto-completion query for the user executing this request. This operation checks the user&#39;s history and browsing context to return issue suggestions.
 
-",cloudidRestApi3IssuePickerGet,cloudid opts
-/{cloudid}/rest/api/3/issue,POST,"
+",issuePickerGet,cloudid opts
+/issue,POST,"
 
 
 Creates an issue or, where the option to create sub-tasks is enabled in Jira, a sub-task. A transition may be applied, to move the issue or sub-task to a workflow step other than the default start step, and issue properties set.
 
-",cloudidRestApi3IssuePost,cloudid opts
-/{cloudid}/rest/api/3/issue/properties/{propertyKey},DELETE,"
+",issuePost,cloudid opts
+/issue/properties/{propertyKey},DELETE,"
 
 
 Deletes a property value from multiple issues. The issues to be updated can be specified by filter criteria.
 
-",cloudidRestApi3IssuePropertiesPropertyKeyDelete,cloudid propertyKey opts
-/{cloudid}/rest/api/3/issue/properties/{propertyKey},PUT,"
+",issuePropertiesPropertyKeyDelete,cloudid propertyKey opts
+/issue/properties/{propertyKey},PUT,"
 
 
 Sets a property value on multiple issues. The issues to be updated can be specified by a filter.
 
-",cloudidRestApi3IssuePropertiesPropertyKeyPut,cloudid propertyKey opts
-/{cloudid}/rest/api/3/issuesecurityschemes,GET,"
+",issuePropertiesPropertyKeyPut,cloudid propertyKey opts
+/issuesecurityschemes,GET,"
 
 
 Returns all issue security schemes.
 
-",cloudidRestApi3IssuesecurityschemesGet,cloudid
-/{cloudid}/rest/api/3/issuesecurityschemes/{id},GET,"
+",issuesecurityschemesGet,cloudid
+/issuesecurityschemes/{id},GET,"
 
 
 Returns an issue security scheme along with its security levels.
 
-",cloudidRestApi3IssuesecurityschemesIdGet,cloudid id
-/{cloudid}/rest/api/3/issuetype,GET,"
+",issuesecurityschemesIdGet,cloudid id
+/issuetype,GET,"
 
 
 Returns all issue types. Permissions required: Permission to access Jira, however, only issue types that are visible to the user are returned.
 
-",cloudidRestApi3IssuetypeGet,cloudid
-/{cloudid}/rest/api/3/issuetype/{id}/alternatives,GET,"
+",issuetypeGet,cloudid
+/issuetype/{id}/alternatives,GET,"
 
 
 Returns a list of issue types that can be used to replace the issue type. The alternative issue types are those assigned to the same workflow scheme, field configuration scheme, and screen scheme. Permissions required: Permission to access Jira.
 
-",cloudidRestApi3IssuetypeIdAlternativesGet,cloudid id
-/{cloudid}/rest/api/3/issuetype/{id}/avatar2,POST,"
+",issuetypeIdAlternativesGet,cloudid id
+/issuetype/{id}/avatar2,POST,"
 
 
 Loads an avatar for the issue type.
 
-",cloudidRestApi3IssuetypeIdAvatar2Post,cloudid id opts
-/{cloudid}/rest/api/3/issuetype/{id},DELETE,"
+",issuetypeIdAvatar2Post,cloudid id opts
+/issuetype/{id},DELETE,"
 
 
 Deletes the issue type. If the issue type is in use, all uses are updated with the alternative issue type (alternativeIssueTypeId). A list of alternative issue types can be obtained from the Get alternative issue types resource. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3IssuetypeIdDelete,cloudid id opts
-/{cloudid}/rest/api/3/issuetype/{id},GET,"
+",issuetypeIdDelete,cloudid id opts
+/issuetype/{id},GET,"
 
 
 Returns an issue type. Permissions required:
 
-",cloudidRestApi3IssuetypeIdGet,cloudid id
-/{cloudid}/rest/api/3/issuetype/{id},PUT,"
+",issuetypeIdGet,cloudid id
+/issuetype/{id},PUT,"
 
 
 Updates the issue type. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3IssuetypeIdPut,cloudid id opts
-/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties,GET,"
+",issuetypeIdPut,cloudid id opts
+/issuetype/{issueTypeId}/properties,GET,"
 
 
 Returns all the issue type property keys of the issue type. Permissions required:
 
-",cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet,cloudid issueTypeId
-/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey},DELETE,"
+",issuetypeIssueTypeIdPropertiesGet,cloudid issueTypeId
+/issuetype/{issueTypeId}/properties/{propertyKey},DELETE,"
 
 
 Deletes the issue type property. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete,cloudid issueTypeId propertyKey
-/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey},GET,"
+",issuetypeIssueTypeIdPropertiesPropertyKeyDelete,cloudid issueTypeId propertyKey
+/issuetype/{issueTypeId}/properties/{propertyKey},GET,"
 
 
 Returns the key and value of the issue type property. Permissions required:
 
-",cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet,cloudid issueTypeId propertyKey
-/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey},PUT,"
+",issuetypeIssueTypeIdPropertiesPropertyKeyGet,cloudid issueTypeId propertyKey
+/issuetype/{issueTypeId}/properties/{propertyKey},PUT,"
 
 
 Creates or updates the value of the issue type property. Use this resource to store and update data against an issue type. The value of the request body must be a valid, non-empty JSON blob. The maximum length of the property value is 32768 bytes. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut,cloudid issueTypeId propertyKey
-/{cloudid}/rest/api/3/issuetype,POST,"
+",issuetypeIssueTypeIdPropertiesPropertyKeyPut,cloudid issueTypeId propertyKey
+/issuetype,POST,"
 
 
 Creates an issue type and adds it to the default issue type scheme. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3IssuetypePost,cloudid opts
-/{cloudid}/rest/api/3/jql/autocompletedata,GET,"
+",issuetypePost,cloudid opts
+/jql/autocompletedata,GET,"
 
 
 Returns reference data for JQL searches. This is a downloadable version of the documentation provided in Advanced searching - fields reference and Advanced searching - functions reference, along with a list of JQL-reserved words. Use this information to assist with the programmatic creation of JQL queries or the validation of queries built in a custom query builder.
 
-",cloudidRestApi3JqlAutocompletedataGet,cloudid
-/{cloudid}/rest/api/3/jql/autocompletedata/suggestions,GET,"
+",jqlAutocompletedataGet,cloudid
+/jql/autocompletedata/suggestions,GET,"
 
 
 Returns the JQL search auto complete suggestions for a field.
 
-",cloudidRestApi3JqlAutocompletedataSuggestionsGet,cloudid opts
-/{cloudid}/rest/api/3/jql/pdcleaner,POST,"
+",jqlAutocompletedataSuggestionsGet,cloudid opts
+/jql/pdcleaner,POST,"
 
 
 The query strings having personal data that need to be migrated. There should be at most 100 queries.
 
-",cloudidRestApi3JqlPdcleanerPost,cloudid opts
-/{cloudid}/rest/api/3/mypermissions,GET,"
+",jqlPdcleanerPost,cloudid opts
+/mypermissions,GET,"
 
 
 Returns a list of permissions indicating which permissions the user has. Details of the user&#39;s permissions can be obtained in a global, project, or issue context.
 
-",cloudidRestApi3MypermissionsGet,cloudid opts
-/{cloudid}/rest/api/3/mypreferences,DELETE,"
+",mypermissionsGet,cloudid opts
+/mypreferences,DELETE,"
 
 
 Deletes a preference of the user, which restores the default value of system defined settings.
 
-",cloudidRestApi3MypreferencesDelete,cloudid opts
-/{cloudid}/rest/api/3/mypreferences,GET,"
+",mypreferencesDelete,cloudid opts
+/mypreferences,GET,"
 
 
 Returns the value of a preference of the user.
 
-",cloudidRestApi3MypreferencesGet,cloudid opts
-/{cloudid}/rest/api/3/mypreferences/locale,DELETE,"
+",mypreferencesGet,cloudid opts
+/mypreferences/locale,DELETE,"
 
 
 Deletes the locale of the current user, which restores the default setting.
 
-",cloudidRestApi3MypreferencesLocaleDelete,cloudid
-/{cloudid}/rest/api/3/mypreferences/locale,GET,"
+",mypreferencesLocaleDelete,cloudid
+/mypreferences/locale,GET,"
 
 
 Returns the locale for the current user.
 
-",cloudidRestApi3MypreferencesLocaleGet,cloudid
-/{cloudid}/rest/api/3/mypreferences/locale,PUT,"
+",mypreferencesLocaleGet,cloudid
+/mypreferences/locale,PUT,"
 
 
 Sets the locale of the current user. The requested locale must be one supported by the instance of Jira.
 
-",cloudidRestApi3MypreferencesLocalePut,cloudid opts
-/{cloudid}/rest/api/3/mypreferences,PUT,"
+",mypreferencesLocalePut,cloudid opts
+/mypreferences,PUT,"
 
 
 Creates a preference for the user or updates its value. An arbitrary preference can be created with the value containing up to 255 characters. In addition, the following keys define system preferences that can be set or created:
 
-",cloudidRestApi3MypreferencesPut,cloudid opts
-/{cloudid}/rest/api/3/myself,GET,"
+",mypreferencesPut,cloudid opts
+/myself,GET,"
 
 
 Returns details for the authenticated user.
 
-",cloudidRestApi3MyselfGet,cloudid opts
-/{cloudid}/rest/api/3/notificationscheme,GET,"
+",myselfGet,cloudid opts
+/notificationscheme,GET,"
 
 
 Returns a paginated list of notification schemes in order by display name.
 
-",cloudidRestApi3NotificationschemeGet,cloudid opts
-/{cloudid}/rest/api/3/notificationscheme/{id},GET,"
+",notificationschemeGet,cloudid opts
+/notificationscheme/{id},GET,"
 
 
 Returns a notification scheme, including the list of events and the recipients who will receive notifications for those events.
 
-",cloudidRestApi3NotificationschemeIdGet,cloudid id opts
-/{cloudid}/rest/api/3/permissions,GET,"
+",notificationschemeIdGet,cloudid id opts
+/permissions,GET,"
 
 
 Returns all permissions, including:
 
-",cloudidRestApi3PermissionsGet,cloudid
-/{cloudid}/rest/api/3/permissions/project,POST,"
+",permissionsGet,cloudid
+/permissions/project,POST,"
 
 
 Returns all the projects where the user is granted a list of project permissions.
 
-",cloudidRestApi3PermissionsProjectPost,cloudid opts
-/{cloudid}/rest/api/3/permissionscheme,GET,"
+",permissionsProjectPost,cloudid opts
+/permissionscheme,GET,"
 
 
 Returns all permission schemes.
 
-",cloudidRestApi3PermissionschemeGet,cloudid opts
-/{cloudid}/rest/api/3/permissionscheme,POST,"
+",permissionschemeGet,cloudid opts
+/permissionscheme,POST,"
 
 
 Creates a new permission scheme. You can create a permission scheme with or without defining a set of permission grants. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3PermissionschemePost,cloudid opts
-/{cloudid}/rest/api/3/permissionscheme/{schemeId},DELETE,"
+",permissionschemePost,cloudid opts
+/permissionscheme/{schemeId},DELETE,"
 
 
 Deletes a permission scheme. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3PermissionschemeSchemeIdDelete,cloudid schemeId
-/{cloudid}/rest/api/3/permissionscheme/{schemeId},GET,"
+",permissionschemeSchemeIdDelete,cloudid schemeId
+/permissionscheme/{schemeId},GET,"
 
 
 Returns a permission scheme. Permissions required: Permission to log in to Jira.
 
-",cloudidRestApi3PermissionschemeSchemeIdGet,cloudid schemeId opts
-/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission,GET,"
+",permissionschemeSchemeIdGet,cloudid schemeId opts
+/permissionscheme/{schemeId}/permission,GET,"
 
 
 Returns all permission grants for a permission scheme. Permissions required: Permission to log in to Jira.
 
-",cloudidRestApi3PermissionschemeSchemeIdPermissionGet,cloudid schemeId opts
-/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId},DELETE,"
+",permissionschemeSchemeIdPermissionGet,cloudid schemeId opts
+/permissionscheme/{schemeId}/permission/{permissionId},DELETE,"
 
 
 Deletes a permission grant from a permission scheme. See About permission schemes and grants for more details. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete,cloudid permissionId schemeId
-/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId},GET,"
+",permissionschemeSchemeIdPermissionPermissionIdDelete,cloudid permissionId schemeId
+/permissionscheme/{schemeId}/permission/{permissionId},GET,"
 
 
 Returns a permission grant. Permissions required: Permission to log in to Jira.
 
-",cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet,cloudid permissionId schemeId opts
-/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission,POST,"
+",permissionschemeSchemeIdPermissionPermissionIdGet,cloudid permissionId schemeId opts
+/permissionscheme/{schemeId}/permission,POST,"
 
 
 Creates a new permission grant in the given permission scheme. Permissions required: Administer Jira global permission.
 
-",cloudidRestApi3PermissionschemeSchemeIdPermissionPost,cloudid schemeId opts
-/{cloudid}/rest/api/3/permissionscheme/{schemeId},PUT,"
+",permissionschemeSchemeIdPermissionPost,cloudid schemeId opts
+/permissionscheme/{schemeId},PUT,"
 
 
 Updates a permission scheme. Below are some important things to note when using this resource:
 
-",cloudidRestApi3PermissionschemeSchemeIdPut,cloudid schemeId opts
-/{cloudid}/rest/api/3/priority,GET,"
+",permissionschemeSchemeIdPut,cloudid schemeId opts
+/priority,GET,"
 
 
 Returns the list of all issue priorities.
 
-",cloudidRestApi3PriorityGet,cloudid
-/{cloudid}/rest/api/3/priority/{id},GET,"
+",priorityGet,cloudid
+/priority/{id},GET,"
 
 
 Returns an issue priority.
 
-",cloudidRestApi3PriorityIdGet,cloudid id
-/{cloudid}/rest/api/3/projectCategory,GET,"
+",priorityIdGet,cloudid id
+/projectCategory,GET,"
 
 
 Returns all project categories.
 
-",cloudidRestApi3ProjectCategoryGet,cloudid
-/{cloudid}/rest/api/3/projectCategory/{id},DELETE,"
+",projectCategoryGet,cloudid
+/projectCategory/{id},DELETE,"
 
 
 Deletes a project category.
 
-",cloudidRestApi3ProjectCategoryIdDelete,cloudid id
-/{cloudid}/rest/api/3/projectCategory/{id},GET,"
+",projectCategoryIdDelete,cloudid id
+/projectCategory/{id},GET,"
 
 
 Returns a project category.
 
-",cloudidRestApi3ProjectCategoryIdGet,cloudid id
-/{cloudid}/rest/api/3/projectCategory/{id},PUT,"
+",projectCategoryIdGet,cloudid id
+/projectCategory/{id},PUT,"
 
 
 Updates a project category.
 
-",cloudidRestApi3ProjectCategoryIdPut,cloudid id opts
-/{cloudid}/rest/api/3/projectCategory,POST,"
+",projectCategoryIdPut,cloudid id opts
+/projectCategory,POST,"
 
 
 Creates a project category.
 
-",cloudidRestApi3ProjectCategoryPost,cloudid opts
-/{cloudid}/rest/api/3/project,GET,"
+",projectCategoryPost,cloudid opts
+/project,GET,"
 
 
 Returns all projects visible to the currently logged in user. Deprecated, use Get projects paginated that supports search and pagination. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, it returns all projects that are visible for anonymous users.
 
-",cloudidRestApi3ProjectGet,cloudid opts
-/{cloudid}/rest/api/3/project,POST,"
+",projectGet,cloudid opts
+/project,POST,"
 
 
 Creates a new project.
 
-",cloudidRestApi3ProjectPost,cloudid opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar2,POST,"
+",projectPost,cloudid opts
+/project/{projectIdOrKey}/avatar2,POST,"
 
 
 Loads an avatar for a project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post,cloudid projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar/{id},DELETE,"
+",projectProjectIdOrKeyAvatar2Post,cloudid projectIdOrKey opts
+/project/{projectIdOrKey}/avatar/{id},DELETE,"
 
 
 Deletes a custom avatar from a project. Note that system avatars cannot be deleted.
 
-",cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete,cloudid id projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar,PUT,"
+",projectProjectIdOrKeyAvatarIdDelete,cloudid id projectIdOrKey
+/project/{projectIdOrKey}/avatar,PUT,"
 
 
 Sets the avatar displayed for a project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyAvatarPut,cloudid projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatars,GET,"
+",projectProjectIdOrKeyAvatarPut,cloudid projectIdOrKey opts
+/project/{projectIdOrKey}/avatars,GET,"
 
 
 Returns all project avatars, grouped by system and custom avatars.
 
-",cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet,cloudid projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/component,GET,"
+",projectProjectIdOrKeyAvatarsGet,cloudid projectIdOrKey
+/project/{projectIdOrKey}/component,GET,"
 
 
 Returns a paginated representation of all components existing in a single project. See the Get project components resource if you want to get a full list of versions without pagination.
 
-",cloudidRestApi3ProjectProjectIdOrKeyComponentGet,cloudid projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/components,GET,"
+",projectProjectIdOrKeyComponentGet,cloudid projectIdOrKey opts
+/project/{projectIdOrKey}/components,GET,"
 
 
 Returns all components existing in a single project. See the Get project components paginated resource if you want to get a full list of components with pagination.
 
-",cloudidRestApi3ProjectProjectIdOrKeyComponentsGet,cloudid projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey},DELETE,"
+",projectProjectIdOrKeyComponentsGet,cloudid projectIdOrKey
+/project/{projectIdOrKey},DELETE,"
 
 
 Deletes an existing project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyDelete,cloudid projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey},GET,"
+",projectProjectIdOrKeyDelete,cloudid projectIdOrKey
+/project/{projectIdOrKey},GET,"
 
 
 Returns the project details for the specified project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyGet,cloudid projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties,GET,"
+",projectProjectIdOrKeyGet,cloudid projectIdOrKey opts
+/project/{projectIdOrKey}/properties,GET,"
 
 
 Returns all project property keys for the project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet,cloudid projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey},DELETE,"
+",projectProjectIdOrKeyPropertiesGet,cloudid projectIdOrKey
+/project/{projectIdOrKey}/properties/{propertyKey},DELETE,"
 
 
 Removes the property from the project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete,cloudid projectIdOrKey propertyKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey},GET,"
+",projectProjectIdOrKeyPropertiesPropertyKeyDelete,cloudid projectIdOrKey propertyKey
+/project/{projectIdOrKey}/properties/{propertyKey},GET,"
 
 
 Returns the value of the project property.
 
-",cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet,cloudid projectIdOrKey propertyKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey},PUT,"
+",projectProjectIdOrKeyPropertiesPropertyKeyGet,cloudid projectIdOrKey propertyKey
+/project/{projectIdOrKey}/properties/{propertyKey},PUT,"
 
 
 Sets the value of the project property. You can use project properties to store custom data against the project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut,cloudid projectIdOrKey propertyKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey},PUT,"
+",projectProjectIdOrKeyPropertiesPropertyKeyPut,cloudid projectIdOrKey propertyKey
+/project/{projectIdOrKey},PUT,"
 
 
 Updates the project details of an existing project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyPut,cloudid projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/role,GET,"
+",projectProjectIdOrKeyPut,cloudid projectIdOrKey opts
+/project/{projectIdOrKey}/role,GET,"
 
 
 Returns a list of project roles for the project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyRoleGet,cloudid projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id},DELETE,"
+",projectProjectIdOrKeyRoleGet,cloudid projectIdOrKey
+/project/{projectIdOrKey}/role/{id},DELETE,"
 
 
 Deletes actors from a project role for the project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete,cloudid id projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id},GET,"
+",projectProjectIdOrKeyRoleIdDelete,cloudid id projectIdOrKey opts
+/project/{projectIdOrKey}/role/{id},GET,"
 
 
 Returns the project role&#39;s details and actors associated with the project. The list of actors is sorted by display name.
 
-",cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet,cloudid id projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id},POST,"
+",projectProjectIdOrKeyRoleIdGet,cloudid id projectIdOrKey
+/project/{projectIdOrKey}/role/{id},POST,"
 
 
 Adds additional actors to a project role for the project.
 
-",cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost,cloudid id projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id},PUT,"
+",projectProjectIdOrKeyRoleIdPost,cloudid id projectIdOrKey opts
+/project/{projectIdOrKey}/role/{id},PUT,"
 
 
 Associates actors with the project role for the project, replacing all existing actors.
 
-",cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut,cloudid id projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/roledetails,GET,"
+",projectProjectIdOrKeyRoleIdPut,cloudid id projectIdOrKey opts
+/project/{projectIdOrKey}/roledetails,GET,"
 
 
 Returns all project roles and the details for each role. Note that the list of project roles is common to all projects.
 
-",cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet,cloudid projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/statuses,GET,"
+",projectProjectIdOrKeyRoledetailsGet,cloudid projectIdOrKey
+/project/{projectIdOrKey}/statuses,GET,"
 
 
 Returns the valid statuses for a project. The statuses are grouped by issue type, as each project has a set of valid issue types and each issue type has a set of valid statuses.
 
-",cloudidRestApi3ProjectProjectIdOrKeyStatusesGet,cloudid projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/type/{newProjectTypeKey},PUT,"
+",projectProjectIdOrKeyStatusesGet,cloudid projectIdOrKey
+/project/{projectIdOrKey}/type/{newProjectTypeKey},PUT,"
 
 
 Updates the project type.
 
-",cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut,cloudid newProjectTypeKey projectIdOrKey
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/version,GET,"
+",projectProjectIdOrKeyTypeNewProjectTypeKeyPut,cloudid newProjectTypeKey projectIdOrKey
+/project/{projectIdOrKey}/version,GET,"
 
 
 Returns a paginated representation of all versions existing in a single project. See the Get project versions resource if you want to get a full list of versions without pagination.
 
-",cloudidRestApi3ProjectProjectIdOrKeyVersionGet,cloudid projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectIdOrKey}/versions,GET,"
+",projectProjectIdOrKeyVersionGet,cloudid projectIdOrKey opts
+/project/{projectIdOrKey}/versions,GET,"
 
 
 Returns all versions existing in a single project. The response is not paginated. Use Get project versions paginated if you want to get the versions in a project with pagination.
 
-",cloudidRestApi3ProjectProjectIdOrKeyVersionsGet,cloudid projectIdOrKey opts
-/{cloudid}/rest/api/3/project/{projectKeyOrId}/issuesecuritylevelscheme,GET,"
+",projectProjectIdOrKeyVersionsGet,cloudid projectIdOrKey opts
+/project/{projectKeyOrId}/issuesecuritylevelscheme,GET,"
 
 
 Returns the issue security scheme associated with the project.
 
-",cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet,cloudid projectKeyOrId
-/{cloudid}/rest/api/3/project/{projectKeyOrId}/notificationscheme,GET,"
+",projectProjectKeyOrIdIssuesecuritylevelschemeGet,cloudid projectKeyOrId
+/project/{projectKeyOrId}/notificationscheme,GET,"
 
 
 Gets a notification scheme associated with the project. See the Get notification scheme resource for more information about notification schemes.
 
-",cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet,cloudid projectKeyOrId opts
-/{cloudid}/rest/api/3/project/{projectKeyOrId}/permissionscheme,GET,"
+",projectProjectKeyOrIdNotificationschemeGet,cloudid projectKeyOrId opts
+/project/{projectKeyOrId}/permissionscheme,GET,"
 
 
 Gets the permission scheme associated with the project.
 
-",cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet,cloudid projectKeyOrId opts
-/{cloudid}/rest/api/3/project/{projectKeyOrId}/permissionscheme,PUT,"
+",projectProjectKeyOrIdPermissionschemeGet,cloudid projectKeyOrId opts
+/project/{projectKeyOrId}/permissionscheme,PUT,"
 
 
 Associates a permission scheme with a particular project. See Managing project permissions for more information about permission schemes.
 
-",cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut,cloudid projectKeyOrId opts
-/{cloudid}/rest/api/3/project/{projectKeyOrId}/securitylevel,GET,"
+",projectProjectKeyOrIdPermissionschemePut,cloudid projectKeyOrId opts
+/project/{projectKeyOrId}/securitylevel,GET,"
 
 
 Returns all issue security levels for the project that the currently authenticated user has access to. If the user does not have permission to see an issue security level, then that level is not returned. If the user lacks the Set Issue Security permission, then an empty list is returned.
 
-",cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet,cloudid projectKeyOrId
-/{cloudid}/rest/api/3/project/search,GET,"
+",projectProjectKeyOrIdSecuritylevelGet,cloudid projectKeyOrId
+/project/search,GET,"
 
 
 Returns projects visible to the currently logged in user. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, then all projects visible to anonymous users are returned.
 
-",cloudidRestApi3ProjectSearchGet,cloudid opts
-/{cloudid}/rest/api/3/project/type,GET,"
+",projectSearchGet,cloudid opts
+/project/type,GET,"
 
 
 Returns all project types, whether or not the instance has a valid license for each type.
 
-",cloudidRestApi3ProjectTypeGet,cloudid
-/{cloudid}/rest/api/3/project/type/{projectTypeKey}/accessible,GET,"
+",projectTypeGet,cloudid
+/project/type/{projectTypeKey}/accessible,GET,"
 
 
 Returns a project type if it is accessible to the logged in user.
 
-",cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet,cloudid projectTypeKey
-/{cloudid}/rest/api/3/project/type/{projectTypeKey},GET,"
+",projectTypeProjectTypeKeyAccessibleGet,cloudid projectTypeKey
+/project/type/{projectTypeKey},GET,"
 
 
 Returns a project type.
 
-",cloudidRestApi3ProjectTypeProjectTypeKeyGet,cloudid projectTypeKey
-/{cloudid}/rest/api/3/projectvalidate/key,GET,"
+",projectTypeProjectTypeKeyGet,cloudid projectTypeKey
+/projectvalidate/key,GET,"
 
 
 Validates a project key by confirming the key is a valid string and not in use.
 
-",cloudidRestApi3ProjectvalidateKeyGet,cloudid opts
-/{cloudid}/rest/api/3/projectvalidate/validProjectKey,GET,"
+",projectvalidateKeyGet,cloudid opts
+/projectvalidate/validProjectKey,GET,"
 
 
 Validates a project key and, if the key is invalid or in use, generates a valid random string for the project key.
 
-",cloudidRestApi3ProjectvalidateValidProjectKeyGet,cloudid opts
-/{cloudid}/rest/api/3/projectvalidate/validProjectName,GET,"
+",projectvalidateValidProjectKeyGet,cloudid opts
+/projectvalidate/validProjectName,GET,"
 
 
 Checks that a project name isn&#39;t in use. If the name isn&#39;t in use, the passed string is returned. If the name is in use, this operation attempts to generate a valid project name based on the one supplied, usually by adding a sequence number. If a valid project name cannot be generated, a 404 response is returned.
 
-",cloudidRestApi3ProjectvalidateValidProjectNameGet,cloudid opts
-/{cloudid}/rest/api/3/resolution,GET,"
+",projectvalidateValidProjectNameGet,cloudid opts
+/resolution,GET,"
 
 
 Returns a list of all issue resolution values.
 
-",cloudidRestApi3ResolutionGet,cloudid
-/{cloudid}/rest/api/3/resolution/{id},GET,"
+",resolutionGet,cloudid
+/resolution/{id},GET,"
 
 
 Returns an issue resolution value.
 
-",cloudidRestApi3ResolutionIdGet,cloudid id
-/{cloudid}/rest/api/3/role,GET,"
+",resolutionIdGet,cloudid id
+/role,GET,"
 
 
 Gets a list of all project roles, complete with project role details and default actors.
 
-",cloudidRestApi3RoleGet,cloudid
-/{cloudid}/rest/api/3/role/{id}/actors,DELETE,"
+",roleGet,cloudid
+/role/{id}/actors,DELETE,"
 
 
 Removes default actors from the project role. You may remove either a group or user, but you cannot remove a group and a user in the same request.
 
-",cloudidRestApi3RoleIdActorsDelete,cloudid id opts
-/{cloudid}/rest/api/3/role/{id}/actors,GET,"
+",roleIdActorsDelete,cloudid id opts
+/role/{id}/actors,GET,"
 
 
 Returns the default actors for the project role.
 
-",cloudidRestApi3RoleIdActorsGet,cloudid id
-/{cloudid}/rest/api/3/role/{id}/actors,POST,"
+",roleIdActorsGet,cloudid id
+/role/{id}/actors,POST,"
 
 
 Adds default actors to the given role. You may add either groups or users, but you cannot add groups and users in the same request.
 
-",cloudidRestApi3RoleIdActorsPost,cloudid id opts
-/{cloudid}/rest/api/3/role/{id},DELETE,"
+",roleIdActorsPost,cloudid id opts
+/role/{id},DELETE,"
 
 
 Deletes a project role. You must specify a replacement project role if you wish to delete a project role that is in use.
 
-",cloudidRestApi3RoleIdDelete,cloudid id opts
-/{cloudid}/rest/api/3/role/{id},GET,"
+",roleIdDelete,cloudid id opts
+/role/{id},GET,"
 
 
 Gets the project role details and the default actors associated with the role. The list of default actors is sorted by display name.
 
-",cloudidRestApi3RoleIdGet,cloudid id
-/{cloudid}/rest/api/3/role/{id},POST,"
+",roleIdGet,cloudid id
+/role/{id},POST,"
 
 
 Update either the project role&#39;s name or its description.
 
-",cloudidRestApi3RoleIdPost,cloudid id opts
-/{cloudid}/rest/api/3/role/{id},PUT,"
+",roleIdPost,cloudid id opts
+/role/{id},PUT,"
 
 
 Update the project role&#39;s name and description. You must include both a name and a description in the request.
 
-",cloudidRestApi3RoleIdPut,cloudid id opts
-/{cloudid}/rest/api/3/role,POST,"
+",roleIdPut,cloudid id opts
+/role,POST,"
 
 
 Creates a new project role with no default actors. You can use the Add default actors to project role the project method to add default actors to the project role after creating it.
 
-",cloudidRestApi3RolePost,cloudid opts
-/{cloudid}/rest/api/3/screens/addToDefault/{fieldId},POST,"
+",rolePost,cloudid opts
+/screens/addToDefault/{fieldId},POST,"
 
 
 Adds a field to the default tab of the default screen.
 
-",cloudidRestApi3ScreensAddToDefaultFieldIdPost,cloudid fieldId
-/{cloudid}/rest/api/3/screens,GET,"
+",screensAddToDefaultFieldIdPost,cloudid fieldId
+/screens,GET,"
 
 
 Returns all screens.
 
-",cloudidRestApi3ScreensGet,cloudid opts
-/{cloudid}/rest/api/3/screens/{screenId}/availableFields,GET,"
+",screensGet,cloudid opts
+/screens/{screenId}/availableFields,GET,"
 
 
 Returns the fields that can be added to a tab on a screen.
 
-",cloudidRestApi3ScreensScreenIdAvailableFieldsGet,cloudid screenId
-/{cloudid}/rest/api/3/screens/{screenId}/tabs,GET,"
+",screensScreenIdAvailableFieldsGet,cloudid screenId
+/screens/{screenId}/tabs,GET,"
 
 
 Returns the list of tabs for a screen.
 
-",cloudidRestApi3ScreensScreenIdTabsGet,cloudid screenId opts
-/{cloudid}/rest/api/3/screens/{screenId}/tabs,POST,"
+",screensScreenIdTabsGet,cloudid screenId opts
+/screens/{screenId}/tabs,POST,"
 
 
 Creates a tab for a screen.
 
-",cloudidRestApi3ScreensScreenIdTabsPost,cloudid screenId opts
-/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId},DELETE,"
+",screensScreenIdTabsPost,cloudid screenId opts
+/screens/{screenId}/tabs/{tabId},DELETE,"
 
 
 Deletes a screen tab.
 
-",cloudidRestApi3ScreensScreenIdTabsTabIdDelete,cloudid screenId tabId
-/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields,GET,"
+",screensScreenIdTabsTabIdDelete,cloudid screenId tabId
+/screens/{screenId}/tabs/{tabId}/fields,GET,"
 
 
 Returns all fields for a screen tab.
 
-",cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet,cloudid screenId tabId opts
-/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id},DELETE,"
+",screensScreenIdTabsTabIdFieldsGet,cloudid screenId tabId opts
+/screens/{screenId}/tabs/{tabId}/fields/{id},DELETE,"
 
 
 Removes a field from a screen tab.
 
-",cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete,cloudid id screenId tabId
-/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}/move,POST,"
+",screensScreenIdTabsTabIdFieldsIdDelete,cloudid id screenId tabId
+/screens/{screenId}/tabs/{tabId}/fields/{id}/move,POST,"
 
 
 Moves a screen tab field.
 
-",cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost,cloudid id screenId tabId opts
-/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields,POST,"
+",screensScreenIdTabsTabIdFieldsIdMovePost,cloudid id screenId tabId opts
+/screens/{screenId}/tabs/{tabId}/fields,POST,"
 
 
 Adds a field to a screen tab.
 
-",cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost,cloudid screenId tabId opts
-/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/move/{pos},POST,"
+",screensScreenIdTabsTabIdFieldsPost,cloudid screenId tabId opts
+/screens/{screenId}/tabs/{tabId}/move/{pos},POST,"
 
 
 Moves a screen tab.
 
-",cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost,cloudid pos screenId tabId
-/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId},PUT,"
+",screensScreenIdTabsTabIdMovePosPost,cloudid pos screenId tabId
+/screens/{screenId}/tabs/{tabId},PUT,"
 
 
 Updates the name of a screen tab.
 
-",cloudidRestApi3ScreensScreenIdTabsTabIdPut,cloudid screenId tabId opts
-/{cloudid}/rest/api/3/search,GET,"
+",screensScreenIdTabsTabIdPut,cloudid screenId tabId opts
+/search,GET,"
 
 
 Searches for issues using JQL. Permissions required: Permission to access Jira.
 
-",cloudidRestApi3SearchGet,cloudid opts
-/{cloudid}/rest/api/3/search,POST,"
+",searchGet,cloudid opts
+/search,POST,"
 
 
 Searches for issues using JQL. Permissions required: Permission to access Jira.
 
-",cloudidRestApi3SearchPost,cloudid opts
-/{cloudid}/rest/api/3/securitylevel/{id},GET,"
+",searchPost,cloudid opts
+/securitylevel/{id},GET,"
 
 
 Returns details of an issue security level.
 
-",cloudidRestApi3SecuritylevelIdGet,cloudid id
-/{cloudid}/rest/api/3/serverInfo,GET,"
+",securitylevelIdGet,cloudid id
+/serverInfo,GET,"
 
 
 Returns information about the Jira instance.
 
-",cloudidRestApi3ServerInfoGet,cloudid
-/{cloudid}/rest/api/3/settings/columns,GET,"
+",serverInfoGet,cloudid
+/settings/columns,GET,"
 
 
 Returns the default issue navigator columns.
 
-",cloudidRestApi3SettingsColumnsGet,cloudid
-/{cloudid}/rest/api/3/settings/columns,PUT,"
+",settingsColumnsGet,cloudid
+/settings/columns,PUT,"
 
 
 Sets the default issue navigator columns.
 
-",cloudidRestApi3SettingsColumnsPut,cloudid
-/{cloudid}/rest/api/3/status,GET,"
+",settingsColumnsPut,cloudid
+/status,GET,"
 
 
 Returns a list of all statuses associated with workflows.
 
-",cloudidRestApi3StatusGet,cloudid
-/{cloudid}/rest/api/3/status/{idOrName},GET,"
+",statusGet,cloudid
+/status/{idOrName},GET,"
 
 
 Returns a status. The status must be associated with a workflow to be returned.
 
-",cloudidRestApi3StatusIdOrNameGet,cloudid idOrName
-/{cloudid}/rest/api/3/statuscategory,GET,"
+",statusIdOrNameGet,cloudid idOrName
+/statuscategory,GET,"
 
 
 Returns a list of all status categories.
 
-",cloudidRestApi3StatuscategoryGet,cloudid
-/{cloudid}/rest/api/3/statuscategory/{idOrKey},GET,"
+",statuscategoryGet,cloudid
+/statuscategory/{idOrKey},GET,"
 
 
 Returns a status category. Status categories provided a mechanism for categorizing statuses.
 
-",cloudidRestApi3StatuscategoryIdOrKeyGet,cloudid idOrKey
-/{cloudid}/rest/api/3/task/{taskId}/cancel,POST,"
+",statuscategoryIdOrKeyGet,cloudid idOrKey
+/task/{taskId}/cancel,POST,"
 
 
 Cancels a task.
 
-",cloudidRestApi3TaskTaskIdCancelPost,cloudid taskId
-/{cloudid}/rest/api/3/task/{taskId},GET,"
+",taskTaskIdCancelPost,cloudid taskId
+/task/{taskId},GET,"
 
 
 Returns the status of a long-running asynchronous task.
 
-",cloudidRestApi3TaskTaskIdGet,cloudid taskId
-/{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{entityId},GET,"
+",taskTaskIdGet,cloudid taskId
+/universal_avatar/type/{type}/owner/{entityId},GET,"
 
 
 Returns the system and custom avatars for a project or issue type.
 
-",cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet,cloudid entityId type
-/{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{entityId},POST,"
+",universalAvatarTypeTypeOwnerEntityIdGet,cloudid entityId type
+/universal_avatar/type/{type}/owner/{entityId},POST,"
 
 
 Loads a custom avatar for a project or issue type.
 
-",cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost,cloudid entityId type opts
-/{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id},DELETE,"
+",universalAvatarTypeTypeOwnerEntityIdPost,cloudid entityId type opts
+/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id},DELETE,"
 
 
 Deletes an avatar from a project or issue type.
 
-",cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete,cloudid id owningObjectId type
-/{cloudid}/rest/api/3/user/assignable/multiProjectSearch,GET,"
+",universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete,cloudid id owningObjectId type
+/user/assignable/multiProjectSearch,GET,"
 
 
 Returns a list of users who fulfill both of these criteria:
 
-",cloudidRestApi3UserAssignableMultiProjectSearchGet,cloudid opts
-/{cloudid}/rest/api/3/user/assignable/search,GET,"
+",userAssignableMultiProjectSearchGet,cloudid opts
+/user/assignable/search,GET,"
 
 
 Returns a list of users that can be assigned to an issue. Use this method to find the list of users who can be assigned to:
 
-",cloudidRestApi3UserAssignableSearchGet,cloudid opts
-/{cloudid}/rest/api/3/user/bulk,GET,"
+",userAssignableSearchGet,cloudid opts
+/user/bulk,GET,"
 
 
 Returns details of users specified in a list of usernames or keys. Permissions required: Administer Jira global permission. Users with permission to access Jira can call this method, but empty search results are returned.
 
-",cloudidRestApi3UserBulkGet,cloudid opts
-/{cloudid}/rest/api/3/user/columns,DELETE,"
+",userBulkGet,cloudid opts
+/user/columns,DELETE,"
 
 
 Resets the default issue table columns for the user to the system default. If a username is not passed, the calling user&#39;s default columns are reset. Permissions required:
 
-",cloudidRestApi3UserColumnsDelete,cloudid opts
-/{cloudid}/rest/api/3/user/columns,GET,"
+",userColumnsDelete,cloudid opts
+/user/columns,GET,"
 
 
 Returns the default issue table columns for the user. If a username is not passed in the request, the calling user&#39;s details are returned. Permissions required:
 
-",cloudidRestApi3UserColumnsGet,cloudid opts
-/{cloudid}/rest/api/3/user/columns,PUT,"
+",userColumnsGet,cloudid opts
+/user/columns,PUT,"
 
 
 Sets the default issue table columns for the user. If a username is not passed, the calling user&#39;s default columns are set. If no column details are sent, then all default columns are removed. The parameters for this resource are expressed as HTML form data. For example, in curl: curl -X PUT -d username&#x3D;&lt;username&gt; -d columns&#x3D;summary -d columns&#x3D;description &lt;url&gt; Permissions required:
 
-",cloudidRestApi3UserColumnsPut,cloudid opts
-/{cloudid}/rest/api/3/user,DELETE,"
+",userColumnsPut,cloudid opts
+/user,DELETE,"
 
 
 Deletes a user. Permissions required: Site administration (i.e., member of the site-admin group).
 
-",cloudidRestApi3UserDelete,cloudid opts
-/{cloudid}/rest/api/3/user,GET,"
+",userDelete,cloudid opts
+/user,GET,"
 
 
 Returns a user. Permissions required: None.
 
-",cloudidRestApi3UserGet,cloudid opts
-/{cloudid}/rest/api/3/user/groups,GET,"
+",userGet,cloudid opts
+/user/groups,GET,"
 
 
 Returns the groups to which a user belongs. Permissions required: Browse users and groups global permission.
 
-",cloudidRestApi3UserGroupsGet,cloudid opts
-/{cloudid}/rest/api/3/user/permission/search,GET,"
+",userGroupsGet,cloudid opts
+/user/permission/search,GET,"
 
 
 Returns a list of users who fulfill both of these criteria:
 
-",cloudidRestApi3UserPermissionSearchGet,cloudid opts
-/{cloudid}/rest/api/3/user/picker,GET,"
+",userPermissionSearchGet,cloudid opts
+/user/picker,GET,"
 
 
 Returns a list of users whose attributes match the query term. The returned object includes the html field where the matched query term is highlighted with the HTML strong tag. A list of account IDs can be provided to exclude users from the results. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but will only get search results for an exact name match.
 
-",cloudidRestApi3UserPickerGet,cloudid opts
-/{cloudid}/rest/api/3/user,POST,"
+",userPickerGet,cloudid opts
+/user,POST,"
 
 
 Creates a user. This resource is retained for legacy compatibility. As soon as a more suitable alternative is available this resource will be deprecated. The option is provided to set or generate a password for the user. When using the option to generate a password, by omitting password from the request, include \&quot;notification\&quot;: \&quot;true\&quot; to ensure the user is sent an email advising them that their account has been created. This email includes a link for the user to set their password. If the notification isn&#39;t sent for a generated password, the user will need to be sent a reset password request from Jira. Permissions required: Administer Jira global permission
 
-",cloudidRestApi3UserPost,cloudid opts
-/{cloudid}/rest/api/3/user/properties,GET,"
+",userPost,cloudid opts
+/user/properties,GET,"
 
 
 Returns the keys of all properties for a user. Permissions required:
 
-",cloudidRestApi3UserPropertiesGet,cloudid opts
-/{cloudid}/rest/api/3/user/properties/{propertyKey},DELETE,"
+",userPropertiesGet,cloudid opts
+/user/properties/{propertyKey},DELETE,"
 
 
 Deletes a property from a user. Permissions required:
 
-",cloudidRestApi3UserPropertiesPropertyKeyDelete,cloudid propertyKey opts
-/{cloudid}/rest/api/3/user/properties/{propertyKey},GET,"
+",userPropertiesPropertyKeyDelete,cloudid propertyKey opts
+/user/properties/{propertyKey},GET,"
 
 
 Returns the value of a user&#39;s property. If no property key is provided Get user property keys is called. Permissions required:
 
-",cloudidRestApi3UserPropertiesPropertyKeyGet,cloudid propertyKey opts
-/{cloudid}/rest/api/3/user/properties/{propertyKey},PUT,"
+",userPropertiesPropertyKeyGet,cloudid propertyKey opts
+/user/properties/{propertyKey},PUT,"
 
 
 Sets the value of a user&#39;s property. Use this resource to store custom data against a user. Permissions required:
 
-",cloudidRestApi3UserPropertiesPropertyKeyPut,cloudid propertyKey opts
-/{cloudid}/rest/api/3/user/search,GET,"
+",userPropertiesPropertyKeyPut,cloudid propertyKey opts
+/user/search,GET,"
 
 
 Returns a list of users that match the search string and property. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but empty search results are returned.
 
-",cloudidRestApi3UserSearchGet,cloudid opts
-/{cloudid}/rest/api/3/user/search/query,GET,"
+",userSearchGet,cloudid opts
+/user/search/query,GET,"
 
 
 Finds users using a structured query and returns user details. Permissions required: Browse users and groups global permission. The available queries statements are:
 
-",cloudidRestApi3UserSearchQueryGet,cloudid opts
-/{cloudid}/rest/api/3/user/search/query/key,GET,"
+",userSearchQueryGet,cloudid opts
+/user/search/query/key,GET,"
 
 
 Finds users using a structured query and returns a list of user keys. Permissions required: Browse users and groups global permission. The available query statements are:
 
-",cloudidRestApi3UserSearchQueryKeyGet,cloudid opts
-/{cloudid}/rest/api/3/user/viewissue/search,GET,"
+",userSearchQueryKeyGet,cloudid opts
+/user/viewissue/search,GET,"
 
 
 Returns a list of users who fulfill both of these criteria:
 
-",cloudidRestApi3UserViewissueSearchGet,cloudid opts
-/{cloudid}/rest/api/3/version/{id},DELETE,"
+",userViewissueSearchGet,cloudid opts
+/version/{id},DELETE,"
 
 
 Deletes a project version. Deprecated, use Delete and replace version that supports swapping version values in custom fields, in addition to the swapping for fixVersion and affectedVersion provided in this resource. Alternative versions can be provided to update issues that use the deleted version in fixVersion or affectedVersion. If alternatives are not provided, occurrences of fixVersion and affectedVersion that contain the deleted version are cleared. Permissions required: Administer Jira global permission or Administer Projects project permission.
 
-",cloudidRestApi3VersionIdDelete,cloudid id opts
-/{cloudid}/rest/api/3/version/{id},GET,"
+",versionIdDelete,cloudid id opts
+/version/{id},GET,"
 
 
 Returns a project version. Permissions required: Browse projects project permission
 
-",cloudidRestApi3VersionIdGet,cloudid id opts
-/{cloudid}/rest/api/3/version/{id}/mergeto/{moveIssuesTo},PUT,"
+",versionIdGet,cloudid id opts
+/version/{id}/mergeto/{moveIssuesTo},PUT,"
 
 
 Merges two project versions. The merge is completed by deleting the version specified in id and replacing any occurrences of its ID in fixVersion with the version ID specified in moveIssuesTo. Consider using Delete and replace version instead. This resource supports swapping version values in fixVersion, affectedVersion, and custom fields. Permissions required: Administer Jira global permission or Administer Projects project permission.
 
-",cloudidRestApi3VersionIdMergetoMoveIssuesToPut,cloudid id moveIssuesTo
-/{cloudid}/rest/api/3/version/{id}/move,POST,"
+",versionIdMergetoMoveIssuesToPut,cloudid id moveIssuesTo
+/version/{id}/move,POST,"
 
 
 Modifies the version&#39;s sequence within the project, which affects the display order of the versions in Jira. Permissions required: Administer Jira global permission or Administer Projects project permission.
 
-",cloudidRestApi3VersionIdMovePost,cloudid id opts
-/{cloudid}/rest/api/3/version/{id},PUT,"
+",versionIdMovePost,cloudid id opts
+/version/{id},PUT,"
 
 
 Modifies a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.
 
-",cloudidRestApi3VersionIdPut,cloudid id opts
-/{cloudid}/rest/api/3/version/{id}/relatedIssueCounts,GET,"
+",versionIdPut,cloudid id opts
+/version/{id}/relatedIssueCounts,GET,"
 
 
 Returns the following counts for a version:
 
-",cloudidRestApi3VersionIdRelatedIssueCountsGet,cloudid id
-/{cloudid}/rest/api/3/version/{id}/removeAndSwap,POST,"
+",versionIdRelatedIssueCountsGet,cloudid id
+/version/{id}/removeAndSwap,POST,"
 
 
 Deletes a project version. Permissions required: Administer Jira global permission or Administer Projects project permission. Alternative versions can be provided to update issues that use the deleted version in fixVersion, affectedVersion, or any version picker custom fields. If alternatives are not provided, occurrences of fixVersion, affectedVersion, and any version picker custom field, that contain the deleted version, are cleared. Any replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
 
-",cloudidRestApi3VersionIdRemoveAndSwapPost,cloudid id opts
-/{cloudid}/rest/api/3/version/{id}/unresolvedIssueCount,GET,"
+",versionIdRemoveAndSwapPost,cloudid id opts
+/version/{id}/unresolvedIssueCount,GET,"
 
 
 Returns counts of the issues and unresolved issues for the project version. Permissions required: Browse projects project permission
 
-",cloudidRestApi3VersionIdUnresolvedIssueCountGet,cloudid id
-/{cloudid}/rest/api/3/version,POST,"
+",versionIdUnresolvedIssueCountGet,cloudid id
+/version,POST,"
 
 
 Creates a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.
 
-",cloudidRestApi3VersionPost,cloudid opts
-/{cloudid}/rest/api/3/version/remotelink,GET,"
+",versionPost,cloudid opts
+/version/remotelink,GET,"
 
 
 the global ID of the remote resource that is linked to the versions
 
-",cloudidRestApi3VersionRemotelinkGet,cloudid opts
-/{cloudid}/rest/api/3/version/{versionId}/remotelink,DELETE,"
+",versionRemotelinkGet,cloudid opts
+/version/{versionId}/remotelink,DELETE,"
 
 
 The version for which to delete ALL existing remote version links
 
-",cloudidRestApi3VersionVersionIdRemotelinkDelete,cloudid versionId
-/{cloudid}/rest/api/3/version/{versionId}/remotelink,GET,"
+",versionVersionIdRemotelinkDelete,cloudid versionId
+/version/{versionId}/remotelink,GET,"
 
 
 a String containing the version ID
 
-",cloudidRestApi3VersionVersionIdRemotelinkGet,cloudid versionId
-/{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId},DELETE,"
+",versionVersionIdRemotelinkGet,cloudid versionId
+/version/{versionId}/remotelink/{globalId},DELETE,"
 
 
 The version ID of the remote link
 
-",cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete,cloudid globalId versionId
-/{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId},GET,"
+",versionVersionIdRemotelinkGlobalIdDelete,cloudid globalId versionId
+/version/{versionId}/remotelink/{globalId},GET,"
 
 
 A REST sub-resource representing a remote version link
 
-",cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet,cloudid globalId versionId
-/{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId},POST,"
+",versionVersionIdRemotelinkGlobalIdGet,cloudid globalId versionId
+/version/{versionId}/remotelink/{globalId},POST,"
 
 
-",cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost,cloudid globalId versionId
-/{cloudid}/rest/api/3/version/{versionId}/remotelink,POST,"
+",versionVersionIdRemotelinkGlobalIdPost,cloudid globalId versionId
+/version/{versionId}/remotelink,POST,"
 
 
 Create a remote version link via POST. The link&#39;s global ID will be taken from the JSON payload if provided; otherwise, it will be generated.
 
-",cloudidRestApi3VersionVersionIdRemotelinkPost,cloudid versionId
-/{cloudid}/rest/api/3/workflow,GET,"
+",versionVersionIdRemotelinkPost,cloudid versionId
+/workflow,GET,"
 
 
 Returns all workflows in Jira or a single workflow.
 
-",cloudidRestApi3WorkflowGet,cloudid opts
-/{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties,DELETE,"
+",workflowGet,cloudid opts
+/workflow/transitions/{transitionId}/properties,DELETE,"
 
 
 Deletes a property from a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
 
-",cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete,cloudid transitionId opts
-/{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties,GET,"
+",workflowTransitionsTransitionIdPropertiesDelete,cloudid transitionId opts
+/workflow/transitions/{transitionId}/properties,GET,"
 
 
 Returns the properties on a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
 
-",cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet,cloudid transitionId opts
-/{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties,POST,"
+",workflowTransitionsTransitionIdPropertiesGet,cloudid transitionId opts
+/workflow/transitions/{transitionId}/properties,POST,"
 
 
 Adds a property to a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
 
-",cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost,cloudid transitionId opts
-/{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties,PUT,"
+",workflowTransitionsTransitionIdPropertiesPost,cloudid transitionId opts
+/workflow/transitions/{transitionId}/properties,PUT,"
 
 
 Updates a workflow transition by changing the property value. Trying to update a property that does not exist results in a new property being added to the transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
 
-",cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut,cloudid transitionId opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/createdraft,POST,"
+",workflowTransitionsTransitionIdPropertiesPut,cloudid transitionId opts
+/workflowscheme/{id}/createdraft,POST,"
 
 
 Create a draft workflow scheme from an active workflow scheme, by copying the active workflow scheme. Note that an active workflow scheme can only have one draft workflow scheme at any given time.
 
-",cloudidRestApi3WorkflowschemeIdCreatedraftPost,cloudid id
-/{cloudid}/rest/api/3/workflowscheme/{id}/default,DELETE,"
+",workflowschemeIdCreatedraftPost,cloudid id
+/workflowscheme/{id}/default,DELETE,"
 
 
 Resets the default workflow for a workflow scheme. That is, the default workflow is set to Jira&#39;s system workflow (the jira workflow).
 
-",cloudidRestApi3WorkflowschemeIdDefaultDelete,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/default,GET,"
+",workflowschemeIdDefaultDelete,cloudid id opts
+/workflowscheme/{id}/default,GET,"
 
 
 Returns the default workflow for a workflow scheme. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has All Unassigned Issue Types listed in its issue types for the workflow scheme in Jira.
 
-",cloudidRestApi3WorkflowschemeIdDefaultGet,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/default,PUT,"
+",workflowschemeIdDefaultGet,cloudid id opts
+/workflowscheme/{id}/default,PUT,"
 
 
 Sets the default workflow for a workflow scheme.
 
-",cloudidRestApi3WorkflowschemeIdDefaultPut,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id},DELETE,"
+",workflowschemeIdDefaultPut,cloudid id opts
+/workflowscheme/{id},DELETE,"
 
 
 Deletes a workflow scheme. Note that a workflow scheme cannot be deleted if it is active (that is, being used by at least one project).
 
-",cloudidRestApi3WorkflowschemeIdDelete,cloudid id
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft/default,DELETE,"
+",workflowschemeIdDelete,cloudid id
+/workflowscheme/{id}/draft/default,DELETE,"
 
 
 Resets the default workflow for a workflow scheme&#39;s draft. That is, the default workflow is set to Jira&#39;s system workflow (the jira workflow).
 
-",cloudidRestApi3WorkflowschemeIdDraftDefaultDelete,cloudid id
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft/default,GET,"
+",workflowschemeIdDraftDefaultDelete,cloudid id
+/workflowscheme/{id}/draft/default,GET,"
 
 
 Returns the default workflow for a workflow scheme&#39;s draft. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has All Unassigned Issue Types listed in its issue types for the workflow scheme in Jira.
 
-",cloudidRestApi3WorkflowschemeIdDraftDefaultGet,cloudid id
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft/default,PUT,"
+",workflowschemeIdDraftDefaultGet,cloudid id
+/workflowscheme/{id}/draft/default,PUT,"
 
 
 Sets the default workflow for a workflow scheme&#39;s draft.
 
-",cloudidRestApi3WorkflowschemeIdDraftDefaultPut,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft,DELETE,"
+",workflowschemeIdDraftDefaultPut,cloudid id opts
+/workflowscheme/{id}/draft,DELETE,"
 
 
 Deletes a draft workflow scheme.
 
-",cloudidRestApi3WorkflowschemeIdDraftDelete,cloudid id
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft,GET,"
+",workflowschemeIdDraftDelete,cloudid id
+/workflowscheme/{id}/draft,GET,"
 
 
 Returns the draft workflow scheme for an active workflow scheme. Draft workflow schemes allow changes to be made to the active workflow schemes: When an active workflow scheme is updated, a draft copy is created. The draft is modified, then the changes in the draft are copied back to the active workflow scheme. See Configuring workflow schemes for more information.Note that:
 
-",cloudidRestApi3WorkflowschemeIdDraftGet,cloudid id
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType},DELETE,"
+",workflowschemeIdDraftGet,cloudid id
+/workflowscheme/{id}/draft/issuetype/{issueType},DELETE,"
 
 
 Deletes the issue type-workflow mapping for an issue type in a workflow scheme&#39;s draft.
 
-",cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete,cloudid id issueType
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType},GET,"
+",workflowschemeIdDraftIssuetypeIssueTypeDelete,cloudid id issueType
+/workflowscheme/{id}/draft/issuetype/{issueType},GET,"
 
 
 Returns the issue type-workflow mapping for an issue type in a workflow scheme&#39;s draft.
 
-",cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet,cloudid id issueType
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType},PUT,"
+",workflowschemeIdDraftIssuetypeIssueTypeGet,cloudid id issueType
+/workflowscheme/{id}/draft/issuetype/{issueType},PUT,"
 
 
 Sets the workflow for an issue type in a workflow scheme&#39;s draft.
 
-",cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut,cloudid id issueType opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft,PUT,"
+",workflowschemeIdDraftIssuetypeIssueTypePut,cloudid id issueType opts
+/workflowscheme/{id}/draft,PUT,"
 
 
 Updates a draft workflow scheme. If a draft workflow scheme does not exist for the active workflow scheme, then a draft is created. Note that an active workflow scheme can only have one draft workflow scheme at any given time.
 
-",cloudidRestApi3WorkflowschemeIdDraftPut,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow,DELETE,"
+",workflowschemeIdDraftPut,cloudid id opts
+/workflowscheme/{id}/draft/workflow,DELETE,"
 
 
 Deletes the workflow-issue type mapping for a workflow in a workflow scheme&#39;s draft.
 
-",cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow,GET,"
+",workflowschemeIdDraftWorkflowDelete,cloudid id opts
+/workflowscheme/{id}/draft/workflow,GET,"
 
 
 Returns the workflow-issue type mappings for a workflow scheme&#39;s draft.
 
-",cloudidRestApi3WorkflowschemeIdDraftWorkflowGet,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow,PUT,"
+",workflowschemeIdDraftWorkflowGet,cloudid id opts
+/workflowscheme/{id}/draft/workflow,PUT,"
 
 
 Sets the issue types for a workflow in a workflow scheme&#39;s draft. The workflow can also be set as the default workflow for the draft workflow scheme. Unmapped issues types are mapped to the default workflow.
 
-",cloudidRestApi3WorkflowschemeIdDraftWorkflowPut,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id},GET,"
+",workflowschemeIdDraftWorkflowPut,cloudid id opts
+/workflowscheme/{id},GET,"
 
 
 Returns a workflow scheme.
 
-",cloudidRestApi3WorkflowschemeIdGet,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType},DELETE,"
+",workflowschemeIdGet,cloudid id opts
+/workflowscheme/{id}/issuetype/{issueType},DELETE,"
 
 
 Deletes the issue type-workflow mapping for an issue type in a workflow scheme.
 
-",cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete,cloudid id issueType opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType},GET,"
+",workflowschemeIdIssuetypeIssueTypeDelete,cloudid id issueType opts
+/workflowscheme/{id}/issuetype/{issueType},GET,"
 
 
 Returns the issue type-workflow mapping for an issue type in a workflow scheme.
 
-",cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet,cloudid id issueType opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType},PUT,"
+",workflowschemeIdIssuetypeIssueTypeGet,cloudid id issueType opts
+/workflowscheme/{id}/issuetype/{issueType},PUT,"
 
 
 Sets the workflow for an issue type in a workflow scheme.
 
-",cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut,cloudid id issueType opts
-/{cloudid}/rest/api/3/workflowscheme/{id},PUT,"
+",workflowschemeIdIssuetypeIssueTypePut,cloudid id issueType opts
+/workflowscheme/{id},PUT,"
 
 
 Updates a workflow scheme, including the name, default workflow, issue type to project mappings, and more. If the workflow scheme is active (that is, being used by at least one project), then a draft workflow scheme is created or updated instead, provided that updateDraftIfNeeded is set to true.
 
-",cloudidRestApi3WorkflowschemeIdPut,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/workflow,DELETE,"
+",workflowschemeIdPut,cloudid id opts
+/workflowscheme/{id}/workflow,DELETE,"
 
 
 Deletes the workflow-issue type mapping for a workflow in a workflow scheme.
 
-",cloudidRestApi3WorkflowschemeIdWorkflowDelete,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/workflow,GET,"
+",workflowschemeIdWorkflowDelete,cloudid id opts
+/workflowscheme/{id}/workflow,GET,"
 
 
 Returns the workflow-issue type mappings for a workflow scheme.
 
-",cloudidRestApi3WorkflowschemeIdWorkflowGet,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme/{id}/workflow,PUT,"
+",workflowschemeIdWorkflowGet,cloudid id opts
+/workflowscheme/{id}/workflow,PUT,"
 
 
 Sets the issue types for a workflow in a workflow scheme. The workflow can also be set as the default workflow for the workflow scheme. Unmapped issues types are mapped to the default workflow.
 
-",cloudidRestApi3WorkflowschemeIdWorkflowPut,cloudid id opts
-/{cloudid}/rest/api/3/workflowscheme,POST,"
+",workflowschemeIdWorkflowPut,cloudid id opts
+/workflowscheme,POST,"
 
 
 Creates a workflow scheme.
 
-",cloudidRestApi3WorkflowschemePost,cloudid opts
-/{cloudid}/rest/api/3/worklog/deleted,GET,"
+",workflowschemePost,cloudid opts
+/worklog/deleted,GET,"
 
 
 Returns a list of IDs and delete timestamps for worklogs deleted after a date and time.
 
-",cloudidRestApi3WorklogDeletedGet,cloudid opts
-/{cloudid}/rest/api/3/worklog/list,POST,"
+",worklogDeletedGet,cloudid opts
+/worklog/list,POST,"
 
 
 Returns worklog details for a list of worklog IDs.
 
-",cloudidRestApi3WorklogListPost,cloudid opts
-/{cloudid}/rest/api/3/worklog/updated,GET,"
+",worklogListPost,cloudid opts
+/worklog/updated,GET,"
 
 
 Returns a list of IDs and update timestamps for worklogs updated after a date and time.
 
-",cloudidRestApi3WorklogUpdatedGet,cloudid opts
+",worklogUpdatedGet,cloudid opts

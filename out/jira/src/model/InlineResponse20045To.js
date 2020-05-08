@@ -17,7 +17,7 @@ import InlineResponse20045ToStatusCategory from './InlineResponse20045ToStatusCa
 /**
  * The InlineResponse20045To model module.
  * @module model/InlineResponse20045To
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20045To {
     /**

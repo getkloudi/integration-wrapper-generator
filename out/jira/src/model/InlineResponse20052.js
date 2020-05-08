@@ -17,7 +17,7 @@ import InlineResponse20052IssueSecuritySchemes from './InlineResponse20052IssueS
 /**
  * The InlineResponse20052 model module.
  * @module model/InlineResponse20052
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20052 {
     /**

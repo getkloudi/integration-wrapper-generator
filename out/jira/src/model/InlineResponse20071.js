@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import CloudidRestApi3FilterIdPermissionProjectProjectCategory from './CloudidRestApi3FilterIdPermissionProjectProjectCategory';
+import FilterIdPermissionProjectProjectCategory from './FilterIdPermissionProjectProjectCategory';
 import InlineResponse2004Author from './InlineResponse2004Author';
 import InlineResponse2004AuthorAvatarUrls from './InlineResponse2004AuthorAvatarUrls';
 import InlineResponse20071Components from './InlineResponse20071Components';
@@ -22,7 +22,7 @@ import InlineResponse20071Roles from './InlineResponse20071Roles';
 /**
  * The InlineResponse20071 model module.
  * @module model/InlineResponse20071
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20071 {
     /**
@@ -39,7 +39,7 @@ class InlineResponse20071 {
      * @param key {String} 
      * @param lead {module:model/InlineResponse2004Author} 
      * @param name {String} 
-     * @param projectCategory {module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory} 
+     * @param projectCategory {module:model/FilterIdPermissionProjectProjectCategory} 
      * @param roles {module:model/InlineResponse20071Roles} 
      * @param self {String} 
      * @param simplified {Boolean} 
@@ -119,7 +119,7 @@ class InlineResponse20071 {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('projectCategory')) {
-                obj['projectCategory'] = CloudidRestApi3FilterIdPermissionProjectProjectCategory.constructFromObject(data['projectCategory']);
+                obj['projectCategory'] = FilterIdPermissionProjectProjectCategory.constructFromObject(data['projectCategory']);
             }
             if (data.hasOwnProperty('roles')) {
                 obj['roles'] = InlineResponse20071Roles.constructFromObject(data['roles']);
@@ -197,7 +197,7 @@ InlineResponse20071.prototype['lead'] = undefined;
 InlineResponse20071.prototype['name'] = undefined;
 
 /**
- * @member {module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory} projectCategory
+ * @member {module:model/FilterIdPermissionProjectProjectCategory} projectCategory
  */
 InlineResponse20071.prototype['projectCategory'] = undefined;
 

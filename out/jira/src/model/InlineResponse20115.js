@@ -19,7 +19,7 @@ import InlineResponse20115OriginalIssueTypeMappings from './InlineResponse20115O
 /**
  * The InlineResponse20115 model module.
  * @module model/InlineResponse20115
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20115 {
     /**

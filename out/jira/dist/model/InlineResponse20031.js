@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CloudidRestApi3FilterIdPermissionProject = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionProject"));
+var _FilterIdPermissionProject = _interopRequireDefault(require("./FilterIdPermissionProject"));
 
-var _CloudidRestApi3FilterIdPermissionRole = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionRole"));
+var _FilterIdPermissionRole = _interopRequireDefault(require("./FilterIdPermissionRole"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -22,15 +22,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20031 model module.
  * @module model/InlineResponse20031
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20031 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20031</code>.
    * @alias module:model/InlineResponse20031
    * @param id {Number} 
-   * @param project {module:model/CloudidRestApi3FilterIdPermissionProject} 
-   * @param role {module:model/CloudidRestApi3FilterIdPermissionRole} 
+   * @param project {module:model/FilterIdPermissionProject} 
+   * @param role {module:model/FilterIdPermissionRole} 
    * @param type {String} 
    */
   function InlineResponse20031(id, project, role, type) {
@@ -72,11 +72,11 @@ var InlineResponse20031 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('project')) {
-          obj['project'] = _CloudidRestApi3FilterIdPermissionProject["default"].constructFromObject(data['project']);
+          obj['project'] = _FilterIdPermissionProject["default"].constructFromObject(data['project']);
         }
 
         if (data.hasOwnProperty('role')) {
-          obj['role'] = _CloudidRestApi3FilterIdPermissionRole["default"].constructFromObject(data['role']);
+          obj['role'] = _FilterIdPermissionRole["default"].constructFromObject(data['role']);
         }
 
         if (data.hasOwnProperty('type')) {
@@ -97,12 +97,12 @@ var InlineResponse20031 = /*#__PURE__*/function () {
 
 InlineResponse20031.prototype['id'] = undefined;
 /**
- * @member {module:model/CloudidRestApi3FilterIdPermissionProject} project
+ * @member {module:model/FilterIdPermissionProject} project
  */
 
 InlineResponse20031.prototype['project'] = undefined;
 /**
- * @member {module:model/CloudidRestApi3FilterIdPermissionRole} role
+ * @member {module:model/FilterIdPermissionRole} role
  */
 
 InlineResponse20031.prototype['role'] = undefined;

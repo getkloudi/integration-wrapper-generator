@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **defaultSecurityLevelId** | **Number** |  | 
 **description** | **String** |  | 
 **id** | **Number** |  | 
-**levels** | [**[CloudidRestApi3FilterIdPermissionProjectProjectCategory]**](CloudidRestApi3FilterIdPermissionProjectProjectCategory.md) |  | 
+**levels** | [**[FilterIdPermissionProjectProjectCategory]**](FilterIdPermissionProjectProjectCategory.md) |  | 
 **name** | **String** |  | 
 **self** | **String** |  | 
 

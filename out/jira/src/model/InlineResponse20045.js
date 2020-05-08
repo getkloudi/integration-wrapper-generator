@@ -17,7 +17,7 @@ import InlineResponse20045Transitions from './InlineResponse20045Transitions';
 /**
  * The InlineResponse20045 model module.
  * @module model/InlineResponse20045
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20045 {
     /**

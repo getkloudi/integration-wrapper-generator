@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20037FieldsType model module.
  * @module model/InlineResponse20037FieldsType
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20037FieldsType = /*#__PURE__*/function () {
   /**

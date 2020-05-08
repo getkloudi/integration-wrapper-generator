@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CloudidRestApi3FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionProjectProjectCategory"));
+var _FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./FilterIdPermissionProjectProjectCategory"));
 
 var _InlineResponse2004AuthorAvatarUrls = _interopRequireDefault(require("./InlineResponse2004AuthorAvatarUrls"));
 
@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20068Values model module.
  * @module model/InlineResponse20068Values
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20068Values = /*#__PURE__*/function () {
   /**
@@ -88,7 +88,7 @@ var InlineResponse20068Values = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('projectCategory')) {
-          obj['projectCategory'] = _CloudidRestApi3FilterIdPermissionProjectProjectCategory["default"].constructFromObject(data['projectCategory']);
+          obj['projectCategory'] = _FilterIdPermissionProjectProjectCategory["default"].constructFromObject(data['projectCategory']);
         }
 
         if (data.hasOwnProperty('self')) {
@@ -132,7 +132,7 @@ InlineResponse20068Values.prototype['key'] = undefined;
 
 InlineResponse20068Values.prototype['name'] = undefined;
 /**
- * @member {module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory} projectCategory
+ * @member {module:model/FilterIdPermissionProjectProjectCategory} projectCategory
  */
 
 InlineResponse20068Values.prototype['projectCategory'] = undefined;

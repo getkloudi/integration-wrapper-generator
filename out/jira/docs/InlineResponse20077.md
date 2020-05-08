@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **name** | **String** |  | 
 **self** | **String** |  | 
-**statuses** | [**[CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses]**](CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses.md) |  | 
+**statuses** | [**[ProjectProjectIdOrKeyStatusesStatuses]**](ProjectProjectIdOrKeyStatusesStatuses.md) |  | 
 **subtask** | **Boolean** |  | 
 
 

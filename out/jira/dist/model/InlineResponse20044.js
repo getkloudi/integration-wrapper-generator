@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication = _interopRequireDefault(require("./CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication"));
+var _IssueIssueIdOrKeyRemotelinkApplication = _interopRequireDefault(require("./IssueIssueIdOrKeyRemotelinkApplication"));
 
-var _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject = _interopRequireDefault(require("./CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject"));
+var _IssueIssueIdOrKeyRemotelinkObject = _interopRequireDefault(require("./IssueIssueIdOrKeyRemotelinkObject"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -22,17 +22,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20044 model module.
  * @module model/InlineResponse20044
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20044 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20044</code>.
    * 
    * @alias module:model/InlineResponse20044
-   * @param application {module:model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication} 
+   * @param application {module:model/IssueIssueIdOrKeyRemotelinkApplication} 
    * @param globalId {String} 
    * @param id {Number} 
-   * @param _object {module:model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject} 
+   * @param _object {module:model/IssueIssueIdOrKeyRemotelinkObject} 
    * @param relationship {String} 
    * @param self {String} 
    */
@@ -73,7 +73,7 @@ var InlineResponse20044 = /*#__PURE__*/function () {
         obj = obj || new InlineResponse20044();
 
         if (data.hasOwnProperty('application')) {
-          obj['application'] = _CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication["default"].constructFromObject(data['application']);
+          obj['application'] = _IssueIssueIdOrKeyRemotelinkApplication["default"].constructFromObject(data['application']);
         }
 
         if (data.hasOwnProperty('globalId')) {
@@ -85,7 +85,7 @@ var InlineResponse20044 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('object')) {
-          obj['object'] = _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject["default"].constructFromObject(data['object']);
+          obj['object'] = _IssueIssueIdOrKeyRemotelinkObject["default"].constructFromObject(data['object']);
         }
 
         if (data.hasOwnProperty('relationship')) {
@@ -104,7 +104,7 @@ var InlineResponse20044 = /*#__PURE__*/function () {
   return InlineResponse20044;
 }();
 /**
- * @member {module:model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication} application
+ * @member {module:model/IssueIssueIdOrKeyRemotelinkApplication} application
  */
 
 
@@ -120,7 +120,7 @@ InlineResponse20044.prototype['globalId'] = undefined;
 
 InlineResponse20044.prototype['id'] = undefined;
 /**
- * @member {module:model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject} object
+ * @member {module:model/IssueIssueIdOrKeyRemotelinkObject} object
  */
 
 InlineResponse20044.prototype['object'] = undefined;

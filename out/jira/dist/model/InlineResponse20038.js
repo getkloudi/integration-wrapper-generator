@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor = _interopRequireDefault(require("./CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor"));
+var _IssueIssueIdOrKeyAttachmentsAuthor = _interopRequireDefault(require("./IssueIssueIdOrKeyAttachmentsAuthor"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,13 +20,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20038 model module.
  * @module model/InlineResponse20038
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20038 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20038</code>.
    * @alias module:model/InlineResponse20038
-   * @param author {module:model/CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor} 
+   * @param author {module:model/IssueIssueIdOrKeyAttachmentsAuthor} 
    * @param content {String} 
    * @param created {String} 
    * @param filename {String} 
@@ -76,7 +76,7 @@ var InlineResponse20038 = /*#__PURE__*/function () {
         obj = obj || new InlineResponse20038();
 
         if (data.hasOwnProperty('author')) {
-          obj['author'] = _CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor["default"].constructFromObject(data['author']);
+          obj['author'] = _IssueIssueIdOrKeyAttachmentsAuthor["default"].constructFromObject(data['author']);
         }
 
         if (data.hasOwnProperty('content')) {
@@ -119,7 +119,7 @@ var InlineResponse20038 = /*#__PURE__*/function () {
   return InlineResponse20038;
 }();
 /**
- * @member {module:model/CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor} author
+ * @member {module:model/IssueIssueIdOrKeyAttachmentsAuthor} author
  */
 
 

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineObject39 model module.
  * @module model/InlineObject39
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineObject39 = /*#__PURE__*/function () {
   /**

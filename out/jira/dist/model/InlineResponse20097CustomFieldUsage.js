@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20097CustomFieldUsage model module.
  * @module model/InlineResponse20097CustomFieldUsage
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20097CustomFieldUsage = /*#__PURE__*/function () {
   /**

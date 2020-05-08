@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20052IssueSecuritySchemes model module.
  * @module model/InlineResponse20052IssueSecuritySchemes
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20052IssueSecuritySchemes {
     /**

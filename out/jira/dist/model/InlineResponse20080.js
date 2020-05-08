@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CloudidRestApi3FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionProjectProjectCategory"));
+var _FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./FilterIdPermissionProjectProjectCategory"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,14 +20,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20080 model module.
  * @module model/InlineResponse20080
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20080 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20080</code>.
    * 
    * @alias module:model/InlineResponse20080
-   * @param levels {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} 
+   * @param levels {Array.<module:model/FilterIdPermissionProjectProjectCategory>} 
    */
   function InlineResponse20080(levels) {
     _classCallCheck(this, InlineResponse20080);
@@ -61,7 +61,7 @@ var InlineResponse20080 = /*#__PURE__*/function () {
         obj = obj || new InlineResponse20080();
 
         if (data.hasOwnProperty('levels')) {
-          obj['levels'] = _ApiClient["default"].convertToType(data['levels'], [_CloudidRestApi3FilterIdPermissionProjectProjectCategory["default"]]);
+          obj['levels'] = _ApiClient["default"].convertToType(data['levels'], [_FilterIdPermissionProjectProjectCategory["default"]]);
         }
       }
 
@@ -72,7 +72,7 @@ var InlineResponse20080 = /*#__PURE__*/function () {
   return InlineResponse20080;
 }();
 /**
- * @member {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} levels
+ * @member {Array.<module:model/FilterIdPermissionProjectProjectCategory>} levels
  */
 
 

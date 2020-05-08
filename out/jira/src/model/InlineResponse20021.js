@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import CloudidRestApi3FieldSchema from './CloudidRestApi3FieldSchema';
+import FieldSchema from './FieldSchema';
 
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20021 {
     /**
@@ -30,7 +30,7 @@ class InlineResponse20021 {
      * @param name {String} 
      * @param navigable {Boolean} 
      * @param orderable {Boolean} 
-     * @param schema {module:model/CloudidRestApi3FieldSchema} 
+     * @param schema {module:model/FieldSchema} 
      * @param searchable {Boolean} 
      */
     constructor(clauseNames, custom, id, key, name, navigable, orderable, schema, searchable) { 
@@ -88,7 +88,7 @@ class InlineResponse20021 {
                 obj['orderable'] = ApiClient.convertToType(data['orderable'], 'Boolean');
             }
             if (data.hasOwnProperty('schema')) {
-                obj['schema'] = CloudidRestApi3FieldSchema.constructFromObject(data['schema']);
+                obj['schema'] = FieldSchema.constructFromObject(data['schema']);
             }
             if (data.hasOwnProperty('searchable')) {
                 obj['searchable'] = ApiClient.convertToType(data['searchable'], 'Boolean');
@@ -136,7 +136,7 @@ InlineResponse20021.prototype['navigable'] = undefined;
 InlineResponse20021.prototype['orderable'] = undefined;
 
 /**
- * @member {module:model/CloudidRestApi3FieldSchema} schema
+ * @member {module:model/FieldSchema} schema
  */
 InlineResponse20021.prototype['schema'] = undefined;
 

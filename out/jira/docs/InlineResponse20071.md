@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **key** | **String** |  | 
 **lead** | [**InlineResponse2004Author**](InlineResponse2004Author.md) |  | 
 **name** | **String** |  | 
-**projectCategory** | [**CloudidRestApi3FilterIdPermissionProjectProjectCategory**](CloudidRestApi3FilterIdPermissionProjectProjectCategory.md) |  | 
+**projectCategory** | [**FilterIdPermissionProjectProjectCategory**](FilterIdPermissionProjectProjectCategory.md) |  | 
 **roles** | [**InlineResponse20071Roles**](InlineResponse20071Roles.md) |  | 
 **self** | **String** |  | 
 **simplified** | **Boolean** |  | 

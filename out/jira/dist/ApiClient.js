@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
 * @module ApiClient
-* @version 1.2.0
+* @version 1.3.0
 */
 
 /**
@@ -38,9 +38,9 @@ var ApiClient = /*#__PURE__*/function () {
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://api.atlassian.com/ex/jira
+     * @default https://api.atlassian.com/ex/jira/{cloudid}/rest/api/3
      */
-    this.basePath = 'https://api.atlassian.com/ex/jira'.replace(/\/+$/, '');
+    this.basePath = 'https://api.atlassian.com/ex/jira/{cloudid}/rest/api/3'.replace(/\/+$/, '');
     /**
      * The authentication methods to be included for all API calls.
      * @type {Array.<String>}
@@ -538,7 +538,7 @@ var ApiClient = /*#__PURE__*/function () {
       */
     value: function hostSettings() {
       return [{
-        'url': "https://api.atlassian.com/ex/jira/",
+        'url': "https://api.atlassian.com/ex/jira/{cloudid}/rest/api/3",
         'description': "No description provided"
       }];
     }

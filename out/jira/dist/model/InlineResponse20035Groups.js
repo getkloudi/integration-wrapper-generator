@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20035Groups model module.
  * @module model/InlineResponse20035Groups
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20035Groups = /*#__PURE__*/function () {
   /**

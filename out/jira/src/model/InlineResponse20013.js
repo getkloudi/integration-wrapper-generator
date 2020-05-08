@@ -17,7 +17,7 @@ import InlineResponse20013TimeTrackingConfiguration from './InlineResponse20013T
 /**
  * The InlineResponse20013 model module.
  * @module model/InlineResponse20013
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20013 {
     /**

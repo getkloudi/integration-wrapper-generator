@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **key** | **String** |  | 
 **name** | **String** |  | 
-**projectCategory** | [**CloudidRestApi3FilterIdPermissionProjectProjectCategory**](CloudidRestApi3FilterIdPermissionProjectProjectCategory.md) |  | [optional] 
+**projectCategory** | [**FilterIdPermissionProjectProjectCategory**](FilterIdPermissionProjectProjectCategory.md) |  | [optional] 
 **self** | **String** |  | 
 **simplified** | **Boolean** |  | 
 **style** | **String** |  | 

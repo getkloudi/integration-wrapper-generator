@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CloudidRestApi3FilterIdPermissionRoleScope = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionRoleScope"));
+var _FilterIdPermissionRoleScope = _interopRequireDefault(require("./FilterIdPermissionRoleScope"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20071IssueTypes model module.
  * @module model/InlineResponse20071IssueTypes
- * @version 1.2.0
+ * @version 1.3.0
  */
 var InlineResponse20071IssueTypes = /*#__PURE__*/function () {
   /**
@@ -92,7 +92,7 @@ var InlineResponse20071IssueTypes = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('scope')) {
-          obj['scope'] = _CloudidRestApi3FilterIdPermissionRoleScope["default"].constructFromObject(data['scope']);
+          obj['scope'] = _FilterIdPermissionRoleScope["default"].constructFromObject(data['scope']);
         }
 
         if (data.hasOwnProperty('self')) {
@@ -137,7 +137,7 @@ InlineResponse20071IssueTypes.prototype['id'] = undefined;
 
 InlineResponse20071IssueTypes.prototype['name'] = undefined;
 /**
- * @member {module:model/CloudidRestApi3FilterIdPermissionRoleScope} scope
+ * @member {module:model/FilterIdPermissionRoleScope} scope
  */
 
 InlineResponse20071IssueTypes.prototype['scope'] = undefined;

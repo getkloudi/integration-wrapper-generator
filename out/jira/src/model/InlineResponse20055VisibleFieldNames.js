@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20055VisibleFieldNames model module.
  * @module model/InlineResponse20055VisibleFieldNames
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20055VisibleFieldNames {
     /**

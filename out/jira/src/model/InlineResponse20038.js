@@ -12,18 +12,18 @@
  */
 
 import ApiClient from '../ApiClient';
-import CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor from './CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor';
+import IssueIssueIdOrKeyAttachmentsAuthor from './IssueIssueIdOrKeyAttachmentsAuthor';
 
 /**
  * The InlineResponse20038 model module.
  * @module model/InlineResponse20038
- * @version 1.2.0
+ * @version 1.3.0
  */
 class InlineResponse20038 {
     /**
      * Constructs a new <code>InlineResponse20038</code>.
      * @alias module:model/InlineResponse20038
-     * @param author {module:model/CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor} 
+     * @param author {module:model/IssueIssueIdOrKeyAttachmentsAuthor} 
      * @param content {String} 
      * @param created {String} 
      * @param filename {String} 
@@ -67,7 +67,7 @@ class InlineResponse20038 {
             obj = obj || new InlineResponse20038();
 
             if (data.hasOwnProperty('author')) {
-                obj['author'] = CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor.constructFromObject(data['author']);
+                obj['author'] = IssueIssueIdOrKeyAttachmentsAuthor.constructFromObject(data['author']);
             }
             if (data.hasOwnProperty('content')) {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
@@ -101,7 +101,7 @@ class InlineResponse20038 {
 }
 
 /**
- * @member {module:model/CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor} author
+ * @member {module:model/IssueIssueIdOrKeyAttachmentsAuthor} author
  */
 InlineResponse20038.prototype['author'] = undefined;
 
