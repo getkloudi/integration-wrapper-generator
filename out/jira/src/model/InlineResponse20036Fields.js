@@ -17,7 +17,7 @@ import InlineResponse20036FieldsIssuetype from './InlineResponse20036FieldsIssue
 /**
  * The InlineResponse20036Fields model module.
  * @module model/InlineResponse20036Fields
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20036Fields {
     /**

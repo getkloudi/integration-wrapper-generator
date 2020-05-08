@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import ProjectProjectIdOrKeyStatusesStatuses from './ProjectProjectIdOrKeyStatusesStatuses';
+import CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses from './CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses';
 
 /**
  * The InlineResponse20077 model module.
  * @module model/InlineResponse20077
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20077 {
     /**
@@ -26,7 +26,7 @@ class InlineResponse20077 {
      * @param id {String} 
      * @param name {String} 
      * @param self {String} 
-     * @param statuses {Array.<module:model/ProjectProjectIdOrKeyStatusesStatuses>} 
+     * @param statuses {Array.<module:model/CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses>} 
      * @param subtask {Boolean} 
      */
     constructor(id, name, self, statuses, subtask) { 
@@ -68,7 +68,7 @@ class InlineResponse20077 {
                 obj['self'] = ApiClient.convertToType(data['self'], 'String');
             }
             if (data.hasOwnProperty('statuses')) {
-                obj['statuses'] = ApiClient.convertToType(data['statuses'], [ProjectProjectIdOrKeyStatusesStatuses]);
+                obj['statuses'] = ApiClient.convertToType(data['statuses'], [CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses]);
             }
             if (data.hasOwnProperty('subtask')) {
                 obj['subtask'] = ApiClient.convertToType(data['subtask'], 'Boolean');
@@ -96,7 +96,7 @@ InlineResponse20077.prototype['name'] = undefined;
 InlineResponse20077.prototype['self'] = undefined;
 
 /**
- * @member {Array.<module:model/ProjectProjectIdOrKeyStatusesStatuses>} statuses
+ * @member {Array.<module:model/CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses>} statuses
  */
 InlineResponse20077.prototype['statuses'] = undefined;
 

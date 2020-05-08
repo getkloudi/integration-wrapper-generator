@@ -48,3170 +48,3170 @@
   }
 
   describe('DefaultApi', function() {
-    describe('applicationPropertiesAdvancedSettingsGet', function() {
-      it('should call applicationPropertiesAdvancedSettingsGet successfully', function(done) {
-        //uncomment below and update the code to test applicationPropertiesAdvancedSettingsGet
-        //instance.applicationPropertiesAdvancedSettingsGet(function(error) {
+    describe('cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet', function() {
+      it('should call cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet
+        //instance.cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('applicationPropertiesGet', function() {
-      it('should call applicationPropertiesGet successfully', function(done) {
-        //uncomment below and update the code to test applicationPropertiesGet
-        //instance.applicationPropertiesGet(function(error) {
+    describe('cloudidRestApi3ApplicationPropertiesGet', function() {
+      it('should call cloudidRestApi3ApplicationPropertiesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ApplicationPropertiesGet
+        //instance.cloudidRestApi3ApplicationPropertiesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('applicationPropertiesIdPut', function() {
-      it('should call applicationPropertiesIdPut successfully', function(done) {
-        //uncomment below and update the code to test applicationPropertiesIdPut
-        //instance.applicationPropertiesIdPut(function(error) {
+    describe('cloudidRestApi3ApplicationPropertiesIdPut', function() {
+      it('should call cloudidRestApi3ApplicationPropertiesIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ApplicationPropertiesIdPut
+        //instance.cloudidRestApi3ApplicationPropertiesIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('applicationroleGet', function() {
-      it('should call applicationroleGet successfully', function(done) {
-        //uncomment below and update the code to test applicationroleGet
-        //instance.applicationroleGet(function(error) {
+    describe('cloudidRestApi3ApplicationroleGet', function() {
+      it('should call cloudidRestApi3ApplicationroleGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ApplicationroleGet
+        //instance.cloudidRestApi3ApplicationroleGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('applicationroleKeyGet', function() {
-      it('should call applicationroleKeyGet successfully', function(done) {
-        //uncomment below and update the code to test applicationroleKeyGet
-        //instance.applicationroleKeyGet(function(error) {
+    describe('cloudidRestApi3ApplicationroleKeyGet', function() {
+      it('should call cloudidRestApi3ApplicationroleKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ApplicationroleKeyGet
+        //instance.cloudidRestApi3ApplicationroleKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('attachmentIdDelete', function() {
-      it('should call attachmentIdDelete successfully', function(done) {
-        //uncomment below and update the code to test attachmentIdDelete
-        //instance.attachmentIdDelete(function(error) {
+    describe('cloudidRestApi3AttachmentIdDelete', function() {
+      it('should call cloudidRestApi3AttachmentIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3AttachmentIdDelete
+        //instance.cloudidRestApi3AttachmentIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('attachmentIdExpandHumanGet', function() {
-      it('should call attachmentIdExpandHumanGet successfully', function(done) {
-        //uncomment below and update the code to test attachmentIdExpandHumanGet
-        //instance.attachmentIdExpandHumanGet(function(error) {
+    describe('cloudidRestApi3AttachmentIdExpandHumanGet', function() {
+      it('should call cloudidRestApi3AttachmentIdExpandHumanGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3AttachmentIdExpandHumanGet
+        //instance.cloudidRestApi3AttachmentIdExpandHumanGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('attachmentIdExpandRawGet', function() {
-      it('should call attachmentIdExpandRawGet successfully', function(done) {
-        //uncomment below and update the code to test attachmentIdExpandRawGet
-        //instance.attachmentIdExpandRawGet(function(error) {
+    describe('cloudidRestApi3AttachmentIdExpandRawGet', function() {
+      it('should call cloudidRestApi3AttachmentIdExpandRawGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3AttachmentIdExpandRawGet
+        //instance.cloudidRestApi3AttachmentIdExpandRawGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('attachmentIdGet', function() {
-      it('should call attachmentIdGet successfully', function(done) {
-        //uncomment below and update the code to test attachmentIdGet
-        //instance.attachmentIdGet(function(error) {
+    describe('cloudidRestApi3AttachmentIdGet', function() {
+      it('should call cloudidRestApi3AttachmentIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3AttachmentIdGet
+        //instance.cloudidRestApi3AttachmentIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('attachmentMetaGet', function() {
-      it('should call attachmentMetaGet successfully', function(done) {
-        //uncomment below and update the code to test attachmentMetaGet
-        //instance.attachmentMetaGet(function(error) {
+    describe('cloudidRestApi3AttachmentMetaGet', function() {
+      it('should call cloudidRestApi3AttachmentMetaGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3AttachmentMetaGet
+        //instance.cloudidRestApi3AttachmentMetaGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('auditingRecordGet', function() {
-      it('should call auditingRecordGet successfully', function(done) {
-        //uncomment below and update the code to test auditingRecordGet
-        //instance.auditingRecordGet(function(error) {
+    describe('cloudidRestApi3AuditingRecordGet', function() {
+      it('should call cloudidRestApi3AuditingRecordGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3AuditingRecordGet
+        //instance.cloudidRestApi3AuditingRecordGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('avatarTypeSystemGet', function() {
-      it('should call avatarTypeSystemGet successfully', function(done) {
-        //uncomment below and update the code to test avatarTypeSystemGet
-        //instance.avatarTypeSystemGet(function(error) {
+    describe('cloudidRestApi3AvatarTypeSystemGet', function() {
+      it('should call cloudidRestApi3AvatarTypeSystemGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3AvatarTypeSystemGet
+        //instance.cloudidRestApi3AvatarTypeSystemGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('commentCommentIdPropertiesGet', function() {
-      it('should call commentCommentIdPropertiesGet successfully', function(done) {
-        //uncomment below and update the code to test commentCommentIdPropertiesGet
-        //instance.commentCommentIdPropertiesGet(function(error) {
+    describe('cloudidRestApi3CommentCommentIdPropertiesGet', function() {
+      it('should call cloudidRestApi3CommentCommentIdPropertiesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3CommentCommentIdPropertiesGet
+        //instance.cloudidRestApi3CommentCommentIdPropertiesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('commentCommentIdPropertiesPropertyKeyDelete', function() {
-      it('should call commentCommentIdPropertiesPropertyKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test commentCommentIdPropertiesPropertyKeyDelete
-        //instance.commentCommentIdPropertiesPropertyKeyDelete(function(error) {
+    describe('cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete', function() {
+      it('should call cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete
+        //instance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('commentCommentIdPropertiesPropertyKeyGet', function() {
-      it('should call commentCommentIdPropertiesPropertyKeyGet successfully', function(done) {
-        //uncomment below and update the code to test commentCommentIdPropertiesPropertyKeyGet
-        //instance.commentCommentIdPropertiesPropertyKeyGet(function(error) {
+    describe('cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet', function() {
+      it('should call cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet
+        //instance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('commentCommentIdPropertiesPropertyKeyPut', function() {
-      it('should call commentCommentIdPropertiesPropertyKeyPut successfully', function(done) {
-        //uncomment below and update the code to test commentCommentIdPropertiesPropertyKeyPut
-        //instance.commentCommentIdPropertiesPropertyKeyPut(function(error) {
+    describe('cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut', function() {
+      it('should call cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut
+        //instance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('commentListPost', function() {
-      it('should call commentListPost successfully', function(done) {
-        //uncomment below and update the code to test commentListPost
-        //instance.commentListPost(function(error) {
+    describe('cloudidRestApi3CommentListPost', function() {
+      it('should call cloudidRestApi3CommentListPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3CommentListPost
+        //instance.cloudidRestApi3CommentListPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('componentIdDelete', function() {
-      it('should call componentIdDelete successfully', function(done) {
-        //uncomment below and update the code to test componentIdDelete
-        //instance.componentIdDelete(function(error) {
+    describe('cloudidRestApi3ComponentIdDelete', function() {
+      it('should call cloudidRestApi3ComponentIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ComponentIdDelete
+        //instance.cloudidRestApi3ComponentIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('componentIdGet', function() {
-      it('should call componentIdGet successfully', function(done) {
-        //uncomment below and update the code to test componentIdGet
-        //instance.componentIdGet(function(error) {
+    describe('cloudidRestApi3ComponentIdGet', function() {
+      it('should call cloudidRestApi3ComponentIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ComponentIdGet
+        //instance.cloudidRestApi3ComponentIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('componentIdPut', function() {
-      it('should call componentIdPut successfully', function(done) {
-        //uncomment below and update the code to test componentIdPut
-        //instance.componentIdPut(function(error) {
+    describe('cloudidRestApi3ComponentIdPut', function() {
+      it('should call cloudidRestApi3ComponentIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ComponentIdPut
+        //instance.cloudidRestApi3ComponentIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('componentIdRelatedIssueCountsGet', function() {
-      it('should call componentIdRelatedIssueCountsGet successfully', function(done) {
-        //uncomment below and update the code to test componentIdRelatedIssueCountsGet
-        //instance.componentIdRelatedIssueCountsGet(function(error) {
+    describe('cloudidRestApi3ComponentIdRelatedIssueCountsGet', function() {
+      it('should call cloudidRestApi3ComponentIdRelatedIssueCountsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ComponentIdRelatedIssueCountsGet
+        //instance.cloudidRestApi3ComponentIdRelatedIssueCountsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('componentPost', function() {
-      it('should call componentPost successfully', function(done) {
-        //uncomment below and update the code to test componentPost
-        //instance.componentPost(function(error) {
+    describe('cloudidRestApi3ComponentPost', function() {
+      it('should call cloudidRestApi3ComponentPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ComponentPost
+        //instance.cloudidRestApi3ComponentPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('configurationGet', function() {
-      it('should call configurationGet successfully', function(done) {
-        //uncomment below and update the code to test configurationGet
-        //instance.configurationGet(function(error) {
+    describe('cloudidRestApi3ConfigurationGet', function() {
+      it('should call cloudidRestApi3ConfigurationGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ConfigurationGet
+        //instance.cloudidRestApi3ConfigurationGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('configurationTimetrackingDelete', function() {
-      it('should call configurationTimetrackingDelete successfully', function(done) {
-        //uncomment below and update the code to test configurationTimetrackingDelete
-        //instance.configurationTimetrackingDelete(function(error) {
+    describe('cloudidRestApi3ConfigurationTimetrackingDelete', function() {
+      it('should call cloudidRestApi3ConfigurationTimetrackingDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ConfigurationTimetrackingDelete
+        //instance.cloudidRestApi3ConfigurationTimetrackingDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('configurationTimetrackingGet', function() {
-      it('should call configurationTimetrackingGet successfully', function(done) {
-        //uncomment below and update the code to test configurationTimetrackingGet
-        //instance.configurationTimetrackingGet(function(error) {
+    describe('cloudidRestApi3ConfigurationTimetrackingGet', function() {
+      it('should call cloudidRestApi3ConfigurationTimetrackingGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ConfigurationTimetrackingGet
+        //instance.cloudidRestApi3ConfigurationTimetrackingGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('configurationTimetrackingListGet', function() {
-      it('should call configurationTimetrackingListGet successfully', function(done) {
-        //uncomment below and update the code to test configurationTimetrackingListGet
-        //instance.configurationTimetrackingListGet(function(error) {
+    describe('cloudidRestApi3ConfigurationTimetrackingListGet', function() {
+      it('should call cloudidRestApi3ConfigurationTimetrackingListGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ConfigurationTimetrackingListGet
+        //instance.cloudidRestApi3ConfigurationTimetrackingListGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('configurationTimetrackingOptionsGet', function() {
-      it('should call configurationTimetrackingOptionsGet successfully', function(done) {
-        //uncomment below and update the code to test configurationTimetrackingOptionsGet
-        //instance.configurationTimetrackingOptionsGet(function(error) {
+    describe('cloudidRestApi3ConfigurationTimetrackingOptionsGet', function() {
+      it('should call cloudidRestApi3ConfigurationTimetrackingOptionsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ConfigurationTimetrackingOptionsGet
+        //instance.cloudidRestApi3ConfigurationTimetrackingOptionsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('configurationTimetrackingOptionsPut', function() {
-      it('should call configurationTimetrackingOptionsPut successfully', function(done) {
-        //uncomment below and update the code to test configurationTimetrackingOptionsPut
-        //instance.configurationTimetrackingOptionsPut(function(error) {
+    describe('cloudidRestApi3ConfigurationTimetrackingOptionsPut', function() {
+      it('should call cloudidRestApi3ConfigurationTimetrackingOptionsPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ConfigurationTimetrackingOptionsPut
+        //instance.cloudidRestApi3ConfigurationTimetrackingOptionsPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('configurationTimetrackingPut', function() {
-      it('should call configurationTimetrackingPut successfully', function(done) {
-        //uncomment below and update the code to test configurationTimetrackingPut
-        //instance.configurationTimetrackingPut(function(error) {
+    describe('cloudidRestApi3ConfigurationTimetrackingPut', function() {
+      it('should call cloudidRestApi3ConfigurationTimetrackingPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ConfigurationTimetrackingPut
+        //instance.cloudidRestApi3ConfigurationTimetrackingPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('customFieldOptionIdGet', function() {
-      it('should call customFieldOptionIdGet successfully', function(done) {
-        //uncomment below and update the code to test customFieldOptionIdGet
-        //instance.customFieldOptionIdGet(function(error) {
+    describe('cloudidRestApi3CustomFieldOptionIdGet', function() {
+      it('should call cloudidRestApi3CustomFieldOptionIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3CustomFieldOptionIdGet
+        //instance.cloudidRestApi3CustomFieldOptionIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('dashboardDashboardIdItemsItemIdPropertiesGet', function() {
-      it('should call dashboardDashboardIdItemsItemIdPropertiesGet successfully', function(done) {
-        //uncomment below and update the code to test dashboardDashboardIdItemsItemIdPropertiesGet
-        //instance.dashboardDashboardIdItemsItemIdPropertiesGet(function(error) {
+    describe('cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet', function() {
+      it('should call cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet
+        //instance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete', function() {
-      it('should call dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete
-        //instance.dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(function(error) {
+    describe('cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete', function() {
+      it('should call cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete
+        //instance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet', function() {
-      it('should call dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet successfully', function(done) {
-        //uncomment below and update the code to test dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet
-        //instance.dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(function(error) {
+    describe('cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet', function() {
+      it('should call cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet
+        //instance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut', function() {
-      it('should call dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut successfully', function(done) {
-        //uncomment below and update the code to test dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut
-        //instance.dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(function(error) {
+    describe('cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut', function() {
+      it('should call cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut
+        //instance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('dashboardGet', function() {
-      it('should call dashboardGet successfully', function(done) {
-        //uncomment below and update the code to test dashboardGet
-        //instance.dashboardGet(function(error) {
+    describe('cloudidRestApi3DashboardGet', function() {
+      it('should call cloudidRestApi3DashboardGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3DashboardGet
+        //instance.cloudidRestApi3DashboardGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('dashboardIdGet', function() {
-      it('should call dashboardIdGet successfully', function(done) {
-        //uncomment below and update the code to test dashboardIdGet
-        //instance.dashboardIdGet(function(error) {
+    describe('cloudidRestApi3DashboardIdGet', function() {
+      it('should call cloudidRestApi3DashboardIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3DashboardIdGet
+        //instance.cloudidRestApi3DashboardIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('expressionEvalPost', function() {
-      it('should call expressionEvalPost successfully', function(done) {
-        //uncomment below and update the code to test expressionEvalPost
-        //instance.expressionEvalPost(function(error) {
+    describe('cloudidRestApi3ExpressionEvalPost', function() {
+      it('should call cloudidRestApi3ExpressionEvalPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ExpressionEvalPost
+        //instance.cloudidRestApi3ExpressionEvalPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldFieldKeyOptionGet', function() {
-      it('should call fieldFieldKeyOptionGet successfully', function(done) {
-        //uncomment below and update the code to test fieldFieldKeyOptionGet
-        //instance.fieldFieldKeyOptionGet(function(error) {
+    describe('cloudidRestApi3FieldFieldKeyOptionGet', function() {
+      it('should call cloudidRestApi3FieldFieldKeyOptionGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldFieldKeyOptionGet
+        //instance.cloudidRestApi3FieldFieldKeyOptionGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldFieldKeyOptionOptionIdDelete', function() {
-      it('should call fieldFieldKeyOptionOptionIdDelete successfully', function(done) {
-        //uncomment below and update the code to test fieldFieldKeyOptionOptionIdDelete
-        //instance.fieldFieldKeyOptionOptionIdDelete(function(error) {
+    describe('cloudidRestApi3FieldFieldKeyOptionOptionIdDelete', function() {
+      it('should call cloudidRestApi3FieldFieldKeyOptionOptionIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldFieldKeyOptionOptionIdDelete
+        //instance.cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldFieldKeyOptionOptionIdGet', function() {
-      it('should call fieldFieldKeyOptionOptionIdGet successfully', function(done) {
-        //uncomment below and update the code to test fieldFieldKeyOptionOptionIdGet
-        //instance.fieldFieldKeyOptionOptionIdGet(function(error) {
+    describe('cloudidRestApi3FieldFieldKeyOptionOptionIdGet', function() {
+      it('should call cloudidRestApi3FieldFieldKeyOptionOptionIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldFieldKeyOptionOptionIdGet
+        //instance.cloudidRestApi3FieldFieldKeyOptionOptionIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldFieldKeyOptionOptionIdIssueDelete', function() {
-      it('should call fieldFieldKeyOptionOptionIdIssueDelete successfully', function(done) {
-        //uncomment below and update the code to test fieldFieldKeyOptionOptionIdIssueDelete
-        //instance.fieldFieldKeyOptionOptionIdIssueDelete(function(error) {
+    describe('cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete', function() {
+      it('should call cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete
+        //instance.cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldFieldKeyOptionOptionIdPut', function() {
-      it('should call fieldFieldKeyOptionOptionIdPut successfully', function(done) {
-        //uncomment below and update the code to test fieldFieldKeyOptionOptionIdPut
-        //instance.fieldFieldKeyOptionOptionIdPut(function(error) {
+    describe('cloudidRestApi3FieldFieldKeyOptionOptionIdPut', function() {
+      it('should call cloudidRestApi3FieldFieldKeyOptionOptionIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldFieldKeyOptionOptionIdPut
+        //instance.cloudidRestApi3FieldFieldKeyOptionOptionIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldFieldKeyOptionPost', function() {
-      it('should call fieldFieldKeyOptionPost successfully', function(done) {
-        //uncomment below and update the code to test fieldFieldKeyOptionPost
-        //instance.fieldFieldKeyOptionPost(function(error) {
+    describe('cloudidRestApi3FieldFieldKeyOptionPost', function() {
+      it('should call cloudidRestApi3FieldFieldKeyOptionPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldFieldKeyOptionPost
+        //instance.cloudidRestApi3FieldFieldKeyOptionPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldFieldKeyOptionSuggestionsEditGet', function() {
-      it('should call fieldFieldKeyOptionSuggestionsEditGet successfully', function(done) {
-        //uncomment below and update the code to test fieldFieldKeyOptionSuggestionsEditGet
-        //instance.fieldFieldKeyOptionSuggestionsEditGet(function(error) {
+    describe('cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet', function() {
+      it('should call cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet
+        //instance.cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldFieldKeyOptionSuggestionsSearchGet', function() {
-      it('should call fieldFieldKeyOptionSuggestionsSearchGet successfully', function(done) {
-        //uncomment below and update the code to test fieldFieldKeyOptionSuggestionsSearchGet
-        //instance.fieldFieldKeyOptionSuggestionsSearchGet(function(error) {
+    describe('cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet', function() {
+      it('should call cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet
+        //instance.cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldGet', function() {
-      it('should call fieldGet successfully', function(done) {
-        //uncomment below and update the code to test fieldGet
-        //instance.fieldGet(function(error) {
+    describe('cloudidRestApi3FieldGet', function() {
+      it('should call cloudidRestApi3FieldGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldGet
+        //instance.cloudidRestApi3FieldGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('fieldPost', function() {
-      it('should call fieldPost successfully', function(done) {
-        //uncomment below and update the code to test fieldPost
-        //instance.fieldPost(function(error) {
+    describe('cloudidRestApi3FieldPost', function() {
+      it('should call cloudidRestApi3FieldPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FieldPost
+        //instance.cloudidRestApi3FieldPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterDefaultShareScopeGet', function() {
-      it('should call filterDefaultShareScopeGet successfully', function(done) {
-        //uncomment below and update the code to test filterDefaultShareScopeGet
-        //instance.filterDefaultShareScopeGet(function(error) {
+    describe('cloudidRestApi3FilterDefaultShareScopeGet', function() {
+      it('should call cloudidRestApi3FilterDefaultShareScopeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterDefaultShareScopeGet
+        //instance.cloudidRestApi3FilterDefaultShareScopeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterDefaultShareScopePut', function() {
-      it('should call filterDefaultShareScopePut successfully', function(done) {
-        //uncomment below and update the code to test filterDefaultShareScopePut
-        //instance.filterDefaultShareScopePut(function(error) {
+    describe('cloudidRestApi3FilterDefaultShareScopePut', function() {
+      it('should call cloudidRestApi3FilterDefaultShareScopePut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterDefaultShareScopePut
+        //instance.cloudidRestApi3FilterDefaultShareScopePut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterFavouriteGet', function() {
-      it('should call filterFavouriteGet successfully', function(done) {
-        //uncomment below and update the code to test filterFavouriteGet
-        //instance.filterFavouriteGet(function(error) {
+    describe('cloudidRestApi3FilterFavouriteGet', function() {
+      it('should call cloudidRestApi3FilterFavouriteGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterFavouriteGet
+        //instance.cloudidRestApi3FilterFavouriteGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterGet', function() {
-      it('should call filterGet successfully', function(done) {
-        //uncomment below and update the code to test filterGet
-        //instance.filterGet(function(error) {
+    describe('cloudidRestApi3FilterGet', function() {
+      it('should call cloudidRestApi3FilterGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterGet
+        //instance.cloudidRestApi3FilterGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdColumnsDelete', function() {
-      it('should call filterIdColumnsDelete successfully', function(done) {
-        //uncomment below and update the code to test filterIdColumnsDelete
-        //instance.filterIdColumnsDelete(function(error) {
+    describe('cloudidRestApi3FilterIdColumnsDelete', function() {
+      it('should call cloudidRestApi3FilterIdColumnsDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdColumnsDelete
+        //instance.cloudidRestApi3FilterIdColumnsDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdColumnsGet', function() {
-      it('should call filterIdColumnsGet successfully', function(done) {
-        //uncomment below and update the code to test filterIdColumnsGet
-        //instance.filterIdColumnsGet(function(error) {
+    describe('cloudidRestApi3FilterIdColumnsGet', function() {
+      it('should call cloudidRestApi3FilterIdColumnsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdColumnsGet
+        //instance.cloudidRestApi3FilterIdColumnsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdColumnsPut', function() {
-      it('should call filterIdColumnsPut successfully', function(done) {
-        //uncomment below and update the code to test filterIdColumnsPut
-        //instance.filterIdColumnsPut(function(error) {
+    describe('cloudidRestApi3FilterIdColumnsPut', function() {
+      it('should call cloudidRestApi3FilterIdColumnsPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdColumnsPut
+        //instance.cloudidRestApi3FilterIdColumnsPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdDelete', function() {
-      it('should call filterIdDelete successfully', function(done) {
-        //uncomment below and update the code to test filterIdDelete
-        //instance.filterIdDelete(function(error) {
+    describe('cloudidRestApi3FilterIdDelete', function() {
+      it('should call cloudidRestApi3FilterIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdDelete
+        //instance.cloudidRestApi3FilterIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdFavouriteDelete', function() {
-      it('should call filterIdFavouriteDelete successfully', function(done) {
-        //uncomment below and update the code to test filterIdFavouriteDelete
-        //instance.filterIdFavouriteDelete(function(error) {
+    describe('cloudidRestApi3FilterIdFavouriteDelete', function() {
+      it('should call cloudidRestApi3FilterIdFavouriteDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdFavouriteDelete
+        //instance.cloudidRestApi3FilterIdFavouriteDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdFavouritePut', function() {
-      it('should call filterIdFavouritePut successfully', function(done) {
-        //uncomment below and update the code to test filterIdFavouritePut
-        //instance.filterIdFavouritePut(function(error) {
+    describe('cloudidRestApi3FilterIdFavouritePut', function() {
+      it('should call cloudidRestApi3FilterIdFavouritePut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdFavouritePut
+        //instance.cloudidRestApi3FilterIdFavouritePut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdGet', function() {
-      it('should call filterIdGet successfully', function(done) {
-        //uncomment below and update the code to test filterIdGet
-        //instance.filterIdGet(function(error) {
+    describe('cloudidRestApi3FilterIdGet', function() {
+      it('should call cloudidRestApi3FilterIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdGet
+        //instance.cloudidRestApi3FilterIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdPermissionGet', function() {
-      it('should call filterIdPermissionGet successfully', function(done) {
-        //uncomment below and update the code to test filterIdPermissionGet
-        //instance.filterIdPermissionGet(function(error) {
+    describe('cloudidRestApi3FilterIdPermissionGet', function() {
+      it('should call cloudidRestApi3FilterIdPermissionGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdPermissionGet
+        //instance.cloudidRestApi3FilterIdPermissionGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdPermissionPermissionIdDelete', function() {
-      it('should call filterIdPermissionPermissionIdDelete successfully', function(done) {
-        //uncomment below and update the code to test filterIdPermissionPermissionIdDelete
-        //instance.filterIdPermissionPermissionIdDelete(function(error) {
+    describe('cloudidRestApi3FilterIdPermissionPermissionIdDelete', function() {
+      it('should call cloudidRestApi3FilterIdPermissionPermissionIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdPermissionPermissionIdDelete
+        //instance.cloudidRestApi3FilterIdPermissionPermissionIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdPermissionPermissionIdGet', function() {
-      it('should call filterIdPermissionPermissionIdGet successfully', function(done) {
-        //uncomment below and update the code to test filterIdPermissionPermissionIdGet
-        //instance.filterIdPermissionPermissionIdGet(function(error) {
+    describe('cloudidRestApi3FilterIdPermissionPermissionIdGet', function() {
+      it('should call cloudidRestApi3FilterIdPermissionPermissionIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdPermissionPermissionIdGet
+        //instance.cloudidRestApi3FilterIdPermissionPermissionIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdPermissionPost', function() {
-      it('should call filterIdPermissionPost successfully', function(done) {
-        //uncomment below and update the code to test filterIdPermissionPost
-        //instance.filterIdPermissionPost(function(error) {
+    describe('cloudidRestApi3FilterIdPermissionPost', function() {
+      it('should call cloudidRestApi3FilterIdPermissionPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdPermissionPost
+        //instance.cloudidRestApi3FilterIdPermissionPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterIdPut', function() {
-      it('should call filterIdPut successfully', function(done) {
-        //uncomment below and update the code to test filterIdPut
-        //instance.filterIdPut(function(error) {
+    describe('cloudidRestApi3FilterIdPut', function() {
+      it('should call cloudidRestApi3FilterIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterIdPut
+        //instance.cloudidRestApi3FilterIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterMyGet', function() {
-      it('should call filterMyGet successfully', function(done) {
-        //uncomment below and update the code to test filterMyGet
-        //instance.filterMyGet(function(error) {
+    describe('cloudidRestApi3FilterMyGet', function() {
+      it('should call cloudidRestApi3FilterMyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterMyGet
+        //instance.cloudidRestApi3FilterMyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterPost', function() {
-      it('should call filterPost successfully', function(done) {
-        //uncomment below and update the code to test filterPost
-        //instance.filterPost(function(error) {
+    describe('cloudidRestApi3FilterPost', function() {
+      it('should call cloudidRestApi3FilterPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterPost
+        //instance.cloudidRestApi3FilterPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('filterSearchGet', function() {
-      it('should call filterSearchGet successfully', function(done) {
-        //uncomment below and update the code to test filterSearchGet
-        //instance.filterSearchGet(function(error) {
+    describe('cloudidRestApi3FilterSearchGet', function() {
+      it('should call cloudidRestApi3FilterSearchGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3FilterSearchGet
+        //instance.cloudidRestApi3FilterSearchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('groupDelete', function() {
-      it('should call groupDelete successfully', function(done) {
-        //uncomment below and update the code to test groupDelete
-        //instance.groupDelete(function(error) {
+    describe('cloudidRestApi3GroupDelete', function() {
+      it('should call cloudidRestApi3GroupDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3GroupDelete
+        //instance.cloudidRestApi3GroupDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('groupGet', function() {
-      it('should call groupGet successfully', function(done) {
-        //uncomment below and update the code to test groupGet
-        //instance.groupGet(function(error) {
+    describe('cloudidRestApi3GroupGet', function() {
+      it('should call cloudidRestApi3GroupGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3GroupGet
+        //instance.cloudidRestApi3GroupGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('groupMemberGet', function() {
-      it('should call groupMemberGet successfully', function(done) {
-        //uncomment below and update the code to test groupMemberGet
-        //instance.groupMemberGet(function(error) {
+    describe('cloudidRestApi3GroupMemberGet', function() {
+      it('should call cloudidRestApi3GroupMemberGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3GroupMemberGet
+        //instance.cloudidRestApi3GroupMemberGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('groupPost', function() {
-      it('should call groupPost successfully', function(done) {
-        //uncomment below and update the code to test groupPost
-        //instance.groupPost(function(error) {
+    describe('cloudidRestApi3GroupPost', function() {
+      it('should call cloudidRestApi3GroupPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3GroupPost
+        //instance.cloudidRestApi3GroupPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('groupUserDelete', function() {
-      it('should call groupUserDelete successfully', function(done) {
-        //uncomment below and update the code to test groupUserDelete
-        //instance.groupUserDelete(function(error) {
+    describe('cloudidRestApi3GroupUserDelete', function() {
+      it('should call cloudidRestApi3GroupUserDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3GroupUserDelete
+        //instance.cloudidRestApi3GroupUserDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('groupUserPost', function() {
-      it('should call groupUserPost successfully', function(done) {
-        //uncomment below and update the code to test groupUserPost
-        //instance.groupUserPost(function(error) {
+    describe('cloudidRestApi3GroupUserPost', function() {
+      it('should call cloudidRestApi3GroupUserPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3GroupUserPost
+        //instance.cloudidRestApi3GroupUserPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('groupsPickerGet', function() {
-      it('should call groupsPickerGet successfully', function(done) {
-        //uncomment below and update the code to test groupsPickerGet
-        //instance.groupsPickerGet(function(error) {
+    describe('cloudidRestApi3GroupsPickerGet', function() {
+      it('should call cloudidRestApi3GroupsPickerGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3GroupsPickerGet
+        //instance.cloudidRestApi3GroupsPickerGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('groupuserpickerGet', function() {
-      it('should call groupuserpickerGet successfully', function(done) {
-        //uncomment below and update the code to test groupuserpickerGet
-        //instance.groupuserpickerGet(function(error) {
+    describe('cloudidRestApi3GroupuserpickerGet', function() {
+      it('should call cloudidRestApi3GroupuserpickerGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3GroupuserpickerGet
+        //instance.cloudidRestApi3GroupuserpickerGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueBulkPost', function() {
-      it('should call issueBulkPost successfully', function(done) {
-        //uncomment below and update the code to test issueBulkPost
-        //instance.issueBulkPost(function(error) {
+    describe('cloudidRestApi3IssueBulkPost', function() {
+      it('should call cloudidRestApi3IssueBulkPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueBulkPost
+        //instance.cloudidRestApi3IssueBulkPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueCreatemetaGet', function() {
-      it('should call issueCreatemetaGet successfully', function(done) {
-        //uncomment below and update the code to test issueCreatemetaGet
-        //instance.issueCreatemetaGet(function(error) {
+    describe('cloudidRestApi3IssueCreatemetaGet', function() {
+      it('should call cloudidRestApi3IssueCreatemetaGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueCreatemetaGet
+        //instance.cloudidRestApi3IssueCreatemetaGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyAssigneePut', function() {
-      it('should call issueIssueIdOrKeyAssigneePut successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyAssigneePut
-        //instance.issueIssueIdOrKeyAssigneePut(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyAssigneePut', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyAssigneePut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyAssigneePut
+        //instance.cloudidRestApi3IssueIssueIdOrKeyAssigneePut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyAttachmentsPost', function() {
-      it('should call issueIssueIdOrKeyAttachmentsPost successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyAttachmentsPost
-        //instance.issueIssueIdOrKeyAttachmentsPost(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost
+        //instance.cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyChangelogGet', function() {
-      it('should call issueIssueIdOrKeyChangelogGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyChangelogGet
-        //instance.issueIssueIdOrKeyChangelogGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyChangelogGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyChangelogGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyChangelogGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyChangelogGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyCommentGet', function() {
-      it('should call issueIssueIdOrKeyCommentGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyCommentGet
-        //instance.issueIssueIdOrKeyCommentGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyCommentGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyCommentGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyCommentGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyCommentGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyCommentIdDelete', function() {
-      it('should call issueIssueIdOrKeyCommentIdDelete successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyCommentIdDelete
-        //instance.issueIssueIdOrKeyCommentIdDelete(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete
+        //instance.cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyCommentIdGet', function() {
-      it('should call issueIssueIdOrKeyCommentIdGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyCommentIdGet
-        //instance.issueIssueIdOrKeyCommentIdGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyCommentIdGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyCommentIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyCommentIdGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyCommentIdPut', function() {
-      it('should call issueIssueIdOrKeyCommentIdPut successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyCommentIdPut
-        //instance.issueIssueIdOrKeyCommentIdPut(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyCommentIdPut', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyCommentIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyCommentIdPut
+        //instance.cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyCommentPost', function() {
-      it('should call issueIssueIdOrKeyCommentPost successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyCommentPost
-        //instance.issueIssueIdOrKeyCommentPost(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyCommentPost', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyCommentPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyCommentPost
+        //instance.cloudidRestApi3IssueIssueIdOrKeyCommentPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyDelete', function() {
-      it('should call issueIssueIdOrKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyDelete
-        //instance.issueIssueIdOrKeyDelete(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyDelete', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyDelete
+        //instance.cloudidRestApi3IssueIssueIdOrKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyEditmetaGet', function() {
-      it('should call issueIssueIdOrKeyEditmetaGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyEditmetaGet
-        //instance.issueIssueIdOrKeyEditmetaGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyEditmetaGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyEditmetaGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyEditmetaGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyGet', function() {
-      it('should call issueIssueIdOrKeyGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyGet
-        //instance.issueIssueIdOrKeyGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyNotifyPost', function() {
-      it('should call issueIssueIdOrKeyNotifyPost successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyNotifyPost
-        //instance.issueIssueIdOrKeyNotifyPost(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyNotifyPost', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyNotifyPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyNotifyPost
+        //instance.cloudidRestApi3IssueIssueIdOrKeyNotifyPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyPropertiesGet', function() {
-      it('should call issueIssueIdOrKeyPropertiesGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyPropertiesGet
-        //instance.issueIssueIdOrKeyPropertiesGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyPropertiesGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyPropertiesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyPropertiesGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyPropertiesPropertyKeyDelete', function() {
-      it('should call issueIssueIdOrKeyPropertiesPropertyKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyPropertiesPropertyKeyDelete
-        //instance.issueIssueIdOrKeyPropertiesPropertyKeyDelete(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete
+        //instance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyPropertiesPropertyKeyGet', function() {
-      it('should call issueIssueIdOrKeyPropertiesPropertyKeyGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyPropertiesPropertyKeyGet
-        //instance.issueIssueIdOrKeyPropertiesPropertyKeyGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyPropertiesPropertyKeyPut', function() {
-      it('should call issueIssueIdOrKeyPropertiesPropertyKeyPut successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyPropertiesPropertyKeyPut
-        //instance.issueIssueIdOrKeyPropertiesPropertyKeyPut(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut
+        //instance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyPut', function() {
-      it('should call issueIssueIdOrKeyPut successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyPut
-        //instance.issueIssueIdOrKeyPut(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyPut', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyPut
+        //instance.cloudidRestApi3IssueIssueIdOrKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyRemotelinkDelete', function() {
-      it('should call issueIssueIdOrKeyRemotelinkDelete successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyRemotelinkDelete
-        //instance.issueIssueIdOrKeyRemotelinkDelete(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete
+        //instance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyRemotelinkGet', function() {
-      it('should call issueIssueIdOrKeyRemotelinkGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyRemotelinkGet
-        //instance.issueIssueIdOrKeyRemotelinkGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyRemotelinkLinkIdDelete', function() {
-      it('should call issueIssueIdOrKeyRemotelinkLinkIdDelete successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyRemotelinkLinkIdDelete
-        //instance.issueIssueIdOrKeyRemotelinkLinkIdDelete(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete
+        //instance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyRemotelinkLinkIdGet', function() {
-      it('should call issueIssueIdOrKeyRemotelinkLinkIdGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyRemotelinkLinkIdGet
-        //instance.issueIssueIdOrKeyRemotelinkLinkIdGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyRemotelinkLinkIdPut', function() {
-      it('should call issueIssueIdOrKeyRemotelinkLinkIdPut successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyRemotelinkLinkIdPut
-        //instance.issueIssueIdOrKeyRemotelinkLinkIdPut(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut
+        //instance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyRemotelinkPost', function() {
-      it('should call issueIssueIdOrKeyRemotelinkPost successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyRemotelinkPost
-        //instance.issueIssueIdOrKeyRemotelinkPost(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost
+        //instance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyTransitionsGet', function() {
-      it('should call issueIssueIdOrKeyTransitionsGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyTransitionsGet
-        //instance.issueIssueIdOrKeyTransitionsGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyTransitionsGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyTransitionsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyTransitionsGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyTransitionsPost', function() {
-      it('should call issueIssueIdOrKeyTransitionsPost successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyTransitionsPost
-        //instance.issueIssueIdOrKeyTransitionsPost(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyTransitionsPost', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyTransitionsPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyTransitionsPost
+        //instance.cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyVotesDelete', function() {
-      it('should call issueIssueIdOrKeyVotesDelete successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyVotesDelete
-        //instance.issueIssueIdOrKeyVotesDelete(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyVotesDelete', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyVotesDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyVotesDelete
+        //instance.cloudidRestApi3IssueIssueIdOrKeyVotesDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyVotesGet', function() {
-      it('should call issueIssueIdOrKeyVotesGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyVotesGet
-        //instance.issueIssueIdOrKeyVotesGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyVotesGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyVotesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyVotesGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyVotesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyVotesPost', function() {
-      it('should call issueIssueIdOrKeyVotesPost successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyVotesPost
-        //instance.issueIssueIdOrKeyVotesPost(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyVotesPost', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyVotesPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyVotesPost
+        //instance.cloudidRestApi3IssueIssueIdOrKeyVotesPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWatchersDelete', function() {
-      it('should call issueIssueIdOrKeyWatchersDelete successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWatchersDelete
-        //instance.issueIssueIdOrKeyWatchersDelete(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWatchersDelete', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWatchersDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWatchersDelete
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWatchersGet', function() {
-      it('should call issueIssueIdOrKeyWatchersGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWatchersGet
-        //instance.issueIssueIdOrKeyWatchersGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWatchersGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWatchersGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWatchersGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWatchersGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWatchersPost', function() {
-      it('should call issueIssueIdOrKeyWatchersPost successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWatchersPost
-        //instance.issueIssueIdOrKeyWatchersPost(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWatchersPost', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWatchersPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWatchersPost
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWatchersPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWorklogGet', function() {
-      it('should call issueIssueIdOrKeyWorklogGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWorklogGet
-        //instance.issueIssueIdOrKeyWorklogGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWorklogGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWorklogGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWorklogGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWorklogGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWorklogIdDelete', function() {
-      it('should call issueIssueIdOrKeyWorklogIdDelete successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWorklogIdDelete
-        //instance.issueIssueIdOrKeyWorklogIdDelete(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWorklogIdGet', function() {
-      it('should call issueIssueIdOrKeyWorklogIdGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWorklogIdGet
-        //instance.issueIssueIdOrKeyWorklogIdGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWorklogIdPut', function() {
-      it('should call issueIssueIdOrKeyWorklogIdPut successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWorklogIdPut
-        //instance.issueIssueIdOrKeyWorklogIdPut(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWorklogPost', function() {
-      it('should call issueIssueIdOrKeyWorklogPost successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWorklogPost
-        //instance.issueIssueIdOrKeyWorklogPost(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWorklogPost', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWorklogPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWorklogPost
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWorklogPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWorklogWorklogIdPropertiesGet', function() {
-      it('should call issueIssueIdOrKeyWorklogWorklogIdPropertiesGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWorklogWorklogIdPropertiesGet
-        //instance.issueIssueIdOrKeyWorklogWorklogIdPropertiesGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete', function() {
-      it('should call issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete
-        //instance.issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet', function() {
-      it('should call issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet
-        //instance.issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut', function() {
-      it('should call issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut successfully', function(done) {
-        //uncomment below and update the code to test issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut
-        //instance.issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(function(error) {
+    describe('cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut', function() {
+      it('should call cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut
+        //instance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueLinkLinkIdDelete', function() {
-      it('should call issueLinkLinkIdDelete successfully', function(done) {
-        //uncomment below and update the code to test issueLinkLinkIdDelete
-        //instance.issueLinkLinkIdDelete(function(error) {
+    describe('cloudidRestApi3IssueLinkLinkIdDelete', function() {
+      it('should call cloudidRestApi3IssueLinkLinkIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueLinkLinkIdDelete
+        //instance.cloudidRestApi3IssueLinkLinkIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueLinkLinkIdGet', function() {
-      it('should call issueLinkLinkIdGet successfully', function(done) {
-        //uncomment below and update the code to test issueLinkLinkIdGet
-        //instance.issueLinkLinkIdGet(function(error) {
+    describe('cloudidRestApi3IssueLinkLinkIdGet', function() {
+      it('should call cloudidRestApi3IssueLinkLinkIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueLinkLinkIdGet
+        //instance.cloudidRestApi3IssueLinkLinkIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueLinkPost', function() {
-      it('should call issueLinkPost successfully', function(done) {
-        //uncomment below and update the code to test issueLinkPost
-        //instance.issueLinkPost(function(error) {
+    describe('cloudidRestApi3IssueLinkPost', function() {
+      it('should call cloudidRestApi3IssueLinkPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueLinkPost
+        //instance.cloudidRestApi3IssueLinkPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueLinkTypeGet', function() {
-      it('should call issueLinkTypeGet successfully', function(done) {
-        //uncomment below and update the code to test issueLinkTypeGet
-        //instance.issueLinkTypeGet(function(error) {
+    describe('cloudidRestApi3IssueLinkTypeGet', function() {
+      it('should call cloudidRestApi3IssueLinkTypeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueLinkTypeGet
+        //instance.cloudidRestApi3IssueLinkTypeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueLinkTypeIssueLinkTypeIdDelete', function() {
-      it('should call issueLinkTypeIssueLinkTypeIdDelete successfully', function(done) {
-        //uncomment below and update the code to test issueLinkTypeIssueLinkTypeIdDelete
-        //instance.issueLinkTypeIssueLinkTypeIdDelete(function(error) {
+    describe('cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete', function() {
+      it('should call cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete
+        //instance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueLinkTypeIssueLinkTypeIdGet', function() {
-      it('should call issueLinkTypeIssueLinkTypeIdGet successfully', function(done) {
-        //uncomment below and update the code to test issueLinkTypeIssueLinkTypeIdGet
-        //instance.issueLinkTypeIssueLinkTypeIdGet(function(error) {
+    describe('cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet', function() {
+      it('should call cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet
+        //instance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueLinkTypeIssueLinkTypeIdPut', function() {
-      it('should call issueLinkTypeIssueLinkTypeIdPut successfully', function(done) {
-        //uncomment below and update the code to test issueLinkTypeIssueLinkTypeIdPut
-        //instance.issueLinkTypeIssueLinkTypeIdPut(function(error) {
+    describe('cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut', function() {
+      it('should call cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut
+        //instance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issueLinkTypePost', function() {
-      it('should call issueLinkTypePost successfully', function(done) {
-        //uncomment below and update the code to test issueLinkTypePost
-        //instance.issueLinkTypePost(function(error) {
+    describe('cloudidRestApi3IssueLinkTypePost', function() {
+      it('should call cloudidRestApi3IssueLinkTypePost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssueLinkTypePost
+        //instance.cloudidRestApi3IssueLinkTypePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuePickerGet', function() {
-      it('should call issuePickerGet successfully', function(done) {
-        //uncomment below and update the code to test issuePickerGet
-        //instance.issuePickerGet(function(error) {
+    describe('cloudidRestApi3IssuePickerGet', function() {
+      it('should call cloudidRestApi3IssuePickerGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuePickerGet
+        //instance.cloudidRestApi3IssuePickerGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuePost', function() {
-      it('should call issuePost successfully', function(done) {
-        //uncomment below and update the code to test issuePost
-        //instance.issuePost(function(error) {
+    describe('cloudidRestApi3IssuePost', function() {
+      it('should call cloudidRestApi3IssuePost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuePost
+        //instance.cloudidRestApi3IssuePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuePropertiesPropertyKeyDelete', function() {
-      it('should call issuePropertiesPropertyKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test issuePropertiesPropertyKeyDelete
-        //instance.issuePropertiesPropertyKeyDelete(function(error) {
+    describe('cloudidRestApi3IssuePropertiesPropertyKeyDelete', function() {
+      it('should call cloudidRestApi3IssuePropertiesPropertyKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuePropertiesPropertyKeyDelete
+        //instance.cloudidRestApi3IssuePropertiesPropertyKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuePropertiesPropertyKeyPut', function() {
-      it('should call issuePropertiesPropertyKeyPut successfully', function(done) {
-        //uncomment below and update the code to test issuePropertiesPropertyKeyPut
-        //instance.issuePropertiesPropertyKeyPut(function(error) {
+    describe('cloudidRestApi3IssuePropertiesPropertyKeyPut', function() {
+      it('should call cloudidRestApi3IssuePropertiesPropertyKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuePropertiesPropertyKeyPut
+        //instance.cloudidRestApi3IssuePropertiesPropertyKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuesecurityschemesGet', function() {
-      it('should call issuesecurityschemesGet successfully', function(done) {
-        //uncomment below and update the code to test issuesecurityschemesGet
-        //instance.issuesecurityschemesGet(function(error) {
+    describe('cloudidRestApi3IssuesecurityschemesGet', function() {
+      it('should call cloudidRestApi3IssuesecurityschemesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuesecurityschemesGet
+        //instance.cloudidRestApi3IssuesecurityschemesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuesecurityschemesIdGet', function() {
-      it('should call issuesecurityschemesIdGet successfully', function(done) {
-        //uncomment below and update the code to test issuesecurityschemesIdGet
-        //instance.issuesecurityschemesIdGet(function(error) {
+    describe('cloudidRestApi3IssuesecurityschemesIdGet', function() {
+      it('should call cloudidRestApi3IssuesecurityschemesIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuesecurityschemesIdGet
+        //instance.cloudidRestApi3IssuesecurityschemesIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeGet', function() {
-      it('should call issuetypeGet successfully', function(done) {
-        //uncomment below and update the code to test issuetypeGet
-        //instance.issuetypeGet(function(error) {
+    describe('cloudidRestApi3IssuetypeGet', function() {
+      it('should call cloudidRestApi3IssuetypeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeGet
+        //instance.cloudidRestApi3IssuetypeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeIdAlternativesGet', function() {
-      it('should call issuetypeIdAlternativesGet successfully', function(done) {
-        //uncomment below and update the code to test issuetypeIdAlternativesGet
-        //instance.issuetypeIdAlternativesGet(function(error) {
+    describe('cloudidRestApi3IssuetypeIdAlternativesGet', function() {
+      it('should call cloudidRestApi3IssuetypeIdAlternativesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeIdAlternativesGet
+        //instance.cloudidRestApi3IssuetypeIdAlternativesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeIdAvatar2Post', function() {
-      it('should call issuetypeIdAvatar2Post successfully', function(done) {
-        //uncomment below and update the code to test issuetypeIdAvatar2Post
-        //instance.issuetypeIdAvatar2Post(function(error) {
+    describe('cloudidRestApi3IssuetypeIdAvatar2Post', function() {
+      it('should call cloudidRestApi3IssuetypeIdAvatar2Post successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeIdAvatar2Post
+        //instance.cloudidRestApi3IssuetypeIdAvatar2Post(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeIdDelete', function() {
-      it('should call issuetypeIdDelete successfully', function(done) {
-        //uncomment below and update the code to test issuetypeIdDelete
-        //instance.issuetypeIdDelete(function(error) {
+    describe('cloudidRestApi3IssuetypeIdDelete', function() {
+      it('should call cloudidRestApi3IssuetypeIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeIdDelete
+        //instance.cloudidRestApi3IssuetypeIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeIdGet', function() {
-      it('should call issuetypeIdGet successfully', function(done) {
-        //uncomment below and update the code to test issuetypeIdGet
-        //instance.issuetypeIdGet(function(error) {
+    describe('cloudidRestApi3IssuetypeIdGet', function() {
+      it('should call cloudidRestApi3IssuetypeIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeIdGet
+        //instance.cloudidRestApi3IssuetypeIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeIdPut', function() {
-      it('should call issuetypeIdPut successfully', function(done) {
-        //uncomment below and update the code to test issuetypeIdPut
-        //instance.issuetypeIdPut(function(error) {
+    describe('cloudidRestApi3IssuetypeIdPut', function() {
+      it('should call cloudidRestApi3IssuetypeIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeIdPut
+        //instance.cloudidRestApi3IssuetypeIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeIssueTypeIdPropertiesGet', function() {
-      it('should call issuetypeIssueTypeIdPropertiesGet successfully', function(done) {
-        //uncomment below and update the code to test issuetypeIssueTypeIdPropertiesGet
-        //instance.issuetypeIssueTypeIdPropertiesGet(function(error) {
+    describe('cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet', function() {
+      it('should call cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet
+        //instance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeIssueTypeIdPropertiesPropertyKeyDelete', function() {
-      it('should call issuetypeIssueTypeIdPropertiesPropertyKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test issuetypeIssueTypeIdPropertiesPropertyKeyDelete
-        //instance.issuetypeIssueTypeIdPropertiesPropertyKeyDelete(function(error) {
+    describe('cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete', function() {
+      it('should call cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete
+        //instance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeIssueTypeIdPropertiesPropertyKeyGet', function() {
-      it('should call issuetypeIssueTypeIdPropertiesPropertyKeyGet successfully', function(done) {
-        //uncomment below and update the code to test issuetypeIssueTypeIdPropertiesPropertyKeyGet
-        //instance.issuetypeIssueTypeIdPropertiesPropertyKeyGet(function(error) {
+    describe('cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet', function() {
+      it('should call cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet
+        //instance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypeIssueTypeIdPropertiesPropertyKeyPut', function() {
-      it('should call issuetypeIssueTypeIdPropertiesPropertyKeyPut successfully', function(done) {
-        //uncomment below and update the code to test issuetypeIssueTypeIdPropertiesPropertyKeyPut
-        //instance.issuetypeIssueTypeIdPropertiesPropertyKeyPut(function(error) {
+    describe('cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut', function() {
+      it('should call cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut
+        //instance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('issuetypePost', function() {
-      it('should call issuetypePost successfully', function(done) {
-        //uncomment below and update the code to test issuetypePost
-        //instance.issuetypePost(function(error) {
+    describe('cloudidRestApi3IssuetypePost', function() {
+      it('should call cloudidRestApi3IssuetypePost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3IssuetypePost
+        //instance.cloudidRestApi3IssuetypePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('jqlAutocompletedataGet', function() {
-      it('should call jqlAutocompletedataGet successfully', function(done) {
-        //uncomment below and update the code to test jqlAutocompletedataGet
-        //instance.jqlAutocompletedataGet(function(error) {
+    describe('cloudidRestApi3JqlAutocompletedataGet', function() {
+      it('should call cloudidRestApi3JqlAutocompletedataGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3JqlAutocompletedataGet
+        //instance.cloudidRestApi3JqlAutocompletedataGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('jqlAutocompletedataSuggestionsGet', function() {
-      it('should call jqlAutocompletedataSuggestionsGet successfully', function(done) {
-        //uncomment below and update the code to test jqlAutocompletedataSuggestionsGet
-        //instance.jqlAutocompletedataSuggestionsGet(function(error) {
+    describe('cloudidRestApi3JqlAutocompletedataSuggestionsGet', function() {
+      it('should call cloudidRestApi3JqlAutocompletedataSuggestionsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3JqlAutocompletedataSuggestionsGet
+        //instance.cloudidRestApi3JqlAutocompletedataSuggestionsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('jqlPdcleanerPost', function() {
-      it('should call jqlPdcleanerPost successfully', function(done) {
-        //uncomment below and update the code to test jqlPdcleanerPost
-        //instance.jqlPdcleanerPost(function(error) {
+    describe('cloudidRestApi3JqlPdcleanerPost', function() {
+      it('should call cloudidRestApi3JqlPdcleanerPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3JqlPdcleanerPost
+        //instance.cloudidRestApi3JqlPdcleanerPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('mypermissionsGet', function() {
-      it('should call mypermissionsGet successfully', function(done) {
-        //uncomment below and update the code to test mypermissionsGet
-        //instance.mypermissionsGet(function(error) {
+    describe('cloudidRestApi3MypermissionsGet', function() {
+      it('should call cloudidRestApi3MypermissionsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3MypermissionsGet
+        //instance.cloudidRestApi3MypermissionsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('mypreferencesDelete', function() {
-      it('should call mypreferencesDelete successfully', function(done) {
-        //uncomment below and update the code to test mypreferencesDelete
-        //instance.mypreferencesDelete(function(error) {
+    describe('cloudidRestApi3MypreferencesDelete', function() {
+      it('should call cloudidRestApi3MypreferencesDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3MypreferencesDelete
+        //instance.cloudidRestApi3MypreferencesDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('mypreferencesGet', function() {
-      it('should call mypreferencesGet successfully', function(done) {
-        //uncomment below and update the code to test mypreferencesGet
-        //instance.mypreferencesGet(function(error) {
+    describe('cloudidRestApi3MypreferencesGet', function() {
+      it('should call cloudidRestApi3MypreferencesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3MypreferencesGet
+        //instance.cloudidRestApi3MypreferencesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('mypreferencesLocaleDelete', function() {
-      it('should call mypreferencesLocaleDelete successfully', function(done) {
-        //uncomment below and update the code to test mypreferencesLocaleDelete
-        //instance.mypreferencesLocaleDelete(function(error) {
+    describe('cloudidRestApi3MypreferencesLocaleDelete', function() {
+      it('should call cloudidRestApi3MypreferencesLocaleDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3MypreferencesLocaleDelete
+        //instance.cloudidRestApi3MypreferencesLocaleDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('mypreferencesLocaleGet', function() {
-      it('should call mypreferencesLocaleGet successfully', function(done) {
-        //uncomment below and update the code to test mypreferencesLocaleGet
-        //instance.mypreferencesLocaleGet(function(error) {
+    describe('cloudidRestApi3MypreferencesLocaleGet', function() {
+      it('should call cloudidRestApi3MypreferencesLocaleGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3MypreferencesLocaleGet
+        //instance.cloudidRestApi3MypreferencesLocaleGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('mypreferencesLocalePut', function() {
-      it('should call mypreferencesLocalePut successfully', function(done) {
-        //uncomment below and update the code to test mypreferencesLocalePut
-        //instance.mypreferencesLocalePut(function(error) {
+    describe('cloudidRestApi3MypreferencesLocalePut', function() {
+      it('should call cloudidRestApi3MypreferencesLocalePut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3MypreferencesLocalePut
+        //instance.cloudidRestApi3MypreferencesLocalePut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('mypreferencesPut', function() {
-      it('should call mypreferencesPut successfully', function(done) {
-        //uncomment below and update the code to test mypreferencesPut
-        //instance.mypreferencesPut(function(error) {
+    describe('cloudidRestApi3MypreferencesPut', function() {
+      it('should call cloudidRestApi3MypreferencesPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3MypreferencesPut
+        //instance.cloudidRestApi3MypreferencesPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('myselfGet', function() {
-      it('should call myselfGet successfully', function(done) {
-        //uncomment below and update the code to test myselfGet
-        //instance.myselfGet(function(error) {
+    describe('cloudidRestApi3MyselfGet', function() {
+      it('should call cloudidRestApi3MyselfGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3MyselfGet
+        //instance.cloudidRestApi3MyselfGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('notificationschemeGet', function() {
-      it('should call notificationschemeGet successfully', function(done) {
-        //uncomment below and update the code to test notificationschemeGet
-        //instance.notificationschemeGet(function(error) {
+    describe('cloudidRestApi3NotificationschemeGet', function() {
+      it('should call cloudidRestApi3NotificationschemeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3NotificationschemeGet
+        //instance.cloudidRestApi3NotificationschemeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('notificationschemeIdGet', function() {
-      it('should call notificationschemeIdGet successfully', function(done) {
-        //uncomment below and update the code to test notificationschemeIdGet
-        //instance.notificationschemeIdGet(function(error) {
+    describe('cloudidRestApi3NotificationschemeIdGet', function() {
+      it('should call cloudidRestApi3NotificationschemeIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3NotificationschemeIdGet
+        //instance.cloudidRestApi3NotificationschemeIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionsGet', function() {
-      it('should call permissionsGet successfully', function(done) {
-        //uncomment below and update the code to test permissionsGet
-        //instance.permissionsGet(function(error) {
+    describe('cloudidRestApi3PermissionsGet', function() {
+      it('should call cloudidRestApi3PermissionsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionsGet
+        //instance.cloudidRestApi3PermissionsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionsProjectPost', function() {
-      it('should call permissionsProjectPost successfully', function(done) {
-        //uncomment below and update the code to test permissionsProjectPost
-        //instance.permissionsProjectPost(function(error) {
+    describe('cloudidRestApi3PermissionsProjectPost', function() {
+      it('should call cloudidRestApi3PermissionsProjectPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionsProjectPost
+        //instance.cloudidRestApi3PermissionsProjectPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionschemeGet', function() {
-      it('should call permissionschemeGet successfully', function(done) {
-        //uncomment below and update the code to test permissionschemeGet
-        //instance.permissionschemeGet(function(error) {
+    describe('cloudidRestApi3PermissionschemeGet', function() {
+      it('should call cloudidRestApi3PermissionschemeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionschemeGet
+        //instance.cloudidRestApi3PermissionschemeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionschemePost', function() {
-      it('should call permissionschemePost successfully', function(done) {
-        //uncomment below and update the code to test permissionschemePost
-        //instance.permissionschemePost(function(error) {
+    describe('cloudidRestApi3PermissionschemePost', function() {
+      it('should call cloudidRestApi3PermissionschemePost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionschemePost
+        //instance.cloudidRestApi3PermissionschemePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionschemeSchemeIdDelete', function() {
-      it('should call permissionschemeSchemeIdDelete successfully', function(done) {
-        //uncomment below and update the code to test permissionschemeSchemeIdDelete
-        //instance.permissionschemeSchemeIdDelete(function(error) {
+    describe('cloudidRestApi3PermissionschemeSchemeIdDelete', function() {
+      it('should call cloudidRestApi3PermissionschemeSchemeIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionschemeSchemeIdDelete
+        //instance.cloudidRestApi3PermissionschemeSchemeIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionschemeSchemeIdGet', function() {
-      it('should call permissionschemeSchemeIdGet successfully', function(done) {
-        //uncomment below and update the code to test permissionschemeSchemeIdGet
-        //instance.permissionschemeSchemeIdGet(function(error) {
+    describe('cloudidRestApi3PermissionschemeSchemeIdGet', function() {
+      it('should call cloudidRestApi3PermissionschemeSchemeIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionschemeSchemeIdGet
+        //instance.cloudidRestApi3PermissionschemeSchemeIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionschemeSchemeIdPermissionGet', function() {
-      it('should call permissionschemeSchemeIdPermissionGet successfully', function(done) {
-        //uncomment below and update the code to test permissionschemeSchemeIdPermissionGet
-        //instance.permissionschemeSchemeIdPermissionGet(function(error) {
+    describe('cloudidRestApi3PermissionschemeSchemeIdPermissionGet', function() {
+      it('should call cloudidRestApi3PermissionschemeSchemeIdPermissionGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionschemeSchemeIdPermissionGet
+        //instance.cloudidRestApi3PermissionschemeSchemeIdPermissionGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionschemeSchemeIdPermissionPermissionIdDelete', function() {
-      it('should call permissionschemeSchemeIdPermissionPermissionIdDelete successfully', function(done) {
-        //uncomment below and update the code to test permissionschemeSchemeIdPermissionPermissionIdDelete
-        //instance.permissionschemeSchemeIdPermissionPermissionIdDelete(function(error) {
+    describe('cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete', function() {
+      it('should call cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete
+        //instance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionschemeSchemeIdPermissionPermissionIdGet', function() {
-      it('should call permissionschemeSchemeIdPermissionPermissionIdGet successfully', function(done) {
-        //uncomment below and update the code to test permissionschemeSchemeIdPermissionPermissionIdGet
-        //instance.permissionschemeSchemeIdPermissionPermissionIdGet(function(error) {
+    describe('cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet', function() {
+      it('should call cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet
+        //instance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionschemeSchemeIdPermissionPost', function() {
-      it('should call permissionschemeSchemeIdPermissionPost successfully', function(done) {
-        //uncomment below and update the code to test permissionschemeSchemeIdPermissionPost
-        //instance.permissionschemeSchemeIdPermissionPost(function(error) {
+    describe('cloudidRestApi3PermissionschemeSchemeIdPermissionPost', function() {
+      it('should call cloudidRestApi3PermissionschemeSchemeIdPermissionPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionschemeSchemeIdPermissionPost
+        //instance.cloudidRestApi3PermissionschemeSchemeIdPermissionPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('permissionschemeSchemeIdPut', function() {
-      it('should call permissionschemeSchemeIdPut successfully', function(done) {
-        //uncomment below and update the code to test permissionschemeSchemeIdPut
-        //instance.permissionschemeSchemeIdPut(function(error) {
+    describe('cloudidRestApi3PermissionschemeSchemeIdPut', function() {
+      it('should call cloudidRestApi3PermissionschemeSchemeIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PermissionschemeSchemeIdPut
+        //instance.cloudidRestApi3PermissionschemeSchemeIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('priorityGet', function() {
-      it('should call priorityGet successfully', function(done) {
-        //uncomment below and update the code to test priorityGet
-        //instance.priorityGet(function(error) {
+    describe('cloudidRestApi3PriorityGet', function() {
+      it('should call cloudidRestApi3PriorityGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PriorityGet
+        //instance.cloudidRestApi3PriorityGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('priorityIdGet', function() {
-      it('should call priorityIdGet successfully', function(done) {
-        //uncomment below and update the code to test priorityIdGet
-        //instance.priorityIdGet(function(error) {
+    describe('cloudidRestApi3PriorityIdGet', function() {
+      it('should call cloudidRestApi3PriorityIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3PriorityIdGet
+        //instance.cloudidRestApi3PriorityIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectCategoryGet', function() {
-      it('should call projectCategoryGet successfully', function(done) {
-        //uncomment below and update the code to test projectCategoryGet
-        //instance.projectCategoryGet(function(error) {
+    describe('cloudidRestApi3ProjectCategoryGet', function() {
+      it('should call cloudidRestApi3ProjectCategoryGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectCategoryGet
+        //instance.cloudidRestApi3ProjectCategoryGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectCategoryIdDelete', function() {
-      it('should call projectCategoryIdDelete successfully', function(done) {
-        //uncomment below and update the code to test projectCategoryIdDelete
-        //instance.projectCategoryIdDelete(function(error) {
+    describe('cloudidRestApi3ProjectCategoryIdDelete', function() {
+      it('should call cloudidRestApi3ProjectCategoryIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectCategoryIdDelete
+        //instance.cloudidRestApi3ProjectCategoryIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectCategoryIdGet', function() {
-      it('should call projectCategoryIdGet successfully', function(done) {
-        //uncomment below and update the code to test projectCategoryIdGet
-        //instance.projectCategoryIdGet(function(error) {
+    describe('cloudidRestApi3ProjectCategoryIdGet', function() {
+      it('should call cloudidRestApi3ProjectCategoryIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectCategoryIdGet
+        //instance.cloudidRestApi3ProjectCategoryIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectCategoryIdPut', function() {
-      it('should call projectCategoryIdPut successfully', function(done) {
-        //uncomment below and update the code to test projectCategoryIdPut
-        //instance.projectCategoryIdPut(function(error) {
+    describe('cloudidRestApi3ProjectCategoryIdPut', function() {
+      it('should call cloudidRestApi3ProjectCategoryIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectCategoryIdPut
+        //instance.cloudidRestApi3ProjectCategoryIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectCategoryPost', function() {
-      it('should call projectCategoryPost successfully', function(done) {
-        //uncomment below and update the code to test projectCategoryPost
-        //instance.projectCategoryPost(function(error) {
+    describe('cloudidRestApi3ProjectCategoryPost', function() {
+      it('should call cloudidRestApi3ProjectCategoryPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectCategoryPost
+        //instance.cloudidRestApi3ProjectCategoryPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectGet', function() {
-      it('should call projectGet successfully', function(done) {
-        //uncomment below and update the code to test projectGet
-        //instance.projectGet(function(error) {
+    describe('cloudidRestApi3ProjectGet', function() {
+      it('should call cloudidRestApi3ProjectGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectGet
+        //instance.cloudidRestApi3ProjectGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectPost', function() {
-      it('should call projectPost successfully', function(done) {
-        //uncomment below and update the code to test projectPost
-        //instance.projectPost(function(error) {
+    describe('cloudidRestApi3ProjectPost', function() {
+      it('should call cloudidRestApi3ProjectPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectPost
+        //instance.cloudidRestApi3ProjectPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyAvatar2Post', function() {
-      it('should call projectProjectIdOrKeyAvatar2Post successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyAvatar2Post
-        //instance.projectProjectIdOrKeyAvatar2Post(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyAvatarIdDelete', function() {
-      it('should call projectProjectIdOrKeyAvatarIdDelete successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyAvatarIdDelete
-        //instance.projectProjectIdOrKeyAvatarIdDelete(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyAvatarPut', function() {
-      it('should call projectProjectIdOrKeyAvatarPut successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyAvatarPut
-        //instance.projectProjectIdOrKeyAvatarPut(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyAvatarPut', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyAvatarPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyAvatarPut
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyAvatarsGet', function() {
-      it('should call projectProjectIdOrKeyAvatarsGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyAvatarsGet
-        //instance.projectProjectIdOrKeyAvatarsGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyComponentGet', function() {
-      it('should call projectProjectIdOrKeyComponentGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyComponentGet
-        //instance.projectProjectIdOrKeyComponentGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyComponentGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyComponentGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyComponentGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyComponentGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyComponentsGet', function() {
-      it('should call projectProjectIdOrKeyComponentsGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyComponentsGet
-        //instance.projectProjectIdOrKeyComponentsGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyComponentsGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyComponentsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyComponentsGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyDelete', function() {
-      it('should call projectProjectIdOrKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyDelete
-        //instance.projectProjectIdOrKeyDelete(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyDelete', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyDelete
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyGet', function() {
-      it('should call projectProjectIdOrKeyGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyGet
-        //instance.projectProjectIdOrKeyGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyPropertiesGet', function() {
-      it('should call projectProjectIdOrKeyPropertiesGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyPropertiesGet
-        //instance.projectProjectIdOrKeyPropertiesGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyPropertiesPropertyKeyDelete', function() {
-      it('should call projectProjectIdOrKeyPropertiesPropertyKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyPropertiesPropertyKeyDelete
-        //instance.projectProjectIdOrKeyPropertiesPropertyKeyDelete(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyPropertiesPropertyKeyGet', function() {
-      it('should call projectProjectIdOrKeyPropertiesPropertyKeyGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyPropertiesPropertyKeyGet
-        //instance.projectProjectIdOrKeyPropertiesPropertyKeyGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyPropertiesPropertyKeyPut', function() {
-      it('should call projectProjectIdOrKeyPropertiesPropertyKeyPut successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyPropertiesPropertyKeyPut
-        //instance.projectProjectIdOrKeyPropertiesPropertyKeyPut(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyPut', function() {
-      it('should call projectProjectIdOrKeyPut successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyPut
-        //instance.projectProjectIdOrKeyPut(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyPut', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyPut
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyRoleGet', function() {
-      it('should call projectProjectIdOrKeyRoleGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyRoleGet
-        //instance.projectProjectIdOrKeyRoleGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyRoleGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyRoleGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyRoleGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyRoleGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyRoleIdDelete', function() {
-      it('should call projectProjectIdOrKeyRoleIdDelete successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyRoleIdDelete
-        //instance.projectProjectIdOrKeyRoleIdDelete(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyRoleIdGet', function() {
-      it('should call projectProjectIdOrKeyRoleIdGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyRoleIdGet
-        //instance.projectProjectIdOrKeyRoleIdGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyRoleIdPost', function() {
-      it('should call projectProjectIdOrKeyRoleIdPost successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyRoleIdPost
-        //instance.projectProjectIdOrKeyRoleIdPost(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyRoleIdPut', function() {
-      it('should call projectProjectIdOrKeyRoleIdPut successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyRoleIdPut
-        //instance.projectProjectIdOrKeyRoleIdPut(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyRoledetailsGet', function() {
-      it('should call projectProjectIdOrKeyRoledetailsGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyRoledetailsGet
-        //instance.projectProjectIdOrKeyRoledetailsGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyStatusesGet', function() {
-      it('should call projectProjectIdOrKeyStatusesGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyStatusesGet
-        //instance.projectProjectIdOrKeyStatusesGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyStatusesGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyStatusesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyStatusesGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyTypeNewProjectTypeKeyPut', function() {
-      it('should call projectProjectIdOrKeyTypeNewProjectTypeKeyPut successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyTypeNewProjectTypeKeyPut
-        //instance.projectProjectIdOrKeyTypeNewProjectTypeKeyPut(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyVersionGet', function() {
-      it('should call projectProjectIdOrKeyVersionGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyVersionGet
-        //instance.projectProjectIdOrKeyVersionGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyVersionGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyVersionGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyVersionGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyVersionGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectIdOrKeyVersionsGet', function() {
-      it('should call projectProjectIdOrKeyVersionsGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectIdOrKeyVersionsGet
-        //instance.projectProjectIdOrKeyVersionsGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectIdOrKeyVersionsGet', function() {
+      it('should call cloudidRestApi3ProjectProjectIdOrKeyVersionsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectIdOrKeyVersionsGet
+        //instance.cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectKeyOrIdIssuesecuritylevelschemeGet', function() {
-      it('should call projectProjectKeyOrIdIssuesecuritylevelschemeGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectKeyOrIdIssuesecuritylevelschemeGet
-        //instance.projectProjectKeyOrIdIssuesecuritylevelschemeGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet', function() {
+      it('should call cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet
+        //instance.cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectKeyOrIdNotificationschemeGet', function() {
-      it('should call projectProjectKeyOrIdNotificationschemeGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectKeyOrIdNotificationschemeGet
-        //instance.projectProjectKeyOrIdNotificationschemeGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet', function() {
+      it('should call cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet
+        //instance.cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectKeyOrIdPermissionschemeGet', function() {
-      it('should call projectProjectKeyOrIdPermissionschemeGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectKeyOrIdPermissionschemeGet
-        //instance.projectProjectKeyOrIdPermissionschemeGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet', function() {
+      it('should call cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet
+        //instance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectKeyOrIdPermissionschemePut', function() {
-      it('should call projectProjectKeyOrIdPermissionschemePut successfully', function(done) {
-        //uncomment below and update the code to test projectProjectKeyOrIdPermissionschemePut
-        //instance.projectProjectKeyOrIdPermissionschemePut(function(error) {
+    describe('cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut', function() {
+      it('should call cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut
+        //instance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectProjectKeyOrIdSecuritylevelGet', function() {
-      it('should call projectProjectKeyOrIdSecuritylevelGet successfully', function(done) {
-        //uncomment below and update the code to test projectProjectKeyOrIdSecuritylevelGet
-        //instance.projectProjectKeyOrIdSecuritylevelGet(function(error) {
+    describe('cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet', function() {
+      it('should call cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet
+        //instance.cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectSearchGet', function() {
-      it('should call projectSearchGet successfully', function(done) {
-        //uncomment below and update the code to test projectSearchGet
-        //instance.projectSearchGet(function(error) {
+    describe('cloudidRestApi3ProjectSearchGet', function() {
+      it('should call cloudidRestApi3ProjectSearchGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectSearchGet
+        //instance.cloudidRestApi3ProjectSearchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectTypeGet', function() {
-      it('should call projectTypeGet successfully', function(done) {
-        //uncomment below and update the code to test projectTypeGet
-        //instance.projectTypeGet(function(error) {
+    describe('cloudidRestApi3ProjectTypeGet', function() {
+      it('should call cloudidRestApi3ProjectTypeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectTypeGet
+        //instance.cloudidRestApi3ProjectTypeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectTypeProjectTypeKeyAccessibleGet', function() {
-      it('should call projectTypeProjectTypeKeyAccessibleGet successfully', function(done) {
-        //uncomment below and update the code to test projectTypeProjectTypeKeyAccessibleGet
-        //instance.projectTypeProjectTypeKeyAccessibleGet(function(error) {
+    describe('cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet', function() {
+      it('should call cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet
+        //instance.cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectTypeProjectTypeKeyGet', function() {
-      it('should call projectTypeProjectTypeKeyGet successfully', function(done) {
-        //uncomment below and update the code to test projectTypeProjectTypeKeyGet
-        //instance.projectTypeProjectTypeKeyGet(function(error) {
+    describe('cloudidRestApi3ProjectTypeProjectTypeKeyGet', function() {
+      it('should call cloudidRestApi3ProjectTypeProjectTypeKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectTypeProjectTypeKeyGet
+        //instance.cloudidRestApi3ProjectTypeProjectTypeKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectvalidateKeyGet', function() {
-      it('should call projectvalidateKeyGet successfully', function(done) {
-        //uncomment below and update the code to test projectvalidateKeyGet
-        //instance.projectvalidateKeyGet(function(error) {
+    describe('cloudidRestApi3ProjectvalidateKeyGet', function() {
+      it('should call cloudidRestApi3ProjectvalidateKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectvalidateKeyGet
+        //instance.cloudidRestApi3ProjectvalidateKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectvalidateValidProjectKeyGet', function() {
-      it('should call projectvalidateValidProjectKeyGet successfully', function(done) {
-        //uncomment below and update the code to test projectvalidateValidProjectKeyGet
-        //instance.projectvalidateValidProjectKeyGet(function(error) {
+    describe('cloudidRestApi3ProjectvalidateValidProjectKeyGet', function() {
+      it('should call cloudidRestApi3ProjectvalidateValidProjectKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectvalidateValidProjectKeyGet
+        //instance.cloudidRestApi3ProjectvalidateValidProjectKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('projectvalidateValidProjectNameGet', function() {
-      it('should call projectvalidateValidProjectNameGet successfully', function(done) {
-        //uncomment below and update the code to test projectvalidateValidProjectNameGet
-        //instance.projectvalidateValidProjectNameGet(function(error) {
+    describe('cloudidRestApi3ProjectvalidateValidProjectNameGet', function() {
+      it('should call cloudidRestApi3ProjectvalidateValidProjectNameGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ProjectvalidateValidProjectNameGet
+        //instance.cloudidRestApi3ProjectvalidateValidProjectNameGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('resolutionGet', function() {
-      it('should call resolutionGet successfully', function(done) {
-        //uncomment below and update the code to test resolutionGet
-        //instance.resolutionGet(function(error) {
+    describe('cloudidRestApi3ResolutionGet', function() {
+      it('should call cloudidRestApi3ResolutionGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ResolutionGet
+        //instance.cloudidRestApi3ResolutionGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('resolutionIdGet', function() {
-      it('should call resolutionIdGet successfully', function(done) {
-        //uncomment below and update the code to test resolutionIdGet
-        //instance.resolutionIdGet(function(error) {
+    describe('cloudidRestApi3ResolutionIdGet', function() {
+      it('should call cloudidRestApi3ResolutionIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ResolutionIdGet
+        //instance.cloudidRestApi3ResolutionIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('roleGet', function() {
-      it('should call roleGet successfully', function(done) {
-        //uncomment below and update the code to test roleGet
-        //instance.roleGet(function(error) {
+    describe('cloudidRestApi3RoleGet', function() {
+      it('should call cloudidRestApi3RoleGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3RoleGet
+        //instance.cloudidRestApi3RoleGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('roleIdActorsDelete', function() {
-      it('should call roleIdActorsDelete successfully', function(done) {
-        //uncomment below and update the code to test roleIdActorsDelete
-        //instance.roleIdActorsDelete(function(error) {
+    describe('cloudidRestApi3RoleIdActorsDelete', function() {
+      it('should call cloudidRestApi3RoleIdActorsDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3RoleIdActorsDelete
+        //instance.cloudidRestApi3RoleIdActorsDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('roleIdActorsGet', function() {
-      it('should call roleIdActorsGet successfully', function(done) {
-        //uncomment below and update the code to test roleIdActorsGet
-        //instance.roleIdActorsGet(function(error) {
+    describe('cloudidRestApi3RoleIdActorsGet', function() {
+      it('should call cloudidRestApi3RoleIdActorsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3RoleIdActorsGet
+        //instance.cloudidRestApi3RoleIdActorsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('roleIdActorsPost', function() {
-      it('should call roleIdActorsPost successfully', function(done) {
-        //uncomment below and update the code to test roleIdActorsPost
-        //instance.roleIdActorsPost(function(error) {
+    describe('cloudidRestApi3RoleIdActorsPost', function() {
+      it('should call cloudidRestApi3RoleIdActorsPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3RoleIdActorsPost
+        //instance.cloudidRestApi3RoleIdActorsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('roleIdDelete', function() {
-      it('should call roleIdDelete successfully', function(done) {
-        //uncomment below and update the code to test roleIdDelete
-        //instance.roleIdDelete(function(error) {
+    describe('cloudidRestApi3RoleIdDelete', function() {
+      it('should call cloudidRestApi3RoleIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3RoleIdDelete
+        //instance.cloudidRestApi3RoleIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('roleIdGet', function() {
-      it('should call roleIdGet successfully', function(done) {
-        //uncomment below and update the code to test roleIdGet
-        //instance.roleIdGet(function(error) {
+    describe('cloudidRestApi3RoleIdGet', function() {
+      it('should call cloudidRestApi3RoleIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3RoleIdGet
+        //instance.cloudidRestApi3RoleIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('roleIdPost', function() {
-      it('should call roleIdPost successfully', function(done) {
-        //uncomment below and update the code to test roleIdPost
-        //instance.roleIdPost(function(error) {
+    describe('cloudidRestApi3RoleIdPost', function() {
+      it('should call cloudidRestApi3RoleIdPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3RoleIdPost
+        //instance.cloudidRestApi3RoleIdPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('roleIdPut', function() {
-      it('should call roleIdPut successfully', function(done) {
-        //uncomment below and update the code to test roleIdPut
-        //instance.roleIdPut(function(error) {
+    describe('cloudidRestApi3RoleIdPut', function() {
+      it('should call cloudidRestApi3RoleIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3RoleIdPut
+        //instance.cloudidRestApi3RoleIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('rolePost', function() {
-      it('should call rolePost successfully', function(done) {
-        //uncomment below and update the code to test rolePost
-        //instance.rolePost(function(error) {
+    describe('cloudidRestApi3RolePost', function() {
+      it('should call cloudidRestApi3RolePost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3RolePost
+        //instance.cloudidRestApi3RolePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensAddToDefaultFieldIdPost', function() {
-      it('should call screensAddToDefaultFieldIdPost successfully', function(done) {
-        //uncomment below and update the code to test screensAddToDefaultFieldIdPost
-        //instance.screensAddToDefaultFieldIdPost(function(error) {
+    describe('cloudidRestApi3ScreensAddToDefaultFieldIdPost', function() {
+      it('should call cloudidRestApi3ScreensAddToDefaultFieldIdPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensAddToDefaultFieldIdPost
+        //instance.cloudidRestApi3ScreensAddToDefaultFieldIdPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensGet', function() {
-      it('should call screensGet successfully', function(done) {
-        //uncomment below and update the code to test screensGet
-        //instance.screensGet(function(error) {
+    describe('cloudidRestApi3ScreensGet', function() {
+      it('should call cloudidRestApi3ScreensGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensGet
+        //instance.cloudidRestApi3ScreensGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdAvailableFieldsGet', function() {
-      it('should call screensScreenIdAvailableFieldsGet successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdAvailableFieldsGet
-        //instance.screensScreenIdAvailableFieldsGet(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdAvailableFieldsGet', function() {
+      it('should call cloudidRestApi3ScreensScreenIdAvailableFieldsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdAvailableFieldsGet
+        //instance.cloudidRestApi3ScreensScreenIdAvailableFieldsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdTabsGet', function() {
-      it('should call screensScreenIdTabsGet successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdTabsGet
-        //instance.screensScreenIdTabsGet(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdTabsGet', function() {
+      it('should call cloudidRestApi3ScreensScreenIdTabsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdTabsGet
+        //instance.cloudidRestApi3ScreensScreenIdTabsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdTabsPost', function() {
-      it('should call screensScreenIdTabsPost successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdTabsPost
-        //instance.screensScreenIdTabsPost(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdTabsPost', function() {
+      it('should call cloudidRestApi3ScreensScreenIdTabsPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdTabsPost
+        //instance.cloudidRestApi3ScreensScreenIdTabsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdTabsTabIdDelete', function() {
-      it('should call screensScreenIdTabsTabIdDelete successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdTabsTabIdDelete
-        //instance.screensScreenIdTabsTabIdDelete(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdTabsTabIdDelete', function() {
+      it('should call cloudidRestApi3ScreensScreenIdTabsTabIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdTabsTabIdDelete
+        //instance.cloudidRestApi3ScreensScreenIdTabsTabIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdTabsTabIdFieldsGet', function() {
-      it('should call screensScreenIdTabsTabIdFieldsGet successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdTabsTabIdFieldsGet
-        //instance.screensScreenIdTabsTabIdFieldsGet(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet', function() {
+      it('should call cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet
+        //instance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdTabsTabIdFieldsIdDelete', function() {
-      it('should call screensScreenIdTabsTabIdFieldsIdDelete successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdTabsTabIdFieldsIdDelete
-        //instance.screensScreenIdTabsTabIdFieldsIdDelete(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete', function() {
+      it('should call cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete
+        //instance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdTabsTabIdFieldsIdMovePost', function() {
-      it('should call screensScreenIdTabsTabIdFieldsIdMovePost successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdTabsTabIdFieldsIdMovePost
-        //instance.screensScreenIdTabsTabIdFieldsIdMovePost(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost', function() {
+      it('should call cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost
+        //instance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdTabsTabIdFieldsPost', function() {
-      it('should call screensScreenIdTabsTabIdFieldsPost successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdTabsTabIdFieldsPost
-        //instance.screensScreenIdTabsTabIdFieldsPost(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost', function() {
+      it('should call cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost
+        //instance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdTabsTabIdMovePosPost', function() {
-      it('should call screensScreenIdTabsTabIdMovePosPost successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdTabsTabIdMovePosPost
-        //instance.screensScreenIdTabsTabIdMovePosPost(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost', function() {
+      it('should call cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost
+        //instance.cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('screensScreenIdTabsTabIdPut', function() {
-      it('should call screensScreenIdTabsTabIdPut successfully', function(done) {
-        //uncomment below and update the code to test screensScreenIdTabsTabIdPut
-        //instance.screensScreenIdTabsTabIdPut(function(error) {
+    describe('cloudidRestApi3ScreensScreenIdTabsTabIdPut', function() {
+      it('should call cloudidRestApi3ScreensScreenIdTabsTabIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ScreensScreenIdTabsTabIdPut
+        //instance.cloudidRestApi3ScreensScreenIdTabsTabIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('searchGet', function() {
-      it('should call searchGet successfully', function(done) {
-        //uncomment below and update the code to test searchGet
-        //instance.searchGet(function(error) {
+    describe('cloudidRestApi3SearchGet', function() {
+      it('should call cloudidRestApi3SearchGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3SearchGet
+        //instance.cloudidRestApi3SearchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('searchPost', function() {
-      it('should call searchPost successfully', function(done) {
-        //uncomment below and update the code to test searchPost
-        //instance.searchPost(function(error) {
+    describe('cloudidRestApi3SearchPost', function() {
+      it('should call cloudidRestApi3SearchPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3SearchPost
+        //instance.cloudidRestApi3SearchPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('securitylevelIdGet', function() {
-      it('should call securitylevelIdGet successfully', function(done) {
-        //uncomment below and update the code to test securitylevelIdGet
-        //instance.securitylevelIdGet(function(error) {
+    describe('cloudidRestApi3SecuritylevelIdGet', function() {
+      it('should call cloudidRestApi3SecuritylevelIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3SecuritylevelIdGet
+        //instance.cloudidRestApi3SecuritylevelIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('serverInfoGet', function() {
-      it('should call serverInfoGet successfully', function(done) {
-        //uncomment below and update the code to test serverInfoGet
-        //instance.serverInfoGet(function(error) {
+    describe('cloudidRestApi3ServerInfoGet', function() {
+      it('should call cloudidRestApi3ServerInfoGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3ServerInfoGet
+        //instance.cloudidRestApi3ServerInfoGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('settingsColumnsGet', function() {
-      it('should call settingsColumnsGet successfully', function(done) {
-        //uncomment below and update the code to test settingsColumnsGet
-        //instance.settingsColumnsGet(function(error) {
+    describe('cloudidRestApi3SettingsColumnsGet', function() {
+      it('should call cloudidRestApi3SettingsColumnsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3SettingsColumnsGet
+        //instance.cloudidRestApi3SettingsColumnsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('settingsColumnsPut', function() {
-      it('should call settingsColumnsPut successfully', function(done) {
-        //uncomment below and update the code to test settingsColumnsPut
-        //instance.settingsColumnsPut(function(error) {
+    describe('cloudidRestApi3SettingsColumnsPut', function() {
+      it('should call cloudidRestApi3SettingsColumnsPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3SettingsColumnsPut
+        //instance.cloudidRestApi3SettingsColumnsPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('statusGet', function() {
-      it('should call statusGet successfully', function(done) {
-        //uncomment below and update the code to test statusGet
-        //instance.statusGet(function(error) {
+    describe('cloudidRestApi3StatusGet', function() {
+      it('should call cloudidRestApi3StatusGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3StatusGet
+        //instance.cloudidRestApi3StatusGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('statusIdOrNameGet', function() {
-      it('should call statusIdOrNameGet successfully', function(done) {
-        //uncomment below and update the code to test statusIdOrNameGet
-        //instance.statusIdOrNameGet(function(error) {
+    describe('cloudidRestApi3StatusIdOrNameGet', function() {
+      it('should call cloudidRestApi3StatusIdOrNameGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3StatusIdOrNameGet
+        //instance.cloudidRestApi3StatusIdOrNameGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('statuscategoryGet', function() {
-      it('should call statuscategoryGet successfully', function(done) {
-        //uncomment below and update the code to test statuscategoryGet
-        //instance.statuscategoryGet(function(error) {
+    describe('cloudidRestApi3StatuscategoryGet', function() {
+      it('should call cloudidRestApi3StatuscategoryGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3StatuscategoryGet
+        //instance.cloudidRestApi3StatuscategoryGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('statuscategoryIdOrKeyGet', function() {
-      it('should call statuscategoryIdOrKeyGet successfully', function(done) {
-        //uncomment below and update the code to test statuscategoryIdOrKeyGet
-        //instance.statuscategoryIdOrKeyGet(function(error) {
+    describe('cloudidRestApi3StatuscategoryIdOrKeyGet', function() {
+      it('should call cloudidRestApi3StatuscategoryIdOrKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3StatuscategoryIdOrKeyGet
+        //instance.cloudidRestApi3StatuscategoryIdOrKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('taskTaskIdCancelPost', function() {
-      it('should call taskTaskIdCancelPost successfully', function(done) {
-        //uncomment below and update the code to test taskTaskIdCancelPost
-        //instance.taskTaskIdCancelPost(function(error) {
+    describe('cloudidRestApi3TaskTaskIdCancelPost', function() {
+      it('should call cloudidRestApi3TaskTaskIdCancelPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3TaskTaskIdCancelPost
+        //instance.cloudidRestApi3TaskTaskIdCancelPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('taskTaskIdGet', function() {
-      it('should call taskTaskIdGet successfully', function(done) {
-        //uncomment below and update the code to test taskTaskIdGet
-        //instance.taskTaskIdGet(function(error) {
+    describe('cloudidRestApi3TaskTaskIdGet', function() {
+      it('should call cloudidRestApi3TaskTaskIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3TaskTaskIdGet
+        //instance.cloudidRestApi3TaskTaskIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('universalAvatarTypeTypeOwnerEntityIdGet', function() {
-      it('should call universalAvatarTypeTypeOwnerEntityIdGet successfully', function(done) {
-        //uncomment below and update the code to test universalAvatarTypeTypeOwnerEntityIdGet
-        //instance.universalAvatarTypeTypeOwnerEntityIdGet(function(error) {
+    describe('cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet', function() {
+      it('should call cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet
+        //instance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('universalAvatarTypeTypeOwnerEntityIdPost', function() {
-      it('should call universalAvatarTypeTypeOwnerEntityIdPost successfully', function(done) {
-        //uncomment below and update the code to test universalAvatarTypeTypeOwnerEntityIdPost
-        //instance.universalAvatarTypeTypeOwnerEntityIdPost(function(error) {
+    describe('cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost', function() {
+      it('should call cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost
+        //instance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete', function() {
-      it('should call universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete successfully', function(done) {
-        //uncomment below and update the code to test universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete
-        //instance.universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(function(error) {
+    describe('cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete', function() {
+      it('should call cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete
+        //instance.cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userAssignableMultiProjectSearchGet', function() {
-      it('should call userAssignableMultiProjectSearchGet successfully', function(done) {
-        //uncomment below and update the code to test userAssignableMultiProjectSearchGet
-        //instance.userAssignableMultiProjectSearchGet(function(error) {
+    describe('cloudidRestApi3UserAssignableMultiProjectSearchGet', function() {
+      it('should call cloudidRestApi3UserAssignableMultiProjectSearchGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserAssignableMultiProjectSearchGet
+        //instance.cloudidRestApi3UserAssignableMultiProjectSearchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userAssignableSearchGet', function() {
-      it('should call userAssignableSearchGet successfully', function(done) {
-        //uncomment below and update the code to test userAssignableSearchGet
-        //instance.userAssignableSearchGet(function(error) {
+    describe('cloudidRestApi3UserAssignableSearchGet', function() {
+      it('should call cloudidRestApi3UserAssignableSearchGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserAssignableSearchGet
+        //instance.cloudidRestApi3UserAssignableSearchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userBulkGet', function() {
-      it('should call userBulkGet successfully', function(done) {
-        //uncomment below and update the code to test userBulkGet
-        //instance.userBulkGet(function(error) {
+    describe('cloudidRestApi3UserBulkGet', function() {
+      it('should call cloudidRestApi3UserBulkGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserBulkGet
+        //instance.cloudidRestApi3UserBulkGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userColumnsDelete', function() {
-      it('should call userColumnsDelete successfully', function(done) {
-        //uncomment below and update the code to test userColumnsDelete
-        //instance.userColumnsDelete(function(error) {
+    describe('cloudidRestApi3UserColumnsDelete', function() {
+      it('should call cloudidRestApi3UserColumnsDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserColumnsDelete
+        //instance.cloudidRestApi3UserColumnsDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userColumnsGet', function() {
-      it('should call userColumnsGet successfully', function(done) {
-        //uncomment below and update the code to test userColumnsGet
-        //instance.userColumnsGet(function(error) {
+    describe('cloudidRestApi3UserColumnsGet', function() {
+      it('should call cloudidRestApi3UserColumnsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserColumnsGet
+        //instance.cloudidRestApi3UserColumnsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userColumnsPut', function() {
-      it('should call userColumnsPut successfully', function(done) {
-        //uncomment below and update the code to test userColumnsPut
-        //instance.userColumnsPut(function(error) {
+    describe('cloudidRestApi3UserColumnsPut', function() {
+      it('should call cloudidRestApi3UserColumnsPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserColumnsPut
+        //instance.cloudidRestApi3UserColumnsPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userDelete', function() {
-      it('should call userDelete successfully', function(done) {
-        //uncomment below and update the code to test userDelete
-        //instance.userDelete(function(error) {
+    describe('cloudidRestApi3UserDelete', function() {
+      it('should call cloudidRestApi3UserDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserDelete
+        //instance.cloudidRestApi3UserDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userGet', function() {
-      it('should call userGet successfully', function(done) {
-        //uncomment below and update the code to test userGet
-        //instance.userGet(function(error) {
+    describe('cloudidRestApi3UserGet', function() {
+      it('should call cloudidRestApi3UserGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserGet
+        //instance.cloudidRestApi3UserGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userGroupsGet', function() {
-      it('should call userGroupsGet successfully', function(done) {
-        //uncomment below and update the code to test userGroupsGet
-        //instance.userGroupsGet(function(error) {
+    describe('cloudidRestApi3UserGroupsGet', function() {
+      it('should call cloudidRestApi3UserGroupsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserGroupsGet
+        //instance.cloudidRestApi3UserGroupsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userPermissionSearchGet', function() {
-      it('should call userPermissionSearchGet successfully', function(done) {
-        //uncomment below and update the code to test userPermissionSearchGet
-        //instance.userPermissionSearchGet(function(error) {
+    describe('cloudidRestApi3UserPermissionSearchGet', function() {
+      it('should call cloudidRestApi3UserPermissionSearchGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserPermissionSearchGet
+        //instance.cloudidRestApi3UserPermissionSearchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userPickerGet', function() {
-      it('should call userPickerGet successfully', function(done) {
-        //uncomment below and update the code to test userPickerGet
-        //instance.userPickerGet(function(error) {
+    describe('cloudidRestApi3UserPickerGet', function() {
+      it('should call cloudidRestApi3UserPickerGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserPickerGet
+        //instance.cloudidRestApi3UserPickerGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userPost', function() {
-      it('should call userPost successfully', function(done) {
-        //uncomment below and update the code to test userPost
-        //instance.userPost(function(error) {
+    describe('cloudidRestApi3UserPost', function() {
+      it('should call cloudidRestApi3UserPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserPost
+        //instance.cloudidRestApi3UserPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userPropertiesGet', function() {
-      it('should call userPropertiesGet successfully', function(done) {
-        //uncomment below and update the code to test userPropertiesGet
-        //instance.userPropertiesGet(function(error) {
+    describe('cloudidRestApi3UserPropertiesGet', function() {
+      it('should call cloudidRestApi3UserPropertiesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserPropertiesGet
+        //instance.cloudidRestApi3UserPropertiesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userPropertiesPropertyKeyDelete', function() {
-      it('should call userPropertiesPropertyKeyDelete successfully', function(done) {
-        //uncomment below and update the code to test userPropertiesPropertyKeyDelete
-        //instance.userPropertiesPropertyKeyDelete(function(error) {
+    describe('cloudidRestApi3UserPropertiesPropertyKeyDelete', function() {
+      it('should call cloudidRestApi3UserPropertiesPropertyKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserPropertiesPropertyKeyDelete
+        //instance.cloudidRestApi3UserPropertiesPropertyKeyDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userPropertiesPropertyKeyGet', function() {
-      it('should call userPropertiesPropertyKeyGet successfully', function(done) {
-        //uncomment below and update the code to test userPropertiesPropertyKeyGet
-        //instance.userPropertiesPropertyKeyGet(function(error) {
+    describe('cloudidRestApi3UserPropertiesPropertyKeyGet', function() {
+      it('should call cloudidRestApi3UserPropertiesPropertyKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserPropertiesPropertyKeyGet
+        //instance.cloudidRestApi3UserPropertiesPropertyKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userPropertiesPropertyKeyPut', function() {
-      it('should call userPropertiesPropertyKeyPut successfully', function(done) {
-        //uncomment below and update the code to test userPropertiesPropertyKeyPut
-        //instance.userPropertiesPropertyKeyPut(function(error) {
+    describe('cloudidRestApi3UserPropertiesPropertyKeyPut', function() {
+      it('should call cloudidRestApi3UserPropertiesPropertyKeyPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserPropertiesPropertyKeyPut
+        //instance.cloudidRestApi3UserPropertiesPropertyKeyPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userSearchGet', function() {
-      it('should call userSearchGet successfully', function(done) {
-        //uncomment below and update the code to test userSearchGet
-        //instance.userSearchGet(function(error) {
+    describe('cloudidRestApi3UserSearchGet', function() {
+      it('should call cloudidRestApi3UserSearchGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserSearchGet
+        //instance.cloudidRestApi3UserSearchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userSearchQueryGet', function() {
-      it('should call userSearchQueryGet successfully', function(done) {
-        //uncomment below and update the code to test userSearchQueryGet
-        //instance.userSearchQueryGet(function(error) {
+    describe('cloudidRestApi3UserSearchQueryGet', function() {
+      it('should call cloudidRestApi3UserSearchQueryGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserSearchQueryGet
+        //instance.cloudidRestApi3UserSearchQueryGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userSearchQueryKeyGet', function() {
-      it('should call userSearchQueryKeyGet successfully', function(done) {
-        //uncomment below and update the code to test userSearchQueryKeyGet
-        //instance.userSearchQueryKeyGet(function(error) {
+    describe('cloudidRestApi3UserSearchQueryKeyGet', function() {
+      it('should call cloudidRestApi3UserSearchQueryKeyGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserSearchQueryKeyGet
+        //instance.cloudidRestApi3UserSearchQueryKeyGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('userViewissueSearchGet', function() {
-      it('should call userViewissueSearchGet successfully', function(done) {
-        //uncomment below and update the code to test userViewissueSearchGet
-        //instance.userViewissueSearchGet(function(error) {
+    describe('cloudidRestApi3UserViewissueSearchGet', function() {
+      it('should call cloudidRestApi3UserViewissueSearchGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3UserViewissueSearchGet
+        //instance.cloudidRestApi3UserViewissueSearchGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionIdDelete', function() {
-      it('should call versionIdDelete successfully', function(done) {
-        //uncomment below and update the code to test versionIdDelete
-        //instance.versionIdDelete(function(error) {
+    describe('cloudidRestApi3VersionIdDelete', function() {
+      it('should call cloudidRestApi3VersionIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionIdDelete
+        //instance.cloudidRestApi3VersionIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionIdGet', function() {
-      it('should call versionIdGet successfully', function(done) {
-        //uncomment below and update the code to test versionIdGet
-        //instance.versionIdGet(function(error) {
+    describe('cloudidRestApi3VersionIdGet', function() {
+      it('should call cloudidRestApi3VersionIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionIdGet
+        //instance.cloudidRestApi3VersionIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionIdMergetoMoveIssuesToPut', function() {
-      it('should call versionIdMergetoMoveIssuesToPut successfully', function(done) {
-        //uncomment below and update the code to test versionIdMergetoMoveIssuesToPut
-        //instance.versionIdMergetoMoveIssuesToPut(function(error) {
+    describe('cloudidRestApi3VersionIdMergetoMoveIssuesToPut', function() {
+      it('should call cloudidRestApi3VersionIdMergetoMoveIssuesToPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionIdMergetoMoveIssuesToPut
+        //instance.cloudidRestApi3VersionIdMergetoMoveIssuesToPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionIdMovePost', function() {
-      it('should call versionIdMovePost successfully', function(done) {
-        //uncomment below and update the code to test versionIdMovePost
-        //instance.versionIdMovePost(function(error) {
+    describe('cloudidRestApi3VersionIdMovePost', function() {
+      it('should call cloudidRestApi3VersionIdMovePost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionIdMovePost
+        //instance.cloudidRestApi3VersionIdMovePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionIdPut', function() {
-      it('should call versionIdPut successfully', function(done) {
-        //uncomment below and update the code to test versionIdPut
-        //instance.versionIdPut(function(error) {
+    describe('cloudidRestApi3VersionIdPut', function() {
+      it('should call cloudidRestApi3VersionIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionIdPut
+        //instance.cloudidRestApi3VersionIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionIdRelatedIssueCountsGet', function() {
-      it('should call versionIdRelatedIssueCountsGet successfully', function(done) {
-        //uncomment below and update the code to test versionIdRelatedIssueCountsGet
-        //instance.versionIdRelatedIssueCountsGet(function(error) {
+    describe('cloudidRestApi3VersionIdRelatedIssueCountsGet', function() {
+      it('should call cloudidRestApi3VersionIdRelatedIssueCountsGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionIdRelatedIssueCountsGet
+        //instance.cloudidRestApi3VersionIdRelatedIssueCountsGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionIdRemoveAndSwapPost', function() {
-      it('should call versionIdRemoveAndSwapPost successfully', function(done) {
-        //uncomment below and update the code to test versionIdRemoveAndSwapPost
-        //instance.versionIdRemoveAndSwapPost(function(error) {
+    describe('cloudidRestApi3VersionIdRemoveAndSwapPost', function() {
+      it('should call cloudidRestApi3VersionIdRemoveAndSwapPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionIdRemoveAndSwapPost
+        //instance.cloudidRestApi3VersionIdRemoveAndSwapPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionIdUnresolvedIssueCountGet', function() {
-      it('should call versionIdUnresolvedIssueCountGet successfully', function(done) {
-        //uncomment below and update the code to test versionIdUnresolvedIssueCountGet
-        //instance.versionIdUnresolvedIssueCountGet(function(error) {
+    describe('cloudidRestApi3VersionIdUnresolvedIssueCountGet', function() {
+      it('should call cloudidRestApi3VersionIdUnresolvedIssueCountGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionIdUnresolvedIssueCountGet
+        //instance.cloudidRestApi3VersionIdUnresolvedIssueCountGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionPost', function() {
-      it('should call versionPost successfully', function(done) {
-        //uncomment below and update the code to test versionPost
-        //instance.versionPost(function(error) {
+    describe('cloudidRestApi3VersionPost', function() {
+      it('should call cloudidRestApi3VersionPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionPost
+        //instance.cloudidRestApi3VersionPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionRemotelinkGet', function() {
-      it('should call versionRemotelinkGet successfully', function(done) {
-        //uncomment below and update the code to test versionRemotelinkGet
-        //instance.versionRemotelinkGet(function(error) {
+    describe('cloudidRestApi3VersionRemotelinkGet', function() {
+      it('should call cloudidRestApi3VersionRemotelinkGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionRemotelinkGet
+        //instance.cloudidRestApi3VersionRemotelinkGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionVersionIdRemotelinkDelete', function() {
-      it('should call versionVersionIdRemotelinkDelete successfully', function(done) {
-        //uncomment below and update the code to test versionVersionIdRemotelinkDelete
-        //instance.versionVersionIdRemotelinkDelete(function(error) {
+    describe('cloudidRestApi3VersionVersionIdRemotelinkDelete', function() {
+      it('should call cloudidRestApi3VersionVersionIdRemotelinkDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionVersionIdRemotelinkDelete
+        //instance.cloudidRestApi3VersionVersionIdRemotelinkDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionVersionIdRemotelinkGet', function() {
-      it('should call versionVersionIdRemotelinkGet successfully', function(done) {
-        //uncomment below and update the code to test versionVersionIdRemotelinkGet
-        //instance.versionVersionIdRemotelinkGet(function(error) {
+    describe('cloudidRestApi3VersionVersionIdRemotelinkGet', function() {
+      it('should call cloudidRestApi3VersionVersionIdRemotelinkGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionVersionIdRemotelinkGet
+        //instance.cloudidRestApi3VersionVersionIdRemotelinkGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionVersionIdRemotelinkGlobalIdDelete', function() {
-      it('should call versionVersionIdRemotelinkGlobalIdDelete successfully', function(done) {
-        //uncomment below and update the code to test versionVersionIdRemotelinkGlobalIdDelete
-        //instance.versionVersionIdRemotelinkGlobalIdDelete(function(error) {
+    describe('cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete', function() {
+      it('should call cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete
+        //instance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionVersionIdRemotelinkGlobalIdGet', function() {
-      it('should call versionVersionIdRemotelinkGlobalIdGet successfully', function(done) {
-        //uncomment below and update the code to test versionVersionIdRemotelinkGlobalIdGet
-        //instance.versionVersionIdRemotelinkGlobalIdGet(function(error) {
+    describe('cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet', function() {
+      it('should call cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet
+        //instance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionVersionIdRemotelinkGlobalIdPost', function() {
-      it('should call versionVersionIdRemotelinkGlobalIdPost successfully', function(done) {
-        //uncomment below and update the code to test versionVersionIdRemotelinkGlobalIdPost
-        //instance.versionVersionIdRemotelinkGlobalIdPost(function(error) {
+    describe('cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost', function() {
+      it('should call cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost
+        //instance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('versionVersionIdRemotelinkPost', function() {
-      it('should call versionVersionIdRemotelinkPost successfully', function(done) {
-        //uncomment below and update the code to test versionVersionIdRemotelinkPost
-        //instance.versionVersionIdRemotelinkPost(function(error) {
+    describe('cloudidRestApi3VersionVersionIdRemotelinkPost', function() {
+      it('should call cloudidRestApi3VersionVersionIdRemotelinkPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3VersionVersionIdRemotelinkPost
+        //instance.cloudidRestApi3VersionVersionIdRemotelinkPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowGet', function() {
-      it('should call workflowGet successfully', function(done) {
-        //uncomment below and update the code to test workflowGet
-        //instance.workflowGet(function(error) {
+    describe('cloudidRestApi3WorkflowGet', function() {
+      it('should call cloudidRestApi3WorkflowGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowGet
+        //instance.cloudidRestApi3WorkflowGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowTransitionsTransitionIdPropertiesDelete', function() {
-      it('should call workflowTransitionsTransitionIdPropertiesDelete successfully', function(done) {
-        //uncomment below and update the code to test workflowTransitionsTransitionIdPropertiesDelete
-        //instance.workflowTransitionsTransitionIdPropertiesDelete(function(error) {
+    describe('cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete', function() {
+      it('should call cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete
+        //instance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowTransitionsTransitionIdPropertiesGet', function() {
-      it('should call workflowTransitionsTransitionIdPropertiesGet successfully', function(done) {
-        //uncomment below and update the code to test workflowTransitionsTransitionIdPropertiesGet
-        //instance.workflowTransitionsTransitionIdPropertiesGet(function(error) {
+    describe('cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet', function() {
+      it('should call cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet
+        //instance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowTransitionsTransitionIdPropertiesPost', function() {
-      it('should call workflowTransitionsTransitionIdPropertiesPost successfully', function(done) {
-        //uncomment below and update the code to test workflowTransitionsTransitionIdPropertiesPost
-        //instance.workflowTransitionsTransitionIdPropertiesPost(function(error) {
+    describe('cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost', function() {
+      it('should call cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost
+        //instance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowTransitionsTransitionIdPropertiesPut', function() {
-      it('should call workflowTransitionsTransitionIdPropertiesPut successfully', function(done) {
-        //uncomment below and update the code to test workflowTransitionsTransitionIdPropertiesPut
-        //instance.workflowTransitionsTransitionIdPropertiesPut(function(error) {
+    describe('cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut', function() {
+      it('should call cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut
+        //instance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdCreatedraftPost', function() {
-      it('should call workflowschemeIdCreatedraftPost successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdCreatedraftPost
-        //instance.workflowschemeIdCreatedraftPost(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdCreatedraftPost', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdCreatedraftPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdCreatedraftPost
+        //instance.cloudidRestApi3WorkflowschemeIdCreatedraftPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDefaultDelete', function() {
-      it('should call workflowschemeIdDefaultDelete successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDefaultDelete
-        //instance.workflowschemeIdDefaultDelete(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDefaultDelete', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDefaultDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDefaultDelete
+        //instance.cloudidRestApi3WorkflowschemeIdDefaultDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDefaultGet', function() {
-      it('should call workflowschemeIdDefaultGet successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDefaultGet
-        //instance.workflowschemeIdDefaultGet(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDefaultGet', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDefaultGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDefaultGet
+        //instance.cloudidRestApi3WorkflowschemeIdDefaultGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDefaultPut', function() {
-      it('should call workflowschemeIdDefaultPut successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDefaultPut
-        //instance.workflowschemeIdDefaultPut(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDefaultPut', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDefaultPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDefaultPut
+        //instance.cloudidRestApi3WorkflowschemeIdDefaultPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDelete', function() {
-      it('should call workflowschemeIdDelete successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDelete
-        //instance.workflowschemeIdDelete(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDelete', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDelete
+        //instance.cloudidRestApi3WorkflowschemeIdDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftDefaultDelete', function() {
-      it('should call workflowschemeIdDraftDefaultDelete successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftDefaultDelete
-        //instance.workflowschemeIdDraftDefaultDelete(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftDefaultDelete', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftDefaultDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftDefaultDelete
+        //instance.cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftDefaultGet', function() {
-      it('should call workflowschemeIdDraftDefaultGet successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftDefaultGet
-        //instance.workflowschemeIdDraftDefaultGet(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftDefaultGet', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftDefaultGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftDefaultGet
+        //instance.cloudidRestApi3WorkflowschemeIdDraftDefaultGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftDefaultPut', function() {
-      it('should call workflowschemeIdDraftDefaultPut successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftDefaultPut
-        //instance.workflowschemeIdDraftDefaultPut(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftDefaultPut', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftDefaultPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftDefaultPut
+        //instance.cloudidRestApi3WorkflowschemeIdDraftDefaultPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftDelete', function() {
-      it('should call workflowschemeIdDraftDelete successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftDelete
-        //instance.workflowschemeIdDraftDelete(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftDelete', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftDelete
+        //instance.cloudidRestApi3WorkflowschemeIdDraftDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftGet', function() {
-      it('should call workflowschemeIdDraftGet successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftGet
-        //instance.workflowschemeIdDraftGet(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftGet', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftGet
+        //instance.cloudidRestApi3WorkflowschemeIdDraftGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftIssuetypeIssueTypeDelete', function() {
-      it('should call workflowschemeIdDraftIssuetypeIssueTypeDelete successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftIssuetypeIssueTypeDelete
-        //instance.workflowschemeIdDraftIssuetypeIssueTypeDelete(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete
+        //instance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftIssuetypeIssueTypeGet', function() {
-      it('should call workflowschemeIdDraftIssuetypeIssueTypeGet successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftIssuetypeIssueTypeGet
-        //instance.workflowschemeIdDraftIssuetypeIssueTypeGet(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet
+        //instance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftIssuetypeIssueTypePut', function() {
-      it('should call workflowschemeIdDraftIssuetypeIssueTypePut successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftIssuetypeIssueTypePut
-        //instance.workflowschemeIdDraftIssuetypeIssueTypePut(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut
+        //instance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftPut', function() {
-      it('should call workflowschemeIdDraftPut successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftPut
-        //instance.workflowschemeIdDraftPut(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftPut', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftPut
+        //instance.cloudidRestApi3WorkflowschemeIdDraftPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftWorkflowDelete', function() {
-      it('should call workflowschemeIdDraftWorkflowDelete successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftWorkflowDelete
-        //instance.workflowschemeIdDraftWorkflowDelete(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete
+        //instance.cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftWorkflowGet', function() {
-      it('should call workflowschemeIdDraftWorkflowGet successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftWorkflowGet
-        //instance.workflowschemeIdDraftWorkflowGet(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftWorkflowGet', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftWorkflowGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftWorkflowGet
+        //instance.cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdDraftWorkflowPut', function() {
-      it('should call workflowschemeIdDraftWorkflowPut successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdDraftWorkflowPut
-        //instance.workflowschemeIdDraftWorkflowPut(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdDraftWorkflowPut', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdDraftWorkflowPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdDraftWorkflowPut
+        //instance.cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdGet', function() {
-      it('should call workflowschemeIdGet successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdGet
-        //instance.workflowschemeIdGet(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdGet', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdGet
+        //instance.cloudidRestApi3WorkflowschemeIdGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdIssuetypeIssueTypeDelete', function() {
-      it('should call workflowschemeIdIssuetypeIssueTypeDelete successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdIssuetypeIssueTypeDelete
-        //instance.workflowschemeIdIssuetypeIssueTypeDelete(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete
+        //instance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdIssuetypeIssueTypeGet', function() {
-      it('should call workflowschemeIdIssuetypeIssueTypeGet successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdIssuetypeIssueTypeGet
-        //instance.workflowschemeIdIssuetypeIssueTypeGet(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet
+        //instance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdIssuetypeIssueTypePut', function() {
-      it('should call workflowschemeIdIssuetypeIssueTypePut successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdIssuetypeIssueTypePut
-        //instance.workflowschemeIdIssuetypeIssueTypePut(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut
+        //instance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdPut', function() {
-      it('should call workflowschemeIdPut successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdPut
-        //instance.workflowschemeIdPut(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdPut', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdPut
+        //instance.cloudidRestApi3WorkflowschemeIdPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdWorkflowDelete', function() {
-      it('should call workflowschemeIdWorkflowDelete successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdWorkflowDelete
-        //instance.workflowschemeIdWorkflowDelete(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdWorkflowDelete', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdWorkflowDelete successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdWorkflowDelete
+        //instance.cloudidRestApi3WorkflowschemeIdWorkflowDelete(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdWorkflowGet', function() {
-      it('should call workflowschemeIdWorkflowGet successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdWorkflowGet
-        //instance.workflowschemeIdWorkflowGet(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdWorkflowGet', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdWorkflowGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdWorkflowGet
+        //instance.cloudidRestApi3WorkflowschemeIdWorkflowGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemeIdWorkflowPut', function() {
-      it('should call workflowschemeIdWorkflowPut successfully', function(done) {
-        //uncomment below and update the code to test workflowschemeIdWorkflowPut
-        //instance.workflowschemeIdWorkflowPut(function(error) {
+    describe('cloudidRestApi3WorkflowschemeIdWorkflowPut', function() {
+      it('should call cloudidRestApi3WorkflowschemeIdWorkflowPut successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemeIdWorkflowPut
+        //instance.cloudidRestApi3WorkflowschemeIdWorkflowPut(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('workflowschemePost', function() {
-      it('should call workflowschemePost successfully', function(done) {
-        //uncomment below and update the code to test workflowschemePost
-        //instance.workflowschemePost(function(error) {
+    describe('cloudidRestApi3WorkflowschemePost', function() {
+      it('should call cloudidRestApi3WorkflowschemePost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorkflowschemePost
+        //instance.cloudidRestApi3WorkflowschemePost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('worklogDeletedGet', function() {
-      it('should call worklogDeletedGet successfully', function(done) {
-        //uncomment below and update the code to test worklogDeletedGet
-        //instance.worklogDeletedGet(function(error) {
+    describe('cloudidRestApi3WorklogDeletedGet', function() {
+      it('should call cloudidRestApi3WorklogDeletedGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorklogDeletedGet
+        //instance.cloudidRestApi3WorklogDeletedGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('worklogListPost', function() {
-      it('should call worklogListPost successfully', function(done) {
-        //uncomment below and update the code to test worklogListPost
-        //instance.worklogListPost(function(error) {
+    describe('cloudidRestApi3WorklogListPost', function() {
+      it('should call cloudidRestApi3WorklogListPost successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorklogListPost
+        //instance.cloudidRestApi3WorklogListPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('worklogUpdatedGet', function() {
-      it('should call worklogUpdatedGet successfully', function(done) {
-        //uncomment below and update the code to test worklogUpdatedGet
-        //instance.worklogUpdatedGet(function(error) {
+    describe('cloudidRestApi3WorklogUpdatedGet', function() {
+      it('should call cloudidRestApi3WorklogUpdatedGet successfully', function(done) {
+        //uncomment below and update the code to test cloudidRestApi3WorklogUpdatedGet
+        //instance.cloudidRestApi3WorklogUpdatedGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

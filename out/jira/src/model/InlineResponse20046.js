@@ -17,7 +17,7 @@ import InlineResponse20046Voters from './InlineResponse20046Voters';
 /**
  * The InlineResponse20046 model module.
  * @module model/InlineResponse20046
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20046 {
     /**

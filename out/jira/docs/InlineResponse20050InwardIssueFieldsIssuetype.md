@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **iconUrl** | **String** |  | 
 **id** | **String** |  | 
 **name** | **String** |  | 
-**scope** | [**FilterIdPermissionRoleScope**](FilterIdPermissionRoleScope.md) |  | 
+**scope** | [**CloudidRestApi3FilterIdPermissionRoleScope**](CloudidRestApi3FilterIdPermissionRoleScope.md) |  | 
 **self** | **String** |  | 
 **subtask** | **Boolean** |  | 
 

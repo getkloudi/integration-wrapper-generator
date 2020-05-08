@@ -19,7 +19,7 @@ import InlineResponse20050OutwardIssueFieldsIssuetype from './InlineResponse2005
 /**
  * The InlineResponse20050OutwardIssueFields model module.
  * @module model/InlineResponse20050OutwardIssueFields
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20050OutwardIssueFields {
     /**

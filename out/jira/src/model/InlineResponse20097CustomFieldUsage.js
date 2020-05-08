@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20097CustomFieldUsage model module.
  * @module model/InlineResponse20097CustomFieldUsage
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20097CustomFieldUsage {
     /**

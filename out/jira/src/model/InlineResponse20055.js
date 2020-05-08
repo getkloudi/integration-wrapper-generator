@@ -18,7 +18,7 @@ import InlineResponse20055VisibleFunctionNames from './InlineResponse20055Visibl
 /**
  * The InlineResponse20055 model module.
  * @module model/InlineResponse20055
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20055 {
     /**

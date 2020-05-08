@@ -19,7 +19,7 @@ import InlineResponse2009Visibility from './InlineResponse2009Visibility';
 /**
  * The InlineResponse20037FieldsWorklog model module.
  * @module model/InlineResponse20037FieldsWorklog
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20037FieldsWorklog {
     /**

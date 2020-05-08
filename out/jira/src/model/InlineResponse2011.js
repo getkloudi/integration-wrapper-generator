@@ -17,7 +17,7 @@ import InlineResponse2011Schema from './InlineResponse2011Schema';
 /**
  * The InlineResponse2011 model module.
  * @module model/InlineResponse2011
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse2011 {
     /**

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | 
 **navigable** | **Boolean** |  | 
 **orderable** | **Boolean** |  | 
-**schema** | [**FieldSchema**](FieldSchema.md) |  | 
+**schema** | [**CloudidRestApi3FieldSchema**](CloudidRestApi3FieldSchema.md) |  | 
 **searchable** | **Boolean** |  | 
 
 

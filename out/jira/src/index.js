@@ -13,14 +13,21 @@
 
 
 import ApiClient from './ApiClient';
-import FieldSchema from './model/FieldSchema';
-import FilterIdPermissionProject from './model/FilterIdPermissionProject';
-import FilterIdPermissionProjectProjectCategory from './model/FilterIdPermissionProjectProjectCategory';
-import FilterIdPermissionRole from './model/FilterIdPermissionRole';
-import FilterIdPermissionRoleActorGroup from './model/FilterIdPermissionRoleActorGroup';
-import FilterIdPermissionRoleActors from './model/FilterIdPermissionRoleActors';
-import FilterIdPermissionRoleScope from './model/FilterIdPermissionRoleScope';
-import FilterIdPermissionRoleScopeProject from './model/FilterIdPermissionRoleScopeProject';
+import CloudidRestApi3FieldSchema from './model/CloudidRestApi3FieldSchema';
+import CloudidRestApi3FilterIdPermissionProject from './model/CloudidRestApi3FilterIdPermissionProject';
+import CloudidRestApi3FilterIdPermissionProjectProjectCategory from './model/CloudidRestApi3FilterIdPermissionProjectProjectCategory';
+import CloudidRestApi3FilterIdPermissionRole from './model/CloudidRestApi3FilterIdPermissionRole';
+import CloudidRestApi3FilterIdPermissionRoleActorGroup from './model/CloudidRestApi3FilterIdPermissionRoleActorGroup';
+import CloudidRestApi3FilterIdPermissionRoleActors from './model/CloudidRestApi3FilterIdPermissionRoleActors';
+import CloudidRestApi3FilterIdPermissionRoleScope from './model/CloudidRestApi3FilterIdPermissionRoleScope';
+import CloudidRestApi3FilterIdPermissionRoleScopeProject from './model/CloudidRestApi3FilterIdPermissionRoleScopeProject';
+import CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor from './model/CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor';
+import CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication from './model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication';
+import CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject from './model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject';
+import CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon from './model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon';
+import CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus from './model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus';
+import CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon from './model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon';
+import CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses from './model/CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses';
 import InlineObject from './model/InlineObject';
 import InlineObject1 from './model/InlineObject1';
 import InlineObject10 from './model/InlineObject10';
@@ -333,13 +340,6 @@ import InlineResponse2019 from './model/InlineResponse2019';
 import InlineResponse303 from './model/InlineResponse303';
 import InlineResponse303Result from './model/InlineResponse303Result';
 import InlineResponse303ResultErrors from './model/InlineResponse303ResultErrors';
-import IssueIssueIdOrKeyAttachmentsAuthor from './model/IssueIssueIdOrKeyAttachmentsAuthor';
-import IssueIssueIdOrKeyRemotelinkApplication from './model/IssueIssueIdOrKeyRemotelinkApplication';
-import IssueIssueIdOrKeyRemotelinkObject from './model/IssueIssueIdOrKeyRemotelinkObject';
-import IssueIssueIdOrKeyRemotelinkObjectIcon from './model/IssueIssueIdOrKeyRemotelinkObjectIcon';
-import IssueIssueIdOrKeyRemotelinkObjectStatus from './model/IssueIssueIdOrKeyRemotelinkObjectStatus';
-import IssueIssueIdOrKeyRemotelinkObjectStatusIcon from './model/IssueIssueIdOrKeyRemotelinkObjectStatusIcon';
-import ProjectProjectIdOrKeyStatusesStatuses from './model/ProjectProjectIdOrKeyStatusesStatuses';
 import DefaultApi from './api/DefaultApi';
 
 
@@ -372,7 +372,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.0.0
+* @version 1.1.0
 */
 export {
     /**
@@ -382,52 +382,94 @@ export {
     ApiClient,
 
     /**
-     * The FieldSchema model constructor.
-     * @property {module:model/FieldSchema}
+     * The CloudidRestApi3FieldSchema model constructor.
+     * @property {module:model/CloudidRestApi3FieldSchema}
      */
-    FieldSchema,
+    CloudidRestApi3FieldSchema,
 
     /**
-     * The FilterIdPermissionProject model constructor.
-     * @property {module:model/FilterIdPermissionProject}
+     * The CloudidRestApi3FilterIdPermissionProject model constructor.
+     * @property {module:model/CloudidRestApi3FilterIdPermissionProject}
      */
-    FilterIdPermissionProject,
+    CloudidRestApi3FilterIdPermissionProject,
 
     /**
-     * The FilterIdPermissionProjectProjectCategory model constructor.
-     * @property {module:model/FilterIdPermissionProjectProjectCategory}
+     * The CloudidRestApi3FilterIdPermissionProjectProjectCategory model constructor.
+     * @property {module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory}
      */
-    FilterIdPermissionProjectProjectCategory,
+    CloudidRestApi3FilterIdPermissionProjectProjectCategory,
 
     /**
-     * The FilterIdPermissionRole model constructor.
-     * @property {module:model/FilterIdPermissionRole}
+     * The CloudidRestApi3FilterIdPermissionRole model constructor.
+     * @property {module:model/CloudidRestApi3FilterIdPermissionRole}
      */
-    FilterIdPermissionRole,
+    CloudidRestApi3FilterIdPermissionRole,
 
     /**
-     * The FilterIdPermissionRoleActorGroup model constructor.
-     * @property {module:model/FilterIdPermissionRoleActorGroup}
+     * The CloudidRestApi3FilterIdPermissionRoleActorGroup model constructor.
+     * @property {module:model/CloudidRestApi3FilterIdPermissionRoleActorGroup}
      */
-    FilterIdPermissionRoleActorGroup,
+    CloudidRestApi3FilterIdPermissionRoleActorGroup,
 
     /**
-     * The FilterIdPermissionRoleActors model constructor.
-     * @property {module:model/FilterIdPermissionRoleActors}
+     * The CloudidRestApi3FilterIdPermissionRoleActors model constructor.
+     * @property {module:model/CloudidRestApi3FilterIdPermissionRoleActors}
      */
-    FilterIdPermissionRoleActors,
+    CloudidRestApi3FilterIdPermissionRoleActors,
 
     /**
-     * The FilterIdPermissionRoleScope model constructor.
-     * @property {module:model/FilterIdPermissionRoleScope}
+     * The CloudidRestApi3FilterIdPermissionRoleScope model constructor.
+     * @property {module:model/CloudidRestApi3FilterIdPermissionRoleScope}
      */
-    FilterIdPermissionRoleScope,
+    CloudidRestApi3FilterIdPermissionRoleScope,
 
     /**
-     * The FilterIdPermissionRoleScopeProject model constructor.
-     * @property {module:model/FilterIdPermissionRoleScopeProject}
+     * The CloudidRestApi3FilterIdPermissionRoleScopeProject model constructor.
+     * @property {module:model/CloudidRestApi3FilterIdPermissionRoleScopeProject}
      */
-    FilterIdPermissionRoleScopeProject,
+    CloudidRestApi3FilterIdPermissionRoleScopeProject,
+
+    /**
+     * The CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor model constructor.
+     * @property {module:model/CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor}
+     */
+    CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor,
+
+    /**
+     * The CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication model constructor.
+     * @property {module:model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication}
+     */
+    CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication,
+
+    /**
+     * The CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject model constructor.
+     * @property {module:model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject}
+     */
+    CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject,
+
+    /**
+     * The CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon model constructor.
+     * @property {module:model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon}
+     */
+    CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon,
+
+    /**
+     * The CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus model constructor.
+     * @property {module:model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus}
+     */
+    CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus,
+
+    /**
+     * The CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon model constructor.
+     * @property {module:model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon}
+     */
+    CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon,
+
+    /**
+     * The CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses model constructor.
+     * @property {module:model/CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses}
+     */
+    CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses,
 
     /**
      * The InlineObject model constructor.
@@ -2300,48 +2342,6 @@ export {
      * @property {module:model/InlineResponse303ResultErrors}
      */
     InlineResponse303ResultErrors,
-
-    /**
-     * The IssueIssueIdOrKeyAttachmentsAuthor model constructor.
-     * @property {module:model/IssueIssueIdOrKeyAttachmentsAuthor}
-     */
-    IssueIssueIdOrKeyAttachmentsAuthor,
-
-    /**
-     * The IssueIssueIdOrKeyRemotelinkApplication model constructor.
-     * @property {module:model/IssueIssueIdOrKeyRemotelinkApplication}
-     */
-    IssueIssueIdOrKeyRemotelinkApplication,
-
-    /**
-     * The IssueIssueIdOrKeyRemotelinkObject model constructor.
-     * @property {module:model/IssueIssueIdOrKeyRemotelinkObject}
-     */
-    IssueIssueIdOrKeyRemotelinkObject,
-
-    /**
-     * The IssueIssueIdOrKeyRemotelinkObjectIcon model constructor.
-     * @property {module:model/IssueIssueIdOrKeyRemotelinkObjectIcon}
-     */
-    IssueIssueIdOrKeyRemotelinkObjectIcon,
-
-    /**
-     * The IssueIssueIdOrKeyRemotelinkObjectStatus model constructor.
-     * @property {module:model/IssueIssueIdOrKeyRemotelinkObjectStatus}
-     */
-    IssueIssueIdOrKeyRemotelinkObjectStatus,
-
-    /**
-     * The IssueIssueIdOrKeyRemotelinkObjectStatusIcon model constructor.
-     * @property {module:model/IssueIssueIdOrKeyRemotelinkObjectStatusIcon}
-     */
-    IssueIssueIdOrKeyRemotelinkObjectStatusIcon,
-
-    /**
-     * The ProjectProjectIdOrKeyStatusesStatuses model constructor.
-     * @property {module:model/ProjectProjectIdOrKeyStatusesStatuses}
-     */
-    ProjectProjectIdOrKeyStatusesStatuses,
 
     /**
     * The DefaultApi service constructor.

@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20061NotificationSchemeEvents model module.
  * @module model/InlineResponse20061NotificationSchemeEvents
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20061NotificationSchemeEvents = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse2009Visibility model module.
  * @module model/InlineResponse2009Visibility
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse2009Visibility {
     /**

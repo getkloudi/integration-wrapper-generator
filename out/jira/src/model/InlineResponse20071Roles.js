@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20071Roles model module.
  * @module model/InlineResponse20071Roles
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20071Roles {
     /**

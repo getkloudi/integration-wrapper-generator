@@ -17,7 +17,7 @@ import InlineResponse20010Keys from './InlineResponse20010Keys';
 /**
  * The InlineResponse20010 model module.
  * @module model/InlineResponse20010
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20010 {
     /**

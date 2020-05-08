@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ProjectProjectIdOrKeyStatusesStatuses = _interopRequireDefault(require("./ProjectProjectIdOrKeyStatusesStatuses"));
+var _CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses = _interopRequireDefault(require("./CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20077 model module.
  * @module model/InlineResponse20077
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20077 = /*#__PURE__*/function () {
   /**
@@ -29,7 +29,7 @@ var InlineResponse20077 = /*#__PURE__*/function () {
    * @param id {String} 
    * @param name {String} 
    * @param self {String} 
-   * @param statuses {Array.<module:model/ProjectProjectIdOrKeyStatusesStatuses>} 
+   * @param statuses {Array.<module:model/CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses>} 
    * @param subtask {Boolean} 
    */
   function InlineResponse20077(id, name, self, statuses, subtask) {
@@ -80,7 +80,7 @@ var InlineResponse20077 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('statuses')) {
-          obj['statuses'] = _ApiClient["default"].convertToType(data['statuses'], [_ProjectProjectIdOrKeyStatusesStatuses["default"]]);
+          obj['statuses'] = _ApiClient["default"].convertToType(data['statuses'], [_CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses["default"]]);
         }
 
         if (data.hasOwnProperty('subtask')) {
@@ -111,7 +111,7 @@ InlineResponse20077.prototype['name'] = undefined;
 
 InlineResponse20077.prototype['self'] = undefined;
 /**
- * @member {Array.<module:model/ProjectProjectIdOrKeyStatusesStatuses>} statuses
+ * @member {Array.<module:model/CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses>} statuses
  */
 
 InlineResponse20077.prototype['statuses'] = undefined;

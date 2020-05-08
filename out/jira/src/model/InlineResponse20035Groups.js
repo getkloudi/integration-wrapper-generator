@@ -17,7 +17,7 @@ import InlineResponse20034Groups from './InlineResponse20034Groups';
 /**
  * The InlineResponse20035Groups model module.
  * @module model/InlineResponse20035Groups
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20035Groups {
     /**

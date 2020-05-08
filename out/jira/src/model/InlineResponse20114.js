@@ -17,7 +17,7 @@ import InlineResponse20114IssueTypeMappings from './InlineResponse20114IssueType
 /**
  * The InlineResponse20114 model module.
  * @module model/InlineResponse20114
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20114 {
     /**

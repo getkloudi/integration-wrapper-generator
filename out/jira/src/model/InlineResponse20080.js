@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import FilterIdPermissionProjectProjectCategory from './FilterIdPermissionProjectProjectCategory';
+import CloudidRestApi3FilterIdPermissionProjectProjectCategory from './CloudidRestApi3FilterIdPermissionProjectProjectCategory';
 
 /**
  * The InlineResponse20080 model module.
  * @module model/InlineResponse20080
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20080 {
     /**
      * Constructs a new <code>InlineResponse20080</code>.
      * 
      * @alias module:model/InlineResponse20080
-     * @param levels {Array.<module:model/FilterIdPermissionProjectProjectCategory>} 
+     * @param levels {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} 
      */
     constructor(levels) { 
         
@@ -52,7 +52,7 @@ class InlineResponse20080 {
             obj = obj || new InlineResponse20080();
 
             if (data.hasOwnProperty('levels')) {
-                obj['levels'] = ApiClient.convertToType(data['levels'], [FilterIdPermissionProjectProjectCategory]);
+                obj['levels'] = ApiClient.convertToType(data['levels'], [CloudidRestApi3FilterIdPermissionProjectProjectCategory]);
             }
         }
         return obj;
@@ -62,7 +62,7 @@ class InlineResponse20080 {
 }
 
 /**
- * @member {Array.<module:model/FilterIdPermissionProjectProjectCategory>} levels
+ * @member {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} levels
  */
 InlineResponse20080.prototype['levels'] = undefined;
 

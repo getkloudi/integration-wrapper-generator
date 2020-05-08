@@ -17,7 +17,7 @@ import InlineResponse2004Author from './InlineResponse2004Author';
 /**
  * The InlineResponse20037FieldsAttachment model module.
  * @module model/InlineResponse20037FieldsAttachment
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20037FieldsAttachment {
     /**

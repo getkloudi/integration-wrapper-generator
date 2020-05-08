@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse2009Visibility model module.
  * @module model/InlineResponse2009Visibility
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse2009Visibility = /*#__PURE__*/function () {
   /**

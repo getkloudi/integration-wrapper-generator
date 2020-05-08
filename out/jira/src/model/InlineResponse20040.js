@@ -17,7 +17,7 @@ import InlineResponse2009Values from './InlineResponse2009Values';
 /**
  * The InlineResponse20040 model module.
  * @module model/InlineResponse20040
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20040 {
     /**

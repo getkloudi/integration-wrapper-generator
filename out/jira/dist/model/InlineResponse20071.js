@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./FilterIdPermissionProjectProjectCategory"));
+var _CloudidRestApi3FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionProjectProjectCategory"));
 
 var _InlineResponse2004Author = _interopRequireDefault(require("./InlineResponse2004Author"));
 
@@ -30,7 +30,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20071 model module.
  * @module model/InlineResponse20071
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20071 = /*#__PURE__*/function () {
   /**
@@ -47,7 +47,7 @@ var InlineResponse20071 = /*#__PURE__*/function () {
    * @param key {String} 
    * @param lead {module:model/InlineResponse2004Author} 
    * @param name {String} 
-   * @param projectCategory {module:model/FilterIdPermissionProjectProjectCategory} 
+   * @param projectCategory {module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory} 
    * @param roles {module:model/InlineResponse20071Roles} 
    * @param self {String} 
    * @param simplified {Boolean} 
@@ -143,7 +143,7 @@ var InlineResponse20071 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('projectCategory')) {
-          obj['projectCategory'] = _FilterIdPermissionProjectProjectCategory["default"].constructFromObject(data['projectCategory']);
+          obj['projectCategory'] = _CloudidRestApi3FilterIdPermissionProjectProjectCategory["default"].constructFromObject(data['projectCategory']);
         }
 
         if (data.hasOwnProperty('roles')) {
@@ -229,7 +229,7 @@ InlineResponse20071.prototype['lead'] = undefined;
 
 InlineResponse20071.prototype['name'] = undefined;
 /**
- * @member {module:model/FilterIdPermissionProjectProjectCategory} projectCategory
+ * @member {module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory} projectCategory
  */
 
 InlineResponse20071.prototype['projectCategory'] = undefined;

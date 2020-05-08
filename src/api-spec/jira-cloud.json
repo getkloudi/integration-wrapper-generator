@@ -3,8 +3,7 @@
   "schemes": [
     "https"
   ],
-  "host": "jira.atlassian.com",
-  "basePath": "/rest/api/3",
+  "host": "api.atlassian.com/ex/jira",
   "info": {
     "contact": {
       "x-twitter": "Atlassian"
@@ -51,13 +50,10 @@
   "security": [
     {
       "OAuth": []
-    },
-    {
-      "Basic": []
     }
   ],
   "paths": {
-    "/application-properties": {
+    "/{cloudid}/rest/api/3/application-properties": {
       "get": {
         "description": "Returns all application properties or a single application property.",
         "parameters": [
@@ -134,7 +130,7 @@
         }
       }
     },
-    "/application-properties/advanced-settings": {
+    "/{cloudid}/rest/api/3/application-properties/advanced-settings": {
       "get": {
         "description": "Returns the application properties that are accessible on the Advanced Settings page. To navigate to the Advanced Settings page in Jira, choose the Jira icon > Jira settings > System, General Configuration and then click Advanced Settings (in the upper right).",
         "parameters": [],
@@ -192,7 +188,7 @@
         }
       }
     },
-    "/application-properties/{id}": {
+    "/{cloudid}/rest/api/3/application-properties/{id}": {
       "put": {
         "description": "Changes the value of an application property. For example, you can change the value of the jira.clone.prefix from its default value of CLONE - to Clone - if you prefer sentence case capitalization. Editable properties are described below along with their default values.",
         "parameters": [
@@ -228,7 +224,7 @@
         }
       }
     },
-    "/applicationrole": {
+    "/{cloudid}/rest/api/3/applicationrole": {
       "get": {
         "description": "Returns all application roles. In Jira, application roles are managed using the Application access configuration page.",
         "parameters": [],
@@ -309,7 +305,7 @@
         }
       }
     },
-    "/applicationrole/{key}": {
+    "/{cloudid}/rest/api/3/applicationrole/{key}": {
       "get": {
         "description": "Returns an application role.",
         "parameters": [
@@ -393,7 +389,7 @@
         }
       }
     },
-    "/attachment/meta": {
+    "/{cloudid}/rest/api/3/attachment/meta": {
       "get": {
         "description": "Returns the global attachment settings, that is, whether attachments are enabled and the maximum attachment size allowed.",
         "parameters": [],
@@ -420,7 +416,7 @@
         }
       }
     },
-    "/attachment/{id}": {
+    "/{cloudid}/rest/api/3/attachment/{id}": {
       "delete": {
         "description": "Deletes an attachment from an issue.",
         "parameters": [
@@ -567,7 +563,7 @@
         }
       }
     },
-    "/attachment/{id}/expand/human": {
+    "/{cloudid}/rest/api/3/attachment/{id}/expand/human": {
       "get": {
         "description": "Returns the metadata for the contents of an attachment, if it is an archive, and metadata for the attachment itself. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned and metadata for the ZIP archive. Currently, only the ZIP archive format is supported.",
         "parameters": [
@@ -648,7 +644,7 @@
         }
       }
     },
-    "/attachment/{id}/expand/raw": {
+    "/{cloudid}/rest/api/3/attachment/{id}/expand/raw": {
       "get": {
         "description": "Returns the metadata for the contents of an attachment, if it is an archive. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned. Currently, only the ZIP archive format is supported.",
         "parameters": [
@@ -709,7 +705,7 @@
         }
       }
     },
-    "/auditing/record": {
+    "/{cloudid}/rest/api/3/auditing/record": {
       "get": {
         "description": "Returns a list of audit records. The list can be filtered to include items:",
         "parameters": [
@@ -916,7 +912,7 @@
         }
       }
     },
-    "/avatar/{type}/system": {
+    "/{cloudid}/rest/api/3/avatar/{type}/system": {
       "get": {
         "description": "Returns a list of system avatar details by owner type, where the owner types are issue type, project, or user.",
         "parameters": [
@@ -999,7 +995,7 @@
         }
       }
     },
-    "/comment/list": {
+    "/{cloudid}/rest/api/3/comment/list": {
       "post": {
         "description": "Returns the comments for a list of comment IDs.",
         "parameters": [
@@ -1216,7 +1212,7 @@
         }
       }
     },
-    "/comment/{commentId}/properties": {
+    "/{cloudid}/rest/api/3/comment/{commentId}/properties": {
       "get": {
         "description": "Returns the keys of all the properties of a comment.",
         "parameters": [
@@ -1265,7 +1261,7 @@
         }
       }
     },
-    "/comment/{commentId}/properties/{propertyKey}": {
+    "/{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey}": {
       "delete": {
         "description": "Deletes a comment property.",
         "parameters": [
@@ -1370,7 +1366,7 @@
         }
       }
     },
-    "/component": {
+    "/{cloudid}/rest/api/3/component": {
       "post": {
         "description": "Creates a component. Use components to provide containers for issues within a project. Permissions required: Any of the following:",
         "parameters": [
@@ -1683,7 +1679,7 @@
         }
       }
     },
-    "/component/{id}": {
+    "/{cloudid}/rest/api/3/component/{id}": {
       "delete": {
         "description": "Deletes a component. Permissions required: Any of the following:",
         "parameters": [
@@ -2042,7 +2038,7 @@
         }
       }
     },
-    "/component/{id}/relatedIssueCounts": {
+    "/{cloudid}/rest/api/3/component/{id}/relatedIssueCounts": {
       "get": {
         "description": "Returns the counts of issues assigned to the component. Permissions required: Permission to access Jira.",
         "parameters": [
@@ -2078,7 +2074,7 @@
         }
       }
     },
-    "/configuration": {
+    "/{cloudid}/rest/api/3/configuration": {
       "get": {
         "description": "Returns the global settings in Jira. These settings determine whether optional features (for example, sub-tasks, time tracking, and others) are enabled. If time tracking is enabled, this method also returns the time tracking configuration.",
         "parameters": [],
@@ -2151,7 +2147,7 @@
         }
       }
     },
-    "/configuration/timetracking": {
+    "/{cloudid}/rest/api/3/configuration/timetracking": {
       "delete": {
         "description": "Disables time tracking.",
         "parameters": [],
@@ -2221,7 +2217,7 @@
         }
       }
     },
-    "/configuration/timetracking/list": {
+    "/{cloudid}/rest/api/3/configuration/timetracking/list": {
       "get": {
         "description": "Returns all time tracking providers. By default, Jira only has one time tracking provider: JIRA provided time tracking. However, you can install other time tracking providers via apps from the Atlassian Marketplace. For more information on time tracking providers, see the documentation for the Time Tracking Provider module.",
         "parameters": [],
@@ -2260,7 +2256,7 @@
         }
       }
     },
-    "/configuration/timetracking/options": {
+    "/{cloudid}/rest/api/3/configuration/timetracking/options": {
       "get": {
         "description": "Returns the time tracking settings. This includes settings such as the time format, default time unit, and others. For more information, see Configuring time tracking.",
         "parameters": [],
@@ -2369,7 +2365,7 @@
         }
       }
     },
-    "/customFieldOption/{id}": {
+    "/{cloudid}/rest/api/3/customFieldOption/{id}": {
       "get": {
         "description": "Returns a custom field option. For example, an option in a cascading select list.",
         "parameters": [
@@ -2406,7 +2402,7 @@
         }
       }
     },
-    "/dashboard": {
+    "/{cloudid}/rest/api/3/dashboard": {
       "get": {
         "description": "Returns a list of dashboards owned by or shared with the user. The list may be filtered to include only favorite or owned dashboards.",
         "parameters": [
@@ -2602,7 +2598,7 @@
         }
       }
     },
-    "/dashboard/{dashboardId}/items/{itemId}/properties": {
+    "/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties": {
       "get": {
         "description": "Returns the keys of all properties for a dashboard item.",
         "parameters": [
@@ -2658,7 +2654,7 @@
         }
       }
     },
-    "/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}": {
+    "/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}": {
       "delete": {
         "description": "Deletes a dashboard item property.",
         "parameters": [
@@ -2784,7 +2780,7 @@
         }
       }
     },
-    "/dashboard/{id}": {
+    "/{cloudid}/rest/api/3/dashboard/{id}": {
       "get": {
         "description": "Returns a dashboard.",
         "parameters": [
@@ -2856,7 +2852,7 @@
         }
       }
     },
-    "/expression/eval": {
+    "/{cloudid}/rest/api/3/expression/eval": {
       "post": {
         "description": "Evaluates a Jira expression and returns its value.",
         "parameters": [
@@ -2986,7 +2982,7 @@
         }
       }
     },
-    "/field": {
+    "/{cloudid}/rest/api/3/field": {
       "get": {
         "description": "Returns all issue fields in Jira, both system and custom fields.",
         "parameters": [],
@@ -3188,7 +3184,7 @@
         }
       }
     },
-    "/field/{fieldKey}/option": {
+    "/{cloudid}/rest/api/3/field/{fieldKey}/option": {
       "get": {
         "description": "Returns all options defined for a select list issue field. A select list issue field is a type of issue field that allows a user to select an value from a list of options.",
         "parameters": [
@@ -3515,7 +3511,7 @@
         }
       }
     },
-    "/field/{fieldKey}/option/suggestions/edit": {
+    "/{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/edit": {
       "get": {
         "description": "Returns options defined for a select list issue field that can be viewed and selected by the currently logged in user.",
         "parameters": [
@@ -3646,7 +3642,7 @@
         }
       }
     },
-    "/field/{fieldKey}/option/suggestions/search": {
+    "/{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/search": {
       "get": {
         "description": "Returns options defined for a select list issue field that can be viewed by the currently logged in user.",
         "parameters": [
@@ -3777,7 +3773,7 @@
         }
       }
     },
-    "/field/{fieldKey}/option/{optionId}": {
+    "/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId}": {
       "delete": {
         "description": "Deletes an option from a select list issue field.",
         "parameters": [
@@ -4099,7 +4095,7 @@
         }
       }
     },
-    "/field/{fieldKey}/option/{optionId}/issue": {
+    "/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId}/issue": {
       "delete": {
         "description": "Deselects a select list issue field option in all issues that it has been selected in. A different option can be selected to replace the deselected option. The update can also be limited to a smaller set of issues by using a JQL query.",
         "parameters": [
@@ -4211,7 +4207,7 @@
         }
       }
     },
-    "/filter": {
+    "/{cloudid}/rest/api/3/filter": {
       "get": {
         "description": "Returns all filters. Deprecated, use Search for filters that supports search and pagination. Permissions required: None, however only the following filters are returned:",
         "parameters": [
@@ -4595,7 +4591,7 @@
         }
       }
     },
-    "/filter/defaultShareScope": {
+    "/{cloudid}/rest/api/3/filter/defaultShareScope": {
       "get": {
         "description": "Returns the default sharing settings for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).",
         "parameters": [],
@@ -4660,7 +4656,7 @@
         }
       }
     },
-    "/filter/favourite": {
+    "/{cloudid}/rest/api/3/filter/favourite": {
       "get": {
         "description": "Returns the favorite filters of the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group).",
         "parameters": [
@@ -4841,7 +4837,7 @@
         }
       }
     },
-    "/filter/my": {
+    "/{cloudid}/rest/api/3/filter/my": {
       "get": {
         "description": "Returns the filters owned by the calling user. If includeFavourites is true, the user's favorite filters are also returned. Permissions required: Permission to log in to Jira (i.e., member of the users group).",
         "parameters": [
@@ -5028,7 +5024,7 @@
         }
       }
     },
-    "/filter/search": {
+    "/{cloudid}/rest/api/3/filter/search": {
       "get": {
         "description": "Search for filters. This method is similar to Get filters except that you can refine the results to include filters that have specific attributes. For example, filters with a particular name. Permissions required: None, however only the following filters are returned (if no search parameters are set):",
         "parameters": [
@@ -5268,7 +5264,7 @@
         }
       }
     },
-    "/filter/{id}": {
+    "/{cloudid}/rest/api/3/filter/{id}": {
       "delete": {
         "description": "Delete a filter. Permissions required: Permission to log in to Jira, however the following rules govern what a user can delete:",
         "parameters": [
@@ -5683,7 +5679,7 @@
         }
       }
     },
-    "/filter/{id}/columns": {
+    "/{cloudid}/rest/api/3/filter/{id}/columns": {
       "delete": {
         "description": "Reset the user's column configuration for the filter to the default. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.",
         "parameters": [
@@ -5759,7 +5755,7 @@
         }
       }
     },
-    "/filter/{id}/favourite": {
+    "/{cloudid}/rest/api/3/filter/{id}/favourite": {
       "delete": {
         "description": "Removes a filter as a favorite for the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.",
         "parameters": [
@@ -6123,7 +6119,7 @@
         }
       }
     },
-    "/filter/{id}/permission": {
+    "/{cloudid}/rest/api/3/filter/{id}/permission": {
       "get": {
         "description": "Returns the share permissions for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.",
         "parameters": [
@@ -6623,7 +6619,7 @@
         }
       }
     },
-    "/filter/{id}/permission/{permissionId}": {
+    "/{cloudid}/rest/api/3/filter/{id}/permission/{permissionId}": {
       "delete": {
         "description": "Deletes a share permission from a filter. Permissions required: Permission to log in to Jira (i.e., member of the users group) and the calling user must own the filter.",
         "parameters": [
@@ -6690,7 +6686,7 @@
         }
       }
     },
-    "/group": {
+    "/{cloudid}/rest/api/3/group": {
       "delete": {
         "description": "Deletes a group.",
         "parameters": [
@@ -6837,7 +6833,7 @@
         }
       }
     },
-    "/group/member": {
+    "/{cloudid}/rest/api/3/group/member": {
       "get": {
         "description": "Returns all users in a group. Users are ordered by username.",
         "parameters": [
@@ -6962,7 +6958,7 @@
         }
       }
     },
-    "/group/user": {
+    "/{cloudid}/rest/api/3/group/user": {
       "delete": {
         "description": "Removes a user from a group. Permissions required: Administer Jira global permission.",
         "parameters": [
@@ -7025,7 +7021,7 @@
         }
       }
     },
-    "/groups/picker": {
+    "/{cloudid}/rest/api/3/groups/picker": {
       "get": {
         "description": "Returns a list of groups whose names contain a query string. A list of group names can be provided to exclude groups from the results.",
         "parameters": [
@@ -7109,7 +7105,7 @@
         }
       }
     },
-    "/groupuserpicker": {
+    "/{cloudid}/rest/api/3/groupuserpicker": {
       "get": {
         "description": "Returns a list of users and groups matching a string. The string is used:",
         "parameters": [
@@ -7287,7 +7283,7 @@
         }
       }
     },
-    "/issue": {
+    "/{cloudid}/rest/api/3/issue": {
       "post": {
         "description": "Creates an issue or, where the option to create sub-tasks is enabled in Jira, a sub-task. A transition may be applied, to move the issue or sub-task to a workflow step other than the default start step, and issue properties set.",
         "parameters": [
@@ -7360,7 +7356,7 @@
         }
       }
     },
-    "/issue/bulk": {
+    "/{cloudid}/rest/api/3/issue/bulk": {
       "post": {
         "description": "Creates issues and, where the option to create sub-tasks is enabled in Jira, sub-tasks. Transitions may be applied, to move the issues or sub-tasks to a workflow step other than the default start step, and issue properties set.",
         "parameters": [
@@ -7429,7 +7425,7 @@
         }
       }
     },
-    "/issue/createmeta": {
+    "/{cloudid}/rest/api/3/issue/createmeta": {
       "get": {
         "description": "Returns details of projects, issue types within projects, and, when requested, the create screen fields for each issue type for the user. Use the information to populate the requests in Create issue and Create issues.",
         "parameters": [
@@ -7635,7 +7631,7 @@
         }
       }
     },
-    "/issue/picker": {
+    "/{cloudid}/rest/api/3/issue/picker": {
       "get": {
         "description": "Returns a list of suggested issues matching the auto-completion query for the user executing this request. This operation checks the user's history and browsing context to return issue suggestions.",
         "parameters": [
@@ -7683,7 +7679,7 @@
         }
       }
     },
-    "/issue/properties/{propertyKey}": {
+    "/{cloudid}/rest/api/3/issue/properties/{propertyKey}": {
       "delete": {
         "description": "Deletes a property value from multiple issues. The issues to be updated can be specified by filter criteria.",
         "parameters": [
@@ -7756,7 +7752,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}": {
       "delete": {
         "description": "Deletes an issue.",
         "parameters": [
@@ -8817,7 +8813,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/assignee": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/assignee": {
       "put": {
         "description": "Assigns an issue to a user. Use this operation when the calling user does not have the Edit Issues permission but has the Assign issue permission for the project that the issue is in.",
         "parameters": [
@@ -8889,7 +8885,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/attachments": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/attachments": {
       "post": {
         "description": "Adds one or more attachments to an issue. Attachments are posted as multipart/form-data (RFC 1867).",
         "parameters": [
@@ -9035,7 +9031,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/changelog": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/changelog": {
       "get": {
         "description": "Returns a paginated list of all updates of an issue, sorted by date, starting from the oldest.",
         "parameters": [
@@ -9233,7 +9229,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/comment": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment": {
       "get": {
         "description": "to get comments for",
         "parameters": [
@@ -9657,7 +9653,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/comment/{id}": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id}": {
       "delete": {
         "description": "a string containing the issue id or key the comment belongs to",
         "parameters": [
@@ -10081,7 +10077,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/editmeta": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/editmeta": {
       "get": {
         "description": "Returns the edit screen fields for an issue that are visible to and editable by the user. Use the information to populate the requests in Edit issue.",
         "parameters": [
@@ -10200,7 +10196,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/notify": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/notify": {
       "post": {
         "description": "Creates an email notification for an issue and adds it to the mail queue.",
         "parameters": [
@@ -10246,7 +10242,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/properties": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties": {
       "get": {
         "description": "Returns the URIs and keys of an issue's properties.",
         "parameters": [
@@ -10295,7 +10291,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/properties/{propertyKey}": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}": {
       "delete": {
         "description": "Deletes an issue's property.",
         "parameters": [
@@ -10400,7 +10396,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/remotelink": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink": {
       "delete": {
         "description": "Deletes the remote issue link from the issue using the link's global ID.",
         "parameters": [
@@ -10633,7 +10629,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/remotelink/{linkId}": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}": {
       "delete": {
         "description": "Deletes a remote issue link from an issue.",
         "parameters": [
@@ -10853,7 +10849,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/transitions": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/transitions": {
       "get": {
         "description": "Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue's status.",
         "parameters": [
@@ -11133,7 +11129,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/votes": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes": {
       "delete": {
         "description": "Deletes a user's vote from an issue. This is the equivalent of the user clicking Unvote on an issue in Jira.",
         "parameters": [
@@ -11275,7 +11271,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/watchers": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers": {
       "delete": {
         "description": "Deletes a user as a watcher of an issue.",
         "parameters": [
@@ -11392,7 +11388,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/worklog": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog": {
       "get": {
         "description": "Returns all worklogs for an issue.",
         "parameters": [
@@ -11730,7 +11726,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/worklog/{id}": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id}": {
       "delete": {
         "description": "Deletes a worklog from an issue.",
         "parameters": [
@@ -12275,7 +12271,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/worklog/{worklogId}/properties": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties": {
       "get": {
         "description": "Returns the keys of all properties for a worklog.",
         "parameters": [
@@ -12331,7 +12327,7 @@
         }
       }
     },
-    "/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}": {
+    "/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}": {
       "delete": {
         "description": "Deletes a worklog property.",
         "parameters": [
@@ -12457,7 +12453,7 @@
         }
       }
     },
-    "/issueLink": {
+    "/{cloudid}/rest/api/3/issueLink": {
       "post": {
         "description": "Creates a link between two issues. Use this operation to indicate a relationship between two issues and optionally add a comment to the from (outward) issue. To use this resource the site must have Issue Linking enabled.",
         "parameters": [
@@ -12494,7 +12490,7 @@
         }
       }
     },
-    "/issueLink/{linkId}": {
+    "/{cloudid}/rest/api/3/issueLink/{linkId}": {
       "delete": {
         "description": "Deletes an issue link.",
         "parameters": [
@@ -12947,7 +12943,7 @@
         }
       }
     },
-    "/issueLinkType": {
+    "/{cloudid}/rest/api/3/issueLinkType": {
       "get": {
         "description": "Returns a list of all issue link types.",
         "parameters": [],
@@ -13071,7 +13067,7 @@
         }
       }
     },
-    "/issueLinkType/{issueLinkTypeId}": {
+    "/{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId}": {
       "delete": {
         "description": "Deletes an issue link type.",
         "parameters": [
@@ -13215,7 +13211,7 @@
         }
       }
     },
-    "/issuesecurityschemes": {
+    "/{cloudid}/rest/api/3/issuesecurityschemes": {
       "get": {
         "description": "Returns all issue security schemes.",
         "parameters": [],
@@ -13269,7 +13265,7 @@
         }
       }
     },
-    "/issuesecurityschemes/{id}": {
+    "/{cloudid}/rest/api/3/issuesecurityschemes/{id}": {
       "get": {
         "description": "Returns an issue security scheme along with its security levels.",
         "parameters": [
@@ -13351,7 +13347,7 @@
         }
       }
     },
-    "/issuetype": {
+    "/{cloudid}/rest/api/3/issuetype": {
       "get": {
         "description": "Returns all issue types. Permissions required: Permission to access Jira, however, only issue types that are visible to the user are returned.",
         "parameters": [],
@@ -13469,7 +13465,7 @@
         }
       }
     },
-    "/issuetype/{id}": {
+    "/{cloudid}/rest/api/3/issuetype/{id}": {
       "delete": {
         "description": "Deletes the issue type. If the issue type is in use, all uses are updated with the alternative issue type (alternativeIssueTypeId). A list of alternative issue types can be obtained from the Get alternative issue types resource. Permissions required: Administer Jira global permission.",
         "parameters": [
@@ -13590,7 +13586,7 @@
         }
       }
     },
-    "/issuetype/{id}/alternatives": {
+    "/{cloudid}/rest/api/3/issuetype/{id}/alternatives": {
       "get": {
         "description": "Returns a list of issue types that can be used to replace the issue type. The alternative issue types are those assigned to the same workflow scheme, field configuration scheme, and screen scheme. Permissions required: Permission to access Jira.",
         "parameters": [
@@ -13681,7 +13677,7 @@
         }
       }
     },
-    "/issuetype/{id}/avatar2": {
+    "/{cloudid}/rest/api/3/issuetype/{id}/avatar2": {
       "post": {
         "description": "Loads an avatar for the issue type.",
         "parameters": [
@@ -13771,7 +13767,7 @@
         }
       }
     },
-    "/issuetype/{issueTypeId}/properties": {
+    "/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties": {
       "get": {
         "description": "Returns all the issue type property keys of the issue type. Permissions required:",
         "parameters": [
@@ -13820,7 +13816,7 @@
         }
       }
     },
-    "/issuetype/{issueTypeId}/properties/{propertyKey}": {
+    "/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}": {
       "delete": {
         "description": "Deletes the issue type property. Permissions required: Administer Jira global permission.",
         "parameters": [
@@ -13925,7 +13921,7 @@
         }
       }
     },
-    "/jql/autocompletedata": {
+    "/{cloudid}/rest/api/3/jql/autocompletedata": {
       "get": {
         "description": "Returns reference data for JQL searches. This is a downloadable version of the documentation provided in Advanced searching - fields reference and Advanced searching - functions reference, along with a list of JQL-reserved words. Use this information to assist with the programmatic creation of JQL queries or the validation of queries built in a custom query builder.",
         "parameters": [],
@@ -14038,7 +14034,7 @@
         }
       }
     },
-    "/jql/autocompletedata/suggestions": {
+    "/{cloudid}/rest/api/3/jql/autocompletedata/suggestions": {
       "get": {
         "description": "Returns the JQL search auto complete suggestions for a field.",
         "parameters": [
@@ -14104,7 +14100,7 @@
         }
       }
     },
-    "/jql/pdcleaner": {
+    "/{cloudid}/rest/api/3/jql/pdcleaner": {
       "post": {
         "description": "The query strings having personal data that need to be migrated. There should be at most 100 queries.",
         "parameters": [
@@ -14147,7 +14143,7 @@
         }
       }
     },
-    "/mypermissions": {
+    "/{cloudid}/rest/api/3/mypermissions": {
       "get": {
         "description": "Returns a list of permissions indicating which permissions the user has. Details of the user's permissions can be obtained in a global, project, or issue context.",
         "parameters": [
@@ -14242,7 +14238,7 @@
         }
       }
     },
-    "/mypreferences": {
+    "/{cloudid}/rest/api/3/mypreferences": {
       "delete": {
         "description": "Deletes a preference of the user, which restores the default value of system defined settings.",
         "parameters": [
@@ -14292,7 +14288,7 @@
         }
       }
     },
-    "/mypreferences/locale": {
+    "/{cloudid}/rest/api/3/mypreferences/locale": {
       "delete": {
         "description": "Deletes the locale of the current user, which restores the default setting.",
         "parameters": [],
@@ -14348,7 +14344,7 @@
         }
       }
     },
-    "/myself": {
+    "/{cloudid}/rest/api/3/myself": {
       "get": {
         "description": "Returns details for the authenticated user.",
         "parameters": [
@@ -14483,7 +14479,7 @@
         }
       }
     },
-    "/notificationscheme": {
+    "/{cloudid}/rest/api/3/notificationscheme": {
       "get": {
         "description": "Returns a paginated list of notification schemes in order by display name.",
         "parameters": [
@@ -14658,7 +14654,7 @@
         }
       }
     },
-    "/notificationscheme/{id}": {
+    "/{cloudid}/rest/api/3/notificationscheme/{id}": {
       "get": {
         "description": "Returns a notification scheme, including the list of events and the recipients who will receive notifications for those events.",
         "parameters": [
@@ -14801,7 +14797,7 @@
         }
       }
     },
-    "/permissions": {
+    "/{cloudid}/rest/api/3/permissions": {
       "get": {
         "description": "Returns all permissions, including:",
         "parameters": [],
@@ -14856,7 +14852,7 @@
         }
       }
     },
-    "/permissions/project": {
+    "/{cloudid}/rest/api/3/permissions/project": {
       "post": {
         "description": "Returns all the projects where the user is granted a list of project permissions.",
         "parameters": [
@@ -14913,7 +14909,7 @@
         }
       }
     },
-    "/permissionscheme": {
+    "/{cloudid}/rest/api/3/permissionscheme": {
       "get": {
         "description": "Returns all permission schemes.",
         "parameters": [
@@ -15105,7 +15101,7 @@
         }
       }
     },
-    "/permissionscheme/{schemeId}": {
+    "/{cloudid}/rest/api/3/permissionscheme/{schemeId}": {
       "delete": {
         "description": "Deletes a permission scheme. Permissions required: Administer Jira global permission.",
         "parameters": [
@@ -15364,7 +15360,7 @@
         }
       }
     },
-    "/permissionscheme/{schemeId}/permission": {
+    "/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission": {
       "get": {
         "description": "Returns all permission grants for a permission scheme. Permissions required: Permission to log in to Jira.",
         "parameters": [
@@ -15551,7 +15547,7 @@
         }
       }
     },
-    "/permissionscheme/{schemeId}/permission/{permissionId}": {
+    "/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId}": {
       "delete": {
         "description": "Deletes a permission grant from a permission scheme. See About permission schemes and grants for more details. Permissions required: Administer Jira global permission.",
         "parameters": [
@@ -15660,7 +15656,7 @@
         }
       }
     },
-    "/priority": {
+    "/{cloudid}/rest/api/3/priority": {
       "get": {
         "description": "Returns the list of all issue priorities.",
         "parameters": [],
@@ -15714,7 +15710,7 @@
         }
       }
     },
-    "/priority/{id}": {
+    "/{cloudid}/rest/api/3/priority/{id}": {
       "get": {
         "description": "Returns an issue priority.",
         "parameters": [
@@ -15771,7 +15767,7 @@
         }
       }
     },
-    "/project": {
+    "/{cloudid}/rest/api/3/project": {
       "get": {
         "description": "Returns all projects visible to the currently logged in user. Deprecated, use Get projects paginated that supports search and pagination. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, it returns all projects that are visible for anonymous users.",
         "parameters": [
@@ -16017,7 +16013,7 @@
         }
       }
     },
-    "/project/search": {
+    "/{cloudid}/rest/api/3/project/search": {
       "get": {
         "description": "Returns projects visible to the currently logged in user. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, then all projects visible to anonymous users are returned.",
         "parameters": [
@@ -16219,7 +16215,7 @@
         }
       }
     },
-    "/project/type": {
+    "/{cloudid}/rest/api/3/project/type": {
       "get": {
         "description": "Returns all project types, whether or not the instance has a valid license for each type.",
         "parameters": [],
@@ -16268,7 +16264,7 @@
         }
       }
     },
-    "/project/type/{projectTypeKey}": {
+    "/{cloudid}/rest/api/3/project/type/{projectTypeKey}": {
       "get": {
         "description": "Returns a project type.",
         "parameters": [
@@ -16320,7 +16316,7 @@
         }
       }
     },
-    "/project/type/{projectTypeKey}/accessible": {
+    "/{cloudid}/rest/api/3/project/type/{projectTypeKey}/accessible": {
       "get": {
         "description": "Returns a project type if it is accessible to the logged in user.",
         "parameters": [
@@ -16372,7 +16368,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}": {
       "delete": {
         "description": "Deletes an existing project.",
         "parameters": [
@@ -17565,7 +17561,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/avatar": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar": {
       "put": {
         "description": "Sets the avatar displayed for a project.",
         "parameters": [
@@ -17597,7 +17593,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/avatar/{id}": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar/{id}": {
       "delete": {
         "description": "Deletes a custom avatar from a project. Note that system avatars cannot be deleted.",
         "parameters": [
@@ -17623,7 +17619,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/avatar2": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar2": {
       "post": {
         "description": "Loads an avatar for a project.",
         "parameters": [
@@ -17685,7 +17681,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/avatars": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatars": {
       "get": {
         "description": "Returns all project avatars, grouped by system and custom avatars.",
         "parameters": [
@@ -17824,7 +17820,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/component": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/component": {
       "get": {
         "description": "Returns a paginated representation of all components existing in a single project. See the Get project components resource if you want to get a full list of versions without pagination.",
         "parameters": [
@@ -18158,7 +18154,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/components": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/components": {
       "get": {
         "description": "Returns all components existing in a single project. See the Get project components paginated resource if you want to get a full list of components with pagination.",
         "parameters": [
@@ -18428,7 +18424,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/properties": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties": {
       "get": {
         "description": "Returns all project property keys for the project.",
         "parameters": [
@@ -18477,7 +18473,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/properties/{propertyKey}": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}": {
       "delete": {
         "description": "Removes the property from the project.",
         "parameters": [
@@ -18582,7 +18578,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/role": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/role": {
       "get": {
         "description": "Returns a list of project roles for the project.",
         "parameters": [
@@ -18624,7 +18620,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/role/{id}": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id}": {
       "delete": {
         "description": "Deletes actors from a project role for the project.",
         "parameters": [
@@ -18976,7 +18972,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/roledetails": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/roledetails": {
       "get": {
         "description": "Returns all project roles and the details for each role. Note that the list of project roles is common to all projects.",
         "parameters": [
@@ -19101,7 +19097,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/statuses": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/statuses": {
       "get": {
         "description": "Returns the valid statuses for a project. The statuses are grouped by issue type, as each project has a set of valid issue types and each issue type has a set of valid statuses.",
         "parameters": [
@@ -19189,7 +19185,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/type/{newProjectTypeKey}": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/type/{newProjectTypeKey}": {
       "put": {
         "description": "Updates the project type.",
         "parameters": [
@@ -19730,7 +19726,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/version": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/version": {
       "get": {
         "description": "Returns a paginated representation of all versions existing in a single project. See the Get project versions resource if you want to get a full list of versions without pagination.",
         "parameters": [
@@ -19889,7 +19885,7 @@
         }
       }
     },
-    "/project/{projectIdOrKey}/versions": {
+    "/{cloudid}/rest/api/3/project/{projectIdOrKey}/versions": {
       "get": {
         "description": "Returns all versions existing in a single project. The response is not paginated. Use Get project versions paginated if you want to get the versions in a project with pagination.",
         "parameters": [
@@ -19976,7 +19972,7 @@
         }
       }
     },
-    "/project/{projectKeyOrId}/issuesecuritylevelscheme": {
+    "/{cloudid}/rest/api/3/project/{projectKeyOrId}/issuesecuritylevelscheme": {
       "get": {
         "description": "Returns the issue security scheme associated with the project.",
         "parameters": [
@@ -20058,7 +20054,7 @@
         }
       }
     },
-    "/project/{projectKeyOrId}/notificationscheme": {
+    "/{cloudid}/rest/api/3/project/{projectKeyOrId}/notificationscheme": {
       "get": {
         "description": "Gets a notification scheme associated with the project. See the Get notification scheme resource for more information about notification schemes.",
         "parameters": [
@@ -20201,7 +20197,7 @@
         }
       }
     },
-    "/project/{projectKeyOrId}/permissionscheme": {
+    "/{cloudid}/rest/api/3/project/{projectKeyOrId}/permissionscheme": {
       "get": {
         "description": "Gets the permission scheme associated with the project.",
         "parameters": [
@@ -20332,7 +20328,7 @@
         }
       }
     },
-    "/project/{projectKeyOrId}/securitylevel": {
+    "/{cloudid}/rest/api/3/project/{projectKeyOrId}/securitylevel": {
       "get": {
         "description": "Returns all issue security levels for the project that the currently authenticated user has access to. If the user does not have permission to see an issue security level, then that level is not returned. If the user lacks the Set Issue Security permission, then an empty list is returned.",
         "parameters": [
@@ -20391,7 +20387,7 @@
         }
       }
     },
-    "/projectCategory": {
+    "/{cloudid}/rest/api/3/projectCategory": {
       "get": {
         "description": "Returns all project categories.",
         "parameters": [],
@@ -20490,7 +20486,7 @@
         }
       }
     },
-    "/projectCategory/{id}": {
+    "/{cloudid}/rest/api/3/projectCategory/{id}": {
       "delete": {
         "description": "Deletes a project category.",
         "parameters": [
@@ -20615,7 +20611,7 @@
         }
       }
     },
-    "/projectvalidate/key": {
+    "/{cloudid}/rest/api/3/projectvalidate/key": {
       "get": {
         "description": "Validates a project key by confirming the key is a valid string and not in use.",
         "parameters": [
@@ -20661,7 +20657,7 @@
         }
       }
     },
-    "/projectvalidate/validProjectKey": {
+    "/{cloudid}/rest/api/3/projectvalidate/validProjectKey": {
       "get": {
         "description": "Validates a project key and, if the key is invalid or in use, generates a valid random string for the project key.",
         "parameters": [
@@ -20707,7 +20703,7 @@
         }
       }
     },
-    "/projectvalidate/validProjectName": {
+    "/{cloudid}/rest/api/3/projectvalidate/validProjectName": {
       "get": {
         "description": "Checks that a project name isn't in use. If the name isn't in use, the passed string is returned. If the name is in use, this operation attempts to generate a valid project name based on the one supplied, usually by adding a sequence number. If a valid project name cannot be generated, a 404 response is returned.",
         "parameters": [
@@ -20863,7 +20859,7 @@
         }
       }
     },
-    "/resolution": {
+    "/{cloudid}/rest/api/3/resolution": {
       "get": {
         "description": "Returns a list of all issue resolution values.",
         "parameters": [],
@@ -20907,7 +20903,7 @@
         }
       }
     },
-    "/resolution/{id}": {
+    "/{cloudid}/rest/api/3/resolution/{id}": {
       "get": {
         "description": "Returns an issue resolution value.",
         "parameters": [
@@ -20954,7 +20950,7 @@
         }
       }
     },
-    "/role": {
+    "/{cloudid}/rest/api/3/role": {
       "get": {
         "description": "Gets a list of all project roles, complete with project role details and default actors.",
         "parameters": [],
@@ -21125,7 +21121,7 @@
         }
       }
     },
-    "/role/{id}": {
+    "/{cloudid}/rest/api/3/role/{id}": {
       "delete": {
         "description": "Deletes a project role. You must specify a replacement project role if you wish to delete a project role that is in use.",
         "parameters": [
@@ -21538,7 +21534,7 @@
         }
       }
     },
-    "/role/{id}/actors": {
+    "/{cloudid}/rest/api/3/role/{id}/actors": {
       "delete": {
         "description": "Removes default actors from the project role. You may remove either a group or user, but you cannot remove a group and a user in the same request.",
         "parameters": [
@@ -21793,7 +21789,7 @@
         }
       }
     },
-    "/screens": {
+    "/{cloudid}/rest/api/3/screens": {
       "get": {
         "description": "Returns all screens.",
         "parameters": [
@@ -21817,7 +21813,7 @@
         }
       }
     },
-    "/screens/addToDefault/{fieldId}": {
+    "/{cloudid}/rest/api/3/screens/addToDefault/{fieldId}": {
       "post": {
         "description": "Adds a field to the default tab of the default screen.",
         "parameters": [
@@ -21836,7 +21832,7 @@
         }
       }
     },
-    "/screens/{screenId}/availableFields": {
+    "/{cloudid}/rest/api/3/screens/{screenId}/availableFields": {
       "get": {
         "description": "Returns the fields that can be added to a tab on a screen.",
         "parameters": [
@@ -21855,7 +21851,7 @@
         }
       }
     },
-    "/screens/{screenId}/tabs": {
+    "/{cloudid}/rest/api/3/screens/{screenId}/tabs": {
       "get": {
         "description": "Returns the list of tabs for a screen.",
         "parameters": [
@@ -21927,7 +21923,7 @@
         }
       }
     },
-    "/screens/{screenId}/tabs/{tabId}": {
+    "/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}": {
       "delete": {
         "description": "Deletes a screen tab.",
         "parameters": [
@@ -22007,7 +22003,7 @@
         }
       }
     },
-    "/screens/{screenId}/tabs/{tabId}/fields": {
+    "/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields": {
       "get": {
         "description": "Returns all fields for a screen tab.",
         "parameters": [
@@ -22094,7 +22090,7 @@
         }
       }
     },
-    "/screens/{screenId}/tabs/{tabId}/fields/{id}": {
+    "/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}": {
       "delete": {
         "description": "Removes a field from a screen tab.",
         "parameters": [
@@ -22127,7 +22123,7 @@
         }
       }
     },
-    "/screens/{screenId}/tabs/{tabId}/fields/{id}/move": {
+    "/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}/move": {
       "post": {
         "description": "Moves a screen tab field.",
         "parameters": [
@@ -22183,7 +22179,7 @@
         }
       }
     },
-    "/screens/{screenId}/tabs/{tabId}/move/{pos}": {
+    "/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/move/{pos}": {
       "post": {
         "description": "Moves a screen tab.",
         "parameters": [
@@ -22216,7 +22212,7 @@
         }
       }
     },
-    "/search": {
+    "/{cloudid}/rest/api/3/search": {
       "get": {
         "description": "Searches for issues using JQL. Permissions required: Permission to access Jira.",
         "parameters": [
@@ -22500,7 +22496,7 @@
         }
       }
     },
-    "/securitylevel/{id}": {
+    "/{cloudid}/rest/api/3/securitylevel/{id}": {
       "get": {
         "description": "Returns details of an issue security level.",
         "parameters": [
@@ -22547,7 +22543,7 @@
         }
       }
     },
-    "/serverInfo": {
+    "/{cloudid}/rest/api/3/serverInfo": {
       "get": {
         "description": "Returns information about the Jira instance.",
         "parameters": [],
@@ -22607,7 +22603,7 @@
         }
       }
     },
-    "/settings/columns": {
+    "/{cloudid}/rest/api/3/settings/columns": {
       "get": {
         "description": "Returns the default issue navigator columns.",
         "parameters": [],
@@ -22650,7 +22646,7 @@
         }
       }
     },
-    "/status": {
+    "/{cloudid}/rest/api/3/status": {
       "get": {
         "description": "Returns a list of all statuses associated with workflows.",
         "parameters": [],
@@ -22731,7 +22727,7 @@
         }
       }
     },
-    "/status/{idOrName}": {
+    "/{cloudid}/rest/api/3/status/{idOrName}": {
       "get": {
         "description": "Returns a status. The status must be associated with a workflow to be returned.",
         "parameters": [
@@ -22815,7 +22811,7 @@
         }
       }
     },
-    "/statuscategory": {
+    "/{cloudid}/rest/api/3/statuscategory": {
       "get": {
         "description": "Returns a list of all status categories.",
         "parameters": [],
@@ -22863,7 +22859,7 @@
         }
       }
     },
-    "/statuscategory/{idOrKey}": {
+    "/{cloudid}/rest/api/3/statuscategory/{idOrKey}": {
       "get": {
         "description": "Returns a status category. Status categories provided a mechanism for categorizing statuses.",
         "parameters": [
@@ -22914,7 +22910,7 @@
         }
       }
     },
-    "/task/{taskId}": {
+    "/{cloudid}/rest/api/3/task/{taskId}": {
       "get": {
         "description": "Returns the status of a long-running asynchronous task.",
         "parameters": [
@@ -22994,7 +22990,7 @@
         }
       }
     },
-    "/task/{taskId}/cancel": {
+    "/{cloudid}/rest/api/3/task/{taskId}/cancel": {
       "post": {
         "description": "Cancels a task.",
         "parameters": [
@@ -23013,7 +23009,7 @@
         }
       }
     },
-    "/universal_avatar/type/{type}/owner/{entityId}": {
+    "/{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{entityId}": {
       "get": {
         "description": "Returns the system and custom avatars for a project or issue type.",
         "parameters": [
@@ -23254,7 +23250,7 @@
         }
       }
     },
-    "/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id}": {
+    "/{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id}": {
       "delete": {
         "description": "Deletes an avatar from a project or issue type.",
         "parameters": [
@@ -23287,7 +23283,7 @@
         }
       }
     },
-    "/user": {
+    "/{cloudid}/rest/api/3/user": {
       "delete": {
         "description": "Deletes a user. Permissions required: Site administration (i.e., member of the site-admin group).",
         "parameters": [
@@ -23631,7 +23627,7 @@
         }
       }
     },
-    "/user/assignable/multiProjectSearch": {
+    "/{cloudid}/rest/api/3/user/assignable/multiProjectSearch": {
       "get": {
         "description": "Returns a list of users who fulfill both of these criteria:",
         "parameters": [
@@ -23743,7 +23739,7 @@
         }
       }
     },
-    "/user/assignable/search": {
+    "/{cloudid}/rest/api/3/user/assignable/search": {
       "get": {
         "description": "Returns a list of users that can be assigned to an issue. Use this method to find the list of users who can be assigned to:",
         "parameters": [
@@ -23910,7 +23906,7 @@
         }
       }
     },
-    "/user/bulk": {
+    "/{cloudid}/rest/api/3/user/bulk": {
       "get": {
         "description": "Returns details of users specified in a list of usernames or keys. Permissions required: Administer Jira global permission. Users with permission to access Jira can call this method, but empty search results are returned.",
         "parameters": [
@@ -24090,7 +24086,7 @@
         }
       }
     },
-    "/user/columns": {
+    "/{cloudid}/rest/api/3/user/columns": {
       "delete": {
         "description": "Resets the default issue table columns for the user to the system default. If a username is not passed, the calling user's default columns are reset. Permissions required:",
         "parameters": [
@@ -24152,7 +24148,7 @@
         }
       }
     },
-    "/user/groups": {
+    "/{cloudid}/rest/api/3/user/groups": {
       "get": {
         "description": "Returns the groups to which a user belongs. Permissions required: Browse users and groups global permission.",
         "parameters": [
@@ -24200,7 +24196,7 @@
         }
       }
     },
-    "/user/permission/search": {
+    "/{cloudid}/rest/api/3/user/permission/search": {
       "get": {
         "description": "Returns a list of users who fulfill both of these criteria:",
         "parameters": [
@@ -24324,7 +24320,7 @@
         }
       }
     },
-    "/user/picker": {
+    "/{cloudid}/rest/api/3/user/picker": {
       "get": {
         "description": "Returns a list of users whose attributes match the query term. The returned object includes the html field where the matched query term is highlighted with the HTML strong tag. A list of account IDs can be provided to exclude users from the results. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but will only get search results for an exact name match.",
         "parameters": [
@@ -24431,7 +24427,7 @@
         }
       }
     },
-    "/user/properties": {
+    "/{cloudid}/rest/api/3/user/properties": {
       "get": {
         "description": "Returns the keys of all properties for a user. Permissions required:",
         "parameters": [
@@ -24491,7 +24487,7 @@
         }
       }
     },
-    "/user/properties/{propertyKey}": {
+    "/{cloudid}/rest/api/3/user/properties/{propertyKey}": {
       "delete": {
         "description": "Deletes a property from a user. Permissions required:",
         "parameters": [
@@ -24629,7 +24625,7 @@
         }
       }
     },
-    "/user/search": {
+    "/{cloudid}/rest/api/3/user/search": {
       "get": {
         "description": "Returns a list of users that match the search string and property. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but empty search results are returned.",
         "parameters": [
@@ -24753,7 +24749,7 @@
         }
       }
     },
-    "/user/search/query": {
+    "/{cloudid}/rest/api/3/user/search/query": {
       "get": {
         "description": "Finds users using a structured query and returns user details. Permissions required: Browse users and groups global permission. The available queries statements are:",
         "parameters": [
@@ -24789,7 +24785,7 @@
         }
       }
     },
-    "/user/search/query/key": {
+    "/{cloudid}/rest/api/3/user/search/query/key": {
       "get": {
         "description": "Finds users using a structured query and returns a list of user keys. Permissions required: Browse users and groups global permission. The available query statements are:",
         "parameters": [
@@ -24825,7 +24821,7 @@
         }
       }
     },
-    "/user/viewissue/search": {
+    "/{cloudid}/rest/api/3/user/viewissue/search": {
       "get": {
         "description": "Returns a list of users who fulfill both of these criteria:",
         "parameters": [
@@ -24943,7 +24939,7 @@
         }
       }
     },
-    "/version": {
+    "/{cloudid}/rest/api/3/version": {
       "post": {
         "description": "Creates a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.",
         "parameters": [
@@ -25062,7 +25058,7 @@
         }
       }
     },
-    "/version/remotelink": {
+    "/{cloudid}/rest/api/3/version/remotelink": {
       "get": {
         "description": "the global ID of the remote resource that is linked to the versions",
         "parameters": [
@@ -25133,7 +25129,7 @@
         }
       }
     },
-    "/version/{id}": {
+    "/{cloudid}/rest/api/3/version/{id}": {
       "delete": {
         "description": "Deletes a project version. Deprecated, use Delete and replace version that supports swapping version values in custom fields, in addition to the swapping for fixVersion and affectedVersion provided in this resource. Alternative versions can be provided to update issues that use the deleted version in fixVersion or affectedVersion. If alternatives are not provided, occurrences of fixVersion and affectedVersion that contain the deleted version are cleared. Permissions required: Administer Jira global permission or Administer Projects project permission.",
         "parameters": [
@@ -25325,7 +25321,7 @@
         }
       }
     },
-    "/version/{id}/mergeto/{moveIssuesTo}": {
+    "/{cloudid}/rest/api/3/version/{id}/mergeto/{moveIssuesTo}": {
       "put": {
         "description": "Merges two project versions. The merge is completed by deleting the version specified in id and replacing any occurrences of its ID in fixVersion with the version ID specified in moveIssuesTo. Consider using Delete and replace version instead. This resource supports swapping version values in fixVersion, affectedVersion, and custom fields. Permissions required: Administer Jira global permission or Administer Projects project permission.",
         "parameters": [
@@ -25351,7 +25347,7 @@
         }
       }
     },
-    "/version/{id}/move": {
+    "/{cloudid}/rest/api/3/version/{id}/move": {
       "post": {
         "description": "Modifies the version's sequence within the project, which affects the display order of the versions in Jira. Permissions required: Administer Jira global permission or Administer Projects project permission.",
         "parameters": [
@@ -25447,7 +25443,7 @@
         }
       }
     },
-    "/version/{id}/relatedIssueCounts": {
+    "/{cloudid}/rest/api/3/version/{id}/relatedIssueCounts": {
       "get": {
         "description": "Returns the following counts for a version:",
         "parameters": [
@@ -25516,7 +25512,7 @@
         }
       }
     },
-    "/version/{id}/removeAndSwap": {
+    "/{cloudid}/rest/api/3/version/{id}/removeAndSwap": {
       "post": {
         "description": "Deletes a project version. Permissions required: Administer Jira global permission or Administer Projects project permission. Alternative versions can be provided to update issues that use the deleted version in fixVersion, affectedVersion, or any version picker custom fields. If alternatives are not provided, occurrences of fixVersion, affectedVersion, and any version picker custom field, that contain the deleted version, are cleared. Any replacement version must be in the same project as the version being deleted and cannot be the version being deleted.",
         "parameters": [
@@ -25559,7 +25555,7 @@
         }
       }
     },
-    "/version/{id}/unresolvedIssueCount": {
+    "/{cloudid}/rest/api/3/version/{id}/unresolvedIssueCount": {
       "get": {
         "description": "Returns counts of the issues and unresolved issues for the project version. Permissions required: Browse projects project permission",
         "parameters": [
@@ -25599,7 +25595,7 @@
         }
       }
     },
-    "/version/{versionId}/remotelink": {
+    "/{cloudid}/rest/api/3/version/{versionId}/remotelink": {
       "delete": {
         "description": "The version for which to delete ALL existing remote version links",
         "parameters": [
@@ -25704,7 +25700,7 @@
         }
       }
     },
-    "/version/{versionId}/remotelink/{globalId}": {
+    "/{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId}": {
       "delete": {
         "description": "The version ID of the remote link",
         "parameters": [
@@ -25817,7 +25813,7 @@
         }
       }
     },
-    "/workflow": {
+    "/{cloudid}/rest/api/3/workflow": {
       "get": {
         "description": "Returns all workflows in Jira or a single workflow.",
         "parameters": [
@@ -25881,7 +25877,7 @@
         }
       }
     },
-    "/workflow/transitions/{transitionId}/properties": {
+    "/{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties": {
       "delete": {
         "description": "Deletes a property from a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.",
         "parameters": [
@@ -26137,7 +26133,7 @@
         }
       }
     },
-    "/workflowscheme": {
+    "/{cloudid}/rest/api/3/workflowscheme": {
       "post": {
         "description": "Creates a workflow scheme.",
         "parameters": [
@@ -26232,7 +26228,7 @@
         }
       }
     },
-    "/workflowscheme/{id}": {
+    "/{cloudid}/rest/api/3/workflowscheme/{id}": {
       "delete": {
         "description": "Deletes a workflow scheme. Note that a workflow scheme cannot be deleted if it is active (that is, being used by at least one project).",
         "parameters": [
@@ -26428,7 +26424,7 @@
         }
       }
     },
-    "/workflowscheme/{id}/createdraft": {
+    "/{cloudid}/rest/api/3/workflowscheme/{id}/createdraft": {
       "post": {
         "description": "Create a draft workflow scheme from an active workflow scheme, by copying the active workflow scheme. Note that an active workflow scheme can only have one draft workflow scheme at any given time.",
         "parameters": [
@@ -26637,7 +26633,7 @@
         }
       }
     },
-    "/workflowscheme/{id}/default": {
+    "/{cloudid}/rest/api/3/workflowscheme/{id}/default": {
       "delete": {
         "description": "Resets the default workflow for a workflow scheme. That is, the default workflow is set to Jira's system workflow (the jira workflow).",
         "parameters": [
@@ -26840,7 +26836,7 @@
         }
       }
     },
-    "/workflowscheme/{id}/draft": {
+    "/{cloudid}/rest/api/3/workflowscheme/{id}/draft": {
       "delete": {
         "description": "Deletes a draft workflow scheme.",
         "parameters": [
@@ -27302,7 +27298,7 @@
         }
       }
     },
-    "/workflowscheme/{id}/draft/default": {
+    "/{cloudid}/rest/api/3/workflowscheme/{id}/draft/default": {
       "delete": {
         "description": "Resets the default workflow for a workflow scheme's draft. That is, the default workflow is set to Jira's system workflow (the jira workflow).",
         "parameters": [
@@ -27765,7 +27761,7 @@
         }
       }
     },
-    "/workflowscheme/{id}/draft/issuetype/{issueType}": {
+    "/{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}": {
       "delete": {
         "description": "Deletes the issue type-workflow mapping for an issue type in a workflow scheme's draft.",
         "parameters": [
@@ -28258,7 +28254,7 @@
         }
       }
     },
-    "/workflowscheme/{id}/draft/workflow": {
+    "/{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow": {
       "delete": {
         "description": "Deletes the workflow-issue type mapping for a workflow in a workflow scheme's draft.",
         "parameters": [
@@ -28435,7 +28431,7 @@
         }
       }
     },
-    "/workflowscheme/{id}/issuetype/{issueType}": {
+    "/{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType}": {
       "delete": {
         "description": "Deletes the issue type-workflow mapping for an issue type in a workflow scheme.",
         "parameters": [
@@ -28668,7 +28664,7 @@
         }
       }
     },
-    "/workflowscheme/{id}/workflow": {
+    "/{cloudid}/rest/api/3/workflowscheme/{id}/workflow": {
       "delete": {
         "description": "Deletes the workflow-issue type mapping for a workflow in a workflow scheme.",
         "parameters": [
@@ -28857,7 +28853,7 @@
         }
       }
     },
-    "/worklog/deleted": {
+    "/{cloudid}/rest/api/3/worklog/deleted": {
       "get": {
         "description": "Returns a list of IDs and delete timestamps for worklogs deleted after a date and time.",
         "parameters": [
@@ -28931,7 +28927,7 @@
         }
       }
     },
-    "/worklog/list": {
+    "/{cloudid}/rest/api/3/worklog/list": {
       "post": {
         "description": "Returns worklog details for a list of worklog IDs.",
         "parameters": [
@@ -29139,7 +29135,7 @@
         }
       }
     },
-    "/worklog/updated": {
+    "/{cloudid}/rest/api/3/worklog/updated": {
       "get": {
         "description": "Returns a list of IDs and update timestamps for worklogs updated after a date and time.",
         "parameters": [

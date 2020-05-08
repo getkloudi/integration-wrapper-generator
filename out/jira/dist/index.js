@@ -9,52 +9,94 @@ Object.defineProperty(exports, "ApiClient", {
     return _ApiClient["default"];
   }
 });
-Object.defineProperty(exports, "FieldSchema", {
+Object.defineProperty(exports, "CloudidRestApi3FieldSchema", {
   enumerable: true,
   get: function get() {
-    return _FieldSchema["default"];
+    return _CloudidRestApi3FieldSchema["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionProject", {
+Object.defineProperty(exports, "CloudidRestApi3FilterIdPermissionProject", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionProject["default"];
+    return _CloudidRestApi3FilterIdPermissionProject["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionProjectProjectCategory", {
+Object.defineProperty(exports, "CloudidRestApi3FilterIdPermissionProjectProjectCategory", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionProjectProjectCategory["default"];
+    return _CloudidRestApi3FilterIdPermissionProjectProjectCategory["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRole", {
+Object.defineProperty(exports, "CloudidRestApi3FilterIdPermissionRole", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRole["default"];
+    return _CloudidRestApi3FilterIdPermissionRole["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRoleActorGroup", {
+Object.defineProperty(exports, "CloudidRestApi3FilterIdPermissionRoleActorGroup", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRoleActorGroup["default"];
+    return _CloudidRestApi3FilterIdPermissionRoleActorGroup["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRoleActors", {
+Object.defineProperty(exports, "CloudidRestApi3FilterIdPermissionRoleActors", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRoleActors["default"];
+    return _CloudidRestApi3FilterIdPermissionRoleActors["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRoleScope", {
+Object.defineProperty(exports, "CloudidRestApi3FilterIdPermissionRoleScope", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRoleScope["default"];
+    return _CloudidRestApi3FilterIdPermissionRoleScope["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRoleScopeProject", {
+Object.defineProperty(exports, "CloudidRestApi3FilterIdPermissionRoleScopeProject", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRoleScopeProject["default"];
+    return _CloudidRestApi3FilterIdPermissionRoleScopeProject["default"];
+  }
+});
+Object.defineProperty(exports, "CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor", {
+  enumerable: true,
+  get: function get() {
+    return _CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor["default"];
+  }
+});
+Object.defineProperty(exports, "CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication", {
+  enumerable: true,
+  get: function get() {
+    return _CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication["default"];
+  }
+});
+Object.defineProperty(exports, "CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject", {
+  enumerable: true,
+  get: function get() {
+    return _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject["default"];
+  }
+});
+Object.defineProperty(exports, "CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon", {
+  enumerable: true,
+  get: function get() {
+    return _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon["default"];
+  }
+});
+Object.defineProperty(exports, "CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus", {
+  enumerable: true,
+  get: function get() {
+    return _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus["default"];
+  }
+});
+Object.defineProperty(exports, "CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon", {
+  enumerable: true,
+  get: function get() {
+    return _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon["default"];
+  }
+});
+Object.defineProperty(exports, "CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses", {
+  enumerable: true,
+  get: function get() {
+    return _CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses["default"];
   }
 });
 Object.defineProperty(exports, "InlineObject", {
@@ -1929,48 +1971,6 @@ Object.defineProperty(exports, "InlineResponse303ResultErrors", {
     return _InlineResponse303ResultErrors["default"];
   }
 });
-Object.defineProperty(exports, "IssueIssueIdOrKeyAttachmentsAuthor", {
-  enumerable: true,
-  get: function get() {
-    return _IssueIssueIdOrKeyAttachmentsAuthor["default"];
-  }
-});
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkApplication", {
-  enumerable: true,
-  get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkApplication["default"];
-  }
-});
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkObject", {
-  enumerable: true,
-  get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkObject["default"];
-  }
-});
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkObjectIcon", {
-  enumerable: true,
-  get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkObjectIcon["default"];
-  }
-});
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkObjectStatus", {
-  enumerable: true,
-  get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkObjectStatus["default"];
-  }
-});
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkObjectStatusIcon", {
-  enumerable: true,
-  get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkObjectStatusIcon["default"];
-  }
-});
-Object.defineProperty(exports, "ProjectProjectIdOrKeyStatusesStatuses", {
-  enumerable: true,
-  get: function get() {
-    return _ProjectProjectIdOrKeyStatusesStatuses["default"];
-  }
-});
 Object.defineProperty(exports, "DefaultApi", {
   enumerable: true,
   get: function get() {
@@ -1980,21 +1980,35 @@ Object.defineProperty(exports, "DefaultApi", {
 
 var _ApiClient = _interopRequireDefault(require("./ApiClient"));
 
-var _FieldSchema = _interopRequireDefault(require("./model/FieldSchema"));
+var _CloudidRestApi3FieldSchema = _interopRequireDefault(require("./model/CloudidRestApi3FieldSchema"));
 
-var _FilterIdPermissionProject = _interopRequireDefault(require("./model/FilterIdPermissionProject"));
+var _CloudidRestApi3FilterIdPermissionProject = _interopRequireDefault(require("./model/CloudidRestApi3FilterIdPermissionProject"));
 
-var _FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./model/FilterIdPermissionProjectProjectCategory"));
+var _CloudidRestApi3FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./model/CloudidRestApi3FilterIdPermissionProjectProjectCategory"));
 
-var _FilterIdPermissionRole = _interopRequireDefault(require("./model/FilterIdPermissionRole"));
+var _CloudidRestApi3FilterIdPermissionRole = _interopRequireDefault(require("./model/CloudidRestApi3FilterIdPermissionRole"));
 
-var _FilterIdPermissionRoleActorGroup = _interopRequireDefault(require("./model/FilterIdPermissionRoleActorGroup"));
+var _CloudidRestApi3FilterIdPermissionRoleActorGroup = _interopRequireDefault(require("./model/CloudidRestApi3FilterIdPermissionRoleActorGroup"));
 
-var _FilterIdPermissionRoleActors = _interopRequireDefault(require("./model/FilterIdPermissionRoleActors"));
+var _CloudidRestApi3FilterIdPermissionRoleActors = _interopRequireDefault(require("./model/CloudidRestApi3FilterIdPermissionRoleActors"));
 
-var _FilterIdPermissionRoleScope = _interopRequireDefault(require("./model/FilterIdPermissionRoleScope"));
+var _CloudidRestApi3FilterIdPermissionRoleScope = _interopRequireDefault(require("./model/CloudidRestApi3FilterIdPermissionRoleScope"));
 
-var _FilterIdPermissionRoleScopeProject = _interopRequireDefault(require("./model/FilterIdPermissionRoleScopeProject"));
+var _CloudidRestApi3FilterIdPermissionRoleScopeProject = _interopRequireDefault(require("./model/CloudidRestApi3FilterIdPermissionRoleScopeProject"));
+
+var _CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor = _interopRequireDefault(require("./model/CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor"));
+
+var _CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication = _interopRequireDefault(require("./model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkApplication"));
+
+var _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject = _interopRequireDefault(require("./model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObject"));
+
+var _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon = _interopRequireDefault(require("./model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectIcon"));
+
+var _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus = _interopRequireDefault(require("./model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatus"));
+
+var _CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon = _interopRequireDefault(require("./model/CloudidRestApi3IssueIssueIdOrKeyRemotelinkObjectStatusIcon"));
+
+var _CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses = _interopRequireDefault(require("./model/CloudidRestApi3ProjectProjectIdOrKeyStatusesStatuses"));
 
 var _InlineObject = _interopRequireDefault(require("./model/InlineObject"));
 
@@ -2619,20 +2633,6 @@ var _InlineResponse125 = _interopRequireDefault(require("./model/InlineResponse3
 var _InlineResponse303Result = _interopRequireDefault(require("./model/InlineResponse303Result"));
 
 var _InlineResponse303ResultErrors = _interopRequireDefault(require("./model/InlineResponse303ResultErrors"));
-
-var _IssueIssueIdOrKeyAttachmentsAuthor = _interopRequireDefault(require("./model/IssueIssueIdOrKeyAttachmentsAuthor"));
-
-var _IssueIssueIdOrKeyRemotelinkApplication = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkApplication"));
-
-var _IssueIssueIdOrKeyRemotelinkObject = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkObject"));
-
-var _IssueIssueIdOrKeyRemotelinkObjectIcon = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkObjectIcon"));
-
-var _IssueIssueIdOrKeyRemotelinkObjectStatus = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkObjectStatus"));
-
-var _IssueIssueIdOrKeyRemotelinkObjectStatusIcon = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkObjectStatusIcon"));
-
-var _ProjectProjectIdOrKeyStatusesStatuses = _interopRequireDefault(require("./model/ProjectProjectIdOrKeyStatusesStatuses"));
 
 var _DefaultApi = _interopRequireDefault(require("./api/DefaultApi"));
 

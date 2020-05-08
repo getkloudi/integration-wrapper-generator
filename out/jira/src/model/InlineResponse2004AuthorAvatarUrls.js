@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse2004AuthorAvatarUrls model module.
  * @module model/InlineResponse2004AuthorAvatarUrls
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse2004AuthorAvatarUrls {
     /**

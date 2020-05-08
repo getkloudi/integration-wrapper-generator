@@ -22,7 +22,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20037FieldsSubTasks model module.
  * @module model/InlineResponse20037FieldsSubTasks
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20037FieldsSubTasks = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20022ConfigScopeProjects2 model module.
  * @module model/InlineResponse20022ConfigScopeProjects2
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20022ConfigScopeProjects2 {
     /**

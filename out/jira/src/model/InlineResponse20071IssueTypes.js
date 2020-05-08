@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import FilterIdPermissionRoleScope from './FilterIdPermissionRoleScope';
+import CloudidRestApi3FilterIdPermissionRoleScope from './CloudidRestApi3FilterIdPermissionRoleScope';
 
 /**
  * The InlineResponse20071IssueTypes model module.
  * @module model/InlineResponse20071IssueTypes
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20071IssueTypes {
     /**
@@ -78,7 +78,7 @@ class InlineResponse20071IssueTypes {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('scope')) {
-                obj['scope'] = FilterIdPermissionRoleScope.constructFromObject(data['scope']);
+                obj['scope'] = CloudidRestApi3FilterIdPermissionRoleScope.constructFromObject(data['scope']);
             }
             if (data.hasOwnProperty('self')) {
                 obj['self'] = ApiClient.convertToType(data['self'], 'String');
@@ -119,7 +119,7 @@ InlineResponse20071IssueTypes.prototype['id'] = undefined;
 InlineResponse20071IssueTypes.prototype['name'] = undefined;
 
 /**
- * @member {module:model/FilterIdPermissionRoleScope} scope
+ * @member {module:model/CloudidRestApi3FilterIdPermissionRoleScope} scope
  */
 InlineResponse20071IssueTypes.prototype['scope'] = undefined;
 

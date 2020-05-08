@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20037FieldsWatcher model module.
  * @module model/InlineResponse20037FieldsWatcher
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20037FieldsWatcher = /*#__PURE__*/function () {
   /**

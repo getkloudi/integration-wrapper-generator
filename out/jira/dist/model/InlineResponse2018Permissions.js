@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse2018Permissions model module.
  * @module model/InlineResponse2018Permissions
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse2018Permissions = /*#__PURE__*/function () {
   /**

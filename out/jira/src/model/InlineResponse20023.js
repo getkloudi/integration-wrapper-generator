@@ -18,7 +18,7 @@ import InlineResponse20022Properties from './InlineResponse20022Properties';
 /**
  * The InlineResponse20023 model module.
  * @module model/InlineResponse20023
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20023 {
     /**

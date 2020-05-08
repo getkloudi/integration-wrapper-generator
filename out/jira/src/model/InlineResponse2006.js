@@ -17,7 +17,7 @@ import InlineResponse2006Entries from './InlineResponse2006Entries';
 /**
  * The InlineResponse2006 model module.
  * @module model/InlineResponse2006
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse2006 {
     /**

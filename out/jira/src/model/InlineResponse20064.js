@@ -17,7 +17,7 @@ import InlineResponse20064Projects from './InlineResponse20064Projects';
 /**
  * The InlineResponse20064 model module.
  * @module model/InlineResponse20064
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20064 {
     /**

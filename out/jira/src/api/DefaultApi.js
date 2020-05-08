@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import FilterIdPermissionProject from '../model/FilterIdPermissionProject';
-import FilterIdPermissionProjectProjectCategory from '../model/FilterIdPermissionProjectProjectCategory';
-import FilterIdPermissionRole from '../model/FilterIdPermissionRole';
+import CloudidRestApi3FilterIdPermissionProject from '../model/CloudidRestApi3FilterIdPermissionProject';
+import CloudidRestApi3FilterIdPermissionProjectProjectCategory from '../model/CloudidRestApi3FilterIdPermissionProjectProjectCategory';
+import CloudidRestApi3FilterIdPermissionRole from '../model/CloudidRestApi3FilterIdPermissionRole';
 import InlineObject from '../model/InlineObject';
 import InlineObject1 from '../model/InlineObject1';
 import InlineObject10 from '../model/InlineObject10';
@@ -226,7 +226,7 @@ import InlineResponse303 from '../model/InlineResponse303';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.0.0
+* @version 1.1.0
 */
 export default class DefaultApi {
 
@@ -243,8 +243,8 @@ export default class DefaultApi {
 
 
     /**
-     * Callback function to receive the result of the applicationPropertiesAdvancedSettingsGet operation.
-     * @callback module:api/DefaultApi~applicationPropertiesAdvancedSettingsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ApplicationPropertiesAdvancedSettingsGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse200>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -252,10 +252,10 @@ export default class DefaultApi {
 
     /**
      * Returns the application properties that are accessible on the Advanced Settings page. To navigate to the Advanced Settings page in Jira, choose the Jira icon > Jira settings > System, General Configuration and then click Advanced Settings (in the upper right).
-     * @param {module:api/DefaultApi~applicationPropertiesAdvancedSettingsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ApplicationPropertiesAdvancedSettingsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse200>}
      */
-    applicationPropertiesAdvancedSettingsGet(callback) {
+    cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -267,20 +267,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse200];
       return this.apiClient.callApi(
-        '/application-properties/advanced-settings', 'GET',
+        '/{cloudid}/rest/api/3/application-properties/advanced-settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the applicationPropertiesGet operation.
-     * @callback module:api/DefaultApi~applicationPropertiesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ApplicationPropertiesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ApplicationPropertiesGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse200>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -292,10 +292,10 @@ export default class DefaultApi {
      * @param {String} opts.key The key of the application property.
      * @param {String} opts.keyFilter When a key isn't provided, this filters the list of results by the application property key using a regular expression. For example, using jira.lf.* will return all application properties with keys that start with jira.lf..
      * @param {String} opts.permissionLevel The permission level of all items being returned in the list.
-     * @param {module:api/DefaultApi~applicationPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ApplicationPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse200>}
      */
-    applicationPropertiesGet(opts, callback) {
+    cloudidRestApi3ApplicationPropertiesGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -311,20 +311,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse200];
       return this.apiClient.callApi(
-        '/application-properties', 'GET',
+        '/{cloudid}/rest/api/3/application-properties', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the applicationPropertiesIdPut operation.
-     * @callback module:api/DefaultApi~applicationPropertiesIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ApplicationPropertiesIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ApplicationPropertiesIdPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -335,14 +335,14 @@ export default class DefaultApi {
      * @param {String} id The key of the application property to update.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject} opts.body 
-     * @param {module:api/DefaultApi~applicationPropertiesIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ApplicationPropertiesIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    applicationPropertiesIdPut(id, opts, callback) {
+    cloudidRestApi3ApplicationPropertiesIdPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling applicationPropertiesIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ApplicationPropertiesIdPut");
       }
 
       let pathParams = {
@@ -355,20 +355,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/application-properties/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/application-properties/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the applicationroleGet operation.
-     * @callback module:api/DefaultApi~applicationroleGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ApplicationroleGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ApplicationroleGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse2001>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -376,10 +376,10 @@ export default class DefaultApi {
 
     /**
      * Returns all application roles. In Jira, application roles are managed using the Application access configuration page.
-     * @param {module:api/DefaultApi~applicationroleGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ApplicationroleGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse2001>}
      */
-    applicationroleGet(callback) {
+    cloudidRestApi3ApplicationroleGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -391,20 +391,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse2001];
       return this.apiClient.callApi(
-        '/applicationrole', 'GET',
+        '/{cloudid}/rest/api/3/applicationrole', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the applicationroleKeyGet operation.
-     * @callback module:api/DefaultApi~applicationroleKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ApplicationroleKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ApplicationroleKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -413,14 +413,14 @@ export default class DefaultApi {
     /**
      * Returns an application role.
      * @param {String} key The key of the application role. Use the Get all application roles method to get the key for each application role.
-     * @param {module:api/DefaultApi~applicationroleKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ApplicationroleKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2002}
      */
-    applicationroleKeyGet(key, callback) {
+    cloudidRestApi3ApplicationroleKeyGet(key, callback) {
       let postBody = null;
       // verify the required parameter 'key' is set
       if (key === undefined || key === null) {
-        throw new Error("Missing the required parameter 'key' when calling applicationroleKeyGet");
+        throw new Error("Missing the required parameter 'key' when calling cloudidRestApi3ApplicationroleKeyGet");
       }
 
       let pathParams = {
@@ -433,20 +433,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2002;
       return this.apiClient.callApi(
-        '/applicationrole/{key}', 'GET',
+        '/{cloudid}/rest/api/3/applicationrole/{key}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the attachmentIdDelete operation.
-     * @callback module:api/DefaultApi~attachmentIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3AttachmentIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3AttachmentIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -455,13 +455,13 @@ export default class DefaultApi {
     /**
      * Deletes an attachment from an issue.
      * @param {String} id The ID of the attachment.
-     * @param {module:api/DefaultApi~attachmentIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3AttachmentIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    attachmentIdDelete(id, callback) {
+    cloudidRestApi3AttachmentIdDelete(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling attachmentIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3AttachmentIdDelete");
       }
 
       let pathParams = {
@@ -474,20 +474,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/attachment/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/attachment/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the attachmentIdExpandHumanGet operation.
-     * @callback module:api/DefaultApi~attachmentIdExpandHumanGetCallback
+     * Callback function to receive the result of the cloudidRestApi3AttachmentIdExpandHumanGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3AttachmentIdExpandHumanGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2005} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -496,14 +496,14 @@ export default class DefaultApi {
     /**
      * Returns the metadata for the contents of an attachment, if it is an archive, and metadata for the attachment itself. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned and metadata for the ZIP archive. Currently, only the ZIP archive format is supported.
      * @param {String} id The ID of the attachment.
-     * @param {module:api/DefaultApi~attachmentIdExpandHumanGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3AttachmentIdExpandHumanGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2005}
      */
-    attachmentIdExpandHumanGet(id, callback) {
+    cloudidRestApi3AttachmentIdExpandHumanGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling attachmentIdExpandHumanGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3AttachmentIdExpandHumanGet");
       }
 
       let pathParams = {
@@ -516,20 +516,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2005;
       return this.apiClient.callApi(
-        '/attachment/{id}/expand/human', 'GET',
+        '/{cloudid}/rest/api/3/attachment/{id}/expand/human', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the attachmentIdExpandRawGet operation.
-     * @callback module:api/DefaultApi~attachmentIdExpandRawGetCallback
+     * Callback function to receive the result of the cloudidRestApi3AttachmentIdExpandRawGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3AttachmentIdExpandRawGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2006} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -538,14 +538,14 @@ export default class DefaultApi {
     /**
      * Returns the metadata for the contents of an attachment, if it is an archive. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned. Currently, only the ZIP archive format is supported.
      * @param {String} id The ID of the attachment.
-     * @param {module:api/DefaultApi~attachmentIdExpandRawGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3AttachmentIdExpandRawGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2006}
      */
-    attachmentIdExpandRawGet(id, callback) {
+    cloudidRestApi3AttachmentIdExpandRawGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling attachmentIdExpandRawGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3AttachmentIdExpandRawGet");
       }
 
       let pathParams = {
@@ -558,20 +558,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2006;
       return this.apiClient.callApi(
-        '/attachment/{id}/expand/raw', 'GET',
+        '/{cloudid}/rest/api/3/attachment/{id}/expand/raw', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the attachmentIdGet operation.
-     * @callback module:api/DefaultApi~attachmentIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3AttachmentIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3AttachmentIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2004} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -580,14 +580,14 @@ export default class DefaultApi {
     /**
      * Returns the metadata for an attachment. Note that the attachment itself is not returned.
      * @param {String} id The ID of the attachment.
-     * @param {module:api/DefaultApi~attachmentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3AttachmentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2004}
      */
-    attachmentIdGet(id, callback) {
+    cloudidRestApi3AttachmentIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling attachmentIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3AttachmentIdGet");
       }
 
       let pathParams = {
@@ -600,20 +600,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2004;
       return this.apiClient.callApi(
-        '/attachment/{id}', 'GET',
+        '/{cloudid}/rest/api/3/attachment/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the attachmentMetaGet operation.
-     * @callback module:api/DefaultApi~attachmentMetaGetCallback
+     * Callback function to receive the result of the cloudidRestApi3AttachmentMetaGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3AttachmentMetaGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2003} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -621,10 +621,10 @@ export default class DefaultApi {
 
     /**
      * Returns the global attachment settings, that is, whether attachments are enabled and the maximum attachment size allowed.
-     * @param {module:api/DefaultApi~attachmentMetaGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3AttachmentMetaGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2003}
      */
-    attachmentMetaGet(callback) {
+    cloudidRestApi3AttachmentMetaGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -636,20 +636,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2003;
       return this.apiClient.callApi(
-        '/attachment/meta', 'GET',
+        '/{cloudid}/rest/api/3/attachment/meta', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the auditingRecordGet operation.
-     * @callback module:api/DefaultApi~auditingRecordGetCallback
+     * Callback function to receive the result of the cloudidRestApi3AuditingRecordGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3AuditingRecordGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2007} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -663,10 +663,10 @@ export default class DefaultApi {
      * @param {Number} opts.limit The maximum number of results to return. The maximum is 1000.
      * @param {Number} opts.offset The number of records to skip before returning the first result.
      * @param {String} opts.to The date and time on or before which returned audit results must have been created. If from is provided to must be after from or the result set will be empty.
-     * @param {module:api/DefaultApi~auditingRecordGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3AuditingRecordGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2007}
      */
-    auditingRecordGet(opts, callback) {
+    cloudidRestApi3AuditingRecordGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -684,20 +684,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2007;
       return this.apiClient.callApi(
-        '/auditing/record', 'GET',
+        '/{cloudid}/rest/api/3/auditing/record', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the avatarTypeSystemGet operation.
-     * @callback module:api/DefaultApi~avatarTypeSystemGetCallback
+     * Callback function to receive the result of the cloudidRestApi3AvatarTypeSystemGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3AvatarTypeSystemGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2008} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -706,14 +706,14 @@ export default class DefaultApi {
     /**
      * Returns a list of system avatar details by owner type, where the owner types are issue type, project, or user.
      * @param {String} type The avatar type.
-     * @param {module:api/DefaultApi~avatarTypeSystemGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3AvatarTypeSystemGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2008}
      */
-    avatarTypeSystemGet(type, callback) {
+    cloudidRestApi3AvatarTypeSystemGet(type, callback) {
       let postBody = null;
       // verify the required parameter 'type' is set
       if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling avatarTypeSystemGet");
+        throw new Error("Missing the required parameter 'type' when calling cloudidRestApi3AvatarTypeSystemGet");
       }
 
       let pathParams = {
@@ -726,20 +726,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2008;
       return this.apiClient.callApi(
-        '/avatar/{type}/system', 'GET',
+        '/{cloudid}/rest/api/3/avatar/{type}/system', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the commentCommentIdPropertiesGet operation.
-     * @callback module:api/DefaultApi~commentCommentIdPropertiesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3CommentCommentIdPropertiesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3CommentCommentIdPropertiesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20010} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -748,14 +748,14 @@ export default class DefaultApi {
     /**
      * Returns the keys of all the properties of a comment.
      * @param {String} commentId The ID of the comment.
-     * @param {module:api/DefaultApi~commentCommentIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3CommentCommentIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20010}
      */
-    commentCommentIdPropertiesGet(commentId, callback) {
+    cloudidRestApi3CommentCommentIdPropertiesGet(commentId, callback) {
       let postBody = null;
       // verify the required parameter 'commentId' is set
       if (commentId === undefined || commentId === null) {
-        throw new Error("Missing the required parameter 'commentId' when calling commentCommentIdPropertiesGet");
+        throw new Error("Missing the required parameter 'commentId' when calling cloudidRestApi3CommentCommentIdPropertiesGet");
       }
 
       let pathParams = {
@@ -768,20 +768,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20010;
       return this.apiClient.callApi(
-        '/comment/{commentId}/properties', 'GET',
+        '/{cloudid}/rest/api/3/comment/{commentId}/properties', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the commentCommentIdPropertiesPropertyKeyDelete operation.
-     * @callback module:api/DefaultApi~commentCommentIdPropertiesPropertyKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -791,17 +791,17 @@ export default class DefaultApi {
      * Deletes a comment property.
      * @param {String} commentId The ID of the comment.
      * @param {String} propertyKey The key of the property.
-     * @param {module:api/DefaultApi~commentCommentIdPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    commentCommentIdPropertiesPropertyKeyDelete(commentId, propertyKey, callback) {
+    cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(commentId, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'commentId' is set
       if (commentId === undefined || commentId === null) {
-        throw new Error("Missing the required parameter 'commentId' when calling commentCommentIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'commentId' when calling cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling commentCommentIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete");
       }
 
       let pathParams = {
@@ -815,20 +815,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/comment/{commentId}/properties/{propertyKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the commentCommentIdPropertiesPropertyKeyGet operation.
-     * @callback module:api/DefaultApi~commentCommentIdPropertiesPropertyKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -838,18 +838,18 @@ export default class DefaultApi {
      * Returns the value of a comment property.
      * @param {String} commentId The ID of the comment.
      * @param {String} propertyKey The key of the property.
-     * @param {module:api/DefaultApi~commentCommentIdPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20011}
      */
-    commentCommentIdPropertiesPropertyKeyGet(commentId, propertyKey, callback) {
+    cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(commentId, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'commentId' is set
       if (commentId === undefined || commentId === null) {
-        throw new Error("Missing the required parameter 'commentId' when calling commentCommentIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'commentId' when calling cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling commentCommentIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet");
       }
 
       let pathParams = {
@@ -863,20 +863,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20011;
       return this.apiClient.callApi(
-        '/comment/{commentId}/properties/{propertyKey}', 'GET',
+        '/{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the commentCommentIdPropertiesPropertyKeyPut operation.
-     * @callback module:api/DefaultApi~commentCommentIdPropertiesPropertyKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -886,17 +886,17 @@ export default class DefaultApi {
      * Creates or updates the value of a property for a comment. Use this resource to store custom data against a comment.
      * @param {String} commentId The ID of the comment.
      * @param {String} propertyKey The key of the property. The maximum length is 255 characters.
-     * @param {module:api/DefaultApi~commentCommentIdPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    commentCommentIdPropertiesPropertyKeyPut(commentId, propertyKey, callback) {
+    cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(commentId, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'commentId' is set
       if (commentId === undefined || commentId === null) {
-        throw new Error("Missing the required parameter 'commentId' when calling commentCommentIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'commentId' when calling cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling commentCommentIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut");
       }
 
       let pathParams = {
@@ -910,20 +910,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/comment/{commentId}/properties/{propertyKey}', 'PUT',
+        '/{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the commentListPost operation.
-     * @callback module:api/DefaultApi~commentListPostCallback
+     * Callback function to receive the result of the cloudidRestApi3CommentListPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3CommentListPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2009} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -934,10 +934,10 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about comments in the response. This parameter accepts multiple values separated by a comma:
      * @param {module:model/InlineObject1} opts.body 
-     * @param {module:api/DefaultApi~commentListPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3CommentListPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2009}
      */
-    commentListPost(opts, callback) {
+    cloudidRestApi3CommentListPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -951,20 +951,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2009;
       return this.apiClient.callApi(
-        '/comment/list', 'POST',
+        '/{cloudid}/rest/api/3/comment/list', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the componentIdDelete operation.
-     * @callback module:api/DefaultApi~componentIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3ComponentIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ComponentIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -975,14 +975,14 @@ export default class DefaultApi {
      * @param {String} id The ID of the component.
      * @param {Object} opts Optional parameters
      * @param {String} opts.moveIssuesTo The ID of the component to replace the deleted component. If this value is null no replacement is made.
-     * @param {module:api/DefaultApi~componentIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ComponentIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    componentIdDelete(id, opts, callback) {
+    cloudidRestApi3ComponentIdDelete(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling componentIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ComponentIdDelete");
       }
 
       let pathParams = {
@@ -996,20 +996,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/component/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/component/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the componentIdGet operation.
-     * @callback module:api/DefaultApi~componentIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ComponentIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ComponentIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse201} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1018,14 +1018,14 @@ export default class DefaultApi {
     /**
      * Returns a component. Permissions required: Browse projects project permission.
      * @param {String} id The ID of the component.
-     * @param {module:api/DefaultApi~componentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ComponentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse201}
      */
-    componentIdGet(id, callback) {
+    cloudidRestApi3ComponentIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling componentIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ComponentIdGet");
       }
 
       let pathParams = {
@@ -1038,20 +1038,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse201;
       return this.apiClient.callApi(
-        '/component/{id}', 'GET',
+        '/{cloudid}/rest/api/3/component/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the componentIdPut operation.
-     * @callback module:api/DefaultApi~componentIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ComponentIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ComponentIdPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -1062,14 +1062,14 @@ export default class DefaultApi {
      * @param {String} id 
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject3} opts.body 
-     * @param {module:api/DefaultApi~componentIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ComponentIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    componentIdPut(id, opts, callback) {
+    cloudidRestApi3ComponentIdPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling componentIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ComponentIdPut");
       }
 
       let pathParams = {
@@ -1082,20 +1082,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/component/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/component/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the componentIdRelatedIssueCountsGet operation.
-     * @callback module:api/DefaultApi~componentIdRelatedIssueCountsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ComponentIdRelatedIssueCountsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ComponentIdRelatedIssueCountsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20012} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1104,14 +1104,14 @@ export default class DefaultApi {
     /**
      * Returns the counts of issues assigned to the component. Permissions required: Permission to access Jira.
      * @param {String} id The ID of the component.
-     * @param {module:api/DefaultApi~componentIdRelatedIssueCountsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ComponentIdRelatedIssueCountsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20012}
      */
-    componentIdRelatedIssueCountsGet(id, callback) {
+    cloudidRestApi3ComponentIdRelatedIssueCountsGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling componentIdRelatedIssueCountsGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ComponentIdRelatedIssueCountsGet");
       }
 
       let pathParams = {
@@ -1124,20 +1124,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20012;
       return this.apiClient.callApi(
-        '/component/{id}/relatedIssueCounts', 'GET',
+        '/{cloudid}/rest/api/3/component/{id}/relatedIssueCounts', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the componentPost operation.
-     * @callback module:api/DefaultApi~componentPostCallback
+     * Callback function to receive the result of the cloudidRestApi3ComponentPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ComponentPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse201} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1147,10 +1147,10 @@ export default class DefaultApi {
      * Creates a component. Use components to provide containers for issues within a project. Permissions required: Any of the following:
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject2} opts.body 
-     * @param {module:api/DefaultApi~componentPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ComponentPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse201}
      */
-    componentPost(opts, callback) {
+    cloudidRestApi3ComponentPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -1163,20 +1163,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse201;
       return this.apiClient.callApi(
-        '/component', 'POST',
+        '/{cloudid}/rest/api/3/component', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the configurationGet operation.
-     * @callback module:api/DefaultApi~configurationGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ConfigurationGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ConfigurationGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20013} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1184,10 +1184,10 @@ export default class DefaultApi {
 
     /**
      * Returns the global settings in Jira. These settings determine whether optional features (for example, sub-tasks, time tracking, and others) are enabled. If time tracking is enabled, this method also returns the time tracking configuration.
-     * @param {module:api/DefaultApi~configurationGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ConfigurationGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20013}
      */
-    configurationGet(callback) {
+    cloudidRestApi3ConfigurationGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -1199,20 +1199,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20013;
       return this.apiClient.callApi(
-        '/configuration', 'GET',
+        '/{cloudid}/rest/api/3/configuration', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the configurationTimetrackingDelete operation.
-     * @callback module:api/DefaultApi~configurationTimetrackingDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3ConfigurationTimetrackingDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -1220,9 +1220,9 @@ export default class DefaultApi {
 
     /**
      * Disables time tracking.
-     * @param {module:api/DefaultApi~configurationTimetrackingDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    configurationTimetrackingDelete(callback) {
+    cloudidRestApi3ConfigurationTimetrackingDelete(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -1234,20 +1234,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/configuration/timetracking', 'DELETE',
+        '/{cloudid}/rest/api/3/configuration/timetracking', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the configurationTimetrackingGet operation.
-     * @callback module:api/DefaultApi~configurationTimetrackingGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ConfigurationTimetrackingGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20014} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1255,10 +1255,10 @@ export default class DefaultApi {
 
     /**
      * Returns the time tracking provider that is currently selected. Note that if time tracking is disabled, then a successful but empty response is returned.
-     * @param {module:api/DefaultApi~configurationTimetrackingGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20014}
      */
-    configurationTimetrackingGet(callback) {
+    cloudidRestApi3ConfigurationTimetrackingGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -1270,20 +1270,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20014;
       return this.apiClient.callApi(
-        '/configuration/timetracking', 'GET',
+        '/{cloudid}/rest/api/3/configuration/timetracking', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the configurationTimetrackingListGet operation.
-     * @callback module:api/DefaultApi~configurationTimetrackingListGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ConfigurationTimetrackingListGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingListGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20015>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1291,10 +1291,10 @@ export default class DefaultApi {
 
     /**
      * Returns all time tracking providers. By default, Jira only has one time tracking provider: JIRA provided time tracking. However, you can install other time tracking providers via apps from the Atlassian Marketplace. For more information on time tracking providers, see the documentation for the Time Tracking Provider module.
-     * @param {module:api/DefaultApi~configurationTimetrackingListGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingListGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20015>}
      */
-    configurationTimetrackingListGet(callback) {
+    cloudidRestApi3ConfigurationTimetrackingListGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -1306,20 +1306,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20015];
       return this.apiClient.callApi(
-        '/configuration/timetracking/list', 'GET',
+        '/{cloudid}/rest/api/3/configuration/timetracking/list', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the configurationTimetrackingOptionsGet operation.
-     * @callback module:api/DefaultApi~configurationTimetrackingOptionsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ConfigurationTimetrackingOptionsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingOptionsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20016} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1327,10 +1327,10 @@ export default class DefaultApi {
 
     /**
      * Returns the time tracking settings. This includes settings such as the time format, default time unit, and others. For more information, see Configuring time tracking.
-     * @param {module:api/DefaultApi~configurationTimetrackingOptionsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingOptionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20016}
      */
-    configurationTimetrackingOptionsGet(callback) {
+    cloudidRestApi3ConfigurationTimetrackingOptionsGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -1342,20 +1342,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20016;
       return this.apiClient.callApi(
-        '/configuration/timetracking/options', 'GET',
+        '/{cloudid}/rest/api/3/configuration/timetracking/options', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the configurationTimetrackingOptionsPut operation.
-     * @callback module:api/DefaultApi~configurationTimetrackingOptionsPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ConfigurationTimetrackingOptionsPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingOptionsPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20016} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1365,10 +1365,10 @@ export default class DefaultApi {
      * Sets the time tracking settings.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject5} opts.body 
-     * @param {module:api/DefaultApi~configurationTimetrackingOptionsPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingOptionsPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20016}
      */
-    configurationTimetrackingOptionsPut(opts, callback) {
+    cloudidRestApi3ConfigurationTimetrackingOptionsPut(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -1381,20 +1381,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20016;
       return this.apiClient.callApi(
-        '/configuration/timetracking/options', 'PUT',
+        '/{cloudid}/rest/api/3/configuration/timetracking/options', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the configurationTimetrackingPut operation.
-     * @callback module:api/DefaultApi~configurationTimetrackingPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ConfigurationTimetrackingPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -1404,9 +1404,9 @@ export default class DefaultApi {
      * Selects a time tracking provider.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject4} opts.body 
-     * @param {module:api/DefaultApi~configurationTimetrackingPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ConfigurationTimetrackingPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    configurationTimetrackingPut(opts, callback) {
+    cloudidRestApi3ConfigurationTimetrackingPut(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -1419,20 +1419,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/configuration/timetracking', 'PUT',
+        '/{cloudid}/rest/api/3/configuration/timetracking', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the customFieldOptionIdGet operation.
-     * @callback module:api/DefaultApi~customFieldOptionIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3CustomFieldOptionIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3CustomFieldOptionIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20017} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1441,14 +1441,14 @@ export default class DefaultApi {
     /**
      * Returns a custom field option. For example, an option in a cascading select list.
      * @param {String} id The ID of the custom field option. To find this ID, configure the custom field and edit its options in Jira. Click the option and its ID will show in the URL as the selectedParentOptionId parameter.
-     * @param {module:api/DefaultApi~customFieldOptionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3CustomFieldOptionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20017}
      */
-    customFieldOptionIdGet(id, callback) {
+    cloudidRestApi3CustomFieldOptionIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling customFieldOptionIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3CustomFieldOptionIdGet");
       }
 
       let pathParams = {
@@ -1461,20 +1461,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20017;
       return this.apiClient.callApi(
-        '/customFieldOption/{id}', 'GET',
+        '/{cloudid}/rest/api/3/customFieldOption/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the dashboardDashboardIdItemsItemIdPropertiesGet operation.
-     * @callback module:api/DefaultApi~dashboardDashboardIdItemsItemIdPropertiesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20010} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1484,18 +1484,18 @@ export default class DefaultApi {
      * Returns the keys of all properties for a dashboard item.
      * @param {String} dashboardId The ID of the dashboard.
      * @param {String} itemId The ID of the dashboard item.
-     * @param {module:api/DefaultApi~dashboardDashboardIdItemsItemIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20010}
      */
-    dashboardDashboardIdItemsItemIdPropertiesGet(dashboardId, itemId, callback) {
+    cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(dashboardId, itemId, callback) {
       let postBody = null;
       // verify the required parameter 'dashboardId' is set
       if (dashboardId === undefined || dashboardId === null) {
-        throw new Error("Missing the required parameter 'dashboardId' when calling dashboardDashboardIdItemsItemIdPropertiesGet");
+        throw new Error("Missing the required parameter 'dashboardId' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet");
       }
       // verify the required parameter 'itemId' is set
       if (itemId === undefined || itemId === null) {
-        throw new Error("Missing the required parameter 'itemId' when calling dashboardDashboardIdItemsItemIdPropertiesGet");
+        throw new Error("Missing the required parameter 'itemId' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet");
       }
 
       let pathParams = {
@@ -1509,20 +1509,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20010;
       return this.apiClient.callApi(
-        '/dashboard/{dashboardId}/items/{itemId}/properties', 'GET',
+        '/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete operation.
-     * @callback module:api/DefaultApi~dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -1533,21 +1533,21 @@ export default class DefaultApi {
      * @param {String} dashboardId The ID of the dashboard.
      * @param {String} itemId The ID of the dashboard item.
      * @param {String} propertyKey The key of the dashboard item property.
-     * @param {module:api/DefaultApi~dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(dashboardId, itemId, propertyKey, callback) {
+    cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(dashboardId, itemId, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'dashboardId' is set
       if (dashboardId === undefined || dashboardId === null) {
-        throw new Error("Missing the required parameter 'dashboardId' when calling dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'dashboardId' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete");
       }
       // verify the required parameter 'itemId' is set
       if (itemId === undefined || itemId === null) {
-        throw new Error("Missing the required parameter 'itemId' when calling dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'itemId' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete");
       }
 
       let pathParams = {
@@ -1562,20 +1562,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet operation.
-     * @callback module:api/DefaultApi~dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1586,22 +1586,22 @@ export default class DefaultApi {
      * @param {String} dashboardId The ID of the dashboard.
      * @param {String} itemId The ID of the dashboard item.
      * @param {String} propertyKey The key of the dashboard item property.
-     * @param {module:api/DefaultApi~dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20011}
      */
-    dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(dashboardId, itemId, propertyKey, callback) {
+    cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(dashboardId, itemId, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'dashboardId' is set
       if (dashboardId === undefined || dashboardId === null) {
-        throw new Error("Missing the required parameter 'dashboardId' when calling dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'dashboardId' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet");
       }
       // verify the required parameter 'itemId' is set
       if (itemId === undefined || itemId === null) {
-        throw new Error("Missing the required parameter 'itemId' when calling dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'itemId' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet");
       }
 
       let pathParams = {
@@ -1616,20 +1616,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20011;
       return this.apiClient.callApi(
-        '/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}', 'GET',
+        '/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut operation.
-     * @callback module:api/DefaultApi~dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -1640,21 +1640,21 @@ export default class DefaultApi {
      * @param {String} dashboardId The ID of the dashboard.
      * @param {String} itemId The ID of the dashboard item.
      * @param {String} propertyKey The key of the dashboard item property. The maximum length of the key is 255 bytes.
-     * @param {module:api/DefaultApi~dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(dashboardId, itemId, propertyKey, callback) {
+    cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(dashboardId, itemId, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'dashboardId' is set
       if (dashboardId === undefined || dashboardId === null) {
-        throw new Error("Missing the required parameter 'dashboardId' when calling dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'dashboardId' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut");
       }
       // verify the required parameter 'itemId' is set
       if (itemId === undefined || itemId === null) {
-        throw new Error("Missing the required parameter 'itemId' when calling dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'itemId' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut");
       }
 
       let pathParams = {
@@ -1669,20 +1669,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}', 'PUT',
+        '/{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the dashboardGet operation.
-     * @callback module:api/DefaultApi~dashboardGetCallback
+     * Callback function to receive the result of the cloudidRestApi3DashboardGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3DashboardGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20018} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1694,10 +1694,10 @@ export default class DefaultApi {
      * @param {module:model/String} opts.filter The filter applied to the list of dashboards. Valid values are:
      * @param {Number} opts.maxResults The maximum number of items to return per page. Maximum is 1000.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
-     * @param {module:api/DefaultApi~dashboardGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3DashboardGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20018}
      */
-    dashboardGet(opts, callback) {
+    cloudidRestApi3DashboardGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -1713,20 +1713,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20018;
       return this.apiClient.callApi(
-        '/dashboard', 'GET',
+        '/{cloudid}/rest/api/3/dashboard', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the dashboardIdGet operation.
-     * @callback module:api/DefaultApi~dashboardIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3DashboardIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3DashboardIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20019} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1735,14 +1735,14 @@ export default class DefaultApi {
     /**
      * Returns a dashboard.
      * @param {String} id The ID of the dashboard.
-     * @param {module:api/DefaultApi~dashboardIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3DashboardIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20019}
      */
-    dashboardIdGet(id, callback) {
+    cloudidRestApi3DashboardIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling dashboardIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3DashboardIdGet");
       }
 
       let pathParams = {
@@ -1755,20 +1755,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20019;
       return this.apiClient.callApi(
-        '/dashboard/{id}', 'GET',
+        '/{cloudid}/rest/api/3/dashboard/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the expressionEvalPost operation.
-     * @callback module:api/DefaultApi~expressionEvalPostCallback
+     * Callback function to receive the result of the cloudidRestApi3ExpressionEvalPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ExpressionEvalPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20020} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1779,10 +1779,10 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
      * @param {module:model/InlineObject6} opts.body 
-     * @param {module:api/DefaultApi~expressionEvalPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ExpressionEvalPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20020}
      */
-    expressionEvalPost(opts, callback) {
+    cloudidRestApi3ExpressionEvalPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -1796,20 +1796,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20020;
       return this.apiClient.callApi(
-        '/expression/eval', 'POST',
+        '/{cloudid}/rest/api/3/expression/eval', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldFieldKeyOptionGet operation.
-     * @callback module:api/DefaultApi~fieldFieldKeyOptionGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldFieldKeyOptionGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20022} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1821,15 +1821,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.maxResults The maximum number of items to return per page. For example, 20.
      * @param {Number} opts.startAt The starting index of the returned objects. For example, 1.
-     * @param {module:api/DefaultApi~fieldFieldKeyOptionGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20022}
      */
-    fieldFieldKeyOptionGet(fieldKey, opts, callback) {
+    cloudidRestApi3FieldFieldKeyOptionGet(fieldKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'fieldKey' is set
       if (fieldKey === undefined || fieldKey === null) {
-        throw new Error("Missing the required parameter 'fieldKey' when calling fieldFieldKeyOptionGet");
+        throw new Error("Missing the required parameter 'fieldKey' when calling cloudidRestApi3FieldFieldKeyOptionGet");
       }
 
       let pathParams = {
@@ -1844,20 +1844,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20022;
       return this.apiClient.callApi(
-        '/field/{fieldKey}/option', 'GET',
+        '/{cloudid}/rest/api/3/field/{fieldKey}/option', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldFieldKeyOptionOptionIdDelete operation.
-     * @callback module:api/DefaultApi~fieldFieldKeyOptionOptionIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldFieldKeyOptionOptionIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionOptionIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -1867,17 +1867,17 @@ export default class DefaultApi {
      * Deletes an option from a select list issue field.
      * @param {String} fieldKey The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
      * @param {Number} optionId The ID of the option to be deleted. For example, 3.
-     * @param {module:api/DefaultApi~fieldFieldKeyOptionOptionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionOptionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    fieldFieldKeyOptionOptionIdDelete(fieldKey, optionId, callback) {
+    cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(fieldKey, optionId, callback) {
       let postBody = null;
       // verify the required parameter 'fieldKey' is set
       if (fieldKey === undefined || fieldKey === null) {
-        throw new Error("Missing the required parameter 'fieldKey' when calling fieldFieldKeyOptionOptionIdDelete");
+        throw new Error("Missing the required parameter 'fieldKey' when calling cloudidRestApi3FieldFieldKeyOptionOptionIdDelete");
       }
       // verify the required parameter 'optionId' is set
       if (optionId === undefined || optionId === null) {
-        throw new Error("Missing the required parameter 'optionId' when calling fieldFieldKeyOptionOptionIdDelete");
+        throw new Error("Missing the required parameter 'optionId' when calling cloudidRestApi3FieldFieldKeyOptionOptionIdDelete");
       }
 
       let pathParams = {
@@ -1891,20 +1891,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/field/{fieldKey}/option/{optionId}', 'DELETE',
+        '/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldFieldKeyOptionOptionIdGet operation.
-     * @callback module:api/DefaultApi~fieldFieldKeyOptionOptionIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldFieldKeyOptionOptionIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionOptionIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20025} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -1914,18 +1914,18 @@ export default class DefaultApi {
      * Returns an option from a select list issue field.
      * @param {String} fieldKey The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
      * @param {Number} optionId The ID of the option to be returned. For example, 3.
-     * @param {module:api/DefaultApi~fieldFieldKeyOptionOptionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionOptionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20025}
      */
-    fieldFieldKeyOptionOptionIdGet(fieldKey, optionId, callback) {
+    cloudidRestApi3FieldFieldKeyOptionOptionIdGet(fieldKey, optionId, callback) {
       let postBody = null;
       // verify the required parameter 'fieldKey' is set
       if (fieldKey === undefined || fieldKey === null) {
-        throw new Error("Missing the required parameter 'fieldKey' when calling fieldFieldKeyOptionOptionIdGet");
+        throw new Error("Missing the required parameter 'fieldKey' when calling cloudidRestApi3FieldFieldKeyOptionOptionIdGet");
       }
       // verify the required parameter 'optionId' is set
       if (optionId === undefined || optionId === null) {
-        throw new Error("Missing the required parameter 'optionId' when calling fieldFieldKeyOptionOptionIdGet");
+        throw new Error("Missing the required parameter 'optionId' when calling cloudidRestApi3FieldFieldKeyOptionOptionIdGet");
       }
 
       let pathParams = {
@@ -1939,20 +1939,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20025;
       return this.apiClient.callApi(
-        '/field/{fieldKey}/option/{optionId}', 'GET',
+        '/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldFieldKeyOptionOptionIdIssueDelete operation.
-     * @callback module:api/DefaultApi~fieldFieldKeyOptionOptionIdIssueDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -1965,18 +1965,18 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.jql A JQL query that specifies the issues to be updated. For example, project=10000.
      * @param {Number} opts.replaceWith The ID of the option that will replace the currently selected option. For example, 2.
-     * @param {module:api/DefaultApi~fieldFieldKeyOptionOptionIdIssueDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    fieldFieldKeyOptionOptionIdIssueDelete(fieldKey, optionId, opts, callback) {
+    cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(fieldKey, optionId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'fieldKey' is set
       if (fieldKey === undefined || fieldKey === null) {
-        throw new Error("Missing the required parameter 'fieldKey' when calling fieldFieldKeyOptionOptionIdIssueDelete");
+        throw new Error("Missing the required parameter 'fieldKey' when calling cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete");
       }
       // verify the required parameter 'optionId' is set
       if (optionId === undefined || optionId === null) {
-        throw new Error("Missing the required parameter 'optionId' when calling fieldFieldKeyOptionOptionIdIssueDelete");
+        throw new Error("Missing the required parameter 'optionId' when calling cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete");
       }
 
       let pathParams = {
@@ -1992,20 +1992,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = null;
       return this.apiClient.callApi(
-        '/field/{fieldKey}/option/{optionId}/issue', 'DELETE',
+        '/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId}/issue', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldFieldKeyOptionOptionIdPut operation.
-     * @callback module:api/DefaultApi~fieldFieldKeyOptionOptionIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldFieldKeyOptionOptionIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionOptionIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20025} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2017,19 +2017,19 @@ export default class DefaultApi {
      * @param {Number} optionId The ID of the option to be updated. For example, 3.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject9} opts.body 
-     * @param {module:api/DefaultApi~fieldFieldKeyOptionOptionIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionOptionIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20025}
      */
-    fieldFieldKeyOptionOptionIdPut(fieldKey, optionId, opts, callback) {
+    cloudidRestApi3FieldFieldKeyOptionOptionIdPut(fieldKey, optionId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'fieldKey' is set
       if (fieldKey === undefined || fieldKey === null) {
-        throw new Error("Missing the required parameter 'fieldKey' when calling fieldFieldKeyOptionOptionIdPut");
+        throw new Error("Missing the required parameter 'fieldKey' when calling cloudidRestApi3FieldFieldKeyOptionOptionIdPut");
       }
       // verify the required parameter 'optionId' is set
       if (optionId === undefined || optionId === null) {
-        throw new Error("Missing the required parameter 'optionId' when calling fieldFieldKeyOptionOptionIdPut");
+        throw new Error("Missing the required parameter 'optionId' when calling cloudidRestApi3FieldFieldKeyOptionOptionIdPut");
       }
 
       let pathParams = {
@@ -2043,20 +2043,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20025;
       return this.apiClient.callApi(
-        '/field/{fieldKey}/option/{optionId}', 'PUT',
+        '/{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldFieldKeyOptionPost operation.
-     * @callback module:api/DefaultApi~fieldFieldKeyOptionPostCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldFieldKeyOptionPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20023} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2067,15 +2067,15 @@ export default class DefaultApi {
      * @param {String} fieldKey 
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject8} opts.body 
-     * @param {module:api/DefaultApi~fieldFieldKeyOptionPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20023}
      */
-    fieldFieldKeyOptionPost(fieldKey, opts, callback) {
+    cloudidRestApi3FieldFieldKeyOptionPost(fieldKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'fieldKey' is set
       if (fieldKey === undefined || fieldKey === null) {
-        throw new Error("Missing the required parameter 'fieldKey' when calling fieldFieldKeyOptionPost");
+        throw new Error("Missing the required parameter 'fieldKey' when calling cloudidRestApi3FieldFieldKeyOptionPost");
       }
 
       let pathParams = {
@@ -2088,20 +2088,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20023;
       return this.apiClient.callApi(
-        '/field/{fieldKey}/option', 'POST',
+        '/{cloudid}/rest/api/3/field/{fieldKey}/option', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldFieldKeyOptionSuggestionsEditGet operation.
-     * @callback module:api/DefaultApi~fieldFieldKeyOptionSuggestionsEditGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20024} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2114,15 +2114,15 @@ export default class DefaultApi {
      * @param {Number} opts.maxResults The maximum number of items to return per page. For example, 20.
      * @param {Number} opts.projectId Filters the results to options that are only available in the specified project. For example, 10000.
      * @param {Number} opts.startAt The starting index of the returned objects. For example, 1.
-     * @param {module:api/DefaultApi~fieldFieldKeyOptionSuggestionsEditGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20024}
      */
-    fieldFieldKeyOptionSuggestionsEditGet(fieldKey, opts, callback) {
+    cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(fieldKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'fieldKey' is set
       if (fieldKey === undefined || fieldKey === null) {
-        throw new Error("Missing the required parameter 'fieldKey' when calling fieldFieldKeyOptionSuggestionsEditGet");
+        throw new Error("Missing the required parameter 'fieldKey' when calling cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet");
       }
 
       let pathParams = {
@@ -2138,20 +2138,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20024;
       return this.apiClient.callApi(
-        '/field/{fieldKey}/option/suggestions/edit', 'GET',
+        '/{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/edit', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldFieldKeyOptionSuggestionsSearchGet operation.
-     * @callback module:api/DefaultApi~fieldFieldKeyOptionSuggestionsSearchGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20024} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2164,15 +2164,15 @@ export default class DefaultApi {
      * @param {Number} opts.maxResults The maximum number of items to return per page. For example, 20.
      * @param {Number} opts.projectId Filters the results to options that are only available in the specified project. For example, 10000.
      * @param {Number} opts.startAt The starting index of the returned objects. For example, 1.
-     * @param {module:api/DefaultApi~fieldFieldKeyOptionSuggestionsSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20024}
      */
-    fieldFieldKeyOptionSuggestionsSearchGet(fieldKey, opts, callback) {
+    cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(fieldKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'fieldKey' is set
       if (fieldKey === undefined || fieldKey === null) {
-        throw new Error("Missing the required parameter 'fieldKey' when calling fieldFieldKeyOptionSuggestionsSearchGet");
+        throw new Error("Missing the required parameter 'fieldKey' when calling cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet");
       }
 
       let pathParams = {
@@ -2188,20 +2188,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20024;
       return this.apiClient.callApi(
-        '/field/{fieldKey}/option/suggestions/search', 'GET',
+        '/{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldGet operation.
-     * @callback module:api/DefaultApi~fieldGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20021>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2209,10 +2209,10 @@ export default class DefaultApi {
 
     /**
      * Returns all issue fields in Jira, both system and custom fields.
-     * @param {module:api/DefaultApi~fieldGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20021>}
      */
-    fieldGet(callback) {
+    cloudidRestApi3FieldGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -2224,20 +2224,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20021];
       return this.apiClient.callApi(
-        '/field', 'GET',
+        '/{cloudid}/rest/api/3/field', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the fieldPost operation.
-     * @callback module:api/DefaultApi~fieldPostCallback
+     * Callback function to receive the result of the cloudidRestApi3FieldPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FieldPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2247,10 +2247,10 @@ export default class DefaultApi {
      * Creates a custom field.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject7} opts.body 
-     * @param {module:api/DefaultApi~fieldPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FieldPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2011}
      */
-    fieldPost(opts, callback) {
+    cloudidRestApi3FieldPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -2263,20 +2263,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2011;
       return this.apiClient.callApi(
-        '/field', 'POST',
+        '/{cloudid}/rest/api/3/field', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterDefaultShareScopeGet operation.
-     * @callback module:api/DefaultApi~filterDefaultShareScopeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterDefaultShareScopeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterDefaultShareScopeGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20027} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2284,10 +2284,10 @@ export default class DefaultApi {
 
     /**
      * Returns the default sharing settings for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
-     * @param {module:api/DefaultApi~filterDefaultShareScopeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterDefaultShareScopeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20027}
      */
-    filterDefaultShareScopeGet(callback) {
+    cloudidRestApi3FilterDefaultShareScopeGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -2299,20 +2299,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20027;
       return this.apiClient.callApi(
-        '/filter/defaultShareScope', 'GET',
+        '/{cloudid}/rest/api/3/filter/defaultShareScope', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterDefaultShareScopePut operation.
-     * @callback module:api/DefaultApi~filterDefaultShareScopePutCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterDefaultShareScopePut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterDefaultShareScopePutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20027} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2322,10 +2322,10 @@ export default class DefaultApi {
      * Sets the default sharing for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject11} opts.body 
-     * @param {module:api/DefaultApi~filterDefaultShareScopePutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterDefaultShareScopePutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20027}
      */
-    filterDefaultShareScopePut(opts, callback) {
+    cloudidRestApi3FilterDefaultShareScopePut(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -2338,20 +2338,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20027;
       return this.apiClient.callApi(
-        '/filter/defaultShareScope', 'PUT',
+        '/{cloudid}/rest/api/3/filter/defaultShareScope', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterFavouriteGet operation.
-     * @callback module:api/DefaultApi~filterFavouriteGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterFavouriteGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterFavouriteGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20028>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2361,10 +2361,10 @@ export default class DefaultApi {
      * Returns the favorite filters of the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~filterFavouriteGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterFavouriteGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20028>}
      */
-    filterFavouriteGet(opts, callback) {
+    cloudidRestApi3FilterFavouriteGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -2378,20 +2378,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20028];
       return this.apiClient.callApi(
-        '/filter/favourite', 'GET',
+        '/{cloudid}/rest/api/3/filter/favourite', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterGet operation.
-     * @callback module:api/DefaultApi~filterGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20026} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2401,10 +2401,10 @@ export default class DefaultApi {
      * Returns all filters. Deprecated, use Search for filters that supports search and pagination. Permissions required: None, however only the following filters are returned:
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~filterGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20026}
      */
-    filterGet(opts, callback) {
+    cloudidRestApi3FilterGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -2418,20 +2418,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20026;
       return this.apiClient.callApi(
-        '/filter', 'GET',
+        '/{cloudid}/rest/api/3/filter', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdColumnsDelete operation.
-     * @callback module:api/DefaultApi~filterIdColumnsDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdColumnsDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdColumnsDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -2440,13 +2440,13 @@ export default class DefaultApi {
     /**
      * Reset the user's column configuration for the filter to the default. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
      * @param {Number} id The ID of the filter.
-     * @param {module:api/DefaultApi~filterIdColumnsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdColumnsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    filterIdColumnsDelete(id, callback) {
+    cloudidRestApi3FilterIdColumnsDelete(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdColumnsDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdColumnsDelete");
       }
 
       let pathParams = {
@@ -2459,20 +2459,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/filter/{id}/columns', 'DELETE',
+        '/{cloudid}/rest/api/3/filter/{id}/columns', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdColumnsGet operation.
-     * @callback module:api/DefaultApi~filterIdColumnsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdColumnsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdColumnsGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20030>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2481,14 +2481,14 @@ export default class DefaultApi {
     /**
      * Returns the columns configured for a filter. The column configuration is used when the filter's results are viewed in List View with the Columns set to Filter. Permissions required: None, however the calling user must have permission to view the filter.
      * @param {Number} id The ID of the filter.
-     * @param {module:api/DefaultApi~filterIdColumnsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdColumnsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20030>}
      */
-    filterIdColumnsGet(id, callback) {
+    cloudidRestApi3FilterIdColumnsGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdColumnsGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdColumnsGet");
       }
 
       let pathParams = {
@@ -2501,20 +2501,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20030];
       return this.apiClient.callApi(
-        '/filter/{id}/columns', 'GET',
+        '/{cloudid}/rest/api/3/filter/{id}/columns', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdColumnsPut operation.
-     * @callback module:api/DefaultApi~filterIdColumnsPutCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdColumnsPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdColumnsPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -2523,13 +2523,13 @@ export default class DefaultApi {
     /**
      * Sets the columns for a filter. Only navigable fields can be set as columns. Use Get fields to get the list fields in Jira. A navigable field has navigable set to true. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
      * @param {Number} id The ID of the filter.
-     * @param {module:api/DefaultApi~filterIdColumnsPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdColumnsPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    filterIdColumnsPut(id, callback) {
+    cloudidRestApi3FilterIdColumnsPut(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdColumnsPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdColumnsPut");
       }
 
       let pathParams = {
@@ -2542,20 +2542,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/filter/{id}/columns', 'PUT',
+        '/{cloudid}/rest/api/3/filter/{id}/columns', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdDelete operation.
-     * @callback module:api/DefaultApi~filterIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -2564,13 +2564,13 @@ export default class DefaultApi {
     /**
      * Delete a filter. Permissions required: Permission to log in to Jira, however the following rules govern what a user can delete:
      * @param {Number} id The ID of the filter to delete.
-     * @param {module:api/DefaultApi~filterIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    filterIdDelete(id, callback) {
+    cloudidRestApi3FilterIdDelete(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdDelete");
       }
 
       let pathParams = {
@@ -2583,20 +2583,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/filter/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/filter/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdFavouriteDelete operation.
-     * @callback module:api/DefaultApi~filterIdFavouriteDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdFavouriteDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdFavouriteDeleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20026} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2607,15 +2607,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the filter.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~filterIdFavouriteDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdFavouriteDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20026}
      */
-    filterIdFavouriteDelete(id, opts, callback) {
+    cloudidRestApi3FilterIdFavouriteDelete(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdFavouriteDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdFavouriteDelete");
       }
 
       let pathParams = {
@@ -2629,20 +2629,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20026;
       return this.apiClient.callApi(
-        '/filter/{id}/favourite', 'DELETE',
+        '/{cloudid}/rest/api/3/filter/{id}/favourite', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdFavouritePut operation.
-     * @callback module:api/DefaultApi~filterIdFavouritePutCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdFavouritePut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdFavouritePutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20026} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2653,15 +2653,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the filter.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~filterIdFavouritePutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdFavouritePutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20026}
      */
-    filterIdFavouritePut(id, opts, callback) {
+    cloudidRestApi3FilterIdFavouritePut(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdFavouritePut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdFavouritePut");
       }
 
       let pathParams = {
@@ -2675,20 +2675,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20026;
       return this.apiClient.callApi(
-        '/filter/{id}/favourite', 'PUT',
+        '/{cloudid}/rest/api/3/filter/{id}/favourite', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdGet operation.
-     * @callback module:api/DefaultApi~filterIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20026} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2699,15 +2699,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the filter to return.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~filterIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20026}
      */
-    filterIdGet(id, opts, callback) {
+    cloudidRestApi3FilterIdGet(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdGet");
       }
 
       let pathParams = {
@@ -2721,20 +2721,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20026;
       return this.apiClient.callApi(
-        '/filter/{id}', 'GET',
+        '/{cloudid}/rest/api/3/filter/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdPermissionGet operation.
-     * @callback module:api/DefaultApi~filterIdPermissionGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdPermissionGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdPermissionGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20031>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2743,14 +2743,14 @@ export default class DefaultApi {
     /**
      * Returns the share permissions for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.
      * @param {Number} id The ID of the filter.
-     * @param {module:api/DefaultApi~filterIdPermissionGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdPermissionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20031>}
      */
-    filterIdPermissionGet(id, callback) {
+    cloudidRestApi3FilterIdPermissionGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdPermissionGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdPermissionGet");
       }
 
       let pathParams = {
@@ -2763,20 +2763,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20031];
       return this.apiClient.callApi(
-        '/filter/{id}/permission', 'GET',
+        '/{cloudid}/rest/api/3/filter/{id}/permission', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdPermissionPermissionIdDelete operation.
-     * @callback module:api/DefaultApi~filterIdPermissionPermissionIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdPermissionPermissionIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdPermissionPermissionIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -2786,17 +2786,17 @@ export default class DefaultApi {
      * Deletes a share permission from a filter. Permissions required: Permission to log in to Jira (i.e., member of the users group) and the calling user must own the filter.
      * @param {Number} id The ID of the filter.
      * @param {Number} permissionId The ID of the share permission.
-     * @param {module:api/DefaultApi~filterIdPermissionPermissionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdPermissionPermissionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    filterIdPermissionPermissionIdDelete(id, permissionId, callback) {
+    cloudidRestApi3FilterIdPermissionPermissionIdDelete(id, permissionId, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdPermissionPermissionIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdPermissionPermissionIdDelete");
       }
       // verify the required parameter 'permissionId' is set
       if (permissionId === undefined || permissionId === null) {
-        throw new Error("Missing the required parameter 'permissionId' when calling filterIdPermissionPermissionIdDelete");
+        throw new Error("Missing the required parameter 'permissionId' when calling cloudidRestApi3FilterIdPermissionPermissionIdDelete");
       }
 
       let pathParams = {
@@ -2810,20 +2810,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/filter/{id}/permission/{permissionId}', 'DELETE',
+        '/{cloudid}/rest/api/3/filter/{id}/permission/{permissionId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdPermissionPermissionIdGet operation.
-     * @callback module:api/DefaultApi~filterIdPermissionPermissionIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdPermissionPermissionIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdPermissionPermissionIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20032} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2833,18 +2833,18 @@ export default class DefaultApi {
      * Returns a share permission for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.
      * @param {Number} id The ID of the filter.
      * @param {Number} permissionId The ID of the share permission.
-     * @param {module:api/DefaultApi~filterIdPermissionPermissionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdPermissionPermissionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20032}
      */
-    filterIdPermissionPermissionIdGet(id, permissionId, callback) {
+    cloudidRestApi3FilterIdPermissionPermissionIdGet(id, permissionId, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdPermissionPermissionIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdPermissionPermissionIdGet");
       }
       // verify the required parameter 'permissionId' is set
       if (permissionId === undefined || permissionId === null) {
-        throw new Error("Missing the required parameter 'permissionId' when calling filterIdPermissionPermissionIdGet");
+        throw new Error("Missing the required parameter 'permissionId' when calling cloudidRestApi3FilterIdPermissionPermissionIdGet");
       }
 
       let pathParams = {
@@ -2858,20 +2858,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20032;
       return this.apiClient.callApi(
-        '/filter/{id}/permission/{permissionId}', 'GET',
+        '/{cloudid}/rest/api/3/filter/{id}/permission/{permissionId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdPermissionPost operation.
-     * @callback module:api/DefaultApi~filterIdPermissionPostCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdPermissionPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdPermissionPostCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20031>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2882,15 +2882,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the filter.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject13} opts.body 
-     * @param {module:api/DefaultApi~filterIdPermissionPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdPermissionPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20031>}
      */
-    filterIdPermissionPost(id, opts, callback) {
+    cloudidRestApi3FilterIdPermissionPost(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdPermissionPost");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdPermissionPost");
       }
 
       let pathParams = {
@@ -2903,20 +2903,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20031];
       return this.apiClient.callApi(
-        '/filter/{id}/permission', 'POST',
+        '/{cloudid}/rest/api/3/filter/{id}/permission', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterIdPut operation.
-     * @callback module:api/DefaultApi~filterIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20026} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2928,15 +2928,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
      * @param {module:model/InlineObject12} opts.body 
-     * @param {module:api/DefaultApi~filterIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20026}
      */
-    filterIdPut(id, opts, callback) {
+    cloudidRestApi3FilterIdPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling filterIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3FilterIdPut");
       }
 
       let pathParams = {
@@ -2950,20 +2950,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20026;
       return this.apiClient.callApi(
-        '/filter/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/filter/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterMyGet operation.
-     * @callback module:api/DefaultApi~filterMyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterMyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterMyGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20028>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -2974,10 +2974,10 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
      * @param {Boolean} opts.includeFavourites Include the user's favorite filters in the response.
-     * @param {module:api/DefaultApi~filterMyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterMyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20028>}
      */
-    filterMyGet(opts, callback) {
+    cloudidRestApi3FilterMyGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -2992,20 +2992,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20028];
       return this.apiClient.callApi(
-        '/filter/my', 'GET',
+        '/{cloudid}/rest/api/3/filter/my', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterPost operation.
-     * @callback module:api/DefaultApi~filterPostCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20026} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3016,10 +3016,10 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
      * @param {module:model/InlineObject10} opts.body 
-     * @param {module:api/DefaultApi~filterPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20026}
      */
-    filterPost(opts, callback) {
+    cloudidRestApi3FilterPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -3033,20 +3033,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20026;
       return this.apiClient.callApi(
-        '/filter', 'POST',
+        '/{cloudid}/rest/api/3/filter', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the filterSearchGet operation.
-     * @callback module:api/DefaultApi~filterSearchGetCallback
+     * Callback function to receive the result of the cloudidRestApi3FilterSearchGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3FilterSearchGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20029} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3064,10 +3064,10 @@ export default class DefaultApi {
      * @param {String} opts.owner Returns filters with an owner that exactly matches owner. This parameter cannot be used with the accountId parameter.
      * @param {Number} opts.projectId Returns filters that are shared with a project that has an ID that exactly matches projectId.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset). The base index is 0.
-     * @param {module:api/DefaultApi~filterSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3FilterSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20029}
      */
-    filterSearchGet(opts, callback) {
+    cloudidRestApi3FilterSearchGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -3089,20 +3089,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20029;
       return this.apiClient.callApi(
-        '/filter/search', 'GET',
+        '/{cloudid}/rest/api/3/filter/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the groupDelete operation.
-     * @callback module:api/DefaultApi~groupDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3GroupDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3GroupDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -3113,9 +3113,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.groupname The name of the group.
      * @param {String} opts.swapGroup The group to transfer restrictions to. Only comments and worklogs are transferred. If restrictions are not transferred, comments and worklogs will be inaccessible after the deletion.
-     * @param {module:api/DefaultApi~groupDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3GroupDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    groupDelete(opts, callback) {
+    cloudidRestApi3GroupDelete(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -3130,20 +3130,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/group', 'DELETE',
+        '/{cloudid}/rest/api/3/group', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the groupGet operation.
-     * @callback module:api/DefaultApi~groupGetCallback
+     * Callback function to receive the result of the cloudidRestApi3GroupGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3GroupGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -3154,9 +3154,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand List of fields to expand.
      * @param {String} opts.groupname The name of the group.
-     * @param {module:api/DefaultApi~groupGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3GroupGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    groupGet(opts, callback) {
+    cloudidRestApi3GroupGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -3171,20 +3171,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/group', 'GET',
+        '/{cloudid}/rest/api/3/group', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the groupMemberGet operation.
-     * @callback module:api/DefaultApi~groupMemberGetCallback
+     * Callback function to receive the result of the cloudidRestApi3GroupMemberGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3GroupMemberGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20033} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3197,10 +3197,10 @@ export default class DefaultApi {
      * @param {Boolean} opts.includeInactiveUsers Include inactive users.
      * @param {Number} opts.maxResults The maximum number of users to return per page.
      * @param {Number} opts.startAt The index of the first user to return.
-     * @param {module:api/DefaultApi~groupMemberGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3GroupMemberGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20033}
      */
-    groupMemberGet(opts, callback) {
+    cloudidRestApi3GroupMemberGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -3217,20 +3217,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20033;
       return this.apiClient.callApi(
-        '/group/member', 'GET',
+        '/{cloudid}/rest/api/3/group/member', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the groupPost operation.
-     * @callback module:api/DefaultApi~groupPostCallback
+     * Callback function to receive the result of the cloudidRestApi3GroupPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3GroupPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2012} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3240,10 +3240,10 @@ export default class DefaultApi {
      * Creates a group.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject14} opts.body 
-     * @param {module:api/DefaultApi~groupPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3GroupPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2012}
      */
-    groupPost(opts, callback) {
+    cloudidRestApi3GroupPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -3256,20 +3256,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2012;
       return this.apiClient.callApi(
-        '/group', 'POST',
+        '/{cloudid}/rest/api/3/group', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the groupUserDelete operation.
-     * @callback module:api/DefaultApi~groupUserDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3GroupUserDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3GroupUserDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -3281,9 +3281,9 @@ export default class DefaultApi {
      * @param {String} opts.accountid The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
      * @param {String} opts.groupname The name of the group.
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
-     * @param {module:api/DefaultApi~groupUserDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3GroupUserDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    groupUserDelete(opts, callback) {
+    cloudidRestApi3GroupUserDelete(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -3299,20 +3299,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/group/user', 'DELETE',
+        '/{cloudid}/rest/api/3/group/user', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the groupUserPost operation.
-     * @callback module:api/DefaultApi~groupUserPostCallback
+     * Callback function to receive the result of the cloudidRestApi3GroupUserPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3GroupUserPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -3323,9 +3323,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.groupname The name of the group.
      * @param {module:model/InlineObject15} opts.body 
-     * @param {module:api/DefaultApi~groupUserPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3GroupUserPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    groupUserPost(opts, callback) {
+    cloudidRestApi3GroupUserPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -3339,20 +3339,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/group/user', 'POST',
+        '/{cloudid}/rest/api/3/group/user', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the groupsPickerGet operation.
-     * @callback module:api/DefaultApi~groupsPickerGetCallback
+     * Callback function to receive the result of the cloudidRestApi3GroupsPickerGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3GroupsPickerGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20034} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3366,10 +3366,10 @@ export default class DefaultApi {
      * @param {Number} opts.maxResults The maximum number of groups to return. The maximum number of groups that can be returned is limited by the system property jira.ajax.autocomplete.limit.
      * @param {String} opts.query The string to find in group names.
      * @param {String} opts.userName Parameter not in use.
-     * @param {module:api/DefaultApi~groupsPickerGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3GroupsPickerGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20034}
      */
-    groupsPickerGet(opts, callback) {
+    cloudidRestApi3GroupsPickerGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -3387,20 +3387,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20034;
       return this.apiClient.callApi(
-        '/groups/picker', 'GET',
+        '/{cloudid}/rest/api/3/groups/picker', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the groupuserpickerGet operation.
-     * @callback module:api/DefaultApi~groupuserpickerGetCallback
+     * Callback function to receive the result of the cloudidRestApi3GroupuserpickerGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3GroupuserpickerGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20035} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3418,10 +3418,10 @@ export default class DefaultApi {
      * @param {Array.<String>} opts.projectId The ID of a project that returned users and groups must have permission to view. To include multiple projects repeat this parameter, use of a comma separated list is not supported. This parameter is only used when fieldId is present.
      * @param {String} opts.query The search string.
      * @param {Boolean} opts.showAvatar Indicates whether the user avatar should be returned. If an invalid value is provided, the default value is used.
-     * @param {module:api/DefaultApi~groupuserpickerGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3GroupuserpickerGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20035}
      */
-    groupuserpickerGet(opts, callback) {
+    cloudidRestApi3GroupuserpickerGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -3443,20 +3443,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20035;
       return this.apiClient.callApi(
-        '/groupuserpicker', 'GET',
+        '/{cloudid}/rest/api/3/groupuserpicker', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueBulkPost operation.
-     * @callback module:api/DefaultApi~issueBulkPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueBulkPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueBulkPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2014} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3466,10 +3466,10 @@ export default class DefaultApi {
      * Creates issues and, where the option to create sub-tasks is enabled in Jira, sub-tasks. Transitions may be applied, to move the issues or sub-tasks to a workflow step other than the default start step, and issue properties set.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject17} opts.body 
-     * @param {module:api/DefaultApi~issueBulkPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueBulkPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2014}
      */
-    issueBulkPost(opts, callback) {
+    cloudidRestApi3IssueBulkPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -3482,20 +3482,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2014;
       return this.apiClient.callApi(
-        '/issue/bulk', 'POST',
+        '/{cloudid}/rest/api/3/issue/bulk', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueCreatemetaGet operation.
-     * @callback module:api/DefaultApi~issueCreatemetaGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueCreatemetaGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueCreatemetaGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20036} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3509,10 +3509,10 @@ export default class DefaultApi {
      * @param {Array.<String>} opts.issuetypeNames Comma-separated list of issue type names. May be specified multiple times and with issuetypeIds.
      * @param {Array.<String>} opts.projectIds Comma-separated list of project IDs. May be specified multiple times and with projectKeys.
      * @param {Array.<String>} opts.projectKeys Comma-separated list of project keys. May be specified multiple times and with projectIds.
-     * @param {module:api/DefaultApi~issueCreatemetaGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueCreatemetaGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20036}
      */
-    issueCreatemetaGet(opts, callback) {
+    cloudidRestApi3IssueCreatemetaGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -3530,20 +3530,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20036;
       return this.apiClient.callApi(
-        '/issue/createmeta', 'GET',
+        '/{cloudid}/rest/api/3/issue/createmeta', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyAssigneePut operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyAssigneePutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyAssigneePut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyAssigneePutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -3554,14 +3554,14 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue to be assigned.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject21} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyAssigneePutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyAssigneePutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyAssigneePut(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyAssigneePut(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyAssigneePut");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyAssigneePut");
       }
 
       let pathParams = {
@@ -3574,20 +3574,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/assignee', 'PUT',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/assignee', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyAttachmentsPost operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyAttachmentsPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyAttachmentsPostCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20038>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3596,14 +3596,14 @@ export default class DefaultApi {
     /**
      * Adds one or more attachments to an issue. Attachments are posted as multipart/form-data (RFC 1867).
      * @param {String} issueIdOrKey The ID or key of the issue that attachments are added to.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyAttachmentsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyAttachmentsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20038>}
      */
-    issueIssueIdOrKeyAttachmentsPost(issueIdOrKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(issueIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyAttachmentsPost");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost");
       }
 
       let pathParams = {
@@ -3616,20 +3616,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20038];
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/attachments', 'POST',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/attachments', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyChangelogGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyChangelogGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyChangelogGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyChangelogGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20039} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3641,15 +3641,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.maxResults Maximum number of items to return per page. See Pagination section for more details.
      * @param {Number} opts.startAt Page offset, ie. index of the first item returned in the page of results. Base index: 0.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyChangelogGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyChangelogGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20039}
      */
-    issueIssueIdOrKeyChangelogGet(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyChangelogGet(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyChangelogGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyChangelogGet");
       }
 
       let pathParams = {
@@ -3664,20 +3664,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20039;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/changelog', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/changelog', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyCommentGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyCommentGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyCommentGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20040} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3691,15 +3691,15 @@ export default class DefaultApi {
      * @param {Number} opts.maxResults how many results on the page should be included. Defaults to 50.
      * @param {String} opts.orderBy ordering of the results.
      * @param {Number} opts.startAt the page offset, if not specified then defaults to 0
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyCommentGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20040}
      */
-    issueIssueIdOrKeyCommentGet(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyCommentGet(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyCommentGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyCommentGet");
       }
 
       let pathParams = {
@@ -3716,20 +3716,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20040;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/comment', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyCommentIdDelete operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyCommentIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -3739,17 +3739,17 @@ export default class DefaultApi {
      * a string containing the issue id or key the comment belongs to
      * @param {String} id id of the comment to be deleted
      * @param {String} issueIdOrKey a string containing the issue id or key the comment belongs to
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyCommentIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyCommentIdDelete(id, issueIdOrKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(id, issueIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issueIssueIdOrKeyCommentIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete");
       }
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyCommentIdDelete");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete");
       }
 
       let pathParams = {
@@ -3763,20 +3763,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/comment/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyCommentIdGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyCommentIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyCommentIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2015} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3788,19 +3788,19 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey of the issue the comment belongs to
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand optional flags: renderedBody (provides body rendered in HTML)
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyCommentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2015}
      */
-    issueIssueIdOrKeyCommentIdGet(id, issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(id, issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issueIssueIdOrKeyCommentIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssueIssueIdOrKeyCommentIdGet");
       }
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyCommentIdGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyCommentIdGet");
       }
 
       let pathParams = {
@@ -3815,20 +3815,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2015;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/comment/{id}', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyCommentIdPut operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyCommentIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyCommentIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2015} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3841,19 +3841,19 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand optional flags: renderedBody (provides body rendered in HTML)
      * @param {module:model/InlineObject23} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyCommentIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2015}
      */
-    issueIssueIdOrKeyCommentIdPut(id, issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(id, issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issueIssueIdOrKeyCommentIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssueIssueIdOrKeyCommentIdPut");
       }
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyCommentIdPut");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyCommentIdPut");
       }
 
       let pathParams = {
@@ -3868,20 +3868,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2015;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/comment/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyCommentPost operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyCommentPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyCommentPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2015} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3893,15 +3893,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand optional flags: renderedBody (provides body rendered in HTML)
      * @param {module:model/InlineObject22} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyCommentPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyCommentPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2015}
      */
-    issueIssueIdOrKeyCommentPost(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyCommentPost(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyCommentPost");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyCommentPost");
       }
 
       let pathParams = {
@@ -3915,20 +3915,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2015;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/comment', 'POST',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyDelete operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -3939,14 +3939,14 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {Object} opts Optional parameters
      * @param {String} opts.deleteSubtasks Indicates whether the issue's sub-tasks are deleted when the issue is deleted.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyDelete(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyDelete(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyDelete");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyDelete");
       }
 
       let pathParams = {
@@ -3960,20 +3960,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyEditmetaGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyEditmetaGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyEditmetaGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyEditmetaGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20041} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -3985,15 +3985,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.overrideEditableFlag Indicates whether non-editable fields should be returned. Available to connect app users with admin permissions.
      * @param {Boolean} opts.overrideScreenSecurity Indicates whether hidden fields should be returned. Available to connect app users with admin permissions.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyEditmetaGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyEditmetaGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20041}
      */
-    issueIssueIdOrKeyEditmetaGet(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyEditmetaGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyEditmetaGet");
       }
 
       let pathParams = {
@@ -4008,20 +4008,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20041;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/editmeta', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/editmeta', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20037} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4036,15 +4036,15 @@ export default class DefaultApi {
      * @param {Boolean} opts.fieldsByKeys Indicates whether fields in fields are referenced by keys rather than IDs. This parameter is useful where fields have been added by a connect app and a field's key may differ from its ID.
      * @param {Array.<module:model/String>} opts.properties A comma-separated list of issue properties to return for the issue. Allowed values:
      * @param {Boolean} opts.updateHistory Indicates whether the project in which the issue is created is added to the user's Recently viewed project list, as shown under Projects in Jira. This also populates the JQL issues search lastViewed field.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20037}
      */
-    issueIssueIdOrKeyGet(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyGet(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyGet");
       }
 
       let pathParams = {
@@ -4062,20 +4062,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20037;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyNotifyPost operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyNotifyPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyNotifyPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyNotifyPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4086,14 +4086,14 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey ID or key of the issue that the notification is sent for.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject24} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyNotifyPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyNotifyPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyNotifyPost(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyNotifyPost(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyNotifyPost");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyNotifyPost");
       }
 
       let pathParams = {
@@ -4106,20 +4106,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/notify', 'POST',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/notify', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyPropertiesGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyPropertiesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyPropertiesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPropertiesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20010} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4128,14 +4128,14 @@ export default class DefaultApi {
     /**
      * Returns the URIs and keys of an issue's properties.
      * @param {String} issueIdOrKey The key or ID of the issue.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20010}
      */
-    issueIssueIdOrKeyPropertiesGet(issueIdOrKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(issueIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyPropertiesGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyPropertiesGet");
       }
 
       let pathParams = {
@@ -4148,20 +4148,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20010;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/properties', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyPropertiesPropertyKeyDelete operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyPropertiesPropertyKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4171,17 +4171,17 @@ export default class DefaultApi {
      * Deletes an issue's property.
      * @param {String} issueIdOrKey The key or ID of the issue.
      * @param {String} propertyKey The key of the property.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issueIssueIdOrKeyPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete");
       }
 
       let pathParams = {
@@ -4195,20 +4195,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/properties/{propertyKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyPropertiesPropertyKeyGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyPropertiesPropertyKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4218,18 +4218,18 @@ export default class DefaultApi {
      * Returns the key and value of an issue's property.
      * @param {String} issueIdOrKey The key or ID of the issue.
      * @param {String} propertyKey The key of the property.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20011}
      */
-    issueIssueIdOrKeyPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issueIssueIdOrKeyPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet");
       }
 
       let pathParams = {
@@ -4243,20 +4243,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20011;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/properties/{propertyKey}', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyPropertiesPropertyKeyPut operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyPropertiesPropertyKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4266,17 +4266,17 @@ export default class DefaultApi {
      * Sets the value of an issue's property. Use this resource to store custom data against an issue.
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {String} propertyKey The key of the issue property. The maximum length is 255 characters.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issueIssueIdOrKeyPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut");
       }
 
       let pathParams = {
@@ -4290,20 +4290,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/properties/{propertyKey}', 'PUT',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyPut operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4317,14 +4317,14 @@ export default class DefaultApi {
      * @param {Boolean} opts.overrideEditableFlag Indicates whether screen security should be overridden to enable uneditable fields to be edited. Available to Connect app users with admin permissions.
      * @param {Boolean} opts.overrideScreenSecurity Indicates whether screen security should be overridden to enable hidden fields to be edited. Available to Connect app users with admin permissions.
      * @param {module:model/InlineObject20} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyPut(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyPut(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyPut");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyPut");
       }
 
       let pathParams = {
@@ -4340,20 +4340,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}', 'PUT',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyRemotelinkDelete operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyRemotelinkDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4364,14 +4364,14 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {Object} opts Optional parameters
      * @param {String} opts.globalId The global ID of a remote issue link.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyRemotelinkDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyRemotelinkDelete(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyRemotelinkDelete");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete");
       }
 
       let pathParams = {
@@ -4385,20 +4385,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/remotelink', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyRemotelinkGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyRemotelinkGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20042>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4409,15 +4409,15 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {Object} opts Optional parameters
      * @param {String} opts.globalId The global ID of the remote issue link.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyRemotelinkGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20042>}
      */
-    issueIssueIdOrKeyRemotelinkGet(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyRemotelinkGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet");
       }
 
       let pathParams = {
@@ -4431,20 +4431,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20042];
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/remotelink', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyRemotelinkLinkIdDelete operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyRemotelinkLinkIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4454,17 +4454,17 @@ export default class DefaultApi {
      * Deletes a remote issue link from an issue.
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {String} linkId The ID of a remote issue link.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyRemotelinkLinkIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyRemotelinkLinkIdDelete(issueIdOrKey, linkId, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(issueIdOrKey, linkId, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyRemotelinkLinkIdDelete");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete");
       }
       // verify the required parameter 'linkId' is set
       if (linkId === undefined || linkId === null) {
-        throw new Error("Missing the required parameter 'linkId' when calling issueIssueIdOrKeyRemotelinkLinkIdDelete");
+        throw new Error("Missing the required parameter 'linkId' when calling cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete");
       }
 
       let pathParams = {
@@ -4478,20 +4478,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/remotelink/{linkId}', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyRemotelinkLinkIdGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyRemotelinkLinkIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20044} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4501,18 +4501,18 @@ export default class DefaultApi {
      * Returns a remote issue link for an issue.
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {String} linkId The ID of the remote issue link.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyRemotelinkLinkIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20044}
      */
-    issueIssueIdOrKeyRemotelinkLinkIdGet(issueIdOrKey, linkId, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(issueIdOrKey, linkId, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyRemotelinkLinkIdGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet");
       }
       // verify the required parameter 'linkId' is set
       if (linkId === undefined || linkId === null) {
-        throw new Error("Missing the required parameter 'linkId' when calling issueIssueIdOrKeyRemotelinkLinkIdGet");
+        throw new Error("Missing the required parameter 'linkId' when calling cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet");
       }
 
       let pathParams = {
@@ -4526,20 +4526,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20044;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/remotelink/{linkId}', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyRemotelinkLinkIdPut operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyRemotelinkLinkIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4551,18 +4551,18 @@ export default class DefaultApi {
      * @param {String} linkId The ID of the remote issue link.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject26} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyRemotelinkLinkIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyRemotelinkLinkIdPut(issueIdOrKey, linkId, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(issueIdOrKey, linkId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyRemotelinkLinkIdPut");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut");
       }
       // verify the required parameter 'linkId' is set
       if (linkId === undefined || linkId === null) {
-        throw new Error("Missing the required parameter 'linkId' when calling issueIssueIdOrKeyRemotelinkLinkIdPut");
+        throw new Error("Missing the required parameter 'linkId' when calling cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut");
       }
 
       let pathParams = {
@@ -4576,20 +4576,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/remotelink/{linkId}', 'PUT',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyRemotelinkPost operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyRemotelinkPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20043} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4600,15 +4600,15 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject25} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyRemotelinkPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyRemotelinkPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20043}
      */
-    issueIssueIdOrKeyRemotelinkPost(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyRemotelinkPost");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost");
       }
 
       let pathParams = {
@@ -4621,20 +4621,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20043;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/remotelink', 'POST',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyTransitionsGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyTransitionsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyTransitionsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyTransitionsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20045} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4647,15 +4647,15 @@ export default class DefaultApi {
      * @param {module:model/String} opts.expand Use expand to include additional information about in the response. This parameter accepts multiple values separated by a comma:
      * @param {Boolean} opts.skipRemoteOnlyCondition Indicates whether transitions with the condition Hide From User Condition are included in the response.
      * @param {String} opts.transitionId The ID of the transition.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyTransitionsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyTransitionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20045}
      */
-    issueIssueIdOrKeyTransitionsGet(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyTransitionsGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyTransitionsGet");
       }
 
       let pathParams = {
@@ -4671,20 +4671,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20045;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/transitions', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/transitions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyTransitionsPost operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyTransitionsPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyTransitionsPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyTransitionsPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4695,14 +4695,14 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject27} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyTransitionsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyTransitionsPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyTransitionsPost(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyTransitionsPost");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyTransitionsPost");
       }
 
       let pathParams = {
@@ -4715,20 +4715,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/transitions', 'POST',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/transitions', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyVotesDelete operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyVotesDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyVotesDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyVotesDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4737,13 +4737,13 @@ export default class DefaultApi {
     /**
      * Deletes a user's vote from an issue. This is the equivalent of the user clicking Unvote on an issue in Jira.
      * @param {String} issueIdOrKey The ID or key of the issue.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyVotesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyVotesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyVotesDelete(issueIdOrKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyVotesDelete(issueIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyVotesDelete");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyVotesDelete");
       }
 
       let pathParams = {
@@ -4756,20 +4756,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/votes', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyVotesGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyVotesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyVotesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyVotesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20046} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4778,14 +4778,14 @@ export default class DefaultApi {
     /**
      * Returns details about the votes on an issue.
      * @param {String} issueIdOrKey The ID or key of the issue.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyVotesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyVotesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20046}
      */
-    issueIssueIdOrKeyVotesGet(issueIdOrKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyVotesGet(issueIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyVotesGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyVotesGet");
       }
 
       let pathParams = {
@@ -4798,20 +4798,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20046;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/votes', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyVotesPost operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyVotesPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyVotesPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyVotesPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4820,13 +4820,13 @@ export default class DefaultApi {
     /**
      * Adds the user's vote to an issue. This is the equivalent of the user clicking Vote on an issue in Jira.
      * @param {String} issueIdOrKey The ID or key of the issue.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyVotesPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyVotesPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyVotesPost(issueIdOrKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyVotesPost(issueIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyVotesPost");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyVotesPost");
       }
 
       let pathParams = {
@@ -4839,20 +4839,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/votes', 'POST',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWatchersDelete operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWatchersDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWatchersDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWatchersDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4864,14 +4864,14 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.accountId The account ID of the user. Required if username is omitted, otherwise must be omitted.
      * @param {String} opts.username The name of the user. Required if accountId is omitted, otherwise must be omitted.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWatchersDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWatchersDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyWatchersDelete(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWatchersDelete");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWatchersDelete");
       }
 
       let pathParams = {
@@ -4886,20 +4886,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/watchers', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWatchersGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWatchersGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWatchersGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWatchersGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20047} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4908,14 +4908,14 @@ export default class DefaultApi {
     /**
      * Returns the watchers for an issue.
      * @param {String} issueIdOrKey The ID or key of the issue.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWatchersGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWatchersGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20047}
      */
-    issueIssueIdOrKeyWatchersGet(issueIdOrKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWatchersGet(issueIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWatchersGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWatchersGet");
       }
 
       let pathParams = {
@@ -4928,20 +4928,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20047;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/watchers', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWatchersPost operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWatchersPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWatchersPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWatchersPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -4950,13 +4950,13 @@ export default class DefaultApi {
     /**
      * Adds a user as a watcher of an issue. If no user is specified the calling user is added.
      * @param {String} issueIdOrKey The ID or key of the issue.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWatchersPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWatchersPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyWatchersPost(issueIdOrKey, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWatchersPost(issueIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWatchersPost");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWatchersPost");
       }
 
       let pathParams = {
@@ -4969,20 +4969,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/watchers', 'POST',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWorklogGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWorklogGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWorklogGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20048} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -4995,15 +4995,15 @@ export default class DefaultApi {
      * @param {module:model/String} opts.expand Use expand to include additional information about worklogs in the response. This parameter accepts multiple values separated by a comma:
      * @param {Number} opts.maxResults The maximum number of items to return per page. Maximum is 1048576.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWorklogGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20048}
      */
-    issueIssueIdOrKeyWorklogGet(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWorklogGet(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWorklogGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogGet");
       }
 
       let pathParams = {
@@ -5019,20 +5019,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20048;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/worklog', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWorklogIdDelete operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWorklogIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5048,18 +5048,18 @@ export default class DefaultApi {
      * @param {String} opts.newEstimate The value to set as the issue's remaining time estimate, as days (#d), hours (#h), or minutes (#m or #). For example, 2d. Required when adjustEstimate is new.
      * @param {Boolean} opts.notifyUsers Indicates whether users watching the issue are notified by email.
      * @param {Boolean} opts.overrideEditableFlag Indicates whether the work log entry should be added to the issue even if the issue is not editable, because jira.issue.editable set to false or missing. For example, the issue is closed. Only connect app users with admin permissions can use this flag.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWorklogIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyWorklogIdDelete(id, issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(id, issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issueIssueIdOrKeyWorklogIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete");
       }
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWorklogIdDelete");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete");
       }
 
       let pathParams = {
@@ -5078,20 +5078,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/worklog/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWorklogIdGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWorklogIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20049} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5103,19 +5103,19 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about work logs in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWorklogIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20049}
      */
-    issueIssueIdOrKeyWorklogIdGet(id, issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(id, issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issueIssueIdOrKeyWorklogIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet");
       }
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWorklogIdGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet");
       }
 
       let pathParams = {
@@ -5130,20 +5130,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20049;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/worklog/{id}', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWorklogIdPut operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWorklogIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20049} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5160,19 +5160,19 @@ export default class DefaultApi {
      * @param {Boolean} opts.notifyUsers Indicates whether users watching the issue are notified by email.
      * @param {Boolean} opts.overrideEditableFlag Indicates whether the worklog should be added to the issue even if the issue is not editable, for example, because the issue is closed. Only connect app users with admin permissions can use this flag.
      * @param {module:model/InlineObject29} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWorklogIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20049}
      */
-    issueIssueIdOrKeyWorklogIdPut(id, issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(id, issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issueIssueIdOrKeyWorklogIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut");
       }
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWorklogIdPut");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut");
       }
 
       let pathParams = {
@@ -5191,20 +5191,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20049;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/worklog/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWorklogPost operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWorklogPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWorklogPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5221,14 +5221,14 @@ export default class DefaultApi {
      * @param {Boolean} opts.overrideEditableFlag Indicates whether the worklog entry should be added to the issue even if the issue is not editable, because jira.issue.editable set to false or missing. For example, the issue is closed. Only connect app users with admin scope permission can use this flag.
      * @param {String} opts.reduceBy The amount to reduce the issue's remaining estimate by, as days (#d), hours (#h), or minutes (#m). For example, 2d. Required when adjustEstimate is manual.
      * @param {module:model/InlineObject28} opts.body 
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWorklogPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyWorklogPost(issueIdOrKey, opts, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWorklogPost(issueIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWorklogPost");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogPost");
       }
 
       let pathParams = {
@@ -5247,20 +5247,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/worklog', 'POST',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWorklogWorklogIdPropertiesGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWorklogWorklogIdPropertiesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20010} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5270,18 +5270,18 @@ export default class DefaultApi {
      * Returns the keys of all properties for a worklog.
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {String} worklogId The ID of the worklog.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWorklogWorklogIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20010}
      */
-    issueIssueIdOrKeyWorklogWorklogIdPropertiesGet(issueIdOrKey, worklogId, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(issueIdOrKey, worklogId, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet");
       }
       // verify the required parameter 'worklogId' is set
       if (worklogId === undefined || worklogId === null) {
-        throw new Error("Missing the required parameter 'worklogId' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesGet");
+        throw new Error("Missing the required parameter 'worklogId' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet");
       }
 
       let pathParams = {
@@ -5295,20 +5295,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20010;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/worklog/{worklogId}/properties', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5319,21 +5319,21 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {String} propertyKey The key of the property.
      * @param {String} worklogId The ID of the worklog.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, worklogId, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, worklogId, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete");
       }
       // verify the required parameter 'worklogId' is set
       if (worklogId === undefined || worklogId === null) {
-        throw new Error("Missing the required parameter 'worklogId' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'worklogId' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete");
       }
 
       let pathParams = {
@@ -5348,20 +5348,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5372,22 +5372,22 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {String} propertyKey The key of the property.
      * @param {String} worklogId The ID of the worklog.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20011}
      */
-    issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, worklogId, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, worklogId, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet");
       }
       // verify the required parameter 'worklogId' is set
       if (worklogId === undefined || worklogId === null) {
-        throw new Error("Missing the required parameter 'worklogId' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'worklogId' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet");
       }
 
       let pathParams = {
@@ -5402,20 +5402,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20011;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}', 'GET',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut operation.
-     * @callback module:api/DefaultApi~issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5426,21 +5426,21 @@ export default class DefaultApi {
      * @param {String} issueIdOrKey The ID or key of the issue.
      * @param {String} propertyKey The key of the issue property. The maximum length is 255 characters.
      * @param {String} worklogId The ID of the worklog.
-     * @param {module:api/DefaultApi~issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, worklogId, callback) {
+    cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, worklogId, callback) {
       let postBody = null;
       // verify the required parameter 'issueIdOrKey' is set
       if (issueIdOrKey === undefined || issueIdOrKey === null) {
-        throw new Error("Missing the required parameter 'issueIdOrKey' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'issueIdOrKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut");
       }
       // verify the required parameter 'worklogId' is set
       if (worklogId === undefined || worklogId === null) {
-        throw new Error("Missing the required parameter 'worklogId' when calling issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'worklogId' when calling cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut");
       }
 
       let pathParams = {
@@ -5455,20 +5455,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}', 'PUT',
+        '/{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueLinkLinkIdDelete operation.
-     * @callback module:api/DefaultApi~issueLinkLinkIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueLinkLinkIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueLinkLinkIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5477,13 +5477,13 @@ export default class DefaultApi {
     /**
      * Deletes an issue link.
      * @param {String} linkId The ID of the issue link.
-     * @param {module:api/DefaultApi~issueLinkLinkIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueLinkLinkIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueLinkLinkIdDelete(linkId, callback) {
+    cloudidRestApi3IssueLinkLinkIdDelete(linkId, callback) {
       let postBody = null;
       // verify the required parameter 'linkId' is set
       if (linkId === undefined || linkId === null) {
-        throw new Error("Missing the required parameter 'linkId' when calling issueLinkLinkIdDelete");
+        throw new Error("Missing the required parameter 'linkId' when calling cloudidRestApi3IssueLinkLinkIdDelete");
       }
 
       let pathParams = {
@@ -5496,20 +5496,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issueLink/{linkId}', 'DELETE',
+        '/{cloudid}/rest/api/3/issueLink/{linkId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueLinkLinkIdGet operation.
-     * @callback module:api/DefaultApi~issueLinkLinkIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueLinkLinkIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueLinkLinkIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20050} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5518,14 +5518,14 @@ export default class DefaultApi {
     /**
      * Returns an issue link.
      * @param {String} linkId The ID of the issue link.
-     * @param {module:api/DefaultApi~issueLinkLinkIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueLinkLinkIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20050}
      */
-    issueLinkLinkIdGet(linkId, callback) {
+    cloudidRestApi3IssueLinkLinkIdGet(linkId, callback) {
       let postBody = null;
       // verify the required parameter 'linkId' is set
       if (linkId === undefined || linkId === null) {
-        throw new Error("Missing the required parameter 'linkId' when calling issueLinkLinkIdGet");
+        throw new Error("Missing the required parameter 'linkId' when calling cloudidRestApi3IssueLinkLinkIdGet");
       }
 
       let pathParams = {
@@ -5538,20 +5538,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20050;
       return this.apiClient.callApi(
-        '/issueLink/{linkId}', 'GET',
+        '/{cloudid}/rest/api/3/issueLink/{linkId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueLinkPost operation.
-     * @callback module:api/DefaultApi~issueLinkPostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueLinkPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueLinkPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5561,9 +5561,9 @@ export default class DefaultApi {
      * Creates a link between two issues. Use this operation to indicate a relationship between two issues and optionally add a comment to the from (outward) issue. To use this resource the site must have Issue Linking enabled.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject30} opts.body 
-     * @param {module:api/DefaultApi~issueLinkPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueLinkPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueLinkPost(opts, callback) {
+    cloudidRestApi3IssueLinkPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -5576,20 +5576,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issueLink', 'POST',
+        '/{cloudid}/rest/api/3/issueLink', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueLinkTypeGet operation.
-     * @callback module:api/DefaultApi~issueLinkTypeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueLinkTypeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueLinkTypeGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20051} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5597,10 +5597,10 @@ export default class DefaultApi {
 
     /**
      * Returns a list of all issue link types.
-     * @param {module:api/DefaultApi~issueLinkTypeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueLinkTypeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20051}
      */
-    issueLinkTypeGet(callback) {
+    cloudidRestApi3IssueLinkTypeGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -5612,20 +5612,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20051;
       return this.apiClient.callApi(
-        '/issueLinkType', 'GET',
+        '/{cloudid}/rest/api/3/issueLinkType', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueLinkTypeIssueLinkTypeIdDelete operation.
-     * @callback module:api/DefaultApi~issueLinkTypeIssueLinkTypeIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5634,13 +5634,13 @@ export default class DefaultApi {
     /**
      * Deletes an issue link type.
      * @param {String} issueLinkTypeId The ID of the issue link type.
-     * @param {module:api/DefaultApi~issueLinkTypeIssueLinkTypeIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issueLinkTypeIssueLinkTypeIdDelete(issueLinkTypeId, callback) {
+    cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(issueLinkTypeId, callback) {
       let postBody = null;
       // verify the required parameter 'issueLinkTypeId' is set
       if (issueLinkTypeId === undefined || issueLinkTypeId === null) {
-        throw new Error("Missing the required parameter 'issueLinkTypeId' when calling issueLinkTypeIssueLinkTypeIdDelete");
+        throw new Error("Missing the required parameter 'issueLinkTypeId' when calling cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete");
       }
 
       let pathParams = {
@@ -5653,20 +5653,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issueLinkType/{issueLinkTypeId}', 'DELETE',
+        '/{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueLinkTypeIssueLinkTypeIdGet operation.
-     * @callback module:api/DefaultApi~issueLinkTypeIssueLinkTypeIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2016} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5675,14 +5675,14 @@ export default class DefaultApi {
     /**
      * Returns an issue link type.
      * @param {String} issueLinkTypeId The ID of the issue link type.
-     * @param {module:api/DefaultApi~issueLinkTypeIssueLinkTypeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2016}
      */
-    issueLinkTypeIssueLinkTypeIdGet(issueLinkTypeId, callback) {
+    cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(issueLinkTypeId, callback) {
       let postBody = null;
       // verify the required parameter 'issueLinkTypeId' is set
       if (issueLinkTypeId === undefined || issueLinkTypeId === null) {
-        throw new Error("Missing the required parameter 'issueLinkTypeId' when calling issueLinkTypeIssueLinkTypeIdGet");
+        throw new Error("Missing the required parameter 'issueLinkTypeId' when calling cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet");
       }
 
       let pathParams = {
@@ -5695,20 +5695,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2016;
       return this.apiClient.callApi(
-        '/issueLinkType/{issueLinkTypeId}', 'GET',
+        '/{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueLinkTypeIssueLinkTypeIdPut operation.
-     * @callback module:api/DefaultApi~issueLinkTypeIssueLinkTypeIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2016} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5719,15 +5719,15 @@ export default class DefaultApi {
      * @param {String} issueLinkTypeId The ID of the issue link type.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject32} opts.body 
-     * @param {module:api/DefaultApi~issueLinkTypeIssueLinkTypeIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2016}
      */
-    issueLinkTypeIssueLinkTypeIdPut(issueLinkTypeId, opts, callback) {
+    cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(issueLinkTypeId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'issueLinkTypeId' is set
       if (issueLinkTypeId === undefined || issueLinkTypeId === null) {
-        throw new Error("Missing the required parameter 'issueLinkTypeId' when calling issueLinkTypeIssueLinkTypeIdPut");
+        throw new Error("Missing the required parameter 'issueLinkTypeId' when calling cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut");
       }
 
       let pathParams = {
@@ -5740,20 +5740,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2016;
       return this.apiClient.callApi(
-        '/issueLinkType/{issueLinkTypeId}', 'PUT',
+        '/{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issueLinkTypePost operation.
-     * @callback module:api/DefaultApi~issueLinkTypePostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssueLinkTypePost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssueLinkTypePostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2016} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5763,10 +5763,10 @@ export default class DefaultApi {
      * Creates an issue link type. Use this operation to create descriptions of the reasons why issues are linked. The issue link type consists of a name and descriptions for a link's inward and outward relationships.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject31} opts.body 
-     * @param {module:api/DefaultApi~issueLinkTypePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssueLinkTypePostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2016}
      */
-    issueLinkTypePost(opts, callback) {
+    cloudidRestApi3IssueLinkTypePost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -5779,20 +5779,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2016;
       return this.apiClient.callApi(
-        '/issueLinkType', 'POST',
+        '/{cloudid}/rest/api/3/issueLinkType', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuePickerGet operation.
-     * @callback module:api/DefaultApi~issuePickerGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuePickerGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuePickerGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5807,9 +5807,9 @@ export default class DefaultApi {
      * @param {String} opts.query Query used to filter issue search results.
      * @param {Boolean} opts.showSubTaskParent Set to false to exclude parent issue from the suggestions list if search is performed in the context of a sub-task.
      * @param {Boolean} opts.showSubTasks Set to false to exclude subtasks from the suggestions list.
-     * @param {module:api/DefaultApi~issuePickerGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuePickerGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issuePickerGet(opts, callback) {
+    cloudidRestApi3IssuePickerGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -5828,20 +5828,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/picker', 'GET',
+        '/{cloudid}/rest/api/3/issue/picker', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuePost operation.
-     * @callback module:api/DefaultApi~issuePostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuePost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuePostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2013} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5852,10 +5852,10 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.updateHistory Indicates whether the project in which the issue is created is added to the user's Recently viewed project list, as shown under Projects in Jira.
      * @param {module:model/InlineObject16} opts.body 
-     * @param {module:api/DefaultApi~issuePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuePostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2013}
      */
-    issuePost(opts, callback) {
+    cloudidRestApi3IssuePost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -5869,20 +5869,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2013;
       return this.apiClient.callApi(
-        '/issue', 'POST',
+        '/{cloudid}/rest/api/3/issue', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuePropertiesPropertyKeyDelete operation.
-     * @callback module:api/DefaultApi~issuePropertiesPropertyKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuePropertiesPropertyKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuePropertiesPropertyKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5893,14 +5893,14 @@ export default class DefaultApi {
      * @param {String} propertyKey The key of the property.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject19} opts.body 
-     * @param {module:api/DefaultApi~issuePropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuePropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issuePropertiesPropertyKeyDelete(propertyKey, opts, callback) {
+    cloudidRestApi3IssuePropertiesPropertyKeyDelete(propertyKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issuePropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssuePropertiesPropertyKeyDelete");
       }
 
       let pathParams = {
@@ -5913,20 +5913,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/properties/{propertyKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/issue/properties/{propertyKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuePropertiesPropertyKeyPut operation.
-     * @callback module:api/DefaultApi~issuePropertiesPropertyKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuePropertiesPropertyKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuePropertiesPropertyKeyPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -5937,14 +5937,14 @@ export default class DefaultApi {
      * @param {String} propertyKey The key of the property. The maximum length is 255 characters.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject18} opts.body 
-     * @param {module:api/DefaultApi~issuePropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuePropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issuePropertiesPropertyKeyPut(propertyKey, opts, callback) {
+    cloudidRestApi3IssuePropertiesPropertyKeyPut(propertyKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issuePropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssuePropertiesPropertyKeyPut");
       }
 
       let pathParams = {
@@ -5957,20 +5957,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issue/properties/{propertyKey}', 'PUT',
+        '/{cloudid}/rest/api/3/issue/properties/{propertyKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuesecurityschemesGet operation.
-     * @callback module:api/DefaultApi~issuesecurityschemesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuesecurityschemesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuesecurityschemesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20052} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -5978,10 +5978,10 @@ export default class DefaultApi {
 
     /**
      * Returns all issue security schemes.
-     * @param {module:api/DefaultApi~issuesecurityschemesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuesecurityschemesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20052}
      */
-    issuesecurityschemesGet(callback) {
+    cloudidRestApi3IssuesecurityschemesGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -5993,20 +5993,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20052;
       return this.apiClient.callApi(
-        '/issuesecurityschemes', 'GET',
+        '/{cloudid}/rest/api/3/issuesecurityschemes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuesecurityschemesIdGet operation.
-     * @callback module:api/DefaultApi~issuesecurityschemesIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuesecurityschemesIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuesecurityschemesIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20053} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6015,14 +6015,14 @@ export default class DefaultApi {
     /**
      * Returns an issue security scheme along with its security levels.
      * @param {Number} id The ID of the issue security scheme. Use the Get issue security schemes operation to get a list of issue security scheme IDs.
-     * @param {module:api/DefaultApi~issuesecurityschemesIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuesecurityschemesIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20053}
      */
-    issuesecurityschemesIdGet(id, callback) {
+    cloudidRestApi3IssuesecurityschemesIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issuesecurityschemesIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssuesecurityschemesIdGet");
       }
 
       let pathParams = {
@@ -6035,20 +6035,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20053;
       return this.apiClient.callApi(
-        '/issuesecurityschemes/{id}', 'GET',
+        '/{cloudid}/rest/api/3/issuesecurityschemes/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeGet operation.
-     * @callback module:api/DefaultApi~issuetypeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20050InwardIssueFieldsIssuetype>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6056,10 +6056,10 @@ export default class DefaultApi {
 
     /**
      * Returns all issue types. Permissions required: Permission to access Jira, however, only issue types that are visible to the user are returned.
-     * @param {module:api/DefaultApi~issuetypeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20050InwardIssueFieldsIssuetype>}
      */
-    issuetypeGet(callback) {
+    cloudidRestApi3IssuetypeGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -6071,20 +6071,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20050InwardIssueFieldsIssuetype];
       return this.apiClient.callApi(
-        '/issuetype', 'GET',
+        '/{cloudid}/rest/api/3/issuetype', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeIdAlternativesGet operation.
-     * @callback module:api/DefaultApi~issuetypeIdAlternativesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeIdAlternativesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeIdAlternativesGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20050InwardIssueFieldsIssuetype>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6093,14 +6093,14 @@ export default class DefaultApi {
     /**
      * Returns a list of issue types that can be used to replace the issue type. The alternative issue types are those assigned to the same workflow scheme, field configuration scheme, and screen scheme. Permissions required: Permission to access Jira.
      * @param {String} id The ID of the issue type.
-     * @param {module:api/DefaultApi~issuetypeIdAlternativesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeIdAlternativesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20050InwardIssueFieldsIssuetype>}
      */
-    issuetypeIdAlternativesGet(id, callback) {
+    cloudidRestApi3IssuetypeIdAlternativesGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issuetypeIdAlternativesGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssuetypeIdAlternativesGet");
       }
 
       let pathParams = {
@@ -6113,20 +6113,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20050InwardIssueFieldsIssuetype];
       return this.apiClient.callApi(
-        '/issuetype/{id}/alternatives', 'GET',
+        '/{cloudid}/rest/api/3/issuetype/{id}/alternatives', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeIdAvatar2Post operation.
-     * @callback module:api/DefaultApi~issuetypeIdAvatar2PostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeIdAvatar2Post operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeIdAvatar2PostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2017} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6139,15 +6139,15 @@ export default class DefaultApi {
      * @param {Number} opts.size The length of each side of the crop region.
      * @param {Number} opts.x The X coordinate of the top-left corner of the crop region.
      * @param {Number} opts.y The Y coordinate of the top-left corner of the crop region.
-     * @param {module:api/DefaultApi~issuetypeIdAvatar2PostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeIdAvatar2PostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2017}
      */
-    issuetypeIdAvatar2Post(id, opts, callback) {
+    cloudidRestApi3IssuetypeIdAvatar2Post(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issuetypeIdAvatar2Post");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssuetypeIdAvatar2Post");
       }
 
       let pathParams = {
@@ -6163,20 +6163,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2017;
       return this.apiClient.callApi(
-        '/issuetype/{id}/avatar2', 'POST',
+        '/{cloudid}/rest/api/3/issuetype/{id}/avatar2', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeIdDelete operation.
-     * @callback module:api/DefaultApi~issuetypeIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6187,14 +6187,14 @@ export default class DefaultApi {
      * @param {String} id The ID of the issue type.
      * @param {Object} opts Optional parameters
      * @param {String} opts.alternativeIssueTypeId The ID of the replacement issue type.
-     * @param {module:api/DefaultApi~issuetypeIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issuetypeIdDelete(id, opts, callback) {
+    cloudidRestApi3IssuetypeIdDelete(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issuetypeIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssuetypeIdDelete");
       }
 
       let pathParams = {
@@ -6208,20 +6208,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issuetype/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/issuetype/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeIdGet operation.
-     * @callback module:api/DefaultApi~issuetypeIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20054} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6230,14 +6230,14 @@ export default class DefaultApi {
     /**
      * Returns an issue type. Permissions required:
      * @param {String} id The ID of the issue type.
-     * @param {module:api/DefaultApi~issuetypeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20054}
      */
-    issuetypeIdGet(id, callback) {
+    cloudidRestApi3IssuetypeIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issuetypeIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssuetypeIdGet");
       }
 
       let pathParams = {
@@ -6250,20 +6250,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20054;
       return this.apiClient.callApi(
-        '/issuetype/{id}', 'GET',
+        '/{cloudid}/rest/api/3/issuetype/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeIdPut operation.
-     * @callback module:api/DefaultApi~issuetypeIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeIdPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6274,14 +6274,14 @@ export default class DefaultApi {
      * @param {String} id The ID of the issue type.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject34} opts.body 
-     * @param {module:api/DefaultApi~issuetypeIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issuetypeIdPut(id, opts, callback) {
+    cloudidRestApi3IssuetypeIdPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling issuetypeIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3IssuetypeIdPut");
       }
 
       let pathParams = {
@@ -6294,20 +6294,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issuetype/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/issuetype/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeIssueTypeIdPropertiesGet operation.
-     * @callback module:api/DefaultApi~issuetypeIssueTypeIdPropertiesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeIssueTypeIdPropertiesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20010} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6316,14 +6316,14 @@ export default class DefaultApi {
     /**
      * Returns all the issue type property keys of the issue type. Permissions required:
      * @param {String} issueTypeId The ID of the issue type.
-     * @param {module:api/DefaultApi~issuetypeIssueTypeIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeIssueTypeIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20010}
      */
-    issuetypeIssueTypeIdPropertiesGet(issueTypeId, callback) {
+    cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(issueTypeId, callback) {
       let postBody = null;
       // verify the required parameter 'issueTypeId' is set
       if (issueTypeId === undefined || issueTypeId === null) {
-        throw new Error("Missing the required parameter 'issueTypeId' when calling issuetypeIssueTypeIdPropertiesGet");
+        throw new Error("Missing the required parameter 'issueTypeId' when calling cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet");
       }
 
       let pathParams = {
@@ -6336,20 +6336,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20010;
       return this.apiClient.callApi(
-        '/issuetype/{issueTypeId}/properties', 'GET',
+        '/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeIssueTypeIdPropertiesPropertyKeyDelete operation.
-     * @callback module:api/DefaultApi~issuetypeIssueTypeIdPropertiesPropertyKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6359,17 +6359,17 @@ export default class DefaultApi {
      * Deletes the issue type property. Permissions required: Administer Jira global permission.
      * @param {String} issueTypeId The ID of the issue type.
      * @param {String} propertyKey The key of the property. Use Get issue type property keys to get a list of all issue type property keys.
-     * @param {module:api/DefaultApi~issuetypeIssueTypeIdPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issuetypeIssueTypeIdPropertiesPropertyKeyDelete(issueTypeId, propertyKey, callback) {
+    cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(issueTypeId, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueTypeId' is set
       if (issueTypeId === undefined || issueTypeId === null) {
-        throw new Error("Missing the required parameter 'issueTypeId' when calling issuetypeIssueTypeIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'issueTypeId' when calling cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issuetypeIssueTypeIdPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete");
       }
 
       let pathParams = {
@@ -6383,20 +6383,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issuetype/{issueTypeId}/properties/{propertyKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeIssueTypeIdPropertiesPropertyKeyGet operation.
-     * @callback module:api/DefaultApi~issuetypeIssueTypeIdPropertiesPropertyKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6406,18 +6406,18 @@ export default class DefaultApi {
      * Returns the key and value of the issue type property. Permissions required:
      * @param {String} issueTypeId The ID of the issue type.
      * @param {String} propertyKey The key of the property. Use Get issue type property keys to get a list of all issue type property keys.
-     * @param {module:api/DefaultApi~issuetypeIssueTypeIdPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20011}
      */
-    issuetypeIssueTypeIdPropertiesPropertyKeyGet(issueTypeId, propertyKey, callback) {
+    cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(issueTypeId, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueTypeId' is set
       if (issueTypeId === undefined || issueTypeId === null) {
-        throw new Error("Missing the required parameter 'issueTypeId' when calling issuetypeIssueTypeIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'issueTypeId' when calling cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issuetypeIssueTypeIdPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet");
       }
 
       let pathParams = {
@@ -6431,20 +6431,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20011;
       return this.apiClient.callApi(
-        '/issuetype/{issueTypeId}/properties/{propertyKey}', 'GET',
+        '/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypeIssueTypeIdPropertiesPropertyKeyPut operation.
-     * @callback module:api/DefaultApi~issuetypeIssueTypeIdPropertiesPropertyKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6454,17 +6454,17 @@ export default class DefaultApi {
      * Creates or updates the value of the issue type property. Use this resource to store and update data against an issue type. The value of the request body must be a valid, non-empty JSON blob. The maximum length of the property value is 32768 bytes. Permissions required: Administer Jira global permission.
      * @param {String} issueTypeId The ID of the issue type.
      * @param {String} propertyKey The key of the issue type property. The maximum length of the key is 255 bytes.
-     * @param {module:api/DefaultApi~issuetypeIssueTypeIdPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issuetypeIssueTypeIdPropertiesPropertyKeyPut(issueTypeId, propertyKey, callback) {
+    cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(issueTypeId, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'issueTypeId' is set
       if (issueTypeId === undefined || issueTypeId === null) {
-        throw new Error("Missing the required parameter 'issueTypeId' when calling issuetypeIssueTypeIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'issueTypeId' when calling cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling issuetypeIssueTypeIdPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut");
       }
 
       let pathParams = {
@@ -6478,20 +6478,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issuetype/{issueTypeId}/properties/{propertyKey}', 'PUT',
+        '/{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the issuetypePost operation.
-     * @callback module:api/DefaultApi~issuetypePostCallback
+     * Callback function to receive the result of the cloudidRestApi3IssuetypePost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3IssuetypePostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6501,9 +6501,9 @@ export default class DefaultApi {
      * Creates an issue type and adds it to the default issue type scheme. Permissions required: Administer Jira global permission.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject33} opts.body 
-     * @param {module:api/DefaultApi~issuetypePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3IssuetypePostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    issuetypePost(opts, callback) {
+    cloudidRestApi3IssuetypePost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -6516,20 +6516,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/issuetype', 'POST',
+        '/{cloudid}/rest/api/3/issuetype', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the jqlAutocompletedataGet operation.
-     * @callback module:api/DefaultApi~jqlAutocompletedataGetCallback
+     * Callback function to receive the result of the cloudidRestApi3JqlAutocompletedataGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3JqlAutocompletedataGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20055} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6537,10 +6537,10 @@ export default class DefaultApi {
 
     /**
      * Returns reference data for JQL searches. This is a downloadable version of the documentation provided in Advanced searching - fields reference and Advanced searching - functions reference, along with a list of JQL-reserved words. Use this information to assist with the programmatic creation of JQL queries or the validation of queries built in a custom query builder.
-     * @param {module:api/DefaultApi~jqlAutocompletedataGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3JqlAutocompletedataGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20055}
      */
-    jqlAutocompletedataGet(callback) {
+    cloudidRestApi3JqlAutocompletedataGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -6552,20 +6552,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20055;
       return this.apiClient.callApi(
-        '/jql/autocompletedata', 'GET',
+        '/{cloudid}/rest/api/3/jql/autocompletedata', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the jqlAutocompletedataSuggestionsGet operation.
-     * @callback module:api/DefaultApi~jqlAutocompletedataSuggestionsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3JqlAutocompletedataSuggestionsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3JqlAutocompletedataSuggestionsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20056} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6578,10 +6578,10 @@ export default class DefaultApi {
      * @param {String} opts.fieldValue The partial field item name entered by the user.
      * @param {String} opts.predicateName The name of the CHANGED operator predicate for which the suggestions are generated. The valid predicate operators are by, from, and to.
      * @param {String} opts.predicateValue The partial predicate item name entered by the user.
-     * @param {module:api/DefaultApi~jqlAutocompletedataSuggestionsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3JqlAutocompletedataSuggestionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20056}
      */
-    jqlAutocompletedataSuggestionsGet(opts, callback) {
+    cloudidRestApi3JqlAutocompletedataSuggestionsGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -6598,20 +6598,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20056;
       return this.apiClient.callApi(
-        '/jql/autocompletedata/suggestions', 'GET',
+        '/{cloudid}/rest/api/3/jql/autocompletedata/suggestions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the jqlPdcleanerPost operation.
-     * @callback module:api/DefaultApi~jqlPdcleanerPostCallback
+     * Callback function to receive the result of the cloudidRestApi3JqlPdcleanerPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3JqlPdcleanerPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20057} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6621,10 +6621,10 @@ export default class DefaultApi {
      * The query strings having personal data that need to be migrated. There should be at most 100 queries.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject35} opts.body 
-     * @param {module:api/DefaultApi~jqlPdcleanerPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3JqlPdcleanerPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20057}
      */
-    jqlPdcleanerPost(opts, callback) {
+    cloudidRestApi3JqlPdcleanerPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -6637,20 +6637,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20057;
       return this.apiClient.callApi(
-        '/jql/pdcleaner', 'POST',
+        '/{cloudid}/rest/api/3/jql/pdcleaner', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the mypermissionsGet operation.
-     * @callback module:api/DefaultApi~mypermissionsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3MypermissionsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3MypermissionsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20058} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6664,10 +6664,10 @@ export default class DefaultApi {
      * @param {String} opts.permissions A comma separated list of permission keys. Omitting this parameter is deprecated. To get the list of available permissions, use Get all permissions. Note that deprecated keys cannot be used. Deprecated keys are not returned by Get all permissions but are returned by this operation if permissions is omitted.
      * @param {String} opts.projectId The ID of project.
      * @param {String} opts.projectKey The key of project. Ignored if projectId is provided.
-     * @param {module:api/DefaultApi~mypermissionsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3MypermissionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20058}
      */
-    mypermissionsGet(opts, callback) {
+    cloudidRestApi3MypermissionsGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -6685,20 +6685,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20058;
       return this.apiClient.callApi(
-        '/mypermissions', 'GET',
+        '/{cloudid}/rest/api/3/mypermissions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the mypreferencesDelete operation.
-     * @callback module:api/DefaultApi~mypreferencesDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3MypreferencesDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3MypreferencesDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6708,9 +6708,9 @@ export default class DefaultApi {
      * Deletes a preference of the user, which restores the default value of system defined settings.
      * @param {Object} opts Optional parameters
      * @param {String} opts.key The key of the preference.
-     * @param {module:api/DefaultApi~mypreferencesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3MypreferencesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    mypreferencesDelete(opts, callback) {
+    cloudidRestApi3MypreferencesDelete(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -6724,20 +6724,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/mypreferences', 'DELETE',
+        '/{cloudid}/rest/api/3/mypreferences', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the mypreferencesGet operation.
-     * @callback module:api/DefaultApi~mypreferencesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3MypreferencesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3MypreferencesGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6747,9 +6747,9 @@ export default class DefaultApi {
      * Returns the value of a preference of the user.
      * @param {Object} opts Optional parameters
      * @param {String} opts.key The key of the preference.
-     * @param {module:api/DefaultApi~mypreferencesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3MypreferencesGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    mypreferencesGet(opts, callback) {
+    cloudidRestApi3MypreferencesGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -6763,20 +6763,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/mypreferences', 'GET',
+        '/{cloudid}/rest/api/3/mypreferences', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the mypreferencesLocaleDelete operation.
-     * @callback module:api/DefaultApi~mypreferencesLocaleDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3MypreferencesLocaleDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3MypreferencesLocaleDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6784,9 +6784,9 @@ export default class DefaultApi {
 
     /**
      * Deletes the locale of the current user, which restores the default setting.
-     * @param {module:api/DefaultApi~mypreferencesLocaleDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3MypreferencesLocaleDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    mypreferencesLocaleDelete(callback) {
+    cloudidRestApi3MypreferencesLocaleDelete(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -6798,20 +6798,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/mypreferences/locale', 'DELETE',
+        '/{cloudid}/rest/api/3/mypreferences/locale', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the mypreferencesLocaleGet operation.
-     * @callback module:api/DefaultApi~mypreferencesLocaleGetCallback
+     * Callback function to receive the result of the cloudidRestApi3MypreferencesLocaleGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3MypreferencesLocaleGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20059} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6819,10 +6819,10 @@ export default class DefaultApi {
 
     /**
      * Returns the locale for the current user.
-     * @param {module:api/DefaultApi~mypreferencesLocaleGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3MypreferencesLocaleGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20059}
      */
-    mypreferencesLocaleGet(callback) {
+    cloudidRestApi3MypreferencesLocaleGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -6834,20 +6834,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20059;
       return this.apiClient.callApi(
-        '/mypreferences/locale', 'GET',
+        '/{cloudid}/rest/api/3/mypreferences/locale', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the mypreferencesLocalePut operation.
-     * @callback module:api/DefaultApi~mypreferencesLocalePutCallback
+     * Callback function to receive the result of the cloudidRestApi3MypreferencesLocalePut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3MypreferencesLocalePutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6857,9 +6857,9 @@ export default class DefaultApi {
      * Sets the locale of the current user. The requested locale must be one supported by the instance of Jira.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject36} opts.body 
-     * @param {module:api/DefaultApi~mypreferencesLocalePutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3MypreferencesLocalePutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    mypreferencesLocalePut(opts, callback) {
+    cloudidRestApi3MypreferencesLocalePut(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -6872,20 +6872,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/mypreferences/locale', 'PUT',
+        '/{cloudid}/rest/api/3/mypreferences/locale', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the mypreferencesPut operation.
-     * @callback module:api/DefaultApi~mypreferencesPutCallback
+     * Callback function to receive the result of the cloudidRestApi3MypreferencesPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3MypreferencesPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -6895,9 +6895,9 @@ export default class DefaultApi {
      * Creates a preference for the user or updates its value. An arbitrary preference can be created with the value containing up to 255 characters. In addition, the following keys define system preferences that can be set or created:
      * @param {Object} opts Optional parameters
      * @param {String} opts.key The key of the preference. Maximum length is 255 characters.
-     * @param {module:api/DefaultApi~mypreferencesPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3MypreferencesPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    mypreferencesPut(opts, callback) {
+    cloudidRestApi3MypreferencesPut(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -6911,20 +6911,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/mypreferences', 'PUT',
+        '/{cloudid}/rest/api/3/mypreferences', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the myselfGet operation.
-     * @callback module:api/DefaultApi~myselfGetCallback
+     * Callback function to receive the result of the cloudidRestApi3MyselfGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3MyselfGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20060} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6934,10 +6934,10 @@ export default class DefaultApi {
      * Returns details for the authenticated user.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about user in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~myselfGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3MyselfGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20060}
      */
-    myselfGet(opts, callback) {
+    cloudidRestApi3MyselfGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -6951,20 +6951,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20060;
       return this.apiClient.callApi(
-        '/myself', 'GET',
+        '/{cloudid}/rest/api/3/myself', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the notificationschemeGet operation.
-     * @callback module:api/DefaultApi~notificationschemeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3NotificationschemeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3NotificationschemeGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20061} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -6976,10 +6976,10 @@ export default class DefaultApi {
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
      * @param {Number} opts.maxResults The maximum number of items to return per page. Max is 50.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset). The base index is 0.
-     * @param {module:api/DefaultApi~notificationschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3NotificationschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20061}
      */
-    notificationschemeGet(opts, callback) {
+    cloudidRestApi3NotificationschemeGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -6995,20 +6995,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20061;
       return this.apiClient.callApi(
-        '/notificationscheme', 'GET',
+        '/{cloudid}/rest/api/3/notificationscheme', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the notificationschemeIdGet operation.
-     * @callback module:api/DefaultApi~notificationschemeIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3NotificationschemeIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3NotificationschemeIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20062} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7019,15 +7019,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the notification scheme. Use Get notification schemes paginated to get a list of notification scheme IDs.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~notificationschemeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3NotificationschemeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20062}
      */
-    notificationschemeIdGet(id, opts, callback) {
+    cloudidRestApi3NotificationschemeIdGet(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling notificationschemeIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3NotificationschemeIdGet");
       }
 
       let pathParams = {
@@ -7041,20 +7041,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20062;
       return this.apiClient.callApi(
-        '/notificationscheme/{id}', 'GET',
+        '/{cloudid}/rest/api/3/notificationscheme/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionsGet operation.
-     * @callback module:api/DefaultApi~permissionsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20063} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7062,10 +7062,10 @@ export default class DefaultApi {
 
     /**
      * Returns all permissions, including:
-     * @param {module:api/DefaultApi~permissionsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20063}
      */
-    permissionsGet(callback) {
+    cloudidRestApi3PermissionsGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -7077,20 +7077,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20063;
       return this.apiClient.callApi(
-        '/permissions', 'GET',
+        '/{cloudid}/rest/api/3/permissions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionsProjectPost operation.
-     * @callback module:api/DefaultApi~permissionsProjectPostCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionsProjectPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionsProjectPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20064} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7100,10 +7100,10 @@ export default class DefaultApi {
      * Returns all the projects where the user is granted a list of project permissions.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject37} opts.body 
-     * @param {module:api/DefaultApi~permissionsProjectPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionsProjectPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20064}
      */
-    permissionsProjectPost(opts, callback) {
+    cloudidRestApi3PermissionsProjectPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -7116,20 +7116,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20064;
       return this.apiClient.callApi(
-        '/permissions/project', 'POST',
+        '/{cloudid}/rest/api/3/permissions/project', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionschemeGet operation.
-     * @callback module:api/DefaultApi~permissionschemeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionschemeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionschemeGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20065} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7139,10 +7139,10 @@ export default class DefaultApi {
      * Returns all permission schemes.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
-     * @param {module:api/DefaultApi~permissionschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20065}
      */
-    permissionschemeGet(opts, callback) {
+    cloudidRestApi3PermissionschemeGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -7156,20 +7156,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20065;
       return this.apiClient.callApi(
-        '/permissionscheme', 'GET',
+        '/{cloudid}/rest/api/3/permissionscheme', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionschemePost operation.
-     * @callback module:api/DefaultApi~permissionschemePostCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionschemePost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionschemePostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2018} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7180,10 +7180,10 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
      * @param {module:model/InlineObject38} opts.body 
-     * @param {module:api/DefaultApi~permissionschemePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionschemePostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2018}
      */
-    permissionschemePost(opts, callback) {
+    cloudidRestApi3PermissionschemePost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -7197,20 +7197,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2018;
       return this.apiClient.callApi(
-        '/permissionscheme', 'POST',
+        '/{cloudid}/rest/api/3/permissionscheme', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionschemeSchemeIdDelete operation.
-     * @callback module:api/DefaultApi~permissionschemeSchemeIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionschemeSchemeIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -7219,13 +7219,13 @@ export default class DefaultApi {
     /**
      * Deletes a permission scheme. Permissions required: Administer Jira global permission.
      * @param {Number} schemeId The ID of the permission scheme being deleted (e.g., 10000).
-     * @param {module:api/DefaultApi~permissionschemeSchemeIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    permissionschemeSchemeIdDelete(schemeId, callback) {
+    cloudidRestApi3PermissionschemeSchemeIdDelete(schemeId, callback) {
       let postBody = null;
       // verify the required parameter 'schemeId' is set
       if (schemeId === undefined || schemeId === null) {
-        throw new Error("Missing the required parameter 'schemeId' when calling permissionschemeSchemeIdDelete");
+        throw new Error("Missing the required parameter 'schemeId' when calling cloudidRestApi3PermissionschemeSchemeIdDelete");
       }
 
       let pathParams = {
@@ -7238,20 +7238,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/permissionscheme/{schemeId}', 'DELETE',
+        '/{cloudid}/rest/api/3/permissionscheme/{schemeId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionschemeSchemeIdGet operation.
-     * @callback module:api/DefaultApi~permissionschemeSchemeIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionschemeSchemeIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2018} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7262,15 +7262,15 @@ export default class DefaultApi {
      * @param {Number} schemeId The ID of the permission scheme to return (e.g., 10000).
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
-     * @param {module:api/DefaultApi~permissionschemeSchemeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2018}
      */
-    permissionschemeSchemeIdGet(schemeId, opts, callback) {
+    cloudidRestApi3PermissionschemeSchemeIdGet(schemeId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'schemeId' is set
       if (schemeId === undefined || schemeId === null) {
-        throw new Error("Missing the required parameter 'schemeId' when calling permissionschemeSchemeIdGet");
+        throw new Error("Missing the required parameter 'schemeId' when calling cloudidRestApi3PermissionschemeSchemeIdGet");
       }
 
       let pathParams = {
@@ -7284,20 +7284,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2018;
       return this.apiClient.callApi(
-        '/permissionscheme/{schemeId}', 'GET',
+        '/{cloudid}/rest/api/3/permissionscheme/{schemeId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionschemeSchemeIdPermissionGet operation.
-     * @callback module:api/DefaultApi~permissionschemeSchemeIdPermissionGetCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionschemeSchemeIdPermissionGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPermissionGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20066} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7308,15 +7308,15 @@ export default class DefaultApi {
      * @param {Number} schemeId The ID of the permission scheme (e.g., 10010).
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
-     * @param {module:api/DefaultApi~permissionschemeSchemeIdPermissionGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPermissionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20066}
      */
-    permissionschemeSchemeIdPermissionGet(schemeId, opts, callback) {
+    cloudidRestApi3PermissionschemeSchemeIdPermissionGet(schemeId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'schemeId' is set
       if (schemeId === undefined || schemeId === null) {
-        throw new Error("Missing the required parameter 'schemeId' when calling permissionschemeSchemeIdPermissionGet");
+        throw new Error("Missing the required parameter 'schemeId' when calling cloudidRestApi3PermissionschemeSchemeIdPermissionGet");
       }
 
       let pathParams = {
@@ -7330,20 +7330,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20066;
       return this.apiClient.callApi(
-        '/permissionscheme/{schemeId}/permission', 'GET',
+        '/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionschemeSchemeIdPermissionPermissionIdDelete operation.
-     * @callback module:api/DefaultApi~permissionschemeSchemeIdPermissionPermissionIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -7353,17 +7353,17 @@ export default class DefaultApi {
      * Deletes a permission grant from a permission scheme. See About permission schemes and grants for more details. Permissions required: Administer Jira global permission.
      * @param {Number} permissionId The ID of the permission grant to delete (e.g., 10847).
      * @param {Number} schemeId The ID of the permission scheme to delete the permission grant from (e.g., 10000).
-     * @param {module:api/DefaultApi~permissionschemeSchemeIdPermissionPermissionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    permissionschemeSchemeIdPermissionPermissionIdDelete(permissionId, schemeId, callback) {
+    cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(permissionId, schemeId, callback) {
       let postBody = null;
       // verify the required parameter 'permissionId' is set
       if (permissionId === undefined || permissionId === null) {
-        throw new Error("Missing the required parameter 'permissionId' when calling permissionschemeSchemeIdPermissionPermissionIdDelete");
+        throw new Error("Missing the required parameter 'permissionId' when calling cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete");
       }
       // verify the required parameter 'schemeId' is set
       if (schemeId === undefined || schemeId === null) {
-        throw new Error("Missing the required parameter 'schemeId' when calling permissionschemeSchemeIdPermissionPermissionIdDelete");
+        throw new Error("Missing the required parameter 'schemeId' when calling cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete");
       }
 
       let pathParams = {
@@ -7377,20 +7377,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/permissionscheme/{schemeId}/permission/{permissionId}', 'DELETE',
+        '/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionschemeSchemeIdPermissionPermissionIdGet operation.
-     * @callback module:api/DefaultApi~permissionschemeSchemeIdPermissionPermissionIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2019} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7402,19 +7402,19 @@ export default class DefaultApi {
      * @param {Number} schemeId The ID of the permission scheme (e.g., 10010).
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
-     * @param {module:api/DefaultApi~permissionschemeSchemeIdPermissionPermissionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2019}
      */
-    permissionschemeSchemeIdPermissionPermissionIdGet(permissionId, schemeId, opts, callback) {
+    cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(permissionId, schemeId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'permissionId' is set
       if (permissionId === undefined || permissionId === null) {
-        throw new Error("Missing the required parameter 'permissionId' when calling permissionschemeSchemeIdPermissionPermissionIdGet");
+        throw new Error("Missing the required parameter 'permissionId' when calling cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet");
       }
       // verify the required parameter 'schemeId' is set
       if (schemeId === undefined || schemeId === null) {
-        throw new Error("Missing the required parameter 'schemeId' when calling permissionschemeSchemeIdPermissionPermissionIdGet");
+        throw new Error("Missing the required parameter 'schemeId' when calling cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet");
       }
 
       let pathParams = {
@@ -7429,20 +7429,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2019;
       return this.apiClient.callApi(
-        '/permissionscheme/{schemeId}/permission/{permissionId}', 'GET',
+        '/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionschemeSchemeIdPermissionPost operation.
-     * @callback module:api/DefaultApi~permissionschemeSchemeIdPermissionPostCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionschemeSchemeIdPermissionPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPermissionPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2019} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7454,15 +7454,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
      * @param {module:model/InlineObject40} opts.body 
-     * @param {module:api/DefaultApi~permissionschemeSchemeIdPermissionPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPermissionPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2019}
      */
-    permissionschemeSchemeIdPermissionPost(schemeId, opts, callback) {
+    cloudidRestApi3PermissionschemeSchemeIdPermissionPost(schemeId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'schemeId' is set
       if (schemeId === undefined || schemeId === null) {
-        throw new Error("Missing the required parameter 'schemeId' when calling permissionschemeSchemeIdPermissionPost");
+        throw new Error("Missing the required parameter 'schemeId' when calling cloudidRestApi3PermissionschemeSchemeIdPermissionPost");
       }
 
       let pathParams = {
@@ -7476,20 +7476,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2019;
       return this.apiClient.callApi(
-        '/permissionscheme/{schemeId}/permission', 'POST',
+        '/{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the permissionschemeSchemeIdPut operation.
-     * @callback module:api/DefaultApi~permissionschemeSchemeIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3PermissionschemeSchemeIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2018} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7501,15 +7501,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
      * @param {module:model/InlineObject39} opts.body 
-     * @param {module:api/DefaultApi~permissionschemeSchemeIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PermissionschemeSchemeIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2018}
      */
-    permissionschemeSchemeIdPut(schemeId, opts, callback) {
+    cloudidRestApi3PermissionschemeSchemeIdPut(schemeId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'schemeId' is set
       if (schemeId === undefined || schemeId === null) {
-        throw new Error("Missing the required parameter 'schemeId' when calling permissionschemeSchemeIdPut");
+        throw new Error("Missing the required parameter 'schemeId' when calling cloudidRestApi3PermissionschemeSchemeIdPut");
       }
 
       let pathParams = {
@@ -7523,20 +7523,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2018;
       return this.apiClient.callApi(
-        '/permissionscheme/{schemeId}', 'PUT',
+        '/{cloudid}/rest/api/3/permissionscheme/{schemeId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the priorityGet operation.
-     * @callback module:api/DefaultApi~priorityGetCallback
+     * Callback function to receive the result of the cloudidRestApi3PriorityGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PriorityGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20050InwardIssueFieldsPriority>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7544,10 +7544,10 @@ export default class DefaultApi {
 
     /**
      * Returns the list of all issue priorities.
-     * @param {module:api/DefaultApi~priorityGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PriorityGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20050InwardIssueFieldsPriority>}
      */
-    priorityGet(callback) {
+    cloudidRestApi3PriorityGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -7559,20 +7559,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20050InwardIssueFieldsPriority];
       return this.apiClient.callApi(
-        '/priority', 'GET',
+        '/{cloudid}/rest/api/3/priority', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the priorityIdGet operation.
-     * @callback module:api/DefaultApi~priorityIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3PriorityIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3PriorityIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20067} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7581,14 +7581,14 @@ export default class DefaultApi {
     /**
      * Returns an issue priority.
      * @param {String} id The ID of the issue priority.
-     * @param {module:api/DefaultApi~priorityIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3PriorityIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20067}
      */
-    priorityIdGet(id, callback) {
+    cloudidRestApi3PriorityIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling priorityIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3PriorityIdGet");
       }
 
       let pathParams = {
@@ -7601,31 +7601,31 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20067;
       return this.apiClient.callApi(
-        '/priority/{id}', 'GET',
+        '/{cloudid}/rest/api/3/priority/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectCategoryGet operation.
-     * @callback module:api/DefaultApi~projectCategoryGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectCategoryGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectCategoryGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FilterIdPermissionProjectProjectCategory>} data The data returned by the service call.
+     * @param {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Returns all project categories.
-     * @param {module:api/DefaultApi~projectCategoryGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/FilterIdPermissionProjectProjectCategory>}
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectCategoryGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>}
      */
-    projectCategoryGet(callback) {
+    cloudidRestApi3ProjectCategoryGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -7637,20 +7637,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = [FilterIdPermissionProjectProjectCategory];
+      let returnType = [CloudidRestApi3FilterIdPermissionProjectProjectCategory];
       return this.apiClient.callApi(
-        '/projectCategory', 'GET',
+        '/{cloudid}/rest/api/3/projectCategory', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectCategoryIdDelete operation.
-     * @callback module:api/DefaultApi~projectCategoryIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectCategoryIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectCategoryIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -7659,13 +7659,13 @@ export default class DefaultApi {
     /**
      * Deletes a project category.
      * @param {Number} id ID of the project category to delete.
-     * @param {module:api/DefaultApi~projectCategoryIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectCategoryIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    projectCategoryIdDelete(id, callback) {
+    cloudidRestApi3ProjectCategoryIdDelete(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling projectCategoryIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ProjectCategoryIdDelete");
       }
 
       let pathParams = {
@@ -7678,20 +7678,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/projectCategory/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/projectCategory/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectCategoryIdGet operation.
-     * @callback module:api/DefaultApi~projectCategoryIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectCategoryIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectCategoryIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20112} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7700,14 +7700,14 @@ export default class DefaultApi {
     /**
      * Returns a project category.
      * @param {Number} id The ID of the project category.
-     * @param {module:api/DefaultApi~projectCategoryIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectCategoryIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20112}
      */
-    projectCategoryIdGet(id, callback) {
+    cloudidRestApi3ProjectCategoryIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling projectCategoryIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ProjectCategoryIdGet");
       }
 
       let pathParams = {
@@ -7720,20 +7720,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20112;
       return this.apiClient.callApi(
-        '/projectCategory/{id}', 'GET',
+        '/{cloudid}/rest/api/3/projectCategory/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectCategoryIdPut operation.
-     * @callback module:api/DefaultApi~projectCategoryIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectCategoryIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectCategoryIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20112} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7744,15 +7744,15 @@ export default class DefaultApi {
      * @param {Number} id 
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject48} opts.body 
-     * @param {module:api/DefaultApi~projectCategoryIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectCategoryIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20112}
      */
-    projectCategoryIdPut(id, opts, callback) {
+    cloudidRestApi3ProjectCategoryIdPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling projectCategoryIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ProjectCategoryIdPut");
       }
 
       let pathParams = {
@@ -7765,20 +7765,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20112;
       return this.apiClient.callApi(
-        '/projectCategory/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/projectCategory/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectCategoryPost operation.
-     * @callback module:api/DefaultApi~projectCategoryPostCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectCategoryPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectCategoryPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20112} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7788,10 +7788,10 @@ export default class DefaultApi {
      * Creates a project category.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject47} opts.body 
-     * @param {module:api/DefaultApi~projectCategoryPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectCategoryPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20112}
      */
-    projectCategoryPost(opts, callback) {
+    cloudidRestApi3ProjectCategoryPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -7804,22 +7804,22 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20112;
       return this.apiClient.callApi(
-        '/projectCategory', 'POST',
+        '/{cloudid}/rest/api/3/projectCategory', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectGet operation.
-     * @callback module:api/DefaultApi~projectGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FilterIdPermissionProject>} data The data returned by the service call.
+     * @param {Array.<module:model/CloudidRestApi3FilterIdPermissionProject>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -7828,10 +7828,10 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
      * @param {Number} opts.recent Returns the most recently accessed projects for the current user. You may specify the number of results to return up to a maximum of 20. If no user is logged in, then the recently accessed projects will be returned based on the current HTTP session.
-     * @param {module:api/DefaultApi~projectGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/FilterIdPermissionProject>}
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CloudidRestApi3FilterIdPermissionProject>}
      */
-    projectGet(opts, callback) {
+    cloudidRestApi3ProjectGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -7846,20 +7846,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = [FilterIdPermissionProject];
+      let returnType = [CloudidRestApi3FilterIdPermissionProject];
       return this.apiClient.callApi(
-        '/project', 'GET',
+        '/{cloudid}/rest/api/3/project', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectPost operation.
-     * @callback module:api/DefaultApi~projectPostCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20110} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7869,10 +7869,10 @@ export default class DefaultApi {
      * Creates a new project.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject41} opts.body 
-     * @param {module:api/DefaultApi~projectPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20110}
      */
-    projectPost(opts, callback) {
+    cloudidRestApi3ProjectPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -7885,20 +7885,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20110;
       return this.apiClient.callApi(
-        '/project', 'POST',
+        '/{cloudid}/rest/api/3/project', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyAvatar2Post operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyAvatar2PostCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyAvatar2PostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20111} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -7911,15 +7911,15 @@ export default class DefaultApi {
      * @param {Number} opts.size The length of each side of the crop region.
      * @param {Number} opts.x The X coordinate of the top-left corner of the crop region.
      * @param {Number} opts.y The Y coordinate of the top-left corner of the crop region.
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyAvatar2PostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyAvatar2PostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20111}
      */
-    projectProjectIdOrKeyAvatar2Post(projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyAvatar2Post");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post");
       }
 
       let pathParams = {
@@ -7935,20 +7935,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20111;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/avatar2', 'POST',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar2', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyAvatarIdDelete operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyAvatarIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -7958,17 +7958,17 @@ export default class DefaultApi {
      * Deletes a custom avatar from a project. Note that system avatars cannot be deleted.
      * @param {Number} id The ID of the avatar.
      * @param {String} projectIdOrKey The project ID or (case-sensitive) key.
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyAvatarIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    projectProjectIdOrKeyAvatarIdDelete(id, projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(id, projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling projectProjectIdOrKeyAvatarIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete");
       }
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyAvatarIdDelete");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete");
       }
 
       let pathParams = {
@@ -7982,20 +7982,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/avatar/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyAvatarPut operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyAvatarPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyAvatarPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyAvatarPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -8006,14 +8006,14 @@ export default class DefaultApi {
      * @param {String} projectIdOrKey The ID or (case-sensitive) key of the project.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject43} opts.body 
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyAvatarPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyAvatarPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    projectProjectIdOrKeyAvatarPut(projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyAvatarPut");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyAvatarPut");
       }
 
       let pathParams = {
@@ -8026,20 +8026,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/avatar', 'PUT',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyAvatarsGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyAvatarsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyAvatarsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20072} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8048,14 +8048,14 @@ export default class DefaultApi {
     /**
      * Returns all project avatars, grouped by system and custom avatars.
      * @param {String} projectIdOrKey The ID or (case-sensitive) key of the project.
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyAvatarsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyAvatarsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20072}
      */
-    projectProjectIdOrKeyAvatarsGet(projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyAvatarsGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet");
       }
 
       let pathParams = {
@@ -8068,20 +8068,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20072;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/avatars', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/avatars', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyComponentGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyComponentGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyComponentGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyComponentGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20073} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8095,15 +8095,15 @@ export default class DefaultApi {
      * @param {module:model/String} opts.orderBy Order the results by a particular field:
      * @param {String} opts.query Filter the results using a literal string. Components with a matching name or description are returned (case insensitive).
      * @param {Number} opts.startAt The starting index of the returned list of components. The base index is 0.
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyComponentGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyComponentGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20073}
      */
-    projectProjectIdOrKeyComponentGet(projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyComponentGet(projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyComponentGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyComponentGet");
       }
 
       let pathParams = {
@@ -8120,20 +8120,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20073;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/component', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/component', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyComponentsGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyComponentsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyComponentsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyComponentsGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20074>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8142,14 +8142,14 @@ export default class DefaultApi {
     /**
      * Returns all components existing in a single project. See the Get project components paginated resource if you want to get a full list of components with pagination.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyComponentsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyComponentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20074>}
      */
-    projectProjectIdOrKeyComponentsGet(projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyComponentsGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyComponentsGet");
       }
 
       let pathParams = {
@@ -8162,20 +8162,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20074];
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/components', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/components', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyDelete operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -8184,13 +8184,13 @@ export default class DefaultApi {
     /**
      * Deletes an existing project.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    projectProjectIdOrKeyDelete(projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyDelete(projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyDelete");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyDelete");
       }
 
       let pathParams = {
@@ -8203,20 +8203,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20071} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8227,15 +8227,15 @@ export default class DefaultApi {
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default:
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20071}
      */
-    projectProjectIdOrKeyGet(projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyGet(projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyGet");
       }
 
       let pathParams = {
@@ -8249,20 +8249,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20071;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyPropertiesGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyPropertiesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPropertiesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20010} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8271,14 +8271,14 @@ export default class DefaultApi {
     /**
      * Returns all project property keys for the project.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20010}
      */
-    projectProjectIdOrKeyPropertiesGet(projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyPropertiesGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet");
       }
 
       let pathParams = {
@@ -8291,20 +8291,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20010;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/properties', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyPropertiesPropertyKeyDelete operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyPropertiesPropertyKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -8314,17 +8314,17 @@ export default class DefaultApi {
      * Removes the property from the project.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
      * @param {String} propertyKey The project property key. Use Get project property keys to get a list of all project property keys.
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    projectProjectIdOrKeyPropertiesPropertyKeyDelete(projectIdOrKey, propertyKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(projectIdOrKey, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling projectProjectIdOrKeyPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete");
       }
 
       let pathParams = {
@@ -8338,20 +8338,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/properties/{propertyKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyPropertiesPropertyKeyGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyPropertiesPropertyKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8361,18 +8361,18 @@ export default class DefaultApi {
      * Returns the value of the project property.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
      * @param {String} propertyKey The project property key. Use Get project property keys to get a list of all project property keys.
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20011}
      */
-    projectProjectIdOrKeyPropertiesPropertyKeyGet(projectIdOrKey, propertyKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(projectIdOrKey, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling projectProjectIdOrKeyPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet");
       }
 
       let pathParams = {
@@ -8386,20 +8386,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20011;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/properties/{propertyKey}', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyPropertiesPropertyKeyPut operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyPropertiesPropertyKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -8409,17 +8409,17 @@ export default class DefaultApi {
      * Sets the value of the project property. You can use project properties to store custom data against the project.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
      * @param {String} propertyKey The key of the project property. The maximum length is 255 bytes.
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    projectProjectIdOrKeyPropertiesPropertyKeyPut(projectIdOrKey, propertyKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(projectIdOrKey, propertyKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut");
       }
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling projectProjectIdOrKeyPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut");
       }
 
       let pathParams = {
@@ -8433,20 +8433,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/properties/{propertyKey}', 'PUT',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyPut operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20071} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8458,15 +8458,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default:
      * @param {module:model/InlineObject42} opts.body 
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20071}
      */
-    projectProjectIdOrKeyPut(projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyPut(projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyPut");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyPut");
       }
 
       let pathParams = {
@@ -8480,20 +8480,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20071;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}', 'PUT',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyRoleGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyRoleGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyRoleGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20075} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8502,14 +8502,14 @@ export default class DefaultApi {
     /**
      * Returns a list of project roles for the project.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyRoleGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20075}
      */
-    projectProjectIdOrKeyRoleGet(projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyRoleGet(projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyRoleGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyRoleGet");
       }
 
       let pathParams = {
@@ -8522,20 +8522,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20075;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/role', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/role', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyRoleIdDelete operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyRoleIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -8548,18 +8548,18 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.group The name of the group to remove from the project role.
      * @param {String} opts.user The user account ID of the user to remove from the project role.
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyRoleIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    projectProjectIdOrKeyRoleIdDelete(id, projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(id, projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling projectProjectIdOrKeyRoleIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete");
       }
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyRoleIdDelete");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete");
       }
 
       let pathParams = {
@@ -8575,20 +8575,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/role/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyRoleIdGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyRoleIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20076} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8598,18 +8598,18 @@ export default class DefaultApi {
      * Returns the project role's details and actors associated with the project. The list of actors is sorted by display name.
      * @param {Number} id The ID of the project role. Use Get all project roles to get a list of project role IDs.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyRoleIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20076}
      */
-    projectProjectIdOrKeyRoleIdGet(id, projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(id, projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling projectProjectIdOrKeyRoleIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet");
       }
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyRoleIdGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet");
       }
 
       let pathParams = {
@@ -8623,20 +8623,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20076;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/role/{id}', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyRoleIdPost operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyRoleIdPostCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleIdPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -8648,18 +8648,18 @@ export default class DefaultApi {
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject45} opts.body 
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyRoleIdPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleIdPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    projectProjectIdOrKeyRoleIdPost(id, projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(id, projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling projectProjectIdOrKeyRoleIdPost");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost");
       }
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyRoleIdPost");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost");
       }
 
       let pathParams = {
@@ -8673,20 +8673,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/role/{id}', 'POST',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyRoleIdPut operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyRoleIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20076} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8698,19 +8698,19 @@ export default class DefaultApi {
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject44} opts.body 
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyRoleIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoleIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20076}
      */
-    projectProjectIdOrKeyRoleIdPut(id, projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(id, projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling projectProjectIdOrKeyRoleIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut");
       }
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyRoleIdPut");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut");
       }
 
       let pathParams = {
@@ -8724,36 +8724,36 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20076;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/role/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyRoledetailsGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyRoledetailsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FilterIdPermissionRole>} data The data returned by the service call.
+     * @param {Array.<module:model/CloudidRestApi3FilterIdPermissionRole>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Returns all project roles and the details for each role. Note that the list of project roles is common to all projects.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyRoledetailsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/FilterIdPermissionRole>}
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CloudidRestApi3FilterIdPermissionRole>}
      */
-    projectProjectIdOrKeyRoledetailsGet(projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyRoledetailsGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet");
       }
 
       let pathParams = {
@@ -8766,20 +8766,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = [FilterIdPermissionRole];
+      let returnType = [CloudidRestApi3FilterIdPermissionRole];
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/roledetails', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/roledetails', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyStatusesGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyStatusesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyStatusesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyStatusesGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20077>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8788,14 +8788,14 @@ export default class DefaultApi {
     /**
      * Returns the valid statuses for a project. The statuses are grouped by issue type, as each project has a set of valid issue types and each issue type has a set of valid statuses.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20077>}
      */
-    projectProjectIdOrKeyStatusesGet(projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyStatusesGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyStatusesGet");
       }
 
       let pathParams = {
@@ -8808,20 +8808,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20077];
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/statuses', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/statuses', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyTypeNewProjectTypeKeyPut operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyTypeNewProjectTypeKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20071} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8831,18 +8831,18 @@ export default class DefaultApi {
      * Updates the project type.
      * @param {String} newProjectTypeKey The key of the new project type.
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyTypeNewProjectTypeKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20071}
      */
-    projectProjectIdOrKeyTypeNewProjectTypeKeyPut(newProjectTypeKey, projectIdOrKey, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(newProjectTypeKey, projectIdOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'newProjectTypeKey' is set
       if (newProjectTypeKey === undefined || newProjectTypeKey === null) {
-        throw new Error("Missing the required parameter 'newProjectTypeKey' when calling projectProjectIdOrKeyTypeNewProjectTypeKeyPut");
+        throw new Error("Missing the required parameter 'newProjectTypeKey' when calling cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut");
       }
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyTypeNewProjectTypeKeyPut");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut");
       }
 
       let pathParams = {
@@ -8856,20 +8856,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20071;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/type/{newProjectTypeKey}', 'PUT',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/type/{newProjectTypeKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyVersionGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyVersionGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyVersionGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyVersionGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20078} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8885,15 +8885,15 @@ export default class DefaultApi {
      * @param {String} opts.query Filter the results using a literal string. Versions with matching name or description are returned (case insensitive).
      * @param {Number} opts.startAt The starting index of the returned list of versions (page offset). The base index is 0.
      * @param {String} opts.status A comma separated string used to filter the results by version status.
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyVersionGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyVersionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20078}
      */
-    projectProjectIdOrKeyVersionGet(projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyVersionGet(projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyVersionGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyVersionGet");
       }
 
       let pathParams = {
@@ -8912,20 +8912,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20078;
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/version', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/version', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectIdOrKeyVersionsGet operation.
-     * @callback module:api/DefaultApi~projectProjectIdOrKeyVersionsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectIdOrKeyVersionsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyVersionsGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20078Values>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8936,15 +8936,15 @@ export default class DefaultApi {
      * @param {String} projectIdOrKey The project ID or project key (case sensitive).
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~projectProjectIdOrKeyVersionsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectIdOrKeyVersionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20078Values>}
      */
-    projectProjectIdOrKeyVersionsGet(projectIdOrKey, opts, callback) {
+    cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(projectIdOrKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectIdOrKey' is set
       if (projectIdOrKey === undefined || projectIdOrKey === null) {
-        throw new Error("Missing the required parameter 'projectIdOrKey' when calling projectProjectIdOrKeyVersionsGet");
+        throw new Error("Missing the required parameter 'projectIdOrKey' when calling cloudidRestApi3ProjectProjectIdOrKeyVersionsGet");
       }
 
       let pathParams = {
@@ -8958,20 +8958,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20078Values];
       return this.apiClient.callApi(
-        '/project/{projectIdOrKey}/versions', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectIdOrKey}/versions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectKeyOrIdIssuesecuritylevelschemeGet operation.
-     * @callback module:api/DefaultApi~projectProjectKeyOrIdIssuesecuritylevelschemeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20053} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -8980,14 +8980,14 @@ export default class DefaultApi {
     /**
      * Returns the issue security scheme associated with the project.
      * @param {String} projectKeyOrId The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectKeyOrIdIssuesecuritylevelschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20053}
      */
-    projectProjectKeyOrIdIssuesecuritylevelschemeGet(projectKeyOrId, callback) {
+    cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(projectKeyOrId, callback) {
       let postBody = null;
       // verify the required parameter 'projectKeyOrId' is set
       if (projectKeyOrId === undefined || projectKeyOrId === null) {
-        throw new Error("Missing the required parameter 'projectKeyOrId' when calling projectProjectKeyOrIdIssuesecuritylevelschemeGet");
+        throw new Error("Missing the required parameter 'projectKeyOrId' when calling cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet");
       }
 
       let pathParams = {
@@ -9000,20 +9000,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20053;
       return this.apiClient.callApi(
-        '/project/{projectKeyOrId}/issuesecuritylevelscheme', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectKeyOrId}/issuesecuritylevelscheme', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectKeyOrIdNotificationschemeGet operation.
-     * @callback module:api/DefaultApi~projectProjectKeyOrIdNotificationschemeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20062} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9024,15 +9024,15 @@ export default class DefaultApi {
      * @param {String} projectKeyOrId The project ID or project key (case sensitive).
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~projectProjectKeyOrIdNotificationschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20062}
      */
-    projectProjectKeyOrIdNotificationschemeGet(projectKeyOrId, opts, callback) {
+    cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(projectKeyOrId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectKeyOrId' is set
       if (projectKeyOrId === undefined || projectKeyOrId === null) {
-        throw new Error("Missing the required parameter 'projectKeyOrId' when calling projectProjectKeyOrIdNotificationschemeGet");
+        throw new Error("Missing the required parameter 'projectKeyOrId' when calling cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet");
       }
 
       let pathParams = {
@@ -9046,20 +9046,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20062;
       return this.apiClient.callApi(
-        '/project/{projectKeyOrId}/notificationscheme', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectKeyOrId}/notificationscheme', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectKeyOrIdPermissionschemeGet operation.
-     * @callback module:api/DefaultApi~projectProjectKeyOrIdPermissionschemeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20079} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9070,15 +9070,15 @@ export default class DefaultApi {
      * @param {String} projectKeyOrId The project ID or project key (case sensitive).
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
-     * @param {module:api/DefaultApi~projectProjectKeyOrIdPermissionschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20079}
      */
-    projectProjectKeyOrIdPermissionschemeGet(projectKeyOrId, opts, callback) {
+    cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(projectKeyOrId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'projectKeyOrId' is set
       if (projectKeyOrId === undefined || projectKeyOrId === null) {
-        throw new Error("Missing the required parameter 'projectKeyOrId' when calling projectProjectKeyOrIdPermissionschemeGet");
+        throw new Error("Missing the required parameter 'projectKeyOrId' when calling cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet");
       }
 
       let pathParams = {
@@ -9092,20 +9092,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20079;
       return this.apiClient.callApi(
-        '/project/{projectKeyOrId}/permissionscheme', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectKeyOrId}/permissionscheme', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectKeyOrIdPermissionschemePut operation.
-     * @callback module:api/DefaultApi~projectProjectKeyOrIdPermissionschemePutCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20079} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9117,15 +9117,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
      * @param {module:model/InlineObject46} opts.body 
-     * @param {module:api/DefaultApi~projectProjectKeyOrIdPermissionschemePutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20079}
      */
-    projectProjectKeyOrIdPermissionschemePut(projectKeyOrId, opts, callback) {
+    cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(projectKeyOrId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'projectKeyOrId' is set
       if (projectKeyOrId === undefined || projectKeyOrId === null) {
-        throw new Error("Missing the required parameter 'projectKeyOrId' when calling projectProjectKeyOrIdPermissionschemePut");
+        throw new Error("Missing the required parameter 'projectKeyOrId' when calling cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut");
       }
 
       let pathParams = {
@@ -9139,20 +9139,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20079;
       return this.apiClient.callApi(
-        '/project/{projectKeyOrId}/permissionscheme', 'PUT',
+        '/{cloudid}/rest/api/3/project/{projectKeyOrId}/permissionscheme', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectProjectKeyOrIdSecuritylevelGet operation.
-     * @callback module:api/DefaultApi~projectProjectKeyOrIdSecuritylevelGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20080} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9161,14 +9161,14 @@ export default class DefaultApi {
     /**
      * Returns all issue security levels for the project that the currently authenticated user has access to. If the user does not have permission to see an issue security level, then that level is not returned. If the user lacks the Set Issue Security permission, then an empty list is returned.
      * @param {String} projectKeyOrId The project ID or project key (case sensitive).
-     * @param {module:api/DefaultApi~projectProjectKeyOrIdSecuritylevelGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20080}
      */
-    projectProjectKeyOrIdSecuritylevelGet(projectKeyOrId, callback) {
+    cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(projectKeyOrId, callback) {
       let postBody = null;
       // verify the required parameter 'projectKeyOrId' is set
       if (projectKeyOrId === undefined || projectKeyOrId === null) {
-        throw new Error("Missing the required parameter 'projectKeyOrId' when calling projectProjectKeyOrIdSecuritylevelGet");
+        throw new Error("Missing the required parameter 'projectKeyOrId' when calling cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet");
       }
 
       let pathParams = {
@@ -9181,20 +9181,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20080;
       return this.apiClient.callApi(
-        '/project/{projectKeyOrId}/securitylevel', 'GET',
+        '/{cloudid}/rest/api/3/project/{projectKeyOrId}/securitylevel', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectSearchGet operation.
-     * @callback module:api/DefaultApi~projectSearchGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectSearchGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectSearchGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20068} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9211,10 +9211,10 @@ export default class DefaultApi {
      * @param {String} opts.query Filter the results using a literal string. Projects with a matching key or name are returned (case insensitive).
      * @param {Number} opts.startAt The starting index of the first item returned in the page of results (page offset). The base index is 0.
      * @param {String} opts.typeKey Orders results by the project type. This parameter accepts multiple values separated by a comma. Valid values are business, service_desk, and software.
-     * @param {module:api/DefaultApi~projectSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20068}
      */
-    projectSearchGet(opts, callback) {
+    cloudidRestApi3ProjectSearchGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -9235,20 +9235,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20068;
       return this.apiClient.callApi(
-        '/project/search', 'GET',
+        '/{cloudid}/rest/api/3/project/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectTypeGet operation.
-     * @callback module:api/DefaultApi~projectTypeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectTypeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectTypeGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20069>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9256,10 +9256,10 @@ export default class DefaultApi {
 
     /**
      * Returns all project types, whether or not the instance has a valid license for each type.
-     * @param {module:api/DefaultApi~projectTypeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectTypeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20069>}
      */
-    projectTypeGet(callback) {
+    cloudidRestApi3ProjectTypeGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -9271,20 +9271,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20069];
       return this.apiClient.callApi(
-        '/project/type', 'GET',
+        '/{cloudid}/rest/api/3/project/type', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectTypeProjectTypeKeyAccessibleGet operation.
-     * @callback module:api/DefaultApi~projectTypeProjectTypeKeyAccessibleGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20070} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9293,14 +9293,14 @@ export default class DefaultApi {
     /**
      * Returns a project type if it is accessible to the logged in user.
      * @param {String} projectTypeKey The key of the project type.
-     * @param {module:api/DefaultApi~projectTypeProjectTypeKeyAccessibleGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20070}
      */
-    projectTypeProjectTypeKeyAccessibleGet(projectTypeKey, callback) {
+    cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(projectTypeKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectTypeKey' is set
       if (projectTypeKey === undefined || projectTypeKey === null) {
-        throw new Error("Missing the required parameter 'projectTypeKey' when calling projectTypeProjectTypeKeyAccessibleGet");
+        throw new Error("Missing the required parameter 'projectTypeKey' when calling cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet");
       }
 
       let pathParams = {
@@ -9313,20 +9313,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20070;
       return this.apiClient.callApi(
-        '/project/type/{projectTypeKey}/accessible', 'GET',
+        '/{cloudid}/rest/api/3/project/type/{projectTypeKey}/accessible', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectTypeProjectTypeKeyGet operation.
-     * @callback module:api/DefaultApi~projectTypeProjectTypeKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectTypeProjectTypeKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectTypeProjectTypeKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20070} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9335,14 +9335,14 @@ export default class DefaultApi {
     /**
      * Returns a project type.
      * @param {String} projectTypeKey The key of the project type.
-     * @param {module:api/DefaultApi~projectTypeProjectTypeKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectTypeProjectTypeKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20070}
      */
-    projectTypeProjectTypeKeyGet(projectTypeKey, callback) {
+    cloudidRestApi3ProjectTypeProjectTypeKeyGet(projectTypeKey, callback) {
       let postBody = null;
       // verify the required parameter 'projectTypeKey' is set
       if (projectTypeKey === undefined || projectTypeKey === null) {
-        throw new Error("Missing the required parameter 'projectTypeKey' when calling projectTypeProjectTypeKeyGet");
+        throw new Error("Missing the required parameter 'projectTypeKey' when calling cloudidRestApi3ProjectTypeProjectTypeKeyGet");
       }
 
       let pathParams = {
@@ -9355,20 +9355,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20070;
       return this.apiClient.callApi(
-        '/project/type/{projectTypeKey}', 'GET',
+        '/{cloudid}/rest/api/3/project/type/{projectTypeKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectvalidateKeyGet operation.
-     * @callback module:api/DefaultApi~projectvalidateKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectvalidateKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectvalidateKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20081} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9378,10 +9378,10 @@ export default class DefaultApi {
      * Validates a project key by confirming the key is a valid string and not in use.
      * @param {Object} opts Optional parameters
      * @param {String} opts.key The project key.
-     * @param {module:api/DefaultApi~projectvalidateKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectvalidateKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20081}
      */
-    projectvalidateKeyGet(opts, callback) {
+    cloudidRestApi3ProjectvalidateKeyGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -9395,20 +9395,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20081;
       return this.apiClient.callApi(
-        '/projectvalidate/key', 'GET',
+        '/{cloudid}/rest/api/3/projectvalidate/key', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectvalidateValidProjectKeyGet operation.
-     * @callback module:api/DefaultApi~projectvalidateValidProjectKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectvalidateValidProjectKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectvalidateValidProjectKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20082} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9418,10 +9418,10 @@ export default class DefaultApi {
      * Validates a project key and, if the key is invalid or in use, generates a valid random string for the project key.
      * @param {Object} opts Optional parameters
      * @param {String} opts.key The project key.
-     * @param {module:api/DefaultApi~projectvalidateValidProjectKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectvalidateValidProjectKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20082}
      */
-    projectvalidateValidProjectKeyGet(opts, callback) {
+    cloudidRestApi3ProjectvalidateValidProjectKeyGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -9435,20 +9435,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20082;
       return this.apiClient.callApi(
-        '/projectvalidate/validProjectKey', 'GET',
+        '/{cloudid}/rest/api/3/projectvalidate/validProjectKey', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the projectvalidateValidProjectNameGet operation.
-     * @callback module:api/DefaultApi~projectvalidateValidProjectNameGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ProjectvalidateValidProjectNameGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ProjectvalidateValidProjectNameGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20083} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9458,10 +9458,10 @@ export default class DefaultApi {
      * Checks that a project name isn't in use. If the name isn't in use, the passed string is returned. If the name is in use, this operation attempts to generate a valid project name based on the one supplied, usually by adding a sequence number. If a valid project name cannot be generated, a 404 response is returned.
      * @param {Object} opts Optional parameters
      * @param {String} opts.name The project name.
-     * @param {module:api/DefaultApi~projectvalidateValidProjectNameGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ProjectvalidateValidProjectNameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20083}
      */
-    projectvalidateValidProjectNameGet(opts, callback) {
+    cloudidRestApi3ProjectvalidateValidProjectNameGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -9475,31 +9475,31 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20083;
       return this.apiClient.callApi(
-        '/projectvalidate/validProjectName', 'GET',
+        '/{cloudid}/rest/api/3/projectvalidate/validProjectName', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the resolutionGet operation.
-     * @callback module:api/DefaultApi~resolutionGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ResolutionGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ResolutionGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FilterIdPermissionProjectProjectCategory>} data The data returned by the service call.
+     * @param {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Returns a list of all issue resolution values.
-     * @param {module:api/DefaultApi~resolutionGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/FilterIdPermissionProjectProjectCategory>}
+     * @param {module:api/DefaultApi~cloudidRestApi3ResolutionGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>}
      */
-    resolutionGet(callback) {
+    cloudidRestApi3ResolutionGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -9511,20 +9511,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = [FilterIdPermissionProjectProjectCategory];
+      let returnType = [CloudidRestApi3FilterIdPermissionProjectProjectCategory];
       return this.apiClient.callApi(
-        '/resolution', 'GET',
+        '/{cloudid}/rest/api/3/resolution', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the resolutionIdGet operation.
-     * @callback module:api/DefaultApi~resolutionIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ResolutionIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ResolutionIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20112} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9533,14 +9533,14 @@ export default class DefaultApi {
     /**
      * Returns an issue resolution value.
      * @param {String} id The ID of the issue resolution value.
-     * @param {module:api/DefaultApi~resolutionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ResolutionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20112}
      */
-    resolutionIdGet(id, callback) {
+    cloudidRestApi3ResolutionIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling resolutionIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ResolutionIdGet");
       }
 
       let pathParams = {
@@ -9553,31 +9553,31 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20112;
       return this.apiClient.callApi(
-        '/resolution/{id}', 'GET',
+        '/{cloudid}/rest/api/3/resolution/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the roleGet operation.
-     * @callback module:api/DefaultApi~roleGetCallback
+     * Callback function to receive the result of the cloudidRestApi3RoleGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3RoleGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/FilterIdPermissionRole>} data The data returned by the service call.
+     * @param {Array.<module:model/CloudidRestApi3FilterIdPermissionRole>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Gets a list of all project roles, complete with project role details and default actors.
-     * @param {module:api/DefaultApi~roleGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/FilterIdPermissionRole>}
+     * @param {module:api/DefaultApi~cloudidRestApi3RoleGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/CloudidRestApi3FilterIdPermissionRole>}
      */
-    roleGet(callback) {
+    cloudidRestApi3RoleGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -9589,20 +9589,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = [FilterIdPermissionRole];
+      let returnType = [CloudidRestApi3FilterIdPermissionRole];
       return this.apiClient.callApi(
-        '/role', 'GET',
+        '/{cloudid}/rest/api/3/role', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the roleIdActorsDelete operation.
-     * @callback module:api/DefaultApi~roleIdActorsDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3RoleIdActorsDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3RoleIdActorsDeleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20084} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9614,15 +9614,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.group The group name of the group to be removed as a default actor.
      * @param {String} opts.user The user account ID of the user to remove as a default actor.
-     * @param {module:api/DefaultApi~roleIdActorsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3RoleIdActorsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20084}
      */
-    roleIdActorsDelete(id, opts, callback) {
+    cloudidRestApi3RoleIdActorsDelete(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling roleIdActorsDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3RoleIdActorsDelete");
       }
 
       let pathParams = {
@@ -9637,20 +9637,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20084;
       return this.apiClient.callApi(
-        '/role/{id}/actors', 'DELETE',
+        '/{cloudid}/rest/api/3/role/{id}/actors', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the roleIdActorsGet operation.
-     * @callback module:api/DefaultApi~roleIdActorsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3RoleIdActorsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3RoleIdActorsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20084} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9659,14 +9659,14 @@ export default class DefaultApi {
     /**
      * Returns the default actors for the project role.
      * @param {Number} id The ID of the project role. Use Get all project roles to get a list of project role IDs.
-     * @param {module:api/DefaultApi~roleIdActorsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3RoleIdActorsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20084}
      */
-    roleIdActorsGet(id, callback) {
+    cloudidRestApi3RoleIdActorsGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling roleIdActorsGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3RoleIdActorsGet");
       }
 
       let pathParams = {
@@ -9679,20 +9679,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20084;
       return this.apiClient.callApi(
-        '/role/{id}/actors', 'GET',
+        '/{cloudid}/rest/api/3/role/{id}/actors', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the roleIdActorsPost operation.
-     * @callback module:api/DefaultApi~roleIdActorsPostCallback
+     * Callback function to receive the result of the cloudidRestApi3RoleIdActorsPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3RoleIdActorsPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20084} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9703,15 +9703,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the project role. Use Get all project roles to get a list of project role IDs.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject52} opts.body 
-     * @param {module:api/DefaultApi~roleIdActorsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3RoleIdActorsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20084}
      */
-    roleIdActorsPost(id, opts, callback) {
+    cloudidRestApi3RoleIdActorsPost(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling roleIdActorsPost");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3RoleIdActorsPost");
       }
 
       let pathParams = {
@@ -9724,20 +9724,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20084;
       return this.apiClient.callApi(
-        '/role/{id}/actors', 'POST',
+        '/{cloudid}/rest/api/3/role/{id}/actors', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the roleIdDelete operation.
-     * @callback module:api/DefaultApi~roleIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3RoleIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3RoleIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -9748,14 +9748,14 @@ export default class DefaultApi {
      * @param {Number} id The ID of the project role to delete. Use Get all project roles to get a list of project role IDs.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.swap The ID of the project role that will replace the one being deleted.
-     * @param {module:api/DefaultApi~roleIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3RoleIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    roleIdDelete(id, opts, callback) {
+    cloudidRestApi3RoleIdDelete(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling roleIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3RoleIdDelete");
       }
 
       let pathParams = {
@@ -9769,20 +9769,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/role/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/role/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the roleIdGet operation.
-     * @callback module:api/DefaultApi~roleIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3RoleIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3RoleIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20076} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9791,14 +9791,14 @@ export default class DefaultApi {
     /**
      * Gets the project role details and the default actors associated with the role. The list of default actors is sorted by display name.
      * @param {Number} id The ID of the project role. Use Get all project roles to get a list of project role IDs.
-     * @param {module:api/DefaultApi~roleIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3RoleIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20076}
      */
-    roleIdGet(id, callback) {
+    cloudidRestApi3RoleIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling roleIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3RoleIdGet");
       }
 
       let pathParams = {
@@ -9811,20 +9811,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20076;
       return this.apiClient.callApi(
-        '/role/{id}', 'GET',
+        '/{cloudid}/rest/api/3/role/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the roleIdPost operation.
-     * @callback module:api/DefaultApi~roleIdPostCallback
+     * Callback function to receive the result of the cloudidRestApi3RoleIdPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3RoleIdPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20076} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9835,15 +9835,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the project role. Use Get all project roles to get a list of project role IDs.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject51} opts.body 
-     * @param {module:api/DefaultApi~roleIdPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3RoleIdPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20076}
      */
-    roleIdPost(id, opts, callback) {
+    cloudidRestApi3RoleIdPost(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling roleIdPost");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3RoleIdPost");
       }
 
       let pathParams = {
@@ -9856,20 +9856,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20076;
       return this.apiClient.callApi(
-        '/role/{id}', 'POST',
+        '/{cloudid}/rest/api/3/role/{id}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the roleIdPut operation.
-     * @callback module:api/DefaultApi~roleIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3RoleIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3RoleIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20076} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9880,15 +9880,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the project role. Use Get all project roles to get a list of project role IDs.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject50} opts.body 
-     * @param {module:api/DefaultApi~roleIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3RoleIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20076}
      */
-    roleIdPut(id, opts, callback) {
+    cloudidRestApi3RoleIdPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling roleIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3RoleIdPut");
       }
 
       let pathParams = {
@@ -9901,20 +9901,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20076;
       return this.apiClient.callApi(
-        '/role/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/role/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the rolePost operation.
-     * @callback module:api/DefaultApi~rolePostCallback
+     * Callback function to receive the result of the cloudidRestApi3RolePost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3RolePostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20079} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -9924,10 +9924,10 @@ export default class DefaultApi {
      * Creates a new project role with no default actors. You can use the Add default actors to project role the project method to add default actors to the project role after creating it.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject49} opts.body 
-     * @param {module:api/DefaultApi~rolePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3RolePostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20079}
      */
-    rolePost(opts, callback) {
+    cloudidRestApi3RolePost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -9940,20 +9940,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20079;
       return this.apiClient.callApi(
-        '/role', 'POST',
+        '/{cloudid}/rest/api/3/role', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensAddToDefaultFieldIdPost operation.
-     * @callback module:api/DefaultApi~screensAddToDefaultFieldIdPostCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensAddToDefaultFieldIdPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensAddToDefaultFieldIdPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -9962,13 +9962,13 @@ export default class DefaultApi {
     /**
      * Adds a field to the default tab of the default screen.
      * @param {String} fieldId The ID of the field.
-     * @param {module:api/DefaultApi~screensAddToDefaultFieldIdPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensAddToDefaultFieldIdPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    screensAddToDefaultFieldIdPost(fieldId, callback) {
+    cloudidRestApi3ScreensAddToDefaultFieldIdPost(fieldId, callback) {
       let postBody = null;
       // verify the required parameter 'fieldId' is set
       if (fieldId === undefined || fieldId === null) {
-        throw new Error("Missing the required parameter 'fieldId' when calling screensAddToDefaultFieldIdPost");
+        throw new Error("Missing the required parameter 'fieldId' when calling cloudidRestApi3ScreensAddToDefaultFieldIdPost");
       }
 
       let pathParams = {
@@ -9981,20 +9981,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/screens/addToDefault/{fieldId}', 'POST',
+        '/{cloudid}/rest/api/3/screens/addToDefault/{fieldId}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensGet operation.
-     * @callback module:api/DefaultApi~screensGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10005,9 +10005,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {Number} opts.maxResults The maximum number of items to return per page. Maximum is 100.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
-     * @param {module:api/DefaultApi~screensGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    screensGet(opts, callback) {
+    cloudidRestApi3ScreensGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -10022,20 +10022,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/screens', 'GET',
+        '/{cloudid}/rest/api/3/screens', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdAvailableFieldsGet operation.
-     * @callback module:api/DefaultApi~screensScreenIdAvailableFieldsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdAvailableFieldsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdAvailableFieldsGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10044,13 +10044,13 @@ export default class DefaultApi {
     /**
      * Returns the fields that can be added to a tab on a screen.
      * @param {Number} screenId The ID of the screen.
-     * @param {module:api/DefaultApi~screensScreenIdAvailableFieldsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdAvailableFieldsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    screensScreenIdAvailableFieldsGet(screenId, callback) {
+    cloudidRestApi3ScreensScreenIdAvailableFieldsGet(screenId, callback) {
       let postBody = null;
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdAvailableFieldsGet");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdAvailableFieldsGet");
       }
 
       let pathParams = {
@@ -10063,20 +10063,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/screens/{screenId}/availableFields', 'GET',
+        '/{cloudid}/rest/api/3/screens/{screenId}/availableFields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdTabsGet operation.
-     * @callback module:api/DefaultApi~screensScreenIdTabsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdTabsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10087,14 +10087,14 @@ export default class DefaultApi {
      * @param {Number} screenId The ID of the screen.
      * @param {Object} opts Optional parameters
      * @param {String} opts.projectKey The key of the project.
-     * @param {module:api/DefaultApi~screensScreenIdTabsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    screensScreenIdTabsGet(screenId, opts, callback) {
+    cloudidRestApi3ScreensScreenIdTabsGet(screenId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdTabsGet");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdTabsGet");
       }
 
       let pathParams = {
@@ -10108,20 +10108,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/screens/{screenId}/tabs', 'GET',
+        '/{cloudid}/rest/api/3/screens/{screenId}/tabs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdTabsPost operation.
-     * @callback module:api/DefaultApi~screensScreenIdTabsPostCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdTabsPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20085} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10132,15 +10132,15 @@ export default class DefaultApi {
      * @param {Number} screenId The ID of the screen.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject53} opts.body 
-     * @param {module:api/DefaultApi~screensScreenIdTabsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20085}
      */
-    screensScreenIdTabsPost(screenId, opts, callback) {
+    cloudidRestApi3ScreensScreenIdTabsPost(screenId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdTabsPost");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdTabsPost");
       }
 
       let pathParams = {
@@ -10153,20 +10153,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20085;
       return this.apiClient.callApi(
-        '/screens/{screenId}/tabs', 'POST',
+        '/{cloudid}/rest/api/3/screens/{screenId}/tabs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdTabsTabIdDelete operation.
-     * @callback module:api/DefaultApi~screensScreenIdTabsTabIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdTabsTabIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10176,17 +10176,17 @@ export default class DefaultApi {
      * Deletes a screen tab.
      * @param {Number} screenId The ID of the screen.
      * @param {Number} tabId The ID of the screen tab.
-     * @param {module:api/DefaultApi~screensScreenIdTabsTabIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    screensScreenIdTabsTabIdDelete(screenId, tabId, callback) {
+    cloudidRestApi3ScreensScreenIdTabsTabIdDelete(screenId, tabId, callback) {
       let postBody = null;
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdTabsTabIdDelete");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdDelete");
       }
       // verify the required parameter 'tabId' is set
       if (tabId === undefined || tabId === null) {
-        throw new Error("Missing the required parameter 'tabId' when calling screensScreenIdTabsTabIdDelete");
+        throw new Error("Missing the required parameter 'tabId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdDelete");
       }
 
       let pathParams = {
@@ -10200,20 +10200,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/screens/{screenId}/tabs/{tabId}', 'DELETE',
+        '/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdTabsTabIdFieldsGet operation.
-     * @callback module:api/DefaultApi~screensScreenIdTabsTabIdFieldsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10225,18 +10225,18 @@ export default class DefaultApi {
      * @param {Number} tabId The ID of the screen tab.
      * @param {Object} opts Optional parameters
      * @param {String} opts.projectKey The key of the project.
-     * @param {module:api/DefaultApi~screensScreenIdTabsTabIdFieldsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    screensScreenIdTabsTabIdFieldsGet(screenId, tabId, opts, callback) {
+    cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(screenId, tabId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdTabsTabIdFieldsGet");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet");
       }
       // verify the required parameter 'tabId' is set
       if (tabId === undefined || tabId === null) {
-        throw new Error("Missing the required parameter 'tabId' when calling screensScreenIdTabsTabIdFieldsGet");
+        throw new Error("Missing the required parameter 'tabId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet");
       }
 
       let pathParams = {
@@ -10251,20 +10251,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/screens/{screenId}/tabs/{tabId}/fields', 'GET',
+        '/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdTabsTabIdFieldsIdDelete operation.
-     * @callback module:api/DefaultApi~screensScreenIdTabsTabIdFieldsIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10275,21 +10275,21 @@ export default class DefaultApi {
      * @param {String} id The ID of the field.
      * @param {Number} screenId The ID of the screen.
      * @param {Number} tabId The ID of the screen tab.
-     * @param {module:api/DefaultApi~screensScreenIdTabsTabIdFieldsIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    screensScreenIdTabsTabIdFieldsIdDelete(id, screenId, tabId, callback) {
+    cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(id, screenId, tabId, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling screensScreenIdTabsTabIdFieldsIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete");
       }
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdTabsTabIdFieldsIdDelete");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete");
       }
       // verify the required parameter 'tabId' is set
       if (tabId === undefined || tabId === null) {
-        throw new Error("Missing the required parameter 'tabId' when calling screensScreenIdTabsTabIdFieldsIdDelete");
+        throw new Error("Missing the required parameter 'tabId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete");
       }
 
       let pathParams = {
@@ -10304,20 +10304,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/screens/{screenId}/tabs/{tabId}/fields/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdTabsTabIdFieldsIdMovePost operation.
-     * @callback module:api/DefaultApi~screensScreenIdTabsTabIdFieldsIdMovePostCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10330,22 +10330,22 @@ export default class DefaultApi {
      * @param {Number} tabId The ID of the screen tab.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject56} opts.body 
-     * @param {module:api/DefaultApi~screensScreenIdTabsTabIdFieldsIdMovePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    screensScreenIdTabsTabIdFieldsIdMovePost(id, screenId, tabId, opts, callback) {
+    cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(id, screenId, tabId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling screensScreenIdTabsTabIdFieldsIdMovePost");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost");
       }
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdTabsTabIdFieldsIdMovePost");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost");
       }
       // verify the required parameter 'tabId' is set
       if (tabId === undefined || tabId === null) {
-        throw new Error("Missing the required parameter 'tabId' when calling screensScreenIdTabsTabIdFieldsIdMovePost");
+        throw new Error("Missing the required parameter 'tabId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost");
       }
 
       let pathParams = {
@@ -10360,20 +10360,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/screens/{screenId}/tabs/{tabId}/fields/{id}/move', 'POST',
+        '/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}/move', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdTabsTabIdFieldsPost operation.
-     * @callback module:api/DefaultApi~screensScreenIdTabsTabIdFieldsPostCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20086} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10385,19 +10385,19 @@ export default class DefaultApi {
      * @param {Number} tabId The ID of the screen tab.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject55} opts.body 
-     * @param {module:api/DefaultApi~screensScreenIdTabsTabIdFieldsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20086}
      */
-    screensScreenIdTabsTabIdFieldsPost(screenId, tabId, opts, callback) {
+    cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(screenId, tabId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdTabsTabIdFieldsPost");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost");
       }
       // verify the required parameter 'tabId' is set
       if (tabId === undefined || tabId === null) {
-        throw new Error("Missing the required parameter 'tabId' when calling screensScreenIdTabsTabIdFieldsPost");
+        throw new Error("Missing the required parameter 'tabId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost");
       }
 
       let pathParams = {
@@ -10411,20 +10411,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20086;
       return this.apiClient.callApi(
-        '/screens/{screenId}/tabs/{tabId}/fields', 'POST',
+        '/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdTabsTabIdMovePosPost operation.
-     * @callback module:api/DefaultApi~screensScreenIdTabsTabIdMovePosPostCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10435,21 +10435,21 @@ export default class DefaultApi {
      * @param {Number} pos The position of tab. The base index is 0.
      * @param {Number} screenId The ID of the screen.
      * @param {Number} tabId The ID of the screen tab.
-     * @param {module:api/DefaultApi~screensScreenIdTabsTabIdMovePosPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    screensScreenIdTabsTabIdMovePosPost(pos, screenId, tabId, callback) {
+    cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(pos, screenId, tabId, callback) {
       let postBody = null;
       // verify the required parameter 'pos' is set
       if (pos === undefined || pos === null) {
-        throw new Error("Missing the required parameter 'pos' when calling screensScreenIdTabsTabIdMovePosPost");
+        throw new Error("Missing the required parameter 'pos' when calling cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost");
       }
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdTabsTabIdMovePosPost");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost");
       }
       // verify the required parameter 'tabId' is set
       if (tabId === undefined || tabId === null) {
-        throw new Error("Missing the required parameter 'tabId' when calling screensScreenIdTabsTabIdMovePosPost");
+        throw new Error("Missing the required parameter 'tabId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost");
       }
 
       let pathParams = {
@@ -10464,20 +10464,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/screens/{screenId}/tabs/{tabId}/move/{pos}', 'POST',
+        '/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/move/{pos}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the screensScreenIdTabsTabIdPut operation.
-     * @callback module:api/DefaultApi~screensScreenIdTabsTabIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3ScreensScreenIdTabsTabIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20085} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10489,19 +10489,19 @@ export default class DefaultApi {
      * @param {Number} tabId The ID of the screen tab.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject54} opts.body 
-     * @param {module:api/DefaultApi~screensScreenIdTabsTabIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ScreensScreenIdTabsTabIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20085}
      */
-    screensScreenIdTabsTabIdPut(screenId, tabId, opts, callback) {
+    cloudidRestApi3ScreensScreenIdTabsTabIdPut(screenId, tabId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'screenId' is set
       if (screenId === undefined || screenId === null) {
-        throw new Error("Missing the required parameter 'screenId' when calling screensScreenIdTabsTabIdPut");
+        throw new Error("Missing the required parameter 'screenId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdPut");
       }
       // verify the required parameter 'tabId' is set
       if (tabId === undefined || tabId === null) {
-        throw new Error("Missing the required parameter 'tabId' when calling screensScreenIdTabsTabIdPut");
+        throw new Error("Missing the required parameter 'tabId' when calling cloudidRestApi3ScreensScreenIdTabsTabIdPut");
       }
 
       let pathParams = {
@@ -10515,20 +10515,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20085;
       return this.apiClient.callApi(
-        '/screens/{screenId}/tabs/{tabId}', 'PUT',
+        '/{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the searchGet operation.
-     * @callback module:api/DefaultApi~searchGetCallback
+     * Callback function to receive the result of the cloudidRestApi3SearchGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3SearchGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20087} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10545,10 +10545,10 @@ export default class DefaultApi {
      * @param {Array.<String>} opts.properties A comma-separated list of up to 5 issue properties to include in the results.
      * @param {Number} opts.startAt The index of the first item to return in the page of results (page offset).
      * @param {module:model/String} opts.validateQuery Determines how to validate the JQL query and treat the validation results. Supported values are:
-     * @param {module:api/DefaultApi~searchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3SearchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20087}
      */
-    searchGet(opts, callback) {
+    cloudidRestApi3SearchGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -10569,20 +10569,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20087;
       return this.apiClient.callApi(
-        '/search', 'GET',
+        '/{cloudid}/rest/api/3/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the searchPost operation.
-     * @callback module:api/DefaultApi~searchPostCallback
+     * Callback function to receive the result of the cloudidRestApi3SearchPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3SearchPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20087} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10592,10 +10592,10 @@ export default class DefaultApi {
      * Searches for issues using JQL. Permissions required: Permission to access Jira.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject57} opts.body 
-     * @param {module:api/DefaultApi~searchPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3SearchPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20087}
      */
-    searchPost(opts, callback) {
+    cloudidRestApi3SearchPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -10608,20 +10608,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20087;
       return this.apiClient.callApi(
-        '/search', 'POST',
+        '/{cloudid}/rest/api/3/search', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the securitylevelIdGet operation.
-     * @callback module:api/DefaultApi~securitylevelIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3SecuritylevelIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3SecuritylevelIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20112} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10630,14 +10630,14 @@ export default class DefaultApi {
     /**
      * Returns details of an issue security level.
      * @param {String} id The ID of the issue security level.
-     * @param {module:api/DefaultApi~securitylevelIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3SecuritylevelIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20112}
      */
-    securitylevelIdGet(id, callback) {
+    cloudidRestApi3SecuritylevelIdGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling securitylevelIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3SecuritylevelIdGet");
       }
 
       let pathParams = {
@@ -10650,20 +10650,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20112;
       return this.apiClient.callApi(
-        '/securitylevel/{id}', 'GET',
+        '/{cloudid}/rest/api/3/securitylevel/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the serverInfoGet operation.
-     * @callback module:api/DefaultApi~serverInfoGetCallback
+     * Callback function to receive the result of the cloudidRestApi3ServerInfoGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3ServerInfoGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20088} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10671,10 +10671,10 @@ export default class DefaultApi {
 
     /**
      * Returns information about the Jira instance.
-     * @param {module:api/DefaultApi~serverInfoGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3ServerInfoGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20088}
      */
-    serverInfoGet(callback) {
+    cloudidRestApi3ServerInfoGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -10686,20 +10686,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20088;
       return this.apiClient.callApi(
-        '/serverInfo', 'GET',
+        '/{cloudid}/rest/api/3/serverInfo', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the settingsColumnsGet operation.
-     * @callback module:api/DefaultApi~settingsColumnsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3SettingsColumnsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3SettingsColumnsGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20030>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10707,10 +10707,10 @@ export default class DefaultApi {
 
     /**
      * Returns the default issue navigator columns.
-     * @param {module:api/DefaultApi~settingsColumnsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3SettingsColumnsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20030>}
      */
-    settingsColumnsGet(callback) {
+    cloudidRestApi3SettingsColumnsGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -10722,20 +10722,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20030];
       return this.apiClient.callApi(
-        '/settings/columns', 'GET',
+        '/{cloudid}/rest/api/3/settings/columns', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the settingsColumnsPut operation.
-     * @callback module:api/DefaultApi~settingsColumnsPutCallback
+     * Callback function to receive the result of the cloudidRestApi3SettingsColumnsPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3SettingsColumnsPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10743,9 +10743,9 @@ export default class DefaultApi {
 
     /**
      * Sets the default issue navigator columns.
-     * @param {module:api/DefaultApi~settingsColumnsPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3SettingsColumnsPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    settingsColumnsPut(callback) {
+    cloudidRestApi3SettingsColumnsPut(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -10757,20 +10757,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/settings/columns', 'PUT',
+        '/{cloudid}/rest/api/3/settings/columns', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the statusGet operation.
-     * @callback module:api/DefaultApi~statusGetCallback
+     * Callback function to receive the result of the cloudidRestApi3StatusGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3StatusGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20045To>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10778,10 +10778,10 @@ export default class DefaultApi {
 
     /**
      * Returns a list of all statuses associated with workflows.
-     * @param {module:api/DefaultApi~statusGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3StatusGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20045To>}
      */
-    statusGet(callback) {
+    cloudidRestApi3StatusGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -10793,20 +10793,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20045To];
       return this.apiClient.callApi(
-        '/status', 'GET',
+        '/{cloudid}/rest/api/3/status', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the statusIdOrNameGet operation.
-     * @callback module:api/DefaultApi~statusIdOrNameGetCallback
+     * Callback function to receive the result of the cloudidRestApi3StatusIdOrNameGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3StatusIdOrNameGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20089} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10815,14 +10815,14 @@ export default class DefaultApi {
     /**
      * Returns a status. The status must be associated with a workflow to be returned.
      * @param {String} idOrName The ID or name of the status.
-     * @param {module:api/DefaultApi~statusIdOrNameGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3StatusIdOrNameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20089}
      */
-    statusIdOrNameGet(idOrName, callback) {
+    cloudidRestApi3StatusIdOrNameGet(idOrName, callback) {
       let postBody = null;
       // verify the required parameter 'idOrName' is set
       if (idOrName === undefined || idOrName === null) {
-        throw new Error("Missing the required parameter 'idOrName' when calling statusIdOrNameGet");
+        throw new Error("Missing the required parameter 'idOrName' when calling cloudidRestApi3StatusIdOrNameGet");
       }
 
       let pathParams = {
@@ -10835,20 +10835,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20089;
       return this.apiClient.callApi(
-        '/status/{idOrName}', 'GET',
+        '/{cloudid}/rest/api/3/status/{idOrName}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the statuscategoryGet operation.
-     * @callback module:api/DefaultApi~statuscategoryGetCallback
+     * Callback function to receive the result of the cloudidRestApi3StatuscategoryGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3StatuscategoryGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse20045ToStatusCategory>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10856,10 +10856,10 @@ export default class DefaultApi {
 
     /**
      * Returns a list of all status categories.
-     * @param {module:api/DefaultApi~statuscategoryGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3StatuscategoryGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse20045ToStatusCategory>}
      */
-    statuscategoryGet(callback) {
+    cloudidRestApi3StatuscategoryGet(callback) {
       let postBody = null;
 
       let pathParams = {
@@ -10871,20 +10871,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse20045ToStatusCategory];
       return this.apiClient.callApi(
-        '/statuscategory', 'GET',
+        '/{cloudid}/rest/api/3/statuscategory', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the statuscategoryIdOrKeyGet operation.
-     * @callback module:api/DefaultApi~statuscategoryIdOrKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3StatuscategoryIdOrKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3StatuscategoryIdOrKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20090} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10893,14 +10893,14 @@ export default class DefaultApi {
     /**
      * Returns a status category. Status categories provided a mechanism for categorizing statuses.
      * @param {String} idOrKey The ID or key of the status category.
-     * @param {module:api/DefaultApi~statuscategoryIdOrKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3StatuscategoryIdOrKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20090}
      */
-    statuscategoryIdOrKeyGet(idOrKey, callback) {
+    cloudidRestApi3StatuscategoryIdOrKeyGet(idOrKey, callback) {
       let postBody = null;
       // verify the required parameter 'idOrKey' is set
       if (idOrKey === undefined || idOrKey === null) {
-        throw new Error("Missing the required parameter 'idOrKey' when calling statuscategoryIdOrKeyGet");
+        throw new Error("Missing the required parameter 'idOrKey' when calling cloudidRestApi3StatuscategoryIdOrKeyGet");
       }
 
       let pathParams = {
@@ -10913,20 +10913,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20090;
       return this.apiClient.callApi(
-        '/statuscategory/{idOrKey}', 'GET',
+        '/{cloudid}/rest/api/3/statuscategory/{idOrKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the taskTaskIdCancelPost operation.
-     * @callback module:api/DefaultApi~taskTaskIdCancelPostCallback
+     * Callback function to receive the result of the cloudidRestApi3TaskTaskIdCancelPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3TaskTaskIdCancelPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -10935,13 +10935,13 @@ export default class DefaultApi {
     /**
      * Cancels a task.
      * @param {String} taskId The ID of the task.
-     * @param {module:api/DefaultApi~taskTaskIdCancelPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3TaskTaskIdCancelPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    taskTaskIdCancelPost(taskId, callback) {
+    cloudidRestApi3TaskTaskIdCancelPost(taskId, callback) {
       let postBody = null;
       // verify the required parameter 'taskId' is set
       if (taskId === undefined || taskId === null) {
-        throw new Error("Missing the required parameter 'taskId' when calling taskTaskIdCancelPost");
+        throw new Error("Missing the required parameter 'taskId' when calling cloudidRestApi3TaskTaskIdCancelPost");
       }
 
       let pathParams = {
@@ -10954,20 +10954,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/task/{taskId}/cancel', 'POST',
+        '/{cloudid}/rest/api/3/task/{taskId}/cancel', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the taskTaskIdGet operation.
-     * @callback module:api/DefaultApi~taskTaskIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3TaskTaskIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3TaskTaskIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20091} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -10976,14 +10976,14 @@ export default class DefaultApi {
     /**
      * Returns the status of a long-running asynchronous task.
      * @param {String} taskId The ID of the task.
-     * @param {module:api/DefaultApi~taskTaskIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3TaskTaskIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20091}
      */
-    taskTaskIdGet(taskId, callback) {
+    cloudidRestApi3TaskTaskIdGet(taskId, callback) {
       let postBody = null;
       // verify the required parameter 'taskId' is set
       if (taskId === undefined || taskId === null) {
-        throw new Error("Missing the required parameter 'taskId' when calling taskTaskIdGet");
+        throw new Error("Missing the required parameter 'taskId' when calling cloudidRestApi3TaskTaskIdGet");
       }
 
       let pathParams = {
@@ -10996,20 +10996,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20091;
       return this.apiClient.callApi(
-        '/task/{taskId}', 'GET',
+        '/{cloudid}/rest/api/3/task/{taskId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the universalAvatarTypeTypeOwnerEntityIdGet operation.
-     * @callback module:api/DefaultApi~universalAvatarTypeTypeOwnerEntityIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20072} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11019,18 +11019,18 @@ export default class DefaultApi {
      * Returns the system and custom avatars for a project or issue type.
      * @param {String} entityId The ID of the entity item.
      * @param {String} type The type of the entity. Valid values are project and issuetype.
-     * @param {module:api/DefaultApi~universalAvatarTypeTypeOwnerEntityIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20072}
      */
-    universalAvatarTypeTypeOwnerEntityIdGet(entityId, type, callback) {
+    cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(entityId, type, callback) {
       let postBody = null;
       // verify the required parameter 'entityId' is set
       if (entityId === undefined || entityId === null) {
-        throw new Error("Missing the required parameter 'entityId' when calling universalAvatarTypeTypeOwnerEntityIdGet");
+        throw new Error("Missing the required parameter 'entityId' when calling cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet");
       }
       // verify the required parameter 'type' is set
       if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling universalAvatarTypeTypeOwnerEntityIdGet");
+        throw new Error("Missing the required parameter 'type' when calling cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet");
       }
 
       let pathParams = {
@@ -11044,20 +11044,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20072;
       return this.apiClient.callApi(
-        '/universal_avatar/type/{type}/owner/{entityId}', 'GET',
+        '/{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{entityId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the universalAvatarTypeTypeOwnerEntityIdPost operation.
-     * @callback module:api/DefaultApi~universalAvatarTypeTypeOwnerEntityIdPostCallback
+     * Callback function to receive the result of the cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2017} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11071,19 +11071,19 @@ export default class DefaultApi {
      * @param {Number} opts.size The length of each side of the crop region.
      * @param {Number} opts.x The X coordinate of the top-left corner of the crop region.
      * @param {Number} opts.y The Y coordinate of the top-left corner of the crop region.
-     * @param {module:api/DefaultApi~universalAvatarTypeTypeOwnerEntityIdPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2017}
      */
-    universalAvatarTypeTypeOwnerEntityIdPost(entityId, type, opts, callback) {
+    cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(entityId, type, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'entityId' is set
       if (entityId === undefined || entityId === null) {
-        throw new Error("Missing the required parameter 'entityId' when calling universalAvatarTypeTypeOwnerEntityIdPost");
+        throw new Error("Missing the required parameter 'entityId' when calling cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost");
       }
       // verify the required parameter 'type' is set
       if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling universalAvatarTypeTypeOwnerEntityIdPost");
+        throw new Error("Missing the required parameter 'type' when calling cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost");
       }
 
       let pathParams = {
@@ -11100,20 +11100,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse2017;
       return this.apiClient.callApi(
-        '/universal_avatar/type/{type}/owner/{entityId}', 'POST',
+        '/{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{entityId}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete operation.
-     * @callback module:api/DefaultApi~universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -11124,21 +11124,21 @@ export default class DefaultApi {
      * @param {Number} id The ID of the avatar.
      * @param {String} owningObjectId The ID of the entity item.
      * @param {String} type The type of the entity. Valid values are project and issuetype.
-     * @param {module:api/DefaultApi~universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(id, owningObjectId, type, callback) {
+    cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(id, owningObjectId, type, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete");
       }
       // verify the required parameter 'owningObjectId' is set
       if (owningObjectId === undefined || owningObjectId === null) {
-        throw new Error("Missing the required parameter 'owningObjectId' when calling universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete");
+        throw new Error("Missing the required parameter 'owningObjectId' when calling cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete");
       }
       // verify the required parameter 'type' is set
       if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete");
+        throw new Error("Missing the required parameter 'type' when calling cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete");
       }
 
       let pathParams = {
@@ -11153,20 +11153,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userAssignableMultiProjectSearchGet operation.
-     * @callback module:api/DefaultApi~userAssignableMultiProjectSearchGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserAssignableMultiProjectSearchGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserAssignableMultiProjectSearchGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse2004Author>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11180,10 +11180,10 @@ export default class DefaultApi {
      * @param {String} opts.query A query string that is matched against user attributes, such as key, name, displayName, and emailAddress, to find relevant users. The string can match any part of the attribute's value. For example, query=john matches a user with a displayName of John Smith and a user with an emailAddress of jane.johnson@example.com.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark.
-     * @param {module:api/DefaultApi~userAssignableMultiProjectSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserAssignableMultiProjectSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse2004Author>}
      */
-    userAssignableMultiProjectSearchGet(opts, callback) {
+    cloudidRestApi3UserAssignableMultiProjectSearchGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11201,20 +11201,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse2004Author];
       return this.apiClient.callApi(
-        '/user/assignable/multiProjectSearch', 'GET',
+        '/{cloudid}/rest/api/3/user/assignable/multiProjectSearch', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userAssignableSearchGet operation.
-     * @callback module:api/DefaultApi~userAssignableSearchGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserAssignableSearchGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserAssignableSearchGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20060} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11230,10 +11230,10 @@ export default class DefaultApi {
      * @param {String} opts.query A query string that is matched against user attributes, such as key, name, displayName, and emailAddress, to find relevant users. The string can match any part of the attribute's value. For example, query=john matches a user with a displayName of John Smith and a user with an emailAddress of jane.johnson@example.com. Required, unless username is specified.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
-     * @param {module:api/DefaultApi~userAssignableSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserAssignableSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20060}
      */
-    userAssignableSearchGet(opts, callback) {
+    cloudidRestApi3UserAssignableSearchGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11253,20 +11253,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20060;
       return this.apiClient.callApi(
-        '/user/assignable/search', 'GET',
+        '/{cloudid}/rest/api/3/user/assignable/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userBulkGet operation.
-     * @callback module:api/DefaultApi~userBulkGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserBulkGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserBulkGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20092} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11279,10 +11279,10 @@ export default class DefaultApi {
      * @param {Number} opts.maxResults The maximum number of items to return per page. Maximum is 200.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
      * @param {Array.<String>} opts.username Comma-separated list of usernames. Required if key isn't provided.
-     * @param {module:api/DefaultApi~userBulkGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserBulkGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20092}
      */
-    userBulkGet(opts, callback) {
+    cloudidRestApi3UserBulkGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11299,20 +11299,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20092;
       return this.apiClient.callApi(
-        '/user/bulk', 'GET',
+        '/{cloudid}/rest/api/3/user/bulk', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userColumnsDelete operation.
-     * @callback module:api/DefaultApi~userColumnsDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3UserColumnsDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserColumnsDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -11323,9 +11323,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.accountId The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
-     * @param {module:api/DefaultApi~userColumnsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserColumnsDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    userColumnsDelete(opts, callback) {
+    cloudidRestApi3UserColumnsDelete(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11340,20 +11340,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/user/columns', 'DELETE',
+        '/{cloudid}/rest/api/3/user/columns', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userColumnsGet operation.
-     * @callback module:api/DefaultApi~userColumnsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserColumnsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserColumnsGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -11364,9 +11364,9 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.accountId The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
-     * @param {module:api/DefaultApi~userColumnsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserColumnsGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    userColumnsGet(opts, callback) {
+    cloudidRestApi3UserColumnsGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11381,20 +11381,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/user/columns', 'GET',
+        '/{cloudid}/rest/api/3/user/columns', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userColumnsPut operation.
-     * @callback module:api/DefaultApi~userColumnsPutCallback
+     * Callback function to receive the result of the cloudidRestApi3UserColumnsPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserColumnsPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -11404,9 +11404,9 @@ export default class DefaultApi {
      * Sets the default issue table columns for the user. If a username is not passed, the calling user's default columns are set. If no column details are sent, then all default columns are removed. The parameters for this resource are expressed as HTML form data. For example, in curl: curl -X PUT -d username=<username> -d columns=summary -d columns=description <url> Permissions required:
      * @param {Object} opts Optional parameters
      * @param {String} opts.accountId The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
-     * @param {module:api/DefaultApi~userColumnsPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserColumnsPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    userColumnsPut(opts, callback) {
+    cloudidRestApi3UserColumnsPut(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11420,20 +11420,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/user/columns', 'PUT',
+        '/{cloudid}/rest/api/3/user/columns', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userDelete operation.
-     * @callback module:api/DefaultApi~userDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3UserDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -11445,9 +11445,9 @@ export default class DefaultApi {
      * @param {String} opts.accountId The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
      * @param {String} opts.key This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
-     * @param {module:api/DefaultApi~userDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    userDelete(opts, callback) {
+    cloudidRestApi3UserDelete(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11463,20 +11463,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/user', 'DELETE',
+        '/{cloudid}/rest/api/3/user', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userGet operation.
-     * @callback module:api/DefaultApi~userGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20060} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11489,10 +11489,10 @@ export default class DefaultApi {
      * @param {module:model/String} opts.expand Use expand to include additional information about users in the response. This parameter accepts multiple values separated by a comma:
      * @param {String} opts.key This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
-     * @param {module:api/DefaultApi~userGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20060}
      */
-    userGet(opts, callback) {
+    cloudidRestApi3UserGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11509,20 +11509,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20060;
       return this.apiClient.callApi(
-        '/user', 'GET',
+        '/{cloudid}/rest/api/3/user', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userGroupsGet operation.
-     * @callback module:api/DefaultApi~userGroupsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserGroupsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserGroupsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20093} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11534,10 +11534,10 @@ export default class DefaultApi {
      * @param {String} opts.accountId The account ID of the user.
      * @param {String} opts.key The key of the user.
      * @param {String} opts.username The username of the user. Deprecated in favour of accountId.
-     * @param {module:api/DefaultApi~userGroupsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserGroupsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20093}
      */
-    userGroupsGet(opts, callback) {
+    cloudidRestApi3UserGroupsGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11553,20 +11553,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20093;
       return this.apiClient.callApi(
-        '/user/groups', 'GET',
+        '/{cloudid}/rest/api/3/user/groups', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userPermissionSearchGet operation.
-     * @callback module:api/DefaultApi~userPermissionSearchGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserPermissionSearchGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserPermissionSearchGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse2004Author>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11582,10 +11582,10 @@ export default class DefaultApi {
      * @param {String} opts.query A query string that is matched against user attributes, such as key, name, displayName, and emailAddress, to find relevant users. The string can match any part of the attribute's value. For example, query=john matches a user with a displayName of John Smith and a user with an emailAddress of jane.johnson@example.com.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark.
-     * @param {module:api/DefaultApi~userPermissionSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserPermissionSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse2004Author>}
      */
-    userPermissionSearchGet(opts, callback) {
+    cloudidRestApi3UserPermissionSearchGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11605,20 +11605,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse2004Author];
       return this.apiClient.callApi(
-        '/user/permission/search', 'GET',
+        '/{cloudid}/rest/api/3/user/permission/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userPickerGet operation.
-     * @callback module:api/DefaultApi~userPickerGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserPickerGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserPickerGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20094} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11632,10 +11632,10 @@ export default class DefaultApi {
      * @param {Number} opts.maxResults The maximum number of items to return. Maximum is 1000. The total number of matched users is returned in total.
      * @param {String} opts.query A search input that is matched against appropriate user attributes to find relevant users.
      * @param {Boolean} opts.showAvatar Include the URI to the user's avatar.
-     * @param {module:api/DefaultApi~userPickerGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserPickerGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20094}
      */
-    userPickerGet(opts, callback) {
+    cloudidRestApi3UserPickerGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11653,20 +11653,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20094;
       return this.apiClient.callApi(
-        '/user/picker', 'GET',
+        '/{cloudid}/rest/api/3/user/picker', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userPost operation.
-     * @callback module:api/DefaultApi~userPostCallback
+     * Callback function to receive the result of the cloudidRestApi3UserPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20060} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11676,10 +11676,10 @@ export default class DefaultApi {
      * Creates a user. This resource is retained for legacy compatibility. As soon as a more suitable alternative is available this resource will be deprecated. The option is provided to set or generate a password for the user. When using the option to generate a password, by omitting password from the request, include \"notification\": \"true\" to ensure the user is sent an email advising them that their account has been created. This email includes a link for the user to set their password. If the notification isn't sent for a generated password, the user will need to be sent a reset password request from Jira. Permissions required: Administer Jira global permission
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject58} opts.body 
-     * @param {module:api/DefaultApi~userPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20060}
      */
-    userPost(opts, callback) {
+    cloudidRestApi3UserPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -11692,20 +11692,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20060;
       return this.apiClient.callApi(
-        '/user', 'POST',
+        '/{cloudid}/rest/api/3/user', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userPropertiesGet operation.
-     * @callback module:api/DefaultApi~userPropertiesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserPropertiesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserPropertiesGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20010} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11717,10 +11717,10 @@ export default class DefaultApi {
      * @param {String} opts.accountId The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
      * @param {String} opts.userKey This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
-     * @param {module:api/DefaultApi~userPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20010}
      */
-    userPropertiesGet(opts, callback) {
+    cloudidRestApi3UserPropertiesGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11736,20 +11736,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20010;
       return this.apiClient.callApi(
-        '/user/properties', 'GET',
+        '/{cloudid}/rest/api/3/user/properties', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userPropertiesPropertyKeyDelete operation.
-     * @callback module:api/DefaultApi~userPropertiesPropertyKeyDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3UserPropertiesPropertyKeyDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserPropertiesPropertyKeyDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -11762,14 +11762,14 @@ export default class DefaultApi {
      * @param {String} opts.accountId The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
      * @param {String} opts.userKey This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin.
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
-     * @param {module:api/DefaultApi~userPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserPropertiesPropertyKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    userPropertiesPropertyKeyDelete(propertyKey, opts, callback) {
+    cloudidRestApi3UserPropertiesPropertyKeyDelete(propertyKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling userPropertiesPropertyKeyDelete");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3UserPropertiesPropertyKeyDelete");
       }
 
       let pathParams = {
@@ -11785,20 +11785,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/user/properties/{propertyKey}', 'DELETE',
+        '/{cloudid}/rest/api/3/user/properties/{propertyKey}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userPropertiesPropertyKeyGet operation.
-     * @callback module:api/DefaultApi~userPropertiesPropertyKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserPropertiesPropertyKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserPropertiesPropertyKeyGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20011} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11811,15 +11811,15 @@ export default class DefaultApi {
      * @param {String} opts.accountId The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
      * @param {String} opts.userKey This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin.
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
-     * @param {module:api/DefaultApi~userPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserPropertiesPropertyKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20011}
      */
-    userPropertiesPropertyKeyGet(propertyKey, opts, callback) {
+    cloudidRestApi3UserPropertiesPropertyKeyGet(propertyKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling userPropertiesPropertyKeyGet");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3UserPropertiesPropertyKeyGet");
       }
 
       let pathParams = {
@@ -11835,20 +11835,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20011;
       return this.apiClient.callApi(
-        '/user/properties/{propertyKey}', 'GET',
+        '/{cloudid}/rest/api/3/user/properties/{propertyKey}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userPropertiesPropertyKeyPut operation.
-     * @callback module:api/DefaultApi~userPropertiesPropertyKeyPutCallback
+     * Callback function to receive the result of the cloudidRestApi3UserPropertiesPropertyKeyPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserPropertiesPropertyKeyPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -11861,14 +11861,14 @@ export default class DefaultApi {
      * @param {String} opts.accountId The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username or key is specified.
      * @param {String} opts.userKey This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
-     * @param {module:api/DefaultApi~userPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserPropertiesPropertyKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    userPropertiesPropertyKeyPut(propertyKey, opts, callback) {
+    cloudidRestApi3UserPropertiesPropertyKeyPut(propertyKey, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'propertyKey' is set
       if (propertyKey === undefined || propertyKey === null) {
-        throw new Error("Missing the required parameter 'propertyKey' when calling userPropertiesPropertyKeyPut");
+        throw new Error("Missing the required parameter 'propertyKey' when calling cloudidRestApi3UserPropertiesPropertyKeyPut");
       }
 
       let pathParams = {
@@ -11884,20 +11884,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/user/properties/{propertyKey}', 'PUT',
+        '/{cloudid}/rest/api/3/user/properties/{propertyKey}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userSearchGet operation.
-     * @callback module:api/DefaultApi~userSearchGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserSearchGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserSearchGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse2004Author>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -11913,10 +11913,10 @@ export default class DefaultApi {
      * @param {String} opts.query A query string that is matched against user attributes (key, name, displayName, and emailAddress) to find relevant users. The string can match any part of the attribute's value. For example, query=john matches a user with a displayName of John Smith and a user with an emailAddress of jane.johnson@example.com. Required, unless username is specified.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
-     * @param {module:api/DefaultApi~userSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse2004Author>}
      */
-    userSearchGet(opts, callback) {
+    cloudidRestApi3UserSearchGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11936,20 +11936,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse2004Author];
       return this.apiClient.callApi(
-        '/user/search', 'GET',
+        '/{cloudid}/rest/api/3/user/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userSearchQueryGet operation.
-     * @callback module:api/DefaultApi~userSearchQueryGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserSearchQueryGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserSearchQueryGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -11962,9 +11962,9 @@ export default class DefaultApi {
      * @param {Number} opts.maxResults The maximum number of items to return per page. Maximum is 1000.
      * @param {String} opts.query The search query.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
-     * @param {module:api/DefaultApi~userSearchQueryGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserSearchQueryGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    userSearchQueryGet(opts, callback) {
+    cloudidRestApi3UserSearchQueryGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -11981,20 +11981,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/user/search/query', 'GET',
+        '/{cloudid}/rest/api/3/user/search/query', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userSearchQueryKeyGet operation.
-     * @callback module:api/DefaultApi~userSearchQueryKeyGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserSearchQueryKeyGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserSearchQueryKeyGetCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12007,9 +12007,9 @@ export default class DefaultApi {
      * @param {Number} opts.maxResults The maximum number of items to return per page. Maximum is 1000.
      * @param {String} opts.query The search query.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
-     * @param {module:api/DefaultApi~userSearchQueryKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserSearchQueryKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    userSearchQueryKeyGet(opts, callback) {
+    cloudidRestApi3UserSearchQueryKeyGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -12026,20 +12026,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/user/search/query/key', 'GET',
+        '/{cloudid}/rest/api/3/user/search/query/key', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the userViewissueSearchGet operation.
-     * @callback module:api/DefaultApi~userViewissueSearchGetCallback
+     * Callback function to receive the result of the cloudidRestApi3UserViewissueSearchGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3UserViewissueSearchGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse2004Author>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12054,10 +12054,10 @@ export default class DefaultApi {
      * @param {String} opts.query A query string that is matched against user attributes, such as key, name, displayName, and emailAddress, to find relevant users. The string can match any part of the attribute's value. For example, query=john matches a user with a displayName of John Smith and a user with an emailAddress of jane.johnson@example.com. Required, unless username is specified.
      * @param {Number} opts.startAt The index of the first item to return in a page of results (page offset).
      * @param {String} opts.username This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
-     * @param {module:api/DefaultApi~userViewissueSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3UserViewissueSearchGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse2004Author>}
      */
-    userViewissueSearchGet(opts, callback) {
+    cloudidRestApi3UserViewissueSearchGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -12076,20 +12076,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse2004Author];
       return this.apiClient.callApi(
-        '/user/viewissue/search', 'GET',
+        '/{cloudid}/rest/api/3/user/viewissue/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionIdDelete operation.
-     * @callback module:api/DefaultApi~versionIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12101,14 +12101,14 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.moveAffectedIssuesTo The ID of the version to update affectedVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
      * @param {String} opts.moveFixIssuesTo The ID of the version to update fixVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
-     * @param {module:api/DefaultApi~versionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    versionIdDelete(id, opts, callback) {
+    cloudidRestApi3VersionIdDelete(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling versionIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3VersionIdDelete");
       }
 
       let pathParams = {
@@ -12123,20 +12123,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/version/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/version/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionIdGet operation.
-     * @callback module:api/DefaultApi~versionIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20096} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12147,15 +12147,15 @@ export default class DefaultApi {
      * @param {String} id The ID of the version.
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.expand Use expand to include additional information about version in the response. This parameter accepts multiple values separated by a comma:
-     * @param {module:api/DefaultApi~versionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20096}
      */
-    versionIdGet(id, opts, callback) {
+    cloudidRestApi3VersionIdGet(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling versionIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3VersionIdGet");
       }
 
       let pathParams = {
@@ -12169,20 +12169,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20096;
       return this.apiClient.callApi(
-        '/version/{id}', 'GET',
+        '/{cloudid}/rest/api/3/version/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionIdMergetoMoveIssuesToPut operation.
-     * @callback module:api/DefaultApi~versionIdMergetoMoveIssuesToPutCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionIdMergetoMoveIssuesToPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionIdMergetoMoveIssuesToPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12192,17 +12192,17 @@ export default class DefaultApi {
      * Merges two project versions. The merge is completed by deleting the version specified in id and replacing any occurrences of its ID in fixVersion with the version ID specified in moveIssuesTo. Consider using Delete and replace version instead. This resource supports swapping version values in fixVersion, affectedVersion, and custom fields. Permissions required: Administer Jira global permission or Administer Projects project permission.
      * @param {String} id The ID of the version to delete.
      * @param {String} moveIssuesTo The ID of the version to merge into.
-     * @param {module:api/DefaultApi~versionIdMergetoMoveIssuesToPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionIdMergetoMoveIssuesToPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    versionIdMergetoMoveIssuesToPut(id, moveIssuesTo, callback) {
+    cloudidRestApi3VersionIdMergetoMoveIssuesToPut(id, moveIssuesTo, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling versionIdMergetoMoveIssuesToPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3VersionIdMergetoMoveIssuesToPut");
       }
       // verify the required parameter 'moveIssuesTo' is set
       if (moveIssuesTo === undefined || moveIssuesTo === null) {
-        throw new Error("Missing the required parameter 'moveIssuesTo' when calling versionIdMergetoMoveIssuesToPut");
+        throw new Error("Missing the required parameter 'moveIssuesTo' when calling cloudidRestApi3VersionIdMergetoMoveIssuesToPut");
       }
 
       let pathParams = {
@@ -12216,20 +12216,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/version/{id}/mergeto/{moveIssuesTo}', 'PUT',
+        '/{cloudid}/rest/api/3/version/{id}/mergeto/{moveIssuesTo}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionIdMovePost operation.
-     * @callback module:api/DefaultApi~versionIdMovePostCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionIdMovePost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionIdMovePostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20096} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12240,15 +12240,15 @@ export default class DefaultApi {
      * @param {String} id The ID of the version to be moved.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject61} opts.body 
-     * @param {module:api/DefaultApi~versionIdMovePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionIdMovePostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20096}
      */
-    versionIdMovePost(id, opts, callback) {
+    cloudidRestApi3VersionIdMovePost(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling versionIdMovePost");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3VersionIdMovePost");
       }
 
       let pathParams = {
@@ -12261,20 +12261,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20096;
       return this.apiClient.callApi(
-        '/version/{id}/move', 'POST',
+        '/{cloudid}/rest/api/3/version/{id}/move', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionIdPut operation.
-     * @callback module:api/DefaultApi~versionIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionIdPutCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12285,14 +12285,14 @@ export default class DefaultApi {
      * @param {String} id The ID of the version.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject60} opts.body 
-     * @param {module:api/DefaultApi~versionIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    versionIdPut(id, opts, callback) {
+    cloudidRestApi3VersionIdPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling versionIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3VersionIdPut");
       }
 
       let pathParams = {
@@ -12305,20 +12305,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/version/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/version/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionIdRelatedIssueCountsGet operation.
-     * @callback module:api/DefaultApi~versionIdRelatedIssueCountsGetCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionIdRelatedIssueCountsGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionIdRelatedIssueCountsGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20097} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12327,14 +12327,14 @@ export default class DefaultApi {
     /**
      * Returns the following counts for a version:
      * @param {String} id The ID of the version.
-     * @param {module:api/DefaultApi~versionIdRelatedIssueCountsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionIdRelatedIssueCountsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20097}
      */
-    versionIdRelatedIssueCountsGet(id, callback) {
+    cloudidRestApi3VersionIdRelatedIssueCountsGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling versionIdRelatedIssueCountsGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3VersionIdRelatedIssueCountsGet");
       }
 
       let pathParams = {
@@ -12347,20 +12347,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20097;
       return this.apiClient.callApi(
-        '/version/{id}/relatedIssueCounts', 'GET',
+        '/{cloudid}/rest/api/3/version/{id}/relatedIssueCounts', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionIdRemoveAndSwapPost operation.
-     * @callback module:api/DefaultApi~versionIdRemoveAndSwapPostCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionIdRemoveAndSwapPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionIdRemoveAndSwapPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12371,14 +12371,14 @@ export default class DefaultApi {
      * @param {String} id The ID of the version.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject62} opts.body 
-     * @param {module:api/DefaultApi~versionIdRemoveAndSwapPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionIdRemoveAndSwapPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    versionIdRemoveAndSwapPost(id, opts, callback) {
+    cloudidRestApi3VersionIdRemoveAndSwapPost(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling versionIdRemoveAndSwapPost");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3VersionIdRemoveAndSwapPost");
       }
 
       let pathParams = {
@@ -12391,20 +12391,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/version/{id}/removeAndSwap', 'POST',
+        '/{cloudid}/rest/api/3/version/{id}/removeAndSwap', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionIdUnresolvedIssueCountGet operation.
-     * @callback module:api/DefaultApi~versionIdUnresolvedIssueCountGetCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionIdUnresolvedIssueCountGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionIdUnresolvedIssueCountGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20098} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12413,14 +12413,14 @@ export default class DefaultApi {
     /**
      * Returns counts of the issues and unresolved issues for the project version. Permissions required: Browse projects project permission
      * @param {String} id The ID of the version.
-     * @param {module:api/DefaultApi~versionIdUnresolvedIssueCountGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionIdUnresolvedIssueCountGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20098}
      */
-    versionIdUnresolvedIssueCountGet(id, callback) {
+    cloudidRestApi3VersionIdUnresolvedIssueCountGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling versionIdUnresolvedIssueCountGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3VersionIdUnresolvedIssueCountGet");
       }
 
       let pathParams = {
@@ -12433,20 +12433,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20098;
       return this.apiClient.callApi(
-        '/version/{id}/unresolvedIssueCount', 'GET',
+        '/{cloudid}/rest/api/3/version/{id}/unresolvedIssueCount', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionPost operation.
-     * @callback module:api/DefaultApi~versionPostCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20113} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12456,10 +12456,10 @@ export default class DefaultApi {
      * Creates a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject59} opts.body 
-     * @param {module:api/DefaultApi~versionPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20113}
      */
-    versionPost(opts, callback) {
+    cloudidRestApi3VersionPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -12472,20 +12472,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20113;
       return this.apiClient.callApi(
-        '/version', 'POST',
+        '/{cloudid}/rest/api/3/version', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionRemotelinkGet operation.
-     * @callback module:api/DefaultApi~versionRemotelinkGetCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionRemotelinkGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionRemotelinkGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20095} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12495,10 +12495,10 @@ export default class DefaultApi {
      * the global ID of the remote resource that is linked to the versions
      * @param {Object} opts Optional parameters
      * @param {String} opts.globalId the global ID of the remote resource that is linked to the versions
-     * @param {module:api/DefaultApi~versionRemotelinkGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionRemotelinkGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20095}
      */
-    versionRemotelinkGet(opts, callback) {
+    cloudidRestApi3VersionRemotelinkGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -12512,20 +12512,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20095;
       return this.apiClient.callApi(
-        '/version/remotelink', 'GET',
+        '/{cloudid}/rest/api/3/version/remotelink', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionVersionIdRemotelinkDelete operation.
-     * @callback module:api/DefaultApi~versionVersionIdRemotelinkDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionVersionIdRemotelinkDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12534,13 +12534,13 @@ export default class DefaultApi {
     /**
      * The version for which to delete ALL existing remote version links
      * @param {String} versionId The version for which to delete ALL existing remote version links
-     * @param {module:api/DefaultApi~versionVersionIdRemotelinkDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    versionVersionIdRemotelinkDelete(versionId, callback) {
+    cloudidRestApi3VersionVersionIdRemotelinkDelete(versionId, callback) {
       let postBody = null;
       // verify the required parameter 'versionId' is set
       if (versionId === undefined || versionId === null) {
-        throw new Error("Missing the required parameter 'versionId' when calling versionVersionIdRemotelinkDelete");
+        throw new Error("Missing the required parameter 'versionId' when calling cloudidRestApi3VersionVersionIdRemotelinkDelete");
       }
 
       let pathParams = {
@@ -12553,20 +12553,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/version/{versionId}/remotelink', 'DELETE',
+        '/{cloudid}/rest/api/3/version/{versionId}/remotelink', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionVersionIdRemotelinkGet operation.
-     * @callback module:api/DefaultApi~versionVersionIdRemotelinkGetCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionVersionIdRemotelinkGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20095} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12575,14 +12575,14 @@ export default class DefaultApi {
     /**
      * a String containing the version ID
      * @param {String} versionId a String containing the version ID
-     * @param {module:api/DefaultApi~versionVersionIdRemotelinkGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20095}
      */
-    versionVersionIdRemotelinkGet(versionId, callback) {
+    cloudidRestApi3VersionVersionIdRemotelinkGet(versionId, callback) {
       let postBody = null;
       // verify the required parameter 'versionId' is set
       if (versionId === undefined || versionId === null) {
-        throw new Error("Missing the required parameter 'versionId' when calling versionVersionIdRemotelinkGet");
+        throw new Error("Missing the required parameter 'versionId' when calling cloudidRestApi3VersionVersionIdRemotelinkGet");
       }
 
       let pathParams = {
@@ -12595,20 +12595,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20095;
       return this.apiClient.callApi(
-        '/version/{versionId}/remotelink', 'GET',
+        '/{cloudid}/rest/api/3/version/{versionId}/remotelink', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionVersionIdRemotelinkGlobalIdDelete operation.
-     * @callback module:api/DefaultApi~versionVersionIdRemotelinkGlobalIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12618,17 +12618,17 @@ export default class DefaultApi {
      * The version ID of the remote link
      * @param {String} globalId The global ID of the remote link
      * @param {String} versionId The version ID of the remote link
-     * @param {module:api/DefaultApi~versionVersionIdRemotelinkGlobalIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    versionVersionIdRemotelinkGlobalIdDelete(globalId, versionId, callback) {
+    cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(globalId, versionId, callback) {
       let postBody = null;
       // verify the required parameter 'globalId' is set
       if (globalId === undefined || globalId === null) {
-        throw new Error("Missing the required parameter 'globalId' when calling versionVersionIdRemotelinkGlobalIdDelete");
+        throw new Error("Missing the required parameter 'globalId' when calling cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete");
       }
       // verify the required parameter 'versionId' is set
       if (versionId === undefined || versionId === null) {
-        throw new Error("Missing the required parameter 'versionId' when calling versionVersionIdRemotelinkGlobalIdDelete");
+        throw new Error("Missing the required parameter 'versionId' when calling cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete");
       }
 
       let pathParams = {
@@ -12642,20 +12642,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/version/{versionId}/remotelink/{globalId}', 'DELETE',
+        '/{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionVersionIdRemotelinkGlobalIdGet operation.
-     * @callback module:api/DefaultApi~versionVersionIdRemotelinkGlobalIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20099} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12665,18 +12665,18 @@ export default class DefaultApi {
      * A REST sub-resource representing a remote version link
      * @param {String} globalId The id of the remote issue link to be returned. If {@code null} (not provided) all remote links for the issue are returned.
      * @param {String} versionId a String containing the version id
-     * @param {module:api/DefaultApi~versionVersionIdRemotelinkGlobalIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20099}
      */
-    versionVersionIdRemotelinkGlobalIdGet(globalId, versionId, callback) {
+    cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(globalId, versionId, callback) {
       let postBody = null;
       // verify the required parameter 'globalId' is set
       if (globalId === undefined || globalId === null) {
-        throw new Error("Missing the required parameter 'globalId' when calling versionVersionIdRemotelinkGlobalIdGet");
+        throw new Error("Missing the required parameter 'globalId' when calling cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet");
       }
       // verify the required parameter 'versionId' is set
       if (versionId === undefined || versionId === null) {
-        throw new Error("Missing the required parameter 'versionId' when calling versionVersionIdRemotelinkGlobalIdGet");
+        throw new Error("Missing the required parameter 'versionId' when calling cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet");
       }
 
       let pathParams = {
@@ -12690,20 +12690,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20099;
       return this.apiClient.callApi(
-        '/version/{versionId}/remotelink/{globalId}', 'GET',
+        '/{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionVersionIdRemotelinkGlobalIdPost operation.
-     * @callback module:api/DefaultApi~versionVersionIdRemotelinkGlobalIdPostCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12712,17 +12712,17 @@ export default class DefaultApi {
     /**
      * @param {String} globalId 
      * @param {String} versionId 
-     * @param {module:api/DefaultApi~versionVersionIdRemotelinkGlobalIdPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    versionVersionIdRemotelinkGlobalIdPost(globalId, versionId, callback) {
+    cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(globalId, versionId, callback) {
       let postBody = null;
       // verify the required parameter 'globalId' is set
       if (globalId === undefined || globalId === null) {
-        throw new Error("Missing the required parameter 'globalId' when calling versionVersionIdRemotelinkGlobalIdPost");
+        throw new Error("Missing the required parameter 'globalId' when calling cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost");
       }
       // verify the required parameter 'versionId' is set
       if (versionId === undefined || versionId === null) {
-        throw new Error("Missing the required parameter 'versionId' when calling versionVersionIdRemotelinkGlobalIdPost");
+        throw new Error("Missing the required parameter 'versionId' when calling cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost");
       }
 
       let pathParams = {
@@ -12736,20 +12736,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/version/{versionId}/remotelink/{globalId}', 'POST',
+        '/{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the versionVersionIdRemotelinkPost operation.
-     * @callback module:api/DefaultApi~versionVersionIdRemotelinkPostCallback
+     * Callback function to receive the result of the cloudidRestApi3VersionVersionIdRemotelinkPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkPostCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12758,13 +12758,13 @@ export default class DefaultApi {
     /**
      * Create a remote version link via POST. The link's global ID will be taken from the JSON payload if provided; otherwise, it will be generated.
      * @param {String} versionId 
-     * @param {module:api/DefaultApi~versionVersionIdRemotelinkPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3VersionVersionIdRemotelinkPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    versionVersionIdRemotelinkPost(versionId, callback) {
+    cloudidRestApi3VersionVersionIdRemotelinkPost(versionId, callback) {
       let postBody = null;
       // verify the required parameter 'versionId' is set
       if (versionId === undefined || versionId === null) {
-        throw new Error("Missing the required parameter 'versionId' when calling versionVersionIdRemotelinkPost");
+        throw new Error("Missing the required parameter 'versionId' when calling cloudidRestApi3VersionVersionIdRemotelinkPost");
       }
 
       let pathParams = {
@@ -12777,20 +12777,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/version/{versionId}/remotelink', 'POST',
+        '/{cloudid}/rest/api/3/version/{versionId}/remotelink', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowGet operation.
-     * @callback module:api/DefaultApi~workflowGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse200100>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12800,10 +12800,10 @@ export default class DefaultApi {
      * Returns all workflows in Jira or a single workflow.
      * @param {Object} opts Optional parameters
      * @param {String} opts.workflowName The name of the workflow to be returned. Only one workflow can be specified.
-     * @param {module:api/DefaultApi~workflowGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse200100>}
      */
-    workflowGet(opts, callback) {
+    cloudidRestApi3WorkflowGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -12817,20 +12817,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse200100];
       return this.apiClient.callApi(
-        '/workflow', 'GET',
+        '/{cloudid}/rest/api/3/workflow', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowTransitionsTransitionIdPropertiesDelete operation.
-     * @callback module:api/DefaultApi~workflowTransitionsTransitionIdPropertiesDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -12843,14 +12843,14 @@ export default class DefaultApi {
      * @param {String} opts.key The name of the transition property to delete, also known as the name of the property.
      * @param {String} opts.workflowMode The workflow status. Set to live for inactive workflows or draft for draft workflows. Active workflows cannot be edited.
      * @param {String} opts.workflowName The name of the workflow that the transition belongs to.
-     * @param {module:api/DefaultApi~workflowTransitionsTransitionIdPropertiesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    workflowTransitionsTransitionIdPropertiesDelete(transitionId, opts, callback) {
+    cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(transitionId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'transitionId' is set
       if (transitionId === undefined || transitionId === null) {
-        throw new Error("Missing the required parameter 'transitionId' when calling workflowTransitionsTransitionIdPropertiesDelete");
+        throw new Error("Missing the required parameter 'transitionId' when calling cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete");
       }
 
       let pathParams = {
@@ -12866,20 +12866,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/workflow/transitions/{transitionId}/properties', 'DELETE',
+        '/{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowTransitionsTransitionIdPropertiesGet operation.
-     * @callback module:api/DefaultApi~workflowTransitionsTransitionIdPropertiesGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGetCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse200101>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12893,15 +12893,15 @@ export default class DefaultApi {
      * @param {String} opts.key The key of the property being returned, also known as the name of the property. If this parameter is not specified, all properties on the transition are returned.
      * @param {String} opts.workflowMode The workflow status. Set to live for active and inactive workflows, or draft for draft workflows.
      * @param {String} opts.workflowName The name of the workflow that the transition belongs to.
-     * @param {module:api/DefaultApi~workflowTransitionsTransitionIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse200101>}
      */
-    workflowTransitionsTransitionIdPropertiesGet(transitionId, opts, callback) {
+    cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(transitionId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'transitionId' is set
       if (transitionId === undefined || transitionId === null) {
-        throw new Error("Missing the required parameter 'transitionId' when calling workflowTransitionsTransitionIdPropertiesGet");
+        throw new Error("Missing the required parameter 'transitionId' when calling cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet");
       }
 
       let pathParams = {
@@ -12918,20 +12918,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse200101];
       return this.apiClient.callApi(
-        '/workflow/transitions/{transitionId}/properties', 'GET',
+        '/{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowTransitionsTransitionIdPropertiesPost operation.
-     * @callback module:api/DefaultApi~workflowTransitionsTransitionIdPropertiesPostCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200102} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12945,15 +12945,15 @@ export default class DefaultApi {
      * @param {String} opts.workflowMode The workflow status. Set to live for inactive workflows or draft for draft workflows. Active workflows cannot be edited.
      * @param {String} opts.workflowName The name of the workflow that the transition belongs to.
      * @param {module:model/InlineObject64} opts.body 
-     * @param {module:api/DefaultApi~workflowTransitionsTransitionIdPropertiesPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200102}
      */
-    workflowTransitionsTransitionIdPropertiesPost(transitionId, opts, callback) {
+    cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(transitionId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'transitionId' is set
       if (transitionId === undefined || transitionId === null) {
-        throw new Error("Missing the required parameter 'transitionId' when calling workflowTransitionsTransitionIdPropertiesPost");
+        throw new Error("Missing the required parameter 'transitionId' when calling cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost");
       }
 
       let pathParams = {
@@ -12969,20 +12969,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200102;
       return this.apiClient.callApi(
-        '/workflow/transitions/{transitionId}/properties', 'POST',
+        '/{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowTransitionsTransitionIdPropertiesPut operation.
-     * @callback module:api/DefaultApi~workflowTransitionsTransitionIdPropertiesPutCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200102} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -12996,15 +12996,15 @@ export default class DefaultApi {
      * @param {String} opts.workflowMode The workflow status. Set to live for inactive workflows or draft for draft workflows. Active workflows cannot be edited.
      * @param {String} opts.workflowName The name of the workflow that the transition belongs to.
      * @param {module:model/InlineObject63} opts.body 
-     * @param {module:api/DefaultApi~workflowTransitionsTransitionIdPropertiesPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200102}
      */
-    workflowTransitionsTransitionIdPropertiesPut(transitionId, opts, callback) {
+    cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(transitionId, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'transitionId' is set
       if (transitionId === undefined || transitionId === null) {
-        throw new Error("Missing the required parameter 'transitionId' when calling workflowTransitionsTransitionIdPropertiesPut");
+        throw new Error("Missing the required parameter 'transitionId' when calling cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut");
       }
 
       let pathParams = {
@@ -13020,20 +13020,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200102;
       return this.apiClient.callApi(
-        '/workflow/transitions/{transitionId}/properties', 'PUT',
+        '/{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdCreatedraftPost operation.
-     * @callback module:api/DefaultApi~workflowschemeIdCreatedraftPostCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdCreatedraftPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdCreatedraftPostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20115} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13042,14 +13042,14 @@ export default class DefaultApi {
     /**
      * Create a draft workflow scheme from an active workflow scheme, by copying the active workflow scheme. Note that an active workflow scheme can only have one draft workflow scheme at any given time.
      * @param {Number} id The ID of the active workflow scheme that the draft is created from.
-     * @param {module:api/DefaultApi~workflowschemeIdCreatedraftPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdCreatedraftPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20115}
      */
-    workflowschemeIdCreatedraftPost(id, callback) {
+    cloudidRestApi3WorkflowschemeIdCreatedraftPost(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdCreatedraftPost");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdCreatedraftPost");
       }
 
       let pathParams = {
@@ -13062,20 +13062,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20115;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/createdraft', 'POST',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/createdraft', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDefaultDelete operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDefaultDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDefaultDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDefaultDeleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20114} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13086,15 +13086,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the workflow scheme.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.updateDraftIfNeeded Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false.
-     * @param {module:api/DefaultApi~workflowschemeIdDefaultDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDefaultDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20114}
      */
-    workflowschemeIdDefaultDelete(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdDefaultDelete(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDefaultDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDefaultDelete");
       }
 
       let pathParams = {
@@ -13108,20 +13108,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20114;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/default', 'DELETE',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/default', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDefaultGet operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDefaultGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDefaultGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDefaultGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200103} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13132,15 +13132,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the workflow scheme.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.returnDraftIfExists Set to true to return the default workflow for the workflow scheme's draft rather than scheme itself. If the workflow scheme does not have a draft, then the default workflow for the workflow scheme is returned.
-     * @param {module:api/DefaultApi~workflowschemeIdDefaultGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDefaultGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200103}
      */
-    workflowschemeIdDefaultGet(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdDefaultGet(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDefaultGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDefaultGet");
       }
 
       let pathParams = {
@@ -13154,20 +13154,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200103;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/default', 'GET',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/default', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDefaultPut operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDefaultPutCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDefaultPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDefaultPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20114} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13178,15 +13178,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the workflow scheme.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject67} opts.body 
-     * @param {module:api/DefaultApi~workflowschemeIdDefaultPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDefaultPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20114}
      */
-    workflowschemeIdDefaultPut(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdDefaultPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDefaultPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDefaultPut");
       }
 
       let pathParams = {
@@ -13199,20 +13199,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20114;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/default', 'PUT',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/default', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDelete operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -13221,13 +13221,13 @@ export default class DefaultApi {
     /**
      * Deletes a workflow scheme. Note that a workflow scheme cannot be deleted if it is active (that is, being used by at least one project).
      * @param {Number} id The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).
-     * @param {module:api/DefaultApi~workflowschemeIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    workflowschemeIdDelete(id, callback) {
+    cloudidRestApi3WorkflowschemeIdDelete(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDelete");
       }
 
       let pathParams = {
@@ -13240,20 +13240,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}', 'DELETE',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftDefaultDelete operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftDefaultDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftDefaultDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftDefaultDeleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20115} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13262,14 +13262,14 @@ export default class DefaultApi {
     /**
      * Resets the default workflow for a workflow scheme's draft. That is, the default workflow is set to Jira's system workflow (the jira workflow).
      * @param {Number} id The ID of the workflow scheme that the draft belongs to.
-     * @param {module:api/DefaultApi~workflowschemeIdDraftDefaultDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftDefaultDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20115}
      */
-    workflowschemeIdDraftDefaultDelete(id, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftDefaultDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftDefaultDelete");
       }
 
       let pathParams = {
@@ -13282,20 +13282,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20115;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft/default', 'DELETE',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft/default', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftDefaultGet operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftDefaultGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftDefaultGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftDefaultGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200103} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13304,14 +13304,14 @@ export default class DefaultApi {
     /**
      * Returns the default workflow for a workflow scheme's draft. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has All Unassigned Issue Types listed in its issue types for the workflow scheme in Jira.
      * @param {Number} id The ID of the workflow scheme that the draft belongs to.
-     * @param {module:api/DefaultApi~workflowschemeIdDraftDefaultGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftDefaultGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200103}
      */
-    workflowschemeIdDraftDefaultGet(id, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftDefaultGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftDefaultGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftDefaultGet");
       }
 
       let pathParams = {
@@ -13324,20 +13324,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200103;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft/default', 'GET',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft/default', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftDefaultPut operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftDefaultPutCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftDefaultPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftDefaultPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20115} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13348,15 +13348,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the workflow scheme that the draft belongs to.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject69} opts.body 
-     * @param {module:api/DefaultApi~workflowschemeIdDraftDefaultPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftDefaultPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20115}
      */
-    workflowschemeIdDraftDefaultPut(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftDefaultPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftDefaultPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftDefaultPut");
       }
 
       let pathParams = {
@@ -13369,20 +13369,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20115;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft/default', 'PUT',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft/default', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftDelete operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -13391,13 +13391,13 @@ export default class DefaultApi {
     /**
      * Deletes a draft workflow scheme.
      * @param {Number} id The ID of the active workflow scheme that the draft was originally created from.
-     * @param {module:api/DefaultApi~workflowschemeIdDraftDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    workflowschemeIdDraftDelete(id, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftDelete(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftDelete");
       }
 
       let pathParams = {
@@ -13410,20 +13410,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft', 'DELETE',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftGet operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20115} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13432,14 +13432,14 @@ export default class DefaultApi {
     /**
      * Returns the draft workflow scheme for an active workflow scheme. Draft workflow schemes allow changes to be made to the active workflow schemes: When an active workflow scheme is updated, a draft copy is created. The draft is modified, then the changes in the draft are copied back to the active workflow scheme. See Configuring workflow schemes for more information.Note that:
      * @param {Number} id The ID of the active workflow scheme that the draft was originally created from.
-     * @param {module:api/DefaultApi~workflowschemeIdDraftGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20115}
      */
-    workflowschemeIdDraftGet(id, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftGet(id, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftGet");
       }
 
       let pathParams = {
@@ -13452,20 +13452,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20115;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft', 'GET',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftIssuetypeIssueTypeDelete operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftIssuetypeIssueTypeDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDeleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20115} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13475,18 +13475,18 @@ export default class DefaultApi {
      * Deletes the issue type-workflow mapping for an issue type in a workflow scheme's draft.
      * @param {Number} id The ID of the workflow scheme that the draft belongs to.
      * @param {String} issueType The ID of the issue type.
-     * @param {module:api/DefaultApi~workflowschemeIdDraftIssuetypeIssueTypeDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20115}
      */
-    workflowschemeIdDraftIssuetypeIssueTypeDelete(id, issueType, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(id, issueType, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftIssuetypeIssueTypeDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete");
       }
       // verify the required parameter 'issueType' is set
       if (issueType === undefined || issueType === null) {
-        throw new Error("Missing the required parameter 'issueType' when calling workflowschemeIdDraftIssuetypeIssueTypeDelete");
+        throw new Error("Missing the required parameter 'issueType' when calling cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete");
       }
 
       let pathParams = {
@@ -13500,20 +13500,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20115;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft/issuetype/{issueType}', 'DELETE',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftIssuetypeIssueTypeGet operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftIssuetypeIssueTypeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200104} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13523,18 +13523,18 @@ export default class DefaultApi {
      * Returns the issue type-workflow mapping for an issue type in a workflow scheme's draft.
      * @param {Number} id The ID of the workflow scheme that the draft belongs to.
      * @param {String} issueType The ID of the issue type.
-     * @param {module:api/DefaultApi~workflowschemeIdDraftIssuetypeIssueTypeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200104}
      */
-    workflowschemeIdDraftIssuetypeIssueTypeGet(id, issueType, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(id, issueType, callback) {
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftIssuetypeIssueTypeGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet");
       }
       // verify the required parameter 'issueType' is set
       if (issueType === undefined || issueType === null) {
-        throw new Error("Missing the required parameter 'issueType' when calling workflowschemeIdDraftIssuetypeIssueTypeGet");
+        throw new Error("Missing the required parameter 'issueType' when calling cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet");
       }
 
       let pathParams = {
@@ -13548,20 +13548,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200104;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft/issuetype/{issueType}', 'GET',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftIssuetypeIssueTypePut operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftIssuetypeIssueTypePutCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20115} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13573,19 +13573,19 @@ export default class DefaultApi {
      * @param {String} issueType The ID of the issue type.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject70} opts.body 
-     * @param {module:api/DefaultApi~workflowschemeIdDraftIssuetypeIssueTypePutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20115}
      */
-    workflowschemeIdDraftIssuetypeIssueTypePut(id, issueType, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(id, issueType, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftIssuetypeIssueTypePut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut");
       }
       // verify the required parameter 'issueType' is set
       if (issueType === undefined || issueType === null) {
-        throw new Error("Missing the required parameter 'issueType' when calling workflowschemeIdDraftIssuetypeIssueTypePut");
+        throw new Error("Missing the required parameter 'issueType' when calling cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut");
       }
 
       let pathParams = {
@@ -13599,20 +13599,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20115;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft/issuetype/{issueType}', 'PUT',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftPut operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftPutCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20115} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13623,15 +13623,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the active workflow scheme that the draft was originally created from.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject68} opts.body 
-     * @param {module:api/DefaultApi~workflowschemeIdDraftPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20115}
      */
-    workflowschemeIdDraftPut(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftPut");
       }
 
       let pathParams = {
@@ -13644,20 +13644,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20115;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft', 'PUT',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftWorkflowDelete operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftWorkflowDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftWorkflowDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -13668,14 +13668,14 @@ export default class DefaultApi {
      * @param {Number} id The ID of the workflow scheme that the draft belongs to.
      * @param {Object} opts Optional parameters
      * @param {String} opts.workflowName The name of the workflow.
-     * @param {module:api/DefaultApi~workflowschemeIdDraftWorkflowDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftWorkflowDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    workflowschemeIdDraftWorkflowDelete(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftWorkflowDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete");
       }
 
       let pathParams = {
@@ -13689,20 +13689,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft/workflow', 'DELETE',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftWorkflowGet operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftWorkflowGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftWorkflowGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftWorkflowGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200105} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13713,15 +13713,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the workflow scheme that the draft belongs to.
      * @param {Object} opts Optional parameters
      * @param {String} opts.workflowName The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow.
-     * @param {module:api/DefaultApi~workflowschemeIdDraftWorkflowGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftWorkflowGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200105}
      */
-    workflowschemeIdDraftWorkflowGet(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftWorkflowGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftWorkflowGet");
       }
 
       let pathParams = {
@@ -13735,20 +13735,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200105;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft/workflow', 'GET',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdDraftWorkflowPut operation.
-     * @callback module:api/DefaultApi~workflowschemeIdDraftWorkflowPutCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdDraftWorkflowPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftWorkflowPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20114} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13760,15 +13760,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.workflowName The name of the workflow.
      * @param {module:model/InlineObject71} opts.body 
-     * @param {module:api/DefaultApi~workflowschemeIdDraftWorkflowPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdDraftWorkflowPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20114}
      */
-    workflowschemeIdDraftWorkflowPut(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdDraftWorkflowPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdDraftWorkflowPut");
       }
 
       let pathParams = {
@@ -13782,20 +13782,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20114;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/draft/workflow', 'PUT',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdGet operation.
-     * @callback module:api/DefaultApi~workflowschemeIdGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20114} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13806,15 +13806,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.returnDraftIfExists Returns the workflow scheme's draft rather than scheme itself, if set to true. If the workflow scheme does not have a draft, then the workflow scheme is returned.
-     * @param {module:api/DefaultApi~workflowschemeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20114}
      */
-    workflowschemeIdGet(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdGet(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdGet");
       }
 
       let pathParams = {
@@ -13828,20 +13828,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20114;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}', 'GET',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdIssuetypeIssueTypeDelete operation.
-     * @callback module:api/DefaultApi~workflowschemeIdIssuetypeIssueTypeDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDeleteCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20114} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13853,19 +13853,19 @@ export default class DefaultApi {
      * @param {String} issueType The ID of the issue type.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.updateDraftIfNeeded Set to true to create or update the draft of a workflow scheme and update the mapping in the draft, when the workflow scheme cannot be edited. Defaults to false.
-     * @param {module:api/DefaultApi~workflowschemeIdIssuetypeIssueTypeDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20114}
      */
-    workflowschemeIdIssuetypeIssueTypeDelete(id, issueType, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(id, issueType, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdIssuetypeIssueTypeDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete");
       }
       // verify the required parameter 'issueType' is set
       if (issueType === undefined || issueType === null) {
-        throw new Error("Missing the required parameter 'issueType' when calling workflowschemeIdIssuetypeIssueTypeDelete");
+        throw new Error("Missing the required parameter 'issueType' when calling cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete");
       }
 
       let pathParams = {
@@ -13880,20 +13880,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20114;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/issuetype/{issueType}', 'DELETE',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdIssuetypeIssueTypeGet operation.
-     * @callback module:api/DefaultApi~workflowschemeIdIssuetypeIssueTypeGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200104} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13905,19 +13905,19 @@ export default class DefaultApi {
      * @param {String} issueType The ID of the issue type.
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.returnDraftIfExists Returns the mapping from the workflow scheme's draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned.
-     * @param {module:api/DefaultApi~workflowschemeIdIssuetypeIssueTypeGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200104}
      */
-    workflowschemeIdIssuetypeIssueTypeGet(id, issueType, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(id, issueType, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdIssuetypeIssueTypeGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet");
       }
       // verify the required parameter 'issueType' is set
       if (issueType === undefined || issueType === null) {
-        throw new Error("Missing the required parameter 'issueType' when calling workflowschemeIdIssuetypeIssueTypeGet");
+        throw new Error("Missing the required parameter 'issueType' when calling cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet");
       }
 
       let pathParams = {
@@ -13932,20 +13932,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200104;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/issuetype/{issueType}', 'GET',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdIssuetypeIssueTypePut operation.
-     * @callback module:api/DefaultApi~workflowschemeIdIssuetypeIssueTypePutCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20114} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -13957,19 +13957,19 @@ export default class DefaultApi {
      * @param {String} issueType The ID of the issue type.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject72} opts.body 
-     * @param {module:api/DefaultApi~workflowschemeIdIssuetypeIssueTypePutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20114}
      */
-    workflowschemeIdIssuetypeIssueTypePut(id, issueType, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(id, issueType, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdIssuetypeIssueTypePut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut");
       }
       // verify the required parameter 'issueType' is set
       if (issueType === undefined || issueType === null) {
-        throw new Error("Missing the required parameter 'issueType' when calling workflowschemeIdIssuetypeIssueTypePut");
+        throw new Error("Missing the required parameter 'issueType' when calling cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut");
       }
 
       let pathParams = {
@@ -13983,20 +13983,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20114;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/issuetype/{issueType}', 'PUT',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdPut operation.
-     * @callback module:api/DefaultApi~workflowschemeIdPutCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20114} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -14007,15 +14007,15 @@ export default class DefaultApi {
      * @param {Number} id The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject66} opts.body 
-     * @param {module:api/DefaultApi~workflowschemeIdPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20114}
      */
-    workflowschemeIdPut(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdPut");
       }
 
       let pathParams = {
@@ -14028,20 +14028,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20114;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}', 'PUT',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdWorkflowDelete operation.
-     * @callback module:api/DefaultApi~workflowschemeIdWorkflowDeleteCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdWorkflowDelete operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdWorkflowDeleteCallback
      * @param {String} error Error message, if any.
      * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
@@ -14053,14 +14053,14 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.updateDraftIfNeeded Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false.
      * @param {String} opts.workflowName The name of the workflow.
-     * @param {module:api/DefaultApi~workflowschemeIdWorkflowDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdWorkflowDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
-    workflowschemeIdWorkflowDelete(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdWorkflowDelete(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdWorkflowDelete");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdWorkflowDelete");
       }
 
       let pathParams = {
@@ -14075,20 +14075,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/workflow', 'DELETE',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/workflow', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdWorkflowGet operation.
-     * @callback module:api/DefaultApi~workflowschemeIdWorkflowGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdWorkflowGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdWorkflowGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200105} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -14100,15 +14100,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.returnDraftIfExists Returns the mapping from the workflow scheme's draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned.
      * @param {String} opts.workflowName The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow.
-     * @param {module:api/DefaultApi~workflowschemeIdWorkflowGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdWorkflowGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200105}
      */
-    workflowschemeIdWorkflowGet(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdWorkflowGet(id, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdWorkflowGet");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdWorkflowGet");
       }
 
       let pathParams = {
@@ -14123,20 +14123,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200105;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/workflow', 'GET',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/workflow', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemeIdWorkflowPut operation.
-     * @callback module:api/DefaultApi~workflowschemeIdWorkflowPutCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemeIdWorkflowPut operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdWorkflowPutCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20114} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -14148,15 +14148,15 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.workflowName The name of the workflow.
      * @param {module:model/InlineObject73} opts.body 
-     * @param {module:api/DefaultApi~workflowschemeIdWorkflowPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemeIdWorkflowPutCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20114}
      */
-    workflowschemeIdWorkflowPut(id, opts, callback) {
+    cloudidRestApi3WorkflowschemeIdWorkflowPut(id, opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling workflowschemeIdWorkflowPut");
+        throw new Error("Missing the required parameter 'id' when calling cloudidRestApi3WorkflowschemeIdWorkflowPut");
       }
 
       let pathParams = {
@@ -14170,20 +14170,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20114;
       return this.apiClient.callApi(
-        '/workflowscheme/{id}/workflow', 'PUT',
+        '/{cloudid}/rest/api/3/workflowscheme/{id}/workflow', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the workflowschemePost operation.
-     * @callback module:api/DefaultApi~workflowschemePostCallback
+     * Callback function to receive the result of the cloudidRestApi3WorkflowschemePost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorkflowschemePostCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse20114} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -14193,10 +14193,10 @@ export default class DefaultApi {
      * Creates a workflow scheme.
      * @param {Object} opts Optional parameters
      * @param {module:model/InlineObject65} opts.body 
-     * @param {module:api/DefaultApi~workflowschemePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorkflowschemePostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse20114}
      */
-    workflowschemePost(opts, callback) {
+    cloudidRestApi3WorkflowschemePost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -14209,20 +14209,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse20114;
       return this.apiClient.callApi(
-        '/workflowscheme', 'POST',
+        '/{cloudid}/rest/api/3/workflowscheme', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the worklogDeletedGet operation.
-     * @callback module:api/DefaultApi~worklogDeletedGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorklogDeletedGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorklogDeletedGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200106} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -14232,10 +14232,10 @@ export default class DefaultApi {
      * Returns a list of IDs and delete timestamps for worklogs deleted after a date and time.
      * @param {Object} opts Optional parameters
      * @param {Number} opts.since The date and time, in UNIX timestamp format, after which deleted worklogs are returned.
-     * @param {module:api/DefaultApi~worklogDeletedGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorklogDeletedGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200106}
      */
-    worklogDeletedGet(opts, callback) {
+    cloudidRestApi3WorklogDeletedGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -14249,20 +14249,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200106;
       return this.apiClient.callApi(
-        '/worklog/deleted', 'GET',
+        '/{cloudid}/rest/api/3/worklog/deleted', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the worklogListPost operation.
-     * @callback module:api/DefaultApi~worklogListPostCallback
+     * Callback function to receive the result of the cloudidRestApi3WorklogListPost operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorklogListPostCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/InlineResponse200107>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -14273,10 +14273,10 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog.
      * @param {module:model/InlineObject74} opts.body 
-     * @param {module:api/DefaultApi~worklogListPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorklogListPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/InlineResponse200107>}
      */
-    worklogListPost(opts, callback) {
+    cloudidRestApi3WorklogListPost(opts, callback) {
       opts = opts || {};
       let postBody = opts['body'];
 
@@ -14290,20 +14290,20 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = [InlineResponse200107];
       return this.apiClient.callApi(
-        '/worklog/list', 'POST',
+        '/{cloudid}/rest/api/3/worklog/list', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the worklogUpdatedGet operation.
-     * @callback module:api/DefaultApi~worklogUpdatedGetCallback
+     * Callback function to receive the result of the cloudidRestApi3WorklogUpdatedGet operation.
+     * @callback module:api/DefaultApi~cloudidRestApi3WorklogUpdatedGetCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200106} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -14314,10 +14314,10 @@ export default class DefaultApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.expand Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog.
      * @param {Number} opts.since The date and time, in UNIX timestamp format, after which updated worklogs are returned.
-     * @param {module:api/DefaultApi~worklogUpdatedGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~cloudidRestApi3WorklogUpdatedGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200106}
      */
-    worklogUpdatedGet(opts, callback) {
+    cloudidRestApi3WorklogUpdatedGet(opts, callback) {
       opts = opts || {};
       let postBody = null;
 
@@ -14332,12 +14332,12 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = ['Basic', 'OAuth'];
+      let authNames = ['OAuth'];
       let contentTypes = [];
       let accepts = ['*/*'];
       let returnType = InlineResponse200106;
       return this.apiClient.callApi(
-        '/worklog/updated', 'GET',
+        '/{cloudid}/rest/api/3/worklog/updated', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

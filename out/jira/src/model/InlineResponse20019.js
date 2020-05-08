@@ -17,7 +17,7 @@ import InlineResponse20019SharePermissions from './InlineResponse20019SharePermi
 /**
  * The InlineResponse20019 model module.
  * @module model/InlineResponse20019
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20019 {
     /**

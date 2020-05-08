@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import FilterIdPermissionRoleScope from './FilterIdPermissionRoleScope';
+import CloudidRestApi3FilterIdPermissionRoleScope from './CloudidRestApi3FilterIdPermissionRoleScope';
 
 /**
  * The InlineResponse20050InwardIssueFieldsIssuetype model module.
  * @module model/InlineResponse20050InwardIssueFieldsIssuetype
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20050InwardIssueFieldsIssuetype {
     /**
@@ -28,7 +28,7 @@ class InlineResponse20050InwardIssueFieldsIssuetype {
      * @param iconUrl {String} 
      * @param id {String} 
      * @param name {String} 
-     * @param scope {module:model/FilterIdPermissionRoleScope} 
+     * @param scope {module:model/CloudidRestApi3FilterIdPermissionRoleScope} 
      * @param self {String} 
      * @param subtask {Boolean} 
      */
@@ -80,7 +80,7 @@ class InlineResponse20050InwardIssueFieldsIssuetype {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('scope')) {
-                obj['scope'] = FilterIdPermissionRoleScope.constructFromObject(data['scope']);
+                obj['scope'] = CloudidRestApi3FilterIdPermissionRoleScope.constructFromObject(data['scope']);
             }
             if (data.hasOwnProperty('self')) {
                 obj['self'] = ApiClient.convertToType(data['self'], 'String');
@@ -121,7 +121,7 @@ InlineResponse20050InwardIssueFieldsIssuetype.prototype['id'] = undefined;
 InlineResponse20050InwardIssueFieldsIssuetype.prototype['name'] = undefined;
 
 /**
- * @member {module:model/FilterIdPermissionRoleScope} scope
+ * @member {module:model/CloudidRestApi3FilterIdPermissionRoleScope} scope
  */
 InlineResponse20050InwardIssueFieldsIssuetype.prototype['scope'] = undefined;
 

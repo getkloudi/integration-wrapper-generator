@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **comment** | [**[InlineResponse2009Values]**](InlineResponse2009Values.md) |  | 
 **description** | [**InlineResponse2009Body**](InlineResponse2009Body.md) |  | 
 **issuelinks** | [**[InlineResponse20037FieldsIssuelinks]**](InlineResponse20037FieldsIssuelinks.md) |  | 
-**project** | [**FilterIdPermissionProject**](FilterIdPermissionProject.md) |  | 
+**project** | [**CloudidRestApi3FilterIdPermissionProject**](CloudidRestApi3FilterIdPermissionProject.md) |  | 
 **subTasks** | [**[InlineResponse20037FieldsSubTasks]**](InlineResponse20037FieldsSubTasks.md) |  | 
 **timetracking** | [**InlineResponse20037FieldsTimetracking**](InlineResponse20037FieldsTimetracking.md) |  | 
 **updated** | **Number** |  | 

@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actors** | [**[FilterIdPermissionRoleActors]**](FilterIdPermissionRoleActors.md) |  | 
+**actors** | [**[CloudidRestApi3FilterIdPermissionRoleActors]**](CloudidRestApi3FilterIdPermissionRoleActors.md) |  | 
 
 

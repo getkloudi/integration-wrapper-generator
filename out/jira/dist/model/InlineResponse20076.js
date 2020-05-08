@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _FilterIdPermissionRoleActors = _interopRequireDefault(require("./FilterIdPermissionRoleActors"));
+var _CloudidRestApi3FilterIdPermissionRoleActors = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionRoleActors"));
 
-var _FilterIdPermissionRoleScope = _interopRequireDefault(require("./FilterIdPermissionRoleScope"));
+var _CloudidRestApi3FilterIdPermissionRoleScope = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionRoleScope"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -22,18 +22,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20076 model module.
  * @module model/InlineResponse20076
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20076 = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InlineResponse20076</code>.
    * 
    * @alias module:model/InlineResponse20076
-   * @param actors {Array.<module:model/FilterIdPermissionRoleActors>} 
+   * @param actors {Array.<module:model/CloudidRestApi3FilterIdPermissionRoleActors>} 
    * @param description {String} 
    * @param id {Number} 
    * @param name {String} 
-   * @param scope {module:model/FilterIdPermissionRoleScope} 
+   * @param scope {module:model/CloudidRestApi3FilterIdPermissionRoleScope} 
    * @param self {String} 
    */
   function InlineResponse20076(actors, description, id, name, scope, self) {
@@ -73,7 +73,7 @@ var InlineResponse20076 = /*#__PURE__*/function () {
         obj = obj || new InlineResponse20076();
 
         if (data.hasOwnProperty('actors')) {
-          obj['actors'] = _ApiClient["default"].convertToType(data['actors'], [_FilterIdPermissionRoleActors["default"]]);
+          obj['actors'] = _ApiClient["default"].convertToType(data['actors'], [_CloudidRestApi3FilterIdPermissionRoleActors["default"]]);
         }
 
         if (data.hasOwnProperty('description')) {
@@ -89,7 +89,7 @@ var InlineResponse20076 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('scope')) {
-          obj['scope'] = _FilterIdPermissionRoleScope["default"].constructFromObject(data['scope']);
+          obj['scope'] = _CloudidRestApi3FilterIdPermissionRoleScope["default"].constructFromObject(data['scope']);
         }
 
         if (data.hasOwnProperty('self')) {
@@ -104,7 +104,7 @@ var InlineResponse20076 = /*#__PURE__*/function () {
   return InlineResponse20076;
 }();
 /**
- * @member {Array.<module:model/FilterIdPermissionRoleActors>} actors
+ * @member {Array.<module:model/CloudidRestApi3FilterIdPermissionRoleActors>} actors
  */
 
 
@@ -125,7 +125,7 @@ InlineResponse20076.prototype['id'] = undefined;
 
 InlineResponse20076.prototype['name'] = undefined;
 /**
- * @member {module:model/FilterIdPermissionRoleScope} scope
+ * @member {module:model/CloudidRestApi3FilterIdPermissionRoleScope} scope
  */
 
 InlineResponse20076.prototype['scope'] = undefined;

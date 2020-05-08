@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _FieldSchema = _interopRequireDefault(require("./FieldSchema"));
+var _CloudidRestApi3FieldSchema = _interopRequireDefault(require("./CloudidRestApi3FieldSchema"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20021 model module.
  * @module model/InlineResponse20021
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20021 = /*#__PURE__*/function () {
   /**
@@ -33,7 +33,7 @@ var InlineResponse20021 = /*#__PURE__*/function () {
    * @param name {String} 
    * @param navigable {Boolean} 
    * @param orderable {Boolean} 
-   * @param schema {module:model/FieldSchema} 
+   * @param schema {module:model/CloudidRestApi3FieldSchema} 
    * @param searchable {Boolean} 
    */
   function InlineResponse20021(clauseNames, custom, id, key, name, navigable, orderable, schema, searchable) {
@@ -104,7 +104,7 @@ var InlineResponse20021 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('schema')) {
-          obj['schema'] = _FieldSchema["default"].constructFromObject(data['schema']);
+          obj['schema'] = _CloudidRestApi3FieldSchema["default"].constructFromObject(data['schema']);
         }
 
         if (data.hasOwnProperty('searchable')) {
@@ -155,7 +155,7 @@ InlineResponse20021.prototype['navigable'] = undefined;
 
 InlineResponse20021.prototype['orderable'] = undefined;
 /**
- * @member {module:model/FieldSchema} schema
+ * @member {module:model/CloudidRestApi3FieldSchema} schema
  */
 
 InlineResponse20021.prototype['schema'] = undefined;

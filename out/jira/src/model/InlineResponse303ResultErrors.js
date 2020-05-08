@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse303ResultErrors model module.
  * @module model/InlineResponse303ResultErrors
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse303ResultErrors {
     /**

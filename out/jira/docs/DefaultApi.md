@@ -1,332 +1,332 @@
 # Jira.DefaultApi
 
-All URIs are relative to *https://jira.atlassian.com/rest/api/3*
+All URIs are relative to *https://api.atlassian.com/ex/jira*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**applicationPropertiesAdvancedSettingsGet**](DefaultApi.md#applicationPropertiesAdvancedSettingsGet) | **GET** /application-properties/advanced-settings | 
-[**applicationPropertiesGet**](DefaultApi.md#applicationPropertiesGet) | **GET** /application-properties | 
-[**applicationPropertiesIdPut**](DefaultApi.md#applicationPropertiesIdPut) | **PUT** /application-properties/{id} | 
-[**applicationroleGet**](DefaultApi.md#applicationroleGet) | **GET** /applicationrole | 
-[**applicationroleKeyGet**](DefaultApi.md#applicationroleKeyGet) | **GET** /applicationrole/{key} | 
-[**attachmentIdDelete**](DefaultApi.md#attachmentIdDelete) | **DELETE** /attachment/{id} | 
-[**attachmentIdExpandHumanGet**](DefaultApi.md#attachmentIdExpandHumanGet) | **GET** /attachment/{id}/expand/human | 
-[**attachmentIdExpandRawGet**](DefaultApi.md#attachmentIdExpandRawGet) | **GET** /attachment/{id}/expand/raw | 
-[**attachmentIdGet**](DefaultApi.md#attachmentIdGet) | **GET** /attachment/{id} | 
-[**attachmentMetaGet**](DefaultApi.md#attachmentMetaGet) | **GET** /attachment/meta | 
-[**auditingRecordGet**](DefaultApi.md#auditingRecordGet) | **GET** /auditing/record | 
-[**avatarTypeSystemGet**](DefaultApi.md#avatarTypeSystemGet) | **GET** /avatar/{type}/system | 
-[**commentCommentIdPropertiesGet**](DefaultApi.md#commentCommentIdPropertiesGet) | **GET** /comment/{commentId}/properties | 
-[**commentCommentIdPropertiesPropertyKeyDelete**](DefaultApi.md#commentCommentIdPropertiesPropertyKeyDelete) | **DELETE** /comment/{commentId}/properties/{propertyKey} | 
-[**commentCommentIdPropertiesPropertyKeyGet**](DefaultApi.md#commentCommentIdPropertiesPropertyKeyGet) | **GET** /comment/{commentId}/properties/{propertyKey} | 
-[**commentCommentIdPropertiesPropertyKeyPut**](DefaultApi.md#commentCommentIdPropertiesPropertyKeyPut) | **PUT** /comment/{commentId}/properties/{propertyKey} | 
-[**commentListPost**](DefaultApi.md#commentListPost) | **POST** /comment/list | 
-[**componentIdDelete**](DefaultApi.md#componentIdDelete) | **DELETE** /component/{id} | 
-[**componentIdGet**](DefaultApi.md#componentIdGet) | **GET** /component/{id} | 
-[**componentIdPut**](DefaultApi.md#componentIdPut) | **PUT** /component/{id} | 
-[**componentIdRelatedIssueCountsGet**](DefaultApi.md#componentIdRelatedIssueCountsGet) | **GET** /component/{id}/relatedIssueCounts | 
-[**componentPost**](DefaultApi.md#componentPost) | **POST** /component | 
-[**configurationGet**](DefaultApi.md#configurationGet) | **GET** /configuration | 
-[**configurationTimetrackingDelete**](DefaultApi.md#configurationTimetrackingDelete) | **DELETE** /configuration/timetracking | 
-[**configurationTimetrackingGet**](DefaultApi.md#configurationTimetrackingGet) | **GET** /configuration/timetracking | 
-[**configurationTimetrackingListGet**](DefaultApi.md#configurationTimetrackingListGet) | **GET** /configuration/timetracking/list | 
-[**configurationTimetrackingOptionsGet**](DefaultApi.md#configurationTimetrackingOptionsGet) | **GET** /configuration/timetracking/options | 
-[**configurationTimetrackingOptionsPut**](DefaultApi.md#configurationTimetrackingOptionsPut) | **PUT** /configuration/timetracking/options | 
-[**configurationTimetrackingPut**](DefaultApi.md#configurationTimetrackingPut) | **PUT** /configuration/timetracking | 
-[**customFieldOptionIdGet**](DefaultApi.md#customFieldOptionIdGet) | **GET** /customFieldOption/{id} | 
-[**dashboardDashboardIdItemsItemIdPropertiesGet**](DefaultApi.md#dashboardDashboardIdItemsItemIdPropertiesGet) | **GET** /dashboard/{dashboardId}/items/{itemId}/properties | 
-[**dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete**](DefaultApi.md#dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete) | **DELETE** /dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
-[**dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet**](DefaultApi.md#dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet) | **GET** /dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
-[**dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut**](DefaultApi.md#dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut) | **PUT** /dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
-[**dashboardGet**](DefaultApi.md#dashboardGet) | **GET** /dashboard | 
-[**dashboardIdGet**](DefaultApi.md#dashboardIdGet) | **GET** /dashboard/{id} | 
-[**expressionEvalPost**](DefaultApi.md#expressionEvalPost) | **POST** /expression/eval | 
-[**fieldFieldKeyOptionGet**](DefaultApi.md#fieldFieldKeyOptionGet) | **GET** /field/{fieldKey}/option | 
-[**fieldFieldKeyOptionOptionIdDelete**](DefaultApi.md#fieldFieldKeyOptionOptionIdDelete) | **DELETE** /field/{fieldKey}/option/{optionId} | 
-[**fieldFieldKeyOptionOptionIdGet**](DefaultApi.md#fieldFieldKeyOptionOptionIdGet) | **GET** /field/{fieldKey}/option/{optionId} | 
-[**fieldFieldKeyOptionOptionIdIssueDelete**](DefaultApi.md#fieldFieldKeyOptionOptionIdIssueDelete) | **DELETE** /field/{fieldKey}/option/{optionId}/issue | 
-[**fieldFieldKeyOptionOptionIdPut**](DefaultApi.md#fieldFieldKeyOptionOptionIdPut) | **PUT** /field/{fieldKey}/option/{optionId} | 
-[**fieldFieldKeyOptionPost**](DefaultApi.md#fieldFieldKeyOptionPost) | **POST** /field/{fieldKey}/option | 
-[**fieldFieldKeyOptionSuggestionsEditGet**](DefaultApi.md#fieldFieldKeyOptionSuggestionsEditGet) | **GET** /field/{fieldKey}/option/suggestions/edit | 
-[**fieldFieldKeyOptionSuggestionsSearchGet**](DefaultApi.md#fieldFieldKeyOptionSuggestionsSearchGet) | **GET** /field/{fieldKey}/option/suggestions/search | 
-[**fieldGet**](DefaultApi.md#fieldGet) | **GET** /field | 
-[**fieldPost**](DefaultApi.md#fieldPost) | **POST** /field | 
-[**filterDefaultShareScopeGet**](DefaultApi.md#filterDefaultShareScopeGet) | **GET** /filter/defaultShareScope | 
-[**filterDefaultShareScopePut**](DefaultApi.md#filterDefaultShareScopePut) | **PUT** /filter/defaultShareScope | 
-[**filterFavouriteGet**](DefaultApi.md#filterFavouriteGet) | **GET** /filter/favourite | 
-[**filterGet**](DefaultApi.md#filterGet) | **GET** /filter | 
-[**filterIdColumnsDelete**](DefaultApi.md#filterIdColumnsDelete) | **DELETE** /filter/{id}/columns | 
-[**filterIdColumnsGet**](DefaultApi.md#filterIdColumnsGet) | **GET** /filter/{id}/columns | 
-[**filterIdColumnsPut**](DefaultApi.md#filterIdColumnsPut) | **PUT** /filter/{id}/columns | 
-[**filterIdDelete**](DefaultApi.md#filterIdDelete) | **DELETE** /filter/{id} | 
-[**filterIdFavouriteDelete**](DefaultApi.md#filterIdFavouriteDelete) | **DELETE** /filter/{id}/favourite | 
-[**filterIdFavouritePut**](DefaultApi.md#filterIdFavouritePut) | **PUT** /filter/{id}/favourite | 
-[**filterIdGet**](DefaultApi.md#filterIdGet) | **GET** /filter/{id} | 
-[**filterIdPermissionGet**](DefaultApi.md#filterIdPermissionGet) | **GET** /filter/{id}/permission | 
-[**filterIdPermissionPermissionIdDelete**](DefaultApi.md#filterIdPermissionPermissionIdDelete) | **DELETE** /filter/{id}/permission/{permissionId} | 
-[**filterIdPermissionPermissionIdGet**](DefaultApi.md#filterIdPermissionPermissionIdGet) | **GET** /filter/{id}/permission/{permissionId} | 
-[**filterIdPermissionPost**](DefaultApi.md#filterIdPermissionPost) | **POST** /filter/{id}/permission | 
-[**filterIdPut**](DefaultApi.md#filterIdPut) | **PUT** /filter/{id} | 
-[**filterMyGet**](DefaultApi.md#filterMyGet) | **GET** /filter/my | 
-[**filterPost**](DefaultApi.md#filterPost) | **POST** /filter | 
-[**filterSearchGet**](DefaultApi.md#filterSearchGet) | **GET** /filter/search | 
-[**groupDelete**](DefaultApi.md#groupDelete) | **DELETE** /group | 
-[**groupGet**](DefaultApi.md#groupGet) | **GET** /group | 
-[**groupMemberGet**](DefaultApi.md#groupMemberGet) | **GET** /group/member | 
-[**groupPost**](DefaultApi.md#groupPost) | **POST** /group | 
-[**groupUserDelete**](DefaultApi.md#groupUserDelete) | **DELETE** /group/user | 
-[**groupUserPost**](DefaultApi.md#groupUserPost) | **POST** /group/user | 
-[**groupsPickerGet**](DefaultApi.md#groupsPickerGet) | **GET** /groups/picker | 
-[**groupuserpickerGet**](DefaultApi.md#groupuserpickerGet) | **GET** /groupuserpicker | 
-[**issueBulkPost**](DefaultApi.md#issueBulkPost) | **POST** /issue/bulk | 
-[**issueCreatemetaGet**](DefaultApi.md#issueCreatemetaGet) | **GET** /issue/createmeta | 
-[**issueIssueIdOrKeyAssigneePut**](DefaultApi.md#issueIssueIdOrKeyAssigneePut) | **PUT** /issue/{issueIdOrKey}/assignee | 
-[**issueIssueIdOrKeyAttachmentsPost**](DefaultApi.md#issueIssueIdOrKeyAttachmentsPost) | **POST** /issue/{issueIdOrKey}/attachments | 
-[**issueIssueIdOrKeyChangelogGet**](DefaultApi.md#issueIssueIdOrKeyChangelogGet) | **GET** /issue/{issueIdOrKey}/changelog | 
-[**issueIssueIdOrKeyCommentGet**](DefaultApi.md#issueIssueIdOrKeyCommentGet) | **GET** /issue/{issueIdOrKey}/comment | 
-[**issueIssueIdOrKeyCommentIdDelete**](DefaultApi.md#issueIssueIdOrKeyCommentIdDelete) | **DELETE** /issue/{issueIdOrKey}/comment/{id} | 
-[**issueIssueIdOrKeyCommentIdGet**](DefaultApi.md#issueIssueIdOrKeyCommentIdGet) | **GET** /issue/{issueIdOrKey}/comment/{id} | 
-[**issueIssueIdOrKeyCommentIdPut**](DefaultApi.md#issueIssueIdOrKeyCommentIdPut) | **PUT** /issue/{issueIdOrKey}/comment/{id} | 
-[**issueIssueIdOrKeyCommentPost**](DefaultApi.md#issueIssueIdOrKeyCommentPost) | **POST** /issue/{issueIdOrKey}/comment | 
-[**issueIssueIdOrKeyDelete**](DefaultApi.md#issueIssueIdOrKeyDelete) | **DELETE** /issue/{issueIdOrKey} | 
-[**issueIssueIdOrKeyEditmetaGet**](DefaultApi.md#issueIssueIdOrKeyEditmetaGet) | **GET** /issue/{issueIdOrKey}/editmeta | 
-[**issueIssueIdOrKeyGet**](DefaultApi.md#issueIssueIdOrKeyGet) | **GET** /issue/{issueIdOrKey} | 
-[**issueIssueIdOrKeyNotifyPost**](DefaultApi.md#issueIssueIdOrKeyNotifyPost) | **POST** /issue/{issueIdOrKey}/notify | 
-[**issueIssueIdOrKeyPropertiesGet**](DefaultApi.md#issueIssueIdOrKeyPropertiesGet) | **GET** /issue/{issueIdOrKey}/properties | 
-[**issueIssueIdOrKeyPropertiesPropertyKeyDelete**](DefaultApi.md#issueIssueIdOrKeyPropertiesPropertyKeyDelete) | **DELETE** /issue/{issueIdOrKey}/properties/{propertyKey} | 
-[**issueIssueIdOrKeyPropertiesPropertyKeyGet**](DefaultApi.md#issueIssueIdOrKeyPropertiesPropertyKeyGet) | **GET** /issue/{issueIdOrKey}/properties/{propertyKey} | 
-[**issueIssueIdOrKeyPropertiesPropertyKeyPut**](DefaultApi.md#issueIssueIdOrKeyPropertiesPropertyKeyPut) | **PUT** /issue/{issueIdOrKey}/properties/{propertyKey} | 
-[**issueIssueIdOrKeyPut**](DefaultApi.md#issueIssueIdOrKeyPut) | **PUT** /issue/{issueIdOrKey} | 
-[**issueIssueIdOrKeyRemotelinkDelete**](DefaultApi.md#issueIssueIdOrKeyRemotelinkDelete) | **DELETE** /issue/{issueIdOrKey}/remotelink | 
-[**issueIssueIdOrKeyRemotelinkGet**](DefaultApi.md#issueIssueIdOrKeyRemotelinkGet) | **GET** /issue/{issueIdOrKey}/remotelink | 
-[**issueIssueIdOrKeyRemotelinkLinkIdDelete**](DefaultApi.md#issueIssueIdOrKeyRemotelinkLinkIdDelete) | **DELETE** /issue/{issueIdOrKey}/remotelink/{linkId} | 
-[**issueIssueIdOrKeyRemotelinkLinkIdGet**](DefaultApi.md#issueIssueIdOrKeyRemotelinkLinkIdGet) | **GET** /issue/{issueIdOrKey}/remotelink/{linkId} | 
-[**issueIssueIdOrKeyRemotelinkLinkIdPut**](DefaultApi.md#issueIssueIdOrKeyRemotelinkLinkIdPut) | **PUT** /issue/{issueIdOrKey}/remotelink/{linkId} | 
-[**issueIssueIdOrKeyRemotelinkPost**](DefaultApi.md#issueIssueIdOrKeyRemotelinkPost) | **POST** /issue/{issueIdOrKey}/remotelink | 
-[**issueIssueIdOrKeyTransitionsGet**](DefaultApi.md#issueIssueIdOrKeyTransitionsGet) | **GET** /issue/{issueIdOrKey}/transitions | 
-[**issueIssueIdOrKeyTransitionsPost**](DefaultApi.md#issueIssueIdOrKeyTransitionsPost) | **POST** /issue/{issueIdOrKey}/transitions | 
-[**issueIssueIdOrKeyVotesDelete**](DefaultApi.md#issueIssueIdOrKeyVotesDelete) | **DELETE** /issue/{issueIdOrKey}/votes | 
-[**issueIssueIdOrKeyVotesGet**](DefaultApi.md#issueIssueIdOrKeyVotesGet) | **GET** /issue/{issueIdOrKey}/votes | 
-[**issueIssueIdOrKeyVotesPost**](DefaultApi.md#issueIssueIdOrKeyVotesPost) | **POST** /issue/{issueIdOrKey}/votes | 
-[**issueIssueIdOrKeyWatchersDelete**](DefaultApi.md#issueIssueIdOrKeyWatchersDelete) | **DELETE** /issue/{issueIdOrKey}/watchers | 
-[**issueIssueIdOrKeyWatchersGet**](DefaultApi.md#issueIssueIdOrKeyWatchersGet) | **GET** /issue/{issueIdOrKey}/watchers | 
-[**issueIssueIdOrKeyWatchersPost**](DefaultApi.md#issueIssueIdOrKeyWatchersPost) | **POST** /issue/{issueIdOrKey}/watchers | 
-[**issueIssueIdOrKeyWorklogGet**](DefaultApi.md#issueIssueIdOrKeyWorklogGet) | **GET** /issue/{issueIdOrKey}/worklog | 
-[**issueIssueIdOrKeyWorklogIdDelete**](DefaultApi.md#issueIssueIdOrKeyWorklogIdDelete) | **DELETE** /issue/{issueIdOrKey}/worklog/{id} | 
-[**issueIssueIdOrKeyWorklogIdGet**](DefaultApi.md#issueIssueIdOrKeyWorklogIdGet) | **GET** /issue/{issueIdOrKey}/worklog/{id} | 
-[**issueIssueIdOrKeyWorklogIdPut**](DefaultApi.md#issueIssueIdOrKeyWorklogIdPut) | **PUT** /issue/{issueIdOrKey}/worklog/{id} | 
-[**issueIssueIdOrKeyWorklogPost**](DefaultApi.md#issueIssueIdOrKeyWorklogPost) | **POST** /issue/{issueIdOrKey}/worklog | 
-[**issueIssueIdOrKeyWorklogWorklogIdPropertiesGet**](DefaultApi.md#issueIssueIdOrKeyWorklogWorklogIdPropertiesGet) | **GET** /issue/{issueIdOrKey}/worklog/{worklogId}/properties | 
-[**issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete**](DefaultApi.md#issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete) | **DELETE** /issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
-[**issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet**](DefaultApi.md#issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet) | **GET** /issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
-[**issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut**](DefaultApi.md#issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut) | **PUT** /issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
-[**issueLinkLinkIdDelete**](DefaultApi.md#issueLinkLinkIdDelete) | **DELETE** /issueLink/{linkId} | 
-[**issueLinkLinkIdGet**](DefaultApi.md#issueLinkLinkIdGet) | **GET** /issueLink/{linkId} | 
-[**issueLinkPost**](DefaultApi.md#issueLinkPost) | **POST** /issueLink | 
-[**issueLinkTypeGet**](DefaultApi.md#issueLinkTypeGet) | **GET** /issueLinkType | 
-[**issueLinkTypeIssueLinkTypeIdDelete**](DefaultApi.md#issueLinkTypeIssueLinkTypeIdDelete) | **DELETE** /issueLinkType/{issueLinkTypeId} | 
-[**issueLinkTypeIssueLinkTypeIdGet**](DefaultApi.md#issueLinkTypeIssueLinkTypeIdGet) | **GET** /issueLinkType/{issueLinkTypeId} | 
-[**issueLinkTypeIssueLinkTypeIdPut**](DefaultApi.md#issueLinkTypeIssueLinkTypeIdPut) | **PUT** /issueLinkType/{issueLinkTypeId} | 
-[**issueLinkTypePost**](DefaultApi.md#issueLinkTypePost) | **POST** /issueLinkType | 
-[**issuePickerGet**](DefaultApi.md#issuePickerGet) | **GET** /issue/picker | 
-[**issuePost**](DefaultApi.md#issuePost) | **POST** /issue | 
-[**issuePropertiesPropertyKeyDelete**](DefaultApi.md#issuePropertiesPropertyKeyDelete) | **DELETE** /issue/properties/{propertyKey} | 
-[**issuePropertiesPropertyKeyPut**](DefaultApi.md#issuePropertiesPropertyKeyPut) | **PUT** /issue/properties/{propertyKey} | 
-[**issuesecurityschemesGet**](DefaultApi.md#issuesecurityschemesGet) | **GET** /issuesecurityschemes | 
-[**issuesecurityschemesIdGet**](DefaultApi.md#issuesecurityschemesIdGet) | **GET** /issuesecurityschemes/{id} | 
-[**issuetypeGet**](DefaultApi.md#issuetypeGet) | **GET** /issuetype | 
-[**issuetypeIdAlternativesGet**](DefaultApi.md#issuetypeIdAlternativesGet) | **GET** /issuetype/{id}/alternatives | 
-[**issuetypeIdAvatar2Post**](DefaultApi.md#issuetypeIdAvatar2Post) | **POST** /issuetype/{id}/avatar2 | 
-[**issuetypeIdDelete**](DefaultApi.md#issuetypeIdDelete) | **DELETE** /issuetype/{id} | 
-[**issuetypeIdGet**](DefaultApi.md#issuetypeIdGet) | **GET** /issuetype/{id} | 
-[**issuetypeIdPut**](DefaultApi.md#issuetypeIdPut) | **PUT** /issuetype/{id} | 
-[**issuetypeIssueTypeIdPropertiesGet**](DefaultApi.md#issuetypeIssueTypeIdPropertiesGet) | **GET** /issuetype/{issueTypeId}/properties | 
-[**issuetypeIssueTypeIdPropertiesPropertyKeyDelete**](DefaultApi.md#issuetypeIssueTypeIdPropertiesPropertyKeyDelete) | **DELETE** /issuetype/{issueTypeId}/properties/{propertyKey} | 
-[**issuetypeIssueTypeIdPropertiesPropertyKeyGet**](DefaultApi.md#issuetypeIssueTypeIdPropertiesPropertyKeyGet) | **GET** /issuetype/{issueTypeId}/properties/{propertyKey} | 
-[**issuetypeIssueTypeIdPropertiesPropertyKeyPut**](DefaultApi.md#issuetypeIssueTypeIdPropertiesPropertyKeyPut) | **PUT** /issuetype/{issueTypeId}/properties/{propertyKey} | 
-[**issuetypePost**](DefaultApi.md#issuetypePost) | **POST** /issuetype | 
-[**jqlAutocompletedataGet**](DefaultApi.md#jqlAutocompletedataGet) | **GET** /jql/autocompletedata | 
-[**jqlAutocompletedataSuggestionsGet**](DefaultApi.md#jqlAutocompletedataSuggestionsGet) | **GET** /jql/autocompletedata/suggestions | 
-[**jqlPdcleanerPost**](DefaultApi.md#jqlPdcleanerPost) | **POST** /jql/pdcleaner | 
-[**mypermissionsGet**](DefaultApi.md#mypermissionsGet) | **GET** /mypermissions | 
-[**mypreferencesDelete**](DefaultApi.md#mypreferencesDelete) | **DELETE** /mypreferences | 
-[**mypreferencesGet**](DefaultApi.md#mypreferencesGet) | **GET** /mypreferences | 
-[**mypreferencesLocaleDelete**](DefaultApi.md#mypreferencesLocaleDelete) | **DELETE** /mypreferences/locale | 
-[**mypreferencesLocaleGet**](DefaultApi.md#mypreferencesLocaleGet) | **GET** /mypreferences/locale | 
-[**mypreferencesLocalePut**](DefaultApi.md#mypreferencesLocalePut) | **PUT** /mypreferences/locale | 
-[**mypreferencesPut**](DefaultApi.md#mypreferencesPut) | **PUT** /mypreferences | 
-[**myselfGet**](DefaultApi.md#myselfGet) | **GET** /myself | 
-[**notificationschemeGet**](DefaultApi.md#notificationschemeGet) | **GET** /notificationscheme | 
-[**notificationschemeIdGet**](DefaultApi.md#notificationschemeIdGet) | **GET** /notificationscheme/{id} | 
-[**permissionsGet**](DefaultApi.md#permissionsGet) | **GET** /permissions | 
-[**permissionsProjectPost**](DefaultApi.md#permissionsProjectPost) | **POST** /permissions/project | 
-[**permissionschemeGet**](DefaultApi.md#permissionschemeGet) | **GET** /permissionscheme | 
-[**permissionschemePost**](DefaultApi.md#permissionschemePost) | **POST** /permissionscheme | 
-[**permissionschemeSchemeIdDelete**](DefaultApi.md#permissionschemeSchemeIdDelete) | **DELETE** /permissionscheme/{schemeId} | 
-[**permissionschemeSchemeIdGet**](DefaultApi.md#permissionschemeSchemeIdGet) | **GET** /permissionscheme/{schemeId} | 
-[**permissionschemeSchemeIdPermissionGet**](DefaultApi.md#permissionschemeSchemeIdPermissionGet) | **GET** /permissionscheme/{schemeId}/permission | 
-[**permissionschemeSchemeIdPermissionPermissionIdDelete**](DefaultApi.md#permissionschemeSchemeIdPermissionPermissionIdDelete) | **DELETE** /permissionscheme/{schemeId}/permission/{permissionId} | 
-[**permissionschemeSchemeIdPermissionPermissionIdGet**](DefaultApi.md#permissionschemeSchemeIdPermissionPermissionIdGet) | **GET** /permissionscheme/{schemeId}/permission/{permissionId} | 
-[**permissionschemeSchemeIdPermissionPost**](DefaultApi.md#permissionschemeSchemeIdPermissionPost) | **POST** /permissionscheme/{schemeId}/permission | 
-[**permissionschemeSchemeIdPut**](DefaultApi.md#permissionschemeSchemeIdPut) | **PUT** /permissionscheme/{schemeId} | 
-[**priorityGet**](DefaultApi.md#priorityGet) | **GET** /priority | 
-[**priorityIdGet**](DefaultApi.md#priorityIdGet) | **GET** /priority/{id} | 
-[**projectCategoryGet**](DefaultApi.md#projectCategoryGet) | **GET** /projectCategory | 
-[**projectCategoryIdDelete**](DefaultApi.md#projectCategoryIdDelete) | **DELETE** /projectCategory/{id} | 
-[**projectCategoryIdGet**](DefaultApi.md#projectCategoryIdGet) | **GET** /projectCategory/{id} | 
-[**projectCategoryIdPut**](DefaultApi.md#projectCategoryIdPut) | **PUT** /projectCategory/{id} | 
-[**projectCategoryPost**](DefaultApi.md#projectCategoryPost) | **POST** /projectCategory | 
-[**projectGet**](DefaultApi.md#projectGet) | **GET** /project | 
-[**projectPost**](DefaultApi.md#projectPost) | **POST** /project | 
-[**projectProjectIdOrKeyAvatar2Post**](DefaultApi.md#projectProjectIdOrKeyAvatar2Post) | **POST** /project/{projectIdOrKey}/avatar2 | 
-[**projectProjectIdOrKeyAvatarIdDelete**](DefaultApi.md#projectProjectIdOrKeyAvatarIdDelete) | **DELETE** /project/{projectIdOrKey}/avatar/{id} | 
-[**projectProjectIdOrKeyAvatarPut**](DefaultApi.md#projectProjectIdOrKeyAvatarPut) | **PUT** /project/{projectIdOrKey}/avatar | 
-[**projectProjectIdOrKeyAvatarsGet**](DefaultApi.md#projectProjectIdOrKeyAvatarsGet) | **GET** /project/{projectIdOrKey}/avatars | 
-[**projectProjectIdOrKeyComponentGet**](DefaultApi.md#projectProjectIdOrKeyComponentGet) | **GET** /project/{projectIdOrKey}/component | 
-[**projectProjectIdOrKeyComponentsGet**](DefaultApi.md#projectProjectIdOrKeyComponentsGet) | **GET** /project/{projectIdOrKey}/components | 
-[**projectProjectIdOrKeyDelete**](DefaultApi.md#projectProjectIdOrKeyDelete) | **DELETE** /project/{projectIdOrKey} | 
-[**projectProjectIdOrKeyGet**](DefaultApi.md#projectProjectIdOrKeyGet) | **GET** /project/{projectIdOrKey} | 
-[**projectProjectIdOrKeyPropertiesGet**](DefaultApi.md#projectProjectIdOrKeyPropertiesGet) | **GET** /project/{projectIdOrKey}/properties | 
-[**projectProjectIdOrKeyPropertiesPropertyKeyDelete**](DefaultApi.md#projectProjectIdOrKeyPropertiesPropertyKeyDelete) | **DELETE** /project/{projectIdOrKey}/properties/{propertyKey} | 
-[**projectProjectIdOrKeyPropertiesPropertyKeyGet**](DefaultApi.md#projectProjectIdOrKeyPropertiesPropertyKeyGet) | **GET** /project/{projectIdOrKey}/properties/{propertyKey} | 
-[**projectProjectIdOrKeyPropertiesPropertyKeyPut**](DefaultApi.md#projectProjectIdOrKeyPropertiesPropertyKeyPut) | **PUT** /project/{projectIdOrKey}/properties/{propertyKey} | 
-[**projectProjectIdOrKeyPut**](DefaultApi.md#projectProjectIdOrKeyPut) | **PUT** /project/{projectIdOrKey} | 
-[**projectProjectIdOrKeyRoleGet**](DefaultApi.md#projectProjectIdOrKeyRoleGet) | **GET** /project/{projectIdOrKey}/role | 
-[**projectProjectIdOrKeyRoleIdDelete**](DefaultApi.md#projectProjectIdOrKeyRoleIdDelete) | **DELETE** /project/{projectIdOrKey}/role/{id} | 
-[**projectProjectIdOrKeyRoleIdGet**](DefaultApi.md#projectProjectIdOrKeyRoleIdGet) | **GET** /project/{projectIdOrKey}/role/{id} | 
-[**projectProjectIdOrKeyRoleIdPost**](DefaultApi.md#projectProjectIdOrKeyRoleIdPost) | **POST** /project/{projectIdOrKey}/role/{id} | 
-[**projectProjectIdOrKeyRoleIdPut**](DefaultApi.md#projectProjectIdOrKeyRoleIdPut) | **PUT** /project/{projectIdOrKey}/role/{id} | 
-[**projectProjectIdOrKeyRoledetailsGet**](DefaultApi.md#projectProjectIdOrKeyRoledetailsGet) | **GET** /project/{projectIdOrKey}/roledetails | 
-[**projectProjectIdOrKeyStatusesGet**](DefaultApi.md#projectProjectIdOrKeyStatusesGet) | **GET** /project/{projectIdOrKey}/statuses | 
-[**projectProjectIdOrKeyTypeNewProjectTypeKeyPut**](DefaultApi.md#projectProjectIdOrKeyTypeNewProjectTypeKeyPut) | **PUT** /project/{projectIdOrKey}/type/{newProjectTypeKey} | 
-[**projectProjectIdOrKeyVersionGet**](DefaultApi.md#projectProjectIdOrKeyVersionGet) | **GET** /project/{projectIdOrKey}/version | 
-[**projectProjectIdOrKeyVersionsGet**](DefaultApi.md#projectProjectIdOrKeyVersionsGet) | **GET** /project/{projectIdOrKey}/versions | 
-[**projectProjectKeyOrIdIssuesecuritylevelschemeGet**](DefaultApi.md#projectProjectKeyOrIdIssuesecuritylevelschemeGet) | **GET** /project/{projectKeyOrId}/issuesecuritylevelscheme | 
-[**projectProjectKeyOrIdNotificationschemeGet**](DefaultApi.md#projectProjectKeyOrIdNotificationschemeGet) | **GET** /project/{projectKeyOrId}/notificationscheme | 
-[**projectProjectKeyOrIdPermissionschemeGet**](DefaultApi.md#projectProjectKeyOrIdPermissionschemeGet) | **GET** /project/{projectKeyOrId}/permissionscheme | 
-[**projectProjectKeyOrIdPermissionschemePut**](DefaultApi.md#projectProjectKeyOrIdPermissionschemePut) | **PUT** /project/{projectKeyOrId}/permissionscheme | 
-[**projectProjectKeyOrIdSecuritylevelGet**](DefaultApi.md#projectProjectKeyOrIdSecuritylevelGet) | **GET** /project/{projectKeyOrId}/securitylevel | 
-[**projectSearchGet**](DefaultApi.md#projectSearchGet) | **GET** /project/search | 
-[**projectTypeGet**](DefaultApi.md#projectTypeGet) | **GET** /project/type | 
-[**projectTypeProjectTypeKeyAccessibleGet**](DefaultApi.md#projectTypeProjectTypeKeyAccessibleGet) | **GET** /project/type/{projectTypeKey}/accessible | 
-[**projectTypeProjectTypeKeyGet**](DefaultApi.md#projectTypeProjectTypeKeyGet) | **GET** /project/type/{projectTypeKey} | 
-[**projectvalidateKeyGet**](DefaultApi.md#projectvalidateKeyGet) | **GET** /projectvalidate/key | 
-[**projectvalidateValidProjectKeyGet**](DefaultApi.md#projectvalidateValidProjectKeyGet) | **GET** /projectvalidate/validProjectKey | 
-[**projectvalidateValidProjectNameGet**](DefaultApi.md#projectvalidateValidProjectNameGet) | **GET** /projectvalidate/validProjectName | 
-[**resolutionGet**](DefaultApi.md#resolutionGet) | **GET** /resolution | 
-[**resolutionIdGet**](DefaultApi.md#resolutionIdGet) | **GET** /resolution/{id} | 
-[**roleGet**](DefaultApi.md#roleGet) | **GET** /role | 
-[**roleIdActorsDelete**](DefaultApi.md#roleIdActorsDelete) | **DELETE** /role/{id}/actors | 
-[**roleIdActorsGet**](DefaultApi.md#roleIdActorsGet) | **GET** /role/{id}/actors | 
-[**roleIdActorsPost**](DefaultApi.md#roleIdActorsPost) | **POST** /role/{id}/actors | 
-[**roleIdDelete**](DefaultApi.md#roleIdDelete) | **DELETE** /role/{id} | 
-[**roleIdGet**](DefaultApi.md#roleIdGet) | **GET** /role/{id} | 
-[**roleIdPost**](DefaultApi.md#roleIdPost) | **POST** /role/{id} | 
-[**roleIdPut**](DefaultApi.md#roleIdPut) | **PUT** /role/{id} | 
-[**rolePost**](DefaultApi.md#rolePost) | **POST** /role | 
-[**screensAddToDefaultFieldIdPost**](DefaultApi.md#screensAddToDefaultFieldIdPost) | **POST** /screens/addToDefault/{fieldId} | 
-[**screensGet**](DefaultApi.md#screensGet) | **GET** /screens | 
-[**screensScreenIdAvailableFieldsGet**](DefaultApi.md#screensScreenIdAvailableFieldsGet) | **GET** /screens/{screenId}/availableFields | 
-[**screensScreenIdTabsGet**](DefaultApi.md#screensScreenIdTabsGet) | **GET** /screens/{screenId}/tabs | 
-[**screensScreenIdTabsPost**](DefaultApi.md#screensScreenIdTabsPost) | **POST** /screens/{screenId}/tabs | 
-[**screensScreenIdTabsTabIdDelete**](DefaultApi.md#screensScreenIdTabsTabIdDelete) | **DELETE** /screens/{screenId}/tabs/{tabId} | 
-[**screensScreenIdTabsTabIdFieldsGet**](DefaultApi.md#screensScreenIdTabsTabIdFieldsGet) | **GET** /screens/{screenId}/tabs/{tabId}/fields | 
-[**screensScreenIdTabsTabIdFieldsIdDelete**](DefaultApi.md#screensScreenIdTabsTabIdFieldsIdDelete) | **DELETE** /screens/{screenId}/tabs/{tabId}/fields/{id} | 
-[**screensScreenIdTabsTabIdFieldsIdMovePost**](DefaultApi.md#screensScreenIdTabsTabIdFieldsIdMovePost) | **POST** /screens/{screenId}/tabs/{tabId}/fields/{id}/move | 
-[**screensScreenIdTabsTabIdFieldsPost**](DefaultApi.md#screensScreenIdTabsTabIdFieldsPost) | **POST** /screens/{screenId}/tabs/{tabId}/fields | 
-[**screensScreenIdTabsTabIdMovePosPost**](DefaultApi.md#screensScreenIdTabsTabIdMovePosPost) | **POST** /screens/{screenId}/tabs/{tabId}/move/{pos} | 
-[**screensScreenIdTabsTabIdPut**](DefaultApi.md#screensScreenIdTabsTabIdPut) | **PUT** /screens/{screenId}/tabs/{tabId} | 
-[**searchGet**](DefaultApi.md#searchGet) | **GET** /search | 
-[**searchPost**](DefaultApi.md#searchPost) | **POST** /search | 
-[**securitylevelIdGet**](DefaultApi.md#securitylevelIdGet) | **GET** /securitylevel/{id} | 
-[**serverInfoGet**](DefaultApi.md#serverInfoGet) | **GET** /serverInfo | 
-[**settingsColumnsGet**](DefaultApi.md#settingsColumnsGet) | **GET** /settings/columns | 
-[**settingsColumnsPut**](DefaultApi.md#settingsColumnsPut) | **PUT** /settings/columns | 
-[**statusGet**](DefaultApi.md#statusGet) | **GET** /status | 
-[**statusIdOrNameGet**](DefaultApi.md#statusIdOrNameGet) | **GET** /status/{idOrName} | 
-[**statuscategoryGet**](DefaultApi.md#statuscategoryGet) | **GET** /statuscategory | 
-[**statuscategoryIdOrKeyGet**](DefaultApi.md#statuscategoryIdOrKeyGet) | **GET** /statuscategory/{idOrKey} | 
-[**taskTaskIdCancelPost**](DefaultApi.md#taskTaskIdCancelPost) | **POST** /task/{taskId}/cancel | 
-[**taskTaskIdGet**](DefaultApi.md#taskTaskIdGet) | **GET** /task/{taskId} | 
-[**universalAvatarTypeTypeOwnerEntityIdGet**](DefaultApi.md#universalAvatarTypeTypeOwnerEntityIdGet) | **GET** /universal_avatar/type/{type}/owner/{entityId} | 
-[**universalAvatarTypeTypeOwnerEntityIdPost**](DefaultApi.md#universalAvatarTypeTypeOwnerEntityIdPost) | **POST** /universal_avatar/type/{type}/owner/{entityId} | 
-[**universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete**](DefaultApi.md#universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete) | **DELETE** /universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id} | 
-[**userAssignableMultiProjectSearchGet**](DefaultApi.md#userAssignableMultiProjectSearchGet) | **GET** /user/assignable/multiProjectSearch | 
-[**userAssignableSearchGet**](DefaultApi.md#userAssignableSearchGet) | **GET** /user/assignable/search | 
-[**userBulkGet**](DefaultApi.md#userBulkGet) | **GET** /user/bulk | 
-[**userColumnsDelete**](DefaultApi.md#userColumnsDelete) | **DELETE** /user/columns | 
-[**userColumnsGet**](DefaultApi.md#userColumnsGet) | **GET** /user/columns | 
-[**userColumnsPut**](DefaultApi.md#userColumnsPut) | **PUT** /user/columns | 
-[**userDelete**](DefaultApi.md#userDelete) | **DELETE** /user | 
-[**userGet**](DefaultApi.md#userGet) | **GET** /user | 
-[**userGroupsGet**](DefaultApi.md#userGroupsGet) | **GET** /user/groups | 
-[**userPermissionSearchGet**](DefaultApi.md#userPermissionSearchGet) | **GET** /user/permission/search | 
-[**userPickerGet**](DefaultApi.md#userPickerGet) | **GET** /user/picker | 
-[**userPost**](DefaultApi.md#userPost) | **POST** /user | 
-[**userPropertiesGet**](DefaultApi.md#userPropertiesGet) | **GET** /user/properties | 
-[**userPropertiesPropertyKeyDelete**](DefaultApi.md#userPropertiesPropertyKeyDelete) | **DELETE** /user/properties/{propertyKey} | 
-[**userPropertiesPropertyKeyGet**](DefaultApi.md#userPropertiesPropertyKeyGet) | **GET** /user/properties/{propertyKey} | 
-[**userPropertiesPropertyKeyPut**](DefaultApi.md#userPropertiesPropertyKeyPut) | **PUT** /user/properties/{propertyKey} | 
-[**userSearchGet**](DefaultApi.md#userSearchGet) | **GET** /user/search | 
-[**userSearchQueryGet**](DefaultApi.md#userSearchQueryGet) | **GET** /user/search/query | 
-[**userSearchQueryKeyGet**](DefaultApi.md#userSearchQueryKeyGet) | **GET** /user/search/query/key | 
-[**userViewissueSearchGet**](DefaultApi.md#userViewissueSearchGet) | **GET** /user/viewissue/search | 
-[**versionIdDelete**](DefaultApi.md#versionIdDelete) | **DELETE** /version/{id} | 
-[**versionIdGet**](DefaultApi.md#versionIdGet) | **GET** /version/{id} | 
-[**versionIdMergetoMoveIssuesToPut**](DefaultApi.md#versionIdMergetoMoveIssuesToPut) | **PUT** /version/{id}/mergeto/{moveIssuesTo} | 
-[**versionIdMovePost**](DefaultApi.md#versionIdMovePost) | **POST** /version/{id}/move | 
-[**versionIdPut**](DefaultApi.md#versionIdPut) | **PUT** /version/{id} | 
-[**versionIdRelatedIssueCountsGet**](DefaultApi.md#versionIdRelatedIssueCountsGet) | **GET** /version/{id}/relatedIssueCounts | 
-[**versionIdRemoveAndSwapPost**](DefaultApi.md#versionIdRemoveAndSwapPost) | **POST** /version/{id}/removeAndSwap | 
-[**versionIdUnresolvedIssueCountGet**](DefaultApi.md#versionIdUnresolvedIssueCountGet) | **GET** /version/{id}/unresolvedIssueCount | 
-[**versionPost**](DefaultApi.md#versionPost) | **POST** /version | 
-[**versionRemotelinkGet**](DefaultApi.md#versionRemotelinkGet) | **GET** /version/remotelink | 
-[**versionVersionIdRemotelinkDelete**](DefaultApi.md#versionVersionIdRemotelinkDelete) | **DELETE** /version/{versionId}/remotelink | 
-[**versionVersionIdRemotelinkGet**](DefaultApi.md#versionVersionIdRemotelinkGet) | **GET** /version/{versionId}/remotelink | 
-[**versionVersionIdRemotelinkGlobalIdDelete**](DefaultApi.md#versionVersionIdRemotelinkGlobalIdDelete) | **DELETE** /version/{versionId}/remotelink/{globalId} | 
-[**versionVersionIdRemotelinkGlobalIdGet**](DefaultApi.md#versionVersionIdRemotelinkGlobalIdGet) | **GET** /version/{versionId}/remotelink/{globalId} | 
-[**versionVersionIdRemotelinkGlobalIdPost**](DefaultApi.md#versionVersionIdRemotelinkGlobalIdPost) | **POST** /version/{versionId}/remotelink/{globalId} | 
-[**versionVersionIdRemotelinkPost**](DefaultApi.md#versionVersionIdRemotelinkPost) | **POST** /version/{versionId}/remotelink | 
-[**workflowGet**](DefaultApi.md#workflowGet) | **GET** /workflow | 
-[**workflowTransitionsTransitionIdPropertiesDelete**](DefaultApi.md#workflowTransitionsTransitionIdPropertiesDelete) | **DELETE** /workflow/transitions/{transitionId}/properties | 
-[**workflowTransitionsTransitionIdPropertiesGet**](DefaultApi.md#workflowTransitionsTransitionIdPropertiesGet) | **GET** /workflow/transitions/{transitionId}/properties | 
-[**workflowTransitionsTransitionIdPropertiesPost**](DefaultApi.md#workflowTransitionsTransitionIdPropertiesPost) | **POST** /workflow/transitions/{transitionId}/properties | 
-[**workflowTransitionsTransitionIdPropertiesPut**](DefaultApi.md#workflowTransitionsTransitionIdPropertiesPut) | **PUT** /workflow/transitions/{transitionId}/properties | 
-[**workflowschemeIdCreatedraftPost**](DefaultApi.md#workflowschemeIdCreatedraftPost) | **POST** /workflowscheme/{id}/createdraft | 
-[**workflowschemeIdDefaultDelete**](DefaultApi.md#workflowschemeIdDefaultDelete) | **DELETE** /workflowscheme/{id}/default | 
-[**workflowschemeIdDefaultGet**](DefaultApi.md#workflowschemeIdDefaultGet) | **GET** /workflowscheme/{id}/default | 
-[**workflowschemeIdDefaultPut**](DefaultApi.md#workflowschemeIdDefaultPut) | **PUT** /workflowscheme/{id}/default | 
-[**workflowschemeIdDelete**](DefaultApi.md#workflowschemeIdDelete) | **DELETE** /workflowscheme/{id} | 
-[**workflowschemeIdDraftDefaultDelete**](DefaultApi.md#workflowschemeIdDraftDefaultDelete) | **DELETE** /workflowscheme/{id}/draft/default | 
-[**workflowschemeIdDraftDefaultGet**](DefaultApi.md#workflowschemeIdDraftDefaultGet) | **GET** /workflowscheme/{id}/draft/default | 
-[**workflowschemeIdDraftDefaultPut**](DefaultApi.md#workflowschemeIdDraftDefaultPut) | **PUT** /workflowscheme/{id}/draft/default | 
-[**workflowschemeIdDraftDelete**](DefaultApi.md#workflowschemeIdDraftDelete) | **DELETE** /workflowscheme/{id}/draft | 
-[**workflowschemeIdDraftGet**](DefaultApi.md#workflowschemeIdDraftGet) | **GET** /workflowscheme/{id}/draft | 
-[**workflowschemeIdDraftIssuetypeIssueTypeDelete**](DefaultApi.md#workflowschemeIdDraftIssuetypeIssueTypeDelete) | **DELETE** /workflowscheme/{id}/draft/issuetype/{issueType} | 
-[**workflowschemeIdDraftIssuetypeIssueTypeGet**](DefaultApi.md#workflowschemeIdDraftIssuetypeIssueTypeGet) | **GET** /workflowscheme/{id}/draft/issuetype/{issueType} | 
-[**workflowschemeIdDraftIssuetypeIssueTypePut**](DefaultApi.md#workflowschemeIdDraftIssuetypeIssueTypePut) | **PUT** /workflowscheme/{id}/draft/issuetype/{issueType} | 
-[**workflowschemeIdDraftPut**](DefaultApi.md#workflowschemeIdDraftPut) | **PUT** /workflowscheme/{id}/draft | 
-[**workflowschemeIdDraftWorkflowDelete**](DefaultApi.md#workflowschemeIdDraftWorkflowDelete) | **DELETE** /workflowscheme/{id}/draft/workflow | 
-[**workflowschemeIdDraftWorkflowGet**](DefaultApi.md#workflowschemeIdDraftWorkflowGet) | **GET** /workflowscheme/{id}/draft/workflow | 
-[**workflowschemeIdDraftWorkflowPut**](DefaultApi.md#workflowschemeIdDraftWorkflowPut) | **PUT** /workflowscheme/{id}/draft/workflow | 
-[**workflowschemeIdGet**](DefaultApi.md#workflowschemeIdGet) | **GET** /workflowscheme/{id} | 
-[**workflowschemeIdIssuetypeIssueTypeDelete**](DefaultApi.md#workflowschemeIdIssuetypeIssueTypeDelete) | **DELETE** /workflowscheme/{id}/issuetype/{issueType} | 
-[**workflowschemeIdIssuetypeIssueTypeGet**](DefaultApi.md#workflowschemeIdIssuetypeIssueTypeGet) | **GET** /workflowscheme/{id}/issuetype/{issueType} | 
-[**workflowschemeIdIssuetypeIssueTypePut**](DefaultApi.md#workflowschemeIdIssuetypeIssueTypePut) | **PUT** /workflowscheme/{id}/issuetype/{issueType} | 
-[**workflowschemeIdPut**](DefaultApi.md#workflowschemeIdPut) | **PUT** /workflowscheme/{id} | 
-[**workflowschemeIdWorkflowDelete**](DefaultApi.md#workflowschemeIdWorkflowDelete) | **DELETE** /workflowscheme/{id}/workflow | 
-[**workflowschemeIdWorkflowGet**](DefaultApi.md#workflowschemeIdWorkflowGet) | **GET** /workflowscheme/{id}/workflow | 
-[**workflowschemeIdWorkflowPut**](DefaultApi.md#workflowschemeIdWorkflowPut) | **PUT** /workflowscheme/{id}/workflow | 
-[**workflowschemePost**](DefaultApi.md#workflowschemePost) | **POST** /workflowscheme | 
-[**worklogDeletedGet**](DefaultApi.md#worklogDeletedGet) | **GET** /worklog/deleted | 
-[**worklogListPost**](DefaultApi.md#worklogListPost) | **POST** /worklog/list | 
-[**worklogUpdatedGet**](DefaultApi.md#worklogUpdatedGet) | **GET** /worklog/updated | 
+[**cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet**](DefaultApi.md#cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet) | **GET** /{cloudid}/rest/api/3/application-properties/advanced-settings | 
+[**cloudidRestApi3ApplicationPropertiesGet**](DefaultApi.md#cloudidRestApi3ApplicationPropertiesGet) | **GET** /{cloudid}/rest/api/3/application-properties | 
+[**cloudidRestApi3ApplicationPropertiesIdPut**](DefaultApi.md#cloudidRestApi3ApplicationPropertiesIdPut) | **PUT** /{cloudid}/rest/api/3/application-properties/{id} | 
+[**cloudidRestApi3ApplicationroleGet**](DefaultApi.md#cloudidRestApi3ApplicationroleGet) | **GET** /{cloudid}/rest/api/3/applicationrole | 
+[**cloudidRestApi3ApplicationroleKeyGet**](DefaultApi.md#cloudidRestApi3ApplicationroleKeyGet) | **GET** /{cloudid}/rest/api/3/applicationrole/{key} | 
+[**cloudidRestApi3AttachmentIdDelete**](DefaultApi.md#cloudidRestApi3AttachmentIdDelete) | **DELETE** /{cloudid}/rest/api/3/attachment/{id} | 
+[**cloudidRestApi3AttachmentIdExpandHumanGet**](DefaultApi.md#cloudidRestApi3AttachmentIdExpandHumanGet) | **GET** /{cloudid}/rest/api/3/attachment/{id}/expand/human | 
+[**cloudidRestApi3AttachmentIdExpandRawGet**](DefaultApi.md#cloudidRestApi3AttachmentIdExpandRawGet) | **GET** /{cloudid}/rest/api/3/attachment/{id}/expand/raw | 
+[**cloudidRestApi3AttachmentIdGet**](DefaultApi.md#cloudidRestApi3AttachmentIdGet) | **GET** /{cloudid}/rest/api/3/attachment/{id} | 
+[**cloudidRestApi3AttachmentMetaGet**](DefaultApi.md#cloudidRestApi3AttachmentMetaGet) | **GET** /{cloudid}/rest/api/3/attachment/meta | 
+[**cloudidRestApi3AuditingRecordGet**](DefaultApi.md#cloudidRestApi3AuditingRecordGet) | **GET** /{cloudid}/rest/api/3/auditing/record | 
+[**cloudidRestApi3AvatarTypeSystemGet**](DefaultApi.md#cloudidRestApi3AvatarTypeSystemGet) | **GET** /{cloudid}/rest/api/3/avatar/{type}/system | 
+[**cloudidRestApi3CommentCommentIdPropertiesGet**](DefaultApi.md#cloudidRestApi3CommentCommentIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/comment/{commentId}/properties | 
+[**cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey} | 
+[**cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey} | 
+[**cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/comment/{commentId}/properties/{propertyKey} | 
+[**cloudidRestApi3CommentListPost**](DefaultApi.md#cloudidRestApi3CommentListPost) | **POST** /{cloudid}/rest/api/3/comment/list | 
+[**cloudidRestApi3ComponentIdDelete**](DefaultApi.md#cloudidRestApi3ComponentIdDelete) | **DELETE** /{cloudid}/rest/api/3/component/{id} | 
+[**cloudidRestApi3ComponentIdGet**](DefaultApi.md#cloudidRestApi3ComponentIdGet) | **GET** /{cloudid}/rest/api/3/component/{id} | 
+[**cloudidRestApi3ComponentIdPut**](DefaultApi.md#cloudidRestApi3ComponentIdPut) | **PUT** /{cloudid}/rest/api/3/component/{id} | 
+[**cloudidRestApi3ComponentIdRelatedIssueCountsGet**](DefaultApi.md#cloudidRestApi3ComponentIdRelatedIssueCountsGet) | **GET** /{cloudid}/rest/api/3/component/{id}/relatedIssueCounts | 
+[**cloudidRestApi3ComponentPost**](DefaultApi.md#cloudidRestApi3ComponentPost) | **POST** /{cloudid}/rest/api/3/component | 
+[**cloudidRestApi3ConfigurationGet**](DefaultApi.md#cloudidRestApi3ConfigurationGet) | **GET** /{cloudid}/rest/api/3/configuration | 
+[**cloudidRestApi3ConfigurationTimetrackingDelete**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingDelete) | **DELETE** /{cloudid}/rest/api/3/configuration/timetracking | 
+[**cloudidRestApi3ConfigurationTimetrackingGet**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingGet) | **GET** /{cloudid}/rest/api/3/configuration/timetracking | 
+[**cloudidRestApi3ConfigurationTimetrackingListGet**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingListGet) | **GET** /{cloudid}/rest/api/3/configuration/timetracking/list | 
+[**cloudidRestApi3ConfigurationTimetrackingOptionsGet**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingOptionsGet) | **GET** /{cloudid}/rest/api/3/configuration/timetracking/options | 
+[**cloudidRestApi3ConfigurationTimetrackingOptionsPut**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingOptionsPut) | **PUT** /{cloudid}/rest/api/3/configuration/timetracking/options | 
+[**cloudidRestApi3ConfigurationTimetrackingPut**](DefaultApi.md#cloudidRestApi3ConfigurationTimetrackingPut) | **PUT** /{cloudid}/rest/api/3/configuration/timetracking | 
+[**cloudidRestApi3CustomFieldOptionIdGet**](DefaultApi.md#cloudidRestApi3CustomFieldOptionIdGet) | **GET** /{cloudid}/rest/api/3/customFieldOption/{id} | 
+[**cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet**](DefaultApi.md#cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties | 
+[**cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
+[**cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
+[**cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey} | 
+[**cloudidRestApi3DashboardGet**](DefaultApi.md#cloudidRestApi3DashboardGet) | **GET** /{cloudid}/rest/api/3/dashboard | 
+[**cloudidRestApi3DashboardIdGet**](DefaultApi.md#cloudidRestApi3DashboardIdGet) | **GET** /{cloudid}/rest/api/3/dashboard/{id} | 
+[**cloudidRestApi3ExpressionEvalPost**](DefaultApi.md#cloudidRestApi3ExpressionEvalPost) | **POST** /{cloudid}/rest/api/3/expression/eval | 
+[**cloudidRestApi3FieldFieldKeyOptionGet**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionGet) | **GET** /{cloudid}/rest/api/3/field/{fieldKey}/option | 
+[**cloudidRestApi3FieldFieldKeyOptionOptionIdDelete**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionOptionIdDelete) | **DELETE** /{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId} | 
+[**cloudidRestApi3FieldFieldKeyOptionOptionIdGet**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionOptionIdGet) | **GET** /{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId} | 
+[**cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete) | **DELETE** /{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId}/issue | 
+[**cloudidRestApi3FieldFieldKeyOptionOptionIdPut**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionOptionIdPut) | **PUT** /{cloudid}/rest/api/3/field/{fieldKey}/option/{optionId} | 
+[**cloudidRestApi3FieldFieldKeyOptionPost**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionPost) | **POST** /{cloudid}/rest/api/3/field/{fieldKey}/option | 
+[**cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet) | **GET** /{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/edit | 
+[**cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet**](DefaultApi.md#cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet) | **GET** /{cloudid}/rest/api/3/field/{fieldKey}/option/suggestions/search | 
+[**cloudidRestApi3FieldGet**](DefaultApi.md#cloudidRestApi3FieldGet) | **GET** /{cloudid}/rest/api/3/field | 
+[**cloudidRestApi3FieldPost**](DefaultApi.md#cloudidRestApi3FieldPost) | **POST** /{cloudid}/rest/api/3/field | 
+[**cloudidRestApi3FilterDefaultShareScopeGet**](DefaultApi.md#cloudidRestApi3FilterDefaultShareScopeGet) | **GET** /{cloudid}/rest/api/3/filter/defaultShareScope | 
+[**cloudidRestApi3FilterDefaultShareScopePut**](DefaultApi.md#cloudidRestApi3FilterDefaultShareScopePut) | **PUT** /{cloudid}/rest/api/3/filter/defaultShareScope | 
+[**cloudidRestApi3FilterFavouriteGet**](DefaultApi.md#cloudidRestApi3FilterFavouriteGet) | **GET** /{cloudid}/rest/api/3/filter/favourite | 
+[**cloudidRestApi3FilterGet**](DefaultApi.md#cloudidRestApi3FilterGet) | **GET** /{cloudid}/rest/api/3/filter | 
+[**cloudidRestApi3FilterIdColumnsDelete**](DefaultApi.md#cloudidRestApi3FilterIdColumnsDelete) | **DELETE** /{cloudid}/rest/api/3/filter/{id}/columns | 
+[**cloudidRestApi3FilterIdColumnsGet**](DefaultApi.md#cloudidRestApi3FilterIdColumnsGet) | **GET** /{cloudid}/rest/api/3/filter/{id}/columns | 
+[**cloudidRestApi3FilterIdColumnsPut**](DefaultApi.md#cloudidRestApi3FilterIdColumnsPut) | **PUT** /{cloudid}/rest/api/3/filter/{id}/columns | 
+[**cloudidRestApi3FilterIdDelete**](DefaultApi.md#cloudidRestApi3FilterIdDelete) | **DELETE** /{cloudid}/rest/api/3/filter/{id} | 
+[**cloudidRestApi3FilterIdFavouriteDelete**](DefaultApi.md#cloudidRestApi3FilterIdFavouriteDelete) | **DELETE** /{cloudid}/rest/api/3/filter/{id}/favourite | 
+[**cloudidRestApi3FilterIdFavouritePut**](DefaultApi.md#cloudidRestApi3FilterIdFavouritePut) | **PUT** /{cloudid}/rest/api/3/filter/{id}/favourite | 
+[**cloudidRestApi3FilterIdGet**](DefaultApi.md#cloudidRestApi3FilterIdGet) | **GET** /{cloudid}/rest/api/3/filter/{id} | 
+[**cloudidRestApi3FilterIdPermissionGet**](DefaultApi.md#cloudidRestApi3FilterIdPermissionGet) | **GET** /{cloudid}/rest/api/3/filter/{id}/permission | 
+[**cloudidRestApi3FilterIdPermissionPermissionIdDelete**](DefaultApi.md#cloudidRestApi3FilterIdPermissionPermissionIdDelete) | **DELETE** /{cloudid}/rest/api/3/filter/{id}/permission/{permissionId} | 
+[**cloudidRestApi3FilterIdPermissionPermissionIdGet**](DefaultApi.md#cloudidRestApi3FilterIdPermissionPermissionIdGet) | **GET** /{cloudid}/rest/api/3/filter/{id}/permission/{permissionId} | 
+[**cloudidRestApi3FilterIdPermissionPost**](DefaultApi.md#cloudidRestApi3FilterIdPermissionPost) | **POST** /{cloudid}/rest/api/3/filter/{id}/permission | 
+[**cloudidRestApi3FilterIdPut**](DefaultApi.md#cloudidRestApi3FilterIdPut) | **PUT** /{cloudid}/rest/api/3/filter/{id} | 
+[**cloudidRestApi3FilterMyGet**](DefaultApi.md#cloudidRestApi3FilterMyGet) | **GET** /{cloudid}/rest/api/3/filter/my | 
+[**cloudidRestApi3FilterPost**](DefaultApi.md#cloudidRestApi3FilterPost) | **POST** /{cloudid}/rest/api/3/filter | 
+[**cloudidRestApi3FilterSearchGet**](DefaultApi.md#cloudidRestApi3FilterSearchGet) | **GET** /{cloudid}/rest/api/3/filter/search | 
+[**cloudidRestApi3GroupDelete**](DefaultApi.md#cloudidRestApi3GroupDelete) | **DELETE** /{cloudid}/rest/api/3/group | 
+[**cloudidRestApi3GroupGet**](DefaultApi.md#cloudidRestApi3GroupGet) | **GET** /{cloudid}/rest/api/3/group | 
+[**cloudidRestApi3GroupMemberGet**](DefaultApi.md#cloudidRestApi3GroupMemberGet) | **GET** /{cloudid}/rest/api/3/group/member | 
+[**cloudidRestApi3GroupPost**](DefaultApi.md#cloudidRestApi3GroupPost) | **POST** /{cloudid}/rest/api/3/group | 
+[**cloudidRestApi3GroupUserDelete**](DefaultApi.md#cloudidRestApi3GroupUserDelete) | **DELETE** /{cloudid}/rest/api/3/group/user | 
+[**cloudidRestApi3GroupUserPost**](DefaultApi.md#cloudidRestApi3GroupUserPost) | **POST** /{cloudid}/rest/api/3/group/user | 
+[**cloudidRestApi3GroupsPickerGet**](DefaultApi.md#cloudidRestApi3GroupsPickerGet) | **GET** /{cloudid}/rest/api/3/groups/picker | 
+[**cloudidRestApi3GroupuserpickerGet**](DefaultApi.md#cloudidRestApi3GroupuserpickerGet) | **GET** /{cloudid}/rest/api/3/groupuserpicker | 
+[**cloudidRestApi3IssueBulkPost**](DefaultApi.md#cloudidRestApi3IssueBulkPost) | **POST** /{cloudid}/rest/api/3/issue/bulk | 
+[**cloudidRestApi3IssueCreatemetaGet**](DefaultApi.md#cloudidRestApi3IssueCreatemetaGet) | **GET** /{cloudid}/rest/api/3/issue/createmeta | 
+[**cloudidRestApi3IssueIssueIdOrKeyAssigneePut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyAssigneePut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/assignee | 
+[**cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/attachments | 
+[**cloudidRestApi3IssueIssueIdOrKeyChangelogGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyChangelogGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/changelog | 
+[**cloudidRestApi3IssueIssueIdOrKeyCommentGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment | 
+[**cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id} | 
+[**cloudidRestApi3IssueIssueIdOrKeyCommentIdGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentIdGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id} | 
+[**cloudidRestApi3IssueIssueIdOrKeyCommentIdPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentIdPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment/{id} | 
+[**cloudidRestApi3IssueIssueIdOrKeyCommentPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyCommentPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/comment | 
+[**cloudidRestApi3IssueIssueIdOrKeyDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey} | 
+[**cloudidRestApi3IssueIssueIdOrKeyEditmetaGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyEditmetaGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/editmeta | 
+[**cloudidRestApi3IssueIssueIdOrKeyGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey} | 
+[**cloudidRestApi3IssueIssueIdOrKeyNotifyPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyNotifyPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/notify | 
+[**cloudidRestApi3IssueIssueIdOrKeyPropertiesGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPropertiesGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties | 
+[**cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey} | 
+[**cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey} | 
+[**cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/properties/{propertyKey} | 
+[**cloudidRestApi3IssueIssueIdOrKeyPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey} | 
+[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink | 
+[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink | 
+[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId} | 
+[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId} | 
+[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink/{linkId} | 
+[**cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/remotelink | 
+[**cloudidRestApi3IssueIssueIdOrKeyTransitionsGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyTransitionsGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/transitions | 
+[**cloudidRestApi3IssueIssueIdOrKeyTransitionsPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyTransitionsPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/transitions | 
+[**cloudidRestApi3IssueIssueIdOrKeyVotesDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyVotesDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes | 
+[**cloudidRestApi3IssueIssueIdOrKeyVotesGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyVotesGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes | 
+[**cloudidRestApi3IssueIssueIdOrKeyVotesPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyVotesPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/votes | 
+[**cloudidRestApi3IssueIssueIdOrKeyWatchersDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWatchersDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers | 
+[**cloudidRestApi3IssueIssueIdOrKeyWatchersGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWatchersGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers | 
+[**cloudidRestApi3IssueIssueIdOrKeyWatchersPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWatchersPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/watchers | 
+[**cloudidRestApi3IssueIssueIdOrKeyWorklogGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog | 
+[**cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id} | 
+[**cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id} | 
+[**cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{id} | 
+[**cloudidRestApi3IssueIssueIdOrKeyWorklogPost**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogPost) | **POST** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog | 
+[**cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties | 
+[**cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
+[**cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
+[**cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey} | 
+[**cloudidRestApi3IssueLinkLinkIdDelete**](DefaultApi.md#cloudidRestApi3IssueLinkLinkIdDelete) | **DELETE** /{cloudid}/rest/api/3/issueLink/{linkId} | 
+[**cloudidRestApi3IssueLinkLinkIdGet**](DefaultApi.md#cloudidRestApi3IssueLinkLinkIdGet) | **GET** /{cloudid}/rest/api/3/issueLink/{linkId} | 
+[**cloudidRestApi3IssueLinkPost**](DefaultApi.md#cloudidRestApi3IssueLinkPost) | **POST** /{cloudid}/rest/api/3/issueLink | 
+[**cloudidRestApi3IssueLinkTypeGet**](DefaultApi.md#cloudidRestApi3IssueLinkTypeGet) | **GET** /{cloudid}/rest/api/3/issueLinkType | 
+[**cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete**](DefaultApi.md#cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete) | **DELETE** /{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId} | 
+[**cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet**](DefaultApi.md#cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet) | **GET** /{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId} | 
+[**cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut**](DefaultApi.md#cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut) | **PUT** /{cloudid}/rest/api/3/issueLinkType/{issueLinkTypeId} | 
+[**cloudidRestApi3IssueLinkTypePost**](DefaultApi.md#cloudidRestApi3IssueLinkTypePost) | **POST** /{cloudid}/rest/api/3/issueLinkType | 
+[**cloudidRestApi3IssuePickerGet**](DefaultApi.md#cloudidRestApi3IssuePickerGet) | **GET** /{cloudid}/rest/api/3/issue/picker | 
+[**cloudidRestApi3IssuePost**](DefaultApi.md#cloudidRestApi3IssuePost) | **POST** /{cloudid}/rest/api/3/issue | 
+[**cloudidRestApi3IssuePropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3IssuePropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issue/properties/{propertyKey} | 
+[**cloudidRestApi3IssuePropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3IssuePropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/issue/properties/{propertyKey} | 
+[**cloudidRestApi3IssuesecurityschemesGet**](DefaultApi.md#cloudidRestApi3IssuesecurityschemesGet) | **GET** /{cloudid}/rest/api/3/issuesecurityschemes | 
+[**cloudidRestApi3IssuesecurityschemesIdGet**](DefaultApi.md#cloudidRestApi3IssuesecurityschemesIdGet) | **GET** /{cloudid}/rest/api/3/issuesecurityschemes/{id} | 
+[**cloudidRestApi3IssuetypeGet**](DefaultApi.md#cloudidRestApi3IssuetypeGet) | **GET** /{cloudid}/rest/api/3/issuetype | 
+[**cloudidRestApi3IssuetypeIdAlternativesGet**](DefaultApi.md#cloudidRestApi3IssuetypeIdAlternativesGet) | **GET** /{cloudid}/rest/api/3/issuetype/{id}/alternatives | 
+[**cloudidRestApi3IssuetypeIdAvatar2Post**](DefaultApi.md#cloudidRestApi3IssuetypeIdAvatar2Post) | **POST** /{cloudid}/rest/api/3/issuetype/{id}/avatar2 | 
+[**cloudidRestApi3IssuetypeIdDelete**](DefaultApi.md#cloudidRestApi3IssuetypeIdDelete) | **DELETE** /{cloudid}/rest/api/3/issuetype/{id} | 
+[**cloudidRestApi3IssuetypeIdGet**](DefaultApi.md#cloudidRestApi3IssuetypeIdGet) | **GET** /{cloudid}/rest/api/3/issuetype/{id} | 
+[**cloudidRestApi3IssuetypeIdPut**](DefaultApi.md#cloudidRestApi3IssuetypeIdPut) | **PUT** /{cloudid}/rest/api/3/issuetype/{id} | 
+[**cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet**](DefaultApi.md#cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties | 
+[**cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey} | 
+[**cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey} | 
+[**cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/issuetype/{issueTypeId}/properties/{propertyKey} | 
+[**cloudidRestApi3IssuetypePost**](DefaultApi.md#cloudidRestApi3IssuetypePost) | **POST** /{cloudid}/rest/api/3/issuetype | 
+[**cloudidRestApi3JqlAutocompletedataGet**](DefaultApi.md#cloudidRestApi3JqlAutocompletedataGet) | **GET** /{cloudid}/rest/api/3/jql/autocompletedata | 
+[**cloudidRestApi3JqlAutocompletedataSuggestionsGet**](DefaultApi.md#cloudidRestApi3JqlAutocompletedataSuggestionsGet) | **GET** /{cloudid}/rest/api/3/jql/autocompletedata/suggestions | 
+[**cloudidRestApi3JqlPdcleanerPost**](DefaultApi.md#cloudidRestApi3JqlPdcleanerPost) | **POST** /{cloudid}/rest/api/3/jql/pdcleaner | 
+[**cloudidRestApi3MypermissionsGet**](DefaultApi.md#cloudidRestApi3MypermissionsGet) | **GET** /{cloudid}/rest/api/3/mypermissions | 
+[**cloudidRestApi3MypreferencesDelete**](DefaultApi.md#cloudidRestApi3MypreferencesDelete) | **DELETE** /{cloudid}/rest/api/3/mypreferences | 
+[**cloudidRestApi3MypreferencesGet**](DefaultApi.md#cloudidRestApi3MypreferencesGet) | **GET** /{cloudid}/rest/api/3/mypreferences | 
+[**cloudidRestApi3MypreferencesLocaleDelete**](DefaultApi.md#cloudidRestApi3MypreferencesLocaleDelete) | **DELETE** /{cloudid}/rest/api/3/mypreferences/locale | 
+[**cloudidRestApi3MypreferencesLocaleGet**](DefaultApi.md#cloudidRestApi3MypreferencesLocaleGet) | **GET** /{cloudid}/rest/api/3/mypreferences/locale | 
+[**cloudidRestApi3MypreferencesLocalePut**](DefaultApi.md#cloudidRestApi3MypreferencesLocalePut) | **PUT** /{cloudid}/rest/api/3/mypreferences/locale | 
+[**cloudidRestApi3MypreferencesPut**](DefaultApi.md#cloudidRestApi3MypreferencesPut) | **PUT** /{cloudid}/rest/api/3/mypreferences | 
+[**cloudidRestApi3MyselfGet**](DefaultApi.md#cloudidRestApi3MyselfGet) | **GET** /{cloudid}/rest/api/3/myself | 
+[**cloudidRestApi3NotificationschemeGet**](DefaultApi.md#cloudidRestApi3NotificationschemeGet) | **GET** /{cloudid}/rest/api/3/notificationscheme | 
+[**cloudidRestApi3NotificationschemeIdGet**](DefaultApi.md#cloudidRestApi3NotificationschemeIdGet) | **GET** /{cloudid}/rest/api/3/notificationscheme/{id} | 
+[**cloudidRestApi3PermissionsGet**](DefaultApi.md#cloudidRestApi3PermissionsGet) | **GET** /{cloudid}/rest/api/3/permissions | 
+[**cloudidRestApi3PermissionsProjectPost**](DefaultApi.md#cloudidRestApi3PermissionsProjectPost) | **POST** /{cloudid}/rest/api/3/permissions/project | 
+[**cloudidRestApi3PermissionschemeGet**](DefaultApi.md#cloudidRestApi3PermissionschemeGet) | **GET** /{cloudid}/rest/api/3/permissionscheme | 
+[**cloudidRestApi3PermissionschemePost**](DefaultApi.md#cloudidRestApi3PermissionschemePost) | **POST** /{cloudid}/rest/api/3/permissionscheme | 
+[**cloudidRestApi3PermissionschemeSchemeIdDelete**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdDelete) | **DELETE** /{cloudid}/rest/api/3/permissionscheme/{schemeId} | 
+[**cloudidRestApi3PermissionschemeSchemeIdGet**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdGet) | **GET** /{cloudid}/rest/api/3/permissionscheme/{schemeId} | 
+[**cloudidRestApi3PermissionschemeSchemeIdPermissionGet**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPermissionGet) | **GET** /{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission | 
+[**cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete) | **DELETE** /{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId} | 
+[**cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet) | **GET** /{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission/{permissionId} | 
+[**cloudidRestApi3PermissionschemeSchemeIdPermissionPost**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPermissionPost) | **POST** /{cloudid}/rest/api/3/permissionscheme/{schemeId}/permission | 
+[**cloudidRestApi3PermissionschemeSchemeIdPut**](DefaultApi.md#cloudidRestApi3PermissionschemeSchemeIdPut) | **PUT** /{cloudid}/rest/api/3/permissionscheme/{schemeId} | 
+[**cloudidRestApi3PriorityGet**](DefaultApi.md#cloudidRestApi3PriorityGet) | **GET** /{cloudid}/rest/api/3/priority | 
+[**cloudidRestApi3PriorityIdGet**](DefaultApi.md#cloudidRestApi3PriorityIdGet) | **GET** /{cloudid}/rest/api/3/priority/{id} | 
+[**cloudidRestApi3ProjectCategoryGet**](DefaultApi.md#cloudidRestApi3ProjectCategoryGet) | **GET** /{cloudid}/rest/api/3/projectCategory | 
+[**cloudidRestApi3ProjectCategoryIdDelete**](DefaultApi.md#cloudidRestApi3ProjectCategoryIdDelete) | **DELETE** /{cloudid}/rest/api/3/projectCategory/{id} | 
+[**cloudidRestApi3ProjectCategoryIdGet**](DefaultApi.md#cloudidRestApi3ProjectCategoryIdGet) | **GET** /{cloudid}/rest/api/3/projectCategory/{id} | 
+[**cloudidRestApi3ProjectCategoryIdPut**](DefaultApi.md#cloudidRestApi3ProjectCategoryIdPut) | **PUT** /{cloudid}/rest/api/3/projectCategory/{id} | 
+[**cloudidRestApi3ProjectCategoryPost**](DefaultApi.md#cloudidRestApi3ProjectCategoryPost) | **POST** /{cloudid}/rest/api/3/projectCategory | 
+[**cloudidRestApi3ProjectGet**](DefaultApi.md#cloudidRestApi3ProjectGet) | **GET** /{cloudid}/rest/api/3/project | 
+[**cloudidRestApi3ProjectPost**](DefaultApi.md#cloudidRestApi3ProjectPost) | **POST** /{cloudid}/rest/api/3/project | 
+[**cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post) | **POST** /{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar2 | 
+[**cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete) | **DELETE** /{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar/{id} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyAvatarPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyAvatarPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey}/avatar | 
+[**cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/avatars | 
+[**cloudidRestApi3ProjectProjectIdOrKeyComponentGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyComponentGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/component | 
+[**cloudidRestApi3ProjectProjectIdOrKeyComponentsGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyComponentsGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/components | 
+[**cloudidRestApi3ProjectProjectIdOrKeyDelete**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyDelete) | **DELETE** /{cloudid}/rest/api/3/project/{projectIdOrKey} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/properties | 
+[**cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey}/properties/{propertyKey} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyRoleGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role | 
+[**cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete) | **DELETE** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost) | **POST** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey}/role/{id} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/roledetails | 
+[**cloudidRestApi3ProjectProjectIdOrKeyStatusesGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyStatusesGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/statuses | 
+[**cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut) | **PUT** /{cloudid}/rest/api/3/project/{projectIdOrKey}/type/{newProjectTypeKey} | 
+[**cloudidRestApi3ProjectProjectIdOrKeyVersionGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyVersionGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/version | 
+[**cloudidRestApi3ProjectProjectIdOrKeyVersionsGet**](DefaultApi.md#cloudidRestApi3ProjectProjectIdOrKeyVersionsGet) | **GET** /{cloudid}/rest/api/3/project/{projectIdOrKey}/versions | 
+[**cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet) | **GET** /{cloudid}/rest/api/3/project/{projectKeyOrId}/issuesecuritylevelscheme | 
+[**cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet) | **GET** /{cloudid}/rest/api/3/project/{projectKeyOrId}/notificationscheme | 
+[**cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet) | **GET** /{cloudid}/rest/api/3/project/{projectKeyOrId}/permissionscheme | 
+[**cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut) | **PUT** /{cloudid}/rest/api/3/project/{projectKeyOrId}/permissionscheme | 
+[**cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet**](DefaultApi.md#cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet) | **GET** /{cloudid}/rest/api/3/project/{projectKeyOrId}/securitylevel | 
+[**cloudidRestApi3ProjectSearchGet**](DefaultApi.md#cloudidRestApi3ProjectSearchGet) | **GET** /{cloudid}/rest/api/3/project/search | 
+[**cloudidRestApi3ProjectTypeGet**](DefaultApi.md#cloudidRestApi3ProjectTypeGet) | **GET** /{cloudid}/rest/api/3/project/type | 
+[**cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet**](DefaultApi.md#cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet) | **GET** /{cloudid}/rest/api/3/project/type/{projectTypeKey}/accessible | 
+[**cloudidRestApi3ProjectTypeProjectTypeKeyGet**](DefaultApi.md#cloudidRestApi3ProjectTypeProjectTypeKeyGet) | **GET** /{cloudid}/rest/api/3/project/type/{projectTypeKey} | 
+[**cloudidRestApi3ProjectvalidateKeyGet**](DefaultApi.md#cloudidRestApi3ProjectvalidateKeyGet) | **GET** /{cloudid}/rest/api/3/projectvalidate/key | 
+[**cloudidRestApi3ProjectvalidateValidProjectKeyGet**](DefaultApi.md#cloudidRestApi3ProjectvalidateValidProjectKeyGet) | **GET** /{cloudid}/rest/api/3/projectvalidate/validProjectKey | 
+[**cloudidRestApi3ProjectvalidateValidProjectNameGet**](DefaultApi.md#cloudidRestApi3ProjectvalidateValidProjectNameGet) | **GET** /{cloudid}/rest/api/3/projectvalidate/validProjectName | 
+[**cloudidRestApi3ResolutionGet**](DefaultApi.md#cloudidRestApi3ResolutionGet) | **GET** /{cloudid}/rest/api/3/resolution | 
+[**cloudidRestApi3ResolutionIdGet**](DefaultApi.md#cloudidRestApi3ResolutionIdGet) | **GET** /{cloudid}/rest/api/3/resolution/{id} | 
+[**cloudidRestApi3RoleGet**](DefaultApi.md#cloudidRestApi3RoleGet) | **GET** /{cloudid}/rest/api/3/role | 
+[**cloudidRestApi3RoleIdActorsDelete**](DefaultApi.md#cloudidRestApi3RoleIdActorsDelete) | **DELETE** /{cloudid}/rest/api/3/role/{id}/actors | 
+[**cloudidRestApi3RoleIdActorsGet**](DefaultApi.md#cloudidRestApi3RoleIdActorsGet) | **GET** /{cloudid}/rest/api/3/role/{id}/actors | 
+[**cloudidRestApi3RoleIdActorsPost**](DefaultApi.md#cloudidRestApi3RoleIdActorsPost) | **POST** /{cloudid}/rest/api/3/role/{id}/actors | 
+[**cloudidRestApi3RoleIdDelete**](DefaultApi.md#cloudidRestApi3RoleIdDelete) | **DELETE** /{cloudid}/rest/api/3/role/{id} | 
+[**cloudidRestApi3RoleIdGet**](DefaultApi.md#cloudidRestApi3RoleIdGet) | **GET** /{cloudid}/rest/api/3/role/{id} | 
+[**cloudidRestApi3RoleIdPost**](DefaultApi.md#cloudidRestApi3RoleIdPost) | **POST** /{cloudid}/rest/api/3/role/{id} | 
+[**cloudidRestApi3RoleIdPut**](DefaultApi.md#cloudidRestApi3RoleIdPut) | **PUT** /{cloudid}/rest/api/3/role/{id} | 
+[**cloudidRestApi3RolePost**](DefaultApi.md#cloudidRestApi3RolePost) | **POST** /{cloudid}/rest/api/3/role | 
+[**cloudidRestApi3ScreensAddToDefaultFieldIdPost**](DefaultApi.md#cloudidRestApi3ScreensAddToDefaultFieldIdPost) | **POST** /{cloudid}/rest/api/3/screens/addToDefault/{fieldId} | 
+[**cloudidRestApi3ScreensGet**](DefaultApi.md#cloudidRestApi3ScreensGet) | **GET** /{cloudid}/rest/api/3/screens | 
+[**cloudidRestApi3ScreensScreenIdAvailableFieldsGet**](DefaultApi.md#cloudidRestApi3ScreensScreenIdAvailableFieldsGet) | **GET** /{cloudid}/rest/api/3/screens/{screenId}/availableFields | 
+[**cloudidRestApi3ScreensScreenIdTabsGet**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsGet) | **GET** /{cloudid}/rest/api/3/screens/{screenId}/tabs | 
+[**cloudidRestApi3ScreensScreenIdTabsPost**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsPost) | **POST** /{cloudid}/rest/api/3/screens/{screenId}/tabs | 
+[**cloudidRestApi3ScreensScreenIdTabsTabIdDelete**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdDelete) | **DELETE** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId} | 
+[**cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet) | **GET** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields | 
+[**cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete) | **DELETE** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id} | 
+[**cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost) | **POST** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields/{id}/move | 
+[**cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost) | **POST** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/fields | 
+[**cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost) | **POST** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId}/move/{pos} | 
+[**cloudidRestApi3ScreensScreenIdTabsTabIdPut**](DefaultApi.md#cloudidRestApi3ScreensScreenIdTabsTabIdPut) | **PUT** /{cloudid}/rest/api/3/screens/{screenId}/tabs/{tabId} | 
+[**cloudidRestApi3SearchGet**](DefaultApi.md#cloudidRestApi3SearchGet) | **GET** /{cloudid}/rest/api/3/search | 
+[**cloudidRestApi3SearchPost**](DefaultApi.md#cloudidRestApi3SearchPost) | **POST** /{cloudid}/rest/api/3/search | 
+[**cloudidRestApi3SecuritylevelIdGet**](DefaultApi.md#cloudidRestApi3SecuritylevelIdGet) | **GET** /{cloudid}/rest/api/3/securitylevel/{id} | 
+[**cloudidRestApi3ServerInfoGet**](DefaultApi.md#cloudidRestApi3ServerInfoGet) | **GET** /{cloudid}/rest/api/3/serverInfo | 
+[**cloudidRestApi3SettingsColumnsGet**](DefaultApi.md#cloudidRestApi3SettingsColumnsGet) | **GET** /{cloudid}/rest/api/3/settings/columns | 
+[**cloudidRestApi3SettingsColumnsPut**](DefaultApi.md#cloudidRestApi3SettingsColumnsPut) | **PUT** /{cloudid}/rest/api/3/settings/columns | 
+[**cloudidRestApi3StatusGet**](DefaultApi.md#cloudidRestApi3StatusGet) | **GET** /{cloudid}/rest/api/3/status | 
+[**cloudidRestApi3StatusIdOrNameGet**](DefaultApi.md#cloudidRestApi3StatusIdOrNameGet) | **GET** /{cloudid}/rest/api/3/status/{idOrName} | 
+[**cloudidRestApi3StatuscategoryGet**](DefaultApi.md#cloudidRestApi3StatuscategoryGet) | **GET** /{cloudid}/rest/api/3/statuscategory | 
+[**cloudidRestApi3StatuscategoryIdOrKeyGet**](DefaultApi.md#cloudidRestApi3StatuscategoryIdOrKeyGet) | **GET** /{cloudid}/rest/api/3/statuscategory/{idOrKey} | 
+[**cloudidRestApi3TaskTaskIdCancelPost**](DefaultApi.md#cloudidRestApi3TaskTaskIdCancelPost) | **POST** /{cloudid}/rest/api/3/task/{taskId}/cancel | 
+[**cloudidRestApi3TaskTaskIdGet**](DefaultApi.md#cloudidRestApi3TaskTaskIdGet) | **GET** /{cloudid}/rest/api/3/task/{taskId} | 
+[**cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet**](DefaultApi.md#cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet) | **GET** /{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{entityId} | 
+[**cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost**](DefaultApi.md#cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost) | **POST** /{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{entityId} | 
+[**cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete**](DefaultApi.md#cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete) | **DELETE** /{cloudid}/rest/api/3/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id} | 
+[**cloudidRestApi3UserAssignableMultiProjectSearchGet**](DefaultApi.md#cloudidRestApi3UserAssignableMultiProjectSearchGet) | **GET** /{cloudid}/rest/api/3/user/assignable/multiProjectSearch | 
+[**cloudidRestApi3UserAssignableSearchGet**](DefaultApi.md#cloudidRestApi3UserAssignableSearchGet) | **GET** /{cloudid}/rest/api/3/user/assignable/search | 
+[**cloudidRestApi3UserBulkGet**](DefaultApi.md#cloudidRestApi3UserBulkGet) | **GET** /{cloudid}/rest/api/3/user/bulk | 
+[**cloudidRestApi3UserColumnsDelete**](DefaultApi.md#cloudidRestApi3UserColumnsDelete) | **DELETE** /{cloudid}/rest/api/3/user/columns | 
+[**cloudidRestApi3UserColumnsGet**](DefaultApi.md#cloudidRestApi3UserColumnsGet) | **GET** /{cloudid}/rest/api/3/user/columns | 
+[**cloudidRestApi3UserColumnsPut**](DefaultApi.md#cloudidRestApi3UserColumnsPut) | **PUT** /{cloudid}/rest/api/3/user/columns | 
+[**cloudidRestApi3UserDelete**](DefaultApi.md#cloudidRestApi3UserDelete) | **DELETE** /{cloudid}/rest/api/3/user | 
+[**cloudidRestApi3UserGet**](DefaultApi.md#cloudidRestApi3UserGet) | **GET** /{cloudid}/rest/api/3/user | 
+[**cloudidRestApi3UserGroupsGet**](DefaultApi.md#cloudidRestApi3UserGroupsGet) | **GET** /{cloudid}/rest/api/3/user/groups | 
+[**cloudidRestApi3UserPermissionSearchGet**](DefaultApi.md#cloudidRestApi3UserPermissionSearchGet) | **GET** /{cloudid}/rest/api/3/user/permission/search | 
+[**cloudidRestApi3UserPickerGet**](DefaultApi.md#cloudidRestApi3UserPickerGet) | **GET** /{cloudid}/rest/api/3/user/picker | 
+[**cloudidRestApi3UserPost**](DefaultApi.md#cloudidRestApi3UserPost) | **POST** /{cloudid}/rest/api/3/user | 
+[**cloudidRestApi3UserPropertiesGet**](DefaultApi.md#cloudidRestApi3UserPropertiesGet) | **GET** /{cloudid}/rest/api/3/user/properties | 
+[**cloudidRestApi3UserPropertiesPropertyKeyDelete**](DefaultApi.md#cloudidRestApi3UserPropertiesPropertyKeyDelete) | **DELETE** /{cloudid}/rest/api/3/user/properties/{propertyKey} | 
+[**cloudidRestApi3UserPropertiesPropertyKeyGet**](DefaultApi.md#cloudidRestApi3UserPropertiesPropertyKeyGet) | **GET** /{cloudid}/rest/api/3/user/properties/{propertyKey} | 
+[**cloudidRestApi3UserPropertiesPropertyKeyPut**](DefaultApi.md#cloudidRestApi3UserPropertiesPropertyKeyPut) | **PUT** /{cloudid}/rest/api/3/user/properties/{propertyKey} | 
+[**cloudidRestApi3UserSearchGet**](DefaultApi.md#cloudidRestApi3UserSearchGet) | **GET** /{cloudid}/rest/api/3/user/search | 
+[**cloudidRestApi3UserSearchQueryGet**](DefaultApi.md#cloudidRestApi3UserSearchQueryGet) | **GET** /{cloudid}/rest/api/3/user/search/query | 
+[**cloudidRestApi3UserSearchQueryKeyGet**](DefaultApi.md#cloudidRestApi3UserSearchQueryKeyGet) | **GET** /{cloudid}/rest/api/3/user/search/query/key | 
+[**cloudidRestApi3UserViewissueSearchGet**](DefaultApi.md#cloudidRestApi3UserViewissueSearchGet) | **GET** /{cloudid}/rest/api/3/user/viewissue/search | 
+[**cloudidRestApi3VersionIdDelete**](DefaultApi.md#cloudidRestApi3VersionIdDelete) | **DELETE** /{cloudid}/rest/api/3/version/{id} | 
+[**cloudidRestApi3VersionIdGet**](DefaultApi.md#cloudidRestApi3VersionIdGet) | **GET** /{cloudid}/rest/api/3/version/{id} | 
+[**cloudidRestApi3VersionIdMergetoMoveIssuesToPut**](DefaultApi.md#cloudidRestApi3VersionIdMergetoMoveIssuesToPut) | **PUT** /{cloudid}/rest/api/3/version/{id}/mergeto/{moveIssuesTo} | 
+[**cloudidRestApi3VersionIdMovePost**](DefaultApi.md#cloudidRestApi3VersionIdMovePost) | **POST** /{cloudid}/rest/api/3/version/{id}/move | 
+[**cloudidRestApi3VersionIdPut**](DefaultApi.md#cloudidRestApi3VersionIdPut) | **PUT** /{cloudid}/rest/api/3/version/{id} | 
+[**cloudidRestApi3VersionIdRelatedIssueCountsGet**](DefaultApi.md#cloudidRestApi3VersionIdRelatedIssueCountsGet) | **GET** /{cloudid}/rest/api/3/version/{id}/relatedIssueCounts | 
+[**cloudidRestApi3VersionIdRemoveAndSwapPost**](DefaultApi.md#cloudidRestApi3VersionIdRemoveAndSwapPost) | **POST** /{cloudid}/rest/api/3/version/{id}/removeAndSwap | 
+[**cloudidRestApi3VersionIdUnresolvedIssueCountGet**](DefaultApi.md#cloudidRestApi3VersionIdUnresolvedIssueCountGet) | **GET** /{cloudid}/rest/api/3/version/{id}/unresolvedIssueCount | 
+[**cloudidRestApi3VersionPost**](DefaultApi.md#cloudidRestApi3VersionPost) | **POST** /{cloudid}/rest/api/3/version | 
+[**cloudidRestApi3VersionRemotelinkGet**](DefaultApi.md#cloudidRestApi3VersionRemotelinkGet) | **GET** /{cloudid}/rest/api/3/version/remotelink | 
+[**cloudidRestApi3VersionVersionIdRemotelinkDelete**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkDelete) | **DELETE** /{cloudid}/rest/api/3/version/{versionId}/remotelink | 
+[**cloudidRestApi3VersionVersionIdRemotelinkGet**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkGet) | **GET** /{cloudid}/rest/api/3/version/{versionId}/remotelink | 
+[**cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete) | **DELETE** /{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId} | 
+[**cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet) | **GET** /{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId} | 
+[**cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost) | **POST** /{cloudid}/rest/api/3/version/{versionId}/remotelink/{globalId} | 
+[**cloudidRestApi3VersionVersionIdRemotelinkPost**](DefaultApi.md#cloudidRestApi3VersionVersionIdRemotelinkPost) | **POST** /{cloudid}/rest/api/3/version/{versionId}/remotelink | 
+[**cloudidRestApi3WorkflowGet**](DefaultApi.md#cloudidRestApi3WorkflowGet) | **GET** /{cloudid}/rest/api/3/workflow | 
+[**cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete**](DefaultApi.md#cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete) | **DELETE** /{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties | 
+[**cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet**](DefaultApi.md#cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet) | **GET** /{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties | 
+[**cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost**](DefaultApi.md#cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost) | **POST** /{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties | 
+[**cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut**](DefaultApi.md#cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut) | **PUT** /{cloudid}/rest/api/3/workflow/transitions/{transitionId}/properties | 
+[**cloudidRestApi3WorkflowschemeIdCreatedraftPost**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdCreatedraftPost) | **POST** /{cloudid}/rest/api/3/workflowscheme/{id}/createdraft | 
+[**cloudidRestApi3WorkflowschemeIdDefaultDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDefaultDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/default | 
+[**cloudidRestApi3WorkflowschemeIdDefaultGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDefaultGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/default | 
+[**cloudidRestApi3WorkflowschemeIdDefaultPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDefaultPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/default | 
+[**cloudidRestApi3WorkflowschemeIdDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id} | 
+[**cloudidRestApi3WorkflowschemeIdDraftDefaultDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftDefaultDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/default | 
+[**cloudidRestApi3WorkflowschemeIdDraftDefaultGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftDefaultGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/default | 
+[**cloudidRestApi3WorkflowschemeIdDraftDefaultPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftDefaultPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/default | 
+[**cloudidRestApi3WorkflowschemeIdDraftDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/draft | 
+[**cloudidRestApi3WorkflowschemeIdDraftGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/draft | 
+[**cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType} | 
+[**cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType} | 
+[**cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/issuetype/{issueType} | 
+[**cloudidRestApi3WorkflowschemeIdDraftPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/draft | 
+[**cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow | 
+[**cloudidRestApi3WorkflowschemeIdDraftWorkflowGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftWorkflowGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow | 
+[**cloudidRestApi3WorkflowschemeIdDraftWorkflowPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdDraftWorkflowPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/draft/workflow | 
+[**cloudidRestApi3WorkflowschemeIdGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id} | 
+[**cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType} | 
+[**cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType} | 
+[**cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/issuetype/{issueType} | 
+[**cloudidRestApi3WorkflowschemeIdPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id} | 
+[**cloudidRestApi3WorkflowschemeIdWorkflowDelete**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdWorkflowDelete) | **DELETE** /{cloudid}/rest/api/3/workflowscheme/{id}/workflow | 
+[**cloudidRestApi3WorkflowschemeIdWorkflowGet**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdWorkflowGet) | **GET** /{cloudid}/rest/api/3/workflowscheme/{id}/workflow | 
+[**cloudidRestApi3WorkflowschemeIdWorkflowPut**](DefaultApi.md#cloudidRestApi3WorkflowschemeIdWorkflowPut) | **PUT** /{cloudid}/rest/api/3/workflowscheme/{id}/workflow | 
+[**cloudidRestApi3WorkflowschemePost**](DefaultApi.md#cloudidRestApi3WorkflowschemePost) | **POST** /{cloudid}/rest/api/3/workflowscheme | 
+[**cloudidRestApi3WorklogDeletedGet**](DefaultApi.md#cloudidRestApi3WorklogDeletedGet) | **GET** /{cloudid}/rest/api/3/worklog/deleted | 
+[**cloudidRestApi3WorklogListPost**](DefaultApi.md#cloudidRestApi3WorklogListPost) | **POST** /{cloudid}/rest/api/3/worklog/list | 
+[**cloudidRestApi3WorklogUpdatedGet**](DefaultApi.md#cloudidRestApi3WorklogUpdatedGet) | **GET** /{cloudid}/rest/api/3/worklog/updated | 
 
 
 
-## applicationPropertiesAdvancedSettingsGet
+## cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet
 
-> [InlineResponse200] applicationPropertiesAdvancedSettingsGet()
+> [InlineResponse200] cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet()
 
 
 
@@ -337,16 +337,12 @@ Returns the application properties that are accessible on the Advanced Settings 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.applicationPropertiesAdvancedSettingsGet((error, data, response) => {
+apiInstance.cloudidRestApi3ApplicationPropertiesAdvancedSettingsGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -365,7 +361,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -373,9 +369,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## applicationPropertiesGet
+## cloudidRestApi3ApplicationPropertiesGet
 
-> [InlineResponse200] applicationPropertiesGet(opts)
+> [InlineResponse200] cloudidRestApi3ApplicationPropertiesGet(opts)
 
 
 
@@ -386,10 +382,6 @@ Returns all application properties or a single application property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -400,7 +392,7 @@ let opts = {
   'keyFilter': "keyFilter_example", // String | When a key isn't provided, this filters the list of results by the application property key using a regular expression. For example, using jira.lf.* will return all application properties with keys that start with jira.lf..
   'permissionLevel': "permissionLevel_example" // String | The permission level of all items being returned in the list.
 };
-apiInstance.applicationPropertiesGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ApplicationPropertiesGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -424,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -432,9 +424,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## applicationPropertiesIdPut
+## cloudidRestApi3ApplicationPropertiesIdPut
 
-> applicationPropertiesIdPut(id, opts)
+> cloudidRestApi3ApplicationPropertiesIdPut(id, opts)
 
 
 
@@ -445,10 +437,6 @@ Changes the value of an application property. For example, you can change the va
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -458,7 +446,7 @@ let id = "id_example"; // String | The key of the application property to update
 let opts = {
   'body': new Jira.InlineObject() // InlineObject | 
 };
-apiInstance.applicationPropertiesIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ApplicationPropertiesIdPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -481,7 +469,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -489,9 +477,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## applicationroleGet
+## cloudidRestApi3ApplicationroleGet
 
-> [InlineResponse2001] applicationroleGet()
+> [InlineResponse2001] cloudidRestApi3ApplicationroleGet()
 
 
 
@@ -502,16 +490,12 @@ Returns all application roles. In Jira, application roles are managed using the 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.applicationroleGet((error, data, response) => {
+apiInstance.cloudidRestApi3ApplicationroleGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -530,7 +514,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -538,9 +522,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## applicationroleKeyGet
+## cloudidRestApi3ApplicationroleKeyGet
 
-> InlineResponse2002 applicationroleKeyGet(key)
+> InlineResponse2002 cloudidRestApi3ApplicationroleKeyGet(key)
 
 
 
@@ -551,17 +535,13 @@ Returns an application role.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let key = "key_example"; // String | The key of the application role. Use the Get all application roles method to get the key for each application role.
-apiInstance.applicationroleKeyGet(key, (error, data, response) => {
+apiInstance.cloudidRestApi3ApplicationroleKeyGet(key, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -583,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -591,9 +571,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## attachmentIdDelete
+## cloudidRestApi3AttachmentIdDelete
 
-> attachmentIdDelete(id)
+> cloudidRestApi3AttachmentIdDelete(id)
 
 
 
@@ -604,17 +584,13 @@ Deletes an attachment from an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.attachmentIdDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3AttachmentIdDelete(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -636,7 +612,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -644,9 +620,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## attachmentIdExpandHumanGet
+## cloudidRestApi3AttachmentIdExpandHumanGet
 
-> InlineResponse2005 attachmentIdExpandHumanGet(id)
+> InlineResponse2005 cloudidRestApi3AttachmentIdExpandHumanGet(id)
 
 
 
@@ -657,17 +633,13 @@ Returns the metadata for the contents of an attachment, if it is an archive, and
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.attachmentIdExpandHumanGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3AttachmentIdExpandHumanGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -689,7 +661,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -697,9 +669,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## attachmentIdExpandRawGet
+## cloudidRestApi3AttachmentIdExpandRawGet
 
-> InlineResponse2006 attachmentIdExpandRawGet(id)
+> InlineResponse2006 cloudidRestApi3AttachmentIdExpandRawGet(id)
 
 
 
@@ -710,17 +682,13 @@ Returns the metadata for the contents of an attachment, if it is an archive. For
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.attachmentIdExpandRawGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3AttachmentIdExpandRawGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -742,7 +710,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -750,9 +718,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## attachmentIdGet
+## cloudidRestApi3AttachmentIdGet
 
-> InlineResponse2004 attachmentIdGet(id)
+> InlineResponse2004 cloudidRestApi3AttachmentIdGet(id)
 
 
 
@@ -763,17 +731,13 @@ Returns the metadata for an attachment. Note that the attachment itself is not r
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the attachment.
-apiInstance.attachmentIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3AttachmentIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -795,7 +759,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -803,9 +767,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## attachmentMetaGet
+## cloudidRestApi3AttachmentMetaGet
 
-> InlineResponse2003 attachmentMetaGet()
+> InlineResponse2003 cloudidRestApi3AttachmentMetaGet()
 
 
 
@@ -816,16 +780,12 @@ Returns the global attachment settings, that is, whether attachments are enabled
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.attachmentMetaGet((error, data, response) => {
+apiInstance.cloudidRestApi3AttachmentMetaGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -844,7 +804,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -852,9 +812,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## auditingRecordGet
+## cloudidRestApi3AuditingRecordGet
 
-> InlineResponse2007 auditingRecordGet(opts)
+> InlineResponse2007 cloudidRestApi3AuditingRecordGet(opts)
 
 
 
@@ -865,10 +825,6 @@ Returns a list of audit records. The list can be filtered to include items:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -881,7 +837,7 @@ let opts = {
   'offset': 56, // Number | The number of records to skip before returning the first result.
   'to': "to_example" // String | The date and time on or before which returned audit results must have been created. If from is provided to must be after from or the result set will be empty.
 };
-apiInstance.auditingRecordGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3AuditingRecordGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -907,7 +863,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -915,9 +871,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## avatarTypeSystemGet
+## cloudidRestApi3AvatarTypeSystemGet
 
-> InlineResponse2008 avatarTypeSystemGet(type)
+> InlineResponse2008 cloudidRestApi3AvatarTypeSystemGet(type)
 
 
 
@@ -928,17 +884,13 @@ Returns a list of system avatar details by owner type, where the owner types are
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let type = "type_example"; // String | The avatar type.
-apiInstance.avatarTypeSystemGet(type, (error, data, response) => {
+apiInstance.cloudidRestApi3AvatarTypeSystemGet(type, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -960,7 +912,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -968,9 +920,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## commentCommentIdPropertiesGet
+## cloudidRestApi3CommentCommentIdPropertiesGet
 
-> InlineResponse20010 commentCommentIdPropertiesGet(commentId)
+> InlineResponse20010 cloudidRestApi3CommentCommentIdPropertiesGet(commentId)
 
 
 
@@ -981,17 +933,13 @@ Returns the keys of all the properties of a comment.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let commentId = "commentId_example"; // String | The ID of the comment.
-apiInstance.commentCommentIdPropertiesGet(commentId, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentCommentIdPropertiesGet(commentId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1013,7 +961,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1021,9 +969,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## commentCommentIdPropertiesPropertyKeyDelete
+## cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete
 
-> commentCommentIdPropertiesPropertyKeyDelete(commentId, propertyKey)
+> cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(commentId, propertyKey)
 
 
 
@@ -1034,10 +982,6 @@ Deletes a comment property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1045,7 +989,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let commentId = "commentId_example"; // String | The ID of the comment.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.commentCommentIdPropertiesPropertyKeyDelete(commentId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyDelete(commentId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1068,7 +1012,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1076,9 +1020,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## commentCommentIdPropertiesPropertyKeyGet
+## cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 commentCommentIdPropertiesPropertyKeyGet(commentId, propertyKey)
+> InlineResponse20011 cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(commentId, propertyKey)
 
 
 
@@ -1089,10 +1033,6 @@ Returns the value of a comment property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1100,7 +1040,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let commentId = "commentId_example"; // String | The ID of the comment.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.commentCommentIdPropertiesPropertyKeyGet(commentId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyGet(commentId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1123,7 +1063,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1131,9 +1071,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## commentCommentIdPropertiesPropertyKeyPut
+## cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut
 
-> commentCommentIdPropertiesPropertyKeyPut(commentId, propertyKey)
+> cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(commentId, propertyKey)
 
 
 
@@ -1144,10 +1084,6 @@ Creates or updates the value of a property for a comment. Use this resource to s
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1155,7 +1091,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let commentId = "commentId_example"; // String | The ID of the comment.
 let propertyKey = "propertyKey_example"; // String | The key of the property. The maximum length is 255 characters.
-apiInstance.commentCommentIdPropertiesPropertyKeyPut(commentId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentCommentIdPropertiesPropertyKeyPut(commentId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1178,7 +1114,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1186,9 +1122,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## commentListPost
+## cloudidRestApi3CommentListPost
 
-> InlineResponse2009 commentListPost(opts)
+> InlineResponse2009 cloudidRestApi3CommentListPost(opts)
 
 
 
@@ -1199,10 +1135,6 @@ Returns the comments for a list of comment IDs.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1212,7 +1144,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about comments in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject1() // InlineObject1 | 
 };
-apiInstance.commentListPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3CommentListPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1235,7 +1167,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1243,9 +1175,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## componentIdDelete
+## cloudidRestApi3ComponentIdDelete
 
-> componentIdDelete(id, opts)
+> cloudidRestApi3ComponentIdDelete(id, opts)
 
 
 
@@ -1256,10 +1188,6 @@ Deletes a component. Permissions required: Any of the following:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1269,7 +1197,7 @@ let id = "id_example"; // String | The ID of the component.
 let opts = {
   'moveIssuesTo': "moveIssuesTo_example" // String | The ID of the component to replace the deleted component. If this value is null no replacement is made.
 };
-apiInstance.componentIdDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentIdDelete(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1292,7 +1220,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1300,9 +1228,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## componentIdGet
+## cloudidRestApi3ComponentIdGet
 
-> InlineResponse201 componentIdGet(id)
+> InlineResponse201 cloudidRestApi3ComponentIdGet(id)
 
 
 
@@ -1313,17 +1241,13 @@ Returns a component. Permissions required: Browse projects project permission.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the component.
-apiInstance.componentIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1345,7 +1269,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1353,9 +1277,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## componentIdPut
+## cloudidRestApi3ComponentIdPut
 
-> componentIdPut(id, opts)
+> cloudidRestApi3ComponentIdPut(id, opts)
 
 
 
@@ -1366,10 +1290,6 @@ Modifies a component. Any fields included in the request are overwritten. If lea
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1379,7 +1299,7 @@ let id = "id_example"; // String |
 let opts = {
   'body': new Jira.InlineObject3() // InlineObject3 | 
 };
-apiInstance.componentIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentIdPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1402,7 +1322,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1410,9 +1330,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## componentIdRelatedIssueCountsGet
+## cloudidRestApi3ComponentIdRelatedIssueCountsGet
 
-> InlineResponse20012 componentIdRelatedIssueCountsGet(id)
+> InlineResponse20012 cloudidRestApi3ComponentIdRelatedIssueCountsGet(id)
 
 
 
@@ -1423,17 +1343,13 @@ Returns the counts of issues assigned to the component. Permissions required: Pe
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the component.
-apiInstance.componentIdRelatedIssueCountsGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentIdRelatedIssueCountsGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1455,7 +1371,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1463,9 +1379,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## componentPost
+## cloudidRestApi3ComponentPost
 
-> InlineResponse201 componentPost(opts)
+> InlineResponse201 cloudidRestApi3ComponentPost(opts)
 
 
 
@@ -1476,10 +1392,6 @@ Creates a component. Use components to provide containers for issues within a pr
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1488,7 +1400,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject2() // InlineObject2 | 
 };
-apiInstance.componentPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ComponentPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1510,7 +1422,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1518,9 +1430,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## configurationGet
+## cloudidRestApi3ConfigurationGet
 
-> InlineResponse20013 configurationGet()
+> InlineResponse20013 cloudidRestApi3ConfigurationGet()
 
 
 
@@ -1531,16 +1443,12 @@ Returns the global settings in Jira. These settings determine whether optional f
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.configurationGet((error, data, response) => {
+apiInstance.cloudidRestApi3ConfigurationGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1559,7 +1467,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1567,9 +1475,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## configurationTimetrackingDelete
+## cloudidRestApi3ConfigurationTimetrackingDelete
 
-> configurationTimetrackingDelete()
+> cloudidRestApi3ConfigurationTimetrackingDelete()
 
 
 
@@ -1580,16 +1488,12 @@ Disables time tracking.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.configurationTimetrackingDelete((error, data, response) => {
+apiInstance.cloudidRestApi3ConfigurationTimetrackingDelete((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1608,7 +1512,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1616,9 +1520,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## configurationTimetrackingGet
+## cloudidRestApi3ConfigurationTimetrackingGet
 
-> InlineResponse20014 configurationTimetrackingGet()
+> InlineResponse20014 cloudidRestApi3ConfigurationTimetrackingGet()
 
 
 
@@ -1629,16 +1533,12 @@ Returns the time tracking provider that is currently selected. Note that if time
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.configurationTimetrackingGet((error, data, response) => {
+apiInstance.cloudidRestApi3ConfigurationTimetrackingGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1657,7 +1557,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1665,9 +1565,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## configurationTimetrackingListGet
+## cloudidRestApi3ConfigurationTimetrackingListGet
 
-> [InlineResponse20015] configurationTimetrackingListGet()
+> [InlineResponse20015] cloudidRestApi3ConfigurationTimetrackingListGet()
 
 
 
@@ -1678,16 +1578,12 @@ Returns all time tracking providers. By default, Jira only has one time tracking
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.configurationTimetrackingListGet((error, data, response) => {
+apiInstance.cloudidRestApi3ConfigurationTimetrackingListGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1706,7 +1602,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1714,9 +1610,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## configurationTimetrackingOptionsGet
+## cloudidRestApi3ConfigurationTimetrackingOptionsGet
 
-> InlineResponse20016 configurationTimetrackingOptionsGet()
+> InlineResponse20016 cloudidRestApi3ConfigurationTimetrackingOptionsGet()
 
 
 
@@ -1727,16 +1623,12 @@ Returns the time tracking settings. This includes settings such as the time form
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.configurationTimetrackingOptionsGet((error, data, response) => {
+apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1755,7 +1647,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1763,9 +1655,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## configurationTimetrackingOptionsPut
+## cloudidRestApi3ConfigurationTimetrackingOptionsPut
 
-> InlineResponse20016 configurationTimetrackingOptionsPut(opts)
+> InlineResponse20016 cloudidRestApi3ConfigurationTimetrackingOptionsPut(opts)
 
 
 
@@ -1776,10 +1668,6 @@ Sets the time tracking settings.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1788,7 +1676,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject5() // InlineObject5 | 
 };
-apiInstance.configurationTimetrackingOptionsPut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ConfigurationTimetrackingOptionsPut(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1810,7 +1698,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1818,9 +1706,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## configurationTimetrackingPut
+## cloudidRestApi3ConfigurationTimetrackingPut
 
-> configurationTimetrackingPut(opts)
+> cloudidRestApi3ConfigurationTimetrackingPut(opts)
 
 
 
@@ -1831,10 +1719,6 @@ Selects a time tracking provider.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1843,7 +1727,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject4() // InlineObject4 | 
 };
-apiInstance.configurationTimetrackingPut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ConfigurationTimetrackingPut(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1865,7 +1749,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1873,9 +1757,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## customFieldOptionIdGet
+## cloudidRestApi3CustomFieldOptionIdGet
 
-> InlineResponse20017 customFieldOptionIdGet(id)
+> InlineResponse20017 cloudidRestApi3CustomFieldOptionIdGet(id)
 
 
 
@@ -1886,17 +1770,13 @@ Returns a custom field option. For example, an option in a cascading select list
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the custom field option. To find this ID, configure the custom field and edit its options in Jira. Click the option and its ID will show in the URL as the selectedParentOptionId parameter.
-apiInstance.customFieldOptionIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3CustomFieldOptionIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1918,7 +1798,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1926,9 +1806,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## dashboardDashboardIdItemsItemIdPropertiesGet
+## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet
 
-> InlineResponse20010 dashboardDashboardIdItemsItemIdPropertiesGet(dashboardId, itemId)
+> InlineResponse20010 cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(dashboardId, itemId)
 
 
 
@@ -1939,10 +1819,6 @@ Returns the keys of all properties for a dashboard item.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -1950,7 +1826,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
-apiInstance.dashboardDashboardIdItemsItemIdPropertiesGet(dashboardId, itemId, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesGet(dashboardId, itemId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1973,7 +1849,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -1981,9 +1857,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete
+## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete
 
-> dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(dashboardId, itemId, propertyKey)
+> cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(dashboardId, itemId, propertyKey)
 
 
 
@@ -1994,10 +1870,6 @@ Deletes a dashboard item property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2006,7 +1878,7 @@ let apiInstance = new Jira.DefaultApi();
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
 let propertyKey = "propertyKey_example"; // String | The key of the dashboard item property.
-apiInstance.dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(dashboardId, itemId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete(dashboardId, itemId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2030,7 +1902,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2038,9 +1910,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet
+## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(dashboardId, itemId, propertyKey)
+> InlineResponse20011 cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(dashboardId, itemId, propertyKey)
 
 
 
@@ -2051,10 +1923,6 @@ Returns the key and value of a dashboard item property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2063,7 +1931,7 @@ let apiInstance = new Jira.DefaultApi();
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
 let propertyKey = "propertyKey_example"; // String | The key of the dashboard item property.
-apiInstance.dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(dashboardId, itemId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet(dashboardId, itemId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2087,7 +1955,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2095,9 +1963,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut
+## cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut
 
-> dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(dashboardId, itemId, propertyKey)
+> cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(dashboardId, itemId, propertyKey)
 
 
 
@@ -2108,10 +1976,6 @@ Sets the value of a dashboard item property. Use this resource in apps to store 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2120,7 +1984,7 @@ let apiInstance = new Jira.DefaultApi();
 let dashboardId = "dashboardId_example"; // String | The ID of the dashboard.
 let itemId = "itemId_example"; // String | The ID of the dashboard item.
 let propertyKey = "propertyKey_example"; // String | The key of the dashboard item property. The maximum length of the key is 255 bytes.
-apiInstance.dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(dashboardId, itemId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut(dashboardId, itemId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2144,7 +2008,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2152,9 +2016,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## dashboardGet
+## cloudidRestApi3DashboardGet
 
-> InlineResponse20018 dashboardGet(opts)
+> InlineResponse20018 cloudidRestApi3DashboardGet(opts)
 
 
 
@@ -2165,10 +2029,6 @@ Returns a list of dashboards owned by or shared with the user. The list may be f
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2179,7 +2039,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1000.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.dashboardGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2203,7 +2063,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2211,9 +2071,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## dashboardIdGet
+## cloudidRestApi3DashboardIdGet
 
-> InlineResponse20019 dashboardIdGet(id)
+> InlineResponse20019 cloudidRestApi3DashboardIdGet(id)
 
 
 
@@ -2224,17 +2084,13 @@ Returns a dashboard.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the dashboard.
-apiInstance.dashboardIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3DashboardIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2256,7 +2112,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2264,9 +2120,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## expressionEvalPost
+## cloudidRestApi3ExpressionEvalPost
 
-> InlineResponse20020 expressionEvalPost(opts)
+> InlineResponse20020 cloudidRestApi3ExpressionEvalPost(opts)
 
 
 
@@ -2277,10 +2133,6 @@ Evaluates a Jira expression and returns its value.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2290,7 +2142,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject6() // InlineObject6 | 
 };
-apiInstance.expressionEvalPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ExpressionEvalPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2313,7 +2165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2321,9 +2173,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## fieldFieldKeyOptionGet
+## cloudidRestApi3FieldFieldKeyOptionGet
 
-> InlineResponse20022 fieldFieldKeyOptionGet(fieldKey, opts)
+> InlineResponse20022 cloudidRestApi3FieldFieldKeyOptionGet(fieldKey, opts)
 
 
 
@@ -2334,10 +2186,6 @@ Returns all options defined for a select list issue field. A select list issue f
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2348,7 +2196,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. For example, 20.
   'startAt': 56 // Number | The starting index of the returned objects. For example, 1.
 };
-apiInstance.fieldFieldKeyOptionGet(fieldKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionGet(fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2372,7 +2220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2380,9 +2228,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## fieldFieldKeyOptionOptionIdDelete
+## cloudidRestApi3FieldFieldKeyOptionOptionIdDelete
 
-> fieldFieldKeyOptionOptionIdDelete(fieldKey, optionId)
+> cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(fieldKey, optionId)
 
 
 
@@ -2393,10 +2241,6 @@ Deletes an option from a select list issue field.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2404,7 +2248,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let optionId = 56; // Number | The ID of the option to be deleted. For example, 3.
-apiInstance.fieldFieldKeyOptionOptionIdDelete(fieldKey, optionId, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdDelete(fieldKey, optionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2427,7 +2271,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2435,9 +2279,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## fieldFieldKeyOptionOptionIdGet
+## cloudidRestApi3FieldFieldKeyOptionOptionIdGet
 
-> InlineResponse20025 fieldFieldKeyOptionOptionIdGet(fieldKey, optionId)
+> InlineResponse20025 cloudidRestApi3FieldFieldKeyOptionOptionIdGet(fieldKey, optionId)
 
 
 
@@ -2448,10 +2292,6 @@ Returns an option from a select list issue field.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2459,7 +2299,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let fieldKey = "fieldKey_example"; // String | The field key is specified in the following format: $(app-key)__$(field-key). For example, example-add-on__example-issue-field.
 let optionId = 56; // Number | The ID of the option to be returned. For example, 3.
-apiInstance.fieldFieldKeyOptionOptionIdGet(fieldKey, optionId, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdGet(fieldKey, optionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2482,7 +2322,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2490,9 +2330,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## fieldFieldKeyOptionOptionIdIssueDelete
+## cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete
 
-> fieldFieldKeyOptionOptionIdIssueDelete(fieldKey, optionId, opts)
+> cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(fieldKey, optionId, opts)
 
 
 
@@ -2503,10 +2343,6 @@ Deselects a select list issue field option in all issues that it has been select
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2518,7 +2354,7 @@ let opts = {
   'jql': "jql_example", // String | A JQL query that specifies the issues to be updated. For example, project=10000.
   'replaceWith': 56 // Number | The ID of the option that will replace the currently selected option. For example, 2.
 };
-apiInstance.fieldFieldKeyOptionOptionIdIssueDelete(fieldKey, optionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdIssueDelete(fieldKey, optionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2543,7 +2379,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2551,9 +2387,9 @@ null (empty response body)
 - **Accept**: */*
 
 
-## fieldFieldKeyOptionOptionIdPut
+## cloudidRestApi3FieldFieldKeyOptionOptionIdPut
 
-> InlineResponse20025 fieldFieldKeyOptionOptionIdPut(fieldKey, optionId, opts)
+> InlineResponse20025 cloudidRestApi3FieldFieldKeyOptionOptionIdPut(fieldKey, optionId, opts)
 
 
 
@@ -2564,10 +2400,6 @@ Updates an option for a select list issue field. If the option does not exist, a
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2578,7 +2410,7 @@ let optionId = 56; // Number | The ID of the option to be updated. For example, 
 let opts = {
   'body': new Jira.InlineObject9() // InlineObject9 | 
 };
-apiInstance.fieldFieldKeyOptionOptionIdPut(fieldKey, optionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionOptionIdPut(fieldKey, optionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2602,7 +2434,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2610,9 +2442,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## fieldFieldKeyOptionPost
+## cloudidRestApi3FieldFieldKeyOptionPost
 
-> InlineResponse20023 fieldFieldKeyOptionPost(fieldKey, opts)
+> InlineResponse20023 cloudidRestApi3FieldFieldKeyOptionPost(fieldKey, opts)
 
 
 
@@ -2623,10 +2455,6 @@ Creates an option for a select list issue field.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2636,7 +2464,7 @@ let fieldKey = "fieldKey_example"; // String |
 let opts = {
   'body': new Jira.InlineObject8() // InlineObject8 | 
 };
-apiInstance.fieldFieldKeyOptionPost(fieldKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionPost(fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2659,7 +2487,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2667,9 +2495,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## fieldFieldKeyOptionSuggestionsEditGet
+## cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet
 
-> InlineResponse20024 fieldFieldKeyOptionSuggestionsEditGet(fieldKey, opts)
+> InlineResponse20024 cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(fieldKey, opts)
 
 
 
@@ -2680,10 +2508,6 @@ Returns options defined for a select list issue field that can be viewed and sel
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2695,7 +2519,7 @@ let opts = {
   'projectId': 56, // Number | Filters the results to options that are only available in the specified project. For example, 10000.
   'startAt': 56 // Number | The starting index of the returned objects. For example, 1.
 };
-apiInstance.fieldFieldKeyOptionSuggestionsEditGet(fieldKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsEditGet(fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2720,7 +2544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2728,9 +2552,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## fieldFieldKeyOptionSuggestionsSearchGet
+## cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet
 
-> InlineResponse20024 fieldFieldKeyOptionSuggestionsSearchGet(fieldKey, opts)
+> InlineResponse20024 cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(fieldKey, opts)
 
 
 
@@ -2741,10 +2565,6 @@ Returns options defined for a select list issue field that can be viewed by the 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2756,7 +2576,7 @@ let opts = {
   'projectId': 56, // Number | Filters the results to options that are only available in the specified project. For example, 10000.
   'startAt': 56 // Number | The starting index of the returned objects. For example, 1.
 };
-apiInstance.fieldFieldKeyOptionSuggestionsSearchGet(fieldKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldFieldKeyOptionSuggestionsSearchGet(fieldKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2781,7 +2601,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2789,9 +2609,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## fieldGet
+## cloudidRestApi3FieldGet
 
-> [InlineResponse20021] fieldGet()
+> [InlineResponse20021] cloudidRestApi3FieldGet()
 
 
 
@@ -2802,16 +2622,12 @@ Returns all issue fields in Jira, both system and custom fields.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.fieldGet((error, data, response) => {
+apiInstance.cloudidRestApi3FieldGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2830,7 +2646,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2838,9 +2654,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## fieldPost
+## cloudidRestApi3FieldPost
 
-> InlineResponse2011 fieldPost(opts)
+> InlineResponse2011 cloudidRestApi3FieldPost(opts)
 
 
 
@@ -2851,10 +2667,6 @@ Creates a custom field.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2863,7 +2675,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject7() // InlineObject7 | 
 };
-apiInstance.fieldPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FieldPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2885,7 +2697,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2893,9 +2705,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterDefaultShareScopeGet
+## cloudidRestApi3FilterDefaultShareScopeGet
 
-> InlineResponse20027 filterDefaultShareScopeGet()
+> InlineResponse20027 cloudidRestApi3FilterDefaultShareScopeGet()
 
 
 
@@ -2906,16 +2718,12 @@ Returns the default sharing settings for new filters and dashboards for a user. 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.filterDefaultShareScopeGet((error, data, response) => {
+apiInstance.cloudidRestApi3FilterDefaultShareScopeGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2934,7 +2742,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2942,9 +2750,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## filterDefaultShareScopePut
+## cloudidRestApi3FilterDefaultShareScopePut
 
-> InlineResponse20027 filterDefaultShareScopePut(opts)
+> InlineResponse20027 cloudidRestApi3FilterDefaultShareScopePut(opts)
 
 
 
@@ -2955,10 +2763,6 @@ Sets the default sharing for new filters and dashboards for a user. Permissions 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -2967,7 +2771,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject11() // InlineObject11 | 
 };
-apiInstance.filterDefaultShareScopePut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterDefaultShareScopePut(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -2989,7 +2793,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -2997,9 +2801,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterFavouriteGet
+## cloudidRestApi3FilterFavouriteGet
 
-> [InlineResponse20028] filterFavouriteGet(opts)
+> [InlineResponse20028] cloudidRestApi3FilterFavouriteGet(opts)
 
 
 
@@ -3010,10 +2814,6 @@ Returns the favorite filters of the calling user. Permissions required: Permissi
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3022,7 +2822,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.filterFavouriteGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterFavouriteGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3044,7 +2844,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3052,9 +2852,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterGet
+## cloudidRestApi3FilterGet
 
-> InlineResponse20026 filterGet(opts)
+> InlineResponse20026 cloudidRestApi3FilterGet(opts)
 
 
 
@@ -3065,10 +2865,6 @@ Returns all filters. Deprecated, use Search for filters that supports search and
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3077,7 +2873,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.filterGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3099,7 +2895,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3107,9 +2903,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterIdColumnsDelete
+## cloudidRestApi3FilterIdColumnsDelete
 
-> filterIdColumnsDelete(id)
+> cloudidRestApi3FilterIdColumnsDelete(id)
 
 
 
@@ -3120,17 +2916,13 @@ Reset the user&#39;s column configuration for the filter to the default. Permiss
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the filter.
-apiInstance.filterIdColumnsDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdColumnsDelete(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3152,7 +2944,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3160,9 +2952,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## filterIdColumnsGet
+## cloudidRestApi3FilterIdColumnsGet
 
-> [InlineResponse20030] filterIdColumnsGet(id)
+> [InlineResponse20030] cloudidRestApi3FilterIdColumnsGet(id)
 
 
 
@@ -3173,17 +2965,13 @@ Returns the columns configured for a filter. The column configuration is used wh
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the filter.
-apiInstance.filterIdColumnsGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdColumnsGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3205,7 +2993,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3213,9 +3001,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterIdColumnsPut
+## cloudidRestApi3FilterIdColumnsPut
 
-> filterIdColumnsPut(id)
+> cloudidRestApi3FilterIdColumnsPut(id)
 
 
 
@@ -3226,17 +3014,13 @@ Sets the columns for a filter. Only navigable fields can be set as columns. Use 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the filter.
-apiInstance.filterIdColumnsPut(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdColumnsPut(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3258,7 +3042,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3266,9 +3050,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## filterIdDelete
+## cloudidRestApi3FilterIdDelete
 
-> filterIdDelete(id)
+> cloudidRestApi3FilterIdDelete(id)
 
 
 
@@ -3279,17 +3063,13 @@ Delete a filter. Permissions required: Permission to log in to Jira, however the
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the filter to delete.
-apiInstance.filterIdDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdDelete(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3311,7 +3091,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3319,9 +3099,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## filterIdFavouriteDelete
+## cloudidRestApi3FilterIdFavouriteDelete
 
-> InlineResponse20026 filterIdFavouriteDelete(id, opts)
+> InlineResponse20026 cloudidRestApi3FilterIdFavouriteDelete(id, opts)
 
 
 
@@ -3332,10 +3112,6 @@ Removes a filter as a favorite for the calling user. Permissions required: Permi
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3345,7 +3121,7 @@ let id = 56; // Number | The ID of the filter.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.filterIdFavouriteDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdFavouriteDelete(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3368,7 +3144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3376,9 +3152,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterIdFavouritePut
+## cloudidRestApi3FilterIdFavouritePut
 
-> InlineResponse20026 filterIdFavouritePut(id, opts)
+> InlineResponse20026 cloudidRestApi3FilterIdFavouritePut(id, opts)
 
 
 
@@ -3389,10 +3165,6 @@ Add a filter as a favorite for the calling user. Permissions required: Permissio
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3402,7 +3174,7 @@ let id = 56; // Number | The ID of the filter.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.filterIdFavouritePut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdFavouritePut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3425,7 +3197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3433,9 +3205,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterIdGet
+## cloudidRestApi3FilterIdGet
 
-> InlineResponse20026 filterIdGet(id, opts)
+> InlineResponse20026 cloudidRestApi3FilterIdGet(id, opts)
 
 
 
@@ -3446,10 +3218,6 @@ Returns a filter. Permissions required: None, however the calling user must have
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3459,7 +3227,7 @@ let id = 56; // Number | The ID of the filter to return.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.filterIdGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdGet(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3482,7 +3250,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3490,9 +3258,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterIdPermissionGet
+## cloudidRestApi3FilterIdPermissionGet
 
-> [InlineResponse20031] filterIdPermissionGet(id)
+> [InlineResponse20031] cloudidRestApi3FilterIdPermissionGet(id)
 
 
 
@@ -3503,17 +3271,13 @@ Returns the share permissions for a filter. A filter can be shared with groups, 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the filter.
-apiInstance.filterIdPermissionGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPermissionGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3535,7 +3299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3543,9 +3307,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterIdPermissionPermissionIdDelete
+## cloudidRestApi3FilterIdPermissionPermissionIdDelete
 
-> filterIdPermissionPermissionIdDelete(id, permissionId)
+> cloudidRestApi3FilterIdPermissionPermissionIdDelete(id, permissionId)
 
 
 
@@ -3556,10 +3320,6 @@ Deletes a share permission from a filter. Permissions required: Permission to lo
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3567,7 +3327,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the filter.
 let permissionId = 56; // Number | The ID of the share permission.
-apiInstance.filterIdPermissionPermissionIdDelete(id, permissionId, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdDelete(id, permissionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3590,7 +3350,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3598,9 +3358,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## filterIdPermissionPermissionIdGet
+## cloudidRestApi3FilterIdPermissionPermissionIdGet
 
-> InlineResponse20032 filterIdPermissionPermissionIdGet(id, permissionId)
+> InlineResponse20032 cloudidRestApi3FilterIdPermissionPermissionIdGet(id, permissionId)
 
 
 
@@ -3611,10 +3371,6 @@ Returns a share permission for a filter. A filter can be shared with groups, pro
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3622,7 +3378,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the filter.
 let permissionId = 56; // Number | The ID of the share permission.
-apiInstance.filterIdPermissionPermissionIdGet(id, permissionId, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPermissionPermissionIdGet(id, permissionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3645,7 +3401,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3653,9 +3409,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterIdPermissionPost
+## cloudidRestApi3FilterIdPermissionPost
 
-> [InlineResponse20031] filterIdPermissionPost(id, opts)
+> [InlineResponse20031] cloudidRestApi3FilterIdPermissionPost(id, opts)
 
 
 
@@ -3666,10 +3422,6 @@ Add a share permissions to a filter. If you add a global share permission (i.e.,
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3679,7 +3431,7 @@ let id = 56; // Number | The ID of the filter.
 let opts = {
   'body': new Jira.InlineObject13() // InlineObject13 | 
 };
-apiInstance.filterIdPermissionPost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPermissionPost(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3702,7 +3454,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3710,9 +3462,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterIdPut
+## cloudidRestApi3FilterIdPut
 
-> InlineResponse20026 filterIdPut(id, opts)
+> InlineResponse20026 cloudidRestApi3FilterIdPut(id, opts)
 
 
 
@@ -3723,10 +3475,6 @@ Updates an existing filter. Use this method to update a filter&#39;s name, descr
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3737,7 +3485,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject12() // InlineObject12 | 
 };
-apiInstance.filterIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterIdPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3761,7 +3509,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3769,9 +3517,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterMyGet
+## cloudidRestApi3FilterMyGet
 
-> [InlineResponse20028] filterMyGet(opts)
+> [InlineResponse20028] cloudidRestApi3FilterMyGet(opts)
 
 
 
@@ -3782,10 +3530,6 @@ Returns the filters owned by the calling user. If includeFavourites is true, the
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3795,7 +3539,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
   'includeFavourites': true // Boolean | Include the user's favorite filters in the response.
 };
-apiInstance.filterMyGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterMyGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3818,7 +3562,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3826,9 +3570,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterPost
+## cloudidRestApi3FilterPost
 
-> InlineResponse20026 filterPost(opts)
+> InlineResponse20026 cloudidRestApi3FilterPost(opts)
 
 
 
@@ -3839,10 +3583,6 @@ Creates a new filter. The new filter is not shared and not selected as a favorit
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3852,7 +3592,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about filter in the response. This parameter accepts multiple values separated by a comma:
   'body': new Jira.InlineObject10() // InlineObject10 | 
 };
-apiInstance.filterPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3875,7 +3615,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3883,9 +3623,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## filterSearchGet
+## cloudidRestApi3FilterSearchGet
 
-> InlineResponse20029 filterSearchGet(opts)
+> InlineResponse20029 cloudidRestApi3FilterSearchGet(opts)
 
 
 
@@ -3896,10 +3636,6 @@ Search for filters. This method is similar to Get filters except that you can re
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3916,7 +3652,7 @@ let opts = {
   'projectId': 56, // Number | Returns filters that are shared with a project that has an ID that exactly matches projectId.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset). The base index is 0.
 };
-apiInstance.filterSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3FilterSearchGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -3946,7 +3682,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -3954,9 +3690,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## groupDelete
+## cloudidRestApi3GroupDelete
 
-> groupDelete(opts)
+> cloudidRestApi3GroupDelete(opts)
 
 
 
@@ -3967,10 +3703,6 @@ Deletes a group.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -3980,7 +3712,7 @@ let opts = {
   'groupname': "groupname_example", // String | The name of the group.
   'swapGroup': "swapGroup_example" // String | The group to transfer restrictions to. Only comments and worklogs are transferred. If restrictions are not transferred, comments and worklogs will be inaccessible after the deletion.
 };
-apiInstance.groupDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupDelete(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4003,7 +3735,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4011,9 +3743,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## groupGet
+## cloudidRestApi3GroupGet
 
-> groupGet(opts)
+> cloudidRestApi3GroupGet(opts)
 
 
 
@@ -4024,10 +3756,6 @@ This resource is deprecated, use group/member.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4037,7 +3765,7 @@ let opts = {
   'expand': "expand_example", // String | List of fields to expand.
   'groupname': "groupname_example" // String | The name of the group.
 };
-apiInstance.groupGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4060,7 +3788,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4068,9 +3796,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## groupMemberGet
+## cloudidRestApi3GroupMemberGet
 
-> InlineResponse20033 groupMemberGet(opts)
+> InlineResponse20033 cloudidRestApi3GroupMemberGet(opts)
 
 
 
@@ -4081,10 +3809,6 @@ Returns all users in a group. Users are ordered by username.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4096,7 +3820,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of users to return per page.
   'startAt': 56 // Number | The index of the first user to return.
 };
-apiInstance.groupMemberGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupMemberGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4121,7 +3845,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4129,9 +3853,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## groupPost
+## cloudidRestApi3GroupPost
 
-> InlineResponse2012 groupPost(opts)
+> InlineResponse2012 cloudidRestApi3GroupPost(opts)
 
 
 
@@ -4142,10 +3866,6 @@ Creates a group.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4154,7 +3874,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject14() // InlineObject14 | 
 };
-apiInstance.groupPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4176,7 +3896,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4184,9 +3904,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## groupUserDelete
+## cloudidRestApi3GroupUserDelete
 
-> groupUserDelete(opts)
+> cloudidRestApi3GroupUserDelete(opts)
 
 
 
@@ -4197,10 +3917,6 @@ Removes a user from a group. Permissions required: Administer Jira global permis
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4211,7 +3927,7 @@ let opts = {
   'groupname': "groupname_example", // String | The name of the group.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
 };
-apiInstance.groupUserDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupUserDelete(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4235,7 +3951,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4243,9 +3959,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## groupUserPost
+## cloudidRestApi3GroupUserPost
 
-> groupUserPost(opts)
+> cloudidRestApi3GroupUserPost(opts)
 
 
 
@@ -4256,10 +3972,6 @@ Adds a user to a group.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4269,7 +3981,7 @@ let opts = {
   'groupname': "groupname_example", // String | The name of the group.
   'body': new Jira.InlineObject15() // InlineObject15 | 
 };
-apiInstance.groupUserPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupUserPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4292,7 +4004,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4300,9 +4012,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## groupsPickerGet
+## cloudidRestApi3GroupsPickerGet
 
-> InlineResponse20034 groupsPickerGet(opts)
+> InlineResponse20034 cloudidRestApi3GroupsPickerGet(opts)
 
 
 
@@ -4313,10 +4025,6 @@ Returns a list of groups whose names contain a query string. A list of group nam
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4329,7 +4037,7 @@ let opts = {
   'query': "query_example", // String | The string to find in group names.
   'userName': "userName_example" // String | Parameter not in use.
 };
-apiInstance.groupsPickerGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupsPickerGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4355,7 +4063,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4363,9 +4071,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## groupuserpickerGet
+## cloudidRestApi3GroupuserpickerGet
 
-> InlineResponse20035 groupuserpickerGet(opts)
+> InlineResponse20035 cloudidRestApi3GroupuserpickerGet(opts)
 
 
 
@@ -4376,10 +4084,6 @@ Returns a list of users and groups matching a string. The string is used:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4396,7 +4100,7 @@ let opts = {
   'query': "query_example", // String | The search string.
   'showAvatar': true // Boolean | Indicates whether the user avatar should be returned. If an invalid value is provided, the default value is used.
 };
-apiInstance.groupuserpickerGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3GroupuserpickerGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4426,7 +4130,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4434,9 +4138,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueBulkPost
+## cloudidRestApi3IssueBulkPost
 
-> InlineResponse2014 issueBulkPost(opts)
+> InlineResponse2014 cloudidRestApi3IssueBulkPost(opts)
 
 
 
@@ -4447,10 +4151,6 @@ Creates issues and, where the option to create sub-tasks is enabled in Jira, sub
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4459,7 +4159,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject17() // InlineObject17 | 
 };
-apiInstance.issueBulkPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueBulkPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4481,7 +4181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4489,9 +4189,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueCreatemetaGet
+## cloudidRestApi3IssueCreatemetaGet
 
-> InlineResponse20036 issueCreatemetaGet(opts)
+> InlineResponse20036 cloudidRestApi3IssueCreatemetaGet(opts)
 
 
 
@@ -4502,10 +4202,6 @@ Returns details of projects, issue types within projects, and, when requested, t
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4518,7 +4214,7 @@ let opts = {
   'projectIds': ["null"], // [String] | Comma-separated list of project IDs. May be specified multiple times and with projectKeys.
   'projectKeys': ["null"] // [String] | Comma-separated list of project keys. May be specified multiple times and with projectIds.
 };
-apiInstance.issueCreatemetaGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueCreatemetaGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4544,7 +4240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4552,9 +4248,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyAssigneePut
+## cloudidRestApi3IssueIssueIdOrKeyAssigneePut
 
-> issueIssueIdOrKeyAssigneePut(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyAssigneePut(issueIdOrKey, opts)
 
 
 
@@ -4565,10 +4261,6 @@ Assigns an issue to a user. Use this operation when the calling user does not ha
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4578,7 +4270,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'body': new Jira.InlineObject21() // InlineObject21 | 
 };
-apiInstance.issueIssueIdOrKeyAssigneePut(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyAssigneePut(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4601,7 +4293,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4609,9 +4301,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyAttachmentsPost
+## cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost
 
-> [InlineResponse20038] issueIssueIdOrKeyAttachmentsPost(issueIdOrKey)
+> [InlineResponse20038] cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(issueIdOrKey)
 
 
 
@@ -4622,17 +4314,13 @@ Adds one or more attachments to an issue. Attachments are posted as multipart/fo
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue that attachments are added to.
-apiInstance.issueIssueIdOrKeyAttachmentsPost(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyAttachmentsPost(issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4654,7 +4342,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4662,9 +4350,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyChangelogGet
+## cloudidRestApi3IssueIssueIdOrKeyChangelogGet
 
-> InlineResponse20039 issueIssueIdOrKeyChangelogGet(issueIdOrKey, opts)
+> InlineResponse20039 cloudidRestApi3IssueIssueIdOrKeyChangelogGet(issueIdOrKey, opts)
 
 
 
@@ -4675,10 +4363,6 @@ Returns a paginated list of all updates of an issue, sorted by date, starting fr
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4689,7 +4373,7 @@ let opts = {
   'maxResults': 56, // Number | Maximum number of items to return per page. See Pagination section for more details.
   'startAt': 56 // Number | Page offset, ie. index of the first item returned in the page of results. Base index: 0.
 };
-apiInstance.issueIssueIdOrKeyChangelogGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyChangelogGet(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4713,7 +4397,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4721,9 +4405,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyCommentGet
+## cloudidRestApi3IssueIssueIdOrKeyCommentGet
 
-> InlineResponse20040 issueIssueIdOrKeyCommentGet(issueIdOrKey, opts)
+> InlineResponse20040 cloudidRestApi3IssueIssueIdOrKeyCommentGet(issueIdOrKey, opts)
 
 
 
@@ -4734,10 +4418,6 @@ to get comments for
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4750,7 +4430,7 @@ let opts = {
   'orderBy': "orderBy_example", // String | ordering of the results.
   'startAt': 56 // Number | the page offset, if not specified then defaults to 0
 };
-apiInstance.issueIssueIdOrKeyCommentGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentGet(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4776,7 +4456,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4784,9 +4464,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyCommentIdDelete
+## cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete
 
-> issueIssueIdOrKeyCommentIdDelete(id, issueIdOrKey)
+> cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(id, issueIdOrKey)
 
 
 
@@ -4797,10 +4477,6 @@ a string containing the issue id or key the comment belongs to
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4808,7 +4484,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | id of the comment to be deleted
 let issueIdOrKey = "issueIdOrKey_example"; // String | a string containing the issue id or key the comment belongs to
-apiInstance.issueIssueIdOrKeyCommentIdDelete(id, issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdDelete(id, issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4831,7 +4507,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4839,9 +4515,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyCommentIdGet
+## cloudidRestApi3IssueIssueIdOrKeyCommentIdGet
 
-> InlineResponse2015 issueIssueIdOrKeyCommentIdGet(id, issueIdOrKey, opts)
+> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(id, issueIdOrKey, opts)
 
 
 
@@ -4852,10 +4528,6 @@ of the issue the comment belongs to
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4866,7 +4538,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | of the issue the comment 
 let opts = {
   'expand': "expand_example" // String | optional flags: renderedBody (provides body rendered in HTML)
 };
-apiInstance.issueIssueIdOrKeyCommentIdGet(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdGet(id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4890,7 +4562,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4898,9 +4570,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyCommentIdPut
+## cloudidRestApi3IssueIssueIdOrKeyCommentIdPut
 
-> InlineResponse2015 issueIssueIdOrKeyCommentIdPut(id, issueIdOrKey, opts)
+> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(id, issueIdOrKey, opts)
 
 
 
@@ -4911,10 +4583,6 @@ a string containing the issue id or key the comment belongs to
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4926,7 +4594,7 @@ let opts = {
   'expand': "expand_example", // String | optional flags: renderedBody (provides body rendered in HTML)
   'body': new Jira.InlineObject23() // InlineObject23 | 
 };
-apiInstance.issueIssueIdOrKeyCommentIdPut(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentIdPut(id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -4951,7 +4619,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -4959,9 +4627,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyCommentPost
+## cloudidRestApi3IssueIssueIdOrKeyCommentPost
 
-> InlineResponse2015 issueIssueIdOrKeyCommentPost(issueIdOrKey, opts)
+> InlineResponse2015 cloudidRestApi3IssueIssueIdOrKeyCommentPost(issueIdOrKey, opts)
 
 
 
@@ -4972,10 +4640,6 @@ a string containing the issue id or key the comment will be added to
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -4986,7 +4650,7 @@ let opts = {
   'expand': "expand_example", // String | optional flags: renderedBody (provides body rendered in HTML)
   'body': new Jira.InlineObject22() // InlineObject22 | 
 };
-apiInstance.issueIssueIdOrKeyCommentPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyCommentPost(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5010,7 +4674,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5018,9 +4682,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyDelete
+## cloudidRestApi3IssueIssueIdOrKeyDelete
 
-> issueIssueIdOrKeyDelete(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyDelete(issueIdOrKey, opts)
 
 
 
@@ -5031,10 +4695,6 @@ Deletes an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5044,7 +4704,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'deleteSubtasks': "deleteSubtasks_example" // String | Indicates whether the issue's sub-tasks are deleted when the issue is deleted.
 };
-apiInstance.issueIssueIdOrKeyDelete(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyDelete(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5067,7 +4727,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5075,9 +4735,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyEditmetaGet
+## cloudidRestApi3IssueIssueIdOrKeyEditmetaGet
 
-> InlineResponse20041 issueIssueIdOrKeyEditmetaGet(issueIdOrKey, opts)
+> InlineResponse20041 cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(issueIdOrKey, opts)
 
 
 
@@ -5088,10 +4748,6 @@ Returns the edit screen fields for an issue that are visible to and editable by 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5102,7 +4758,7 @@ let opts = {
   'overrideEditableFlag': true, // Boolean | Indicates whether non-editable fields should be returned. Available to connect app users with admin permissions.
   'overrideScreenSecurity': true // Boolean | Indicates whether hidden fields should be returned. Available to connect app users with admin permissions.
 };
-apiInstance.issueIssueIdOrKeyEditmetaGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyEditmetaGet(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5126,7 +4782,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5134,9 +4790,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyGet
+## cloudidRestApi3IssueIssueIdOrKeyGet
 
-> InlineResponse20037 issueIssueIdOrKeyGet(issueIdOrKey, opts)
+> InlineResponse20037 cloudidRestApi3IssueIssueIdOrKeyGet(issueIdOrKey, opts)
 
 
 
@@ -5147,10 +4803,6 @@ Returns the details for an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5164,7 +4816,7 @@ let opts = {
   'properties': ["null"], // [String] | A comma-separated list of issue properties to return for the issue. Allowed values:
   'updateHistory': true // Boolean | Indicates whether the project in which the issue is created is added to the user's Recently viewed project list, as shown under Projects in Jira. This also populates the JQL issues search lastViewed field.
 };
-apiInstance.issueIssueIdOrKeyGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyGet(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5191,7 +4843,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5199,9 +4851,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyNotifyPost
+## cloudidRestApi3IssueIssueIdOrKeyNotifyPost
 
-> issueIssueIdOrKeyNotifyPost(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyNotifyPost(issueIdOrKey, opts)
 
 
 
@@ -5212,10 +4864,6 @@ Creates an email notification for an issue and adds it to the mail queue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5225,7 +4873,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | ID or key of the issue th
 let opts = {
   'body': new Jira.InlineObject24() // InlineObject24 | 
 };
-apiInstance.issueIssueIdOrKeyNotifyPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyNotifyPost(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5248,7 +4896,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5256,9 +4904,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyPropertiesGet
+## cloudidRestApi3IssueIssueIdOrKeyPropertiesGet
 
-> InlineResponse20010 issueIssueIdOrKeyPropertiesGet(issueIdOrKey)
+> InlineResponse20010 cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(issueIdOrKey)
 
 
 
@@ -5269,17 +4917,13 @@ Returns the URIs and keys of an issue&#39;s properties.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The key or ID of the issue.
-apiInstance.issueIssueIdOrKeyPropertiesGet(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesGet(issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5301,7 +4945,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5309,9 +4953,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyPropertiesPropertyKeyDelete
+## cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete
 
-> issueIssueIdOrKeyPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey)
+> cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey)
 
 
 
@@ -5322,10 +4966,6 @@ Deletes an issue&#39;s property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5333,7 +4973,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The key or ID of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.issueIssueIdOrKeyPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5356,7 +4996,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5364,9 +5004,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyPropertiesPropertyKeyGet
+## cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet
 
-> InlineResponse20011 issueIssueIdOrKeyPropertiesPropertyKeyGet(issueIdOrKey, propertyKey)
+> InlineResponse20011 cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(issueIdOrKey, propertyKey)
 
 
 
@@ -5377,10 +5017,6 @@ Returns the key and value of an issue&#39;s property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5388,7 +5024,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The key or ID of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
-apiInstance.issueIssueIdOrKeyPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5411,7 +5047,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5419,9 +5055,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyPropertiesPropertyKeyPut
+## cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut
 
-> issueIssueIdOrKeyPropertiesPropertyKeyPut(issueIdOrKey, propertyKey)
+> cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(issueIdOrKey, propertyKey)
 
 
 
@@ -5432,10 +5068,6 @@ Sets the value of an issue&#39;s property. Use this resource to store custom dat
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5443,7 +5075,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the issue property. The maximum length is 255 characters.
-apiInstance.issueIssueIdOrKeyPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5466,7 +5098,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5474,9 +5106,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyPut
+## cloudidRestApi3IssueIssueIdOrKeyPut
 
-> issueIssueIdOrKeyPut(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyPut(issueIdOrKey, opts)
 
 
 
@@ -5487,10 +5119,6 @@ Edits an issue. A transition may be applied and issue properties updated as part
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5503,7 +5131,7 @@ let opts = {
   'overrideScreenSecurity': true, // Boolean | Indicates whether screen security should be overridden to enable hidden fields to be edited. Available to Connect app users with admin permissions.
   'body': new Jira.InlineObject20() // InlineObject20 | 
 };
-apiInstance.issueIssueIdOrKeyPut(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyPut(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5529,7 +5157,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5537,9 +5165,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyRemotelinkDelete
+## cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete
 
-> issueIssueIdOrKeyRemotelinkDelete(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(issueIdOrKey, opts)
 
 
 
@@ -5550,10 +5178,6 @@ Deletes the remote issue link from the issue using the link&#39;s global ID.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5563,7 +5187,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'globalId': "globalId_example" // String | The global ID of a remote issue link.
 };
-apiInstance.issueIssueIdOrKeyRemotelinkDelete(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkDelete(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5586,7 +5210,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5594,9 +5218,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyRemotelinkGet
+## cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet
 
-> [InlineResponse20042] issueIssueIdOrKeyRemotelinkGet(issueIdOrKey, opts)
+> [InlineResponse20042] cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(issueIdOrKey, opts)
 
 
 
@@ -5607,10 +5231,6 @@ Returns the remote issue links for an issue. When a remote issue link global ID 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5620,7 +5240,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'globalId': "globalId_example" // String | The global ID of the remote issue link.
 };
-apiInstance.issueIssueIdOrKeyRemotelinkGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkGet(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5643,7 +5263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5651,9 +5271,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyRemotelinkLinkIdDelete
+## cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete
 
-> issueIssueIdOrKeyRemotelinkLinkIdDelete(issueIdOrKey, linkId)
+> cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(issueIdOrKey, linkId)
 
 
 
@@ -5664,10 +5284,6 @@ Deletes a remote issue link from an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5675,7 +5291,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let linkId = "linkId_example"; // String | The ID of a remote issue link.
-apiInstance.issueIssueIdOrKeyRemotelinkLinkIdDelete(issueIdOrKey, linkId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdDelete(issueIdOrKey, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5698,7 +5314,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5706,9 +5322,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyRemotelinkLinkIdGet
+## cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet
 
-> InlineResponse20044 issueIssueIdOrKeyRemotelinkLinkIdGet(issueIdOrKey, linkId)
+> InlineResponse20044 cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(issueIdOrKey, linkId)
 
 
 
@@ -5719,10 +5335,6 @@ Returns a remote issue link for an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5730,7 +5342,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let linkId = "linkId_example"; // String | The ID of the remote issue link.
-apiInstance.issueIssueIdOrKeyRemotelinkLinkIdGet(issueIdOrKey, linkId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdGet(issueIdOrKey, linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5753,7 +5365,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5761,9 +5373,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyRemotelinkLinkIdPut
+## cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut
 
-> issueIssueIdOrKeyRemotelinkLinkIdPut(issueIdOrKey, linkId, opts)
+> cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(issueIdOrKey, linkId, opts)
 
 
 
@@ -5774,10 +5386,6 @@ Updates a remote issue link for an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5788,7 +5396,7 @@ let linkId = "linkId_example"; // String | The ID of the remote issue link.
 let opts = {
   'body': new Jira.InlineObject26() // InlineObject26 | 
 };
-apiInstance.issueIssueIdOrKeyRemotelinkLinkIdPut(issueIdOrKey, linkId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkLinkIdPut(issueIdOrKey, linkId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5812,7 +5420,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5820,9 +5428,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyRemotelinkPost
+## cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost
 
-> InlineResponse20043 issueIssueIdOrKeyRemotelinkPost(issueIdOrKey, opts)
+> InlineResponse20043 cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(issueIdOrKey, opts)
 
 
 
@@ -5833,10 +5441,6 @@ Creates or updates a remote issue link for an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5846,7 +5450,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'body': new Jira.InlineObject25() // InlineObject25 | 
 };
-apiInstance.issueIssueIdOrKeyRemotelinkPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyRemotelinkPost(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5869,7 +5473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5877,9 +5481,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyTransitionsGet
+## cloudidRestApi3IssueIssueIdOrKeyTransitionsGet
 
-> InlineResponse20045 issueIssueIdOrKeyTransitionsGet(issueIdOrKey, opts)
+> InlineResponse20045 cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(issueIdOrKey, opts)
 
 
 
@@ -5890,10 +5494,6 @@ Returns either all transitions or a transition that can be performed by the user
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5905,7 +5505,7 @@ let opts = {
   'skipRemoteOnlyCondition': true, // Boolean | Indicates whether transitions with the condition Hide From User Condition are included in the response.
   'transitionId': "transitionId_example" // String | The ID of the transition.
 };
-apiInstance.issueIssueIdOrKeyTransitionsGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsGet(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5930,7 +5530,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5938,9 +5538,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyTransitionsPost
+## cloudidRestApi3IssueIssueIdOrKeyTransitionsPost
 
-> issueIssueIdOrKeyTransitionsPost(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(issueIdOrKey, opts)
 
 
 
@@ -5951,10 +5551,6 @@ Performs an issue transition and, if the transition has a screen, updates the fi
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -5964,7 +5560,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'body': new Jira.InlineObject27() // InlineObject27 | 
 };
-apiInstance.issueIssueIdOrKeyTransitionsPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyTransitionsPost(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -5987,7 +5583,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -5995,9 +5591,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyVotesDelete
+## cloudidRestApi3IssueIssueIdOrKeyVotesDelete
 
-> issueIssueIdOrKeyVotesDelete(issueIdOrKey)
+> cloudidRestApi3IssueIssueIdOrKeyVotesDelete(issueIdOrKey)
 
 
 
@@ -6008,17 +5604,13 @@ Deletes a user&#39;s vote from an issue. This is the equivalent of the user clic
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.issueIssueIdOrKeyVotesDelete(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesDelete(issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6040,7 +5632,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6048,9 +5640,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyVotesGet
+## cloudidRestApi3IssueIssueIdOrKeyVotesGet
 
-> InlineResponse20046 issueIssueIdOrKeyVotesGet(issueIdOrKey)
+> InlineResponse20046 cloudidRestApi3IssueIssueIdOrKeyVotesGet(issueIdOrKey)
 
 
 
@@ -6061,17 +5653,13 @@ Returns details about the votes on an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.issueIssueIdOrKeyVotesGet(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesGet(issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6093,7 +5681,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6101,9 +5689,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyVotesPost
+## cloudidRestApi3IssueIssueIdOrKeyVotesPost
 
-> issueIssueIdOrKeyVotesPost(issueIdOrKey)
+> cloudidRestApi3IssueIssueIdOrKeyVotesPost(issueIdOrKey)
 
 
 
@@ -6114,17 +5702,13 @@ Adds the user&#39;s vote to an issue. This is the equivalent of the user clickin
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.issueIssueIdOrKeyVotesPost(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyVotesPost(issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6146,7 +5730,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6154,9 +5738,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyWatchersDelete
+## cloudidRestApi3IssueIssueIdOrKeyWatchersDelete
 
-> issueIssueIdOrKeyWatchersDelete(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(issueIdOrKey, opts)
 
 
 
@@ -6167,10 +5751,6 @@ Deletes a user as a watcher of an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6181,7 +5761,7 @@ let opts = {
   'accountId': "accountId_example", // String | The account ID of the user. Required if username is omitted, otherwise must be omitted.
   'username': "username_example" // String | The name of the user. Required if accountId is omitted, otherwise must be omitted.
 };
-apiInstance.issueIssueIdOrKeyWatchersDelete(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersDelete(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6205,7 +5785,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6213,9 +5793,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyWatchersGet
+## cloudidRestApi3IssueIssueIdOrKeyWatchersGet
 
-> InlineResponse20047 issueIssueIdOrKeyWatchersGet(issueIdOrKey)
+> InlineResponse20047 cloudidRestApi3IssueIssueIdOrKeyWatchersGet(issueIdOrKey)
 
 
 
@@ -6226,17 +5806,13 @@ Returns the watchers for an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.issueIssueIdOrKeyWatchersGet(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersGet(issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6258,7 +5834,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6266,9 +5842,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyWatchersPost
+## cloudidRestApi3IssueIssueIdOrKeyWatchersPost
 
-> issueIssueIdOrKeyWatchersPost(issueIdOrKey)
+> cloudidRestApi3IssueIssueIdOrKeyWatchersPost(issueIdOrKey)
 
 
 
@@ -6279,17 +5855,13 @@ Adds a user as a watcher of an issue. If no user is specified the calling user i
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
-apiInstance.issueIssueIdOrKeyWatchersPost(issueIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWatchersPost(issueIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6311,7 +5883,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6319,9 +5891,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyWorklogGet
+## cloudidRestApi3IssueIssueIdOrKeyWorklogGet
 
-> InlineResponse20048 issueIssueIdOrKeyWorklogGet(issueIdOrKey, opts)
+> InlineResponse20048 cloudidRestApi3IssueIssueIdOrKeyWorklogGet(issueIdOrKey, opts)
 
 
 
@@ -6332,10 +5904,6 @@ Returns all worklogs for an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6347,7 +5915,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 1048576.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.issueIssueIdOrKeyWorklogGet(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogGet(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6372,7 +5940,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6380,9 +5948,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyWorklogIdDelete
+## cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete
 
-> issueIssueIdOrKeyWorklogIdDelete(id, issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(id, issueIdOrKey, opts)
 
 
 
@@ -6393,10 +5961,6 @@ Deletes a worklog from an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6411,7 +5975,7 @@ let opts = {
   'notifyUsers': true, // Boolean | Indicates whether users watching the issue are notified by email.
   'overrideEditableFlag': true // Boolean | Indicates whether the work log entry should be added to the issue even if the issue is not editable, because jira.issue.editable set to false or missing. For example, the issue is closed. Only connect app users with admin permissions can use this flag.
 };
-apiInstance.issueIssueIdOrKeyWorklogIdDelete(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdDelete(id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6439,7 +6003,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6447,9 +6011,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyWorklogIdGet
+## cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet
 
-> InlineResponse20049 issueIssueIdOrKeyWorklogIdGet(id, issueIdOrKey, opts)
+> InlineResponse20049 cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(id, issueIdOrKey, opts)
 
 
 
@@ -6460,10 +6024,6 @@ Returns a worklog.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6474,7 +6034,7 @@ let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issu
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about work logs in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.issueIssueIdOrKeyWorklogIdGet(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdGet(id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6498,7 +6058,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6506,9 +6066,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyWorklogIdPut
+## cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut
 
-> InlineResponse20049 issueIssueIdOrKeyWorklogIdPut(id, issueIdOrKey, opts)
+> InlineResponse20049 cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(id, issueIdOrKey, opts)
 
 
 
@@ -6519,10 +6079,6 @@ Updates a worklog.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6538,7 +6094,7 @@ let opts = {
   'overrideEditableFlag': true, // Boolean | Indicates whether the worklog should be added to the issue even if the issue is not editable, for example, because the issue is closed. Only connect app users with admin permissions can use this flag.
   'body': new Jira.InlineObject29() // InlineObject29 | 
 };
-apiInstance.issueIssueIdOrKeyWorklogIdPut(id, issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogIdPut(id, issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6567,7 +6123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6575,9 +6131,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyWorklogPost
+## cloudidRestApi3IssueIssueIdOrKeyWorklogPost
 
-> issueIssueIdOrKeyWorklogPost(issueIdOrKey, opts)
+> cloudidRestApi3IssueIssueIdOrKeyWorklogPost(issueIdOrKey, opts)
 
 
 
@@ -6588,10 +6144,6 @@ Adds a worklog to an issue.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6607,7 +6159,7 @@ let opts = {
   'reduceBy': "reduceBy_example", // String | The amount to reduce the issue's remaining estimate by, as days (#d), hours (#h), or minutes (#m). For example, 2d. Required when adjustEstimate is manual.
   'body': new Jira.InlineObject28() // InlineObject28 | 
 };
-apiInstance.issueIssueIdOrKeyWorklogPost(issueIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogPost(issueIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6636,7 +6188,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6644,9 +6196,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyWorklogWorklogIdPropertiesGet
+## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet
 
-> InlineResponse20010 issueIssueIdOrKeyWorklogWorklogIdPropertiesGet(issueIdOrKey, worklogId)
+> InlineResponse20010 cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(issueIdOrKey, worklogId)
 
 
 
@@ -6657,10 +6209,6 @@ Returns the keys of all properties for a worklog.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6668,7 +6216,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.issueIssueIdOrKeyWorklogWorklogIdPropertiesGet(issueIdOrKey, worklogId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesGet(issueIdOrKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6691,7 +6239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6699,9 +6247,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete
+## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete
 
-> issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, worklogId)
+> cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, worklogId)
 
 
 
@@ -6712,10 +6260,6 @@ Deletes a worklog property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6724,7 +6268,7 @@ let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete(issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6748,7 +6292,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6756,9 +6300,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet
+## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, worklogId)
+> InlineResponse20011 cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, worklogId)
 
 
 
@@ -6769,10 +6313,6 @@ Returns the value of a worklog property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6781,7 +6321,7 @@ let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the property.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet(issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6805,7 +6345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6813,9 +6353,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut
+## cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut
 
-> issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, worklogId)
+> cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, worklogId)
 
 
 
@@ -6826,10 +6366,6 @@ Sets the value of a worklog property. Use this operation to store custom data ag
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -6838,7 +6374,7 @@ let apiInstance = new Jira.DefaultApi();
 let issueIdOrKey = "issueIdOrKey_example"; // String | The ID or key of the issue.
 let propertyKey = "propertyKey_example"; // String | The key of the issue property. The maximum length is 255 characters.
 let worklogId = "worklogId_example"; // String | The ID of the worklog.
-apiInstance.issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut(issueIdOrKey, propertyKey, worklogId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6862,7 +6398,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6870,9 +6406,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueLinkLinkIdDelete
+## cloudidRestApi3IssueLinkLinkIdDelete
 
-> issueLinkLinkIdDelete(linkId)
+> cloudidRestApi3IssueLinkLinkIdDelete(linkId)
 
 
 
@@ -6883,17 +6419,13 @@ Deletes an issue link.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let linkId = "linkId_example"; // String | The ID of the issue link.
-apiInstance.issueLinkLinkIdDelete(linkId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkLinkIdDelete(linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6915,7 +6447,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6923,9 +6455,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueLinkLinkIdGet
+## cloudidRestApi3IssueLinkLinkIdGet
 
-> InlineResponse20050 issueLinkLinkIdGet(linkId)
+> InlineResponse20050 cloudidRestApi3IssueLinkLinkIdGet(linkId)
 
 
 
@@ -6936,17 +6468,13 @@ Returns an issue link.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let linkId = "linkId_example"; // String | The ID of the issue link.
-apiInstance.issueLinkLinkIdGet(linkId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkLinkIdGet(linkId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -6968,7 +6496,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -6976,9 +6504,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueLinkPost
+## cloudidRestApi3IssueLinkPost
 
-> issueLinkPost(opts)
+> cloudidRestApi3IssueLinkPost(opts)
 
 
 
@@ -6989,10 +6517,6 @@ Creates a link between two issues. Use this operation to indicate a relationship
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7001,7 +6525,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject30() // InlineObject30 | 
 };
-apiInstance.issueLinkPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7023,7 +6547,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7031,9 +6555,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueLinkTypeGet
+## cloudidRestApi3IssueLinkTypeGet
 
-> InlineResponse20051 issueLinkTypeGet()
+> InlineResponse20051 cloudidRestApi3IssueLinkTypeGet()
 
 
 
@@ -7044,16 +6568,12 @@ Returns a list of all issue link types.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.issueLinkTypeGet((error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkTypeGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7072,7 +6592,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7080,9 +6600,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## issueLinkTypeIssueLinkTypeIdDelete
+## cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete
 
-> issueLinkTypeIssueLinkTypeIdDelete(issueLinkTypeId)
+> cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(issueLinkTypeId)
 
 
 
@@ -7093,17 +6613,13 @@ Deletes an issue link type.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueLinkTypeId = "issueLinkTypeId_example"; // String | The ID of the issue link type.
-apiInstance.issueLinkTypeIssueLinkTypeIdDelete(issueLinkTypeId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdDelete(issueLinkTypeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7125,7 +6641,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7133,9 +6649,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issueLinkTypeIssueLinkTypeIdGet
+## cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet
 
-> InlineResponse2016 issueLinkTypeIssueLinkTypeIdGet(issueLinkTypeId)
+> InlineResponse2016 cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(issueLinkTypeId)
 
 
 
@@ -7146,17 +6662,13 @@ Returns an issue link type.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueLinkTypeId = "issueLinkTypeId_example"; // String | The ID of the issue link type.
-apiInstance.issueLinkTypeIssueLinkTypeIdGet(issueLinkTypeId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdGet(issueLinkTypeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7178,7 +6690,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7186,9 +6698,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueLinkTypeIssueLinkTypeIdPut
+## cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut
 
-> InlineResponse2016 issueLinkTypeIssueLinkTypeIdPut(issueLinkTypeId, opts)
+> InlineResponse2016 cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(issueLinkTypeId, opts)
 
 
 
@@ -7199,10 +6711,6 @@ Updates an issue link type.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7212,7 +6720,7 @@ let issueLinkTypeId = "issueLinkTypeId_example"; // String | The ID of the issue
 let opts = {
   'body': new Jira.InlineObject32() // InlineObject32 | 
 };
-apiInstance.issueLinkTypeIssueLinkTypeIdPut(issueLinkTypeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkTypeIssueLinkTypeIdPut(issueLinkTypeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7235,7 +6743,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7243,9 +6751,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issueLinkTypePost
+## cloudidRestApi3IssueLinkTypePost
 
-> InlineResponse2016 issueLinkTypePost(opts)
+> InlineResponse2016 cloudidRestApi3IssueLinkTypePost(opts)
 
 
 
@@ -7256,10 +6764,6 @@ Creates an issue link type. Use this operation to create descriptions of the rea
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7268,7 +6772,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject31() // InlineObject31 | 
 };
-apiInstance.issueLinkTypePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssueLinkTypePost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7290,7 +6794,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7298,9 +6802,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issuePickerGet
+## cloudidRestApi3IssuePickerGet
 
-> issuePickerGet(opts)
+> cloudidRestApi3IssuePickerGet(opts)
 
 
 
@@ -7311,10 +6815,6 @@ Returns a list of suggested issues matching the auto-completion query for the us
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7328,7 +6828,7 @@ let opts = {
   'showSubTaskParent': true, // Boolean | Set to false to exclude parent issue from the suggestions list if search is performed in the context of a sub-task.
   'showSubTasks': true // Boolean | Set to false to exclude subtasks from the suggestions list.
 };
-apiInstance.issuePickerGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuePickerGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7355,7 +6855,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7363,9 +6863,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issuePost
+## cloudidRestApi3IssuePost
 
-> InlineResponse2013 issuePost(opts)
+> InlineResponse2013 cloudidRestApi3IssuePost(opts)
 
 
 
@@ -7376,10 +6876,6 @@ Creates an issue or, where the option to create sub-tasks is enabled in Jira, a 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7389,7 +6885,7 @@ let opts = {
   'updateHistory': true, // Boolean | Indicates whether the project in which the issue is created is added to the user's Recently viewed project list, as shown under Projects in Jira.
   'body': new Jira.InlineObject16() // InlineObject16 | 
 };
-apiInstance.issuePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuePost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7412,7 +6908,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7420,9 +6916,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issuePropertiesPropertyKeyDelete
+## cloudidRestApi3IssuePropertiesPropertyKeyDelete
 
-> issuePropertiesPropertyKeyDelete(propertyKey, opts)
+> cloudidRestApi3IssuePropertiesPropertyKeyDelete(propertyKey, opts)
 
 
 
@@ -7433,10 +6929,6 @@ Deletes a property value from multiple issues. The issues to be updated can be s
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7446,7 +6938,7 @@ let propertyKey = "propertyKey_example"; // String | The key of the property.
 let opts = {
   'body': new Jira.InlineObject19() // InlineObject19 | 
 };
-apiInstance.issuePropertiesPropertyKeyDelete(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyDelete(propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7469,7 +6961,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7477,9 +6969,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issuePropertiesPropertyKeyPut
+## cloudidRestApi3IssuePropertiesPropertyKeyPut
 
-> issuePropertiesPropertyKeyPut(propertyKey, opts)
+> cloudidRestApi3IssuePropertiesPropertyKeyPut(propertyKey, opts)
 
 
 
@@ -7490,10 +6982,6 @@ Sets a property value on multiple issues. The issues to be updated can be specif
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7503,7 +6991,7 @@ let propertyKey = "propertyKey_example"; // String | The key of the property. Th
 let opts = {
   'body': new Jira.InlineObject18() // InlineObject18 | 
 };
-apiInstance.issuePropertiesPropertyKeyPut(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuePropertiesPropertyKeyPut(propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7526,7 +7014,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7534,9 +7022,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issuesecurityschemesGet
+## cloudidRestApi3IssuesecurityschemesGet
 
-> InlineResponse20052 issuesecurityschemesGet()
+> InlineResponse20052 cloudidRestApi3IssuesecurityschemesGet()
 
 
 
@@ -7547,16 +7035,12 @@ Returns all issue security schemes.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.issuesecurityschemesGet((error, data, response) => {
+apiInstance.cloudidRestApi3IssuesecurityschemesGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7575,7 +7059,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7583,9 +7067,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## issuesecurityschemesIdGet
+## cloudidRestApi3IssuesecurityschemesIdGet
 
-> InlineResponse20053 issuesecurityschemesIdGet(id)
+> InlineResponse20053 cloudidRestApi3IssuesecurityschemesIdGet(id)
 
 
 
@@ -7596,17 +7080,13 @@ Returns an issue security scheme along with its security levels.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the issue security scheme. Use the Get issue security schemes operation to get a list of issue security scheme IDs.
-apiInstance.issuesecurityschemesIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuesecurityschemesIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7628,7 +7108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7636,9 +7116,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issuetypeGet
+## cloudidRestApi3IssuetypeGet
 
-> [InlineResponse20050InwardIssueFieldsIssuetype] issuetypeGet()
+> [InlineResponse20050InwardIssueFieldsIssuetype] cloudidRestApi3IssuetypeGet()
 
 
 
@@ -7649,16 +7129,12 @@ Returns all issue types. Permissions required: Permission to access Jira, howeve
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.issuetypeGet((error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7677,7 +7153,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7685,9 +7161,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## issuetypeIdAlternativesGet
+## cloudidRestApi3IssuetypeIdAlternativesGet
 
-> [InlineResponse20050InwardIssueFieldsIssuetype] issuetypeIdAlternativesGet(id)
+> [InlineResponse20050InwardIssueFieldsIssuetype] cloudidRestApi3IssuetypeIdAlternativesGet(id)
 
 
 
@@ -7698,17 +7174,13 @@ Returns a list of issue types that can be used to replace the issue type. The al
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the issue type.
-apiInstance.issuetypeIdAlternativesGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdAlternativesGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7730,7 +7202,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7738,9 +7210,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issuetypeIdAvatar2Post
+## cloudidRestApi3IssuetypeIdAvatar2Post
 
-> InlineResponse2017 issuetypeIdAvatar2Post(id, opts)
+> InlineResponse2017 cloudidRestApi3IssuetypeIdAvatar2Post(id, opts)
 
 
 
@@ -7751,10 +7223,6 @@ Loads an avatar for the issue type.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7766,7 +7234,7 @@ let opts = {
   'x': 56, // Number | The X coordinate of the top-left corner of the crop region.
   'y': 56 // Number | The Y coordinate of the top-left corner of the crop region.
 };
-apiInstance.issuetypeIdAvatar2Post(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdAvatar2Post(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7791,7 +7259,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7799,9 +7267,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issuetypeIdDelete
+## cloudidRestApi3IssuetypeIdDelete
 
-> issuetypeIdDelete(id, opts)
+> cloudidRestApi3IssuetypeIdDelete(id, opts)
 
 
 
@@ -7812,10 +7280,6 @@ Deletes the issue type. If the issue type is in use, all uses are updated with t
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7825,7 +7289,7 @@ let id = "id_example"; // String | The ID of the issue type.
 let opts = {
   'alternativeIssueTypeId': "alternativeIssueTypeId_example" // String | The ID of the replacement issue type.
 };
-apiInstance.issuetypeIdDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdDelete(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7848,7 +7312,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7856,9 +7320,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issuetypeIdGet
+## cloudidRestApi3IssuetypeIdGet
 
-> InlineResponse20054 issuetypeIdGet(id)
+> InlineResponse20054 cloudidRestApi3IssuetypeIdGet(id)
 
 
 
@@ -7869,17 +7333,13 @@ Returns an issue type. Permissions required:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the issue type.
-apiInstance.issuetypeIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7901,7 +7361,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7909,9 +7369,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issuetypeIdPut
+## cloudidRestApi3IssuetypeIdPut
 
-> issuetypeIdPut(id, opts)
+> cloudidRestApi3IssuetypeIdPut(id, opts)
 
 
 
@@ -7922,10 +7382,6 @@ Updates the issue type. Permissions required: Administer Jira global permission.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -7935,7 +7391,7 @@ let id = "id_example"; // String | The ID of the issue type.
 let opts = {
   'body': new Jira.InlineObject34() // InlineObject34 | 
 };
-apiInstance.issuetypeIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIdPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -7958,7 +7414,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -7966,9 +7422,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issuetypeIssueTypeIdPropertiesGet
+## cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet
 
-> InlineResponse20010 issuetypeIssueTypeIdPropertiesGet(issueTypeId)
+> InlineResponse20010 cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(issueTypeId)
 
 
 
@@ -7979,17 +7435,13 @@ Returns all the issue type property keys of the issue type. Permissions required
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
-apiInstance.issuetypeIssueTypeIdPropertiesGet(issueTypeId, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesGet(issueTypeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8011,7 +7463,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8019,9 +7471,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issuetypeIssueTypeIdPropertiesPropertyKeyDelete
+## cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete
 
-> issuetypeIssueTypeIdPropertiesPropertyKeyDelete(issueTypeId, propertyKey)
+> cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(issueTypeId, propertyKey)
 
 
 
@@ -8032,10 +7484,6 @@ Deletes the issue type property. Permissions required: Administer Jira global pe
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8043,7 +7491,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
 let propertyKey = "propertyKey_example"; // String | The key of the property. Use Get issue type property keys to get a list of all issue type property keys.
-apiInstance.issuetypeIssueTypeIdPropertiesPropertyKeyDelete(issueTypeId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyDelete(issueTypeId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8066,7 +7514,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8074,9 +7522,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issuetypeIssueTypeIdPropertiesPropertyKeyGet
+## cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet
 
-> InlineResponse20011 issuetypeIssueTypeIdPropertiesPropertyKeyGet(issueTypeId, propertyKey)
+> InlineResponse20011 cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(issueTypeId, propertyKey)
 
 
 
@@ -8087,10 +7535,6 @@ Returns the key and value of the issue type property. Permissions required:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8098,7 +7542,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
 let propertyKey = "propertyKey_example"; // String | The key of the property. Use Get issue type property keys to get a list of all issue type property keys.
-apiInstance.issuetypeIssueTypeIdPropertiesPropertyKeyGet(issueTypeId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyGet(issueTypeId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8121,7 +7565,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8129,9 +7573,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## issuetypeIssueTypeIdPropertiesPropertyKeyPut
+## cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut
 
-> issuetypeIssueTypeIdPropertiesPropertyKeyPut(issueTypeId, propertyKey)
+> cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(issueTypeId, propertyKey)
 
 
 
@@ -8142,10 +7586,6 @@ Creates or updates the value of the issue type property. Use this resource to st
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8153,7 +7593,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let issueTypeId = "issueTypeId_example"; // String | The ID of the issue type.
 let propertyKey = "propertyKey_example"; // String | The key of the issue type property. The maximum length of the key is 255 bytes.
-apiInstance.issuetypeIssueTypeIdPropertiesPropertyKeyPut(issueTypeId, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypeIssueTypeIdPropertiesPropertyKeyPut(issueTypeId, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8176,7 +7616,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8184,9 +7624,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## issuetypePost
+## cloudidRestApi3IssuetypePost
 
-> issuetypePost(opts)
+> cloudidRestApi3IssuetypePost(opts)
 
 
 
@@ -8197,10 +7637,6 @@ Creates an issue type and adds it to the default issue type scheme. Permissions 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8209,7 +7645,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject33() // InlineObject33 | 
 };
-apiInstance.issuetypePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3IssuetypePost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8231,7 +7667,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8239,9 +7675,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## jqlAutocompletedataGet
+## cloudidRestApi3JqlAutocompletedataGet
 
-> InlineResponse20055 jqlAutocompletedataGet()
+> InlineResponse20055 cloudidRestApi3JqlAutocompletedataGet()
 
 
 
@@ -8252,16 +7688,12 @@ Returns reference data for JQL searches. This is a downloadable version of the d
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.jqlAutocompletedataGet((error, data, response) => {
+apiInstance.cloudidRestApi3JqlAutocompletedataGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8280,7 +7712,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8288,9 +7720,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## jqlAutocompletedataSuggestionsGet
+## cloudidRestApi3JqlAutocompletedataSuggestionsGet
 
-> InlineResponse20056 jqlAutocompletedataSuggestionsGet(opts)
+> InlineResponse20056 cloudidRestApi3JqlAutocompletedataSuggestionsGet(opts)
 
 
 
@@ -8301,10 +7733,6 @@ Returns the JQL search auto complete suggestions for a field.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8316,7 +7744,7 @@ let opts = {
   'predicateName': "predicateName_example", // String | The name of the CHANGED operator predicate for which the suggestions are generated. The valid predicate operators are by, from, and to.
   'predicateValue': "predicateValue_example" // String | The partial predicate item name entered by the user.
 };
-apiInstance.jqlAutocompletedataSuggestionsGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3JqlAutocompletedataSuggestionsGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8341,7 +7769,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8349,9 +7777,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## jqlPdcleanerPost
+## cloudidRestApi3JqlPdcleanerPost
 
-> InlineResponse20057 jqlPdcleanerPost(opts)
+> InlineResponse20057 cloudidRestApi3JqlPdcleanerPost(opts)
 
 
 
@@ -8362,10 +7790,6 @@ The query strings having personal data that need to be migrated. There should be
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8374,7 +7798,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject35() // InlineObject35 | 
 };
-apiInstance.jqlPdcleanerPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3JqlPdcleanerPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8396,7 +7820,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8404,9 +7828,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## mypermissionsGet
+## cloudidRestApi3MypermissionsGet
 
-> InlineResponse20058 mypermissionsGet(opts)
+> InlineResponse20058 cloudidRestApi3MypermissionsGet(opts)
 
 
 
@@ -8417,10 +7841,6 @@ Returns a list of permissions indicating which permissions the user has. Details
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8433,7 +7853,7 @@ let opts = {
   'projectId': "projectId_example", // String | The ID of project.
   'projectKey': "projectKey_example" // String | The key of project. Ignored if projectId is provided.
 };
-apiInstance.mypermissionsGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypermissionsGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8459,7 +7879,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8467,9 +7887,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## mypreferencesDelete
+## cloudidRestApi3MypreferencesDelete
 
-> mypreferencesDelete(opts)
+> cloudidRestApi3MypreferencesDelete(opts)
 
 
 
@@ -8480,10 +7900,6 @@ Deletes a preference of the user, which restores the default value of system def
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8492,7 +7908,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'key': "key_example" // String | The key of the preference.
 };
-apiInstance.mypreferencesDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesDelete(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8514,7 +7930,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8522,9 +7938,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## mypreferencesGet
+## cloudidRestApi3MypreferencesGet
 
-> mypreferencesGet(opts)
+> cloudidRestApi3MypreferencesGet(opts)
 
 
 
@@ -8535,10 +7951,6 @@ Returns the value of a preference of the user.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8547,7 +7959,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'key': "key_example" // String | The key of the preference.
 };
-apiInstance.mypreferencesGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8569,7 +7981,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8577,9 +7989,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## mypreferencesLocaleDelete
+## cloudidRestApi3MypreferencesLocaleDelete
 
-> mypreferencesLocaleDelete()
+> cloudidRestApi3MypreferencesLocaleDelete()
 
 
 
@@ -8590,16 +8002,12 @@ Deletes the locale of the current user, which restores the default setting.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.mypreferencesLocaleDelete((error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesLocaleDelete((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8618,7 +8026,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8626,9 +8034,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## mypreferencesLocaleGet
+## cloudidRestApi3MypreferencesLocaleGet
 
-> InlineResponse20059 mypreferencesLocaleGet()
+> InlineResponse20059 cloudidRestApi3MypreferencesLocaleGet()
 
 
 
@@ -8639,16 +8047,12 @@ Returns the locale for the current user.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.mypreferencesLocaleGet((error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesLocaleGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8667,7 +8071,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8675,9 +8079,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## mypreferencesLocalePut
+## cloudidRestApi3MypreferencesLocalePut
 
-> mypreferencesLocalePut(opts)
+> cloudidRestApi3MypreferencesLocalePut(opts)
 
 
 
@@ -8688,10 +8092,6 @@ Sets the locale of the current user. The requested locale must be one supported 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8700,7 +8100,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject36() // InlineObject36 | 
 };
-apiInstance.mypreferencesLocalePut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesLocalePut(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8722,7 +8122,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8730,9 +8130,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## mypreferencesPut
+## cloudidRestApi3MypreferencesPut
 
-> mypreferencesPut(opts)
+> cloudidRestApi3MypreferencesPut(opts)
 
 
 
@@ -8743,10 +8143,6 @@ Creates a preference for the user or updates its value. An arbitrary preference 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8755,7 +8151,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'key': "key_example" // String | The key of the preference. Maximum length is 255 characters.
 };
-apiInstance.mypreferencesPut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MypreferencesPut(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8777,7 +8173,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8785,9 +8181,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## myselfGet
+## cloudidRestApi3MyselfGet
 
-> InlineResponse20060 myselfGet(opts)
+> InlineResponse20060 cloudidRestApi3MyselfGet(opts)
 
 
 
@@ -8798,10 +8194,6 @@ Returns details for the authenticated user.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8810,7 +8202,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about user in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.myselfGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3MyselfGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8832,7 +8224,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8840,9 +8232,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## notificationschemeGet
+## cloudidRestApi3NotificationschemeGet
 
-> InlineResponse20061 notificationschemeGet(opts)
+> InlineResponse20061 cloudidRestApi3NotificationschemeGet(opts)
 
 
 
@@ -8853,10 +8245,6 @@ Returns a paginated list of notification schemes in order by display name.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8867,7 +8255,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Max is 50.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset). The base index is 0.
 };
-apiInstance.notificationschemeGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3NotificationschemeGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8891,7 +8279,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8899,9 +8287,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## notificationschemeIdGet
+## cloudidRestApi3NotificationschemeIdGet
 
-> InlineResponse20062 notificationschemeIdGet(id, opts)
+> InlineResponse20062 cloudidRestApi3NotificationschemeIdGet(id, opts)
 
 
 
@@ -8912,10 +8300,6 @@ Returns a notification scheme, including the list of events and the recipients w
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -8925,7 +8309,7 @@ let id = 56; // Number | The ID of the notification scheme. Use Get notification
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.notificationschemeIdGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3NotificationschemeIdGet(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8948,7 +8332,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -8956,9 +8340,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## permissionsGet
+## cloudidRestApi3PermissionsGet
 
-> InlineResponse20063 permissionsGet()
+> InlineResponse20063 cloudidRestApi3PermissionsGet()
 
 
 
@@ -8969,16 +8353,12 @@ Returns all permissions, including:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.permissionsGet((error, data, response) => {
+apiInstance.cloudidRestApi3PermissionsGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -8997,7 +8377,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9005,9 +8385,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## permissionsProjectPost
+## cloudidRestApi3PermissionsProjectPost
 
-> InlineResponse20064 permissionsProjectPost(opts)
+> InlineResponse20064 cloudidRestApi3PermissionsProjectPost(opts)
 
 
 
@@ -9018,10 +8398,6 @@ Returns all the projects where the user is granted a list of project permissions
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9030,7 +8406,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject37() // InlineObject37 | 
 };
-apiInstance.permissionsProjectPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionsProjectPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9052,7 +8428,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9060,9 +8436,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## permissionschemeGet
+## cloudidRestApi3PermissionschemeGet
 
-> InlineResponse20065 permissionschemeGet(opts)
+> InlineResponse20065 cloudidRestApi3PermissionschemeGet(opts)
 
 
 
@@ -9073,10 +8449,6 @@ Returns all permission schemes.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9085,7 +8457,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
 };
-apiInstance.permissionschemeGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9107,7 +8479,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9115,9 +8487,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## permissionschemePost
+## cloudidRestApi3PermissionschemePost
 
-> InlineResponse2018 permissionschemePost(opts)
+> InlineResponse2018 cloudidRestApi3PermissionschemePost(opts)
 
 
 
@@ -9128,10 +8500,6 @@ Creates a new permission scheme. You can create a permission scheme with or with
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9141,7 +8509,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
   'body': new Jira.InlineObject38() // InlineObject38 | 
 };
-apiInstance.permissionschemePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemePost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9164,7 +8532,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9172,9 +8540,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## permissionschemeSchemeIdDelete
+## cloudidRestApi3PermissionschemeSchemeIdDelete
 
-> permissionschemeSchemeIdDelete(schemeId)
+> cloudidRestApi3PermissionschemeSchemeIdDelete(schemeId)
 
 
 
@@ -9185,17 +8553,13 @@ Deletes a permission scheme. Permissions required: Administer Jira global permis
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let schemeId = 56; // Number | The ID of the permission scheme being deleted (e.g., 10000).
-apiInstance.permissionschemeSchemeIdDelete(schemeId, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdDelete(schemeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9217,7 +8581,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9225,9 +8589,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## permissionschemeSchemeIdGet
+## cloudidRestApi3PermissionschemeSchemeIdGet
 
-> InlineResponse2018 permissionschemeSchemeIdGet(schemeId, opts)
+> InlineResponse2018 cloudidRestApi3PermissionschemeSchemeIdGet(schemeId, opts)
 
 
 
@@ -9238,10 +8602,6 @@ Returns a permission scheme. Permissions required: Permission to log in to Jira.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9251,7 +8611,7 @@ let schemeId = 56; // Number | The ID of the permission scheme to return (e.g., 
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
 };
-apiInstance.permissionschemeSchemeIdGet(schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdGet(schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9274,7 +8634,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9282,9 +8642,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## permissionschemeSchemeIdPermissionGet
+## cloudidRestApi3PermissionschemeSchemeIdPermissionGet
 
-> InlineResponse20066 permissionschemeSchemeIdPermissionGet(schemeId, opts)
+> InlineResponse20066 cloudidRestApi3PermissionschemeSchemeIdPermissionGet(schemeId, opts)
 
 
 
@@ -9295,10 +8655,6 @@ Returns all permission grants for a permission scheme. Permissions required: Per
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9308,7 +8664,7 @@ let schemeId = 56; // Number | The ID of the permission scheme (e.g., 10010).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
 };
-apiInstance.permissionschemeSchemeIdPermissionGet(schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionGet(schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9331,7 +8687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9339,9 +8695,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## permissionschemeSchemeIdPermissionPermissionIdDelete
+## cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete
 
-> permissionschemeSchemeIdPermissionPermissionIdDelete(permissionId, schemeId)
+> cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(permissionId, schemeId)
 
 
 
@@ -9352,10 +8708,6 @@ Deletes a permission grant from a permission scheme. See About permission scheme
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9363,7 +8715,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let permissionId = 56; // Number | The ID of the permission grant to delete (e.g., 10847).
 let schemeId = 56; // Number | The ID of the permission scheme to delete the permission grant from (e.g., 10000).
-apiInstance.permissionschemeSchemeIdPermissionPermissionIdDelete(permissionId, schemeId, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdDelete(permissionId, schemeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9386,7 +8738,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9394,9 +8746,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## permissionschemeSchemeIdPermissionPermissionIdGet
+## cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet
 
-> InlineResponse2019 permissionschemeSchemeIdPermissionPermissionIdGet(permissionId, schemeId, opts)
+> InlineResponse2019 cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(permissionId, schemeId, opts)
 
 
 
@@ -9407,10 +8759,6 @@ Returns a permission grant. Permissions required: Permission to log in to Jira.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9421,7 +8769,7 @@ let schemeId = 56; // Number | The ID of the permission scheme (e.g., 10010).
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
 };
-apiInstance.permissionschemeSchemeIdPermissionPermissionIdGet(permissionId, schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPermissionIdGet(permissionId, schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9445,7 +8793,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9453,9 +8801,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## permissionschemeSchemeIdPermissionPost
+## cloudidRestApi3PermissionschemeSchemeIdPermissionPost
 
-> InlineResponse2019 permissionschemeSchemeIdPermissionPost(schemeId, opts)
+> InlineResponse2019 cloudidRestApi3PermissionschemeSchemeIdPermissionPost(schemeId, opts)
 
 
 
@@ -9466,10 +8814,6 @@ Creates a new permission grant in the given permission scheme. Permissions requi
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9480,7 +8824,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
   'body': new Jira.InlineObject40() // InlineObject40 | 
 };
-apiInstance.permissionschemeSchemeIdPermissionPost(schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPermissionPost(schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9504,7 +8848,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9512,9 +8856,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## permissionschemeSchemeIdPut
+## cloudidRestApi3PermissionschemeSchemeIdPut
 
-> InlineResponse2018 permissionschemeSchemeIdPut(schemeId, opts)
+> InlineResponse2018 cloudidRestApi3PermissionschemeSchemeIdPut(schemeId, opts)
 
 
 
@@ -9525,10 +8869,6 @@ Updates a permission scheme. Below are some important things to note when using 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9539,7 +8879,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are always included when you specify any value:
   'body': new Jira.InlineObject39() // InlineObject39 | 
 };
-apiInstance.permissionschemeSchemeIdPut(schemeId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3PermissionschemeSchemeIdPut(schemeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9563,7 +8903,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9571,9 +8911,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## priorityGet
+## cloudidRestApi3PriorityGet
 
-> [InlineResponse20050InwardIssueFieldsPriority] priorityGet()
+> [InlineResponse20050InwardIssueFieldsPriority] cloudidRestApi3PriorityGet()
 
 
 
@@ -9584,16 +8924,12 @@ Returns the list of all issue priorities.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.priorityGet((error, data, response) => {
+apiInstance.cloudidRestApi3PriorityGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9612,7 +8948,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9620,9 +8956,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## priorityIdGet
+## cloudidRestApi3PriorityIdGet
 
-> InlineResponse20067 priorityIdGet(id)
+> InlineResponse20067 cloudidRestApi3PriorityIdGet(id)
 
 
 
@@ -9633,17 +8969,13 @@ Returns an issue priority.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the issue priority.
-apiInstance.priorityIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3PriorityIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9665,7 +8997,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9673,9 +9005,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectCategoryGet
+## cloudidRestApi3ProjectCategoryGet
 
-> [FilterIdPermissionProjectProjectCategory] projectCategoryGet()
+> [CloudidRestApi3FilterIdPermissionProjectProjectCategory] cloudidRestApi3ProjectCategoryGet()
 
 
 
@@ -9686,16 +9018,12 @@ Returns all project categories.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.projectCategoryGet((error, data, response) => {
+apiInstance.cloudidRestApi3ProjectCategoryGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9710,11 +9038,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[FilterIdPermissionProjectProjectCategory]**](FilterIdPermissionProjectProjectCategory.md)
+[**[CloudidRestApi3FilterIdPermissionProjectProjectCategory]**](CloudidRestApi3FilterIdPermissionProjectProjectCategory.md)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9722,9 +9050,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## projectCategoryIdDelete
+## cloudidRestApi3ProjectCategoryIdDelete
 
-> projectCategoryIdDelete(id)
+> cloudidRestApi3ProjectCategoryIdDelete(id)
 
 
 
@@ -9735,17 +9063,13 @@ Deletes a project category.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | ID of the project category to delete.
-apiInstance.projectCategoryIdDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectCategoryIdDelete(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9767,7 +9091,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9775,9 +9099,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## projectCategoryIdGet
+## cloudidRestApi3ProjectCategoryIdGet
 
-> InlineResponse20112 projectCategoryIdGet(id)
+> InlineResponse20112 cloudidRestApi3ProjectCategoryIdGet(id)
 
 
 
@@ -9788,17 +9112,13 @@ Returns a project category.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the project category.
-apiInstance.projectCategoryIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectCategoryIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9820,7 +9140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9828,9 +9148,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectCategoryIdPut
+## cloudidRestApi3ProjectCategoryIdPut
 
-> InlineResponse20112 projectCategoryIdPut(id, opts)
+> InlineResponse20112 cloudidRestApi3ProjectCategoryIdPut(id, opts)
 
 
 
@@ -9841,10 +9161,6 @@ Updates a project category.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9854,7 +9170,7 @@ let id = 56; // Number |
 let opts = {
   'body': new Jira.InlineObject48() // InlineObject48 | 
 };
-apiInstance.projectCategoryIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectCategoryIdPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9877,7 +9193,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9885,9 +9201,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectCategoryPost
+## cloudidRestApi3ProjectCategoryPost
 
-> InlineResponse20112 projectCategoryPost(opts)
+> InlineResponse20112 cloudidRestApi3ProjectCategoryPost(opts)
 
 
 
@@ -9898,10 +9214,6 @@ Creates a project category.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9910,7 +9222,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject47() // InlineObject47 | 
 };
-apiInstance.projectCategoryPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectCategoryPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9932,7 +9244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9940,9 +9252,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectGet
+## cloudidRestApi3ProjectGet
 
-> [FilterIdPermissionProject] projectGet(opts)
+> [CloudidRestApi3FilterIdPermissionProject] cloudidRestApi3ProjectGet(opts)
 
 
 
@@ -9953,10 +9265,6 @@ Returns all projects visible to the currently logged in user. Deprecated, use Ge
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -9966,7 +9274,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
   'recent': 56 // Number | Returns the most recently accessed projects for the current user. You may specify the number of results to return up to a maximum of 20. If no user is logged in, then the recently accessed projects will be returned based on the current HTTP session.
 };
-apiInstance.projectGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -9985,11 +9293,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[FilterIdPermissionProject]**](FilterIdPermissionProject.md)
+[**[CloudidRestApi3FilterIdPermissionProject]**](CloudidRestApi3FilterIdPermissionProject.md)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -9997,9 +9305,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectPost
+## cloudidRestApi3ProjectPost
 
-> InlineResponse20110 projectPost(opts)
+> InlineResponse20110 cloudidRestApi3ProjectPost(opts)
 
 
 
@@ -10010,10 +9318,6 @@ Creates a new project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10022,7 +9326,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject41() // InlineObject41 | 
 };
-apiInstance.projectPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10044,7 +9348,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10052,9 +9356,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyAvatar2Post
+## cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post
 
-> InlineResponse20111 projectProjectIdOrKeyAvatar2Post(projectIdOrKey, opts)
+> InlineResponse20111 cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(projectIdOrKey, opts)
 
 
 
@@ -10065,10 +9369,6 @@ Loads an avatar for a project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10080,7 +9380,7 @@ let opts = {
   'x': 56, // Number | The X coordinate of the top-left corner of the crop region.
   'y': 56 // Number | The Y coordinate of the top-left corner of the crop region.
 };
-apiInstance.projectProjectIdOrKeyAvatar2Post(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatar2Post(projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10105,7 +9405,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10113,9 +9413,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyAvatarIdDelete
+## cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete
 
-> projectProjectIdOrKeyAvatarIdDelete(id, projectIdOrKey)
+> cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(id, projectIdOrKey)
 
 
 
@@ -10126,10 +9426,6 @@ Deletes a custom avatar from a project. Note that system avatars cannot be delet
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10137,7 +9433,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the avatar.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or (case-sensitive) key.
-apiInstance.projectProjectIdOrKeyAvatarIdDelete(id, projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarIdDelete(id, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10160,7 +9456,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10168,9 +9464,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## projectProjectIdOrKeyAvatarPut
+## cloudidRestApi3ProjectProjectIdOrKeyAvatarPut
 
-> projectProjectIdOrKeyAvatarPut(projectIdOrKey, opts)
+> cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(projectIdOrKey, opts)
 
 
 
@@ -10181,10 +9477,6 @@ Sets the avatar displayed for a project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10194,7 +9486,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The ID or (case-sensi
 let opts = {
   'body': new Jira.InlineObject43() // InlineObject43 | 
 };
-apiInstance.projectProjectIdOrKeyAvatarPut(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarPut(projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10217,7 +9509,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10225,9 +9517,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## projectProjectIdOrKeyAvatarsGet
+## cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet
 
-> InlineResponse20072 projectProjectIdOrKeyAvatarsGet(projectIdOrKey)
+> InlineResponse20072 cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(projectIdOrKey)
 
 
 
@@ -10238,17 +9530,13 @@ Returns all project avatars, grouped by system and custom avatars.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The ID or (case-sensitive) key of the project.
-apiInstance.projectProjectIdOrKeyAvatarsGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyAvatarsGet(projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10270,7 +9558,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10278,9 +9566,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyComponentGet
+## cloudidRestApi3ProjectProjectIdOrKeyComponentGet
 
-> InlineResponse20073 projectProjectIdOrKeyComponentGet(projectIdOrKey, opts)
+> InlineResponse20073 cloudidRestApi3ProjectProjectIdOrKeyComponentGet(projectIdOrKey, opts)
 
 
 
@@ -10291,10 +9579,6 @@ Returns a paginated representation of all components existing in a single projec
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10307,7 +9591,7 @@ let opts = {
   'query': "query_example", // String | Filter the results using a literal string. Components with a matching name or description are returned (case insensitive).
   'startAt': 56 // Number | The starting index of the returned list of components. The base index is 0.
 };
-apiInstance.projectProjectIdOrKeyComponentGet(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentGet(projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10333,7 +9617,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10341,9 +9625,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyComponentsGet
+## cloudidRestApi3ProjectProjectIdOrKeyComponentsGet
 
-> [InlineResponse20074] projectProjectIdOrKeyComponentsGet(projectIdOrKey)
+> [InlineResponse20074] cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(projectIdOrKey)
 
 
 
@@ -10354,17 +9638,13 @@ Returns all components existing in a single project. See the Get project compone
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectIdOrKeyComponentsGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyComponentsGet(projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10386,7 +9666,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10394,9 +9674,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyDelete
+## cloudidRestApi3ProjectProjectIdOrKeyDelete
 
-> projectProjectIdOrKeyDelete(projectIdOrKey)
+> cloudidRestApi3ProjectProjectIdOrKeyDelete(projectIdOrKey)
 
 
 
@@ -10407,17 +9687,13 @@ Deletes an existing project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectIdOrKeyDelete(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyDelete(projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10439,7 +9715,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10447,9 +9723,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## projectProjectIdOrKeyGet
+## cloudidRestApi3ProjectProjectIdOrKeyGet
 
-> InlineResponse20071 projectProjectIdOrKeyGet(projectIdOrKey, opts)
+> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyGet(projectIdOrKey, opts)
 
 
 
@@ -10460,10 +9736,6 @@ Returns the project details for the specified project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10473,7 +9745,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or pro
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default:
 };
-apiInstance.projectProjectIdOrKeyGet(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyGet(projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10496,7 +9768,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10504,9 +9776,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyPropertiesGet
+## cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet
 
-> InlineResponse20010 projectProjectIdOrKeyPropertiesGet(projectIdOrKey)
+> InlineResponse20010 cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(projectIdOrKey)
 
 
 
@@ -10517,17 +9789,13 @@ Returns all project property keys for the project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectIdOrKeyPropertiesGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesGet(projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10549,7 +9817,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10557,9 +9825,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyPropertiesPropertyKeyDelete
+## cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete
 
-> projectProjectIdOrKeyPropertiesPropertyKeyDelete(projectIdOrKey, propertyKey)
+> cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(projectIdOrKey, propertyKey)
 
 
 
@@ -10570,10 +9838,6 @@ Removes the property from the project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10581,7 +9845,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let propertyKey = "propertyKey_example"; // String | The project property key. Use Get project property keys to get a list of all project property keys.
-apiInstance.projectProjectIdOrKeyPropertiesPropertyKeyDelete(projectIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyDelete(projectIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10604,7 +9868,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10612,9 +9876,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## projectProjectIdOrKeyPropertiesPropertyKeyGet
+## cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet
 
-> InlineResponse20011 projectProjectIdOrKeyPropertiesPropertyKeyGet(projectIdOrKey, propertyKey)
+> InlineResponse20011 cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(projectIdOrKey, propertyKey)
 
 
 
@@ -10625,10 +9889,6 @@ Returns the value of the project property.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10636,7 +9896,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let propertyKey = "propertyKey_example"; // String | The project property key. Use Get project property keys to get a list of all project property keys.
-apiInstance.projectProjectIdOrKeyPropertiesPropertyKeyGet(projectIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyGet(projectIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10659,7 +9919,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10667,9 +9927,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyPropertiesPropertyKeyPut
+## cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut
 
-> projectProjectIdOrKeyPropertiesPropertyKeyPut(projectIdOrKey, propertyKey)
+> cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(projectIdOrKey, propertyKey)
 
 
 
@@ -10680,10 +9940,6 @@ Sets the value of the project property. You can use project properties to store 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10691,7 +9947,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
 let propertyKey = "propertyKey_example"; // String | The key of the project property. The maximum length is 255 bytes.
-apiInstance.projectProjectIdOrKeyPropertiesPropertyKeyPut(projectIdOrKey, propertyKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPropertiesPropertyKeyPut(projectIdOrKey, propertyKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10714,7 +9970,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10722,9 +9978,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## projectProjectIdOrKeyPut
+## cloudidRestApi3ProjectProjectIdOrKeyPut
 
-> InlineResponse20071 projectProjectIdOrKeyPut(projectIdOrKey, opts)
+> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyPut(projectIdOrKey, opts)
 
 
 
@@ -10735,10 +9991,6 @@ Updates the project details of an existing project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10749,7 +10001,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that the project description, issue types, and project lead are included in all responses by default:
   'body': new Jira.InlineObject42() // InlineObject42 | 
 };
-apiInstance.projectProjectIdOrKeyPut(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyPut(projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10773,7 +10025,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10781,9 +10033,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyRoleGet
+## cloudidRestApi3ProjectProjectIdOrKeyRoleGet
 
-> InlineResponse20075 projectProjectIdOrKeyRoleGet(projectIdOrKey)
+> InlineResponse20075 cloudidRestApi3ProjectProjectIdOrKeyRoleGet(projectIdOrKey)
 
 
 
@@ -10794,17 +10046,13 @@ Returns a list of project roles for the project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectIdOrKeyRoleGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleGet(projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10826,7 +10074,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10834,9 +10082,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyRoleIdDelete
+## cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete
 
-> projectProjectIdOrKeyRoleIdDelete(id, projectIdOrKey, opts)
+> cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(id, projectIdOrKey, opts)
 
 
 
@@ -10847,10 +10095,6 @@ Deletes actors from a project role for the project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10862,7 +10106,7 @@ let opts = {
   'group': "group_example", // String | The name of the group to remove from the project role.
   'user': "user_example" // String | The user account ID of the user to remove from the project role.
 };
-apiInstance.projectProjectIdOrKeyRoleIdDelete(id, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdDelete(id, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10887,7 +10131,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10895,9 +10139,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## projectProjectIdOrKeyRoleIdGet
+## cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet
 
-> InlineResponse20076 projectProjectIdOrKeyRoleIdGet(id, projectIdOrKey)
+> InlineResponse20076 cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(id, projectIdOrKey)
 
 
 
@@ -10908,10 +10152,6 @@ Returns the project role&#39;s details and actors associated with the project. T
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10919,7 +10159,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectIdOrKeyRoleIdGet(id, projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdGet(id, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -10942,7 +10182,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -10950,9 +10190,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyRoleIdPost
+## cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost
 
-> projectProjectIdOrKeyRoleIdPost(id, projectIdOrKey, opts)
+> cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(id, projectIdOrKey, opts)
 
 
 
@@ -10963,10 +10203,6 @@ Adds additional actors to a project role for the project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -10977,7 +10213,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or pro
 let opts = {
   'body': new Jira.InlineObject45() // InlineObject45 | 
 };
-apiInstance.projectProjectIdOrKeyRoleIdPost(id, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPost(id, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11001,7 +10237,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11009,9 +10245,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## projectProjectIdOrKeyRoleIdPut
+## cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut
 
-> InlineResponse20076 projectProjectIdOrKeyRoleIdPut(id, projectIdOrKey, opts)
+> InlineResponse20076 cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(id, projectIdOrKey, opts)
 
 
 
@@ -11022,10 +10258,6 @@ Associates actors with the project role for the project, replacing all existing 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11036,7 +10268,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or pro
 let opts = {
   'body': new Jira.InlineObject44() // InlineObject44 | 
 };
-apiInstance.projectProjectIdOrKeyRoleIdPut(id, projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoleIdPut(id, projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11060,7 +10292,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11068,9 +10300,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyRoledetailsGet
+## cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet
 
-> [FilterIdPermissionRole] projectProjectIdOrKeyRoledetailsGet(projectIdOrKey)
+> [CloudidRestApi3FilterIdPermissionRole] cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(projectIdOrKey)
 
 
 
@@ -11081,17 +10313,13 @@ Returns all project roles and the details for each role. Note that the list of p
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectIdOrKeyRoledetailsGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyRoledetailsGet(projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11109,11 +10337,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[FilterIdPermissionRole]**](FilterIdPermissionRole.md)
+[**[CloudidRestApi3FilterIdPermissionRole]**](CloudidRestApi3FilterIdPermissionRole.md)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11121,9 +10349,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyStatusesGet
+## cloudidRestApi3ProjectProjectIdOrKeyStatusesGet
 
-> [InlineResponse20077] projectProjectIdOrKeyStatusesGet(projectIdOrKey)
+> [InlineResponse20077] cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(projectIdOrKey)
 
 
 
@@ -11134,17 +10362,13 @@ Returns the valid statuses for a project. The statuses are grouped by issue type
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectIdOrKeyStatusesGet(projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyStatusesGet(projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11166,7 +10390,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11174,9 +10398,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyTypeNewProjectTypeKeyPut
+## cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut
 
-> InlineResponse20071 projectProjectIdOrKeyTypeNewProjectTypeKeyPut(newProjectTypeKey, projectIdOrKey)
+> InlineResponse20071 cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(newProjectTypeKey, projectIdOrKey)
 
 
 
@@ -11187,10 +10411,6 @@ Updates the project type.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11198,7 +10418,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let newProjectTypeKey = "newProjectTypeKey_example"; // String | The key of the new project type.
 let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectIdOrKeyTypeNewProjectTypeKeyPut(newProjectTypeKey, projectIdOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyTypeNewProjectTypeKeyPut(newProjectTypeKey, projectIdOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11221,7 +10441,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11229,9 +10449,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyVersionGet
+## cloudidRestApi3ProjectProjectIdOrKeyVersionGet
 
-> InlineResponse20078 projectProjectIdOrKeyVersionGet(projectIdOrKey, opts)
+> InlineResponse20078 cloudidRestApi3ProjectProjectIdOrKeyVersionGet(projectIdOrKey, opts)
 
 
 
@@ -11242,10 +10462,6 @@ Returns a paginated representation of all versions existing in a single project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11260,7 +10476,7 @@ let opts = {
   'startAt': 56, // Number | The starting index of the returned list of versions (page offset). The base index is 0.
   'status': "status_example" // String | A comma separated string used to filter the results by version status.
 };
-apiInstance.projectProjectIdOrKeyVersionGet(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionGet(projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11288,7 +10504,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11296,9 +10512,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectIdOrKeyVersionsGet
+## cloudidRestApi3ProjectProjectIdOrKeyVersionsGet
 
-> [InlineResponse20078Values] projectProjectIdOrKeyVersionsGet(projectIdOrKey, opts)
+> [InlineResponse20078Values] cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(projectIdOrKey, opts)
 
 
 
@@ -11309,10 +10525,6 @@ Returns all versions existing in a single project. The response is not paginated
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11322,7 +10534,7 @@ let projectIdOrKey = "projectIdOrKey_example"; // String | The project ID or pro
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.projectProjectIdOrKeyVersionsGet(projectIdOrKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectIdOrKeyVersionsGet(projectIdOrKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11345,7 +10557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11353,9 +10565,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectKeyOrIdIssuesecuritylevelschemeGet
+## cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet
 
-> InlineResponse20053 projectProjectKeyOrIdIssuesecuritylevelschemeGet(projectKeyOrId)
+> InlineResponse20053 cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(projectKeyOrId)
 
 
 
@@ -11366,17 +10578,13 @@ Returns the issue security scheme associated with the project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectKeyOrIdIssuesecuritylevelschemeGet(projectKeyOrId, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdIssuesecuritylevelschemeGet(projectKeyOrId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11398,7 +10606,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11406,9 +10614,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectKeyOrIdNotificationschemeGet
+## cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet
 
-> InlineResponse20062 projectProjectKeyOrIdNotificationschemeGet(projectKeyOrId, opts)
+> InlineResponse20062 cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(projectKeyOrId, opts)
 
 
 
@@ -11419,10 +10627,6 @@ Gets a notification scheme associated with the project. See the Get notification
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11432,7 +10636,7 @@ let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or pro
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.projectProjectKeyOrIdNotificationschemeGet(projectKeyOrId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdNotificationschemeGet(projectKeyOrId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11455,7 +10659,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11463,9 +10667,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectKeyOrIdPermissionschemeGet
+## cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet
 
-> InlineResponse20079 projectProjectKeyOrIdPermissionschemeGet(projectKeyOrId, opts)
+> InlineResponse20079 cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(projectKeyOrId, opts)
 
 
 
@@ -11476,10 +10680,6 @@ Gets the permission scheme associated with the project.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11489,7 +10689,7 @@ let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or pro
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
 };
-apiInstance.projectProjectKeyOrIdPermissionschemeGet(projectKeyOrId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemeGet(projectKeyOrId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11512,7 +10712,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11520,9 +10720,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectKeyOrIdPermissionschemePut
+## cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut
 
-> InlineResponse20079 projectProjectKeyOrIdPermissionschemePut(projectKeyOrId, opts)
+> InlineResponse20079 cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(projectKeyOrId, opts)
 
 
 
@@ -11533,10 +10733,6 @@ Associates a permission scheme with a particular project. See Managing project p
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11547,7 +10743,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information in the response. This parameter accepts multiple values separated by a comma. Note that permissions are included when you specify any value:
   'body': new Jira.InlineObject46() // InlineObject46 | 
 };
-apiInstance.projectProjectKeyOrIdPermissionschemePut(projectKeyOrId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdPermissionschemePut(projectKeyOrId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11571,7 +10767,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11579,9 +10775,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectProjectKeyOrIdSecuritylevelGet
+## cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet
 
-> InlineResponse20080 projectProjectKeyOrIdSecuritylevelGet(projectKeyOrId)
+> InlineResponse20080 cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(projectKeyOrId)
 
 
 
@@ -11592,17 +10788,13 @@ Returns all issue security levels for the project that the currently authenticat
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectKeyOrId = "projectKeyOrId_example"; // String | The project ID or project key (case sensitive).
-apiInstance.projectProjectKeyOrIdSecuritylevelGet(projectKeyOrId, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectProjectKeyOrIdSecuritylevelGet(projectKeyOrId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11624,7 +10816,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11632,9 +10824,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectSearchGet
+## cloudidRestApi3ProjectSearchGet
 
-> InlineResponse20068 projectSearchGet(opts)
+> InlineResponse20068 cloudidRestApi3ProjectSearchGet(opts)
 
 
 
@@ -11645,10 +10837,6 @@ Returns projects visible to the currently logged in user. For projects to be vis
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11664,7 +10852,7 @@ let opts = {
   'startAt': 56, // Number | The starting index of the first item returned in the page of results (page offset). The base index is 0.
   'typeKey': "typeKey_example" // String | Orders results by the project type. This parameter accepts multiple values separated by a comma. Valid values are business, service_desk, and software.
 };
-apiInstance.projectSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectSearchGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11693,7 +10881,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11701,9 +10889,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectTypeGet
+## cloudidRestApi3ProjectTypeGet
 
-> [InlineResponse20069] projectTypeGet()
+> [InlineResponse20069] cloudidRestApi3ProjectTypeGet()
 
 
 
@@ -11714,16 +10902,12 @@ Returns all project types, whether or not the instance has a valid license for e
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.projectTypeGet((error, data, response) => {
+apiInstance.cloudidRestApi3ProjectTypeGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11742,7 +10926,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11750,9 +10934,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## projectTypeProjectTypeKeyAccessibleGet
+## cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet
 
-> InlineResponse20070 projectTypeProjectTypeKeyAccessibleGet(projectTypeKey)
+> InlineResponse20070 cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(projectTypeKey)
 
 
 
@@ -11763,17 +10947,13 @@ Returns a project type if it is accessible to the logged in user.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectTypeKey = "projectTypeKey_example"; // String | The key of the project type.
-apiInstance.projectTypeProjectTypeKeyAccessibleGet(projectTypeKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyAccessibleGet(projectTypeKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11795,7 +10975,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11803,9 +10983,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectTypeProjectTypeKeyGet
+## cloudidRestApi3ProjectTypeProjectTypeKeyGet
 
-> InlineResponse20070 projectTypeProjectTypeKeyGet(projectTypeKey)
+> InlineResponse20070 cloudidRestApi3ProjectTypeProjectTypeKeyGet(projectTypeKey)
 
 
 
@@ -11816,17 +10996,13 @@ Returns a project type.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let projectTypeKey = "projectTypeKey_example"; // String | The key of the project type.
-apiInstance.projectTypeProjectTypeKeyGet(projectTypeKey, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectTypeProjectTypeKeyGet(projectTypeKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11848,7 +11024,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11856,9 +11032,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectvalidateKeyGet
+## cloudidRestApi3ProjectvalidateKeyGet
 
-> InlineResponse20081 projectvalidateKeyGet(opts)
+> InlineResponse20081 cloudidRestApi3ProjectvalidateKeyGet(opts)
 
 
 
@@ -11869,10 +11045,6 @@ Validates a project key by confirming the key is a valid string and not in use.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11881,7 +11053,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'key': "key_example" // String | The project key.
 };
-apiInstance.projectvalidateKeyGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectvalidateKeyGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11903,7 +11075,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11911,9 +11083,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectvalidateValidProjectKeyGet
+## cloudidRestApi3ProjectvalidateValidProjectKeyGet
 
-> InlineResponse20082 projectvalidateValidProjectKeyGet(opts)
+> InlineResponse20082 cloudidRestApi3ProjectvalidateValidProjectKeyGet(opts)
 
 
 
@@ -11924,10 +11096,6 @@ Validates a project key and, if the key is invalid or in use, generates a valid 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11936,7 +11104,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'key': "key_example" // String | The project key.
 };
-apiInstance.projectvalidateValidProjectKeyGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectvalidateValidProjectKeyGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -11958,7 +11126,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -11966,9 +11134,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## projectvalidateValidProjectNameGet
+## cloudidRestApi3ProjectvalidateValidProjectNameGet
 
-> InlineResponse20083 projectvalidateValidProjectNameGet(opts)
+> InlineResponse20083 cloudidRestApi3ProjectvalidateValidProjectNameGet(opts)
 
 
 
@@ -11979,10 +11147,6 @@ Checks that a project name isn&#39;t in use. If the name isn&#39;t in use, the p
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -11991,7 +11155,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'name': "name_example" // String | The project name.
 };
-apiInstance.projectvalidateValidProjectNameGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ProjectvalidateValidProjectNameGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12013,7 +11177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12021,9 +11185,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## resolutionGet
+## cloudidRestApi3ResolutionGet
 
-> [FilterIdPermissionProjectProjectCategory] resolutionGet()
+> [CloudidRestApi3FilterIdPermissionProjectProjectCategory] cloudidRestApi3ResolutionGet()
 
 
 
@@ -12034,16 +11198,12 @@ Returns a list of all issue resolution values.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.resolutionGet((error, data, response) => {
+apiInstance.cloudidRestApi3ResolutionGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12058,11 +11218,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[FilterIdPermissionProjectProjectCategory]**](FilterIdPermissionProjectProjectCategory.md)
+[**[CloudidRestApi3FilterIdPermissionProjectProjectCategory]**](CloudidRestApi3FilterIdPermissionProjectProjectCategory.md)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12070,9 +11230,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## resolutionIdGet
+## cloudidRestApi3ResolutionIdGet
 
-> InlineResponse20112 resolutionIdGet(id)
+> InlineResponse20112 cloudidRestApi3ResolutionIdGet(id)
 
 
 
@@ -12083,17 +11243,13 @@ Returns an issue resolution value.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the issue resolution value.
-apiInstance.resolutionIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3ResolutionIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12115,7 +11271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12123,9 +11279,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## roleGet
+## cloudidRestApi3RoleGet
 
-> [FilterIdPermissionRole] roleGet()
+> [CloudidRestApi3FilterIdPermissionRole] cloudidRestApi3RoleGet()
 
 
 
@@ -12136,16 +11292,12 @@ Gets a list of all project roles, complete with project role details and default
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.roleGet((error, data, response) => {
+apiInstance.cloudidRestApi3RoleGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12160,11 +11312,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[FilterIdPermissionRole]**](FilterIdPermissionRole.md)
+[**[CloudidRestApi3FilterIdPermissionRole]**](CloudidRestApi3FilterIdPermissionRole.md)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12172,9 +11324,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## roleIdActorsDelete
+## cloudidRestApi3RoleIdActorsDelete
 
-> InlineResponse20084 roleIdActorsDelete(id, opts)
+> InlineResponse20084 cloudidRestApi3RoleIdActorsDelete(id, opts)
 
 
 
@@ -12185,10 +11337,6 @@ Removes default actors from the project role. You may remove either a group or u
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12199,7 +11347,7 @@ let opts = {
   'group': "group_example", // String | The group name of the group to be removed as a default actor.
   'user': "user_example" // String | The user account ID of the user to remove as a default actor.
 };
-apiInstance.roleIdActorsDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdActorsDelete(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12223,7 +11371,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12231,9 +11379,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## roleIdActorsGet
+## cloudidRestApi3RoleIdActorsGet
 
-> InlineResponse20084 roleIdActorsGet(id)
+> InlineResponse20084 cloudidRestApi3RoleIdActorsGet(id)
 
 
 
@@ -12244,17 +11392,13 @@ Returns the default actors for the project role.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
-apiInstance.roleIdActorsGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdActorsGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12276,7 +11420,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12284,9 +11428,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## roleIdActorsPost
+## cloudidRestApi3RoleIdActorsPost
 
-> InlineResponse20084 roleIdActorsPost(id, opts)
+> InlineResponse20084 cloudidRestApi3RoleIdActorsPost(id, opts)
 
 
 
@@ -12297,10 +11441,6 @@ Adds default actors to the given role. You may add either groups or users, but y
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12310,7 +11450,7 @@ let id = 56; // Number | The ID of the project role. Use Get all project roles t
 let opts = {
   'body': new Jira.InlineObject52() // InlineObject52 | 
 };
-apiInstance.roleIdActorsPost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdActorsPost(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12333,7 +11473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12341,9 +11481,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## roleIdDelete
+## cloudidRestApi3RoleIdDelete
 
-> roleIdDelete(id, opts)
+> cloudidRestApi3RoleIdDelete(id, opts)
 
 
 
@@ -12354,10 +11494,6 @@ Deletes a project role. You must specify a replacement project role if you wish 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12367,7 +11503,7 @@ let id = 56; // Number | The ID of the project role to delete. Use Get all proje
 let opts = {
   'swap': 56 // Number | The ID of the project role that will replace the one being deleted.
 };
-apiInstance.roleIdDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdDelete(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12390,7 +11526,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12398,9 +11534,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## roleIdGet
+## cloudidRestApi3RoleIdGet
 
-> InlineResponse20076 roleIdGet(id)
+> InlineResponse20076 cloudidRestApi3RoleIdGet(id)
 
 
 
@@ -12411,17 +11547,13 @@ Gets the project role details and the default actors associated with the role. T
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the project role. Use Get all project roles to get a list of project role IDs.
-apiInstance.roleIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12443,7 +11575,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12451,9 +11583,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## roleIdPost
+## cloudidRestApi3RoleIdPost
 
-> InlineResponse20076 roleIdPost(id, opts)
+> InlineResponse20076 cloudidRestApi3RoleIdPost(id, opts)
 
 
 
@@ -12464,10 +11596,6 @@ Update either the project role&#39;s name or its description.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12477,7 +11605,7 @@ let id = 56; // Number | The ID of the project role. Use Get all project roles t
 let opts = {
   'body': new Jira.InlineObject51() // InlineObject51 | 
 };
-apiInstance.roleIdPost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdPost(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12500,7 +11628,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12508,9 +11636,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## roleIdPut
+## cloudidRestApi3RoleIdPut
 
-> InlineResponse20076 roleIdPut(id, opts)
+> InlineResponse20076 cloudidRestApi3RoleIdPut(id, opts)
 
 
 
@@ -12521,10 +11649,6 @@ Update the project role&#39;s name and description. You must include both a name
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12534,7 +11658,7 @@ let id = 56; // Number | The ID of the project role. Use Get all project roles t
 let opts = {
   'body': new Jira.InlineObject50() // InlineObject50 | 
 };
-apiInstance.roleIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RoleIdPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12557,7 +11681,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12565,9 +11689,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## rolePost
+## cloudidRestApi3RolePost
 
-> InlineResponse20079 rolePost(opts)
+> InlineResponse20079 cloudidRestApi3RolePost(opts)
 
 
 
@@ -12578,10 +11702,6 @@ Creates a new project role with no default actors. You can use the Add default a
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12590,7 +11710,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject49() // InlineObject49 | 
 };
-apiInstance.rolePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3RolePost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12612,7 +11732,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12620,9 +11740,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## screensAddToDefaultFieldIdPost
+## cloudidRestApi3ScreensAddToDefaultFieldIdPost
 
-> screensAddToDefaultFieldIdPost(fieldId)
+> cloudidRestApi3ScreensAddToDefaultFieldIdPost(fieldId)
 
 
 
@@ -12633,17 +11753,13 @@ Adds a field to the default tab of the default screen.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let fieldId = "fieldId_example"; // String | The ID of the field.
-apiInstance.screensAddToDefaultFieldIdPost(fieldId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensAddToDefaultFieldIdPost(fieldId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12665,7 +11781,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12673,9 +11789,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## screensGet
+## cloudidRestApi3ScreensGet
 
-> screensGet(opts)
+> cloudidRestApi3ScreensGet(opts)
 
 
 
@@ -12686,10 +11802,6 @@ Returns all screens.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12699,7 +11811,7 @@ let opts = {
   'maxResults': 56, // Number | The maximum number of items to return per page. Maximum is 100.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.screensGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12722,7 +11834,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12730,9 +11842,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## screensScreenIdAvailableFieldsGet
+## cloudidRestApi3ScreensScreenIdAvailableFieldsGet
 
-> screensScreenIdAvailableFieldsGet(screenId)
+> cloudidRestApi3ScreensScreenIdAvailableFieldsGet(screenId)
 
 
 
@@ -12743,17 +11855,13 @@ Returns the fields that can be added to a tab on a screen.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let screenId = 56; // Number | The ID of the screen.
-apiInstance.screensScreenIdAvailableFieldsGet(screenId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdAvailableFieldsGet(screenId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12775,7 +11883,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12783,9 +11891,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## screensScreenIdTabsGet
+## cloudidRestApi3ScreensScreenIdTabsGet
 
-> screensScreenIdTabsGet(screenId, opts)
+> cloudidRestApi3ScreensScreenIdTabsGet(screenId, opts)
 
 
 
@@ -12796,10 +11904,6 @@ Returns the list of tabs for a screen.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12809,7 +11913,7 @@ let screenId = 56; // Number | The ID of the screen.
 let opts = {
   'projectKey': "projectKey_example" // String | The key of the project.
 };
-apiInstance.screensScreenIdTabsGet(screenId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsGet(screenId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12832,7 +11936,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12840,9 +11944,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## screensScreenIdTabsPost
+## cloudidRestApi3ScreensScreenIdTabsPost
 
-> InlineResponse20085 screensScreenIdTabsPost(screenId, opts)
+> InlineResponse20085 cloudidRestApi3ScreensScreenIdTabsPost(screenId, opts)
 
 
 
@@ -12853,10 +11957,6 @@ Creates a tab for a screen.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12866,7 +11966,7 @@ let screenId = 56; // Number | The ID of the screen.
 let opts = {
   'body': new Jira.InlineObject53() // InlineObject53 | 
 };
-apiInstance.screensScreenIdTabsPost(screenId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsPost(screenId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12889,7 +11989,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12897,9 +11997,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## screensScreenIdTabsTabIdDelete
+## cloudidRestApi3ScreensScreenIdTabsTabIdDelete
 
-> screensScreenIdTabsTabIdDelete(screenId, tabId)
+> cloudidRestApi3ScreensScreenIdTabsTabIdDelete(screenId, tabId)
 
 
 
@@ -12910,10 +12010,6 @@ Deletes a screen tab.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12921,7 +12017,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
-apiInstance.screensScreenIdTabsTabIdDelete(screenId, tabId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdDelete(screenId, tabId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -12944,7 +12040,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -12952,9 +12048,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## screensScreenIdTabsTabIdFieldsGet
+## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet
 
-> screensScreenIdTabsTabIdFieldsGet(screenId, tabId, opts)
+> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(screenId, tabId, opts)
 
 
 
@@ -12965,10 +12061,6 @@ Returns all fields for a screen tab.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -12979,7 +12071,7 @@ let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'projectKey': "projectKey_example" // String | The key of the project.
 };
-apiInstance.screensScreenIdTabsTabIdFieldsGet(screenId, tabId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsGet(screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13003,7 +12095,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13011,9 +12103,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## screensScreenIdTabsTabIdFieldsIdDelete
+## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete
 
-> screensScreenIdTabsTabIdFieldsIdDelete(id, screenId, tabId)
+> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(id, screenId, tabId)
 
 
 
@@ -13024,10 +12116,6 @@ Removes a field from a screen tab.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -13036,7 +12124,7 @@ let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the field.
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
-apiInstance.screensScreenIdTabsTabIdFieldsIdDelete(id, screenId, tabId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdDelete(id, screenId, tabId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13060,7 +12148,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13068,9 +12156,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## screensScreenIdTabsTabIdFieldsIdMovePost
+## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost
 
-> screensScreenIdTabsTabIdFieldsIdMovePost(id, screenId, tabId, opts)
+> cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(id, screenId, tabId, opts)
 
 
 
@@ -13081,10 +12169,6 @@ Moves a screen tab field.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -13096,7 +12180,7 @@ let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'body': new Jira.InlineObject56() // InlineObject56 | 
 };
-apiInstance.screensScreenIdTabsTabIdFieldsIdMovePost(id, screenId, tabId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsIdMovePost(id, screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13121,7 +12205,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13129,9 +12213,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## screensScreenIdTabsTabIdFieldsPost
+## cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost
 
-> InlineResponse20086 screensScreenIdTabsTabIdFieldsPost(screenId, tabId, opts)
+> InlineResponse20086 cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(screenId, tabId, opts)
 
 
 
@@ -13142,10 +12226,6 @@ Adds a field to a screen tab.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -13156,7 +12236,7 @@ let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'body': new Jira.InlineObject55() // InlineObject55 | 
 };
-apiInstance.screensScreenIdTabsTabIdFieldsPost(screenId, tabId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdFieldsPost(screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13180,7 +12260,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13188,9 +12268,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## screensScreenIdTabsTabIdMovePosPost
+## cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost
 
-> screensScreenIdTabsTabIdMovePosPost(pos, screenId, tabId)
+> cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(pos, screenId, tabId)
 
 
 
@@ -13201,10 +12281,6 @@ Moves a screen tab.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -13213,7 +12289,7 @@ let apiInstance = new Jira.DefaultApi();
 let pos = 56; // Number | The position of tab. The base index is 0.
 let screenId = 56; // Number | The ID of the screen.
 let tabId = 56; // Number | The ID of the screen tab.
-apiInstance.screensScreenIdTabsTabIdMovePosPost(pos, screenId, tabId, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdMovePosPost(pos, screenId, tabId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13237,7 +12313,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13245,9 +12321,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## screensScreenIdTabsTabIdPut
+## cloudidRestApi3ScreensScreenIdTabsTabIdPut
 
-> InlineResponse20085 screensScreenIdTabsTabIdPut(screenId, tabId, opts)
+> InlineResponse20085 cloudidRestApi3ScreensScreenIdTabsTabIdPut(screenId, tabId, opts)
 
 
 
@@ -13258,10 +12334,6 @@ Updates the name of a screen tab.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -13272,7 +12344,7 @@ let tabId = 56; // Number | The ID of the screen tab.
 let opts = {
   'body': new Jira.InlineObject54() // InlineObject54 | 
 };
-apiInstance.screensScreenIdTabsTabIdPut(screenId, tabId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3ScreensScreenIdTabsTabIdPut(screenId, tabId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13296,7 +12368,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13304,9 +12376,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## searchGet
+## cloudidRestApi3SearchGet
 
-> InlineResponse20087 searchGet(opts)
+> InlineResponse20087 cloudidRestApi3SearchGet(opts)
 
 
 
@@ -13317,10 +12389,6 @@ Searches for issues using JQL. Permissions required: Permission to access Jira.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -13336,7 +12404,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in the page of results (page offset).
   'validateQuery': "validateQuery_example" // String | Determines how to validate the JQL query and treat the validation results. Supported values are:
 };
-apiInstance.searchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3SearchGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13365,7 +12433,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13373,9 +12441,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## searchPost
+## cloudidRestApi3SearchPost
 
-> InlineResponse20087 searchPost(opts)
+> InlineResponse20087 cloudidRestApi3SearchPost(opts)
 
 
 
@@ -13386,10 +12454,6 @@ Searches for issues using JQL. Permissions required: Permission to access Jira.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -13398,7 +12462,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject57() // InlineObject57 | 
 };
-apiInstance.searchPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3SearchPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13420,7 +12484,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13428,9 +12492,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## securitylevelIdGet
+## cloudidRestApi3SecuritylevelIdGet
 
-> InlineResponse20112 securitylevelIdGet(id)
+> InlineResponse20112 cloudidRestApi3SecuritylevelIdGet(id)
 
 
 
@@ -13441,17 +12505,13 @@ Returns details of an issue security level.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the issue security level.
-apiInstance.securitylevelIdGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3SecuritylevelIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13473,7 +12533,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13481,9 +12541,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## serverInfoGet
+## cloudidRestApi3ServerInfoGet
 
-> InlineResponse20088 serverInfoGet()
+> InlineResponse20088 cloudidRestApi3ServerInfoGet()
 
 
 
@@ -13494,16 +12554,12 @@ Returns information about the Jira instance.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.serverInfoGet((error, data, response) => {
+apiInstance.cloudidRestApi3ServerInfoGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13522,7 +12578,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13530,9 +12586,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## settingsColumnsGet
+## cloudidRestApi3SettingsColumnsGet
 
-> [InlineResponse20030] settingsColumnsGet()
+> [InlineResponse20030] cloudidRestApi3SettingsColumnsGet()
 
 
 
@@ -13543,16 +12599,12 @@ Returns the default issue navigator columns.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.settingsColumnsGet((error, data, response) => {
+apiInstance.cloudidRestApi3SettingsColumnsGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13571,7 +12623,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13579,9 +12631,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## settingsColumnsPut
+## cloudidRestApi3SettingsColumnsPut
 
-> settingsColumnsPut()
+> cloudidRestApi3SettingsColumnsPut()
 
 
 
@@ -13592,16 +12644,12 @@ Sets the default issue navigator columns.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.settingsColumnsPut((error, data, response) => {
+apiInstance.cloudidRestApi3SettingsColumnsPut((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13620,7 +12668,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13628,9 +12676,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## statusGet
+## cloudidRestApi3StatusGet
 
-> [InlineResponse20045To] statusGet()
+> [InlineResponse20045To] cloudidRestApi3StatusGet()
 
 
 
@@ -13641,16 +12689,12 @@ Returns a list of all statuses associated with workflows.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.statusGet((error, data, response) => {
+apiInstance.cloudidRestApi3StatusGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13669,7 +12713,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13677,9 +12721,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## statusIdOrNameGet
+## cloudidRestApi3StatusIdOrNameGet
 
-> InlineResponse20089 statusIdOrNameGet(idOrName)
+> InlineResponse20089 cloudidRestApi3StatusIdOrNameGet(idOrName)
 
 
 
@@ -13690,17 +12734,13 @@ Returns a status. The status must be associated with a workflow to be returned.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let idOrName = "idOrName_example"; // String | The ID or name of the status.
-apiInstance.statusIdOrNameGet(idOrName, (error, data, response) => {
+apiInstance.cloudidRestApi3StatusIdOrNameGet(idOrName, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13722,7 +12762,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13730,9 +12770,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## statuscategoryGet
+## cloudidRestApi3StatuscategoryGet
 
-> [InlineResponse20045ToStatusCategory] statuscategoryGet()
+> [InlineResponse20045ToStatusCategory] cloudidRestApi3StatuscategoryGet()
 
 
 
@@ -13743,16 +12783,12 @@ Returns a list of all status categories.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
-apiInstance.statuscategoryGet((error, data, response) => {
+apiInstance.cloudidRestApi3StatuscategoryGet((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13771,7 +12807,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13779,9 +12815,9 @@ This endpoint does not need any parameter.
 - **Accept**: */*
 
 
-## statuscategoryIdOrKeyGet
+## cloudidRestApi3StatuscategoryIdOrKeyGet
 
-> InlineResponse20090 statuscategoryIdOrKeyGet(idOrKey)
+> InlineResponse20090 cloudidRestApi3StatuscategoryIdOrKeyGet(idOrKey)
 
 
 
@@ -13792,17 +12828,13 @@ Returns a status category. Status categories provided a mechanism for categorizi
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let idOrKey = "idOrKey_example"; // String | The ID or key of the status category.
-apiInstance.statuscategoryIdOrKeyGet(idOrKey, (error, data, response) => {
+apiInstance.cloudidRestApi3StatuscategoryIdOrKeyGet(idOrKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13824,7 +12856,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13832,9 +12864,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## taskTaskIdCancelPost
+## cloudidRestApi3TaskTaskIdCancelPost
 
-> taskTaskIdCancelPost(taskId)
+> cloudidRestApi3TaskTaskIdCancelPost(taskId)
 
 
 
@@ -13845,17 +12877,13 @@ Cancels a task.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let taskId = "taskId_example"; // String | The ID of the task.
-apiInstance.taskTaskIdCancelPost(taskId, (error, data, response) => {
+apiInstance.cloudidRestApi3TaskTaskIdCancelPost(taskId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13877,7 +12905,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13885,9 +12913,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## taskTaskIdGet
+## cloudidRestApi3TaskTaskIdGet
 
-> InlineResponse20091 taskTaskIdGet(taskId)
+> InlineResponse20091 cloudidRestApi3TaskTaskIdGet(taskId)
 
 
 
@@ -13898,17 +12926,13 @@ Returns the status of a long-running asynchronous task.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let taskId = "taskId_example"; // String | The ID of the task.
-apiInstance.taskTaskIdGet(taskId, (error, data, response) => {
+apiInstance.cloudidRestApi3TaskTaskIdGet(taskId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13930,7 +12954,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13938,9 +12962,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## universalAvatarTypeTypeOwnerEntityIdGet
+## cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet
 
-> InlineResponse20072 universalAvatarTypeTypeOwnerEntityIdGet(entityId, type)
+> InlineResponse20072 cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(entityId, type)
 
 
 
@@ -13951,10 +12975,6 @@ Returns the system and custom avatars for a project or issue type.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -13962,7 +12982,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let entityId = "entityId_example"; // String | The ID of the entity item.
 let type = "type_example"; // String | The type of the entity. Valid values are project and issuetype.
-apiInstance.universalAvatarTypeTypeOwnerEntityIdGet(entityId, type, (error, data, response) => {
+apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdGet(entityId, type, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -13985,7 +13005,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -13993,9 +13013,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## universalAvatarTypeTypeOwnerEntityIdPost
+## cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost
 
-> InlineResponse2017 universalAvatarTypeTypeOwnerEntityIdPost(entityId, type, opts)
+> InlineResponse2017 cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(entityId, type, opts)
 
 
 
@@ -14006,10 +13026,6 @@ Loads a custom avatar for a project or issue type.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14022,7 +13038,7 @@ let opts = {
   'x': 56, // Number | The X coordinate of the top-left corner of the crop region.
   'y': 56 // Number | The Y coordinate of the top-left corner of the crop region.
 };
-apiInstance.universalAvatarTypeTypeOwnerEntityIdPost(entityId, type, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerEntityIdPost(entityId, type, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14048,7 +13064,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14056,9 +13072,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete
+## cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete
 
-> universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(id, owningObjectId, type)
+> cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(id, owningObjectId, type)
 
 
 
@@ -14069,10 +13085,6 @@ Deletes an avatar from a project or issue type.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14081,7 +13093,7 @@ let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the avatar.
 let owningObjectId = "owningObjectId_example"; // String | The ID of the entity item.
 let type = "type_example"; // String | The type of the entity. Valid values are project and issuetype.
-apiInstance.universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(id, owningObjectId, type, (error, data, response) => {
+apiInstance.cloudidRestApi3UniversalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete(id, owningObjectId, type, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14105,7 +13117,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14113,9 +13125,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## userAssignableMultiProjectSearchGet
+## cloudidRestApi3UserAssignableMultiProjectSearchGet
 
-> [InlineResponse2004Author] userAssignableMultiProjectSearchGet(opts)
+> [InlineResponse2004Author] cloudidRestApi3UserAssignableMultiProjectSearchGet(opts)
 
 
 
@@ -14126,10 +13138,6 @@ Returns a list of users who fulfill both of these criteria:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14142,7 +13150,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark.
 };
-apiInstance.userAssignableMultiProjectSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserAssignableMultiProjectSearchGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14168,7 +13176,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14176,9 +13184,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userAssignableSearchGet
+## cloudidRestApi3UserAssignableSearchGet
 
-> InlineResponse20060 userAssignableSearchGet(opts)
+> InlineResponse20060 cloudidRestApi3UserAssignableSearchGet(opts)
 
 
 
@@ -14189,10 +13197,6 @@ Returns a list of users that can be assigned to an issue. Use this method to fin
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14207,7 +13211,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
 };
-apiInstance.userAssignableSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserAssignableSearchGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14235,7 +13239,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14243,9 +13247,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userBulkGet
+## cloudidRestApi3UserBulkGet
 
-> InlineResponse20092 userBulkGet(opts)
+> InlineResponse20092 cloudidRestApi3UserBulkGet(opts)
 
 
 
@@ -14256,10 +13260,6 @@ Returns details of users specified in a list of usernames or keys. Permissions r
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14271,7 +13271,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': ["null"] // [String] | Comma-separated list of usernames. Required if key isn't provided.
 };
-apiInstance.userBulkGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserBulkGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14296,7 +13296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14304,9 +13304,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userColumnsDelete
+## cloudidRestApi3UserColumnsDelete
 
-> userColumnsDelete(opts)
+> cloudidRestApi3UserColumnsDelete(opts)
 
 
 
@@ -14317,10 +13317,6 @@ Resets the default issue table columns for the user to the system default. If a 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14330,7 +13326,7 @@ let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
 };
-apiInstance.userColumnsDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserColumnsDelete(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14353,7 +13349,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14361,9 +13357,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## userColumnsGet
+## cloudidRestApi3UserColumnsGet
 
-> userColumnsGet(opts)
+> cloudidRestApi3UserColumnsGet(opts)
 
 
 
@@ -14374,10 +13370,6 @@ Returns the default issue table columns for the user. If a username is not passe
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14387,7 +13379,7 @@ let opts = {
   'accountId': "accountId_example", // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId is specified.
 };
-apiInstance.userColumnsGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserColumnsGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14410,7 +13402,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14418,9 +13410,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## userColumnsPut
+## cloudidRestApi3UserColumnsPut
 
-> userColumnsPut(opts)
+> cloudidRestApi3UserColumnsPut(opts)
 
 
 
@@ -14431,10 +13423,6 @@ Sets the default issue table columns for the user. If a username is not passed, 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14443,7 +13431,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'accountId': "accountId_example" // String | The accountId of the user, which uniquely identifies the user across all Atlassian products. For example, 384093:32b4d9w0-f6a5-3535-11a3-9c8c88d10192. Required, unless username is specified.
 };
-apiInstance.userColumnsPut(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserColumnsPut(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14465,7 +13453,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14473,9 +13461,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## userDelete
+## cloudidRestApi3UserDelete
 
-> userDelete(opts)
+> cloudidRestApi3UserDelete(opts)
 
 
 
@@ -14486,10 +13474,6 @@ Deletes a user. Permissions required: Site administration (i.e., member of the s
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14500,7 +13484,7 @@ let opts = {
   'key': "key_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.userDelete(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserDelete(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14524,7 +13508,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14532,9 +13516,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## userGet
+## cloudidRestApi3UserGet
 
-> InlineResponse20060 userGet(opts)
+> InlineResponse20060 cloudidRestApi3UserGet(opts)
 
 
 
@@ -14545,10 +13529,6 @@ Returns a user. Permissions required: None.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14560,7 +13540,7 @@ let opts = {
   'key': "key_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.userGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14585,7 +13565,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14593,9 +13573,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userGroupsGet
+## cloudidRestApi3UserGroupsGet
 
-> InlineResponse20093 userGroupsGet(opts)
+> InlineResponse20093 cloudidRestApi3UserGroupsGet(opts)
 
 
 
@@ -14606,10 +13586,6 @@ Returns the groups to which a user belongs. Permissions required: Browse users a
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14620,7 +13596,7 @@ let opts = {
   'key': "key_example", // String | The key of the user.
   'username': "username_example" // String | The username of the user. Deprecated in favour of accountId.
 };
-apiInstance.userGroupsGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserGroupsGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14644,7 +13620,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14652,9 +13628,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userPermissionSearchGet
+## cloudidRestApi3UserPermissionSearchGet
 
-> [InlineResponse2004Author] userPermissionSearchGet(opts)
+> [InlineResponse2004Author] cloudidRestApi3UserPermissionSearchGet(opts)
 
 
 
@@ -14665,10 +13641,6 @@ Returns a list of users who fulfill both of these criteria:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14683,7 +13655,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark.
 };
-apiInstance.userPermissionSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPermissionSearchGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14711,7 +13683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14719,9 +13691,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userPickerGet
+## cloudidRestApi3UserPickerGet
 
-> InlineResponse20094 userPickerGet(opts)
+> InlineResponse20094 cloudidRestApi3UserPickerGet(opts)
 
 
 
@@ -14732,10 +13704,6 @@ Returns a list of users whose attributes match the query term. The returned obje
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14748,7 +13716,7 @@ let opts = {
   'query': "query_example", // String | A search input that is matched against appropriate user attributes to find relevant users.
   'showAvatar': true // Boolean | Include the URI to the user's avatar.
 };
-apiInstance.userPickerGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPickerGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14774,7 +13742,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14782,9 +13750,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userPost
+## cloudidRestApi3UserPost
 
-> InlineResponse20060 userPost(opts)
+> InlineResponse20060 cloudidRestApi3UserPost(opts)
 
 
 
@@ -14795,10 +13763,6 @@ Creates a user. This resource is retained for legacy compatibility. As soon as a
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14807,7 +13771,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject58() // InlineObject58 | 
 };
-apiInstance.userPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14829,7 +13793,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14837,9 +13801,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userPropertiesGet
+## cloudidRestApi3UserPropertiesGet
 
-> InlineResponse20010 userPropertiesGet(opts)
+> InlineResponse20010 cloudidRestApi3UserPropertiesGet(opts)
 
 
 
@@ -14850,10 +13814,6 @@ Returns the keys of all properties for a user. Permissions required:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14864,7 +13824,7 @@ let opts = {
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.userPropertiesGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPropertiesGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14888,7 +13848,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14896,9 +13856,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userPropertiesPropertyKeyDelete
+## cloudidRestApi3UserPropertiesPropertyKeyDelete
 
-> userPropertiesPropertyKeyDelete(propertyKey, opts)
+> cloudidRestApi3UserPropertiesPropertyKeyDelete(propertyKey, opts)
 
 
 
@@ -14909,10 +13869,6 @@ Deletes a property from a user. Permissions required:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14924,7 +13880,7 @@ let opts = {
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.userPropertiesPropertyKeyDelete(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPropertiesPropertyKeyDelete(propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -14949,7 +13905,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -14957,9 +13913,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## userPropertiesPropertyKeyGet
+## cloudidRestApi3UserPropertiesPropertyKeyGet
 
-> InlineResponse20011 userPropertiesPropertyKeyGet(propertyKey, opts)
+> InlineResponse20011 cloudidRestApi3UserPropertiesPropertyKeyGet(propertyKey, opts)
 
 
 
@@ -14970,10 +13926,6 @@ Returns the value of a user&#39;s property. If no property key is provided Get u
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -14985,7 +13937,7 @@ let opts = {
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.userPropertiesPropertyKeyGet(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPropertiesPropertyKeyGet(propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15010,7 +13962,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15018,9 +13970,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userPropertiesPropertyKeyPut
+## cloudidRestApi3UserPropertiesPropertyKeyPut
 
-> userPropertiesPropertyKeyPut(propertyKey, opts)
+> cloudidRestApi3UserPropertiesPropertyKeyPut(propertyKey, opts)
 
 
 
@@ -15031,10 +13983,6 @@ Sets the value of a user&#39;s property. Use this resource to store custom data 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15046,7 +13994,7 @@ let opts = {
   'userKey': "userKey_example", // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The key of the user. For example, admin. Required, unless accountId or username is specified.
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use accountId instead. See the migration guide for details.The username of the user. For example, admin. Required, unless accountId or key is specified.
 };
-apiInstance.userPropertiesPropertyKeyPut(propertyKey, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserPropertiesPropertyKeyPut(propertyKey, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15071,7 +14019,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15079,9 +14027,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## userSearchGet
+## cloudidRestApi3UserSearchGet
 
-> [InlineResponse2004Author] userSearchGet(opts)
+> [InlineResponse2004Author] cloudidRestApi3UserSearchGet(opts)
 
 
 
@@ -15092,10 +14040,6 @@ Returns a list of users that match the search string and property. Permissions r
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15110,7 +14054,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
 };
-apiInstance.userSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserSearchGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15138,7 +14082,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15146,9 +14090,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## userSearchQueryGet
+## cloudidRestApi3UserSearchQueryGet
 
-> userSearchQueryGet(opts)
+> cloudidRestApi3UserSearchQueryGet(opts)
 
 
 
@@ -15159,10 +14103,6 @@ Finds users using a structured query and returns user details. Permissions requi
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15174,7 +14114,7 @@ let opts = {
   'query': "query_example", // String | The search query.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.userSearchQueryGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserSearchQueryGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15199,7 +14139,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15207,9 +14147,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## userSearchQueryKeyGet
+## cloudidRestApi3UserSearchQueryKeyGet
 
-> userSearchQueryKeyGet(opts)
+> cloudidRestApi3UserSearchQueryKeyGet(opts)
 
 
 
@@ -15220,10 +14160,6 @@ Finds users using a structured query and returns a list of user keys. Permission
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15235,7 +14171,7 @@ let opts = {
   'query': "query_example", // String | The search query.
   'startAt': 56 // Number | The index of the first item to return in a page of results (page offset).
 };
-apiInstance.userSearchQueryKeyGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserSearchQueryKeyGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15260,7 +14196,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15268,9 +14204,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## userViewissueSearchGet
+## cloudidRestApi3UserViewissueSearchGet
 
-> [InlineResponse2004Author] userViewissueSearchGet(opts)
+> [InlineResponse2004Author] cloudidRestApi3UserViewissueSearchGet(opts)
 
 
 
@@ -15281,10 +14217,6 @@ Returns a list of users who fulfill both of these criteria:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15298,7 +14230,7 @@ let opts = {
   'startAt': 56, // Number | The index of the first item to return in a page of results (page offset).
   'username': "username_example" // String | This parameter has been deprecated due to privacy changes. Use query instead. See the migration guide for details. A query string used to search username, display name, and email address. The string is matched to the starting letters of any word in the searched fields. For example, ar matches to the username archie but not mark. Required, unless accountId is specified.
 };
-apiInstance.userViewissueSearchGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3UserViewissueSearchGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15325,7 +14257,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15333,9 +14265,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## versionIdDelete
+## cloudidRestApi3VersionIdDelete
 
-> versionIdDelete(id, opts)
+> cloudidRestApi3VersionIdDelete(id, opts)
 
 
 
@@ -15346,10 +14278,6 @@ Deletes a project version. Deprecated, use Delete and replace version that suppo
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15360,7 +14288,7 @@ let opts = {
   'moveAffectedIssuesTo': "moveAffectedIssuesTo_example", // String | The ID of the version to update affectedVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
   'moveFixIssuesTo': "moveFixIssuesTo_example" // String | The ID of the version to update fixVersion to when the field contains the deleted version. The replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
 };
-apiInstance.versionIdDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdDelete(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15384,7 +14312,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15392,9 +14320,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## versionIdGet
+## cloudidRestApi3VersionIdGet
 
-> InlineResponse20096 versionIdGet(id, opts)
+> InlineResponse20096 cloudidRestApi3VersionIdGet(id, opts)
 
 
 
@@ -15405,10 +14333,6 @@ Returns a project version. Permissions required: Browse projects project permiss
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15418,7 +14342,7 @@ let id = "id_example"; // String | The ID of the version.
 let opts = {
   'expand': "expand_example" // String | Use expand to include additional information about version in the response. This parameter accepts multiple values separated by a comma:
 };
-apiInstance.versionIdGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdGet(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15441,7 +14365,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15449,9 +14373,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## versionIdMergetoMoveIssuesToPut
+## cloudidRestApi3VersionIdMergetoMoveIssuesToPut
 
-> versionIdMergetoMoveIssuesToPut(id, moveIssuesTo)
+> cloudidRestApi3VersionIdMergetoMoveIssuesToPut(id, moveIssuesTo)
 
 
 
@@ -15462,10 +14386,6 @@ Merges two project versions. The merge is completed by deleting the version spec
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15473,7 +14393,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the version to delete.
 let moveIssuesTo = "moveIssuesTo_example"; // String | The ID of the version to merge into.
-apiInstance.versionIdMergetoMoveIssuesToPut(id, moveIssuesTo, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdMergetoMoveIssuesToPut(id, moveIssuesTo, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15496,7 +14416,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15504,9 +14424,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## versionIdMovePost
+## cloudidRestApi3VersionIdMovePost
 
-> InlineResponse20096 versionIdMovePost(id, opts)
+> InlineResponse20096 cloudidRestApi3VersionIdMovePost(id, opts)
 
 
 
@@ -15517,10 +14437,6 @@ Modifies the version&#39;s sequence within the project, which affects the displa
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15530,7 +14446,7 @@ let id = "id_example"; // String | The ID of the version to be moved.
 let opts = {
   'body': new Jira.InlineObject61() // InlineObject61 | 
 };
-apiInstance.versionIdMovePost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdMovePost(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15553,7 +14469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15561,9 +14477,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## versionIdPut
+## cloudidRestApi3VersionIdPut
 
-> versionIdPut(id, opts)
+> cloudidRestApi3VersionIdPut(id, opts)
 
 
 
@@ -15574,10 +14490,6 @@ Modifies a project version. Permissions required: Administer Jira global permiss
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15587,7 +14499,7 @@ let id = "id_example"; // String | The ID of the version.
 let opts = {
   'body': new Jira.InlineObject60() // InlineObject60 | 
 };
-apiInstance.versionIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15610,7 +14522,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15618,9 +14530,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## versionIdRelatedIssueCountsGet
+## cloudidRestApi3VersionIdRelatedIssueCountsGet
 
-> InlineResponse20097 versionIdRelatedIssueCountsGet(id)
+> InlineResponse20097 cloudidRestApi3VersionIdRelatedIssueCountsGet(id)
 
 
 
@@ -15631,17 +14543,13 @@ Returns the following counts for a version:
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the version.
-apiInstance.versionIdRelatedIssueCountsGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdRelatedIssueCountsGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15663,7 +14571,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15671,9 +14579,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## versionIdRemoveAndSwapPost
+## cloudidRestApi3VersionIdRemoveAndSwapPost
 
-> versionIdRemoveAndSwapPost(id, opts)
+> cloudidRestApi3VersionIdRemoveAndSwapPost(id, opts)
 
 
 
@@ -15684,10 +14592,6 @@ Deletes a project version. Permissions required: Administer Jira global permissi
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15697,7 +14601,7 @@ let id = "id_example"; // String | The ID of the version.
 let opts = {
   'body': new Jira.InlineObject62() // InlineObject62 | 
 };
-apiInstance.versionIdRemoveAndSwapPost(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdRemoveAndSwapPost(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15720,7 +14624,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15728,9 +14632,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## versionIdUnresolvedIssueCountGet
+## cloudidRestApi3VersionIdUnresolvedIssueCountGet
 
-> InlineResponse20098 versionIdUnresolvedIssueCountGet(id)
+> InlineResponse20098 cloudidRestApi3VersionIdUnresolvedIssueCountGet(id)
 
 
 
@@ -15741,17 +14645,13 @@ Returns counts of the issues and unresolved issues for the project version. Perm
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = "id_example"; // String | The ID of the version.
-apiInstance.versionIdUnresolvedIssueCountGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionIdUnresolvedIssueCountGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15773,7 +14673,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15781,9 +14681,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## versionPost
+## cloudidRestApi3VersionPost
 
-> InlineResponse20113 versionPost(opts)
+> InlineResponse20113 cloudidRestApi3VersionPost(opts)
 
 
 
@@ -15794,10 +14694,6 @@ Creates a project version. Permissions required: Administer Jira global permissi
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15806,7 +14702,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject59() // InlineObject59 | 
 };
-apiInstance.versionPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15828,7 +14724,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15836,9 +14732,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## versionRemotelinkGet
+## cloudidRestApi3VersionRemotelinkGet
 
-> InlineResponse20095 versionRemotelinkGet(opts)
+> InlineResponse20095 cloudidRestApi3VersionRemotelinkGet(opts)
 
 
 
@@ -15849,10 +14745,6 @@ the global ID of the remote resource that is linked to the versions
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -15861,7 +14753,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'globalId': "globalId_example" // String | the global ID of the remote resource that is linked to the versions
 };
-apiInstance.versionRemotelinkGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionRemotelinkGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15883,7 +14775,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15891,9 +14783,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## versionVersionIdRemotelinkDelete
+## cloudidRestApi3VersionVersionIdRemotelinkDelete
 
-> versionVersionIdRemotelinkDelete(versionId)
+> cloudidRestApi3VersionVersionIdRemotelinkDelete(versionId)
 
 
 
@@ -15904,17 +14796,13 @@ The version for which to delete ALL existing remote version links
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let versionId = "versionId_example"; // String | The version for which to delete ALL existing remote version links
-apiInstance.versionVersionIdRemotelinkDelete(versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkDelete(versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15936,7 +14824,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15944,9 +14832,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## versionVersionIdRemotelinkGet
+## cloudidRestApi3VersionVersionIdRemotelinkGet
 
-> InlineResponse20095 versionVersionIdRemotelinkGet(versionId)
+> InlineResponse20095 cloudidRestApi3VersionVersionIdRemotelinkGet(versionId)
 
 
 
@@ -15957,17 +14845,13 @@ a String containing the version ID
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let versionId = "versionId_example"; // String | a String containing the version ID
-apiInstance.versionVersionIdRemotelinkGet(versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGet(versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -15989,7 +14873,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -15997,9 +14881,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## versionVersionIdRemotelinkGlobalIdDelete
+## cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete
 
-> versionVersionIdRemotelinkGlobalIdDelete(globalId, versionId)
+> cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(globalId, versionId)
 
 
 
@@ -16010,10 +14894,6 @@ The version ID of the remote link
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16021,7 +14901,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let globalId = "globalId_example"; // String | The global ID of the remote link
 let versionId = "versionId_example"; // String | The version ID of the remote link
-apiInstance.versionVersionIdRemotelinkGlobalIdDelete(globalId, versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdDelete(globalId, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16044,7 +14924,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16052,9 +14932,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## versionVersionIdRemotelinkGlobalIdGet
+## cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet
 
-> InlineResponse20099 versionVersionIdRemotelinkGlobalIdGet(globalId, versionId)
+> InlineResponse20099 cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(globalId, versionId)
 
 
 
@@ -16065,10 +14945,6 @@ A REST sub-resource representing a remote version link
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16076,7 +14952,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let globalId = "globalId_example"; // String | The id of the remote issue link to be returned. If {@code null} (not provided) all remote links for the issue are returned.
 let versionId = "versionId_example"; // String | a String containing the version id
-apiInstance.versionVersionIdRemotelinkGlobalIdGet(globalId, versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdGet(globalId, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16099,7 +14975,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16107,9 +14983,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## versionVersionIdRemotelinkGlobalIdPost
+## cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost
 
-> versionVersionIdRemotelinkGlobalIdPost(globalId, versionId)
+> cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(globalId, versionId)
 
 
 
@@ -16118,10 +14994,6 @@ Name | Type | Description  | Notes
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16129,7 +15001,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let globalId = "globalId_example"; // String | 
 let versionId = "versionId_example"; // String | 
-apiInstance.versionVersionIdRemotelinkGlobalIdPost(globalId, versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkGlobalIdPost(globalId, versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16152,7 +15024,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16160,9 +15032,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## versionVersionIdRemotelinkPost
+## cloudidRestApi3VersionVersionIdRemotelinkPost
 
-> versionVersionIdRemotelinkPost(versionId)
+> cloudidRestApi3VersionVersionIdRemotelinkPost(versionId)
 
 
 
@@ -16173,17 +15045,13 @@ Create a remote version link via POST. The link&#39;s global ID will be taken fr
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let versionId = "versionId_example"; // String | 
-apiInstance.versionVersionIdRemotelinkPost(versionId, (error, data, response) => {
+apiInstance.cloudidRestApi3VersionVersionIdRemotelinkPost(versionId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16205,7 +15073,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16213,9 +15081,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## workflowGet
+## cloudidRestApi3WorkflowGet
 
-> [InlineResponse200100] workflowGet(opts)
+> [InlineResponse200100] cloudidRestApi3WorkflowGet(opts)
 
 
 
@@ -16226,10 +15094,6 @@ Returns all workflows in Jira or a single workflow.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16238,7 +15102,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'workflowName': "workflowName_example" // String | The name of the workflow to be returned. Only one workflow can be specified.
 };
-apiInstance.workflowGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16260,7 +15124,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16268,9 +15132,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowTransitionsTransitionIdPropertiesDelete
+## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete
 
-> workflowTransitionsTransitionIdPropertiesDelete(transitionId, opts)
+> cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(transitionId, opts)
 
 
 
@@ -16281,10 +15145,6 @@ Deletes a property from a workflow transition. Transition properties are used to
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16296,7 +15156,7 @@ let opts = {
   'workflowMode': "workflowMode_example", // String | The workflow status. Set to live for inactive workflows or draft for draft workflows. Active workflows cannot be edited.
   'workflowName': "workflowName_example" // String | The name of the workflow that the transition belongs to.
 };
-apiInstance.workflowTransitionsTransitionIdPropertiesDelete(transitionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesDelete(transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16321,7 +15181,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16329,9 +15189,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## workflowTransitionsTransitionIdPropertiesGet
+## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet
 
-> [InlineResponse200101] workflowTransitionsTransitionIdPropertiesGet(transitionId, opts)
+> [InlineResponse200101] cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(transitionId, opts)
 
 
 
@@ -16342,10 +15202,6 @@ Returns the properties on a workflow transition. Transition properties are used 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16358,7 +15214,7 @@ let opts = {
   'workflowMode': "workflowMode_example", // String | The workflow status. Set to live for active and inactive workflows, or draft for draft workflows.
   'workflowName': "workflowName_example" // String | The name of the workflow that the transition belongs to.
 };
-apiInstance.workflowTransitionsTransitionIdPropertiesGet(transitionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesGet(transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16384,7 +15240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16392,9 +15248,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowTransitionsTransitionIdPropertiesPost
+## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost
 
-> InlineResponse200102 workflowTransitionsTransitionIdPropertiesPost(transitionId, opts)
+> InlineResponse200102 cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(transitionId, opts)
 
 
 
@@ -16405,10 +15261,6 @@ Adds a property to a workflow transition. Transition properties are used to chan
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16421,7 +15273,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow that the transition belongs to.
   'body': new Jira.InlineObject64() // InlineObject64 | 
 };
-apiInstance.workflowTransitionsTransitionIdPropertiesPost(transitionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPost(transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16447,7 +15299,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16455,9 +15307,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowTransitionsTransitionIdPropertiesPut
+## cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut
 
-> InlineResponse200102 workflowTransitionsTransitionIdPropertiesPut(transitionId, opts)
+> InlineResponse200102 cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(transitionId, opts)
 
 
 
@@ -16468,10 +15320,6 @@ Updates a workflow transition by changing the property value. Trying to update a
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16484,7 +15332,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow that the transition belongs to.
   'body': new Jira.InlineObject63() // InlineObject63 | 
 };
-apiInstance.workflowTransitionsTransitionIdPropertiesPut(transitionId, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowTransitionsTransitionIdPropertiesPut(transitionId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16510,7 +15358,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16518,9 +15366,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdCreatedraftPost
+## cloudidRestApi3WorkflowschemeIdCreatedraftPost
 
-> InlineResponse20115 workflowschemeIdCreatedraftPost(id)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdCreatedraftPost(id)
 
 
 
@@ -16531,17 +15379,13 @@ Create a draft workflow scheme from an active workflow scheme, by copying the ac
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the active workflow scheme that the draft is created from.
-apiInstance.workflowschemeIdCreatedraftPost(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdCreatedraftPost(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16563,7 +15407,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16571,9 +15415,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDefaultDelete
+## cloudidRestApi3WorkflowschemeIdDefaultDelete
 
-> InlineResponse20114 workflowschemeIdDefaultDelete(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDefaultDelete(id, opts)
 
 
 
@@ -16584,10 +15428,6 @@ Resets the default workflow for a workflow scheme. That is, the default workflow
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16597,7 +15437,7 @@ let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'updateDraftIfNeeded': true // Boolean | Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false.
 };
-apiInstance.workflowschemeIdDefaultDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDefaultDelete(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16620,7 +15460,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16628,9 +15468,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDefaultGet
+## cloudidRestApi3WorkflowschemeIdDefaultGet
 
-> InlineResponse200103 workflowschemeIdDefaultGet(id, opts)
+> InlineResponse200103 cloudidRestApi3WorkflowschemeIdDefaultGet(id, opts)
 
 
 
@@ -16641,10 +15481,6 @@ Returns the default workflow for a workflow scheme. The default workflow is the 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16654,7 +15490,7 @@ let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'returnDraftIfExists': true // Boolean | Set to true to return the default workflow for the workflow scheme's draft rather than scheme itself. If the workflow scheme does not have a draft, then the default workflow for the workflow scheme is returned.
 };
-apiInstance.workflowschemeIdDefaultGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDefaultGet(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16677,7 +15513,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16685,9 +15521,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDefaultPut
+## cloudidRestApi3WorkflowschemeIdDefaultPut
 
-> InlineResponse20114 workflowschemeIdDefaultPut(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDefaultPut(id, opts)
 
 
 
@@ -16698,10 +15534,6 @@ Sets the default workflow for a workflow scheme.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16711,7 +15543,7 @@ let id = 56; // Number | The ID of the workflow scheme.
 let opts = {
   'body': new Jira.InlineObject67() // InlineObject67 | 
 };
-apiInstance.workflowschemeIdDefaultPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDefaultPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16734,7 +15566,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16742,9 +15574,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDelete
+## cloudidRestApi3WorkflowschemeIdDelete
 
-> workflowschemeIdDelete(id)
+> cloudidRestApi3WorkflowschemeIdDelete(id)
 
 
 
@@ -16755,17 +15587,13 @@ Deletes a workflow scheme. Note that a workflow scheme cannot be deleted if it i
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the workflow scheme. Find this ID by editing the desired workflow scheme in Jira. The ID will be shown in the URL as schemeId (for example, schemeId=10301).
-apiInstance.workflowschemeIdDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDelete(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16787,7 +15615,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16795,9 +15623,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## workflowschemeIdDraftDefaultDelete
+## cloudidRestApi3WorkflowschemeIdDraftDefaultDelete
 
-> InlineResponse20115 workflowschemeIdDraftDefaultDelete(id)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(id)
 
 
 
@@ -16808,17 +15636,13 @@ Resets the default workflow for a workflow scheme&#39;s draft. That is, the defa
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
-apiInstance.workflowschemeIdDraftDefaultDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultDelete(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16840,7 +15664,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16848,9 +15672,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDraftDefaultGet
+## cloudidRestApi3WorkflowschemeIdDraftDefaultGet
 
-> InlineResponse200103 workflowschemeIdDraftDefaultGet(id)
+> InlineResponse200103 cloudidRestApi3WorkflowschemeIdDraftDefaultGet(id)
 
 
 
@@ -16861,17 +15685,13 @@ Returns the default workflow for a workflow scheme&#39;s draft. The default work
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
-apiInstance.workflowschemeIdDraftDefaultGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16893,7 +15713,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16901,9 +15721,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDraftDefaultPut
+## cloudidRestApi3WorkflowschemeIdDraftDefaultPut
 
-> InlineResponse20115 workflowschemeIdDraftDefaultPut(id, opts)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftDefaultPut(id, opts)
 
 
 
@@ -16914,10 +15734,6 @@ Sets the default workflow for a workflow scheme&#39;s draft.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -16927,7 +15743,7 @@ let id = 56; // Number | The ID of the workflow scheme that the draft belongs to
 let opts = {
   'body': new Jira.InlineObject69() // InlineObject69 | 
 };
-apiInstance.workflowschemeIdDraftDefaultPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftDefaultPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -16950,7 +15766,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -16958,9 +15774,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDraftDelete
+## cloudidRestApi3WorkflowschemeIdDraftDelete
 
-> workflowschemeIdDraftDelete(id)
+> cloudidRestApi3WorkflowschemeIdDraftDelete(id)
 
 
 
@@ -16971,17 +15787,13 @@ Deletes a draft workflow scheme.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the active workflow scheme that the draft was originally created from.
-apiInstance.workflowschemeIdDraftDelete(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftDelete(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17003,7 +15815,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17011,9 +15823,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## workflowschemeIdDraftGet
+## cloudidRestApi3WorkflowschemeIdDraftGet
 
-> InlineResponse20115 workflowschemeIdDraftGet(id)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftGet(id)
 
 
 
@@ -17024,17 +15836,13 @@ Returns the draft workflow scheme for an active workflow scheme. Draft workflow 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the active workflow scheme that the draft was originally created from.
-apiInstance.workflowschemeIdDraftGet(id, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17056,7 +15864,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17064,9 +15872,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDraftIssuetypeIssueTypeDelete
+## cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete
 
-> InlineResponse20115 workflowschemeIdDraftIssuetypeIssueTypeDelete(id, issueType)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(id, issueType)
 
 
 
@@ -17077,10 +15885,6 @@ Deletes the issue type-workflow mapping for an issue type in a workflow scheme&#
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17088,7 +15892,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let issueType = "issueType_example"; // String | The ID of the issue type.
-apiInstance.workflowschemeIdDraftIssuetypeIssueTypeDelete(id, issueType, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeDelete(id, issueType, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17111,7 +15915,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17119,9 +15923,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDraftIssuetypeIssueTypeGet
+## cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet
 
-> InlineResponse200104 workflowschemeIdDraftIssuetypeIssueTypeGet(id, issueType)
+> InlineResponse200104 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(id, issueType)
 
 
 
@@ -17132,10 +15936,6 @@ Returns the issue type-workflow mapping for an issue type in a workflow scheme&#
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17143,7 +15943,7 @@ OAuth.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Jira.DefaultApi();
 let id = 56; // Number | The ID of the workflow scheme that the draft belongs to.
 let issueType = "issueType_example"; // String | The ID of the issue type.
-apiInstance.workflowschemeIdDraftIssuetypeIssueTypeGet(id, issueType, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypeGet(id, issueType, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17166,7 +15966,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17174,9 +15974,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDraftIssuetypeIssueTypePut
+## cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut
 
-> InlineResponse20115 workflowschemeIdDraftIssuetypeIssueTypePut(id, issueType, opts)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(id, issueType, opts)
 
 
 
@@ -17187,10 +15987,6 @@ Sets the workflow for an issue type in a workflow scheme&#39;s draft.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17201,7 +15997,7 @@ let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'body': new Jira.InlineObject70() // InlineObject70 | 
 };
-apiInstance.workflowschemeIdDraftIssuetypeIssueTypePut(id, issueType, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftIssuetypeIssueTypePut(id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17225,7 +16021,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17233,9 +16029,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDraftPut
+## cloudidRestApi3WorkflowschemeIdDraftPut
 
-> InlineResponse20115 workflowschemeIdDraftPut(id, opts)
+> InlineResponse20115 cloudidRestApi3WorkflowschemeIdDraftPut(id, opts)
 
 
 
@@ -17246,10 +16042,6 @@ Updates a draft workflow scheme. If a draft workflow scheme does not exist for t
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17259,7 +16051,7 @@ let id = 56; // Number | The ID of the active workflow scheme that the draft was
 let opts = {
   'body': new Jira.InlineObject68() // InlineObject68 | 
 };
-apiInstance.workflowschemeIdDraftPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17282,7 +16074,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17290,9 +16082,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDraftWorkflowDelete
+## cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete
 
-> workflowschemeIdDraftWorkflowDelete(id, opts)
+> cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(id, opts)
 
 
 
@@ -17303,10 +16095,6 @@ Deletes the workflow-issue type mapping for a workflow in a workflow scheme&#39;
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17316,7 +16104,7 @@ let id = 56; // Number | The ID of the workflow scheme that the draft belongs to
 let opts = {
   'workflowName': "workflowName_example" // String | The name of the workflow.
 };
-apiInstance.workflowschemeIdDraftWorkflowDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowDelete(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17339,7 +16127,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17347,9 +16135,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## workflowschemeIdDraftWorkflowGet
+## cloudidRestApi3WorkflowschemeIdDraftWorkflowGet
 
-> InlineResponse200105 workflowschemeIdDraftWorkflowGet(id, opts)
+> InlineResponse200105 cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(id, opts)
 
 
 
@@ -17360,10 +16148,6 @@ Returns the workflow-issue type mappings for a workflow scheme&#39;s draft.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17373,7 +16157,7 @@ let id = 56; // Number | The ID of the workflow scheme that the draft belongs to
 let opts = {
   'workflowName': "workflowName_example" // String | The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow.
 };
-apiInstance.workflowschemeIdDraftWorkflowGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowGet(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17396,7 +16180,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17404,9 +16188,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdDraftWorkflowPut
+## cloudidRestApi3WorkflowschemeIdDraftWorkflowPut
 
-> InlineResponse20114 workflowschemeIdDraftWorkflowPut(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(id, opts)
 
 
 
@@ -17417,10 +16201,6 @@ Sets the issue types for a workflow in a workflow scheme&#39;s draft. The workfl
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17431,7 +16211,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow.
   'body': new Jira.InlineObject71() // InlineObject71 | 
 };
-apiInstance.workflowschemeIdDraftWorkflowPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdDraftWorkflowPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17455,7 +16235,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17463,9 +16243,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdGet
+## cloudidRestApi3WorkflowschemeIdGet
 
-> InlineResponse20114 workflowschemeIdGet(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdGet(id, opts)
 
 
 
@@ -17476,10 +16256,6 @@ Returns a workflow scheme.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17489,7 +16265,7 @@ let id = 56; // Number | The ID of the workflow scheme. Find this ID by editing 
 let opts = {
   'returnDraftIfExists': true // Boolean | Returns the workflow scheme's draft rather than scheme itself, if set to true. If the workflow scheme does not have a draft, then the workflow scheme is returned.
 };
-apiInstance.workflowschemeIdGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdGet(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17512,7 +16288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17520,9 +16296,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdIssuetypeIssueTypeDelete
+## cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete
 
-> InlineResponse20114 workflowschemeIdIssuetypeIssueTypeDelete(id, issueType, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(id, issueType, opts)
 
 
 
@@ -17533,10 +16309,6 @@ Deletes the issue type-workflow mapping for an issue type in a workflow scheme.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17547,7 +16319,7 @@ let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'updateDraftIfNeeded': true // Boolean | Set to true to create or update the draft of a workflow scheme and update the mapping in the draft, when the workflow scheme cannot be edited. Defaults to false.
 };
-apiInstance.workflowschemeIdIssuetypeIssueTypeDelete(id, issueType, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeDelete(id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17571,7 +16343,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17579,9 +16351,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdIssuetypeIssueTypeGet
+## cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet
 
-> InlineResponse200104 workflowschemeIdIssuetypeIssueTypeGet(id, issueType, opts)
+> InlineResponse200104 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(id, issueType, opts)
 
 
 
@@ -17592,10 +16364,6 @@ Returns the issue type-workflow mapping for an issue type in a workflow scheme.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17606,7 +16374,7 @@ let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'returnDraftIfExists': true // Boolean | Returns the mapping from the workflow scheme's draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned.
 };
-apiInstance.workflowschemeIdIssuetypeIssueTypeGet(id, issueType, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypeGet(id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17630,7 +16398,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17638,9 +16406,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdIssuetypeIssueTypePut
+## cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut
 
-> InlineResponse20114 workflowschemeIdIssuetypeIssueTypePut(id, issueType, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(id, issueType, opts)
 
 
 
@@ -17651,10 +16419,6 @@ Sets the workflow for an issue type in a workflow scheme.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17665,7 +16429,7 @@ let issueType = "issueType_example"; // String | The ID of the issue type.
 let opts = {
   'body': new Jira.InlineObject72() // InlineObject72 | 
 };
-apiInstance.workflowschemeIdIssuetypeIssueTypePut(id, issueType, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdIssuetypeIssueTypePut(id, issueType, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17689,7 +16453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17697,9 +16461,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdPut
+## cloudidRestApi3WorkflowschemeIdPut
 
-> InlineResponse20114 workflowschemeIdPut(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdPut(id, opts)
 
 
 
@@ -17710,10 +16474,6 @@ Updates a workflow scheme, including the name, default workflow, issue type to p
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17723,7 +16483,7 @@ let id = 56; // Number | The ID of the workflow scheme. Find this ID by editing 
 let opts = {
   'body': new Jira.InlineObject66() // InlineObject66 | 
 };
-apiInstance.workflowschemeIdPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17746,7 +16506,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17754,9 +16514,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdWorkflowDelete
+## cloudidRestApi3WorkflowschemeIdWorkflowDelete
 
-> workflowschemeIdWorkflowDelete(id, opts)
+> cloudidRestApi3WorkflowschemeIdWorkflowDelete(id, opts)
 
 
 
@@ -17767,10 +16527,6 @@ Deletes the workflow-issue type mapping for a workflow in a workflow scheme.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17781,7 +16537,7 @@ let opts = {
   'updateDraftIfNeeded': true, // Boolean | Set to true to create or update the draft of a workflow scheme and delete the mapping from the draft, when the workflow scheme cannot be edited. Defaults to false.
   'workflowName': "workflowName_example" // String | The name of the workflow.
 };
-apiInstance.workflowschemeIdWorkflowDelete(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowDelete(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17805,7 +16561,7 @@ null (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17813,9 +16569,9 @@ null (empty response body)
 - **Accept**: Not defined
 
 
-## workflowschemeIdWorkflowGet
+## cloudidRestApi3WorkflowschemeIdWorkflowGet
 
-> InlineResponse200105 workflowschemeIdWorkflowGet(id, opts)
+> InlineResponse200105 cloudidRestApi3WorkflowschemeIdWorkflowGet(id, opts)
 
 
 
@@ -17826,10 +16582,6 @@ Returns the workflow-issue type mappings for a workflow scheme.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17840,7 +16592,7 @@ let opts = {
   'returnDraftIfExists': true, // Boolean | Returns the mapping from the workflow scheme's draft rather than the workflow scheme, if set to true. If no draft exists, the mapping from the workflow scheme is returned.
   'workflowName': "workflowName_example" // String | The name of a workflow in the scheme. Limits the results to the workflow-issue type mapping for the specified workflow.
 };
-apiInstance.workflowschemeIdWorkflowGet(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowGet(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17864,7 +16616,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17872,9 +16624,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemeIdWorkflowPut
+## cloudidRestApi3WorkflowschemeIdWorkflowPut
 
-> InlineResponse20114 workflowschemeIdWorkflowPut(id, opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemeIdWorkflowPut(id, opts)
 
 
 
@@ -17885,10 +16637,6 @@ Sets the issue types for a workflow in a workflow scheme. The workflow can also 
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17899,7 +16647,7 @@ let opts = {
   'workflowName': "workflowName_example", // String | The name of the workflow.
   'body': new Jira.InlineObject73() // InlineObject73 | 
 };
-apiInstance.workflowschemeIdWorkflowPut(id, opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemeIdWorkflowPut(id, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17923,7 +16671,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17931,9 +16679,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## workflowschemePost
+## cloudidRestApi3WorkflowschemePost
 
-> InlineResponse20114 workflowschemePost(opts)
+> InlineResponse20114 cloudidRestApi3WorkflowschemePost(opts)
 
 
 
@@ -17944,10 +16692,6 @@ Creates a workflow scheme.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -17956,7 +16700,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'body': new Jira.InlineObject65() // InlineObject65 | 
 };
-apiInstance.workflowschemePost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorkflowschemePost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -17978,7 +16722,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -17986,9 +16730,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## worklogDeletedGet
+## cloudidRestApi3WorklogDeletedGet
 
-> InlineResponse200106 worklogDeletedGet(opts)
+> InlineResponse200106 cloudidRestApi3WorklogDeletedGet(opts)
 
 
 
@@ -17999,10 +16743,6 @@ Returns a list of IDs and delete timestamps for worklogs deleted after a date an
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -18011,7 +16751,7 @@ let apiInstance = new Jira.DefaultApi();
 let opts = {
   'since': 56 // Number | The date and time, in UNIX timestamp format, after which deleted worklogs are returned.
 };
-apiInstance.worklogDeletedGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorklogDeletedGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -18033,7 +16773,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -18041,9 +16781,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## worklogListPost
+## cloudidRestApi3WorklogListPost
 
-> [InlineResponse200107] worklogListPost(opts)
+> [InlineResponse200107] cloudidRestApi3WorklogListPost(opts)
 
 
 
@@ -18054,10 +16794,6 @@ Returns worklog details for a list of worklog IDs.
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -18067,7 +16803,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog.
   'body': new Jira.InlineObject74() // InlineObject74 | 
 };
-apiInstance.worklogListPost(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorklogListPost(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -18090,7 +16826,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 
@@ -18098,9 +16834,9 @@ Name | Type | Description  | Notes
 - **Accept**: */*
 
 
-## worklogUpdatedGet
+## cloudidRestApi3WorklogUpdatedGet
 
-> InlineResponse200106 worklogUpdatedGet(opts)
+> InlineResponse200106 cloudidRestApi3WorklogUpdatedGet(opts)
 
 
 
@@ -18111,10 +16847,6 @@ Returns a list of IDs and update timestamps for worklogs updated after a date an
 ```javascript
 import Jira from 'Jira';
 let defaultClient = Jira.ApiClient.instance;
-// Configure HTTP basic authorization: Basic
-let Basic = defaultClient.authentications['Basic'];
-Basic.username = 'YOUR USERNAME';
-Basic.password = 'YOUR PASSWORD';
 // Configure OAuth2 access token for authorization: OAuth
 let OAuth = defaultClient.authentications['OAuth'];
 OAuth.accessToken = 'YOUR ACCESS TOKEN';
@@ -18124,7 +16856,7 @@ let opts = {
   'expand': "expand_example", // String | Use expand to include additional information about worklogs in the response. This parameter accepts properties that returns the properties of each worklog.
   'since': 56 // Number | The date and time, in UNIX timestamp format, after which updated worklogs are returned.
 };
-apiInstance.worklogUpdatedGet(opts, (error, data, response) => {
+apiInstance.cloudidRestApi3WorklogUpdatedGet(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -18147,7 +16879,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [OAuth](../README.md#OAuth)
+[OAuth](../README.md#OAuth)
 
 ### HTTP request headers
 

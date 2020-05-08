@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**levels** | [**[FilterIdPermissionProjectProjectCategory]**](FilterIdPermissionProjectProjectCategory.md) |  | 
+**levels** | [**[CloudidRestApi3FilterIdPermissionProjectProjectCategory]**](CloudidRestApi3FilterIdPermissionProjectProjectCategory.md) |  | 
 
 

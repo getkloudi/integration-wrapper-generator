@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20050InwardIssueFieldsStatusStatusCategory model module.
  * @module model/InlineResponse20050InwardIssueFieldsStatusStatusCategory
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20050InwardIssueFieldsStatusStatusCategory = /*#__PURE__*/function () {
   /**

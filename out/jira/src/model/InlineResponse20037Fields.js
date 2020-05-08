@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import FilterIdPermissionProject from './FilterIdPermissionProject';
+import CloudidRestApi3FilterIdPermissionProject from './CloudidRestApi3FilterIdPermissionProject';
 import InlineResponse20037FieldsAttachment from './InlineResponse20037FieldsAttachment';
 import InlineResponse20037FieldsIssuelinks from './InlineResponse20037FieldsIssuelinks';
 import InlineResponse20037FieldsSubTasks from './InlineResponse20037FieldsSubTasks';
@@ -25,7 +25,7 @@ import InlineResponse2009Values from './InlineResponse2009Values';
 /**
  * The InlineResponse20037Fields model module.
  * @module model/InlineResponse20037Fields
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20037Fields {
     /**
@@ -35,7 +35,7 @@ class InlineResponse20037Fields {
      * @param comment {Array.<module:model/InlineResponse2009Values>} 
      * @param description {module:model/InlineResponse2009Body} 
      * @param issuelinks {Array.<module:model/InlineResponse20037FieldsIssuelinks>} 
-     * @param project {module:model/FilterIdPermissionProject} 
+     * @param project {module:model/CloudidRestApi3FilterIdPermissionProject} 
      * @param subTasks {Array.<module:model/InlineResponse20037FieldsSubTasks>} 
      * @param timetracking {module:model/InlineResponse20037FieldsTimetracking} 
      * @param updated {Number} 
@@ -89,7 +89,7 @@ class InlineResponse20037Fields {
                 obj['issuelinks'] = ApiClient.convertToType(data['issuelinks'], [InlineResponse20037FieldsIssuelinks]);
             }
             if (data.hasOwnProperty('project')) {
-                obj['project'] = FilterIdPermissionProject.constructFromObject(data['project']);
+                obj['project'] = CloudidRestApi3FilterIdPermissionProject.constructFromObject(data['project']);
             }
             if (data.hasOwnProperty('sub-tasks')) {
                 obj['sub-tasks'] = ApiClient.convertToType(data['sub-tasks'], [InlineResponse20037FieldsSubTasks]);
@@ -134,7 +134,7 @@ InlineResponse20037Fields.prototype['description'] = undefined;
 InlineResponse20037Fields.prototype['issuelinks'] = undefined;
 
 /**
- * @member {module:model/FilterIdPermissionProject} project
+ * @member {module:model/CloudidRestApi3FilterIdPermissionProject} project
  */
 InlineResponse20037Fields.prototype['project'] = undefined;
 

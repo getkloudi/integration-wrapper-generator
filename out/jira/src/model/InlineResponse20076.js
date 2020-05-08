@@ -12,24 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import FilterIdPermissionRoleActors from './FilterIdPermissionRoleActors';
-import FilterIdPermissionRoleScope from './FilterIdPermissionRoleScope';
+import CloudidRestApi3FilterIdPermissionRoleActors from './CloudidRestApi3FilterIdPermissionRoleActors';
+import CloudidRestApi3FilterIdPermissionRoleScope from './CloudidRestApi3FilterIdPermissionRoleScope';
 
 /**
  * The InlineResponse20076 model module.
  * @module model/InlineResponse20076
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20076 {
     /**
      * Constructs a new <code>InlineResponse20076</code>.
      * 
      * @alias module:model/InlineResponse20076
-     * @param actors {Array.<module:model/FilterIdPermissionRoleActors>} 
+     * @param actors {Array.<module:model/CloudidRestApi3FilterIdPermissionRoleActors>} 
      * @param description {String} 
      * @param id {Number} 
      * @param name {String} 
-     * @param scope {module:model/FilterIdPermissionRoleScope} 
+     * @param scope {module:model/CloudidRestApi3FilterIdPermissionRoleScope} 
      * @param self {String} 
      */
     constructor(actors, description, id, name, scope, self) { 
@@ -63,7 +63,7 @@ class InlineResponse20076 {
             obj = obj || new InlineResponse20076();
 
             if (data.hasOwnProperty('actors')) {
-                obj['actors'] = ApiClient.convertToType(data['actors'], [FilterIdPermissionRoleActors]);
+                obj['actors'] = ApiClient.convertToType(data['actors'], [CloudidRestApi3FilterIdPermissionRoleActors]);
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -75,7 +75,7 @@ class InlineResponse20076 {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('scope')) {
-                obj['scope'] = FilterIdPermissionRoleScope.constructFromObject(data['scope']);
+                obj['scope'] = CloudidRestApi3FilterIdPermissionRoleScope.constructFromObject(data['scope']);
             }
             if (data.hasOwnProperty('self')) {
                 obj['self'] = ApiClient.convertToType(data['self'], 'String');
@@ -88,7 +88,7 @@ class InlineResponse20076 {
 }
 
 /**
- * @member {Array.<module:model/FilterIdPermissionRoleActors>} actors
+ * @member {Array.<module:model/CloudidRestApi3FilterIdPermissionRoleActors>} actors
  */
 InlineResponse20076.prototype['actors'] = undefined;
 
@@ -108,7 +108,7 @@ InlineResponse20076.prototype['id'] = undefined;
 InlineResponse20076.prototype['name'] = undefined;
 
 /**
- * @member {module:model/FilterIdPermissionRoleScope} scope
+ * @member {module:model/CloudidRestApi3FilterIdPermissionRoleScope} scope
  */
 InlineResponse20076.prototype['scope'] = undefined;
 

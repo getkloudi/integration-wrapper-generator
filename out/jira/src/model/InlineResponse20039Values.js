@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor from './CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor';
 import InlineResponse20039Items from './InlineResponse20039Items';
-import IssueIssueIdOrKeyAttachmentsAuthor from './IssueIssueIdOrKeyAttachmentsAuthor';
 
 /**
  * The InlineResponse20039Values model module.
  * @module model/InlineResponse20039Values
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20039Values {
     /**
@@ -54,7 +54,7 @@ class InlineResponse20039Values {
             obj = obj || new InlineResponse20039Values();
 
             if (data.hasOwnProperty('author')) {
-                obj['author'] = IssueIssueIdOrKeyAttachmentsAuthor.constructFromObject(data['author']);
+                obj['author'] = CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor.constructFromObject(data['author']);
             }
             if (data.hasOwnProperty('created')) {
                 obj['created'] = ApiClient.convertToType(data['created'], 'String');
@@ -73,7 +73,7 @@ class InlineResponse20039Values {
 }
 
 /**
- * @member {module:model/IssueIssueIdOrKeyAttachmentsAuthor} author
+ * @member {module:model/CloudidRestApi3IssueIssueIdOrKeyAttachmentsAuthor} author
  */
 InlineResponse20039Values.prototype['author'] = undefined;
 

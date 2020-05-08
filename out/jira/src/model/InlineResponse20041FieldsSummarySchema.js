@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse20041FieldsSummarySchema model module.
  * @module model/InlineResponse20041FieldsSummarySchema
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20041FieldsSummarySchema {
     /**

@@ -17,7 +17,7 @@ import InlineResponse20020MetaComplexity from './InlineResponse20020MetaComplexi
 /**
  * The InlineResponse20020Meta model module.
  * @module model/InlineResponse20020Meta
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20020Meta {
     /**

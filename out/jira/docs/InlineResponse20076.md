@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actors** | [**[FilterIdPermissionRoleActors]**](FilterIdPermissionRoleActors.md) |  | 
+**actors** | [**[CloudidRestApi3FilterIdPermissionRoleActors]**](CloudidRestApi3FilterIdPermissionRoleActors.md) |  | 
 **description** | **String** |  | 
 **id** | **Number** |  | 
 **name** | **String** |  | 
-**scope** | [**FilterIdPermissionRoleScope**](FilterIdPermissionRoleScope.md) |  | 
+**scope** | [**CloudidRestApi3FilterIdPermissionRoleScope**](CloudidRestApi3FilterIdPermissionRoleScope.md) |  | 
 **self** | **String** |  | 
 
 

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Number** |  | 
-**project** | [**FilterIdPermissionProject**](FilterIdPermissionProject.md) |  | 
-**role** | [**FilterIdPermissionRole**](FilterIdPermissionRole.md) |  | 
+**project** | [**CloudidRestApi3FilterIdPermissionProject**](CloudidRestApi3FilterIdPermissionProject.md) |  | 
+**role** | [**CloudidRestApi3FilterIdPermissionRole**](CloudidRestApi3FilterIdPermissionRole.md) |  | 
 **type** | **String** |  | 
 
 

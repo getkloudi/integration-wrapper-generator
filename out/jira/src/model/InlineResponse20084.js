@@ -12,19 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import FilterIdPermissionRoleActors from './FilterIdPermissionRoleActors';
+import CloudidRestApi3FilterIdPermissionRoleActors from './CloudidRestApi3FilterIdPermissionRoleActors';
 
 /**
  * The InlineResponse20084 model module.
  * @module model/InlineResponse20084
- * @version 1.0.0
+ * @version 1.1.0
  */
 class InlineResponse20084 {
     /**
      * Constructs a new <code>InlineResponse20084</code>.
      * 
      * @alias module:model/InlineResponse20084
-     * @param actors {Array.<module:model/FilterIdPermissionRoleActors>} 
+     * @param actors {Array.<module:model/CloudidRestApi3FilterIdPermissionRoleActors>} 
      */
     constructor(actors) { 
         
@@ -52,7 +52,7 @@ class InlineResponse20084 {
             obj = obj || new InlineResponse20084();
 
             if (data.hasOwnProperty('actors')) {
-                obj['actors'] = ApiClient.convertToType(data['actors'], [FilterIdPermissionRoleActors]);
+                obj['actors'] = ApiClient.convertToType(data['actors'], [CloudidRestApi3FilterIdPermissionRoleActors]);
             }
         }
         return obj;
@@ -62,7 +62,7 @@ class InlineResponse20084 {
 }
 
 /**
- * @member {Array.<module:model/FilterIdPermissionRoleActors>} actors
+ * @member {Array.<module:model/CloudidRestApi3FilterIdPermissionRoleActors>} actors
  */
 InlineResponse20084.prototype['actors'] = undefined;
 

@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _FilterIdPermissionProject = _interopRequireDefault(require("./FilterIdPermissionProject"));
+var _CloudidRestApi3FilterIdPermissionProject = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionProject"));
 
 var _InlineResponse20037FieldsAttachment = _interopRequireDefault(require("./InlineResponse20037FieldsAttachment"));
 
@@ -36,7 +36,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20037Fields model module.
  * @module model/InlineResponse20037Fields
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20037Fields = /*#__PURE__*/function () {
   /**
@@ -46,7 +46,7 @@ var InlineResponse20037Fields = /*#__PURE__*/function () {
    * @param comment {Array.<module:model/InlineResponse2009Values>} 
    * @param description {module:model/InlineResponse2009Body} 
    * @param issuelinks {Array.<module:model/InlineResponse20037FieldsIssuelinks>} 
-   * @param project {module:model/FilterIdPermissionProject} 
+   * @param project {module:model/CloudidRestApi3FilterIdPermissionProject} 
    * @param subTasks {Array.<module:model/InlineResponse20037FieldsSubTasks>} 
    * @param timetracking {module:model/InlineResponse20037FieldsTimetracking} 
    * @param updated {Number} 
@@ -110,7 +110,7 @@ var InlineResponse20037Fields = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('project')) {
-          obj['project'] = _FilterIdPermissionProject["default"].constructFromObject(data['project']);
+          obj['project'] = _CloudidRestApi3FilterIdPermissionProject["default"].constructFromObject(data['project']);
         }
 
         if (data.hasOwnProperty('sub-tasks')) {
@@ -162,7 +162,7 @@ InlineResponse20037Fields.prototype['description'] = undefined;
 
 InlineResponse20037Fields.prototype['issuelinks'] = undefined;
 /**
- * @member {module:model/FilterIdPermissionProject} project
+ * @member {module:model/CloudidRestApi3FilterIdPermissionProject} project
  */
 
 InlineResponse20037Fields.prototype['project'] = undefined;

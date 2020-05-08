@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./FilterIdPermissionProjectProjectCategory"));
+var _CloudidRestApi3FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./CloudidRestApi3FilterIdPermissionProjectProjectCategory"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The InlineResponse20053 model module.
  * @module model/InlineResponse20053
- * @version 1.0.0
+ * @version 1.1.0
  */
 var InlineResponse20053 = /*#__PURE__*/function () {
   /**
@@ -30,7 +30,7 @@ var InlineResponse20053 = /*#__PURE__*/function () {
    * @param defaultSecurityLevelId {Number} 
    * @param description {String} 
    * @param id {Number} 
-   * @param levels {Array.<module:model/FilterIdPermissionProjectProjectCategory>} 
+   * @param levels {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} 
    * @param name {String} 
    * @param self {String} 
    */
@@ -83,7 +83,7 @@ var InlineResponse20053 = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('levels')) {
-          obj['levels'] = _ApiClient["default"].convertToType(data['levels'], [_FilterIdPermissionProjectProjectCategory["default"]]);
+          obj['levels'] = _ApiClient["default"].convertToType(data['levels'], [_CloudidRestApi3FilterIdPermissionProjectProjectCategory["default"]]);
         }
 
         if (data.hasOwnProperty('name')) {
@@ -118,7 +118,7 @@ InlineResponse20053.prototype['description'] = undefined;
 
 InlineResponse20053.prototype['id'] = undefined;
 /**
- * @member {Array.<module:model/FilterIdPermissionProjectProjectCategory>} levels
+ * @member {Array.<module:model/CloudidRestApi3FilterIdPermissionProjectProjectCategory>} levels
  */
 
 InlineResponse20053.prototype['levels'] = undefined;
