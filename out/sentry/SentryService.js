@@ -101,8 +101,9 @@ class SentryService {
           ],
           project_id: incomingOptions.projectId,
           user_id: incomingOptions.userId,
-          third_party_project_id: incomingOptions.projectId,
-          third_party_organization_id: incomingOptions.organizationId,
+          third_party_project_id: incomingOptions.thirdPartyProject.projectId,
+          third_party_organization_id:
+            incomingOptions.thirdPartyProject.organizationId,
         },
         {
           headers: {
@@ -155,7 +156,7 @@ class SentryService {
   async getProjects(options) {
     const projects = await Axios.default.get(`${this.apiEndpoint}/projects/`, {
       headers: {
-        Authorization: `Bearer ${options.integration.authAccessToken}`,
+        Authorization: `Bearer ${options.accessToken}`,
       },
     });
 
@@ -166,7 +167,7 @@ class SentryService {
           `${this.apiEndpoint}/projects/${projects.data[index].organization.slug}/${projects.data[index].slug}/stats/?stat=received&resolution=1d`,
           {
             headers: {
-              Authorization: `Bearer ${options.integration.authAccessToken}`,
+              Authorization: `Bearer ${options.accessToken}`,
             },
           }
         );
@@ -201,14 +202,14 @@ class SentryService {
 
   async getIssues(options) {
     let params;
-    if (options.query) params = `query=${options.query}`;
+    if (options.query.query) params = `query=${options.query.query}`;
     const res = await Axios.default.get(
-      `${this.apiEndpoint}/projects/${options.thirdPartyOrganizationId}/${
-        options.thirdPartyProjectId
+      `${this.apiEndpoint}/projects/${options.query.thirdPartyOrganizationId}/${
+        options.query.thirdPartyProjectId
       }/issues/?${params ? params : ``}&statsPeriod=`,
       {
         headers: {
-          Authorization: `Bearer ${options.integration.authAccessToken}`,
+          Authorization: `Bearer ${options.accessToken}`,
         },
       }
     );
@@ -219,7 +220,7 @@ class SentryService {
       while (parsedHeader.next.results == 'true' && count < 10) {
         const res = await Axios.default.get(parsedHeader.next.url, {
           headers: {
-            Authorization: `Bearer ${options.integration.authAccessToken}`,
+            Authorization: `Bearer ${options.accessToken}`,
           },
         });
         issues = issues.concat(res.data);
@@ -234,10 +235,10 @@ class SentryService {
 
   async getMembers(options) {
     const res = await Axios.default.get(
-      `${this.apiEndpoint}/projects/${options.thirdPartyOrganizationId}/${options.thirdPartyProjectId}/members/`,
+      `${this.apiEndpoint}/projects/${options.query.thirdPartyOrganizationId}/${options.query.thirdPartyProjectId}/members/`,
       {
         headers: {
-          Authorization: `Bearer ${options.integration.authAccessToken}`,
+          Authorization: `Bearer ${options.accessToken}`,
         },
       }
     );
@@ -252,7 +253,7 @@ class SentryService {
       ) {
         const res = await Axios.default.get(parsedHeader.next.url, {
           headers: {
-            Authorization: `Bearer ${options.integration.authAccessToken}`,
+            Authorization: `Bearer ${options.accessToken}`,
           },
         });
         members = members.concat(res.data);
@@ -341,14 +342,14 @@ class SentryService {
   async createProject(options) {}
 
   async getEventsForAnIssue(options) {
-    if (!options.issueID) throw Error('Incorrect request');
+    if (!options.query.issueID) throw Error('Incorrect request');
     let events = [],
-      uri = `${this.apiEndpoint}/issues/${options.issueID}/events/`;
-    if (options.latest.toLowerCase() === 'true') uri += `latest/`;
+      uri = `${this.apiEndpoint}/issues/${options.query.issueID}/events/`;
+    if (options.query.latest === true) uri += `latest/`;
     uri += `?full=1`;
     const res = await Axios.default.get(uri, {
       headers: {
-        Authorization: `Bearer ${options.integration.authAccessToken}`,
+        Authorization: `Bearer ${options.accessToken}`,
       },
     });
     events.push(res.data);
@@ -356,12 +357,13 @@ class SentryService {
   }
 
   async getIssueFromID(options) {
-    if (!options.id) throw Error('options.id is missing from the request body');
+    if (!options.query.id)
+      throw Error('options.id is missing from the request body');
     const res = await Axios.default.get(
-      `${this.apiEndpoint}/issues/${options.id}/?statsPeriod=`,
+      `${this.apiEndpoint}/issues/${options.query.id}/?statsPeriod=`,
       {
         headers: {
-          Authorization: `Bearer ${options.integration.authAccessToken}`,
+          Authorization: `Bearer ${options.accessToken}`,
         },
       }
     );

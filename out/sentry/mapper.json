@@ -105,5 +105,35 @@
         }
       }
     ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "ISSUE|ISSUES|MEMBERS|EVENTS",
+    "integration": "SENTRY",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "accessToken"
+        }
+      },
+      {
+        "input": {
+          "key": "query"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "query"
+        }
+      }
+    ]
   }
 ]
