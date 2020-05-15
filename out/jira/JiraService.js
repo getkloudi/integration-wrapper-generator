@@ -199,6 +199,42 @@ class JiraService {
     }
   }
 
+  async createIssues(options) {
+    if (
+      !options.integration.thirdPartyProjects ||
+      options.integration.thirdPartyProjects.length == 0
+    ) {
+      console.error('No third party projects present');
+      return 'Ok';
+    }
+
+    const taskUri = nconf.get('TASK_API_URI');
+    const authToken = nconf.get('PEPPER_TASK_API_ACCESS_TOKEN');
+
+    try {
+      const res = await Axios.default.post(
+        taskUri,
+        {
+          pepper_task: 'task.thirdParty.CREATE_JIRA_ISSUES',
+          project_id: options.projectID,
+          user_id: options.userID,
+          bug: options.bug,
+          clubSimilarBugs: options.clubSimilarBugs,
+          jiraProjectID: options.integration.thirdPartyProjects[0].projectId,
+        },
+        {
+          headers: {
+            Authorization: authToken,
+          },
+        }
+      );
+      return 'Ok';
+    } catch (error) {
+      console.error(error.response || error);
+      return 'ERROR';
+    }
+  }
+
   async get(entity, options) {
     switch (entity) {
       case 'APPLICATION_PROPERTIES_ADVANCED_SETTINGS':
@@ -9103,6 +9139,8 @@ Returns a list of IDs and update timestamps for worklogs updated after a date an
 
   async post(entity, options) {
     switch (entity) {
+      case 'ISSUES':
+        return await this.createIssues(options);
       case 'COMMENT_LIST':
         /*
 
