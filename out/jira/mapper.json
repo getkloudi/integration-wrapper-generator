@@ -85,7 +85,8 @@
           "parent": "body.integration.thirdPartyProjects"
         },
         "transform": {
-          "type": "ONE-TO-ONE"
+          "type": "FUNCTION",
+          "name": "transformThirdPartyProjects"
         },
         "output": {
           "parent": "projects"

@@ -2,6 +2,10 @@ module.exports.tansformDomainToAtlassianDomain = (str) => {
   return `${str}.atlassian.net`;
 };
 
+module.exports.transformThirdPartyProjects = (projects) => {
+  return projects._doc;
+};
+
 module.exports.transformQueryParamsToOpts = (query) => {
   const opts = { ...query };
   delete opts.projectId;

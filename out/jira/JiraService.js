@@ -200,10 +200,7 @@ class JiraService {
   }
 
   async createIssues(options) {
-    if (
-      !options.integration.thirdPartyProjects ||
-      options.integration.thirdPartyProjects.length == 0
-    ) {
+    if (!options.projects || options.projects.length == 0) {
       console.error('No third party projects present');
       return 'Ok';
     }
@@ -220,7 +217,7 @@ class JiraService {
           user_id: options.userID,
           bug: options.bug,
           clubSimilarBugs: options.clubSimilarBugs,
-          jiraProjectID: options.integration.thirdPartyProjects[0].projectId,
+          jiraProjectID: options.projects[0].projectId,
         },
         {
           headers: {
