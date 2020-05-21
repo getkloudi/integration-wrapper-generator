@@ -1,0 +1,6102 @@
+[
+  {
+    "manifest": {
+      "name": "action.github.EMOJIS_GET",
+      "displayName": "get emojis",
+      "isSystemAction": false,
+      "shortDescription": "get emojis",
+      "longDescription": "Lists all the emojis available to use on GitHub.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.EMOJIS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.EVENTS_GET",
+      "displayName": "get events",
+      "isSystemAction": false,
+      "shortDescription": "get events",
+      "longDescription": "List public events.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.EVENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.FEEDS_GET",
+      "displayName": "get feeds",
+      "isSystemAction": false,
+      "shortDescription": "get feeds",
+      "longDescription": "List Feeds. GitHub provides several timeline resources in Atom format. The Feeds API  lists all the feeds available to the authenticating user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.FEEDS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_GET",
+      "displayName": "get gists",
+      "isSystemAction": false,
+      "shortDescription": "get gists",
+      "longDescription": "List the authenticated user&#39;s gists or if called anonymously, this will return all public gists.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_COMMENTS_COMMENT_ID_DELETE",
+      "displayName": "delete gists id comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "delete gists id comments comment id",
+      "longDescription": "Delete a comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_COMMENTS_COMMENT_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_COMMENTS_COMMENT_ID_GET",
+      "displayName": "get gists id comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "get gists id comments comment id",
+      "longDescription": "Get a single comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_COMMENTS_COMMENT_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_COMMENTS_COMMENT_ID_PATCH",
+      "displayName": "patch gists id comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "patch gists id comments comment id",
+      "longDescription": "Edit a comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_COMMENTS_COMMENT_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_COMMENTS_GET",
+      "displayName": "get gists id comments",
+      "isSystemAction": false,
+      "shortDescription": "get gists id comments",
+      "longDescription": "List comments on a gist.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_COMMENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_COMMENTS_POST",
+      "displayName": "post gists id comments",
+      "isSystemAction": false,
+      "shortDescription": "post gists id comments",
+      "longDescription": "Create a commen",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_COMMENTS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_DELETE",
+      "displayName": "delete gists id",
+      "isSystemAction": false,
+      "shortDescription": "delete gists id",
+      "longDescription": "Delete a gist.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_FORKS_POST",
+      "displayName": "post gists id forks",
+      "isSystemAction": false,
+      "shortDescription": "post gists id forks",
+      "longDescription": "Fork a gist.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_FORKS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_GET",
+      "displayName": "get gists id",
+      "isSystemAction": false,
+      "shortDescription": "get gists id",
+      "longDescription": "Get a single gist.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_PATCH",
+      "displayName": "patch gists id",
+      "isSystemAction": false,
+      "shortDescription": "patch gists id",
+      "longDescription": "Edit a gist.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_STAR_DELETE",
+      "displayName": "delete gists id star",
+      "isSystemAction": false,
+      "shortDescription": "delete gists id star",
+      "longDescription": "Unstar a gist.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_STAR_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_STAR_GET",
+      "displayName": "get gists id star",
+      "isSystemAction": false,
+      "shortDescription": "get gists id star",
+      "longDescription": "Check if a gist is starred.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_STAR_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_ID_STAR_PUT",
+      "displayName": "put gists id star",
+      "isSystemAction": false,
+      "shortDescription": "put gists id star",
+      "longDescription": "Star a gist.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_ID_STAR_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_POST",
+      "displayName": "post gists",
+      "isSystemAction": false,
+      "shortDescription": "post gists",
+      "longDescription": "Create a gist.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_PUBLIC_GET",
+      "displayName": "get gists public",
+      "isSystemAction": false,
+      "shortDescription": "get gists public",
+      "longDescription": "List all public gists.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_PUBLIC_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GISTS_STARRED_GET",
+      "displayName": "get gists starred",
+      "isSystemAction": false,
+      "shortDescription": "get gists starred",
+      "longDescription": "List the authenticated user&#39;s starred gists.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GISTS_STARRED_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GITIGNORE_TEMPLATES_GET",
+      "displayName": "get gitignore templates",
+      "isSystemAction": false,
+      "shortDescription": "get gitignore templates",
+      "longDescription": "Listing available templates. List all templates available to pass as an option when creating a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GITIGNORE_TEMPLATES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.GITIGNORE_TEMPLATES_LANGUAGE_GET",
+      "displayName": "get gitignore templates language",
+      "isSystemAction": false,
+      "shortDescription": "get gitignore templates language",
+      "longDescription": "Get a single template.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.GITIGNORE_TEMPLATES_LANGUAGE_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ISSUES_GET",
+      "displayName": "get issues",
+      "isSystemAction": false,
+      "shortDescription": "get issues",
+      "longDescription": "List issues. List all issues across all the authenticated user&#39;s visible repositories.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ISSUES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.LEGACY_ISSUES_SEARCH_OWNER_REPOSITORY_STATE_KEYWORD_GET",
+      "displayName": "get legacy issues search owner repository state keyword",
+      "isSystemAction": false,
+      "shortDescription": "get legacy issues search owner repository state keyword",
+      "longDescription": "Find issues by state and keyword.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.LEGACY_ISSUES_SEARCH_OWNER_REPOSITORY_STATE_KEYWORD_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.LEGACY_REPOS_SEARCH_KEYWORD_GET",
+      "displayName": "get legacy repos search keyword",
+      "isSystemAction": false,
+      "shortDescription": "get legacy repos search keyword",
+      "longDescription": "Find repositories by keyword. Note, this legacy method does not follow the v3 pagination pattern. This method returns up to 100 results per page and pages can be fetched using the start_page parameter.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.LEGACY_REPOS_SEARCH_KEYWORD_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.LEGACY_USER_EMAIL_EMAIL_GET",
+      "displayName": "get legacy user email email",
+      "isSystemAction": false,
+      "shortDescription": "get legacy user email email",
+      "longDescription": "This API call is added for compatibility reasons only.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.LEGACY_USER_EMAIL_EMAIL_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.LEGACY_USER_SEARCH_KEYWORD_GET",
+      "displayName": "get legacy user search keyword",
+      "isSystemAction": false,
+      "shortDescription": "get legacy user search keyword",
+      "longDescription": "Find users by keyword.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.LEGACY_USER_SEARCH_KEYWORD_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.MARKDOWN_POST",
+      "displayName": "post markdown",
+      "isSystemAction": false,
+      "shortDescription": "post markdown",
+      "longDescription": "Render an arbitrary Markdown document",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.MARKDOWN_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.MARKDOWN_RAW_POST",
+      "displayName": "post markdown raw",
+      "isSystemAction": false,
+      "shortDescription": "post markdown raw",
+      "longDescription": "Render a Markdown document in raw mode",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.MARKDOWN_RAW_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.META_GET",
+      "displayName": "get meta",
+      "isSystemAction": false,
+      "shortDescription": "get meta",
+      "longDescription": "This gives some information about GitHub.com, the service.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.META_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.NETWORKS_OWNER_REPO_EVENTS_GET",
+      "displayName": "get networks owner repo events",
+      "isSystemAction": false,
+      "shortDescription": "get networks owner repo events",
+      "longDescription": "List public events for a network of repositories.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.NETWORKS_OWNER_REPO_EVENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.NOTIFICATIONS_GET",
+      "displayName": "get notifications",
+      "isSystemAction": false,
+      "shortDescription": "get notifications",
+      "longDescription": "List your notifications. List all notifications for the current user, grouped by repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.NOTIFICATIONS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.NOTIFICATIONS_PUT",
+      "displayName": "put notifications",
+      "isSystemAction": false,
+      "shortDescription": "put notifications",
+      "longDescription": "Mark as read. Marking a notification as \\&quot;read\\&quot; removes it from the default view on GitHub.com.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.NOTIFICATIONS_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.NOTIFICATIONS_THREADS_ID_GET",
+      "displayName": "get notifications threads id",
+      "isSystemAction": false,
+      "shortDescription": "get notifications threads id",
+      "longDescription": "View a single thread.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.NOTIFICATIONS_THREADS_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.NOTIFICATIONS_THREADS_ID_PATCH",
+      "displayName": "patch notifications threads id",
+      "isSystemAction": false,
+      "shortDescription": "patch notifications threads id",
+      "longDescription": "Mark a thread as read",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.NOTIFICATIONS_THREADS_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.NOTIFICATIONS_THREADS_ID_SUBSCRIPTION_DELETE",
+      "displayName": "delete notifications threads id subscription",
+      "isSystemAction": false,
+      "shortDescription": "delete notifications threads id subscription",
+      "longDescription": "Delete a Thread Subscription.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.NOTIFICATIONS_THREADS_ID_SUBSCRIPTION_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.NOTIFICATIONS_THREADS_ID_SUBSCRIPTION_GET",
+      "displayName": "get notifications threads id subscription",
+      "isSystemAction": false,
+      "shortDescription": "get notifications threads id subscription",
+      "longDescription": "Get a Thread Subscription.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.NOTIFICATIONS_THREADS_ID_SUBSCRIPTION_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.NOTIFICATIONS_THREADS_ID_SUBSCRIPTION_PUT",
+      "displayName": "put notifications threads id subscription",
+      "isSystemAction": false,
+      "shortDescription": "put notifications threads id subscription",
+      "longDescription": "Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Subscribing to a thread is unnecessary if the user is already subscribed to the repository. Ignoring a thread will mute all future notifications (until you comment or get @mentioned).",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.NOTIFICATIONS_THREADS_ID_SUBSCRIPTION_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_EVENTS_GET",
+      "displayName": "get orgs org events",
+      "isSystemAction": false,
+      "shortDescription": "get orgs org events",
+      "longDescription": "List public events for an organization.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_EVENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_GET",
+      "displayName": "get orgs org",
+      "isSystemAction": false,
+      "shortDescription": "get orgs org",
+      "longDescription": "Get an Organization.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_ISSUES_GET",
+      "displayName": "get orgs org issues",
+      "isSystemAction": false,
+      "shortDescription": "get orgs org issues",
+      "longDescription": "List issues. List all issues for a given organization for the authenticated user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_ISSUES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_MEMBERS_GET",
+      "displayName": "get orgs org members",
+      "isSystemAction": false,
+      "shortDescription": "get orgs org members",
+      "longDescription": "Members list. List all users who are members of an organization. A member is a user tha belongs to at least 1 team in the organization. If the authenticated user is also an owner of this organization then both concealed and public members will be returned. If the requester is not an owner of the organization the query will be redirected to the public members list.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_MEMBERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_MEMBERS_USERNAME_DELETE",
+      "displayName": "delete orgs org members username",
+      "isSystemAction": false,
+      "shortDescription": "delete orgs org members username",
+      "longDescription": "Remove a member. Removing a user from this list will remove them from all teams and they will no longer have any access to the organization&#39;s repositories.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_MEMBERS_USERNAME_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_MEMBERS_USERNAME_GET",
+      "displayName": "get orgs org members username",
+      "isSystemAction": false,
+      "shortDescription": "get orgs org members username",
+      "longDescription": "Check if a user is, publicly or privately, a member of the organization.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_MEMBERS_USERNAME_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_PATCH",
+      "displayName": "patch orgs org",
+      "isSystemAction": false,
+      "shortDescription": "patch orgs org",
+      "longDescription": "Edit an Organization.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_PUBLIC_MEMBERS_GET",
+      "displayName": "get orgs org public members",
+      "isSystemAction": false,
+      "shortDescription": "get orgs org public members",
+      "longDescription": "Public members list. Members of an organization can choose to have their membership publicized or not.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_PUBLIC_MEMBERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_PUBLIC_MEMBERS_USERNAME_DELETE",
+      "displayName": "delete orgs org public members username",
+      "isSystemAction": false,
+      "shortDescription": "delete orgs org public members username",
+      "longDescription": "Conceal a user&#39;s membership.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_PUBLIC_MEMBERS_USERNAME_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_PUBLIC_MEMBERS_USERNAME_GET",
+      "displayName": "get orgs org public members username",
+      "isSystemAction": false,
+      "shortDescription": "get orgs org public members username",
+      "longDescription": "Check public membership.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_PUBLIC_MEMBERS_USERNAME_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_PUBLIC_MEMBERS_USERNAME_PUT",
+      "displayName": "put orgs org public members username",
+      "isSystemAction": false,
+      "shortDescription": "put orgs org public members username",
+      "longDescription": "Publicize a user&#39;s membership.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_PUBLIC_MEMBERS_USERNAME_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_REPOS_GET",
+      "displayName": "get orgs org repos",
+      "isSystemAction": false,
+      "shortDescription": "get orgs org repos",
+      "longDescription": "List repositories for the specified org.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_REPOS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_REPOS_POST",
+      "displayName": "post orgs org repos",
+      "isSystemAction": false,
+      "shortDescription": "post orgs org repos",
+      "longDescription": "Create a new repository for the authenticated user. OAuth users must supply repo scope.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_REPOS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_TEAMS_GET",
+      "displayName": "get orgs org teams",
+      "isSystemAction": false,
+      "shortDescription": "get orgs org teams",
+      "longDescription": "List teams.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_TEAMS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.ORGS_ORG_TEAMS_POST",
+      "displayName": "post orgs org teams",
+      "isSystemAction": false,
+      "shortDescription": "post orgs org teams",
+      "longDescription": "Create team. In order to create a team, the authenticated user must be an owner of organization.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.ORGS_ORG_TEAMS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.RATE_LIMIT_GET",
+      "displayName": "get rate limit",
+      "isSystemAction": false,
+      "shortDescription": "get rate limit",
+      "longDescription": "Get your current rate limit status Note: Accessing this endpoint does not count against your rate limit.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.RATE_LIMIT_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ARCHIVE_FORMAT_PATH_GET",
+      "displayName": "get repos owner repo archive format path",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo archive format path",
+      "longDescription": "Get archive link. This method will return a 302 to a URL to download a tarball or zipball archive for a repository. Please make sure your HTTP framework is configured to follow redirects or you will need to use the Location header to make a second GET request. Note: For private repositories, these links are temporary and expire quickly.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ARCHIVE_FORMAT_PATH_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ASSIGNEES_ASSIGNEE_GET",
+      "displayName": "get repos owner repo assignees assignee",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo assignees assignee",
+      "longDescription": "Check assignee. You may also check to see if a particular user is an assignee for a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ASSIGNEES_ASSIGNEE_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ASSIGNEES_GET",
+      "displayName": "get repos owner repo assignees",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo assignees",
+      "longDescription": "List assignees. This call lists all the available assignees (owner + collaborators) to which issues may be assigned.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ASSIGNEES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_BRANCHES_BRANCH_GET",
+      "displayName": "get repos owner repo branches branch",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo branches branch",
+      "longDescription": "Get Branch",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_BRANCHES_BRANCH_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_BRANCHES_GET",
+      "displayName": "get repos owner repo branches",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo branches",
+      "longDescription": "Get list of branches",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_BRANCHES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COLLABORATORS_GET",
+      "displayName": "get repos owner repo collaborators",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo collaborators",
+      "longDescription": "List. When authenticating as an organization owner of an organization-owned repository, all organization owners are included in the list of collaborators. Otherwise, only users with access to the repository are returned in the collaborators list.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COLLABORATORS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COLLABORATORS_USER_DELETE",
+      "displayName": "delete repos owner repo collaborators user",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo collaborators user",
+      "longDescription": "Remove collaborator.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COLLABORATORS_USER_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COLLABORATORS_USER_GET",
+      "displayName": "get repos owner repo collaborators user",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo collaborators user",
+      "longDescription": "Check if user is a collaborator",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COLLABORATORS_USER_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COLLABORATORS_USER_PUT",
+      "displayName": "put repos owner repo collaborators user",
+      "isSystemAction": false,
+      "shortDescription": "put repos owner repo collaborators user",
+      "longDescription": "Add collaborator.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COLLABORATORS_USER_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMMENTS_COMMENT_ID_DELETE",
+      "displayName": "delete repos owner repo comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo comments comment id",
+      "longDescription": "Delete a commit comment",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMMENTS_COMMENT_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMMENTS_COMMENT_ID_GET",
+      "displayName": "get repos owner repo comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo comments comment id",
+      "longDescription": "Get a single commit comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMMENTS_COMMENT_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMMENTS_COMMENT_ID_PATCH",
+      "displayName": "patch repos owner repo comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo comments comment id",
+      "longDescription": "Update a commit comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMMENTS_COMMENT_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMMENTS_GET",
+      "displayName": "get repos owner repo comments",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo comments",
+      "longDescription": "List commit comments for a repository. Comments are ordered by ascending ID.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMMENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMMITS_GET",
+      "displayName": "get repos owner repo commits",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo commits",
+      "longDescription": "List commits on a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMMITS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMMITS_REF_STATUS_GET",
+      "displayName": "get repos owner repo commits ref status",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo commits ref status",
+      "longDescription": "Get the combined Status for a specific Ref The Combined status endpoint is currently available for developers to preview. During the preview period, the API may change without advance notice. Please see the blog post for full details. To access this endpoint during the preview period, you must provide a custom media type in the Accept header: application/vnd.github.she-hulk-preview+json",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMMITS_REF_STATUS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS_GET",
+      "displayName": "get repos owner repo commits sha code comments",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo commits sha code comments",
+      "longDescription": "List comments for a single commitList comments for a single commit.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS_POST",
+      "displayName": "post repos owner repo commits sha code comments",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo commits sha code comments",
+      "longDescription": "Create a commit comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMMITS_SHA_CODE_COMMENTS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMMITS_SHA_CODE_GET",
+      "displayName": "get repos owner repo commits sha code",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo commits sha code",
+      "longDescription": "Get a single commit.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMMITS_SHA_CODE_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_COMPARE_BASE_ID_HEAD_ID_GET",
+      "displayName": "get repos owner repo compare base id head id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo compare base id head id",
+      "longDescription": "Compare two commits",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_COMPARE_BASE_ID_HEAD_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_CONTENTS_PATH_DELETE",
+      "displayName": "delete repos owner repo contents path",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo contents path",
+      "longDescription": "Delete a file. This method deletes a file in a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_CONTENTS_PATH_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_CONTENTS_PATH_GET",
+      "displayName": "get repos owner repo contents path",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo contents path",
+      "longDescription": "Get contents. This method returns the contents of a file or directory in a repository. Files and symlinks support a custom media type for getting the raw content. Directories and submodules do not support custom media types. Note: This API supports files up to 1 megabyte in size. Here can be many outcomes. For details see \\&quot;http://developer.github.com/v3/repos/contents/\\&quot;",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_CONTENTS_PATH_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_CONTENTS_PATH_PUT",
+      "displayName": "put repos owner repo contents path",
+      "isSystemAction": false,
+      "shortDescription": "put repos owner repo contents path",
+      "longDescription": "Create a file.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_CONTENTS_PATH_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_CONTRIBUTORS_GET",
+      "displayName": "get repos owner repo contributors",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo contributors",
+      "longDescription": "Get list of contributors.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_CONTRIBUTORS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_DELETE",
+      "displayName": "delete repos owner repo",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo",
+      "longDescription": "Delete a Repository. Deleting a repository requires admin access. If OAuth is used, the delete_repo scope is required.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_DEPLOYMENTS_GET",
+      "displayName": "get repos owner repo deployments",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo deployments",
+      "longDescription": "Users with pull access can view deployments for a repository",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_DEPLOYMENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES_GET",
+      "displayName": "get repos owner repo deployments id statuses",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo deployments id statuses",
+      "longDescription": "Users with pull access can view deployment statuses for a deployment",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES_POST",
+      "displayName": "post repos owner repo deployments id statuses",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo deployments id statuses",
+      "longDescription": "Create a Deployment Status Users with push access can create deployment statuses for a given deployment:",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_DEPLOYMENTS_ID_STATUSES_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_DEPLOYMENTS_POST",
+      "displayName": "post repos owner repo deployments",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo deployments",
+      "longDescription": "Users with push access can create a deployment for a given ref",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_DEPLOYMENTS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID_DELETE",
+      "displayName": "delete repos owner repo downloads download id",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo downloads download id",
+      "longDescription": "Deprecated. Delete a download.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID_GET",
+      "displayName": "get repos owner repo downloads download id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo downloads download id",
+      "longDescription": "Deprecated. Get a single download.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_DOWNLOADS_DOWNLOAD_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_DOWNLOADS_GET",
+      "displayName": "get repos owner repo downloads",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo downloads",
+      "longDescription": "Deprecated. List downloads for a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_DOWNLOADS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_EVENTS_GET",
+      "displayName": "get repos owner repo events",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo events",
+      "longDescription": "Get list of repository events.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_EVENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_FORKS_GET",
+      "displayName": "get repos owner repo forks",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo forks",
+      "longDescription": "List forks.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_FORKS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_FORKS_POST",
+      "displayName": "post repos owner repo forks",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo forks",
+      "longDescription": "Create a fork. Forking a Repository happens asynchronously. Therefore, you may have to wai a short period before accessing the git objects. If this takes longer than 5 minutes, be sure to contact Support.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_FORKS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GET",
+      "displayName": "get repos owner repo",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo",
+      "longDescription": "Get repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_BLOBS_POST",
+      "displayName": "post repos owner repo git blobs",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo git blobs",
+      "longDescription": "Create a Blob.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_BLOBS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_BLOBS_SHA_CODE_GET",
+      "displayName": "get repos owner repo git blobs sha code",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo git blobs sha code",
+      "longDescription": "Get a Blob. Since blobs can be any arbitrary binary data, the input and responses for the blob API takes an encoding parameter that can be either utf-8 or base64. If your data cannot be losslessly sent as a UTF-8 string, you can base64 encode it.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_BLOBS_SHA_CODE_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_COMMITS_POST",
+      "displayName": "post repos owner repo git commits",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo git commits",
+      "longDescription": "Create a Commit.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_COMMITS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_COMMITS_SHA_CODE_GET",
+      "displayName": "get repos owner repo git commits sha code",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo git commits sha code",
+      "longDescription": "Get a Commit.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_COMMITS_SHA_CODE_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_REFS_GET",
+      "displayName": "get repos owner repo git refs",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo git refs",
+      "longDescription": "Get all References",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_REFS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_REFS_POST",
+      "displayName": "post repos owner repo git refs",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo git refs",
+      "longDescription": "Create a Reference",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_REFS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_REFS_REF_DELETE",
+      "displayName": "delete repos owner repo git refs ref",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo git refs ref",
+      "longDescription": "Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World/git/refs/heads/feature-a  Example: Deleting a tag:        DELETE /repos/octocat/Hello-World/git/refs/tags/v1.0",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_REFS_REF_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_REFS_REF_GET",
+      "displayName": "get repos owner repo git refs ref",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo git refs ref",
+      "longDescription": "Get a Reference",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_REFS_REF_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_REFS_REF_PATCH",
+      "displayName": "patch repos owner repo git refs ref",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo git refs ref",
+      "longDescription": "Update a Reference",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_REFS_REF_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_TAGS_POST",
+      "displayName": "post repos owner repo git tags",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo git tags",
+      "longDescription": "Create a Tag Object. Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then create the refs/tags/[tag] reference. If you want to create a lightweight tag, you only have to create the tag reference - this call would be unnecessary.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_TAGS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_TAGS_SHA_CODE_GET",
+      "displayName": "get repos owner repo git tags sha code",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo git tags sha code",
+      "longDescription": "Get a Tag.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_TAGS_SHA_CODE_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_TREES_POST",
+      "displayName": "post repos owner repo git trees",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo git trees",
+      "longDescription": "Create a Tree. The tree creation API will take nested entries as well. If both a tree and a nested path modifying that tree are specified, it will overwrite the contents of that tree with the new path contents and write a new tree out.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_TREES_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_GIT_TREES_SHA_CODE_GET",
+      "displayName": "get repos owner repo git trees sha code",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo git trees sha code",
+      "longDescription": "Get a Tree.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_GIT_TREES_SHA_CODE_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_HOOKS_GET",
+      "displayName": "get repos owner repo hooks",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo hooks",
+      "longDescription": "Get list of hooks.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_HOOKS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_HOOKS_HOOK_ID_DELETE",
+      "displayName": "delete repos owner repo hooks hook id",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo hooks hook id",
+      "longDescription": "Delete a hook.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_HOOKS_HOOK_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_HOOKS_HOOK_ID_GET",
+      "displayName": "get repos owner repo hooks hook id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo hooks hook id",
+      "longDescription": "Get single hook.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_HOOKS_HOOK_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_HOOKS_HOOK_ID_PATCH",
+      "displayName": "patch repos owner repo hooks hook id",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo hooks hook id",
+      "longDescription": "Edit a hook.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_HOOKS_HOOK_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_HOOKS_HOOK_ID_TESTS_POST",
+      "displayName": "post repos owner repo hooks hook id tests",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo hooks hook id tests",
+      "longDescription": "Test a push hook. This will trigger the hook with the latest push to the current repository if the hook is subscribed to push events. If the hook is not subscribed to push events, the server will respond with 204 but no test POST will be generated. Note: Previously /repos/:owner/:repo/hooks/:id/tes",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_HOOKS_HOOK_ID_TESTS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_HOOKS_POST",
+      "displayName": "post repos owner repo hooks",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo hooks",
+      "longDescription": "Create a hook.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_HOOKS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID_DELETE",
+      "displayName": "delete repos owner repo issues comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo issues comments comment id",
+      "longDescription": "Delete a comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID_GET",
+      "displayName": "get repos owner repo issues comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo issues comments comment id",
+      "longDescription": "Get a single comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID_PATCH",
+      "displayName": "patch repos owner repo issues comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo issues comments comment id",
+      "longDescription": "Edit a comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_COMMENTS_COMMENT_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_COMMENTS_GET",
+      "displayName": "get repos owner repo issues comments",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo issues comments",
+      "longDescription": "List comments in a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_COMMENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_EVENTS_EVENT_ID_GET",
+      "displayName": "get repos owner repo issues events event id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo issues events event id",
+      "longDescription": "Get a single event.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_EVENTS_EVENT_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_EVENTS_GET",
+      "displayName": "get repos owner repo issues events",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo issues events",
+      "longDescription": "List issue events for a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_EVENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_GET",
+      "displayName": "get repos owner repo issues",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo issues",
+      "longDescription": "List issues for a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS_GET",
+      "displayName": "get repos owner repo issues number comments",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo issues number comments",
+      "longDescription": "List comments on an issue.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS_POST",
+      "displayName": "post repos owner repo issues number comments",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo issues number comments",
+      "longDescription": "Create a comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_COMMENTS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_EVENTS_GET",
+      "displayName": "get repos owner repo issues number events",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo issues number events",
+      "longDescription": "List events for an issue.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_EVENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_GET",
+      "displayName": "get repos owner repo issues number",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo issues number",
+      "longDescription": "Get a single issue",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_DELETE",
+      "displayName": "delete repos owner repo issues number labels",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo issues number labels",
+      "longDescription": "Remove all labels from an issue.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_GET",
+      "displayName": "get repos owner repo issues number labels",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo issues number labels",
+      "longDescription": "List labels on an issue.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_NAME_DELETE",
+      "displayName": "delete repos owner repo issues number labels name",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo issues number labels name",
+      "longDescription": "Remove a label from an issue.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_NAME_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_POST",
+      "displayName": "post repos owner repo issues number labels",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo issues number labels",
+      "longDescription": "Add labels to an issue.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_PUT",
+      "displayName": "put repos owner repo issues number labels",
+      "isSystemAction": false,
+      "shortDescription": "put repos owner repo issues number labels",
+      "longDescription": "Replace all labels for an issue. Sending an empty array ([]) will remove all Labels from the Issue.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_LABELS_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_NUMBER_PATCH",
+      "displayName": "patch repos owner repo issues number",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo issues number",
+      "longDescription": "Edit an issue. Issue owners and users with push access can edit an issue.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_NUMBER_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_ISSUES_POST",
+      "displayName": "post repos owner repo issues",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo issues",
+      "longDescription": "Create an issue. Any user with pull access to a repository can create an issue.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_ISSUES_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_KEYS_GET",
+      "displayName": "get repos owner repo keys",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo keys",
+      "longDescription": "Get list of keys.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_KEYS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_KEYS_KEY_ID_DELETE",
+      "displayName": "delete repos owner repo keys key id",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo keys key id",
+      "longDescription": "Delete a key.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_KEYS_KEY_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_KEYS_KEY_ID_GET",
+      "displayName": "get repos owner repo keys key id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo keys key id",
+      "longDescription": "Get a key",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_KEYS_KEY_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_KEYS_POST",
+      "displayName": "post repos owner repo keys",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo keys",
+      "longDescription": "Create a key.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_KEYS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_LABELS_GET",
+      "displayName": "get repos owner repo labels",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo labels",
+      "longDescription": "List all labels for this repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_LABELS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_LABELS_NAME_DELETE",
+      "displayName": "delete repos owner repo labels name",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo labels name",
+      "longDescription": "Delete a label.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_LABELS_NAME_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_LABELS_NAME_GET",
+      "displayName": "get repos owner repo labels name",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo labels name",
+      "longDescription": "Get a single label.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_LABELS_NAME_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_LABELS_NAME_PATCH",
+      "displayName": "patch repos owner repo labels name",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo labels name",
+      "longDescription": "Update a label.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_LABELS_NAME_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_LABELS_POST",
+      "displayName": "post repos owner repo labels",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo labels",
+      "longDescription": "Create a label.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_LABELS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_LANGUAGES_GET",
+      "displayName": "get repos owner repo languages",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo languages",
+      "longDescription": "List languages. List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_LANGUAGES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_MERGES_POST",
+      "displayName": "post repos owner repo merges",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo merges",
+      "longDescription": "Perform a merge.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_MERGES_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_MILESTONES_GET",
+      "displayName": "get repos owner repo milestones",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo milestones",
+      "longDescription": "List milestones for a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_MILESTONES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_MILESTONES_NUMBER_DELETE",
+      "displayName": "delete repos owner repo milestones number",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo milestones number",
+      "longDescription": "Delete a milestone.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_MILESTONES_NUMBER_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_MILESTONES_NUMBER_GET",
+      "displayName": "get repos owner repo milestones number",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo milestones number",
+      "longDescription": "Get a single milestone.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_MILESTONES_NUMBER_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_MILESTONES_NUMBER_LABELS_GET",
+      "displayName": "get repos owner repo milestones number labels",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo milestones number labels",
+      "longDescription": "Get labels for every issue in a milestone.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_MILESTONES_NUMBER_LABELS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_MILESTONES_NUMBER_PATCH",
+      "displayName": "patch repos owner repo milestones number",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo milestones number",
+      "longDescription": "Update a milestone.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_MILESTONES_NUMBER_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_MILESTONES_POST",
+      "displayName": "post repos owner repo milestones",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo milestones",
+      "longDescription": "Create a milestone.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_MILESTONES_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_NOTIFICATIONS_GET",
+      "displayName": "get repos owner repo notifications",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo notifications",
+      "longDescription": "List your notifications in a repository List all notifications for the current user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_NOTIFICATIONS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_NOTIFICATIONS_PUT",
+      "displayName": "put repos owner repo notifications",
+      "isSystemAction": false,
+      "shortDescription": "put repos owner repo notifications",
+      "longDescription": "Mark notifications as read in a repository. Marking all notifications in a repository as \\&quot;read\\&quot; removes them from the default view on GitHub.com.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_NOTIFICATIONS_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PATCH",
+      "displayName": "patch repos owner repo",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo",
+      "longDescription": "Edit repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID_DELETE",
+      "displayName": "delete repos owner repo pulls comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo pulls comments comment id",
+      "longDescription": "Delete a comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID_GET",
+      "displayName": "get repos owner repo pulls comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo pulls comments comment id",
+      "longDescription": "Get a single comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID_PATCH",
+      "displayName": "patch repos owner repo pulls comments comment id",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo pulls comments comment id",
+      "longDescription": "Edit a comment.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_COMMENTS_COMMENT_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_COMMENTS_GET",
+      "displayName": "get repos owner repo pulls comments",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo pulls comments",
+      "longDescription": "List comments in a repository. By default, Review Comments are ordered by ascending ID.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_COMMENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_GET",
+      "displayName": "get repos owner repo pulls",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo pulls",
+      "longDescription": "List pull requests.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS_GET",
+      "displayName": "get repos owner repo pulls number comments",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo pulls number comments",
+      "longDescription": "List comments on a pull request.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS_POST",
+      "displayName": "post repos owner repo pulls number comments",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo pulls number comments",
+      "longDescription": "Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pulls/comments/ )   description: |     Alternative Input.     Instead of passing commit_id, path, and position you can reply to an     existing Pull Request Comment like this:          body            Required string         in_reply_to            Required number - Comment id to reply to.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_NUMBER_COMMENTS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_NUMBER_COMMITS_GET",
+      "displayName": "get repos owner repo pulls number commits",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo pulls number commits",
+      "longDescription": "List commits on a pull request.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_NUMBER_COMMITS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_NUMBER_FILES_GET",
+      "displayName": "get repos owner repo pulls number files",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo pulls number files",
+      "longDescription": "List pull requests files.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_NUMBER_FILES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_NUMBER_GET",
+      "displayName": "get repos owner repo pulls number",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo pulls number",
+      "longDescription": "Get a single pull request.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_NUMBER_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_NUMBER_MERGE_GET",
+      "displayName": "get repos owner repo pulls number merge",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo pulls number merge",
+      "longDescription": "Get if a pull request has been merged.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_NUMBER_MERGE_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_NUMBER_MERGE_PUT",
+      "displayName": "put repos owner repo pulls number merge",
+      "isSystemAction": false,
+      "shortDescription": "put repos owner repo pulls number merge",
+      "longDescription": "Merge a pull request (Merge Button&#39;s)",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_NUMBER_MERGE_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_NUMBER_PATCH",
+      "displayName": "patch repos owner repo pulls number",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo pulls number",
+      "longDescription": "Update a pull request.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_NUMBER_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_PULLS_POST",
+      "displayName": "post repos owner repo pulls",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo pulls",
+      "longDescription": "Create a pull request.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_PULLS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_README_GET",
+      "displayName": "get repos owner repo readme",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo readme",
+      "longDescription": "Get the README. This method returns the preferred README for a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_README_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_RELEASES_ASSETS_ID_DELETE",
+      "displayName": "delete repos owner repo releases assets id",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo releases assets id",
+      "longDescription": "Delete a release asset",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_RELEASES_ASSETS_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_RELEASES_ASSETS_ID_GET",
+      "displayName": "get repos owner repo releases assets id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo releases assets id",
+      "longDescription": "Get a single release asset",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_RELEASES_ASSETS_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_RELEASES_ASSETS_ID_PATCH",
+      "displayName": "patch repos owner repo releases assets id",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo releases assets id",
+      "longDescription": "Edit a release asset Users with push access to the repository can edit a release asset.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_RELEASES_ASSETS_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_RELEASES_GET",
+      "displayName": "get repos owner repo releases",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo releases",
+      "longDescription": "Users with push access to the repository will receive all releases (i.e., published releases and draft releases). Users with pull access will receive published releases only",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_RELEASES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_RELEASES_ID_ASSETS_GET",
+      "displayName": "get repos owner repo releases id assets",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo releases id assets",
+      "longDescription": "List assets for a release",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_RELEASES_ID_ASSETS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_RELEASES_ID_DELETE",
+      "displayName": "delete repos owner repo releases id",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo releases id",
+      "longDescription": "Users with push access to the repository can delete a release.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_RELEASES_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_RELEASES_ID_GET",
+      "displayName": "get repos owner repo releases id",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo releases id",
+      "longDescription": "Get a single release",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_RELEASES_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_RELEASES_ID_PATCH",
+      "displayName": "patch repos owner repo releases id",
+      "isSystemAction": false,
+      "shortDescription": "patch repos owner repo releases id",
+      "longDescription": "Users with push access to the repository can edit a release",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_RELEASES_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_RELEASES_POST",
+      "displayName": "post repos owner repo releases",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo releases",
+      "longDescription": "Create a release Users with push access to the repository can create a release.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_RELEASES_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_STARGAZERS_GET",
+      "displayName": "get repos owner repo stargazers",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo stargazers",
+      "longDescription": "List Stargazers.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_STARGAZERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_STATS_CODE_FREQUENCY_GET",
+      "displayName": "get repos owner repo stats code frequency",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo stats code frequency",
+      "longDescription": "Get the number of additions and deletions per week. Returns a weekly aggregate of the number of additions and deletions pushed to a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_STATS_CODE_FREQUENCY_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_STATS_COMMIT_ACTIVITY_GET",
+      "displayName": "get repos owner repo stats commit activity",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo stats commit activity",
+      "longDescription": "Get the last year of commit activity data. Returns the last year of commit activity grouped by week. The days array is a group of commits per day, starting on Sunday.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_STATS_COMMIT_ACTIVITY_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_STATS_CONTRIBUTORS_GET",
+      "displayName": "get repos owner repo stats contributors",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo stats contributors",
+      "longDescription": "Get contributors list with additions, deletions, and commit counts.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_STATS_CONTRIBUTORS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_STATS_PARTICIPATION_GET",
+      "displayName": "get repos owner repo stats participation",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo stats participation",
+      "longDescription": "Get the weekly commit count for the repo owner and everyone else.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_STATS_PARTICIPATION_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_STATS_PUNCH_CARD_GET",
+      "displayName": "get repos owner repo stats punch card",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo stats punch card",
+      "longDescription": "Get the number of commits per hour in each day. Each array contains the day number, hour number, and number of commits 0-6 Sunday - Saturday 0-23 Hour of day Number of commits  For example, [2, 14, 25] indicates that there were 25 total commits, during the 2.00pm hour on Tuesdays. All times are based on the time zone of individual commits.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_STATS_PUNCH_CARD_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_STATUSES_REF_GET",
+      "displayName": "get repos owner repo statuses ref",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo statuses ref",
+      "longDescription": "List Statuses for a specific Ref.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_STATUSES_REF_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_STATUSES_REF_POST",
+      "displayName": "post repos owner repo statuses ref",
+      "isSystemAction": false,
+      "shortDescription": "post repos owner repo statuses ref",
+      "longDescription": "Create a Status.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_STATUSES_REF_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_SUBSCRIBERS_GET",
+      "displayName": "get repos owner repo subscribers",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo subscribers",
+      "longDescription": "List watchers.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_SUBSCRIBERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_SUBSCRIPTION_DELETE",
+      "displayName": "delete repos owner repo subscription",
+      "isSystemAction": false,
+      "shortDescription": "delete repos owner repo subscription",
+      "longDescription": "Delete a Repository Subscription.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_SUBSCRIPTION_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_SUBSCRIPTION_GET",
+      "displayName": "get repos owner repo subscription",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo subscription",
+      "longDescription": "Get a Repository Subscription.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_SUBSCRIPTION_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_SUBSCRIPTION_PUT",
+      "displayName": "put repos owner repo subscription",
+      "isSystemAction": false,
+      "shortDescription": "put repos owner repo subscription",
+      "longDescription": "Set a Repository Subscription",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_SUBSCRIPTION_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_TAGS_GET",
+      "displayName": "get repos owner repo tags",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo tags",
+      "longDescription": "Get list of tags.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_TAGS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_TEAMS_GET",
+      "displayName": "get repos owner repo teams",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo teams",
+      "longDescription": "Get list of teams",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_TEAMS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOS_OWNER_REPO_WATCHERS_GET",
+      "displayName": "get repos owner repo watchers",
+      "isSystemAction": false,
+      "shortDescription": "get repos owner repo watchers",
+      "longDescription": "List Stargazers. New implementation.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOS_OWNER_REPO_WATCHERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.REPOSITORIES_GET",
+      "displayName": "get repositories",
+      "isSystemAction": false,
+      "shortDescription": "get repositories",
+      "longDescription": "List all public repositories. This provides a dump of every public repository, in the order that they were created. Note: Pagination is powered exclusively by the since parameter. is the Link header to get the URL for the next page of repositories.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.REPOSITORIES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.SEARCH_CODE_GET",
+      "displayName": "get search code",
+      "isSystemAction": false,
+      "shortDescription": "get search code",
+      "longDescription": "Search code.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.SEARCH_CODE_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.SEARCH_ISSUES_GET",
+      "displayName": "get search issues",
+      "isSystemAction": false,
+      "shortDescription": "get search issues",
+      "longDescription": "Find issues by state and keyword. (This method returns up to 100 results per page.)",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.SEARCH_ISSUES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.SEARCH_REPOSITORIES_GET",
+      "displayName": "get search repositories",
+      "isSystemAction": false,
+      "shortDescription": "get search repositories",
+      "longDescription": "Search repositories.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.SEARCH_REPOSITORIES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.SEARCH_USERS_GET",
+      "displayName": "get search users",
+      "isSystemAction": false,
+      "shortDescription": "get search users",
+      "longDescription": "Search users.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.SEARCH_USERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_DELETE",
+      "displayName": "delete teams team id",
+      "isSystemAction": false,
+      "shortDescription": "delete teams team id",
+      "longDescription": "Delete team. In order to delete a team, the authenticated user must be an owner of the org that the team is associated with.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_GET",
+      "displayName": "get teams team id",
+      "isSystemAction": false,
+      "shortDescription": "get teams team id",
+      "longDescription": "Get team.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_MEMBERS_GET",
+      "displayName": "get teams team id members",
+      "isSystemAction": false,
+      "shortDescription": "get teams team id members",
+      "longDescription": "List team members. In order to list members in a team, the authenticated user must be a member of the team.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_MEMBERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_MEMBERS_USERNAME_DELETE",
+      "displayName": "delete teams team id members username",
+      "isSystemAction": false,
+      "shortDescription": "delete teams team id members username",
+      "longDescription": "The \\&quot;Remove team member\\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Remove team membership API instead. It allows you to remove both active and pending memberships.  Remove team member. In order to remove a user from a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with. NOTE This does not delete the user, it just remove them from the team.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_MEMBERS_USERNAME_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_MEMBERS_USERNAME_GET",
+      "displayName": "get teams team id members username",
+      "isSystemAction": false,
+      "shortDescription": "get teams team id members username",
+      "longDescription": "The \\&quot;Get team member\\&quot; API is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Get team membership API instead. It allows you to get both active and pending memberships.  Get team member. In order to get if a user is a member of a team, the authenticated user mus be a member of the team.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_MEMBERS_USERNAME_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_MEMBERS_USERNAME_PUT",
+      "displayName": "put teams team id members username",
+      "isSystemAction": false,
+      "shortDescription": "put teams team id members username",
+      "longDescription": "The API (described below) is deprecated and is scheduled for removal in the next major version of the API. We recommend using the Add team membership API instead. It allows you to invite new organization members to your teams.  Add team member. In order to add a user to a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the org that the team is associated with.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_MEMBERS_USERNAME_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME_DELETE",
+      "displayName": "delete teams team id memberships username",
+      "isSystemAction": false,
+      "shortDescription": "delete teams team id memberships username",
+      "longDescription": "Remove team membership. In order to remove a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with. NOTE: This does not delete the user, it just removes their membership from the team.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME_GET",
+      "displayName": "get teams team id memberships username",
+      "isSystemAction": false,
+      "shortDescription": "get teams team id memberships username",
+      "longDescription": "Get team membership. In order to get a user&#39;s membership with a team, the authenticated user must be a member of the team or an owner of the team&#39;s organization.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME_PUT",
+      "displayName": "put teams team id memberships username",
+      "isSystemAction": false,
+      "shortDescription": "put teams team id memberships username",
+      "longDescription": "Add team membership. In order to add a membership between a user and a team, the authenticated user must have &#39;admin&#39; permissions to the team or be an owner of the organization that the team is associated with.  If the user is already a part of the team&#39;s organization (meaning they&#39;re on at least one other team in the organization), this endpoint will add the user to the team.  If the user is completely unaffiliated with the team&#39;s organization (meaning they&#39;re on none of the organization&#39;s teams), this endpoint will send an invitation to the user via email. This newly-created membership will be in the &#39;pending&#39; state until the user accepts the invitation, at which point the membership will transition to the &#39;active&#39; state and the user will be added as a member of the team.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_MEMBERSHIPS_USERNAME_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_PATCH",
+      "displayName": "patch teams team id",
+      "isSystemAction": false,
+      "shortDescription": "patch teams team id",
+      "longDescription": "Edit team. In order to edit a team, the authenticated user must be an owner of the org that the team is associated with.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_REPOS_GET",
+      "displayName": "get teams team id repos",
+      "isSystemAction": false,
+      "shortDescription": "get teams team id repos",
+      "longDescription": "List team repos",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_REPOS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_REPOS_OWNER_REPO_DELETE",
+      "displayName": "delete teams team id repos owner repo",
+      "isSystemAction": false,
+      "shortDescription": "delete teams team id repos owner repo",
+      "longDescription": "In order to remove a repository from a team, the authenticated user must be an owner of the org that the team is associated with. NOTE: This does not delete the repository, it just removes it from the team.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_REPOS_OWNER_REPO_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_REPOS_OWNER_REPO_GET",
+      "displayName": "get teams team id repos owner repo",
+      "isSystemAction": false,
+      "shortDescription": "get teams team id repos owner repo",
+      "longDescription": "Check if a team manages a repository",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_REPOS_OWNER_REPO_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.TEAMS_TEAM_ID_REPOS_OWNER_REPO_PUT",
+      "displayName": "put teams team id repos owner repo",
+      "isSystemAction": false,
+      "shortDescription": "put teams team id repos owner repo",
+      "longDescription": "In order to add a repository to a team, the authenticated user must be an owner of the org that the team is associated with. Also, the repository must be owned by the organization, or a direct fork of a repository owned by the organization.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.TEAMS_TEAM_ID_REPOS_OWNER_REPO_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_EMAILS_DELETE",
+      "displayName": "delete user emails",
+      "isSystemAction": false,
+      "shortDescription": "delete user emails",
+      "longDescription": "Delete email address(es). You can include a single email address or an array of addresses.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_EMAILS_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_EMAILS_GET",
+      "displayName": "get user emails",
+      "isSystemAction": false,
+      "shortDescription": "get user emails",
+      "longDescription": "List email addresses for a user. In the final version of the API, this method will return an array of hashes with extended information for each email address indicating if the address has been verified and if it&#39;s primary email address for GitHub. Until API v3 is finalized, use the application/vnd.github.v3 media type to get other response format.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_EMAILS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_EMAILS_POST",
+      "displayName": "post user emails",
+      "isSystemAction": false,
+      "shortDescription": "post user emails",
+      "longDescription": "Add email address(es). You can post a single email address or an array of addresses.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_EMAILS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_FOLLOWERS_GET",
+      "displayName": "get user followers",
+      "isSystemAction": false,
+      "shortDescription": "get user followers",
+      "longDescription": "List the authenticated user&#39;s followers",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_FOLLOWERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_FOLLOWING_GET",
+      "displayName": "get user following",
+      "isSystemAction": false,
+      "shortDescription": "get user following",
+      "longDescription": "List who the authenticated user is following.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_FOLLOWING_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_FOLLOWING_USERNAME_DELETE",
+      "displayName": "delete user following username",
+      "isSystemAction": false,
+      "shortDescription": "delete user following username",
+      "longDescription": "Unfollow a user. Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_FOLLOWING_USERNAME_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_FOLLOWING_USERNAME_GET",
+      "displayName": "get user following username",
+      "isSystemAction": false,
+      "shortDescription": "get user following username",
+      "longDescription": "Check if you are following a user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_FOLLOWING_USERNAME_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_FOLLOWING_USERNAME_PUT",
+      "displayName": "put user following username",
+      "isSystemAction": false,
+      "shortDescription": "put user following username",
+      "longDescription": "Follow a user. Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the user:follow scope.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_FOLLOWING_USERNAME_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_GET",
+      "displayName": "get user",
+      "isSystemAction": false,
+      "shortDescription": "get user",
+      "longDescription": "Get the authenticated user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_ISSUES_GET",
+      "displayName": "get user issues",
+      "isSystemAction": false,
+      "shortDescription": "get user issues",
+      "longDescription": "List issues. List all issues across owned and member repositories for the authenticated user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_ISSUES_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_KEYS_GET",
+      "displayName": "get user keys",
+      "isSystemAction": false,
+      "shortDescription": "get user keys",
+      "longDescription": "List your public keys. Lists the current user&#39;s keys. Management of public keys via the API requires that you are authenticated through basic auth, or OAuth with the &#39;user&#39;, &#39;write:public_key&#39; scopes.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_KEYS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_KEYS_KEY_ID_DELETE",
+      "displayName": "delete user keys key id",
+      "isSystemAction": false,
+      "shortDescription": "delete user keys key id",
+      "longDescription": "Delete a public key. Removes a public key. Requires that you are authenticated via Basic Auth or via OAuth with at least admin:public_key scope.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_KEYS_KEY_ID_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_KEYS_KEY_ID_GET",
+      "displayName": "get user keys key id",
+      "isSystemAction": false,
+      "shortDescription": "get user keys key id",
+      "longDescription": "Get a single public key.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_KEYS_KEY_ID_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_KEYS_POST",
+      "displayName": "post user keys",
+      "isSystemAction": false,
+      "shortDescription": "post user keys",
+      "longDescription": "Create a public key.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_KEYS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_ORGS_GET",
+      "displayName": "get user orgs",
+      "isSystemAction": false,
+      "shortDescription": "get user orgs",
+      "longDescription": "List public and private organizations for the authenticated user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_ORGS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_PATCH",
+      "displayName": "patch user",
+      "isSystemAction": false,
+      "shortDescription": "patch user",
+      "longDescription": "Update the authenticated user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_PATCH"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_REPOS_GET",
+      "displayName": "get user repos",
+      "isSystemAction": false,
+      "shortDescription": "get user repos",
+      "longDescription": "List repositories for the authenticated user. Note that this does not include repositories owned by organizations which the user can access. You can lis user organizations and list organization repositories separately.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_REPOS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_REPOS_POST",
+      "displayName": "post user repos",
+      "isSystemAction": false,
+      "shortDescription": "post user repos",
+      "longDescription": "Create a new repository for the authenticated user. OAuth users must supply repo scope.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_REPOS_POST"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_STARRED_GET",
+      "displayName": "get user starred",
+      "isSystemAction": false,
+      "shortDescription": "get user starred",
+      "longDescription": "List repositories being starred by the authenticated user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_STARRED_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_STARRED_OWNER_REPO_DELETE",
+      "displayName": "delete user starred owner repo",
+      "isSystemAction": false,
+      "shortDescription": "delete user starred owner repo",
+      "longDescription": "Unstar a repository",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_STARRED_OWNER_REPO_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_STARRED_OWNER_REPO_GET",
+      "displayName": "get user starred owner repo",
+      "isSystemAction": false,
+      "shortDescription": "get user starred owner repo",
+      "longDescription": "Check if you are starring a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_STARRED_OWNER_REPO_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_STARRED_OWNER_REPO_PUT",
+      "displayName": "put user starred owner repo",
+      "isSystemAction": false,
+      "shortDescription": "put user starred owner repo",
+      "longDescription": "Star a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_STARRED_OWNER_REPO_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_SUBSCRIPTIONS_GET",
+      "displayName": "get user subscriptions",
+      "isSystemAction": false,
+      "shortDescription": "get user subscriptions",
+      "longDescription": "List repositories being watched by the authenticated user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_SUBSCRIPTIONS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_SUBSCRIPTIONS_OWNER_REPO_DELETE",
+      "displayName": "delete user subscriptions owner repo",
+      "isSystemAction": false,
+      "shortDescription": "delete user subscriptions owner repo",
+      "longDescription": "Stop watching a repository",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_SUBSCRIPTIONS_OWNER_REPO_DELETE"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_SUBSCRIPTIONS_OWNER_REPO_GET",
+      "displayName": "get user subscriptions owner repo",
+      "isSystemAction": false,
+      "shortDescription": "get user subscriptions owner repo",
+      "longDescription": "Check if you are watching a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_SUBSCRIPTIONS_OWNER_REPO_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_SUBSCRIPTIONS_OWNER_REPO_PUT",
+      "displayName": "put user subscriptions owner repo",
+      "isSystemAction": false,
+      "shortDescription": "put user subscriptions owner repo",
+      "longDescription": "Watch a repository.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_SUBSCRIPTIONS_OWNER_REPO_PUT"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USER_TEAMS_GET",
+      "displayName": "get user teams",
+      "isSystemAction": false,
+      "shortDescription": "get user teams",
+      "longDescription": "List all of the teams across all of the organizations to which the authenticated user belongs. This method requires user or repo scope when authenticating via OAuth.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USER_TEAMS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_GET",
+      "displayName": "get users",
+      "isSystemAction": false,
+      "shortDescription": "get users",
+      "longDescription": "Get all users. This provides a dump of every user, in the order that they signed up for GitHub. Note: Pagination is powered exclusively by the since parameter. Use the Link header to get the URL for the next page of users.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_EVENTS_GET",
+      "displayName": "get users username events",
+      "isSystemAction": false,
+      "shortDescription": "get users username events",
+      "longDescription": "If you are authenticated as the given user, you will see your private events. Otherwise, you&#39;ll only see public events.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_EVENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_EVENTS_ORGS_ORG_GET",
+      "displayName": "get users username events orgs org",
+      "isSystemAction": false,
+      "shortDescription": "get users username events orgs org",
+      "longDescription": "This is the user&#39;s organization dashboard. You must be authenticated as the user to view this.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_EVENTS_ORGS_ORG_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_FOLLOWERS_GET",
+      "displayName": "get users username followers",
+      "isSystemAction": false,
+      "shortDescription": "get users username followers",
+      "longDescription": "List a user&#39;s followers",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_FOLLOWERS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_FOLLOWING_TARGET_USER_GET",
+      "displayName": "get users username following tar user get",
+      "isSystemAction": false,
+      "shortDescription": "get users username following tar user get",
+      "longDescription": "Check if one user follows another.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_FOLLOWING_TARGET_USER_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_GET",
+      "displayName": "get users username",
+      "isSystemAction": false,
+      "shortDescription": "get users username",
+      "longDescription": "Get a single user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_GISTS_GET",
+      "displayName": "get users username gists",
+      "isSystemAction": false,
+      "shortDescription": "get users username gists",
+      "longDescription": "List a users gists.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_GISTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_KEYS_GET",
+      "displayName": "get users username keys",
+      "isSystemAction": false,
+      "shortDescription": "get users username keys",
+      "longDescription": "List public keys for a user. Lists the verified public keys for a user. This is accessible by anyone.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_KEYS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_ORGS_GET",
+      "displayName": "get users username orgs",
+      "isSystemAction": false,
+      "shortDescription": "get users username orgs",
+      "longDescription": "List all public organizations for a user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_ORGS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_RECEIVED_EVENTS_GET",
+      "displayName": "get users username received events",
+      "isSystemAction": false,
+      "shortDescription": "get users username received events",
+      "longDescription": "These are events that you&#39;ll only see public events.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_RECEIVED_EVENTS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_RECEIVED_EVENTS_PUBLIC_GET",
+      "displayName": "get users username received events public",
+      "isSystemAction": false,
+      "shortDescription": "get users username received events public",
+      "longDescription": "List public events that a user has received",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_RECEIVED_EVENTS_PUBLIC_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_REPOS_GET",
+      "displayName": "get users username repos",
+      "isSystemAction": false,
+      "shortDescription": "get users username repos",
+      "longDescription": "List public repositories for the specified user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_REPOS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_STARRED_GET",
+      "displayName": "get users username starred",
+      "isSystemAction": false,
+      "shortDescription": "get users username starred",
+      "longDescription": "List repositories being starred by a user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_STARRED_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  },
+  {
+    "manifest": {
+      "name": "action.github.USERS_USERNAME_SUBSCRIPTIONS_GET",
+      "displayName": "get users username subscriptions",
+      "isSystemAction": false,
+      "shortDescription": "get users username subscriptions",
+      "longDescription": "List repositories being watched by a user.",
+      "icons": "github.svg"
+    },
+    "defaultNavigateTo": "app/projects/github",
+    "intents": [
+      "intent.system.CONNECT_GITHUB",
+      "intent.thirdParty.SELECT_GITHUB_PROJECT",
+      "intent.github.USERS_USERNAME_SUBSCRIPTIONS_GET"
+    ],
+    "tags": [
+      "third-party",
+      "github"
+    ],
+    "fulfilment": [
+      {
+        "type": "internal-service"
+      }
+    ]
+  }
+]
