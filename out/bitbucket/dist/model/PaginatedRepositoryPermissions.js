@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedRepositoryPermissions model module.
  * @module model/PaginatedRepositoryPermissions
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedRepositoryPermissions =
-/*#__PURE__*/
-function () {
+var PaginatedRepositoryPermissions = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedRepositoryPermissions</code>.
    * A paginated list of repository permissions.

@@ -20,7 +20,7 @@ import PullrequestAllOfRenderedTitle from './PullrequestAllOfRenderedTitle';
 /**
  * The BaseCommit model module.
  * @module model/BaseCommit
- * @version 1.1.2
+ * @version 1.2.0
  */
 class BaseCommit {
     /**

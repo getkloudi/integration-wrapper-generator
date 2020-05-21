@@ -28,11 +28,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RepositoryAllOf model module.
  * @module model/RepositoryAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var RepositoryAllOf =
-/*#__PURE__*/
-function () {
+var RepositoryAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RepositoryAllOf</code>.
    * A Bitbucket repository.

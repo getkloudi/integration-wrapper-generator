@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStateCompletedStoppedAllOf model module.
  * @module model/PipelineStateCompletedStoppedAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStateCompletedStoppedAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStateCompletedStoppedAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStateCompletedStoppedAllOf</code>.
    * A Bitbucket Pipelines STOPPED pipeline result.

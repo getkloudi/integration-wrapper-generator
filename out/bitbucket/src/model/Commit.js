@@ -22,7 +22,7 @@ import Repository from './Repository';
 /**
  * The Commit model module.
  * @module model/Commit
- * @version 1.1.2
+ * @version 1.2.0
  */
 class Commit {
     /**

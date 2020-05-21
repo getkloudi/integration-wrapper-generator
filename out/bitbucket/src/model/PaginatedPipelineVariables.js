@@ -17,7 +17,7 @@ import PipelineVariable from './PipelineVariable';
 /**
  * The PaginatedPipelineVariables model module.
  * @module model/PaginatedPipelineVariables
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedPipelineVariables {
     /**

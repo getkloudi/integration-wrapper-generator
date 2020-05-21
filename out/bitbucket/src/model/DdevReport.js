@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The DdevReport model module.
  * @module model/DdevReport
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DdevReport {
     /**

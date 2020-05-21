@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedBranchrestrictions model module.
  * @module model/PaginatedBranchrestrictions
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedBranchrestrictions =
-/*#__PURE__*/
-function () {
+var PaginatedBranchrestrictions = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedBranchrestrictions</code>.
    * A paginated list of branch restriction rules.

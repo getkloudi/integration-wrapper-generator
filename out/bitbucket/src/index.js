@@ -81,7 +81,6 @@ import Group from './model/Group';
 import GroupAllOf from './model/GroupAllOf';
 import GroupAllOfLinks from './model/GroupAllOfLinks';
 import HookEvent from './model/HookEvent';
-import Hookbody from './model/Hookbody';
 import Issue from './model/Issue';
 import IssueAllOf from './model/IssueAllOf';
 import IssueAllOfLinks from './model/IssueAllOfLinks';
@@ -94,10 +93,13 @@ import IssueChangeLinks from './model/IssueChangeLinks';
 import IssueComment from './model/IssueComment';
 import IssueCommentAllOf from './model/IssueCommentAllOf';
 import IssueJobStatus from './model/IssueJobStatus';
+import JiraProject from './model/JiraProject';
+import JiraSite from './model/JiraSite';
 import Milestone from './model/Milestone';
 import MilestoneAllOf from './model/MilestoneAllOf';
 import ModelObject from './model/ModelObject';
 import Page from './model/Page';
+import PaginatedAnnotations from './model/PaginatedAnnotations';
 import PaginatedBranches from './model/PaginatedBranches';
 import PaginatedBranchrestrictions from './model/PaginatedBranchrestrictions';
 import PaginatedCommitComments from './model/PaginatedCommitComments';
@@ -125,6 +127,7 @@ import PaginatedProjects from './model/PaginatedProjects';
 import PaginatedPullrequestComments from './model/PaginatedPullrequestComments';
 import PaginatedPullrequests from './model/PaginatedPullrequests';
 import PaginatedRefs from './model/PaginatedRefs';
+import PaginatedReports from './model/PaginatedReports';
 import PaginatedRepositories from './model/PaginatedRepositories';
 import PaginatedRepositoryPermissions from './model/PaginatedRepositoryPermissions';
 import PaginatedSnippetComments from './model/PaginatedSnippetComments';
@@ -138,6 +141,8 @@ import PaginatedTreeentries from './model/PaginatedTreeentries';
 import PaginatedUsers from './model/PaginatedUsers';
 import PaginatedVersions from './model/PaginatedVersions';
 import PaginatedWebhookSubscriptions from './model/PaginatedWebhookSubscriptions';
+import PaginatedWorkspaceMemberships from './model/PaginatedWorkspaceMemberships';
+import PaginatedWorkspaces from './model/PaginatedWorkspaces';
 import Participant from './model/Participant';
 import ParticipantAllOf from './model/ParticipantAllOf';
 import Pipeline from './model/Pipeline';
@@ -242,6 +247,11 @@ import PullrequestEndpointBranch from './model/PullrequestEndpointBranch';
 import PullrequestMergeParameters from './model/PullrequestMergeParameters';
 import Ref from './model/Ref';
 import RefLinks from './model/RefLinks';
+import Report from './model/Report';
+import ReportAllOf from './model/ReportAllOf';
+import ReportAnnotation from './model/ReportAnnotation';
+import ReportAnnotationAllOf from './model/ReportAnnotationAllOf';
+import ReportData from './model/ReportData';
 import Repository from './model/Repository';
 import RepositoryAllOf from './model/RepositoryAllOf';
 import RepositoryAllOfLinks from './model/RepositoryAllOfLinks';
@@ -277,6 +287,11 @@ import Version from './model/Version';
 import VersionAllOf from './model/VersionAllOf';
 import WebhookSubscription from './model/WebhookSubscription';
 import WebhookSubscriptionAllOf from './model/WebhookSubscriptionAllOf';
+import Workspace from './model/Workspace';
+import WorkspaceAllOf from './model/WorkspaceAllOf';
+import WorkspaceAllOfLinks from './model/WorkspaceAllOfLinks';
+import WorkspaceMembership from './model/WorkspaceMembership';
+import WorkspaceMembershipAllOf from './model/WorkspaceMembershipAllOf';
 import AddonApi from './api/AddonApi';
 import BranchingModelApi from './api/BranchingModelApi';
 import BranchrestrictionsApi from './api/BranchrestrictionsApi';
@@ -292,6 +307,7 @@ import ProjectsApi from './api/ProjectsApi';
 import PropertiesApi from './api/PropertiesApi';
 import PullrequestsApi from './api/PullrequestsApi';
 import RefsApi from './api/RefsApi';
+import ReportsApi from './api/ReportsApi';
 import RepositoriesApi from './api/RepositoriesApi';
 import SearchApi from './api/SearchApi';
 import SnippetApi from './api/SnippetApi';
@@ -301,6 +317,7 @@ import SshApi from './api/SshApi';
 import TeamsApi from './api/TeamsApi';
 import UsersApi from './api/UsersApi';
 import WebhooksApi from './api/WebhooksApi';
+import WorkspacesApi from './api/WorkspacesApi';
 
 
 /**
@@ -332,7 +349,7 @@ import WebhooksApi from './api/WebhooksApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.1.2
+* @version 1.2.0
 */
 export {
     /**
@@ -750,12 +767,6 @@ export {
     HookEvent,
 
     /**
-     * The Hookbody model constructor.
-     * @property {module:model/Hookbody}
-     */
-    Hookbody,
-
-    /**
      * The Issue model constructor.
      * @property {module:model/Issue}
      */
@@ -828,6 +839,18 @@ export {
     IssueJobStatus,
 
     /**
+     * The JiraProject model constructor.
+     * @property {module:model/JiraProject}
+     */
+    JiraProject,
+
+    /**
+     * The JiraSite model constructor.
+     * @property {module:model/JiraSite}
+     */
+    JiraSite,
+
+    /**
      * The Milestone model constructor.
      * @property {module:model/Milestone}
      */
@@ -850,6 +873,12 @@ export {
      * @property {module:model/Page}
      */
     Page,
+
+    /**
+     * The PaginatedAnnotations model constructor.
+     * @property {module:model/PaginatedAnnotations}
+     */
+    PaginatedAnnotations,
 
     /**
      * The PaginatedBranches model constructor.
@@ -1014,6 +1043,12 @@ export {
     PaginatedRefs,
 
     /**
+     * The PaginatedReports model constructor.
+     * @property {module:model/PaginatedReports}
+     */
+    PaginatedReports,
+
+    /**
      * The PaginatedRepositories model constructor.
      * @property {module:model/PaginatedRepositories}
      */
@@ -1090,6 +1125,18 @@ export {
      * @property {module:model/PaginatedWebhookSubscriptions}
      */
     PaginatedWebhookSubscriptions,
+
+    /**
+     * The PaginatedWorkspaceMemberships model constructor.
+     * @property {module:model/PaginatedWorkspaceMemberships}
+     */
+    PaginatedWorkspaceMemberships,
+
+    /**
+     * The PaginatedWorkspaces model constructor.
+     * @property {module:model/PaginatedWorkspaces}
+     */
+    PaginatedWorkspaces,
 
     /**
      * The Participant model constructor.
@@ -1716,6 +1763,36 @@ export {
     RefLinks,
 
     /**
+     * The Report model constructor.
+     * @property {module:model/Report}
+     */
+    Report,
+
+    /**
+     * The ReportAllOf model constructor.
+     * @property {module:model/ReportAllOf}
+     */
+    ReportAllOf,
+
+    /**
+     * The ReportAnnotation model constructor.
+     * @property {module:model/ReportAnnotation}
+     */
+    ReportAnnotation,
+
+    /**
+     * The ReportAnnotationAllOf model constructor.
+     * @property {module:model/ReportAnnotationAllOf}
+     */
+    ReportAnnotationAllOf,
+
+    /**
+     * The ReportData model constructor.
+     * @property {module:model/ReportData}
+     */
+    ReportData,
+
+    /**
      * The Repository model constructor.
      * @property {module:model/Repository}
      */
@@ -1926,6 +2003,36 @@ export {
     WebhookSubscriptionAllOf,
 
     /**
+     * The Workspace model constructor.
+     * @property {module:model/Workspace}
+     */
+    Workspace,
+
+    /**
+     * The WorkspaceAllOf model constructor.
+     * @property {module:model/WorkspaceAllOf}
+     */
+    WorkspaceAllOf,
+
+    /**
+     * The WorkspaceAllOfLinks model constructor.
+     * @property {module:model/WorkspaceAllOfLinks}
+     */
+    WorkspaceAllOfLinks,
+
+    /**
+     * The WorkspaceMembership model constructor.
+     * @property {module:model/WorkspaceMembership}
+     */
+    WorkspaceMembership,
+
+    /**
+     * The WorkspaceMembershipAllOf model constructor.
+     * @property {module:model/WorkspaceMembershipAllOf}
+     */
+    WorkspaceMembershipAllOf,
+
+    /**
     * The AddonApi service constructor.
     * @property {module:api/AddonApi}
     */
@@ -2016,6 +2123,12 @@ export {
     RefsApi,
 
     /**
+    * The ReportsApi service constructor.
+    * @property {module:api/ReportsApi}
+    */
+    ReportsApi,
+
+    /**
     * The RepositoriesApi service constructor.
     * @property {module:api/RepositoriesApi}
     */
@@ -2067,5 +2180,11 @@ export {
     * The WebhooksApi service constructor.
     * @property {module:api/WebhooksApi}
     */
-    WebhooksApi
+    WebhooksApi,
+
+    /**
+    * The WorkspacesApi service constructor.
+    * @property {module:api/WorkspacesApi}
+    */
+    WorkspacesApi
 };

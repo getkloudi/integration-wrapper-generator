@@ -20,7 +20,7 @@ import PaginatedDeployKeys from '../model/PaginatedDeployKeys';
 /**
 * Deploy service.
 * @module api/DeployApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class DeployApi {
 

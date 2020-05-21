@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineRefTargetAllOf model module.
  * @module model/PipelineRefTargetAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineRefTargetAllOf =
-/*#__PURE__*/
-function () {
+var PipelineRefTargetAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineRefTargetAllOf</code>.
    * A Bitbucket Pipelines reference target.

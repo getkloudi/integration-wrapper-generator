@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The AuthorAllOf model module.
  * @module model/AuthorAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var AuthorAllOf =
-/*#__PURE__*/
-function () {
+var AuthorAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>AuthorAllOf</code>.
    * The author of a change in a repository

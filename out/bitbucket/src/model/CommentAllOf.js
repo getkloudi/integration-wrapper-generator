@@ -21,7 +21,7 @@ import User from './User';
 /**
  * The CommentAllOf model module.
  * @module model/CommentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class CommentAllOf {
     /**

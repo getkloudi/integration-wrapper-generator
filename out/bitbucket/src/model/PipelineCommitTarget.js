@@ -20,7 +20,7 @@ import PipelineTarget from './PipelineTarget';
 /**
  * The PipelineCommitTarget model module.
  * @module model/PipelineCommitTarget
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineCommitTarget {
     /**

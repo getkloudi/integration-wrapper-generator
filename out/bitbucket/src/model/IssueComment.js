@@ -23,7 +23,7 @@ import User from './User';
 /**
  * The IssueComment model module.
  * @module model/IssueComment
- * @version 1.1.2
+ * @version 1.2.0
  */
 class IssueComment {
     /**

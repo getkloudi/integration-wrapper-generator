@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SubjectTypesRepositoryEvents model module.
  * @module model/SubjectTypesRepositoryEvents
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SubjectTypesRepositoryEvents =
-/*#__PURE__*/
-function () {
+var SubjectTypesRepositoryEvents = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SubjectTypesRepositoryEvents</code>.
    * @alias module:model/SubjectTypesRepositoryEvents

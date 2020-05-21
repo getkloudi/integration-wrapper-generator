@@ -19,7 +19,7 @@ import ModelObject from './ModelObject';
 /**
  * The Account model module.
  * @module model/Account
- * @version 1.1.2
+ * @version 1.2.0
  */
 class Account {
     /**

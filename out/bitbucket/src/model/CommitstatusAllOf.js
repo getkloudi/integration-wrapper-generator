@@ -17,7 +17,7 @@ import CommitstatusAllOfLinks from './CommitstatusAllOfLinks';
 /**
  * The CommitstatusAllOf model module.
  * @module model/CommitstatusAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class CommitstatusAllOf {
     /**

@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepAllOf model module.
  * @module model/PipelineStepAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStepAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStepAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStepAllOf</code>.
    * A step of a Bitbucket pipeline. This represents the actual result of the step execution.

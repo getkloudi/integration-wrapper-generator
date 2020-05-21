@@ -12,20 +12,24 @@
  */
 
 import ApiClient from '../ApiClient';
+import ModelObject from './ModelObject';
 
 /**
- * The Hookbody model module.
- * @module model/Hookbody
- * @version 1.1.2
+ * The JiraSite model module.
+ * @module model/JiraSite
+ * @version 1.2.0
  */
-class Hookbody {
+class JiraSite {
     /**
-     * Constructs a new <code>Hookbody</code>.
-     * @alias module:model/Hookbody
+     * Constructs a new <code>JiraSite</code>.
+     * @alias module:model/JiraSite
+     * @extends module:model/ModelObject
+     * @implements module:model/ModelObject
+     * @param type {String} 
      */
-    constructor() { 
-        
-        Hookbody.initialize(this);
+    constructor(type) { 
+        ModelObject.initialize(this, type);
+        JiraSite.initialize(this, type);
     }
 
     /**
@@ -33,23 +37,22 @@ class Hookbody {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, type) { 
     }
 
     /**
-     * Constructs a <code>Hookbody</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>JiraSite</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Hookbody} obj Optional instance to populate.
-     * @return {module:model/Hookbody} The populated <code>Hookbody</code> instance.
+     * @param {module:model/JiraSite} obj Optional instance to populate.
+     * @return {module:model/JiraSite} The populated <code>JiraSite</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Hookbody();
+            obj = obj || new JiraSite();
+            ModelObject.constructFromObject(data, obj);
+            ModelObject.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('property')) {
-                obj['property'] = ApiClient.convertToType(data['property'], Object);
-            }
         }
         return obj;
     }
@@ -57,15 +60,15 @@ class Hookbody {
 
 }
 
+
+// Implement ModelObject interface:
 /**
- * @member {Object} property
+ * @member {String} type
  */
-Hookbody.prototype['property'] = undefined;
+ModelObject.prototype['type'] = undefined;
 
 
 
 
-
-
-export default Hookbody;
+export default JiraSite;
 

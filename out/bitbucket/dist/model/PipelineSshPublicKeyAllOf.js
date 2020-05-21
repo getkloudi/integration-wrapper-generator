@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineSshPublicKeyAllOf model module.
  * @module model/PipelineSshPublicKeyAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineSshPublicKeyAllOf =
-/*#__PURE__*/
-function () {
+var PipelineSshPublicKeyAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineSshPublicKeyAllOf</code>.
    * A Pipelines known host public key.

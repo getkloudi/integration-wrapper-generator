@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentVariable model module.
  * @module model/DeploymentVariable
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentVariable =
-/*#__PURE__*/
-function () {
+var DeploymentVariable = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentVariable</code>.
    * @alias module:model/DeploymentVariable

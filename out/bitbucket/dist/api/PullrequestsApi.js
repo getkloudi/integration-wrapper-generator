@@ -34,11 +34,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Pullrequests service.
 * @module api/PullrequestsApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var PullrequestsApi =
-/*#__PURE__*/
-function () {
+var PullrequestsApi = /*#__PURE__*/function () {
   /**
   * Constructs a new PullrequestsApi. 
   * @alias module:api/PullrequestsApi
@@ -1217,6 +1215,61 @@ function () {
       return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
+     * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet operation.
+     * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGetCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} pullRequestId 
+     * @param {String} taskId 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGetCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+
+  }, {
+    key: "repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet",
+    value: function repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet(pullRequestId, taskId, workspace, repoSlug, callback) {
+      var postBody = null; // verify the required parameter 'pullRequestId' is set
+
+      if (pullRequestId === undefined || pullRequestId === null) {
+        throw new _Error["default"]("Missing the required parameter 'pullRequestId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet");
+      } // verify the required parameter 'taskId' is set
+
+
+      if (taskId === undefined || taskId === null) {
+        throw new _Error["default"]("Missing the required parameter 'taskId' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet");
+      } // verify the required parameter 'workspace' is set
+
+
+      if (workspace === undefined || workspace === null) {
+        throw new _Error["default"]("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet");
+      } // verify the required parameter 'repoSlug' is set
+
+
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new _Error["default"]("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet");
+      }
+
+      var pathParams = {
+        'pull_request_id': pullRequestId,
+        'task_id': taskId,
+        'workspace': workspace,
+        'repo_slug': repoSlug
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key', 'basic', 'oauth2'];
+      var contentTypes = [];
+      var accepts = [];
+      var returnType = null;
+      return this.apiClient.callApi('/repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge/task-status/{task_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
      * Callback function to receive the result of the repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet operation.
      * @callback module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGetCallback
      * @param {String} error Error message, if any.
@@ -1331,13 +1384,17 @@ function () {
      * @param {Number} pullRequestId The id of the pull request.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+     * @param {String} opts.sort Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
      * @param {module:api/PullrequestsApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCommitstatuses}
      */
 
   }, {
     key: "repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet",
-    value: function repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, callback) {
+    value: function repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, opts, callback) {
+      opts = opts || {};
       var postBody = null; // verify the required parameter 'pullRequestId' is set
 
       if (pullRequestId === undefined || pullRequestId === null) {
@@ -1359,7 +1416,10 @@ function () {
         'workspace': workspace,
         'repo_slug': repoSlug
       };
-      var queryParams = {};
+      var queryParams = {
+        'q': opts['q'],
+        'sort': opts['sort']
+      };
       var headerParams = {};
       var formParams = {};
       var authNames = ['api_key', 'basic', 'oauth2'];

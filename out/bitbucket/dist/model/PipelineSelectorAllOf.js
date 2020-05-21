@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineSelectorAllOf model module.
  * @module model/PipelineSelectorAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineSelectorAllOf =
-/*#__PURE__*/
-function () {
+var PipelineSelectorAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineSelectorAllOf</code>.
    * A representation of the selector that was used to identify the pipeline in the YML file.

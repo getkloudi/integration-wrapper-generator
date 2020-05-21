@@ -18,7 +18,7 @@ import Team from './Team';
 /**
  * The ProjectAllOf model module.
  * @module model/ProjectAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class ProjectAllOf {
     /**

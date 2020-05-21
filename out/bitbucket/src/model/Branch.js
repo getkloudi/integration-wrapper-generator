@@ -19,7 +19,7 @@ import RefLinks from './RefLinks';
 /**
  * The Branch model module.
  * @module model/Branch
- * @version 1.1.2
+ * @version 1.2.0
  */
 class Branch {
     /**

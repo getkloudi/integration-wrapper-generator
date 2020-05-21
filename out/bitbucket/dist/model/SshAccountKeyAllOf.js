@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SshAccountKeyAllOf model module.
  * @module model/SshAccountKeyAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SshAccountKeyAllOf =
-/*#__PURE__*/
-function () {
+var SshAccountKeyAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SshAccountKeyAllOf</code>.
    * Represents an SSH public key for a user.

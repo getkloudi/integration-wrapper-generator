@@ -18,7 +18,7 @@ import PipelineStepStateCompletedResult from './PipelineStepStateCompletedResult
 /**
  * The PipelineStepStateCompletedExpired model module.
  * @module model/PipelineStepStateCompletedExpired
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStepStateCompletedExpired {
     /**

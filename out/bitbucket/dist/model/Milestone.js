@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Milestone model module.
  * @module model/Milestone
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Milestone =
-/*#__PURE__*/
-function () {
+var Milestone = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Milestone</code>.
    * @alias module:model/Milestone

@@ -78,6 +78,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property escapedPath (base name: "escaped_path")', function() {
+      // uncomment below and update the code to test the property escapedPath
+      //var instane = new Bitbucket.CommitFile();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

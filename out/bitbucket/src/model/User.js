@@ -19,7 +19,7 @@ import UserAllOf from './UserAllOf';
 /**
  * The User model module.
  * @module model/User
- * @version 1.1.2
+ * @version 1.2.0
  */
 class User {
     /**

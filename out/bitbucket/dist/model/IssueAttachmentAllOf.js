@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueAttachmentAllOf model module.
  * @module model/IssueAttachmentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var IssueAttachmentAllOf =
-/*#__PURE__*/
-function () {
+var IssueAttachmentAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>IssueAttachmentAllOf</code>.
    * An issue file attachment&#39;s meta data. Note this does not contain the file&#39;s actual contents.

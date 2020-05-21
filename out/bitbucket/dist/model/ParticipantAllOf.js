@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ParticipantAllOf model module.
  * @module model/ParticipantAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var ParticipantAllOf =
-/*#__PURE__*/
-function () {
+var ParticipantAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ParticipantAllOf</code>.
    * Object describing a user&#39;s role on resources like commits or pull requests.

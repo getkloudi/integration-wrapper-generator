@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineSshPublicKeyAllOf model module.
  * @module model/PipelineSshPublicKeyAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineSshPublicKeyAllOf {
     /**

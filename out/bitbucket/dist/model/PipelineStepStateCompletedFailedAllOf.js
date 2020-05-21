@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStateCompletedFailedAllOf model module.
  * @module model/PipelineStepStateCompletedFailedAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStepStateCompletedFailedAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStepStateCompletedFailedAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStepStateCompletedFailedAllOf</code>.
    * A Bitbucket Pipelines FAILED pipeline step result.

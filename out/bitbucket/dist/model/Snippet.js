@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Snippet model module.
  * @module model/Snippet
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Snippet =
-/*#__PURE__*/
-function () {
+var Snippet = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Snippet</code>.
    * @alias module:model/Snippet

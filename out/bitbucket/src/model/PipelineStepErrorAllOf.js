@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineStepErrorAllOf model module.
  * @module model/PipelineStepErrorAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStepErrorAllOf {
     /**

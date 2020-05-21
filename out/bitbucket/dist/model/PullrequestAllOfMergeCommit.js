@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullrequestAllOfMergeCommit model module.
  * @module model/PullrequestAllOfMergeCommit
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PullrequestAllOfMergeCommit =
-/*#__PURE__*/
-function () {
+var PullrequestAllOfMergeCommit = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PullrequestAllOfMergeCommit</code>.
    * @alias module:model/PullrequestAllOfMergeCommit

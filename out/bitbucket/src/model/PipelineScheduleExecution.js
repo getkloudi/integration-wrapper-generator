@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The PipelineScheduleExecution model module.
  * @module model/PipelineScheduleExecution
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineScheduleExecution {
     /**

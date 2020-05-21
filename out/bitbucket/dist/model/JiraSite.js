@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _ModelObject = _interopRequireDefault(require("./ModelObject"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -16,21 +18,24 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
- * The Hookbody model module.
- * @module model/Hookbody
- * @version 1.1.2
+ * The JiraSite model module.
+ * @module model/JiraSite
+ * @version 1.2.0
  */
-var Hookbody =
-/*#__PURE__*/
-function () {
+var JiraSite = /*#__PURE__*/function () {
   /**
-   * Constructs a new <code>Hookbody</code>.
-   * @alias module:model/Hookbody
+   * Constructs a new <code>JiraSite</code>.
+   * @alias module:model/JiraSite
+   * @extends module:model/ModelObject
+   * @implements module:model/ModelObject
+   * @param type {String} 
    */
-  function Hookbody() {
-    _classCallCheck(this, Hookbody);
+  function JiraSite(type) {
+    _classCallCheck(this, JiraSite);
 
-    Hookbody.initialize(this);
+    _ModelObject["default"].initialize(this, type);
+
+    JiraSite.initialize(this, type);
   }
   /**
    * Initializes the fields of this object.
@@ -39,39 +44,40 @@ function () {
    */
 
 
-  _createClass(Hookbody, null, [{
+  _createClass(JiraSite, null, [{
     key: "initialize",
-    value: function initialize(obj) {}
+    value: function initialize(obj, type) {}
     /**
-     * Constructs a <code>Hookbody</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>JiraSite</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Hookbody} obj Optional instance to populate.
-     * @return {module:model/Hookbody} The populated <code>Hookbody</code> instance.
+     * @param {module:model/JiraSite} obj Optional instance to populate.
+     * @return {module:model/JiraSite} The populated <code>JiraSite</code> instance.
      */
 
   }, {
     key: "constructFromObject",
     value: function constructFromObject(data, obj) {
       if (data) {
-        obj = obj || new Hookbody();
+        obj = obj || new JiraSite();
 
-        if (data.hasOwnProperty('property')) {
-          obj['property'] = _ApiClient["default"].convertToType(data['property'], Object);
-        }
+        _ModelObject["default"].constructFromObject(data, obj);
+
+        _ModelObject["default"].constructFromObject(data, obj);
       }
 
       return obj;
     }
   }]);
 
-  return Hookbody;
-}();
+  return JiraSite;
+}(); // Implement ModelObject interface:
+
 /**
- * @member {Object} property
+ * @member {String} type
  */
 
 
-Hookbody.prototype['property'] = undefined;
-var _default = Hookbody;
+_ModelObject["default"].prototype['type'] = undefined;
+var _default = JiraSite;
 exports["default"] = _default;

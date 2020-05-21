@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineTriggerManual model module.
  * @module model/PipelineTriggerManual
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineTriggerManual =
-/*#__PURE__*/
-function () {
+var PipelineTriggerManual = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineTriggerManual</code>.
    * @alias module:model/PipelineTriggerManual

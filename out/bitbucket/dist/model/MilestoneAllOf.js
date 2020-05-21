@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MilestoneAllOf model module.
  * @module model/MilestoneAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var MilestoneAllOf =
-/*#__PURE__*/
-function () {
+var MilestoneAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>MilestoneAllOf</code>.
    * A milestone as defined in a repository&#39;s issue tracker.

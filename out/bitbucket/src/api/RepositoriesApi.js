@@ -15,7 +15,6 @@
 import ApiClient from "../ApiClient";
 import Commitstatus from '../model/Commitstatus';
 import Error from '../model/Error';
-import HookBody from '../model/HookBody';
 import PaginatedCommitstatuses from '../model/PaginatedCommitstatuses';
 import PaginatedFiles from '../model/PaginatedFiles';
 import PaginatedRepositories from '../model/PaginatedRepositories';
@@ -28,7 +27,7 @@ import WebhookSubscription from '../model/WebhookSubscription';
 /**
 * Repositories service.
 * @module api/RepositoriesApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class RepositoriesApi {
 
@@ -55,7 +54,10 @@ export default class RepositoriesApi {
     /**
      * Returns a paginated list of all public repositories.  This endpoint also supports filtering and sorting of the results. See [filtering and sorting](../meta/filtering) for more details.
      * @param {Object} opts Optional parameters
-     * @param {String} opts.after Filter the results to include only repositories create on or after this [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)  timestamp. Example: `YYYY-MM-DDTHH:mm:ss.sssZ`
+     * @param {String} opts.after Filter the results to include only repositories created on or after this [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)  timestamp. Example: `YYYY-MM-DDTHH:mm:ss.sssZ`
+     * @param {module:model/String} opts.role Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user 
+     * @param {String} opts.q Query string to narrow down the response as per [filtering and sorting](../meta/filtering). `role` parameter must also be specified. 
+     * @param {String} opts.sort Field by which the results should be sorted as per [filtering and sorting](../meta/filtering). 
      * @param {module:api/RepositoriesApi~repositoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedRepositories}
      */
@@ -66,7 +68,10 @@ export default class RepositoriesApi {
       let pathParams = {
       };
       let queryParams = {
-        'after': opts['after']
+        'after': opts['after'],
+        'role': opts['role'],
+        'q': opts['q'],
+        'sort': opts['sort']
       };
       let headerParams = {
       };
@@ -96,8 +101,9 @@ export default class RepositoriesApi {
      * Returns a paginated list of all repositories owned by the specified account or UUID.  The result can be narrowed down based on the authenticated user's role.  E.g. with `?role=contributor`, only those repositories that the authenticated user has write access to are returned (this includes any repo the user is an admin on, as that implies write access).  This endpoint also supports filtering and sorting of the results. See [filtering and sorting](../../meta/filtering) for more details.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.page Page number of the current results. This is an optional element that is not provided in all responses. (default to 1)
      * @param {module:model/String} opts.role  Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user 
+     * @param {String} opts.q  Query string to narrow down the response as per [filtering and sorting](../../meta/filtering). 
+     * @param {String} opts.sort  Field by which the results should be sorted as per [filtering and sorting](../../meta/filtering).         
      * @param {module:api/RepositoriesApi~repositoriesWorkspaceGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedRepositories}
      */
@@ -113,8 +119,9 @@ export default class RepositoriesApi {
         'workspace': workspace
       };
       let queryParams = {
-        'page': opts['page'],
-        'role': opts['role']
+        'role': opts['role'],
+        'q': opts['q'],
+        'sort': opts['sort']
       };
       let headerParams = {
       };
@@ -325,10 +332,14 @@ export default class RepositoriesApi {
      * @param {String} node The commit's SHA1.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+     * @param {String} opts.sort Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
      * @param {module:api/RepositoriesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCommitstatuses}
      */
-    repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'node' is set
       if (node === undefined || node === null) {
@@ -349,6 +360,8 @@ export default class RepositoriesApi {
         'repo_slug': repoSlug
       };
       let queryParams = {
+        'q': opts['q'],
+        'sort': opts['sort']
       };
       let headerParams = {
       };
@@ -497,10 +510,15 @@ export default class RepositoriesApi {
      * Returns a paginated list of all the forks of the specified repository.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/String} opts.role Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user 
+     * @param {String} opts.q Query string to narrow down the response as per [filtering and sorting](../../../../meta/filtering). 
+     * @param {String} opts.sort Field by which the results should be sorted as per [filtering and sorting](../../../../meta/filtering). 
      * @param {module:api/RepositoriesApi~repositoriesWorkspaceRepoSlugForksGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedRepositories}
      */
-    repositoriesWorkspaceRepoSlugForksGet(workspace, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugForksGet(workspace, repoSlug, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'workspace' is set
       if (workspace === undefined || workspace === null) {
@@ -516,6 +534,9 @@ export default class RepositoriesApi {
         'repo_slug': repoSlug
       };
       let queryParams = {
+        'role': opts['role'],
+        'q': opts['q'],
+        'sort': opts['sort']
       };
       let headerParams = {
       };
@@ -692,12 +713,11 @@ export default class RepositoriesApi {
      * Creates a new webhook on the specified repository.  Example:  ``` $ curl -X POST -u credentials -H 'Content-Type: application/json'           https://api.bitbucket.org/2.0/repositories/username/slug/hooks           -d '     {       \"description\": \"Webhook Description\",       \"url\": \"https://example.com/\",       \"active\": true,       \"events\": [         \"repo:push\",         \"issue:created\",         \"issue:updated\"       ]     }' ```  Note that this call requires the webhook scope, as well as any scope that applies to the events that the webhook subscribes to. In the example above that means: `webhook`, `repository` and `issue`.  Also note that the `url` must properly resolve and cannot be an internal, non-routed address.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-     * @param {module:model/HookBody} body 
      * @param {module:api/RepositoriesApi~repositoriesWorkspaceRepoSlugHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
-    repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, body, callback) {
-      let postBody = body;
+    repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, callback) {
+      let postBody = null;
       // verify the required parameter 'workspace' is set
       if (workspace === undefined || workspace === null) {
         throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugHooksPost");
@@ -705,10 +725,6 @@ export default class RepositoriesApi {
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
         throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugHooksPost");
-      }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling repositoriesWorkspaceRepoSlugHooksPost");
       }
 
       let pathParams = {
@@ -723,7 +739,7 @@ export default class RepositoriesApi {
       };
 
       let authNames = ['api_key', 'basic', 'oauth2'];
-      let contentTypes = ['application/json'];
+      let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = WebhookSubscription;
       return this.apiClient.callApi(
@@ -958,10 +974,14 @@ export default class RepositoriesApi {
      * @param {Number} pullRequestId The id of the pull request.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+     * @param {String} opts.sort Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
      * @param {module:api/RepositoriesApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCommitstatuses}
      */
-    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'pullRequestId' is set
       if (pullRequestId === undefined || pullRequestId === null) {
@@ -982,6 +1002,8 @@ export default class RepositoriesApi {
         'repo_slug': repoSlug
       };
       let queryParams = {
+        'q': opts['q'],
+        'sort': opts['sort']
       };
       let headerParams = {
       };
@@ -1189,7 +1211,6 @@ export default class RepositoriesApi {
      * @param {String} opts.author  The raw string to be used as the new commit's author. This string follows the format `Erik van Zijst <evzijst@atlassian.com>`.  When omitted, Bitbucket uses the authenticated user's full/display name and primary email address. Commits cannot be created anonymously.
      * @param {String} opts.parents  A comma-separated list of SHA1s of the commits that should be the parents of the newly created commit.  When omitted, the new commit will inherit from and become a child of the main branch's tip/HEAD commit.  When more than one SHA1 is provided, the first SHA1 identifies the commit from which the content will be inherited.  When more than 2 parents are provided on a Mercurial repo, a 400 is returned as Mercurial does not support \"octopus merges\".
      * @param {String} opts.files  Optional field that declares the files that the request is manipulating. When adding a new file to a repo, or when overwriting an existing file, the client can just upload the full contents of the file in a normal form field and the use of this `files` meta data field is redundant. However, when the `files` field contains a file path that does not have a corresponding, identically-named form field, then Bitbucket interprets that as the client wanting to replace the named file with the null set and the file is deleted instead.  Paths in the repo that are referenced in neither files nor an individual file field, remain unchanged and carry over from the parent to the new commit.  This API does not support renaming as an explicit feature. To rename a file, simply delete it and recreate it under the new name in the same commit. 
-     * @param {String} opts.files2  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch's new HEAD/tip.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, if a parent SHA1 was also provided, then it is asserted that the parent is the branch's tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repos.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch's tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request also specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch's current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo's root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo's root commit and also define the repo's main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with parents, but omitting the files fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty. 
      * @param {String} opts.branch  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch's new head.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, *if* a parent SHA1 was also provided, then it is asserted that the parent is the branch's tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repositories.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch's tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request *also* specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch's current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo's root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo's root commit and also define the repo's main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with `parents`, but omitting the `files` fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty. 
      * @param {module:api/RepositoriesApi~repositoriesWorkspaceRepoSlugSrcPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -1214,7 +1235,6 @@ export default class RepositoriesApi {
         'author': opts['author'],
         'parents': opts['parents'],
         'files': opts['files'],
-        'files': opts['files2'],
         'branch': opts['branch']
       };
       let headerParams = {

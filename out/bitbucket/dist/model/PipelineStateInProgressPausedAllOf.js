@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStateInProgressPausedAllOf model module.
  * @module model/PipelineStateInProgressPausedAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStateInProgressPausedAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStateInProgressPausedAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStateInProgressPausedAllOf</code>.
    * A Bitbucket Pipelines PAUSED stage of a pipeline that is in progress.

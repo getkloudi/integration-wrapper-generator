@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeployKeyAllOf model module.
  * @module model/DeployKeyAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeployKeyAllOf =
-/*#__PURE__*/
-function () {
+var DeployKeyAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeployKeyAllOf</code>.
    * Represents deploy key for a repository.

@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStateCompletedFailed model module.
  * @module model/PipelineStepStateCompletedFailed
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStepStateCompletedFailed =
-/*#__PURE__*/
-function () {
+var PipelineStepStateCompletedFailed = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStepStateCompletedFailed</code>.
    * @alias module:model/PipelineStepStateCompletedFailed

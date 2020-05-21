@@ -17,7 +17,7 @@ import HookEvent from './HookEvent';
 /**
  * The PaginatedHookEvents model module.
  * @module model/PaginatedHookEvents
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedHookEvents {
     /**

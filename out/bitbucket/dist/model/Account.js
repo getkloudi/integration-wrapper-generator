@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Account model module.
  * @module model/Account
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Account =
-/*#__PURE__*/
-function () {
+var Account = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Account</code>.
    * @alias module:model/Account

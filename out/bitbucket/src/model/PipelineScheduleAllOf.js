@@ -18,7 +18,7 @@ import PipelineTarget from './PipelineTarget';
 /**
  * The PipelineScheduleAllOf model module.
  * @module model/PipelineScheduleAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineScheduleAllOf {
     /**

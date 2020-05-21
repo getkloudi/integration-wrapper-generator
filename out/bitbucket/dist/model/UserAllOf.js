@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UserAllOf model module.
  * @module model/UserAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var UserAllOf =
-/*#__PURE__*/
-function () {
+var UserAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>UserAllOf</code>.
    * A user object.

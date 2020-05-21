@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Page model module.
  * @module model/Page
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Page =
-/*#__PURE__*/
-function () {
+var Page = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Page</code>.
    * @alias module:model/Page

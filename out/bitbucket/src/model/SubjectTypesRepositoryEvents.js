@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SubjectTypesRepositoryEvents model module.
  * @module model/SubjectTypesRepositoryEvents
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SubjectTypesRepositoryEvents {
     /**

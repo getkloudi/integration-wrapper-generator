@@ -21,7 +21,7 @@ import PipelineStepState from './PipelineStepState';
 /**
  * The PipelineStep model module.
  * @module model/PipelineStep
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStep {
     /**

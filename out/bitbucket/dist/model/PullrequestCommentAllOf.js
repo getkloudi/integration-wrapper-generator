@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullrequestCommentAllOf model module.
  * @module model/PullrequestCommentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PullrequestCommentAllOf =
-/*#__PURE__*/
-function () {
+var PullrequestCommentAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PullrequestCommentAllOf</code>.
    * A pullrequest comment.

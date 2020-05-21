@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineCommitTargetAllOf model module.
  * @module model/PipelineCommitTargetAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineCommitTargetAllOf =
-/*#__PURE__*/
-function () {
+var PipelineCommitTargetAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineCommitTargetAllOf</code>.
    * A Bitbucket Pipelines commit target.

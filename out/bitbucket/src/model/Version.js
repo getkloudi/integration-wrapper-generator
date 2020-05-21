@@ -19,7 +19,7 @@ import VersionAllOf from './VersionAllOf';
 /**
  * The Version model module.
  * @module model/Version
- * @version 1.1.2
+ * @version 1.2.0
  */
 class Version {
     /**

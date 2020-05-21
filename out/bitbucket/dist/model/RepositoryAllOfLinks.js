@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RepositoryAllOfLinks model module.
  * @module model/RepositoryAllOfLinks
- * @version 1.1.2
+ * @version 1.2.0
  */
-var RepositoryAllOfLinks =
-/*#__PURE__*/
-function () {
+var RepositoryAllOfLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RepositoryAllOfLinks</code>.
    * @alias module:model/RepositoryAllOfLinks

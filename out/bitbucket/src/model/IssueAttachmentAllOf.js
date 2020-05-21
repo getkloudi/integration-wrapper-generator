@@ -17,7 +17,7 @@ import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks
 /**
  * The IssueAttachmentAllOf model module.
  * @module model/IssueAttachmentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class IssueAttachmentAllOf {
     /**

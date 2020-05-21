@@ -17,7 +17,7 @@ import SearchCodeSearchResult from './SearchCodeSearchResult';
 /**
  * The SearchResultPage model module.
  * @module model/SearchResultPage
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SearchResultPage {
     /**

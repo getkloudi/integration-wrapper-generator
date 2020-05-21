@@ -17,7 +17,7 @@ import PipelineKnownHost from './PipelineKnownHost';
 /**
  * The PaginatedPipelineKnownHosts model module.
  * @module model/PaginatedPipelineKnownHosts
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedPipelineKnownHosts {
     /**

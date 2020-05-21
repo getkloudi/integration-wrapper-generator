@@ -30,11 +30,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Refs service.
 * @module api/RefsApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var RefsApi =
-/*#__PURE__*/
-function () {
+var RefsApi = /*#__PURE__*/function () {
   /**
   * Constructs a new RefsApi. 
   * @alias module:api/RefsApi

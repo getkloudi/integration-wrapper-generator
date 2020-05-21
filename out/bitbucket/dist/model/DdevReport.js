@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DdevReport model module.
  * @module model/DdevReport
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DdevReport =
-/*#__PURE__*/
-function () {
+var DdevReport = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DdevReport</code>.
    * @alias module:model/DdevReport

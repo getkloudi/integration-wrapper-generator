@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Author model module.
  * @module model/Author
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Author =
-/*#__PURE__*/
-function () {
+var Author = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Author</code>.
    * @alias module:model/Author

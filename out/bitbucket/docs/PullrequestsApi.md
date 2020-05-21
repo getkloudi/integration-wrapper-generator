@@ -27,6 +27,7 @@ Method | HTTP request | Description
 [**repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet**](PullrequestsApi.md#repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdDiffstatGet) | **GET** /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/diffstat | 
 [**repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet**](PullrequestsApi.md#repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdGet) | **GET** /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id} | 
 [**repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost**](PullrequestsApi.md#repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost) | **POST** /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge | 
+[**repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet**](PullrequestsApi.md#repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet) | **GET** /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/merge/task-status/{task_id} | 
 [**repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet**](PullrequestsApi.md#repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet) | **GET** /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/patch | 
 [**repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut**](PullrequestsApi.md#repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut) | **PUT** /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id} | 
 [**repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet**](PullrequestsApi.md#repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet) | **GET** /repositories/{workspace}/{repo_slug}/pullrequests/{pull_request_id}/statuses | 
@@ -1466,6 +1467,68 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet
+
+> repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet(pullRequestId, taskId, workspace, repoSlug)
+
+
+
+### Example
+
+```javascript
+import Bitbucket from 'bitbucket';
+let defaultClient = Bitbucket.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
+// Configure OAuth2 access token for authorization: oauth2
+let oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new Bitbucket.PullrequestsApi();
+let pullRequestId = "pullRequestId_example"; // String | 
+let taskId = "taskId_example"; // String | 
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet(pullRequestId, taskId, workspace, repoSlug, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pullRequestId** | **String**|  | 
+ **taskId** | **String**|  | 
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key), [basic](../README.md#basic), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
 ## repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet
 
 > Error repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet(pullRequestId, workspace, repoSlug)
@@ -1594,7 +1657,7 @@ Name | Type | Description  | Notes
 
 ## repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet
 
-> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug)
+> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, opts)
 
 
 
@@ -1622,7 +1685,11 @@ let apiInstance = new Bitbucket.PullrequestsApi();
 let pullRequestId = 56; // Number | The id of the pull request.
 let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, (error, data, response) => {
+let opts = {
+  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
+};
+apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1639,6 +1706,8 @@ Name | Type | Description  | Notes
  **pullRequestId** | **Number**| The id of the pull request. | 
  **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
+ **q** | **String**| Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).  | [optional] 
+ **sort** | **String**| Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to &#x60;created_on&#x60;.  | [optional] 
 
 ### Return type
 

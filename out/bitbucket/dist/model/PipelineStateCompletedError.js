@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStateCompletedError model module.
  * @module model/PipelineStateCompletedError
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStateCompletedError =
-/*#__PURE__*/
-function () {
+var PipelineStateCompletedError = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStateCompletedError</code>.
    * @alias module:model/PipelineStateCompletedError

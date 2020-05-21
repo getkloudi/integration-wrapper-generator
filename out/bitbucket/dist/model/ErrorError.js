@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ErrorError model module.
  * @module model/ErrorError
- * @version 1.1.2
+ * @version 1.2.0
  */
-var ErrorError =
-/*#__PURE__*/
-function () {
+var ErrorError = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ErrorError</code>.
    * @alias module:model/ErrorError

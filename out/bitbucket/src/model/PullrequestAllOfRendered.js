@@ -17,7 +17,7 @@ import PullrequestAllOfRenderedTitle from './PullrequestAllOfRenderedTitle';
 /**
  * The PullrequestAllOfRendered model module.
  * @module model/PullrequestAllOfRendered
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PullrequestAllOfRendered {
     /**

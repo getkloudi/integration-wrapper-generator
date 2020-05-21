@@ -20,7 +20,7 @@ import PipelineTarget from './PipelineTarget';
 /**
  * The PipelineSchedule model module.
  * @module model/PipelineSchedule
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineSchedule {
     /**

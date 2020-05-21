@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IssueJobStatus model module.
  * @module model/IssueJobStatus
- * @version 1.1.2
+ * @version 1.2.0
  */
 class IssueJobStatus {
     /**

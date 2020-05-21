@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineScheduleExecutionExecuted model module.
  * @module model/PipelineScheduleExecutionExecuted
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineScheduleExecutionExecuted =
-/*#__PURE__*/
-function () {
+var PipelineScheduleExecutionExecuted = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineScheduleExecutionExecuted</code>.
    * @alias module:model/PipelineScheduleExecutionExecuted

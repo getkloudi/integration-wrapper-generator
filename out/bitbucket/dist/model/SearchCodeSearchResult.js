@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchCodeSearchResult model module.
  * @module model/SearchCodeSearchResult
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SearchCodeSearchResult =
-/*#__PURE__*/
-function () {
+var SearchCodeSearchResult = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SearchCodeSearchResult</code>.
    * @alias module:model/SearchCodeSearchResult

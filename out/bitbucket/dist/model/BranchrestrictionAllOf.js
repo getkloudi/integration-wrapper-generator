@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchrestrictionAllOf model module.
  * @module model/BranchrestrictionAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var BranchrestrictionAllOf =
-/*#__PURE__*/
-function () {
+var BranchrestrictionAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BranchrestrictionAllOf</code>.
    * A branch restriction rule.

@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelinesDdevPipelineStep model module.
  * @module model/PipelinesDdevPipelineStep
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelinesDdevPipelineStep =
-/*#__PURE__*/
-function () {
+var PipelinesDdevPipelineStep = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelinesDdevPipelineStep</code>.
    * @alias module:model/PipelinesDdevPipelineStep

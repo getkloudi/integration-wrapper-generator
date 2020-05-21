@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineVariableAllOf model module.
  * @module model/PipelineVariableAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineVariableAllOf {
     /**

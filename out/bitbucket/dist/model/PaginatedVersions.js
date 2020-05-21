@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedVersions model module.
  * @module model/PaginatedVersions
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedVersions =
-/*#__PURE__*/
-function () {
+var PaginatedVersions = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedVersions</code>.
    * A paginated list of issue tracker versions.

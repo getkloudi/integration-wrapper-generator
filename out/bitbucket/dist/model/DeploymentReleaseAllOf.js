@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentReleaseAllOf model module.
  * @module model/DeploymentReleaseAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentReleaseAllOf =
-/*#__PURE__*/
-function () {
+var DeploymentReleaseAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentReleaseAllOf</code>.
    * A Bitbucket Deployment Release.

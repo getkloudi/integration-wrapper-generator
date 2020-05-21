@@ -30,11 +30,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Repository model module.
  * @module model/Repository
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Repository =
-/*#__PURE__*/
-function () {
+var Repository = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Repository</code>.
    * @alias module:model/Repository

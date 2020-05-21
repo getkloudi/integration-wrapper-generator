@@ -17,7 +17,7 @@ import Deployment from './Deployment';
 /**
  * The PaginatedDeployments model module.
  * @module model/PaginatedDeployments
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedDeployments {
     /**

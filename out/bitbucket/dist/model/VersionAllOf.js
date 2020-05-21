@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The VersionAllOf model module.
  * @module model/VersionAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var VersionAllOf =
-/*#__PURE__*/
-function () {
+var VersionAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>VersionAllOf</code>.
    * A version as defined in a repository&#39;s issue tracker.

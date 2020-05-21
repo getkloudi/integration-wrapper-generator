@@ -19,7 +19,7 @@ import Repository from './Repository';
 /**
  * The DeployKeyAllOf model module.
  * @module model/DeployKeyAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeployKeyAllOf {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BranchingModelSettingsAllOfProduction model module.
  * @module model/BranchingModelSettingsAllOfProduction
- * @version 1.1.2
+ * @version 1.2.0
  */
 class BranchingModelSettingsAllOfProduction {
     /**

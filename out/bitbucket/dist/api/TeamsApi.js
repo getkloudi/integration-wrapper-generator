@@ -32,11 +32,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Teams service.
 * @module api/TeamsApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var TeamsApi =
-/*#__PURE__*/
-function () {
+var TeamsApi = /*#__PURE__*/function () {
   /**
   * Constructs a new TeamsApi. 
   * @alias module:api/TeamsApi

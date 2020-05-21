@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineVariable model module.
  * @module model/PipelineVariable
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineVariable =
-/*#__PURE__*/
-function () {
+var PipelineVariable = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineVariable</code>.
    * @alias module:model/PipelineVariable

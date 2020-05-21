@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStateInProgress model module.
  * @module model/PipelineStepStateInProgress
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStepStateInProgress =
-/*#__PURE__*/
-function () {
+var PipelineStepStateInProgress = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStepStateInProgress</code>.
    * @alias module:model/PipelineStepStateInProgress

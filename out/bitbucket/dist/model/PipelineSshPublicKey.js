@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineSshPublicKey model module.
  * @module model/PipelineSshPublicKey
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineSshPublicKey =
-/*#__PURE__*/
-function () {
+var PipelineSshPublicKey = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineSshPublicKey</code>.
    * @alias module:model/PipelineSshPublicKey

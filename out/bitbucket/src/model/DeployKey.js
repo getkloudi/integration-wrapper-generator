@@ -21,7 +21,7 @@ import Repository from './Repository';
 /**
  * The DeployKey model module.
  * @module model/DeployKey
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeployKey {
     /**

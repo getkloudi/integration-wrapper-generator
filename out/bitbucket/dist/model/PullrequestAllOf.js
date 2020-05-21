@@ -32,11 +32,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullrequestAllOf model module.
  * @module model/PullrequestAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PullrequestAllOf =
-/*#__PURE__*/
-function () {
+var PullrequestAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PullrequestAllOf</code>.
    * A pull request object.

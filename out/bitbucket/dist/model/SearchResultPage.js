@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchResultPage model module.
  * @module model/SearchResultPage
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SearchResultPage =
-/*#__PURE__*/
-function () {
+var SearchResultPage = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SearchResultPage</code>.
    * @alias module:model/SearchResultPage

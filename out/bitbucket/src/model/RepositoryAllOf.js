@@ -21,7 +21,7 @@ import RepositoryAllOfLinks from './RepositoryAllOfLinks';
 /**
  * The RepositoryAllOf model module.
  * @module model/RepositoryAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class RepositoryAllOf {
     /**

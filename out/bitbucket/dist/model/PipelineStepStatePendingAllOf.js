@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStatePendingAllOf model module.
  * @module model/PipelineStepStatePendingAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStepStatePendingAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStepStatePendingAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStepStatePendingAllOf</code>.
    * A Bitbucket Pipelines PENDING pipeline step state.

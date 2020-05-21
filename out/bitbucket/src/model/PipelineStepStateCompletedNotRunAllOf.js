@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineStepStateCompletedNotRunAllOf model module.
  * @module model/PipelineStepStateCompletedNotRunAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStepStateCompletedNotRunAllOf {
     /**

@@ -17,7 +17,7 @@ import Commitstatus from './Commitstatus';
 /**
  * The PaginatedCommitstatuses model module.
  * @module model/PaginatedCommitstatuses
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedCommitstatuses {
     /**

@@ -17,7 +17,7 @@ import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 /**
  * The RefLinks model module.
  * @module model/RefLinks
- * @version 1.1.2
+ * @version 1.2.0
  */
 class RefLinks {
     /**

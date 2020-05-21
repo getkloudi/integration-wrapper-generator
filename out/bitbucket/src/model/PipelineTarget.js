@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The PipelineTarget model module.
  * @module model/PipelineTarget
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineTarget {
     /**

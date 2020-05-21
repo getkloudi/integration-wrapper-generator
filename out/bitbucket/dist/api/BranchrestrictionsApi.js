@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Branchrestrictions service.
 * @module api/BranchrestrictionsApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var BranchrestrictionsApi =
-/*#__PURE__*/
-function () {
+var BranchrestrictionsApi = /*#__PURE__*/function () {
   /**
   * Constructs a new BranchrestrictionsApi. 
   * @alias module:api/BranchrestrictionsApi

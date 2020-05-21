@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ProjectAllOf model module.
  * @module model/ProjectAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var ProjectAllOf =
-/*#__PURE__*/
-function () {
+var ProjectAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ProjectAllOf</code>.
    * A Bitbucket project.             Projects are used by teams to organize repositories.

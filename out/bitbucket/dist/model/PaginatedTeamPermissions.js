@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedTeamPermissions model module.
  * @module model/PaginatedTeamPermissions
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedTeamPermissions =
-/*#__PURE__*/
-function () {
+var PaginatedTeamPermissions = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedTeamPermissions</code>.
    * A paginated list of team permissions.

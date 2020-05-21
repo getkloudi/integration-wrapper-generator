@@ -25,7 +25,7 @@ import SnippetCommit from '../model/SnippetCommit';
 /**
 * Snippets service.
 * @module api/SnippetsApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class SnippetsApi {
 

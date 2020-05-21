@@ -19,7 +19,7 @@ import PipelineStateCompletedResult from './PipelineStateCompletedResult';
 /**
  * The PipelineStateCompletedError model module.
  * @module model/PipelineStateCompletedError
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStateCompletedError {
     /**

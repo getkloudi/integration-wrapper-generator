@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStateCompletedNotRunAllOf model module.
  * @module model/PipelineStepStateCompletedNotRunAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStepStateCompletedNotRunAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStepStateCompletedNotRunAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStepStateCompletedNotRunAllOf</code>.
    * A Bitbucket Pipelines NOT_RUN pipeline step result.

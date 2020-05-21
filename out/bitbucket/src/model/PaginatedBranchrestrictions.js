@@ -17,7 +17,7 @@ import Branchrestriction from './Branchrestriction';
 /**
  * The PaginatedBranchrestrictions model module.
  * @module model/PaginatedBranchrestrictions
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedBranchrestrictions {
     /**

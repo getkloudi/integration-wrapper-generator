@@ -17,7 +17,7 @@ import DeploymentVariable from './DeploymentVariable';
 /**
  * The PaginatedDeploymentVariable model module.
  * @module model/PaginatedDeploymentVariable
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedDeploymentVariable {
     /**

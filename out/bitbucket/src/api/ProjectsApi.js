@@ -20,7 +20,7 @@ import Project from '../model/Project';
 /**
 * Projects service.
 * @module api/ProjectsApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class ProjectsApi {
 
@@ -265,6 +265,199 @@ export default class ProjectsApi {
       let returnType = Project;
       return this.apiClient.callApi(
         '/teams/{username}/projects/{project_key}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workspacesWorkspaceProjectsPost operation.
+     * @callback module:api/ProjectsApi~workspacesWorkspaceProjectsPostCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates a new project.  Note that the avatar has to be embedded as either a data-url or a URL to an external image as shown in the examples below:  ``` $ body=$(cat << EOF {     \"name\": \"Mars Project\",     \"key\": \"MARS\",     \"description\": \"Software for colonizing mars.\",     \"links\": {         \"avatar\": {             \"href\": \"data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/...\"         }     },     \"is_private\": false } EOF ) $ curl -H \"Content-Type: application/json\" \\        -X POST \\        -d \"$body\" \\        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq . {   // Serialized project document } ```  or even:  ``` $ body=$(cat << EOF {     \"name\": \"Mars Project\",     \"key\": \"MARS\",     \"description\": \"Software for colonizing mars.\",     \"links\": {         \"avatar\": {             \"href\": \"http://i.imgur.com/72tRx4w.gif\"         }     },     \"is_private\": false } EOF ) $ curl -H \"Content-Type: application/json\" \\        -X POST \\        -d \"$body\" \\        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq . {   // Serialized project document } ```
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {module:model/Project} body 
+     * @param {module:api/ProjectsApi~workspacesWorkspaceProjectsPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
+     */
+    workspacesWorkspaceProjectsPost(workspace, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling workspacesWorkspaceProjectsPost");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling workspacesWorkspaceProjectsPost");
+      }
+
+      let pathParams = {
+        'workspace': workspace
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Project;
+      return this.apiClient.callApi(
+        '/workspaces/{workspace}/projects', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workspacesWorkspaceProjectsProjectKeyDelete operation.
+     * @callback module:api/ProjectsApi~workspacesWorkspaceProjectsProjectKeyDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} projectKey The project in question. This is the actual `key` assigned to the project. 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {module:api/ProjectsApi~workspacesWorkspaceProjectsProjectKeyDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    workspacesWorkspaceProjectsProjectKeyDelete(projectKey, workspace, callback) {
+      let postBody = null;
+      // verify the required parameter 'projectKey' is set
+      if (projectKey === undefined || projectKey === null) {
+        throw new Error("Missing the required parameter 'projectKey' when calling workspacesWorkspaceProjectsProjectKeyDelete");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling workspacesWorkspaceProjectsProjectKeyDelete");
+      }
+
+      let pathParams = {
+        'project_key': projectKey,
+        'workspace': workspace
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/workspaces/{workspace}/projects/{project_key}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workspacesWorkspaceProjectsProjectKeyGet operation.
+     * @callback module:api/ProjectsApi~workspacesWorkspaceProjectsProjectKeyGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} projectKey The project in question. This is the actual `key` assigned to the project. 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {module:api/ProjectsApi~workspacesWorkspaceProjectsProjectKeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
+     */
+    workspacesWorkspaceProjectsProjectKeyGet(projectKey, workspace, callback) {
+      let postBody = null;
+      // verify the required parameter 'projectKey' is set
+      if (projectKey === undefined || projectKey === null) {
+        throw new Error("Missing the required parameter 'projectKey' when calling workspacesWorkspaceProjectsProjectKeyGet");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling workspacesWorkspaceProjectsProjectKeyGet");
+      }
+
+      let pathParams = {
+        'project_key': projectKey,
+        'workspace': workspace
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Project;
+      return this.apiClient.callApi(
+        '/workspaces/{workspace}/projects/{project_key}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workspacesWorkspaceProjectsProjectKeyPut operation.
+     * @callback module:api/ProjectsApi~workspacesWorkspaceProjectsProjectKeyPutCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Project} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Since this endpoint can be used to both update and to create a project, the request body depends on the intent.  ### Creation  See the POST documentation for the project collection for an example of the request body.  Note: The `key` should not be specified in the body of request (since it is already present in the URL). The `name` is required, everything else is optional.  ### Update  See the POST documentation for the project collection for an example of the request body.  Note: The key is not required in the body (since it is already in the URL). The key may be specified in the body, if the intent is to change the key itself. In such a scenario, the location of the project is changed and is returned in the `Location` header of the response.
+     * @param {String} projectKey The project in question. This is the actual `key` assigned to the project. 
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {module:model/Project} body 
+     * @param {module:api/ProjectsApi~workspacesWorkspaceProjectsProjectKeyPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Project}
+     */
+    workspacesWorkspaceProjectsProjectKeyPut(projectKey, workspace, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'projectKey' is set
+      if (projectKey === undefined || projectKey === null) {
+        throw new Error("Missing the required parameter 'projectKey' when calling workspacesWorkspaceProjectsProjectKeyPut");
+      }
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling workspacesWorkspaceProjectsProjectKeyPut");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling workspacesWorkspaceProjectsProjectKeyPut");
+      }
+
+      let pathParams = {
+        'project_key': projectKey,
+        'workspace': workspace
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Project;
+      return this.apiClient.callApi(
+        '/workspaces/{workspace}/projects/{project_key}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

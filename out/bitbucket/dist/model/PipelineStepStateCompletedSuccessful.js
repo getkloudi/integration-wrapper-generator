@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStateCompletedSuccessful model module.
  * @module model/PipelineStepStateCompletedSuccessful
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStepStateCompletedSuccessful =
-/*#__PURE__*/
-function () {
+var PipelineStepStateCompletedSuccessful = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStepStateCompletedSuccessful</code>.
    * @alias module:model/PipelineStepStateCompletedSuccessful

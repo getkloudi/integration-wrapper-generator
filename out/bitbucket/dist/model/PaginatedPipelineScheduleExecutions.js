@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedPipelineScheduleExecutions model module.
  * @module model/PaginatedPipelineScheduleExecutions
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedPipelineScheduleExecutions =
-/*#__PURE__*/
-function () {
+var PaginatedPipelineScheduleExecutions = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedPipelineScheduleExecutions</code>.
    * A paged list of the executions of a schedule.

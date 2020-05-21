@@ -17,7 +17,7 @@ import Version from './Version';
 /**
  * The PaginatedVersions model module.
  * @module model/PaginatedVersions
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedVersions {
     /**

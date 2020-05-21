@@ -20,7 +20,7 @@ import SnippetCommentAllOf from './SnippetCommentAllOf';
 /**
  * The SnippetComment model module.
  * @module model/SnippetComment
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SnippetComment {
     /**

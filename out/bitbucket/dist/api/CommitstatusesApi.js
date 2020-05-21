@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Commitstatuses service.
 * @module api/CommitstatusesApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var CommitstatusesApi =
-/*#__PURE__*/
-function () {
+var CommitstatusesApi = /*#__PURE__*/function () {
   /**
   * Constructs a new CommitstatusesApi. 
   * @alias module:api/CommitstatusesApi
@@ -225,13 +223,17 @@ function () {
      * @param {String} node The commit's SHA1.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+     * @param {String} opts.sort Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
      * @param {module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugCommitNodeStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCommitstatuses}
      */
 
   }, {
     key: "repositoriesWorkspaceRepoSlugCommitNodeStatusesGet",
-    value: function repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, callback) {
+    value: function repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, opts, callback) {
+      opts = opts || {};
       var postBody = null; // verify the required parameter 'node' is set
 
       if (node === undefined || node === null) {
@@ -253,7 +255,10 @@ function () {
         'workspace': workspace,
         'repo_slug': repoSlug
       };
-      var queryParams = {};
+      var queryParams = {
+        'q': opts['q'],
+        'sort': opts['sort']
+      };
       var headerParams = {};
       var formParams = {};
       var authNames = ['api_key', 'basic', 'oauth2'];
@@ -275,13 +280,17 @@ function () {
      * @param {Number} pullRequestId The id of the pull request.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+     * @param {String} opts.sort Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
      * @param {module:api/CommitstatusesApi~repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCommitstatuses}
      */
 
   }, {
     key: "repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet",
-    value: function repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, callback) {
+    value: function repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, opts, callback) {
+      opts = opts || {};
       var postBody = null; // verify the required parameter 'pullRequestId' is set
 
       if (pullRequestId === undefined || pullRequestId === null) {
@@ -303,7 +312,10 @@ function () {
         'workspace': workspace,
         'repo_slug': repoSlug
       };
-      var queryParams = {};
+      var queryParams = {
+        'q': opts['q'],
+        'sort': opts['sort']
+      };
       var headerParams = {};
       var formParams = {};
       var authNames = ['api_key', 'basic', 'oauth2'];

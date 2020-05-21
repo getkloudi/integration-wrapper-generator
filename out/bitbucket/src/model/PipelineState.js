@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The PipelineState model module.
  * @module model/PipelineState
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineState {
     /**

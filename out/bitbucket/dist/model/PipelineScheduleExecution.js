@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineScheduleExecution model module.
  * @module model/PipelineScheduleExecution
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineScheduleExecution =
-/*#__PURE__*/
-function () {
+var PipelineScheduleExecution = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineScheduleExecution</code>.
    * @alias module:model/PipelineScheduleExecution

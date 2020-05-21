@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentStateCompletedStatusFailedAllOf model module.
  * @module model/DeploymentStateCompletedStatusFailedAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentStateCompletedStatusFailedAllOf =
-/*#__PURE__*/
-function () {
+var DeploymentStateCompletedStatusFailedAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentStateCompletedStatusFailedAllOf</code>.
    * A FAILED completed deployment status.

@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Version model module.
  * @module model/Version
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Version =
-/*#__PURE__*/
-function () {
+var Version = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Version</code>.
    * @alias module:model/Version

@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Downloads service.
 * @module api/DownloadsApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var DownloadsApi =
-/*#__PURE__*/
-function () {
+var DownloadsApi = /*#__PURE__*/function () {
   /**
   * Constructs a new DownloadsApi. 
   * @alias module:api/DownloadsApi

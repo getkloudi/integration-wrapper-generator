@@ -19,7 +19,7 @@ import SnippetAllOf from './SnippetAllOf';
 /**
  * The Snippet model module.
  * @module model/Snippet
- * @version 1.1.2
+ * @version 1.2.0
  */
 class Snippet {
     /**

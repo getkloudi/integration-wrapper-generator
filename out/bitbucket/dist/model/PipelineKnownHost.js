@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineKnownHost model module.
  * @module model/PipelineKnownHost
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineKnownHost =
-/*#__PURE__*/
-function () {
+var PipelineKnownHost = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineKnownHost</code>.
    * @alias module:model/PipelineKnownHost

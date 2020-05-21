@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueAttachment model module.
  * @module model/IssueAttachment
- * @version 1.1.2
+ * @version 1.2.0
  */
-var IssueAttachment =
-/*#__PURE__*/
-function () {
+var IssueAttachment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>IssueAttachment</code>.
    * @alias module:model/IssueAttachment

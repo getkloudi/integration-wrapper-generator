@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PipelineStepStateInProgressAllOf model module.
  * @module model/PipelineStepStateInProgressAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStepStateInProgressAllOf {
     /**

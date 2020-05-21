@@ -17,7 +17,7 @@ import Pullrequest from './Pullrequest';
 /**
  * The PullrequestCommentAllOf model module.
  * @module model/PullrequestCommentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PullrequestCommentAllOf {
     /**

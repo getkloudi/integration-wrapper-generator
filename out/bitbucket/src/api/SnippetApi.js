@@ -18,7 +18,7 @@ import Error from '../model/Error';
 /**
 * Snippet service.
 * @module api/SnippetApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class SnippetApi {
 

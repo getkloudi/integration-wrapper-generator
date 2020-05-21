@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Team model module.
  * @module model/Team
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Team =
-/*#__PURE__*/
-function () {
+var Team = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Team</code>.
    * @alias module:model/Team

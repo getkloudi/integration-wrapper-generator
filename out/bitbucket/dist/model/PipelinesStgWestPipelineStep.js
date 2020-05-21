@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelinesStgWestPipelineStep model module.
  * @module model/PipelinesStgWestPipelineStep
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelinesStgWestPipelineStep =
-/*#__PURE__*/
-function () {
+var PipelinesStgWestPipelineStep = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelinesStgWestPipelineStep</code>.
    * @alias module:model/PipelinesStgWestPipelineStep

@@ -28,11 +28,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineAllOf model module.
  * @module model/PipelineAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineAllOf =
-/*#__PURE__*/
-function () {
+var PipelineAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineAllOf</code>.
    * A Bitbucket Pipeline. This represents an actual pipeline result.

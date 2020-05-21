@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchingModelAllOf model module.
  * @module model/BranchingModelAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var BranchingModelAllOf =
-/*#__PURE__*/
-function () {
+var BranchingModelAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BranchingModelAllOf</code>.
    * A repository&#39;s branching model

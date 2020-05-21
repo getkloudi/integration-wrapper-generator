@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineErrorAllOf model module.
  * @module model/PipelineErrorAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineErrorAllOf =
-/*#__PURE__*/
-function () {
+var PipelineErrorAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineErrorAllOf</code>.
    * An error causing a pipeline failure.

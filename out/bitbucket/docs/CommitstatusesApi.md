@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## repositoriesWorkspaceRepoSlugCommitNodeStatusesGet
 
-> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug)
+> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, opts)
 
 
 
@@ -240,7 +240,11 @@ let apiInstance = new Bitbucket.CommitstatusesApi();
 let node = "node_example"; // String | The commit's SHA1.
 let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, (error, data, response) => {
+let opts = {
+  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
+};
+apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -257,6 +261,8 @@ Name | Type | Description  | Notes
  **node** | **String**| The commit&#39;s SHA1. | 
  **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
+ **q** | **String**| Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).  | [optional] 
+ **sort** | **String**| Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to &#x60;created_on&#x60;.  | [optional] 
 
 ### Return type
 
@@ -274,7 +280,7 @@ Name | Type | Description  | Notes
 
 ## repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet
 
-> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug)
+> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, opts)
 
 
 
@@ -302,7 +308,11 @@ let apiInstance = new Bitbucket.CommitstatusesApi();
 let pullRequestId = 56; // Number | The id of the pull request.
 let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, (error, data, response) => {
+let opts = {
+  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
+};
+apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -319,6 +329,8 @@ Name | Type | Description  | Notes
  **pullRequestId** | **Number**| The id of the pull request. | 
  **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
+ **q** | **String**| Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).  | [optional] 
+ **sort** | **String**| Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to &#x60;created_on&#x60;.  | [optional] 
 
 ### Return type
 

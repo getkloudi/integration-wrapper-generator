@@ -20,7 +20,7 @@ import SshKey from './SshKey';
 /**
  * The SshAccountKey model module.
  * @module model/SshAccountKey
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SshAccountKey {
     /**

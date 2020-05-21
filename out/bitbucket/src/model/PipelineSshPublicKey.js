@@ -18,7 +18,7 @@ import PipelineSshPublicKeyAllOf from './PipelineSshPublicKeyAllOf';
 /**
  * The PipelineSshPublicKey model module.
  * @module model/PipelineSshPublicKey
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineSshPublicKey {
     /**

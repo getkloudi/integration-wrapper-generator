@@ -26,11 +26,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BaseCommit model module.
  * @module model/BaseCommit
- * @version 1.1.2
+ * @version 1.2.0
  */
-var BaseCommit =
-/*#__PURE__*/
-function () {
+var BaseCommit = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BaseCommit</code>.
    * @alias module:model/BaseCommit

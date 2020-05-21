@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStateInProgressAllOf model module.
  * @module model/PipelineStepStateInProgressAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStepStateInProgressAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStepStateInProgressAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStepStateInProgressAllOf</code>.
    * A Bitbucket Pipelines IN_PROGRESS pipeline step state.

@@ -23,7 +23,7 @@ import User from './User';
 /**
  * The PullrequestComment model module.
  * @module model/PullrequestComment
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PullrequestComment {
     /**

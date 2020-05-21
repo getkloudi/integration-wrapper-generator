@@ -18,7 +18,7 @@ import DeploymentStateUndeployedAllOf from './DeploymentStateUndeployedAllOf';
 /**
  * The DeploymentStateUndeployed model module.
  * @module model/DeploymentStateUndeployed
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentStateUndeployed {
     /**

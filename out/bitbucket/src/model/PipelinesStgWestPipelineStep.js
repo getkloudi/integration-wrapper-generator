@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The PipelinesStgWestPipelineStep model module.
  * @module model/PipelinesStgWestPipelineStep
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelinesStgWestPipelineStep {
     /**

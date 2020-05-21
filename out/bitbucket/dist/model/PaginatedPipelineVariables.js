@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedPipelineVariables model module.
  * @module model/PaginatedPipelineVariables
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedPipelineVariables =
-/*#__PURE__*/
-function () {
+var PaginatedPipelineVariables = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedPipelineVariables</code>.
    * A paged list of variables.

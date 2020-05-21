@@ -21,6 +21,11 @@ Method | HTTP request | Description
 [**usersUsernameHooksUidDelete**](WebhooksApi.md#usersUsernameHooksUidDelete) | **DELETE** /users/{username}/hooks/{uid} | 
 [**usersUsernameHooksUidGet**](WebhooksApi.md#usersUsernameHooksUidGet) | **GET** /users/{username}/hooks/{uid} | 
 [**usersUsernameHooksUidPut**](WebhooksApi.md#usersUsernameHooksUidPut) | **PUT** /users/{username}/hooks/{uid} | 
+[**workspacesWorkspaceHooksGet**](WebhooksApi.md#workspacesWorkspaceHooksGet) | **GET** /workspaces/{workspace}/hooks | 
+[**workspacesWorkspaceHooksPost**](WebhooksApi.md#workspacesWorkspaceHooksPost) | **POST** /workspaces/{workspace}/hooks | 
+[**workspacesWorkspaceHooksUidDelete**](WebhooksApi.md#workspacesWorkspaceHooksUidDelete) | **DELETE** /workspaces/{workspace}/hooks/{uid} | 
+[**workspacesWorkspaceHooksUidGet**](WebhooksApi.md#workspacesWorkspaceHooksUidGet) | **GET** /workspaces/{workspace}/hooks/{uid} | 
+[**workspacesWorkspaceHooksUidPut**](WebhooksApi.md#workspacesWorkspaceHooksUidPut) | **PUT** /workspaces/{workspace}/hooks/{uid} | 
 
 
 
@@ -198,7 +203,7 @@ Name | Type | Description  | Notes
 
 ## repositoriesWorkspaceRepoSlugHooksPost
 
-> WebhookSubscription repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, body)
+> WebhookSubscription repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug)
 
 
 
@@ -225,8 +230,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Bitbucket.WebhooksApi();
 let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-let body = new Bitbucket.HookBody(); // HookBody | 
-apiInstance.repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, body, (error, data, response) => {
+apiInstance.repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -242,7 +246,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
- **body** | **HookBody**|  | 
 
 ### Return type
 
@@ -254,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -1020,6 +1023,302 @@ apiInstance.usersUsernameHooksUidPut(username, uid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| This can either be the username or the UUID of the account, surrounded by curly-braces, for example: &#x60;{account UUID}&#x60;. An account is either a team or user.  | 
+ **uid** | **String**| The installed webhook&#39;s id | 
+
+### Return type
+
+[**WebhookSubscription**](WebhookSubscription.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [basic](../README.md#basic), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## workspacesWorkspaceHooksGet
+
+> PaginatedWebhookSubscriptions workspacesWorkspaceHooksGet(workspace)
+
+
+
+Returns a paginated list of webhooks installed on this workspace.
+
+### Example
+
+```javascript
+import Bitbucket from 'bitbucket';
+let defaultClient = Bitbucket.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
+// Configure OAuth2 access token for authorization: oauth2
+let oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new Bitbucket.WebhooksApi();
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+apiInstance.workspacesWorkspaceHooksGet(workspace, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+
+### Return type
+
+[**PaginatedWebhookSubscriptions**](PaginatedWebhookSubscriptions.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [basic](../README.md#basic), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## workspacesWorkspaceHooksPost
+
+> WebhookSubscription workspacesWorkspaceHooksPost(workspace)
+
+
+
+Creates a new webhook on the specified workspace.  Workspace webhooks are fired for events from all repositories contained by that workspace.  Note that only owners can install webhooks on workspaces.
+
+### Example
+
+```javascript
+import Bitbucket from 'bitbucket';
+let defaultClient = Bitbucket.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
+// Configure OAuth2 access token for authorization: oauth2
+let oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new Bitbucket.WebhooksApi();
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+apiInstance.workspacesWorkspaceHooksPost(workspace, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+
+### Return type
+
+[**WebhookSubscription**](WebhookSubscription.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [basic](../README.md#basic), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## workspacesWorkspaceHooksUidDelete
+
+> workspacesWorkspaceHooksUidDelete(workspace, uid)
+
+
+
+Deletes the specified webhook subscription from the given workspace.
+
+### Example
+
+```javascript
+import Bitbucket from 'bitbucket';
+let defaultClient = Bitbucket.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
+// Configure OAuth2 access token for authorization: oauth2
+let oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new Bitbucket.WebhooksApi();
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let uid = "uid_example"; // String | The installed webhook's id
+apiInstance.workspacesWorkspaceHooksUidDelete(workspace, uid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **uid** | **String**| The installed webhook&#39;s id | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key), [basic](../README.md#basic), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## workspacesWorkspaceHooksUidGet
+
+> WebhookSubscription workspacesWorkspaceHooksUidGet(workspace, uid)
+
+
+
+Returns the webhook with the specified id installed on the given workspace.
+
+### Example
+
+```javascript
+import Bitbucket from 'bitbucket';
+let defaultClient = Bitbucket.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
+// Configure OAuth2 access token for authorization: oauth2
+let oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new Bitbucket.WebhooksApi();
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let uid = "uid_example"; // String | The installed webhook's id.
+apiInstance.workspacesWorkspaceHooksUidGet(workspace, uid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
+ **uid** | **String**| The installed webhook&#39;s id. | 
+
+### Return type
+
+[**WebhookSubscription**](WebhookSubscription.md)
+
+### Authorization
+
+[api_key](../README.md#api_key), [basic](../README.md#basic), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## workspacesWorkspaceHooksUidPut
+
+> WebhookSubscription workspacesWorkspaceHooksUidPut(workspace, uid)
+
+
+
+Updates the specified webhook subscription.  The following properties can be mutated:  * &#x60;description&#x60; * &#x60;url&#x60; * &#x60;active&#x60; * &#x60;events&#x60;
+
+### Example
+
+```javascript
+import Bitbucket from 'bitbucket';
+let defaultClient = Bitbucket.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+// Configure HTTP basic authorization: basic
+let basic = defaultClient.authentications['basic'];
+basic.username = 'YOUR USERNAME';
+basic.password = 'YOUR PASSWORD';
+// Configure OAuth2 access token for authorization: oauth2
+let oauth2 = defaultClient.authentications['oauth2'];
+oauth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new Bitbucket.WebhooksApi();
+let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+let uid = "uid_example"; // String | The installed webhook's id
+apiInstance.workspacesWorkspaceHooksUidPut(workspace, uid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **uid** | **String**| The installed webhook&#39;s id | 
 
 ### Return type

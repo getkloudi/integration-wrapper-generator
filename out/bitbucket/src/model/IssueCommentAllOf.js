@@ -17,7 +17,7 @@ import Issue from './Issue';
 /**
  * The IssueCommentAllOf model module.
  * @module model/IssueCommentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class IssueCommentAllOf {
     /**

@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Addon service.
 * @module api/AddonApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var AddonApi =
-/*#__PURE__*/
-function () {
+var AddonApi = /*#__PURE__*/function () {
   /**
   * Constructs a new AddonApi. 
   * @alias module:api/AddonApi
@@ -41,13 +39,13 @@ function () {
    * Callback function to receive the result of the addonDelete operation.
    * @callback module:api/AddonApi~addonDeleteCallback
    * @param {String} error Error message, if any.
-   * @param {module:model/Error} data The data returned by the service call.
+   * @param data This operation does not return a value.
    * @param {String} response The complete HTTP response.
    */
 
   /**
+   * Deletes the application for the user.  This endpoint is intended to be used by Bitbucket Connect apps and only supports JWT authentication -- that is how Bitbucket identifies the particular installation of the app. Developers with applications registered in the \"Develop Apps\" section of Bitbucket Marketplace need not use this endpoint as updates for those applications can be sent out via the UI of that section.  ``` $ curl -X DELETE https://api.bitbucket.org/2.0/addon \\   -H \"Authorization: JWT <JWT Token>\" ```
    * @param {module:api/AddonApi~addonDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-   * data is of type: {@link module:model/Error}
    */
 
 
@@ -62,7 +60,7 @@ function () {
       var authNames = ['api_key', 'basic', 'oauth2'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Error["default"];
+      var returnType = null;
       return this.apiClient.callApi('/addon', 'DELETE', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
@@ -341,13 +339,13 @@ function () {
      * Callback function to receive the result of the addonPut operation.
      * @callback module:api/AddonApi~addonPutCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Error} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
     /**
+     * Updates the application installation for the user.  This endpoint is intended to be used by Bitbucket Connect apps and only supports JWT authentication -- that is how Bitbucket identifies the particular installation of the app. Developers with applications registered in the \"Develop Apps\" section of Bitbucket Marketplace need not use this endpoint as updates for those applications can be sent out via the UI of that section.  A new, valid descriptor must be provided in the body of the PUT request.  ``` $ curl -X PUT https://api.bitbucket.org/2.0/addon \\   -H \"Authorization: JWT <JWT Token>\" \\   --header \"Content-Type: application/json\" \\   --data '{\"descriptor\": $NEW_DESCRIPTOR}' ```  Note that the scopes of the application cannot be increased in the new descriptor nor reduced to none.
      * @param {module:api/AddonApi~addonPutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Error}
      */
 
   }, {
@@ -361,7 +359,7 @@ function () {
       var authNames = ['api_key', 'basic', 'oauth2'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Error["default"];
+      var returnType = null;
       return this.apiClient.callApi('/addon', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**

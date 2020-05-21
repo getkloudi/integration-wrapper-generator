@@ -17,7 +17,7 @@ import BranchingModelSettingsAllOfLinks from './BranchingModelSettingsAllOfLinks
 /**
  * The MilestoneAllOf model module.
  * @module model/MilestoneAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class MilestoneAllOf {
     /**

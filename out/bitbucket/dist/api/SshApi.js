@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Ssh service.
 * @module api/SshApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var SshApi =
-/*#__PURE__*/
-function () {
+var SshApi = /*#__PURE__*/function () {
   /**
   * Constructs a new SshApi. 
   * @alias module:api/SshApi
@@ -88,6 +86,42 @@ function () {
      * Callback function to receive the result of the usersUsernameSshKeysGet operation.
      * @callback module:api/SshApi~usersUsernameSshKeysGetCallback
      * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedSshUserKeys} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns a paginated list of the user's SSH public keys.  Example:  ``` $ curl https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys {     \"page\": 1,     \"pagelen\": 10,     \"size\": 1,     \"values\": [         {             \"comment\": \"user@myhost\",             \"created_on\": \"2018-03-14T13:17:05.196003+00:00\",             \"key\": \"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqP3Cr632C2dNhhgKVcon4ldUSAeKiku2yP9O9/bDtY\",             \"label\": \"\",             \"last_used\": \"2018-03-20T13:18:05.196003+00:00\",             \"links\": {                 \"self\": {                     \"href\": \"https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/b15b6026-9c02-4626-b4ad-b905f99f763a\"                 }             },             \"owner\": {                 \"display_name\": \"Mark Adams\",                 \"links\": {                     \"avatar\": {                         \"href\": \"https://bitbucket.org/account/markadams-atl/avatar/32/\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/markadams-atl/\"                     },                     \"self\": {                         \"href\": \"https://api.bitbucket.org/2.0/users/markadams-atl\"                     }                 },                 \"type\": \"user\",                 \"username\": \"markadams-atl\",                 \"nickname\": \"markadams-atl\",                 \"uuid\": \"{d7dd0e2d-3994-4a50-a9ee-d260b6cefdab}\"             },             \"type\": \"ssh_key\",             \"uuid\": \"{b15b6026-9c02-4626-b4ad-b905f99f763a}\"         }     ] } ```
+     * @param {String} username The account's UUID, account_id, or username. Note that username has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
+     * @param {module:api/SshApi~usersUsernameSshKeysGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedSshUserKeys}
+     */
+
+  }, {
+    key: "usersUsernameSshKeysGet",
+    value: function usersUsernameSshKeysGet(username, callback) {
+      var postBody = null; // verify the required parameter 'username' is set
+
+      if (username === undefined || username === null) {
+        throw new _Error["default"]("Missing the required parameter 'username' when calling usersUsernameSshKeysGet");
+      }
+
+      var pathParams = {
+        'username': username
+      };
+      var queryParams = {};
+      var headerParams = {};
+      var formParams = {};
+      var authNames = ['api_key', 'basic', 'oauth2'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = _PaginatedSshUserKeys["default"];
+      return this.apiClient.callApi('/users/{username}/ssh-keys', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
+    }
+    /**
+     * Callback function to receive the result of the usersUsernameSshKeysGet_0 operation.
+     * @callback module:api/SshApi~usersUsernameSshKeysGet_0Callback
+     * @param {String} error Error message, if any.
      * @param {module:model/SshAccountKey} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
@@ -96,22 +130,22 @@ function () {
      * Returns a specific SSH public key belonging to a user.  Example: ``` $ curl https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/{fbe4bbab-f6f7-4dde-956b-5c58323c54b3}  {     \"comment\": \"user@myhost\",     \"created_on\": \"2018-03-14T13:17:05.196003+00:00\",     \"key\": \"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqP3Cr632C2dNhhgKVcon4ldUSAeKiku2yP9O9/bDtY\",     \"label\": \"\",     \"last_used\": \"2018-03-20T13:18:05.196003+00:00\",     \"links\": {         \"self\": {             \"href\": \"https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/b15b6026-9c02-4626-b4ad-b905f99f763a\"         }     },     \"owner\": {         \"display_name\": \"Mark Adams\",         \"links\": {             \"avatar\": {                 \"href\": \"https://bitbucket.org/account/markadams-atl/avatar/32/\"             },             \"html\": {                 \"href\": \"https://bitbucket.org/markadams-atl/\"             },             \"self\": {                 \"href\": \"https://api.bitbucket.org/2.0/users/markadams-atl\"             }         },         \"type\": \"user\",         \"username\": \"markadams-atl\",         \"nickname\": \"markadams-atl\",         \"uuid\": \"{d7dd0e2d-3994-4a50-a9ee-d260b6cefdab}\"     },     \"type\": \"ssh_key\",     \"uuid\": \"{b15b6026-9c02-4626-b4ad-b905f99f763a}\" } ```
      * @param {String} username The account's username or UUID.
      * @param {String} keyId The SSH key's UUID value.
-     * @param {module:api/SshApi~usersUsernameSshKeysGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/SshApi~usersUsernameSshKeysGet_0Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SshAccountKey}
      */
 
   }, {
-    key: "usersUsernameSshKeysGet",
-    value: function usersUsernameSshKeysGet(username, keyId, callback) {
+    key: "usersUsernameSshKeysGet_0",
+    value: function usersUsernameSshKeysGet_0(username, keyId, callback) {
       var postBody = null; // verify the required parameter 'username' is set
 
       if (username === undefined || username === null) {
-        throw new _Error["default"]("Missing the required parameter 'username' when calling usersUsernameSshKeysGet");
+        throw new _Error["default"]("Missing the required parameter 'username' when calling usersUsernameSshKeysGet_0");
       } // verify the required parameter 'keyId' is set
 
 
       if (keyId === undefined || keyId === null) {
-        throw new _Error["default"]("Missing the required parameter 'keyId' when calling usersUsernameSshKeysGet");
+        throw new _Error["default"]("Missing the required parameter 'keyId' when calling usersUsernameSshKeysGet_0");
       }
 
       var pathParams = {
@@ -126,42 +160,6 @@ function () {
       var accepts = ['application/json'];
       var returnType = _SshAccountKey["default"];
       return this.apiClient.callApi('/users/{username}/ssh-keys/', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
-    }
-    /**
-     * Callback function to receive the result of the usersUsernameSshKeysGet_0 operation.
-     * @callback module:api/SshApi~usersUsernameSshKeysGet_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/PaginatedSshUserKeys} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Returns a paginated list of the user's SSH public keys.  Example:  ``` $ curl https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys {     \"page\": 1,     \"pagelen\": 10,     \"size\": 1,     \"values\": [         {             \"comment\": \"user@myhost\",             \"created_on\": \"2018-03-14T13:17:05.196003+00:00\",             \"key\": \"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqP3Cr632C2dNhhgKVcon4ldUSAeKiku2yP9O9/bDtY\",             \"label\": \"\",             \"last_used\": \"2018-03-20T13:18:05.196003+00:00\",             \"links\": {                 \"self\": {                     \"href\": \"https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/b15b6026-9c02-4626-b4ad-b905f99f763a\"                 }             },             \"owner\": {                 \"display_name\": \"Mark Adams\",                 \"links\": {                     \"avatar\": {                         \"href\": \"https://bitbucket.org/account/markadams-atl/avatar/32/\"                     },                     \"html\": {                         \"href\": \"https://bitbucket.org/markadams-atl/\"                     },                     \"self\": {                         \"href\": \"https://api.bitbucket.org/2.0/users/markadams-atl\"                     }                 },                 \"type\": \"user\",                 \"username\": \"markadams-atl\",                 \"nickname\": \"markadams-atl\",                 \"uuid\": \"{d7dd0e2d-3994-4a50-a9ee-d260b6cefdab}\"             },             \"type\": \"ssh_key\",             \"uuid\": \"{b15b6026-9c02-4626-b4ad-b905f99f763a}\"         }     ] } ```
-     * @param {String} username The account's UUID, account_id, or username. Note that username has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
-     * @param {module:api/SshApi~usersUsernameSshKeysGet_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PaginatedSshUserKeys}
-     */
-
-  }, {
-    key: "usersUsernameSshKeysGet_0",
-    value: function usersUsernameSshKeysGet_0(username, callback) {
-      var postBody = null; // verify the required parameter 'username' is set
-
-      if (username === undefined || username === null) {
-        throw new _Error["default"]("Missing the required parameter 'username' when calling usersUsernameSshKeysGet_0");
-      }
-
-      var pathParams = {
-        'username': username
-      };
-      var queryParams = {};
-      var headerParams = {};
-      var formParams = {};
-      var authNames = ['api_key', 'basic', 'oauth2'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = _PaginatedSshUserKeys["default"];
-      return this.apiClient.callApi('/users/{username}/ssh-keys', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null, callback);
     }
     /**
      * Callback function to receive the result of the usersUsernameSshKeysPost operation.

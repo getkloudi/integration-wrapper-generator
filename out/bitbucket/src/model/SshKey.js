@@ -19,7 +19,7 @@ import SshKeyAllOf from './SshKeyAllOf';
 /**
  * The SshKey model module.
  * @module model/SshKey
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SshKey {
     /**

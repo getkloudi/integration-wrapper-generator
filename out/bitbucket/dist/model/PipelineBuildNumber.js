@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineBuildNumber model module.
  * @module model/PipelineBuildNumber
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineBuildNumber =
-/*#__PURE__*/
-function () {
+var PipelineBuildNumber = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineBuildNumber</code>.
    * @alias module:model/PipelineBuildNumber

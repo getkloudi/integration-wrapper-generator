@@ -20,9 +20,11 @@ Method | HTTP request | Description
 
 ## addonDelete
 
-> Error addonDelete()
+> addonDelete()
 
 
+
+Deletes the application for the user.  This endpoint is intended to be used by Bitbucket Connect apps and only supports JWT authentication -- that is how Bitbucket identifies the particular installation of the app. Developers with applications registered in the \&quot;Develop Apps\&quot; section of Bitbucket Marketplace need not use this endpoint as updates for those applications can be sent out via the UI of that section.  &#x60;&#x60;&#x60; $ curl -X DELETE https://api.bitbucket.org/2.0/addon \\   -H \&quot;Authorization: JWT &lt;JWT Token&gt;\&quot; &#x60;&#x60;&#x60;
 
 ### Example
 
@@ -47,7 +49,7 @@ apiInstance.addonDelete((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -58,7 +60,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Error**](Error.md)
+null (empty response body)
 
 ### Authorization
 
@@ -516,9 +518,11 @@ Name | Type | Description  | Notes
 
 ## addonPut
 
-> Error addonPut()
+> addonPut()
 
 
+
+Updates the application installation for the user.  This endpoint is intended to be used by Bitbucket Connect apps and only supports JWT authentication -- that is how Bitbucket identifies the particular installation of the app. Developers with applications registered in the \&quot;Develop Apps\&quot; section of Bitbucket Marketplace need not use this endpoint as updates for those applications can be sent out via the UI of that section.  A new, valid descriptor must be provided in the body of the PUT request.  &#x60;&#x60;&#x60; $ curl -X PUT https://api.bitbucket.org/2.0/addon \\   -H \&quot;Authorization: JWT &lt;JWT Token&gt;\&quot; \\   --header \&quot;Content-Type: application/json\&quot; \\   --data &#39;{\&quot;descriptor\&quot;: $NEW_DESCRIPTOR}&#39; &#x60;&#x60;&#x60;  Note that the scopes of the application cannot be increased in the new descriptor nor reduced to none.
 
 ### Example
 
@@ -543,7 +547,7 @@ apiInstance.addonPut((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 });
 ```
@@ -554,7 +558,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Error**](Error.md)
+null (empty response body)
 
 ### Authorization
 

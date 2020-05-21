@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommitstatusAllOf model module.
  * @module model/CommitstatusAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var CommitstatusAllOf =
-/*#__PURE__*/
-function () {
+var CommitstatusAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CommitstatusAllOf</code>.
    * A commit status object.

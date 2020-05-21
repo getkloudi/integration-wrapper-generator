@@ -1,7 +1,7 @@
-const Axios = require("axios");
-const ErrorHelper = require("../../../helpers/ErrorHelper");
-const nconf = require("nconf");
-const qs = require("querystring");
+const Axios = require('axios');
+const ErrorHelper = require('../../../helpers/ErrorHelper');
+const nconf = require('nconf');
+const qs = require('querystring');
 
 /* document_link : "https://developer.atlassian.com/cloud/bitbucket/oauth-2/",
  * rfc_link: "https://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-1.3.1"
@@ -9,19 +9,19 @@ const qs = require("querystring");
  */
 
 const SCOPES = [
-  "issue:write",
-  "repository",
-  "pullrequest",
-  "team",
-  "webhook",
-  "project",
-  "account",
-  "email"
+  'issue:write',
+  'repository',
+  'pullrequest',
+  'team',
+  'webhook',
+  'project',
+  'account',
+  'email',
 ];
 
 class BitbucketService {
   get name() {
-    return "BITBUCKET";
+    return 'BITBUCKET';
   }
 
   get description() {
@@ -29,7 +29,7 @@ class BitbucketService {
   }
 
   get icon() {
-    return "bitbucket.svg";
+    return 'bitbucket.svg';
   }
 
   get category() {
@@ -37,18 +37,18 @@ class BitbucketService {
   }
 
   get apiEndpoint() {
-    return "https://api.bitbucket.org/2.0";
+    return 'https://api.bitbucket.org/2.0';
   }
 
   get authMethod() {
-    return "OAUTH2";
+    return 'OAUTH2';
   }
 
   get authEndpoint() {
     return (
       `https://bitbucket.org/site/oauth2/authorize?` +
-      `client_id=${nconf.get("BITBUCKET_CLIENT_ID")}&` +
-      `scope=${qs.escape(this.scopes.join(" "))}&` +
+      `client_id=${nconf.get('BITBUCKET_CLIENT_ID')}&` +
+      `scope=${qs.escape(this.scopes.join(' '))}&` +
       `response_type=code`
     );
   }
@@ -62,109 +62,109 @@ class BitbucketService {
   }
 
   get requiredAuthParams() {
-    return ["code"];
+    return ['code'];
   }
 
   get primaryAction() {
     return {
-      type: "HREF",
+      type: 'HREF',
       url: this.authEndpoint,
-      requiredAuthParams: this.requiredAuthParams
+      requiredAuthParams: this.requiredAuthParams,
     };
   }
 
   get webhooks() {
     return [
       // "project:updated",
-      "pullrequest:created",
-      "pullrequest:updated",
-      "pullrequest:approved",
-      "pullrequest:unapproved",
-      "pullrequest:fulfilled",
-      "pullrequest:rejected",
-      "pullrequest:comment_created",
-      "pullrequest:comment_updated",
+      'pullrequest:created',
+      'pullrequest:updated',
+      'pullrequest:approved',
+      'pullrequest:unapproved',
+      'pullrequest:fulfilled',
+      'pullrequest:rejected',
+      'pullrequest:comment_created',
+      'pullrequest:comment_updated',
       // "repo:updated"
-      "issue:comment_created",
-      "issue:created",
-      "issue:updated",
-      "repo:push"
+      'issue:comment_created',
+      'issue:created',
+      'issue:updated',
+      'repo:push',
     ];
   }
 
   get webhookToTasksMap() {
     return [
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_PR",
-        webhook: "pullrequest:created"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_PR',
+        webhook: 'pullrequest:created',
       },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_PR",
-        webhook: "pullrequest:updated"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_PR',
+        webhook: 'pullrequest:updated',
       },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_PR",
-        webhook: "pullrequest:approved"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_PR',
+        webhook: 'pullrequest:approved',
       },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_PR",
-        webhook: "pullrequest:unapproved"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_PR',
+        webhook: 'pullrequest:unapproved',
       },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_PR",
-        webhook: "pullrequest:fulfilled"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_PR',
+        webhook: 'pullrequest:fulfilled',
       },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_PR",
-        webhook: "pullrequest:rejected"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_PR',
+        webhook: 'pullrequest:rejected',
       },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_PR",
-        webhook: "pullrequest:comment_created"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_PR',
+        webhook: 'pullrequest:comment_created',
       },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_PR",
-        webhook: "pullrequest:comment_updated"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_PR',
+        webhook: 'pullrequest:comment_updated',
       },
-      { name: "task.pepper.SYNC_BITBUCKET_COMMITS", webhook: "repo:push" },
+      { name: 'task.pepper.SYNC_BITBUCKET_COMMITS', webhook: 'repo:push' },
       {
-        name: "task.pepper.SYNC_BITBUCKET_TEAM_MEMBERS",
-        webhook: "repo:push"
+        name: 'task.pepper.SYNC_BITBUCKET_TEAM_MEMBERS',
+        webhook: 'repo:push',
       },
       // { name: "", webhook: "repo:updated" },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_ISSUE",
-        webhook: "issue:created"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_ISSUE',
+        webhook: 'issue:created',
       },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_ISSUE",
-        webhook: "issue:updated"
+        name: 'task.thirdParty.UPDATE_BITBUCKET_ISSUE',
+        webhook: 'issue:updated',
       },
       {
-        name: "task.thirdParty.UPDATE_BITBUCKET_ISSUE",
-        webhook: "issue:comment_created"
-      }
+        name: 'task.thirdParty.UPDATE_BITBUCKET_ISSUE',
+        webhook: 'issue:comment_created',
+      },
     ];
   }
 
   get entities() {
     return [
-      "PROJECTS",
-      "REPOS",
-      "MEMBERS",
-      "TEAMS",
+      'PROJECTS',
+      'REPOS',
+      'MEMBERS',
+      'TEAMS',
       // PRs- https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Busername%7D/%7Brepo_slug%7D/pullrequests
       // PR from ID- https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Busername%7D/%7Brepo_slug%7D/pullrequests/%7Bpull_request_id%7D
-      "PULL_REQUESTS",
+      'PULL_REQUESTS',
       // Comments for an PR- https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Busername%7D/%7Brepo_slug%7D/pullrequests/%7Bpull_request_id%7D/comments
-      "PULL_REQUEST_COMMENTS",
+      'PULL_REQUEST_COMMENTS',
       // Commit for an PR- https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Busername%7D/%7Brepo_slug%7D/pullrequests/%7Bpull_request_id%7D/commits
-      "PULL_REQUEST_COMMITS",
+      'PULL_REQUEST_COMMITS',
       // Issues- https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Busername%7D/%7Brepo_slug%7D/issues
       // Issue from ID- https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Busername%7D/%7Brepo_slug%7D/issues/%7Bissue_id%7D
-      "ISSUES",
+      'ISSUES',
       // Comments for an issue- https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Busername%7D/%7Brepo_slug%7D/issues/%7Bissue_id%7D/comments
-      "ISSUE_COMMENTS"
+      'ISSUE_COMMENTS',
     ];
   }
 
@@ -173,16 +173,16 @@ class BitbucketService {
      * https://developer.atlassian.com/bitbucket/api/2/reference/meta/authentication
      */
     const res = await Axios.default.post(
-      "https://bitbucket.org/site/oauth2/access_token",
+      'https://bitbucket.org/site/oauth2/access_token',
       qs.stringify({
-        grant_type: "refresh_token",
-        refresh_token: integration.authRefreshToken
+        grant_type: 'refresh_token',
+        refresh_token: integration.authRefreshToken,
       }),
       {
         auth: {
-          username: nconf.get("BITBUCKET_CLIENT_ID"),
-          password: nconf.get("BITBUCKET_CLIENT_SECRET")
-        }
+          username: nconf.get('BITBUCKET_CLIENT_ID'),
+          password: nconf.get('BITBUCKET_CLIENT_SECRET'),
+        },
       }
     );
     return res.data.access_token;
@@ -192,7 +192,7 @@ class BitbucketService {
     if (!response.body.next) return;
     else
       return Object.fromEntries(
-        new URLSearchParams(require("url").parse(response.body.next).query)
+        new URLSearchParams(require('url').parse(response.body.next).query)
       );
   }
 
@@ -201,34 +201,34 @@ class BitbucketService {
      * https://developer.atlassian.com/bitbucket/api/2/reference/meta/authentication
      */
     const authRes = await Axios.default.post(
-      "https://bitbucket.org/site/oauth2/access_token",
+      'https://bitbucket.org/site/oauth2/access_token',
       qs.stringify({
-        grant_type: "authorization_code",
-        code: authParams.code
+        grant_type: 'authorization_code',
+        code: authParams.code,
       }),
       {
         auth: {
-          username: nconf.get("BITBUCKET_CLIENT_ID"),
-          password: nconf.get("BITBUCKET_CLIENT_SECRET")
-        }
+          username: nconf.get('BITBUCKET_CLIENT_ID'),
+          password: nconf.get('BITBUCKET_CLIENT_SECRET'),
+        },
       }
     );
-    const user = await this.get("USER", {
-      accessToken: authRes.data.access_token
+    const user = await this.get('USER', {
+      accessToken: authRes.data.access_token,
     });
 
     let teamUsernames = [],
       incomingOptions = { opts: {} };
     while (true) {
-      const teams = await this.get("TEAMS", {
+      const teams = await this.get('TEAMS', {
         accessToken: authRes.data.access_token,
-        opts: { role: "contributor" }
+        opts: { role: 'contributor' },
       });
       incomingOptions.opts = this.getNextPaginationURIFromResponse(
         teams.response
       );
       teamUsernames = teamUsernames.concat(
-        teams.data.values.map(item => item.username)
+        teams.data.values.map((item) => item.username)
       );
       if (!incomingOptions.opts || !incomingOptions.opts.page) break;
     }
@@ -240,8 +240,8 @@ class BitbucketService {
         username: user.data.username,
         uuid: user.data.uuid,
         team: { usernames: teamUsernames },
-        authAccessTokenExpiresAt: Date.now() + authRes.data.expires_in * 1000
-      }
+        authAccessTokenExpiresAt: Date.now() + authRes.data.expires_in * 1000,
+      },
     };
   }
 
@@ -251,9 +251,9 @@ class BitbucketService {
       repos = [];
 
     while (true) {
-      res = await this.get("REPOSITORIES_WORKSPACE", {
+      res = await this.get('REPOSITORIES_WORKSPACE', {
         ...incomingOptions,
-        workspace: incomingOptions.username
+        workspace: incomingOptions.username,
       });
       incomingOptions.opts = this.getNextPaginationURIFromResponse(
         res.response
@@ -265,9 +265,9 @@ class BitbucketService {
     for (const username of incomingOptions.team.usernames) {
       incomingOptions.opts = options;
       while (true) {
-        res = await this.get("REPOSITORIES_WORKSPACE", {
+        res = await this.get('REPOSITORIES_WORKSPACE', {
           ...incomingOptions,
-          workspace: username
+          workspace: username,
         });
         incomingOptions.opts = this.getNextPaginationURIFromResponse(
           res.response
@@ -276,7 +276,7 @@ class BitbucketService {
         if (!incomingOptions.opts || !incomingOptions.opts.page) break;
       }
     }
-    repos.sort(function(a, b) {
+    repos.sort(function (a, b) {
       if (a.updated_on > b.updated_on) return -1;
       else if (a.updated_on < b.updated_on) return 1;
       else return 0;
@@ -288,40 +288,40 @@ class BitbucketService {
     let data, res;
 
     res = await this.get(
-      "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS",
+      'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS',
       incomingOptions
     );
     data = res.data.values;
     const webhooks = data.filter(
-      item =>
+      (item) =>
         item.url === incomingOptions.body.webhookURL &&
         item.events.sort().toString() ===
           incomingOptions.body.webhookEvents.sort().toString()
     );
-    if (webhooks && webhooks.length > 0) return "Ok";
+    if (webhooks && webhooks.length > 0) return 'Ok';
 
     const body = {
-      description: "Webhook for Kloudi",
+      description: 'Webhook for Kloudi',
       active: true,
       events: incomingOptions.body.webhookEvents,
-      url: incomingOptions.body.webhookURL
+      url: incomingOptions.body.webhookURL,
     };
     delete incomingOptions.body;
     try {
-      res = await this.post("REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS", {
+      res = await this.post('REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS', {
         body: body,
-        ...incomingOptions
+        ...incomingOptions,
       });
     } catch (err) {
     } finally {
-      if (res.response.status == 201) return "Ok";
-      else return "ERROR";
+      if (res.response.status == 201) return 'Ok';
+      else return 'ERROR';
     }
   }
 
   async syncIntegrationEntities(integration, incomingOptions) {
-    const taskUri = nconf.get("TASK_API_URI");
-    const authToken = nconf.get("PEPPER_TASK_API_ACCESS_TOKEN");
+    const taskUri = nconf.get('TASK_API_URI');
+    const authToken = nconf.get('PEPPER_TASK_API_ACCESS_TOKEN');
 
     try {
       //TODO: Add custom syncIntegrationEntities functionality here
@@ -329,33 +329,33 @@ class BitbucketService {
         taskUri,
         {
           pepper_task: [
-            "task.pepper.SYNC_BITBUCKET_TEAM_MEMBERS",
-            "task.pepper.SYNC_BITBUCKET_PRS",
-            "task.pepper.SYNC_BITBUCKET_COMMITS"
+            'task.pepper.SYNC_BITBUCKET_TEAM_MEMBERS',
+            'task.pepper.SYNC_BITBUCKET_PRS',
+            'task.pepper.SYNC_BITBUCKET_COMMITS',
           ],
           project_id: incomingOptions.projectId,
           user_id: incomingOptions.userId,
           third_party_project_id: incomingOptions.repoSlug,
           third_party_organization_id: incomingOptions.workspace,
           bitbucket_username: incomingOptions.username,
-          repo_endpoint: `${incomingOptions.workspace}/${incomingOptions.repoSlug}`
+          repo_endpoint: `${incomingOptions.workspace}/${incomingOptions.repoSlug}`,
         },
         {
           headers: {
-            Authorization: authToken
-          }
+            Authorization: authToken,
+          },
         }
       );
-      return "Ok";
+      return 'Ok';
     } catch (error) {
       console.error(error.response || error);
-      return "ERROR";
+      return 'ERROR';
     }
   }
 
   async get(entity, options) {
     switch (entity) {
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_FILEHISTORY_NODE_PATH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_FILEHISTORY_NODE_PATH':
         /*
 
 
@@ -377,7 +377,7 @@ Returns a paginated list of commits that modified the specified file.  Commits a
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_SRC":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_SRC':
         /*
 
 
@@ -399,7 +399,7 @@ This endpoint redirects the client to the directory listing of the root director
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_SRC_NODE_PATH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_SRC_NODE_PATH':
         /*
 
 
@@ -421,7 +421,198 @@ This endpoints is used to retrieve the contents of a single file, or the content
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCHING_MODEL":
+      case 'USER_PERMISSIONS_WORKSPACES':
+        /*
+
+
+
+Returns an object for each workspace the caller is a member of, and their effective role - the highest level of privilege the caller has. If a user is a member of multiple groups with distinct roles, only the highest level is returned.  Permissions can be:  * &#x60;owner&#x60; * &#x60;collaborator&#x60; * &#x60;member&#x60;  Example:  &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/user/permissions/workspaces  {   \&quot;pagelen\&quot;: 10,   \&quot;page\&quot;: 1,   \&quot;size\&quot;: 1,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;workspace_membership\&quot;,       \&quot;permission\&quot;: \&quot;owner\&quot;,       \&quot;last_accessed\&quot;: \&quot;2019-03-07T12:35:02.900024+00:00\&quot;,       \&quot;added_on\&quot;: \&quot;2018-10-11T17:42:02.961424+00:00\&quot;,        \&quot;user\&quot;: {         \&quot;type\&quot;: \&quot;user\&quot;,         \&quot;uuid\&quot;: \&quot;{470c176d-3574-44ea-bb41-89e8638bcca4}\&quot;,         \&quot;nickname\&quot;: \&quot;evzijst\&quot;,         \&quot;display_name\&quot;: \&quot;Erik van Zijst\&quot;,       },        \&quot;workspace\&quot;: {         \&quot;type\&quot;: \&quot;workspace\&quot;,         \&quot;uuid\&quot;: \&quot;{a15fb181-db1f-48f7-b41f-e1eff06929d6}\&quot;,         \&quot;slug\&quot;: \&quot;bitbucket\&quot;,         \&quot;name\&quot;: \&quot;Atlassian Bitbucket\&quot;,       }     }   ] } &#x60;&#x60;&#x60;  Results may be further [filtered or sorted](../../../meta/filtering) by workspace or permission by adding the following query string parameters:  * &#x60;q&#x3D;workspace.slug&#x3D;\&quot;bitbucket\&quot;&#x60; or &#x60;q&#x3D;permission&#x3D;\&quot;owner\&quot;&#x60; * &#x60;sort&#x3D;workspace.slug&#x60;  Note that the query parameter values need to be URL escaped so that &#x60;&#x3D;&#x60; would become &#x60;%3D&#x60;.
+
+
+      Function parameters for this API
+        */
+        return new Promise((resolve, reject) => {
+          this.userPermissionsWorkspacesGet(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'WORKSPACES':
+        /*
+
+
+
+
+      Function parameters for this API
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesGet(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'WORKSPACES_WORKSPACE':
+        /*
+
+
+
+
+      Function parameters for this API workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceGet(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'WORKSPACES_WORKSPACE_HOOKS':
+        /*
+
+
+
+Returns a paginated list of webhooks installed on this workspace.
+
+
+      Function parameters for this API workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksGet(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'WORKSPACES_WORKSPACE_HOOKS_UID':
+        /*
+
+
+
+Returns the webhook with the specified id installed on the given workspace.
+
+
+      Function parameters for this API workspace,uid
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksUidGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'WORKSPACES_WORKSPACE_MEMBERS':
+        /*
+
+
+
+
+      Function parameters for this API workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceMembersGet(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'WORKSPACES_WORKSPACE_MEMBERS_MEMBER':
+        /*
+
+
+
+
+      Function parameters for this API member,workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceMembersMemberGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'WORKSPACES_WORKSPACE_PERMISSIONS':
+        /*
+
+
+
+
+      Function parameters for this API workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspacePermissionsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'WORKSPACES_WORKSPACE_PROJECTS':
+        /*
+
+
+
+
+      Function parameters for this API workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceProjectsGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'WORKSPACES_WORKSPACE_PROJECTS_PROJECT_KEY':
+        /*
+
+
+
+
+      Function parameters for this API projectKey,workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceProjectsProjectKeyGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCHING_MODEL':
         /*
 
 
@@ -443,7 +634,7 @@ Return the branching model as applied to the repository. This view is read-only.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCHING_MODEL_SETTINGS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCHING_MODEL_SETTINGS':
         /*
 
 
@@ -465,7 +656,7 @@ Return the branching model configuration for a repository. The returned object: 
           );
         });
 
-      case "TEAMS_USERNAME_REPOSITORIES":
+      case 'TEAMS_USERNAME_REPOSITORIES':
         /*
 
 
@@ -484,7 +675,7 @@ All repositories owned by a user/team. This includes private repositories, but f
           });
         });
 
-      case "USER_EMAILS_EMAIL":
+      case 'USER_EMAILS_EMAIL':
         /*
 
 
@@ -503,7 +694,7 @@ Returns details about a specific one of the authenticated user&#39;s email addre
           });
         });
 
-      case "USER_EMAILS":
+      case 'USER_EMAILS':
         /*
 
 
@@ -522,7 +713,7 @@ Returns all the authenticated user&#39;s email addresses. Both confirmed and unc
           });
         });
 
-      case "USER":
+      case 'USER':
         /*
 
 
@@ -541,7 +732,7 @@ Returns the currently logged in user.
           });
         });
 
-      case "USERS_USERNAME_FOLLOWERS":
+      case 'USERS_USERNAME_FOLLOWERS':
         /*
 
 
@@ -560,7 +751,7 @@ Returns the list of accounts that are following this user.  This operation has b
           });
         });
 
-      case "USERS_USERNAME_FOLLOWING":
+      case 'USERS_USERNAME_FOLLOWING':
         /*
 
 
@@ -579,7 +770,7 @@ Returns the list of accounts this user is following.  This operation has been de
           });
         });
 
-      case "USERS_USERNAME":
+      case 'USERS_USERNAME':
         /*
 
 
@@ -598,7 +789,7 @@ Gets the public information associated with a user account.  If the user&#39;s p
           });
         });
 
-      case "USERS_USERNAME_HOOKS":
+      case 'USERS_USERNAME_HOOKS':
         /*
 
 
@@ -617,7 +808,7 @@ Returns a paginated list of webhooks installed on this user account.  Note that 
           });
         });
 
-      case "USERS_USERNAME_HOOKS_UID":
+      case 'USERS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -636,7 +827,7 @@ Returns the webhook with the specified id installed on the given user account.  
           });
         });
 
-      case "USERS_USERNAME_REPOSITORIES":
+      case 'USERS_USERNAME_REPOSITORIES':
         /*
 
 
@@ -655,7 +846,7 @@ All repositories owned by a user/team. This includes private repositories, but f
           });
         });
 
-      case "GET_COMMIT_HOSTED_PROPERTY_VA":
+      case 'GET_COMMIT_HOSTED_PROPERTY_VA':
         /*
 
 
@@ -674,7 +865,7 @@ Retrieve an application property value stored against a commit.
           });
         });
 
-      case "GET_PULL_REQUEST_HOSTED_PROPERTY_VA":
+      case 'GET_PULL_REQUEST_HOSTED_PROPERTY_VA':
         /*
 
 
@@ -696,7 +887,7 @@ Retrieve an application property value stored against a pull request.
           );
         });
 
-      case "GET_REPOSITORY_HOSTED_PROPERTY_VA":
+      case 'GET_REPOSITORY_HOSTED_PROPERTY_VA':
         /*
 
 
@@ -718,7 +909,7 @@ Retrieve an application property value stored against a repository.
           );
         });
 
-      case "RETRIEVE_USER_HOSTED_PROPERTY_VA":
+      case 'RETRIEVE_USER_HOSTED_PROPERTY_VA':
         /*
 
 
@@ -740,7 +931,7 @@ Retrieve an application property value stored against a user.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD_KEY":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD_KEY':
         /*
 
 
@@ -762,7 +953,7 @@ Returns the specified build status for a commit.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES':
         /*
 
 
@@ -770,7 +961,7 @@ Returns the specified build status for a commit.
 Returns all statuses (e.g. build results) for a specific commit.
 
 
-      Function parameters for this API node,workspace,repoSlug
+      Function parameters for this API node,workspace,repoSlug,opts
         */
         return new Promise((resolve, reject) => {
           this.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(
@@ -784,7 +975,7 @@ Returns all statuses (e.g. build results) for a specific commit.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_STATUSES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_STATUSES':
         /*
 
 
@@ -792,7 +983,7 @@ Returns all statuses (e.g. build results) for a specific commit.
 Returns all statuses (e.g. build results) for the given pull request.
 
 
-      Function parameters for this API pullRequestId,workspace,repoSlug
+      Function parameters for this API pullRequestId,workspace,repoSlug,opts
         */
         return new Promise((resolve, reject) => {
           this.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(
@@ -806,7 +997,7 @@ Returns all statuses (e.g. build results) for the given pull request.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS':
         /*
 
 
@@ -828,7 +1019,7 @@ Returns all deploy-keys belonging to a repository.  Example: &#x60;&#x60;&#x60; 
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS_KEY_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS_KEY_ID':
         /*
 
 
@@ -850,7 +1041,7 @@ Returns the deploy key belonging to a specific key.  Example: &#x60;&#x60;&#x60;
           );
         });
 
-      case "REPOSITORIES":
+      case 'REPOSITORIES':
         /*
 
 
@@ -869,7 +1060,7 @@ Returns a paginated list of all public repositories.  This endpoint also support
           });
         });
 
-      case "REPOSITORIES_WORKSPACE":
+      case 'REPOSITORIES_WORKSPACE':
         /*
 
 
@@ -888,7 +1079,7 @@ Returns a paginated list of all repositories owned by the specified account or U
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD_KEY":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD_KEY':
         /*
 
 
@@ -910,7 +1101,7 @@ Returns the specified build status for a commit.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES':
         /*
 
 
@@ -918,7 +1109,7 @@ Returns the specified build status for a commit.
 Returns all statuses (e.g. build results) for a specific commit.
 
 
-      Function parameters for this API node,workspace,repoSlug
+      Function parameters for this API node,workspace,repoSlug,opts
         */
         return new Promise((resolve, reject) => {
           this.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(
@@ -932,7 +1123,7 @@ Returns all statuses (e.g. build results) for a specific commit.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_FILEHISTORY_NODE_PATH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_FILEHISTORY_NODE_PATH':
         /*
 
 
@@ -954,7 +1145,7 @@ Returns a paginated list of commits that modified the specified file.  Commits a
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_FORKS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_FORKS':
         /*
 
 
@@ -962,7 +1153,7 @@ Returns a paginated list of commits that modified the specified file.  Commits a
 Returns a paginated list of all the forks of the specified repository.
 
 
-      Function parameters for this API workspace,repoSlug
+      Function parameters for this API workspace,repoSlug,opts
         */
         return new Promise((resolve, reject) => {
           this.repositoriesWorkspaceRepoSlugForksGet(
@@ -976,7 +1167,7 @@ Returns a paginated list of all the forks of the specified repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG':
         /*
 
 
@@ -998,7 +1189,7 @@ Returns the object describing this repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS':
         /*
 
 
@@ -1020,7 +1211,7 @@ Returns a paginated list of webhooks installed on this repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID':
         /*
 
 
@@ -1042,7 +1233,7 @@ Returns the webhook with the specified id installed on the specified repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_STATUSES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_STATUSES':
         /*
 
 
@@ -1050,7 +1241,7 @@ Returns the webhook with the specified id installed on the specified repository.
 Returns all statuses (e.g. build results) for the given pull request.
 
 
-      Function parameters for this API pullRequestId,workspace,repoSlug
+      Function parameters for this API pullRequestId,workspace,repoSlug,opts
         */
         return new Promise((resolve, reject) => {
           this.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(
@@ -1064,7 +1255,7 @@ Returns all statuses (e.g. build results) for the given pull request.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_SRC":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_SRC':
         /*
 
 
@@ -1086,7 +1277,7 @@ This endpoint redirects the client to the directory listing of the root director
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_SRC_NODE_PATH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_SRC_NODE_PATH':
         /*
 
 
@@ -1108,7 +1299,7 @@ This endpoints is used to retrieve the contents of a single file, or the content
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_WATCHERS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_WATCHERS':
         /*
 
 
@@ -1130,7 +1321,7 @@ Returns a paginated list of all the watchers on the specified repository.
           );
         });
 
-      case "USER_PERMISSIONS_REPOSITORIES":
+      case 'USER_PERMISSIONS_REPOSITORIES':
         /*
 
 
@@ -1152,7 +1343,7 @@ Returns an object for each repository the caller has explicit access to and thei
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_FILES_PATH":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_FILES_PATH':
         /*
 
 
@@ -1174,12 +1365,12 @@ Convenience resource for getting to a snippet&#39;s raw files without the need f
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DIFFSTAT_SPEC":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DIFFSTAT_SPEC':
         /*
 
 
 
-Returns the diff stat for the specified commit.  Diff stat responses contain a record for every path modified by the commit and lists the number of lines added and removed for each file.   Example: &#x60;&#x60;&#x60; curl https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/diffstat/d222fa2..e174964 {     \&quot;pagelen\&quot;: 500,     \&quot;values\&quot;: [         {             \&quot;type\&quot;: \&quot;diffstat\&quot;,             \&quot;status\&quot;: \&quot;modified\&quot;,             \&quot;lines_removed\&quot;: 1,             \&quot;lines_added\&quot;: 2,             \&quot;old\&quot;: {                 \&quot;path\&quot;: \&quot;setup.py\&quot;,                 \&quot;type\&quot;: \&quot;commit_file\&quot;,                 \&quot;links\&quot;: {                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/src/e1749643d655d7c7014001a6c0f58abaf42ad850/setup.py\&quot;                     }                 }             },             \&quot;new\&quot;: {                 \&quot;path\&quot;: \&quot;setup.py\&quot;,                 \&quot;type\&quot;: \&quot;commit_file\&quot;,                 \&quot;links\&quot;: {                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/src/d222fa235229c55dad20b190b0b571adf737d5a6/setup.py\&quot;                     }                 }             }         }     ],     \&quot;page\&quot;: 1,     \&quot;size\&quot;: 1 } &#x60;&#x60;&#x60;
+Returns the diff stat for the specified commit.  Diff stat responses contain a record for every path modified by the commit and lists the number of lines added and removed for each file.   Example: &#x60;&#x60;&#x60; curl https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/diffstat/d222fa2..e174964 {     \&quot;pagelen\&quot;: 500,     \&quot;values\&quot;: [         {             \&quot;type\&quot;: \&quot;diffstat\&quot;,             \&quot;status\&quot;: \&quot;modified\&quot;,             \&quot;lines_removed\&quot;: 1,             \&quot;lines_added\&quot;: 2,             \&quot;old\&quot;: {                 \&quot;path\&quot;: \&quot;setup.py\&quot;,                 \&quot;escaped_path\&quot;: \&quot;setup.py\&quot;,                 \&quot;type\&quot;: \&quot;commit_file\&quot;,                 \&quot;links\&quot;: {                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/src/e1749643d655d7c7014001a6c0f58abaf42ad850/setup.py\&quot;                     }                 }             },             \&quot;new\&quot;: {                 \&quot;path\&quot;: \&quot;setup.py\&quot;,                 \&quot;escaped_path\&quot;: \&quot;setup.py\&quot;,                 \&quot;type\&quot;: \&quot;commit_file\&quot;,                 \&quot;links\&quot;: {                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/src/d222fa235229c55dad20b190b0b571adf737d5a6/setup.py\&quot;                     }                 }             }         }     ],     \&quot;page\&quot;: 1,     \&quot;size\&quot;: 1 } &#x60;&#x60;&#x60;
 
 
       Function parameters for this API spec,workspace,repoSlug,opts
@@ -1196,7 +1387,7 @@ Returns the diff stat for the specified commit.  Diff stat responses contain a r
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_EXPORT_REPO_NAME_ISSUES_TASK_ID_ZIP":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_EXPORT_REPO_NAME_ISSUES_TASK_ID_ZIP':
         /*
 
 
@@ -1218,7 +1409,7 @@ This endpoint is used to poll for the progress of an issue export job and return
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_IMPORT":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_IMPORT':
         /*
 
 
@@ -1240,7 +1431,7 @@ When using GET, this endpoint reports the status of the current import task. Req
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PIPELINES_PIPELINE_UUID_STEPS_STEP_UUID_LOGS_LOG_UUID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PIPELINES_PIPELINE_UUID_STEPS_STEP_UUID_LOGS_LOG_UUID':
         /*
 
 
@@ -1260,7 +1451,7 @@ When using GET, this endpoint reports the status of the current import task. Req
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PIPELINES_PIPELINE_UUID_STEPS_STEP_UUID_TEST_REPORTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PIPELINES_PIPELINE_UUID_STEPS_STEP_UUID_TEST_REPORTS':
         /*
 
 
@@ -1280,7 +1471,7 @@ When using GET, this endpoint reports the status of the current import task. Req
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PIPELINES_PIPELINE_UUID_STEPS_STEP_UUID_TEST_REPORTS_TEST_CASES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PIPELINES_PIPELINE_UUID_STEPS_STEP_UUID_TEST_REPORTS_TEST_CASES':
         /*
 
 
@@ -1300,7 +1491,7 @@ When using GET, this endpoint reports the status of the current import task. Req
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PIPELINES_PIPELINE_UUID_STEPS_STEP_UUID_TEST_REPORTS_TEST_CASES_TEST_CASE_UUID_TEST_CASE_REASONS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PIPELINES_PIPELINE_UUID_STEPS_STEP_UUID_TEST_REPORTS_TEST_CASES_TEST_CASE_UUID_TEST_CASE_REASONS':
         /*
 
 
@@ -1320,7 +1511,7 @@ When using GET, this endpoint reports the status of the current import task. Req
           );
         });
 
-      case "TEAMS_USERNAME_PERMISSIONS":
+      case 'TEAMS_USERNAME_PERMISSIONS':
         /*
 
 
@@ -1339,7 +1530,7 @@ Returns an object for each team permission a user on the team has.  Permissions 
           });
         });
 
-      case "TEAMS_USERNAME_PERMISSIONS_REPOSITORIES":
+      case 'TEAMS_USERNAME_PERMISSIONS_REPOSITORIES':
         /*
 
 
@@ -1361,7 +1552,7 @@ Returns an object for each repository permission for all of a team’s repositor
           );
         });
 
-      case "TEAMS_USERNAME_PERMISSIONS_REPOSITORIES_REPO_SLUG":
+      case 'TEAMS_USERNAME_PERMISSIONS_REPOSITORIES_REPO_SLUG':
         /*
 
 
@@ -1383,7 +1574,7 @@ Returns an object for each repository permission of a given repository.  If the 
           );
         });
 
-      case "USER_PERMISSIONS_TEAMS":
+      case 'USER_PERMISSIONS_TEAMS':
         /*
 
 
@@ -1402,7 +1593,7 @@ Returns an object for each team the caller is a member of, and their effective r
           });
         });
 
-      case "ADDON_LINKERS":
+      case 'ADDON_LINKERS':
         /*
 
 
@@ -1419,7 +1610,7 @@ Returns an object for each team the caller is a member of, and their effective r
           });
         });
 
-      case "ADDON_LINKERS_LINKER_KEY":
+      case 'ADDON_LINKERS_LINKER_KEY':
         /*
 
 
@@ -1436,7 +1627,7 @@ Returns an object for each team the caller is a member of, and their effective r
           });
         });
 
-      case "ADDON_LINKERS_LINKER_KEY_VALUES":
+      case 'ADDON_LINKERS_LINKER_KEY_VALUES':
         /*
 
 
@@ -1456,7 +1647,7 @@ Returns an object for each team the caller is a member of, and their effective r
           );
         });
 
-      case "ADDON_LINKERS_LINKER_KEY_VALUES_GE":
+      case 'ADDON_LINKERS_LINKER_KEY_VALUES_GE':
         /*
 
 
@@ -1476,7 +1667,7 @@ Returns an object for each team the caller is a member of, and their effective r
           );
         });
 
-      case "GET_DEPLOYMENT_VARIAB":
+      case 'GET_DEPLOYMENT_VARIAB':
         /*
 
 
@@ -1495,7 +1686,7 @@ Find deployment environment level variables.
           });
         });
 
-      case "GET_PIPELINE_FOR_REPOSIT":
+      case 'GET_PIPELINE_FOR_REPOSIT':
         /*
 
 
@@ -1514,7 +1705,7 @@ Retrieve a specified pipeline
           });
         });
 
-      case "GET_PIPELINE_STEP_FOR_REPOSIT":
+      case 'GET_PIPELINE_STEP_FOR_REPOSIT':
         /*
 
 
@@ -1533,7 +1724,7 @@ Retrieve a given step of a pipeline.
           });
         });
 
-      case "GET_PIPELINE_STEP_LOG_FOR_REPOSIT":
+      case 'GET_PIPELINE_STEP_LOG_FOR_REPOSIT':
         /*
 
 
@@ -1555,7 +1746,7 @@ Retrieve the log file for a given step of a pipeline.  This endpoint supports (a
           );
         });
 
-      case "GET_PIPELINE_STEPS_FOR_REPOSIT":
+      case 'GET_PIPELINE_STEPS_FOR_REPOSIT':
         /*
 
 
@@ -1574,7 +1765,7 @@ Find steps for the given pipeline.
           });
         });
 
-      case "GET_PIPELINE_VARIABLE_FOR_T":
+      case 'GET_PIPELINE_VARIABLE_FOR_T':
         /*
 
 
@@ -1593,7 +1784,7 @@ Retrieve a team level variable.
           });
         });
 
-      case "GET_PIPELINE_VARIABLE_FOR_U":
+      case 'GET_PIPELINE_VARIABLE_FOR_U':
         /*
 
 
@@ -1612,7 +1803,7 @@ Retrieve a user level variable.
           });
         });
 
-      case "GET_PIPELINE_VARIABLES_FOR_T":
+      case 'GET_PIPELINE_VARIABLES_FOR_T':
         /*
 
 
@@ -1631,7 +1822,7 @@ Find account level variables.
           });
         });
 
-      case "GET_PIPELINE_VARIABLES_FOR_U":
+      case 'GET_PIPELINE_VARIABLES_FOR_U':
         /*
 
 
@@ -1650,7 +1841,7 @@ Find user level variables.
           });
         });
 
-      case "GET_PIPELINES_FOR_REPOSIT":
+      case 'GET_PIPELINES_FOR_REPOSIT':
         /*
 
 
@@ -1669,7 +1860,7 @@ Find pipelines
           });
         });
 
-      case "GET_REPOSITORY_PIPELINE_CON":
+      case 'GET_REPOSITORY_PIPELINE_CON':
         /*
 
 
@@ -1688,7 +1879,7 @@ Retrieve the repository pipelines configuration.
           });
         });
 
-      case "GET_REPOSITORY_PIPELINE_KNOWN_H":
+      case 'GET_REPOSITORY_PIPELINE_KNOWN_H':
         /*
 
 
@@ -1710,7 +1901,7 @@ Retrieve a repository level known host.
           );
         });
 
-      case "GET_REPOSITORY_PIPELINE_KNOWN_HO":
+      case 'GET_REPOSITORY_PIPELINE_KNOWN_HO':
         /*
 
 
@@ -1732,7 +1923,7 @@ Find repository level known hosts.
           );
         });
 
-      case "GET_REPOSITORY_PIPELINE_SCHED":
+      case 'GET_REPOSITORY_PIPELINE_SCHED':
         /*
 
 
@@ -1751,7 +1942,7 @@ Retrieve a schedule by its UUID.
           });
         });
 
-      case "GET_REPOSITORY_PIPELINE_SCHEDULE_EXECUTI":
+      case 'GET_REPOSITORY_PIPELINE_SCHEDULE_EXECUTI':
         /*
 
 
@@ -1773,7 +1964,7 @@ Retrieve the executions of a given schedule.
           );
         });
 
-      case "GET_REPOSITORY_PIPELINE_SCHEDU":
+      case 'GET_REPOSITORY_PIPELINE_SCHEDU':
         /*
 
 
@@ -1795,7 +1986,7 @@ Retrieve the configured schedules for the given repository.
           );
         });
 
-      case "GET_REPOSITORY_PIPELINE_SSH_KEY_P":
+      case 'GET_REPOSITORY_PIPELINE_SSH_KEY_P':
         /*
 
 
@@ -1817,7 +2008,7 @@ Retrieve the repository SSH key pair excluding the SSH private key. The private 
           );
         });
 
-      case "GET_REPOSITORY_PIPELINE_VARIA":
+      case 'GET_REPOSITORY_PIPELINE_VARIA':
         /*
 
 
@@ -1836,7 +2027,7 @@ Retrieve a repository level variable.
           });
         });
 
-      case "GET_REPOSITORY_PIPELINE_VARIAB":
+      case 'GET_REPOSITORY_PIPELINE_VARIAB':
         /*
 
 
@@ -1858,7 +2049,7 @@ Find repository level variables.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMPONENTS_COMPONENT_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMPONENTS_COMPONENT_ID':
         /*
 
 
@@ -1880,7 +2071,7 @@ Returns the specified issue tracker component object.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMPONENTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMPONENTS':
         /*
 
 
@@ -1902,7 +2093,7 @@ Returns the components that have been defined in the issue tracker.  This resour
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES':
         /*
 
 
@@ -1924,7 +2115,7 @@ Returns the issues in the issue tracker.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_ATTACHMENTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_ATTACHMENTS':
         /*
 
 
@@ -1946,7 +2137,7 @@ Returns all attachments for this issue.  This returns the files&#39; meta data. 
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_ATTACHMENTS_PATH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_ATTACHMENTS_PATH':
         /*
 
 
@@ -1968,7 +2159,7 @@ Returns the contents of the specified file attachment.  Note that this endpoint 
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_CHANGES_CHANGE_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_CHANGES_CHANGE_ID':
         /*
 
 
@@ -1990,7 +2181,7 @@ Returns the specified issue change object.  This resource is only available on r
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_CHANGES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_CHANGES':
         /*
 
 
@@ -2012,7 +2203,7 @@ Returns the list of all changes that have been made to the specified issue. Chan
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS_COMMENT_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -2034,7 +2225,7 @@ Returns the specified issue comment object.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS':
         /*
 
 
@@ -2056,7 +2247,7 @@ Returns a paginated list of all comments that were made on the specified issue. 
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID':
         /*
 
 
@@ -2078,7 +2269,7 @@ Returns the specified issue.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_VOTE":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_VOTE':
         /*
 
 
@@ -2100,7 +2291,7 @@ Check whether the authenticated user has voted for this issue. A 204 status code
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_WATCH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_WATCH':
         /*
 
 
@@ -2122,7 +2313,7 @@ Indicated whether or not the authenticated user is watching this issue.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_MILESTONES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_MILESTONES':
         /*
 
 
@@ -2144,7 +2335,7 @@ Returns the milestones that have been defined in the issue tracker.  This resour
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_MILESTONES_MILESTONE_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_MILESTONES_MILESTONE_ID':
         /*
 
 
@@ -2166,7 +2357,7 @@ Returns the specified issue tracker milestone object.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_VERSIONS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_VERSIONS':
         /*
 
 
@@ -2188,7 +2379,7 @@ Returns the versions that have been defined in the issue tracker.  This resource
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_VERSIONS_VERSION_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_VERSIONS_VERSION_ID':
         /*
 
 
@@ -2210,7 +2401,7 @@ Returns the specified issue tracker version object.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS':
         /*
 
 
@@ -2232,7 +2423,7 @@ Returns a paginated list of all branch restrictions on the repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS_ID':
         /*
 
 
@@ -2254,7 +2445,7 @@ Returns a specific branch restriction rule.
           );
         });
 
-      case "TEAMS":
+      case 'TEAMS':
         /*
 
 
@@ -2273,7 +2464,7 @@ Returns all the teams that the authenticated user is associated with.
           });
         });
 
-      case "TEAMS_USERNAME_FOLLOWERS":
+      case 'TEAMS_USERNAME_FOLLOWERS':
         /*
 
 
@@ -2292,7 +2483,7 @@ Returns the list of accounts that are following this team.
           });
         });
 
-      case "TEAMS_USERNAME_FOLLOWING":
+      case 'TEAMS_USERNAME_FOLLOWING':
         /*
 
 
@@ -2311,7 +2502,7 @@ Returns the list of accounts this team is following.
           });
         });
 
-      case "TEAMS_USERNAME":
+      case 'TEAMS_USERNAME':
         /*
 
 
@@ -2330,7 +2521,7 @@ Gets the public information associated with a team.  If the team&#39;s profile i
           });
         });
 
-      case "TEAMS_USERNAME_HOOKS":
+      case 'TEAMS_USERNAME_HOOKS':
         /*
 
 
@@ -2349,7 +2540,7 @@ Returns a paginated list of webhooks installed on this team.
           });
         });
 
-      case "TEAMS_USERNAME_HOOKS_UID":
+      case 'TEAMS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -2368,7 +2559,7 @@ Returns the webhook with the specified id installed on the given team account.
           });
         });
 
-      case "TEAMS_USERNAME_MEMBERS":
+      case 'TEAMS_USERNAME_MEMBERS':
         /*
 
 
@@ -2387,7 +2578,7 @@ Returns all members of the specified team. Any member of any of the team&#39;s g
           });
         });
 
-      case "TEAMS_USERNAME_REPOSITORIES":
+      case 'TEAMS_USERNAME_REPOSITORIES':
         /*
 
 
@@ -2406,7 +2597,7 @@ All repositories owned by a user/team. This includes private repositories, but f
           });
         });
 
-      case "USERS_USERNAME_MEMBERS":
+      case 'USERS_USERNAME_MEMBERS':
         /*
 
 
@@ -2425,7 +2616,7 @@ Returns all members of the specified team. Any member of any of the team&#39;s g
           });
         });
 
-      case "USERS_USERNAME_REPOSITORIES":
+      case 'USERS_USERNAME_REPOSITORIES':
         /*
 
 
@@ -2444,7 +2635,83 @@ All repositories owned by a user/team. This includes private repositories, but f
           });
         });
 
-      case "SNIPPETS":
+      case 'GET_ANNOTAT':
+        /*
+
+
+
+Returns a single Annotation matching the provided ID.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId,annotationId
+        */
+        return new Promise((resolve, reject) => {
+          this.getAnnotation(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'GET_ANNOTATIONS_FOR_REP':
+        /*
+
+
+
+Returns a paginated list of Annotations for a specified report.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId
+        */
+        return new Promise((resolve, reject) => {
+          this.getAnnotationsForReport(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'GET_REP':
+        /*
+
+
+
+Returns a single Report matching the provided ID.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId
+        */
+        return new Promise((resolve, reject) => {
+          this.getReport(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'GET_REPORTS_FOR_COM':
+        /*
+
+
+
+Returns a paginated list of Reports linked to this commit.
+
+
+      Function parameters for this API username,repoSlug,commit
+        */
+        return new Promise((resolve, reject) => {
+          this.getReportsForCommit(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'SNIPPETS':
         /*
 
 
@@ -2463,7 +2730,7 @@ Returns all snippets. Like pull requests, repositories and teams, the full set o
           });
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS_COMMENT_ID":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -2485,7 +2752,7 @@ Returns the specific snippet comment.
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS':
         /*
 
 
@@ -2507,7 +2774,7 @@ Used to retrieve a paginated list of all comments for a specific snippet.  This 
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_COMMITS":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_COMMITS':
         /*
 
 
@@ -2529,7 +2796,7 @@ Returns the changes (commits) made on this snippet.
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_COMMITS_REVISION":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_COMMITS_REVISION':
         /*
 
 
@@ -2549,7 +2816,7 @@ Returns the changes (commits) made on this snippet.
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID':
         /*
 
 
@@ -2568,7 +2835,7 @@ Retrieves a single snippet.  Snippets support multiple content types:  * applica
           });
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_NODE_ID_FILES_PATH":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_NODE_ID_FILES_PATH':
         /*
 
 
@@ -2590,7 +2857,7 @@ Retrieves the raw contents of a specific file in the snippet. The &#x60;Content-
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_NODE_ID":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_NODE_ID':
         /*
 
 
@@ -2612,7 +2879,7 @@ Identical to &#x60;GET /snippets/encoded_id&#x60;, except that this endpoint can
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_REVISION_DIFF":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_REVISION_DIFF':
         /*
 
 
@@ -2634,7 +2901,7 @@ Returns the diff of the specified commit against its first parent.  Note that th
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_REVISION_PATCH":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_REVISION_PATCH':
         /*
 
 
@@ -2656,7 +2923,7 @@ Returns the patch of the specified commit against its first parent.  Note that t
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_WATCH":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_WATCH':
         /*
 
 
@@ -2678,7 +2945,7 @@ Used to check if the current user is watching a specific snippet.  Returns 204 (
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_WATCHERS":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_WATCHERS':
         /*
 
 
@@ -2700,7 +2967,7 @@ Returns a paginated list of all users watching a specific snippet.
           );
         });
 
-      case "SNIPPETS_WORKSPACE":
+      case 'SNIPPETS_WORKSPACE':
         /*
 
 
@@ -2719,7 +2986,7 @@ Identical to &#x60;/snippets&#x60;, except that the result is further filtered b
           });
         });
 
-      case "GET_PULLREQUESTS_FOR_COM":
+      case 'GET_PULLREQUESTS_FOR_COM':
         /*
 
 Returns a paginated list of all pull requests as part of which this commit was reviewed. Pull Request Commit Links app must be installed first before using this API; installation automatically occurs when &#39;Go to pull request&#39; is clicked from the web interface for a commit&#39;s details.
@@ -2736,7 +3003,7 @@ Returns a paginated list of all pull requests as part of which this commit was r
           });
         });
 
-      case "PULLREQUESTS_SELECTED_USER":
+      case 'PULLREQUESTS_SELECTED_USER':
         /*
 
 
@@ -2755,7 +3022,7 @@ Returns all pull requests authored by the specified user.  By default only open 
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DEFAULT_REVIEWERS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DEFAULT_REVIEWERS':
         /*
 
 
@@ -2777,7 +3044,7 @@ Returns the repository&#39;s default reviewers.  These are the users that are au
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DEFAULT_REVIEWERS_TARGET_USERNAME":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DEFAULT_REVIEWERS_TARGET_USERNAME':
         /*
 
 
@@ -2799,7 +3066,7 @@ Returns the specified reviewer.  This can be used to test whether a user is amon
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_ACTIVITY":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_ACTIVITY':
         /*
 
 
@@ -2821,7 +3088,7 @@ Returns a paginated list of the pull request&#39;s activity log.  This includes 
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS':
         /*
 
 
@@ -2843,7 +3110,7 @@ Returns all pull requests on the specified repository.  By default only open pul
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_ACTIVITY":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_ACTIVITY':
         /*
 
 
@@ -2865,7 +3132,7 @@ Returns a paginated list of the pull request&#39;s activity log.  This includes 
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS_COMMENT_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -2887,7 +3154,7 @@ Returns a specific pull request comment.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS':
         /*
 
 
@@ -2909,7 +3176,7 @@ Returns a paginated list of the pull request&#39;s comments.  This includes both
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMITS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMITS':
         /*
 
 
@@ -2931,7 +3198,7 @@ Returns a paginated list of the pull request&#39;s commits.  These are the commi
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_DIFF":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_DIFF':
         /*
 
 
@@ -2953,7 +3220,7 @@ Redirects to the [repository diff](../../diff/%7Bspec%7D) with the revspec that 
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_DIFFSTAT":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_DIFFSTAT':
         /*
 
 
@@ -2975,7 +3242,7 @@ Redirects to the [repository diffstat](../../diffstat/%7Bspec%7D) with the revsp
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID':
         /*
 
 
@@ -2997,7 +3264,27 @@ Returns the specified pull request.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_PATCH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_MERGE_TASK_STATUS_TASK_ID':
+        /*
+
+
+
+
+      Function parameters for this API pullRequestId,taskId,workspace,repoSlug
+        */
+        return new Promise((resolve, reject) => {
+          this.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_PATCH':
         /*
 
 
@@ -3017,7 +3304,7 @@ Returns the specified pull request.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_STATUSES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_STATUSES':
         /*
 
 
@@ -3025,7 +3312,7 @@ Returns the specified pull request.
 Returns all statuses (e.g. build results) for the given pull request.
 
 
-      Function parameters for this API pullRequestId,workspace,repoSlug
+      Function parameters for this API pullRequestId,workspace,repoSlug,opts
         */
         return new Promise((resolve, reject) => {
           this.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(
@@ -3039,10 +3326,10 @@ Returns all statuses (e.g. build results) for the given pull request.
           );
         });
 
-      case "SEARCH_ACCO":
+      case 'SEARCH_ACCO':
         /*
 
-Search for code in the repositories of the specified team
+Search for code in the repositories of the specified team.  Searching across all repositories:  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code?search_query&#x3D;foo&#39; {   \&quot;size\&quot;: 1,   \&quot;page\&quot;: 1,   \&quot;pagelen\&quot;: 10,   \&quot;query_substituted\&quot;: false,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;code_search_result\&quot;,       \&quot;content_match_count\&quot;: 2,       \&quot;content_matches\&quot;: [         {           \&quot;lines\&quot;: [             {               \&quot;line\&quot;: 2,               \&quot;segments\&quot;: []             },             {               \&quot;line\&quot;: 3,               \&quot;segments\&quot;: [                 {                   \&quot;text\&quot;: \&quot;def \&quot;                 },                 {                   \&quot;text\&quot;: \&quot;foo\&quot;,                   \&quot;match\&quot;: true                 },                 {                   \&quot;text\&quot;: \&quot;():\&quot;                 }               ]             },             {               \&quot;line\&quot;: 4,               \&quot;segments\&quot;: [                 {                   \&quot;text\&quot;: \&quot;    print(\\\&quot;snek\\\&quot;)\&quot;                 }               ]             },             {               \&quot;line\&quot;: 5,               \&quot;segments\&quot;: []             }           ]         }       ],       \&quot;path_matches\&quot;: [         {           \&quot;text\&quot;: \&quot;src/\&quot;         },         {           \&quot;text\&quot;: \&quot;foo\&quot;,           \&quot;match\&quot;: true         },         {           \&quot;text\&quot;: \&quot;.py\&quot;         }       ],       \&quot;file\&quot;: {         \&quot;path\&quot;: \&quot;src/foo.py\&quot;,         \&quot;type\&quot;: \&quot;commit_file\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/src/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b/src/foo.py\&quot;           }         }       }     }   ] } &#x60;&#x60;&#x60;  Note that searches can match in the file&#39;s text (&#x60;content_matches&#x60;), the path (&#x60;path_matches&#x60;), or both as in the example above.  You can use the same syntax for the search query as in the UI, e.g. to only search within a specific repository:  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code?search_query&#x3D;foo+repo:demo&#39; # results from the \&quot;demo\&quot; repository &#x60;&#x60;&#x60;  Similar to other APIs, you can request more fields using a &#x60;fields&#x60; query parameter. E.g. to get some more information about the repository of matched files (the &#x60;%2B&#x60; is a URL-encoded &#x60;+&#x60;):  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code&#39;\\      &#39;?search_query&#x3D;foo&amp;fields&#x3D;%2Bvalues.file.commit.repository&#39; {   \&quot;size\&quot;: 1,   \&quot;page\&quot;: 1,   \&quot;pagelen\&quot;: 10,   \&quot;query_substituted\&quot;: false,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;code_search_result\&quot;,       \&quot;content_match_count\&quot;: 1,       \&quot;content_matches\&quot;: [...],       \&quot;path_matches\&quot;: [...],       \&quot;file\&quot;: {         \&quot;commit\&quot;: {           \&quot;type\&quot;: \&quot;commit\&quot;,           \&quot;hash\&quot;: \&quot;ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;,           \&quot;links\&quot;: {             \&quot;self\&quot;: {               \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/commit/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;             },             \&quot;html\&quot;: {               \&quot;href\&quot;: \&quot;https://bitbucket.org/my-workspace/demo/commits/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;             }           },           \&quot;repository\&quot;: {             \&quot;name\&quot;: \&quot;demo\&quot;,             \&quot;type\&quot;: \&quot;repository\&quot;,             \&quot;full_name\&quot;: \&quot;my-workspace/demo\&quot;,             \&quot;links\&quot;: {               \&quot;self\&quot;: {                 \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo\&quot;               },               \&quot;html\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/my-workspace/demo\&quot;               },               \&quot;avatar\&quot;: {                 \&quot;href\&quot;: \&quot;https://bytebucket.org/ravatar/%7B850e1749-781a-4115-9316-df39d0600e7a%7D?ts&#x3D;default\&quot;               }             },             \&quot;uuid\&quot;: \&quot;{850e1749-781a-4115-9316-df39d0600e7a}\&quot;           }         },         \&quot;type\&quot;: \&quot;commit_file\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/src/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b/src/foo.py\&quot;           }         },         \&quot;path\&quot;: \&quot;src/foo.py\&quot;       }     }   ] } &#x60;&#x60;&#x60;  Try &#x60;fields&#x3D;%2Bvalues.*.*.*.*&#x60; to get an idea what&#39;s possible.
 
 
       Function parameters for this API username,searchQuery,opts
@@ -3056,10 +3343,10 @@ Search for code in the repositories of the specified team
           });
         });
 
-      case "SEARCH_ACCOUN":
+      case 'SEARCH_ACCOUN':
         /*
 
-Search for code in the repositories of the specified user
+Search for code in the repositories of the specified user.  Searching across all repositories:  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code?search_query&#x3D;foo&#39; {   \&quot;size\&quot;: 1,   \&quot;page\&quot;: 1,   \&quot;pagelen\&quot;: 10,   \&quot;query_substituted\&quot;: false,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;code_search_result\&quot;,       \&quot;content_match_count\&quot;: 2,       \&quot;content_matches\&quot;: [         {           \&quot;lines\&quot;: [             {               \&quot;line\&quot;: 2,               \&quot;segments\&quot;: []             },             {               \&quot;line\&quot;: 3,               \&quot;segments\&quot;: [                 {                   \&quot;text\&quot;: \&quot;def \&quot;                 },                 {                   \&quot;text\&quot;: \&quot;foo\&quot;,                   \&quot;match\&quot;: true                 },                 {                   \&quot;text\&quot;: \&quot;():\&quot;                 }               ]             },             {               \&quot;line\&quot;: 4,               \&quot;segments\&quot;: [                 {                   \&quot;text\&quot;: \&quot;    print(\\\&quot;snek\\\&quot;)\&quot;                 }               ]             },             {               \&quot;line\&quot;: 5,               \&quot;segments\&quot;: []             }           ]         }       ],       \&quot;path_matches\&quot;: [         {           \&quot;text\&quot;: \&quot;src/\&quot;         },         {           \&quot;text\&quot;: \&quot;foo\&quot;,           \&quot;match\&quot;: true         },         {           \&quot;text\&quot;: \&quot;.py\&quot;         }       ],       \&quot;file\&quot;: {         \&quot;path\&quot;: \&quot;src/foo.py\&quot;,         \&quot;type\&quot;: \&quot;commit_file\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/src/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b/src/foo.py\&quot;           }         }       }     }   ] } &#x60;&#x60;&#x60;  Note that searches can match in the file&#39;s text (&#x60;content_matches&#x60;), the path (&#x60;path_matches&#x60;), or both as in the example above.  You can use the same syntax for the search query as in the UI, e.g. to only search within a specific repository:  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code?search_query&#x3D;foo+repo:demo&#39; # results from the \&quot;demo\&quot; repository &#x60;&#x60;&#x60;  Similar to other APIs, you can request more fields using a &#x60;fields&#x60; query parameter. E.g. to get some more information about the repository of matched files (the &#x60;%2B&#x60; is a URL-encoded &#x60;+&#x60;):  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code&#39;\\      &#39;?search_query&#x3D;foo&amp;fields&#x3D;%2Bvalues.file.commit.repository&#39; {   \&quot;size\&quot;: 1,   \&quot;page\&quot;: 1,   \&quot;pagelen\&quot;: 10,   \&quot;query_substituted\&quot;: false,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;code_search_result\&quot;,       \&quot;content_match_count\&quot;: 1,       \&quot;content_matches\&quot;: [...],       \&quot;path_matches\&quot;: [...],       \&quot;file\&quot;: {         \&quot;commit\&quot;: {           \&quot;type\&quot;: \&quot;commit\&quot;,           \&quot;hash\&quot;: \&quot;ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;,           \&quot;links\&quot;: {             \&quot;self\&quot;: {               \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/commit/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;             },             \&quot;html\&quot;: {               \&quot;href\&quot;: \&quot;https://bitbucket.org/my-workspace/demo/commits/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;             }           },           \&quot;repository\&quot;: {             \&quot;name\&quot;: \&quot;demo\&quot;,             \&quot;type\&quot;: \&quot;repository\&quot;,             \&quot;full_name\&quot;: \&quot;my-workspace/demo\&quot;,             \&quot;links\&quot;: {               \&quot;self\&quot;: {                 \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo\&quot;               },               \&quot;html\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/my-workspace/demo\&quot;               },               \&quot;avatar\&quot;: {                 \&quot;href\&quot;: \&quot;https://bytebucket.org/ravatar/%7B850e1749-781a-4115-9316-df39d0600e7a%7D?ts&#x3D;default\&quot;               }             },             \&quot;uuid\&quot;: \&quot;{850e1749-781a-4115-9316-df39d0600e7a}\&quot;           }         },         \&quot;type\&quot;: \&quot;commit_file\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/src/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b/src/foo.py\&quot;           }         },         \&quot;path\&quot;: \&quot;src/foo.py\&quot;       }     }   ] } &#x60;&#x60;&#x60;  Try &#x60;fields&#x3D;%2Bvalues.*.*.*.*&#x60; to get an idea what&#39;s possible.
 
 
       Function parameters for this API username,searchQuery,opts
@@ -3073,7 +3360,7 @@ Search for code in the repositories of the specified user
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DOWNLOADS_FILENAME":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DOWNLOADS_FILENAME':
         /*
 
 
@@ -3095,7 +3382,7 @@ Return a redirect to the contents of a download artifact.  This endpoint returns
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DOWNLOADS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DOWNLOADS':
         /*
 
 
@@ -3117,7 +3404,83 @@ Returns a list of download links associated with the repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_COMMENTS_COMMENT_ID":
+      case 'GET_ANNOTAT':
+        /*
+
+
+
+Returns a single Annotation matching the provided ID.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId,annotationId
+        */
+        return new Promise((resolve, reject) => {
+          this.getAnnotation(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'GET_ANNOTATIONS_FOR_REP':
+        /*
+
+
+
+Returns a paginated list of Annotations for a specified report.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId
+        */
+        return new Promise((resolve, reject) => {
+          this.getAnnotationsForReport(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'GET_REP':
+        /*
+
+
+
+Returns a single Report matching the provided ID.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId
+        */
+        return new Promise((resolve, reject) => {
+          this.getReport(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'GET_REPORTS_FOR_COM':
+        /*
+
+
+
+Returns a paginated list of Reports linked to this commit.
+
+
+      Function parameters for this API username,repoSlug,commit
+        */
+        return new Promise((resolve, reject) => {
+          this.getReportsForCommit(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -3139,7 +3502,7 @@ Returns the specified commit comment.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_COMMENTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_COMMENTS':
         /*
 
 
@@ -3147,7 +3510,7 @@ Returns the specified commit comment.
 Returns the commit&#39;s comments.  This includes both global and inline comments.  The default sorting is oldest to newest and can be overridden with the &#x60;sort&#x60; query parameter.
 
 
-      Function parameters for this API node,workspace,repoSlug
+      Function parameters for this API node,workspace,repoSlug,opts
         */
         return new Promise((resolve, reject) => {
           this.repositoriesWorkspaceRepoSlugCommitNodeCommentsGet(
@@ -3161,7 +3524,7 @@ Returns the commit&#39;s comments.  This includes both global and inline comment
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE':
         /*
 
 
@@ -3183,7 +3546,7 @@ Returns the specified commit.  Example:  &#x60;&#x60;&#x60; $ curl https://api.b
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMITS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMITS':
         /*
 
 
@@ -3205,7 +3568,7 @@ These are the repository&#39;s commits. They are paginated and returned in rever
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMITS_REVISION":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMITS_REVISION':
         /*
 
 
@@ -3227,7 +3590,7 @@ These are the repository&#39;s commits. They are paginated and returned in rever
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DIFF_SPEC":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DIFF_SPEC':
         /*
 
 
@@ -3249,7 +3612,7 @@ Produces a raw, git-style diff for either a single commit (diffed against its fi
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PATCH_SPEC":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PATCH_SPEC':
         /*
 
 
@@ -3271,7 +3634,7 @@ Produces a raw patch for a single commit (diffed against its first parent), or a
           );
         });
 
-      case "GET_DEPLOYMENT_FOR_REPOSIT":
+      case 'GET_DEPLOYMENT_FOR_REPOSIT':
         /*
 
 
@@ -3290,7 +3653,7 @@ Retrieve a deployment
           });
         });
 
-      case "GET_DEPLOYMENTS_FOR_REPOSIT":
+      case 'GET_DEPLOYMENTS_FOR_REPOSIT':
         /*
 
 
@@ -3309,7 +3672,7 @@ Find deployments
           });
         });
 
-      case "GET_ENVIRONMENT_FOR_REPOSIT":
+      case 'GET_ENVIRONMENT_FOR_REPOSIT':
         /*
 
 
@@ -3328,7 +3691,7 @@ Retrieve an environment
           });
         });
 
-      case "GET_ENVIRONMENTS_FOR_REPOSIT":
+      case 'GET_ENVIRONMENTS_FOR_REPOSIT':
         /*
 
 
@@ -3347,7 +3710,7 @@ Find environments
           });
         });
 
-      case "HOOK_EVENTS":
+      case 'HOOK_EVENTS':
         /*
 
 
@@ -3366,7 +3729,7 @@ Returns the webhook resource or subject types on which webhooks can be registere
           });
         });
 
-      case "HOOK_EVENTS_SUBJECT_TYPE":
+      case 'HOOK_EVENTS_SUBJECT_TYPE':
         /*
 
 
@@ -3385,7 +3748,7 @@ Returns a paginated list of all valid webhook events for the specified entity.  
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS':
         /*
 
 
@@ -3407,7 +3770,7 @@ Returns a paginated list of webhooks installed on this repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID':
         /*
 
 
@@ -3429,7 +3792,7 @@ Returns the webhook with the specified id installed on the specified repository.
           );
         });
 
-      case "TEAMS_USERNAME_HOOKS":
+      case 'TEAMS_USERNAME_HOOKS':
         /*
 
 
@@ -3448,7 +3811,7 @@ Returns a paginated list of webhooks installed on this team.
           });
         });
 
-      case "TEAMS_USERNAME_HOOKS_UID":
+      case 'TEAMS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -3467,7 +3830,7 @@ Returns the webhook with the specified id installed on the given team account.
           });
         });
 
-      case "USERS_USERNAME_HOOKS":
+      case 'USERS_USERNAME_HOOKS':
         /*
 
 
@@ -3486,7 +3849,7 @@ Returns a paginated list of webhooks installed on this user account.  Note that 
           });
         });
 
-      case "USERS_USERNAME_HOOKS_UID":
+      case 'USERS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -3505,7 +3868,48 @@ Returns the webhook with the specified id installed on the given user account.  
           });
         });
 
-      case "TEAMS_USERNAME_PROJECTS":
+      case 'WORKSPACES_WORKSPACE_HOOKS':
+        /*
+
+
+
+Returns a paginated list of webhooks installed on this workspace.
+
+
+      Function parameters for this API workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksGet(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'WORKSPACES_WORKSPACE_HOOKS_UID':
+        /*
+
+
+
+Returns the webhook with the specified id installed on the given workspace.
+
+
+      Function parameters for this API workspace,uid
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksUidGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'TEAMS_USERNAME_PROJECTS':
         /*
 
 
@@ -3522,7 +3926,7 @@ Returns the webhook with the specified id installed on the given user account.  
           });
         });
 
-      case "TEAMS_USERNAME_PROJECTS_PROJECT_KEY":
+      case 'TEAMS_USERNAME_PROJECTS_PROJECT_KEY':
         /*
 
 
@@ -3542,26 +3946,27 @@ Returns the webhook with the specified id installed on the given user account.  
           );
         });
 
-      case "USERS_USERNAME_SSH_KEYS":
+      case 'WORKSPACES_WORKSPACE_PROJECTS_PROJECT_KEY':
         /*
 
 
 
-Returns a specific SSH public key belonging to a user.  Example: &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/{fbe4bbab-f6f7-4dde-956b-5c58323c54b3}  {     \&quot;comment\&quot;: \&quot;user@myhost\&quot;,     \&quot;created_on\&quot;: \&quot;2018-03-14T13:17:05.196003+00:00\&quot;,     \&quot;key\&quot;: \&quot;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqP3Cr632C2dNhhgKVcon4ldUSAeKiku2yP9O9/bDtY\&quot;,     \&quot;label\&quot;: \&quot;\&quot;,     \&quot;last_used\&quot;: \&quot;2018-03-20T13:18:05.196003+00:00\&quot;,     \&quot;links\&quot;: {         \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/b15b6026-9c02-4626-b4ad-b905f99f763a\&quot;         }     },     \&quot;owner\&quot;: {         \&quot;display_name\&quot;: \&quot;Mark Adams\&quot;,         \&quot;links\&quot;: {             \&quot;avatar\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/account/markadams-atl/avatar/32/\&quot;             },             \&quot;html\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/markadams-atl/\&quot;             },             \&quot;self\&quot;: {                 \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl\&quot;             }         },         \&quot;type\&quot;: \&quot;user\&quot;,         \&quot;username\&quot;: \&quot;markadams-atl\&quot;,         \&quot;nickname\&quot;: \&quot;markadams-atl\&quot;,         \&quot;uuid\&quot;: \&quot;{d7dd0e2d-3994-4a50-a9ee-d260b6cefdab}\&quot;     },     \&quot;type\&quot;: \&quot;ssh_key\&quot;,     \&quot;uuid\&quot;: \&quot;{b15b6026-9c02-4626-b4ad-b905f99f763a}\&quot; } &#x60;&#x60;&#x60;
 
-
-      Function parameters for this API username,keyId
+      Function parameters for this API projectKey,workspace
         */
         return new Promise((resolve, reject) => {
-          this.usersUsernameSshKeysGet(options, (err, data, response) => {
-            if (err) {
-              reject({ error: err, response: response });
+          this.workspacesWorkspaceProjectsProjectKeyGet(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
             }
-            resolve({ data: data, response: response });
-          });
+          );
         });
 
-      case "USERS_USERNAME_SSH_KEYS_GE":
+      case 'USERS_USERNAME_SSH_KEYS':
         /*
 
 
@@ -3572,6 +3977,25 @@ Returns a paginated list of the user&#39;s SSH public keys.  Example:  &#x60;&#x
       Function parameters for this API username
         */
         return new Promise((resolve, reject) => {
+          this.usersUsernameSshKeysGet(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'USERS_USERNAME_SSH_KEYS_GE':
+        /*
+
+
+
+Returns a specific SSH public key belonging to a user.  Example: &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/{fbe4bbab-f6f7-4dde-956b-5c58323c54b3}  {     \&quot;comment\&quot;: \&quot;user@myhost\&quot;,     \&quot;created_on\&quot;: \&quot;2018-03-14T13:17:05.196003+00:00\&quot;,     \&quot;key\&quot;: \&quot;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqP3Cr632C2dNhhgKVcon4ldUSAeKiku2yP9O9/bDtY\&quot;,     \&quot;label\&quot;: \&quot;\&quot;,     \&quot;last_used\&quot;: \&quot;2018-03-20T13:18:05.196003+00:00\&quot;,     \&quot;links\&quot;: {         \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/b15b6026-9c02-4626-b4ad-b905f99f763a\&quot;         }     },     \&quot;owner\&quot;: {         \&quot;display_name\&quot;: \&quot;Mark Adams\&quot;,         \&quot;links\&quot;: {             \&quot;avatar\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/account/markadams-atl/avatar/32/\&quot;             },             \&quot;html\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/markadams-atl/\&quot;             },             \&quot;self\&quot;: {                 \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl\&quot;             }         },         \&quot;type\&quot;: \&quot;user\&quot;,         \&quot;username\&quot;: \&quot;markadams-atl\&quot;,         \&quot;nickname\&quot;: \&quot;markadams-atl\&quot;,         \&quot;uuid\&quot;: \&quot;{d7dd0e2d-3994-4a50-a9ee-d260b6cefdab}\&quot;     },     \&quot;type\&quot;: \&quot;ssh_key\&quot;,     \&quot;uuid\&quot;: \&quot;{b15b6026-9c02-4626-b4ad-b905f99f763a}\&quot; } &#x60;&#x60;&#x60;
+
+
+      Function parameters for this API username,keyId
+        */
+        return new Promise((resolve, reject) => {
           this.usersUsernameSshKeysGet_0(options, (err, data, response) => {
             if (err) {
               reject({ error: err, response: response });
@@ -3580,7 +4004,7 @@ Returns a paginated list of the user&#39;s SSH public keys.  Example:  &#x60;&#x
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_BRANCHES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_BRANCHES':
         /*
 
 
@@ -3602,7 +4026,7 @@ Returns a list of all open branches within the specified repository. Results wil
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_BRANCHES_NAME":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_BRANCHES_NAME':
         /*
 
 
@@ -3624,7 +4048,7 @@ Returns a branch object within the specified repository.  &#x60;&#x60;&#x60; $ c
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_REFS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_REFS':
         /*
 
 
@@ -3646,7 +4070,7 @@ Returns the branches and tags in the repository.  By default, results will be in
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_TAGS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_TAGS':
         /*
 
 
@@ -3668,7 +4092,7 @@ Returns the tags in the repository.  By default, results will be in the order th
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_TAGS_NAME":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_TAGS_NAME':
         /*
 
 
@@ -3702,19 +4126,19 @@ Returns a paginated list of commits that modified the specified file.  Commits a
 
  */
   repositoriesWorkspaceRepoSlugFilehistoryNodePathGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SourceApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -3724,11 +4148,13 @@ Returns a paginated list of commits that modified the specified file.  Commits a
       //  'sort': "sort_example" // String |  Name of a response property sort the result by as per [filtering and sorting](../../../../../../meta/filtering#query-sort).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugFilehistoryNodePathGet(
@@ -3755,19 +4181,19 @@ This endpoint redirects the client to the directory listing of the root director
 
  */
   repositoriesWorkspaceRepoSlugSrcGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SourceApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -3775,11 +4201,13 @@ This endpoint redirects the client to the directory listing of the root director
       //  'format': "format_example" // String | Instead of returning the file's contents, return the (json) meta data for it.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugSrcGet(
@@ -3804,19 +4232,19 @@ This endpoints is used to retrieve the contents of a single file, or the content
 
  */
   repositoriesWorkspaceRepoSlugSrcNodePathGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SourceApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -3824,14 +4252,16 @@ This endpoints is used to retrieve the contents of a single file, or the content
       //  'format': "format_example", // String | If 'meta' is provided, returns the (json) meta data for the contents of the file.  If 'rendered' is provided, returns the contents of a non-binary file in HTML-formatted rendered markup. Since Git and Mercurial do not generally track what text encoding scheme is used, this endpoint attempts to detect the most appropriate character encoding. While usually correct, determining the character encoding can be ambiguous which in exceptional cases can lead to misinterpretation of the characters. As such, the raw element in the response object should not be treated as equivalent to the file's actual contents.
       //  'q': "q_example", // String | Optional filter expression as per [filtering and sorting](../../../../../../meta/filtering).
       //  'sort': "sort_example", // String | Optional sorting parameter as per [filtering and sorting](../../../../../../meta/filtering#query-sort).
-      maxDepth: 56 // Number | If provided, returns the contents of the repository and its subdirectories recursively until the specified max_depth of nested directories. When omitted, this defaults to 1.
+      maxDepth: 56, // Number | If provided, returns the contents of the repository and its subdirectories recursively until the specified max_depth of nested directories. When omitted, this defaults to 1.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugSrcNodePathGet(
@@ -3850,6 +4280,349 @@ This endpoints is used to retrieve the contents of a single file, or the content
     );
   }
 
+  // This is a function for userPermissionsWorkspacesGet
+  /*
+
+
+Returns an object for each workspace the caller is a member of, and their effective role - the highest level of privilege the caller has. If a user is a member of multiple groups with distinct roles, only the highest level is returned.  Permissions can be:  * &#x60;owner&#x60; * &#x60;collaborator&#x60; * &#x60;member&#x60;  Example:  &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/user/permissions/workspaces  {   \&quot;pagelen\&quot;: 10,   \&quot;page\&quot;: 1,   \&quot;size\&quot;: 1,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;workspace_membership\&quot;,       \&quot;permission\&quot;: \&quot;owner\&quot;,       \&quot;last_accessed\&quot;: \&quot;2019-03-07T12:35:02.900024+00:00\&quot;,       \&quot;added_on\&quot;: \&quot;2018-10-11T17:42:02.961424+00:00\&quot;,        \&quot;user\&quot;: {         \&quot;type\&quot;: \&quot;user\&quot;,         \&quot;uuid\&quot;: \&quot;{470c176d-3574-44ea-bb41-89e8638bcca4}\&quot;,         \&quot;nickname\&quot;: \&quot;evzijst\&quot;,         \&quot;display_name\&quot;: \&quot;Erik van Zijst\&quot;,       },        \&quot;workspace\&quot;: {         \&quot;type\&quot;: \&quot;workspace\&quot;,         \&quot;uuid\&quot;: \&quot;{a15fb181-db1f-48f7-b41f-e1eff06929d6}\&quot;,         \&quot;slug\&quot;: \&quot;bitbucket\&quot;,         \&quot;name\&quot;: \&quot;Atlassian Bitbucket\&quot;,       }     }   ] } &#x60;&#x60;&#x60;  Results may be further [filtered or sorted](../../../meta/filtering) by workspace or permission by adding the following query string parameters:  * &#x60;q&#x3D;workspace.slug&#x3D;\&quot;bitbucket\&quot;&#x60; or &#x60;q&#x3D;permission&#x3D;\&quot;owner\&quot;&#x60; * &#x60;sort&#x3D;workspace.slug&#x60;  Note that the query parameter values need to be URL escaped so that &#x60;&#x3D;&#x60; would become &#x60;%3D&#x60;.
+
+ */
+  userPermissionsWorkspacesGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi();
+    apiInstance.userPermissionsWorkspacesGet((error, data, response) => {
+      if (error) {
+        cb(error, null, response);
+      } else {
+        cb(null, data, response);
+      }
+    });
+  }
+
+  // This is a function for workspacesGet
+  /*
+
+
+ */
+  workspacesGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi();
+    apiInstance.workspacesGet((error, data, response) => {
+      if (error) {
+        cb(error, null, response);
+      } else {
+        cb(null, data, response);
+      }
+    });
+  }
+
+  // This is a function for workspacesWorkspaceGet
+  /*
+
+
+ */
+  workspacesWorkspaceGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceGet(
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceHooksGet
+  /*
+
+
+Returns a paginated list of webhooks installed on this workspace.
+
+ */
+  workspacesWorkspaceHooksGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceHooksGet(
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceHooksUidGet
+  /*
+
+
+Returns the webhook with the specified id installed on the given workspace.
+
+ */
+  workspacesWorkspaceHooksUidGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The installed webhook's id.
+    /*let workspace = "workspace_example";*/ /*let uid = "uid_example";*/ apiInstance.workspacesWorkspaceHooksUidGet(
+      incomingOptions.workspace,
+      incomingOptions.uid,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceMembersGet
+  /*
+
+
+ */
+  workspacesWorkspaceMembersGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceMembersGet(
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceMembersMemberGet
+  /*
+
+
+ */
+  workspacesWorkspaceMembersMemberGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | Member's UUID or Atlassian ID // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let member = "member_example";*/ /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceMembersMemberGet(
+      incomingOptions.member,
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspacePermissionsGet
+  /*
+
+
+ */
+  workspacesWorkspacePermissionsGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspacePermissionsGet(
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceProjectsGet
+  /*
+
+
+ */
+  workspacesWorkspaceProjectsGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceProjectsGet(
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceProjectsProjectKeyGet
+  /*
+
+
+ */
+  workspacesWorkspaceProjectsProjectKeyGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | The project in question. This is the actual `key` assigned to the project. // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let projectKey = "projectKey_example";*/ /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceProjectsProjectKeyGet(
+      incomingOptions.projectKey,
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
   // This is a function for repositoriesWorkspaceRepoSlugBranchingModelGet
   /*
 
@@ -3858,19 +4631,19 @@ Return the branching model as applied to the repository. This view is read-only.
 
  */
   repositoriesWorkspaceRepoSlugBranchingModelGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.BranchingModelApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -3895,19 +4668,19 @@ Return the branching model configuration for a repository. The returned object: 
 
  */
   repositoriesWorkspaceRepoSlugBranchingModelSettingsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.BranchingModelApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -3932,19 +4705,19 @@ All repositories owned by a user/team. This includes private repositories, but f
 
  */
   teamsUsernameRepositoriesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -3968,19 +4741,19 @@ Returns details about a specific one of the authenticated user&#39;s email addre
 
  */
   userEmailsEmailGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String |
@@ -4004,19 +4777,19 @@ Returns all the authenticated user&#39;s email addresses. Both confirmed and unc
 
  */
   userEmailsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi();
@@ -4037,19 +4810,19 @@ Returns the currently logged in user.
 
  */
   userGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi();
@@ -4070,19 +4843,19 @@ Returns the list of accounts that are following this user.  This operation has b
 
  */
   usersUsernameFollowersGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | The account's username
@@ -4106,19 +4879,19 @@ Returns the list of accounts this user is following.  This operation has been de
 
  */
   usersUsernameFollowingGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | The user's username
@@ -4142,19 +4915,19 @@ Gets the public information associated with a user account.  If the user&#39;s p
 
  */
   usersUsernameGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | The account's UUID, account_id, or username. Note that username has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
@@ -4178,19 +4951,19 @@ Returns a paginated list of webhooks installed on this user account.  Note that 
 
  */
   usersUsernameHooksGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -4214,19 +4987,19 @@ Returns the webhook with the specified id installed on the given user account.  
 
  */
   usersUsernameHooksUidGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id.
@@ -4251,19 +5024,19 @@ All repositories owned by a user/team. This includes private repositories, but f
 
  */
   usersUsernameRepositoriesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -4287,7 +5060,7 @@ Retrieve an application property value stored against a commit.
 
  */
   getCommitHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The account // String | The repository // String | The commit // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.getCommitHostedPropertyValue(
@@ -4300,7 +5073,7 @@ Retrieve an application property value stored against a commit.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -4314,7 +5087,7 @@ Retrieve an application property value stored against a pull request.
 
  */
   getPullRequestHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The account // String | The repository // String | The pull request ID // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let pullrequestId = "pullrequestId_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.getPullRequestHostedPropertyValue(
@@ -4327,7 +5100,7 @@ Retrieve an application property value stored against a pull request.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -4341,7 +5114,7 @@ Retrieve an application property value stored against a repository.
 
  */
   getRepositoryHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The account // String | The repository // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.getRepositoryHostedPropertyValue(
@@ -4353,7 +5126,7 @@ Retrieve an application property value stored against a repository.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -4367,7 +5140,7 @@ Retrieve an application property value stored against a user.
 
  */
   retrieveUserHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The user // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.retrieveUserHostedPropertyValue(
@@ -4378,7 +5151,7 @@ Retrieve an application property value stored against a user.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -4395,19 +5168,19 @@ Returns the specified build status for a commit.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitstatusesApi(); // String | The commit's SHA1 // String | The build status' unique ke // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -4434,26 +5207,41 @@ Returns all statuses (e.g. build results) for a specific commit.
 
  */
   repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitstatusesApi(); // String | The commit's SHA1 // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
-    /*let node = "node_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(
+    /*let node = "node_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
+      //  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).
+      //  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`.
+    };
+
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(
       incomingOptions.node,
       incomingOptions.workspace,
       incomingOptions.repoSlug,
+      incomingOptions.opts,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -4475,26 +5263,41 @@ Returns all statuses (e.g. build results) for the given pull request.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitstatusesApi(); // Number | The id of the pull request // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
-    /*let pullRequestId = 56;*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(
+    /*let pullRequestId = 56;*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
+      //  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).
+      //  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`.
+    };
+
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(
       incomingOptions.pullRequestId,
       incomingOptions.workspace,
       incomingOptions.repoSlug,
+      incomingOptions.opts,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -4513,19 +5316,19 @@ Returns all deploy-keys belonging to a repository.  Example: &#x60;&#x60;&#x60; 
 
  */
   repositoriesWorkspaceRepoSlugDeployKeysGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DeployApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -4550,19 +5353,19 @@ Returns the deploy key belonging to a specific key.  Example: &#x60;&#x60;&#x60;
 
  */
   repositoriesWorkspaceRepoSlugDeployKeysKeyIdGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DeployApi(); // String | The key ID matching the deploy key // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -4588,31 +5391,36 @@ Returns a paginated list of all public repositories.  This endpoint also support
 
  */
   repositoriesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi();
     let opts = {
-      //  'after': "after_example" // String | Filter the results to include only repositories create on or after this [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)  timestamp. Example: `YYYY-MM-DDTHH:mm:ss.sssZ`
+      //  'after': "after_example", // String | Filter the results to include only repositories created on or after this [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)  timestamp. Example: `YYYY-MM-DDTHH:mm:ss.sssZ`
+      //  'role': "role_example", // String | Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user
+      //  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../meta/filtering). `role` parameter must also be specified.
+      //  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../meta/filtering).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesGet(
@@ -4635,32 +5443,35 @@ Returns a paginated list of all repositories owned by the specified account or U
 
  */
   repositoriesWorkspaceGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
     /*let workspace = "workspace_example";*/ let opts = {
-      page: 1 // Number | Page number of the current results. This is an optional element that is not provided in all responses.
-      //  'role': "role_example" // String |  Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user
+      //  'role': "role_example", // String |  Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user
+      //  'q': "q_example", // String |  Query string to narrow down the response as per [filtering and sorting](../../meta/filtering).
+      //  'sort': "sort_example" // String |  Field by which the results should be sorted as per [filtering and sorting](../../meta/filtering).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceGet(
@@ -4687,19 +5498,19 @@ Returns the specified build status for a commit.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | The commit's SHA1 // String | The build status' unique ke // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -4726,26 +5537,41 @@ Returns all statuses (e.g. build results) for a specific commit.
 
  */
   repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | The commit's SHA1 // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
-    /*let node = "node_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(
+    /*let node = "node_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
+      //  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).
+      //  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`.
+    };
+
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(
       incomingOptions.node,
       incomingOptions.workspace,
       incomingOptions.repoSlug,
+      incomingOptions.opts,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -4764,19 +5590,19 @@ Returns a paginated list of commits that modified the specified file.  Commits a
 
  */
   repositoriesWorkspaceRepoSlugFilehistoryNodePathGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -4786,11 +5612,13 @@ Returns a paginated list of commits that modified the specified file.  Commits a
       //  'sort': "sort_example" // String |  Name of a response property sort the result by as per [filtering and sorting](../../../../../../meta/filtering#query-sort).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugFilehistoryNodePathGet(
@@ -4817,25 +5645,41 @@ Returns a paginated list of all the forks of the specified repository.
 
  */
   repositoriesWorkspaceRepoSlugForksGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
-    /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugForksGet(
+    /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
+      //  'role': "role_example", // String | Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user
+      //  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../meta/filtering).
+      //  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../meta/filtering).
+    };
+
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.repositoriesWorkspaceRepoSlugForksGet(
       incomingOptions.workspace,
       incomingOptions.repoSlug,
+      incomingOptions.opts,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -4854,19 +5698,19 @@ Returns the object describing this repository.
 
  */
   repositoriesWorkspaceRepoSlugGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -4891,19 +5735,19 @@ Returns a paginated list of webhooks installed on this repository.
 
  */
   repositoriesWorkspaceRepoSlugHooksGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -4928,19 +5772,19 @@ Returns the webhook with the specified id installed on the specified repository.
 
  */
   repositoriesWorkspaceRepoSlugHooksUidGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The installed webhook's id.
@@ -4969,26 +5813,41 @@ Returns all statuses (e.g. build results) for the given pull request.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // Number | The id of the pull request // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
-    /*let pullRequestId = 56;*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(
+    /*let pullRequestId = 56;*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
+      //  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).
+      //  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`.
+    };
+
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(
       incomingOptions.pullRequestId,
       incomingOptions.workspace,
       incomingOptions.repoSlug,
+      incomingOptions.opts,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -5007,19 +5866,19 @@ This endpoint redirects the client to the directory listing of the root director
 
  */
   repositoriesWorkspaceRepoSlugSrcGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -5027,11 +5886,13 @@ This endpoint redirects the client to the directory listing of the root director
       //  'format': "format_example" // String | Instead of returning the file's contents, return the (json) meta data for it.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugSrcGet(
@@ -5056,19 +5917,19 @@ This endpoints is used to retrieve the contents of a single file, or the content
 
  */
   repositoriesWorkspaceRepoSlugSrcNodePathGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -5076,14 +5937,16 @@ This endpoints is used to retrieve the contents of a single file, or the content
       //  'format': "format_example", // String | If 'meta' is provided, returns the (json) meta data for the contents of the file.  If 'rendered' is provided, returns the contents of a non-binary file in HTML-formatted rendered markup. Since Git and Mercurial do not generally track what text encoding scheme is used, this endpoint attempts to detect the most appropriate character encoding. While usually correct, determining the character encoding can be ambiguous which in exceptional cases can lead to misinterpretation of the characters. As such, the raw element in the response object should not be treated as equivalent to the file's actual contents.
       //  'q': "q_example", // String | Optional filter expression as per [filtering and sorting](../../../../../../meta/filtering).
       //  'sort': "sort_example", // String | Optional sorting parameter as per [filtering and sorting](../../../../../../meta/filtering#query-sort).
-      maxDepth: 56 // Number | If provided, returns the contents of the repository and its subdirectories recursively until the specified max_depth of nested directories. When omitted, this defaults to 1.
+      maxDepth: 56, // Number | If provided, returns the contents of the repository and its subdirectories recursively until the specified max_depth of nested directories. When omitted, this defaults to 1.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugSrcNodePathGet(
@@ -5110,19 +5973,19 @@ Returns a paginated list of all the watchers on the specified repository.
 
  */
   repositoriesWorkspaceRepoSlugWatchersGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -5133,7 +5996,7 @@ Returns a paginated list of all the watchers on the specified repository.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -5147,19 +6010,19 @@ Returns an object for each repository the caller has explicit access to and thei
 
  */
   userPermissionsRepositoriesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi();
@@ -5168,11 +6031,13 @@ Returns an object for each repository the caller has explicit access to and thei
       //  'sort': "sort_example" // String |  Name of a response property sort the result by as per [filtering and sorting](../../../meta/filtering#query-sort).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userPermissionsRepositoriesGet(
@@ -5195,19 +6060,19 @@ Convenience resource for getting to a snippet&#39;s raw files without the need f
 
  */
   snippetsWorkspaceEncodedIdFilesPathGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
@@ -5219,7 +6084,7 @@ Convenience resource for getting to a snippet&#39;s raw files without the need f
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -5229,35 +6094,37 @@ Convenience resource for getting to a snippet&#39;s raw files without the need f
   /*
 
 
-Returns the diff stat for the specified commit.  Diff stat responses contain a record for every path modified by the commit and lists the number of lines added and removed for each file.   Example: &#x60;&#x60;&#x60; curl https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/diffstat/d222fa2..e174964 {     \&quot;pagelen\&quot;: 500,     \&quot;values\&quot;: [         {             \&quot;type\&quot;: \&quot;diffstat\&quot;,             \&quot;status\&quot;: \&quot;modified\&quot;,             \&quot;lines_removed\&quot;: 1,             \&quot;lines_added\&quot;: 2,             \&quot;old\&quot;: {                 \&quot;path\&quot;: \&quot;setup.py\&quot;,                 \&quot;type\&quot;: \&quot;commit_file\&quot;,                 \&quot;links\&quot;: {                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/src/e1749643d655d7c7014001a6c0f58abaf42ad850/setup.py\&quot;                     }                 }             },             \&quot;new\&quot;: {                 \&quot;path\&quot;: \&quot;setup.py\&quot;,                 \&quot;type\&quot;: \&quot;commit_file\&quot;,                 \&quot;links\&quot;: {                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/src/d222fa235229c55dad20b190b0b571adf737d5a6/setup.py\&quot;                     }                 }             }         }     ],     \&quot;page\&quot;: 1,     \&quot;size\&quot;: 1 } &#x60;&#x60;&#x60;
+Returns the diff stat for the specified commit.  Diff stat responses contain a record for every path modified by the commit and lists the number of lines added and removed for each file.   Example: &#x60;&#x60;&#x60; curl https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/diffstat/d222fa2..e174964 {     \&quot;pagelen\&quot;: 500,     \&quot;values\&quot;: [         {             \&quot;type\&quot;: \&quot;diffstat\&quot;,             \&quot;status\&quot;: \&quot;modified\&quot;,             \&quot;lines_removed\&quot;: 1,             \&quot;lines_added\&quot;: 2,             \&quot;old\&quot;: {                 \&quot;path\&quot;: \&quot;setup.py\&quot;,                 \&quot;escaped_path\&quot;: \&quot;setup.py\&quot;,                 \&quot;type\&quot;: \&quot;commit_file\&quot;,                 \&quot;links\&quot;: {                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/src/e1749643d655d7c7014001a6c0f58abaf42ad850/setup.py\&quot;                     }                 }             },             \&quot;new\&quot;: {                 \&quot;path\&quot;: \&quot;setup.py\&quot;,                 \&quot;escaped_path\&quot;: \&quot;setup.py\&quot;,                 \&quot;type\&quot;: \&quot;commit_file\&quot;,                 \&quot;links\&quot;: {                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/bitbucket/geordi/src/d222fa235229c55dad20b190b0b571adf737d5a6/setup.py\&quot;                     }                 }             }         }     ],     \&quot;page\&quot;: 1,     \&quot;size\&quot;: 1 } &#x60;&#x60;&#x60;
 
  */
   repositoriesWorkspaceRepoSlugDiffstatSpecGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DefaultApi(); // String | A commit SHA (e.g. `3a8b42`) or a commit range using double dot notation (e.g. `3a8b42..9ff173`). // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let spec = "spec_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      ignoreWhitespace: true // Boolean | Generate diffs that ignore whitespace
+      ignoreWhitespace: true, // Boolean | Generate diffs that ignore whitespace
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugDiffstatSpecGet(
@@ -5286,19 +6153,19 @@ This endpoint is used to poll for the progress of an issue export job and return
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DefaultApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The name of the rep // String | The ID of the export task
@@ -5325,19 +6192,19 @@ When using GET, this endpoint reports the status of the current import task. Req
 
  */
   repositoriesWorkspaceRepoSlugIssuesImportGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DefaultApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -5363,7 +6230,7 @@ When using GET, this endpoint reports the status of the current import task. Req
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DefaultApi();
     apiInstance.repositoriesWorkspaceRepoSlugPipelinesPipelineUuidStepsStepUuidLogsLogUuidGet(
@@ -5371,7 +6238,7 @@ When using GET, this endpoint reports the status of the current import task. Req
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -5386,7 +6253,7 @@ When using GET, this endpoint reports the status of the current import task. Req
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DefaultApi();
     apiInstance.repositoriesWorkspaceRepoSlugPipelinesPipelineUuidStepsStepUuidTestReportsGet(
@@ -5394,7 +6261,7 @@ When using GET, this endpoint reports the status of the current import task. Req
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -5409,7 +6276,7 @@ When using GET, this endpoint reports the status of the current import task. Req
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DefaultApi();
     apiInstance.repositoriesWorkspaceRepoSlugPipelinesPipelineUuidStepsStepUuidTestReportsTestCasesGet(
@@ -5417,7 +6284,7 @@ When using GET, this endpoint reports the status of the current import task. Req
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -5432,7 +6299,7 @@ When using GET, this endpoint reports the status of the current import task. Req
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DefaultApi();
     apiInstance.repositoriesWorkspaceRepoSlugPipelinesPipelineUuidStepsStepUuidTestReportsTestCasesTestCaseUuidTestCaseReasonsGet(
@@ -5440,7 +6307,7 @@ When using GET, this endpoint reports the status of the current import task. Req
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -5454,19 +6321,19 @@ Returns an object for each team permission a user on the team has.  Permissions 
 
  */
   teamsUsernamePermissionsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DefaultApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -5475,11 +6342,13 @@ Returns an object for each team permission a user on the team has.  Permissions 
       //  'sort': "sort_example" // String |  Name of a response property sort the result by as per [filtering and sorting](../../../meta/filtering#query-sort).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsUsernamePermissionsGet(
@@ -5503,19 +6372,19 @@ Returns an object for each repository permission for all of a team’s repositor
 
  */
   teamsUsernamePermissionsRepositoriesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DefaultApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -5524,11 +6393,13 @@ Returns an object for each repository permission for all of a team’s repositor
       //  'sort': "sort_example" // String |  Name of a response property sort the result by as per [filtering and sorting](../../../../meta/filtering#query-sort).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsUsernamePermissionsRepositoriesGet(
@@ -5552,19 +6423,19 @@ Returns an object for each repository permission of a given repository.  If the 
 
  */
   teamsUsernamePermissionsRepositoriesRepoSlugGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DefaultApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -5573,11 +6444,13 @@ Returns an object for each repository permission of a given repository.  If the 
       //  'sort': "sort_example" // String |  Name of a response property sort the result by as per [filtering and sorting](../../../../meta/filtering#query-sort).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsUsernamePermissionsRepositoriesRepoSlugGet(
@@ -5602,19 +6475,19 @@ Returns an object for each team the caller is a member of, and their effective r
 
  */
   userPermissionsTeamsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DefaultApi();
@@ -5623,11 +6496,13 @@ Returns an object for each team the caller is a member of, and their effective r
       //  'sort': "sort_example" // String |  Name of a response property sort the result by as per [filtering and sorting](../../../meta/filtering#query-sort).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.userPermissionsTeamsGet(
@@ -5648,19 +6523,19 @@ Returns an object for each team the caller is a member of, and their effective r
 
  */
   addonLinkersGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi();
@@ -5679,19 +6554,19 @@ Returns an object for each team the caller is a member of, and their effective r
 
  */
   addonLinkersLinkerKeyGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi(); // String |
@@ -5713,19 +6588,19 @@ Returns an object for each team the caller is a member of, and their effective r
 
  */
   addonLinkersLinkerKeyValuesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi(); // String |
@@ -5747,19 +6622,19 @@ Returns an object for each team the caller is a member of, and their effective r
 
  */
   addonLinkersLinkerKeyValuesGet_0(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi(); // String |
@@ -5783,7 +6658,7 @@ Find deployment environment level variables.
 
  */
   getDeploymentVariables(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The environment.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let environmentUuid = "environmentUuid_example";*/ apiInstance.getDeploymentVariables(
@@ -5808,7 +6683,7 @@ Retrieve a specified pipeline
 
  */
   getPipelineForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The pipeline UUID.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let pipelineUuid = "pipelineUuid_example";*/ apiInstance.getPipelineForRepository(
@@ -5833,7 +6708,7 @@ Retrieve a given step of a pipeline.
 
  */
   getPipelineStepForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the pipeline // String | The UUID of the step.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let pipelineUuid = "pipelineUuid_example";*/ /*let stepUuid = "stepUuid_example";*/ apiInstance.getPipelineStepForRepository(
@@ -5859,7 +6734,7 @@ Retrieve the log file for a given step of a pipeline.  This endpoint supports (a
 
  */
   getPipelineStepLogForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the pipeline // String | The UUID of the step.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let pipelineUuid = "pipelineUuid_example";*/ /*let stepUuid = "stepUuid_example";*/ apiInstance.getPipelineStepLogForRepository(
@@ -5871,7 +6746,7 @@ Retrieve the log file for a given step of a pipeline.  This endpoint supports (a
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -5885,7 +6760,7 @@ Find steps for the given pipeline.
 
  */
   getPipelineStepsForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the pipeline.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let pipelineUuid = "pipelineUuid_example";*/ apiInstance.getPipelineStepsForRepository(
@@ -5910,7 +6785,7 @@ Retrieve a team level variable.
 
  */
   getPipelineVariableForTeam(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The UUID of the variable to retrieve.
     /*let username = "username_example";*/ /*let variableUuid = "variableUuid_example";*/ apiInstance.getPipelineVariableForTeam(
@@ -5934,7 +6809,7 @@ Retrieve a user level variable.
 
  */
   getPipelineVariableForUser(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The UUID of the variable to retrieve.
     /*let username = "username_example";*/ /*let variableUuid = "variableUuid_example";*/ apiInstance.getPipelineVariableForUser(
@@ -5958,7 +6833,7 @@ Find account level variables.
 
  */
   getPipelineVariablesForTeam(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account.
     /*let username = "username_example";*/ apiInstance.getPipelineVariablesForTeam(
@@ -5981,7 +6856,7 @@ Find user level variables.
 
  */
   getPipelineVariablesForUser(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account.
     /*let username = "username_example";*/ apiInstance.getPipelineVariablesForUser(
@@ -6004,7 +6879,7 @@ Find pipelines
 
  */
   getPipelinesForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.getPipelinesForRepository(
@@ -6028,7 +6903,7 @@ Retrieve the repository pipelines configuration.
 
  */
   getRepositoryPipelineConfig(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.getRepositoryPipelineConfig(
@@ -6052,7 +6927,7 @@ Retrieve a repository level known host.
 
  */
   getRepositoryPipelineKnownHost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the known host to retrieve.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let knownHostUuid = "knownHostUuid_example";*/ apiInstance.getRepositoryPipelineKnownHost(
@@ -6077,7 +6952,7 @@ Find repository level known hosts.
 
  */
   getRepositoryPipelineKnownHosts(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.getRepositoryPipelineKnownHosts(
@@ -6101,7 +6976,7 @@ Retrieve a schedule by its UUID.
 
  */
   getRepositoryPipelineSchedule(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The uuid of the schedule.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let scheduleUuid = "scheduleUuid_example";*/ apiInstance.getRepositoryPipelineSchedule(
@@ -6126,7 +7001,7 @@ Retrieve the executions of a given schedule.
 
  */
   getRepositoryPipelineScheduleExecutions(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.getRepositoryPipelineScheduleExecutions(
@@ -6150,7 +7025,7 @@ Retrieve the configured schedules for the given repository.
 
  */
   getRepositoryPipelineSchedules(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.getRepositoryPipelineSchedules(
@@ -6174,7 +7049,7 @@ Retrieve the repository SSH key pair excluding the SSH private key. The private 
 
  */
   getRepositoryPipelineSshKeyPair(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.getRepositoryPipelineSshKeyPair(
@@ -6198,7 +7073,7 @@ Retrieve a repository level variable.
 
  */
   getRepositoryPipelineVariable(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the variable to retrieve.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let variableUuid = "variableUuid_example";*/ apiInstance.getRepositoryPipelineVariable(
@@ -6223,7 +7098,7 @@ Find repository level variables.
 
  */
   getRepositoryPipelineVariables(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.getRepositoryPipelineVariables(
@@ -6247,19 +7122,19 @@ Returns the specified issue tracker component object.
 
  */
   repositoriesWorkspaceRepoSlugComponentsComponentIdGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // Number | The component's i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6285,19 +7160,19 @@ Returns the components that have been defined in the issue tracker.  This resour
 
  */
   repositoriesWorkspaceRepoSlugComponentsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6322,19 +7197,19 @@ Returns the issues in the issue tracker.
 
  */
   repositoriesWorkspaceRepoSlugIssuesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6362,19 +7237,19 @@ Returns all attachments for this issue.  This returns the files&#39; meta data. 
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Number | The issue's id
@@ -6403,19 +7278,19 @@ Returns the contents of the specified file attachment.  Note that this endpoint 
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6428,7 +7303,7 @@ Returns the contents of the specified file attachment.  Note that this endpoint 
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -6445,19 +7320,19 @@ Returns the specified issue change object.  This resource is only available on r
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue change i // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6484,19 +7359,19 @@ Returns the list of all changes that have been made to the specified issue. Chan
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdChangesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6505,11 +7380,13 @@ Returns the list of all changes that have been made to the specified issue. Chan
       //  'sort': "sort_example" // String |  Name of a response property to sort results. See [filtering and sorting](../../../meta/filtering#query-sort) for details.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugIssuesIssueIdChangesGet(
@@ -6538,19 +7415,19 @@ Returns the specified issue comment object.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The ID of the issue that is being queried.
@@ -6578,19 +7455,19 @@ Returns a paginated list of all comments that were made on the specified issue. 
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdCommentsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6598,11 +7475,13 @@ Returns a paginated list of all comments that were made on the specified issue. 
       //  'q': "q_example" // String |  Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugIssuesIssueIdCommentsGet(
@@ -6629,19 +7508,19 @@ Returns the specified issue.
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6667,19 +7546,19 @@ Check whether the authenticated user has voted for this issue. A 204 status code
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdVoteGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6705,19 +7584,19 @@ Indicated whether or not the authenticated user is watching this issue.
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdWatchGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6743,19 +7622,19 @@ Returns the milestones that have been defined in the issue tracker.  This resour
 
  */
   repositoriesWorkspaceRepoSlugMilestonesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6780,19 +7659,19 @@ Returns the specified issue tracker milestone object.
 
  */
   repositoriesWorkspaceRepoSlugMilestonesMilestoneIdGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // Number | The milestone's i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6818,19 +7697,19 @@ Returns the versions that have been defined in the issue tracker.  This resource
 
  */
   repositoriesWorkspaceRepoSlugVersionsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6855,19 +7734,19 @@ Returns the specified issue tracker version object.
 
  */
   repositoriesWorkspaceRepoSlugVersionsVersionIdGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // Number | The version's i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6893,19 +7772,19 @@ Returns a paginated list of all branch restrictions on the repository.
 
  */
   repositoriesWorkspaceRepoSlugBranchRestrictionsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.BranchrestrictionsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6914,11 +7793,13 @@ Returns a paginated list of all branch restrictions on the repository.
       //  'pattern': "pattern_example" // String | Branch restrictions applied to branches of this pattern
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugBranchRestrictionsGet(
@@ -6943,19 +7824,19 @@ Returns a specific branch restriction rule.
 
  */
   repositoriesWorkspaceRepoSlugBranchRestrictionsIdGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.BranchrestrictionsApi(); // String | The restriction rule's i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -6981,19 +7862,19 @@ Returns all the teams that the authenticated user is associated with.
 
  */
   teamsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi();
@@ -7001,11 +7882,13 @@ Returns all the teams that the authenticated user is associated with.
       //  'role': "role_example" // String |  Filters the teams based on the authenticated user's role on each team.  * **member**: returns a list of all the teams which the caller is a member of   at least one team group or repository owned by the team * **contributor**: returns a list of teams which the caller has write access   to at least one repository owned by the team * **admin**: returns a list teams which the caller has team administrator access
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.teamsGet(incomingOptions.opts, (error, data, response) => {
@@ -7025,19 +7908,19 @@ Returns the list of accounts that are following this team.
 
  */
   teamsUsernameFollowersGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | The team's username
@@ -7061,19 +7944,19 @@ Returns the list of accounts this team is following.
 
  */
   teamsUsernameFollowingGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | The team's username
@@ -7097,19 +7980,19 @@ Gets the public information associated with a team.  If the team&#39;s profile i
 
  */
   teamsUsernameGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | The team's username or UUID.
@@ -7133,19 +8016,19 @@ Returns a paginated list of webhooks installed on this team.
 
  */
   teamsUsernameHooksGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -7169,19 +8052,19 @@ Returns the webhook with the specified id installed on the given team account.
 
  */
   teamsUsernameHooksUidGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id.
@@ -7206,19 +8089,19 @@ Returns all members of the specified team. Any member of any of the team&#39;s g
 
  */
   teamsUsernameMembersGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -7242,19 +8125,19 @@ All repositories owned by a user/team. This includes private repositories, but f
 
  */
   teamsUsernameRepositoriesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -7278,19 +8161,19 @@ Returns all members of the specified team. Any member of any of the team&#39;s g
 
  */
   usersUsernameMembersGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -7314,24 +8197,128 @@ All repositories owned by a user/team. This includes private repositories, but f
 
  */
   usersUsernameRepositoriesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
     /*let username = "username_example";*/ apiInstance.usersUsernameRepositoriesGet(
       incomingOptions.username,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for getAnnotation
+  /*
+
+
+Returns a single Annotation matching the provided ID.
+
+ */
+  getAnnotation(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.ReportsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report // String | Either the uuid or external-id of the annotation.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let annotationId = "annotationId_example";*/ apiInstance.getAnnotation(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.annotationId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for getAnnotationsForReport
+  /*
+
+
+Returns a paginated list of Annotations for a specified report.
+
+ */
+  getAnnotationsForReport(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.ReportsApi(); // String | The account // String | The repository // String | The commit for which to retrieve reports // String | Uuid or external-if of the report for which to get annotations for.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ apiInstance.getAnnotationsForReport(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for getReport
+  /*
+
+
+Returns a single Report matching the provided ID.
+
+ */
+  getReport(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.ReportsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ apiInstance.getReport(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for getReportsForCommit
+  /*
+
+
+Returns a paginated list of Reports linked to this commit.
+
+ */
+  getReportsForCommit(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.ReportsApi(); // String | The account // String | The repository // String | The commit for which to retrieve reports.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ apiInstance.getReportsForCommit(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -7350,19 +8337,19 @@ Returns all snippets. Like pull requests, repositories and teams, the full set o
 
  */
   snippetsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi();
@@ -7370,11 +8357,13 @@ Returns all snippets. Like pull requests, repositories and teams, the full set o
       //  'role': "role_example" // String | Filter down the result based on the authenticated user's role (`owner`, `contributor`, or `member`).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.snippetsGet(incomingOptions.opts, (error, data, response) => {
@@ -7394,19 +8383,19 @@ Returns the specific snippet comment.
 
  */
   snippetsWorkspaceEncodedIdCommentsCommentIdGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
@@ -7432,19 +8421,19 @@ Used to retrieve a paginated list of all comments for a specific snippet.  This 
 
  */
   snippetsWorkspaceEncodedIdCommentsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
@@ -7469,19 +8458,19 @@ Returns the changes (commits) made on this snippet.
 
  */
   snippetsWorkspaceEncodedIdCommitsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
@@ -7504,19 +8493,19 @@ Returns the changes (commits) made on this snippet.
 
  */
   snippetsWorkspaceEncodedIdCommitsRevisionGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String |
@@ -7542,19 +8531,19 @@ Retrieves a single snippet.  Snippets support multiple content types:  * applica
 
  */
   snippetsWorkspaceEncodedIdGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet's id.
@@ -7579,19 +8568,19 @@ Retrieves the raw contents of a specific file in the snippet. The &#x60;Content-
 
  */
   snippetsWorkspaceEncodedIdNodeIdFilesPathGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
@@ -7604,7 +8593,7 @@ Retrieves the raw contents of a specific file in the snippet. The &#x60;Content-
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -7618,19 +8607,19 @@ Identical to &#x60;GET /snippets/encoded_id&#x60;, except that this endpoint can
 
  */
   snippetsWorkspaceEncodedIdNodeIdGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet's id // String | A commit revision (SHA1).
@@ -7656,19 +8645,19 @@ Returns the diff of the specified commit against its first parent.  Note that th
 
  */
   snippetsWorkspaceEncodedIdRevisionDiffGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet id // String | A revspec expression. This can simply be a commit SHA1, a ref name, or a compare expression like `staging..production`.
@@ -7676,11 +8665,13 @@ Returns the diff of the specified commit against its first parent.  Note that th
       //  'path': "path_example" // String | When used, only one the diff of the specified file will be returned.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.snippetsWorkspaceEncodedIdRevisionDiffGet(
@@ -7692,7 +8683,7 @@ Returns the diff of the specified commit against its first parent.  Note that th
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -7706,19 +8697,19 @@ Returns the patch of the specified commit against its first parent.  Note that t
 
  */
   snippetsWorkspaceEncodedIdRevisionPatchGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet id // String | A revspec expression. This can simply be a commit SHA1, a ref name, or a compare expression like `staging..production`.
@@ -7730,7 +8721,7 @@ Returns the patch of the specified commit against its first parent.  Note that t
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -7744,19 +8735,19 @@ Used to check if the current user is watching a specific snippet.  Returns 204 (
 
  */
   snippetsWorkspaceEncodedIdWatchGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet id.
@@ -7781,19 +8772,19 @@ Returns a paginated list of all users watching a specific snippet.
 
  */
   snippetsWorkspaceEncodedIdWatchersGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet id.
@@ -7818,19 +8809,19 @@ Identical to &#x60;/snippets&#x60;, except that the result is further filtered b
 
  */
   snippetsWorkspaceGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | Limits the result to snippets owned by this user.
@@ -7838,11 +8829,13 @@ Identical to &#x60;/snippets&#x60;, except that the result is further filtered b
       //  'role': "role_example" // String | Filter down the result based on the authenticated user's role (`owner`, `contributor`, or `member`).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.snippetsWorkspaceGet(
@@ -7865,19 +8858,21 @@ Returns a paginated list of all pull requests as part of which this commit was r
 
  */
   getPullrequestsForCommit(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | The account; either the UUID in curly braces, or the account_i // String | The repository; either the UUID in curly braces, or the slu // String | The SHA1 of the commit
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ let opts = {
       page: 1, // Number | Which page to retrieve
-      pagelen: 30 // Number | How many pull requests to retrieve per page
+      pagelen: 30, // Number | How many pull requests to retrieve per page
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.getPullrequestsForCommit(
@@ -7903,19 +8898,19 @@ Returns all pull requests authored by the specified user.  By default only open 
 
  */
   pullrequestsSelectedUserGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the username of the pull request author, the author's UUID surrounded by curly-braces, for example: `{account UUID}`, or the author's Atlassian ID.
@@ -7923,11 +8918,13 @@ Returns all pull requests authored by the specified user.  By default only open 
       //  'state': "state_example" // String | Only return pull requests that are in this state. This parameter can be repeated.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.pullrequestsSelectedUserGet(
@@ -7951,19 +8948,19 @@ Returns the repository&#39;s default reviewers.  These are the users that are au
 
  */
   repositoriesWorkspaceRepoSlugDefaultReviewersGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -7974,7 +8971,7 @@ Returns the repository&#39;s default reviewers.  These are the users that are au
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -7991,19 +8988,19 @@ Returns the specified reviewer.  This can be used to test whether a user is amon
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the username or the UUID of the default reviewer, surrounded by curly-braces, for example: `{account UUID}`. // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8029,19 +9026,19 @@ Returns a paginated list of the pull request&#39;s activity log.  This includes 
 
  */
   repositoriesWorkspaceRepoSlugPullrequestsActivityGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // Number | The id of the pull request // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8053,7 +9050,7 @@ Returns a paginated list of the pull request&#39;s activity log.  This includes 
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -8067,19 +9064,19 @@ Returns all pull requests on the specified repository.  By default only open pul
 
  */
   repositoriesWorkspaceRepoSlugPullrequestsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8087,11 +9084,13 @@ Returns all pull requests on the specified repository.  By default only open pul
       //  'state': "state_example" // String | Only return pull requests that are in this state. This parameter can be repeated.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugPullrequestsGet(
@@ -8119,19 +9118,19 @@ Returns a paginated list of the pull request&#39;s activity log.  This includes 
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // Number | The id of the pull request // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8143,7 +9142,7 @@ Returns a paginated list of the pull request&#39;s activity log.  This includes 
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -8160,19 +9159,19 @@ Returns a specific pull request comment.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8202,19 +9201,19 @@ Returns a paginated list of the pull request&#39;s comments.  This includes both
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Number | The id of the pull request.
@@ -8243,19 +9242,19 @@ Returns a paginated list of the pull request&#39;s commits.  These are the commi
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8284,19 +9283,19 @@ Redirects to the [repository diff](../../diff/%7Bspec%7D) with the revspec that 
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8308,7 +9307,7 @@ Redirects to the [repository diff](../../diff/%7Bspec%7D) with the revspec that 
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -8325,19 +9324,19 @@ Redirects to the [repository diffstat](../../diffstat/%7Bspec%7D) with the revsp
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8349,7 +9348,7 @@ Redirects to the [repository diffstat](../../diffstat/%7Bspec%7D) with the revsp
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -8366,19 +9365,19 @@ Returns the specified pull request.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Number | The id of the pull request.
@@ -8396,6 +9395,46 @@ Returns the specified pull request.
     );
   }
 
+  // This is a function for repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet
+  /*
+
+
+ */
+  repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet(
+    incomingOptions,
+    cb
+  ) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
+    /*let pullRequestId = "pullRequestId_example";*/ /*let taskId = "taskId_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet(
+      incomingOptions.pullRequestId,
+      incomingOptions.taskId,
+      incomingOptions.workspace,
+      incomingOptions.repoSlug,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, '', response);
+        }
+      }
+    );
+  }
+
   // This is a function for repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet
   /*
 
@@ -8405,19 +9444,19 @@ Returns the specified pull request.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8446,26 +9485,41 @@ Returns all statuses (e.g. build results) for the given pull request.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // Number | The id of the pull request // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
-    /*let pullRequestId = 56;*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(
+    /*let pullRequestId = 56;*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
+      //  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).
+      //  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`.
+    };
+
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(
       incomingOptions.pullRequestId,
       incomingOptions.workspace,
       incomingOptions.repoSlug,
+      incomingOptions.opts,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -8478,23 +9532,25 @@ Returns all statuses (e.g. build results) for the given pull request.
 
   // This is a function for searchAccount
   /*
-Search for code in the repositories of the specified team
+Search for code in the repositories of the specified team.  Searching across all repositories:  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code?search_query&#x3D;foo&#39; {   \&quot;size\&quot;: 1,   \&quot;page\&quot;: 1,   \&quot;pagelen\&quot;: 10,   \&quot;query_substituted\&quot;: false,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;code_search_result\&quot;,       \&quot;content_match_count\&quot;: 2,       \&quot;content_matches\&quot;: [         {           \&quot;lines\&quot;: [             {               \&quot;line\&quot;: 2,               \&quot;segments\&quot;: []             },             {               \&quot;line\&quot;: 3,               \&quot;segments\&quot;: [                 {                   \&quot;text\&quot;: \&quot;def \&quot;                 },                 {                   \&quot;text\&quot;: \&quot;foo\&quot;,                   \&quot;match\&quot;: true                 },                 {                   \&quot;text\&quot;: \&quot;():\&quot;                 }               ]             },             {               \&quot;line\&quot;: 4,               \&quot;segments\&quot;: [                 {                   \&quot;text\&quot;: \&quot;    print(\\\&quot;snek\\\&quot;)\&quot;                 }               ]             },             {               \&quot;line\&quot;: 5,               \&quot;segments\&quot;: []             }           ]         }       ],       \&quot;path_matches\&quot;: [         {           \&quot;text\&quot;: \&quot;src/\&quot;         },         {           \&quot;text\&quot;: \&quot;foo\&quot;,           \&quot;match\&quot;: true         },         {           \&quot;text\&quot;: \&quot;.py\&quot;         }       ],       \&quot;file\&quot;: {         \&quot;path\&quot;: \&quot;src/foo.py\&quot;,         \&quot;type\&quot;: \&quot;commit_file\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/src/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b/src/foo.py\&quot;           }         }       }     }   ] } &#x60;&#x60;&#x60;  Note that searches can match in the file&#39;s text (&#x60;content_matches&#x60;), the path (&#x60;path_matches&#x60;), or both as in the example above.  You can use the same syntax for the search query as in the UI, e.g. to only search within a specific repository:  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code?search_query&#x3D;foo+repo:demo&#39; # results from the \&quot;demo\&quot; repository &#x60;&#x60;&#x60;  Similar to other APIs, you can request more fields using a &#x60;fields&#x60; query parameter. E.g. to get some more information about the repository of matched files (the &#x60;%2B&#x60; is a URL-encoded &#x60;+&#x60;):  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code&#39;\\      &#39;?search_query&#x3D;foo&amp;fields&#x3D;%2Bvalues.file.commit.repository&#39; {   \&quot;size\&quot;: 1,   \&quot;page\&quot;: 1,   \&quot;pagelen\&quot;: 10,   \&quot;query_substituted\&quot;: false,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;code_search_result\&quot;,       \&quot;content_match_count\&quot;: 1,       \&quot;content_matches\&quot;: [...],       \&quot;path_matches\&quot;: [...],       \&quot;file\&quot;: {         \&quot;commit\&quot;: {           \&quot;type\&quot;: \&quot;commit\&quot;,           \&quot;hash\&quot;: \&quot;ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;,           \&quot;links\&quot;: {             \&quot;self\&quot;: {               \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/commit/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;             },             \&quot;html\&quot;: {               \&quot;href\&quot;: \&quot;https://bitbucket.org/my-workspace/demo/commits/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;             }           },           \&quot;repository\&quot;: {             \&quot;name\&quot;: \&quot;demo\&quot;,             \&quot;type\&quot;: \&quot;repository\&quot;,             \&quot;full_name\&quot;: \&quot;my-workspace/demo\&quot;,             \&quot;links\&quot;: {               \&quot;self\&quot;: {                 \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo\&quot;               },               \&quot;html\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/my-workspace/demo\&quot;               },               \&quot;avatar\&quot;: {                 \&quot;href\&quot;: \&quot;https://bytebucket.org/ravatar/%7B850e1749-781a-4115-9316-df39d0600e7a%7D?ts&#x3D;default\&quot;               }             },             \&quot;uuid\&quot;: \&quot;{850e1749-781a-4115-9316-df39d0600e7a}\&quot;           }         },         \&quot;type\&quot;: \&quot;commit_file\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/src/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b/src/foo.py\&quot;           }         },         \&quot;path\&quot;: \&quot;src/foo.py\&quot;       }     }   ] } &#x60;&#x60;&#x60;  Try &#x60;fields&#x3D;%2Bvalues.*.*.*.*&#x60; to get an idea what&#39;s possible.
 
  */
   searchAccount(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.SearchApi(); // String | The account to search in; either the username or the UUID in curly brace // String | The search query
     /*let username = "username_example";*/ /*let searchQuery = "searchQuery_example";*/ let opts = {
       page: 1, // Number | Which page of the search results to retrieve
-      pagelen: 10 // Number | How many search results to retrieve per page
+      pagelen: 10, // Number | How many search results to retrieve per page
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchAccount(
@@ -8513,23 +9569,25 @@ Search for code in the repositories of the specified team
 
   // This is a function for searchAccount_0
   /*
-Search for code in the repositories of the specified user
+Search for code in the repositories of the specified user.  Searching across all repositories:  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code?search_query&#x3D;foo&#39; {   \&quot;size\&quot;: 1,   \&quot;page\&quot;: 1,   \&quot;pagelen\&quot;: 10,   \&quot;query_substituted\&quot;: false,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;code_search_result\&quot;,       \&quot;content_match_count\&quot;: 2,       \&quot;content_matches\&quot;: [         {           \&quot;lines\&quot;: [             {               \&quot;line\&quot;: 2,               \&quot;segments\&quot;: []             },             {               \&quot;line\&quot;: 3,               \&quot;segments\&quot;: [                 {                   \&quot;text\&quot;: \&quot;def \&quot;                 },                 {                   \&quot;text\&quot;: \&quot;foo\&quot;,                   \&quot;match\&quot;: true                 },                 {                   \&quot;text\&quot;: \&quot;():\&quot;                 }               ]             },             {               \&quot;line\&quot;: 4,               \&quot;segments\&quot;: [                 {                   \&quot;text\&quot;: \&quot;    print(\\\&quot;snek\\\&quot;)\&quot;                 }               ]             },             {               \&quot;line\&quot;: 5,               \&quot;segments\&quot;: []             }           ]         }       ],       \&quot;path_matches\&quot;: [         {           \&quot;text\&quot;: \&quot;src/\&quot;         },         {           \&quot;text\&quot;: \&quot;foo\&quot;,           \&quot;match\&quot;: true         },         {           \&quot;text\&quot;: \&quot;.py\&quot;         }       ],       \&quot;file\&quot;: {         \&quot;path\&quot;: \&quot;src/foo.py\&quot;,         \&quot;type\&quot;: \&quot;commit_file\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/src/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b/src/foo.py\&quot;           }         }       }     }   ] } &#x60;&#x60;&#x60;  Note that searches can match in the file&#39;s text (&#x60;content_matches&#x60;), the path (&#x60;path_matches&#x60;), or both as in the example above.  You can use the same syntax for the search query as in the UI, e.g. to only search within a specific repository:  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code?search_query&#x3D;foo+repo:demo&#39; # results from the \&quot;demo\&quot; repository &#x60;&#x60;&#x60;  Similar to other APIs, you can request more fields using a &#x60;fields&#x60; query parameter. E.g. to get some more information about the repository of matched files (the &#x60;%2B&#x60; is a URL-encoded &#x60;+&#x60;):  &#x60;&#x60;&#x60; curl &#39;https://api.bitbucket.org/2.0/users/my-workspace/search/code&#39;\\      &#39;?search_query&#x3D;foo&amp;fields&#x3D;%2Bvalues.file.commit.repository&#39; {   \&quot;size\&quot;: 1,   \&quot;page\&quot;: 1,   \&quot;pagelen\&quot;: 10,   \&quot;query_substituted\&quot;: false,   \&quot;values\&quot;: [     {       \&quot;type\&quot;: \&quot;code_search_result\&quot;,       \&quot;content_match_count\&quot;: 1,       \&quot;content_matches\&quot;: [...],       \&quot;path_matches\&quot;: [...],       \&quot;file\&quot;: {         \&quot;commit\&quot;: {           \&quot;type\&quot;: \&quot;commit\&quot;,           \&quot;hash\&quot;: \&quot;ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;,           \&quot;links\&quot;: {             \&quot;self\&quot;: {               \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/commit/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;             },             \&quot;html\&quot;: {               \&quot;href\&quot;: \&quot;https://bitbucket.org/my-workspace/demo/commits/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b\&quot;             }           },           \&quot;repository\&quot;: {             \&quot;name\&quot;: \&quot;demo\&quot;,             \&quot;type\&quot;: \&quot;repository\&quot;,             \&quot;full_name\&quot;: \&quot;my-workspace/demo\&quot;,             \&quot;links\&quot;: {               \&quot;self\&quot;: {                 \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo\&quot;               },               \&quot;html\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/my-workspace/demo\&quot;               },               \&quot;avatar\&quot;: {                 \&quot;href\&quot;: \&quot;https://bytebucket.org/ravatar/%7B850e1749-781a-4115-9316-df39d0600e7a%7D?ts&#x3D;default\&quot;               }             },             \&quot;uuid\&quot;: \&quot;{850e1749-781a-4115-9316-df39d0600e7a}\&quot;           }         },         \&quot;type\&quot;: \&quot;commit_file\&quot;,         \&quot;links\&quot;: {           \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/repositories/my-workspace/demo/src/ad6964b5fe2880dbd9ddcad1c89000f1dbcbc24b/src/foo.py\&quot;           }         },         \&quot;path\&quot;: \&quot;src/foo.py\&quot;       }     }   ] } &#x60;&#x60;&#x60;  Try &#x60;fields&#x3D;%2Bvalues.*.*.*.*&#x60; to get an idea what&#39;s possible.
 
  */
   searchAccount_0(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.SearchApi(); // String | The account to search in; either the username or the UUID in curly brace // String | The search query
     /*let username = "username_example";*/ /*let searchQuery = "searchQuery_example";*/ let opts = {
       page: 1, // Number | Which page of the search results to retrieve
-      pagelen: 10 // Number | How many search results to retrieve per page
+      pagelen: 10, // Number | How many search results to retrieve per page
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.searchAccount_0(
@@ -8554,19 +9612,19 @@ Return a redirect to the contents of a download artifact.  This endpoint returns
 
  */
   repositoriesWorkspaceRepoSlugDownloadsFilenameGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DownloadsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8592,25 +9650,129 @@ Returns a list of download links associated with the repository.
 
  */
   repositoriesWorkspaceRepoSlugDownloadsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DownloadsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugDownloadsGet(
       incomingOptions.workspace,
       incomingOptions.repoSlug,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for getAnnotation
+  /*
+
+
+Returns a single Annotation matching the provided ID.
+
+ */
+  getAnnotation(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.CommitsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report // String | Either the uuid or external-id of the annotation.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let annotationId = "annotationId_example";*/ apiInstance.getAnnotation(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.annotationId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for getAnnotationsForReport
+  /*
+
+
+Returns a paginated list of Annotations for a specified report.
+
+ */
+  getAnnotationsForReport(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.CommitsApi(); // String | The account // String | The repository // String | The commit for which to retrieve reports // String | Uuid or external-if of the report for which to get annotations for.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ apiInstance.getAnnotationsForReport(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for getReport
+  /*
+
+
+Returns a single Report matching the provided ID.
+
+ */
+  getReport(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.CommitsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ apiInstance.getReport(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for getReportsForCommit
+  /*
+
+
+Returns a paginated list of Reports linked to this commit.
+
+ */
+  getReportsForCommit(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.CommitsApi(); // String | The account // String | The repository // String | The commit for which to retrieve reports.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ apiInstance.getReportsForCommit(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -8632,19 +9794,19 @@ Returns the specified commit comment.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | The commit's SHA1 // Number | The id of the comment // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8671,26 +9833,41 @@ Returns the commit&#39;s comments.  This includes both global and inline comment
 
  */
   repositoriesWorkspaceRepoSlugCommitNodeCommentsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | The commit's SHA1 // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
-    /*let node = "node_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugCommitNodeCommentsGet(
+    /*let node = "node_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
+      //  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).
+      //  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering).
+    };
+
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
+    incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
+
+    apiInstance.repositoriesWorkspaceRepoSlugCommitNodeCommentsGet(
       incomingOptions.node,
       incomingOptions.workspace,
       incomingOptions.repoSlug,
+      incomingOptions.opts,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -8709,19 +9886,19 @@ Returns the specified commit.  Example:  &#x60;&#x60;&#x60; $ curl https://api.b
 
  */
   repositoriesWorkspaceRepoSlugCommitNodeGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | The commit's SHA1 // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8747,19 +9924,19 @@ These are the repository&#39;s commits. They are paginated and returned in rever
 
  */
   repositoriesWorkspaceRepoSlugCommitsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8784,19 +9961,19 @@ These are the repository&#39;s commits. They are paginated and returned in rever
 
  */
   repositoriesWorkspaceRepoSlugCommitsRevisionGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8822,19 +9999,19 @@ Produces a raw, git-style diff for either a single commit (diffed against its fi
 
  */
   repositoriesWorkspaceRepoSlugDiffSpecGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8842,14 +10019,16 @@ Produces a raw, git-style diff for either a single commit (diffed against its fi
       context: 56, // Number | Generate diffs with <n> lines of context instead of the usual three
       //  'path': "path_example", // String | Limit the diff to a particular file (this parameter can be repeated for multiple paths)
       ignoreWhitespace: true, // Boolean | Generate diffs that ignore whitespace
-      binary: true // Boolean | Generate diffs that include binary files,true if omitted.
+      binary: true, // Boolean | Generate diffs that include binary files,true if omitted.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugDiffSpecGet(
@@ -8861,7 +10040,7 @@ Produces a raw, git-style diff for either a single commit (diffed against its fi
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -8875,19 +10054,19 @@ Produces a raw patch for a single commit (diffed against its first parent), or a
 
  */
   repositoriesWorkspaceRepoSlugPatchSpecGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -8899,7 +10078,7 @@ Produces a raw patch for a single commit (diffed against its first parent), or a
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -8913,7 +10092,7 @@ Retrieve a deployment
 
  */
   getDeploymentForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DeploymentsApi(); // String | The account // String | The repository // String | The deployment UUID.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let deploymentUuid = "deploymentUuid_example";*/ apiInstance.getDeploymentForRepository(
@@ -8938,7 +10117,7 @@ Find deployments
 
  */
   getDeploymentsForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DeploymentsApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.getDeploymentsForRepository(
@@ -8962,7 +10141,7 @@ Retrieve an environment
 
  */
   getEnvironmentForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DeploymentsApi(); // String | The account // String | The repository // String | The environment UUID.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let environmentUuid = "environmentUuid_example";*/ apiInstance.getEnvironmentForRepository(
@@ -8987,7 +10166,7 @@ Find environments
 
  */
   getEnvironmentsForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DeploymentsApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.getEnvironmentsForRepository(
@@ -9011,19 +10190,19 @@ Returns the webhook resource or subject types on which webhooks can be registere
 
  */
   hookEventsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi();
@@ -9044,19 +10223,19 @@ Returns a paginated list of all valid webhook events for the specified entity.  
 
  */
   hookEventsSubjectTypeGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | A resource or subject type.
@@ -9080,19 +10259,19 @@ Returns a paginated list of webhooks installed on this repository.
 
  */
   repositoriesWorkspaceRepoSlugHooksGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -9117,19 +10296,19 @@ Returns the webhook with the specified id installed on the specified repository.
 
  */
   repositoriesWorkspaceRepoSlugHooksUidGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The installed webhook's id.
@@ -9155,19 +10334,19 @@ Returns a paginated list of webhooks installed on this team.
 
  */
   teamsUsernameHooksGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -9191,19 +10370,19 @@ Returns the webhook with the specified id installed on the given team account.
 
  */
   teamsUsernameHooksUidGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id.
@@ -9228,19 +10407,19 @@ Returns a paginated list of webhooks installed on this user account.  Note that 
 
  */
   usersUsernameHooksGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -9264,24 +10443,97 @@ Returns the webhook with the specified id installed on the given user account.  
 
  */
   usersUsernameHooksUidGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id.
     /*let username = "username_example";*/ /*let uid = "uid_example";*/ apiInstance.usersUsernameHooksUidGet(
       incomingOptions.username,
+      incomingOptions.uid,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceHooksGet
+  /*
+
+
+Returns a paginated list of webhooks installed on this workspace.
+
+ */
+  workspacesWorkspaceHooksGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceHooksGet(
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceHooksUidGet
+  /*
+
+
+Returns the webhook with the specified id installed on the given workspace.
+
+ */
+  workspacesWorkspaceHooksUidGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The installed webhook's id.
+    /*let workspace = "workspace_example";*/ /*let uid = "uid_example";*/ apiInstance.workspacesWorkspaceHooksUidGet(
+      incomingOptions.workspace,
       incomingOptions.uid,
       (error, data, response) => {
         if (error) {
@@ -9299,19 +10551,19 @@ Returns the webhook with the specified id installed on the given user account.  
 
  */
   teamsUsernameProjectsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.ProjectsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -9333,19 +10585,19 @@ Returns the webhook with the specified id installed on the given user account.  
 
  */
   teamsUsernameProjectsProjectKeyGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.ProjectsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The project in question. This can either be the actual `key` assigned to the project or the `UUID` (surrounded by curly-braces (`{}`)).
@@ -9362,33 +10614,67 @@ Returns the webhook with the specified id installed on the given user account.  
     );
   }
 
+  // This is a function for workspacesWorkspaceProjectsProjectKeyGet
+  /*
+
+
+ */
+  workspacesWorkspaceProjectsProjectKeyGet(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.ProjectsApi(); // String | The project in question. This is the actual `key` assigned to the project. // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let projectKey = "projectKey_example";*/ /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceProjectsProjectKeyGet(
+      incomingOptions.projectKey,
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
   // This is a function for usersUsernameSshKeysGet
   /*
 
 
-Returns a specific SSH public key belonging to a user.  Example: &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/{fbe4bbab-f6f7-4dde-956b-5c58323c54b3}  {     \&quot;comment\&quot;: \&quot;user@myhost\&quot;,     \&quot;created_on\&quot;: \&quot;2018-03-14T13:17:05.196003+00:00\&quot;,     \&quot;key\&quot;: \&quot;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqP3Cr632C2dNhhgKVcon4ldUSAeKiku2yP9O9/bDtY\&quot;,     \&quot;label\&quot;: \&quot;\&quot;,     \&quot;last_used\&quot;: \&quot;2018-03-20T13:18:05.196003+00:00\&quot;,     \&quot;links\&quot;: {         \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/b15b6026-9c02-4626-b4ad-b905f99f763a\&quot;         }     },     \&quot;owner\&quot;: {         \&quot;display_name\&quot;: \&quot;Mark Adams\&quot;,         \&quot;links\&quot;: {             \&quot;avatar\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/account/markadams-atl/avatar/32/\&quot;             },             \&quot;html\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/markadams-atl/\&quot;             },             \&quot;self\&quot;: {                 \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl\&quot;             }         },         \&quot;type\&quot;: \&quot;user\&quot;,         \&quot;username\&quot;: \&quot;markadams-atl\&quot;,         \&quot;nickname\&quot;: \&quot;markadams-atl\&quot;,         \&quot;uuid\&quot;: \&quot;{d7dd0e2d-3994-4a50-a9ee-d260b6cefdab}\&quot;     },     \&quot;type\&quot;: \&quot;ssh_key\&quot;,     \&quot;uuid\&quot;: \&quot;{b15b6026-9c02-4626-b4ad-b905f99f763a}\&quot; } &#x60;&#x60;&#x60;
+Returns a paginated list of the user&#39;s SSH public keys.  Example:  &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys {     \&quot;page\&quot;: 1,     \&quot;pagelen\&quot;: 10,     \&quot;size\&quot;: 1,     \&quot;values\&quot;: [         {             \&quot;comment\&quot;: \&quot;user@myhost\&quot;,             \&quot;created_on\&quot;: \&quot;2018-03-14T13:17:05.196003+00:00\&quot;,             \&quot;key\&quot;: \&quot;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqP3Cr632C2dNhhgKVcon4ldUSAeKiku2yP9O9/bDtY\&quot;,             \&quot;label\&quot;: \&quot;\&quot;,             \&quot;last_used\&quot;: \&quot;2018-03-20T13:18:05.196003+00:00\&quot;,             \&quot;links\&quot;: {                 \&quot;self\&quot;: {                     \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/b15b6026-9c02-4626-b4ad-b905f99f763a\&quot;                 }             },             \&quot;owner\&quot;: {                 \&quot;display_name\&quot;: \&quot;Mark Adams\&quot;,                 \&quot;links\&quot;: {                     \&quot;avatar\&quot;: {                         \&quot;href\&quot;: \&quot;https://bitbucket.org/account/markadams-atl/avatar/32/\&quot;                     },                     \&quot;html\&quot;: {                         \&quot;href\&quot;: \&quot;https://bitbucket.org/markadams-atl/\&quot;                     },                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl\&quot;                     }                 },                 \&quot;type\&quot;: \&quot;user\&quot;,                 \&quot;username\&quot;: \&quot;markadams-atl\&quot;,                 \&quot;nickname\&quot;: \&quot;markadams-atl\&quot;,                 \&quot;uuid\&quot;: \&quot;{d7dd0e2d-3994-4a50-a9ee-d260b6cefdab}\&quot;             },             \&quot;type\&quot;: \&quot;ssh_key\&quot;,             \&quot;uuid\&quot;: \&quot;{b15b6026-9c02-4626-b4ad-b905f99f763a}\&quot;         }     ] } &#x60;&#x60;&#x60;
 
  */
   usersUsernameSshKeysGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
-    let apiInstance = new Bitbucket.SshApi(); // String | The account's username or UUID // String | The SSH key's UUID value.
-    /*let username = "username_example";*/ /*let keyId = "keyId_example";*/ apiInstance.usersUsernameSshKeysGet(
+    let apiInstance = new Bitbucket.SshApi(); // String | The account's UUID, account_id, or username. Note that username has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
+    /*let username = "username_example";*/ apiInstance.usersUsernameSshKeysGet(
       incomingOptions.username,
-      incomingOptions.keyId,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -9403,28 +10689,29 @@ Returns a specific SSH public key belonging to a user.  Example: &#x60;&#x60;&#x
   /*
 
 
-Returns a paginated list of the user&#39;s SSH public keys.  Example:  &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys {     \&quot;page\&quot;: 1,     \&quot;pagelen\&quot;: 10,     \&quot;size\&quot;: 1,     \&quot;values\&quot;: [         {             \&quot;comment\&quot;: \&quot;user@myhost\&quot;,             \&quot;created_on\&quot;: \&quot;2018-03-14T13:17:05.196003+00:00\&quot;,             \&quot;key\&quot;: \&quot;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqP3Cr632C2dNhhgKVcon4ldUSAeKiku2yP9O9/bDtY\&quot;,             \&quot;label\&quot;: \&quot;\&quot;,             \&quot;last_used\&quot;: \&quot;2018-03-20T13:18:05.196003+00:00\&quot;,             \&quot;links\&quot;: {                 \&quot;self\&quot;: {                     \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/b15b6026-9c02-4626-b4ad-b905f99f763a\&quot;                 }             },             \&quot;owner\&quot;: {                 \&quot;display_name\&quot;: \&quot;Mark Adams\&quot;,                 \&quot;links\&quot;: {                     \&quot;avatar\&quot;: {                         \&quot;href\&quot;: \&quot;https://bitbucket.org/account/markadams-atl/avatar/32/\&quot;                     },                     \&quot;html\&quot;: {                         \&quot;href\&quot;: \&quot;https://bitbucket.org/markadams-atl/\&quot;                     },                     \&quot;self\&quot;: {                         \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl\&quot;                     }                 },                 \&quot;type\&quot;: \&quot;user\&quot;,                 \&quot;username\&quot;: \&quot;markadams-atl\&quot;,                 \&quot;nickname\&quot;: \&quot;markadams-atl\&quot;,                 \&quot;uuid\&quot;: \&quot;{d7dd0e2d-3994-4a50-a9ee-d260b6cefdab}\&quot;             },             \&quot;type\&quot;: \&quot;ssh_key\&quot;,             \&quot;uuid\&quot;: \&quot;{b15b6026-9c02-4626-b4ad-b905f99f763a}\&quot;         }     ] } &#x60;&#x60;&#x60;
+Returns a specific SSH public key belonging to a user.  Example: &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/{fbe4bbab-f6f7-4dde-956b-5c58323c54b3}  {     \&quot;comment\&quot;: \&quot;user@myhost\&quot;,     \&quot;created_on\&quot;: \&quot;2018-03-14T13:17:05.196003+00:00\&quot;,     \&quot;key\&quot;: \&quot;ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKqP3Cr632C2dNhhgKVcon4ldUSAeKiku2yP9O9/bDtY\&quot;,     \&quot;label\&quot;: \&quot;\&quot;,     \&quot;last_used\&quot;: \&quot;2018-03-20T13:18:05.196003+00:00\&quot;,     \&quot;links\&quot;: {         \&quot;self\&quot;: {             \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl/ssh-keys/b15b6026-9c02-4626-b4ad-b905f99f763a\&quot;         }     },     \&quot;owner\&quot;: {         \&quot;display_name\&quot;: \&quot;Mark Adams\&quot;,         \&quot;links\&quot;: {             \&quot;avatar\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/account/markadams-atl/avatar/32/\&quot;             },             \&quot;html\&quot;: {                 \&quot;href\&quot;: \&quot;https://bitbucket.org/markadams-atl/\&quot;             },             \&quot;self\&quot;: {                 \&quot;href\&quot;: \&quot;https://api.bitbucket.org/2.0/users/markadams-atl\&quot;             }         },         \&quot;type\&quot;: \&quot;user\&quot;,         \&quot;username\&quot;: \&quot;markadams-atl\&quot;,         \&quot;nickname\&quot;: \&quot;markadams-atl\&quot;,         \&quot;uuid\&quot;: \&quot;{d7dd0e2d-3994-4a50-a9ee-d260b6cefdab}\&quot;     },     \&quot;type\&quot;: \&quot;ssh_key\&quot;,     \&quot;uuid\&quot;: \&quot;{b15b6026-9c02-4626-b4ad-b905f99f763a}\&quot; } &#x60;&#x60;&#x60;
 
  */
   usersUsernameSshKeysGet_0(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
-    let apiInstance = new Bitbucket.SshApi(); // String | The account's UUID, account_id, or username. Note that username has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
-    /*let username = "username_example";*/ apiInstance.usersUsernameSshKeysGet_0(
+    let apiInstance = new Bitbucket.SshApi(); // String | The account's username or UUID // String | The SSH key's UUID value.
+    /*let username = "username_example";*/ /*let keyId = "keyId_example";*/ apiInstance.usersUsernameSshKeysGet_0(
       incomingOptions.username,
+      incomingOptions.keyId,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -9443,19 +10730,19 @@ Returns a list of all open branches within the specified repository. Results wil
 
  */
   repositoriesWorkspaceRepoSlugRefsBranchesGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RefsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String |  This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. // String |  This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -9464,11 +10751,13 @@ Returns a list of all open branches within the specified repository. Results wil
       //  'sort': "sort_example" // String |  Field by which the results should be sorted as per [filtering and sorting](../../../../../meta/filtering). The `name` field is handled specially for branches in that, if specified as the sort field, it uses a natural sort order instead of the default lexicographical sort order. For example, it will return ['branch1', 'branch2', 'branch10'] instead of ['branch1', 'branch10', 'branch2'].
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugRefsBranchesGet(
@@ -9494,19 +10783,19 @@ Returns a branch object within the specified repository.  &#x60;&#x60;&#x60; $ c
 
  */
   repositoriesWorkspaceRepoSlugRefsBranchesNameGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RefsApi(); // String | The name of the branch // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -9532,19 +10821,19 @@ Returns the branches and tags in the repository.  By default, results will be in
 
  */
   repositoriesWorkspaceRepoSlugRefsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RefsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String |  This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. // String |  This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -9553,11 +10842,13 @@ Returns the branches and tags in the repository.  By default, results will be in
       //  'sort': "sort_example" // String |  Field by which the results should be sorted as per [filtering and sorting](../../../../meta/filtering). The `name` field is handled specially for refs in that, if specified as the sort field, it uses a natural sort order instead of the default lexicographical sort order. For example, it will return ['1.1', '1.2', '1.10'] instead of ['1.1', '1.10', '1.2'].
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugRefsGet(
@@ -9583,19 +10874,19 @@ Returns the tags in the repository.  By default, results will be in the order th
 
  */
   repositoriesWorkspaceRepoSlugRefsTagsGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RefsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String |  This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. // String |  This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -9604,11 +10895,13 @@ Returns the tags in the repository.  By default, results will be in the order th
       //  'sort': "sort_example" // String |  Field by which the results should be sorted as per [filtering and sorting](../../../../../meta/filtering). The `name` field is handled specially for tags in that, if specified as the sort field, it uses a natural sort order instead of the default lexicographical sort order. For example, it will return ['1.1', '1.2', '1.10'] instead of ['1.1', '1.10', '1.2'].
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugRefsTagsGet(
@@ -9634,19 +10927,19 @@ Returns the specified tag.  &#x60;&#x60;&#x60; $ curl -s https://api.bitbucket.o
 
  */
   repositoriesWorkspaceRepoSlugRefsTagsNameGet(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RefsApi(); // String | The name of the tag // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -9666,7 +10959,7 @@ Returns the specified tag.  &#x60;&#x60;&#x60; $ curl -s https://api.bitbucket.o
 
   async post(entity, options) {
     switch (entity) {
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_SRC":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_SRC':
         /*
 
 
@@ -9688,7 +10981,26 @@ This endpoint is used to create new commits in the repository by uploading files
           );
         });
 
-      case "USERS_USERNAME_HOOKS":
+      case 'WORKSPACES_WORKSPACE_HOOKS':
+        /*
+
+
+
+Creates a new webhook on the specified workspace.  Workspace webhooks are fired for events from all repositories contained by that workspace.  Note that only owners can install webhooks on workspaces.
+
+
+      Function parameters for this API workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksPost(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'USERS_USERNAME_HOOKS':
         /*
 
 
@@ -9707,7 +11019,7 @@ Creates a new webhook on the specified user account.  Account-level webhooks are
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD':
         /*
 
 
@@ -9729,7 +11041,7 @@ Creates a new build status against the specified commit.  If the specified key a
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS':
         /*
 
 
@@ -9751,7 +11063,7 @@ Create a new deploy key in a repository.  Example: &#x60;&#x60;&#x60; $ curl -XP
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD':
         /*
 
 
@@ -9773,7 +11085,7 @@ Creates a new build status against the specified commit.  If the specified key a
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_FORKS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_FORKS':
         /*
 
 
@@ -9795,7 +11107,7 @@ Creates a new fork of the specified repository.  ## Forking a repository  To cre
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS':
         /*
 
 
@@ -9803,7 +11115,7 @@ Creates a new fork of the specified repository.  ## Forking a repository  To cre
 Creates a new webhook on the specified repository.  Example:  &#x60;&#x60;&#x60; $ curl -X POST -u credentials -H &#39;Content-Type: application/json&#39;           https://api.bitbucket.org/2.0/repositories/username/slug/hooks           -d &#39;     {       \&quot;description\&quot;: \&quot;Webhook Description\&quot;,       \&quot;url\&quot;: \&quot;https://example.com/\&quot;,       \&quot;active\&quot;: true,       \&quot;events\&quot;: [         \&quot;repo:push\&quot;,         \&quot;issue:created\&quot;,         \&quot;issue:updated\&quot;       ]     }&#39; &#x60;&#x60;&#x60;  Note that this call requires the webhook scope, as well as any scope that applies to the events that the webhook subscribes to. In the example above that means: &#x60;webhook&#x60;, &#x60;repository&#x60; and &#x60;issue&#x60;.  Also note that the &#x60;url&#x60; must properly resolve and cannot be an internal, non-routed address.
 
 
-      Function parameters for this API workspace,repoSlug,body
+      Function parameters for this API workspace,repoSlug
         */
         return new Promise((resolve, reject) => {
           this.repositoriesWorkspaceRepoSlugHooksPost(
@@ -9817,7 +11129,7 @@ Creates a new webhook on the specified repository.  Example:  &#x60;&#x60;&#x60;
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG':
         /*
 
 
@@ -9839,7 +11151,7 @@ Creates a new repository.  Note: In order to set the project for the newly creat
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_SRC":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_SRC':
         /*
 
 
@@ -9861,7 +11173,7 @@ This endpoint is used to create new commits in the repository by uploading files
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_EXPORT":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_EXPORT':
         /*
 
 
@@ -9883,7 +11195,7 @@ A POST request to this endpoint initiates a new background celery task that arch
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_IMPORT":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_IMPORT':
         /*
 
 
@@ -9905,7 +11217,7 @@ A POST request to this endpoint will import the zip file given by the archive pa
           );
         });
 
-      case "ADDON_LINKERS_LINKER_KEY_VALUES":
+      case 'ADDON_LINKERS_LINKER_KEY_VALUES':
         /*
 
 
@@ -9925,7 +11237,7 @@ A POST request to this endpoint will import the zip file given by the archive pa
           );
         });
 
-      case "ADDON_USERS_TARGET_USER_EVENTS_EVENT_KEY":
+      case 'ADDON_USERS_TARGET_USER_EVENTS_EVENT_KEY':
         /*
 
 
@@ -9947,7 +11259,7 @@ POST a new custom event.  The data within the event body will be hydrated by Bit
           );
         });
 
-      case "CREATE_DEPLOYMENT_VARI":
+      case 'CREATE_DEPLOYMENT_VARI':
         /*
 
 
@@ -9966,12 +11278,12 @@ Create a deployment environment level variable.
           });
         });
 
-      case "CREATE_PIPELINE_FOR_REPOSI":
+      case 'CREATE_PIPELINE_FOR_REPOSI':
         /*
 
 
 
-Endpoint to create and initiate a pipeline.  There are a couple of different options to initiate a pipeline, where the payload of the request will determine which type of pipeline will be instantiated. # Trigger a Pipeline for a branch One way to trigger pipelines is by specifying the branch for which you want to trigger a pipeline.  The specified branch will be used to determine which pipeline definition from the &#x60;bitbucket-pipelines.yml&#x60; file will be applied to initiate the pipeline. The pipeline will then do a clone of the repository and checkout the latest revision of the specified branch.
+Endpoint to create and initiate a pipeline. There are a couple of different options to initiate a pipeline, where the payload of the request will determine which type of pipeline will be instantiated. # Trigger a Pipeline for a branch One way to trigger pipelines is by specifying the branch for which you want to trigger a pipeline. The specified branch will be used to determine which pipeline definition from the &#x60;bitbucket-pipelines.yml&#x60; file will be applied to initiate the pipeline. The pipeline will then do a clone of the repository and checkout the latest revision of the specified branch.
       Function parameters for this API username,repoSlug,body
         */
         return new Promise((resolve, reject) => {
@@ -9983,7 +11295,7 @@ Endpoint to create and initiate a pipeline.  There are a couple of different opt
           });
         });
 
-      case "CREATE_PIPELINE_VARIABLE_FOR":
+      case 'CREATE_PIPELINE_VARIABLE_FOR':
         /*
 
 
@@ -10002,7 +11314,7 @@ Create an account level variable.
           });
         });
 
-      case "CREATE_PIPELINE_VARIABLE_FOR":
+      case 'CREATE_PIPELINE_VARIABLE_FOR':
         /*
 
 
@@ -10021,7 +11333,7 @@ Create a user level variable.
           });
         });
 
-      case "CREATE_REPOSITORY_PIPELINE_KNOWN":
+      case 'CREATE_REPOSITORY_PIPELINE_KNOWN':
         /*
 
 
@@ -10043,7 +11355,7 @@ Create a repository level known host.
           );
         });
 
-      case "CREATE_REPOSITORY_PIPELINE_SCHE":
+      case 'CREATE_REPOSITORY_PIPELINE_SCHE':
         /*
 
 
@@ -10065,7 +11377,7 @@ Create a schedule for the given repository.
           );
         });
 
-      case "CREATE_REPOSITORY_PIPELINE_VARI":
+      case 'CREATE_REPOSITORY_PIPELINE_VARI':
         /*
 
 
@@ -10087,7 +11399,7 @@ Create a repository level variable.
           );
         });
 
-      case "STOP_PIPE":
+      case 'STOP_PIPE':
         /*
 
 
@@ -10106,7 +11418,7 @@ Signal the stop of a pipeline and all of its steps that not have completed yet.
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_ATTACHMENTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_ATTACHMENTS':
         /*
 
 
@@ -10128,7 +11440,7 @@ Upload new issue attachments.  To upload files, perform a &#x60;multipart/form-d
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_CHANGES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_CHANGES':
         /*
 
 
@@ -10150,7 +11462,7 @@ Makes a change to the specified issue.  For example, to change an issue&#39;s st
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS':
         /*
 
 
@@ -10172,7 +11484,7 @@ Creates a new issue comment.  &#x60;&#x60;&#x60; $ curl https://api.bitbucket.or
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES':
         /*
 
 
@@ -10194,7 +11506,7 @@ Creates a new issue.  This call requires authentication. Private repositories or
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS':
         /*
 
 
@@ -10216,7 +11528,7 @@ Creates a new branch restriction rule for a repository.  &#x60;kind&#x60; descri
           );
         });
 
-      case "TEAMS_USERNAME_HOOKS":
+      case 'TEAMS_USERNAME_HOOKS':
         /*
 
 
@@ -10235,7 +11547,24 @@ Creates a new webhook on the specified team.  Team webhooks are fired for events
           });
         });
 
-      case "SNIPPETS":
+      case 'BULK_CREATE_OR_UPDATE_ANNOTAT':
+        /*
+
+
+
+Bulk upload of annotations. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Add the annotations you want to upload as objects in a JSON array and make sure each annotation has the external_id field set to a unique value. If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-annotation001. The external id can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). You can upload up to 100 annotations per POST request.
+      Function parameters for this API username,repoSlug,commit,reportId,body
+        */
+        return new Promise((resolve, reject) => {
+          this.bulkCreateOrUpdateAnnotations(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'SNIPPETS':
         /*
 
 
@@ -10254,7 +11583,7 @@ Creates a new snippet under the authenticated user&#39;s account.  Snippets can 
           });
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS':
         /*
 
 
@@ -10276,7 +11605,7 @@ Creates a new comment.  The only required field in the body is &#x60;content.raw
           );
         });
 
-      case "SNIPPETS_WORKSPACE":
+      case 'SNIPPETS_WORKSPACE':
         /*
 
 
@@ -10295,7 +11624,7 @@ Identical to &#x60;/snippets&#x60;, except that the new snippet will be created 
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS':
         /*
 
 
@@ -10317,7 +11646,7 @@ Creates a new pull request where the destination repository is this repository a
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_APPROVE":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_APPROVE':
         /*
 
 
@@ -10339,7 +11668,7 @@ Approve the specified pull request as the authenticated user.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS':
         /*
 
 
@@ -10361,7 +11690,7 @@ Creates a new pull request comment.  Returns the newly created pull request comm
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_DECLINE":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_DECLINE':
         /*
 
 
@@ -10383,7 +11712,7 @@ Declines the pull request.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_MERGE":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_MERGE':
         /*
 
 
@@ -10405,7 +11734,7 @@ Merges the pull request.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DOWNLOADS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DOWNLOADS':
         /*
 
 
@@ -10427,7 +11756,24 @@ Upload new download artifacts.  To upload files, perform a &#x60;multipart/form-
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_APPROVE":
+      case 'BULK_CREATE_OR_UPDATE_ANNOTAT':
+        /*
+
+
+
+Bulk upload of annotations. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Add the annotations you want to upload as objects in a JSON array and make sure each annotation has the external_id field set to a unique value. If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-annotation001. The external id can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). You can upload up to 100 annotations per POST request.
+      Function parameters for this API username,repoSlug,commit,reportId,body
+        */
+        return new Promise((resolve, reject) => {
+          this.bulkCreateOrUpdateAnnotations(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_APPROVE':
         /*
 
 
@@ -10449,7 +11795,7 @@ Approve the specified commit as the authenticated user.  This operation is only 
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_COMMENTS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_COMMENTS':
         /*
 
 
@@ -10471,7 +11817,7 @@ Creates new comment on the specified commit.  To post a reply to an existing com
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMITS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMITS':
         /*
 
 
@@ -10493,7 +11839,7 @@ Identical to &#x60;GET /repositories/{workspace}/{repo_slug}/commits&#x60;, exce
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMITS_REVISION":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMITS_REVISION':
         /*
 
 
@@ -10515,7 +11861,7 @@ Identical to &#x60;GET /repositories/{workspace}/{repo_slug}/commits&#x60;, exce
           );
         });
 
-      case "CREATE_ENVIRON":
+      case 'CREATE_ENVIRON':
         /*
 
 
@@ -10534,7 +11880,7 @@ Create an environment.
           });
         });
 
-      case "UPDATE_ENVIRONMENT_FOR_REPOSI":
+      case 'UPDATE_ENVIRONMENT_FOR_REPOSI':
         /*
 
 
@@ -10556,7 +11902,7 @@ Update an environment
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS':
         /*
 
 
@@ -10564,7 +11910,7 @@ Update an environment
 Creates a new webhook on the specified repository.  Example:  &#x60;&#x60;&#x60; $ curl -X POST -u credentials -H &#39;Content-Type: application/json&#39;           https://api.bitbucket.org/2.0/repositories/username/slug/hooks           -d &#39;     {       \&quot;description\&quot;: \&quot;Webhook Description\&quot;,       \&quot;url\&quot;: \&quot;https://example.com/\&quot;,       \&quot;active\&quot;: true,       \&quot;events\&quot;: [         \&quot;repo:push\&quot;,         \&quot;issue:created\&quot;,         \&quot;issue:updated\&quot;       ]     }&#39; &#x60;&#x60;&#x60;  Note that this call requires the webhook scope, as well as any scope that applies to the events that the webhook subscribes to. In the example above that means: &#x60;webhook&#x60;, &#x60;repository&#x60; and &#x60;issue&#x60;.  Also note that the &#x60;url&#x60; must properly resolve and cannot be an internal, non-routed address.
 
 
-      Function parameters for this API workspace,repoSlug,body
+      Function parameters for this API workspace,repoSlug
         */
         return new Promise((resolve, reject) => {
           this.repositoriesWorkspaceRepoSlugHooksPost(
@@ -10578,7 +11924,7 @@ Creates a new webhook on the specified repository.  Example:  &#x60;&#x60;&#x60;
           );
         });
 
-      case "TEAMS_USERNAME_HOOKS":
+      case 'TEAMS_USERNAME_HOOKS':
         /*
 
 
@@ -10597,7 +11943,7 @@ Creates a new webhook on the specified team.  Team webhooks are fired for events
           });
         });
 
-      case "USERS_USERNAME_HOOKS":
+      case 'USERS_USERNAME_HOOKS':
         /*
 
 
@@ -10616,7 +11962,26 @@ Creates a new webhook on the specified user account.  Account-level webhooks are
           });
         });
 
-      case "TEAMS_USERNAME_PROJECTS":
+      case 'WORKSPACES_WORKSPACE_HOOKS':
+        /*
+
+
+
+Creates a new webhook on the specified workspace.  Workspace webhooks are fired for events from all repositories contained by that workspace.  Note that only owners can install webhooks on workspaces.
+
+
+      Function parameters for this API workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksPost(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'TEAMS_USERNAME_PROJECTS':
         /*
 
 
@@ -10635,7 +12000,29 @@ Creates a new project.  Note that the avatar has to be embedded as either a data
           });
         });
 
-      case "USERS_USERNAME_SSH_KEYS":
+      case 'WORKSPACES_WORKSPACE_PROJECTS':
+        /*
+
+
+
+Creates a new project.  Note that the avatar has to be embedded as either a data-url or a URL to an external image as shown in the examples below:  &#x60;&#x60;&#x60; $ body&#x3D;$(cat &lt;&lt; EOF {     \&quot;name\&quot;: \&quot;Mars Project\&quot;,     \&quot;key\&quot;: \&quot;MARS\&quot;,     \&quot;description\&quot;: \&quot;Software for colonizing mars.\&quot;,     \&quot;links\&quot;: {         \&quot;avatar\&quot;: {             \&quot;href\&quot;: \&quot;data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/...\&quot;         }     },     \&quot;is_private\&quot;: false } EOF ) $ curl -H \&quot;Content-Type: application/json\&quot; \\        -X POST \\        -d \&quot;$body\&quot; \\        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq . {   // Serialized project document } &#x60;&#x60;&#x60;  or even:  &#x60;&#x60;&#x60; $ body&#x3D;$(cat &lt;&lt; EOF {     \&quot;name\&quot;: \&quot;Mars Project\&quot;,     \&quot;key\&quot;: \&quot;MARS\&quot;,     \&quot;description\&quot;: \&quot;Software for colonizing mars.\&quot;,     \&quot;links\&quot;: {         \&quot;avatar\&quot;: {             \&quot;href\&quot;: \&quot;http://i.imgur.com/72tRx4w.gif\&quot;         }     },     \&quot;is_private\&quot;: false } EOF ) $ curl -H \&quot;Content-Type: application/json\&quot; \\        -X POST \\        -d \&quot;$body\&quot; \\        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq . {   // Serialized project document } &#x60;&#x60;&#x60;
+
+
+      Function parameters for this API workspace,body
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceProjectsPost(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'USERS_USERNAME_SSH_KEYS':
         /*
 
 
@@ -10654,7 +12041,7 @@ Adds a new SSH public key to the specified user account and returns the resultin
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_BRANCHES":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_BRANCHES':
         /*
 
 
@@ -10676,7 +12063,7 @@ Creates a new branch in the specified repository.  The payload of the POST shoul
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_TAGS":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_TAGS':
         /*
 
 
@@ -10710,19 +12097,19 @@ This endpoint is used to create new commits in the repository by uploading files
 
  */
   repositoriesWorkspaceRepoSlugSrcPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SourceApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -10731,15 +12118,16 @@ This endpoint is used to create new commits in the repository by uploading files
       //  'author': "author_example", // String |  The raw string to be used as the new commit's author. This string follows the format `Erik van Zijst <evzijst@atlassian.com>`.  When omitted, Bitbucket uses the authenticated user's full/display name and primary email address. Commits cannot be created anonymously.
       //  'parents': "parents_example", // String |  A comma-separated list of SHA1s of the commits that should be the parents of the newly created commit.  When omitted, the new commit will inherit from and become a child of the main branch's tip/HEAD commit.  When more than one SHA1 is provided, the first SHA1 identifies the commit from which the content will be inherited.  When more than 2 parents are provided on a Mercurial repo, a 400 is returned as Mercurial does not support \"octopus merges\".
       //  'files': "files_example", // String |  Optional field that declares the files that the request is manipulating. When adding a new file to a repo, or when overwriting an existing file, the client can just upload the full contents of the file in a normal form field and the use of this `files` meta data field is redundant. However, when the `files` field contains a file path that does not have a corresponding, identically-named form field, then Bitbucket interprets that as the client wanting to replace the named file with the null set and the file is deleted instead.  Paths in the repo that are referenced in neither files nor an individual file field, remain unchanged and carry over from the parent to the new commit.  This API does not support renaming as an explicit feature. To rename a file, simply delete it and recreate it under the new name in the same commit.
-      //  'files2': "files_example", // String |  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch's new HEAD/tip.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, if a parent SHA1 was also provided, then it is asserted that the parent is the branch's tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repos.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch's tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request also specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch's current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo's root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo's root commit and also define the repo's main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with parents, but omitting the files fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty.
       //  'branch': "branch_example" // String |  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch's new head.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, *if* a parent SHA1 was also provided, then it is asserted that the parent is the branch's tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repositories.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch's tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request *also* specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch's current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo's root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo's root commit and also define the repo's main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with `parents`, but omitting the `files` fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugSrcPost(
@@ -10750,7 +12138,43 @@ This endpoint is used to create new commits in the repository by uploading files
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceHooksPost
+  /*
+
+
+Creates a new webhook on the specified workspace.  Workspace webhooks are fired for events from all repositories contained by that workspace.  Note that only owners can install webhooks on workspaces.
+
+ */
+  workspacesWorkspaceHooksPost(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceHooksPost(
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
         }
       }
     );
@@ -10764,19 +12188,19 @@ Creates a new webhook on the specified user account.  Account-level webhooks are
 
  */
   usersUsernameHooksPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -10803,31 +12227,33 @@ Creates a new build status against the specified commit.  If the specified key a
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitstatusesApi(); // String | The commit's SHA1 // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let node = "node_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      body: new Bitbucket.Commitstatus() // Commitstatus | The new commit status object.
+      body: new Bitbucket.Commitstatus(), // Commitstatus | The new commit status object.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost(
@@ -10853,19 +12279,19 @@ Create a new deploy key in a repository.  Example: &#x60;&#x60;&#x60; $ curl -XP
 
  */
   repositoriesWorkspaceRepoSlugDeployKeysPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DeployApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -10893,31 +12319,33 @@ Creates a new build status against the specified commit.  If the specified key a
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | The commit's SHA1 // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let node = "node_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      body: new Bitbucket.Commitstatus() // Commitstatus | The new commit status object.
+      body: new Bitbucket.Commitstatus(), // Commitstatus | The new commit status object.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildPost(
@@ -10943,31 +12371,33 @@ Creates a new fork of the specified repository.  ## Forking a repository  To cre
 
  */
   repositoriesWorkspaceRepoSlugForksPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      body: new Bitbucket.Repository() // Repository | A repository object. This can be left blank.
+      body: new Bitbucket.Repository(), // Repository | A repository object. This can be left blank.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugForksPost(
@@ -10992,26 +12422,25 @@ Creates a new webhook on the specified repository.  Example:  &#x60;&#x60;&#x60;
 
  */
   repositoriesWorkspaceRepoSlugHooksPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
-    let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // HookBody |
-    /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.HookBody();*/ apiInstance.repositoriesWorkspaceRepoSlugHooksPost(
+    let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
+    /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugHooksPost(
       incomingOptions.workspace,
       incomingOptions.repoSlug,
-      incomingOptions.body,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -11030,31 +12459,33 @@ Creates a new repository.  Note: In order to set the project for the newly creat
 
  */
   repositoriesWorkspaceRepoSlugPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      body: new Bitbucket.Repository() // Repository | The repository that is to be created. Note that most object elements are optional. Elements \"owner\" and \"full_name\" are ignored as the URL implies them.
+      body: new Bitbucket.Repository(), // Repository | The repository that is to be created. Note that most object elements are optional. Elements \"owner\" and \"full_name\" are ignored as the URL implies them.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugPost(
@@ -11079,19 +12510,19 @@ This endpoint is used to create new commits in the repository by uploading files
 
  */
   repositoriesWorkspaceRepoSlugSrcPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -11100,15 +12531,16 @@ This endpoint is used to create new commits in the repository by uploading files
       //  'author': "author_example", // String |  The raw string to be used as the new commit's author. This string follows the format `Erik van Zijst <evzijst@atlassian.com>`.  When omitted, Bitbucket uses the authenticated user's full/display name and primary email address. Commits cannot be created anonymously.
       //  'parents': "parents_example", // String |  A comma-separated list of SHA1s of the commits that should be the parents of the newly created commit.  When omitted, the new commit will inherit from and become a child of the main branch's tip/HEAD commit.  When more than one SHA1 is provided, the first SHA1 identifies the commit from which the content will be inherited.  When more than 2 parents are provided on a Mercurial repo, a 400 is returned as Mercurial does not support \"octopus merges\".
       //  'files': "files_example", // String |  Optional field that declares the files that the request is manipulating. When adding a new file to a repo, or when overwriting an existing file, the client can just upload the full contents of the file in a normal form field and the use of this `files` meta data field is redundant. However, when the `files` field contains a file path that does not have a corresponding, identically-named form field, then Bitbucket interprets that as the client wanting to replace the named file with the null set and the file is deleted instead.  Paths in the repo that are referenced in neither files nor an individual file field, remain unchanged and carry over from the parent to the new commit.  This API does not support renaming as an explicit feature. To rename a file, simply delete it and recreate it under the new name in the same commit.
-      //  'files2': "files_example", // String |  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch's new HEAD/tip.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, if a parent SHA1 was also provided, then it is asserted that the parent is the branch's tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repos.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch's tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request also specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch's current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo's root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo's root commit and also define the repo's main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with parents, but omitting the files fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty.
       //  'branch': "branch_example" // String |  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch's new head.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, *if* a parent SHA1 was also provided, then it is asserted that the parent is the branch's tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repositories.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch's tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request *also* specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch's current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo's root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo's root commit and also define the repo's main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with `parents`, but omitting the `files` fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugSrcPost(
@@ -11119,7 +12551,7 @@ This endpoint is used to create new commits in the repository by uploading files
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -11133,19 +12565,19 @@ A POST request to this endpoint initiates a new background celery task that arch
 
  */
   repositoriesWorkspaceRepoSlugIssuesExportPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DefaultApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -11156,7 +12588,7 @@ A POST request to this endpoint initiates a new background celery task that arch
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -11170,19 +12602,19 @@ A POST request to this endpoint will import the zip file given by the archive pa
 
  */
   repositoriesWorkspaceRepoSlugIssuesImportPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DefaultApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -11205,19 +12637,19 @@ A POST request to this endpoint will import the zip file given by the archive pa
 
  */
   addonLinkersLinkerKeyValuesPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi(); // String |
@@ -11241,19 +12673,19 @@ POST a new custom event.  The data within the event body will be hydrated by Bit
 
  */
   addonUsersTargetUserEventsEventKeyPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi(); // String | The account the app is installed in.  This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The key of the event, which corresponds to an event defined in the connect app descriptor.
@@ -11264,7 +12696,7 @@ POST a new custom event.  The data within the event body will be hydrated by Bit
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -11278,7 +12710,7 @@ Create a deployment environment level variable.
 
  */
   createDeploymentVariable(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The environment // String | The UUID of the variable to update // DeploymentVariable | The variable to create
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let environmentUuid = "environmentUuid_example";*/ /*let variableUuid = "variableUuid_example";*/ /*let body = new Bitbucket.DeploymentVariable();*/ apiInstance.createDeploymentVariable(
@@ -11301,9 +12733,9 @@ Create a deployment environment level variable.
   /*
 
 
-Endpoint to create and initiate a pipeline.  There are a couple of different options to initiate a pipeline, where the payload of the request will determine which type of pipeline will be instantiated. # Trigger a Pipeline for a branch One way to trigger pipelines is by specifying the branch for which you want to trigger a pipeline.  The specified branch will be used to determine which pipeline definition from the &#x60;bitbucket-pipelines.yml&#x60; file will be applied to initiate the pipeline. The pipeline will then do a clone of the repository and checkout the latest revision of the specified branch.   */
+Endpoint to create and initiate a pipeline. There are a couple of different options to initiate a pipeline, where the payload of the request will determine which type of pipeline will be instantiated. # Trigger a Pipeline for a branch One way to trigger pipelines is by specifying the branch for which you want to trigger a pipeline. The specified branch will be used to determine which pipeline definition from the &#x60;bitbucket-pipelines.yml&#x60; file will be applied to initiate the pipeline. The pipeline will then do a clone of the repository and checkout the latest revision of the specified branch.   */
   createPipelineForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // Pipeline | The pipeline to initiate.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.Pipeline();*/ apiInstance.createPipelineForRepository(
@@ -11328,18 +12760,20 @@ Create an account level variable.
 
  */
   createPipelineVariableForTeam(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account.
     /*let username = "username_example";*/ let opts = {
-      body: new Bitbucket.PipelineVariable() // PipelineVariable | The variable to create.
+      body: new Bitbucket.PipelineVariable(), // PipelineVariable | The variable to create.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.createPipelineVariableForTeam(
@@ -11363,18 +12797,20 @@ Create a user level variable.
 
  */
   createPipelineVariableForUser(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account.
     /*let username = "username_example";*/ let opts = {
-      body: new Bitbucket.PipelineVariable() // PipelineVariable | The variable to create.
+      body: new Bitbucket.PipelineVariable(), // PipelineVariable | The variable to create.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.createPipelineVariableForUser(
@@ -11398,7 +12834,7 @@ Create a repository level known host.
 
  */
   createRepositoryPipelineKnownHost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // PipelineKnownHost | The known host to create.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.PipelineKnownHost();*/ apiInstance.createRepositoryPipelineKnownHost(
@@ -11423,7 +12859,7 @@ Create a schedule for the given repository.
 
  */
   createRepositoryPipelineSchedule(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // PipelineSchedule | The schedule to create.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.PipelineSchedule();*/ apiInstance.createRepositoryPipelineSchedule(
@@ -11448,7 +12884,7 @@ Create a repository level variable.
 
  */
   createRepositoryPipelineVariable(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // PipelineVariable | The variable to create.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.PipelineVariable();*/ apiInstance.createRepositoryPipelineVariable(
@@ -11473,7 +12909,7 @@ Signal the stop of a pipeline and all of its steps that not have completed yet.
 
  */
   stopPipeline(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the pipeline.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let pipelineUuid = "pipelineUuid_example";*/ apiInstance.stopPipeline(
@@ -11484,7 +12920,7 @@ Signal the stop of a pipeline and all of its steps that not have completed yet.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -11501,19 +12937,19 @@ Upload new issue attachments.  To upload files, perform a &#x60;multipart/form-d
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Number | The issue's id
@@ -11525,7 +12961,7 @@ Upload new issue attachments.  To upload files, perform a &#x60;multipart/form-d
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -11539,19 +12975,19 @@ Makes a change to the specified issue.  For example, to change an issue&#39;s st
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdChangesPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // IssueChange | The new issue state change. The only required elements are `changes.[].new`. All other elements can be omitted from the body.
@@ -11578,19 +13014,19 @@ Creates a new issue comment.  &#x60;&#x60;&#x60; $ curl https://api.bitbucket.or
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdCommentsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // IssueComment | The new issue comment object.
@@ -11604,7 +13040,7 @@ Creates a new issue comment.  &#x60;&#x60;&#x60; $ curl https://api.bitbucket.or
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -11618,19 +13054,19 @@ Creates a new issue.  This call requires authentication. Private repositories or
 
  */
   repositoriesWorkspaceRepoSlugIssuesPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Issue | The new issue. The only required element is `title`. All other elements can be omitted from the body.
@@ -11656,19 +13092,19 @@ Creates a new branch restriction rule for a repository.  &#x60;kind&#x60; descri
 
  */
   repositoriesWorkspaceRepoSlugBranchRestrictionsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.BranchrestrictionsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Branchrestriction | The new rule
@@ -11694,24 +13130,49 @@ Creates a new webhook on the specified team.  Team webhooks are fired for events
 
  */
   teamsUsernameHooksPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
     /*let username = "username_example";*/ apiInstance.teamsUsernameHooksPost(
       incomingOptions.username,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for bulkCreateOrUpdateAnnotations
+  /*
+
+
+Bulk upload of annotations. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Add the annotations you want to upload as objects in a JSON array and make sure each annotation has the external_id field set to a unique value. If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-annotation001. The external id can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). You can upload up to 100 annotations per POST request.   */
+  bulkCreateOrUpdateAnnotations(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.ReportsApi(); // String | The account // String | The repository // String | The commit for which to retrieve reports // String | Uuid or external-if of the report for which to get annotations for // [ReportAnnotation] | The annotations to create or update
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let body = [new Bitbucket.ReportAnnotation()];*/ apiInstance.bulkCreateOrUpdateAnnotations(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.body,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -11730,19 +13191,19 @@ Creates a new snippet under the authenticated user&#39;s account.  Snippets can 
 
  */
   snippetsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // Snippet | The new snippet object.
@@ -11766,19 +13227,19 @@ Creates a new comment.  The only required field in the body is &#x60;content.raw
 
  */
   snippetsWorkspaceEncodedIdCommentsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // Snippet | The contents of the new comment.
@@ -11804,19 +13265,19 @@ Identical to &#x60;/snippets&#x60;, except that the new snippet will be created 
 
  */
   snippetsWorkspacePost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // Snippet | The new snippet object.
@@ -11841,31 +13302,33 @@ Creates a new pull request where the destination repository is this repository a
 
  */
   repositoriesWorkspaceRepoSlugPullrequestsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      body: new Bitbucket.Pullrequest() // Pullrequest | The new pull request.  The request URL you POST to becomes the destination repository URL. For this reason, you must specify an explicit source repository in the request object if you want to pull from a different repository (fork).  Since not all elements are required or even mutable, you only need to include the elements you want to initialize, such as the source branch and the title.
+      body: new Bitbucket.Pullrequest(), // Pullrequest | The new pull request.  The request URL you POST to becomes the destination repository URL. For this reason, you must specify an explicit source repository in the request object if you want to pull from a different repository (fork).  Since not all elements are required or even mutable, you only need to include the elements you want to initialize, such as the source branch and the title.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPost(
@@ -11893,19 +13356,19 @@ Approve the specified pull request as the authenticated user.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -11934,19 +13397,19 @@ Creates a new pull request comment.  Returns the newly created pull request comm
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Number | The id of the pull request // PullrequestComment | The comment object.
@@ -11976,19 +13439,19 @@ Declines the pull request.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -12017,31 +13480,33 @@ Merges the pull request.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let pullRequestId = "pullRequestId_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      body: new Bitbucket.PullrequestMergeParameters() // PullrequestMergeParameters |
+      body: new Bitbucket.PullrequestMergeParameters(), // PullrequestMergeParameters |
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergePost(
@@ -12067,25 +13532,50 @@ Upload new download artifacts.  To upload files, perform a &#x60;multipart/form-
 
  */
   repositoriesWorkspaceRepoSlugDownloadsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DownloadsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugDownloadsPost(
       incomingOptions.workspace,
       incomingOptions.repoSlug,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for bulkCreateOrUpdateAnnotations
+  /*
+
+
+Bulk upload of annotations. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Add the annotations you want to upload as objects in a JSON array and make sure each annotation has the external_id field set to a unique value. If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-annotation001. The external id can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). You can upload up to 100 annotations per POST request.   */
+  bulkCreateOrUpdateAnnotations(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.CommitsApi(); // String | The account // String | The repository // String | The commit for which to retrieve reports // String | Uuid or external-if of the report for which to get annotations for // [ReportAnnotation] | The annotations to create or update
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let body = [new Bitbucket.ReportAnnotation()];*/ apiInstance.bulkCreateOrUpdateAnnotations(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.body,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -12104,19 +13594,19 @@ Approve the specified commit as the authenticated user.  This operation is only 
 
  */
   repositoriesWorkspaceRepoSlugCommitNodeApprovePost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | The commit's SHA1 // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -12142,19 +13632,19 @@ Creates new comment on the specified commit.  To post a reply to an existing com
 
  */
   repositoriesWorkspaceRepoSlugCommitNodeCommentsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | The commit's SHA1 // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // CommitComment | The specified comment.
@@ -12168,7 +13658,7 @@ Creates new comment on the specified commit.  To post a reply to an existing com
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -12182,19 +13672,19 @@ Identical to &#x60;GET /repositories/{workspace}/{repo_slug}/commits&#x60;, exce
 
  */
   repositoriesWorkspaceRepoSlugCommitsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -12219,19 +13709,19 @@ Identical to &#x60;GET /repositories/{workspace}/{repo_slug}/commits&#x60;, exce
 
  */
   repositoriesWorkspaceRepoSlugCommitsRevisionPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -12257,7 +13747,7 @@ Create an environment.
 
  */
   createEnvironment(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DeploymentsApi(); // String | The account // String | The repository // DeploymentEnvironment | The environment to create.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.DeploymentEnvironment();*/ apiInstance.createEnvironment(
@@ -12282,7 +13772,7 @@ Update an environment
 
  */
   updateEnvironmentForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DeploymentsApi(); // String | The account // String | The repository // String | The environment UUID.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let environmentUuid = "environmentUuid_example";*/ apiInstance.updateEnvironmentForRepository(
@@ -12293,7 +13783,7 @@ Update an environment
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -12307,26 +13797,25 @@ Creates a new webhook on the specified repository.  Example:  &#x60;&#x60;&#x60;
 
  */
   repositoriesWorkspaceRepoSlugHooksPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
-    let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // HookBody |
-    /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.HookBody();*/ apiInstance.repositoriesWorkspaceRepoSlugHooksPost(
+    let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
+    /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.repositoriesWorkspaceRepoSlugHooksPost(
       incomingOptions.workspace,
       incomingOptions.repoSlug,
-      incomingOptions.body,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -12345,19 +13834,19 @@ Creates a new webhook on the specified team.  Team webhooks are fired for events
 
  */
   teamsUsernameHooksPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
@@ -12381,24 +13870,60 @@ Creates a new webhook on the specified user account.  Account-level webhooks are
 
  */
   usersUsernameHooksPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user.
     /*let username = "username_example";*/ apiInstance.usersUsernameHooksPost(
       incomingOptions.username,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceHooksPost
+  /*
+
+
+Creates a new webhook on the specified workspace.  Workspace webhooks are fired for events from all repositories contained by that workspace.  Note that only owners can install webhooks on workspaces.
+
+ */
+  workspacesWorkspaceHooksPost(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceHooksPost(
+      incomingOptions.workspace,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -12417,24 +13942,61 @@ Creates a new project.  Note that the avatar has to be embedded as either a data
 
  */
   teamsUsernameProjectsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.ProjectsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // Project |
     /*let username = "username_example";*/ /*let body = new Bitbucket.Project();*/ apiInstance.teamsUsernameProjectsPost(
       incomingOptions.username,
+      incomingOptions.body,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceProjectsPost
+  /*
+
+
+Creates a new project.  Note that the avatar has to be embedded as either a data-url or a URL to an external image as shown in the examples below:  &#x60;&#x60;&#x60; $ body&#x3D;$(cat &lt;&lt; EOF {     \&quot;name\&quot;: \&quot;Mars Project\&quot;,     \&quot;key\&quot;: \&quot;MARS\&quot;,     \&quot;description\&quot;: \&quot;Software for colonizing mars.\&quot;,     \&quot;links\&quot;: {         \&quot;avatar\&quot;: {             \&quot;href\&quot;: \&quot;data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/...\&quot;         }     },     \&quot;is_private\&quot;: false } EOF ) $ curl -H \&quot;Content-Type: application/json\&quot; \\        -X POST \\        -d \&quot;$body\&quot; \\        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq . {   // Serialized project document } &#x60;&#x60;&#x60;  or even:  &#x60;&#x60;&#x60; $ body&#x3D;$(cat &lt;&lt; EOF {     \&quot;name\&quot;: \&quot;Mars Project\&quot;,     \&quot;key\&quot;: \&quot;MARS\&quot;,     \&quot;description\&quot;: \&quot;Software for colonizing mars.\&quot;,     \&quot;links\&quot;: {         \&quot;avatar\&quot;: {             \&quot;href\&quot;: \&quot;http://i.imgur.com/72tRx4w.gif\&quot;         }     },     \&quot;is_private\&quot;: false } EOF ) $ curl -H \&quot;Content-Type: application/json\&quot; \\        -X POST \\        -d \&quot;$body\&quot; \\        https://api.bitbucket.org/2.0/teams/teams-in-space/projects/ | jq . {   // Serialized project document } &#x60;&#x60;&#x60;
+
+ */
+  workspacesWorkspaceProjectsPost(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.ProjectsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // Project |
+    /*let workspace = "workspace_example";*/ /*let body = new Bitbucket.Project();*/ apiInstance.workspacesWorkspaceProjectsPost(
+      incomingOptions.workspace,
       incomingOptions.body,
       (error, data, response) => {
         if (error) {
@@ -12454,31 +14016,33 @@ Adds a new SSH public key to the specified user account and returns the resultin
 
  */
   usersUsernameSshKeysPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SshApi(); // String | The account's UUID, account_id, or username. Note that username has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
     /*let username = "username_example";*/ let opts = {
-      body: new Bitbucket.SshAccountKey() // SshAccountKey | The new SSH key object. Note that the username property has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
+      body: new Bitbucket.SshAccountKey(), // SshAccountKey | The new SSH key object. Note that the username property has been deprecated due to [privacy changes](https://developer.atlassian.com/cloud/bitbucket/bitbucket-api-changes-gdpr/#removal-of-usernames-from-user-referencing-apis).
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameSshKeysPost(
@@ -12502,19 +14066,19 @@ Creates a new branch in the specified repository.  The payload of the POST shoul
 
  */
   repositoriesWorkspaceRepoSlugRefsBranchesPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RefsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -12539,19 +14103,19 @@ Creates a new tag in the specified repository.  The payload of the POST should c
 
  */
   repositoriesWorkspaceRepoSlugRefsTagsPost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RefsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Tag |
@@ -12571,7 +14135,29 @@ Creates a new tag in the specified repository.  The payload of the POST should c
 
   async put(entity, options) {
     switch (entity) {
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCHING_MODEL_SETTINGS":
+      case 'WORKSPACES_WORKSPACE_HOOKS_UID':
+        /*
+
+
+
+Updates the specified webhook subscription.  The following properties can be mutated:  * &#x60;description&#x60; * &#x60;url&#x60; * &#x60;active&#x60; * &#x60;events&#x60;
+
+
+      Function parameters for this API workspace,uid
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksUidPut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCHING_MODEL_SETTINGS':
         /*
 
 
@@ -12593,7 +14179,7 @@ Update the branching model configuration for a repository.  The &#x60;developmen
           );
         });
 
-      case "USERS_USERNAME_HOOKS_UID":
+      case 'USERS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -12612,7 +14198,7 @@ Updates the specified webhook subscription.  The following properties can be mut
           });
         });
 
-      case "UPDATE_COMMIT_HOSTED_PROPERTY_VA":
+      case 'UPDATE_COMMIT_HOSTED_PROPERTY_VA':
         /*
 
 
@@ -12634,7 +14220,7 @@ Update an application property value stored against a commit.
           );
         });
 
-      case "UPDATE_PULL_REQUEST_HOSTED_PROPERTY_VA":
+      case 'UPDATE_PULL_REQUEST_HOSTED_PROPERTY_VA':
         /*
 
 
@@ -12656,7 +14242,7 @@ Update an application property value stored against a pull request.
           );
         });
 
-      case "UPDATE_REPOSITORY_HOSTED_PROPERTY_VA":
+      case 'UPDATE_REPOSITORY_HOSTED_PROPERTY_VA':
         /*
 
 
@@ -12678,7 +14264,7 @@ Update an application property value stored against a repository.
           );
         });
 
-      case "UPDATE_USER_HOSTED_PROPERTY_VA":
+      case 'UPDATE_USER_HOSTED_PROPERTY_VA':
         /*
 
 
@@ -12697,7 +14283,7 @@ Update an application property value stored against a user.
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD_KEY":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD_KEY':
         /*
 
 
@@ -12719,7 +14305,7 @@ Used to update the current status of a build status object on the specific commi
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS_KEY_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS_KEY_ID':
         /*
 
 
@@ -12741,7 +14327,7 @@ Create a new deploy key in a repository.  The same key needs to be passed in but
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD_KEY":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_STATUSES_BUILD_KEY':
         /*
 
 
@@ -12763,7 +14349,7 @@ Used to update the current status of a build status object on the specific commi
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID':
         /*
 
 
@@ -12785,7 +14371,7 @@ Updates the specified webhook subscription.  The following properties can be mut
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG':
         /*
 
 
@@ -12805,7 +14391,7 @@ Since this endpoint can be used to both update and to create a repository, the r
           );
         });
 
-      case "ADDON_LINKERS_LINKER_KEY_VALUES":
+      case 'ADDON_LINKERS_LINKER_KEY_VALUES':
         /*
 
 
@@ -12825,10 +14411,12 @@ Since this endpoint can be used to both update and to create a repository, the r
           );
         });
 
-      case "ADDON":
+      case 'ADDON':
         /*
 
 
+
+Updates the application installation for the user.  This endpoint is intended to be used by Bitbucket Connect apps and only supports JWT authentication -- that is how Bitbucket identifies the particular installation of the app. Developers with applications registered in the \&quot;Develop Apps\&quot; section of Bitbucket Marketplace need not use this endpoint as updates for those applications can be sent out via the UI of that section.  A new, valid descriptor must be provided in the body of the PUT request.  &#x60;&#x60;&#x60; $ curl -X PUT https://api.bitbucket.org/2.0/addon \\   -H \&quot;Authorization: JWT &lt;JWT Token&gt;\&quot; \\   --header \&quot;Content-Type: application/json\&quot; \\   --data &#39;{\&quot;descriptor\&quot;: $NEW_DESCRIPTOR}&#39; &#x60;&#x60;&#x60;  Note that the scopes of the application cannot be increased in the new descriptor nor reduced to none.
 
 
       Function parameters for this API
@@ -12842,7 +14430,7 @@ Since this endpoint can be used to both update and to create a repository, the r
           });
         });
 
-      case "UPDATE_DEPLOYMENT_VARIA":
+      case 'UPDATE_DEPLOYMENT_VARIA':
         /*
 
 
@@ -12861,7 +14449,7 @@ Update a deployment environment level variable.
           });
         });
 
-      case "UPDATE_PIPELINE_VARIABLE_FOR_T":
+      case 'UPDATE_PIPELINE_VARIABLE_FOR_T':
         /*
 
 
@@ -12880,7 +14468,7 @@ Update a team level variable.
           });
         });
 
-      case "UPDATE_PIPELINE_VARIABLE_FOR_U":
+      case 'UPDATE_PIPELINE_VARIABLE_FOR_U':
         /*
 
 
@@ -12899,7 +14487,7 @@ Update a user level variable.
           });
         });
 
-      case "UPDATE_REPOSITORY_BUILD_NUM":
+      case 'UPDATE_REPOSITORY_BUILD_NUM':
         /*
 
 
@@ -12918,7 +14506,7 @@ Update the next build number that should be assigned to a pipeline. The next bui
           });
         });
 
-      case "UPDATE_REPOSITORY_PIPELINE_CON":
+      case 'UPDATE_REPOSITORY_PIPELINE_CON':
         /*
 
 
@@ -12940,7 +14528,7 @@ Update the pipelines configuration for a repository.
           );
         });
 
-      case "UPDATE_REPOSITORY_PIPELINE_KEY_P":
+      case 'UPDATE_REPOSITORY_PIPELINE_KEY_P':
         /*
 
 
@@ -12962,7 +14550,7 @@ Create or update the repository SSH key pair. The private key will be set as a d
           );
         });
 
-      case "UPDATE_REPOSITORY_PIPELINE_KNOWN_H":
+      case 'UPDATE_REPOSITORY_PIPELINE_KNOWN_H':
         /*
 
 
@@ -12984,7 +14572,7 @@ Update a repository level known host.
           );
         });
 
-      case "UPDATE_REPOSITORY_PIPELINE_SCHED":
+      case 'UPDATE_REPOSITORY_PIPELINE_SCHED':
         /*
 
 
@@ -13006,7 +14594,7 @@ Update a schedule.
           );
         });
 
-      case "UPDATE_REPOSITORY_PIPELINE_VARIA":
+      case 'UPDATE_REPOSITORY_PIPELINE_VARIA':
         /*
 
 
@@ -13028,7 +14616,7 @@ Update a repository level variable.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS_COMMENT_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -13050,7 +14638,7 @@ Updates the content of the specified issue comment. Note that only the &#x60;con
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID':
         /*
 
 
@@ -13072,7 +14660,7 @@ Modifies the issue.  &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/rep
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_VOTE":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_VOTE':
         /*
 
 
@@ -13094,7 +14682,7 @@ Vote for this issue.  To cast your vote, do an empty PUT. The 204 status code in
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_WATCH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_WATCH':
         /*
 
 
@@ -13116,7 +14704,7 @@ Start watching this issue.  To start watching this issue, do an empty PUT. The 2
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS_ID':
         /*
 
 
@@ -13138,7 +14726,7 @@ Updates an existing branch restriction rule.  Fields not present in the request 
           );
         });
 
-      case "TEAMS_USERNAME_HOOKS_UID":
+      case 'TEAMS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -13157,7 +14745,41 @@ Updates the specified webhook subscription.  The following properties can be mut
           });
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS_COMMENT_ID":
+      case 'CREATE_OR_UPDATE_ANNOTAT':
+        /*
+
+
+
+Creates or updates an individual annotation for the specified report. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Just as reports, annotation needs to be uploaded with a unique ID that can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-annotation001.
+      Function parameters for this API username,repoSlug,commit,reportId,annotationId,body
+        */
+        return new Promise((resolve, reject) => {
+          this.createOrUpdateAnnotation(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'CREATE_OR_UPDATE_REP':
+        /*
+
+
+
+Creates or updates a report for the specified commit. To upload a report, make sure to generate an ID that is unique across all reports for that commit. If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-001.
+      Function parameters for this API username,repoSlug,commit,reportId,body
+        */
+        return new Promise((resolve, reject) => {
+          this.createOrUpdateReport(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -13179,7 +14801,7 @@ Updates a comment.  Comments can only be updated by their author.
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_NODE_ID":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_NODE_ID':
         /*
 
 
@@ -13201,7 +14823,7 @@ Identical to &#x60;UPDATE /snippets/encoded_id&#x60;, except that this endpoint 
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID':
         /*
 
 
@@ -13220,7 +14842,7 @@ Used to update a snippet. Use this to add and delete files and to change a snipp
           });
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_WATCH":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_WATCH':
         /*
 
 
@@ -13242,7 +14864,7 @@ Used to start watching a specific snippet. Returns 204 (No Content).
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DEFAULT_REVIEWERS_TARGET_USERNAME":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DEFAULT_REVIEWERS_TARGET_USERNAME':
         /*
 
 
@@ -13264,7 +14886,7 @@ Adds the specified user to the repository&#39;s list of default reviewers.  This
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS_COMMENT_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -13286,7 +14908,7 @@ Updates a specific pull request comment.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID':
         /*
 
 
@@ -13308,7 +14930,41 @@ Mutates the specified pull request.  This can be used to change the pull request
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID":
+      case 'CREATE_OR_UPDATE_ANNOTAT':
+        /*
+
+
+
+Creates or updates an individual annotation for the specified report. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Just as reports, annotation needs to be uploaded with a unique ID that can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-annotation001.
+      Function parameters for this API username,repoSlug,commit,reportId,annotationId,body
+        */
+        return new Promise((resolve, reject) => {
+          this.createOrUpdateAnnotation(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'CREATE_OR_UPDATE_REP':
+        /*
+
+
+
+Creates or updates a report for the specified commit. To upload a report, make sure to generate an ID that is unique across all reports for that commit. If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-001.
+      Function parameters for this API username,repoSlug,commit,reportId,body
+        */
+        return new Promise((resolve, reject) => {
+          this.createOrUpdateReport(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID':
         /*
 
 
@@ -13330,7 +14986,7 @@ Updates the specified webhook subscription.  The following properties can be mut
           );
         });
 
-      case "TEAMS_USERNAME_HOOKS_UID":
+      case 'TEAMS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -13349,7 +15005,7 @@ Updates the specified webhook subscription.  The following properties can be mut
           });
         });
 
-      case "USERS_USERNAME_HOOKS_UID":
+      case 'USERS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -13368,7 +15024,29 @@ Updates the specified webhook subscription.  The following properties can be mut
           });
         });
 
-      case "TEAMS_USERNAME_PROJECTS_PROJECT_KEY":
+      case 'WORKSPACES_WORKSPACE_HOOKS_UID':
+        /*
+
+
+
+Updates the specified webhook subscription.  The following properties can be mutated:  * &#x60;description&#x60; * &#x60;url&#x60; * &#x60;active&#x60; * &#x60;events&#x60;
+
+
+      Function parameters for this API workspace,uid
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksUidPut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'TEAMS_USERNAME_PROJECTS_PROJECT_KEY':
         /*
 
 
@@ -13388,7 +15066,27 @@ Since this endpoint can be used to both update and to create a project, the requ
           );
         });
 
-      case "USERS_USERNAME_SSH_KEYS":
+      case 'WORKSPACES_WORKSPACE_PROJECTS_PROJECT_KEY':
+        /*
+
+
+
+Since this endpoint can be used to both update and to create a project, the request body depends on the intent.
+      Function parameters for this API projectKey,workspace,body
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceProjectsProjectKeyPut(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'USERS_USERNAME_SSH_KEYS':
         /*
 
 
@@ -13411,6 +15109,43 @@ Updates a specific SSH public key on a user&#39;s account  Note: Only the &#39;c
         throw ErrorHelper.getError(`Can't get entity`, 404);
     }
   }
+  // This is a function for workspacesWorkspaceHooksUidPut
+  /*
+
+
+Updates the specified webhook subscription.  The following properties can be mutated:  * &#x60;description&#x60; * &#x60;url&#x60; * &#x60;active&#x60; * &#x60;events&#x60;
+
+ */
+  workspacesWorkspaceHooksUidPut(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The installed webhook's id
+    /*let workspace = "workspace_example";*/ /*let uid = "uid_example";*/ apiInstance.workspacesWorkspaceHooksUidPut(
+      incomingOptions.workspace,
+      incomingOptions.uid,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
   // This is a function for repositoriesWorkspaceRepoSlugBranchingModelSettingsPut
   /*
 
@@ -13419,19 +15154,19 @@ Update the branching model configuration for a repository.  The &#x60;developmen
 
  */
   repositoriesWorkspaceRepoSlugBranchingModelSettingsPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.BranchingModelApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -13456,19 +15191,19 @@ Updates the specified webhook subscription.  The following properties can be mut
 
  */
   usersUsernameHooksUidPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id
@@ -13493,7 +15228,7 @@ Update an application property value stored against a commit.
 
  */
   updateCommitHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The account // String | The repository // String | The commit // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.updateCommitHostedPropertyValue(
@@ -13506,7 +15241,7 @@ Update an application property value stored against a commit.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -13520,7 +15255,7 @@ Update an application property value stored against a pull request.
 
  */
   updatePullRequestHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The account // String | The repository // String | The pull request ID // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let pullrequestId = "pullrequestId_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.updatePullRequestHostedPropertyValue(
@@ -13533,7 +15268,7 @@ Update an application property value stored against a pull request.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -13547,7 +15282,7 @@ Update an application property value stored against a repository.
 
  */
   updateRepositoryHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The account // String | The repository // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.updateRepositoryHostedPropertyValue(
@@ -13559,7 +15294,7 @@ Update an application property value stored against a repository.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -13573,7 +15308,7 @@ Update an application property value stored against a user.
 
  */
   updateUserHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The user // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.updateUserHostedPropertyValue(
@@ -13584,7 +15319,7 @@ Update an application property value stored against a user.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -13601,31 +15336,33 @@ Used to update the current status of a build status object on the specific commi
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitstatusesApi(); // String | The commit's SHA1 // String | The build status' unique ke // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let node = "node_example";*/ /*let key = "key_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      body: new Bitbucket.Commitstatus() // Commitstatus | The updated build status object
+      body: new Bitbucket.Commitstatus(), // Commitstatus | The updated build status object
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut(
@@ -13652,19 +15389,19 @@ Create a new deploy key in a repository.  The same key needs to be passed in but
 
  */
   repositoriesWorkspaceRepoSlugDeployKeysKeyIdPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DeployApi(); // String | The key ID matching the deploy key // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -13693,31 +15430,33 @@ Used to update the current status of a build status object on the specific commi
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | The commit's SHA1 // String | The build status' unique ke // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let node = "node_example";*/ /*let key = "key_example";*/ /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      body: new Bitbucket.Commitstatus() // Commitstatus | The updated build status object
+      body: new Bitbucket.Commitstatus(), // Commitstatus | The updated build status object
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesBuildKeyPut(
@@ -13744,19 +15483,19 @@ Updates the specified webhook subscription.  The following properties can be mut
 
  */
   repositoriesWorkspaceRepoSlugHooksUidPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The installed webhook's id
@@ -13780,31 +15519,33 @@ Updates the specified webhook subscription.  The following properties can be mut
 
 Since this endpoint can be used to both update and to create a repository, the request body depends on the intent.   */
   repositoriesWorkspaceRepoSlugPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
     /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ let opts = {
-      body: new Bitbucket.Repository() // Repository | The repository that is to be updated.  Note that the elements \"owner\" and \"full_name\" are ignored since the URL implies them.
+      body: new Bitbucket.Repository(), // Repository | The repository that is to be updated.  Note that the elements \"owner\" and \"full_name\" are ignored since the URL implies them.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugPut(
@@ -13827,19 +15568,19 @@ Since this endpoint can be used to both update and to create a repository, the r
 
  */
   addonLinkersLinkerKeyValuesPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi(); // String |
@@ -13859,21 +15600,23 @@ Since this endpoint can be used to both update and to create a repository, the r
   /*
 
 
+Updates the application installation for the user.  This endpoint is intended to be used by Bitbucket Connect apps and only supports JWT authentication -- that is how Bitbucket identifies the particular installation of the app. Developers with applications registered in the \&quot;Develop Apps\&quot; section of Bitbucket Marketplace need not use this endpoint as updates for those applications can be sent out via the UI of that section.  A new, valid descriptor must be provided in the body of the PUT request.  &#x60;&#x60;&#x60; $ curl -X PUT https://api.bitbucket.org/2.0/addon \\   -H \&quot;Authorization: JWT &lt;JWT Token&gt;\&quot; \\   --header \&quot;Content-Type: application/json\&quot; \\   --data &#39;{\&quot;descriptor\&quot;: $NEW_DESCRIPTOR}&#39; &#x60;&#x60;&#x60;  Note that the scopes of the application cannot be increased in the new descriptor nor reduced to none.
+
  */
   addonPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi();
@@ -13881,7 +15624,7 @@ Since this endpoint can be used to both update and to create a repository, the r
       if (error) {
         cb(error, null, response);
       } else {
-        cb(null, data, response);
+        cb(null, '', response);
       }
     });
   }
@@ -13894,7 +15637,7 @@ Update a deployment environment level variable.
 
  */
   updateDeploymentVariable(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The environment // String | The UUID of the variable to update // DeploymentVariable | The updated deployment variable.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let environmentUuid = "environmentUuid_example";*/ /*let variableUuid = "variableUuid_example";*/ /*let body = new Bitbucket.DeploymentVariable();*/ apiInstance.updateDeploymentVariable(
@@ -13921,7 +15664,7 @@ Update a team level variable.
 
  */
   updatePipelineVariableForTeam(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The UUID of the variable // PipelineVariable | The updated variable.
     /*let username = "username_example";*/ /*let variableUuid = "variableUuid_example";*/ /*let body = new Bitbucket.PipelineVariable();*/ apiInstance.updatePipelineVariableForTeam(
@@ -13946,7 +15689,7 @@ Update a user level variable.
 
  */
   updatePipelineVariableForUser(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The UUID of the variable // PipelineVariable | The updated variable.
     /*let username = "username_example";*/ /*let variableUuid = "variableUuid_example";*/ /*let body = new Bitbucket.PipelineVariable();*/ apiInstance.updatePipelineVariableForUser(
@@ -13971,7 +15714,7 @@ Update the next build number that should be assigned to a pipeline. The next bui
 
  */
   updateRepositoryBuildNumber(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // PipelineBuildNumber | The build number to update.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.PipelineBuildNumber();*/ apiInstance.updateRepositoryBuildNumber(
@@ -13996,7 +15739,7 @@ Update the pipelines configuration for a repository.
 
  */
   updateRepositoryPipelineConfig(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // PipelinesConfig | The updated repository pipelines configuration.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.PipelinesConfig();*/ apiInstance.updateRepositoryPipelineConfig(
@@ -14021,7 +15764,7 @@ Create or update the repository SSH key pair. The private key will be set as a d
 
  */
   updateRepositoryPipelineKeyPair(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // PipelineSshKeyPair | The created or updated SSH key pair.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let body = new Bitbucket.PipelineSshKeyPair();*/ apiInstance.updateRepositoryPipelineKeyPair(
@@ -14046,7 +15789,7 @@ Update a repository level known host.
 
  */
   updateRepositoryPipelineKnownHost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the known host to update // PipelineKnownHost | The updated known host.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let knownHostUuid = "knownHostUuid_example";*/ /*let body = new Bitbucket.PipelineKnownHost();*/ apiInstance.updateRepositoryPipelineKnownHost(
@@ -14072,7 +15815,7 @@ Update a schedule.
 
  */
   updateRepositoryPipelineSchedule(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The uuid of the schedule // PipelineSchedule | The schedule to update.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let scheduleUuid = "scheduleUuid_example";*/ /*let body = new Bitbucket.PipelineSchedule();*/ apiInstance.updateRepositoryPipelineSchedule(
@@ -14098,7 +15841,7 @@ Update a repository level variable.
 
  */
   updateRepositoryPipelineVariable(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the variable to update // PipelineVariable | The updated variable
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let variableUuid = "variableUuid_example";*/ /*let body = new Bitbucket.PipelineVariable();*/ apiInstance.updateRepositoryPipelineVariable(
@@ -14127,19 +15870,19 @@ Updates the content of the specified issue comment. Note that only the &#x60;con
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The ID of the issue that is being queried. // IssueComment | The updated comment.
@@ -14168,19 +15911,19 @@ Modifies the issue.  &#x60;&#x60;&#x60; $ curl https://api.bitbucket.org/2.0/rep
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -14206,19 +15949,19 @@ Vote for this issue.  To cast your vote, do an empty PUT. The 204 status code in
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdVotePut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -14244,19 +15987,19 @@ Start watching this issue.  To start watching this issue, do an empty PUT. The 2
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdWatchPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -14282,19 +16025,19 @@ Updates an existing branch restriction rule.  Fields not present in the request 
 
  */
   repositoriesWorkspaceRepoSlugBranchRestrictionsIdPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.BranchrestrictionsApi(); // String | The restriction rule's i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Branchrestriction | The new version of the existing rule
@@ -14321,25 +16064,76 @@ Updates the specified webhook subscription.  The following properties can be mut
 
  */
   teamsUsernameHooksUidPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id
     /*let username = "username_example";*/ /*let uid = "uid_example";*/ apiInstance.teamsUsernameHooksUidPut(
       incomingOptions.username,
       incomingOptions.uid,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for createOrUpdateAnnotation
+  /*
+
+
+Creates or updates an individual annotation for the specified report. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Just as reports, annotation needs to be uploaded with a unique ID that can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-annotation001.   */
+  createOrUpdateAnnotation(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.ReportsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report // String | Either the uuid or external-id of the annotation // ReportAnnotation | The annotation to create or update
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let annotationId = "annotationId_example";*/ /*let body = new Bitbucket.ReportAnnotation();*/ apiInstance.createOrUpdateAnnotation(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.annotationId,
+      incomingOptions.body,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for createOrUpdateReport
+  /*
+
+
+Creates or updates a report for the specified commit. To upload a report, make sure to generate an ID that is unique across all reports for that commit. If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-001.   */
+  createOrUpdateReport(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.ReportsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report // Report | The report to create or update
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let body = new Bitbucket.Report();*/ apiInstance.createOrUpdateReport(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.body,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -14358,19 +16152,19 @@ Updates a comment.  Comments can only be updated by their author.
 
  */
   snippetsWorkspaceEncodedIdCommentsCommentIdPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
@@ -14382,7 +16176,7 @@ Updates a comment.  Comments can only be updated by their author.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -14396,19 +16190,19 @@ Identical to &#x60;UPDATE /snippets/encoded_id&#x60;, except that this endpoint 
 
  */
   snippetsWorkspaceEncodedIdNodeIdPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet's id // String | A commit revision (SHA1).
@@ -14434,19 +16228,19 @@ Used to update a snippet. Use this to add and delete files and to change a snipp
 
  */
   snippetsWorkspaceEncodedIdPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet's id.
@@ -14471,19 +16265,19 @@ Used to start watching a specific snippet. Returns 204 (No Content).
 
  */
   snippetsWorkspaceEncodedIdWatchPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet id.
@@ -14511,19 +16305,19 @@ Adds the specified user to the repository&#39;s list of default reviewers.  This
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the username or the UUID of the default reviewer, surrounded by curly-braces, for example: `{account UUID}`. // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -14552,19 +16346,19 @@ Updates a specific pull request comment.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // PullrequestComment | The contents of the updated comment.
@@ -14595,31 +16389,33 @@ Mutates the specified pull request.  This can be used to change the pull request
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // Number | The id of the pull request.
     /*let workspace = "workspace_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let pullRequestId = 56;*/ let opts = {
-      body: new Bitbucket.Pullrequest() // Pullrequest | The pull request that is to be updated.
+      body: new Bitbucket.Pullrequest(), // Pullrequest | The pull request that is to be updated.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPut(
@@ -14627,6 +16423,57 @@ Mutates the specified pull request.  This can be used to change the pull request
       incomingOptions.repoSlug,
       incomingOptions.pullRequestId,
       incomingOptions.opts,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for createOrUpdateAnnotation
+  /*
+
+
+Creates or updates an individual annotation for the specified report. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Just as reports, annotation needs to be uploaded with a unique ID that can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-annotation001.   */
+  createOrUpdateAnnotation(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.CommitsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report // String | Either the uuid or external-id of the annotation // ReportAnnotation | The annotation to create or update
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let annotationId = "annotationId_example";*/ /*let body = new Bitbucket.ReportAnnotation();*/ apiInstance.createOrUpdateAnnotation(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.annotationId,
+      incomingOptions.body,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for createOrUpdateReport
+  /*
+
+
+Creates or updates a report for the specified commit. To upload a report, make sure to generate an ID that is unique across all reports for that commit. If you want to use an existing id from your own system, we recommend prefixing it with your system&#39;s name to avoid collisions, for example, mySystem-001.   */
+  createOrUpdateReport(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.CommitsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report // Report | The report to create or update
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let body = new Bitbucket.Report();*/ apiInstance.createOrUpdateReport(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.body,
       (error, data, response) => {
         if (error) {
           cb(error, null, response);
@@ -14645,19 +16492,19 @@ Updates the specified webhook subscription.  The following properties can be mut
 
  */
   repositoriesWorkspaceRepoSlugHooksUidPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The installed webhook's id
@@ -14683,19 +16530,19 @@ Updates the specified webhook subscription.  The following properties can be mut
 
  */
   teamsUsernameHooksUidPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id
@@ -14720,24 +16567,61 @@ Updates the specified webhook subscription.  The following properties can be mut
 
  */
   usersUsernameHooksUidPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id
     /*let username = "username_example";*/ /*let uid = "uid_example";*/ apiInstance.usersUsernameHooksUidPut(
       incomingOptions.username,
+      incomingOptions.uid,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceHooksUidPut
+  /*
+
+
+Updates the specified webhook subscription.  The following properties can be mutated:  * &#x60;description&#x60; * &#x60;url&#x60; * &#x60;active&#x60; * &#x60;events&#x60;
+
+ */
+  workspacesWorkspaceHooksUidPut(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The installed webhook's id
+    /*let workspace = "workspace_example";*/ /*let uid = "uid_example";*/ apiInstance.workspacesWorkspaceHooksUidPut(
+      incomingOptions.workspace,
       incomingOptions.uid,
       (error, data, response) => {
         if (error) {
@@ -14755,25 +16639,61 @@ Updates the specified webhook subscription.  The following properties can be mut
 
 Since this endpoint can be used to both update and to create a project, the request body depends on the intent.   */
   teamsUsernameProjectsProjectKeyPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.ProjectsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The project in question. This can either be the actual `key` assigned to the project or the `UUID` (surrounded by curly-braces (`{}`)). // Project |
     /*let username = "username_example";*/ /*let projectKey = "projectKey_example";*/ /*let body = new Bitbucket.Project();*/ apiInstance.teamsUsernameProjectsProjectKeyPut(
       incomingOptions.username,
       incomingOptions.projectKey,
+      incomingOptions.body,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, data, response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceProjectsProjectKeyPut
+  /*
+
+
+Since this endpoint can be used to both update and to create a project, the request body depends on the intent.   */
+  workspacesWorkspaceProjectsProjectKeyPut(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.ProjectsApi(); // String | The project in question. This is the actual `key` assigned to the project. // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // Project |
+    /*let projectKey = "projectKey_example";*/ /*let workspace = "workspace_example";*/ /*let body = new Bitbucket.Project();*/ apiInstance.workspacesWorkspaceProjectsProjectKeyPut(
+      incomingOptions.projectKey,
+      incomingOptions.workspace,
       incomingOptions.body,
       (error, data, response) => {
         if (error) {
@@ -14793,31 +16713,33 @@ Updates a specific SSH public key on a user&#39;s account  Note: Only the &#39;c
 
  */
   usersUsernameSshKeysPut(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SshApi(); // String | The account's username or UUID // String | The SSH key's UUID value.
     /*let username = "username_example";*/ /*let keyId = "keyId_example";*/ let opts = {
-      body: new Bitbucket.SshAccountKey() // SshAccountKey | The updated SSH key object
+      body: new Bitbucket.SshAccountKey(), // SshAccountKey | The updated SSH key object
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.usersUsernameSshKeysPut(
@@ -14836,7 +16758,29 @@ Updates a specific SSH public key on a user&#39;s account  Note: Only the &#39;c
 
   async delete(entity, options) {
     switch (entity) {
-      case "USERS_USERNAME_HOOKS_UID":
+      case 'WORKSPACES_WORKSPACE_HOOKS_UID':
+        /*
+
+
+
+Deletes the specified webhook subscription from the given workspace.
+
+
+      Function parameters for this API workspace,uid
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksUidDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'USERS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -14855,7 +16799,7 @@ Deletes the specified webhook subscription from the given user account.  Note th
           });
         });
 
-      case "DELETE_COMMIT_HOSTED_PROPERT":
+      case 'DELETE_COMMIT_HOSTED_PROPERT':
         /*
 
 
@@ -14877,7 +16821,7 @@ Delete an application property value stored against a commit.
           );
         });
 
-      case "DELETE_PULL_REQUEST_HOSTED_PROPERT":
+      case 'DELETE_PULL_REQUEST_HOSTED_PROPERT':
         /*
 
 
@@ -14899,7 +16843,7 @@ Delete an application property value stored against a pull request.
           );
         });
 
-      case "DELETE_REPOSITORY_HOSTED_PROPERT":
+      case 'DELETE_REPOSITORY_HOSTED_PROPERT':
         /*
 
 
@@ -14921,7 +16865,7 @@ Delete an application property value stored against a repository.
           );
         });
 
-      case "DELETE_USER_HOSTED_PROPERT":
+      case 'DELETE_USER_HOSTED_PROPERT':
         /*
 
 
@@ -14940,7 +16884,7 @@ Delete an application property value stored against a user.
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS_KEY_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DEPLOY_KEYS_KEY_ID':
         /*
 
 
@@ -14962,7 +16906,7 @@ This deletes a deploy key from a repository.  Example: &#x60;&#x60;&#x60; $ curl
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG':
         /*
 
 
@@ -14984,7 +16928,7 @@ Deletes the repository. This is an irreversible operation.  This does not affect
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID':
         /*
 
 
@@ -15006,10 +16950,12 @@ Deletes the specified webhook subscription from the given repository.
           );
         });
 
-      case "ADDON":
+      case 'ADDON':
         /*
 
 
+
+Deletes the application for the user.  This endpoint is intended to be used by Bitbucket Connect apps and only supports JWT authentication -- that is how Bitbucket identifies the particular installation of the app. Developers with applications registered in the \&quot;Develop Apps\&quot; section of Bitbucket Marketplace need not use this endpoint as updates for those applications can be sent out via the UI of that section.  &#x60;&#x60;&#x60; $ curl -X DELETE https://api.bitbucket.org/2.0/addon \\   -H \&quot;Authorization: JWT &lt;JWT Token&gt;\&quot; &#x60;&#x60;&#x60;
 
 
       Function parameters for this API
@@ -15023,7 +16969,7 @@ Deletes the specified webhook subscription from the given repository.
           });
         });
 
-      case "ADDON_LINKERS_LINKER_KEY_VALUES":
+      case 'ADDON_LINKERS_LINKER_KEY_VALUES':
         /*
 
 
@@ -15043,7 +16989,7 @@ Deletes the specified webhook subscription from the given repository.
           );
         });
 
-      case "ADDON_LINKERS_LINKER_KEY_VALUES_DE":
+      case 'ADDON_LINKERS_LINKER_KEY_VALUES_DE':
         /*
 
 
@@ -15063,7 +17009,7 @@ Deletes the specified webhook subscription from the given repository.
           );
         });
 
-      case "DELETE_DEPLOYMENT_VA":
+      case 'DELETE_DEPLOYMENT_VA':
         /*
 
 
@@ -15082,7 +17028,7 @@ Delete a deployment environment level variable.
           });
         });
 
-      case "DELETE_PIPELINE_VARIABLE_F":
+      case 'DELETE_PIPELINE_VARIABLE_F':
         /*
 
 
@@ -15101,7 +17047,7 @@ Delete a team level variable.
           });
         });
 
-      case "DELETE_PIPELINE_VARIABLE_F":
+      case 'DELETE_PIPELINE_VARIABLE_F':
         /*
 
 
@@ -15120,7 +17066,7 @@ Delete an account level variable.
           });
         });
 
-      case "DELETE_REPOSITORY_PIPELINE_K":
+      case 'DELETE_REPOSITORY_PIPELINE_K':
         /*
 
 
@@ -15142,7 +17088,7 @@ Delete the repository SSH key pair.
           );
         });
 
-      case "DELETE_REPOSITORY_PIPELINE_KNO":
+      case 'DELETE_REPOSITORY_PIPELINE_KNO':
         /*
 
 
@@ -15164,7 +17110,7 @@ Delete a repository level known host.
           );
         });
 
-      case "DELETE_REPOSITORY_PIPELINE_SC":
+      case 'DELETE_REPOSITORY_PIPELINE_SC':
         /*
 
 
@@ -15186,7 +17132,7 @@ Delete a schedule.
           );
         });
 
-      case "DELETE_REPOSITORY_PIPELINE_VA":
+      case 'DELETE_REPOSITORY_PIPELINE_VA':
         /*
 
 
@@ -15208,7 +17154,7 @@ Delete a repository level variable.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_ATTACHMENTS_PATH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_ATTACHMENTS_PATH':
         /*
 
 
@@ -15230,7 +17176,7 @@ Deletes an attachment.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS_COMMENT_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -15252,7 +17198,7 @@ Deletes the specified comment.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID':
         /*
 
 
@@ -15274,7 +17220,7 @@ Deletes the specified issue. This requires write access to the repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_VOTE":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_VOTE':
         /*
 
 
@@ -15296,7 +17242,7 @@ Retract your vote.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_WATCH":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_ISSUES_ISSUE_ID_WATCH':
         /*
 
 
@@ -15318,7 +17264,7 @@ Stop watching this issue.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_BRANCH_RESTRICTIONS_ID':
         /*
 
 
@@ -15340,7 +17286,7 @@ Deletes an existing branch restriction rule.
           );
         });
 
-      case "TEAMS_USERNAME_HOOKS_UID":
+      case 'TEAMS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -15359,7 +17305,45 @@ Deletes the specified webhook subscription from the given team account.
           });
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS_COMMENT_ID":
+      case 'DELETE_ANNO':
+        /*
+
+
+
+Deletes a single Annotation matching the provided ID.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId,annotationId
+        */
+        return new Promise((resolve, reject) => {
+          this.deleteAnnotation(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'DELETE':
+        /*
+
+
+
+Deletes a single Report matching the provided ID.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId
+        */
+        return new Promise((resolve, reject) => {
+          this.deleteReport(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -15381,7 +17365,7 @@ Deletes a snippet comment.  Comments can only be removed by their author.
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID':
         /*
 
 
@@ -15403,7 +17387,7 @@ Deletes a snippet and returns an empty response.
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_NODE_ID":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_NODE_ID':
         /*
 
 
@@ -15425,7 +17409,7 @@ Deletes the snippet.  Note that this only works for versioned URLs that point to
           );
         });
 
-      case "SNIPPETS_WORKSPACE_ENCODED_ID_WATCH":
+      case 'SNIPPETS_WORKSPACE_ENCODED_ID_WATCH':
         /*
 
 
@@ -15447,7 +17431,7 @@ Used to stop watching a specific snippet. Returns 204 (No Content) to indicate s
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DEFAULT_REVIEWERS_TARGET_USERNAME":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DEFAULT_REVIEWERS_TARGET_USERNAME':
         /*
 
 
@@ -15469,7 +17453,7 @@ Removes a default reviewer from the repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_APPROVE":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_APPROVE':
         /*
 
 
@@ -15491,7 +17475,7 @@ Redact the authenticated user&#39;s approval of the specified pull request.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS_COMMENT_ID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_PULLREQUESTS_PULL_REQUEST_ID_COMMENTS_COMMENT_ID':
         /*
 
 
@@ -15513,7 +17497,7 @@ Deletes a specific pull request comment.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_DOWNLOADS_FILENAME":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_DOWNLOADS_FILENAME':
         /*
 
 
@@ -15535,7 +17519,45 @@ Deletes the specified download artifact from the repository.
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_APPROVE":
+      case 'DELETE_ANNO':
+        /*
+
+
+
+Deletes a single Annotation matching the provided ID.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId,annotationId
+        */
+        return new Promise((resolve, reject) => {
+          this.deleteAnnotation(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'DELETE':
+        /*
+
+
+
+Deletes a single Report matching the provided ID.
+
+
+      Function parameters for this API username,repoSlug,commit,reportId
+        */
+        return new Promise((resolve, reject) => {
+          this.deleteReport(options, (err, data, response) => {
+            if (err) {
+              reject({ error: err, response: response });
+            }
+            resolve({ data: data, response: response });
+          });
+        });
+
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_COMMIT_NODE_APPROVE':
         /*
 
 
@@ -15557,7 +17579,7 @@ Redact the authenticated user&#39;s approval of the specified commit.  This oper
           );
         });
 
-      case "DELETE_ENVIRONMENT_FOR_REPO":
+      case 'DELETE_ENVIRONMENT_FOR_REPO':
         /*
 
 
@@ -15579,7 +17601,7 @@ Delete an environment
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_HOOKS_UID':
         /*
 
 
@@ -15601,7 +17623,7 @@ Deletes the specified webhook subscription from the given repository.
           );
         });
 
-      case "TEAMS_USERNAME_HOOKS_UID":
+      case 'TEAMS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -15620,7 +17642,7 @@ Deletes the specified webhook subscription from the given team account.
           });
         });
 
-      case "USERS_USERNAME_HOOKS_UID":
+      case 'USERS_USERNAME_HOOKS_UID':
         /*
 
 
@@ -15639,7 +17661,29 @@ Deletes the specified webhook subscription from the given user account.  Note th
           });
         });
 
-      case "TEAMS_USERNAME_PROJECTS_PROJECT_KEY":
+      case 'WORKSPACES_WORKSPACE_HOOKS_UID':
+        /*
+
+
+
+Deletes the specified webhook subscription from the given workspace.
+
+
+      Function parameters for this API workspace,uid
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceHooksUidDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'TEAMS_USERNAME_PROJECTS_PROJECT_KEY':
         /*
 
 
@@ -15659,7 +17703,27 @@ Deletes the specified webhook subscription from the given user account.  Note th
           );
         });
 
-      case "USERS_USERNAME_SSH_KEYS":
+      case 'WORKSPACES_WORKSPACE_PROJECTS_PROJECT_KEY':
+        /*
+
+
+
+
+      Function parameters for this API projectKey,workspace
+        */
+        return new Promise((resolve, reject) => {
+          this.workspacesWorkspaceProjectsProjectKeyDelete(
+            options,
+            (err, data, response) => {
+              if (err) {
+                reject({ error: err, response: response });
+              }
+              resolve({ data: data, response: response });
+            }
+          );
+        });
+
+      case 'USERS_USERNAME_SSH_KEYS':
         /*
 
 
@@ -15678,7 +17742,7 @@ Deletes a specific SSH public key from a user&#39;s account  Example: &#x60;&#x6
           });
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_BRANCHES_NAME":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_BRANCHES_NAME':
         /*
 
 
@@ -15700,7 +17764,7 @@ Delete a branch in the specified repository.  The main branch is not allowed to 
           );
         });
 
-      case "REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_TAGS_NAME":
+      case 'REPOSITORIES_WORKSPACE_REPO_SLUG_REFS_TAGS_NAME':
         /*
 
 
@@ -15726,6 +17790,43 @@ Delete a tag in the specified repository.  For Git, the tag name should not incl
         throw ErrorHelper.getError(`Can't get entity`, 404);
     }
   }
+  // This is a function for workspacesWorkspaceHooksUidDelete
+  /*
+
+
+Deletes the specified webhook subscription from the given workspace.
+
+ */
+  workspacesWorkspaceHooksUidDelete(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WorkspacesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The installed webhook's id
+    /*let workspace = "workspace_example";*/ /*let uid = "uid_example";*/ apiInstance.workspacesWorkspaceHooksUidDelete(
+      incomingOptions.workspace,
+      incomingOptions.uid,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, '', response);
+        }
+      }
+    );
+  }
+
   // This is a function for usersUsernameHooksUidDelete
   /*
 
@@ -15734,19 +17835,19 @@ Deletes the specified webhook subscription from the given user account.  Note th
 
  */
   usersUsernameHooksUidDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.UsersApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id
@@ -15757,7 +17858,7 @@ Deletes the specified webhook subscription from the given user account.  Note th
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -15771,7 +17872,7 @@ Delete an application property value stored against a commit.
 
  */
   deleteCommitHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The account // String | The repository // String | The commit // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.deleteCommitHostedPropertyValue(
@@ -15784,7 +17885,7 @@ Delete an application property value stored against a commit.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -15798,7 +17899,7 @@ Delete an application property value stored against a pull request.
 
  */
   deletePullRequestHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The account // String | The repository // String | The pull request ID // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let pullrequestId = "pullrequestId_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.deletePullRequestHostedPropertyValue(
@@ -15811,7 +17912,7 @@ Delete an application property value stored against a pull request.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -15825,7 +17926,7 @@ Delete an application property value stored against a repository.
 
  */
   deleteRepositoryHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The account // String | The repository // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.deleteRepositoryHostedPropertyValue(
@@ -15837,7 +17938,7 @@ Delete an application property value stored against a repository.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -15851,7 +17952,7 @@ Delete an application property value stored against a user.
 
  */
   deleteUserHostedPropertyValue(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PropertiesApi(); // String | The user // String | The key of the Connect app // String | The name of the property.
     /*let username = "username_example";*/ /*let appKey = "appKey_example";*/ /*let propertyName = "propertyName_example";*/ apiInstance.deleteUserHostedPropertyValue(
@@ -15862,7 +17963,7 @@ Delete an application property value stored against a user.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -15876,19 +17977,19 @@ This deletes a deploy key from a repository.  Example: &#x60;&#x60;&#x60; $ curl
 
  */
   repositoriesWorkspaceRepoSlugDeployKeysKeyIdDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DeployApi(); // String | The key ID matching the deploy key // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -15900,7 +18001,7 @@ This deletes a deploy key from a repository.  Example: &#x60;&#x60;&#x60; $ curl
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -15914,19 +18015,19 @@ Deletes the repository. This is an irreversible operation.  This does not affect
 
  */
   repositoriesWorkspaceRepoSlugDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -15934,11 +18035,13 @@ Deletes the repository. This is an irreversible operation.  This does not affect
       //  'redirectTo': "redirectTo_example" // String | If a repository has been moved to a new location, use this parameter to show users a friendly message in the Bitbucket UI that the repository has moved to a new location. However, a GET to this endpoint will still return a 404.
     };
 
-    Object.keys(incomingOptions.opts).forEach(
-      key =>
-        incomingOptions.opts[key] === undefined &&
-        delete incomingOptions.opts[key]
-    );
+    if (incomingOptions.opts)
+      Object.keys(incomingOptions.opts).forEach(
+        (key) =>
+          incomingOptions.opts[key] === undefined &&
+          delete incomingOptions.opts[key]
+      );
+    else delete incomingOptions.opts;
     incomingOptions.opts = Object.assign(opts, incomingOptions.opts);
 
     apiInstance.repositoriesWorkspaceRepoSlugDelete(
@@ -15949,7 +18052,7 @@ Deletes the repository. This is an irreversible operation.  This does not affect
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -15963,19 +18066,19 @@ Deletes the specified webhook subscription from the given repository.
 
  */
   repositoriesWorkspaceRepoSlugHooksUidDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RepositoriesApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The installed webhook's id
@@ -15987,7 +18090,7 @@ Deletes the specified webhook subscription from the given repository.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -15997,21 +18100,23 @@ Deletes the specified webhook subscription from the given repository.
   /*
 
 
+Deletes the application for the user.  This endpoint is intended to be used by Bitbucket Connect apps and only supports JWT authentication -- that is how Bitbucket identifies the particular installation of the app. Developers with applications registered in the \&quot;Develop Apps\&quot; section of Bitbucket Marketplace need not use this endpoint as updates for those applications can be sent out via the UI of that section.  &#x60;&#x60;&#x60; $ curl -X DELETE https://api.bitbucket.org/2.0/addon \\   -H \&quot;Authorization: JWT &lt;JWT Token&gt;\&quot; &#x60;&#x60;&#x60;
+
  */
   addonDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi();
@@ -16019,7 +18124,7 @@ Deletes the specified webhook subscription from the given repository.
       if (error) {
         cb(error, null, response);
       } else {
-        cb(null, data, response);
+        cb(null, '', response);
       }
     });
   }
@@ -16030,19 +18135,19 @@ Deletes the specified webhook subscription from the given repository.
 
  */
   addonLinkersLinkerKeyValuesDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi(); // String |
@@ -16064,19 +18169,19 @@ Deletes the specified webhook subscription from the given repository.
 
  */
   addonLinkersLinkerKeyValuesDelete_0(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.AddonApi(); // String |
@@ -16100,7 +18205,7 @@ Delete a deployment environment level variable.
 
  */
   deleteDeploymentVariable(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The environment // String | The UUID of the variable to delete.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let environmentUuid = "environmentUuid_example";*/ /*let variableUuid = "variableUuid_example";*/ apiInstance.deleteDeploymentVariable(
@@ -16112,7 +18217,7 @@ Delete a deployment environment level variable.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16126,7 +18231,7 @@ Delete a team level variable.
 
  */
   deletePipelineVariableForTeam(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The UUID of the variable to delete.
     /*let username = "username_example";*/ /*let variableUuid = "variableUuid_example";*/ apiInstance.deletePipelineVariableForTeam(
@@ -16136,7 +18241,7 @@ Delete a team level variable.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16150,7 +18255,7 @@ Delete an account level variable.
 
  */
   deletePipelineVariableForUser(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The UUID of the variable to delete.
     /*let username = "username_example";*/ /*let variableUuid = "variableUuid_example";*/ apiInstance.deletePipelineVariableForUser(
@@ -16160,7 +18265,7 @@ Delete an account level variable.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16174,7 +18279,7 @@ Delete the repository SSH key pair.
 
  */
   deleteRepositoryPipelineKeyPair(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ apiInstance.deleteRepositoryPipelineKeyPair(
@@ -16184,7 +18289,7 @@ Delete the repository SSH key pair.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16198,7 +18303,7 @@ Delete a repository level known host.
 
  */
   deleteRepositoryPipelineKnownHost(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the known host to delete.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let knownHostUuid = "knownHostUuid_example";*/ apiInstance.deleteRepositoryPipelineKnownHost(
@@ -16209,7 +18314,7 @@ Delete a repository level known host.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16223,7 +18328,7 @@ Delete a schedule.
 
  */
   deleteRepositoryPipelineSchedule(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The uuid of the schedule.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let scheduleUuid = "scheduleUuid_example";*/ apiInstance.deleteRepositoryPipelineSchedule(
@@ -16234,7 +18339,7 @@ Delete a schedule.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16248,7 +18353,7 @@ Delete a repository level variable.
 
  */
   deleteRepositoryPipelineVariable(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.PipelinesApi(); // String | The account // String | The repository // String | The UUID of the variable to delete.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let variableUuid = "variableUuid_example";*/ apiInstance.deleteRepositoryPipelineVariable(
@@ -16259,7 +18364,7 @@ Delete a repository level variable.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16276,19 +18381,19 @@ Deletes an attachment.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16301,7 +18406,7 @@ Deletes an attachment.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16318,19 +18423,19 @@ Deletes the specified comment.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the username or the UUID of the user, surrounded by curly-braces, for example: `{user UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The ID of the issue that is being queried. // IssueComment | The updated comment.
@@ -16345,7 +18450,7 @@ Deletes the specified comment.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16359,19 +18464,19 @@ Deletes the specified issue. This requires write access to the repository.
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16397,19 +18502,19 @@ Retract your vote.
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdVoteDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16435,19 +18540,19 @@ Stop watching this issue.
 
  */
   repositoriesWorkspaceRepoSlugIssuesIssueIdWatchDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.IssueTrackerApi(); // String | The issue i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16473,19 +18578,19 @@ Deletes an existing branch restriction rule.
 
  */
   repositoriesWorkspaceRepoSlugBranchRestrictionsIdDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.BranchrestrictionsApi(); // String | The restriction rule's i // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16497,7 +18602,7 @@ Deletes an existing branch restriction rule.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16511,19 +18616,19 @@ Deletes the specified webhook subscription from the given team account.
 
  */
   teamsUsernameHooksUidDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.TeamsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id
@@ -16534,7 +18639,60 @@ Deletes the specified webhook subscription from the given team account.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
+        }
+      }
+    );
+  }
+
+  // This is a function for deleteAnnotation
+  /*
+
+
+Deletes a single Annotation matching the provided ID.
+
+ */
+  deleteAnnotation(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.ReportsApi(); // String | The account // String | The repository // String | The commit the annotation belongs to // String | Either the uuid or external-id of the annotation // String | Either the uuid or external-id of the annotation.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let annotationId = "annotationId_example";*/ apiInstance.deleteAnnotation(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.annotationId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, '', response);
+        }
+      }
+    );
+  }
+
+  // This is a function for deleteReport
+  /*
+
+
+Deletes a single Report matching the provided ID.
+
+ */
+  deleteReport(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.ReportsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ apiInstance.deleteReport(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, '', response);
         }
       }
     );
@@ -16548,19 +18706,19 @@ Deletes a snippet comment.  Comments can only be removed by their author.
 
  */
   snippetsWorkspaceEncodedIdCommentsCommentIdDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
@@ -16572,7 +18730,7 @@ Deletes a snippet comment.  Comments can only be removed by their author.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16586,19 +18744,19 @@ Deletes a snippet and returns an empty response.
 
  */
   snippetsWorkspaceEncodedIdDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet's id.
@@ -16609,7 +18767,7 @@ Deletes a snippet and returns an empty response.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16623,19 +18781,19 @@ Deletes the snippet.  Note that this only works for versioned URLs that point to
 
  */
   snippetsWorkspaceEncodedIdNodeIdDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet's id.
@@ -16647,7 +18805,7 @@ Deletes the snippet.  Note that this only works for versioned URLs that point to
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16661,19 +18819,19 @@ Used to stop watching a specific snippet. Returns 204 (No Content) to indicate s
 
  */
   snippetsWorkspaceEncodedIdWatchDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SnippetsApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The snippet id.
@@ -16701,19 +18859,19 @@ Removes a default reviewer from the repository.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | This can either be the username or the UUID of the default reviewer, surrounded by curly-braces, for example: `{account UUID}`. // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16742,19 +18900,19 @@ Redact the authenticated user&#39;s approval of the specified pull request.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16766,7 +18924,7 @@ Redact the authenticated user&#39;s approval of the specified pull request.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16783,19 +18941,19 @@ Deletes a specific pull request comment.
     incomingOptions,
     cb
   ) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.PullrequestsApi(); // String | // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16808,7 +18966,7 @@ Deletes a specific pull request comment.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16822,19 +18980,19 @@ Deletes the specified download artifact from the repository.
 
  */
   repositoriesWorkspaceRepoSlugDownloadsFilenameDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.DownloadsApi(); // String | // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16852,6 +19010,59 @@ Deletes the specified download artifact from the repository.
     );
   }
 
+  // This is a function for deleteAnnotation
+  /*
+
+
+Deletes a single Annotation matching the provided ID.
+
+ */
+  deleteAnnotation(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.CommitsApi(); // String | The account // String | The repository // String | The commit the annotation belongs to // String | Either the uuid or external-id of the annotation // String | Either the uuid or external-id of the annotation.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ /*let annotationId = "annotationId_example";*/ apiInstance.deleteAnnotation(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      incomingOptions.annotationId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, '', response);
+        }
+      }
+    );
+  }
+
+  // This is a function for deleteReport
+  /*
+
+
+Deletes a single Report matching the provided ID.
+
+ */
+  deleteReport(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+
+    let apiInstance = new Bitbucket.CommitsApi(); // String | The account // String | The repository // String | The commit the report belongs to // String | Either the uuid or external-id of the report.
+    /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let commit = "commit_example";*/ /*let reportId = "reportId_example";*/ apiInstance.deleteReport(
+      incomingOptions.username,
+      incomingOptions.repoSlug,
+      incomingOptions.commit,
+      incomingOptions.reportId,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, '', response);
+        }
+      }
+    );
+  }
+
   // This is a function for repositoriesWorkspaceRepoSlugCommitNodeApproveDelete
   /*
 
@@ -16860,19 +19071,19 @@ Redact the authenticated user&#39;s approval of the specified commit.  This oper
 
  */
   repositoriesWorkspaceRepoSlugCommitNodeApproveDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.CommitsApi(); // String | The commit's SHA1 // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -16884,7 +19095,7 @@ Redact the authenticated user&#39;s approval of the specified commit.  This oper
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16898,7 +19109,7 @@ Delete an environment
 
  */
   deleteEnvironmentForRepository(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
 
     let apiInstance = new Bitbucket.DeploymentsApi(); // String | The account // String | The repository // String | The environment UUID.
     /*let username = "username_example";*/ /*let repoSlug = "repoSlug_example";*/ /*let environmentUuid = "environmentUuid_example";*/ apiInstance.deleteEnvironmentForRepository(
@@ -16909,7 +19120,7 @@ Delete an environment
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16923,19 +19134,19 @@ Deletes the specified webhook subscription from the given repository.
 
  */
   repositoriesWorkspaceRepoSlugHooksUidDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. // String | The installed webhook's id
@@ -16947,7 +19158,7 @@ Deletes the specified webhook subscription from the given repository.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16961,19 +19172,19 @@ Deletes the specified webhook subscription from the given team account.
 
  */
   teamsUsernameHooksUidDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id
@@ -16984,7 +19195,7 @@ Deletes the specified webhook subscription from the given team account.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -16998,19 +19209,19 @@ Deletes the specified webhook subscription from the given user account.  Note th
 
  */
   usersUsernameHooksUidDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The installed webhook's id
@@ -17021,7 +19232,44 @@ Deletes the specified webhook subscription from the given user account.  Note th
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceHooksUidDelete
+  /*
+
+
+Deletes the specified webhook subscription from the given workspace.
+
+ */
+  workspacesWorkspaceHooksUidDelete(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.WebhooksApi(); // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | The installed webhook's id
+    /*let workspace = "workspace_example";*/ /*let uid = "uid_example";*/ apiInstance.workspacesWorkspaceHooksUidDelete(
+      incomingOptions.workspace,
+      incomingOptions.uid,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, '', response);
         }
       }
     );
@@ -17033,19 +19281,19 @@ Deletes the specified webhook subscription from the given user account.  Note th
 
  */
   teamsUsernameProjectsProjectKeyDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.ProjectsApi(); // String | This can either be the username or the UUID of the account, surrounded by curly-braces, for example: `{account UUID}`. An account is either a team or user. // String | The project in question. This can either be the actual `key` assigned to the project or the `UUID` (surrounded by curly-braces (`{}`)).
@@ -17056,7 +19304,42 @@ Deletes the specified webhook subscription from the given user account.  Note th
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
+        }
+      }
+    );
+  }
+
+  // This is a function for workspacesWorkspaceProjectsProjectKeyDelete
+  /*
+
+
+ */
+  workspacesWorkspaceProjectsProjectKeyDelete(incomingOptions, cb) {
+    const Bitbucket = require('./dist');
+    let defaultClient = Bitbucket.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications['api_key'];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
+    // Configure HTTP basic authorization: basic
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
+    // Configure OAuth2 access token for authorization: oauth2
+    let oauth2 = defaultClient.authentications['oauth2'];
+    oauth2.accessToken = incomingOptions.accessToken;
+
+    let apiInstance = new Bitbucket.ProjectsApi(); // String | The project in question. This is the actual `key` assigned to the project. // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`.
+    /*let projectKey = "projectKey_example";*/ /*let workspace = "workspace_example";*/ apiInstance.workspacesWorkspaceProjectsProjectKeyDelete(
+      incomingOptions.projectKey,
+      incomingOptions.workspace,
+      (error, data, response) => {
+        if (error) {
+          cb(error, null, response);
+        } else {
+          cb(null, '', response);
         }
       }
     );
@@ -17070,19 +19353,19 @@ Deletes a specific SSH public key from a user&#39;s account  Example: &#x60;&#x6
 
  */
   usersUsernameSshKeysDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.SshApi(); // String | The account's username or UUID // String | The SSH key's UUID value.
@@ -17093,7 +19376,7 @@ Deletes a specific SSH public key from a user&#39;s account  Example: &#x60;&#x6
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -17107,19 +19390,19 @@ Delete a branch in the specified repository.  The main branch is not allowed to 
 
  */
   repositoriesWorkspaceRepoSlugRefsBranchesNameDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RefsApi(); // String | The name of the branch // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -17131,7 +19414,7 @@ Delete a branch in the specified repository.  The main branch is not allowed to 
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -17145,19 +19428,19 @@ Delete a tag in the specified repository.  For Git, the tag name should not incl
 
  */
   repositoriesWorkspaceRepoSlugRefsTagsNameDelete(incomingOptions, cb) {
-    const Bitbucket = require("./dist");
+    const Bitbucket = require('./dist');
     let defaultClient = Bitbucket.ApiClient.instance;
     // Configure API key authorization: api_key
-    let api_key = defaultClient.authentications["api_key"];
+    let api_key = defaultClient.authentications['api_key'];
     api_key.apiKey = incomingOptions.apiKey;
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || 'Token';
     // Configure HTTP basic authorization: basic
-    let basic = defaultClient.authentications["basic"];
-    basic.username = "YOUR USERNAME";
-    basic.password = "YOUR PASSWORD";
+    let basic = defaultClient.authentications['basic'];
+    basic.username = 'YOUR USERNAME';
+    basic.password = 'YOUR PASSWORD';
     // Configure OAuth2 access token for authorization: oauth2
-    let oauth2 = defaultClient.authentications["oauth2"];
+    let oauth2 = defaultClient.authentications['oauth2'];
     oauth2.accessToken = incomingOptions.accessToken;
 
     let apiInstance = new Bitbucket.RefsApi(); // String | The name of the tag // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`.
@@ -17169,7 +19452,7 @@ Delete a tag in the specified repository.  For Git, the tag name should not incl
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, "", response);
+          cb(null, '', response);
         }
       }
     );
@@ -17182,4 +19465,4 @@ Delete a tag in the specified repository.  For Git, the tag name should not incl
     }
   }
 }
-module.exports = new BitbucketService();
+module.exports = new bitbucketService();

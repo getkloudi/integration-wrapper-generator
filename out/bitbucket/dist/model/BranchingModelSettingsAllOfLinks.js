@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchingModelSettingsAllOfLinks model module.
  * @module model/BranchingModelSettingsAllOfLinks
- * @version 1.1.2
+ * @version 1.2.0
  */
-var BranchingModelSettingsAllOfLinks =
-/*#__PURE__*/
-function () {
+var BranchingModelSettingsAllOfLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BranchingModelSettingsAllOfLinks</code>.
    * @alias module:model/BranchingModelSettingsAllOfLinks

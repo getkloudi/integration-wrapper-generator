@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RepositoryPermission model module.
  * @module model/RepositoryPermission
- * @version 1.1.2
+ * @version 1.2.0
  */
-var RepositoryPermission =
-/*#__PURE__*/
-function () {
+var RepositoryPermission = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RepositoryPermission</code>.
    * A user&#39;s permission for a given repository.

@@ -19,7 +19,7 @@ import PipelineScheduleExecutionErroredAllOf from './PipelineScheduleExecutionEr
 /**
  * The PipelineScheduleExecutionErrored model module.
  * @module model/PipelineScheduleExecutionErrored
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineScheduleExecutionErrored {
     /**

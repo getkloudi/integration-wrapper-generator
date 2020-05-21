@@ -18,7 +18,7 @@ import PipelineSshKeyPairAllOf from './PipelineSshKeyPairAllOf';
 /**
  * The PipelineSshKeyPair model module.
  * @module model/PipelineSshKeyPair
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineSshKeyPair {
     /**

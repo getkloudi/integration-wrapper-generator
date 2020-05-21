@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentsStgWestDeploymentEnvironment model module.
  * @module model/DeploymentsStgWestDeploymentEnvironment
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentsStgWestDeploymentEnvironment =
-/*#__PURE__*/
-function () {
+var DeploymentsStgWestDeploymentEnvironment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentsStgWestDeploymentEnvironment</code>.
    * @alias module:model/DeploymentsStgWestDeploymentEnvironment

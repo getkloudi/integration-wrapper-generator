@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Component model module.
  * @module model/Component
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Component =
-/*#__PURE__*/
-function () {
+var Component = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Component</code>.
    * @alias module:model/Component

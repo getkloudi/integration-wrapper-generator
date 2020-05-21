@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StgWestReport model module.
  * @module model/StgWestReport
- * @version 1.1.2
+ * @version 1.2.0
  */
-var StgWestReport =
-/*#__PURE__*/
-function () {
+var StgWestReport = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>StgWestReport</code>.
    * @alias module:model/StgWestReport

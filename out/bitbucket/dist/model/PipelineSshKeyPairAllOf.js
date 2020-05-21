@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineSshKeyPairAllOf model module.
  * @module model/PipelineSshKeyPairAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineSshKeyPairAllOf =
-/*#__PURE__*/
-function () {
+var PipelineSshKeyPairAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineSshKeyPairAllOf</code>.
    * A Pipelines SSH key pair.

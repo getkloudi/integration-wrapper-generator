@@ -17,7 +17,7 @@ import Account from './Account';
 /**
  * The DeploymentStateInProgressAllOf model module.
  * @module model/DeploymentStateInProgressAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentStateInProgressAllOf {
     /**

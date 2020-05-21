@@ -17,7 +17,7 @@ import Commit from './Commit';
 /**
  * The CommitFile model module.
  * @module model/CommitFile
- * @version 1.1.2
+ * @version 1.2.0
  */
 class CommitFile {
     /**
@@ -63,6 +63,9 @@ class CommitFile {
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], 'String');
             }
+            if (data.hasOwnProperty('escaped_path')) {
+                obj['escaped_path'] = ApiClient.convertToType(data['escaped_path'], 'String');
+            }
         }
         return obj;
     }
@@ -90,6 +93,12 @@ CommitFile.prototype['commit'] = undefined;
  * @member {module:model/CommitFile.AttributesEnum} attributes
  */
 CommitFile.prototype['attributes'] = undefined;
+
+/**
+ * The escaped version of the path as it appears in a diff. If the path does not require escaping this will be the same as path.
+ * @member {String} escaped_path
+ */
+CommitFile.prototype['escaped_path'] = undefined;
 
 
 

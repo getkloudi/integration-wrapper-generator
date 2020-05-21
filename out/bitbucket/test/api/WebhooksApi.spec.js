@@ -218,6 +218,56 @@
         done();
       });
     });
+    describe('workspacesWorkspaceHooksGet', function() {
+      it('should call workspacesWorkspaceHooksGet successfully', function(done) {
+        //uncomment below and update the code to test workspacesWorkspaceHooksGet
+        //instance.workspacesWorkspaceHooksGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('workspacesWorkspaceHooksPost', function() {
+      it('should call workspacesWorkspaceHooksPost successfully', function(done) {
+        //uncomment below and update the code to test workspacesWorkspaceHooksPost
+        //instance.workspacesWorkspaceHooksPost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('workspacesWorkspaceHooksUidDelete', function() {
+      it('should call workspacesWorkspaceHooksUidDelete successfully', function(done) {
+        //uncomment below and update the code to test workspacesWorkspaceHooksUidDelete
+        //instance.workspacesWorkspaceHooksUidDelete(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('workspacesWorkspaceHooksUidGet', function() {
+      it('should call workspacesWorkspaceHooksUidGet successfully', function(done) {
+        //uncomment below and update the code to test workspacesWorkspaceHooksUidGet
+        //instance.workspacesWorkspaceHooksUidGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('workspacesWorkspaceHooksUidPut', function() {
+      it('should call workspacesWorkspaceHooksUidPut successfully', function(done) {
+        //uncomment below and update the code to test workspacesWorkspaceHooksUidPut
+        //instance.workspacesWorkspaceHooksUidPut(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

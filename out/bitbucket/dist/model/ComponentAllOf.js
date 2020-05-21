@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ComponentAllOf model module.
  * @module model/ComponentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var ComponentAllOf =
-/*#__PURE__*/
-function () {
+var ComponentAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ComponentAllOf</code>.
    * A component as defined in a repository&#39;s issue tracker.

@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedUsers model module.
  * @module model/PaginatedUsers
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedUsers =
-/*#__PURE__*/
-function () {
+var PaginatedUsers = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedUsers</code>.
    * A paginated list of users.

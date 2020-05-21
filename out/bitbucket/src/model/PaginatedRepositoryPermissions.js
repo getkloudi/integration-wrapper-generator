@@ -17,7 +17,7 @@ import RepositoryPermission from './RepositoryPermission';
 /**
  * The PaginatedRepositoryPermissions model module.
  * @module model/PaginatedRepositoryPermissions
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedRepositoryPermissions {
     /**

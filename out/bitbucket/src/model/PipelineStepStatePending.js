@@ -18,7 +18,7 @@ import PipelineStepStatePendingAllOf from './PipelineStepStatePendingAllOf';
 /**
  * The PipelineStepStatePending model module.
  * @module model/PipelineStepStatePending
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStepStatePending {
     /**

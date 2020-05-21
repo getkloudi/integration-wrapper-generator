@@ -19,7 +19,7 @@ import ModelObject from './ModelObject';
 /**
  * The IssueAttachment model module.
  * @module model/IssueAttachment
- * @version 1.1.2
+ * @version 1.2.0
  */
 class IssueAttachment {
     /**

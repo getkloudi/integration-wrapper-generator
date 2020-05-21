@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedEnvironments model module.
  * @module model/PaginatedEnvironments
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedEnvironments =
-/*#__PURE__*/
-function () {
+var PaginatedEnvironments = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedEnvironments</code>.
    * A paged list of environments

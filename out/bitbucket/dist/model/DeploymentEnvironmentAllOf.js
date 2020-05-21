@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentEnvironmentAllOf model module.
  * @module model/DeploymentEnvironmentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentEnvironmentAllOf =
-/*#__PURE__*/
-function () {
+var DeploymentEnvironmentAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentEnvironmentAllOf</code>.
    * A Bitbucket Deployment Environment.

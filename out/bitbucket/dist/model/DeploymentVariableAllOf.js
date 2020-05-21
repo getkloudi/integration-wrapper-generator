@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentVariableAllOf model module.
  * @module model/DeploymentVariableAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentVariableAllOf =
-/*#__PURE__*/
-function () {
+var DeploymentVariableAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentVariableAllOf</code>.
    * A Pipelines deployment variable.

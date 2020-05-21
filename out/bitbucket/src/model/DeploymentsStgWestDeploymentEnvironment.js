@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The DeploymentsStgWestDeploymentEnvironment model module.
  * @module model/DeploymentsStgWestDeploymentEnvironment
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentsStgWestDeploymentEnvironment {
     /**

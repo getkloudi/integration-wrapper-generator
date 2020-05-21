@@ -17,7 +17,7 @@ import Diffstat from './Diffstat';
 /**
  * The PaginatedDiffstats model module.
  * @module model/PaginatedDiffstats
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedDiffstats {
     /**

@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStepStateCompletedSuccessfulAllOf model module.
  * @module model/PipelineStepStateCompletedSuccessfulAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStepStateCompletedSuccessfulAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStepStateCompletedSuccessfulAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStepStateCompletedSuccessfulAllOf</code>.
    * A Bitbucket Pipelines SUCCESSFUL pipeline step result.

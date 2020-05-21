@@ -17,7 +17,7 @@ import CommitComment from './CommitComment';
 /**
  * The PaginatedCommitComments model module.
  * @module model/PaginatedCommitComments
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedCommitComments {
     /**

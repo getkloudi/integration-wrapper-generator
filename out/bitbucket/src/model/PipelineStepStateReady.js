@@ -18,7 +18,7 @@ import PipelineStepStateReadyAllOf from './PipelineStepStateReadyAllOf';
 /**
  * The PipelineStepStateReady model module.
  * @module model/PipelineStepStateReady
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStepStateReady {
     /**

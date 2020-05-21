@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedPipelineKnownHosts model module.
  * @module model/PaginatedPipelineKnownHosts
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedPipelineKnownHosts =
-/*#__PURE__*/
-function () {
+var PaginatedPipelineKnownHosts = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedPipelineKnownHosts</code>.
    * A paged list of known hosts.

@@ -17,7 +17,7 @@ import IssueChangeChangesAssignee from './IssueChangeChangesAssignee';
 /**
  * The IssueChangeChanges model module.
  * @module model/IssueChangeChanges
- * @version 1.1.2
+ * @version 1.2.0
  */
 class IssueChangeChanges {
     /**

@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The StgWestReport model module.
  * @module model/StgWestReport
- * @version 1.1.2
+ * @version 1.2.0
  */
 class StgWestReport {
     /**

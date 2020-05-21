@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineSshKeyPair model module.
  * @module model/PipelineSshKeyPair
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineSshKeyPair =
-/*#__PURE__*/
-function () {
+var PipelineSshKeyPair = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineSshKeyPair</code>.
    * @alias module:model/PipelineSshKeyPair

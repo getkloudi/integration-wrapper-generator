@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchSegment model module.
  * @module model/SearchSegment
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SearchSegment =
-/*#__PURE__*/
-function () {
+var SearchSegment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SearchSegment</code>.
    * @alias module:model/SearchSegment

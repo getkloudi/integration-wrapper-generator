@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GroupAllOfLinks model module.
  * @module model/GroupAllOfLinks
- * @version 1.1.2
+ * @version 1.2.0
  */
-var GroupAllOfLinks =
-/*#__PURE__*/
-function () {
+var GroupAllOfLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>GroupAllOfLinks</code>.
    * @alias module:model/GroupAllOfLinks

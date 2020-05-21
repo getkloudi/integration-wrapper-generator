@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueChangeLinks model module.
  * @module model/IssueChangeLinks
- * @version 1.1.2
+ * @version 1.2.0
  */
-var IssueChangeLinks =
-/*#__PURE__*/
-function () {
+var IssueChangeLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>IssueChangeLinks</code>.
    * @alias module:model/IssueChangeLinks

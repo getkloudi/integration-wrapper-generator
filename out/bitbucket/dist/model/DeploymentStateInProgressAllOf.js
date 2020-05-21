@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentStateInProgressAllOf model module.
  * @module model/DeploymentStateInProgressAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentStateInProgressAllOf =
-/*#__PURE__*/
-function () {
+var DeploymentStateInProgressAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentStateInProgressAllOf</code>.
    * A Bitbucket Deployment IN_PROGRESS deployment state.

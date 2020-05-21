@@ -26,11 +26,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineCommitTarget model module.
  * @module model/PipelineCommitTarget
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineCommitTarget =
-/*#__PURE__*/
-function () {
+var PipelineCommitTarget = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineCommitTarget</code>.
    * @alias module:model/PipelineCommitTarget

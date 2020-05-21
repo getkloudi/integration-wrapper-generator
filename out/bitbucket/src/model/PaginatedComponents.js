@@ -17,7 +17,7 @@ import Component from './Component';
 /**
  * The PaginatedComponents model module.
  * @module model/PaginatedComponents
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedComponents {
     /**

@@ -17,7 +17,7 @@ import SnippetComment from './SnippetComment';
 /**
  * The PaginatedSnippetComments model module.
  * @module model/PaginatedSnippetComments
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedSnippetComments {
     /**

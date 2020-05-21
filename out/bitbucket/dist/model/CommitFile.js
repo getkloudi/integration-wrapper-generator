@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommitFile model module.
  * @module model/CommitFile
- * @version 1.1.2
+ * @version 1.2.0
  */
-var CommitFile =
-/*#__PURE__*/
-function () {
+var CommitFile = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CommitFile</code>.
    * A file object, representing a file at a commit in a repository
@@ -77,6 +75,10 @@ function () {
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], 'String');
         }
+
+        if (data.hasOwnProperty('escaped_path')) {
+          obj['escaped_path'] = _ApiClient["default"].convertToType(data['escaped_path'], 'String');
+        }
       }
 
       return obj;
@@ -107,6 +109,12 @@ CommitFile.prototype['commit'] = undefined;
  */
 
 CommitFile.prototype['attributes'] = undefined;
+/**
+ * The escaped version of the path as it appears in a diff. If the path does not require escaping this will be the same as path.
+ * @member {String} escaped_path
+ */
+
+CommitFile.prototype['escaped_path'] = undefined;
 /**
  * Allowed values for the <code>attributes</code> property.
  * @enum {String}

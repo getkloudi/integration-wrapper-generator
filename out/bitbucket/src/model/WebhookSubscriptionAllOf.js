@@ -12,12 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import Account from './Account';
 
 /**
  * The WebhookSubscriptionAllOf model module.
  * @module model/WebhookSubscriptionAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class WebhookSubscriptionAllOf {
     /**
@@ -62,7 +61,7 @@ class WebhookSubscriptionAllOf {
                 obj['subject_type'] = ApiClient.convertToType(data['subject_type'], 'String');
             }
             if (data.hasOwnProperty('subject')) {
-                obj['subject'] = Account.constructFromObject(data['subject']);
+                obj['subject'] = Object.constructFromObject(data['subject']);
             }
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
@@ -105,7 +104,7 @@ WebhookSubscriptionAllOf.prototype['description'] = undefined;
 WebhookSubscriptionAllOf.prototype['subject_type'] = undefined;
 
 /**
- * @member {module:model/Account} subject
+ * @member {Object} subject
  */
 WebhookSubscriptionAllOf.prototype['subject'] = undefined;
 

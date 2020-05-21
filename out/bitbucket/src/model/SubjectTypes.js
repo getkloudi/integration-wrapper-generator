@@ -17,7 +17,7 @@ import SubjectTypesRepository from './SubjectTypesRepository';
 /**
  * The SubjectTypes model module.
  * @module model/SubjectTypes
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SubjectTypes {
     /**

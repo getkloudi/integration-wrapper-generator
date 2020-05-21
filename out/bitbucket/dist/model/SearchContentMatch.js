@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchContentMatch model module.
  * @module model/SearchContentMatch
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SearchContentMatch =
-/*#__PURE__*/
-function () {
+var SearchContentMatch = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SearchContentMatch</code>.
    * @alias module:model/SearchContentMatch

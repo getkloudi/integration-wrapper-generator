@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedDiffstats model module.
  * @module model/PaginatedDiffstats
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedDiffstats =
-/*#__PURE__*/
-function () {
+var PaginatedDiffstats = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedDiffstats</code>.
    * A paginated list of diffstats.

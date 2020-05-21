@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueJobStatus model module.
  * @module model/IssueJobStatus
- * @version 1.1.2
+ * @version 1.2.0
  */
-var IssueJobStatus =
-/*#__PURE__*/
-function () {
+var IssueJobStatus = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>IssueJobStatus</code>.
    * The status of an import or export job

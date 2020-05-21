@@ -59,7 +59,10 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new Bitbucket.RepositoriesApi();
 let opts = {
-  'after': "after_example" // String | Filter the results to include only repositories create on or after this [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)  timestamp. Example: `YYYY-MM-DDTHH:mm:ss.sssZ`
+  'after': "after_example", // String | Filter the results to include only repositories created on or after this [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)  timestamp. Example: `YYYY-MM-DDTHH:mm:ss.sssZ`
+  'role': "role_example", // String | Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user 
+  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../meta/filtering). `role` parameter must also be specified. 
+  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../meta/filtering). 
 };
 apiInstance.repositoriesGet(opts, (error, data, response) => {
   if (error) {
@@ -75,7 +78,10 @@ apiInstance.repositoriesGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **after** | **String**| Filter the results to include only repositories create on or after this [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)  timestamp. Example: &#x60;YYYY-MM-DDTHH:mm:ss.sssZ&#x60; | [optional] 
+ **after** | **String**| Filter the results to include only repositories created on or after this [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601)  timestamp. Example: &#x60;YYYY-MM-DDTHH:mm:ss.sssZ&#x60; | [optional] 
+ **role** | **String**| Filters the result based on the authenticated user&#39;s role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user  | [optional] 
+ **q** | **String**| Query string to narrow down the response as per [filtering and sorting](../meta/filtering). &#x60;role&#x60; parameter must also be specified.  | [optional] 
+ **sort** | **String**| Field by which the results should be sorted as per [filtering and sorting](../meta/filtering).  | [optional] 
 
 ### Return type
 
@@ -120,8 +126,9 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Bitbucket.RepositoriesApi();
 let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let opts = {
-  'page': 1, // Number | Page number of the current results. This is an optional element that is not provided in all responses.
-  'role': "role_example" // String |  Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user 
+  'role': "role_example", // String |  Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user 
+  'q': "q_example", // String |  Query string to narrow down the response as per [filtering and sorting](../../meta/filtering). 
+  'sort': "sort_example" // String |  Field by which the results should be sorted as per [filtering and sorting](../../meta/filtering).         
 };
 apiInstance.repositoriesWorkspaceGet(workspace, opts, (error, data, response) => {
   if (error) {
@@ -138,8 +145,9 @@ apiInstance.repositoriesWorkspaceGet(workspace, opts, (error, data, response) =>
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
- **page** | **Number**| Page number of the current results. This is an optional element that is not provided in all responses. | [optional] [default to 1]
  **role** | **String**|  Filters the result based on the authenticated user&#39;s role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user  | [optional] 
+ **q** | **String**|  Query string to narrow down the response as per [filtering and sorting](../../meta/filtering).  | [optional] 
+ **sort** | **String**|  Field by which the results should be sorted as per [filtering and sorting](../../meta/filtering).          | [optional] 
 
 ### Return type
 
@@ -355,7 +363,7 @@ Name | Type | Description  | Notes
 
 ## repositoriesWorkspaceRepoSlugCommitNodeStatusesGet
 
-> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug)
+> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, opts)
 
 
 
@@ -383,7 +391,11 @@ let apiInstance = new Bitbucket.RepositoriesApi();
 let node = "node_example"; // String | The commit's SHA1.
 let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, (error, data, response) => {
+let opts = {
+  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
+};
+apiInstance.repositoriesWorkspaceRepoSlugCommitNodeStatusesGet(node, workspace, repoSlug, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -400,6 +412,8 @@ Name | Type | Description  | Notes
  **node** | **String**| The commit&#39;s SHA1. | 
  **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
+ **q** | **String**| Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).  | [optional] 
+ **sort** | **String**| Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to &#x60;created_on&#x60;.  | [optional] 
 
 ### Return type
 
@@ -553,7 +567,7 @@ Name | Type | Description  | Notes
 
 ## repositoriesWorkspaceRepoSlugForksGet
 
-> PaginatedRepositories repositoriesWorkspaceRepoSlugForksGet(workspace, repoSlug)
+> PaginatedRepositories repositoriesWorkspaceRepoSlugForksGet(workspace, repoSlug, opts)
 
 
 
@@ -580,7 +594,12 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Bitbucket.RepositoriesApi();
 let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-apiInstance.repositoriesWorkspaceRepoSlugForksGet(workspace, repoSlug, (error, data, response) => {
+let opts = {
+  'role': "role_example", // String | Filters the result based on the authenticated user's role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user 
+  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../meta/filtering). 
+  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../meta/filtering). 
+};
+apiInstance.repositoriesWorkspaceRepoSlugForksGet(workspace, repoSlug, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -596,6 +615,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
+ **role** | **String**| Filters the result based on the authenticated user&#39;s role on each repository.  * **member**: returns repositories to which the user has explicit read access * **contributor**: returns repositories to which the user has explicit write access * **admin**: returns repositories to which the user has explicit administrator access * **owner**: returns all repositories owned by the current user  | [optional] 
+ **q** | **String**| Query string to narrow down the response as per [filtering and sorting](../../../../meta/filtering).  | [optional] 
+ **sort** | **String**| Field by which the results should be sorted as per [filtering and sorting](../../../../meta/filtering).  | [optional] 
 
 ### Return type
 
@@ -797,7 +819,7 @@ Name | Type | Description  | Notes
 
 ## repositoriesWorkspaceRepoSlugHooksPost
 
-> WebhookSubscription repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, body)
+> WebhookSubscription repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug)
 
 
 
@@ -824,8 +846,7 @@ oauth2.accessToken = 'YOUR ACCESS TOKEN';
 let apiInstance = new Bitbucket.RepositoriesApi();
 let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-let body = new Bitbucket.HookBody(); // HookBody | 
-apiInstance.repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, body, (error, data, response) => {
+apiInstance.repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -841,7 +862,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
- **body** | **HookBody**|  | 
 
 ### Return type
 
@@ -853,7 +873,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -1109,7 +1129,7 @@ Name | Type | Description  | Notes
 
 ## repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet
 
-> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug)
+> PaginatedCommitstatuses repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, opts)
 
 
 
@@ -1137,7 +1157,11 @@ let apiInstance = new Bitbucket.RepositoriesApi();
 let pullRequestId = 56; // Number | The id of the pull request.
 let workspace = "workspace_example"; // String | This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
 let repoSlug = "repoSlug_example"; // String | This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, (error, data, response) => {
+let opts = {
+  'q': "q_example", // String | Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+  'sort': "sort_example" // String | Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to `created_on`. 
+};
+apiInstance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdStatusesGet(pullRequestId, workspace, repoSlug, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -1154,6 +1178,8 @@ Name | Type | Description  | Notes
  **pullRequestId** | **Number**| The id of the pull request. | 
  **workspace** | **String**| This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: &#x60;{workspace UUID}&#x60;.  | 
  **repoSlug** | **String**| This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: &#x60;{repository UUID}&#x60;.  | 
+ **q** | **String**| Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering).  | [optional] 
+ **sort** | **String**| Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). Defaults to &#x60;created_on&#x60;.  | [optional] 
 
 ### Return type
 
@@ -1405,7 +1431,6 @@ let opts = {
   'author': "author_example", // String |  The raw string to be used as the new commit's author. This string follows the format `Erik van Zijst <evzijst@atlassian.com>`.  When omitted, Bitbucket uses the authenticated user's full/display name and primary email address. Commits cannot be created anonymously.
   'parents': "parents_example", // String |  A comma-separated list of SHA1s of the commits that should be the parents of the newly created commit.  When omitted, the new commit will inherit from and become a child of the main branch's tip/HEAD commit.  When more than one SHA1 is provided, the first SHA1 identifies the commit from which the content will be inherited.  When more than 2 parents are provided on a Mercurial repo, a 400 is returned as Mercurial does not support \"octopus merges\".
   'files': "files_example", // String |  Optional field that declares the files that the request is manipulating. When adding a new file to a repo, or when overwriting an existing file, the client can just upload the full contents of the file in a normal form field and the use of this `files` meta data field is redundant. However, when the `files` field contains a file path that does not have a corresponding, identically-named form field, then Bitbucket interprets that as the client wanting to replace the named file with the null set and the file is deleted instead.  Paths in the repo that are referenced in neither files nor an individual file field, remain unchanged and carry over from the parent to the new commit.  This API does not support renaming as an explicit feature. To rename a file, simply delete it and recreate it under the new name in the same commit. 
-  'files2': "files_example", // String |  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch's new HEAD/tip.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, if a parent SHA1 was also provided, then it is asserted that the parent is the branch's tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repos.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch's tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request also specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch's current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo's root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo's root commit and also define the repo's main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with parents, but omitting the files fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty. 
   'branch': "branch_example" // String |  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch's new head.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, *if* a parent SHA1 was also provided, then it is asserted that the parent is the branch's tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repositories.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch's tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request *also* specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch's current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo's root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo's root commit and also define the repo's main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with `parents`, but omitting the `files` fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty. 
 };
 apiInstance.repositoriesWorkspaceRepoSlugSrcPost(workspace, repoSlug, opts, (error, data, response) => {
@@ -1428,7 +1453,6 @@ Name | Type | Description  | Notes
  **author** | **String**|  The raw string to be used as the new commit&#39;s author. This string follows the format &#x60;Erik van Zijst &lt;evzijst@atlassian.com&gt;&#x60;.  When omitted, Bitbucket uses the authenticated user&#39;s full/display name and primary email address. Commits cannot be created anonymously. | [optional] 
  **parents** | **String**|  A comma-separated list of SHA1s of the commits that should be the parents of the newly created commit.  When omitted, the new commit will inherit from and become a child of the main branch&#39;s tip/HEAD commit.  When more than one SHA1 is provided, the first SHA1 identifies the commit from which the content will be inherited.  When more than 2 parents are provided on a Mercurial repo, a 400 is returned as Mercurial does not support \&quot;octopus merges\&quot;. | [optional] 
  **files** | **String**|  Optional field that declares the files that the request is manipulating. When adding a new file to a repo, or when overwriting an existing file, the client can just upload the full contents of the file in a normal form field and the use of this &#x60;files&#x60; meta data field is redundant. However, when the &#x60;files&#x60; field contains a file path that does not have a corresponding, identically-named form field, then Bitbucket interprets that as the client wanting to replace the named file with the null set and the file is deleted instead.  Paths in the repo that are referenced in neither files nor an individual file field, remain unchanged and carry over from the parent to the new commit.  This API does not support renaming as an explicit feature. To rename a file, simply delete it and recreate it under the new name in the same commit.  | [optional] 
- **files2** | **String**|  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch&#39;s new HEAD/tip.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, if a parent SHA1 was also provided, then it is asserted that the parent is the branch&#39;s tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repos.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch&#39;s tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request also specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch&#39;s current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo&#39;s root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo&#39;s root commit and also define the repo&#39;s main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with parents, but omitting the files fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty.  | [optional] 
  **branch** | **String**|  The name of the branch that the new commit should be created on. When omitted, the commit will be created on top of the main branch and will become the main branch&#39;s new head.  When a branch name is provided that already exists in the repo, then the commit will be created on top of that branch. In this case, *if* a parent SHA1 was also provided, then it is asserted that the parent is the branch&#39;s tip/HEAD at the time the request is made. When this is not the case, a 409 is returned.  This API cannot be used to create new anonymous heads in Mercurial repositories.  When a new branch name is specified (that does not already exist in the repo), and no parent SHA1s are provided, then the new commit will inherit from the current main branch&#39;s tip/HEAD commit, but not advance the main branch. The new commit will be the new branch. When the request *also* specifies a parent SHA1, then the new commit and branch are created directly on top of the parent commit, regardless of the state of the main branch.  When a branch name is not specified, but a parent SHA1 is provided, then Bitbucket asserts that it represents the main branch&#39;s current HEAD/tip, or a 409 is returned.  When a branch name is not specified and the repo is empty, the new commit will become the repo&#39;s root commit and will be on the main branch.  When a branch name is specified and the repo is empty, the new commit will become the repo&#39;s root commit and also define the repo&#39;s main branch going forward.  This API cannot be used to create additional root commits in non-empty repos.  The branch field cannot be repeated.  As a side effect, this API can be used to create a new branch without modifying any files, by specifying a new branch name in this field, together with &#x60;parents&#x60;, but omitting the &#x60;files&#x60; fields, while not sending any files. This will create a new commit and branch with the same contents as the first parent. The diff of this commit against its first parent will be empty.  | [optional] 
 
 ### Return type

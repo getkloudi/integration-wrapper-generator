@@ -19,7 +19,7 @@ import PipelineStepState from './PipelineStepState';
 /**
  * The PipelineStepAllOf model module.
  * @module model/PipelineStepAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStepAllOf {
     /**

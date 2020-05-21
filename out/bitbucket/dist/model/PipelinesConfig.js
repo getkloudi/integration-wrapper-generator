@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelinesConfig model module.
  * @module model/PipelinesConfig
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelinesConfig =
-/*#__PURE__*/
-function () {
+var PipelinesConfig = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelinesConfig</code>.
    * @alias module:model/PipelinesConfig

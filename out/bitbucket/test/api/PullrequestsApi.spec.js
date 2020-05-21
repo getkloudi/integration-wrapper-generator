@@ -278,6 +278,16 @@
         done();
       });
     });
+    describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet', function() {
+      it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet successfully', function(done) {
+        //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet
+        //instance.repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdMergeTaskStatusTaskIdGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet', function() {
       it('should call repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet successfully', function(done) {
         //uncomment below and update the code to test repositoriesWorkspaceRepoSlugPullrequestsPullRequestIdPatchGet

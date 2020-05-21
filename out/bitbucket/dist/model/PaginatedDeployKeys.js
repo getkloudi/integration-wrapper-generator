@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedDeployKeys model module.
  * @module model/PaginatedDeployKeys
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedDeployKeys =
-/*#__PURE__*/
-function () {
+var PaginatedDeployKeys = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedDeployKeys</code>.
    * A paginated list of deploy keys.

@@ -17,7 +17,7 @@ import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 /**
  * The SnippetCommitAllOfLinks model module.
  * @module model/SnippetCommitAllOfLinks
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SnippetCommitAllOfLinks {
     /**

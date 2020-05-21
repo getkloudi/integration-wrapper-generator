@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BaseCommitAllOf model module.
  * @module model/BaseCommitAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var BaseCommitAllOf =
-/*#__PURE__*/
-function () {
+var BaseCommitAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BaseCommitAllOf</code>.
    * The common base type for both repository and snippet commits.

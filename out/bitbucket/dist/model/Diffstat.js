@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Diffstat model module.
  * @module model/Diffstat
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Diffstat =
-/*#__PURE__*/
-function () {
+var Diffstat = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Diffstat</code>.
    * A diffstat object that includes a summary of changes made to a file between two commits.

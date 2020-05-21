@@ -18,7 +18,7 @@ import DeploymentStateCompletedStatusFailedAllOf from './DeploymentStateComplete
 /**
  * The DeploymentStateCompletedStatusFailed model module.
  * @module model/DeploymentStateCompletedStatusFailed
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentStateCompletedStatusFailed {
     /**

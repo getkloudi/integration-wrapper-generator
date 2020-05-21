@@ -21,7 +21,7 @@ import TagAllOf from './TagAllOf';
 /**
  * The Tag model module.
  * @module model/Tag
- * @version 1.1.2
+ * @version 1.2.0
  */
 class Tag {
     /**

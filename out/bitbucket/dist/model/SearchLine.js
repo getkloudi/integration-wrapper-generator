@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchLine model module.
  * @module model/SearchLine
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SearchLine =
-/*#__PURE__*/
-function () {
+var SearchLine = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SearchLine</code>.
    * @alias module:model/SearchLine

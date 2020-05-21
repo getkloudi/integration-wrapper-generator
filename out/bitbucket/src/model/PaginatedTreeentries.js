@@ -17,7 +17,7 @@ import Treeentry from './Treeentry';
 /**
  * The PaginatedTreeentries model module.
  * @module model/PaginatedTreeentries
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedTreeentries {
     /**

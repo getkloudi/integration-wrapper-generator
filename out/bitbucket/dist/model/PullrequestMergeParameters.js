@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullrequestMergeParameters model module.
  * @module model/PullrequestMergeParameters
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PullrequestMergeParameters =
-/*#__PURE__*/
-function () {
+var PullrequestMergeParameters = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PullrequestMergeParameters</code>.
    * The metadata that describes a pull request merge.

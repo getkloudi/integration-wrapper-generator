@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedCommitComments model module.
  * @module model/PaginatedCommitComments
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedCommitComments =
-/*#__PURE__*/
-function () {
+var PaginatedCommitComments = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedCommitComments</code>.
    * A paginated list of commit comments.

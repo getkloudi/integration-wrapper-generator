@@ -18,7 +18,7 @@ import SnippetCommitAllOfLinks from './SnippetCommitAllOfLinks';
 /**
  * The SnippetCommitAllOf model module.
  * @module model/SnippetCommitAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SnippetCommitAllOf {
     /**

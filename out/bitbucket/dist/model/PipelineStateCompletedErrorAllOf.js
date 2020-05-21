@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStateCompletedErrorAllOf model module.
  * @module model/PipelineStateCompletedErrorAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStateCompletedErrorAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStateCompletedErrorAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStateCompletedErrorAllOf</code>.
    * A Bitbucket Pipelines ERROR pipeline result.

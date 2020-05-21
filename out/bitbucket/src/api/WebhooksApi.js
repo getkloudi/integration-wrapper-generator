@@ -14,7 +14,6 @@
 
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
-import HookBody from '../model/HookBody';
 import PaginatedHookEvents from '../model/PaginatedHookEvents';
 import PaginatedWebhookSubscriptions from '../model/PaginatedWebhookSubscriptions';
 import SubjectTypes from '../model/SubjectTypes';
@@ -23,7 +22,7 @@ import WebhookSubscription from '../model/WebhookSubscription';
 /**
 * Webhooks service.
 * @module api/WebhooksApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class WebhooksApi {
 
@@ -177,12 +176,11 @@ export default class WebhooksApi {
      * Creates a new webhook on the specified repository.  Example:  ``` $ curl -X POST -u credentials -H 'Content-Type: application/json'           https://api.bitbucket.org/2.0/repositories/username/slug/hooks           -d '     {       \"description\": \"Webhook Description\",       \"url\": \"https://example.com/\",       \"active\": true,       \"events\": [         \"repo:push\",         \"issue:created\",         \"issue:updated\"       ]     }' ```  Note that this call requires the webhook scope, as well as any scope that applies to the events that the webhook subscribes to. In the example above that means: `webhook`, `repository` and `issue`.  Also note that the `url` must properly resolve and cannot be an internal, non-routed address.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
-     * @param {module:model/HookBody} body 
      * @param {module:api/WebhooksApi~repositoriesWorkspaceRepoSlugHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/WebhookSubscription}
      */
-    repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, body, callback) {
-      let postBody = body;
+    repositoriesWorkspaceRepoSlugHooksPost(workspace, repoSlug, callback) {
+      let postBody = null;
       // verify the required parameter 'workspace' is set
       if (workspace === undefined || workspace === null) {
         throw new Error("Missing the required parameter 'workspace' when calling repositoriesWorkspaceRepoSlugHooksPost");
@@ -190,10 +188,6 @@ export default class WebhooksApi {
       // verify the required parameter 'repoSlug' is set
       if (repoSlug === undefined || repoSlug === null) {
         throw new Error("Missing the required parameter 'repoSlug' when calling repositoriesWorkspaceRepoSlugHooksPost");
-      }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling repositoriesWorkspaceRepoSlugHooksPost");
       }
 
       let pathParams = {
@@ -208,7 +202,7 @@ export default class WebhooksApi {
       };
 
       let authNames = ['api_key', 'basic', 'oauth2'];
-      let contentTypes = ['application/json'];
+      let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = WebhookSubscription;
       return this.apiClient.callApi(
@@ -828,6 +822,233 @@ export default class WebhooksApi {
       let returnType = WebhookSubscription;
       return this.apiClient.callApi(
         '/users/{username}/hooks/{uid}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workspacesWorkspaceHooksGet operation.
+     * @callback module:api/WebhooksApi~workspacesWorkspaceHooksGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedWebhookSubscriptions} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns a paginated list of webhooks installed on this workspace.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {module:api/WebhooksApi~workspacesWorkspaceHooksGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedWebhookSubscriptions}
+     */
+    workspacesWorkspaceHooksGet(workspace, callback) {
+      let postBody = null;
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling workspacesWorkspaceHooksGet");
+      }
+
+      let pathParams = {
+        'workspace': workspace
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaginatedWebhookSubscriptions;
+      return this.apiClient.callApi(
+        '/workspaces/{workspace}/hooks', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workspacesWorkspaceHooksPost operation.
+     * @callback module:api/WebhooksApi~workspacesWorkspaceHooksPostCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WebhookSubscription} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates a new webhook on the specified workspace.  Workspace webhooks are fired for events from all repositories contained by that workspace.  Note that only owners can install webhooks on workspaces.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {module:api/WebhooksApi~workspacesWorkspaceHooksPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WebhookSubscription}
+     */
+    workspacesWorkspaceHooksPost(workspace, callback) {
+      let postBody = null;
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling workspacesWorkspaceHooksPost");
+      }
+
+      let pathParams = {
+        'workspace': workspace
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = WebhookSubscription;
+      return this.apiClient.callApi(
+        '/workspaces/{workspace}/hooks', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workspacesWorkspaceHooksUidDelete operation.
+     * @callback module:api/WebhooksApi~workspacesWorkspaceHooksUidDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes the specified webhook subscription from the given workspace.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} uid The installed webhook's id
+     * @param {module:api/WebhooksApi~workspacesWorkspaceHooksUidDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    workspacesWorkspaceHooksUidDelete(workspace, uid, callback) {
+      let postBody = null;
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling workspacesWorkspaceHooksUidDelete");
+      }
+      // verify the required parameter 'uid' is set
+      if (uid === undefined || uid === null) {
+        throw new Error("Missing the required parameter 'uid' when calling workspacesWorkspaceHooksUidDelete");
+      }
+
+      let pathParams = {
+        'workspace': workspace,
+        'uid': uid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/workspaces/{workspace}/hooks/{uid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workspacesWorkspaceHooksUidGet operation.
+     * @callback module:api/WebhooksApi~workspacesWorkspaceHooksUidGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WebhookSubscription} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns the webhook with the specified id installed on the given workspace.
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} uid The installed webhook's id.
+     * @param {module:api/WebhooksApi~workspacesWorkspaceHooksUidGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WebhookSubscription}
+     */
+    workspacesWorkspaceHooksUidGet(workspace, uid, callback) {
+      let postBody = null;
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling workspacesWorkspaceHooksUidGet");
+      }
+      // verify the required parameter 'uid' is set
+      if (uid === undefined || uid === null) {
+        throw new Error("Missing the required parameter 'uid' when calling workspacesWorkspaceHooksUidGet");
+      }
+
+      let pathParams = {
+        'workspace': workspace,
+        'uid': uid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = WebhookSubscription;
+      return this.apiClient.callApi(
+        '/workspaces/{workspace}/hooks/{uid}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the workspacesWorkspaceHooksUidPut operation.
+     * @callback module:api/WebhooksApi~workspacesWorkspaceHooksUidPutCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/WebhookSubscription} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Updates the specified webhook subscription.  The following properties can be mutated:  * `description` * `url` * `active` * `events`
+     * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
+     * @param {String} uid The installed webhook's id
+     * @param {module:api/WebhooksApi~workspacesWorkspaceHooksUidPutCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/WebhookSubscription}
+     */
+    workspacesWorkspaceHooksUidPut(workspace, uid, callback) {
+      let postBody = null;
+      // verify the required parameter 'workspace' is set
+      if (workspace === undefined || workspace === null) {
+        throw new Error("Missing the required parameter 'workspace' when calling workspacesWorkspaceHooksUidPut");
+      }
+      // verify the required parameter 'uid' is set
+      if (uid === undefined || uid === null) {
+        throw new Error("Missing the required parameter 'uid' when calling workspacesWorkspaceHooksUidPut");
+      }
+
+      let pathParams = {
+        'workspace': workspace,
+        'uid': uid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key', 'basic', 'oauth2'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = WebhookSubscription;
+      return this.apiClient.callApi(
+        '/workspaces/{workspace}/hooks/{uid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

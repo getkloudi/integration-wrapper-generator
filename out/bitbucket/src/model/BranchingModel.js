@@ -20,7 +20,7 @@ import ModelObject from './ModelObject';
 /**
  * The BranchingModel model module.
  * @module model/BranchingModel
- * @version 1.1.2
+ * @version 1.2.0
  */
 class BranchingModel {
     /**

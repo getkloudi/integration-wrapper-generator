@@ -20,7 +20,7 @@ import DeploymentStateCompletedStatus from './DeploymentStateCompletedStatus';
 /**
  * The DeploymentStateCompleted model module.
  * @module model/DeploymentStateCompleted
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentStateCompleted {
     /**

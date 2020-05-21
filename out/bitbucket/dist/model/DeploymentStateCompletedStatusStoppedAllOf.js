@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentStateCompletedStatusStoppedAllOf model module.
  * @module model/DeploymentStateCompletedStatusStoppedAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentStateCompletedStatusStoppedAllOf =
-/*#__PURE__*/
-function () {
+var DeploymentStateCompletedStatusStoppedAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentStateCompletedStatusStoppedAllOf</code>.
    * A STOPPED completed deployment status.

@@ -17,7 +17,7 @@ import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 /**
  * The CommitstatusAllOfLinks model module.
  * @module model/CommitstatusAllOfLinks
- * @version 1.1.2
+ * @version 1.2.0
  */
 class CommitstatusAllOfLinks {
     /**

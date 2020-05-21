@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentStateCompletedAllOf model module.
  * @module model/DeploymentStateCompletedAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentStateCompletedAllOf =
-/*#__PURE__*/
-function () {
+var DeploymentStateCompletedAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentStateCompletedAllOf</code>.
    * A Bitbucket Deployment COMPLETED deployment state.

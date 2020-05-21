@@ -18,7 +18,7 @@ import PipelineSelectorAllOf from './PipelineSelectorAllOf';
 /**
  * The PipelineSelector model module.
  * @module model/PipelineSelector
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineSelector {
     /**

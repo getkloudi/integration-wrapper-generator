@@ -19,7 +19,7 @@ import DeploymentState from './DeploymentState';
 /**
  * The DeploymentAllOf model module.
  * @module model/DeploymentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentAllOf {
     /**

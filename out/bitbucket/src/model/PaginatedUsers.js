@@ -17,7 +17,7 @@ import User from './User';
 /**
  * The PaginatedUsers model module.
  * @module model/PaginatedUsers
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedUsers {
     /**

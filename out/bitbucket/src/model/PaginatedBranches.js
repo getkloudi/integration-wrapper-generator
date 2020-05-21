@@ -17,7 +17,7 @@ import Branch from './Branch';
 /**
  * The PaginatedBranches model module.
  * @module model/PaginatedBranches
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedBranches {
     /**

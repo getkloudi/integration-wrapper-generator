@@ -7,8 +7,6 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Account = _interopRequireDefault(require("./Account"));
-
 var _ModelObject = _interopRequireDefault(require("./ModelObject"));
 
 var _WebhookSubscriptionAllOf = _interopRequireDefault(require("./WebhookSubscriptionAllOf"));
@@ -24,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The WebhookSubscription model module.
  * @module model/WebhookSubscription
- * @version 1.1.2
+ * @version 1.2.0
  */
-var WebhookSubscription =
-/*#__PURE__*/
-function () {
+var WebhookSubscription = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WebhookSubscription</code>.
    * @alias module:model/WebhookSubscription
@@ -93,7 +89,7 @@ function () {
         }
 
         if (data.hasOwnProperty('subject')) {
-          obj['subject'] = _Account["default"].constructFromObject(data['subject']);
+          obj['subject'] = Object.constructFromObject(data['subject']);
         }
 
         if (data.hasOwnProperty('active')) {
@@ -141,7 +137,7 @@ WebhookSubscription.prototype['description'] = undefined;
 
 WebhookSubscription.prototype['subject_type'] = undefined;
 /**
- * @member {module:model/Account} subject
+ * @member {Object} subject
  */
 
 WebhookSubscription.prototype['subject'] = undefined;
@@ -193,7 +189,7 @@ _WebhookSubscriptionAllOf["default"].prototype['description'] = undefined;
 
 _WebhookSubscriptionAllOf["default"].prototype['subject_type'] = undefined;
 /**
- * @member {module:model/Account} subject
+ * @member {Object} subject
  */
 
 _WebhookSubscriptionAllOf["default"].prototype['subject'] = undefined;

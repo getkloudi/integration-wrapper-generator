@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RefLinks model module.
  * @module model/RefLinks
- * @version 1.1.2
+ * @version 1.2.0
  */
-var RefLinks =
-/*#__PURE__*/
-function () {
+var RefLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RefLinks</code>.
    * @alias module:model/RefLinks

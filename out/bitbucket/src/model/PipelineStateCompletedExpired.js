@@ -18,7 +18,7 @@ import PipelineStateCompletedResult from './PipelineStateCompletedResult';
 /**
  * The PipelineStateCompletedExpired model module.
  * @module model/PipelineStateCompletedExpired
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStateCompletedExpired {
     /**

@@ -22,7 +22,7 @@ import RepositoryAllOfLinks from './RepositoryAllOfLinks';
 /**
  * The Repository model module.
  * @module model/Repository
- * @version 1.1.2
+ * @version 1.2.0
  */
 class Repository {
     /**

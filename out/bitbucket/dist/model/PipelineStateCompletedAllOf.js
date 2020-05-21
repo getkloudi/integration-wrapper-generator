@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStateCompletedAllOf model module.
  * @module model/PipelineStateCompletedAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStateCompletedAllOf =
-/*#__PURE__*/
-function () {
+var PipelineStateCompletedAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStateCompletedAllOf</code>.
    * A Bitbucket Pipelines COMPLETED pipeline state.

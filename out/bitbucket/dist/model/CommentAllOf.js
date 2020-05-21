@@ -28,11 +28,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommentAllOf model module.
  * @module model/CommentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var CommentAllOf =
-/*#__PURE__*/
-function () {
+var CommentAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CommentAllOf</code>.
    * The base type for all comments. This type should be considered abstract. Each of the \&quot;commentable\&quot; resources defines its own subtypes (e.g. &#x60;issue_comment&#x60;).

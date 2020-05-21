@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullrequestEndpointBranch model module.
  * @module model/PullrequestEndpointBranch
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PullrequestEndpointBranch =
-/*#__PURE__*/
-function () {
+var PullrequestEndpointBranch = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PullrequestEndpointBranch</code>.
    * @alias module:model/PullrequestEndpointBranch

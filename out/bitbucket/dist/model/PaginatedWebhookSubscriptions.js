@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedWebhookSubscriptions model module.
  * @module model/PaginatedWebhookSubscriptions
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedWebhookSubscriptions =
-/*#__PURE__*/
-function () {
+var PaginatedWebhookSubscriptions = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedWebhookSubscriptions</code>.
    * A paginated list of webhook subscriptions

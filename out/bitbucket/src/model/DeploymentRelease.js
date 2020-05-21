@@ -19,7 +19,7 @@ import ModelObject from './ModelObject';
 /**
  * The DeploymentRelease model module.
  * @module model/DeploymentRelease
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentRelease {
     /**

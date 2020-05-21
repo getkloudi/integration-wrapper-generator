@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The PipelinesDdevPipelineStep model module.
  * @module model/PipelinesDdevPipelineStep
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelinesDdevPipelineStep {
     /**

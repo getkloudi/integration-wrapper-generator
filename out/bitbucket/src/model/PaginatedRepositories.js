@@ -17,7 +17,7 @@ import Repository from './Repository';
 /**
  * The PaginatedRepositories model module.
  * @module model/PaginatedRepositories
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedRepositories {
     /**

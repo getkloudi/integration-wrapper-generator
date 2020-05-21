@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SubjectTypes model module.
  * @module model/SubjectTypes
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SubjectTypes =
-/*#__PURE__*/
-function () {
+var SubjectTypes = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SubjectTypes</code>.
    * The mapping of resource/subject types pointing to their individual event types.

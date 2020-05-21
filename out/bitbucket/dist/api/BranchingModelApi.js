@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * BranchingModel service.
 * @module api/BranchingModelApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var BranchingModelApi =
-/*#__PURE__*/
-function () {
+var BranchingModelApi = /*#__PURE__*/function () {
   /**
   * Constructs a new BranchingModelApi. 
   * @alias module:api/BranchingModelApi

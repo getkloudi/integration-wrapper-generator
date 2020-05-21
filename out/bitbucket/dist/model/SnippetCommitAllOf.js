@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SnippetCommitAllOf model module.
  * @module model/SnippetCommitAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SnippetCommitAllOf =
-/*#__PURE__*/
-function () {
+var SnippetCommitAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SnippetCommitAllOf</code>.
    * 

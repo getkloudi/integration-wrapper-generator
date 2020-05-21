@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CommentAllOfInline model module.
  * @module model/CommentAllOfInline
- * @version 1.1.2
+ * @version 1.2.0
  */
 class CommentAllOfInline {
     /**

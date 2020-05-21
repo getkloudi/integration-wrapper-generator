@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentEnvironment model module.
  * @module model/DeploymentEnvironment
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentEnvironment =
-/*#__PURE__*/
-function () {
+var DeploymentEnvironment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentEnvironment</code>.
    * @alias module:model/DeploymentEnvironment

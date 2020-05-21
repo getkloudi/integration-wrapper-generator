@@ -18,7 +18,7 @@ import DeploymentStateCompletedStatusStoppedAllOf from './DeploymentStateComplet
 /**
  * The DeploymentStateCompletedStatusStopped model module.
  * @module model/DeploymentStateCompletedStatusStopped
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentStateCompletedStatusStopped {
     /**

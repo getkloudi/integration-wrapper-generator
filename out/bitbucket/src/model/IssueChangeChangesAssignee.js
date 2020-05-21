@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IssueChangeChangesAssignee model module.
  * @module model/IssueChangeChangesAssignee
- * @version 1.1.2
+ * @version 1.2.0
  */
 class IssueChangeChangesAssignee {
     /**

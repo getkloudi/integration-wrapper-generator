@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentStateUndeployedAllOf model module.
  * @module model/DeploymentStateUndeployedAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var DeploymentStateUndeployedAllOf =
-/*#__PURE__*/
-function () {
+var DeploymentStateUndeployedAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentStateUndeployedAllOf</code>.
    * A Bitbucket Deployment UNDEPLOYED deployment state.

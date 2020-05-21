@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Treeentry model module.
  * @module model/Treeentry
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Treeentry =
-/*#__PURE__*/
-function () {
+var Treeentry = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Treeentry</code>.
    * Base type for most resource objects. It defines the common &#x60;type&#x60; element that identifies an object&#39;s type. It also identifies the element as Swagger&#39;s &#x60;discriminator&#x60;.

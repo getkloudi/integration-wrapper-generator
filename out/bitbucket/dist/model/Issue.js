@@ -36,11 +36,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Issue model module.
  * @module model/Issue
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Issue =
-/*#__PURE__*/
-function () {
+var Issue = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Issue</code>.
    * @alias module:model/Issue

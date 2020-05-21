@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedRefs model module.
  * @module model/PaginatedRefs
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedRefs =
-/*#__PURE__*/
-function () {
+var PaginatedRefs = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedRefs</code>.
    * A paginated list of refs.

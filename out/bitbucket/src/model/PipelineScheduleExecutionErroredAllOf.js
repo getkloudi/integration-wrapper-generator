@@ -17,7 +17,7 @@ import PipelineError from './PipelineError';
 /**
  * The PipelineScheduleExecutionErroredAllOf model module.
  * @module model/PipelineScheduleExecutionErroredAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineScheduleExecutionErroredAllOf {
     /**

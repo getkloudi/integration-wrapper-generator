@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The PipelineStepStateCompletedResult model module.
  * @module model/PipelineStepStateCompletedResult
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStepStateCompletedResult {
     /**

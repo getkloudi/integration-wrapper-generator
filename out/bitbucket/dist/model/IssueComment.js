@@ -32,11 +32,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueComment model module.
  * @module model/IssueComment
- * @version 1.1.2
+ * @version 1.2.0
  */
-var IssueComment =
-/*#__PURE__*/
-function () {
+var IssueComment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>IssueComment</code>.
    * @alias module:model/IssueComment

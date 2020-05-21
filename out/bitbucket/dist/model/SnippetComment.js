@@ -26,11 +26,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SnippetComment model module.
  * @module model/SnippetComment
- * @version 1.1.2
+ * @version 1.2.0
  */
-var SnippetComment =
-/*#__PURE__*/
-function () {
+var SnippetComment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SnippetComment</code>.
    * @alias module:model/SnippetComment

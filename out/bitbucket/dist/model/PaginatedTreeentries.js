@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedTreeentries model module.
  * @module model/PaginatedTreeentries
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedTreeentries =
-/*#__PURE__*/
-function () {
+var PaginatedTreeentries = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedTreeentries</code>.
    * A paginated list of commit_file and/or commit_directory objects.

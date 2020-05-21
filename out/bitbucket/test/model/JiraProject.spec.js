@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new Bitbucket.Hookbody();
+    instance = new Bitbucket.JiraProject();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,17 +47,11 @@
       object[property] = value;
   }
 
-  describe('Hookbody', function() {
-    it('should create an instance of Hookbody', function() {
-      // uncomment below and update the code to test Hookbody
-      //var instane = new Bitbucket.Hookbody();
-      //expect(instance).to.be.a(Bitbucket.Hookbody);
-    });
-
-    it('should have the property property (base name: "property")', function() {
-      // uncomment below and update the code to test the property property
-      //var instane = new Bitbucket.Hookbody();
-      //expect(instance).to.be();
+  describe('JiraProject', function() {
+    it('should create an instance of JiraProject', function() {
+      // uncomment below and update the code to test JiraProject
+      //var instane = new Bitbucket.JiraProject();
+      //expect(instance).to.be.a(Bitbucket.JiraProject);
     });
 
   });

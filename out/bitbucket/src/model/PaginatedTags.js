@@ -17,7 +17,7 @@ import Tag from './Tag';
 /**
  * The PaginatedTags model module.
  * @module model/PaginatedTags
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedTags {
     /**

@@ -98,6 +98,46 @@
         done();
       });
     });
+    describe('workspacesWorkspaceProjectsPost', function() {
+      it('should call workspacesWorkspaceProjectsPost successfully', function(done) {
+        //uncomment below and update the code to test workspacesWorkspaceProjectsPost
+        //instance.workspacesWorkspaceProjectsPost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('workspacesWorkspaceProjectsProjectKeyDelete', function() {
+      it('should call workspacesWorkspaceProjectsProjectKeyDelete successfully', function(done) {
+        //uncomment below and update the code to test workspacesWorkspaceProjectsProjectKeyDelete
+        //instance.workspacesWorkspaceProjectsProjectKeyDelete(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('workspacesWorkspaceProjectsProjectKeyGet', function() {
+      it('should call workspacesWorkspaceProjectsProjectKeyGet successfully', function(done) {
+        //uncomment below and update the code to test workspacesWorkspaceProjectsProjectKeyGet
+        //instance.workspacesWorkspaceProjectsProjectKeyGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('workspacesWorkspaceProjectsProjectKeyPut', function() {
+      it('should call workspacesWorkspaceProjectsProjectKeyPut successfully', function(done) {
+        //uncomment below and update the code to test workspacesWorkspaceProjectsProjectKeyPut
+        //instance.workspacesWorkspaceProjectsProjectKeyPut(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
   });
 
 }));

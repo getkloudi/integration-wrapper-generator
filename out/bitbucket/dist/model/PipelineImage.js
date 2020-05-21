@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineImage model module.
  * @module model/PipelineImage
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineImage =
-/*#__PURE__*/
-function () {
+var PipelineImage = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineImage</code>.
    * The definition of a Docker image that can be used for a Bitbucket Pipelines step execution context.

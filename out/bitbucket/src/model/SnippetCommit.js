@@ -22,7 +22,7 @@ import SnippetCommitAllOfLinks from './SnippetCommitAllOfLinks';
 /**
  * The SnippetCommit model module.
  * @module model/SnippetCommit
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SnippetCommit {
     /**

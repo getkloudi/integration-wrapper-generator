@@ -17,7 +17,7 @@ import SubjectTypesRepositoryEvents from './SubjectTypesRepositoryEvents';
 /**
  * The IssueChangeLinks model module.
  * @module model/IssueChangeLinks
- * @version 1.1.2
+ * @version 1.2.0
  */
 class IssueChangeLinks {
     /**

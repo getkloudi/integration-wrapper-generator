@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedSnippetCommit model module.
  * @module model/PaginatedSnippetCommit
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedSnippetCommit =
-/*#__PURE__*/
-function () {
+var PaginatedSnippetCommit = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedSnippetCommit</code>.
    * A paginated list of snippet commits.

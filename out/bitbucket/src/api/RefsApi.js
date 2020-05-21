@@ -23,7 +23,7 @@ import Tag from '../model/Tag';
 /**
 * Refs service.
 * @module api/RefsApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class RefsApi {
 

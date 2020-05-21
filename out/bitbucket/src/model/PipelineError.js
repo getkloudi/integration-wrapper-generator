@@ -18,7 +18,7 @@ import PipelineErrorAllOf from './PipelineErrorAllOf';
 /**
  * The PipelineError model module.
  * @module model/PipelineError
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineError {
     /**

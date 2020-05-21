@@ -30,11 +30,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchingModelSettings model module.
  * @module model/BranchingModelSettings
- * @version 1.1.2
+ * @version 1.2.0
  */
-var BranchingModelSettings =
-/*#__PURE__*/
-function () {
+var BranchingModelSettings = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BranchingModelSettings</code>.
    * @alias module:model/BranchingModelSettings

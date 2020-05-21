@@ -16,13 +16,17 @@ import ApiClient from "../ApiClient";
 import Commit from '../model/Commit';
 import CommitComment from '../model/CommitComment';
 import Error from '../model/Error';
+import PaginatedAnnotations from '../model/PaginatedAnnotations';
 import PaginatedCommitComments from '../model/PaginatedCommitComments';
+import PaginatedReports from '../model/PaginatedReports';
 import Participant from '../model/Participant';
+import Report from '../model/Report';
+import ReportAnnotation from '../model/ReportAnnotation';
 
 /**
 * Commits service.
 * @module api/CommitsApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class CommitsApi {
 
@@ -37,6 +41,571 @@ export default class CommitsApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the bulkCreateOrUpdateAnnotations operation.
+     * @callback module:api/CommitsApi~bulkCreateOrUpdateAnnotationsCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/ReportAnnotation>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Bulk upload of annotations. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Add the annotations you want to upload as objects in a JSON array and make sure each annotation has the external_id field set to a unique value. If you want to use an existing id from your own system, we recommend prefixing it with your system's name to avoid collisions, for example, mySystem-annotation001. The external id can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). You can upload up to 100 annotations per POST request.  ### Sample cURL request: ``` curl --location 'https://api.bitbucket.org/2.0/repositories/<username>/<reposity-name>/commit/<commit-hash>/reports/mysystem-001/annotations' \\ --header 'Content-Type: application/json' \\ --data-raw '[   {      \"external_id\": \"mysystem-annotation001\",      \"title\": \"Security scan report\",      \"annotation_type\": \"VULNERABILITY\",      \"summary\": \"This line represents a security threat.\",      \"severity\": \"HIGH\",       \"path\": \"my-service/src/main/java/com/myCompany/mysystem/logic/Main.java\",      \"line\": 42   },   {      \"external_id\": \"mySystem-annotation002\",      \"title\": \"Bug report\",      \"annotation_type\": \"BUG\",      \"result\": \"FAILED\",      \"summary\": \"This line might introduce a bug.\",      \"severity\": \"MEDIUM\",       \"path\": \"my-service/src/main/java/com/myCompany/mysystem/logic/Helper.java\",      \"line\": 13   } ]' ```  ### Possible field values: annotation_type: VULNERABILITY, CODE_SMELL, BUG result: PASSED, FAILED, IGNORED, SKIPPED severity: HIGH, MEDIUM, LOW, CRITICAL  Please refer to the [Code Insights documentation](https://confluence.atlassian.com/bitbucket/code-insights-994316785.html) for more information. 
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} commit The commit for which to retrieve reports.
+     * @param {String} reportId Uuid or external-if of the report for which to get annotations for.
+     * @param {Array.<module:model/ReportAnnotation>} body The annotations to create or update
+     * @param {module:api/CommitsApi~bulkCreateOrUpdateAnnotationsCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/ReportAnnotation>}
+     */
+    bulkCreateOrUpdateAnnotations(username, repoSlug, commit, reportId, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling bulkCreateOrUpdateAnnotations");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling bulkCreateOrUpdateAnnotations");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling bulkCreateOrUpdateAnnotations");
+      }
+      // verify the required parameter 'reportId' is set
+      if (reportId === undefined || reportId === null) {
+        throw new Error("Missing the required parameter 'reportId' when calling bulkCreateOrUpdateAnnotations");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling bulkCreateOrUpdateAnnotations");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit,
+        'reportId': reportId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = [ReportAnnotation];
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createOrUpdateAnnotation operation.
+     * @callback module:api/CommitsApi~createOrUpdateAnnotationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ReportAnnotation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates or updates an individual annotation for the specified report. Annotations are individual findings that have been identified as part of a report, for example, a line of code that represents a vulnerability. These annotations can be attached to a specific file and even a specific line in that file, however, that is optional. Annotations are not mandatory and a report can contain up to 1000 annotations.  Just as reports, annotation needs to be uploaded with a unique ID that can later be used to identify the report as an alternative to the generated [UUID](https://developer.atlassian.com/bitbucket/api/2/reference/meta/uri-uuid#uuid). If you want to use an existing id from your own system, we recommend prefixing it with your system's name to avoid collisions, for example, mySystem-annotation001.  ### Sample cURL request: ``` curl --request PUT 'https://api.bitbucket.org/2.0/repositories/<username>/<reposity-name>/commit/<commit-hash>/reports/mySystem-001/annotations/mysystem-annotation001' \\ --header 'Content-Type: application/json' \\ --data-raw '{  \"title\": \"Security scan report\",  \"annotation_type\": \"VULNERABILITY\",  \"summary\": \"This line represents a security thread.\",  \"severity\": \"HIGH\",  \"path\": \"my-service/src/main/java/com/myCompany/mysystem/logic/Main.java\",  \"line\": 42 }' ```  ### Possible field values: annotation_type: VULNERABILITY, CODE_SMELL, BUG result: PASSED, FAILED, IGNORED, SKIPPED severity: HIGH, MEDIUM, LOW, CRITICAL  Please refer to the [Code Insights documentation](https://confluence.atlassian.com/bitbucket/code-insights-994316785.html) for more information. 
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} commit The commit the report belongs to.
+     * @param {String} reportId Either the uuid or external-id of the report.
+     * @param {String} annotationId Either the uuid or external-id of the annotation.
+     * @param {module:model/ReportAnnotation} body The annotation to create or update
+     * @param {module:api/CommitsApi~createOrUpdateAnnotationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ReportAnnotation}
+     */
+    createOrUpdateAnnotation(username, repoSlug, commit, reportId, annotationId, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling createOrUpdateAnnotation");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling createOrUpdateAnnotation");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling createOrUpdateAnnotation");
+      }
+      // verify the required parameter 'reportId' is set
+      if (reportId === undefined || reportId === null) {
+        throw new Error("Missing the required parameter 'reportId' when calling createOrUpdateAnnotation");
+      }
+      // verify the required parameter 'annotationId' is set
+      if (annotationId === undefined || annotationId === null) {
+        throw new Error("Missing the required parameter 'annotationId' when calling createOrUpdateAnnotation");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createOrUpdateAnnotation");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit,
+        'reportId': reportId,
+        'annotationId': annotationId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ReportAnnotation;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations/{annotationId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the createOrUpdateReport operation.
+     * @callback module:api/CommitsApi~createOrUpdateReportCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Report} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Creates or updates a report for the specified commit. To upload a report, make sure to generate an ID that is unique across all reports for that commit. If you want to use an existing id from your own system, we recommend prefixing it with your system's name to avoid collisions, for example, mySystem-001.  ### Sample cURL request: ``` curl --request PUT 'https://api.bitbucket.org/2.0/repositories/<username>/<reposity-name>/commit/<commit-hash>/reports/mysystem-001' \\ --header 'Content-Type: application/json' \\ --data-raw '{  \"title\": \"Security scan report\",  \"details\": \"This pull request introduces 10 new dependency vulnerabilities.\",  \"report_type\": \"SECURITY\",  \"reporter\": \"mySystem\",  \"link\": \"http://www.mysystem.com/reports/001\",  \"result\": \"FAILED\",  \"data\": [   {    \"title\": \"Duration (seconds)\",    \"type\": \"DURATION\",    \"value\": 14   },   {    \"title\": \"Safe to merge?\",    \"type\": \"BOOLEAN\",    \"value\": false   }  ] }' ```  ### Possible field values: report_type: SECURITY, COVERAGE, TEST, BUG result: PASSED, FAILED, PENDING data.type: BOOLEAN, DATE, DURATION, LINK, NUMBER, PERCENTAGE, TEXT  Please refer to the [Code Insights documentation](https://confluence.atlassian.com/bitbucket/code-insights-994316785.html) for more information. 
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} commit The commit the report belongs to.
+     * @param {String} reportId Either the uuid or external-id of the report.
+     * @param {module:model/Report} body The report to create or update
+     * @param {module:api/CommitsApi~createOrUpdateReportCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Report}
+     */
+    createOrUpdateReport(username, repoSlug, commit, reportId, body, callback) {
+      let postBody = body;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling createOrUpdateReport");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling createOrUpdateReport");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling createOrUpdateReport");
+      }
+      // verify the required parameter 'reportId' is set
+      if (reportId === undefined || reportId === null) {
+        throw new Error("Missing the required parameter 'reportId' when calling createOrUpdateReport");
+      }
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createOrUpdateReport");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit,
+        'reportId': reportId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Report;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteAnnotation operation.
+     * @callback module:api/CommitsApi~deleteAnnotationCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes a single Annotation matching the provided ID.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} commit The commit the annotation belongs to.
+     * @param {String} reportId Either the uuid or external-id of the annotation.
+     * @param {String} annotationId Either the uuid or external-id of the annotation.
+     * @param {module:api/CommitsApi~deleteAnnotationCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    deleteAnnotation(username, repoSlug, commit, reportId, annotationId, callback) {
+      let postBody = null;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling deleteAnnotation");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling deleteAnnotation");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling deleteAnnotation");
+      }
+      // verify the required parameter 'reportId' is set
+      if (reportId === undefined || reportId === null) {
+        throw new Error("Missing the required parameter 'reportId' when calling deleteAnnotation");
+      }
+      // verify the required parameter 'annotationId' is set
+      if (annotationId === undefined || annotationId === null) {
+        throw new Error("Missing the required parameter 'annotationId' when calling deleteAnnotation");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit,
+        'reportId': reportId,
+        'annotationId': annotationId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations/{annotationId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the deleteReport operation.
+     * @callback module:api/CommitsApi~deleteReportCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Deletes a single Report matching the provided ID.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} commit The commit the report belongs to.
+     * @param {String} reportId Either the uuid or external-id of the report.
+     * @param {module:api/CommitsApi~deleteReportCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    deleteReport(username, repoSlug, commit, reportId, callback) {
+      let postBody = null;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling deleteReport");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling deleteReport");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling deleteReport");
+      }
+      // verify the required parameter 'reportId' is set
+      if (reportId === undefined || reportId === null) {
+        throw new Error("Missing the required parameter 'reportId' when calling deleteReport");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit,
+        'reportId': reportId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getAnnotation operation.
+     * @callback module:api/CommitsApi~getAnnotationCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ReportAnnotation} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns a single Annotation matching the provided ID.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} commit The commit the report belongs to.
+     * @param {String} reportId Either the uuid or external-id of the report.
+     * @param {String} annotationId Either the uuid or external-id of the annotation.
+     * @param {module:api/CommitsApi~getAnnotationCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ReportAnnotation}
+     */
+    getAnnotation(username, repoSlug, commit, reportId, annotationId, callback) {
+      let postBody = null;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling getAnnotation");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling getAnnotation");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling getAnnotation");
+      }
+      // verify the required parameter 'reportId' is set
+      if (reportId === undefined || reportId === null) {
+        throw new Error("Missing the required parameter 'reportId' when calling getAnnotation");
+      }
+      // verify the required parameter 'annotationId' is set
+      if (annotationId === undefined || annotationId === null) {
+        throw new Error("Missing the required parameter 'annotationId' when calling getAnnotation");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit,
+        'reportId': reportId,
+        'annotationId': annotationId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = ReportAnnotation;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations/{annotationId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getAnnotationsForReport operation.
+     * @callback module:api/CommitsApi~getAnnotationsForReportCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedAnnotations} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns a paginated list of Annotations for a specified report.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} commit The commit for which to retrieve reports.
+     * @param {String} reportId Uuid or external-if of the report for which to get annotations for.
+     * @param {module:api/CommitsApi~getAnnotationsForReportCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedAnnotations}
+     */
+    getAnnotationsForReport(username, repoSlug, commit, reportId, callback) {
+      let postBody = null;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling getAnnotationsForReport");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling getAnnotationsForReport");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling getAnnotationsForReport");
+      }
+      // verify the required parameter 'reportId' is set
+      if (reportId === undefined || reportId === null) {
+        throw new Error("Missing the required parameter 'reportId' when calling getAnnotationsForReport");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit,
+        'reportId': reportId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaginatedAnnotations;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}/annotations', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getReport operation.
+     * @callback module:api/CommitsApi~getReportCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Report} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns a single Report matching the provided ID.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} commit The commit the report belongs to.
+     * @param {String} reportId Either the uuid or external-id of the report.
+     * @param {module:api/CommitsApi~getReportCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Report}
+     */
+    getReport(username, repoSlug, commit, reportId, callback) {
+      let postBody = null;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling getReport");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling getReport");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling getReport");
+      }
+      // verify the required parameter 'reportId' is set
+      if (reportId === undefined || reportId === null) {
+        throw new Error("Missing the required parameter 'reportId' when calling getReport");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit,
+        'reportId': reportId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Report;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/reports/{reportId}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getReportsForCommit operation.
+     * @callback module:api/CommitsApi~getReportsForCommitCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaginatedReports} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Returns a paginated list of Reports linked to this commit.
+     * @param {String} username The account.
+     * @param {String} repoSlug The repository.
+     * @param {String} commit The commit for which to retrieve reports.
+     * @param {module:api/CommitsApi~getReportsForCommitCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaginatedReports}
+     */
+    getReportsForCommit(username, repoSlug, commit, callback) {
+      let postBody = null;
+      // verify the required parameter 'username' is set
+      if (username === undefined || username === null) {
+        throw new Error("Missing the required parameter 'username' when calling getReportsForCommit");
+      }
+      // verify the required parameter 'repoSlug' is set
+      if (repoSlug === undefined || repoSlug === null) {
+        throw new Error("Missing the required parameter 'repoSlug' when calling getReportsForCommit");
+      }
+      // verify the required parameter 'commit' is set
+      if (commit === undefined || commit === null) {
+        throw new Error("Missing the required parameter 'commit' when calling getReportsForCommit");
+      }
+
+      let pathParams = {
+        'username': username,
+        'repo_slug': repoSlug,
+        'commit': commit
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaginatedReports;
+      return this.apiClient.callApi(
+        '/repositories/{workspace}/{repo_slug}/commit/{commit}/reports', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the repositoriesWorkspaceRepoSlugCommitNodeApproveDelete operation.
@@ -218,10 +787,14 @@ export default class CommitsApi {
      * @param {String} node The commit's SHA1.
      * @param {String} workspace This can either be the workspace ID (slug) or the workspace UUID surrounded by curly-braces, for example: `{workspace UUID}`. 
      * @param {String} repoSlug This can either be the repository slug or the UUID of the repository, surrounded by curly-braces, for example: `{repository UUID}`. 
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.q Query string to narrow down the response as per [filtering and sorting](../../../../../../meta/filtering). 
+     * @param {String} opts.sort Field by which the results should be sorted as per [filtering and sorting](../../../../../../meta/filtering). 
      * @param {module:api/CommitsApi~repositoriesWorkspaceRepoSlugCommitNodeCommentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaginatedCommitComments}
      */
-    repositoriesWorkspaceRepoSlugCommitNodeCommentsGet(node, workspace, repoSlug, callback) {
+    repositoriesWorkspaceRepoSlugCommitNodeCommentsGet(node, workspace, repoSlug, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'node' is set
       if (node === undefined || node === null) {
@@ -242,6 +815,8 @@ export default class CommitsApi {
         'repo_slug': repoSlug
       };
       let queryParams = {
+        'q': opts['q'],
+        'sort': opts['sort']
       };
       let headerParams = {
       };

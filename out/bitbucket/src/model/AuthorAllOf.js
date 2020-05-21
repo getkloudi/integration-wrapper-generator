@@ -17,7 +17,7 @@ import Account from './Account';
 /**
  * The AuthorAllOf model module.
  * @module model/AuthorAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class AuthorAllOf {
     /**

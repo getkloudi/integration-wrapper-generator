@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedFiles model module.
  * @module model/PaginatedFiles
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedFiles =
-/*#__PURE__*/
-function () {
+var PaginatedFiles = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedFiles</code>.
    * A paginated list of commit_file objects.

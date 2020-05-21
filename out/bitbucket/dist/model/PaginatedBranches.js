@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedBranches model module.
  * @module model/PaginatedBranches
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedBranches =
-/*#__PURE__*/
-function () {
+var PaginatedBranches = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedBranches</code>.
    * A paginated list of branches.

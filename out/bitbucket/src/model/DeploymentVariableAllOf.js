@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DeploymentVariableAllOf model module.
  * @module model/DeploymentVariableAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentVariableAllOf {
     /**

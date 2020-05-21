@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TagAllOf model module.
  * @module model/TagAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var TagAllOf =
-/*#__PURE__*/
-function () {
+var TagAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TagAllOf</code>.
    * A tag object, representing a tag in a repository.

@@ -17,7 +17,7 @@ import ModelObject from './ModelObject';
 /**
  * The DeploymentState model module.
  * @module model/DeploymentState
- * @version 1.1.2
+ * @version 1.2.0
  */
 class DeploymentState {
     /**

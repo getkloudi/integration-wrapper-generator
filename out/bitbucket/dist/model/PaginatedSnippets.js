@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedSnippets model module.
  * @module model/PaginatedSnippets
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedSnippets =
-/*#__PURE__*/
-function () {
+var PaginatedSnippets = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedSnippets</code>.
    * A paginated list of snippets.

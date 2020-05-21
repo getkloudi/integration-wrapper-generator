@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedComponents model module.
  * @module model/PaginatedComponents
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedComponents =
-/*#__PURE__*/
-function () {
+var PaginatedComponents = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedComponents</code>.
    * A paginated list of issue tracker components.

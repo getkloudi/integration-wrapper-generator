@@ -28,11 +28,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Deployment model module.
  * @module model/Deployment
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Deployment =
-/*#__PURE__*/
-function () {
+var Deployment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Deployment</code>.
    * @alias module:model/Deployment

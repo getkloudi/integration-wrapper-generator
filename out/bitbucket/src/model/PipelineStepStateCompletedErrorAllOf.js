@@ -17,7 +17,7 @@ import PipelineStepError from './PipelineStepError';
 /**
  * The PipelineStepStateCompletedErrorAllOf model module.
  * @module model/PipelineStepStateCompletedErrorAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PipelineStepStateCompletedErrorAllOf {
     /**

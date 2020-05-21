@@ -26,11 +26,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineRefTarget model module.
  * @module model/PipelineRefTarget
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineRefTarget =
-/*#__PURE__*/
-function () {
+var PipelineRefTarget = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineRefTarget</code>.
    * @alias module:model/PipelineRefTarget

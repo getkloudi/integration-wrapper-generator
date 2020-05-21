@@ -417,12 +417,6 @@ Object.defineProperty(exports, "HookEvent", {
     return _HookEvent["default"];
   }
 });
-Object.defineProperty(exports, "Hookbody", {
-  enumerable: true,
-  get: function get() {
-    return _Hookbody["default"];
-  }
-});
 Object.defineProperty(exports, "Issue", {
   enumerable: true,
   get: function get() {
@@ -495,6 +489,18 @@ Object.defineProperty(exports, "IssueJobStatus", {
     return _IssueJobStatus["default"];
   }
 });
+Object.defineProperty(exports, "JiraProject", {
+  enumerable: true,
+  get: function get() {
+    return _JiraProject["default"];
+  }
+});
+Object.defineProperty(exports, "JiraSite", {
+  enumerable: true,
+  get: function get() {
+    return _JiraSite["default"];
+  }
+});
 Object.defineProperty(exports, "Milestone", {
   enumerable: true,
   get: function get() {
@@ -517,6 +523,12 @@ Object.defineProperty(exports, "Page", {
   enumerable: true,
   get: function get() {
     return _Page["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedAnnotations", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedAnnotations["default"];
   }
 });
 Object.defineProperty(exports, "PaginatedBranches", {
@@ -681,6 +693,12 @@ Object.defineProperty(exports, "PaginatedRefs", {
     return _PaginatedRefs["default"];
   }
 });
+Object.defineProperty(exports, "PaginatedReports", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedReports["default"];
+  }
+});
 Object.defineProperty(exports, "PaginatedRepositories", {
   enumerable: true,
   get: function get() {
@@ -757,6 +775,18 @@ Object.defineProperty(exports, "PaginatedWebhookSubscriptions", {
   enumerable: true,
   get: function get() {
     return _PaginatedWebhookSubscriptions["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedWorkspaceMemberships", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedWorkspaceMemberships["default"];
+  }
+});
+Object.defineProperty(exports, "PaginatedWorkspaces", {
+  enumerable: true,
+  get: function get() {
+    return _PaginatedWorkspaces["default"];
   }
 });
 Object.defineProperty(exports, "Participant", {
@@ -1383,6 +1413,36 @@ Object.defineProperty(exports, "RefLinks", {
     return _RefLinks["default"];
   }
 });
+Object.defineProperty(exports, "Report", {
+  enumerable: true,
+  get: function get() {
+    return _Report["default"];
+  }
+});
+Object.defineProperty(exports, "ReportAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _ReportAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "ReportAnnotation", {
+  enumerable: true,
+  get: function get() {
+    return _ReportAnnotation["default"];
+  }
+});
+Object.defineProperty(exports, "ReportAnnotationAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _ReportAnnotationAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "ReportData", {
+  enumerable: true,
+  get: function get() {
+    return _ReportData["default"];
+  }
+});
 Object.defineProperty(exports, "Repository", {
   enumerable: true,
   get: function get() {
@@ -1593,6 +1653,36 @@ Object.defineProperty(exports, "WebhookSubscriptionAllOf", {
     return _WebhookSubscriptionAllOf["default"];
   }
 });
+Object.defineProperty(exports, "Workspace", {
+  enumerable: true,
+  get: function get() {
+    return _Workspace["default"];
+  }
+});
+Object.defineProperty(exports, "WorkspaceAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _WorkspaceAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "WorkspaceAllOfLinks", {
+  enumerable: true,
+  get: function get() {
+    return _WorkspaceAllOfLinks["default"];
+  }
+});
+Object.defineProperty(exports, "WorkspaceMembership", {
+  enumerable: true,
+  get: function get() {
+    return _WorkspaceMembership["default"];
+  }
+});
+Object.defineProperty(exports, "WorkspaceMembershipAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _WorkspaceMembershipAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "AddonApi", {
   enumerable: true,
   get: function get() {
@@ -1683,6 +1773,12 @@ Object.defineProperty(exports, "RefsApi", {
     return _RefsApi["default"];
   }
 });
+Object.defineProperty(exports, "ReportsApi", {
+  enumerable: true,
+  get: function get() {
+    return _ReportsApi["default"];
+  }
+});
 Object.defineProperty(exports, "RepositoriesApi", {
   enumerable: true,
   get: function get() {
@@ -1735,6 +1831,12 @@ Object.defineProperty(exports, "WebhooksApi", {
   enumerable: true,
   get: function get() {
     return _WebhooksApi["default"];
+  }
+});
+Object.defineProperty(exports, "WorkspacesApi", {
+  enumerable: true,
+  get: function get() {
+    return _WorkspacesApi["default"];
   }
 });
 
@@ -1876,8 +1978,6 @@ var _GroupAllOfLinks = _interopRequireDefault(require("./model/GroupAllOfLinks")
 
 var _HookEvent = _interopRequireDefault(require("./model/HookEvent"));
 
-var _Hookbody = _interopRequireDefault(require("./model/Hookbody"));
-
 var _Issue = _interopRequireDefault(require("./model/Issue"));
 
 var _IssueAllOf = _interopRequireDefault(require("./model/IssueAllOf"));
@@ -1902,6 +2002,10 @@ var _IssueCommentAllOf = _interopRequireDefault(require("./model/IssueCommentAll
 
 var _IssueJobStatus = _interopRequireDefault(require("./model/IssueJobStatus"));
 
+var _JiraProject = _interopRequireDefault(require("./model/JiraProject"));
+
+var _JiraSite = _interopRequireDefault(require("./model/JiraSite"));
+
 var _Milestone = _interopRequireDefault(require("./model/Milestone"));
 
 var _MilestoneAllOf = _interopRequireDefault(require("./model/MilestoneAllOf"));
@@ -1909,6 +2013,8 @@ var _MilestoneAllOf = _interopRequireDefault(require("./model/MilestoneAllOf"));
 var _ModelObject = _interopRequireDefault(require("./model/ModelObject"));
 
 var _Page = _interopRequireDefault(require("./model/Page"));
+
+var _PaginatedAnnotations = _interopRequireDefault(require("./model/PaginatedAnnotations"));
 
 var _PaginatedBranches = _interopRequireDefault(require("./model/PaginatedBranches"));
 
@@ -1964,6 +2070,8 @@ var _PaginatedPullrequests = _interopRequireDefault(require("./model/PaginatedPu
 
 var _PaginatedRefs = _interopRequireDefault(require("./model/PaginatedRefs"));
 
+var _PaginatedReports = _interopRequireDefault(require("./model/PaginatedReports"));
+
 var _PaginatedRepositories = _interopRequireDefault(require("./model/PaginatedRepositories"));
 
 var _PaginatedRepositoryPermissions = _interopRequireDefault(require("./model/PaginatedRepositoryPermissions"));
@@ -1989,6 +2097,10 @@ var _PaginatedUsers = _interopRequireDefault(require("./model/PaginatedUsers"));
 var _PaginatedVersions = _interopRequireDefault(require("./model/PaginatedVersions"));
 
 var _PaginatedWebhookSubscriptions = _interopRequireDefault(require("./model/PaginatedWebhookSubscriptions"));
+
+var _PaginatedWorkspaceMemberships = _interopRequireDefault(require("./model/PaginatedWorkspaceMemberships"));
+
+var _PaginatedWorkspaces = _interopRequireDefault(require("./model/PaginatedWorkspaces"));
 
 var _Participant = _interopRequireDefault(require("./model/Participant"));
 
@@ -2198,6 +2310,16 @@ var _Ref = _interopRequireDefault(require("./model/Ref"));
 
 var _RefLinks = _interopRequireDefault(require("./model/RefLinks"));
 
+var _Report = _interopRequireDefault(require("./model/Report"));
+
+var _ReportAllOf = _interopRequireDefault(require("./model/ReportAllOf"));
+
+var _ReportAnnotation = _interopRequireDefault(require("./model/ReportAnnotation"));
+
+var _ReportAnnotationAllOf = _interopRequireDefault(require("./model/ReportAnnotationAllOf"));
+
+var _ReportData = _interopRequireDefault(require("./model/ReportData"));
+
 var _Repository = _interopRequireDefault(require("./model/Repository"));
 
 var _RepositoryAllOf = _interopRequireDefault(require("./model/RepositoryAllOf"));
@@ -2268,6 +2390,16 @@ var _WebhookSubscription = _interopRequireDefault(require("./model/WebhookSubscr
 
 var _WebhookSubscriptionAllOf = _interopRequireDefault(require("./model/WebhookSubscriptionAllOf"));
 
+var _Workspace = _interopRequireDefault(require("./model/Workspace"));
+
+var _WorkspaceAllOf = _interopRequireDefault(require("./model/WorkspaceAllOf"));
+
+var _WorkspaceAllOfLinks = _interopRequireDefault(require("./model/WorkspaceAllOfLinks"));
+
+var _WorkspaceMembership = _interopRequireDefault(require("./model/WorkspaceMembership"));
+
+var _WorkspaceMembershipAllOf = _interopRequireDefault(require("./model/WorkspaceMembershipAllOf"));
+
 var _AddonApi = _interopRequireDefault(require("./api/AddonApi"));
 
 var _BranchingModelApi = _interopRequireDefault(require("./api/BranchingModelApi"));
@@ -2298,6 +2430,8 @@ var _PullrequestsApi = _interopRequireDefault(require("./api/PullrequestsApi"));
 
 var _RefsApi = _interopRequireDefault(require("./api/RefsApi"));
 
+var _ReportsApi = _interopRequireDefault(require("./api/ReportsApi"));
+
 var _RepositoriesApi = _interopRequireDefault(require("./api/RepositoriesApi"));
 
 var _SearchApi = _interopRequireDefault(require("./api/SearchApi"));
@@ -2315,5 +2449,7 @@ var _TeamsApi = _interopRequireDefault(require("./api/TeamsApi"));
 var _UsersApi = _interopRequireDefault(require("./api/UsersApi"));
 
 var _WebhooksApi = _interopRequireDefault(require("./api/WebhooksApi"));
+
+var _WorkspacesApi = _interopRequireDefault(require("./api/WorkspacesApi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

@@ -24,7 +24,7 @@ import WebhookSubscription from '../model/WebhookSubscription';
 /**
 * Teams service.
 * @module api/TeamsApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class TeamsApi {
 

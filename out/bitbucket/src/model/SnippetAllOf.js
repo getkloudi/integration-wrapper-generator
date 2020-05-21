@@ -17,7 +17,7 @@ import Account from './Account';
 /**
  * The SnippetAllOf model module.
  * @module model/SnippetAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class SnippetAllOf {
     /**

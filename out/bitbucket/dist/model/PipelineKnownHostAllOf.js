@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineKnownHostAllOf model module.
  * @module model/PipelineKnownHostAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineKnownHostAllOf =
-/*#__PURE__*/
-function () {
+var PipelineKnownHostAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineKnownHostAllOf</code>.
    * A Pipelines known host.

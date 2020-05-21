@@ -31,7 +31,7 @@ import Version from '../model/Version';
 /**
 * IssueTracker service.
 * @module api/IssueTrackerApi
-* @version 1.1.2
+* @version 1.2.0
 */
 export default class IssueTrackerApi {
 

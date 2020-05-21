@@ -48,6 +48,96 @@
   }
 
   describe('CommitsApi', function() {
+    describe('bulkCreateOrUpdateAnnotations', function() {
+      it('should call bulkCreateOrUpdateAnnotations successfully', function(done) {
+        //uncomment below and update the code to test bulkCreateOrUpdateAnnotations
+        //instance.bulkCreateOrUpdateAnnotations(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createOrUpdateAnnotation', function() {
+      it('should call createOrUpdateAnnotation successfully', function(done) {
+        //uncomment below and update the code to test createOrUpdateAnnotation
+        //instance.createOrUpdateAnnotation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createOrUpdateReport', function() {
+      it('should call createOrUpdateReport successfully', function(done) {
+        //uncomment below and update the code to test createOrUpdateReport
+        //instance.createOrUpdateReport(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteAnnotation', function() {
+      it('should call deleteAnnotation successfully', function(done) {
+        //uncomment below and update the code to test deleteAnnotation
+        //instance.deleteAnnotation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteReport', function() {
+      it('should call deleteReport successfully', function(done) {
+        //uncomment below and update the code to test deleteReport
+        //instance.deleteReport(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAnnotation', function() {
+      it('should call getAnnotation successfully', function(done) {
+        //uncomment below and update the code to test getAnnotation
+        //instance.getAnnotation(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAnnotationsForReport', function() {
+      it('should call getAnnotationsForReport successfully', function(done) {
+        //uncomment below and update the code to test getAnnotationsForReport
+        //instance.getAnnotationsForReport(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getReport', function() {
+      it('should call getReport successfully', function(done) {
+        //uncomment below and update the code to test getReport
+        //instance.getReport(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getReportsForCommit', function() {
+      it('should call getReportsForCommit successfully', function(done) {
+        //uncomment below and update the code to test getReportsForCommit
+        //instance.getReportsForCommit(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('repositoriesWorkspaceRepoSlugCommitNodeApproveDelete', function() {
       it('should call repositoriesWorkspaceRepoSlugCommitNodeApproveDelete successfully', function(done) {
         //uncomment below and update the code to test repositoriesWorkspaceRepoSlugCommitNodeApproveDelete

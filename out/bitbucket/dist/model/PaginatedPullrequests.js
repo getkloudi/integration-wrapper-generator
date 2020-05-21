@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedPullrequests model module.
  * @module model/PaginatedPullrequests
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedPullrequests =
-/*#__PURE__*/
-function () {
+var PaginatedPullrequests = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedPullrequests</code>.
    * A paginated list of pullrequests.

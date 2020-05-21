@@ -17,7 +17,7 @@ import Branch from './Branch';
 /**
  * The BranchingModelAllOfDevelopment model module.
  * @module model/BranchingModelAllOfDevelopment
- * @version 1.1.2
+ * @version 1.2.0
  */
 class BranchingModelAllOfDevelopment {
     /**

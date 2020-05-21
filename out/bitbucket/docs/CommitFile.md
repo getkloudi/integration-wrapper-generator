@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **path** | **String** | The path in the repository | [optional] 
 **commit** | [**Commit**](Commit.md) |  | [optional] 
 **attributes** | **String** |  | [optional] 
+**escapedPath** | **String** | The escaped version of the path as it appears in a diff. If the path does not require escaping this will be the same as path. | [optional] 
 
 
 

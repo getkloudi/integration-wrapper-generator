@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Ref model module.
  * @module model/Ref
- * @version 1.1.2
+ * @version 1.2.0
  */
-var Ref =
-/*#__PURE__*/
-function () {
+var Ref = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Ref</code>.
    * A ref object, representing a branch or tag in a repository.

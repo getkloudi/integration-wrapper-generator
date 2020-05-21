@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
 * Deploy service.
 * @module api/DeployApi
-* @version 1.1.2
+* @version 1.2.0
 */
-var DeployApi =
-/*#__PURE__*/
-function () {
+var DeployApi = /*#__PURE__*/function () {
   /**
   * Constructs a new DeployApi. 
   * @alias module:api/DeployApi

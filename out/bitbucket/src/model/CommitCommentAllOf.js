@@ -17,7 +17,7 @@ import Commit from './Commit';
 /**
  * The CommitCommentAllOf model module.
  * @module model/CommitCommentAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
 class CommitCommentAllOf {
     /**

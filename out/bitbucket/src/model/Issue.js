@@ -25,7 +25,7 @@ import Version from './Version';
 /**
  * The Issue model module.
  * @module model/Issue
- * @version 1.1.2
+ * @version 1.2.0
  */
 class Issue {
     /**

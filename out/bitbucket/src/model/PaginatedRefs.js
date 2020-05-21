@@ -17,7 +17,7 @@ import Ref from './Ref';
 /**
  * The PaginatedRefs model module.
  * @module model/PaginatedRefs
- * @version 1.1.2
+ * @version 1.2.0
  */
 class PaginatedRefs {
     /**

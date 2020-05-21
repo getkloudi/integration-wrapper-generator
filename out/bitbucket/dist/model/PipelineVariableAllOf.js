@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineVariableAllOf model module.
  * @module model/PipelineVariableAllOf
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineVariableAllOf =
-/*#__PURE__*/
-function () {
+var PipelineVariableAllOf = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineVariableAllOf</code>.
    * A Pipelines variable.

@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PipelineStateCompletedExpired model module.
  * @module model/PipelineStateCompletedExpired
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PipelineStateCompletedExpired =
-/*#__PURE__*/
-function () {
+var PipelineStateCompletedExpired = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PipelineStateCompletedExpired</code>.
    * @alias module:model/PipelineStateCompletedExpired

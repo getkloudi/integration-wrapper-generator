@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PaginatedMilestones model module.
  * @module model/PaginatedMilestones
- * @version 1.1.2
+ * @version 1.2.0
  */
-var PaginatedMilestones =
-/*#__PURE__*/
-function () {
+var PaginatedMilestones = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PaginatedMilestones</code>.
    * A paginated list of issue tracker milestones.
