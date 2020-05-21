@@ -1,7 +1,7 @@
-const { exec } = require("child_process");
+const { exec } = require('child_process');
 
-const fs = require("fs");
-const functions = require("./src/generator/functions");
+const fs = require('fs');
+const functions = require('./src/generator/functions');
 
 async function executeCommand(argv) {
   try {
@@ -17,7 +17,7 @@ async function executeCommand(argv) {
     let rmCommand = `rm -rf out/${projectName}`;
     await execShellCommand(rmCommand);
 
-    console.log("Executing openapi-generator command");
+    console.log('Executing openapi-generator command');
     // Execute Open API Command
     let openApiCommand = `openapi-generator generate -i ${openApiFilePath} -g javascript -o out/${projectName}/ --additional-properties=withSeparateModelsAndApi=true,supportsES6=true,projectName=${projectName},projectVersion=${version},modelPackage=model,apiPackage=api --skip-validate-spec`;
     openApi = await execShellCommand(openApiCommand);
@@ -28,7 +28,7 @@ async function executeCommand(argv) {
     await execShellCommand(npmBuildCommand);
 
     // parse the api md files
-    console.log("Parsing md api files generated");
+    console.log('Parsing md api files generated');
     await parseFilesAndGenerateCodeFile(
       `out/${projectName.toLowerCase()}/`,
       `${projectName}Service.js`,
@@ -36,7 +36,7 @@ async function executeCommand(argv) {
       allowUndefinedOpts
     );
 
-    console.log("Command Execution completed");
+    console.log('Command Execution completed');
   } catch (e) {
     console.log(e);
   }
@@ -54,13 +54,13 @@ async function parseFilesAndGenerateCodeFile(
   const csvFileNameWithPath = `${path}${csvFileName}`;
   // Fetch all files names with *api.md in the name
   let findCommand = await execShellCommand(`find ${path}* -name "*Api.md"`);
-  let findCommandArray = findCommand.trim().split("\n");
+  let findCommandArray = findCommand.trim().split('\n');
 
-  let functionsTypes = ["Get", "Post", "Put", "Delete", "Patch"];
+  let functionsTypes = ['Get', 'Post', 'Put', 'Delete', 'Patch'];
 
   // Start writing file with empty string
-  fs.writeFileSync(`${fileNameWithPath}`, "");
-  fs.writeFileSync(`${csvFileNameWithPath}`, "");
+  fs.writeFileSync(`${fileNameWithPath}`, '');
+  fs.writeFileSync(`${csvFileNameWithPath}`, '');
 
   var functionWithParams = [];
   var codeBlocks = [];
@@ -70,7 +70,7 @@ async function parseFilesAndGenerateCodeFile(
   for (let j = 0; j < findCommandArray.length; j++) {
     let file = findCommandArray[j];
 
-    let fileContents = fs.readFileSync(file, "utf8");
+    let fileContents = fs.readFileSync(file, 'utf8');
 
     let tempFunctionWithParams = functions.getFunctionWithParams(fileContents);
     functionWithParams.push(...tempFunctionWithParams);
@@ -91,6 +91,13 @@ async function parseFilesAndGenerateCodeFile(
     csvFileNameWithPath,
     functionNamesWithTypeAndApi,
     functionWithParams,
+    codeComments
+  );
+
+  functions.generateActionandIntentJSONFile(
+    path,
+    csvFileName,
+    functionNamesWithTypeAndApi,
     codeComments
   );
 
@@ -120,7 +127,7 @@ async function parseFilesAndGenerateCodeFile(
       functionWithParams,
       codeComments,
       fileNameWithPath,
-      "unknownHTTPMethod",
+      'unknownHTTPMethod',
       functionNamesWithTypeAndApi,
       allowUndefinedOpts
     );
@@ -130,21 +137,21 @@ async function parseFilesAndGenerateCodeFile(
   functions.endCodeFile(fileNameWithPath, fileName);
 }
 
-var argv = require("yargs")
-  .scriptName("api-code-gen")
-  .usage("Usage: $0 -name [str] -spec [path]")
-  .demandOption(["name", "spec"])
-  .string("v")
-  .boolean("allowUndefinedOpts")
-  .describe("name", "Name of the API tool you are generating code for")
-  .describe("spec", "Path of OpenAPI v3 spec of the API tool")
-  .describe("v", "Version of the API being generated")
+var argv = require('yargs')
+  .scriptName('api-code-gen')
+  .usage('Usage: $0 -name [str] -spec [path]')
+  .demandOption(['name', 'spec'])
+  .string('v')
+  .boolean('allowUndefinedOpts')
+  .describe('name', 'Name of the API tool you are generating code for')
+  .describe('spec', 'Path of OpenAPI v3 spec of the API tool')
+  .describe('v', 'Version of the API being generated')
   .describe(
-    "allowUndefinedOpts",
-    "allowUndefinedOpts is an internal configuration used to see whether we should allow or not allow undefined incomingOptions.opts"
+    'allowUndefinedOpts',
+    'allowUndefinedOpts is an internal configuration used to see whether we should allow or not allow undefined incomingOptions.opts'
   )
   .help()
-  .alias("h", "help").argv;
+  .alias('h', 'help').argv;
 executeCommand(argv);
 
 function execShellCommand(cmd) {
@@ -152,7 +159,7 @@ function execShellCommand(cmd) {
     exec(
       cmd,
       {
-        maxBuffer: 1024 * 5000
+        maxBuffer: 1024 * 5000,
       },
       (error, stdout, stderr) => {
         if (error) {

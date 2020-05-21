@@ -1,6 +1,6 @@
-const fs = require("fs");
-const StringHelper = require("../helper/StringHelper");
-const regex = require("./regex");
+const fs = require('fs');
+const StringHelper = require('../helper/StringHelper');
+const regex = require('./regex');
 
 //Regular Expressions
 exports.getFunctionNamesWithTypeAndApi = function getFunctionNames(contents) {
@@ -17,27 +17,27 @@ exports.getFunctionNamesWithTypeAndApi = function getFunctionNames(contents) {
       let x;
       while ((x = regex.functionNamesRegex.exec(innerFunctionExp)) !== null) {
         if (!x[0]) continue;
-        functionNameWithTypeAndApi["functionName"] = x[0];
+        functionNameWithTypeAndApi['functionName'] = x[0];
       }
     }
 
     // Get the function type
-    let functionType = "";
+    let functionType = '';
     while ((w = regex.functionTypeRegex.exec(functionExp)) !== null) {
       if (!w[0]) continue;
-      if (w[0].split("**").length > 1) {
-        functionType = w[0].split("**")[1];
+      if (w[0].split('**').length > 1) {
+        functionType = w[0].split('**')[1];
       }
     }
 
-    functionNameWithTypeAndApi["functionType"] = functionType;
+    functionNameWithTypeAndApi['functionType'] = functionType;
     // get the function API
     let apiIndex = functionExp.indexOf(`${functionType}** `);
 
     let api = functionExp
       .substring(apiIndex, functionExp.length - 1)
-      .split(" ")[1];
-    functionNameWithTypeAndApi["functionApi"] = api;
+      .split(' ')[1];
+    functionNameWithTypeAndApi['functionApi'] = api;
 
     functionNamesWithTypeAndApi.push(functionNameWithTypeAndApi);
   }
@@ -73,10 +73,10 @@ exports.getFunctionWithParams = function getFunctionWithParams(contents) {
       functionParamToReplace += functionParams;
 
       // Remove first and last character, trim white spaces and split by , if params are present
-      functionParams = functionParams.slice(1, -1).replace(/\s/g, "");
+      functionParams = functionParams.slice(1, -1).replace(/\s/g, '');
       if (functionParams) {
         // Split the function parameters by comma
-        functionParams = functionParams.split(",");
+        functionParams = functionParams.split(',');
       } else {
         // No parameters are to be passed to this function
         functionParams = [];
@@ -91,7 +91,7 @@ exports.getFunctionWithParams = function getFunctionWithParams(contents) {
     for (let i = 0; i < functionParams.length; i++) {
       // Split the newFunctionParamsToReplace  by (
       let splitNewFunctionParamsToReplace = newFunctionParamsToReplace.split(
-        "("
+        '('
       );
 
       splitNewFunctionParamsToReplace[1] = splitNewFunctionParamsToReplace[1].replace(
@@ -99,14 +99,14 @@ exports.getFunctionWithParams = function getFunctionWithParams(contents) {
         `incomingOptions.${functionParams[i]}`
       );
 
-      newFunctionParamsToReplace = splitNewFunctionParamsToReplace.join("(");
+      newFunctionParamsToReplace = splitNewFunctionParamsToReplace.join('(');
     }
 
     functionWithParams.push({
       functionName: functionName,
       functionParams: functionParams,
       functionParamToReplace: functionParamToReplace,
-      newFunctionParamsToReplace: newFunctionParamsToReplace
+      newFunctionParamsToReplace: newFunctionParamsToReplace,
     });
   }
 
@@ -124,7 +124,7 @@ exports.getCodeBlocks = function getCodeBlocks(contents) {
   return codeBlocks;
 };
 
-exports.getCodeComments = function(contents, functionWithParams) {
+exports.getCodeComments = function (contents, functionWithParams) {
   let codeComments = [];
 
   let v;
@@ -140,8 +140,8 @@ exports.getCodeComments = function(contents, functionWithParams) {
     let startIndex = contents.indexOf(v[0]);
     let comment = contents.substring(startIndex, contents.length - 1);
 
-    startIndex = comment.indexOf("\n");
-    let endIndex = comment.indexOf("### ");
+    startIndex = comment.indexOf('\n');
+    let endIndex = comment.indexOf('### ');
 
     comment = comment.substring(startIndex + 1, endIndex);
 
@@ -176,7 +176,7 @@ exports.generateCodeFile = function generateCodeFile(
   for (let i = 0; i < codeBlocks.length; i++) {
     if (
       functionType.toUpperCase() !==
-      functionNamesWithTypeAndApi[i]["functionType"]
+      functionNamesWithTypeAndApi[i]['functionType']
     ) {
       continue;
     } else {
@@ -185,14 +185,14 @@ exports.generateCodeFile = function generateCodeFile(
 
     let codeBlock = codeBlocks[i];
     // Remove the first and last line
-    codeBlock = codeBlock.replace("```javascript\n", "");
-    codeBlock = codeBlock.replace("\n```", "");
+    codeBlock = codeBlock.replace('```javascript\n', '');
+    codeBlock = codeBlock.replace('\n```', '');
 
-    let importStatement = codeBlock.split("\n")[0];
+    let importStatement = codeBlock.split('\n')[0];
     // Split the import statement by space
-    let importStatementWords = importStatement.split(" ");
+    let importStatementWords = importStatement.split(' ');
     // Covert the import statement to require
-    if (importStatementWords[0] === "import") {
+    if (importStatementWords[0] === 'import') {
       let fileName = importStatementWords[1];
       let requireStatement = `const ${fileName} = require('./dist');`;
       // Remove the Code Block
@@ -201,10 +201,10 @@ exports.generateCodeFile = function generateCodeFile(
 
     codeBlock = codeBlock.replace(
       "'YOUR ACCESS TOKEN'",
-      "incomingOptions.accessToken"
+      'incomingOptions.accessToken'
     );
 
-    codeBlock = codeBlock.replace("'YOUR API KEY'", "incomingOptions.apiKey");
+    codeBlock = codeBlock.replace("'YOUR API KEY'", 'incomingOptions.apiKey');
 
     codeBlock = codeBlock.replace(
       "//api_key.apiKeyPrefix = 'Token';",
@@ -219,29 +219,29 @@ exports.generateCodeFile = function generateCodeFile(
       let indexOfVariable = codeBlock.indexOf(variableInCode);
 
       // Get index of the first semicolon after this
-      let semiColonIndex = codeBlock.substr(indexOfVariable).indexOf(";");
+      let semiColonIndex = codeBlock.substr(indexOfVariable).indexOf(';');
 
-      if (variable !== "opts") {
+      if (variable !== 'opts') {
         // Add starting comment
         codeBlock =
           codeBlock.substr(0, indexOfVariable - 2) +
-          "\n/*" +
+          '\n/*' +
           codeBlock.substr(indexOfVariable);
 
         // Add ending comment
         codeBlock =
           codeBlock.substr(0, semiColonIndex + indexOfVariable + 1) +
-          ";*/" +
+          ';*/' +
           codeBlock.substr(semiColonIndex + indexOfVariable + 2);
       } else {
         let substring = codeBlock.substr(indexOfVariable, semiColonIndex + 1);
         // Split this string by \n
-        splitSubstring = substring.split("\n");
+        splitSubstring = substring.split('\n');
         for (let i = 0; i < splitSubstring.length; i++) {
           let str = splitSubstring[i];
           if (str.indexOf(`_example"`) !== -1) {
             // Comment out this line if not already commented out
-            if (str[0] !== "/" && str[1] !== "/") {
+            if (str[0] !== '/' && str[1] !== '/') {
               splitSubstring[i] = `//${splitSubstring[i]}`;
             }
           }
@@ -253,7 +253,7 @@ exports.generateCodeFile = function generateCodeFile(
         if (!allowUndefinedOpts)
           codeBlock = codeBlock.replace(
             substring,
-            `${splitSubstring.join("\n")}\n\n
+            `${splitSubstring.join('\n')}\n\n
           if(incomingOptions.opts)\n
           Object.keys(incomingOptions.opts).forEach(key =>incomingOptions.opts[key] === undefined && delete incomingOptions.opts[key]
           )\n
@@ -263,7 +263,7 @@ exports.generateCodeFile = function generateCodeFile(
         else
           codeBlock = codeBlock.replace(
             substring,
-            `${splitSubstring.join("\n")}\n\n
+            `${splitSubstring.join('\n')}\n\n
           if(!incomingOptions.opts)\ndelete incomingOptions.opts
           incomingOptions.opts = Object.assign(opts, incomingOptions.opts)\n\n`
           );
@@ -291,7 +291,7 @@ exports.generateCodeFile = function generateCodeFile(
     codeBlock = codeBlock.replace(
       `console.log('API called successfully. Returned data: ' + data);`,
       // "return data;"
-      "cb(null, data, response)"
+      'cb(null, data, response)'
     );
 
     codeBlocks[i] = codeBlock;
@@ -321,8 +321,8 @@ exports.generateCodeFile = function generateCodeFile(
   );
 };
 
-exports.startCodeFile = function(filePath, fileName) {
-  let fileNameWithoutExtension = fileName.split(".")[0];
+exports.startCodeFile = function (filePath, fileName) {
+  let fileNameWithoutExtension = fileName.split('.')[0];
 
   // Generate fileContent
   let fileContent = `
@@ -333,7 +333,7 @@ exports.startCodeFile = function(filePath, fileName) {
 
   class ${fileNameWithoutExtension} {
     get name() {
-      return \"${fileNameWithoutExtension.split("Service")[0].toUpperCase()}\";
+      return \"${fileNameWithoutExtension.split('Service')[0].toUpperCase()}\";
     }
 
     get description() {
@@ -342,7 +342,7 @@ exports.startCodeFile = function(filePath, fileName) {
 
     get icon() {
       return \"${fileNameWithoutExtension
-        .split("Service")[0]
+        .split('Service')[0]
         .toLowerCase()}.svg\";
     }
 
@@ -442,8 +442,8 @@ exports.startCodeFile = function(filePath, fileName) {
   fs.appendFileSync(filePath, fileContent);
 };
 
-exports.endCodeFile = function(filePath, fileName) {
-  let fileNameWithoutExtension = fileName.split(".")[0];
+exports.endCodeFile = function (filePath, fileName) {
+  let fileNameWithoutExtension = fileName.split('.')[0];
 
   let fileContent = `
   }
@@ -458,13 +458,13 @@ function createSwitchfunction(
   functionNamesWithTypeAndApi
 ) {
   // Return the switch function to be created;
-  let switchCode = "";
+  let switchCode = '';
   for (let i = 0; i < functionWithParams.length; i++) {
     let currentFunction = functionWithParams[i];
 
     if (
       functionType.toUpperCase() !==
-      functionNamesWithTypeAndApi[i]["functionType"]
+      functionNamesWithTypeAndApi[i]['functionType']
     ) {
       continue;
     }
@@ -475,12 +475,12 @@ function createSwitchfunction(
       comment = `
       ${comment}
       Function parameters for this API ${currentFunction.functionParams.join(
-        ","
+        ','
       )}`;
     }
 
     let functionName = currentFunction.functionName;
-    if (functionType !== "unknownHTTPMethod") {
+    if (functionType !== 'unknownHTTPMethod') {
       functionName = functionName.substring(
         0,
         functionName.length - functionType.length
@@ -512,7 +512,7 @@ function createSwitchfunction(
 
   // Mape a wrapper from entity name to wrapper
   let code = `async ${
-    functionType !== "unknownHTTPMethod"
+    functionType !== 'unknownHTTPMethod'
       ? functionType.toLowerCase()
       : functionType
   }(entity, options) {
@@ -524,19 +524,129 @@ function createSwitchfunction(
   return code;
 }
 
-exports.generateCSVFile = function(
+exports.generateCSVFile = function (
   fileName,
   functionNamesWithTypeAndApi,
   functionWithParams,
   codeComments
 ) {
-  let content = "api,http-method,description,functionName,functionParameters\n";
+  let content = 'api,http-method,description,functionName,functionParameters\n';
   for (let i = 0; i < functionNamesWithTypeAndApi.length; i++) {
-    content = `${content}${functionNamesWithTypeAndApi[i]["functionApi"]},${
-      functionNamesWithTypeAndApi[i]["functionType"]
+    content = `${content}${functionNamesWithTypeAndApi[i]['functionApi']},${
+      functionNamesWithTypeAndApi[i]['functionType']
     },"${codeComments[i]}",${
-      functionNamesWithTypeAndApi[i]["functionName"]
-    },${functionWithParams[i]["functionParams"].join(" ")}\n`;
+      functionNamesWithTypeAndApi[i]['functionName']
+    },${functionWithParams[i]['functionParams'].join(' ')}\n`;
   }
   fs.appendFileSync(fileName, content);
+};
+
+exports.generateActionandIntentJSONFile = function (
+  path,
+  serviceName,
+  functionNamesWithTypeAndApi,
+  codeComments
+) {
+  const intents = [];
+  const actions = [];
+  const tableName = serviceName.replace('.csv', '');
+  for (let i = 0; i < functionNamesWithTypeAndApi.length; i++) {
+    const httpMethod = `${functionNamesWithTypeAndApi[i]['functionType']}`;
+    const description = `${codeComments[i]}`;
+    const functionName = StringHelper.convertCamelCaseToSnakeCase(
+      `${functionNamesWithTypeAndApi[i]['functionName']}`
+    )
+      .toUpperCase()
+      .trim();
+    actions.push(
+      createActionForIntent(
+        tableName,
+        functionName,
+        createQueryFromFunctionName(httpMethod, functionName),
+        description
+      )
+    );
+    intents.push(
+      createIntentForQueries(
+        tableName,
+        functionName,
+        createQueryFromFunctionName(httpMethod, functionName)
+      )
+    );
+  }
+  fs.appendFileSync(`${path}intent.json`, JSON.stringify(intents));
+  fs.appendFileSync(`${path}action.json`, JSON.stringify(actions));
+};
+
+createQueryFromFunctionName = function (httpMethod, functionName) {
+  httpMethod = httpMethod.toLowerCase();
+  const query = functionName
+    .toLowerCase()
+    .replace(new RegExp('_', 'g'), ' ')
+    .replace(httpMethod, '')
+    .trim();
+  return `${httpMethod} ${query}`;
+};
+
+createIntentForQueries = function (table, functionName, query) {
+  const intent = {
+    manifest: {
+      name: `intent.${table}.${functionName}`,
+      displayName: functionName
+        .replace(new RegExp('_', 'g'), '-')
+        .toLowerCase(),
+      isSystemIntent: false,
+    },
+    entities: ['entity.system.@project.id'],
+    parameters: [
+      {
+        name: 'entity.system.@project.id',
+        displayName: 'project.id',
+        prompts: ['Sure! Select a project.'],
+        isList: false,
+      },
+    ],
+    messages: [
+      {
+        type: 'success-message',
+        text: 'Your query has been successful!',
+      },
+      {
+        type: 'fail-message',
+        text:
+          'Something went wrong while processing your query. Your query has been recorded. We will get back to you soon.',
+        icon: 'something-went-wrong.svg',
+      },
+    ],
+    triggers: {
+      queryPatterns: {
+        text: query,
+        trainingPhrases: [query],
+        isSystemQuery: true,
+      },
+    },
+  };
+  return intent;
+};
+
+createActionForIntent = function (table, functionName, query, description) {
+  const action = {
+    manifest: {
+      name: `action.${table}.${functionName}`,
+      displayName: query,
+      isSystemAction: false,
+      shortDescription: query,
+      longDescription: description.trim(),
+      icons: `${table}.svg`,
+    },
+    defaultNavigateTo: `app/projects/${table}`,
+    intents: [
+      `intent.system.CONNECT_${table.toUpperCase()}`,
+      `intent.thirdParty.SELECT_${table.toUpperCase()}_PROJECT`,
+      `intent.${table}.${functionName}`,
+    ],
+    tags: [`third-party`, table],
+    fulfilment: [{ type: 'internal-service' }],
+  };
+  return action;
 };
