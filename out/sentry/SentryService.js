@@ -17,7 +17,7 @@ class SentryService {
   }
 
   get categroy() {
-    return;
+    return ['Exception Monitoring'];
   }
 
   get apiEndpoint() {
