@@ -16,7 +16,7 @@ class SentryService {
     return 'sentry.svg';
   }
 
-  get categroy() {
+  get category() {
     return ['Exception Monitoring'];
   }
 
