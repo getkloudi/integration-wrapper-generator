@@ -1,0 +1,109 @@
+[
+  {
+    "type": "RESPONSE",
+    "entity": "PROJECTS",
+    "integration": "ROLLBAR",
+    "method": "GET",
+    "map": [
+      {
+        "input": {
+          "key": "name"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectName"
+        }
+      },
+      {
+        "input": {
+          "key": "id"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectId"
+        }
+      },
+      {
+        "input": {
+          "key": "description"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectDescription"
+        }
+      },
+      {
+        "input": {
+          "key": "self"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectRef"
+        }
+      },
+      {
+        "input": {
+          "key": "avatarUrls['48x48']"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectIcon"
+        }
+      }
+    ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "PROJECTS",
+    "integration": "ROLLBAR",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "apiKey"
+        }
+      },
+      {
+        "input": {
+          "key": "",
+          "parent": "body.integration.thirdPartyProjects"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformThirdPartyProjects"
+        },
+        "output": {
+          "parent": "projects"
+        }
+      },
+      {
+        "input": {
+          "key": "params"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformQueryParamsToOpts"
+        },
+        "output": {
+          "key": "opts"
+        }
+      }
+    ]
+  }
+]
