@@ -1,271 +1,365 @@
 api,http-method,description,functionName,functionParameters
-/item_by_counter/{counter},GET,"
-
-
-",itemByCounterCounterGet,
-/item/{itemid},GET,"
-
-
-",itemItemidGet,
-/item/{itemid},PATCH,"
-
-
-",itemItemidPatch,
 /item/,POST,"
 
 
-",itemPost,
-/items,GET,"
-
-
-",itemsGet,
-/dsym,POST,"
-
-
-",dsymPost,
-/proguard,POST,"
-
-
-",proguardPost,
-/sourcemap,POST,"
-
-
-",sourcemapPost,
-/user/{user_id},GET,"
-
-
-",userUserIdGet,
-/users,GET,"
-
-
-",usersGet,
-/team/{team_id}/project/{project_id},DELETE,"
-
-
-",teamTeamIdProjectProjectIdDelete,
-/team/{team_id}/project/{project_id},GET,"
-
-
-",teamTeamIdProjectProjectIdGet,
-/team/{team_id}/project/{project_id},PUT,"
-
-
-",teamTeamIdProjectProjectIdPut,
-/team/{team_id}/projects,GET,"
-
-
-",teamTeamIdProjectsGet,
+",itemPost,xRollbarAccessToken opts
 /deploy,GET,"
 
 
-",deployGet,
+&#x60;deploy_id&#x60; must be an ID for a deploy in the project. These IDs are returned as the id field in other API calls, and can be found in the Rollbar UI on URLs like &#x60;https://rollbar.com/deploy/12345/&#x60; (&#x60;12345&#x60; is the Deploy ID). 
+
+",deployGet,xRollbarAccessToken
 /deploy,PATCH,"
 
 
-",deployPatch,
+&#x60;&#x60;&#x60;JavaScript $.get(&#39;http://yoursite.com/test/&#39; + id, function(data) {     console.log(data); });&#x60;&#x60;&#x60; 
+
+",deployPatch,xRollbarAccessToken opts
 /deploy,POST,"
 
 
-",deployPost,
+For tool-specific instructions on reporting a deploy, see our [Deploy Tracking](doc:deploy-tracking) docs.  For instructions on setting the default deploy timeout period, see [Deploy Timeouts](https://docs.rollbar.com/docs/deploy-tracking#section-deploy-timeout). 
+
+",deployPost,xRollbarAccessToken opts
 /deploys,GET,"
 
 
-",deploysGet,
+Returns all deploys in the project, most recent first, in pages of 20. 
+
+",deploysGet,xRollbarAccessToken opts
+/dsym,POST,"
+
+
+**Note:** For version, you should use the \&quot;Bundle version\&quot; from your plist which corresponds to the Build Number. This is not the Version Number which is found under the key \&quot;Bundle versions string, short\&quot; in your plist. See this [technical note](https://developer.apple.com/library/content/technotes/tn2420/_index.html) for more information. We use this to match up the dSYM with the same version of the code that caused the stack trace. 
+
+",dsymPost,xRollbarAccessToken opts
+/invite/{invite_id},DELETE,"
+
+
+Returns a &#x60;200&#x60; if the invitation was successfully canceled. 
+
+",inviteInviteIdDelete,inviteId xRollbarAccessToken
+/invite/{invite_id},GET,"
+
+
+# Example Response &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {     \&quot;id\&quot;: 71328,     \&quot;from_user_id\&quot;: 5325,     \&quot;team_id\&quot;: 272686,     \&quot;to_email\&quot;: \&quot;gilfoyle@piedpiper.com\&quot;,     \&quot;status\&quot;: \&quot;pending\&quot;,     \&quot;date_created\&quot;: 1519946545,     \&quot;date_redeemed\&quot;: null   } } &#x60;&#x60;&#x60; 
+
+",inviteInviteIdGet,inviteId xRollbarAccessToken
+/item_by_counter/{counter},GET,"
+
+
+&#x60;counter&#x60; must be an item counter for an item in the project. The counter can be found in URLs like &#x60;https://rollbar.com/myaccount/myproject/items/456/&#x60; (456 is the counter).  The success response is a 301 redirect like this:  &#x60;&#x60;&#x60; HTTP/1.1 301 Moved Permanently Location: /item/272505123  {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {     \&quot;itemId\&quot;: 272505123,     \&quot;path\&quot;: \&quot;/item/272505123\&quot;,     \&quot;uri\&quot;: \&quot;/item/272505123\&quot;   } } &#x60;&#x60;&#x60; 
+
+",itemByCounterCounterGet,counter xRollbarAccessToken
+/item/{itemid},GET,"
+
+
+&#x60;itemid&#x60; must be an item ID for an item in the project. These IDs are returned as the id field in other API calls.  Note that they are NOT found in in URLs like &#x60;https://rollbar.com/myaccount/myproject/items/456/&#x60; – that is the \&quot;counter\&quot;, which can be used in the following API call. 
+
+",itemItemidGet,itemid xRollbarAccessToken
+/item/{itemid},PATCH,"
+
+
+Used to modify an item&#39;s state. Currently supports: * setting the status, level, title, assigned user * when resolving, setting the \&quot;resolved in version\&quot;  Example - &#x60;&#x60;&#x60;curl curl -X PATCH &#39;https://api.rollbar.com/item/275123456&#39; \\   --header \&quot;Content-Type: application/json\&quot; \\   --data &#39;{\&quot;status\&quot;: \&quot;resolved\&quot;, \&quot;resolved_in_version\&quot;: \&quot;aabbcc1\&quot;}&#39;   &#x60;&#x60;&#x60; 
+
+",itemItemidPatch,xRollbarAccessToken itemid opts
+/items,GET,"
+
+
+# Examples Get the 101st through 199th active items: &#x60;&#x60;&#x60;curl curl -H \&quot;X-Rollbar-Access-Token: YOUR_ACCESS_TOKEN\&quot; &#39;https://api.rollbar.com/items/?status&#x3D;active&amp;page&#x3D;2&#39; &#x60;&#x60;&#x60; Get the first page of items that are error or critical, in the production environment: &#x60;&#x60;&#x60;curl curl -H \&quot;X-Rollbar-Access-Token: YOUR_ACCESS_TOKEN\&quot; &#39;https://api.rollbar.com/items/?level&#x3D;error&amp;level&#x3D;critical&amp;environment&#x3D;production&#39; &#x60;&#x60;&#x60; 
+
+",itemsGet,xRollbarAccessToken opts
+/people/delete_jobs/{job_id},GET,"
+
+
+Check on the status of a person deletion request.  The response will include a status, e.g. &#x60;&#x60;&#x60; {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {     \&quot;state\&quot;: \&quot;success\&quot;, // possible values are \&quot;new\&quot;,\&quot;running\&quot;,\&quot;paused\&quot;,\&quot;success\&quot;,\&quot;cancelled\&quot;,\&quot;failed\&quot;     \&quot;id\&quot;: 3   } } &#x60;&#x60;&#x60; 
+
+",peopleDeleteJobsJobIdGet,jobId xRollbarAccessToken
+/people/delete_jobs/,POST,"
+
+
+This endpoint allows for removal of a tracked person from all projects within an account.  To identify the person, you must provide **exactly one** of the following: * &#x60;email&#x60; * &#x60;username&#x60; * &#x60;person_id&#x60;  These correspond to the values transmitted in the original occurrences (see the docs for [Create item](ref:items)) and can also be found by viewing any tracked person via the [People Tracking](doc:person-tracking) page in any project.  Requests for person deletion are asynchronous.  The returned value will include an &#x60;id&#x60; property that can be used to check the status of the deletion process, e.g. &#x60;&#x60;&#x60; {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {     \&quot;id\&quot;: 3   } } &#x60;&#x60;&#x60; 
+
+",peopleDeleteJobsPost,xRollbarAccessToken opts
+/proguard,POST,"
+
+
+Upload an Android Proguard file
+
+",proguardPost,xRollbarAccessToken opts
+/project/{id}/access_tokens,GET,"
+
+
+List all project access tokens
+
+",projectIdAccessTokensGet,xRollbarAccessToken id
+/project/{project_id}/access_token/{project_access_token},PATCH,"
+
+
+Update a rate limit
+
+",projectProjectIdAccessTokenProjectAccessTokenPatch,projectId projectAccessToken xRollbarAccessToken opts
+/project/{project_id},GET,"
+
+
+Get a project
+
+",projectProjectIdGet,projectId xRollbarAccessToken
+/project/{project_id},POST,"
+
+
+Delete a project
+
+",projectProjectIdPost,projectId xRollbarAccessToken
+/projects,GET,"
+
+
+List all projects
+
+",projectsGet,xRollbarAccessToken
+/projects,POST,"
+
+
+Create a project
+
+",projectsPost,xRollbarAccessToken opts
+/reports/activated_counts,GET,"
+
+
+Analogous to \&quot;Daily New/Reactivated Items\&quot; graph on the Dashboard.  Returns an array of recent counts as &#x60;[timestamp, count]&#x60; pairs, where each count is the number of items that were first seen or reactivated in the time range &#x60;[timestamp, timestamp + bucket_size - 1]&#x60;.  Timestamps are UNIX timestamps, in whole seconds.    # Response &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: [     [       // timestamp       1408561200,       // count (number of occurrences from time 1408561200 until time 1408564799)       0     ],     [       1408564800,       0     ],     [       1408568400,       0     ],     [       1408572000,       6     ]   ] }&#x60;&#x60;&#x60; 
+
+",reportsActivatedCountsGet,xRollbarAccessToken opts
+/reports/occurrence_counts,GET,"
+
+
+Analogous to \&quot;Hourly Error/Critical Occurrences\&quot; and \&quot;Daily Error/Critical Occurrences\&quot; on the Dashboard.  Returns an array of recent counts as &#x60;[timestamp, count]&#x60; pairs, where each count is the number of matching active occurrences in the time range &#x60;[timestamp, timestamp + bucket_size - 1]&#x60;.  Timestamps are UNIX timestamps, in whole seconds.  # Response &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: [     [       // timestamp       1408561200,       // count (number of occurrences from time 1408561200 until time 1408564799)       0     ],     [       1408564800,       0     ],     [       1408568400,       0     ],     [       1408572000,       6     ]   ] }&#x60;&#x60;&#x60; 
+
+",reportsOccurrenceCountsGet,xRollbarAccessToken opts
+/reports/top_active_items,GET,"
+
+
+# Response &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: [     // each element in the list is an object with an \&quot;item\&quot; object and a \&quot;counts\&quot; list     {         // data describing the item (similar to that returned by GET /item/:id)         \&quot;item\&quot;: {             \&quot;id\&quot;: 2071,             \&quot;counter\&quot;: 1007,             \&quot;environment\&quot;: \&quot;production\&quot;,             \&quot;framework\&quot;: 0,             \&quot;last_occurrence_timestamp\&quot;: 1408410581,             \&quot;level\&quot;: 40,             \&quot;occurrences\&quot;: 54,             \&quot;project_id\&quot;: 12345,             \&quot;title\&quot;: \&quot;Something went wrong\&quot;,             \&quot;unique_occurrences\&quot;: 5         },         // list of occurrence counts in the past 24 hours. Oldest first.         \&quot;counts\&quot;: [12, 10, 7, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 8, 5, 6]     },     { /_* more elements ... *_/ }   ] } &#x60;&#x60;&#x60; 
+
+",reportsTopActiveItemsGet,xRollbarAccessToken opts
+/rql/job/{job_id}/cancel,POST,"
+
+
+# Response The response will be a RQL Job resource, example: &#x60;&#x60;&#x60;json {   \&quot;err\&quot; 0,   \&quot;result\&quot;: {     \&quot;id\&quot;: 123,  // job id     \&quot;project_id\&quot;: 456,     \&quot;query_string\&quot;: \&quot;show tables\&quot;,     \&quot;status\&quot;: \&quot;cancelled\&quot;, // One of \&quot;new\&quot;, \&quot;running\&quot;, \&quot;success\&quot;, \&quot;failed\&quot;, \&quot;cancelled\&quot;, or \&quot;timed_out\&quot;     \&quot;job_hash\&quot;: \&quot;abcdefabcdefabcdef\&quot;,     \&quot;date_created\&quot;: 1446598885,     \&quot;date_modified\&quot;: 1446598885   } }&#x60;&#x60;&#x60; 
+
+",rqlJobJobIdCancelPost,jobId xRollbarAccessToken
+/rql/job/{job_id},GET,"
+
+
+# Response The response will be a RQL Job resource, example: &#x60;&#x60;&#x60;json {   \&quot;err\&quot; 0,   \&quot;result\&quot;: {     \&quot;id\&quot;: 123,  // job id     \&quot;project_id\&quot;: 456,     \&quot;query_string\&quot;: \&quot;show tables\&quot;,     \&quot;status\&quot;: \&quot;new\&quot;, // One of \&quot;new\&quot;, \&quot;running\&quot;, \&quot;success\&quot;, \&quot;failed\&quot;, \&quot;cancelled\&quot;, or \&quot;timed_out\&quot;     \&quot;job_hash\&quot;: \&quot;abcdefabcdefabcdef\&quot;,     \&quot;date_created\&quot;: 1446598885,     \&quot;date_modified\&quot;: 1446598885,     \&quot;result\&quot;: {...} // A RQL job resource if expand&#x3D;result is used in query string   } }&#x60;&#x60; 
+
+",rqlJobJobIdGet,jobId xRollbarAccessToken opts
+/rql/job/{job_id}/result,GET,"
+
+
+# Response The response will be a RQL job result resource, example: &#x60;&#x60;&#x60;json {   \&quot;err\&quot; 0,   \&quot;result\&quot;: {     \&quot;job_id\&quot;: 123,  // job id     \&quot;result\&quot;: {       \&quot;rows\&quot;: [{...}],       \&quot;selectionColumns\&quot;: [...],       \&quot;columns\&quot;: [...],       \&quot;errors\&quot;: [],       \&quot;warnings\&quot;: [],       \&quot;rowcount\&quot;: 1,       \&quot;executionTime\&quot;: 123     },     \&quot;job\&quot;: {...} // A RQL job resource if expand&#x3D;job is set in the query string   } }&#x60;&#x60;&#x60; 
+
+",rqlJobJobIdResultGet,jobId xRollbarAccessToken opts
+/rql/jobs/,GET,"
+
+
+# Response &#x60;&#x60;&#x60;json {   \&quot;err\&quot; 0,   \&quot;result\&quot;: [     { ... }, // RQL job resource       ...   ] } &#x60;&#x60;&#x60; 
+
+",rqlJobsGet,xRollbarAccessToken opts
+/rql/jobs/,POST,"
+
+
+# Response The response will be a RQL Job resource, example: &#x60;&#x60;&#x60;json {   \&quot;err\&quot; 0,   \&quot;result\&quot;: {     \&quot;id\&quot;: 123,  // job id     \&quot;project_id\&quot;: 456,     \&quot;query_string\&quot;: \&quot;show tables\&quot;,     \&quot;status\&quot;: \&quot;new\&quot;, // One of \&quot;new\&quot;, \&quot;running\&quot;, \&quot;success\&quot;, \&quot;failed\&quot;, \&quot;cancelled\&quot;, or \&quot;timed_out\&quot;     \&quot;job_hash\&quot;: \&quot;abcdefabcdefabcdef\&quot;,     \&quot;date_created\&quot;: 1446598885,     \&quot;date_modified\&quot;: 1446598885   } }&#x60;&#x60;&#x60; 
+
+",rqlJobsPost,xRollbarAccessToken opts
+/sourcemap,POST,"
+
+
+In the above example, our website is http://example.com, we have a minified JavaScript file at http://example.com/js/example.min.js, and we have a source tree like this: &#x60;&#x60;&#x60; example/ example/static/js/example.min.js example/static/js/example.min.map example/static/js/site.js example/static/js/util.js &#x60;&#x60;&#x60; 
+
+",sourcemapPost,xRollbarAccessToken opts
+/team,DELETE,"
+
+
+Delete a team
+
+",teamDelete,xRollbarAccessToken
+/team,GET,"
+
+
+Get a team
+
+",teamGet,xRollbarAccessToken
+/team/{team_id}/invites,GET,"
+
+
+Returns all invites ever sent for the team–pending, accepted, rejected, and canceled.  # Example response &#x60;&#x60;&#x60; {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: [     {       \&quot;id\&quot;: 71328,       \&quot;from_user_id\&quot;: 5325,       \&quot;team_id\&quot;: 272686,       \&quot;to_email\&quot;: \&quot;gilfoyle@pidepiper.com\&quot;,       \&quot;status\&quot;: \&quot;pending\&quot;,       \&quot;date_created\&quot;: 1519946545,       \&quot;date_redeemed\&quot;: null     }   ] } &#x60;&#x60;&#x60; 
+
+",teamTeamIdInvitesGet,teamId xRollbarAccessToken opts
+/team/{team_id}/invites,POST,"
+
+
+Invites a user to the specific team, using the user&#39;s email address.  If the email address belongs to an existing Rollbar user, they will be immediately added to the team, and sent an email notification. Otherwise, an invite email will be sent, containing a signup link that will allow the recipient to join the specified team.  # Example Response &#x60;&#x60;&#x60; {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {     \&quot;id\&quot;: 71328,     \&quot;from_user_id\&quot;: 5325,     \&quot;team_id\&quot;: 272686,     \&quot;to_email\&quot;: \&quot;gilfoyle@piedpiper.com\&quot;,     \&quot;status\&quot;: \&quot;pending\&quot;,     \&quot;date_created\&quot;: 1519946545,     \&quot;date_redeemed\&quot;: null   } } &#x60;&#x60;&#x60; 
+
+",teamTeamIdInvitesPost,teamId xRollbarAccessToken opts
+/team/{team_id}/project/{project_id},DELETE,"
+
+
+Remove a team from a project
+
+",teamTeamIdProjectProjectIdDelete,teamId projectId xRollbarAccessToken
+/team/{team_id}/project/{project_id},GET,"
+
+
+Returns &#x60;200&#x60; if the team is assigned to a project, &#x60;404&#x60; if the team is not assigned to the project.  # Example responses  &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {     \&quot;team_id\&quot;: 272686,     \&quot;project_id\&quot;: 165090   } } &#x60;&#x60;&#x60;  &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 1,   \&quot;message\&quot;: \&quot;Project is not in this Team.\&quot; } &#x60;&#x60;&#x60; 
+
+",teamTeamIdProjectProjectIdGet,teamId projectId xRollbarAccessToken
+/team/{team_id}/project/{project_id},PUT,"
+
+
+# Example Response &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {     \&quot;team_id\&quot;: 272686,     \&quot;project_id\&quot;: 165090   } } &#x60;&#x60;&#x60; 
+
+",teamTeamIdProjectProjectIdPut,teamId projectId xRollbarAccessToken
+/team/{team_id}/projects,GET,"
+
+
+# Example Response &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: [     {       \&quot;team_id\&quot;: 272686,       \&quot;project_id\&quot;: 178029     },     {       \&quot;team_id\&quot;: 272686,       \&quot;project_id\&quot;: 178030     }   ] } &#x60;&#x60;&#x60; 
+
+",teamTeamIdProjectsGet,teamId xRollbarAccessToken
+/team/{team_id}/user/{user_id},DELETE,"
+
+
+Remove a user from a team
+
+",teamTeamIdUserUserIdDelete,xRollbarAccessToken teamId userId
+/team/{team_id}/user/{user_id},GET,"
+
+
+Check if a user is assigned to a team
+
+",teamTeamIdUserUserIdGet,teamId userId xRollbarAccessToken
+/team/{team_id}/user/{user_id},PUT,"
+
+
+Assign a user to team
+
+",teamTeamIdUserUserIdPut,teamId userId xRollbarAccessToken
+/team/{team_id}/users,GET,"
+
+
+List a team&#39;s users
+
+",teamTeamIdUsersGet,teamId xRollbarAccessToken opts
+/teams,GET,"
+
+
+List all teams
+
+",teamsGet,xRollbarAccessToken
+/teams,POST,"
+
+
+# Access Levels &#x60;standard&#x60; is the only access level you can choose in the UI.  &#x60;light&#x60; and &#x60;view&#x60; are API-only team access levels. &#x60;light&#x60; gives the team read and write access, but not to all settings. &#x60;view&#x60; gives the team read-only access. 
+
+",teamsPost,xRollbarAccessToken opts
+/user/{user_id},GET,"
+
+
+Get user details for a given account  Returns basic information about the user, as relevant to the account your access token is for. This is the same information available on the \&quot;Members\&quot; page in the Rollbar UI.  # Sample Response &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {       \&quot;id\&quot;: 14,       \&quot;username\&quot;: \&quot;brian\&quot;,       \&quot;email\&quot;: \&quot;brian@rollbar.com\&quot;,       \&quot;email_enabled\&quot;: 1   } } &#x60;&#x60;&#x60; 
+
+",userUserIdGet,userId xRollbarAccessToken
+/user/{user_id}/projects,GET,"
+
+
+# Example response: &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {     \&quot;projects\&quot;: [       {         \&quot;status\&quot;: 1,         \&quot;slug\&quot;: \&quot;mox\&quot;,         \&quot;id\&quot;: 1,         \&quot;account_id\&quot;: 61       },       {         \&quot;status\&quot;: 1,         \&quot;slug\&quot;: \&quot;moxrts\&quot;,         \&quot;id\&quot;: 25,         \&quot;account_id\&quot;: 61       }     ]   } }&#x60;&#x60;&#x60; 
+
+",userUserIdProjectsGet,userId xRollbarAccessToken
+/user/{user_id}/teams,GET,"
+
+
+List a user&#39;s teams
+
+",userUserIdTeamsGet,xRollbarAccessToken userId
+/users,GET,"
+
+
+List all users who are members of an account #Response Format &#x60;&#x60;&#x60;json {   \&quot;err\&quot;: 0,   \&quot;result\&quot;: {     \&quot;users\&quot;: [     {       \&quot;username\&quot;: \&quot;brianr\&quot;,       \&quot;id\&quot;: 1,       \&quot;email\&quot;: \&quot;brian@rollbar.com\&quot;     },     {       \&quot;username\&quot;: \&quot;coryvirok\&quot;,       \&quot;id\&quot;: 2,       \&quot;email\&quot;: \&quot;cory@rollbar.com\&quot;     }     ]   } } &#x60;&#x60;&#x60; 
+
+",usersGet,xRollbarAccessToken
 /versions/{version},GET,"
 Code version details in one project
 
 Returns the details about one specific code version in one project  https://docs.rollbar.com/docs/versions 
 
-",versionsVersionGet,environment opts
+",versionsVersionGet,xRollbarAccessToken version environment
 /versions/{version}/items,GET,"
 List items by code version
 
 List items that have occurrences for one specific code version.  https://docs.rollbar.com/docs/versions 
 
-",versionsVersionItemsGet,environment event opts
+",versionsVersionItemsGet,xRollbarAccessToken version environment event opts
 /instance/{instance_id},DELETE,"
 Delete an occurrence
 
 Permanently deletes an occurrence. This will make it unavailable in the Rollbar UI and API. Aggregate counts are not updated. 
 
-",instanceInstanceIdDelete,opts
+",instanceInstanceIdDelete,xRollbarAccessToken instanceId
 /instance/{instance_id},GET,"
 Get an occurrence
 
 Returns a JSON object describing the occurrence. This is similar to the \&quot;Raw JSON\&quot; section of the occurrence detail page.  &#x60;instance_id&#x60; must be an Occurrence ID for an occurrence in the project. These IDs are returned as the &#x60;id&#x60; field in other occurrence API calls, and can be found in the Rollbar UI on URLs like &#x60;https://rollbar.com/Rollbar/demo/items/54/occurrences/3209095494/&#x60; (&#x60;3209095494&#x60; is the Occurrence ID). 
 
-",instanceInstanceIdGet,opts
+",instanceInstanceIdGet,xRollbarAccessToken instanceId
 /instances,GET,"
 List all occurrences in a project
 
 Returns all occurrences in the project, in pages of 20. Order is descending by occurrence ID (which is approximately descending by timestamp). 
 
-",instancesGet,opts
+",instancesGet,xRollbarAccessToken opts
 /{item_id}/instances,GET,"
 List all occurrences in an item
 
 Returns all occurrences of an item, in pages of 20. Order is descending by occurrence ID (which is approximately descending by timestamp). 
 
-",itemIdInstancesGet,opts
-/team,DELETE,"
-
-
-",teamDelete,
-/team,GET,"
-
-
-",teamGet,
-/teams,GET,"
-
-
-",teamsGet,
-/teams,POST,"
-
-
-",teamsPost,
-/reports/activated_counts,GET,"
-
-
-",reportsActivatedCountsGet,
-/reports/occurrence_counts,GET,"
-
-
-",reportsOccurrenceCountsGet,
-/reports/top_active_items,GET,"
-
-
-",reportsTopActiveItemsGet,
+",itemIdInstancesGet,xRollbarAccessToken itemId opts
 /notifications/email,PUT,"
 
 
 Configuring Email Notifications integration
 
-",notificationsEmailPut,opts
+",notificationsEmailPut,xRollbarAccessToken body
 /notifications/email/rules,PUT,"
 
 
 Setup Email notification rules
 
-",notificationsEmailRulesPut,opts
+",notificationsEmailRulesPut,xRollbarAccessToken body
 /notifications/pagerduty,PUT,"
 
 
 Configuring PagerDuty integration
 
-",notificationsPagerdutyPut,opts
+",notificationsPagerdutyPut,xRollbarAccessToken body
 /notifications/pagerduty/rules,PUT,"
 
 
 Setup PagerDuty notification rules
 
-",notificationsPagerdutyRulesPut,opts
+",notificationsPagerdutyRulesPut,xRollbarAccessToken body
 /notifications/slack,PUT,"
 
 
 Configuring Slack integration
 
-",notificationsSlackPut,opts
+",notificationsSlackPut,xRollbarAccessToken body
 /notifications/slack/rules,PUT,"
 
 
 Setup Slack notification rules
 
-",notificationsSlackRulesPut,opts
-/user/{user_id}/projects,GET,"
-
-
-",userUserIdProjectsGet,
-/project/{id}/access_tokens,GET,"
-
-
-",projectIdAccessTokensGet,
+",notificationsSlackRulesPut,xRollbarAccessToken body
 /project/{id}/access_tokens,POST,"
 
 
 Create a project access token
 
-",projectIdAccessTokensPost,opts
-/project/{project_id}/access_token/{project_access_token},PATCH,"
-
-
-",projectProjectIdAccessTokenProjectAccessTokenPatch,
-/rql/job/{job_id}/cancel,POST,"
-
-
-",rqlJobJobIdCancelPost,
-/rql/job/{job_id},GET,"
-
-
-",rqlJobJobIdGet,
-/rql/job/{job_id}/result,GET,"
-
-
-",rqlJobJobIdResultGet,
-/rql/jobs/,GET,"
-
-
-",rqlJobsGet,
-/rql/jobs/,POST,"
-
-
-",rqlJobsPost,
-/invite/{invite_id},DELETE,"
-
-
-",inviteInviteIdDelete,
-/invite/{invite_id},GET,"
-
-
-",inviteInviteIdGet,
-/team/{team_id}/invites,GET,"
-
-
-",teamTeamIdInvitesGet,
-/team/{team_id}/invites,POST,"
-
-
-",teamTeamIdInvitesPost,
-/team/{team_id}/user/{user_id},DELETE,"
-
-
-",teamTeamIdUserUserIdDelete,
-/team/{team_id}/user/{user_id},GET,"
-
-
-",teamTeamIdUserUserIdGet,
-/team/{team_id}/user/{user_id},PUT,"
-
-
-",teamTeamIdUserUserIdPut,
-/team/{team_id}/users,GET,"
-
-
-",teamTeamIdUsersGet,
-/user/{user_id}/teams,GET,"
-
-
-",userUserIdTeamsGet,
-/project/{project_id},GET,"
-
-
-",projectProjectIdGet,
-/project/{project_id},POST,"
-
-
-",projectProjectIdPost,
-/projects,GET,"
-
-
-",projectsGet,
-/projects,POST,"
-
-
-",projectsPost,
-/people/delete_jobs/{job_id},GET,"
-
-
-",peopleDeleteJobsJobIdGet,
-/people/delete_jobs/,POST,"
-
-
-",peopleDeleteJobsPost,
+",projectIdAccessTokensPost,xRollbarAccessToken id body

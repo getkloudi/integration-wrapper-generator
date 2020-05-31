@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## notificationsEmailPut
 
-> notificationsEmailPut(opts)
+> EmptyResponse notificationsEmailPut(xRollbarAccessToken, body)
 
 
 
@@ -25,22 +25,15 @@ Configuring Email Notifications integration
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.NotificationsApi();
-let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null() //  | 
-};
-apiInstance.notificationsEmailPut(opts, (error, data, response) => {
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'write' scope
+let body = new Rollbar.EmailIntegrationConfig(); // EmailIntegrationConfig | 
+apiInstance.notificationsEmailPut(xRollbarAccessToken, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -50,25 +43,26 @@ apiInstance.notificationsEmailPut(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;write&#39; scope | 
+ **body** | [**EmailIntegrationConfig**](EmailIntegrationConfig.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**EmptyResponse**](EmptyResponse.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## notificationsEmailRulesPut
 
-> notificationsEmailRulesPut(opts)
+> EmptyResponse notificationsEmailRulesPut(xRollbarAccessToken, body)
 
 
 
@@ -78,22 +72,15 @@ Setup Email notification rules
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.NotificationsApi();
-let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null() //  | 
-};
-apiInstance.notificationsEmailRulesPut(opts, (error, data, response) => {
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'write' scope
+let body = [new Rollbar.EmailRule()]; // [EmailRule] | 
+apiInstance.notificationsEmailRulesPut(xRollbarAccessToken, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -103,25 +90,26 @@ apiInstance.notificationsEmailRulesPut(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;write&#39; scope | 
+ **body** | [**[EmailRule]**](EmailRule.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**EmptyResponse**](EmptyResponse.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## notificationsPagerdutyPut
 
-> notificationsPagerdutyPut(opts)
+> EmptyResponse notificationsPagerdutyPut(xRollbarAccessToken, body)
 
 
 
@@ -131,22 +119,15 @@ Configuring PagerDuty integration
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.NotificationsApi();
-let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null() //  | 
-};
-apiInstance.notificationsPagerdutyPut(opts, (error, data, response) => {
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'write' scope
+let body = new Rollbar.PagerDutyIntegrationConfig(); // PagerDutyIntegrationConfig | 
+apiInstance.notificationsPagerdutyPut(xRollbarAccessToken, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -156,25 +137,26 @@ apiInstance.notificationsPagerdutyPut(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;write&#39; scope | 
+ **body** | [**PagerDutyIntegrationConfig**](PagerDutyIntegrationConfig.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**EmptyResponse**](EmptyResponse.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## notificationsPagerdutyRulesPut
 
-> notificationsPagerdutyRulesPut(opts)
+> EmptyResponse notificationsPagerdutyRulesPut(xRollbarAccessToken, body)
 
 
 
@@ -184,22 +166,15 @@ Setup PagerDuty notification rules
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.NotificationsApi();
-let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null() //  | 
-};
-apiInstance.notificationsPagerdutyRulesPut(opts, (error, data, response) => {
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'write' scope
+let body = [new Rollbar.PagerDutyRule()]; // [PagerDutyRule] | 
+apiInstance.notificationsPagerdutyRulesPut(xRollbarAccessToken, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -209,25 +184,26 @@ apiInstance.notificationsPagerdutyRulesPut(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;write&#39; scope | 
+ **body** | [**[PagerDutyRule]**](PagerDutyRule.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**EmptyResponse**](EmptyResponse.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## notificationsSlackPut
 
-> notificationsSlackPut(opts)
+> EmptyResponse notificationsSlackPut(xRollbarAccessToken, body)
 
 
 
@@ -237,22 +213,15 @@ Configuring Slack integration
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.NotificationsApi();
-let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null() //  | 
-};
-apiInstance.notificationsSlackPut(opts, (error, data, response) => {
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'write' scope
+let body = new Rollbar.SlackIntegrationConfig(); // SlackIntegrationConfig | 
+apiInstance.notificationsSlackPut(xRollbarAccessToken, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -262,25 +231,26 @@ apiInstance.notificationsSlackPut(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;write&#39; scope | 
+ **body** | [**SlackIntegrationConfig**](SlackIntegrationConfig.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**EmptyResponse**](EmptyResponse.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json; charset=utf-8
 
 
 ## notificationsSlackRulesPut
 
-> notificationsSlackRulesPut(opts)
+> EmptyResponse notificationsSlackRulesPut(xRollbarAccessToken, body)
 
 
 
@@ -290,22 +260,15 @@ Setup Slack notification rules
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.NotificationsApi();
-let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null() //  | 
-};
-apiInstance.notificationsSlackRulesPut(opts, (error, data, response) => {
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'write' scope
+let body = [new Rollbar.SlackRule()]; // [SlackRule] | 
+apiInstance.notificationsSlackRulesPut(xRollbarAccessToken, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -315,18 +278,19 @@ apiInstance.notificationsSlackRulesPut(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;write&#39; scope | 
+ **body** | [**[SlackRule]**](SlackRule.md)|  | 
 
 ### Return type
 
-null (empty response body)
+[**EmptyResponse**](EmptyResponse.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json; charset=utf-8
 

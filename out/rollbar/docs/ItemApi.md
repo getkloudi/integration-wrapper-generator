@@ -4,152 +4,13 @@ All URIs are relative to *https://api.rollbar.com/api/1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**itemByCounterCounterGet**](ItemApi.md#itemByCounterCounterGet) | **GET** /item_by_counter/{counter} | 
-[**itemItemidGet**](ItemApi.md#itemItemidGet) | **GET** /item/{itemid} | 
-[**itemItemidPatch**](ItemApi.md#itemItemidPatch) | **PATCH** /item/{itemid} | 
 [**itemPost**](ItemApi.md#itemPost) | **POST** /item/ | 
-[**itemsGet**](ItemApi.md#itemsGet) | **GET** /items | 
 
-
-
-## itemByCounterCounterGet
-
-> itemByCounterCounterGet()
-
-
-
-### Example
-
-```javascript
-import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
-
-let apiInstance = new Rollbar.ItemApi();
-apiInstance.itemByCounterCounterGet((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-});
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## itemItemidGet
-
-> itemItemidGet()
-
-
-
-### Example
-
-```javascript
-import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
-
-let apiInstance = new Rollbar.ItemApi();
-apiInstance.itemItemidGet((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-});
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## itemItemidPatch
-
-> itemItemidPatch()
-
-
-
-### Example
-
-```javascript
-import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
-
-let apiInstance = new Rollbar.ItemApi();
-apiInstance.itemItemidPatch((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-});
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 
 ## itemPost
 
-> itemPost()
+> itemPost(xRollbarAccessToken, opts)
 
 
 
@@ -157,15 +18,13 @@ null (empty response body)
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.ItemApi();
-apiInstance.itemPost((error, data, response) => {
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | An access token with scope `post_server_item` or `post_client_item`. A post_client_item token must be used if the `platform` is `browser\"`, `android`, `ios`, `flash`, or `client`. A post_server_item token should be used for other platforms.
+let opts = {
+  'body': new Rollbar.Api1ItemRequest() // Api1ItemRequest | 
+};
+apiInstance.itemPost(xRollbarAccessToken, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -176,7 +35,11 @@ apiInstance.itemPost((error, data, response) => {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xRollbarAccessToken** | **String**| An access token with scope &#x60;post_server_item&#x60; or &#x60;post_client_item&#x60;. A post_client_item token must be used if the &#x60;platform&#x60; is &#x60;browser\&quot;&#x60;, &#x60;android&#x60;, &#x60;ios&#x60;, &#x60;flash&#x60;, or &#x60;client&#x60;. A post_server_item token should be used for other platforms. | 
+ **body** | [**Api1ItemRequest**](Api1ItemRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -184,55 +47,10 @@ null (empty response body)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## itemsGet
-
-> itemsGet()
-
-
-
-### Example
-
-```javascript
-import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
-
-let apiInstance = new Rollbar.ItemApi();
-apiInstance.itemsGet((error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-});
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[accessToken](../README.md#accessToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: Not defined
 

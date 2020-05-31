@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## instanceInstanceIdDelete
 
-> instanceInstanceIdDelete(opts)
+> Api1InstanceResponse1 instanceInstanceIdDelete(xRollbarAccessToken, instanceId)
 
 Delete an occurrence
 
@@ -23,23 +23,15 @@ Permanently deletes an occurrence. This will make it unavailable in the Rollbar 
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.OccurrenceApi();
-let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null(), //  | 
-  'UNKNOWN_PARAMETER_NAME2': new Rollbar.null() //  | 
-};
-apiInstance.instanceInstanceIdDelete(opts, (error, data, response) => {
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'read' scope
+let instanceId = 56; // Number | The occurrence ID
+apiInstance.instanceInstanceIdDelete(xRollbarAccessToken, instanceId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -49,26 +41,26 @@ apiInstance.instanceInstanceIdDelete(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
- **UNKNOWN_PARAMETER_NAME2** | [****](.md)|  | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;read&#39; scope | 
+ **instanceId** | **Number**| The occurrence ID | 
 
 ### Return type
 
-null (empty response body)
+[**Api1InstanceResponse1**](Api1InstanceResponse1.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json; charset=utf-8
 
 
 ## instanceInstanceIdGet
 
-> instanceInstanceIdGet(opts)
+> Api1InstanceResponse instanceInstanceIdGet(xRollbarAccessToken, instanceId)
 
 Get an occurrence
 
@@ -78,23 +70,15 @@ Returns a JSON object describing the occurrence. This is similar to the \&quot;R
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.OccurrenceApi();
-let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null(), //  | 
-  'UNKNOWN_PARAMETER_NAME2': new Rollbar.null() //  | 
-};
-apiInstance.instanceInstanceIdGet(opts, (error, data, response) => {
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'read' scope
+let instanceId = 56; // Number | The occurrence ID
+apiInstance.instanceInstanceIdGet(xRollbarAccessToken, instanceId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -104,26 +88,26 @@ apiInstance.instanceInstanceIdGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
- **UNKNOWN_PARAMETER_NAME2** | [****](.md)|  | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;read&#39; scope | 
+ **instanceId** | **Number**| The occurrence ID | 
 
 ### Return type
 
-null (empty response body)
+[**Api1InstanceResponse**](Api1InstanceResponse.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json; charset=utf-8
 
 
 ## instancesGet
 
-> instancesGet(opts)
+> Api1InstancesResponse instancesGet(xRollbarAccessToken, opts)
 
 List all occurrences in a project
 
@@ -133,23 +117,17 @@ Returns all occurrences in the project, in pages of 20. Order is descending by o
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.OccurrenceApi();
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'read' scope
 let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null(), //  | 
-  'page': null // Object | Page number to return, starting at 1. 20 occurrences are returned per page.
+  'page': 1 // Number | Page number to return, starting at 1. 20 occurrences are returned per page.
 };
-apiInstance.instancesGet(opts, (error, data, response) => {
+apiInstance.instancesGet(xRollbarAccessToken, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -159,26 +137,26 @@ apiInstance.instancesGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
- **page** | [**Object**](.md)| Page number to return, starting at 1. 20 occurrences are returned per page. | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;read&#39; scope | 
+ **page** | **Number**| Page number to return, starting at 1. 20 occurrences are returned per page. | [optional] [default to 1]
 
 ### Return type
 
-null (empty response body)
+[**Api1InstancesResponse**](Api1InstancesResponse.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json; charset=utf-8
 
 
 ## itemIdInstancesGet
 
-> itemIdInstancesGet(opts)
+> Api1InstancesResponse itemIdInstancesGet(xRollbarAccessToken, itemId, opts)
 
 List all occurrences in an item
 
@@ -188,24 +166,18 @@ Returns all occurrences of an item, in pages of 20. Order is descending by occur
 
 ```javascript
 import Rollbar from 'Rollbar';
-let defaultClient = Rollbar.ApiClient.instance;
-// Configure API key authorization: accessToken
-let accessToken = defaultClient.authentications['accessToken'];
-accessToken.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//accessToken.apiKeyPrefix = 'Token';
 
 let apiInstance = new Rollbar.OccurrenceApi();
+let xRollbarAccessToken = "xRollbarAccessToken_example"; // String | Use a project access token with 'read' scope
+let itemId = 56; // Number | The item ID
 let opts = {
-  'UNKNOWN_PARAMETER_NAME': new Rollbar.null(), //  | 
-  'UNKNOWN_PARAMETER_NAME2': new Rollbar.null(), //  | 
-  'page': null // Object | Page number to return, starting at 1. 20 occurrences are returned per page.
+  'page': 1 // Number | Page number to return, starting at 1. 20 occurrences are returned per page.
 };
-apiInstance.itemIdInstancesGet(opts, (error, data, response) => {
+apiInstance.itemIdInstancesGet(xRollbarAccessToken, itemId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 });
 ```
@@ -215,20 +187,20 @@ apiInstance.itemIdInstancesGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)|  | [optional] 
- **UNKNOWN_PARAMETER_NAME2** | [****](.md)|  | [optional] 
- **page** | [**Object**](.md)| Page number to return, starting at 1. 20 occurrences are returned per page. | [optional] 
+ **xRollbarAccessToken** | **String**| Use a project access token with &#39;read&#39; scope | 
+ **itemId** | **Number**| The item ID | 
+ **page** | **Number**| Page number to return, starting at 1. 20 occurrences are returned per page. | [optional] [default to 1]
 
 ### Return type
 
-null (empty response body)
+[**Api1InstancesResponse**](Api1InstancesResponse.md)
 
 ### Authorization
 
-[accessToken](../README.md#accessToken)
+No authorization required
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json; charset=utf-8
 

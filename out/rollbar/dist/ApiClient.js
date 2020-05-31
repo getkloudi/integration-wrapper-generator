@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
  * @module ApiClient
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 /**
@@ -46,13 +46,7 @@ var ApiClient = /*#__PURE__*/function () {
      * @type {Array.<String>}
      */
 
-    this.authentications = {
-      accessToken: {
-        type: 'apiKey',
-        "in": 'header',
-        name: 'X-Rollbar-Access-Token'
-      }
-    };
+    this.authentications = {};
     /**
      * The default HTTP headers to be included for all API calls.
      * @type {Array.<String>}

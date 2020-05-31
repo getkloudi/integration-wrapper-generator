@@ -1,3 +1,7 @@
+module.exports.transformNameToRef = (item) => {
+  return item.name;
+};
+
 module.exports.transformThirdPartyProjects = (projects) => {
   return projects._doc.map((item) => {
     let projectAccessToken;
@@ -11,15 +15,17 @@ module.exports.transformThirdPartyProjects = (projects) => {
     return { ...item, projectAccessToken: projectAccessToken };
   });
 };
-module.exports.transformQueryParamsToOpts = (params) => {
-  const opts = { ...params };
+
+module.exports.convertOrgNameAndProjectIdToProjetRef = (item) => {
+  return `https://rollbar.com/${item.organizationName}/?projects=${item.id}`;
+};
+
+module.exports.transformQueryParamsToOpts = (queryParams) => {
+  const opts = { ...queryParams };
   delete opts.projectId;
   delete opts.userId;
   return {
     ...opts,
-    categoryId: params.categoryId ? params.categoryId : '',
-    startAt: params.startAt ? params.startAt : 0,
-    maxResults: params.maxResults ? params.maxResults : 50,
   };
 };
 

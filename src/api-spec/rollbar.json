@@ -1,0 +1,4789 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Rollbar API",
+    "description": "",
+    "contact": {}
+  },
+  "host": "api.rollbar.com",
+  "basePath": "/api/1",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/item/": {
+      "post": {
+        "description": "",
+        "tags": [
+          "Item"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "An access token with scope `post_server_item` or `post_client_item`. A post_client_item token must be used if the `platform` is `browser\"`, `android`, `ios`, `flash`, or `client`. A post_server_item token should be used for other platforms."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1ItemRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/instances": {
+      "get": {
+        "description": "Returns all occurrences in the project, in pages of 20. Order is descending by occurrence ID (which is approximately descending by timestamp).\n",
+        "summary": "List all occurrences in a project",
+        "tags": [
+          "Occurrence"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "default": 1,
+            "type": "integer",
+            "format": "int32",
+            "description": "Page number to return, starting at 1. 20 occurrences are returned per page."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1InstancesResponse"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/{item_id}/instances": {
+      "get": {
+        "description": "Returns all occurrences of an item, in pages of 20. Order is descending by occurrence ID (which is approximately descending by timestamp).\n",
+        "summary": "List all occurrences in an item",
+        "tags": [
+          "Occurrence"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "item_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "The item ID"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "default": 1,
+            "type": "integer",
+            "format": "int32",
+            "description": "Page number to return, starting at 1. 20 occurrences are returned per page."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1InstancesResponse"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/instance/{instance_id}": {
+      "get": {
+        "description": "Returns a JSON object describing the occurrence. This is similar to the \"Raw JSON\" section of the occurrence detail page.\n\n`instance_id` must be an Occurrence ID for an occurrence in the project. These IDs are returned as the `id`\nfield in other occurrence API calls, and can be found in the Rollbar UI on URLs like\n`https://rollbar.com/Rollbar/demo/items/54/occurrences/3209095494/` (`3209095494` is the Occurrence ID).\n",
+        "summary": "Get an occurrence",
+        "tags": [
+          "Occurrence"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "instance_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "The occurrence ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1InstanceResponse"
+            },
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "Permanently deletes an occurrence. This will make it unavailable in the Rollbar UI and API. Aggregate counts are not updated.\n",
+        "summary": "Delete an occurrence",
+        "tags": [
+          "Occurrence"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "instance_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "The occurrence ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1InstanceResponse1"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/project/{id}/access_tokens": {
+      "post": {
+        "description": "Create a project access token",
+        "tags": [
+          "Project Access Tokens"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ProjectAccessToken"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response data for slack notification configuration",
+            "schema": {
+              "$ref": "#/definitions/Api1ProjectAccessTokensResponse"
+            },
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "List all project access tokens",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/notifications/slack": {
+      "put": {
+        "description": "Configuring Slack integration",
+        "tags": [
+          "Notifications"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/SlackIntegrationConfig"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/EmptyResponse"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "err": 0,
+                "result": {}
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/notifications/slack/rules": {
+      "put": {
+        "description": "Setup Slack notification rules",
+        "tags": [
+          "Notifications"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SlackRule"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/EmptyResponse"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "err": 0,
+                "result": {}
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/notifications/pagerduty": {
+      "put": {
+        "description": "Configuring PagerDuty integration",
+        "tags": [
+          "Notifications"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PagerDutyIntegrationConfig"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/EmptyResponse"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "err": 0,
+                "result": {}
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/notifications/pagerduty/rules": {
+      "put": {
+        "description": "Setup PagerDuty notification rules",
+        "tags": [
+          "Notifications"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PagerDutyRule"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/EmptyResponse"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "err": 0,
+                "result": {}
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/notifications/email": {
+      "put": {
+        "description": "Configuring Email Notifications integration",
+        "tags": [
+          "Notifications"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EmailIntegrationConfig"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/EmptyResponse"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "err": 0,
+                "result": {}
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/notifications/email/rules": {
+      "put": {
+        "description": "Setup Email notification rules",
+        "tags": [
+          "Notifications"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/EmailRule"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/EmptyResponse"
+            },
+            "examples": {
+              "application/json; charset=utf-8": {
+                "err": 0,
+                "result": {}
+              }
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/versions/{version}": {
+      "get": {
+        "description": "Returns the details about one specific code version in one project\n\nhttps://docs.rollbar.com/docs/versions\n",
+        "summary": "Code version details in one project",
+        "tags": [
+          "Versions"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The code version sent on the occurrence payload"
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "The environment where the code version is detected"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1VersionsResponse"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/versions/{version}/items": {
+      "get": {
+        "description": "List items that have occurrences for one specific code version.\n\nhttps://docs.rollbar.com/docs/versions\n",
+        "summary": "List items by code version",
+        "tags": [
+          "Versions"
+        ],
+        "deprecated": false,
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The code version sent on the occurrence payload"
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": "For one code version list the items only for this environment"
+          },
+          {
+            "name": "event",
+            "in": "query",
+            "required": true,
+            "enum": [
+              "new",
+              "repeated",
+              "reactivated",
+              "resolved"
+            ],
+            "type": "string",
+            "description": "Filter the list of items by the item event produced on the code version. One item can have one of these events in one version:\n\n  - `new` for new items in the code version\n  - `repeated` for an item that already existed in preivous versions\n  - `reactivated` an item that was resolved but was reactivated in the code version\n  - `resolved` an item resolved in one specific version"
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "debug",
+                "info",
+                "warning",
+                "error",
+                "critical"
+              ]
+            },
+            "description": "Filter the list of items by level. Multiple levels can be used, and all items for all levels will be returned if no one is specified."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "description": "Page number, starting from 1. 20 elements are returned per page."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1VersionsItemsResponse"
+            },
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/items": {
+      "get": {
+        "description": "# Examples\nGet the 101st through 199th active items:\n```curl\ncurl -H \"X-Rollbar-Access-Token: YOUR_ACCESS_TOKEN\" 'https://api.rollbar.com/items/?status=active&page=2'\n```\nGet the first page of items that are error or critical, in the production environment:\n```curl\ncurl -H \"X-Rollbar-Access-Token: YOUR_ACCESS_TOKEN\" 'https://api.rollbar.com/items/?level=error&level=critical&environment=production'\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "assigned_user",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "If not empty, only items assigned to the specified user will be returned. Must be a valid Rollbar username, or you can use the keywords `assigned` (items that are assigned to any owner) or `unassigned` (items with no owner)."
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "If not empty, only items in the specified environment will be returned. Specify multiple times to filter by multiple environments."
+          },
+          {
+            "name": "framework",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "If not empty, only items in the specified framework will be returned. Specify multiple times to filter by multiple frameworks."
+          },
+          {
+            "name": "ids",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "(comma-separated list of integers) if not empty, list of item IDs to return, instead of using all items in the project"
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "If not empty, only items with the specified level will be returned. Valid values: `debug`, `info`, `warning`, `error`, `critical`. Specifiy multiple times to filter by multiple levels."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "description": "Page number, starting from 1. 100 items are returned per page."
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "A search string, using the same format as the search box on the Items page."
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "If not empty, only items with the specified status will be returned. Valid values: `active`, `resolved`, `muted`, `archived`. Specify multiple times to filter by multiple statuses."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/item/{itemid}": {
+      "get": {
+        "description": "`itemid` must be an item ID for an item in the project. These IDs are returned as the id field in other API calls.\n\nNote that they are NOT found in in URLs like `https://rollbar.com/myaccount/myproject/items/456/` – that is the \"counter\", which can be used in the following API call.\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "itemid",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "Unique ID of the item\n\n`itemid` must be an item ID for an item in the project.\nThese IDs are returned as the id field in other API calls.\n\nNote that they are NOT found in in URLs like\nhttps://rollbar.com/myaccount/myproject/items/456/ – that\nis the \"counter\", which can be used in the following API call."
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "patch": {
+        "description": "Used to modify an item's state. Currently supports:\n* setting the status, level, title, assigned user\n* when resolving, setting the \"resolved in version\"\n\nExample -\n```curl\ncurl -X PATCH 'https://api.rollbar.com/item/275123456' \\\n  --header \"Content-Type: application/json\" \\\n  --data '{\"status\": \"resolved\", \"resolved_in_version\": \"aabbcc1\"}'\n  ```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1ItemRequest1"
+            }
+          },
+          {
+            "name": "itemid",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/item_by_counter/{counter}": {
+      "get": {
+        "description": "`counter` must be an item counter for an item in the project. The counter can be found in URLs like `https://rollbar.com/myaccount/myproject/items/456/` (456 is the counter).\n\nThe success response is a 301 redirect like this:\n\n```\nHTTP/1.1 301 Moved Permanently\nLocation: /item/272505123\n\n{\n  \"err\": 0,\n  \"result\": {\n    \"itemId\": 272505123,\n    \"path\": \"/item/272505123\",\n    \"uri\": \"/item/272505123\"\n  }\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "counter",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "item counter for an item in the project\n\n`counter` must be an item counter for an item in the project.\nThe counter can be found in URLs like https://rollbar.com/myaccount/myproject/items/456/\n(456 is the counter)."
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/deploy": {
+      "post": {
+        "description": "For tool-specific instructions on reporting a deploy, see our [Deploy Tracking](doc:deploy-tracking) docs.\n\nFor instructions on setting the default deploy timeout period, see [Deploy Timeouts](https://docs.rollbar.com/docs/deploy-tracking#section-deploy-timeout).\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a post server item access token"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1DeployRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "description": "`deploy_id` must be an ID for a deploy in the project. These IDs are returned as the id field in other API calls, and can be found in the Rollbar UI on URLs like `https://rollbar.com/deploy/12345/` (`12345` is the Deploy ID).\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "patch": {
+        "description": "```JavaScript\n$.get('http://yoursite.com/test/' + id, function(data) {\n    console.log(data);\n});```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a post server item access token"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1DeployRequest1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/deploys": {
+      "get": {
+        "description": "Returns all deploys in the project, most recent first, in pages of 20.\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "description": "Page number, starting from 1. 20 deploys are returned per page."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/sourcemap": {
+      "post": {
+        "description": "In the above example, our website is http://example.com, we have a minified JavaScript file at http://example.com/js/example.min.js, and we have a source tree like this:\n```\nexample/\nexample/static/js/example.min.js\nexample/static/js/example.min.map\nexample/static/js/site.js\nexample/static/js/util.js\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a post server item access token"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1SourcemapRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/dsym": {
+      "post": {
+        "description": "**Note:** For version, you should use the \"Bundle version\" from your plist which corresponds to the Build Number. This is not the Version Number which is found under the key \"Bundle versions string, short\" in your plist. See this [technical note](https://developer.apple.com/library/content/technotes/tn2420/_index.html) for more information. We use this to match up the dSYM with the same version of the code that caused the stack trace.\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a post server item access token"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1DsymRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/proguard": {
+      "post": {
+        "description": "Upload an Android Proguard file",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a post server item access token"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1ProguardRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/rql/job/{job_id}": {
+      "get": {
+        "description": "# Response\nThe response will be a RQL Job resource, example:\n```json\n{\n  \"err\" 0,\n  \"result\": {\n    \"id\": 123,  // job id\n    \"project_id\": 456,\n    \"query_string\": \"show tables\",\n    \"status\": \"new\", // One of \"new\", \"running\", \"success\", \"failed\", \"cancelled\", or \"timed_out\"\n    \"job_hash\": \"abcdefabcdefabcdef\",\n    \"date_created\": 1446598885,\n    \"date_modified\": 1446598885,\n    \"result\": {...} // A RQL job resource if expand=result is used in query string\n  }\n}``\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "If the value is `result`, the response will contain the job result"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/rql/jobs/": {
+      "post": {
+        "description": "# Response\nThe response will be a RQL Job resource, example:\n```json\n{\n  \"err\" 0,\n  \"result\": {\n    \"id\": 123,  // job id\n    \"project_id\": 456,\n    \"query_string\": \"show tables\",\n    \"status\": \"new\", // One of \"new\", \"running\", \"success\", \"failed\", \"cancelled\", or \"timed_out\"\n    \"job_hash\": \"abcdefabcdefabcdef\",\n    \"date_created\": 1446598885,\n    \"date_modified\": 1446598885\n  }\n}```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1RqlJobsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "# Response\n```json\n{\n  \"err\" 0,\n  \"result\": [\n    { ... }, // RQL job resource\n      ...\n  ]\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "description": "Page number starting from 1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/rql/job/{job_id}/result": {
+      "get": {
+        "description": "# Response\nThe response will be a RQL job result resource, example:\n```json\n{\n  \"err\" 0,\n  \"result\": {\n    \"job_id\": 123,  // job id\n    \"result\": {\n      \"rows\": [{...}],\n      \"selectionColumns\": [...],\n      \"columns\": [...],\n      \"errors\": [],\n      \"warnings\": [],\n      \"rowcount\": 1,\n      \"executionTime\": 123\n    },\n    \"job\": {...} // A RQL job resource if expand=job is set in the query string\n  }\n}```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "If the value is `job`, the response will contain the RQL job resource"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/rql/job/{job_id}/cancel": {
+      "post": {
+        "description": "# Response\nThe response will be a RQL Job resource, example:\n```json\n{\n  \"err\" 0,\n  \"result\": {\n    \"id\": 123,  // job id\n    \"project_id\": 456,\n    \"query_string\": \"show tables\",\n    \"status\": \"cancelled\", // One of \"new\", \"running\", \"success\", \"failed\", \"cancelled\", or \"timed_out\"\n    \"job_hash\": \"abcdefabcdefabcdef\",\n    \"date_created\": 1446598885,\n    \"date_modified\": 1446598885\n  }\n}```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "system-wide ID of the job to be canceled"
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/reports/top_active_items": {
+      "get": {
+        "description": "# Response\n```json\n{\n  \"err\": 0,\n  \"result\": [\n    // each element in the list is an object with an \"item\" object and a \"counts\" list\n    {\n        // data describing the item (similar to that returned by GET /item/:id)\n        \"item\": {\n            \"id\": 2071,\n            \"counter\": 1007,\n            \"environment\": \"production\",\n            \"framework\": 0,\n            \"last_occurrence_timestamp\": 1408410581,\n            \"level\": 40,\n            \"occurrences\": 54,\n            \"project_id\": 12345,\n            \"title\": \"Something went wrong\",\n            \"unique_occurrences\": 5\n        },\n        // list of occurrence counts in the past 24 hours. Oldest first.\n        \"counts\": [12, 10, 7, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 8, 5, 6]\n    },\n    { /* more elements ... */ }\n  ]\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          },
+          {
+            "name": "hours",
+            "in": "query",
+            "required": false,
+            "default": 24,
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of recent hours to consider. Min `1`, max `168`."
+          },
+          {
+            "name": "environments",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Comma-separated list of environments to consider. If empty, then returns results for \"any environment\"."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/reports/occurrence_counts": {
+      "get": {
+        "description": "Analogous to \"Hourly Error/Critical Occurrences\" and \"Daily Error/Critical Occurrences\" on the Dashboard.\n\nReturns an array of recent counts as `[timestamp, count]` pairs, where each count is the number of matching active occurrences in the time range `[timestamp, timestamp + bucket_size - 1]`.\n\nTimestamps are UNIX timestamps, in whole seconds.\n\n# Response\n```json\n{\n  \"err\": 0,\n  \"result\": [\n    [\n      // timestamp\n      1408561200,\n      // count (number of occurrences from time 1408561200 until time 1408564799)\n      0\n    ],\n    [\n      1408564800,\n      0\n    ],\n    [\n      1408568400,\n      0\n    ],\n    [\n      1408572000,\n      6\n    ]\n  ]\n}```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "bucket_size",
+            "in": "query",
+            "required": false,
+            "default": "86400",
+            "type": "string",
+            "description": "Size of each bucket, in seconds. Valid values are `60` (minute), `3600` (hour), and `86400` (day). Timezone for all buckets is GMT."
+          },
+          {
+            "name": "environments",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Comma-separated list of environments to filter by.  Empty means \"any environment\"."
+          },
+          {
+            "name": "min_level",
+            "in": "query",
+            "required": false,
+            "default": "error",
+            "type": "string",
+            "description": "Minimum item level to filter by. One of `debug`, `info`, `warning`, `error`, or `critical`."
+          },
+          {
+            "name": "max_level",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Maximum item level to filter by. One of `debug`, `info`, `warning`, `error`, or `critical`"
+          },
+          {
+            "name": "item_id",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "description": "Item ID to filter by."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/reports/activated_counts": {
+      "get": {
+        "description": "Analogous to \"Daily New/Reactivated Items\" graph on the Dashboard.\n\nReturns an array of recent counts as `[timestamp, count]` pairs, where each count is the number of items that were first seen or reactivated in the time range `[timestamp, timestamp + bucket_size - 1]`.\n\nTimestamps are UNIX timestamps, in whole seconds.\n\n\n\n# Response\n```json\n{\n  \"err\": 0,\n  \"result\": [\n    [\n      // timestamp\n      1408561200,\n      // count (number of occurrences from time 1408561200 until time 1408564799)\n      0\n    ],\n    [\n      1408564800,\n      0\n    ],\n    [\n      1408568400,\n      0\n    ],\n    [\n      1408572000,\n      6\n    ]\n  ]\n}```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use a project access token with 'read' scope"
+          },
+          {
+            "name": "bucket_size",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "description": "Size of each bucket, in seconds. Only valid value is `86400` (day). Data wil be returned in the project timezone."
+          },
+          {
+            "name": "buckets",
+            "in": "query",
+            "required": false,
+            "default": 60,
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of buckets to return. Must be in range `[2, 366]`."
+          },
+          {
+            "name": "environments",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "Comma-separated list of environments to filter by.  Empty means \"any environment\"."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/projects": {
+      "post": {
+        "description": "Create a project",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1ProjectsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "List all projects",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/project/{project_id}": {
+      "get": {
+        "description": "Get a project",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "description": "Delete a project",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/project/{project_id}/access_token/{project_access_token}": {
+      "patch": {
+        "description": "Update a rate limit",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "project_access_token",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1ProjectAccessTokenRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/teams": {
+      "post": {
+        "description": "# Access Levels\n`standard` is the only access level you can choose in the UI.\n\n`light` and `view` are API-only team access levels. `light` gives the team read and write access, but not to all settings. `view` gives the team read-only access.\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1TeamsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "description": "List all teams",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/team": {
+      "get": {
+        "description": "Get a team",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a team",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "description": "List all users who are members of an account\n#Response Format\n```json\n{\n  \"err\": 0,\n  \"result\": {\n    \"users\": [\n    {\n      \"username\": \"brianr\",\n      \"id\": 1,\n      \"email\": \"brian@rollbar.com\"\n    },\n    {\n      \"username\": \"coryvirok\",\n      \"id\": 2,\n      \"email\": \"cory@rollbar.com\"\n    }\n    ]\n  }\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/{user_id}": {
+      "get": {
+        "description": "Get user details for a given account\n\nReturns basic information about the user, as relevant to the account your access token is for. This is the same information available on the \"Members\" page in the Rollbar UI.\n\n# Sample Response\n```json\n{\n  \"err\": 0,\n  \"result\": {\n      \"id\": 14,\n      \"username\": \"brian\",\n      \"email\": \"brian@rollbar.com\",\n      \"email_enabled\": 1\n  }\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/team/{team_id}/users": {
+      "get": {
+        "description": "List a team's users",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "default": 1,
+            "type": "integer",
+            "format": "int32",
+            "description": "Results are returned in sets of 5000.  Access more results by specifying `page=2`, etc."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/team/{team_id}/user/{user_id}": {
+      "get": {
+        "description": "Check if a user is assigned to a team",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "description": "Assign a user to team",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "Remove a user from a team",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          },
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/{user_id}/teams": {
+      "get": {
+        "description": "List a user's teams",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          },
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/team/{team_id}/invites": {
+      "get": {
+        "description": "Returns all invites ever sent for the team–pending, accepted, rejected, and canceled.\n\n# Example response\n```\n{\n  \"err\": 0,\n  \"result\": [\n    {\n      \"id\": 71328,\n      \"from_user_id\": 5325,\n      \"team_id\": 272686,\n      \"to_email\": \"gilfoyle@pidepiper.com\",\n      \"status\": \"pending\",\n      \"date_created\": 1519946545,\n      \"date_redeemed\": null\n    }\n  ]\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "description": "Returns up to 5000 results. Add `&page=2` to the URL to go to the next page."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "post": {
+        "description": "Invites a user to the specific team, using the user's email address.\n\nIf the email address belongs to an existing Rollbar user, they will be immediately added to the team, and sent an email notification. Otherwise, an invite email will be sent, containing a signup link that will allow the recipient to join the specified team.\n\n# Example Response\n```\n{\n  \"err\": 0,\n  \"result\": {\n    \"id\": 71328,\n    \"from_user_id\": 5325,\n    \"team_id\": 272686,\n    \"to_email\": \"gilfoyle@piedpiper.com\",\n    \"status\": \"pending\",\n    \"date_created\": 1519946545,\n    \"date_redeemed\": null\n  }\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": false,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Api1TeamInvitesRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/invite/{invite_id}": {
+      "get": {
+        "description": "# Example Response\n```json\n{\n  \"err\": 0,\n  \"result\": {\n    \"id\": 71328,\n    \"from_user_id\": 5325,\n    \"team_id\": 272686,\n    \"to_email\": \"gilfoyle@piedpiper.com\",\n    \"status\": \"pending\",\n    \"date_created\": 1519946545,\n    \"date_redeemed\": null\n  }\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "invite_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "Returns a `200` if the invitation was successfully canceled.\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "invite_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/team/{team_id}/projects": {
+      "get": {
+        "description": "# Example Response\n```json\n{\n  \"err\": 0,\n  \"result\": [\n    {\n      \"team_id\": 272686,\n      \"project_id\": 178029\n    },\n    {\n      \"team_id\": 272686,\n      \"project_id\": 178030\n    }\n  ]\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/team/{team_id}/project/{project_id}": {
+      "get": {
+        "description": "Returns `200` if the team is assigned to a project, `404` if the team is not assigned to the project.\n\n# Example responses\n\n```json\n{\n  \"err\": 0,\n  \"result\": {\n    \"team_id\": 272686,\n    \"project_id\": 165090\n  }\n}\n```\n\n```json\n{\n  \"err\": 1,\n  \"message\": \"Project is not in this Team.\"\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "put": {
+        "description": "# Example Response\n```json\n{\n  \"err\": 0,\n  \"result\": {\n    \"team_id\": 272686,\n    \"project_id\": 165090\n  }\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "delete": {
+        "description": "Remove a team from a project",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "project_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/user/{user_id}/projects": {
+      "get": {
+        "description": "# Example response:\n```json\n{\n  \"err\": 0,\n  \"result\": {\n    \"projects\": [\n      {\n        \"status\": 1,\n        \"slug\": \"mox\",\n        \"id\": 1,\n        \"account_id\": 61\n      },\n      {\n        \"status\": 1,\n        \"slug\": \"moxrts\",\n        \"id\": 25,\n        \"account_id\": 61\n      }\n    ]\n  }\n}```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/people/delete_jobs/": {
+      "post": {
+        "description": "This endpoint allows for removal of a tracked person from all projects within an account.\n\nTo identify the person, you must provide **exactly one** of the following:\n* `email`\n* `username`\n* `person_id`\n\nThese correspond to the values transmitted in the original occurrences (see the docs for [Create item](ref:items)) and can also be found by viewing any tracked person via the [People Tracking](doc:person-tracking) page in any project.\n\nRequests for person deletion are asynchronous.  The returned value will include an `id` property that can be used to check the status of the deletion process, e.g.\n```\n{\n  \"err\": 0,\n  \"result\": {\n    \"id\": 3\n  }\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'write' scope"
+          },
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "`username` value of the person to be deleted."
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "`email` value of the person to be deleted."
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "description": "`id` value of the person to be deleted."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/people/delete_jobs/{job_id}": {
+      "get": {
+        "description": "Check on the status of a person deletion request.\n\nThe response will include a status, e.g.\n```\n{\n  \"err\": 0,\n  \"result\": {\n    \"state\": \"success\", // possible values are \"new\",\"running\",\"paused\",\"success\",\"cancelled\",\"failed\"\n    \"id\": 3\n  }\n}\n```\n",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": "The id of the deletion job (from the response to a `POST` to `delete_jobs`)"
+          },
+          {
+            "name": "X-Rollbar-Access-Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "Use an account access token with 'read' scope"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "SuccessResponse": {
+      "title": "SuccessResponse",
+      "type": "object",
+      "properties": {
+        "err": {
+          "$ref": "#/definitions/Err"
+        }
+      }
+    },
+    "EmptyResponse": {
+      "title": "EmptyResponse",
+      "type": "object",
+      "properties": {
+        "err": {
+          "$ref": "#/definitions/Err"
+        },
+        "result": {
+          "type": "object"
+        }
+      }
+    },
+    "PaginatedOccurrenceInstances": {
+      "title": "PaginatedOccurrenceInstances",
+      "type": "object",
+      "properties": {
+        "page": {
+          "example": 1,
+          "type": "integer",
+          "default": 1,
+          "format": "int32"
+        },
+        "instances": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OccurrenceInstance"
+          }
+        }
+      }
+    },
+    "OccurrenceInstance": {
+      "title": "OccurrenceInstance",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The occurrence id",
+          "type": "integer",
+          "format": "int32"
+        },
+        "project_id": {
+          "description": "The project id",
+          "type": "integer",
+          "format": "int32"
+        },
+        "item_id": {
+          "description": "The item id",
+          "type": "integer",
+          "format": "int32"
+        },
+        "timestamp": {
+          "description": "The timestamp in ms when the occurrence was received",
+          "type": "integer",
+          "format": "int32"
+        },
+        "version": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "data": {
+          "description": "The occurrence data sent to the API",
+          "type": "object"
+        },
+        "billable": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ProjectAccessToken": {
+      "title": "ProjectAccessToken",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name to identify the access token",
+          "type": "string"
+        },
+        "scopes": {
+          "description": "Scopes to assign to the create access token",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Scope"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/Status"
+        },
+        "rate_limit_window_size": {
+          "description": "Period of time (in seconds) for the rate limit configuration",
+          "type": "integer",
+          "minimum": 1.0,
+          "format": "int32"
+        },
+        "rate_limit_window_count": {
+          "description": "Number of requests for the defined rate limiting period",
+          "type": "integer",
+          "minimum": 1.0,
+          "format": "int32"
+        }
+      },
+      "required": [
+        "name",
+        "scopes"
+      ]
+    },
+    "ProjectAccessTokenResponse": {
+      "title": "ProjectAccessTokenResponse",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name to identify the access token",
+          "type": "string"
+        },
+        "scopes": {
+          "description": "Scopes to assign to the create access token",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Scope"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/Status"
+        },
+        "rate_limit_window_size": {
+          "description": "Period of time (in seconds) for the rate limit configuration",
+          "type": "integer",
+          "minimum": 1.0,
+          "format": "int32"
+        },
+        "rate_limit_window_count": {
+          "description": "Number of requests for the defined rate limiting period",
+          "type": "integer",
+          "minimum": 1.0,
+          "format": "int32"
+        },
+        "access_token": {
+          "description": "The access token value",
+          "type": "string"
+        },
+        "project_id": {
+          "description": "The project ID the access token belongs to",
+          "type": "integer",
+          "format": "int32"
+        },
+        "date_created": {
+          "type": "string"
+        },
+        "date_modified": {
+          "type": "string"
+        },
+        "cur_rate_limit_window_start": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cur_rate_limit_window_count": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "name",
+        "scopes"
+      ]
+    },
+    "EmailIntegrationConfig": {
+      "title": "EmailIntegrationConfig",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "description": "Enable the Email notifications globally",
+          "type": "boolean"
+        },
+        "include_request_params": {
+          "description": "Whether to include request parameters",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    },
+    "EmailRuleConfig": {
+      "title": "EmailRuleConfig",
+      "type": "object",
+      "properties": {
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      }
+    },
+    "NewItemEmailRule": {
+      "title": "NewItemEmailRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/ message is seen for the first time",
+          "example": "new_item",
+          "type": "string",
+          "default": "new_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "OccurrenceEmailRule": {
+      "title": "OccurrenceEmailRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "Every time an error/ message occurs (use wisely!).",
+          "example": "occurrence",
+          "type": "string",
+          "default": "occurrence"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "DeployEmailRule": {
+      "title": "DeployEmailRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "A new deploy is reported.",
+          "example": "deploy",
+          "type": "string",
+          "default": "deploy"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter3"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ReactivatedItemEmailRule": {
+      "title": "ReactivatedItemEmailRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message occurs again after being marked Resolved",
+          "example": "reactivated_item",
+          "type": "string",
+          "default": "reactivated_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ResolvedItemEmailRule": {
+      "title": "ResolvedItemEmailRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message is marked Resolved.",
+          "example": "resolved_item",
+          "type": "string",
+          "default": "resolved_item"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "NewVersionEmailRule": {
+      "title": "NewVersionEmailRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "A new code version is detected",
+          "example": "new_version",
+          "type": "string",
+          "default": "new_version"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/environment_filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ReopenedItemEmailRule": {
+      "title": "ReopenedItemEmailRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message is marked Active by a user.",
+          "example": "reopened_item",
+          "type": "string",
+          "default": "reopened_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "OccurrenceRateEmailRule": {
+      "title": "OccurrenceRateEmailRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "{x} occurrences seen in {y} minutes",
+          "example": "occurrence_rate",
+          "type": "string",
+          "default": "occurrence_rate"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ExpRepeatItemEmailRule": {
+      "title": "ExpRepeatItemEmailRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "10th, 100th, 1,000th, 10,000th, … occurrence",
+          "example": "exp_repeat_item",
+          "type": "string",
+          "default": "exp_repeat_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "SlackIntegrationConfig": {
+      "title": "SlackIntegrationConfig",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "description": "Enable the Slack notifications globally",
+          "type": "boolean"
+        },
+        "service_account_id": {
+          "description": "You can find your Service Account ID in https://rollbar.com/settings/integrations/#slack",
+          "type": "integer",
+          "format": "int32"
+        },
+        "channel": {
+          "description": "The default Slack channel to send the messages",
+          "example": "#general",
+          "type": "string"
+        },
+        "show_message_buttons": {
+          "description": "Show the Slack actionable buttons",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled",
+        "service_account_id",
+        "channel"
+      ]
+    },
+    "SlackRuleConfig": {
+      "title": "SlackRuleConfig",
+      "type": "object",
+      "properties": {
+        "config": {
+          "$ref": "#/definitions/Config11"
+        }
+      }
+    },
+    "SlackRuleConfigNoButtons": {
+      "title": "SlackRuleConfigNoButtons",
+      "type": "object",
+      "properties": {
+        "config": {
+          "$ref": "#/definitions/Config13"
+        }
+      }
+    },
+    "NewItemSlackRule": {
+      "title": "NewItemSlackRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/ message is seen for the first time",
+          "example": "new_item",
+          "type": "string",
+          "default": "new_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config11"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "OccurrenceSlackRule": {
+      "title": "OccurrenceSlackRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "Every time an error/ message occurs (use wisely!).",
+          "example": "occurrence",
+          "type": "string",
+          "default": "occurrence"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config11"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "DeploySlackRule": {
+      "title": "DeploySlackRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "A new deploy is reported.",
+          "example": "deploy",
+          "type": "string",
+          "default": "deploy"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter3"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config13"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ReactivatedItemSlackRule": {
+      "title": "ReactivatedItemSlackRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message occurs again after being marked Resolved",
+          "example": "reactivated_item",
+          "type": "string",
+          "default": "reactivated_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config11"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ResolvedItemSlackRule": {
+      "title": "ResolvedItemSlackRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message is marked Resolved.",
+          "example": "resolved_item",
+          "type": "string",
+          "default": "resolved_item"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config11"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "NewVersionSlackRule": {
+      "title": "NewVersionSlackRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "A new code version is detected",
+          "example": "new_version",
+          "type": "string",
+          "default": "new_version"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/environment_filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config13"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ReopenedItemSlackRule": {
+      "title": "ReopenedItemSlackRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message is marked Active by a user.",
+          "example": "reopened_item",
+          "type": "string",
+          "default": "reopened_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config11"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "OccurrenceRateSlackRule": {
+      "title": "OccurrenceRateSlackRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "{x} occurrences seen in {y} minutes",
+          "example": "occurrence_rate",
+          "type": "string",
+          "default": "occurrence_rate"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config11"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ExpRepeatItemSlackRule": {
+      "title": "ExpRepeatItemSlackRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "10th, 100th, 1,000th, 10,000th, … occurrence",
+          "example": "exp_repeat_item",
+          "type": "string",
+          "default": "exp_repeat_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config13"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "PagerDutyIntegrationConfig": {
+      "title": "PagerDutyIntegrationConfig",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "description": "Enable the PagerDuty notifications globally",
+          "type": "boolean"
+        },
+        "service_key": {
+          "description": "PagerDuty Service API Key",
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled",
+        "service_key"
+      ]
+    },
+    "PagerDutyRuleConfig": {
+      "title": "PagerDutyRuleConfig",
+      "type": "object",
+      "properties": {
+        "config": {
+          "$ref": "#/definitions/Config23"
+        }
+      }
+    },
+    "NewItemPagerDutyRule": {
+      "title": "NewItemPagerDutyRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/ message is seen for the first time",
+          "example": "new_item",
+          "type": "string",
+          "default": "new_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config23"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ReactivatedItemPagerDutyRule": {
+      "title": "ReactivatedItemPagerDutyRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message occurs again after being marked Resolved",
+          "example": "reactivated_item",
+          "type": "string",
+          "default": "reactivated_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config23"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ResolvedItemPagerDutyRule": {
+      "title": "ResolvedItemPagerDutyRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message is marked Resolved.",
+          "example": "resolved_item",
+          "type": "string",
+          "default": "resolved_item"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config23"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "OccurrenceRatePagerDutyRule": {
+      "title": "OccurrenceRatePagerDutyRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "{x} occurrences seen in {y} minutes",
+          "example": "occurrence_rate",
+          "type": "string",
+          "default": "occurrence_rate"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config23"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ExpRepeatItemPagerDutyRule": {
+      "title": "ExpRepeatItemPagerDutyRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "10th, 100th, 1,000th, 10,000th, … occurrence",
+          "example": "exp_repeat_item",
+          "type": "string",
+          "default": "exp_repeat_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config23"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "NewItemRule": {
+      "title": "NewItemRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/ message is seen for the first time",
+          "example": "new_item",
+          "type": "string",
+          "default": "new_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "OccurrenceRule": {
+      "title": "OccurrenceRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "Every time an error/ message occurs (use wisely!).",
+          "example": "occurrence",
+          "type": "string",
+          "default": "occurrence"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "DeployRule": {
+      "title": "DeployRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "A new deploy is reported.",
+          "example": "deploy",
+          "type": "string",
+          "default": "deploy"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter3"
+          }
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ReactivatedItemRule": {
+      "title": "ReactivatedItemRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message occurs again after being marked Resolved",
+          "example": "reactivated_item",
+          "type": "string",
+          "default": "reactivated_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ResolvedItemRule": {
+      "title": "ResolvedItemRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message is marked Resolved.",
+          "example": "resolved_item",
+          "type": "string",
+          "default": "resolved_item"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "NewVersionRule": {
+      "title": "NewVersionRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "A new code version is detected",
+          "example": "new_version",
+          "type": "string",
+          "default": "new_version"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/environment_filter"
+          }
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ReopenedItemRule": {
+      "title": "ReopenedItemRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "An error/message is marked Active by a user.",
+          "example": "reopened_item",
+          "type": "string",
+          "default": "reopened_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter1"
+          }
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "OccurrenceRateRule": {
+      "title": "OccurrenceRateRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "{x} occurrences seen in {y} minutes",
+          "example": "occurrence_rate",
+          "type": "string",
+          "default": "occurrence_rate"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "ExpRepeatItemRule": {
+      "title": "ExpRepeatItemRule",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "description": "10th, 100th, 1,000th, 10,000th, … occurrence",
+          "example": "exp_repeat_item",
+          "type": "string",
+          "default": "exp_repeat_item"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "path_filter": {
+      "title": "path_filter",
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "type": {
+          "description": "Allows for filtering based on any data in the JSON payload. To view the JSON structure of your errors, check out the Raw JSON section of any occurrence",
+          "example": "path",
+          "type": "string",
+          "default": "path"
+        },
+        "value": {
+          "type": "string"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation33"
+        }
+      },
+      "required": [
+        "path",
+        "type",
+        "value",
+        "operation"
+      ]
+    },
+    "path_filter_with_exists": {
+      "title": "path_filter_with_exists",
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "type": {
+          "description": "Allows for filtering based on any data in the JSON payload. To view the JSON structure of your errors, check out the Raw JSON section of any occurrence",
+          "example": "path",
+          "type": "string",
+          "default": "path"
+        },
+        "value": {
+          "type": "string"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation34"
+        }
+      },
+      "required": [
+        "path",
+        "type",
+        "operation"
+      ]
+    },
+    "level_filter": {
+      "title": "level_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Item Level",
+          "example": "level",
+          "type": "string",
+          "default": "level"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation35"
+        },
+        "value": {
+          "$ref": "#/definitions/Value"
+        }
+      },
+      "required": [
+        "type",
+        "operation",
+        "value"
+      ]
+    },
+    "title_filter": {
+      "title": "title_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Item Title",
+          "example": "title",
+          "type": "string",
+          "default": "title"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation36"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "operation",
+        "value"
+      ]
+    },
+    "filename_filter": {
+      "title": "filename_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Matches the name of any file in the stack trace",
+          "example": "filename",
+          "type": "string",
+          "default": "filename"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation36"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "operation",
+        "value"
+      ]
+    },
+    "context_filter": {
+      "title": "context_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Matches context value (if included in payload)",
+          "example": "context",
+          "type": "string",
+          "default": "context"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation38"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "operation",
+        "value"
+      ]
+    },
+    "method_filter": {
+      "title": "method_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Matches any method in the stack trace",
+          "example": "method",
+          "type": "string",
+          "default": "method"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation36"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "operation",
+        "value"
+      ]
+    },
+    "framework_filter": {
+      "title": "framework_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Platform/language of the item",
+          "example": "framework",
+          "type": "string",
+          "default": "framework"
+        },
+        "operation": {
+          "example": "eq",
+          "type": "string",
+          "default": "eq"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "operation",
+        "value"
+      ]
+    },
+    "unique_occurences_filter": {
+      "title": "unique_occurences_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Number of unique IPs affected for the item",
+          "example": "unique_occurrences",
+          "type": "string",
+          "default": "unique_occurrences"
+        },
+        "operation": {
+          "example": "gte",
+          "type": "string",
+          "default": "gte"
+        },
+        "value": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "type",
+        "operation",
+        "value"
+      ]
+    },
+    "comment_filter": {
+      "title": "comment_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Body of an item comment",
+          "example": "comment",
+          "type": "string",
+          "default": "comment"
+        },
+        "operation": {
+          "example": "within",
+          "type": "string",
+          "default": "within"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "operation",
+        "value"
+      ]
+    },
+    "rate_filter": {
+      "title": "rate_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Rate of occurrences of an item",
+          "example": "rate",
+          "type": "string",
+          "default": "rate"
+        },
+        "period": {
+          "description": "Number of seconds",
+          "type": "number",
+          "format": "double"
+        },
+        "count": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "required": [
+        "type",
+        "period",
+        "count"
+      ]
+    },
+    "environment_filter": {
+      "title": "environment_filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "description": "Item Environment",
+          "example": "environment",
+          "type": "string",
+          "default": "environment"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "operation",
+        "value"
+      ]
+    },
+    "Item": {
+      "title": "Item",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The item ID",
+          "type": "integer",
+          "format": "int32"
+        },
+        "project_id": {
+          "description": "The item's project ID",
+          "type": "integer",
+          "format": "int32"
+        },
+        "counter": {
+          "description": "The item identifier withing the project",
+          "type": "integer",
+          "format": "int32"
+        },
+        "environment": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "framework": {
+          "type": "string"
+        },
+        "hash": {
+          "description": "Fingerprint that identifies the item",
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "first_occurrence_id": {
+          "description": "First occurrence ID of the item in the version",
+          "type": "integer",
+          "format": "int32"
+        },
+        "first_occurrence_timestamp": {
+          "description": "First occurrence timestamp of the item",
+          "type": "integer",
+          "format": "int32"
+        },
+        "activating_occurrence_id": {
+          "description": "Occurrence ID that activated the item",
+          "type": "integer",
+          "format": "int32"
+        },
+        "last_activated_timestamp": {
+          "description": "Last activation timestamp",
+          "type": "integer",
+          "format": "int32"
+        },
+        "last_resolved_timestamp": {
+          "description": "Last timestamp the item was resolved",
+          "type": "integer",
+          "format": "int32"
+        },
+        "last_muted_timestamp": {
+          "description": "Last timestamp the item was muted",
+          "type": "integer",
+          "format": "int32"
+        },
+        "last_occurrence_id": {
+          "description": "Last received occurrence ID of the item",
+          "type": "integer",
+          "format": "int32"
+        },
+        "last_occurrence_timestamp": {
+          "description": "Last received occurrence timestamp",
+          "type": "integer",
+          "format": "int32"
+        },
+        "total_occurrences": {
+          "description": "Total number of occurrences on the item",
+          "type": "integer",
+          "format": "int32"
+        },
+        "last_modified_by": {
+          "description": "Last user ID that modified the item",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/Status2"
+        },
+        "level": {
+          "$ref": "#/definitions/Level"
+        },
+        "integrations_data": {
+          "type": "object"
+        },
+        "assigned_user_id": {
+          "description": "User ID the item is assigned to",
+          "type": "integer",
+          "format": "int32"
+        },
+        "group_item_id": {
+          "description": "Group item this item belongs to",
+          "type": "integer",
+          "format": "int32"
+        },
+        "group_status": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "ItemInVersion": {
+      "title": "ItemInVersion",
+      "example": {
+        "id": 1000,
+        "project_id": 5,
+        "counter": 4,
+        "environment": "production",
+        "platform": "unknown",
+        "framework": "rails",
+        "hash": "03044fc948dd2c51c4ebccafbf0a01b01339a7b5",
+        "title": "NotMethod Error",
+        "status": "active",
+        "level": "error",
+        "first_in_version_occurrence_id": 1234,
+        "first_in_version_occurrence_timestamp": 1583538518,
+        "last_in_version_occurrence_id": 2234,
+        "last_in_version_occurrence_timestamp": 1583538519,
+        "occurrences_in_version": 1000,
+        "people_in_version": 23
+      },
+      "allOf": [
+        {
+          "$ref": "#/definitions/Item"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "first_in_version_occurrence_id": {
+              "description": "First occurrence ID of the item on the version",
+              "type": "integer",
+              "format": "int32"
+            },
+            "first_in_version_occurrence_timestamp": {
+              "description": "First occurrence timestamp of the item on the version",
+              "type": "integer",
+              "format": "int32"
+            },
+            "last_in_version_occurrence_id": {
+              "description": "Last received occurrence ID of the item on the version",
+              "type": "integer",
+              "format": "int32"
+            },
+            "last_in_version_occurrence_timestamp": {
+              "description": "Last received occurrence timestamp on the version",
+              "type": "integer",
+              "format": "int32"
+            },
+            "occurrences_in_version": {
+              "description": "Total number of item occurrences on this version",
+              "type": "integer",
+              "format": "int32"
+            },
+            "people_in_version": {
+              "description": "Number of affected people by this item on this version",
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      ]
+    },
+    "ProjectVersion": {
+      "title": "ProjectVersion",
+      "example": {
+        "id": 100,
+        "version": "781463c84c8e1a3143a95ae5295b468fc5484b32",
+        "environment": "production",
+        "date_created": 1583538519,
+        "first_occurrence_id": 2000,
+        "first_occurrence_timestamp": 1583538529,
+        "last_occurrence_id": 30000,
+        "last_occurrence_timestamp": 1583538529,
+        "deployed_by": "michael",
+        "last_deploy_timestamp": 1583538509,
+        "item_stats": {
+          "new": {
+            "debug": 0,
+            "info": 10,
+            "warning": 19,
+            "error": 4,
+            "critical": 0
+          },
+          "repeated": {
+            "debug": 0,
+            "info": 10,
+            "warning": 19,
+            "error": 4,
+            "critical": 0
+          },
+          "reactivated": {
+            "debug": 0,
+            "info": 10,
+            "warning": 19,
+            "error": 4,
+            "critical": 0
+          },
+          "resolved": {
+            "debug": 0,
+            "info": 10,
+            "warning": 19,
+            "error": 4,
+            "critical": 1
+          },
+          "critical": {
+            "debug": 0,
+            "info": 10,
+            "warning": 19,
+            "error": 4,
+            "critical": 0
+          }
+        },
+        "commits": [
+          {
+            "author": "michael",
+            "sha": "781463c84c8e1a3143a95ae5295b468fc5484b32",
+            "message": "Add feature X"
+          },
+          {
+            "author": "michael",
+            "sha": "03a4569e5d4842f272a54facaacda0bebab97326",
+            "message": "Fix bug"
+          }
+        ]
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The internal ID for the project version",
+          "type": "integer",
+          "format": "int32"
+        },
+        "version": {
+          "description": "The version value received in the item occurrences",
+          "type": "string"
+        },
+        "environment": {
+          "description": "Environment where this version has been deployed",
+          "type": "string"
+        },
+        "date_created": {
+          "description": "Timestamp when the version is created",
+          "type": "integer",
+          "format": "int32"
+        },
+        "first_version_occurrence_id": {
+          "description": "First occurrence ID received for this version",
+          "type": "integer",
+          "format": "int32"
+        },
+        "first_occurrence_timestamp": {
+          "description": "First occurrence timestamp of the item on the version",
+          "type": "integer",
+          "format": "int32"
+        },
+        "last_occurrence_id": {
+          "description": "Last received occurrence ID of the item on the version",
+          "type": "integer",
+          "format": "int32"
+        },
+        "last_occurrence_timestamp": {
+          "description": "Last received occurrence timestamp on the version",
+          "type": "integer",
+          "format": "int32"
+        },
+        "deployed_by": {
+          "description": "Username of the user that deployed the version. https://docs.rollbar.com/docs/deploy-tracking",
+          "type": "string"
+        },
+        "last_deploy_timestamp": {
+          "description": "Last received occurrence timestamp on the version",
+          "type": "integer",
+          "format": "int32"
+        },
+        "item_stats": {
+          "$ref": "#/definitions/ItemStats"
+        },
+        "commits": {
+          "description": "Commits for this version compared to the previous project deploy. If deploy tracking feature is not used this value\nwill be an empty array. https://docs.rollbar.com/docs/deploy-tracking",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Commit"
+          }
+        }
+      }
+    },
+    "ItemLevelStats": {
+      "title": "ItemLevelStats",
+      "example": {
+        "debug": 0,
+        "info": 10,
+        "warning": 19,
+        "error": 4,
+        "critical": 0
+      },
+      "type": "object",
+      "properties": {
+        "debug": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "info": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "warning": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "error": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "critical": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Api1DeployRequest": {
+      "title": "Api1DeployRequest",
+      "type": "object",
+      "properties": {
+        "environment": {
+          "description": "Environment to which the revision was deployed",
+          "type": "string"
+        },
+        "revision": {
+          "description": "Git SHA of revision being deployed",
+          "type": "string"
+        },
+        "rollbar_username": {
+          "description": "Rollbar username of person who deployed",
+          "type": "string"
+        },
+        "local_username": {
+          "description": "Local username of person who deployed.  Displayed in web app if no `rollbar_username` was specified.",
+          "type": "string"
+        },
+        "comment": {
+          "description": "Additional text to include with the deploy",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status of the deployment - `started`, `succeeded` _(default)_, `failed`, or `timed_out`.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "environment",
+        "revision"
+      ]
+    },
+    "Api1DsymRequest": {
+      "title": "Api1DsymRequest",
+      "type": "object",
+      "properties": {
+        "bundle_identifier": {
+          "description": "fully-qualified identifier of the bundle (see example)",
+          "type": "string"
+        },
+        "version": {
+          "description": "The current code version (typically a semantic version)",
+          "type": "string"
+        },
+        "dsym": {
+          "description": "Your zipped dSYM file.  See [upload_dsym.py](https://raw.githubusercontent.com/rollbar/rollbar-ios/master/upload_dsym.py) for an example",
+          "type": "string",
+          "format": "binary"
+        }
+      },
+      "required": [
+        "bundle_identifier",
+        "version",
+        "dsym"
+      ]
+    },
+    "Api1InstanceResponse": {
+      "title": "Api1InstanceResponse",
+      "type": "object",
+      "properties": {
+        "err": {
+          "$ref": "#/definitions/Err"
+        },
+        "result": {
+          "$ref": "#/definitions/OccurrenceInstance"
+        }
+      }
+    },
+    "Api1InstancesResponse": {
+      "title": "Api1InstancesResponse",
+      "type": "object",
+      "properties": {
+        "err": {
+          "$ref": "#/definitions/Err"
+        },
+        "result": {
+          "$ref": "#/definitions/PaginatedOccurrenceInstances"
+        }
+      }
+    },
+    "Api1ItemRequest": {
+      "title": "Api1ItemRequest",
+      "type": "object",
+      "properties": {
+        "data": {
+          "description": "Details of the exception or log message.  For a simple example, try `{\"environment\": \"development\", \"body\": { \"message\": {\"body\": \"Hello, world!\"}}}`",
+          "type": "string"
+        }
+      },
+      "required": [
+        "data"
+      ]
+    },
+    "Api1ProguardRequest": {
+      "title": "Api1ProguardRequest",
+      "type": "object",
+      "properties": {
+        "version": {
+          "description": "The current code version. This must match the `android:versionName` in your app's `AndroidManifest.xml`, corresponding to the version the `mapping.txt` was generated for.",
+          "type": "string"
+        },
+        "mapping": {
+          "description": "Your `mapping.txt` file.",
+          "type": "string",
+          "format": "binary"
+        }
+      },
+      "required": [
+        "version",
+        "mapping"
+      ]
+    },
+    "Api1ProjectAccessTokenRequest": {
+      "title": "Api1ProjectAccessTokenRequest",
+      "type": "object",
+      "properties": {
+        "rate_limit_window_count": {
+          "description": "Max number of calls the token is permitted within each window. Must be an integer (no punctuation) greater than -1. If set to `0`,then no rate limit is applied.",
+          "example": 0,
+          "type": "integer",
+          "default": 0,
+          "format": "int32"
+        },
+        "rate_limit_window_size": {
+          "description": "Window duration in seconds. Must be greater than -1.  If set to `0`, then no rate limit is applied.",
+          "example": 0,
+          "type": "integer",
+          "default": 0,
+          "format": "int32"
+        }
+      }
+    },
+    "Api1ProjectAccessTokensResponse": {
+      "title": "Api1ProjectAccessTokensResponse",
+      "type": "object",
+      "properties": {
+        "err": {
+          "$ref": "#/definitions/Err"
+        },
+        "result": {
+          "$ref": "#/definitions/ProjectAccessTokenResponse"
+        }
+      }
+    },
+    "Api1ProjectsRequest": {
+      "title": "Api1ProjectsRequest",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the project. Must start with a letter; can contain letters, numbers, spaces, underscores, hyphens, periods, and commas. Max length 32 characters.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Api1RqlJobsRequest": {
+      "title": "Api1RqlJobsRequest",
+      "type": "object",
+      "properties": {
+        "query_string": {
+          "description": "The RQL query to run",
+          "type": "string"
+        },
+        "force_refresh": {
+          "description": "Force job creation, `1`/`true` or `0`/`false`.",
+          "example": false,
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "required": [
+        "query_string"
+      ]
+    },
+    "Api1SourcemapRequest": {
+      "title": "Api1SourcemapRequest",
+      "type": "object",
+      "properties": {
+        "version": {
+          "description": "Current code version (typically a git SHA)",
+          "type": "string"
+        },
+        "minified_url": {
+          "description": "The full URL of the minified file, as it appears in the stack trace. This should start with `http:` or `https:`.",
+          "type": "string"
+        },
+        "source_map": {
+          "description": "Your source map file.",
+          "type": "string",
+          "format": "binary"
+        },
+        "source files": {
+          "description": "One or more source unminified files",
+          "type": "string",
+          "format": "binary"
+        }
+      },
+      "required": [
+        "version",
+        "minified_url",
+        "source_map"
+      ]
+    },
+    "Api1TeamInvitesRequest": {
+      "title": "Api1TeamInvitesRequest",
+      "type": "object",
+      "properties": {
+        "email": {
+          "description": "Email address to invite to the team",
+          "type": "string"
+        }
+      },
+      "required": [
+        "email"
+      ]
+    },
+    "Api1TeamsRequest": {
+      "title": "Api1TeamsRequest",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "Name of the team. Max length 32 characters.",
+          "type": "string"
+        },
+        "access_level": {
+          "description": "Can be `standard`, `light`, or `view`.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "access_level"
+      ]
+    },
+    "Api1VersionsItemsResponse": {
+      "title": "Api1VersionsItemsResponse",
+      "type": "object",
+      "properties": {
+        "err": {
+          "$ref": "#/definitions/Err"
+        },
+        "result": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItemInVersion"
+          }
+        }
+      }
+    },
+    "Api1VersionsResponse": {
+      "title": "Api1VersionsResponse",
+      "type": "object",
+      "properties": {
+        "err": {
+          "$ref": "#/definitions/Err"
+        },
+        "result": {
+          "$ref": "#/definitions/ProjectVersion"
+        }
+      }
+    },
+    "Api1ItemRequest1": {
+      "title": "Api1ItemRequest1",
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "If present, the new status. Valid values: `active`, `resolved`, `muted`.",
+          "type": "string"
+        },
+        "resolved_in_version": {
+          "description": "If not empty, a string up to 40 characters describing the version that the item was resolved in. Only used if `status` is set to `resolved`.",
+          "type": "string"
+        },
+        "title": {
+          "description": "If present, the new title. Should be a string with length 1 to 255.",
+          "type": "string"
+        },
+        "level": {
+          "description": "If present, the new level. Valid values: `critical`, `error`, `warning`, `info`, `debug`",
+          "type": "string"
+        },
+        "assigned_user_id": {
+          "description": "If present, the new assigned user ID. Valid values are null or any user ID with access to this item.",
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "Api1InstanceResponse1": {
+      "title": "Api1InstanceResponse1",
+      "type": "object",
+      "properties": {
+        "err": {
+          "$ref": "#/definitions/Err"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "Api1DeployRequest1": {
+      "title": "Api1DeployRequest1",
+      "type": "object",
+      "properties": {
+        "status": {
+          "description": "New status of build - `started`, `succeeded`, `failed`, or `timed_out`.  This value can only be changed if the current status of the build is `started`.",
+          "type": "string"
+        },
+        "comment": {
+          "description": "Optional comment to describe the deploy",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "Commit": {
+      "title": "Commit",
+      "description": "Commit",
+      "type": "object",
+      "properties": {
+        "author": {
+          "description": "Author of the commit",
+          "type": "string"
+        },
+        "sha": {
+          "description": "Commit SHA",
+          "type": "string"
+        },
+        "message": {
+          "description": "Commit message",
+          "type": "string"
+        }
+      }
+    },
+    "Config": {
+      "title": "Config",
+      "type": "object",
+      "properties": {
+        "teams": {
+          "description": "List of team names to send emails to",
+          "type": "object"
+        },
+        "users": {
+          "description": "List of usernames or email addresses to send emails to",
+          "type": "object"
+        }
+      }
+    },
+    "Config11": {
+      "title": "Config11",
+      "type": "object",
+      "properties": {
+        "message_template": {
+          "description": "Define a custom template for the Slack message. More information here https://docs.rollbar.com/docs/slack#section-tips-tricks",
+          "type": "string"
+        },
+        "show_message_buttons": {
+          "description": "Show the Slack actionable buttons",
+          "type": "boolean"
+        },
+        "channel": {
+          "description": "The Slack channel to send the messages",
+          "example": "#general",
+          "type": "string"
+        }
+      }
+    },
+    "Config13": {
+      "title": "Config13",
+      "type": "object",
+      "properties": {
+        "message_template": {
+          "description": "Define a custom template for the Slack message. More information here https://docs.rollbar.com/docs/slack#section-tips-tricks",
+          "type": "string"
+        },
+        "channel": {
+          "description": "The Slack channel to send the messages",
+          "example": "#general",
+          "type": "string"
+        }
+      }
+    },
+    "Config23": {
+      "title": "Config23",
+      "type": "object",
+      "properties": {
+        "service_key": {
+          "description": "PagerDuty Service API Key",
+          "type": "string"
+        }
+      }
+    },
+    "EmailRule": {
+      "title": "EmailRule",
+      "discriminator": "trigger",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "type": "string"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "Err": {
+      "title": "Err",
+      "example": 0,
+      "type": "integer",
+      "format": "int32",
+      "enum": [
+        "0"
+      ]
+    },
+    "event": {
+      "title": "event",
+      "type": "string",
+      "enum": [
+        "new",
+        "repeated",
+        "reactivated",
+        "resolved"
+      ]
+    },
+    "Filter": {
+      "title": "Filter",
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/Type"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation"
+        },
+        "value": {
+          "$ref": "#/definitions/Value"
+        },
+        "path": {
+          "type": "string"
+        },
+        "period": {
+          "description": "Number of seconds",
+          "type": "number",
+          "format": "double"
+        },
+        "count": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "Filter1": {
+      "title": "Filter1",
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/Type"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation"
+        },
+        "value": {
+          "$ref": "#/definitions/Value"
+        },
+        "path": {
+          "type": "string"
+        }
+      }
+    },
+    "Filter3": {
+      "title": "Filter3",
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/definitions/Type"
+        },
+        "operation": {
+          "$ref": "#/definitions/Operation"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "ItemStats": {
+      "title": "ItemStats",
+      "description": "Items statistics per event type and level. Each item in the specified version has 4 possible event types:\n  - `new` for new items in the code version\n  - `repeated` for an item that already existed in preivous versions\n  - `reactivated` an item that was resolved but was reactivated in the code version\n  - `resolved` an item resolved in one specific version\n\nFor each of them we collect the number of items for each possible level: `debug`, `info`, `warning`, `error` or `critical`.",
+      "type": "object",
+      "properties": {
+        "new": {
+          "$ref": "#/definitions/ItemLevelStats"
+        },
+        "repeated": {
+          "$ref": "#/definitions/ItemLevelStats"
+        },
+        "reactivated": {
+          "$ref": "#/definitions/ItemLevelStats"
+        },
+        "resolved": {
+          "$ref": "#/definitions/ItemLevelStats"
+        }
+      }
+    },
+    "Level": {
+      "title": "Level",
+      "type": "string",
+      "enum": [
+        "debug",
+        "info",
+        "warning",
+        "error",
+        "critical"
+      ]
+    },
+    "Operation": {
+      "title": "Operation",
+      "type": "string",
+      "enum": [
+        "eq",
+        "neq"
+      ]
+    },
+    "Operation33": {
+      "title": "Operation33",
+      "type": "string",
+      "enum": [
+        "eq",
+        "gte",
+        "lte",
+        "within",
+        "nwithin",
+        "neq",
+        "regex",
+        "nregex",
+        "startswith"
+      ]
+    },
+    "Operation34": {
+      "title": "Operation34",
+      "type": "string",
+      "enum": [
+        "eq",
+        "gte",
+        "lte",
+        "within",
+        "nwithin",
+        "neq",
+        "regex",
+        "nregex",
+        "startswith",
+        "exists",
+        "nexists"
+      ]
+    },
+    "Operation35": {
+      "title": "Operation35",
+      "type": "string",
+      "enum": [
+        "eq",
+        "gte"
+      ]
+    },
+    "Operation36": {
+      "title": "Operation36",
+      "type": "string",
+      "enum": [
+        "within",
+        "nwithin",
+        "regex",
+        "nregex"
+      ]
+    },
+    "Operation38": {
+      "title": "Operation38",
+      "type": "string",
+      "enum": [
+        "startswith",
+        "eq",
+        "neq"
+      ]
+    },
+    "PagerDutyRule": {
+      "title": "PagerDutyRule",
+      "discriminator": "trigger",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "type": "string"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config23"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "Scope": {
+      "title": "Scope",
+      "type": "string",
+      "enum": [
+        "write",
+        "read",
+        "post_server_item",
+        "post_client_server"
+      ]
+    },
+    "SlackRule": {
+      "title": "SlackRule",
+      "discriminator": "trigger",
+      "type": "object",
+      "properties": {
+        "trigger": {
+          "type": "string"
+        },
+        "filters": {
+          "description": "To keep your notifications relevant, you'll want to apply filters to limit when they send messages or create incidents.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filter"
+          }
+        },
+        "config": {
+          "$ref": "#/definitions/Config11"
+        }
+      },
+      "required": [
+        "trigger"
+      ]
+    },
+    "Status": {
+      "title": "Status",
+      "description": "Enable or disable the access token",
+      "type": "string",
+      "enum": [
+        "disabled",
+        "enabled"
+      ]
+    },
+    "Status2": {
+      "title": "Status2",
+      "type": "string",
+      "enum": [
+        "active",
+        "resolved",
+        "muted"
+      ]
+    },
+    "Type": {
+      "title": "Type",
+      "description": "Item Environment",
+      "type": "string",
+      "enum": [
+        "environment"
+      ]
+    },
+    "Value": {
+      "title": "Value",
+      "type": "string",
+      "enum": [
+        "debug",
+        "info",
+        "warning",
+        "error",
+        "critical"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Item"
+    },
+    {
+      "name": "Occurrence"
+    },
+    {
+      "name": "Deploy"
+    },
+    {
+      "name": "Symbol Maps"
+    },
+    {
+      "name": "RQL"
+    },
+    {
+      "name": "Reports"
+    },
+    {
+      "name": "Projects"
+    },
+    {
+      "name": "Project Access Tokens"
+    },
+    {
+      "name": "Teams"
+    },
+    {
+      "name": "Users"
+    },
+    {
+      "name": "Teams ⟷ Users"
+    },
+    {
+      "name": "Teams ⟷ Projects"
+    },
+    {
+      "name": "Users ⟷ Projects"
+    },
+    {
+      "name": "People"
+    },
+    {
+      "name": "Notifications"
+    },
+    {
+      "name": "Versions"
+    }
+  ]
+}
