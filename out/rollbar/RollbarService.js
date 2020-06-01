@@ -142,9 +142,7 @@ class RollbarService {
           ],
           project_id: incomingOptions.projectId,
           user_id: incomingOptions.userId,
-          third_party_project_id: incomingOptions.thirdPartyProject.projectId,
-          third_party_organization_id:
-            incomingOptions.thirdPartyProject.organizationId,
+          third_party_project: incomingOptions.thirdPartyProject,
           project_access_token:
             incomingOptions.thirdPartyProject.projectSpecificParams
               .projectAccessToken,

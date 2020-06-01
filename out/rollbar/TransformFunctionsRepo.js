@@ -10,43 +10,17 @@ module.exports.convertOrgNameAndProjectIdToProjetRef = (item) => {
   return `https://rollbar.com/${item.organizationName}/?projects=${item.id}`;
 };
 
-module.exports.transformQueryParamsToOpts = (queryParams) => {
-  const opts = { ...queryParams };
+module.exports.transformQueryParamsToOpts = (query) => {
+  const opts = { ...query };
   delete opts.projectId;
   delete opts.userId;
   return {
     ...opts,
+    page: query.page ? query.page : 1,
   };
 };
 
-// ,
-//   {
-//     "type": "REQUEST",
-//     "entity": "ALL",
-//     "integration": "ROLLBAR",
-//     "method": "GET|POST|PUT|DELETE",
-//     "map": [
-//       {
-//         "input": {
-//           "key": "body.integration.authAccessToken"
-//         },
-//         "transform": {
-//           "type": "ONE-TO-ONE"
-//         },
-//         "output": {
-//           "key": "accessToken"
-//         }
-//       },
-//       {
-//         "input": {
-//           "key": "query"
-//         },
-//         "transform": {
-//           "type": "ONE-TO-ONE"
-//         },
-//         "output": {
-//           "key": "query"
-//         }
-//       }
-//     ]
-//   }
+module.exports.getAccessTokenFromReq = (res) => {
+  if (!!res.query.projectAccessToken) return res.query.projectAccessToken;
+  else return res.body.integration.authAccessToken;
+};

@@ -128,5 +128,56 @@
         }
       }
     ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "ALL",
+    "integration": "ROLLBAR",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {
+          "key": ""
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "getAccessTokenFromReq"
+        },
+        "output": {
+          "key": "xRollbarAccessToken"
+        }
+      },
+      {
+        "input": {
+          "key": "query"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformQueryParamsToOpts"
+        },
+        "output": {
+          "key": "opts"
+        }
+      }
+    ]
+  },
+  {
+    "type": "RESPONSE",
+    "entity": "ITEMS",
+    "integration": "ROLLBAR",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {
+          "key": "items"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "bugs"
+        }
+      }
+    ]
   }
 ]
