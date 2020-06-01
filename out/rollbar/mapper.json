@@ -7,8 +7,7 @@
     "map": [
       {
         "input": {
-          "key": "account_id",
-          "parent": "result"
+          "key": "account_id"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -19,8 +18,7 @@
       },
       {
         "input": {
-          "key": "organizationName",
-          "parent": "result"
+          "key": "organizationName"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -31,8 +29,7 @@
       },
       {
         "input": {
-          "key": "name",
-          "parent": "result"
+          "key": "name"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -43,8 +40,7 @@
       },
       {
         "input": {
-          "key": "id",
-          "parent": "result"
+          "key": "id"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -55,8 +51,7 @@
       },
       {
         "input": {
-          "key": "description",
-          "parent": "result"
+          "key": "description"
         },
         "transform": {
           "type": "ONE-TO-ONE"
@@ -67,8 +62,7 @@
       },
       {
         "input": {
-          "key": "",
-          "parent": "result"
+          "key": ""
         },
         "transform": {
           "type": "FUNCTION",
@@ -80,8 +74,7 @@
       },
       {
         "input": {
-          "key": "projectSpecificParams",
-          "parent": "result"
+          "key": "projectSpecificParams"
         },
         "transform": {
           "type": "ONE-TO-ONE"

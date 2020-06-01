@@ -91,14 +91,14 @@ class RollbarService {
 
   async getThirdPartyProjects(incomingOptions) {
     const res = await this.get('PROJECTS', incomingOptions);
-    const projects = res.data.result;
+    const projects = res.data;
     const data = [];
     for (let project of projects) {
       const res = await this.get('PROJECT_ID_ACCESS_TOKENS', {
         ...incomingOptions,
         id: project.id,
       });
-      const value = res.data.result
+      const value = res.data
         .map((item) => ({
           name: item.name,
           token: item.access_token,
@@ -116,14 +116,13 @@ class RollbarService {
           },
         });
         project['projectSpecificParams'] = {
-          projectAccessToken: res.data.result.access_token,
+          projectAccessToken: res.data.access_token,
         };
       }
       project['organizationName'] = incomingOptions.opts.organizationName;
       data.push(project);
     }
-    res.data.result = data;
-    return { data: res.data };
+    return { data: data };
   }
 
   async registerWebhooks(incomingOptions) {
@@ -792,7 +791,7 @@ Returns all occurrences of an item, in pages of 20. Order is descending by occur
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -829,7 +828,7 @@ Returns all deploys in the project, most recent first, in pages of 20.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -853,7 +852,7 @@ Returns all deploys in the project, most recent first, in pages of 20.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -877,7 +876,7 @@ Returns all deploys in the project, most recent first, in pages of 20.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -901,7 +900,7 @@ Returns all deploys in the project, most recent first, in pages of 20.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -945,7 +944,7 @@ Returns all deploys in the project, most recent first, in pages of 20.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -969,7 +968,7 @@ Check on the status of a person deletion request.  The response will include a s
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -993,7 +992,7 @@ List all project access tokens
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1017,7 +1016,7 @@ Get a project
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1040,7 +1039,7 @@ List all projects
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1079,7 +1078,7 @@ Analogous to \&quot;Daily New/Reactivated Items\&quot; graph on the Dashboard.  
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1120,7 +1119,7 @@ Analogous to \&quot;Hourly Error/Critical Occurrences\&quot; and \&quot;Daily Er
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1158,7 +1157,7 @@ Analogous to \&quot;Hourly Error/Critical Occurrences\&quot; and \&quot;Daily Er
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1196,7 +1195,7 @@ Analogous to \&quot;Hourly Error/Critical Occurrences\&quot; and \&quot;Daily Er
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1234,7 +1233,7 @@ Analogous to \&quot;Hourly Error/Critical Occurrences\&quot; and \&quot;Daily Er
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1271,7 +1270,7 @@ Analogous to \&quot;Hourly Error/Critical Occurrences\&quot; and \&quot;Daily Er
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1294,7 +1293,7 @@ Get a team
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1332,7 +1331,7 @@ Returns all invites ever sent for the team–pending, accepted, rejected, and ca
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1357,7 +1356,7 @@ Returns &#x60;200&#x60; if the team is assigned to a project, &#x60;404&#x60; if
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1381,7 +1380,7 @@ Returns &#x60;200&#x60; if the team is assigned to a project, &#x60;404&#x60; if
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1406,7 +1405,7 @@ Check if a user is assigned to a team
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1444,7 +1443,7 @@ List a team&#39;s users
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1467,7 +1466,7 @@ List all teams
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1491,7 +1490,7 @@ Get user details for a given account  Returns basic information about the user, 
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1515,7 +1514,7 @@ Get user details for a given account  Returns basic information about the user, 
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1539,7 +1538,7 @@ List a user&#39;s teams
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1562,7 +1561,7 @@ List all users who are members of an account #Response Format &#x60;&#x60;&#x60;
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1587,7 +1586,7 @@ Returns the details about one specific code version in one project  https://docs
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1628,7 +1627,7 @@ List items that have occurrences for one specific code version.  https://docs.ro
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1652,7 +1651,7 @@ Returns a JSON object describing the occurrence. This is similar to the \&quot;R
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1689,7 +1688,7 @@ Returns all occurrences in the project, in pages of 20. Order is descending by o
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -1727,7 +1726,7 @@ Returns all occurrences of an item, in pages of 20. Order is descending by occur
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2013,7 +2012,7 @@ Create a project access token
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2050,7 +2049,7 @@ For tool-specific instructions on reporting a deploy, see our [Deploy Tracking](
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2087,7 +2086,7 @@ For tool-specific instructions on reporting a deploy, see our [Deploy Tracking](
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2126,7 +2125,7 @@ This endpoint allows for removal of a tracked person from all projects within an
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2163,7 +2162,7 @@ Upload an Android Proguard file
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2187,7 +2186,7 @@ Delete a project
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2224,7 +2223,7 @@ Create a project
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2248,7 +2247,7 @@ Create a project
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2285,7 +2284,7 @@ Create a project
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2322,7 +2321,7 @@ In the above example, our website is http://example.com, we have a minified Java
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2360,7 +2359,7 @@ Invites a user to the specific team, using the user&#39;s email address.  If the
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2397,7 +2396,7 @@ Invites a user to the specific team, using the user&#39;s email address.  If the
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2422,7 +2421,7 @@ Create a project access token
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2608,7 +2607,7 @@ Setup Slack notification rules
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2633,7 +2632,7 @@ Assign a user to team
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2657,7 +2656,7 @@ Configuring Email Notifications integration
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2681,7 +2680,7 @@ Setup Email notification rules
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2705,7 +2704,7 @@ Configuring PagerDuty integration
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2729,7 +2728,7 @@ Setup PagerDuty notification rules
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2753,7 +2752,7 @@ Configuring Slack integration
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2777,7 +2776,7 @@ Setup Slack notification rules
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2905,7 +2904,7 @@ Returns a &#x60;200&#x60; if the invitation was successfully canceled.
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2928,7 +2927,7 @@ Delete a team
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2953,7 +2952,7 @@ Remove a team from a project
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -2978,7 +2977,7 @@ Remove a user from a team
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -3002,7 +3001,7 @@ Permanently deletes an occurrence. This will make it unavailable in the Rollbar 
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -3105,7 +3104,7 @@ Update a rate limit
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -3143,7 +3142,7 @@ Used to modify an item&#39;s state. Currently supports: * setting the status, le
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
@@ -3182,7 +3181,7 @@ Update a rate limit
         if (error) {
           cb(error, null, response);
         } else {
-          cb(null, data, response);
+          cb(null, data.result, response);
         }
       }
     );
