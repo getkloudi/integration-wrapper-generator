@@ -3,17 +3,7 @@ module.exports.transformNameToRef = (item) => {
 };
 
 module.exports.transformThirdPartyProjects = (projects) => {
-  return projects._doc.map((item) => {
-    let projectAccessToken;
-    if (
-      !!item.projectSpecificParams &&
-      !!item.projectSpecificParams.projectAccessToken
-    ) {
-      projectAccessToken = item.projectSpecificParams.projectAccessToken;
-      delete item.projectSpecificParams.projectAccessToken;
-    }
-    return { ...item, projectAccessToken: projectAccessToken };
-  });
+  return projects._doc;
 };
 
 module.exports.convertOrgNameAndProjectIdToProjetRef = (item) => {

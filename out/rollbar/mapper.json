@@ -1,9 +1,9 @@
 [
   {
     "type": "RESPONSE",
-    "entity": "PROJECTS",
+    "entity": "PROJECTS|WEBHOOKS",
     "integration": "ROLLBAR",
-    "method": "GET",
+    "method": "GET|POST",
     "map": [
       {
         "input": {
@@ -87,7 +87,7 @@
   },
   {
     "type": "REQUEST",
-    "entity": "PROJECTS",
+    "entity": "PROJECTS|WEBHOOKS",
     "integration": "ROLLBAR",
     "method": "GET|POST",
     "map": [
