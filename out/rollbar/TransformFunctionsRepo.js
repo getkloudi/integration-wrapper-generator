@@ -22,5 +22,38 @@ module.exports.transformQueryParamsToOpts = (query) => {
 
 module.exports.getAccessTokenFromReq = (res) => {
   if (!!res.query.projectAccessToken) return res.query.projectAccessToken;
-  else return res.body.integration.authAccessToken;
+  if (!!res.query.thirdPartyProject.projectId) {
+    const data = res.body.integration.thirdPartyProjects.find(
+      ({ projectId }) => {
+        return `${projectId}` === `${res.query.thirdPartyProject.projectId}`;
+      }
+    );
+    return data.projectSpecificParams.projectAccessToken;
+  } else return res.body.integration.authAccessToken;
+};
+
+module.exports.transformItemToBug = (item) => {
+  return {
+    culprit: { url: '' },
+    reportedBy: 'ROLLBAR',
+    reportedWhen: {
+      first: item.first_occurrence_timestamp,
+      last: item.last_occurrence_timestamp,
+    },
+    title: item.title,
+    counter: item.counter,
+    monitoringToolRefs: {
+      id: item.id,
+      title: item.title,
+      count: parseInt(item.total_occurrences),
+    },
+    totalCount: parseInt(item.total_occurrences),
+    platform: item.platform,
+    logger: '',
+    level: item.level,
+    environment: item.environment,
+    status: item.status.toUpperCase() === 'ACTIVE' ? 'OPEN' : item.status,
+    similarBugs: [],
+    count: parseInt(item.total_occurrences),
+  };
 };

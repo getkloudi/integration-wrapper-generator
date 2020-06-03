@@ -238,6 +238,7 @@ Returns all deploys in the project, most recent first, in pages of 20.
           });
         });
 
+      case 'ISSUE':
       case 'ITEM_ITEMID':
         /*
 

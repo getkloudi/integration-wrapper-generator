@@ -162,6 +162,49 @@
     ]
   },
   {
+    "type": "REQUEST",
+    "entity": "ITEM_ITEMID|ISSUE",
+    "integration": "ROLLBAR",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {
+          "key": ""
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "getAccessTokenFromReq"
+        },
+        "output": {
+          "key": "xRollbarAccessToken"
+        }
+      },
+      {
+        "input": {
+          "key": "query"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformQueryParamsToOpts"
+        },
+        "output": {
+          "key": "opts"
+        }
+      },
+      {
+        "input": {
+          "key": "query.id"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "itemid"
+        }
+      }
+    ]
+  },
+  {
     "type": "RESPONSE",
     "entity": "ITEMS",
     "integration": "ROLLBAR",
@@ -169,14 +212,32 @@
     "map": [
       {
         "input": {
-          "key": "items"
+          "key": "",
+          "parent": "items"
         },
         "transform": {
-          "type": "ONE-TO-ONE"
+          "type": "FUNCTION",
+          "name": "transformItemToBug"
         },
         "output": {
-          "key": "bugs"
+          "parent": "bugs"
         }
+      }
+    ]
+  },
+  {
+    "type": "RESPONSE",
+    "entity": "ITEM_ITEMID|ISSUE",
+    "integration": "ROLLBAR",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {},
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformItemToBug"
+        },
+        "output": {}
       }
     ]
   }
