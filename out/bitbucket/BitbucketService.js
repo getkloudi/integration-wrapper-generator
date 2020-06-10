@@ -19465,4 +19465,4 @@ Delete a tag in the specified repository.  For Git, the tag name should not incl
     }
   }
 }
-module.exports = new bitbucketService();
+module.exports = new BitbucketService();
