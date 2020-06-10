@@ -2,6 +2,18 @@ module.exports.transformNameToRef = (item) => {
   return item.name;
 };
 
+module.exports.transformValueToKeyAfterNullChecks = (value) => {
+  if (
+    !value ||
+    value === undefined ||
+    value === null ||
+    value === 'undefined' ||
+    value === 'null'
+  )
+    return 'Unnamed-Rollbar-Project';
+  else return value;
+};
+
 module.exports.transformThirdPartyProjects = (projects) => {
   return projects._doc;
 };
@@ -55,5 +67,10 @@ module.exports.transformItemToBug = (item) => {
     status: item.status.toUpperCase() === 'ACTIVE' ? 'OPEN' : item.status,
     similarBugs: [],
     count: parseInt(item.total_occurrences),
+    occurences: {
+      activating: item.activating_occurrence_id,
+      first: item.first_occurrence_id,
+      last: item.last_occurrence_id,
+    },
   };
 };

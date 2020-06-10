@@ -32,7 +32,8 @@
           "key": "name"
         },
         "transform": {
-          "type": "ONE-TO-ONE"
+          "type": "FUNCTION",
+          "name": "transformValueToKeyAfterNullChecks"
         },
         "output": {
           "key": "projectName"
@@ -157,6 +158,39 @@
         },
         "output": {
           "key": "opts"
+        }
+      },
+      {
+        "input": {
+          "key": "query.id"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "itemid"
+        }
+      },
+      {
+        "input": {
+          "key": "query.id"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "itemId"
+        }
+      },
+      {
+        "input": {
+          "key": "query.id"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "instanceId"
         }
       }
     ]
