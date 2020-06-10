@@ -10,7 +10,8 @@
           "key": "account_id"
         },
         "transform": {
-          "type": "ONE-TO-ONE"
+          "type": "FUNCTION",
+          "name": "transforIntToString"
         },
         "output": {
           "key": "organizationId"
@@ -44,7 +45,8 @@
           "key": "id"
         },
         "transform": {
-          "type": "ONE-TO-ONE"
+          "type": "FUNCTION",
+          "name": "transforIntToString"
         },
         "output": {
           "key": "projectId"

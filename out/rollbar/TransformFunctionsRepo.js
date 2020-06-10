@@ -74,3 +74,5 @@ module.exports.transformItemToBug = (item) => {
     },
   };
 };
+
+module.exports.transforIntToString = (item) => `${item}`;
