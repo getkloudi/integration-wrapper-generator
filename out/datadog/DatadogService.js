@@ -16,8 +16,8 @@ class DatadogService {
     return 'datadog.svg';
   }
 
-  get categroy() {
-    return;
+  get category() {
+    return 'Performance Monitoring';
   }
 
   apiEndpoint(site) {
@@ -112,10 +112,9 @@ class DatadogService {
     if (!options.time || !options.time.from || !options.time.to)
       throw Error('time.from and time.to is missing from the request body');
 
-    const site = options.integrationData.integrationSpecificParams.site;
-    const apiKey = options.integrationData.integrationSpecificParams.apiKey;
-    const appKey =
-      options.integrationData.integrationSpecificParams.applicationKey;
+    const site = options.integration.integrationSpecificParams.site;
+    const apiKey = options.integration.integrationSpecificParams.apiKey;
+    const appKey = options.integration.integrationSpecificParams.applicationKey;
 
     let logs = [],
       uri =
