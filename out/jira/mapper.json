@@ -64,7 +64,7 @@
   },
   {
     "type": "REQUEST",
-    "entity": "PROJECTS|WEBHOOKS|ISSUES",
+    "entity": "PROJECTS|WEBHOOKS",
     "integration": "JIRA",
     "method": "GET|POST",
     "map": [

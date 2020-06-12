@@ -1,0 +1,12 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "title": "",
+    "version": ""
+  },
+  "paths": {},
+  "definitions": {},
+  "securityDefinitions": {},
+  "tags": []
+}
