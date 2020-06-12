@@ -150,7 +150,7 @@ class DatadogService {
         else body.startAt = res.data.nextLogId;
       }
     } catch (error) {}
-    return logs;
+    return { data: logs };
   }
 }
 
