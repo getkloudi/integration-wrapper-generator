@@ -20,17 +20,17 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
-* @module ApiClient
-* @version 1.3.1
-*/
+ * @module ApiClient
+ * @version 1.4.0
+ */
 
 /**
-* Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
-* application to use this class directly - the *Api and model classes provide the public API for the service. The
-* contents of this file should be regarded as internal but are documented for completeness.
-* @alias module:ApiClient
-* @class
-*/
+ * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
+ * application to use this class directly - the *Api and model classes provide the public API for the service. The
+ * contents of this file should be regarded as internal but are documented for completeness.
+ * @alias module:ApiClient
+ * @class
+ */
 var ApiClient = /*#__PURE__*/function () {
   function ApiClient() {
     _classCallCheck(this, ApiClient);
@@ -47,11 +47,11 @@ var ApiClient = /*#__PURE__*/function () {
      */
 
     this.authentications = {
-      'Basic': {
-        type: 'basic'
-      },
-      'OAuth': {
+      OAuth2: {
         type: 'oauth2'
+      },
+      basicAuth: {
+        type: 'basic'
       }
     };
     /**
@@ -104,10 +104,10 @@ var ApiClient = /*#__PURE__*/function () {
     this.plugins = null;
   }
   /**
-  * Returns a string representation for an actual parameter.
-  * @param param The actual parameter.
-  * @returns {String} The string representation of <code>param</code>.
-  */
+   * Returns a string representation for an actual parameter.
+   * @param param The actual parameter.
+   * @returns {String} The string representation of <code>param</code>.
+   */
 
 
   _createClass(ApiClient, [{
@@ -161,16 +161,16 @@ var ApiClient = /*#__PURE__*/function () {
       return url;
     }
     /**
-    * Checks whether the given content type represents JSON.<br>
-    * JSON content type examples:<br>
-    * <ul>
-    * <li>application/json</li>
-    * <li>application/json; charset=UTF8</li>
-    * <li>APPLICATION/JSON</li>
-    * </ul>
-    * @param {String} contentType The MIME content type to check.
-    * @returns {Boolean} <code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.
-    */
+     * Checks whether the given content type represents JSON.<br>
+     * JSON content type examples:<br>
+     * <ul>
+     * <li>application/json</li>
+     * <li>application/json; charset=UTF8</li>
+     * <li>APPLICATION/JSON</li>
+     * </ul>
+     * @param {String} contentType The MIME content type to check.
+     * @returns {Boolean} <code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.
+     */
 
   }, {
     key: "isJsonMime",
@@ -178,10 +178,10 @@ var ApiClient = /*#__PURE__*/function () {
       return Boolean(contentType != null && contentType.match(/^application\/json(;.*)?$/i));
     }
     /**
-    * Chooses a content type from the given array, with JSON preferred; i.e. return JSON if included, otherwise return the first.
-    * @param {Array.<String>} contentTypes
-    * @returns {String} The chosen content type, preferring JSON.
-    */
+     * Chooses a content type from the given array, with JSON preferred; i.e. return JSON if included, otherwise return the first.
+     * @param {Array.<String>} contentTypes
+     * @returns {String} The chosen content type, preferring JSON.
+     */
 
   }, {
     key: "jsonPreferredMime",
@@ -195,10 +195,10 @@ var ApiClient = /*#__PURE__*/function () {
       return contentTypes[0];
     }
     /**
-    * Checks whether the given parameter value represents file-like content.
-    * @param param The parameter to check.
-    * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
-    */
+     * Checks whether the given parameter value represents file-like content.
+     * @param param The parameter to check.
+     * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
+     */
 
   }, {
     key: "isFileParam",
@@ -234,15 +234,15 @@ var ApiClient = /*#__PURE__*/function () {
       return false;
     }
     /**
-    * Normalizes parameter values:
-    * <ul>
-    * <li>remove nils</li>
-    * <li>keep files and arrays</li>
-    * <li>format to string with `paramToString` for other cases</li>
-    * </ul>
-    * @param {Object.<String, Object>} params The parameters as object properties.
-    * @returns {Object.<String, Object>} normalized parameters.
-    */
+     * Normalizes parameter values:
+     * <ul>
+     * <li>remove nils</li>
+     * <li>keep files and arrays</li>
+     * <li>format to string with `paramToString` for other cases</li>
+     * </ul>
+     * @param {Object.<String, Object>} params The parameters as object properties.
+     * @returns {Object.<String, Object>} normalized parameters.
+     */
 
   }, {
     key: "normalizeParams",
@@ -264,12 +264,12 @@ var ApiClient = /*#__PURE__*/function () {
       return newParams;
     }
     /**
-    * Builds a string representation of an array-type actual parameter, according to the given collection format.
-    * @param {Array} param An array parameter.
-    * @param {module:ApiClient.CollectionFormatEnum} collectionFormat The array element separator strategy.
-    * @returns {String|Array} A string representation of the supplied collection, using the specified delimiter. Returns
-    * <code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.
-    */
+     * Builds a string representation of an array-type actual parameter, according to the given collection format.
+     * @param {Array} param An array parameter.
+     * @param {module:ApiClient.CollectionFormatEnum} collectionFormat The array element separator strategy.
+     * @returns {String|Array} A string representation of the supplied collection, using the specified delimiter. Returns
+     * <code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.
+     */
 
   }, {
     key: "buildCollectionParam",
@@ -300,10 +300,10 @@ var ApiClient = /*#__PURE__*/function () {
       }
     }
     /**
-    * Applies authentication headers to the request.
-    * @param {Object} request The request object created by a <code>superagent()</code> call.
-    * @param {Array.<String>} authNames An array of authentication method names.
-    */
+     * Applies authentication headers to the request.
+     * @param {Object} request The request object created by a <code>superagent()</code> call.
+     * @param {Array.<String>} authNames An array of authentication method names.
+     */
 
   }, {
     key: "applyAuthToRequest",
@@ -324,7 +324,7 @@ var ApiClient = /*#__PURE__*/function () {
           case 'bearer':
             if (auth.accessToken) {
               request.set({
-                'Authorization': 'Bearer ' + auth.accessToken
+                Authorization: 'Bearer ' + auth.accessToken
               });
             }
 
@@ -352,7 +352,7 @@ var ApiClient = /*#__PURE__*/function () {
           case 'oauth2':
             if (auth.accessToken) {
               request.set({
-                'Authorization': 'Bearer ' + auth.accessToken
+                Authorization: 'Bearer ' + auth.accessToken
               });
             }
 
@@ -524,22 +524,22 @@ var ApiClient = /*#__PURE__*/function () {
       return request;
     }
     /**
-    * Parses an ISO-8601 string representation of a date value.
-    * @param {String} str The date value as a string.
-    * @returns {Date} The parsed date object.
-    */
+     * Parses an ISO-8601 string representation of a date value.
+     * @param {String} str The date value as a string.
+     * @returns {Date} The parsed date object.
+     */
 
   }, {
     key: "hostSettings",
 
     /**
-      * Gets an array of host settings
-      * @returns An array of host settings
-      */
+     * Gets an array of host settings
+     * @returns An array of host settings
+     */
     value: function hostSettings() {
       return [{
-        'url': "https://api.atlassian.com/ex/jira/{cloudid}/rest/api/3",
-        'description': "No description provided"
+        url: 'https://api.atlassian.com/ex/jira/{cloudid}/rest/api/3',
+        description: 'No description provided'
       }];
     }
   }, {
@@ -549,7 +549,7 @@ var ApiClient = /*#__PURE__*/function () {
       var servers = this.hostSettings(); // check array index out of bound
 
       if (index < 0 || index >= servers.length) {
-        throw new Error("Invalid index " + index + " when selecting the host settings. Must be less than " + servers.length);
+        throw new Error('Invalid index ' + index + ' when selecting the host settings. Must be less than ' + servers.length);
       }
 
       var server = servers[index];
@@ -560,23 +560,23 @@ var ApiClient = /*#__PURE__*/function () {
           var variable = server['variables'][variable_name];
 
           if (!('enum_values' in variable) || variable['enum_values'].includes(variables[variable_name])) {
-            url = url.replace("{" + variable_name + "}", variables[variable_name]);
+            url = url.replace('{' + variable_name + '}', variables[variable_name]);
           } else {
-            throw new Error("The variable `" + variable_name + "` in the host URL has invalid value " + variables[variable_name] + ". Must be " + server['variables'][variable_name]['enum_values'] + ".");
+            throw new Error('The variable `' + variable_name + '` in the host URL has invalid value ' + variables[variable_name] + '. Must be ' + server['variables'][variable_name]['enum_values'] + '.');
           }
         } else {
           // use default value
-          url = url.replace("{" + variable_name + "}", server['variables'][variable_name]['default_value']);
+          url = url.replace('{' + variable_name + '}', server['variables'][variable_name]['default_value']);
         }
       }
 
       return url;
     }
     /**
-    * Constructs a new map or array model from REST data.
-    * @param data {Object|Array} The REST data.
-    * @param obj {Object|Array} The target object or array.
-    */
+     * Constructs a new map or array model from REST data.
+     * @param data {Object|Array} The REST data.
+     * @param obj {Object|Array} The target object or array.
+     */
 
   }], [{
     key: "parseDate",
@@ -584,14 +584,14 @@ var ApiClient = /*#__PURE__*/function () {
       return new Date(str);
     }
     /**
-    * Converts a value to the specified type.
-    * @param {(String|Object)} data The data to convert, as a string or object.
-    * @param {(String|Array.<String>|Object.<String, Object>|Function)} type The type to return. Pass a string for simple types
-    * or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
-    * return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type:
-    * all properties on <code>data<code> will be converted to this type.
-    * @returns An instance of the specified type or null or undefined if data is null or undefined.
-    */
+     * Converts a value to the specified type.
+     * @param {(String|Object)} data The data to convert, as a string or object.
+     * @param {(String|Array.<String>|Object.<String, Object>|Function)} type The type to return. Pass a string for simple types
+     * or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
+     * return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type:
+     * all properties on <code>data<code> will be converted to this type.
+     * @returns An instance of the specified type or null or undefined if data is null or undefined.
+     */
 
   }, {
     key: "convertToType",
@@ -716,9 +716,9 @@ ApiClient.CollectionFormatEnum = {
   MULTI: 'multi'
 };
 /**
-* The default API client implementation.
-* @type {module:ApiClient}
-*/
+ * The default API client implementation.
+ * @type {module:ApiClient}
+ */
 
 ApiClient.instance = new ApiClient();
 var _default = ApiClient;

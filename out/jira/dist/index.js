@@ -9,2631 +9,3367 @@ Object.defineProperty(exports, "ApiClient", {
     return _ApiClient["default"];
   }
 });
-Object.defineProperty(exports, "FieldSchema", {
+Object.defineProperty(exports, "ActorInputBean", {
   enumerable: true,
   get: function get() {
-    return _FieldSchema["default"];
+    return _ActorInputBean["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionProject", {
+Object.defineProperty(exports, "ActorsMap", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionProject["default"];
+    return _ActorsMap["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionProjectProjectCategory", {
+Object.defineProperty(exports, "AddFieldBean", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionProjectProjectCategory["default"];
+    return _AddFieldBean["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRole", {
+Object.defineProperty(exports, "AddGroupBean", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRole["default"];
+    return _AddGroupBean["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRoleActorGroup", {
+Object.defineProperty(exports, "Application", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRoleActorGroup["default"];
+    return _Application["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRoleActors", {
+Object.defineProperty(exports, "ApplicationProperty", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRoleActors["default"];
+    return _ApplicationProperty["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRoleScope", {
+Object.defineProperty(exports, "ApplicationRole", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRoleScope["default"];
+    return _ApplicationRole["default"];
   }
 });
-Object.defineProperty(exports, "FilterIdPermissionRoleScopeProject", {
+Object.defineProperty(exports, "AssociatedItemBean", {
   enumerable: true,
   get: function get() {
-    return _FilterIdPermissionRoleScopeProject["default"];
+    return _AssociatedItemBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject", {
+Object.defineProperty(exports, "Attachment", {
   enumerable: true,
   get: function get() {
-    return _InlineObject["default"];
+    return _Attachment["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject1", {
+Object.defineProperty(exports, "AttachmentArchiveEntry", {
   enumerable: true,
   get: function get() {
-    return _InlineObject2["default"];
+    return _AttachmentArchiveEntry["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject10", {
+Object.defineProperty(exports, "AttachmentArchiveImpl", {
   enumerable: true,
   get: function get() {
-    return _InlineObject3["default"];
+    return _AttachmentArchiveImpl["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject11", {
+Object.defineProperty(exports, "AttachmentArchiveItemReadable", {
   enumerable: true,
   get: function get() {
-    return _InlineObject4["default"];
+    return _AttachmentArchiveItemReadable["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject12", {
+Object.defineProperty(exports, "AttachmentArchiveMetadataReadable", {
   enumerable: true,
   get: function get() {
-    return _InlineObject5["default"];
+    return _AttachmentArchiveMetadataReadable["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject13", {
+Object.defineProperty(exports, "AttachmentMetadata", {
   enumerable: true,
   get: function get() {
-    return _InlineObject6["default"];
+    return _AttachmentMetadata["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject14", {
+Object.defineProperty(exports, "AttachmentSettings", {
   enumerable: true,
   get: function get() {
-    return _InlineObject7["default"];
+    return _AttachmentSettings["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject15", {
+Object.defineProperty(exports, "AuditRecordBean", {
   enumerable: true,
   get: function get() {
-    return _InlineObject8["default"];
+    return _AuditRecordBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject16", {
+Object.defineProperty(exports, "AuditRecords", {
   enumerable: true,
   get: function get() {
-    return _InlineObject9["default"];
+    return _AuditRecords["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject17", {
+Object.defineProperty(exports, "AutoCompleteSuggestion", {
   enumerable: true,
   get: function get() {
-    return _InlineObject10["default"];
+    return _AutoCompleteSuggestion["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject18", {
+Object.defineProperty(exports, "AutoCompleteSuggestions", {
   enumerable: true,
   get: function get() {
-    return _InlineObject11["default"];
+    return _AutoCompleteSuggestions["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject19", {
+Object.defineProperty(exports, "Avatar", {
   enumerable: true,
   get: function get() {
-    return _InlineObject12["default"];
+    return _Avatar["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject2", {
+Object.defineProperty(exports, "AvatarUrls", {
   enumerable: true,
   get: function get() {
-    return _InlineObject13["default"];
+    return _AvatarUrls["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject20", {
+Object.defineProperty(exports, "AvatarUrlsBean", {
   enumerable: true,
   get: function get() {
-    return _InlineObject14["default"];
+    return _AvatarUrlsBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject21", {
+Object.defineProperty(exports, "Avatars", {
   enumerable: true,
   get: function get() {
-    return _InlineObject15["default"];
+    return _Avatars["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject22", {
+Object.defineProperty(exports, "BulkCreateCustomFieldOptionRequest", {
   enumerable: true,
   get: function get() {
-    return _InlineObject16["default"];
+    return _BulkCreateCustomFieldOptionRequest["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject23", {
+Object.defineProperty(exports, "BulkIssuePropertyUpdateRequest", {
   enumerable: true,
   get: function get() {
-    return _InlineObject17["default"];
+    return _BulkIssuePropertyUpdateRequest["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject24", {
+Object.defineProperty(exports, "BulkOperationErrorResult", {
   enumerable: true,
   get: function get() {
-    return _InlineObject18["default"];
+    return _BulkOperationErrorResult["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject25", {
+Object.defineProperty(exports, "BulkPermissionGrants", {
   enumerable: true,
   get: function get() {
-    return _InlineObject19["default"];
+    return _BulkPermissionGrants["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject26", {
+Object.defineProperty(exports, "BulkPermissionsRequestBean", {
   enumerable: true,
   get: function get() {
-    return _InlineObject20["default"];
+    return _BulkPermissionsRequestBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject27", {
+Object.defineProperty(exports, "BulkProjectPermissionGrants", {
   enumerable: true,
   get: function get() {
-    return _InlineObject21["default"];
+    return _BulkProjectPermissionGrants["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject28", {
+Object.defineProperty(exports, "BulkProjectPermissions", {
   enumerable: true,
   get: function get() {
-    return _InlineObject22["default"];
+    return _BulkProjectPermissions["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject29", {
+Object.defineProperty(exports, "ChangeDetails", {
   enumerable: true,
   get: function get() {
-    return _InlineObject23["default"];
+    return _ChangeDetails["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject3", {
+Object.defineProperty(exports, "ChangedValueBean", {
   enumerable: true,
   get: function get() {
-    return _InlineObject24["default"];
+    return _ChangedValueBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject30", {
+Object.defineProperty(exports, "ChangedWorklog", {
   enumerable: true,
   get: function get() {
-    return _InlineObject25["default"];
+    return _ChangedWorklog["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject31", {
+Object.defineProperty(exports, "ChangedWorklogs", {
   enumerable: true,
   get: function get() {
-    return _InlineObject26["default"];
+    return _ChangedWorklogs["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject32", {
+Object.defineProperty(exports, "Changelog", {
   enumerable: true,
   get: function get() {
-    return _InlineObject27["default"];
+    return _Changelog["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject33", {
+Object.defineProperty(exports, "ColumnItem", {
   enumerable: true,
   get: function get() {
-    return _InlineObject28["default"];
+    return _ColumnItem["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject34", {
+Object.defineProperty(exports, "Comment", {
   enumerable: true,
   get: function get() {
-    return _InlineObject29["default"];
+    return _Comment["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject35", {
+Object.defineProperty(exports, "Component", {
   enumerable: true,
   get: function get() {
-    return _InlineObject30["default"];
+    return _Component["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject36", {
+Object.defineProperty(exports, "ComponentIssuesCount", {
   enumerable: true,
   get: function get() {
-    return _InlineObject31["default"];
+    return _ComponentIssuesCount["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject37", {
+Object.defineProperty(exports, "ComponentWithIssueCount", {
   enumerable: true,
   get: function get() {
-    return _InlineObject32["default"];
+    return _ComponentWithIssueCount["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject38", {
+Object.defineProperty(exports, "CompoundClause", {
   enumerable: true,
   get: function get() {
-    return _InlineObject33["default"];
+    return _CompoundClause["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject39", {
+Object.defineProperty(exports, "Configuration", {
   enumerable: true,
   get: function get() {
-    return _InlineObject34["default"];
+    return _Configuration["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject4", {
+Object.defineProperty(exports, "ConnectWorkflowTransitionRule", {
   enumerable: true,
   get: function get() {
-    return _InlineObject35["default"];
+    return _ConnectWorkflowTransitionRule["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject40", {
+Object.defineProperty(exports, "ContainerForRegisteredWebhooks", {
   enumerable: true,
   get: function get() {
-    return _InlineObject36["default"];
+    return _ContainerForRegisteredWebhooks["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject41", {
+Object.defineProperty(exports, "ContainerForWebhookIDs", {
   enumerable: true,
   get: function get() {
-    return _InlineObject37["default"];
+    return _ContainerForWebhookIDs["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject42", {
+Object.defineProperty(exports, "ContainerOfWorkflowSchemeAssociations", {
   enumerable: true,
   get: function get() {
-    return _InlineObject38["default"];
+    return _ContainerOfWorkflowSchemeAssociations["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject43", {
+Object.defineProperty(exports, "Context", {
   enumerable: true,
   get: function get() {
-    return _InlineObject39["default"];
+    return _Context["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject44", {
+Object.defineProperty(exports, "ConvertedJQLQueries", {
   enumerable: true,
   get: function get() {
-    return _InlineObject40["default"];
+    return _ConvertedJQLQueries["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject45", {
+Object.defineProperty(exports, "CreateUpdateRoleRequestBean", {
   enumerable: true,
   get: function get() {
-    return _InlineObject41["default"];
+    return _CreateUpdateRoleRequestBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject46", {
+Object.defineProperty(exports, "CreatedIssue", {
   enumerable: true,
   get: function get() {
-    return _InlineObject42["default"];
+    return _CreatedIssue["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject47", {
+Object.defineProperty(exports, "CreatedIssues", {
   enumerable: true,
   get: function get() {
-    return _InlineObject43["default"];
+    return _CreatedIssues["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject48", {
+Object.defineProperty(exports, "CustomFieldDefinitionJsonBean", {
   enumerable: true,
   get: function get() {
-    return _InlineObject44["default"];
+    return _CustomFieldDefinitionJsonBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject49", {
+Object.defineProperty(exports, "CustomFieldOption", {
   enumerable: true,
   get: function get() {
-    return _InlineObject45["default"];
+    return _CustomFieldOption["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject5", {
+Object.defineProperty(exports, "CustomFieldOptionDetails", {
   enumerable: true,
   get: function get() {
-    return _InlineObject46["default"];
+    return _CustomFieldOptionDetails["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject50", {
+Object.defineProperty(exports, "CustomFieldOptionValue", {
   enumerable: true,
   get: function get() {
-    return _InlineObject47["default"];
+    return _CustomFieldOptionValue["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject51", {
+Object.defineProperty(exports, "CustomFieldReplacement", {
   enumerable: true,
   get: function get() {
-    return _InlineObject48["default"];
+    return _CustomFieldReplacement["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject52", {
+Object.defineProperty(exports, "Dashboard", {
   enumerable: true,
   get: function get() {
-    return _InlineObject49["default"];
+    return _Dashboard["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject53", {
+Object.defineProperty(exports, "DashboardRequest", {
   enumerable: true,
   get: function get() {
-    return _InlineObject50["default"];
+    return _DashboardRequest["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject54", {
+Object.defineProperty(exports, "DefaultShareScope", {
   enumerable: true,
   get: function get() {
-    return _InlineObject51["default"];
+    return _DefaultShareScope["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject55", {
+Object.defineProperty(exports, "DefaultWorkflow", {
   enumerable: true,
   get: function get() {
-    return _InlineObject52["default"];
+    return _DefaultWorkflow["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject56", {
+Object.defineProperty(exports, "DeleteAndReplaceVersionBean", {
   enumerable: true,
   get: function get() {
-    return _InlineObject53["default"];
+    return _DeleteAndReplaceVersionBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject57", {
+Object.defineProperty(exports, "DeprecatedWorkflow", {
   enumerable: true,
   get: function get() {
-    return _InlineObject54["default"];
+    return _DeprecatedWorkflow["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject58", {
+Object.defineProperty(exports, "EntityProperty", {
   enumerable: true,
   get: function get() {
-    return _InlineObject55["default"];
+    return _EntityProperty["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject59", {
+Object.defineProperty(exports, "ErrorCollection", {
   enumerable: true,
   get: function get() {
-    return _InlineObject56["default"];
+    return _ErrorCollection["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject6", {
+Object.defineProperty(exports, "ErrorMessage", {
   enumerable: true,
   get: function get() {
-    return _InlineObject57["default"];
+    return _ErrorMessage["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject60", {
+Object.defineProperty(exports, "EventNotification", {
   enumerable: true,
   get: function get() {
-    return _InlineObject58["default"];
+    return _EventNotification["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject61", {
+Object.defineProperty(exports, "FailedWebhook", {
   enumerable: true,
   get: function get() {
-    return _InlineObject59["default"];
+    return _FailedWebhook["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject62", {
+Object.defineProperty(exports, "FailedWebhooks", {
   enumerable: true,
   get: function get() {
-    return _InlineObject60["default"];
+    return _FailedWebhooks["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject63", {
+Object.defineProperty(exports, "Field", {
   enumerable: true,
   get: function get() {
-    return _InlineObject61["default"];
+    return _Field["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject64", {
+Object.defineProperty(exports, "FieldChangedClause", {
   enumerable: true,
   get: function get() {
-    return _InlineObject62["default"];
+    return _FieldChangedClause["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject65", {
+Object.defineProperty(exports, "FieldConfiguration", {
   enumerable: true,
   get: function get() {
-    return _InlineObject63["default"];
+    return _FieldConfiguration["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject66", {
+Object.defineProperty(exports, "FieldConfigurationIssueTypeItem", {
   enumerable: true,
   get: function get() {
-    return _InlineObject64["default"];
+    return _FieldConfigurationIssueTypeItem["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject67", {
+Object.defineProperty(exports, "FieldConfigurationItem", {
   enumerable: true,
   get: function get() {
-    return _InlineObject65["default"];
+    return _FieldConfigurationItem["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject68", {
+Object.defineProperty(exports, "FieldConfigurationScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineObject66["default"];
+    return _FieldConfigurationScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject69", {
+Object.defineProperty(exports, "FieldConfigurationSchemeProjectAssociation", {
   enumerable: true,
   get: function get() {
-    return _InlineObject67["default"];
+    return _FieldConfigurationSchemeProjectAssociation["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject7", {
+Object.defineProperty(exports, "FieldConfigurationSchemeProjects", {
   enumerable: true,
   get: function get() {
-    return _InlineObject68["default"];
+    return _FieldConfigurationSchemeProjects["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject70", {
+Object.defineProperty(exports, "FieldDetails", {
   enumerable: true,
   get: function get() {
-    return _InlineObject69["default"];
+    return _FieldDetails["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject71", {
+Object.defineProperty(exports, "FieldLastUsed", {
   enumerable: true,
   get: function get() {
-    return _InlineObject70["default"];
+    return _FieldLastUsed["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject72", {
+Object.defineProperty(exports, "FieldMetadata", {
   enumerable: true,
   get: function get() {
-    return _InlineObject71["default"];
+    return _FieldMetadata["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject73", {
+Object.defineProperty(exports, "FieldReferenceData", {
   enumerable: true,
   get: function get() {
-    return _InlineObject72["default"];
+    return _FieldReferenceData["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject74", {
+Object.defineProperty(exports, "FieldUpdateOperation", {
   enumerable: true,
   get: function get() {
-    return _InlineObject73["default"];
+    return _FieldUpdateOperation["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject8", {
+Object.defineProperty(exports, "FieldValueClause", {
   enumerable: true,
   get: function get() {
-    return _InlineObject74["default"];
+    return _FieldValueClause["default"];
   }
 });
-Object.defineProperty(exports, "InlineObject9", {
+Object.defineProperty(exports, "FieldWasClause", {
   enumerable: true,
   get: function get() {
-    return _InlineObject75["default"];
+    return _FieldWasClause["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200", {
+Object.defineProperty(exports, "Fields", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse["default"];
+    return _Fields["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2001", {
+Object.defineProperty(exports, "Filter", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2["default"];
+    return _Filter["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20010", {
+Object.defineProperty(exports, "FilterSubscription", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse3["default"];
+    return _FilterSubscription["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200100", {
+Object.defineProperty(exports, "FilterSubscriptionsList", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse4["default"];
+    return _FilterSubscriptionsList["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200101", {
+Object.defineProperty(exports, "FoundFilter", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse5["default"];
+    return _FoundFilter["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200102", {
+Object.defineProperty(exports, "FoundGroup", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse6["default"];
+    return _FoundGroup["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200103", {
+Object.defineProperty(exports, "FoundGroups", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse7["default"];
+    return _FoundGroups["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200104", {
+Object.defineProperty(exports, "FoundUsers", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse8["default"];
+    return _FoundUsers["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200105", {
+Object.defineProperty(exports, "FoundUsersAndGroups", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse9["default"];
+    return _FoundUsersAndGroups["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200106", {
+Object.defineProperty(exports, "FunctionOperand", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse10["default"];
+    return _FunctionOperand["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200106Values", {
+Object.defineProperty(exports, "FunctionReferenceData", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse200106Values["default"];
+    return _FunctionReferenceData["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse200107", {
+Object.defineProperty(exports, "GlobalScopeBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse11["default"];
+    return _GlobalScopeBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20010Keys", {
+Object.defineProperty(exports, "Group", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20010Keys["default"];
+    return _Group["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20011", {
+Object.defineProperty(exports, "GroupLabel", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse12["default"];
+    return _GroupLabel["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20011Value", {
+Object.defineProperty(exports, "GroupName", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20011Value["default"];
+    return _GroupName["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20012", {
+Object.defineProperty(exports, "HealthCheckResult", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse13["default"];
+    return _HealthCheckResult["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20013", {
+Object.defineProperty(exports, "Hierarchy", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse14["default"];
+    return _Hierarchy["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20013TimeTrackingConfiguration", {
+Object.defineProperty(exports, "HierarchyLevel", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20013TimeTrackingConfiguration["default"];
+    return _HierarchyLevel["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20014", {
+Object.defineProperty(exports, "HistoryMetadata", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse15["default"];
+    return _HistoryMetadata["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20015", {
+Object.defineProperty(exports, "HistoryMetadataParticipant", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse16["default"];
+    return _HistoryMetadataParticipant["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20016", {
+Object.defineProperty(exports, "Icon", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse17["default"];
+    return _Icon["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20017", {
+Object.defineProperty(exports, "IconBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse18["default"];
+    return _IconBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20018", {
+Object.defineProperty(exports, "IdBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse19["default"];
+    return _IdBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20018Dashboards", {
+Object.defineProperty(exports, "IdOrKeyBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20018Dashboards["default"];
+    return _IdOrKeyBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20018Group", {
+Object.defineProperty(exports, "IncludedFields", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20018Group["default"];
+    return _IncludedFields["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20018Owner", {
+Object.defineProperty(exports, "IssueBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20018Owner["default"];
+    return _IssueBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20018SharePermissions", {
+Object.defineProperty(exports, "IssueCommentListRequestBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20018SharePermissions["default"];
+    return _IssueCommentListRequestBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20019", {
+Object.defineProperty(exports, "IssueCreateMetadata", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20["default"];
+    return _IssueCreateMetadata["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20019SharePermissions", {
+Object.defineProperty(exports, "IssueEntityProperties", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20019SharePermissions["default"];
+    return _IssueEntityProperties["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2002", {
+Object.defineProperty(exports, "IssueFieldOption", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse21["default"];
+    return _IssueFieldOption["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20020", {
+Object.defineProperty(exports, "IssueFieldOptionConfiguration", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse22["default"];
+    return _IssueFieldOptionConfiguration["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20020Meta", {
+Object.defineProperty(exports, "IssueFieldOptionCreateBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20020Meta["default"];
+    return _IssueFieldOptionCreateBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20020MetaComplexity", {
+Object.defineProperty(exports, "IssueFieldOptionScopeBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20020MetaComplexity["default"];
+    return _IssueFieldOptionScopeBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20020MetaComplexityBeans", {
+Object.defineProperty(exports, "IssueFilterForBulkPropertyDelete", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20020MetaComplexityBeans["default"];
+    return _IssueFilterForBulkPropertyDelete["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20021", {
+Object.defineProperty(exports, "IssueFilterForBulkPropertySet", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse23["default"];
+    return _IssueFilterForBulkPropertySet["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20022", {
+Object.defineProperty(exports, "IssueLink", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse24["default"];
+    return _IssueLink["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20022Config", {
+Object.defineProperty(exports, "IssueLinkType", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20022Config["default"];
+    return _IssueLinkType["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20022ConfigScope", {
+Object.defineProperty(exports, "IssueLinkTypes", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20022ConfigScope["default"];
+    return _IssueLinkTypes["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20022ConfigScopeProjects2", {
+Object.defineProperty(exports, "IssueMatches", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20022ConfigScopeProjects["default"];
+    return _IssueMatches["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20022Properties", {
+Object.defineProperty(exports, "IssueMatchesForJQL", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20022Properties["default"];
+    return _IssueMatchesForJQL["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20022PropertiesLeader", {
+Object.defineProperty(exports, "IssuePickerSuggestions", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20022PropertiesLeader["default"];
+    return _IssuePickerSuggestions["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20022Values", {
+Object.defineProperty(exports, "IssuePickerSuggestionsIssueType", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20022Values["default"];
+    return _IssuePickerSuggestionsIssueType["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20023", {
+Object.defineProperty(exports, "IssueSecurityLevelMember", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse25["default"];
+    return _IssueSecurityLevelMember["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20024", {
+Object.defineProperty(exports, "IssueTransition", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse26["default"];
+    return _IssueTransition["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20024Values", {
+Object.defineProperty(exports, "IssueTypeCreateBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20024Values["default"];
+    return _IssueTypeCreateBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20025", {
+Object.defineProperty(exports, "IssueTypeDetails", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse27["default"];
+    return _IssueTypeDetails["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20026", {
+Object.defineProperty(exports, "IssueTypeInfo", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse28["default"];
+    return _IssueTypeInfo["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20026Subscriptions", {
+Object.defineProperty(exports, "IssueTypeIssueCreateMetadata", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20026Subscriptions["default"];
+    return _IssueTypeIssueCreateMetadata["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20027", {
+Object.defineProperty(exports, "IssueTypeScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse29["default"];
+    return _IssueTypeScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20028", {
+Object.defineProperty(exports, "IssueTypeSchemeMapping", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse30["default"];
+    return _IssueTypeSchemeMapping["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20029", {
+Object.defineProperty(exports, "IssueTypeSchemeProjectAssociation", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse31["default"];
+    return _IssueTypeSchemeProjectAssociation["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20029Values", {
+Object.defineProperty(exports, "IssueTypeSchemeProjects", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20029Values["default"];
+    return _IssueTypeSchemeProjects["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2003", {
+Object.defineProperty(exports, "IssueTypeScreenScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse32["default"];
+    return _IssueTypeScreenScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20030", {
+Object.defineProperty(exports, "IssueTypeScreenSchemeItem", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse33["default"];
+    return _IssueTypeScreenSchemeItem["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20031", {
+Object.defineProperty(exports, "IssueTypeScreenSchemeProjectAssociation", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse34["default"];
+    return _IssueTypeScreenSchemeProjectAssociation["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20032", {
+Object.defineProperty(exports, "IssueTypeScreenSchemesProjects", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse35["default"];
+    return _IssueTypeScreenSchemesProjects["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20033", {
+Object.defineProperty(exports, "IssueTypeUpdateBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse36["default"];
+    return _IssueTypeUpdateBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20033Values", {
+Object.defineProperty(exports, "IssueTypeWithStatus", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20033Values["default"];
+    return _IssueTypeWithStatus["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20034", {
+Object.defineProperty(exports, "IssueTypeWorkflowMapping", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse37["default"];
+    return _IssueTypeWorkflowMapping["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20034Groups", {
+Object.defineProperty(exports, "IssueTypesWorkflowMapping", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20034Groups["default"];
+    return _IssueTypesWorkflowMapping["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20035", {
+Object.defineProperty(exports, "IssueUpdateDetails", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse38["default"];
+    return _IssueUpdateDetails["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20035Groups", {
+Object.defineProperty(exports, "IssueUpdateMetadata", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20035Groups["default"];
+    return _IssueUpdateMetadata["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20035Users", {
+Object.defineProperty(exports, "IssuesAndJQLQueries", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20035Users["default"];
+    return _IssuesAndJQLQueries["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20035UsersUsers", {
+Object.defineProperty(exports, "IssuesJqlMetaDataBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20035UsersUsers["default"];
+    return _IssuesJqlMetaDataBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20036", {
+Object.defineProperty(exports, "IssuesMetaBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse39["default"];
+    return _IssuesMetaBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20036Fields", {
+Object.defineProperty(exports, "IssuesUpdateBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20036Fields["default"];
+    return _IssuesUpdateBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20036FieldsIssuetype", {
+Object.defineProperty(exports, "JQLPersonalDataMigrationRequest", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20036FieldsIssuetype["default"];
+    return _JQLPersonalDataMigrationRequest["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20036Issuetypes", {
+Object.defineProperty(exports, "JQLQueryWithUnknownUsers", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20036Issuetypes["default"];
+    return _JQLQueryWithUnknownUsers["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20036Projects", {
+Object.defineProperty(exports, "JQLReferenceData", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20036Projects["default"];
+    return _JQLReferenceData["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037", {
+Object.defineProperty(exports, "JexpIssues", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse40["default"];
+    return _JexpIssues["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037Fields", {
+Object.defineProperty(exports, "JexpJqlIssues", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037Fields["default"];
+    return _JexpJqlIssues["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsAttachment", {
+Object.defineProperty(exports, "JiraExpressionAnalysis", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsAttachment["default"];
+    return _JiraExpressionAnalysis["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsIssuelinks", {
+Object.defineProperty(exports, "JiraExpressionEvalContextBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsIssuelinks["default"];
+    return _JiraExpressionEvalContextBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsOutwardIssue", {
+Object.defineProperty(exports, "JiraExpressionEvalRequestBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsOutwardIssue["default"];
+    return _JiraExpressionEvalRequestBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsOutwardIssueFields", {
+Object.defineProperty(exports, "JiraExpressionEvaluationMetaDataBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsOutwardIssueFields["default"];
+    return _JiraExpressionEvaluationMetaDataBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsOutwardIssueFieldsStatus", {
+Object.defineProperty(exports, "JiraExpressionForAnalysis", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsOutwardIssueFieldsStatus["default"];
+    return _JiraExpressionForAnalysis["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsSubTasks", {
+Object.defineProperty(exports, "JiraExpressionResult", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsSubTasks["default"];
+    return _JiraExpressionResult["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsTimetracking", {
+Object.defineProperty(exports, "JiraExpressionValidationError", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsTimetracking["default"];
+    return _JiraExpressionValidationError["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsType", {
+Object.defineProperty(exports, "JiraExpressionsAnalysis", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsType["default"];
+    return _JiraExpressionsAnalysis["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsType1", {
+Object.defineProperty(exports, "JiraExpressionsComplexityBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsType2["default"];
+    return _JiraExpressionsComplexityBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsWatcher", {
+Object.defineProperty(exports, "JiraExpressionsComplexityValueBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsWatcher["default"];
+    return _JiraExpressionsComplexityValueBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20037FieldsWorklog", {
+Object.defineProperty(exports, "JqlQueriesToParse", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20037FieldsWorklog["default"];
+    return _JqlQueriesToParse["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20038", {
+Object.defineProperty(exports, "JqlQuery", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse41["default"];
+    return _JqlQuery["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20039", {
+Object.defineProperty(exports, "JqlQueryClauseTimePredicate", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse42["default"];
+    return _JqlQueryClauseTimePredicate["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20039Items", {
+Object.defineProperty(exports, "JqlQueryField", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20039Items["default"];
+    return _JqlQueryField["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20039Values", {
+Object.defineProperty(exports, "JqlQueryFieldEntityProperty", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20039Values["default"];
+    return _JqlQueryFieldEntityProperty["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2004", {
+Object.defineProperty(exports, "JqlQueryOrderByClause", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse43["default"];
+    return _JqlQueryOrderByClause["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20040", {
+Object.defineProperty(exports, "JqlQueryOrderByClauseElement", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse44["default"];
+    return _JqlQueryOrderByClauseElement["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20041", {
+Object.defineProperty(exports, "JsonNode", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse45["default"];
+    return _JsonNode["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20041Fields", {
+Object.defineProperty(exports, "JsonTypeBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20041Fields["default"];
+    return _JsonTypeBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20041FieldsSummary", {
+Object.defineProperty(exports, "KeywordOperand", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20041FieldsSummary["default"];
+    return _KeywordOperand["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20041FieldsSummarySchema", {
+Object.defineProperty(exports, "LinkGroup", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20041FieldsSummarySchema["default"];
+    return _LinkGroup["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20042", {
+Object.defineProperty(exports, "LinkIssueRequestJsonBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse46["default"];
+    return _LinkIssueRequestJsonBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20043", {
+Object.defineProperty(exports, "LinkedIssue", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse47["default"];
+    return _LinkedIssue["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20044", {
+Object.defineProperty(exports, "ListOperand", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse48["default"];
+    return _ListOperand["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20045", {
+Object.defineProperty(exports, "Locale", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse49["default"];
+    return _Locale["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20045To", {
+Object.defineProperty(exports, "MoveFieldBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20045To["default"];
+    return _MoveFieldBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20045ToStatusCategory", {
+Object.defineProperty(exports, "NestedResponse", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20045ToStatusCategory["default"];
+    return _NestedResponse["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20045Transitions", {
+Object.defineProperty(exports, "Notification", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20045Transitions["default"];
+    return _Notification["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20046", {
+Object.defineProperty(exports, "NotificationEvent", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse50["default"];
+    return _NotificationEvent["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20046Voters", {
+Object.defineProperty(exports, "NotificationRecipients", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20046Voters["default"];
+    return _NotificationRecipients["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20047", {
+Object.defineProperty(exports, "NotificationRecipientsRestrictions", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse51["default"];
+    return _NotificationRecipientsRestrictions["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20048", {
+Object.defineProperty(exports, "NotificationScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse52["default"];
+    return _NotificationScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20049", {
+Object.defineProperty(exports, "NotificationSchemeEvent", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse53["default"];
+    return _NotificationSchemeEvent["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2004Author", {
+Object.defineProperty(exports, "OperationMessage", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2004Author["default"];
+    return _OperationMessage["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2004AuthorAvatarUrls", {
+Object.defineProperty(exports, "Operations", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2004AuthorAvatarUrls["default"];
+    return _Operations["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2005", {
+Object.defineProperty(exports, "PageBeanChangelog", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse54["default"];
+    return _PageBeanChangelog["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050", {
+Object.defineProperty(exports, "PageBeanComment", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse55["default"];
+    return _PageBeanComment["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050InwardIssue", {
+Object.defineProperty(exports, "PageBeanComponentWithIssueCount", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050InwardIssue["default"];
+    return _PageBeanComponentWithIssueCount["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050InwardIssueFields", {
+Object.defineProperty(exports, "PageBeanContext", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050InwardIssueFields["default"];
+    return _PageBeanContext["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050InwardIssueFieldsIssuetype", {
+Object.defineProperty(exports, "PageBeanCustomFieldOptionDetails", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050InwardIssueFieldsIssuetype["default"];
+    return _PageBeanCustomFieldOptionDetails["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050InwardIssueFieldsPriority", {
+Object.defineProperty(exports, "PageBeanDashboard", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050InwardIssueFieldsPriority["default"];
+    return _PageBeanDashboard["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050InwardIssueFieldsStatus", {
+Object.defineProperty(exports, "PageBeanField", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050InwardIssueFieldsStatus["default"];
+    return _PageBeanField["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050InwardIssueFieldsStatusStatusCategory", {
+Object.defineProperty(exports, "PageBeanFieldConfiguration", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050InwardIssueFieldsStatusStatusCategory["default"];
+    return _PageBeanFieldConfiguration["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050OutwardIssue", {
+Object.defineProperty(exports, "PageBeanFieldConfigurationIssueTypeItem", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050OutwardIssue["default"];
+    return _PageBeanFieldConfigurationIssueTypeItem["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050OutwardIssueFields", {
+Object.defineProperty(exports, "PageBeanFieldConfigurationItem", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050OutwardIssueFields["default"];
+    return _PageBeanFieldConfigurationItem["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050OutwardIssueFieldsIssuetype", {
+Object.defineProperty(exports, "PageBeanFieldConfigurationScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050OutwardIssueFieldsIssuetype["default"];
+    return _PageBeanFieldConfigurationScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20050Type", {
+Object.defineProperty(exports, "PageBeanFieldConfigurationSchemeProjects", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20050Type["default"];
+    return _PageBeanFieldConfigurationSchemeProjects["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20051", {
+Object.defineProperty(exports, "PageBeanFoundFilter", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse56["default"];
+    return _PageBeanFoundFilter["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20052", {
+Object.defineProperty(exports, "PageBeanIssueFieldOption", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse57["default"];
+    return _PageBeanIssueFieldOption["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20052IssueSecuritySchemes", {
+Object.defineProperty(exports, "PageBeanIssueSecurityLevelMember", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20052IssueSecuritySchemes["default"];
+    return _PageBeanIssueSecurityLevelMember["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20053", {
+Object.defineProperty(exports, "PageBeanIssueTypeScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse58["default"];
+    return _PageBeanIssueTypeScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20054", {
+Object.defineProperty(exports, "PageBeanIssueTypeSchemeMapping", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse59["default"];
+    return _PageBeanIssueTypeSchemeMapping["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20055", {
+Object.defineProperty(exports, "PageBeanIssueTypeSchemeProjects", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse60["default"];
+    return _PageBeanIssueTypeSchemeProjects["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20055VisibleFieldNames", {
+Object.defineProperty(exports, "PageBeanIssueTypeScreenScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20055VisibleFieldNames["default"];
+    return _PageBeanIssueTypeScreenScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20055VisibleFunctionNames", {
+Object.defineProperty(exports, "PageBeanIssueTypeScreenSchemeItem", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20055VisibleFunctionNames["default"];
+    return _PageBeanIssueTypeScreenSchemeItem["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20056", {
+Object.defineProperty(exports, "PageBeanIssueTypeScreenSchemesProjects", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse61["default"];
+    return _PageBeanIssueTypeScreenSchemesProjects["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20056Results", {
+Object.defineProperty(exports, "PageBeanNotificationScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20056Results["default"];
+    return _PageBeanNotificationScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20057", {
+Object.defineProperty(exports, "PageBeanProject", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse62["default"];
+    return _PageBeanProject["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20058", {
+Object.defineProperty(exports, "PageBeanScreen", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse63["default"];
+    return _PageBeanScreen["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20058Permissions", {
+Object.defineProperty(exports, "PageBeanScreenScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20058Permissions["default"];
+    return _PageBeanScreenScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20058PermissionsEDITISSUE", {
+Object.defineProperty(exports, "PageBeanString", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20058PermissionsEDITISSUE["default"];
+    return _PageBeanString["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20059", {
+Object.defineProperty(exports, "PageBeanUser", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse64["default"];
+    return _PageBeanUser["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2005Entries", {
+Object.defineProperty(exports, "PageBeanUserDetails", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2005Entries["default"];
+    return _PageBeanUserDetails["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2006", {
+Object.defineProperty(exports, "PageBeanUserKey", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse65["default"];
+    return _PageBeanUserKey["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20060", {
+Object.defineProperty(exports, "PageBeanVersion", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse66["default"];
+    return _PageBeanVersion["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20060ApplicationRoles", {
+Object.defineProperty(exports, "PageBeanWebhook", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20060ApplicationRoles["default"];
+    return _PageBeanWebhook["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20061", {
+Object.defineProperty(exports, "PageBeanWorkflow", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse67["default"];
+    return _PageBeanWorkflow["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20061Event", {
+Object.defineProperty(exports, "PageBeanWorkflowScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20061Event["default"];
+    return _PageBeanWorkflowScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20061NotificationSchemeEvents", {
+Object.defineProperty(exports, "PageBeanWorkflowTransitionRules", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20061NotificationSchemeEvents["default"];
+    return _PageBeanWorkflowTransitionRules["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20061Notifications", {
+Object.defineProperty(exports, "PageOfChangelogs", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20061Notifications["default"];
+    return _PageOfChangelogs["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20061Values", {
+Object.defineProperty(exports, "PageOfComments", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20061Values["default"];
+    return _PageOfComments["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20062", {
+Object.defineProperty(exports, "PageOfDashboards", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse68["default"];
+    return _PageOfDashboards["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20063", {
+Object.defineProperty(exports, "PageOfWorklogs", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse69["default"];
+    return _PageOfWorklogs["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20063Permissions", {
+Object.defineProperty(exports, "PagedListUserDetailsApplicationUser", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20063Permissions["default"];
+    return _PagedListUserDetailsApplicationUser["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20063PermissionsBULKCHANGE", {
+Object.defineProperty(exports, "ParsedJqlQueries", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20063PermissionsBULKCHANGE["default"];
+    return _ParsedJqlQueries["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20064", {
+Object.defineProperty(exports, "ParsedJqlQuery", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse70["default"];
+    return _ParsedJqlQuery["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20064Projects", {
+Object.defineProperty(exports, "PermissionGrant", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20064Projects["default"];
+    return _PermissionGrant["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20065", {
+Object.defineProperty(exports, "PermissionGrants", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse71["default"];
+    return _PermissionGrants["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20065PermissionSchemes", {
+Object.defineProperty(exports, "PermissionHolder", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20065PermissionSchemes["default"];
+    return _PermissionHolder["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20066", {
+Object.defineProperty(exports, "PermissionScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse72["default"];
+    return _PermissionScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20067", {
+Object.defineProperty(exports, "PermissionSchemes", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse73["default"];
+    return _PermissionSchemes["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20068", {
+Object.defineProperty(exports, "Permissions", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse74["default"];
+    return _Permissions["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20068Values", {
+Object.defineProperty(exports, "PermissionsKeysBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20068Values["default"];
+    return _PermissionsKeysBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20069", {
+Object.defineProperty(exports, "PermittedProjects", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse75["default"];
+    return _PermittedProjects["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2006Entries", {
+Object.defineProperty(exports, "Priority", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2006Entries["default"];
+    return _Priority["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2007", {
+Object.defineProperty(exports, "Project", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse76["default"];
+    return _Project["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20070", {
+Object.defineProperty(exports, "ProjectAvatars", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse77["default"];
+    return _ProjectAvatars["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20071", {
+Object.defineProperty(exports, "ProjectCategory", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse78["default"];
+    return _ProjectCategory["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20071Components", {
+Object.defineProperty(exports, "ProjectForScope", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20071Components["default"];
+    return _ProjectForScope["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20071IssueTypes", {
+Object.defineProperty(exports, "ProjectIdentifierBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20071IssueTypes["default"];
+    return _ProjectIdentifierBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20071Roles", {
+Object.defineProperty(exports, "ProjectIdentifiers", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20071Roles["default"];
+    return _ProjectIdentifiers["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20072", {
+Object.defineProperty(exports, "ProjectInputBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse79["default"];
+    return _ProjectInputBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20073", {
+Object.defineProperty(exports, "ProjectInsight", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse80["default"];
+    return _ProjectInsight["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20073Values", {
+Object.defineProperty(exports, "ProjectIssueCreateMetadata", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20073Values["default"];
+    return _ProjectIssueCreateMetadata["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20074", {
+Object.defineProperty(exports, "ProjectIssueSecurityLevels", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse81["default"];
+    return _ProjectIssueSecurityLevels["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20075", {
+Object.defineProperty(exports, "ProjectIssueTypeHierarchy", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse82["default"];
+    return _ProjectIssueTypeHierarchy["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20076", {
+Object.defineProperty(exports, "ProjectIssueTypesHierarchyLevel", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse83["default"];
+    return _ProjectIssueTypesHierarchyLevel["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20077", {
+Object.defineProperty(exports, "ProjectPermissions", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse84["default"];
+    return _ProjectPermissions["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20078", {
+Object.defineProperty(exports, "ProjectRole", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse85["default"];
+    return _ProjectRole["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20078Values", {
+Object.defineProperty(exports, "ProjectRoleActorsUpdateBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20078Values["default"];
+    return _ProjectRoleActorsUpdateBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20079", {
+Object.defineProperty(exports, "ProjectRoleGroup", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse86["default"];
+    return _ProjectRoleGroup["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2007AssociatedItems", {
+Object.defineProperty(exports, "ProjectRoleUser", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2007AssociatedItems["default"];
+    return _ProjectRoleUser["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2007ChangedValues", {
+Object.defineProperty(exports, "ProjectScopeBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2007ChangedValues["default"];
+    return _ProjectScopeBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2007Records", {
+Object.defineProperty(exports, "ProjectType", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2007Records["default"];
+    return _ProjectType["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2008", {
+Object.defineProperty(exports, "PropertyKey", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse87["default"];
+    return _PropertyKey["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20080", {
+Object.defineProperty(exports, "PropertyKeys", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse88["default"];
+    return _PropertyKeys["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20081", {
+Object.defineProperty(exports, "PublishedWorkflowId", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse89["default"];
+    return _PublishedWorkflowId["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20081Errors", {
+Object.defineProperty(exports, "RegisteredWebhook", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20081Errors["default"];
+    return _RegisteredWebhook["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20082", {
+Object.defineProperty(exports, "RemoteIssueLink", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse90["default"];
+    return _RemoteIssueLink["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20083", {
+Object.defineProperty(exports, "RemoteIssueLinkIdentifies", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse91["default"];
+    return _RemoteIssueLinkIdentifies["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20084", {
+Object.defineProperty(exports, "RemoteIssueLinkRequest", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse92["default"];
+    return _RemoteIssueLinkRequest["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20085", {
+Object.defineProperty(exports, "RemoteObject", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse93["default"];
+    return _RemoteObject["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20086", {
+Object.defineProperty(exports, "RemoveOptionFromIssuesResult", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse94["default"];
+    return _RemoveOptionFromIssuesResult["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20087", {
+Object.defineProperty(exports, "RenamedCascadingOption", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse95["default"];
+    return _RenamedCascadingOption["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20087Issues", {
+Object.defineProperty(exports, "RenamedOption", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20087Issues["default"];
+    return _RenamedOption["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20088", {
+Object.defineProperty(exports, "Resolution", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse96["default"];
+    return _Resolution["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20089", {
+Object.defineProperty(exports, "RestrictedPermission", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse97["default"];
+    return _RestrictedPermission["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2008System", {
+Object.defineProperty(exports, "RichText", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2008System["default"];
+    return _RichText["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2009", {
+Object.defineProperty(exports, "RoleActor", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse98["default"];
+    return _RoleActor["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20090", {
+Object.defineProperty(exports, "RuleConfiguration", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse99["default"];
+    return _RuleConfiguration["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20091", {
+Object.defineProperty(exports, "Scope", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse100["default"];
+    return _Scope["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20092", {
+Object.defineProperty(exports, "Screen", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse101["default"];
+    return _Screen["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20092Values", {
+Object.defineProperty(exports, "ScreenID", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20092Values["default"];
+    return _ScreenID["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20093", {
+Object.defineProperty(exports, "ScreenScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse102["default"];
+    return _ScreenScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20094", {
+Object.defineProperty(exports, "ScreenTypeIDsBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse103["default"];
+    return _ScreenTypeIDsBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20095", {
+Object.defineProperty(exports, "ScreenableField", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse104["default"];
+    return _ScreenableField["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20095Link", {
+Object.defineProperty(exports, "ScreenableTab", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20095Link["default"];
+    return _ScreenableTab["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20095Links", {
+Object.defineProperty(exports, "SearchRequestBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20095Links["default"];
+    return _SearchRequestBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20096", {
+Object.defineProperty(exports, "SearchResults", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse105["default"];
+    return _SearchResults["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20097", {
+Object.defineProperty(exports, "SecurityLevel", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse106["default"];
+    return _SecurityLevel["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20097CustomFieldUsage", {
+Object.defineProperty(exports, "SecurityScheme", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20097CustomFieldUsage["default"];
+    return _SecurityScheme["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20098", {
+Object.defineProperty(exports, "SecuritySchemes", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse107["default"];
+    return _SecuritySchemes["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20099", {
+Object.defineProperty(exports, "ServerInformation", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse108["default"];
+    return _ServerInformation["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2009Author", {
+Object.defineProperty(exports, "SharePermission", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2009Author["default"];
+    return _SharePermission["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2009Body", {
+Object.defineProperty(exports, "SharePermissionInputBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2009Body["default"];
+    return _SharePermissionInputBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2009BodyContent", {
+Object.defineProperty(exports, "SimpleApplicationPropertyBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2009BodyContent["default"];
+    return _SimpleApplicationPropertyBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2009BodyContent1", {
+Object.defineProperty(exports, "SimpleErrorCollection", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2009BodyContent2["default"];
+    return _SimpleErrorCollection["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2009Values", {
+Object.defineProperty(exports, "SimpleLink", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2009Values["default"];
+    return _SimpleLink["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2009Visibility", {
+Object.defineProperty(exports, "SimpleListWrapperApplicationRole", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2009Visibility["default"];
+    return _SimpleListWrapperApplicationRole["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse201", {
+Object.defineProperty(exports, "SimpleListWrapperGroupName", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse109["default"];
+    return _SimpleListWrapperGroupName["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2011", {
+Object.defineProperty(exports, "Status", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse110["default"];
+    return _Status["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20110", {
+Object.defineProperty(exports, "StatusCategory", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse111["default"];
+    return _StatusCategory["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20111", {
+Object.defineProperty(exports, "StatusDetails", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse112["default"];
+    return _StatusDetails["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20112", {
+Object.defineProperty(exports, "SuggestedIssue", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse113["default"];
+    return _SuggestedIssue["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20113", {
+Object.defineProperty(exports, "SystemAvatars", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse114["default"];
+    return _SystemAvatars["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20114", {
+Object.defineProperty(exports, "TaskProgressBeanObject", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse115["default"];
+    return _TaskProgressBeanObject["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20114IssueTypeMappings", {
+Object.defineProperty(exports, "TaskProgressBeanRemoveOptionFromIssuesResult", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20114IssueTypeMappings["default"];
+    return _TaskProgressBeanRemoveOptionFromIssuesResult["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20115", {
+Object.defineProperty(exports, "TimeTrackingConfiguration", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse116["default"];
+    return _TimeTrackingConfiguration["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20115LastModifiedUser", {
+Object.defineProperty(exports, "TimeTrackingProvider", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20115LastModifiedUser["default"];
+    return _TimeTrackingProvider["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse20115OriginalIssueTypeMappings", {
+Object.defineProperty(exports, "Transition", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse20115OriginalIssueTypeMappings["default"];
+    return _Transition["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2011Schema", {
+Object.defineProperty(exports, "Transitions", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2011Schema["default"];
+    return _Transitions["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2012", {
+Object.defineProperty(exports, "UnrestrictedUserEmail", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse117["default"];
+    return _UnrestrictedUserEmail["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2012Users", {
+Object.defineProperty(exports, "UpdateCustomFieldOption", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2012Users["default"];
+    return _UpdateCustomFieldOption["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2013", {
+Object.defineProperty(exports, "UpdateUserToGroupBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse118["default"];
+    return _UpdateUserToGroupBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2014", {
+Object.defineProperty(exports, "UpdatedProjectCategory", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse119["default"];
+    return _UpdatedProjectCategory["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2014Issues", {
+Object.defineProperty(exports, "User", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2014Issues["default"];
+    return _User["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2015", {
+Object.defineProperty(exports, "UserBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse120["default"];
+    return _UserBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2016", {
+Object.defineProperty(exports, "UserBeanAvatarUrls", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse121["default"];
+    return _UserBeanAvatarUrls["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2017", {
+Object.defineProperty(exports, "UserDetails", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse122["default"];
+    return _UserDetails["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2018", {
+Object.defineProperty(exports, "UserKey", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse123["default"];
+    return _UserKey["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2018Holder", {
+Object.defineProperty(exports, "UserList", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2018Holder["default"];
+    return _UserList["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2018Permissions", {
+Object.defineProperty(exports, "UserMigrationBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse2018Permissions["default"];
+    return _UserMigrationBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse2019", {
+Object.defineProperty(exports, "UserPermission", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse124["default"];
+    return _UserPermission["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse303", {
+Object.defineProperty(exports, "UserPickerUser", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse125["default"];
+    return _UserPickerUser["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse303Result", {
+Object.defineProperty(exports, "UserWriteBean", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse303Result["default"];
+    return _UserWriteBean["default"];
   }
 });
-Object.defineProperty(exports, "InlineResponse303ResultErrors", {
+Object.defineProperty(exports, "ValueOperand", {
   enumerable: true,
   get: function get() {
-    return _InlineResponse303ResultErrors["default"];
+    return _ValueOperand["default"];
   }
 });
-Object.defineProperty(exports, "IssueIssueIdOrKeyAttachmentsAuthor", {
+Object.defineProperty(exports, "Version", {
   enumerable: true,
   get: function get() {
-    return _IssueIssueIdOrKeyAttachmentsAuthor["default"];
+    return _Version["default"];
   }
 });
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkApplication", {
+Object.defineProperty(exports, "VersionIssueCounts", {
   enumerable: true,
   get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkApplication["default"];
+    return _VersionIssueCounts["default"];
   }
 });
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkObject", {
+Object.defineProperty(exports, "VersionIssuesStatus", {
   enumerable: true,
   get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkObject["default"];
+    return _VersionIssuesStatus["default"];
   }
 });
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkObjectIcon", {
+Object.defineProperty(exports, "VersionMoveBean", {
   enumerable: true,
   get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkObjectIcon["default"];
+    return _VersionMoveBean["default"];
   }
 });
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkObjectStatus", {
+Object.defineProperty(exports, "VersionUnresolvedIssuesCount", {
   enumerable: true,
   get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkObjectStatus["default"];
+    return _VersionUnresolvedIssuesCount["default"];
   }
 });
-Object.defineProperty(exports, "IssueIssueIdOrKeyRemotelinkObjectStatusIcon", {
+Object.defineProperty(exports, "VersionUsageInCustomField", {
   enumerable: true,
   get: function get() {
-    return _IssueIssueIdOrKeyRemotelinkObjectStatusIcon["default"];
+    return _VersionUsageInCustomField["default"];
   }
 });
-Object.defineProperty(exports, "ProjectProjectIdOrKeyStatusesStatuses", {
+Object.defineProperty(exports, "Visibility", {
   enumerable: true,
   get: function get() {
-    return _ProjectProjectIdOrKeyStatusesStatuses["default"];
+    return _Visibility["default"];
   }
 });
-Object.defineProperty(exports, "DefaultApi", {
+Object.defineProperty(exports, "Votes", {
   enumerable: true,
   get: function get() {
-    return _DefaultApi["default"];
+    return _Votes["default"];
+  }
+});
+Object.defineProperty(exports, "Watchers", {
+  enumerable: true,
+  get: function get() {
+    return _Watchers["default"];
+  }
+});
+Object.defineProperty(exports, "Webhook", {
+  enumerable: true,
+  get: function get() {
+    return _Webhook["default"];
+  }
+});
+Object.defineProperty(exports, "WebhookDetails", {
+  enumerable: true,
+  get: function get() {
+    return _WebhookDetails["default"];
+  }
+});
+Object.defineProperty(exports, "WebhookRegistrationDetails", {
+  enumerable: true,
+  get: function get() {
+    return _WebhookRegistrationDetails["default"];
+  }
+});
+Object.defineProperty(exports, "WebhooksExpirationDate", {
+  enumerable: true,
+  get: function get() {
+    return _WebhooksExpirationDate["default"];
+  }
+});
+Object.defineProperty(exports, "Workflow", {
+  enumerable: true,
+  get: function get() {
+    return _Workflow["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowId", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowId["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowRules", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowRules["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowScheme", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowScheme["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowSchemeAssociations", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowSchemeAssociations["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowStatus", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowStatus["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowStatusProperties", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowStatusProperties["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowTransition", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowTransition["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowTransitionProperty", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowTransitionProperty["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowTransitionRule", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowTransitionRule["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowTransitionRules", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowTransitionRules["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowTransitionRulesUpdate", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowTransitionRulesUpdate["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowTransitionRulesUpdateErrorDetails", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowTransitionRulesUpdateErrorDetails["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowTransitionRulesUpdateErrors", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowTransitionRulesUpdateErrors["default"];
+  }
+});
+Object.defineProperty(exports, "Worklog", {
+  enumerable: true,
+  get: function get() {
+    return _Worklog["default"];
+  }
+});
+Object.defineProperty(exports, "WorklogIdsRequestBean", {
+  enumerable: true,
+  get: function get() {
+    return _WorklogIdsRequestBean["default"];
+  }
+});
+Object.defineProperty(exports, "AppPropertiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _AppPropertiesApi["default"];
+  }
+});
+Object.defineProperty(exports, "ApplicationRolesApi", {
+  enumerable: true,
+  get: function get() {
+    return _ApplicationRolesApi["default"];
+  }
+});
+Object.defineProperty(exports, "AuditRecordsApi", {
+  enumerable: true,
+  get: function get() {
+    return _AuditRecordsApi["default"];
+  }
+});
+Object.defineProperty(exports, "AvatarsApi", {
+  enumerable: true,
+  get: function get() {
+    return _AvatarsApi["default"];
+  }
+});
+Object.defineProperty(exports, "DashboardsApi", {
+  enumerable: true,
+  get: function get() {
+    return _DashboardsApi["default"];
+  }
+});
+Object.defineProperty(exports, "DynamicModulesApi", {
+  enumerable: true,
+  get: function get() {
+    return _DynamicModulesApi["default"];
+  }
+});
+Object.defineProperty(exports, "FilterSharingApi", {
+  enumerable: true,
+  get: function get() {
+    return _FilterSharingApi["default"];
+  }
+});
+Object.defineProperty(exports, "FiltersApi", {
+  enumerable: true,
+  get: function get() {
+    return _FiltersApi["default"];
+  }
+});
+Object.defineProperty(exports, "GroupAndUserPickerApi", {
+  enumerable: true,
+  get: function get() {
+    return _GroupAndUserPickerApi["default"];
+  }
+});
+Object.defineProperty(exports, "GroupsApi", {
+  enumerable: true,
+  get: function get() {
+    return _GroupsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueAttachmentsApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueAttachmentsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueCommentPropertiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueCommentPropertiesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueCommentsApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueCommentsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueCustomFieldOptionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueCustomFieldOptionsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueCustomFieldOptionsAppsApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueCustomFieldOptionsAppsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueFieldConfigurationsApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueFieldConfigurationsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueFieldsApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueFieldsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueLinkTypesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueLinkTypesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueLinksApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueLinksApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueNavigatorSettingsApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueNavigatorSettingsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueNotificationSchemesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueNotificationSchemesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssuePrioritiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssuePrioritiesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssuePropertiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssuePropertiesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueRemoteLinksApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueRemoteLinksApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueResolutionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueResolutionsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueSearchApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueSearchApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueSecurityLevelApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueSecurityLevelApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueSecuritySchemesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueSecuritySchemesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueTypePropertiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueTypePropertiesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueTypeSchemesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueTypeSchemesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueTypeScreenSchemesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueTypeScreenSchemesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueTypesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueTypesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueVotesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueVotesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueWatchersApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueWatchersApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueWorklogPropertiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueWorklogPropertiesApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssueWorklogsApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssueWorklogsApi["default"];
+  }
+});
+Object.defineProperty(exports, "IssuesApi", {
+  enumerable: true,
+  get: function get() {
+    return _IssuesApi["default"];
+  }
+});
+Object.defineProperty(exports, "JQLApi", {
+  enumerable: true,
+  get: function get() {
+    return _JQLApi["default"];
+  }
+});
+Object.defineProperty(exports, "JiraExpressionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _JiraExpressionsApi["default"];
+  }
+});
+Object.defineProperty(exports, "JiraSettingsApi", {
+  enumerable: true,
+  get: function get() {
+    return _JiraSettingsApi["default"];
+  }
+});
+Object.defineProperty(exports, "LabelsApi", {
+  enumerable: true,
+  get: function get() {
+    return _LabelsApi["default"];
+  }
+});
+Object.defineProperty(exports, "MyselfApi", {
+  enumerable: true,
+  get: function get() {
+    return _MyselfApi["default"];
+  }
+});
+Object.defineProperty(exports, "PermissionSchemesApi", {
+  enumerable: true,
+  get: function get() {
+    return _PermissionSchemesApi["default"];
+  }
+});
+Object.defineProperty(exports, "PermissionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _PermissionsApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectAvatarsApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectAvatarsApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectCategoriesApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectCategoriesApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectComponentsApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectComponentsApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectKeyAndNameValidationApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectKeyAndNameValidationApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectPermissionSchemesApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectPermissionSchemesApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectPropertiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectPropertiesApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectRoleActorsApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectRoleActorsApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectRolesApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectRolesApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectTypesApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectTypesApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectVersionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectVersionsApi["default"];
+  }
+});
+Object.defineProperty(exports, "ProjectsApi", {
+  enumerable: true,
+  get: function get() {
+    return _ProjectsApi["default"];
+  }
+});
+Object.defineProperty(exports, "ScreensApi", {
+  enumerable: true,
+  get: function get() {
+    return _ScreensApi["default"];
+  }
+});
+Object.defineProperty(exports, "ServerInfoApi", {
+  enumerable: true,
+  get: function get() {
+    return _ServerInfoApi["default"];
+  }
+});
+Object.defineProperty(exports, "TasksApi", {
+  enumerable: true,
+  get: function get() {
+    return _TasksApi["default"];
+  }
+});
+Object.defineProperty(exports, "TimeTrackingApi", {
+  enumerable: true,
+  get: function get() {
+    return _TimeTrackingApi["default"];
+  }
+});
+Object.defineProperty(exports, "UserPropertiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _UserPropertiesApi["default"];
+  }
+});
+Object.defineProperty(exports, "UserSearchApi", {
+  enumerable: true,
+  get: function get() {
+    return _UserSearchApi["default"];
+  }
+});
+Object.defineProperty(exports, "UsersApi", {
+  enumerable: true,
+  get: function get() {
+    return _UsersApi["default"];
+  }
+});
+Object.defineProperty(exports, "WebhooksApi", {
+  enumerable: true,
+  get: function get() {
+    return _WebhooksApi["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowSchemeDraftsApi", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowSchemeDraftsApi["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowSchemeProjectAssociationsApi", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowSchemeProjectAssociationsApi["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowSchemesApi", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowSchemesApi["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowStatusCategoriesApi", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowStatusCategoriesApi["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowStatusesApi", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowStatusesApi["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowTransitionPropertiesApi", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowTransitionPropertiesApi["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowTransitionRulesApi", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowTransitionRulesApi["default"];
+  }
+});
+Object.defineProperty(exports, "WorkflowsApi", {
+  enumerable: true,
+  get: function get() {
+    return _WorkflowsApi["default"];
   }
 });
 
 var _ApiClient = _interopRequireDefault(require("./ApiClient"));
 
-var _FieldSchema = _interopRequireDefault(require("./model/FieldSchema"));
+var _ActorInputBean = _interopRequireDefault(require("./model/ActorInputBean"));
 
-var _FilterIdPermissionProject = _interopRequireDefault(require("./model/FilterIdPermissionProject"));
+var _ActorsMap = _interopRequireDefault(require("./model/ActorsMap"));
 
-var _FilterIdPermissionProjectProjectCategory = _interopRequireDefault(require("./model/FilterIdPermissionProjectProjectCategory"));
+var _AddFieldBean = _interopRequireDefault(require("./model/AddFieldBean"));
 
-var _FilterIdPermissionRole = _interopRequireDefault(require("./model/FilterIdPermissionRole"));
+var _AddGroupBean = _interopRequireDefault(require("./model/AddGroupBean"));
 
-var _FilterIdPermissionRoleActorGroup = _interopRequireDefault(require("./model/FilterIdPermissionRoleActorGroup"));
+var _Application = _interopRequireDefault(require("./model/Application"));
 
-var _FilterIdPermissionRoleActors = _interopRequireDefault(require("./model/FilterIdPermissionRoleActors"));
+var _ApplicationProperty = _interopRequireDefault(require("./model/ApplicationProperty"));
 
-var _FilterIdPermissionRoleScope = _interopRequireDefault(require("./model/FilterIdPermissionRoleScope"));
+var _ApplicationRole = _interopRequireDefault(require("./model/ApplicationRole"));
 
-var _FilterIdPermissionRoleScopeProject = _interopRequireDefault(require("./model/FilterIdPermissionRoleScopeProject"));
+var _AssociatedItemBean = _interopRequireDefault(require("./model/AssociatedItemBean"));
 
-var _InlineObject = _interopRequireDefault(require("./model/InlineObject"));
+var _Attachment = _interopRequireDefault(require("./model/Attachment"));
 
-var _InlineObject2 = _interopRequireDefault(require("./model/InlineObject1"));
+var _AttachmentArchiveEntry = _interopRequireDefault(require("./model/AttachmentArchiveEntry"));
 
-var _InlineObject3 = _interopRequireDefault(require("./model/InlineObject10"));
+var _AttachmentArchiveImpl = _interopRequireDefault(require("./model/AttachmentArchiveImpl"));
 
-var _InlineObject4 = _interopRequireDefault(require("./model/InlineObject11"));
+var _AttachmentArchiveItemReadable = _interopRequireDefault(require("./model/AttachmentArchiveItemReadable"));
 
-var _InlineObject5 = _interopRequireDefault(require("./model/InlineObject12"));
+var _AttachmentArchiveMetadataReadable = _interopRequireDefault(require("./model/AttachmentArchiveMetadataReadable"));
 
-var _InlineObject6 = _interopRequireDefault(require("./model/InlineObject13"));
+var _AttachmentMetadata = _interopRequireDefault(require("./model/AttachmentMetadata"));
 
-var _InlineObject7 = _interopRequireDefault(require("./model/InlineObject14"));
+var _AttachmentSettings = _interopRequireDefault(require("./model/AttachmentSettings"));
 
-var _InlineObject8 = _interopRequireDefault(require("./model/InlineObject15"));
+var _AuditRecordBean = _interopRequireDefault(require("./model/AuditRecordBean"));
 
-var _InlineObject9 = _interopRequireDefault(require("./model/InlineObject16"));
+var _AuditRecords = _interopRequireDefault(require("./model/AuditRecords"));
 
-var _InlineObject10 = _interopRequireDefault(require("./model/InlineObject17"));
+var _AutoCompleteSuggestion = _interopRequireDefault(require("./model/AutoCompleteSuggestion"));
 
-var _InlineObject11 = _interopRequireDefault(require("./model/InlineObject18"));
+var _AutoCompleteSuggestions = _interopRequireDefault(require("./model/AutoCompleteSuggestions"));
 
-var _InlineObject12 = _interopRequireDefault(require("./model/InlineObject19"));
+var _Avatar = _interopRequireDefault(require("./model/Avatar"));
 
-var _InlineObject13 = _interopRequireDefault(require("./model/InlineObject2"));
+var _AvatarUrls = _interopRequireDefault(require("./model/AvatarUrls"));
 
-var _InlineObject14 = _interopRequireDefault(require("./model/InlineObject20"));
+var _AvatarUrlsBean = _interopRequireDefault(require("./model/AvatarUrlsBean"));
 
-var _InlineObject15 = _interopRequireDefault(require("./model/InlineObject21"));
+var _Avatars = _interopRequireDefault(require("./model/Avatars"));
 
-var _InlineObject16 = _interopRequireDefault(require("./model/InlineObject22"));
+var _BulkCreateCustomFieldOptionRequest = _interopRequireDefault(require("./model/BulkCreateCustomFieldOptionRequest"));
 
-var _InlineObject17 = _interopRequireDefault(require("./model/InlineObject23"));
+var _BulkIssuePropertyUpdateRequest = _interopRequireDefault(require("./model/BulkIssuePropertyUpdateRequest"));
 
-var _InlineObject18 = _interopRequireDefault(require("./model/InlineObject24"));
+var _BulkOperationErrorResult = _interopRequireDefault(require("./model/BulkOperationErrorResult"));
 
-var _InlineObject19 = _interopRequireDefault(require("./model/InlineObject25"));
+var _BulkPermissionGrants = _interopRequireDefault(require("./model/BulkPermissionGrants"));
 
-var _InlineObject20 = _interopRequireDefault(require("./model/InlineObject26"));
+var _BulkPermissionsRequestBean = _interopRequireDefault(require("./model/BulkPermissionsRequestBean"));
 
-var _InlineObject21 = _interopRequireDefault(require("./model/InlineObject27"));
+var _BulkProjectPermissionGrants = _interopRequireDefault(require("./model/BulkProjectPermissionGrants"));
 
-var _InlineObject22 = _interopRequireDefault(require("./model/InlineObject28"));
+var _BulkProjectPermissions = _interopRequireDefault(require("./model/BulkProjectPermissions"));
 
-var _InlineObject23 = _interopRequireDefault(require("./model/InlineObject29"));
+var _ChangeDetails = _interopRequireDefault(require("./model/ChangeDetails"));
 
-var _InlineObject24 = _interopRequireDefault(require("./model/InlineObject3"));
+var _ChangedValueBean = _interopRequireDefault(require("./model/ChangedValueBean"));
 
-var _InlineObject25 = _interopRequireDefault(require("./model/InlineObject30"));
+var _ChangedWorklog = _interopRequireDefault(require("./model/ChangedWorklog"));
 
-var _InlineObject26 = _interopRequireDefault(require("./model/InlineObject31"));
+var _ChangedWorklogs = _interopRequireDefault(require("./model/ChangedWorklogs"));
 
-var _InlineObject27 = _interopRequireDefault(require("./model/InlineObject32"));
+var _Changelog = _interopRequireDefault(require("./model/Changelog"));
 
-var _InlineObject28 = _interopRequireDefault(require("./model/InlineObject33"));
+var _ColumnItem = _interopRequireDefault(require("./model/ColumnItem"));
 
-var _InlineObject29 = _interopRequireDefault(require("./model/InlineObject34"));
+var _Comment = _interopRequireDefault(require("./model/Comment"));
 
-var _InlineObject30 = _interopRequireDefault(require("./model/InlineObject35"));
+var _Component = _interopRequireDefault(require("./model/Component"));
 
-var _InlineObject31 = _interopRequireDefault(require("./model/InlineObject36"));
+var _ComponentIssuesCount = _interopRequireDefault(require("./model/ComponentIssuesCount"));
 
-var _InlineObject32 = _interopRequireDefault(require("./model/InlineObject37"));
+var _ComponentWithIssueCount = _interopRequireDefault(require("./model/ComponentWithIssueCount"));
 
-var _InlineObject33 = _interopRequireDefault(require("./model/InlineObject38"));
+var _CompoundClause = _interopRequireDefault(require("./model/CompoundClause"));
 
-var _InlineObject34 = _interopRequireDefault(require("./model/InlineObject39"));
+var _Configuration = _interopRequireDefault(require("./model/Configuration"));
 
-var _InlineObject35 = _interopRequireDefault(require("./model/InlineObject4"));
+var _ConnectWorkflowTransitionRule = _interopRequireDefault(require("./model/ConnectWorkflowTransitionRule"));
 
-var _InlineObject36 = _interopRequireDefault(require("./model/InlineObject40"));
+var _ContainerForRegisteredWebhooks = _interopRequireDefault(require("./model/ContainerForRegisteredWebhooks"));
 
-var _InlineObject37 = _interopRequireDefault(require("./model/InlineObject41"));
+var _ContainerForWebhookIDs = _interopRequireDefault(require("./model/ContainerForWebhookIDs"));
 
-var _InlineObject38 = _interopRequireDefault(require("./model/InlineObject42"));
+var _ContainerOfWorkflowSchemeAssociations = _interopRequireDefault(require("./model/ContainerOfWorkflowSchemeAssociations"));
 
-var _InlineObject39 = _interopRequireDefault(require("./model/InlineObject43"));
+var _Context = _interopRequireDefault(require("./model/Context"));
 
-var _InlineObject40 = _interopRequireDefault(require("./model/InlineObject44"));
+var _ConvertedJQLQueries = _interopRequireDefault(require("./model/ConvertedJQLQueries"));
 
-var _InlineObject41 = _interopRequireDefault(require("./model/InlineObject45"));
+var _CreateUpdateRoleRequestBean = _interopRequireDefault(require("./model/CreateUpdateRoleRequestBean"));
 
-var _InlineObject42 = _interopRequireDefault(require("./model/InlineObject46"));
+var _CreatedIssue = _interopRequireDefault(require("./model/CreatedIssue"));
 
-var _InlineObject43 = _interopRequireDefault(require("./model/InlineObject47"));
+var _CreatedIssues = _interopRequireDefault(require("./model/CreatedIssues"));
 
-var _InlineObject44 = _interopRequireDefault(require("./model/InlineObject48"));
+var _CustomFieldDefinitionJsonBean = _interopRequireDefault(require("./model/CustomFieldDefinitionJsonBean"));
 
-var _InlineObject45 = _interopRequireDefault(require("./model/InlineObject49"));
+var _CustomFieldOption = _interopRequireDefault(require("./model/CustomFieldOption"));
 
-var _InlineObject46 = _interopRequireDefault(require("./model/InlineObject5"));
+var _CustomFieldOptionDetails = _interopRequireDefault(require("./model/CustomFieldOptionDetails"));
 
-var _InlineObject47 = _interopRequireDefault(require("./model/InlineObject50"));
+var _CustomFieldOptionValue = _interopRequireDefault(require("./model/CustomFieldOptionValue"));
 
-var _InlineObject48 = _interopRequireDefault(require("./model/InlineObject51"));
+var _CustomFieldReplacement = _interopRequireDefault(require("./model/CustomFieldReplacement"));
 
-var _InlineObject49 = _interopRequireDefault(require("./model/InlineObject52"));
+var _Dashboard = _interopRequireDefault(require("./model/Dashboard"));
 
-var _InlineObject50 = _interopRequireDefault(require("./model/InlineObject53"));
+var _DashboardRequest = _interopRequireDefault(require("./model/DashboardRequest"));
 
-var _InlineObject51 = _interopRequireDefault(require("./model/InlineObject54"));
+var _DefaultShareScope = _interopRequireDefault(require("./model/DefaultShareScope"));
 
-var _InlineObject52 = _interopRequireDefault(require("./model/InlineObject55"));
+var _DefaultWorkflow = _interopRequireDefault(require("./model/DefaultWorkflow"));
 
-var _InlineObject53 = _interopRequireDefault(require("./model/InlineObject56"));
+var _DeleteAndReplaceVersionBean = _interopRequireDefault(require("./model/DeleteAndReplaceVersionBean"));
 
-var _InlineObject54 = _interopRequireDefault(require("./model/InlineObject57"));
+var _DeprecatedWorkflow = _interopRequireDefault(require("./model/DeprecatedWorkflow"));
 
-var _InlineObject55 = _interopRequireDefault(require("./model/InlineObject58"));
+var _EntityProperty = _interopRequireDefault(require("./model/EntityProperty"));
 
-var _InlineObject56 = _interopRequireDefault(require("./model/InlineObject59"));
+var _ErrorCollection = _interopRequireDefault(require("./model/ErrorCollection"));
 
-var _InlineObject57 = _interopRequireDefault(require("./model/InlineObject6"));
+var _ErrorMessage = _interopRequireDefault(require("./model/ErrorMessage"));
 
-var _InlineObject58 = _interopRequireDefault(require("./model/InlineObject60"));
+var _EventNotification = _interopRequireDefault(require("./model/EventNotification"));
 
-var _InlineObject59 = _interopRequireDefault(require("./model/InlineObject61"));
+var _FailedWebhook = _interopRequireDefault(require("./model/FailedWebhook"));
 
-var _InlineObject60 = _interopRequireDefault(require("./model/InlineObject62"));
+var _FailedWebhooks = _interopRequireDefault(require("./model/FailedWebhooks"));
 
-var _InlineObject61 = _interopRequireDefault(require("./model/InlineObject63"));
+var _Field = _interopRequireDefault(require("./model/Field"));
 
-var _InlineObject62 = _interopRequireDefault(require("./model/InlineObject64"));
+var _FieldChangedClause = _interopRequireDefault(require("./model/FieldChangedClause"));
 
-var _InlineObject63 = _interopRequireDefault(require("./model/InlineObject65"));
+var _FieldConfiguration = _interopRequireDefault(require("./model/FieldConfiguration"));
 
-var _InlineObject64 = _interopRequireDefault(require("./model/InlineObject66"));
+var _FieldConfigurationIssueTypeItem = _interopRequireDefault(require("./model/FieldConfigurationIssueTypeItem"));
 
-var _InlineObject65 = _interopRequireDefault(require("./model/InlineObject67"));
+var _FieldConfigurationItem = _interopRequireDefault(require("./model/FieldConfigurationItem"));
 
-var _InlineObject66 = _interopRequireDefault(require("./model/InlineObject68"));
+var _FieldConfigurationScheme = _interopRequireDefault(require("./model/FieldConfigurationScheme"));
 
-var _InlineObject67 = _interopRequireDefault(require("./model/InlineObject69"));
+var _FieldConfigurationSchemeProjectAssociation = _interopRequireDefault(require("./model/FieldConfigurationSchemeProjectAssociation"));
 
-var _InlineObject68 = _interopRequireDefault(require("./model/InlineObject7"));
+var _FieldConfigurationSchemeProjects = _interopRequireDefault(require("./model/FieldConfigurationSchemeProjects"));
 
-var _InlineObject69 = _interopRequireDefault(require("./model/InlineObject70"));
+var _FieldDetails = _interopRequireDefault(require("./model/FieldDetails"));
 
-var _InlineObject70 = _interopRequireDefault(require("./model/InlineObject71"));
+var _FieldLastUsed = _interopRequireDefault(require("./model/FieldLastUsed"));
 
-var _InlineObject71 = _interopRequireDefault(require("./model/InlineObject72"));
+var _FieldMetadata = _interopRequireDefault(require("./model/FieldMetadata"));
 
-var _InlineObject72 = _interopRequireDefault(require("./model/InlineObject73"));
+var _FieldReferenceData = _interopRequireDefault(require("./model/FieldReferenceData"));
 
-var _InlineObject73 = _interopRequireDefault(require("./model/InlineObject74"));
+var _FieldUpdateOperation = _interopRequireDefault(require("./model/FieldUpdateOperation"));
 
-var _InlineObject74 = _interopRequireDefault(require("./model/InlineObject8"));
+var _FieldValueClause = _interopRequireDefault(require("./model/FieldValueClause"));
 
-var _InlineObject75 = _interopRequireDefault(require("./model/InlineObject9"));
+var _FieldWasClause = _interopRequireDefault(require("./model/FieldWasClause"));
 
-var _InlineResponse = _interopRequireDefault(require("./model/InlineResponse200"));
+var _Fields = _interopRequireDefault(require("./model/Fields"));
 
-var _InlineResponse2 = _interopRequireDefault(require("./model/InlineResponse2001"));
+var _Filter = _interopRequireDefault(require("./model/Filter"));
 
-var _InlineResponse3 = _interopRequireDefault(require("./model/InlineResponse20010"));
+var _FilterSubscription = _interopRequireDefault(require("./model/FilterSubscription"));
 
-var _InlineResponse4 = _interopRequireDefault(require("./model/InlineResponse200100"));
+var _FilterSubscriptionsList = _interopRequireDefault(require("./model/FilterSubscriptionsList"));
 
-var _InlineResponse5 = _interopRequireDefault(require("./model/InlineResponse200101"));
+var _FoundFilter = _interopRequireDefault(require("./model/FoundFilter"));
 
-var _InlineResponse6 = _interopRequireDefault(require("./model/InlineResponse200102"));
+var _FoundGroup = _interopRequireDefault(require("./model/FoundGroup"));
 
-var _InlineResponse7 = _interopRequireDefault(require("./model/InlineResponse200103"));
+var _FoundGroups = _interopRequireDefault(require("./model/FoundGroups"));
 
-var _InlineResponse8 = _interopRequireDefault(require("./model/InlineResponse200104"));
+var _FoundUsers = _interopRequireDefault(require("./model/FoundUsers"));
 
-var _InlineResponse9 = _interopRequireDefault(require("./model/InlineResponse200105"));
+var _FoundUsersAndGroups = _interopRequireDefault(require("./model/FoundUsersAndGroups"));
 
-var _InlineResponse10 = _interopRequireDefault(require("./model/InlineResponse200106"));
+var _FunctionOperand = _interopRequireDefault(require("./model/FunctionOperand"));
 
-var _InlineResponse200106Values = _interopRequireDefault(require("./model/InlineResponse200106Values"));
+var _FunctionReferenceData = _interopRequireDefault(require("./model/FunctionReferenceData"));
 
-var _InlineResponse11 = _interopRequireDefault(require("./model/InlineResponse200107"));
+var _GlobalScopeBean = _interopRequireDefault(require("./model/GlobalScopeBean"));
 
-var _InlineResponse20010Keys = _interopRequireDefault(require("./model/InlineResponse20010Keys"));
+var _Group = _interopRequireDefault(require("./model/Group"));
 
-var _InlineResponse12 = _interopRequireDefault(require("./model/InlineResponse20011"));
+var _GroupLabel = _interopRequireDefault(require("./model/GroupLabel"));
 
-var _InlineResponse20011Value = _interopRequireDefault(require("./model/InlineResponse20011Value"));
+var _GroupName = _interopRequireDefault(require("./model/GroupName"));
 
-var _InlineResponse13 = _interopRequireDefault(require("./model/InlineResponse20012"));
+var _HealthCheckResult = _interopRequireDefault(require("./model/HealthCheckResult"));
 
-var _InlineResponse14 = _interopRequireDefault(require("./model/InlineResponse20013"));
+var _Hierarchy = _interopRequireDefault(require("./model/Hierarchy"));
 
-var _InlineResponse20013TimeTrackingConfiguration = _interopRequireDefault(require("./model/InlineResponse20013TimeTrackingConfiguration"));
+var _HierarchyLevel = _interopRequireDefault(require("./model/HierarchyLevel"));
 
-var _InlineResponse15 = _interopRequireDefault(require("./model/InlineResponse20014"));
+var _HistoryMetadata = _interopRequireDefault(require("./model/HistoryMetadata"));
 
-var _InlineResponse16 = _interopRequireDefault(require("./model/InlineResponse20015"));
+var _HistoryMetadataParticipant = _interopRequireDefault(require("./model/HistoryMetadataParticipant"));
 
-var _InlineResponse17 = _interopRequireDefault(require("./model/InlineResponse20016"));
+var _Icon = _interopRequireDefault(require("./model/Icon"));
 
-var _InlineResponse18 = _interopRequireDefault(require("./model/InlineResponse20017"));
+var _IconBean = _interopRequireDefault(require("./model/IconBean"));
 
-var _InlineResponse19 = _interopRequireDefault(require("./model/InlineResponse20018"));
+var _IdBean = _interopRequireDefault(require("./model/IdBean"));
 
-var _InlineResponse20018Dashboards = _interopRequireDefault(require("./model/InlineResponse20018Dashboards"));
+var _IdOrKeyBean = _interopRequireDefault(require("./model/IdOrKeyBean"));
 
-var _InlineResponse20018Group = _interopRequireDefault(require("./model/InlineResponse20018Group"));
+var _IncludedFields = _interopRequireDefault(require("./model/IncludedFields"));
 
-var _InlineResponse20018Owner = _interopRequireDefault(require("./model/InlineResponse20018Owner"));
+var _IssueBean = _interopRequireDefault(require("./model/IssueBean"));
 
-var _InlineResponse20018SharePermissions = _interopRequireDefault(require("./model/InlineResponse20018SharePermissions"));
+var _IssueCommentListRequestBean = _interopRequireDefault(require("./model/IssueCommentListRequestBean"));
 
-var _InlineResponse20 = _interopRequireDefault(require("./model/InlineResponse20019"));
+var _IssueCreateMetadata = _interopRequireDefault(require("./model/IssueCreateMetadata"));
 
-var _InlineResponse20019SharePermissions = _interopRequireDefault(require("./model/InlineResponse20019SharePermissions"));
+var _IssueEntityProperties = _interopRequireDefault(require("./model/IssueEntityProperties"));
 
-var _InlineResponse21 = _interopRequireDefault(require("./model/InlineResponse2002"));
+var _IssueFieldOption = _interopRequireDefault(require("./model/IssueFieldOption"));
 
-var _InlineResponse22 = _interopRequireDefault(require("./model/InlineResponse20020"));
+var _IssueFieldOptionConfiguration = _interopRequireDefault(require("./model/IssueFieldOptionConfiguration"));
 
-var _InlineResponse20020Meta = _interopRequireDefault(require("./model/InlineResponse20020Meta"));
+var _IssueFieldOptionCreateBean = _interopRequireDefault(require("./model/IssueFieldOptionCreateBean"));
 
-var _InlineResponse20020MetaComplexity = _interopRequireDefault(require("./model/InlineResponse20020MetaComplexity"));
+var _IssueFieldOptionScopeBean = _interopRequireDefault(require("./model/IssueFieldOptionScopeBean"));
 
-var _InlineResponse20020MetaComplexityBeans = _interopRequireDefault(require("./model/InlineResponse20020MetaComplexityBeans"));
+var _IssueFilterForBulkPropertyDelete = _interopRequireDefault(require("./model/IssueFilterForBulkPropertyDelete"));
 
-var _InlineResponse23 = _interopRequireDefault(require("./model/InlineResponse20021"));
+var _IssueFilterForBulkPropertySet = _interopRequireDefault(require("./model/IssueFilterForBulkPropertySet"));
 
-var _InlineResponse24 = _interopRequireDefault(require("./model/InlineResponse20022"));
+var _IssueLink = _interopRequireDefault(require("./model/IssueLink"));
 
-var _InlineResponse20022Config = _interopRequireDefault(require("./model/InlineResponse20022Config"));
+var _IssueLinkType = _interopRequireDefault(require("./model/IssueLinkType"));
 
-var _InlineResponse20022ConfigScope = _interopRequireDefault(require("./model/InlineResponse20022ConfigScope"));
+var _IssueLinkTypes = _interopRequireDefault(require("./model/IssueLinkTypes"));
 
-var _InlineResponse20022ConfigScopeProjects = _interopRequireDefault(require("./model/InlineResponse20022ConfigScopeProjects2"));
+var _IssueMatches = _interopRequireDefault(require("./model/IssueMatches"));
 
-var _InlineResponse20022Properties = _interopRequireDefault(require("./model/InlineResponse20022Properties"));
+var _IssueMatchesForJQL = _interopRequireDefault(require("./model/IssueMatchesForJQL"));
 
-var _InlineResponse20022PropertiesLeader = _interopRequireDefault(require("./model/InlineResponse20022PropertiesLeader"));
+var _IssuePickerSuggestions = _interopRequireDefault(require("./model/IssuePickerSuggestions"));
 
-var _InlineResponse20022Values = _interopRequireDefault(require("./model/InlineResponse20022Values"));
+var _IssuePickerSuggestionsIssueType = _interopRequireDefault(require("./model/IssuePickerSuggestionsIssueType"));
 
-var _InlineResponse25 = _interopRequireDefault(require("./model/InlineResponse20023"));
+var _IssueSecurityLevelMember = _interopRequireDefault(require("./model/IssueSecurityLevelMember"));
 
-var _InlineResponse26 = _interopRequireDefault(require("./model/InlineResponse20024"));
+var _IssueTransition = _interopRequireDefault(require("./model/IssueTransition"));
 
-var _InlineResponse20024Values = _interopRequireDefault(require("./model/InlineResponse20024Values"));
+var _IssueTypeCreateBean = _interopRequireDefault(require("./model/IssueTypeCreateBean"));
 
-var _InlineResponse27 = _interopRequireDefault(require("./model/InlineResponse20025"));
+var _IssueTypeDetails = _interopRequireDefault(require("./model/IssueTypeDetails"));
 
-var _InlineResponse28 = _interopRequireDefault(require("./model/InlineResponse20026"));
+var _IssueTypeInfo = _interopRequireDefault(require("./model/IssueTypeInfo"));
 
-var _InlineResponse20026Subscriptions = _interopRequireDefault(require("./model/InlineResponse20026Subscriptions"));
+var _IssueTypeIssueCreateMetadata = _interopRequireDefault(require("./model/IssueTypeIssueCreateMetadata"));
 
-var _InlineResponse29 = _interopRequireDefault(require("./model/InlineResponse20027"));
+var _IssueTypeScheme = _interopRequireDefault(require("./model/IssueTypeScheme"));
 
-var _InlineResponse30 = _interopRequireDefault(require("./model/InlineResponse20028"));
+var _IssueTypeSchemeMapping = _interopRequireDefault(require("./model/IssueTypeSchemeMapping"));
 
-var _InlineResponse31 = _interopRequireDefault(require("./model/InlineResponse20029"));
+var _IssueTypeSchemeProjectAssociation = _interopRequireDefault(require("./model/IssueTypeSchemeProjectAssociation"));
 
-var _InlineResponse20029Values = _interopRequireDefault(require("./model/InlineResponse20029Values"));
+var _IssueTypeSchemeProjects = _interopRequireDefault(require("./model/IssueTypeSchemeProjects"));
 
-var _InlineResponse32 = _interopRequireDefault(require("./model/InlineResponse2003"));
+var _IssueTypeScreenScheme = _interopRequireDefault(require("./model/IssueTypeScreenScheme"));
 
-var _InlineResponse33 = _interopRequireDefault(require("./model/InlineResponse20030"));
+var _IssueTypeScreenSchemeItem = _interopRequireDefault(require("./model/IssueTypeScreenSchemeItem"));
 
-var _InlineResponse34 = _interopRequireDefault(require("./model/InlineResponse20031"));
+var _IssueTypeScreenSchemeProjectAssociation = _interopRequireDefault(require("./model/IssueTypeScreenSchemeProjectAssociation"));
 
-var _InlineResponse35 = _interopRequireDefault(require("./model/InlineResponse20032"));
+var _IssueTypeScreenSchemesProjects = _interopRequireDefault(require("./model/IssueTypeScreenSchemesProjects"));
 
-var _InlineResponse36 = _interopRequireDefault(require("./model/InlineResponse20033"));
+var _IssueTypeUpdateBean = _interopRequireDefault(require("./model/IssueTypeUpdateBean"));
 
-var _InlineResponse20033Values = _interopRequireDefault(require("./model/InlineResponse20033Values"));
+var _IssueTypeWithStatus = _interopRequireDefault(require("./model/IssueTypeWithStatus"));
 
-var _InlineResponse37 = _interopRequireDefault(require("./model/InlineResponse20034"));
+var _IssueTypeWorkflowMapping = _interopRequireDefault(require("./model/IssueTypeWorkflowMapping"));
 
-var _InlineResponse20034Groups = _interopRequireDefault(require("./model/InlineResponse20034Groups"));
+var _IssueTypesWorkflowMapping = _interopRequireDefault(require("./model/IssueTypesWorkflowMapping"));
 
-var _InlineResponse38 = _interopRequireDefault(require("./model/InlineResponse20035"));
+var _IssueUpdateDetails = _interopRequireDefault(require("./model/IssueUpdateDetails"));
 
-var _InlineResponse20035Groups = _interopRequireDefault(require("./model/InlineResponse20035Groups"));
+var _IssueUpdateMetadata = _interopRequireDefault(require("./model/IssueUpdateMetadata"));
 
-var _InlineResponse20035Users = _interopRequireDefault(require("./model/InlineResponse20035Users"));
+var _IssuesAndJQLQueries = _interopRequireDefault(require("./model/IssuesAndJQLQueries"));
 
-var _InlineResponse20035UsersUsers = _interopRequireDefault(require("./model/InlineResponse20035UsersUsers"));
+var _IssuesJqlMetaDataBean = _interopRequireDefault(require("./model/IssuesJqlMetaDataBean"));
 
-var _InlineResponse39 = _interopRequireDefault(require("./model/InlineResponse20036"));
+var _IssuesMetaBean = _interopRequireDefault(require("./model/IssuesMetaBean"));
 
-var _InlineResponse20036Fields = _interopRequireDefault(require("./model/InlineResponse20036Fields"));
+var _IssuesUpdateBean = _interopRequireDefault(require("./model/IssuesUpdateBean"));
 
-var _InlineResponse20036FieldsIssuetype = _interopRequireDefault(require("./model/InlineResponse20036FieldsIssuetype"));
+var _JQLPersonalDataMigrationRequest = _interopRequireDefault(require("./model/JQLPersonalDataMigrationRequest"));
 
-var _InlineResponse20036Issuetypes = _interopRequireDefault(require("./model/InlineResponse20036Issuetypes"));
+var _JQLQueryWithUnknownUsers = _interopRequireDefault(require("./model/JQLQueryWithUnknownUsers"));
 
-var _InlineResponse20036Projects = _interopRequireDefault(require("./model/InlineResponse20036Projects"));
+var _JQLReferenceData = _interopRequireDefault(require("./model/JQLReferenceData"));
 
-var _InlineResponse40 = _interopRequireDefault(require("./model/InlineResponse20037"));
+var _JexpIssues = _interopRequireDefault(require("./model/JexpIssues"));
 
-var _InlineResponse20037Fields = _interopRequireDefault(require("./model/InlineResponse20037Fields"));
+var _JexpJqlIssues = _interopRequireDefault(require("./model/JexpJqlIssues"));
 
-var _InlineResponse20037FieldsAttachment = _interopRequireDefault(require("./model/InlineResponse20037FieldsAttachment"));
+var _JiraExpressionAnalysis = _interopRequireDefault(require("./model/JiraExpressionAnalysis"));
 
-var _InlineResponse20037FieldsIssuelinks = _interopRequireDefault(require("./model/InlineResponse20037FieldsIssuelinks"));
+var _JiraExpressionEvalContextBean = _interopRequireDefault(require("./model/JiraExpressionEvalContextBean"));
 
-var _InlineResponse20037FieldsOutwardIssue = _interopRequireDefault(require("./model/InlineResponse20037FieldsOutwardIssue"));
+var _JiraExpressionEvalRequestBean = _interopRequireDefault(require("./model/JiraExpressionEvalRequestBean"));
 
-var _InlineResponse20037FieldsOutwardIssueFields = _interopRequireDefault(require("./model/InlineResponse20037FieldsOutwardIssueFields"));
+var _JiraExpressionEvaluationMetaDataBean = _interopRequireDefault(require("./model/JiraExpressionEvaluationMetaDataBean"));
 
-var _InlineResponse20037FieldsOutwardIssueFieldsStatus = _interopRequireDefault(require("./model/InlineResponse20037FieldsOutwardIssueFieldsStatus"));
+var _JiraExpressionForAnalysis = _interopRequireDefault(require("./model/JiraExpressionForAnalysis"));
 
-var _InlineResponse20037FieldsSubTasks = _interopRequireDefault(require("./model/InlineResponse20037FieldsSubTasks"));
+var _JiraExpressionResult = _interopRequireDefault(require("./model/JiraExpressionResult"));
 
-var _InlineResponse20037FieldsTimetracking = _interopRequireDefault(require("./model/InlineResponse20037FieldsTimetracking"));
+var _JiraExpressionValidationError = _interopRequireDefault(require("./model/JiraExpressionValidationError"));
 
-var _InlineResponse20037FieldsType = _interopRequireDefault(require("./model/InlineResponse20037FieldsType"));
+var _JiraExpressionsAnalysis = _interopRequireDefault(require("./model/JiraExpressionsAnalysis"));
 
-var _InlineResponse20037FieldsType2 = _interopRequireDefault(require("./model/InlineResponse20037FieldsType1"));
+var _JiraExpressionsComplexityBean = _interopRequireDefault(require("./model/JiraExpressionsComplexityBean"));
 
-var _InlineResponse20037FieldsWatcher = _interopRequireDefault(require("./model/InlineResponse20037FieldsWatcher"));
+var _JiraExpressionsComplexityValueBean = _interopRequireDefault(require("./model/JiraExpressionsComplexityValueBean"));
 
-var _InlineResponse20037FieldsWorklog = _interopRequireDefault(require("./model/InlineResponse20037FieldsWorklog"));
+var _JqlQueriesToParse = _interopRequireDefault(require("./model/JqlQueriesToParse"));
 
-var _InlineResponse41 = _interopRequireDefault(require("./model/InlineResponse20038"));
+var _JqlQuery = _interopRequireDefault(require("./model/JqlQuery"));
 
-var _InlineResponse42 = _interopRequireDefault(require("./model/InlineResponse20039"));
+var _JqlQueryClauseTimePredicate = _interopRequireDefault(require("./model/JqlQueryClauseTimePredicate"));
 
-var _InlineResponse20039Items = _interopRequireDefault(require("./model/InlineResponse20039Items"));
+var _JqlQueryField = _interopRequireDefault(require("./model/JqlQueryField"));
 
-var _InlineResponse20039Values = _interopRequireDefault(require("./model/InlineResponse20039Values"));
+var _JqlQueryFieldEntityProperty = _interopRequireDefault(require("./model/JqlQueryFieldEntityProperty"));
 
-var _InlineResponse43 = _interopRequireDefault(require("./model/InlineResponse2004"));
+var _JqlQueryOrderByClause = _interopRequireDefault(require("./model/JqlQueryOrderByClause"));
 
-var _InlineResponse44 = _interopRequireDefault(require("./model/InlineResponse20040"));
+var _JqlQueryOrderByClauseElement = _interopRequireDefault(require("./model/JqlQueryOrderByClauseElement"));
 
-var _InlineResponse45 = _interopRequireDefault(require("./model/InlineResponse20041"));
+var _JsonNode = _interopRequireDefault(require("./model/JsonNode"));
 
-var _InlineResponse20041Fields = _interopRequireDefault(require("./model/InlineResponse20041Fields"));
+var _JsonTypeBean = _interopRequireDefault(require("./model/JsonTypeBean"));
 
-var _InlineResponse20041FieldsSummary = _interopRequireDefault(require("./model/InlineResponse20041FieldsSummary"));
+var _KeywordOperand = _interopRequireDefault(require("./model/KeywordOperand"));
 
-var _InlineResponse20041FieldsSummarySchema = _interopRequireDefault(require("./model/InlineResponse20041FieldsSummarySchema"));
+var _LinkGroup = _interopRequireDefault(require("./model/LinkGroup"));
 
-var _InlineResponse46 = _interopRequireDefault(require("./model/InlineResponse20042"));
+var _LinkIssueRequestJsonBean = _interopRequireDefault(require("./model/LinkIssueRequestJsonBean"));
 
-var _InlineResponse47 = _interopRequireDefault(require("./model/InlineResponse20043"));
+var _LinkedIssue = _interopRequireDefault(require("./model/LinkedIssue"));
 
-var _InlineResponse48 = _interopRequireDefault(require("./model/InlineResponse20044"));
+var _ListOperand = _interopRequireDefault(require("./model/ListOperand"));
 
-var _InlineResponse49 = _interopRequireDefault(require("./model/InlineResponse20045"));
+var _Locale = _interopRequireDefault(require("./model/Locale"));
 
-var _InlineResponse20045To = _interopRequireDefault(require("./model/InlineResponse20045To"));
+var _MoveFieldBean = _interopRequireDefault(require("./model/MoveFieldBean"));
 
-var _InlineResponse20045ToStatusCategory = _interopRequireDefault(require("./model/InlineResponse20045ToStatusCategory"));
+var _NestedResponse = _interopRequireDefault(require("./model/NestedResponse"));
 
-var _InlineResponse20045Transitions = _interopRequireDefault(require("./model/InlineResponse20045Transitions"));
+var _Notification = _interopRequireDefault(require("./model/Notification"));
 
-var _InlineResponse50 = _interopRequireDefault(require("./model/InlineResponse20046"));
+var _NotificationEvent = _interopRequireDefault(require("./model/NotificationEvent"));
 
-var _InlineResponse20046Voters = _interopRequireDefault(require("./model/InlineResponse20046Voters"));
+var _NotificationRecipients = _interopRequireDefault(require("./model/NotificationRecipients"));
 
-var _InlineResponse51 = _interopRequireDefault(require("./model/InlineResponse20047"));
+var _NotificationRecipientsRestrictions = _interopRequireDefault(require("./model/NotificationRecipientsRestrictions"));
 
-var _InlineResponse52 = _interopRequireDefault(require("./model/InlineResponse20048"));
+var _NotificationScheme = _interopRequireDefault(require("./model/NotificationScheme"));
 
-var _InlineResponse53 = _interopRequireDefault(require("./model/InlineResponse20049"));
+var _NotificationSchemeEvent = _interopRequireDefault(require("./model/NotificationSchemeEvent"));
 
-var _InlineResponse2004Author = _interopRequireDefault(require("./model/InlineResponse2004Author"));
+var _OperationMessage = _interopRequireDefault(require("./model/OperationMessage"));
 
-var _InlineResponse2004AuthorAvatarUrls = _interopRequireDefault(require("./model/InlineResponse2004AuthorAvatarUrls"));
+var _Operations = _interopRequireDefault(require("./model/Operations"));
 
-var _InlineResponse54 = _interopRequireDefault(require("./model/InlineResponse2005"));
+var _PageBeanChangelog = _interopRequireDefault(require("./model/PageBeanChangelog"));
 
-var _InlineResponse55 = _interopRequireDefault(require("./model/InlineResponse20050"));
+var _PageBeanComment = _interopRequireDefault(require("./model/PageBeanComment"));
 
-var _InlineResponse20050InwardIssue = _interopRequireDefault(require("./model/InlineResponse20050InwardIssue"));
+var _PageBeanComponentWithIssueCount = _interopRequireDefault(require("./model/PageBeanComponentWithIssueCount"));
 
-var _InlineResponse20050InwardIssueFields = _interopRequireDefault(require("./model/InlineResponse20050InwardIssueFields"));
+var _PageBeanContext = _interopRequireDefault(require("./model/PageBeanContext"));
 
-var _InlineResponse20050InwardIssueFieldsIssuetype = _interopRequireDefault(require("./model/InlineResponse20050InwardIssueFieldsIssuetype"));
+var _PageBeanCustomFieldOptionDetails = _interopRequireDefault(require("./model/PageBeanCustomFieldOptionDetails"));
 
-var _InlineResponse20050InwardIssueFieldsPriority = _interopRequireDefault(require("./model/InlineResponse20050InwardIssueFieldsPriority"));
+var _PageBeanDashboard = _interopRequireDefault(require("./model/PageBeanDashboard"));
 
-var _InlineResponse20050InwardIssueFieldsStatus = _interopRequireDefault(require("./model/InlineResponse20050InwardIssueFieldsStatus"));
+var _PageBeanField = _interopRequireDefault(require("./model/PageBeanField"));
 
-var _InlineResponse20050InwardIssueFieldsStatusStatusCategory = _interopRequireDefault(require("./model/InlineResponse20050InwardIssueFieldsStatusStatusCategory"));
+var _PageBeanFieldConfiguration = _interopRequireDefault(require("./model/PageBeanFieldConfiguration"));
 
-var _InlineResponse20050OutwardIssue = _interopRequireDefault(require("./model/InlineResponse20050OutwardIssue"));
+var _PageBeanFieldConfigurationIssueTypeItem = _interopRequireDefault(require("./model/PageBeanFieldConfigurationIssueTypeItem"));
 
-var _InlineResponse20050OutwardIssueFields = _interopRequireDefault(require("./model/InlineResponse20050OutwardIssueFields"));
+var _PageBeanFieldConfigurationItem = _interopRequireDefault(require("./model/PageBeanFieldConfigurationItem"));
 
-var _InlineResponse20050OutwardIssueFieldsIssuetype = _interopRequireDefault(require("./model/InlineResponse20050OutwardIssueFieldsIssuetype"));
+var _PageBeanFieldConfigurationScheme = _interopRequireDefault(require("./model/PageBeanFieldConfigurationScheme"));
 
-var _InlineResponse20050Type = _interopRequireDefault(require("./model/InlineResponse20050Type"));
+var _PageBeanFieldConfigurationSchemeProjects = _interopRequireDefault(require("./model/PageBeanFieldConfigurationSchemeProjects"));
 
-var _InlineResponse56 = _interopRequireDefault(require("./model/InlineResponse20051"));
+var _PageBeanFoundFilter = _interopRequireDefault(require("./model/PageBeanFoundFilter"));
 
-var _InlineResponse57 = _interopRequireDefault(require("./model/InlineResponse20052"));
+var _PageBeanIssueFieldOption = _interopRequireDefault(require("./model/PageBeanIssueFieldOption"));
 
-var _InlineResponse20052IssueSecuritySchemes = _interopRequireDefault(require("./model/InlineResponse20052IssueSecuritySchemes"));
+var _PageBeanIssueSecurityLevelMember = _interopRequireDefault(require("./model/PageBeanIssueSecurityLevelMember"));
 
-var _InlineResponse58 = _interopRequireDefault(require("./model/InlineResponse20053"));
+var _PageBeanIssueTypeScheme = _interopRequireDefault(require("./model/PageBeanIssueTypeScheme"));
 
-var _InlineResponse59 = _interopRequireDefault(require("./model/InlineResponse20054"));
+var _PageBeanIssueTypeSchemeMapping = _interopRequireDefault(require("./model/PageBeanIssueTypeSchemeMapping"));
 
-var _InlineResponse60 = _interopRequireDefault(require("./model/InlineResponse20055"));
+var _PageBeanIssueTypeSchemeProjects = _interopRequireDefault(require("./model/PageBeanIssueTypeSchemeProjects"));
 
-var _InlineResponse20055VisibleFieldNames = _interopRequireDefault(require("./model/InlineResponse20055VisibleFieldNames"));
+var _PageBeanIssueTypeScreenScheme = _interopRequireDefault(require("./model/PageBeanIssueTypeScreenScheme"));
 
-var _InlineResponse20055VisibleFunctionNames = _interopRequireDefault(require("./model/InlineResponse20055VisibleFunctionNames"));
+var _PageBeanIssueTypeScreenSchemeItem = _interopRequireDefault(require("./model/PageBeanIssueTypeScreenSchemeItem"));
 
-var _InlineResponse61 = _interopRequireDefault(require("./model/InlineResponse20056"));
+var _PageBeanIssueTypeScreenSchemesProjects = _interopRequireDefault(require("./model/PageBeanIssueTypeScreenSchemesProjects"));
 
-var _InlineResponse20056Results = _interopRequireDefault(require("./model/InlineResponse20056Results"));
+var _PageBeanNotificationScheme = _interopRequireDefault(require("./model/PageBeanNotificationScheme"));
 
-var _InlineResponse62 = _interopRequireDefault(require("./model/InlineResponse20057"));
+var _PageBeanProject = _interopRequireDefault(require("./model/PageBeanProject"));
 
-var _InlineResponse63 = _interopRequireDefault(require("./model/InlineResponse20058"));
+var _PageBeanScreen = _interopRequireDefault(require("./model/PageBeanScreen"));
 
-var _InlineResponse20058Permissions = _interopRequireDefault(require("./model/InlineResponse20058Permissions"));
+var _PageBeanScreenScheme = _interopRequireDefault(require("./model/PageBeanScreenScheme"));
 
-var _InlineResponse20058PermissionsEDITISSUE = _interopRequireDefault(require("./model/InlineResponse20058PermissionsEDITISSUE"));
+var _PageBeanString = _interopRequireDefault(require("./model/PageBeanString"));
 
-var _InlineResponse64 = _interopRequireDefault(require("./model/InlineResponse20059"));
+var _PageBeanUser = _interopRequireDefault(require("./model/PageBeanUser"));
 
-var _InlineResponse2005Entries = _interopRequireDefault(require("./model/InlineResponse2005Entries"));
+var _PageBeanUserDetails = _interopRequireDefault(require("./model/PageBeanUserDetails"));
 
-var _InlineResponse65 = _interopRequireDefault(require("./model/InlineResponse2006"));
+var _PageBeanUserKey = _interopRequireDefault(require("./model/PageBeanUserKey"));
 
-var _InlineResponse66 = _interopRequireDefault(require("./model/InlineResponse20060"));
+var _PageBeanVersion = _interopRequireDefault(require("./model/PageBeanVersion"));
 
-var _InlineResponse20060ApplicationRoles = _interopRequireDefault(require("./model/InlineResponse20060ApplicationRoles"));
+var _PageBeanWebhook = _interopRequireDefault(require("./model/PageBeanWebhook"));
 
-var _InlineResponse67 = _interopRequireDefault(require("./model/InlineResponse20061"));
+var _PageBeanWorkflow = _interopRequireDefault(require("./model/PageBeanWorkflow"));
 
-var _InlineResponse20061Event = _interopRequireDefault(require("./model/InlineResponse20061Event"));
+var _PageBeanWorkflowScheme = _interopRequireDefault(require("./model/PageBeanWorkflowScheme"));
 
-var _InlineResponse20061NotificationSchemeEvents = _interopRequireDefault(require("./model/InlineResponse20061NotificationSchemeEvents"));
+var _PageBeanWorkflowTransitionRules = _interopRequireDefault(require("./model/PageBeanWorkflowTransitionRules"));
 
-var _InlineResponse20061Notifications = _interopRequireDefault(require("./model/InlineResponse20061Notifications"));
+var _PageOfChangelogs = _interopRequireDefault(require("./model/PageOfChangelogs"));
 
-var _InlineResponse20061Values = _interopRequireDefault(require("./model/InlineResponse20061Values"));
+var _PageOfComments = _interopRequireDefault(require("./model/PageOfComments"));
 
-var _InlineResponse68 = _interopRequireDefault(require("./model/InlineResponse20062"));
+var _PageOfDashboards = _interopRequireDefault(require("./model/PageOfDashboards"));
 
-var _InlineResponse69 = _interopRequireDefault(require("./model/InlineResponse20063"));
+var _PageOfWorklogs = _interopRequireDefault(require("./model/PageOfWorklogs"));
 
-var _InlineResponse20063Permissions = _interopRequireDefault(require("./model/InlineResponse20063Permissions"));
+var _PagedListUserDetailsApplicationUser = _interopRequireDefault(require("./model/PagedListUserDetailsApplicationUser"));
 
-var _InlineResponse20063PermissionsBULKCHANGE = _interopRequireDefault(require("./model/InlineResponse20063PermissionsBULKCHANGE"));
+var _ParsedJqlQueries = _interopRequireDefault(require("./model/ParsedJqlQueries"));
 
-var _InlineResponse70 = _interopRequireDefault(require("./model/InlineResponse20064"));
+var _ParsedJqlQuery = _interopRequireDefault(require("./model/ParsedJqlQuery"));
 
-var _InlineResponse20064Projects = _interopRequireDefault(require("./model/InlineResponse20064Projects"));
+var _PermissionGrant = _interopRequireDefault(require("./model/PermissionGrant"));
 
-var _InlineResponse71 = _interopRequireDefault(require("./model/InlineResponse20065"));
+var _PermissionGrants = _interopRequireDefault(require("./model/PermissionGrants"));
 
-var _InlineResponse20065PermissionSchemes = _interopRequireDefault(require("./model/InlineResponse20065PermissionSchemes"));
+var _PermissionHolder = _interopRequireDefault(require("./model/PermissionHolder"));
 
-var _InlineResponse72 = _interopRequireDefault(require("./model/InlineResponse20066"));
+var _PermissionScheme = _interopRequireDefault(require("./model/PermissionScheme"));
 
-var _InlineResponse73 = _interopRequireDefault(require("./model/InlineResponse20067"));
+var _PermissionSchemes = _interopRequireDefault(require("./model/PermissionSchemes"));
 
-var _InlineResponse74 = _interopRequireDefault(require("./model/InlineResponse20068"));
+var _Permissions = _interopRequireDefault(require("./model/Permissions"));
 
-var _InlineResponse20068Values = _interopRequireDefault(require("./model/InlineResponse20068Values"));
+var _PermissionsKeysBean = _interopRequireDefault(require("./model/PermissionsKeysBean"));
 
-var _InlineResponse75 = _interopRequireDefault(require("./model/InlineResponse20069"));
+var _PermittedProjects = _interopRequireDefault(require("./model/PermittedProjects"));
 
-var _InlineResponse2006Entries = _interopRequireDefault(require("./model/InlineResponse2006Entries"));
+var _Priority = _interopRequireDefault(require("./model/Priority"));
 
-var _InlineResponse76 = _interopRequireDefault(require("./model/InlineResponse2007"));
+var _Project = _interopRequireDefault(require("./model/Project"));
 
-var _InlineResponse77 = _interopRequireDefault(require("./model/InlineResponse20070"));
+var _ProjectAvatars = _interopRequireDefault(require("./model/ProjectAvatars"));
 
-var _InlineResponse78 = _interopRequireDefault(require("./model/InlineResponse20071"));
+var _ProjectCategory = _interopRequireDefault(require("./model/ProjectCategory"));
 
-var _InlineResponse20071Components = _interopRequireDefault(require("./model/InlineResponse20071Components"));
+var _ProjectForScope = _interopRequireDefault(require("./model/ProjectForScope"));
 
-var _InlineResponse20071IssueTypes = _interopRequireDefault(require("./model/InlineResponse20071IssueTypes"));
+var _ProjectIdentifierBean = _interopRequireDefault(require("./model/ProjectIdentifierBean"));
 
-var _InlineResponse20071Roles = _interopRequireDefault(require("./model/InlineResponse20071Roles"));
+var _ProjectIdentifiers = _interopRequireDefault(require("./model/ProjectIdentifiers"));
 
-var _InlineResponse79 = _interopRequireDefault(require("./model/InlineResponse20072"));
+var _ProjectInputBean = _interopRequireDefault(require("./model/ProjectInputBean"));
 
-var _InlineResponse80 = _interopRequireDefault(require("./model/InlineResponse20073"));
+var _ProjectInsight = _interopRequireDefault(require("./model/ProjectInsight"));
 
-var _InlineResponse20073Values = _interopRequireDefault(require("./model/InlineResponse20073Values"));
+var _ProjectIssueCreateMetadata = _interopRequireDefault(require("./model/ProjectIssueCreateMetadata"));
 
-var _InlineResponse81 = _interopRequireDefault(require("./model/InlineResponse20074"));
+var _ProjectIssueSecurityLevels = _interopRequireDefault(require("./model/ProjectIssueSecurityLevels"));
 
-var _InlineResponse82 = _interopRequireDefault(require("./model/InlineResponse20075"));
+var _ProjectIssueTypeHierarchy = _interopRequireDefault(require("./model/ProjectIssueTypeHierarchy"));
 
-var _InlineResponse83 = _interopRequireDefault(require("./model/InlineResponse20076"));
+var _ProjectIssueTypesHierarchyLevel = _interopRequireDefault(require("./model/ProjectIssueTypesHierarchyLevel"));
 
-var _InlineResponse84 = _interopRequireDefault(require("./model/InlineResponse20077"));
+var _ProjectPermissions = _interopRequireDefault(require("./model/ProjectPermissions"));
 
-var _InlineResponse85 = _interopRequireDefault(require("./model/InlineResponse20078"));
+var _ProjectRole = _interopRequireDefault(require("./model/ProjectRole"));
 
-var _InlineResponse20078Values = _interopRequireDefault(require("./model/InlineResponse20078Values"));
+var _ProjectRoleActorsUpdateBean = _interopRequireDefault(require("./model/ProjectRoleActorsUpdateBean"));
 
-var _InlineResponse86 = _interopRequireDefault(require("./model/InlineResponse20079"));
+var _ProjectRoleGroup = _interopRequireDefault(require("./model/ProjectRoleGroup"));
 
-var _InlineResponse2007AssociatedItems = _interopRequireDefault(require("./model/InlineResponse2007AssociatedItems"));
+var _ProjectRoleUser = _interopRequireDefault(require("./model/ProjectRoleUser"));
 
-var _InlineResponse2007ChangedValues = _interopRequireDefault(require("./model/InlineResponse2007ChangedValues"));
+var _ProjectScopeBean = _interopRequireDefault(require("./model/ProjectScopeBean"));
 
-var _InlineResponse2007Records = _interopRequireDefault(require("./model/InlineResponse2007Records"));
+var _ProjectType = _interopRequireDefault(require("./model/ProjectType"));
 
-var _InlineResponse87 = _interopRequireDefault(require("./model/InlineResponse2008"));
+var _PropertyKey = _interopRequireDefault(require("./model/PropertyKey"));
 
-var _InlineResponse88 = _interopRequireDefault(require("./model/InlineResponse20080"));
+var _PropertyKeys = _interopRequireDefault(require("./model/PropertyKeys"));
 
-var _InlineResponse89 = _interopRequireDefault(require("./model/InlineResponse20081"));
+var _PublishedWorkflowId = _interopRequireDefault(require("./model/PublishedWorkflowId"));
 
-var _InlineResponse20081Errors = _interopRequireDefault(require("./model/InlineResponse20081Errors"));
+var _RegisteredWebhook = _interopRequireDefault(require("./model/RegisteredWebhook"));
 
-var _InlineResponse90 = _interopRequireDefault(require("./model/InlineResponse20082"));
+var _RemoteIssueLink = _interopRequireDefault(require("./model/RemoteIssueLink"));
 
-var _InlineResponse91 = _interopRequireDefault(require("./model/InlineResponse20083"));
+var _RemoteIssueLinkIdentifies = _interopRequireDefault(require("./model/RemoteIssueLinkIdentifies"));
 
-var _InlineResponse92 = _interopRequireDefault(require("./model/InlineResponse20084"));
+var _RemoteIssueLinkRequest = _interopRequireDefault(require("./model/RemoteIssueLinkRequest"));
 
-var _InlineResponse93 = _interopRequireDefault(require("./model/InlineResponse20085"));
+var _RemoteObject = _interopRequireDefault(require("./model/RemoteObject"));
 
-var _InlineResponse94 = _interopRequireDefault(require("./model/InlineResponse20086"));
+var _RemoveOptionFromIssuesResult = _interopRequireDefault(require("./model/RemoveOptionFromIssuesResult"));
 
-var _InlineResponse95 = _interopRequireDefault(require("./model/InlineResponse20087"));
+var _RenamedCascadingOption = _interopRequireDefault(require("./model/RenamedCascadingOption"));
 
-var _InlineResponse20087Issues = _interopRequireDefault(require("./model/InlineResponse20087Issues"));
+var _RenamedOption = _interopRequireDefault(require("./model/RenamedOption"));
 
-var _InlineResponse96 = _interopRequireDefault(require("./model/InlineResponse20088"));
+var _Resolution = _interopRequireDefault(require("./model/Resolution"));
 
-var _InlineResponse97 = _interopRequireDefault(require("./model/InlineResponse20089"));
+var _RestrictedPermission = _interopRequireDefault(require("./model/RestrictedPermission"));
 
-var _InlineResponse2008System = _interopRequireDefault(require("./model/InlineResponse2008System"));
+var _RichText = _interopRequireDefault(require("./model/RichText"));
 
-var _InlineResponse98 = _interopRequireDefault(require("./model/InlineResponse2009"));
+var _RoleActor = _interopRequireDefault(require("./model/RoleActor"));
 
-var _InlineResponse99 = _interopRequireDefault(require("./model/InlineResponse20090"));
+var _RuleConfiguration = _interopRequireDefault(require("./model/RuleConfiguration"));
 
-var _InlineResponse100 = _interopRequireDefault(require("./model/InlineResponse20091"));
+var _Scope = _interopRequireDefault(require("./model/Scope"));
 
-var _InlineResponse101 = _interopRequireDefault(require("./model/InlineResponse20092"));
+var _Screen = _interopRequireDefault(require("./model/Screen"));
 
-var _InlineResponse20092Values = _interopRequireDefault(require("./model/InlineResponse20092Values"));
+var _ScreenID = _interopRequireDefault(require("./model/ScreenID"));
 
-var _InlineResponse102 = _interopRequireDefault(require("./model/InlineResponse20093"));
+var _ScreenScheme = _interopRequireDefault(require("./model/ScreenScheme"));
 
-var _InlineResponse103 = _interopRequireDefault(require("./model/InlineResponse20094"));
+var _ScreenTypeIDsBean = _interopRequireDefault(require("./model/ScreenTypeIDsBean"));
 
-var _InlineResponse104 = _interopRequireDefault(require("./model/InlineResponse20095"));
+var _ScreenableField = _interopRequireDefault(require("./model/ScreenableField"));
 
-var _InlineResponse20095Link = _interopRequireDefault(require("./model/InlineResponse20095Link"));
+var _ScreenableTab = _interopRequireDefault(require("./model/ScreenableTab"));
 
-var _InlineResponse20095Links = _interopRequireDefault(require("./model/InlineResponse20095Links"));
+var _SearchRequestBean = _interopRequireDefault(require("./model/SearchRequestBean"));
 
-var _InlineResponse105 = _interopRequireDefault(require("./model/InlineResponse20096"));
+var _SearchResults = _interopRequireDefault(require("./model/SearchResults"));
 
-var _InlineResponse106 = _interopRequireDefault(require("./model/InlineResponse20097"));
+var _SecurityLevel = _interopRequireDefault(require("./model/SecurityLevel"));
 
-var _InlineResponse20097CustomFieldUsage = _interopRequireDefault(require("./model/InlineResponse20097CustomFieldUsage"));
+var _SecurityScheme = _interopRequireDefault(require("./model/SecurityScheme"));
 
-var _InlineResponse107 = _interopRequireDefault(require("./model/InlineResponse20098"));
+var _SecuritySchemes = _interopRequireDefault(require("./model/SecuritySchemes"));
 
-var _InlineResponse108 = _interopRequireDefault(require("./model/InlineResponse20099"));
+var _ServerInformation = _interopRequireDefault(require("./model/ServerInformation"));
 
-var _InlineResponse2009Author = _interopRequireDefault(require("./model/InlineResponse2009Author"));
+var _SharePermission = _interopRequireDefault(require("./model/SharePermission"));
 
-var _InlineResponse2009Body = _interopRequireDefault(require("./model/InlineResponse2009Body"));
+var _SharePermissionInputBean = _interopRequireDefault(require("./model/SharePermissionInputBean"));
 
-var _InlineResponse2009BodyContent = _interopRequireDefault(require("./model/InlineResponse2009BodyContent"));
+var _SimpleApplicationPropertyBean = _interopRequireDefault(require("./model/SimpleApplicationPropertyBean"));
 
-var _InlineResponse2009BodyContent2 = _interopRequireDefault(require("./model/InlineResponse2009BodyContent1"));
+var _SimpleErrorCollection = _interopRequireDefault(require("./model/SimpleErrorCollection"));
 
-var _InlineResponse2009Values = _interopRequireDefault(require("./model/InlineResponse2009Values"));
+var _SimpleLink = _interopRequireDefault(require("./model/SimpleLink"));
 
-var _InlineResponse2009Visibility = _interopRequireDefault(require("./model/InlineResponse2009Visibility"));
+var _SimpleListWrapperApplicationRole = _interopRequireDefault(require("./model/SimpleListWrapperApplicationRole"));
 
-var _InlineResponse109 = _interopRequireDefault(require("./model/InlineResponse201"));
+var _SimpleListWrapperGroupName = _interopRequireDefault(require("./model/SimpleListWrapperGroupName"));
 
-var _InlineResponse110 = _interopRequireDefault(require("./model/InlineResponse2011"));
+var _Status = _interopRequireDefault(require("./model/Status"));
 
-var _InlineResponse111 = _interopRequireDefault(require("./model/InlineResponse20110"));
+var _StatusCategory = _interopRequireDefault(require("./model/StatusCategory"));
 
-var _InlineResponse112 = _interopRequireDefault(require("./model/InlineResponse20111"));
+var _StatusDetails = _interopRequireDefault(require("./model/StatusDetails"));
 
-var _InlineResponse113 = _interopRequireDefault(require("./model/InlineResponse20112"));
+var _SuggestedIssue = _interopRequireDefault(require("./model/SuggestedIssue"));
 
-var _InlineResponse114 = _interopRequireDefault(require("./model/InlineResponse20113"));
+var _SystemAvatars = _interopRequireDefault(require("./model/SystemAvatars"));
 
-var _InlineResponse115 = _interopRequireDefault(require("./model/InlineResponse20114"));
+var _TaskProgressBeanObject = _interopRequireDefault(require("./model/TaskProgressBeanObject"));
 
-var _InlineResponse20114IssueTypeMappings = _interopRequireDefault(require("./model/InlineResponse20114IssueTypeMappings"));
+var _TaskProgressBeanRemoveOptionFromIssuesResult = _interopRequireDefault(require("./model/TaskProgressBeanRemoveOptionFromIssuesResult"));
 
-var _InlineResponse116 = _interopRequireDefault(require("./model/InlineResponse20115"));
+var _TimeTrackingConfiguration = _interopRequireDefault(require("./model/TimeTrackingConfiguration"));
 
-var _InlineResponse20115LastModifiedUser = _interopRequireDefault(require("./model/InlineResponse20115LastModifiedUser"));
+var _TimeTrackingProvider = _interopRequireDefault(require("./model/TimeTrackingProvider"));
 
-var _InlineResponse20115OriginalIssueTypeMappings = _interopRequireDefault(require("./model/InlineResponse20115OriginalIssueTypeMappings"));
+var _Transition = _interopRequireDefault(require("./model/Transition"));
 
-var _InlineResponse2011Schema = _interopRequireDefault(require("./model/InlineResponse2011Schema"));
+var _Transitions = _interopRequireDefault(require("./model/Transitions"));
 
-var _InlineResponse117 = _interopRequireDefault(require("./model/InlineResponse2012"));
+var _UnrestrictedUserEmail = _interopRequireDefault(require("./model/UnrestrictedUserEmail"));
 
-var _InlineResponse2012Users = _interopRequireDefault(require("./model/InlineResponse2012Users"));
+var _UpdateCustomFieldOption = _interopRequireDefault(require("./model/UpdateCustomFieldOption"));
 
-var _InlineResponse118 = _interopRequireDefault(require("./model/InlineResponse2013"));
+var _UpdateUserToGroupBean = _interopRequireDefault(require("./model/UpdateUserToGroupBean"));
 
-var _InlineResponse119 = _interopRequireDefault(require("./model/InlineResponse2014"));
+var _UpdatedProjectCategory = _interopRequireDefault(require("./model/UpdatedProjectCategory"));
 
-var _InlineResponse2014Issues = _interopRequireDefault(require("./model/InlineResponse2014Issues"));
+var _User = _interopRequireDefault(require("./model/User"));
 
-var _InlineResponse120 = _interopRequireDefault(require("./model/InlineResponse2015"));
+var _UserBean = _interopRequireDefault(require("./model/UserBean"));
 
-var _InlineResponse121 = _interopRequireDefault(require("./model/InlineResponse2016"));
+var _UserBeanAvatarUrls = _interopRequireDefault(require("./model/UserBeanAvatarUrls"));
 
-var _InlineResponse122 = _interopRequireDefault(require("./model/InlineResponse2017"));
+var _UserDetails = _interopRequireDefault(require("./model/UserDetails"));
 
-var _InlineResponse123 = _interopRequireDefault(require("./model/InlineResponse2018"));
+var _UserKey = _interopRequireDefault(require("./model/UserKey"));
 
-var _InlineResponse2018Holder = _interopRequireDefault(require("./model/InlineResponse2018Holder"));
+var _UserList = _interopRequireDefault(require("./model/UserList"));
 
-var _InlineResponse2018Permissions = _interopRequireDefault(require("./model/InlineResponse2018Permissions"));
+var _UserMigrationBean = _interopRequireDefault(require("./model/UserMigrationBean"));
 
-var _InlineResponse124 = _interopRequireDefault(require("./model/InlineResponse2019"));
+var _UserPermission = _interopRequireDefault(require("./model/UserPermission"));
 
-var _InlineResponse125 = _interopRequireDefault(require("./model/InlineResponse303"));
+var _UserPickerUser = _interopRequireDefault(require("./model/UserPickerUser"));
 
-var _InlineResponse303Result = _interopRequireDefault(require("./model/InlineResponse303Result"));
+var _UserWriteBean = _interopRequireDefault(require("./model/UserWriteBean"));
 
-var _InlineResponse303ResultErrors = _interopRequireDefault(require("./model/InlineResponse303ResultErrors"));
+var _ValueOperand = _interopRequireDefault(require("./model/ValueOperand"));
 
-var _IssueIssueIdOrKeyAttachmentsAuthor = _interopRequireDefault(require("./model/IssueIssueIdOrKeyAttachmentsAuthor"));
+var _Version = _interopRequireDefault(require("./model/Version"));
 
-var _IssueIssueIdOrKeyRemotelinkApplication = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkApplication"));
+var _VersionIssueCounts = _interopRequireDefault(require("./model/VersionIssueCounts"));
 
-var _IssueIssueIdOrKeyRemotelinkObject = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkObject"));
+var _VersionIssuesStatus = _interopRequireDefault(require("./model/VersionIssuesStatus"));
 
-var _IssueIssueIdOrKeyRemotelinkObjectIcon = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkObjectIcon"));
+var _VersionMoveBean = _interopRequireDefault(require("./model/VersionMoveBean"));
 
-var _IssueIssueIdOrKeyRemotelinkObjectStatus = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkObjectStatus"));
+var _VersionUnresolvedIssuesCount = _interopRequireDefault(require("./model/VersionUnresolvedIssuesCount"));
 
-var _IssueIssueIdOrKeyRemotelinkObjectStatusIcon = _interopRequireDefault(require("./model/IssueIssueIdOrKeyRemotelinkObjectStatusIcon"));
+var _VersionUsageInCustomField = _interopRequireDefault(require("./model/VersionUsageInCustomField"));
 
-var _ProjectProjectIdOrKeyStatusesStatuses = _interopRequireDefault(require("./model/ProjectProjectIdOrKeyStatusesStatuses"));
+var _Visibility = _interopRequireDefault(require("./model/Visibility"));
 
-var _DefaultApi = _interopRequireDefault(require("./api/DefaultApi"));
+var _Votes = _interopRequireDefault(require("./model/Votes"));
+
+var _Watchers = _interopRequireDefault(require("./model/Watchers"));
+
+var _Webhook = _interopRequireDefault(require("./model/Webhook"));
+
+var _WebhookDetails = _interopRequireDefault(require("./model/WebhookDetails"));
+
+var _WebhookRegistrationDetails = _interopRequireDefault(require("./model/WebhookRegistrationDetails"));
+
+var _WebhooksExpirationDate = _interopRequireDefault(require("./model/WebhooksExpirationDate"));
+
+var _Workflow = _interopRequireDefault(require("./model/Workflow"));
+
+var _WorkflowId = _interopRequireDefault(require("./model/WorkflowId"));
+
+var _WorkflowRules = _interopRequireDefault(require("./model/WorkflowRules"));
+
+var _WorkflowScheme = _interopRequireDefault(require("./model/WorkflowScheme"));
+
+var _WorkflowSchemeAssociations = _interopRequireDefault(require("./model/WorkflowSchemeAssociations"));
+
+var _WorkflowStatus = _interopRequireDefault(require("./model/WorkflowStatus"));
+
+var _WorkflowStatusProperties = _interopRequireDefault(require("./model/WorkflowStatusProperties"));
+
+var _WorkflowTransition = _interopRequireDefault(require("./model/WorkflowTransition"));
+
+var _WorkflowTransitionProperty = _interopRequireDefault(require("./model/WorkflowTransitionProperty"));
+
+var _WorkflowTransitionRule = _interopRequireDefault(require("./model/WorkflowTransitionRule"));
+
+var _WorkflowTransitionRules = _interopRequireDefault(require("./model/WorkflowTransitionRules"));
+
+var _WorkflowTransitionRulesUpdate = _interopRequireDefault(require("./model/WorkflowTransitionRulesUpdate"));
+
+var _WorkflowTransitionRulesUpdateErrorDetails = _interopRequireDefault(require("./model/WorkflowTransitionRulesUpdateErrorDetails"));
+
+var _WorkflowTransitionRulesUpdateErrors = _interopRequireDefault(require("./model/WorkflowTransitionRulesUpdateErrors"));
+
+var _Worklog = _interopRequireDefault(require("./model/Worklog"));
+
+var _WorklogIdsRequestBean = _interopRequireDefault(require("./model/WorklogIdsRequestBean"));
+
+var _AppPropertiesApi = _interopRequireDefault(require("./api/AppPropertiesApi"));
+
+var _ApplicationRolesApi = _interopRequireDefault(require("./api/ApplicationRolesApi"));
+
+var _AuditRecordsApi = _interopRequireDefault(require("./api/AuditRecordsApi"));
+
+var _AvatarsApi = _interopRequireDefault(require("./api/AvatarsApi"));
+
+var _DashboardsApi = _interopRequireDefault(require("./api/DashboardsApi"));
+
+var _DynamicModulesApi = _interopRequireDefault(require("./api/DynamicModulesApi"));
+
+var _FilterSharingApi = _interopRequireDefault(require("./api/FilterSharingApi"));
+
+var _FiltersApi = _interopRequireDefault(require("./api/FiltersApi"));
+
+var _GroupAndUserPickerApi = _interopRequireDefault(require("./api/GroupAndUserPickerApi"));
+
+var _GroupsApi = _interopRequireDefault(require("./api/GroupsApi"));
+
+var _IssueAttachmentsApi = _interopRequireDefault(require("./api/IssueAttachmentsApi"));
+
+var _IssueCommentPropertiesApi = _interopRequireDefault(require("./api/IssueCommentPropertiesApi"));
+
+var _IssueCommentsApi = _interopRequireDefault(require("./api/IssueCommentsApi"));
+
+var _IssueCustomFieldOptionsApi = _interopRequireDefault(require("./api/IssueCustomFieldOptionsApi"));
+
+var _IssueCustomFieldOptionsAppsApi = _interopRequireDefault(require("./api/IssueCustomFieldOptionsAppsApi"));
+
+var _IssueFieldConfigurationsApi = _interopRequireDefault(require("./api/IssueFieldConfigurationsApi"));
+
+var _IssueFieldsApi = _interopRequireDefault(require("./api/IssueFieldsApi"));
+
+var _IssueLinkTypesApi = _interopRequireDefault(require("./api/IssueLinkTypesApi"));
+
+var _IssueLinksApi = _interopRequireDefault(require("./api/IssueLinksApi"));
+
+var _IssueNavigatorSettingsApi = _interopRequireDefault(require("./api/IssueNavigatorSettingsApi"));
+
+var _IssueNotificationSchemesApi = _interopRequireDefault(require("./api/IssueNotificationSchemesApi"));
+
+var _IssuePrioritiesApi = _interopRequireDefault(require("./api/IssuePrioritiesApi"));
+
+var _IssuePropertiesApi = _interopRequireDefault(require("./api/IssuePropertiesApi"));
+
+var _IssueRemoteLinksApi = _interopRequireDefault(require("./api/IssueRemoteLinksApi"));
+
+var _IssueResolutionsApi = _interopRequireDefault(require("./api/IssueResolutionsApi"));
+
+var _IssueSearchApi = _interopRequireDefault(require("./api/IssueSearchApi"));
+
+var _IssueSecurityLevelApi = _interopRequireDefault(require("./api/IssueSecurityLevelApi"));
+
+var _IssueSecuritySchemesApi = _interopRequireDefault(require("./api/IssueSecuritySchemesApi"));
+
+var _IssueTypePropertiesApi = _interopRequireDefault(require("./api/IssueTypePropertiesApi"));
+
+var _IssueTypeSchemesApi = _interopRequireDefault(require("./api/IssueTypeSchemesApi"));
+
+var _IssueTypeScreenSchemesApi = _interopRequireDefault(require("./api/IssueTypeScreenSchemesApi"));
+
+var _IssueTypesApi = _interopRequireDefault(require("./api/IssueTypesApi"));
+
+var _IssueVotesApi = _interopRequireDefault(require("./api/IssueVotesApi"));
+
+var _IssueWatchersApi = _interopRequireDefault(require("./api/IssueWatchersApi"));
+
+var _IssueWorklogPropertiesApi = _interopRequireDefault(require("./api/IssueWorklogPropertiesApi"));
+
+var _IssueWorklogsApi = _interopRequireDefault(require("./api/IssueWorklogsApi"));
+
+var _IssuesApi = _interopRequireDefault(require("./api/IssuesApi"));
+
+var _JQLApi = _interopRequireDefault(require("./api/JQLApi"));
+
+var _JiraExpressionsApi = _interopRequireDefault(require("./api/JiraExpressionsApi"));
+
+var _JiraSettingsApi = _interopRequireDefault(require("./api/JiraSettingsApi"));
+
+var _LabelsApi = _interopRequireDefault(require("./api/LabelsApi"));
+
+var _MyselfApi = _interopRequireDefault(require("./api/MyselfApi"));
+
+var _PermissionSchemesApi = _interopRequireDefault(require("./api/PermissionSchemesApi"));
+
+var _PermissionsApi = _interopRequireDefault(require("./api/PermissionsApi"));
+
+var _ProjectAvatarsApi = _interopRequireDefault(require("./api/ProjectAvatarsApi"));
+
+var _ProjectCategoriesApi = _interopRequireDefault(require("./api/ProjectCategoriesApi"));
+
+var _ProjectComponentsApi = _interopRequireDefault(require("./api/ProjectComponentsApi"));
+
+var _ProjectKeyAndNameValidationApi = _interopRequireDefault(require("./api/ProjectKeyAndNameValidationApi"));
+
+var _ProjectPermissionSchemesApi = _interopRequireDefault(require("./api/ProjectPermissionSchemesApi"));
+
+var _ProjectPropertiesApi = _interopRequireDefault(require("./api/ProjectPropertiesApi"));
+
+var _ProjectRoleActorsApi = _interopRequireDefault(require("./api/ProjectRoleActorsApi"));
+
+var _ProjectRolesApi = _interopRequireDefault(require("./api/ProjectRolesApi"));
+
+var _ProjectTypesApi = _interopRequireDefault(require("./api/ProjectTypesApi"));
+
+var _ProjectVersionsApi = _interopRequireDefault(require("./api/ProjectVersionsApi"));
+
+var _ProjectsApi = _interopRequireDefault(require("./api/ProjectsApi"));
+
+var _ScreensApi = _interopRequireDefault(require("./api/ScreensApi"));
+
+var _ServerInfoApi = _interopRequireDefault(require("./api/ServerInfoApi"));
+
+var _TasksApi = _interopRequireDefault(require("./api/TasksApi"));
+
+var _TimeTrackingApi = _interopRequireDefault(require("./api/TimeTrackingApi"));
+
+var _UserPropertiesApi = _interopRequireDefault(require("./api/UserPropertiesApi"));
+
+var _UserSearchApi = _interopRequireDefault(require("./api/UserSearchApi"));
+
+var _UsersApi = _interopRequireDefault(require("./api/UsersApi"));
+
+var _WebhooksApi = _interopRequireDefault(require("./api/WebhooksApi"));
+
+var _WorkflowSchemeDraftsApi = _interopRequireDefault(require("./api/WorkflowSchemeDraftsApi"));
+
+var _WorkflowSchemeProjectAssociationsApi = _interopRequireDefault(require("./api/WorkflowSchemeProjectAssociationsApi"));
+
+var _WorkflowSchemesApi = _interopRequireDefault(require("./api/WorkflowSchemesApi"));
+
+var _WorkflowStatusCategoriesApi = _interopRequireDefault(require("./api/WorkflowStatusCategoriesApi"));
+
+var _WorkflowStatusesApi = _interopRequireDefault(require("./api/WorkflowStatusesApi"));
+
+var _WorkflowTransitionPropertiesApi = _interopRequireDefault(require("./api/WorkflowTransitionPropertiesApi"));
+
+var _WorkflowTransitionRulesApi = _interopRequireDefault(require("./api/WorkflowTransitionRulesApi"));
+
+var _WorkflowsApi = _interopRequireDefault(require("./api/WorkflowsApi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

@@ -1,1901 +1,1469 @@
 api,http-method,description,functionName,functionParameters
-/application-properties/advanced-settings,GET,"
-
-
-Returns the application properties that are accessible on the Advanced Settings page. To navigate to the Advanced Settings page in Jira, choose the Jira icon &gt; Jira settings &gt; System, General Configuration and then click Advanced Settings (in the upper right).
-
-",applicationPropertiesAdvancedSettingsGet,cloudid
-/application-properties,GET,"
-
-
-Returns all application properties or a single application property.
-
-",applicationPropertiesGet,cloudid opts
-/application-properties/{id},PUT,"
-
-
-Changes the value of an application property. For example, you can change the value of the jira.clone.prefix from its default value of CLONE - to Clone - if you prefer sentence case capitalization. Editable properties are described below along with their default values.
-
-",applicationPropertiesIdPut,cloudid id opts
-/applicationrole,GET,"
-
-
-Returns all application roles. In Jira, application roles are managed using the Application access configuration page.
-
-",applicationroleGet,cloudid
-/applicationrole/{key},GET,"
-
-
-Returns an application role.
-
-",applicationroleKeyGet,cloudid key
-/attachment/{id},DELETE,"
-
-
-Deletes an attachment from an issue.
-
-",attachmentIdDelete,cloudid id
-/attachment/{id}/expand/human,GET,"
-
-
-Returns the metadata for the contents of an attachment, if it is an archive, and metadata for the attachment itself. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned and metadata for the ZIP archive. Currently, only the ZIP archive format is supported.
-
-",attachmentIdExpandHumanGet,cloudid id
-/attachment/{id}/expand/raw,GET,"
-
-
-Returns the metadata for the contents of an attachment, if it is an archive. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned. Currently, only the ZIP archive format is supported.
-
-",attachmentIdExpandRawGet,cloudid id
-/attachment/{id},GET,"
-
-
-Returns the metadata for an attachment. Note that the attachment itself is not returned.
-
-",attachmentIdGet,cloudid id
-/attachment/meta,GET,"
-
-
-Returns the global attachment settings, that is, whether attachments are enabled and the maximum attachment size allowed.
-
-",attachmentMetaGet,cloudid
-/auditing/record,GET,"
-
-
-Returns a list of audit records. The list can be filtered to include items:
-
-",auditingRecordGet,cloudid opts
-/avatar/{type}/system,GET,"
-
-
-Returns a list of system avatar details by owner type, where the owner types are issue type, project, or user.
-
-",avatarTypeSystemGet,cloudid type
 /comment/{commentId}/properties,GET,"
-
-
-Returns the keys of all the properties of a comment.
+Get comment property keys
 
 ",commentCommentIdPropertiesGet,cloudid commentId
 /comment/{commentId}/properties/{propertyKey},DELETE,"
-
-
-Deletes a comment property.
+Delete comment property
 
 ",commentCommentIdPropertiesPropertyKeyDelete,cloudid commentId propertyKey
 /comment/{commentId}/properties/{propertyKey},GET,"
-
-
-Returns the value of a comment property.
+Get comment property
 
 ",commentCommentIdPropertiesPropertyKeyGet,cloudid commentId propertyKey
 /comment/{commentId}/properties/{propertyKey},PUT,"
+Set comment property
 
+",commentCommentIdPropertiesPropertyKeyPut,cloudid commentId propertyKey body
+/workflow/rule/config,GET,"
+Get workflow transition rule configurations
 
-Creates or updates the value of a property for a comment. Use this resource to store custom data against a comment.
+",workflowRuleConfigGet,cloudid types opts
+/workflow/rule/config,PUT,"
+Update workflow transition rule configurations
 
-",commentCommentIdPropertiesPropertyKeyPut,cloudid commentId propertyKey
-/comment/list,POST,"
+",workflowRuleConfigPut,cloudid body
+/rest/atlassian-connect/1/app/module/dynamic,DELETE,"
+Remove modules
 
+",restAtlassianConnect1AppModuleDynamicDelete,cloudid opts
+/rest/atlassian-connect/1/app/module/dynamic,GET,"
+Get modules
 
-Returns the comments for a list of comment IDs.
+",restAtlassianConnect1AppModuleDynamicGet,cloudid
+/rest/atlassian-connect/1/app/module/dynamic,POST,"
+Register modules
 
-",commentListPost,cloudid opts
-/component/{id},DELETE,"
-
-
-Deletes a component. Permissions required: Any of the following:
-
-",componentIdDelete,cloudid id opts
-/component/{id},GET,"
-
-
-Returns a component. Permissions required: Browse projects project permission.
-
-",componentIdGet,cloudid id
-/component/{id},PUT,"
-
-
-Modifies a component. Any fields included in the request are overwritten. If leadUserName is an empty string (\&quot;\&quot;) the component lead is removed. Permissions required: Any of the following:
-
-",componentIdPut,cloudid id opts
-/component/{id}/relatedIssueCounts,GET,"
-
-
-Returns the counts of issues assigned to the component. Permissions required: Permission to access Jira.
-
-",componentIdRelatedIssueCountsGet,cloudid id
-/component,POST,"
-
-
-Creates a component. Use components to provide containers for issues within a project. Permissions required: Any of the following:
-
-",componentPost,cloudid opts
-/configuration,GET,"
-
-
-Returns the global settings in Jira. These settings determine whether optional features (for example, sub-tasks, time tracking, and others) are enabled. If time tracking is enabled, this method also returns the time tracking configuration.
-
-",configurationGet,cloudid
-/configuration/timetracking,DELETE,"
-
-
-Disables time tracking.
-
-",configurationTimetrackingDelete,cloudid
-/configuration/timetracking,GET,"
-
-
-Returns the time tracking provider that is currently selected. Note that if time tracking is disabled, then a successful but empty response is returned.
-
-",configurationTimetrackingGet,cloudid
-/configuration/timetracking/list,GET,"
-
-
-Returns all time tracking providers. By default, Jira only has one time tracking provider: JIRA provided time tracking. However, you can install other time tracking providers via apps from the Atlassian Marketplace. For more information on time tracking providers, see the documentation for the Time Tracking Provider module.
-
-",configurationTimetrackingListGet,cloudid
-/configuration/timetracking/options,GET,"
-
-
-Returns the time tracking settings. This includes settings such as the time format, default time unit, and others. For more information, see Configuring time tracking.
-
-",configurationTimetrackingOptionsGet,cloudid
-/configuration/timetracking/options,PUT,"
-
-
-Sets the time tracking settings.
-
-",configurationTimetrackingOptionsPut,cloudid opts
-/configuration/timetracking,PUT,"
-
-
-Selects a time tracking provider.
-
-",configurationTimetrackingPut,cloudid opts
-/customFieldOption/{id},GET,"
-
-
-Returns a custom field option. For example, an option in a cascading select list.
-
-",customFieldOptionIdGet,cloudid id
-/dashboard/{dashboardId}/items/{itemId}/properties,GET,"
-
-
-Returns the keys of all properties for a dashboard item.
-
-",dashboardDashboardIdItemsItemIdPropertiesGet,cloudid dashboardId itemId
-/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},DELETE,"
-
-
-Deletes a dashboard item property.
-
-",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete,cloudid dashboardId itemId propertyKey
-/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},GET,"
-
-
-Returns the key and value of a dashboard item property.
-
-",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet,cloudid dashboardId itemId propertyKey
-/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},PUT,"
-
-
-Sets the value of a dashboard item property. Use this resource in apps to store custom data against a dashboard item.
-
-",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut,cloudid dashboardId itemId propertyKey
-/dashboard,GET,"
-
-
-Returns a list of dashboards owned by or shared with the user. The list may be filtered to include only favorite or owned dashboards.
-
-",dashboardGet,cloudid opts
-/dashboard/{id},GET,"
-
-
-Returns a dashboard.
-
-",dashboardIdGet,cloudid id
-/expression/eval,POST,"
-
-
-Evaluates a Jira expression and returns its value.
-
-",expressionEvalPost,cloudid opts
-/field/{fieldKey}/option,GET,"
-
-
-Returns all options defined for a select list issue field. A select list issue field is a type of issue field that allows a user to select an value from a list of options.
-
-",fieldFieldKeyOptionGet,cloudid fieldKey opts
-/field/{fieldKey}/option/{optionId},DELETE,"
-
-
-Deletes an option from a select list issue field.
-
-",fieldFieldKeyOptionOptionIdDelete,cloudid fieldKey optionId
-/field/{fieldKey}/option/{optionId},GET,"
-
-
-Returns an option from a select list issue field.
-
-",fieldFieldKeyOptionOptionIdGet,cloudid fieldKey optionId
-/field/{fieldKey}/option/{optionId}/issue,DELETE,"
-
-
-Deselects a select list issue field option in all issues that it has been selected in. A different option can be selected to replace the deselected option. The update can also be limited to a smaller set of issues by using a JQL query.
-
-",fieldFieldKeyOptionOptionIdIssueDelete,cloudid fieldKey optionId opts
-/field/{fieldKey}/option/{optionId},PUT,"
-
-
-Updates an option for a select list issue field. If the option does not exist, a new option is created.
-
-",fieldFieldKeyOptionOptionIdPut,cloudid fieldKey optionId opts
-/field/{fieldKey}/option,POST,"
-
-
-Creates an option for a select list issue field.
-
-",fieldFieldKeyOptionPost,cloudid fieldKey opts
-/field/{fieldKey}/option/suggestions/edit,GET,"
-
-
-Returns options defined for a select list issue field that can be viewed and selected by the currently logged in user.
-
-",fieldFieldKeyOptionSuggestionsEditGet,cloudid fieldKey opts
-/field/{fieldKey}/option/suggestions/search,GET,"
-
-
-Returns options defined for a select list issue field that can be viewed by the currently logged in user.
-
-",fieldFieldKeyOptionSuggestionsSearchGet,cloudid fieldKey opts
-/field,GET,"
-
-
-Returns all issue fields in Jira, both system and custom fields.
-
-",fieldGet,cloudid
-/field,POST,"
-
-
-Creates a custom field.
-
-",fieldPost,cloudid opts
-/filter/defaultShareScope,GET,"
-
-
-Returns the default sharing settings for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
-
-",filterDefaultShareScopeGet,cloudid
-/filter/defaultShareScope,PUT,"
-
-
-Sets the default sharing for new filters and dashboards for a user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
-
-",filterDefaultShareScopePut,cloudid opts
-/filter/favourite,GET,"
-
-
-Returns the favorite filters of the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group).
-
-",filterFavouriteGet,cloudid opts
-/filter,GET,"
-
-
-Returns all filters. Deprecated, use Search for filters that supports search and pagination. Permissions required: None, however only the following filters are returned:
-
-",filterGet,cloudid opts
-/filter/{id}/columns,DELETE,"
-
-
-Reset the user&#39;s column configuration for the filter to the default. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
-
-",filterIdColumnsDelete,cloudid id
-/filter/{id}/columns,GET,"
-
-
-Returns the columns configured for a filter. The column configuration is used when the filter&#39;s results are viewed in List View with the Columns set to Filter. Permissions required: None, however the calling user must have permission to view the filter.
-
-",filterIdColumnsGet,cloudid id
-/filter/{id}/columns,PUT,"
-
-
-Sets the columns for a filter. Only navigable fields can be set as columns. Use Get fields to get the list fields in Jira. A navigable field has navigable set to true. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
-
-",filterIdColumnsPut,cloudid id
-/filter/{id},DELETE,"
-
-
-Delete a filter. Permissions required: Permission to log in to Jira, however the following rules govern what a user can delete:
-
-",filterIdDelete,cloudid id
-/filter/{id}/favourite,DELETE,"
-
-
-Removes a filter as a favorite for the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
-
-",filterIdFavouriteDelete,cloudid id opts
-/filter/{id}/favourite,PUT,"
-
-
-Add a filter as a favorite for the calling user. Permissions required: Permission to log in to Jira (i.e., member of the users group) and permission to view the filter.
-
-",filterIdFavouritePut,cloudid id opts
-/filter/{id},GET,"
-
-
-Returns a filter. Permissions required: None, however the calling user must have permission view the filter.
-
-",filterIdGet,cloudid id opts
-/filter/{id}/permission,GET,"
-
-
-Returns the share permissions for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.
-
-",filterIdPermissionGet,cloudid id
-/filter/{id}/permission/{permissionId},DELETE,"
-
-
-Deletes a share permission from a filter. Permissions required: Permission to log in to Jira (i.e., member of the users group) and the calling user must own the filter.
-
-",filterIdPermissionPermissionIdDelete,cloudid id permissionId
-/filter/{id}/permission/{permissionId},GET,"
-
-
-Returns a share permission for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission. Permissions required: None, however the calling user must have permission to view the filter.
-
-",filterIdPermissionPermissionIdGet,cloudid id permissionId
-/filter/{id}/permission,POST,"
-
-
-Add a share permissions to a filter. If you add a global share permission (i.e., all logged-in users or the public) it will overwrite all share permissions for the filter.Be aware that this method uses different objects for updating share permissions compared to Update filter. Permissions required: Share dashboards and filters global permission and the calling user must own the filter.
-
-",filterIdPermissionPost,cloudid id opts
-/filter/{id},PUT,"
-
-
-Updates an existing filter. Use this method to update a filter&#39;s name, description, JQL, or sharing. Permissions required: Permission to log in to Jira, however the following rules govern what a user can update:
-
-",filterIdPut,cloudid id opts
-/filter/my,GET,"
-
-
-Returns the filters owned by the calling user. If includeFavourites is true, the user&#39;s favorite filters are also returned. Permissions required: Permission to log in to Jira (i.e., member of the users group).
-
-",filterMyGet,cloudid opts
-/filter,POST,"
-
-
-Creates a new filter. The new filter is not shared and not selected as a favorite. Permissions required: Permission to log in to Jira.
-
-",filterPost,cloudid opts
-/filter/search,GET,"
-
-
-Search for filters. This method is similar to Get filters except that you can refine the results to include filters that have specific attributes. For example, filters with a particular name. Permissions required: None, however only the following filters are returned (if no search parameters are set):
-
-",filterSearchGet,cloudid opts
-/group,DELETE,"
-
-
-Deletes a group.
-
-",groupDelete,cloudid opts
-/group,GET,"
-
-
-This resource is deprecated, use group/member.
-
-",groupGet,cloudid opts
-/group/member,GET,"
-
-
-Returns all users in a group. Users are ordered by username.
-
-",groupMemberGet,cloudid opts
-/group,POST,"
-
-
-Creates a group.
-
-",groupPost,cloudid opts
-/group/user,DELETE,"
-
-
-Removes a user from a group. Permissions required: Administer Jira global permission.
-
-",groupUserDelete,cloudid opts
-/group/user,POST,"
-
-
-Adds a user to a group.
-
-",groupUserPost,cloudid opts
-/groups/picker,GET,"
-
-
-Returns a list of groups whose names contain a query string. A list of group names can be provided to exclude groups from the results.
-
-",groupsPickerGet,cloudid opts
-/groupuserpicker,GET,"
-
-
-Returns a list of users and groups matching a string. The string is used:
-
-",groupuserpickerGet,cloudid opts
-/issue/bulk,POST,"
-
-
-Creates issues and, where the option to create sub-tasks is enabled in Jira, sub-tasks. Transitions may be applied, to move the issues or sub-tasks to a workflow step other than the default start step, and issue properties set.
-
-",issueBulkPost,cloudid opts
-/issue/createmeta,GET,"
-
-
-Returns details of projects, issue types within projects, and, when requested, the create screen fields for each issue type for the user. Use the information to populate the requests in Create issue and Create issues.
-
-",issueCreatemetaGet,cloudid opts
-/issue/{issueIdOrKey}/assignee,PUT,"
-
-
-Assigns an issue to a user. Use this operation when the calling user does not have the Edit Issues permission but has the Assign issue permission for the project that the issue is in.
-
-",issueIssueIdOrKeyAssigneePut,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/attachments,POST,"
-
-
-Adds one or more attachments to an issue. Attachments are posted as multipart/form-data (RFC 1867).
-
-",issueIssueIdOrKeyAttachmentsPost,cloudid issueIdOrKey
-/issue/{issueIdOrKey}/changelog,GET,"
-
-
-Returns a paginated list of all updates of an issue, sorted by date, starting from the oldest.
-
-",issueIssueIdOrKeyChangelogGet,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/comment,GET,"
-
-
-to get comments for
-
-",issueIssueIdOrKeyCommentGet,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/comment/{id},DELETE,"
-
-
-a string containing the issue id or key the comment belongs to
-
-",issueIssueIdOrKeyCommentIdDelete,cloudid id issueIdOrKey
-/issue/{issueIdOrKey}/comment/{id},GET,"
-
-
-of the issue the comment belongs to
-
-",issueIssueIdOrKeyCommentIdGet,cloudid id issueIdOrKey opts
-/issue/{issueIdOrKey}/comment/{id},PUT,"
-
-
-a string containing the issue id or key the comment belongs to
-
-",issueIssueIdOrKeyCommentIdPut,cloudid id issueIdOrKey opts
-/issue/{issueIdOrKey}/comment,POST,"
-
-
-a string containing the issue id or key the comment will be added to
-
-",issueIssueIdOrKeyCommentPost,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey},DELETE,"
-
-
-Deletes an issue.
-
-",issueIssueIdOrKeyDelete,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/editmeta,GET,"
-
-
-Returns the edit screen fields for an issue that are visible to and editable by the user. Use the information to populate the requests in Edit issue.
-
-",issueIssueIdOrKeyEditmetaGet,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey},GET,"
-
-
-Returns the details for an issue.
-
-",issueIssueIdOrKeyGet,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/notify,POST,"
-
-
-Creates an email notification for an issue and adds it to the mail queue.
-
-",issueIssueIdOrKeyNotifyPost,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/properties,GET,"
-
-
-Returns the URIs and keys of an issue&#39;s properties.
-
-",issueIssueIdOrKeyPropertiesGet,cloudid issueIdOrKey
-/issue/{issueIdOrKey}/properties/{propertyKey},DELETE,"
-
-
-Deletes an issue&#39;s property.
-
-",issueIssueIdOrKeyPropertiesPropertyKeyDelete,cloudid issueIdOrKey propertyKey
-/issue/{issueIdOrKey}/properties/{propertyKey},GET,"
-
-
-Returns the key and value of an issue&#39;s property.
-
-",issueIssueIdOrKeyPropertiesPropertyKeyGet,cloudid issueIdOrKey propertyKey
-/issue/{issueIdOrKey}/properties/{propertyKey},PUT,"
-
-
-Sets the value of an issue&#39;s property. Use this resource to store custom data against an issue.
-
-",issueIssueIdOrKeyPropertiesPropertyKeyPut,cloudid issueIdOrKey propertyKey
-/issue/{issueIdOrKey},PUT,"
-
-
-Edits an issue. A transition may be applied and issue properties updated as part of the edit.
-
-",issueIssueIdOrKeyPut,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/remotelink,DELETE,"
-
-
-Deletes the remote issue link from the issue using the link&#39;s global ID.
-
-",issueIssueIdOrKeyRemotelinkDelete,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/remotelink,GET,"
-
-
-Returns the remote issue links for an issue. When a remote issue link global ID is provided the record with that global ID is returned, otherwise all remote issue links are returned.
-
-",issueIssueIdOrKeyRemotelinkGet,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/remotelink/{linkId},DELETE,"
-
-
-Deletes a remote issue link from an issue.
-
-",issueIssueIdOrKeyRemotelinkLinkIdDelete,cloudid issueIdOrKey linkId
-/issue/{issueIdOrKey}/remotelink/{linkId},GET,"
-
-
-Returns a remote issue link for an issue.
-
-",issueIssueIdOrKeyRemotelinkLinkIdGet,cloudid issueIdOrKey linkId
-/issue/{issueIdOrKey}/remotelink/{linkId},PUT,"
-
-
-Updates a remote issue link for an issue.
-
-",issueIssueIdOrKeyRemotelinkLinkIdPut,cloudid issueIdOrKey linkId opts
-/issue/{issueIdOrKey}/remotelink,POST,"
-
-
-Creates or updates a remote issue link for an issue.
-
-",issueIssueIdOrKeyRemotelinkPost,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/transitions,GET,"
-
-
-Returns either all transitions or a transition that can be performed by the user on an issue, based on the issue&#39;s status.
-
-",issueIssueIdOrKeyTransitionsGet,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/transitions,POST,"
-
-
-Performs an issue transition and, if the transition has a screen, updates the fields from the transition screen. Optionally, issue properties can be set.
-
-",issueIssueIdOrKeyTransitionsPost,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/votes,DELETE,"
-
-
-Deletes a user&#39;s vote from an issue. This is the equivalent of the user clicking Unvote on an issue in Jira.
-
-",issueIssueIdOrKeyVotesDelete,cloudid issueIdOrKey
-/issue/{issueIdOrKey}/votes,GET,"
-
-
-Returns details about the votes on an issue.
-
-",issueIssueIdOrKeyVotesGet,cloudid issueIdOrKey
-/issue/{issueIdOrKey}/votes,POST,"
-
-
-Adds the user&#39;s vote to an issue. This is the equivalent of the user clicking Vote on an issue in Jira.
-
-",issueIssueIdOrKeyVotesPost,cloudid issueIdOrKey
-/issue/{issueIdOrKey}/watchers,DELETE,"
-
-
-Deletes a user as a watcher of an issue.
-
-",issueIssueIdOrKeyWatchersDelete,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/watchers,GET,"
-
-
-Returns the watchers for an issue.
-
-",issueIssueIdOrKeyWatchersGet,cloudid issueIdOrKey
-/issue/{issueIdOrKey}/watchers,POST,"
-
-
-Adds a user as a watcher of an issue. If no user is specified the calling user is added.
-
-",issueIssueIdOrKeyWatchersPost,cloudid issueIdOrKey
-/issue/{issueIdOrKey}/worklog,GET,"
-
-
-Returns all worklogs for an issue.
-
-",issueIssueIdOrKeyWorklogGet,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/worklog/{id},DELETE,"
-
-
-Deletes a worklog from an issue.
-
-",issueIssueIdOrKeyWorklogIdDelete,cloudid id issueIdOrKey opts
-/issue/{issueIdOrKey}/worklog/{id},GET,"
-
-
-Returns a worklog.
-
-",issueIssueIdOrKeyWorklogIdGet,cloudid id issueIdOrKey opts
-/issue/{issueIdOrKey}/worklog/{id},PUT,"
-
-
-Updates a worklog.
-
-",issueIssueIdOrKeyWorklogIdPut,cloudid id issueIdOrKey opts
-/issue/{issueIdOrKey}/worklog,POST,"
-
-
-Adds a worklog to an issue.
-
-",issueIssueIdOrKeyWorklogPost,cloudid issueIdOrKey opts
-/issue/{issueIdOrKey}/worklog/{worklogId}/properties,GET,"
-
-
-Returns the keys of all properties for a worklog.
-
-",issueIssueIdOrKeyWorklogWorklogIdPropertiesGet,cloudid issueIdOrKey worklogId
-/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},DELETE,"
-
-
-Deletes a worklog property.
-
-",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete,cloudid issueIdOrKey propertyKey worklogId
-/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},GET,"
-
-
-Returns the value of a worklog property.
-
-",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet,cloudid issueIdOrKey propertyKey worklogId
-/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},PUT,"
-
-
-Sets the value of a worklog property. Use this operation to store custom data against the worklog.
-
-",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut,cloudid issueIdOrKey propertyKey worklogId
-/issueLink/{linkId},DELETE,"
-
-
-Deletes an issue link.
-
-",issueLinkLinkIdDelete,cloudid linkId
-/issueLink/{linkId},GET,"
-
-
-Returns an issue link.
-
-",issueLinkLinkIdGet,cloudid linkId
-/issueLink,POST,"
-
-
-Creates a link between two issues. Use this operation to indicate a relationship between two issues and optionally add a comment to the from (outward) issue. To use this resource the site must have Issue Linking enabled.
-
-",issueLinkPost,cloudid opts
-/issueLinkType,GET,"
-
-
-Returns a list of all issue link types.
-
-",issueLinkTypeGet,cloudid
-/issueLinkType/{issueLinkTypeId},DELETE,"
-
-
-Deletes an issue link type.
-
-",issueLinkTypeIssueLinkTypeIdDelete,cloudid issueLinkTypeId
-/issueLinkType/{issueLinkTypeId},GET,"
-
-
-Returns an issue link type.
-
-",issueLinkTypeIssueLinkTypeIdGet,cloudid issueLinkTypeId
-/issueLinkType/{issueLinkTypeId},PUT,"
-
-
-Updates an issue link type.
-
-",issueLinkTypeIssueLinkTypeIdPut,cloudid issueLinkTypeId opts
-/issueLinkType,POST,"
-
-
-Creates an issue link type. Use this operation to create descriptions of the reasons why issues are linked. The issue link type consists of a name and descriptions for a link&#39;s inward and outward relationships.
-
-",issueLinkTypePost,cloudid opts
-/issue/picker,GET,"
-
-
-Returns a list of suggested issues matching the auto-completion query for the user executing this request. This operation checks the user&#39;s history and browsing context to return issue suggestions.
-
-",issuePickerGet,cloudid opts
-/issue,POST,"
-
-
-Creates an issue or, where the option to create sub-tasks is enabled in Jira, a sub-task. A transition may be applied, to move the issue or sub-task to a workflow step other than the default start step, and issue properties set.
-
-",issuePost,cloudid opts
-/issue/properties/{propertyKey},DELETE,"
-
-
-Deletes a property value from multiple issues. The issues to be updated can be specified by filter criteria.
-
-",issuePropertiesPropertyKeyDelete,cloudid propertyKey opts
-/issue/properties/{propertyKey},PUT,"
-
-
-Sets a property value on multiple issues. The issues to be updated can be specified by a filter.
-
-",issuePropertiesPropertyKeyPut,cloudid propertyKey opts
-/issuesecurityschemes,GET,"
-
-
-Returns all issue security schemes.
-
-",issuesecurityschemesGet,cloudid
-/issuesecurityschemes/{id},GET,"
-
-
-Returns an issue security scheme along with its security levels.
-
-",issuesecurityschemesIdGet,cloudid id
-/issuetype,GET,"
-
-
-Returns all issue types. Permissions required: Permission to access Jira, however, only issue types that are visible to the user are returned.
-
-",issuetypeGet,cloudid
-/issuetype/{id}/alternatives,GET,"
-
-
-Returns a list of issue types that can be used to replace the issue type. The alternative issue types are those assigned to the same workflow scheme, field configuration scheme, and screen scheme. Permissions required: Permission to access Jira.
-
-",issuetypeIdAlternativesGet,cloudid id
-/issuetype/{id}/avatar2,POST,"
-
-
-Loads an avatar for the issue type.
-
-",issuetypeIdAvatar2Post,cloudid id opts
-/issuetype/{id},DELETE,"
-
-
-Deletes the issue type. If the issue type is in use, all uses are updated with the alternative issue type (alternativeIssueTypeId). A list of alternative issue types can be obtained from the Get alternative issue types resource. Permissions required: Administer Jira global permission.
-
-",issuetypeIdDelete,cloudid id opts
-/issuetype/{id},GET,"
-
-
-Returns an issue type. Permissions required:
-
-",issuetypeIdGet,cloudid id
-/issuetype/{id},PUT,"
-
-
-Updates the issue type. Permissions required: Administer Jira global permission.
-
-",issuetypeIdPut,cloudid id opts
-/issuetype/{issueTypeId}/properties,GET,"
-
-
-Returns all the issue type property keys of the issue type. Permissions required:
-
-",issuetypeIssueTypeIdPropertiesGet,cloudid issueTypeId
-/issuetype/{issueTypeId}/properties/{propertyKey},DELETE,"
-
-
-Deletes the issue type property. Permissions required: Administer Jira global permission.
-
-",issuetypeIssueTypeIdPropertiesPropertyKeyDelete,cloudid issueTypeId propertyKey
-/issuetype/{issueTypeId}/properties/{propertyKey},GET,"
-
-
-Returns the key and value of the issue type property. Permissions required:
-
-",issuetypeIssueTypeIdPropertiesPropertyKeyGet,cloudid issueTypeId propertyKey
-/issuetype/{issueTypeId}/properties/{propertyKey},PUT,"
-
-
-Creates or updates the value of the issue type property. Use this resource to store and update data against an issue type. The value of the request body must be a valid, non-empty JSON blob. The maximum length of the property value is 32768 bytes. Permissions required: Administer Jira global permission.
-
-",issuetypeIssueTypeIdPropertiesPropertyKeyPut,cloudid issueTypeId propertyKey
-/issuetype,POST,"
-
-
-Creates an issue type and adds it to the default issue type scheme. Permissions required: Administer Jira global permission.
-
-",issuetypePost,cloudid opts
-/jql/autocompletedata,GET,"
-
-
-Returns reference data for JQL searches. This is a downloadable version of the documentation provided in Advanced searching - fields reference and Advanced searching - functions reference, along with a list of JQL-reserved words. Use this information to assist with the programmatic creation of JQL queries or the validation of queries built in a custom query builder.
-
-",jqlAutocompletedataGet,cloudid
-/jql/autocompletedata/suggestions,GET,"
-
-
-Returns the JQL search auto complete suggestions for a field.
-
-",jqlAutocompletedataSuggestionsGet,cloudid opts
-/jql/pdcleaner,POST,"
-
-
-The query strings having personal data that need to be migrated. There should be at most 100 queries.
-
-",jqlPdcleanerPost,cloudid opts
-/mypermissions,GET,"
-
-
-Returns a list of permissions indicating which permissions the user has. Details of the user&#39;s permissions can be obtained in a global, project, or issue context.
-
-",mypermissionsGet,cloudid opts
-/mypreferences,DELETE,"
-
-
-Deletes a preference of the user, which restores the default value of system defined settings.
-
-",mypreferencesDelete,cloudid opts
-/mypreferences,GET,"
-
-
-Returns the value of a preference of the user.
-
-",mypreferencesGet,cloudid opts
-/mypreferences/locale,DELETE,"
-
-
-Deletes the locale of the current user, which restores the default setting.
-
-",mypreferencesLocaleDelete,cloudid
-/mypreferences/locale,GET,"
-
-
-Returns the locale for the current user.
-
-",mypreferencesLocaleGet,cloudid
-/mypreferences/locale,PUT,"
-
-
-Sets the locale of the current user. The requested locale must be one supported by the instance of Jira.
-
-",mypreferencesLocalePut,cloudid opts
-/mypreferences,PUT,"
-
-
-Creates a preference for the user or updates its value. An arbitrary preference can be created with the value containing up to 255 characters. In addition, the following keys define system preferences that can be set or created:
-
-",mypreferencesPut,cloudid opts
-/myself,GET,"
-
-
-Returns details for the authenticated user.
-
-",myselfGet,cloudid opts
-/notificationscheme,GET,"
-
-
-Returns a paginated list of notification schemes in order by display name.
-
-",notificationschemeGet,cloudid opts
-/notificationscheme/{id},GET,"
-
-
-Returns a notification scheme, including the list of events and the recipients who will receive notifications for those events.
-
-",notificationschemeIdGet,cloudid id opts
-/permissions,GET,"
-
-
-Returns all permissions, including:
-
-",permissionsGet,cloudid
-/permissions/project,POST,"
-
-
-Returns all the projects where the user is granted a list of project permissions.
-
-",permissionsProjectPost,cloudid opts
-/permissionscheme,GET,"
-
-
-Returns all permission schemes.
-
-",permissionschemeGet,cloudid opts
-/permissionscheme,POST,"
-
-
-Creates a new permission scheme. You can create a permission scheme with or without defining a set of permission grants. Permissions required: Administer Jira global permission.
-
-",permissionschemePost,cloudid opts
-/permissionscheme/{schemeId},DELETE,"
-
-
-Deletes a permission scheme. Permissions required: Administer Jira global permission.
-
-",permissionschemeSchemeIdDelete,cloudid schemeId
-/permissionscheme/{schemeId},GET,"
-
-
-Returns a permission scheme. Permissions required: Permission to log in to Jira.
-
-",permissionschemeSchemeIdGet,cloudid schemeId opts
-/permissionscheme/{schemeId}/permission,GET,"
-
-
-Returns all permission grants for a permission scheme. Permissions required: Permission to log in to Jira.
-
-",permissionschemeSchemeIdPermissionGet,cloudid schemeId opts
-/permissionscheme/{schemeId}/permission/{permissionId},DELETE,"
-
-
-Deletes a permission grant from a permission scheme. See About permission schemes and grants for more details. Permissions required: Administer Jira global permission.
-
-",permissionschemeSchemeIdPermissionPermissionIdDelete,cloudid permissionId schemeId
-/permissionscheme/{schemeId}/permission/{permissionId},GET,"
-
-
-Returns a permission grant. Permissions required: Permission to log in to Jira.
-
-",permissionschemeSchemeIdPermissionPermissionIdGet,cloudid permissionId schemeId opts
-/permissionscheme/{schemeId}/permission,POST,"
-
-
-Creates a new permission grant in the given permission scheme. Permissions required: Administer Jira global permission.
-
-",permissionschemeSchemeIdPermissionPost,cloudid schemeId opts
-/permissionscheme/{schemeId},PUT,"
-
-
-Updates a permission scheme. Below are some important things to note when using this resource:
-
-",permissionschemeSchemeIdPut,cloudid schemeId opts
-/priority,GET,"
-
-
-Returns the list of all issue priorities.
-
-",priorityGet,cloudid
-/priority/{id},GET,"
-
-
-Returns an issue priority.
-
-",priorityIdGet,cloudid id
+",restAtlassianConnect1AppModuleDynamicPost,cloudid body
 /projectCategory,GET,"
-
-
-Returns all project categories.
+Get all project categories
 
 ",projectCategoryGet,cloudid
 /projectCategory/{id},DELETE,"
-
-
-Deletes a project category.
+Delete project category
 
 ",projectCategoryIdDelete,cloudid id
 /projectCategory/{id},GET,"
-
-
-Returns a project category.
+Get project category by id
 
 ",projectCategoryIdGet,cloudid id
 /projectCategory/{id},PUT,"
+Update project category
 
-
-Updates a project category.
-
-",projectCategoryIdPut,cloudid id opts
+",projectCategoryIdPut,cloudid id body
 /projectCategory,POST,"
+Create project category
 
+",projectCategoryPost,cloudid body
+/jql/autocompletedata,GET,"
+Get field reference data
 
-Creates a project category.
+",jqlAutocompletedataGet,cloudid
+/jql/autocompletedata/suggestions,GET,"
+Get field auto complete suggestions
 
-",projectCategoryPost,cloudid opts
-/project,GET,"
+",jqlAutocompletedataSuggestionsGet,cloudid opts
+/jql/parse,POST,"
+Parse JQL query
 
+",jqlParsePost,cloudid body
+/jql/pdcleaner,POST,"
+Convert user identifiers to account IDs in JQL queries
 
-Returns all projects visible to the currently logged in user. Deprecated, use Get projects paginated that supports search and pagination. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, it returns all projects that are visible for anonymous users.
+",jqlPdcleanerPost,cloudid body
+/issue/picker,GET,"
+Get issue picker suggestions
 
-",projectGet,cloudid opts
-/project,POST,"
+",issuePickerGet,cloudid opts
+/jql/match,POST,"
+Check issues against JQL
 
-
-Creates a new project.
-
-",projectPost,cloudid opts
-/project/{projectIdOrKey}/avatar2,POST,"
-
-
-Loads an avatar for a project.
-
-",projectProjectIdOrKeyAvatar2Post,cloudid projectIdOrKey opts
-/project/{projectIdOrKey}/avatar/{id},DELETE,"
-
-
-Deletes a custom avatar from a project. Note that system avatars cannot be deleted.
-
-",projectProjectIdOrKeyAvatarIdDelete,cloudid id projectIdOrKey
-/project/{projectIdOrKey}/avatar,PUT,"
-
-
-Sets the avatar displayed for a project.
-
-",projectProjectIdOrKeyAvatarPut,cloudid projectIdOrKey opts
-/project/{projectIdOrKey}/avatars,GET,"
-
-
-Returns all project avatars, grouped by system and custom avatars.
-
-",projectProjectIdOrKeyAvatarsGet,cloudid projectIdOrKey
-/project/{projectIdOrKey}/component,GET,"
-
-
-Returns a paginated representation of all components existing in a single project. See the Get project components resource if you want to get a full list of versions without pagination.
-
-",projectProjectIdOrKeyComponentGet,cloudid projectIdOrKey opts
-/project/{projectIdOrKey}/components,GET,"
-
-
-Returns all components existing in a single project. See the Get project components paginated resource if you want to get a full list of components with pagination.
-
-",projectProjectIdOrKeyComponentsGet,cloudid projectIdOrKey
-/project/{projectIdOrKey},DELETE,"
-
-
-Deletes an existing project.
-
-",projectProjectIdOrKeyDelete,cloudid projectIdOrKey
-/project/{projectIdOrKey},GET,"
-
-
-Returns the project details for the specified project.
-
-",projectProjectIdOrKeyGet,cloudid projectIdOrKey opts
-/project/{projectIdOrKey}/properties,GET,"
-
-
-Returns all project property keys for the project.
-
-",projectProjectIdOrKeyPropertiesGet,cloudid projectIdOrKey
-/project/{projectIdOrKey}/properties/{propertyKey},DELETE,"
-
-
-Removes the property from the project.
-
-",projectProjectIdOrKeyPropertiesPropertyKeyDelete,cloudid projectIdOrKey propertyKey
-/project/{projectIdOrKey}/properties/{propertyKey},GET,"
-
-
-Returns the value of the project property.
-
-",projectProjectIdOrKeyPropertiesPropertyKeyGet,cloudid projectIdOrKey propertyKey
-/project/{projectIdOrKey}/properties/{propertyKey},PUT,"
-
-
-Sets the value of the project property. You can use project properties to store custom data against the project.
-
-",projectProjectIdOrKeyPropertiesPropertyKeyPut,cloudid projectIdOrKey propertyKey
-/project/{projectIdOrKey},PUT,"
-
-
-Updates the project details of an existing project.
-
-",projectProjectIdOrKeyPut,cloudid projectIdOrKey opts
-/project/{projectIdOrKey}/role,GET,"
-
-
-Returns a list of project roles for the project.
-
-",projectProjectIdOrKeyRoleGet,cloudid projectIdOrKey
-/project/{projectIdOrKey}/role/{id},DELETE,"
-
-
-Deletes actors from a project role for the project.
-
-",projectProjectIdOrKeyRoleIdDelete,cloudid id projectIdOrKey opts
-/project/{projectIdOrKey}/role/{id},GET,"
-
-
-Returns the project role&#39;s details and actors associated with the project. The list of actors is sorted by display name.
-
-",projectProjectIdOrKeyRoleIdGet,cloudid id projectIdOrKey
-/project/{projectIdOrKey}/role/{id},POST,"
-
-
-Adds additional actors to a project role for the project.
-
-",projectProjectIdOrKeyRoleIdPost,cloudid id projectIdOrKey opts
-/project/{projectIdOrKey}/role/{id},PUT,"
-
-
-Associates actors with the project role for the project, replacing all existing actors.
-
-",projectProjectIdOrKeyRoleIdPut,cloudid id projectIdOrKey opts
-/project/{projectIdOrKey}/roledetails,GET,"
-
-
-Returns all project roles and the details for each role. Note that the list of project roles is common to all projects.
-
-",projectProjectIdOrKeyRoledetailsGet,cloudid projectIdOrKey
-/project/{projectIdOrKey}/statuses,GET,"
-
-
-Returns the valid statuses for a project. The statuses are grouped by issue type, as each project has a set of valid issue types and each issue type has a set of valid statuses.
-
-",projectProjectIdOrKeyStatusesGet,cloudid projectIdOrKey
-/project/{projectIdOrKey}/type/{newProjectTypeKey},PUT,"
-
-
-Updates the project type.
-
-",projectProjectIdOrKeyTypeNewProjectTypeKeyPut,cloudid newProjectTypeKey projectIdOrKey
-/project/{projectIdOrKey}/version,GET,"
-
-
-Returns a paginated representation of all versions existing in a single project. See the Get project versions resource if you want to get a full list of versions without pagination.
-
-",projectProjectIdOrKeyVersionGet,cloudid projectIdOrKey opts
-/project/{projectIdOrKey}/versions,GET,"
-
-
-Returns all versions existing in a single project. The response is not paginated. Use Get project versions paginated if you want to get the versions in a project with pagination.
-
-",projectProjectIdOrKeyVersionsGet,cloudid projectIdOrKey opts
-/project/{projectKeyOrId}/issuesecuritylevelscheme,GET,"
-
-
-Returns the issue security scheme associated with the project.
-
-",projectProjectKeyOrIdIssuesecuritylevelschemeGet,cloudid projectKeyOrId
-/project/{projectKeyOrId}/notificationscheme,GET,"
-
-
-Gets a notification scheme associated with the project. See the Get notification scheme resource for more information about notification schemes.
-
-",projectProjectKeyOrIdNotificationschemeGet,cloudid projectKeyOrId opts
-/project/{projectKeyOrId}/permissionscheme,GET,"
-
-
-Gets the permission scheme associated with the project.
-
-",projectProjectKeyOrIdPermissionschemeGet,cloudid projectKeyOrId opts
-/project/{projectKeyOrId}/permissionscheme,PUT,"
-
-
-Associates a permission scheme with a particular project. See Managing project permissions for more information about permission schemes.
-
-",projectProjectKeyOrIdPermissionschemePut,cloudid projectKeyOrId opts
-/project/{projectKeyOrId}/securitylevel,GET,"
-
-
-Returns all issue security levels for the project that the currently authenticated user has access to. If the user does not have permission to see an issue security level, then that level is not returned. If the user lacks the Set Issue Security permission, then an empty list is returned.
-
-",projectProjectKeyOrIdSecuritylevelGet,cloudid projectKeyOrId
-/project/search,GET,"
-
-
-Returns projects visible to the currently logged in user. For projects to be visible, the authenticated user must be granted either Browse projects or Administer projects permissions. If no user is logged in, then all projects visible to anonymous users are returned.
-
-",projectSearchGet,cloudid opts
-/project/type,GET,"
-
-
-Returns all project types, whether or not the instance has a valid license for each type.
-
-",projectTypeGet,cloudid
-/project/type/{projectTypeKey}/accessible,GET,"
-
-
-Returns a project type if it is accessible to the logged in user.
-
-",projectTypeProjectTypeKeyAccessibleGet,cloudid projectTypeKey
-/project/type/{projectTypeKey},GET,"
-
-
-Returns a project type.
-
-",projectTypeProjectTypeKeyGet,cloudid projectTypeKey
-/projectvalidate/key,GET,"
-
-
-Validates a project key by confirming the key is a valid string and not in use.
-
-",projectvalidateKeyGet,cloudid opts
-/projectvalidate/validProjectKey,GET,"
-
-
-Validates a project key and, if the key is invalid or in use, generates a valid random string for the project key.
-
-",projectvalidateValidProjectKeyGet,cloudid opts
-/projectvalidate/validProjectName,GET,"
-
-
-Checks that a project name isn&#39;t in use. If the name isn&#39;t in use, the passed string is returned. If the name is in use, this operation attempts to generate a valid project name based on the one supplied, usually by adding a sequence number. If a valid project name cannot be generated, a 404 response is returned.
-
-",projectvalidateValidProjectNameGet,cloudid opts
-/resolution,GET,"
-
-
-Returns a list of all issue resolution values.
-
-",resolutionGet,cloudid
-/resolution/{id},GET,"
-
-
-Returns an issue resolution value.
-
-",resolutionIdGet,cloudid id
-/role,GET,"
-
-
-Gets a list of all project roles, complete with project role details and default actors.
-
-",roleGet,cloudid
-/role/{id}/actors,DELETE,"
-
-
-Removes default actors from the project role. You may remove either a group or user, but you cannot remove a group and a user in the same request.
-
-",roleIdActorsDelete,cloudid id opts
-/role/{id}/actors,GET,"
-
-
-Returns the default actors for the project role.
-
-",roleIdActorsGet,cloudid id
-/role/{id}/actors,POST,"
-
-
-Adds default actors to the given role. You may add either groups or users, but you cannot add groups and users in the same request.
-
-",roleIdActorsPost,cloudid id opts
-/role/{id},DELETE,"
-
-
-Deletes a project role. You must specify a replacement project role if you wish to delete a project role that is in use.
-
-",roleIdDelete,cloudid id opts
-/role/{id},GET,"
-
-
-Gets the project role details and the default actors associated with the role. The list of default actors is sorted by display name.
-
-",roleIdGet,cloudid id
-/role/{id},POST,"
-
-
-Update either the project role&#39;s name or its description.
-
-",roleIdPost,cloudid id opts
-/role/{id},PUT,"
-
-
-Update the project role&#39;s name and description. You must include both a name and a description in the request.
-
-",roleIdPut,cloudid id opts
-/role,POST,"
-
-
-Creates a new project role with no default actors. You can use the Add default actors to project role the project method to add default actors to the project role after creating it.
-
-",rolePost,cloudid opts
-/screens/addToDefault/{fieldId},POST,"
-
-
-Adds a field to the default tab of the default screen.
-
-",screensAddToDefaultFieldIdPost,cloudid fieldId
-/screens,GET,"
-
-
-Returns all screens.
-
-",screensGet,cloudid opts
-/screens/{screenId}/availableFields,GET,"
-
-
-Returns the fields that can be added to a tab on a screen.
-
-",screensScreenIdAvailableFieldsGet,cloudid screenId
-/screens/{screenId}/tabs,GET,"
-
-
-Returns the list of tabs for a screen.
-
-",screensScreenIdTabsGet,cloudid screenId opts
-/screens/{screenId}/tabs,POST,"
-
-
-Creates a tab for a screen.
-
-",screensScreenIdTabsPost,cloudid screenId opts
-/screens/{screenId}/tabs/{tabId},DELETE,"
-
-
-Deletes a screen tab.
-
-",screensScreenIdTabsTabIdDelete,cloudid screenId tabId
-/screens/{screenId}/tabs/{tabId}/fields,GET,"
-
-
-Returns all fields for a screen tab.
-
-",screensScreenIdTabsTabIdFieldsGet,cloudid screenId tabId opts
-/screens/{screenId}/tabs/{tabId}/fields/{id},DELETE,"
-
-
-Removes a field from a screen tab.
-
-",screensScreenIdTabsTabIdFieldsIdDelete,cloudid id screenId tabId
-/screens/{screenId}/tabs/{tabId}/fields/{id}/move,POST,"
-
-
-Moves a screen tab field.
-
-",screensScreenIdTabsTabIdFieldsIdMovePost,cloudid id screenId tabId opts
-/screens/{screenId}/tabs/{tabId}/fields,POST,"
-
-
-Adds a field to a screen tab.
-
-",screensScreenIdTabsTabIdFieldsPost,cloudid screenId tabId opts
-/screens/{screenId}/tabs/{tabId}/move/{pos},POST,"
-
-
-Moves a screen tab.
-
-",screensScreenIdTabsTabIdMovePosPost,cloudid pos screenId tabId
-/screens/{screenId}/tabs/{tabId},PUT,"
-
-
-Updates the name of a screen tab.
-
-",screensScreenIdTabsTabIdPut,cloudid screenId tabId opts
+",jqlMatchPost,cloudid body
 /search,GET,"
-
-
-Searches for issues using JQL. Permissions required: Permission to access Jira.
+Search for issues using JQL (GET)
 
 ",searchGet,cloudid opts
 /search,POST,"
+Search for issues using JQL (POST)
 
+",searchPost,cloudid body
+/avatar/{type}/system,GET,"
+Get system avatars by type
 
-Searches for issues using JQL. Permissions required: Permission to access Jira.
+",avatarTypeSystemGet,cloudid type
+/universal_avatar/type/{type}/owner/{entityId},GET,"
+Get avatars
 
-",searchPost,cloudid opts
+",universalAvatarTypeTypeOwnerEntityIdGet,cloudid type entityId
+/universal_avatar/type/{type}/owner/{entityId},POST,"
+Load avatar
+
+",universalAvatarTypeTypeOwnerEntityIdPost,cloudid type entityId size body opts
+/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id},DELETE,"
+Delete avatar
+
+",universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete,cloudid type owningObjectId id
+/project/{projectIdOrKey}/role/{id},DELETE,"
+Delete actors from project role
+
+",projectProjectIdOrKeyRoleIdDelete,cloudid projectIdOrKey id opts
+/project/{projectIdOrKey}/role/{id},POST,"
+Add actors to project role
+
+",projectProjectIdOrKeyRoleIdPost,cloudid projectIdOrKey id body
+/project/{projectIdOrKey}/role/{id},PUT,"
+Set actors for project role
+
+",projectProjectIdOrKeyRoleIdPut,cloudid projectIdOrKey id body
+/role/{id}/actors,DELETE,"
+Delete default actors from project role
+
+",roleIdActorsDelete,cloudid id opts
+/role/{id}/actors,GET,"
+Get default actors for project role
+
+",roleIdActorsGet,cloudid id
+/role/{id}/actors,POST,"
+Add default actors to project role
+
+",roleIdActorsPost,cloudid id body
+/expression/analyse,POST,"
+Analyse Jira expression
+
+",expressionAnalysePost,cloudid body
+/expression/eval,POST,"
+Evaluate Jira expression
+
+",expressionEvalPost,cloudid body opts
+/issuesecurityschemes,GET,"
+Get issue security schemes
+
+",issuesecurityschemesGet,cloudid
+/issuesecurityschemes/{id},GET,"
+Get issue security scheme
+
+",issuesecurityschemesIdGet,cloudid id
+/attachment/{id},DELETE,"
+Delete attachment
+
+",attachmentIdDelete,cloudid id
+/attachment/{id}/expand/human,GET,"
+Get all metadata for an expanded attachment
+
+",attachmentIdExpandHumanGet,cloudid id
+/attachment/{id}/expand/raw,GET,"
+Get contents metadata for an expanded attachment
+
+",attachmentIdExpandRawGet,cloudid id
+/attachment/{id},GET,"
+Get attachment metadata
+
+",attachmentIdGet,cloudid id
+/attachment/meta,GET,"
+Get Jira attachment settings
+
+",attachmentMetaGet,cloudid
+/issue/{issueIdOrKey}/attachments,POST,"
+Add attachment
+
+",issueIssueIdOrKeyAttachmentsPost,cloudid issueIdOrKey opts
+/issuesecurityschemes/{issueSecuritySchemeId}/members,GET,"
+Get issue security level members
+
+",issuesecurityschemesIssueSecuritySchemeIdMembersGet,cloudid issueSecuritySchemeId opts
 /securitylevel/{id},GET,"
-
-
-Returns details of an issue security level.
+Get issue security level
 
 ",securitylevelIdGet,cloudid id
-/serverInfo,GET,"
+/project/{projectIdOrKey}/role,GET,"
+Get project roles for project
 
+",projectProjectIdOrKeyRoleGet,cloudid projectIdOrKey
+/project/{projectIdOrKey}/role/{id},GET,"
+Get project role for project
 
-Returns information about the Jira instance.
+",projectProjectIdOrKeyRoleIdGet,cloudid projectIdOrKey id
+/project/{projectIdOrKey}/roledetails,GET,"
+Get project role details
 
-",serverInfoGet,cloudid
-/settings/columns,GET,"
+",projectProjectIdOrKeyRoledetailsGet,cloudid projectIdOrKey opts
+/role,GET,"
+Get all project roles
 
+",roleGet,cloudid
+/role/{id},DELETE,"
+Delete project role
 
-Returns the default issue navigator columns.
+",roleIdDelete,cloudid id opts
+/role/{id},GET,"
+Get project role by ID
 
-",settingsColumnsGet,cloudid
-/settings/columns,PUT,"
+",roleIdGet,cloudid id
+/role/{id},POST,"
+Partial update project role
 
+",roleIdPost,cloudid id body
+/role/{id},PUT,"
+Fully update project role
 
-Sets the default issue navigator columns.
+",roleIdPut,cloudid id body
+/role,POST,"
+Create project role
 
-",settingsColumnsPut,cloudid
-/status,GET,"
+",rolePost,cloudid body
+/mypermissions,GET,"
+Get my permissions
 
+",mypermissionsGet,cloudid opts
+/permissions/check,POST,"
+Get bulk permissions
 
-Returns a list of all statuses associated with workflows.
+",permissionsCheckPost,cloudid body
+/permissions,GET,"
+Get all permissions
 
-",statusGet,cloudid
-/status/{idOrName},GET,"
+",permissionsGet,cloudid
+/permissions/project,POST,"
+Get permitted projects
 
+",permissionsProjectPost,cloudid body
+/field/{fieldId}/screens,GET,"
+Get screens for a field
 
-Returns a status. The status must be associated with a workflow to be returned.
+",fieldFieldIdScreensGet,cloudid fieldId opts
+/screens/addToDefault/{fieldId},POST,"
+Add field to default screen
 
-",statusIdOrNameGet,cloudid idOrName
-/statuscategory,GET,"
+",screensAddToDefaultFieldIdPost,cloudid fieldId
+/screens,GET,"
+Get all screens
 
+",screensGet,cloudid opts
+/screens/{screenId}/availableFields,GET,"
+Get available screen fields
 
-Returns a list of all status categories.
+",screensScreenIdAvailableFieldsGet,cloudid screenId
+/screens/{screenId}/tabs,GET,"
+Get all screen tabs
 
-",statuscategoryGet,cloudid
-/statuscategory/{idOrKey},GET,"
+",screensScreenIdTabsGet,cloudid screenId opts
+/screens/{screenId}/tabs,POST,"
+Create screen tab
 
+",screensScreenIdTabsPost,cloudid screenId body
+/screens/{screenId}/tabs/{tabId},DELETE,"
+Delete screen tab
 
-Returns a status category. Status categories provided a mechanism for categorizing statuses.
+",screensScreenIdTabsTabIdDelete,cloudid screenId tabId
+/screens/{screenId}/tabs/{tabId}/fields,GET,"
+Get all screen tab fields
 
-",statuscategoryIdOrKeyGet,cloudid idOrKey
-/task/{taskId}/cancel,POST,"
+",screensScreenIdTabsTabIdFieldsGet,cloudid screenId tabId opts
+/screens/{screenId}/tabs/{tabId}/fields/{id},DELETE,"
+Remove screen tab field
 
+",screensScreenIdTabsTabIdFieldsIdDelete,cloudid screenId tabId id
+/screens/{screenId}/tabs/{tabId}/fields/{id}/move,POST,"
+Move screen tab field
 
-Cancels a task.
+",screensScreenIdTabsTabIdFieldsIdMovePost,cloudid screenId tabId id body
+/screens/{screenId}/tabs/{tabId}/fields,POST,"
+Add screen tab field
 
-",taskTaskIdCancelPost,cloudid taskId
-/task/{taskId},GET,"
+",screensScreenIdTabsTabIdFieldsPost,cloudid screenId tabId body
+/screens/{screenId}/tabs/{tabId}/move/{pos},POST,"
+Move screen tab
 
+",screensScreenIdTabsTabIdMovePosPost,cloudid screenId tabId pos
+/screens/{screenId}/tabs/{tabId},PUT,"
+Update screen tab
 
-Returns the status of a long-running asynchronous task.
+",screensScreenIdTabsTabIdPut,cloudid screenId tabId body
+/screenscheme,GET,"
+Get screen schemes
 
-",taskTaskIdGet,cloudid taskId
-/universal_avatar/type/{type}/owner/{entityId},GET,"
-
-
-Returns the system and custom avatars for a project or issue type.
-
-",universalAvatarTypeTypeOwnerEntityIdGet,cloudid entityId type
-/universal_avatar/type/{type}/owner/{entityId},POST,"
-
-
-Loads a custom avatar for a project or issue type.
-
-",universalAvatarTypeTypeOwnerEntityIdPost,cloudid entityId type opts
-/universal_avatar/type/{type}/owner/{owningObjectId}/avatar/{id},DELETE,"
-
-
-Deletes an avatar from a project or issue type.
-
-",universalAvatarTypeTypeOwnerOwningObjectIdAvatarIdDelete,cloudid id owningObjectId type
+",screenschemeGet,cloudid opts
 /user/assignable/multiProjectSearch,GET,"
+Find users assignable to projects
 
-
-Returns a list of users who fulfill both of these criteria:
-
-",userAssignableMultiProjectSearchGet,cloudid opts
+",userAssignableMultiProjectSearchGet,cloudid projectKeys opts
 /user/assignable/search,GET,"
-
-
-Returns a list of users that can be assigned to an issue. Use this method to find the list of users who can be assigned to:
+Find users assignable to issues
 
 ",userAssignableSearchGet,cloudid opts
-/user/bulk,GET,"
-
-
-Returns details of users specified in a list of usernames or keys. Permissions required: Administer Jira global permission. Users with permission to access Jira can call this method, but empty search results are returned.
-
-",userBulkGet,cloudid opts
-/user/columns,DELETE,"
-
-
-Resets the default issue table columns for the user to the system default. If a username is not passed, the calling user&#39;s default columns are reset. Permissions required:
-
-",userColumnsDelete,cloudid opts
-/user/columns,GET,"
-
-
-Returns the default issue table columns for the user. If a username is not passed in the request, the calling user&#39;s details are returned. Permissions required:
-
-",userColumnsGet,cloudid opts
-/user/columns,PUT,"
-
-
-Sets the default issue table columns for the user. If a username is not passed, the calling user&#39;s default columns are set. If no column details are sent, then all default columns are removed. The parameters for this resource are expressed as HTML form data. For example, in curl: curl -X PUT -d username&#x3D;&lt;username&gt; -d columns&#x3D;summary -d columns&#x3D;description &lt;url&gt; Permissions required:
-
-",userColumnsPut,cloudid opts
-/user,DELETE,"
-
-
-Deletes a user. Permissions required: Site administration (i.e., member of the site-admin group).
-
-",userDelete,cloudid opts
-/user,GET,"
-
-
-Returns a user. Permissions required: None.
-
-",userGet,cloudid opts
-/user/groups,GET,"
-
-
-Returns the groups to which a user belongs. Permissions required: Browse users and groups global permission.
-
-",userGroupsGet,cloudid opts
 /user/permission/search,GET,"
+Find users with permissions
 
-
-Returns a list of users who fulfill both of these criteria:
-
-",userPermissionSearchGet,cloudid opts
+",userPermissionSearchGet,cloudid permissions opts
 /user/picker,GET,"
+Find users for picker
 
-
-Returns a list of users whose attributes match the query term. The returned object includes the html field where the matched query term is highlighted with the HTML strong tag. A list of account IDs can be provided to exclude users from the results. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but will only get search results for an exact name match.
-
-",userPickerGet,cloudid opts
-/user,POST,"
-
-
-Creates a user. This resource is retained for legacy compatibility. As soon as a more suitable alternative is available this resource will be deprecated. The option is provided to set or generate a password for the user. When using the option to generate a password, by omitting password from the request, include \&quot;notification\&quot;: \&quot;true\&quot; to ensure the user is sent an email advising them that their account has been created. This email includes a link for the user to set their password. If the notification isn&#39;t sent for a generated password, the user will need to be sent a reset password request from Jira. Permissions required: Administer Jira global permission
-
-",userPost,cloudid opts
-/user/properties,GET,"
-
-
-Returns the keys of all properties for a user. Permissions required:
-
-",userPropertiesGet,cloudid opts
-/user/properties/{propertyKey},DELETE,"
-
-
-Deletes a property from a user. Permissions required:
-
-",userPropertiesPropertyKeyDelete,cloudid propertyKey opts
-/user/properties/{propertyKey},GET,"
-
-
-Returns the value of a user&#39;s property. If no property key is provided Get user property keys is called. Permissions required:
-
-",userPropertiesPropertyKeyGet,cloudid propertyKey opts
-/user/properties/{propertyKey},PUT,"
-
-
-Sets the value of a user&#39;s property. Use this resource to store custom data against a user. Permissions required:
-
-",userPropertiesPropertyKeyPut,cloudid propertyKey opts
+",userPickerGet,cloudid query opts
 /user/search,GET,"
-
-
-Returns a list of users that match the search string and property. Permissions required: Browse users and groups global permission. Users with permission to access Jira can call this method, but empty search results are returned.
+Find users
 
 ",userSearchGet,cloudid opts
 /user/search/query,GET,"
+Find users by query
 
-
-Finds users using a structured query and returns user details. Permissions required: Browse users and groups global permission. The available queries statements are:
-
-",userSearchQueryGet,cloudid opts
+",userSearchQueryGet,cloudid query opts
 /user/search/query/key,GET,"
+Find user keys by query
 
-
-Finds users using a structured query and returns a list of user keys. Permissions required: Browse users and groups global permission. The available query statements are:
-
-",userSearchQueryKeyGet,cloudid opts
+",userSearchQueryKeyGet,cloudid query opts
 /user/viewissue/search,GET,"
-
-
-Returns a list of users who fulfill both of these criteria:
+Find users with browse permission
 
 ",userViewissueSearchGet,cloudid opts
+/issue/{issueIdOrKey}/watchers,DELETE,"
+Delete watcher
+
+",issueIssueIdOrKeyWatchersDelete,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/watchers,GET,"
+Get issue watchers
+
+",issueIssueIdOrKeyWatchersGet,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/watchers,POST,"
+Add watcher
+
+",issueIssueIdOrKeyWatchersPost,cloudid issueIdOrKey body
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties,GET,"
+Get worklog property keys
+
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesGet,cloudid issueIdOrKey worklogId
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},DELETE,"
+Delete worklog property
+
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyDelete,cloudid issueIdOrKey worklogId propertyKey
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},GET,"
+Get worklog property
+
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyGet,cloudid issueIdOrKey worklogId propertyKey
+/issue/{issueIdOrKey}/worklog/{worklogId}/properties/{propertyKey},PUT,"
+Set worklog property
+
+",issueIssueIdOrKeyWorklogWorklogIdPropertiesPropertyKeyPut,cloudid issueIdOrKey worklogId propertyKey body
+/workflow/transitions/{transitionId}/properties,DELETE,"
+Delete workflow transition property
+
+",workflowTransitionsTransitionIdPropertiesDelete,cloudid transitionId key workflowName opts
+/workflow/transitions/{transitionId}/properties,GET,"
+Get workflow transition properties
+
+",workflowTransitionsTransitionIdPropertiesGet,cloudid transitionId workflowName opts
+/workflow/transitions/{transitionId}/properties,POST,"
+Create workflow transition property
+
+",workflowTransitionsTransitionIdPropertiesPost,cloudid transitionId key workflowName body opts
+/workflow/transitions/{transitionId}/properties,PUT,"
+Update workflow transition property
+
+",workflowTransitionsTransitionIdPropertiesPut,cloudid transitionId key workflowName body opts
+/settings/columns,GET,"
+Get issue navigator default columns
+
+",settingsColumnsGet,cloudid
+/settings/columns,PUT,"
+Set issue navigator default columns
+
+",settingsColumnsPut,cloudid opts
+/auditing/record,GET,"
+Get audit records
+
+",auditingRecordGet,cloudid opts
+/project/{projectIdOrKey}/properties,GET,"
+Get project property keys
+
+",projectProjectIdOrKeyPropertiesGet,cloudid projectIdOrKey
+/project/{projectIdOrKey}/properties/{propertyKey},DELETE,"
+Delete project property
+
+",projectProjectIdOrKeyPropertiesPropertyKeyDelete,cloudid projectIdOrKey propertyKey
+/project/{projectIdOrKey}/properties/{propertyKey},GET,"
+Get project property
+
+",projectProjectIdOrKeyPropertiesPropertyKeyGet,cloudid projectIdOrKey propertyKey
+/project/{projectIdOrKey}/properties/{propertyKey},PUT,"
+Set project property
+
+",projectProjectIdOrKeyPropertiesPropertyKeyPut,cloudid projectIdOrKey propertyKey body
+/project/{projectIdOrKey}/version,GET,"
+Get project versions paginated
+
+",projectProjectIdOrKeyVersionGet,cloudid projectIdOrKey opts
+/project/{projectIdOrKey}/versions,GET,"
+Get project versions
+
+",projectProjectIdOrKeyVersionsGet,cloudid projectIdOrKey opts
 /version/{id},DELETE,"
-
-
-Deletes a project version. Deprecated, use Delete and replace version that supports swapping version values in custom fields, in addition to the swapping for fixVersion and affectedVersion provided in this resource. Alternative versions can be provided to update issues that use the deleted version in fixVersion or affectedVersion. If alternatives are not provided, occurrences of fixVersion and affectedVersion that contain the deleted version are cleared. Permissions required: Administer Jira global permission or Administer Projects project permission.
+Delete version
 
 ",versionIdDelete,cloudid id opts
 /version/{id},GET,"
-
-
-Returns a project version. Permissions required: Browse projects project permission
+Get version
 
 ",versionIdGet,cloudid id opts
 /version/{id}/mergeto/{moveIssuesTo},PUT,"
-
-
-Merges two project versions. The merge is completed by deleting the version specified in id and replacing any occurrences of its ID in fixVersion with the version ID specified in moveIssuesTo. Consider using Delete and replace version instead. This resource supports swapping version values in fixVersion, affectedVersion, and custom fields. Permissions required: Administer Jira global permission or Administer Projects project permission.
+Merge versions
 
 ",versionIdMergetoMoveIssuesToPut,cloudid id moveIssuesTo
 /version/{id}/move,POST,"
+Move version
 
-
-Modifies the version&#39;s sequence within the project, which affects the display order of the versions in Jira. Permissions required: Administer Jira global permission or Administer Projects project permission.
-
-",versionIdMovePost,cloudid id opts
+",versionIdMovePost,cloudid id body
 /version/{id},PUT,"
+Update version
 
-
-Modifies a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.
-
-",versionIdPut,cloudid id opts
+",versionIdPut,cloudid id body
 /version/{id}/relatedIssueCounts,GET,"
-
-
-Returns the following counts for a version:
+Get version&#39;s related issues count
 
 ",versionIdRelatedIssueCountsGet,cloudid id
 /version/{id}/removeAndSwap,POST,"
+Delete and replace version
 
-
-Deletes a project version. Permissions required: Administer Jira global permission or Administer Projects project permission. Alternative versions can be provided to update issues that use the deleted version in fixVersion, affectedVersion, or any version picker custom fields. If alternatives are not provided, occurrences of fixVersion, affectedVersion, and any version picker custom field, that contain the deleted version, are cleared. Any replacement version must be in the same project as the version being deleted and cannot be the version being deleted.
-
-",versionIdRemoveAndSwapPost,cloudid id opts
+",versionIdRemoveAndSwapPost,cloudid id body
 /version/{id}/unresolvedIssueCount,GET,"
-
-
-Returns counts of the issues and unresolved issues for the project version. Permissions required: Browse projects project permission
+Get version&#39;s unresolved issues count
 
 ",versionIdUnresolvedIssueCountGet,cloudid id
 /version,POST,"
+Create version
 
+",versionPost,cloudid body
+/notificationscheme,GET,"
+Get notification schemes paginated
 
-Creates a project version. Permissions required: Administer Jira global permission or Administer Projects project permission.
+",notificationschemeGet,cloudid opts
+/notificationscheme/{id},GET,"
+Get notification scheme
 
-",versionPost,cloudid opts
-/version/remotelink,GET,"
+",notificationschemeIdGet,cloudid id opts
+/user/bulk,GET,"
+Bulk get users
 
+",userBulkGet,cloudid accountId opts
+/user/bulk/migration,GET,"
+Get account IDs for users
 
-the global ID of the remote resource that is linked to the versions
+",userBulkMigrationGet,cloudid opts
+/user/columns,DELETE,"
+Reset user default columns
 
-",versionRemotelinkGet,cloudid opts
-/version/{versionId}/remotelink,DELETE,"
+",userColumnsDelete,cloudid opts
+/user/columns,GET,"
+Get user default columns
 
+",userColumnsGet,cloudid opts
+/user/columns,PUT,"
+Set user default columns
 
-The version for which to delete ALL existing remote version links
+",userColumnsPut,cloudid opts
+/user,DELETE,"
+Delete user
 
-",versionVersionIdRemotelinkDelete,cloudid versionId
-/version/{versionId}/remotelink,GET,"
+",userDelete,cloudid accountId opts
+/user/email/bulk,GET,"
+Get user email bulk
 
+",userEmailBulkGet,cloudid accountId
+/user/email,GET,"
+Get user email
 
-a String containing the version ID
+",userEmailGet,cloudid accountId
+/user,GET,"
+Get user
 
-",versionVersionIdRemotelinkGet,cloudid versionId
-/version/{versionId}/remotelink/{globalId},DELETE,"
+",userGet,cloudid opts
+/user/groups,GET,"
+Get user groups
 
+",userGroupsGet,cloudid accountId opts
+/user,POST,"
+Create user
 
-The version ID of the remote link
+",userPost,cloudid body
+/users,GET,"
+Get all users default
 
-",versionVersionIdRemotelinkGlobalIdDelete,cloudid globalId versionId
-/version/{versionId}/remotelink/{globalId},GET,"
+",usersGet,cloudid opts
+/users/search,GET,"
+Get all users
 
+",usersSearchGet,cloudid opts
+/status,GET,"
+Get all statuses
 
-A REST sub-resource representing a remote version link
+",statusGet,cloudid
+/status/{idOrName},GET,"
+Get status
 
-",versionVersionIdRemotelinkGlobalIdGet,cloudid globalId versionId
-/version/{versionId}/remotelink/{globalId},POST,"
+",statusIdOrNameGet,cloudid idOrName
+/issue/bulk,POST,"
+Bulk create issue
 
+",issueBulkPost,cloudid body
+/issue/createmeta,GET,"
+Get create issue metadata
 
-",versionVersionIdRemotelinkGlobalIdPost,cloudid globalId versionId
-/version/{versionId}/remotelink,POST,"
+",issueCreatemetaGet,cloudid opts
+/issue/{issueIdOrKey}/assignee,PUT,"
+Assign issue
 
+",issueIssueIdOrKeyAssigneePut,cloudid issueIdOrKey body
+/issue/{issueIdOrKey}/changelog,GET,"
+Get change logs
 
-Create a remote version link via POST. The link&#39;s global ID will be taken from the JSON payload if provided; otherwise, it will be generated.
+",issueIssueIdOrKeyChangelogGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey},DELETE,"
+Delete issue
 
-",versionVersionIdRemotelinkPost,cloudid versionId
-/workflow,GET,"
+",issueIssueIdOrKeyDelete,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/editmeta,GET,"
+Get edit issue metadata
 
+",issueIssueIdOrKeyEditmetaGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey},GET,"
+Get issue
 
-Returns all workflows in Jira or a single workflow.
+",issueIssueIdOrKeyGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/notify,POST,"
+Send notification for issue
 
-",workflowGet,cloudid opts
-/workflow/transitions/{transitionId}/properties,DELETE,"
+",issueIssueIdOrKeyNotifyPost,cloudid issueIdOrKey body
+/issue/{issueIdOrKey},PUT,"
+Edit issue
 
+",issueIssueIdOrKeyPut,cloudid issueIdOrKey body opts
+/issue/{issueIdOrKey}/transitions,GET,"
+Get transitions
 
-Deletes a property from a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
+",issueIssueIdOrKeyTransitionsGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/transitions,POST,"
+Transition issue
 
-",workflowTransitionsTransitionIdPropertiesDelete,cloudid transitionId opts
-/workflow/transitions/{transitionId}/properties,GET,"
+",issueIssueIdOrKeyTransitionsPost,cloudid issueIdOrKey body
+/issue,POST,"
+Create issue
 
+",issuePost,cloudid body opts
+/mypreferences,DELETE,"
+Delete preference
 
-Returns the properties on a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
+",mypreferencesDelete,cloudid key
+/mypreferences,GET,"
+Get preference
 
-",workflowTransitionsTransitionIdPropertiesGet,cloudid transitionId opts
-/workflow/transitions/{transitionId}/properties,POST,"
+",mypreferencesGet,cloudid key
+/mypreferences/locale,DELETE,"
+Delete locale
 
+",mypreferencesLocaleDelete,cloudid
+/mypreferences/locale,GET,"
+Get locale
 
-Adds a property to a workflow transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
+",mypreferencesLocaleGet,cloudid
+/mypreferences/locale,PUT,"
+Set locale
 
-",workflowTransitionsTransitionIdPropertiesPost,cloudid transitionId opts
-/workflow/transitions/{transitionId}/properties,PUT,"
+",mypreferencesLocalePut,cloudid body
+/mypreferences,PUT,"
+Set preference
 
+",mypreferencesPut,cloudid key body
+/myself,GET,"
+Get current user
 
-Updates a workflow transition by changing the property value. Trying to update a property that does not exist results in a new property being added to the transition. Transition properties are used to change the behavior of a transition. For more information, see Transition properties and Workflow properties.
+",myselfGet,cloudid opts
+/issuetypescheme,GET,"
+Get all issue type schemes
 
-",workflowTransitionsTransitionIdPropertiesPut,cloudid transitionId opts
-/workflowscheme/{id}/createdraft,POST,"
+",issuetypeschemeGet,cloudid opts
+/issuetypescheme/mapping,GET,"
+Get issue type scheme items
 
+",issuetypeschemeMappingGet,cloudid opts
+/issuetypescheme/project,GET,"
+Get issue type schemes for projects
 
-Create a draft workflow scheme from an active workflow scheme, by copying the active workflow scheme. Note that an active workflow scheme can only have one draft workflow scheme at any given time.
+",issuetypeschemeProjectGet,cloudid projectId opts
+/issuetypescheme/project,PUT,"
+Assign issue type scheme to project
 
-",workflowschemeIdCreatedraftPost,cloudid id
+",issuetypeschemeProjectPut,cloudid body
+/comment/list,POST,"
+Get comments by IDs
+
+",commentListPost,cloudid body opts
+/issue/{issueIdOrKey}/comment,GET,"
+Get comments
+
+",issueIssueIdOrKeyCommentGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/comment/{id},DELETE,"
+Delete comment
+
+",issueIssueIdOrKeyCommentIdDelete,cloudid issueIdOrKey id
+/issue/{issueIdOrKey}/comment/{id},GET,"
+Get comment
+
+",issueIssueIdOrKeyCommentIdGet,cloudid issueIdOrKey id opts
+/issue/{issueIdOrKey}/comment/{id},PUT,"
+Update comment
+
+",issueIssueIdOrKeyCommentIdPut,cloudid issueIdOrKey id body opts
+/issue/{issueIdOrKey}/comment,POST,"
+Add comment
+
+",issueIssueIdOrKeyCommentPost,cloudid issueIdOrKey body opts
+/filter/defaultShareScope,GET,"
+Get default share scope
+
+",filterDefaultShareScopeGet,cloudid
+/filter/defaultShareScope,PUT,"
+Set default share scope
+
+",filterDefaultShareScopePut,cloudid body
+/filter/{id}/permission,GET,"
+Get share permissions
+
+",filterIdPermissionGet,cloudid id
+/filter/{id}/permission/{permissionId},DELETE,"
+Delete share permission
+
+",filterIdPermissionPermissionIdDelete,cloudid id permissionId
+/filter/{id}/permission/{permissionId},GET,"
+Get share permission
+
+",filterIdPermissionPermissionIdGet,cloudid id permissionId
+/filter/{id}/permission,POST,"
+Add share permission
+
+",filterIdPermissionPost,cloudid id body
+/workflowscheme/project,GET,"
+Get workflow scheme project associations
+
+",workflowschemeProjectGet,cloudid projectId
+/project/{projectIdOrKey}/avatar2,POST,"
+Load project avatar
+
+",projectProjectIdOrKeyAvatar2Post,cloudid projectIdOrKey body opts
+/project/{projectIdOrKey}/avatar/{id},DELETE,"
+Delete project avatar
+
+",projectProjectIdOrKeyAvatarIdDelete,cloudid projectIdOrKey id
+/project/{projectIdOrKey}/avatar,PUT,"
+Set project avatar
+
+",projectProjectIdOrKeyAvatarPut,cloudid projectIdOrKey body
+/project/{projectIdOrKey}/avatars,GET,"
+Get all project avatars
+
+",projectProjectIdOrKeyAvatarsGet,cloudid projectIdOrKey
+/issuetype,GET,"
+Get all issue types for user
+
+",issuetypeGet,cloudid
+/issuetype/{id}/alternatives,GET,"
+Get alternative issue types
+
+",issuetypeIdAlternativesGet,cloudid id
+/issuetype/{id}/avatar2,POST,"
+Load issue type avatar
+
+",issuetypeIdAvatar2Post,cloudid id size body opts
+/issuetype/{id},DELETE,"
+Delete issue type
+
+",issuetypeIdDelete,cloudid id opts
+/issuetype/{id},GET,"
+Get issue type
+
+",issuetypeIdGet,cloudid id
+/issuetype/{id},PUT,"
+Update issue type
+
+",issuetypeIdPut,cloudid id body
+/issuetype,POST,"
+Create issue type
+
+",issuetypePost,cloudid body
+/workflowscheme,GET,"
+Get all workflow schemes
+
+",workflowschemeGet,cloudid opts
 /workflowscheme/{id}/default,DELETE,"
-
-
-Resets the default workflow for a workflow scheme. That is, the default workflow is set to Jira&#39;s system workflow (the jira workflow).
+Delete default workflow
 
 ",workflowschemeIdDefaultDelete,cloudid id opts
 /workflowscheme/{id}/default,GET,"
-
-
-Returns the default workflow for a workflow scheme. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has All Unassigned Issue Types listed in its issue types for the workflow scheme in Jira.
+Get default workflow
 
 ",workflowschemeIdDefaultGet,cloudid id opts
 /workflowscheme/{id}/default,PUT,"
+Update default workflow
 
-
-Sets the default workflow for a workflow scheme.
-
-",workflowschemeIdDefaultPut,cloudid id opts
+",workflowschemeIdDefaultPut,cloudid id body
 /workflowscheme/{id},DELETE,"
-
-
-Deletes a workflow scheme. Note that a workflow scheme cannot be deleted if it is active (that is, being used by at least one project).
+Delete workflow scheme
 
 ",workflowschemeIdDelete,cloudid id
-/workflowscheme/{id}/draft/default,DELETE,"
-
-
-Resets the default workflow for a workflow scheme&#39;s draft. That is, the default workflow is set to Jira&#39;s system workflow (the jira workflow).
-
-",workflowschemeIdDraftDefaultDelete,cloudid id
-/workflowscheme/{id}/draft/default,GET,"
-
-
-Returns the default workflow for a workflow scheme&#39;s draft. The default workflow is the workflow that is assigned any issue types that have not been mapped to any other workflow. The default workflow has All Unassigned Issue Types listed in its issue types for the workflow scheme in Jira.
-
-",workflowschemeIdDraftDefaultGet,cloudid id
-/workflowscheme/{id}/draft/default,PUT,"
-
-
-Sets the default workflow for a workflow scheme&#39;s draft.
-
-",workflowschemeIdDraftDefaultPut,cloudid id opts
-/workflowscheme/{id}/draft,DELETE,"
-
-
-Deletes a draft workflow scheme.
-
-",workflowschemeIdDraftDelete,cloudid id
-/workflowscheme/{id}/draft,GET,"
-
-
-Returns the draft workflow scheme for an active workflow scheme. Draft workflow schemes allow changes to be made to the active workflow schemes: When an active workflow scheme is updated, a draft copy is created. The draft is modified, then the changes in the draft are copied back to the active workflow scheme. See Configuring workflow schemes for more information.Note that:
-
-",workflowschemeIdDraftGet,cloudid id
-/workflowscheme/{id}/draft/issuetype/{issueType},DELETE,"
-
-
-Deletes the issue type-workflow mapping for an issue type in a workflow scheme&#39;s draft.
-
-",workflowschemeIdDraftIssuetypeIssueTypeDelete,cloudid id issueType
-/workflowscheme/{id}/draft/issuetype/{issueType},GET,"
-
-
-Returns the issue type-workflow mapping for an issue type in a workflow scheme&#39;s draft.
-
-",workflowschemeIdDraftIssuetypeIssueTypeGet,cloudid id issueType
-/workflowscheme/{id}/draft/issuetype/{issueType},PUT,"
-
-
-Sets the workflow for an issue type in a workflow scheme&#39;s draft.
-
-",workflowschemeIdDraftIssuetypeIssueTypePut,cloudid id issueType opts
-/workflowscheme/{id}/draft,PUT,"
-
-
-Updates a draft workflow scheme. If a draft workflow scheme does not exist for the active workflow scheme, then a draft is created. Note that an active workflow scheme can only have one draft workflow scheme at any given time.
-
-",workflowschemeIdDraftPut,cloudid id opts
-/workflowscheme/{id}/draft/workflow,DELETE,"
-
-
-Deletes the workflow-issue type mapping for a workflow in a workflow scheme&#39;s draft.
-
-",workflowschemeIdDraftWorkflowDelete,cloudid id opts
-/workflowscheme/{id}/draft/workflow,GET,"
-
-
-Returns the workflow-issue type mappings for a workflow scheme&#39;s draft.
-
-",workflowschemeIdDraftWorkflowGet,cloudid id opts
-/workflowscheme/{id}/draft/workflow,PUT,"
-
-
-Sets the issue types for a workflow in a workflow scheme&#39;s draft. The workflow can also be set as the default workflow for the draft workflow scheme. Unmapped issues types are mapped to the default workflow.
-
-",workflowschemeIdDraftWorkflowPut,cloudid id opts
 /workflowscheme/{id},GET,"
-
-
-Returns a workflow scheme.
+Get workflow scheme
 
 ",workflowschemeIdGet,cloudid id opts
 /workflowscheme/{id}/issuetype/{issueType},DELETE,"
-
-
-Deletes the issue type-workflow mapping for an issue type in a workflow scheme.
+Delete workflow for issue type in workflow scheme
 
 ",workflowschemeIdIssuetypeIssueTypeDelete,cloudid id issueType opts
 /workflowscheme/{id}/issuetype/{issueType},GET,"
-
-
-Returns the issue type-workflow mapping for an issue type in a workflow scheme.
+Get workflow for issue type in workflow scheme
 
 ",workflowschemeIdIssuetypeIssueTypeGet,cloudid id issueType opts
 /workflowscheme/{id}/issuetype/{issueType},PUT,"
+Set workflow for issue type in workflow scheme
 
-
-Sets the workflow for an issue type in a workflow scheme.
-
-",workflowschemeIdIssuetypeIssueTypePut,cloudid id issueType opts
+",workflowschemeIdIssuetypeIssueTypePut,cloudid id issueType body
 /workflowscheme/{id},PUT,"
+Update workflow scheme
 
-
-Updates a workflow scheme, including the name, default workflow, issue type to project mappings, and more. If the workflow scheme is active (that is, being used by at least one project), then a draft workflow scheme is created or updated instead, provided that updateDraftIfNeeded is set to true.
-
-",workflowschemeIdPut,cloudid id opts
+",workflowschemeIdPut,cloudid id body
 /workflowscheme/{id}/workflow,DELETE,"
+Delete issue types for workflow in workflow scheme
 
-
-Deletes the workflow-issue type mapping for a workflow in a workflow scheme.
-
-",workflowschemeIdWorkflowDelete,cloudid id opts
+",workflowschemeIdWorkflowDelete,cloudid id workflowName opts
 /workflowscheme/{id}/workflow,GET,"
-
-
-Returns the workflow-issue type mappings for a workflow scheme.
+Get issue types for workflows in workflow scheme
 
 ",workflowschemeIdWorkflowGet,cloudid id opts
 /workflowscheme/{id}/workflow,PUT,"
+Set issue types for workflow in workflow scheme
 
-
-Sets the issue types for a workflow in a workflow scheme. The workflow can also be set as the default workflow for the workflow scheme. Unmapped issues types are mapped to the default workflow.
-
-",workflowschemeIdWorkflowPut,cloudid id opts
+",workflowschemeIdWorkflowPut,cloudid id workflowName body
 /workflowscheme,POST,"
+Create workflow scheme
 
+",workflowschemePost,cloudid body
+/issueLinkType,GET,"
+Get issue link types
 
-Creates a workflow scheme.
+",issueLinkTypeGet,cloudid
+/issueLinkType/{issueLinkTypeId},DELETE,"
+Delete issue link type
 
-",workflowschemePost,cloudid opts
+",issueLinkTypeIssueLinkTypeIdDelete,cloudid issueLinkTypeId
+/issueLinkType/{issueLinkTypeId},GET,"
+Get issue link type
+
+",issueLinkTypeIssueLinkTypeIdGet,cloudid issueLinkTypeId
+/issueLinkType/{issueLinkTypeId},PUT,"
+Update issue link type
+
+",issueLinkTypeIssueLinkTypeIdPut,cloudid issueLinkTypeId body
+/issueLinkType,POST,"
+Create issue link type
+
+",issueLinkTypePost,cloudid body
+/issuetype/{issueTypeId}/properties,GET,"
+Get issue type property keys
+
+",issuetypeIssueTypeIdPropertiesGet,cloudid issueTypeId
+/issuetype/{issueTypeId}/properties/{propertyKey},DELETE,"
+Delete issue type property
+
+",issuetypeIssueTypeIdPropertiesPropertyKeyDelete,cloudid issueTypeId propertyKey
+/issuetype/{issueTypeId}/properties/{propertyKey},GET,"
+Get issue type property
+
+",issuetypeIssueTypeIdPropertiesPropertyKeyGet,cloudid issueTypeId propertyKey
+/issuetype/{issueTypeId}/properties/{propertyKey},PUT,"
+Set issue type property
+
+",issuetypeIssueTypeIdPropertiesPropertyKeyPut,cloudid issueTypeId propertyKey body
+/statuscategory,GET,"
+Get all status categories
+
+",statuscategoryGet,cloudid
+/statuscategory/{idOrKey},GET,"
+Get status category
+
+",statuscategoryIdOrKeyGet,cloudid idOrKey
+/project/type/accessible,GET,"
+Get licensed project types
+
+",projectTypeAccessibleGet,cloudid
+/project/type,GET,"
+Get all project types
+
+",projectTypeGet,cloudid
+/project/type/{projectTypeKey}/accessible,GET,"
+Get accessible project type by key
+
+",projectTypeProjectTypeKeyAccessibleGet,cloudid projectTypeKey
+/project/type/{projectTypeKey},GET,"
+Get project type by key
+
+",projectTypeProjectTypeKeyGet,cloudid projectTypeKey
+/filter/favourite,GET,"
+Get favorite filters
+
+",filterFavouriteGet,cloudid opts
+/filter,GET,"
+Get filters
+
+",filterGet,cloudid opts
+/filter/{id}/columns,DELETE,"
+Reset columns
+
+",filterIdColumnsDelete,cloudid id
+/filter/{id}/columns,GET,"
+Get columns
+
+",filterIdColumnsGet,cloudid id
+/filter/{id}/columns,PUT,"
+Set columns
+
+",filterIdColumnsPut,cloudid id opts
+/filter/{id},DELETE,"
+Delete filter
+
+",filterIdDelete,cloudid id
+/filter/{id}/favourite,DELETE,"
+Remove filter as favorite
+
+",filterIdFavouriteDelete,cloudid id opts
+/filter/{id}/favourite,PUT,"
+Add filter as favorite
+
+",filterIdFavouritePut,cloudid id opts
+/filter/{id},GET,"
+Get filter
+
+",filterIdGet,cloudid id opts
+/filter/{id},PUT,"
+Update filter
+
+",filterIdPut,cloudid id body opts
+/filter/my,GET,"
+Get my filters
+
+",filterMyGet,cloudid opts
+/filter,POST,"
+Create filter
+
+",filterPost,cloudid body opts
+/filter/search,GET,"
+Search for filters
+
+",filterSearchGet,cloudid opts
+/groupuserpicker,GET,"
+Find users and groups
+
+",groupuserpickerGet,cloudid query opts
+/workflow,GET,"
+Get all workflows
+
+",workflowGet,cloudid opts
+/workflow/search,GET,"
+Get workflows paginated
+
+",workflowSearchGet,cloudid opts
+/permissionscheme,GET,"
+Get all permission schemes
+
+",permissionschemeGet,cloudid opts
+/permissionscheme,POST,"
+Create permission scheme
+
+",permissionschemePost,cloudid body opts
+/permissionscheme/{schemeId},DELETE,"
+Delete permission scheme
+
+",permissionschemeSchemeIdDelete,cloudid schemeId
+/permissionscheme/{schemeId},GET,"
+Get permission scheme
+
+",permissionschemeSchemeIdGet,cloudid schemeId opts
+/permissionscheme/{schemeId}/permission,GET,"
+Get permission scheme grants
+
+",permissionschemeSchemeIdPermissionGet,cloudid schemeId opts
+/permissionscheme/{schemeId}/permission/{permissionId},DELETE,"
+Delete permission scheme grant
+
+",permissionschemeSchemeIdPermissionPermissionIdDelete,cloudid schemeId permissionId
+/permissionscheme/{schemeId}/permission/{permissionId},GET,"
+Get permission scheme grant
+
+",permissionschemeSchemeIdPermissionPermissionIdGet,cloudid schemeId permissionId opts
+/permissionscheme/{schemeId}/permission,POST,"
+Create permission grant
+
+",permissionschemeSchemeIdPermissionPost,cloudid schemeId body opts
+/permissionscheme/{schemeId},PUT,"
+Update permission scheme
+
+",permissionschemeSchemeIdPut,cloudid schemeId body opts
+/issue/{issueIdOrKey}/remotelink,DELETE,"
+Delete remote issue link by global ID
+
+",issueIssueIdOrKeyRemotelinkDelete,cloudid issueIdOrKey globalId
+/issue/{issueIdOrKey}/remotelink,GET,"
+Get remote issue links
+
+",issueIssueIdOrKeyRemotelinkGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/remotelink/{linkId},DELETE,"
+Delete remote issue link by ID
+
+",issueIssueIdOrKeyRemotelinkLinkIdDelete,cloudid issueIdOrKey linkId
+/issue/{issueIdOrKey}/remotelink/{linkId},GET,"
+Get remote issue link by ID
+
+",issueIssueIdOrKeyRemotelinkLinkIdGet,cloudid issueIdOrKey linkId
+/issue/{issueIdOrKey}/remotelink/{linkId},PUT,"
+Update remote issue link by ID
+
+",issueIssueIdOrKeyRemotelinkLinkIdPut,cloudid issueIdOrKey linkId body
+/issue/{issueIdOrKey}/remotelink,POST,"
+Create or update remote issue link
+
+",issueIssueIdOrKeyRemotelinkPost,cloudid issueIdOrKey body
+/priority,GET,"
+Get priorities
+
+",priorityGet,cloudid
+/priority/{id},GET,"
+Get priority
+
+",priorityIdGet,cloudid id
+/application-properties/advanced-settings,GET,"
+Get advanced settings
+
+",applicationPropertiesAdvancedSettingsGet,cloudid
+/application-properties,GET,"
+Get application property
+
+",applicationPropertiesGet,cloudid opts
+/application-properties/{id},PUT,"
+Set application property
+
+",applicationPropertiesIdPut,cloudid id body
+/configuration,GET,"
+Get global settings
+
+",configurationGet,cloudid
+/task/{taskId}/cancel,POST,"
+Cancel task
+
+",taskTaskIdCancelPost,cloudid taskId
+/task/{taskId},GET,"
+Get task
+
+",taskTaskIdGet,cloudid taskId
+/issue/{issueIdOrKey}/votes,DELETE,"
+Delete vote
+
+",issueIssueIdOrKeyVotesDelete,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/votes,GET,"
+Get votes
+
+",issueIssueIdOrKeyVotesGet,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/votes,POST,"
+Add vote
+
+",issueIssueIdOrKeyVotesPost,cloudid issueIdOrKey
+/serverInfo,GET,"
+Get Jira instance info
+
+",serverInfoGet,cloudid
+/applicationrole,GET,"
+Get all application roles
+
+",applicationroleGet,cloudid
+/applicationrole/{key},GET,"
+Get application role
+
+",applicationroleKeyGet,cloudid key
+/component/{id},DELETE,"
+Delete component
+
+",componentIdDelete,cloudid id opts
+/component/{id},GET,"
+Get component
+
+",componentIdGet,cloudid id
+/component/{id},PUT,"
+Update component
+
+",componentIdPut,cloudid id body
+/component/{id}/relatedIssueCounts,GET,"
+Get component issues count
+
+",componentIdRelatedIssueCountsGet,cloudid id
+/component,POST,"
+Create component
+
+",componentPost,cloudid body
+/project/{projectIdOrKey}/component,GET,"
+Get project components paginated
+
+",projectProjectIdOrKeyComponentGet,cloudid projectIdOrKey opts
+/project/{projectIdOrKey}/components,GET,"
+Get project components
+
+",projectProjectIdOrKeyComponentsGet,cloudid projectIdOrKey
+/customField/{fieldId}/option,GET,"
+Get options for field
+
+",customFieldFieldIdOptionGet,cloudid fieldId opts
+/customField/{fieldId}/option,POST,"
+Create custom field options
+
+",customFieldFieldIdOptionPost,cloudid fieldId body
+/customField/{fieldId}/option,PUT,"
+Update custom field options
+
+",customFieldFieldIdOptionPut,cloudid fieldId body
+/customFieldOption/{id},GET,"
+Get custom field option
+
+",customFieldOptionIdGet,cloudid id
+/resolution,GET,"
+Get resolutions
+
+",resolutionGet,cloudid
+/resolution/{id},GET,"
+Get resolution
+
+",resolutionIdGet,cloudid id
+/workflowscheme/{id}/createdraft,POST,"
+Create draft workflow scheme
+
+",workflowschemeIdCreatedraftPost,cloudid id
+/workflowscheme/{id}/draft/default,DELETE,"
+Delete draft default workflow
+
+",workflowschemeIdDraftDefaultDelete,cloudid id
+/workflowscheme/{id}/draft/default,GET,"
+Get draft default workflow
+
+",workflowschemeIdDraftDefaultGet,cloudid id
+/workflowscheme/{id}/draft/default,PUT,"
+Update draft default workflow
+
+",workflowschemeIdDraftDefaultPut,cloudid id body
+/workflowscheme/{id}/draft,DELETE,"
+Delete draft workflow scheme
+
+",workflowschemeIdDraftDelete,cloudid id
+/workflowscheme/{id}/draft,GET,"
+Get draft workflow scheme
+
+",workflowschemeIdDraftGet,cloudid id
+/workflowscheme/{id}/draft/issuetype/{issueType},DELETE,"
+Delete workflow for issue type in draft workflow scheme
+
+",workflowschemeIdDraftIssuetypeIssueTypeDelete,cloudid id issueType
+/workflowscheme/{id}/draft/issuetype/{issueType},GET,"
+Get workflow for issue type in draft workflow scheme
+
+",workflowschemeIdDraftIssuetypeIssueTypeGet,cloudid id issueType
+/workflowscheme/{id}/draft/issuetype/{issueType},PUT,"
+Set workflow for issue type in draft workflow scheme
+
+",workflowschemeIdDraftIssuetypeIssueTypePut,cloudid id issueType body
+/workflowscheme/{id}/draft,PUT,"
+Update draft workflow scheme
+
+",workflowschemeIdDraftPut,cloudid id body
+/workflowscheme/{id}/draft/workflow,DELETE,"
+Delete issue types for workflow in draft workflow scheme
+
+",workflowschemeIdDraftWorkflowDelete,cloudid id workflowName
+/workflowscheme/{id}/draft/workflow,GET,"
+Get issue types for workflows in draft workflow scheme
+
+",workflowschemeIdDraftWorkflowGet,cloudid id opts
+/workflowscheme/{id}/draft/workflow,PUT,"
+Set issue types for workflow in workflow scheme
+
+",workflowschemeIdDraftWorkflowPut,cloudid id workflowName body
+/group,DELETE,"
+Remove group
+
+",groupDelete,cloudid groupname opts
+/group,GET,"
+Get group
+
+",groupGet,cloudid groupname opts
+/group/member,GET,"
+Get users from group
+
+",groupMemberGet,cloudid groupname opts
+/group,POST,"
+Create group
+
+",groupPost,cloudid body
+/group/user,DELETE,"
+Remove user from group
+
+",groupUserDelete,cloudid groupname accountId opts
+/group/user,POST,"
+Add user to group
+
+",groupUserPost,cloudid groupname body
+/groups/picker,GET,"
+Find groups
+
+",groupsPickerGet,cloudid opts
+/label,GET,"
+Get all labels
+
+",labelGet,cloudid opts
+/user/properties,GET,"
+Get user property keys
+
+",userPropertiesGet,cloudid opts
+/user/properties/{propertyKey},DELETE,"
+Delete user property
+
+",userPropertiesPropertyKeyDelete,cloudid propertyKey opts
+/user/properties/{propertyKey},GET,"
+Get user property
+
+",userPropertiesPropertyKeyGet,cloudid propertyKey opts
+/user/properties/{propertyKey},PUT,"
+Set user property
+
+",userPropertiesPropertyKeyPut,cloudid propertyKey body opts
+/issuetypescreenscheme,GET,"
+Get issue type screen schemes
+
+",issuetypescreenschemeGet,cloudid opts
+/issuetypescreenscheme/mapping,GET,"
+Get issue type screen scheme items
+
+",issuetypescreenschemeMappingGet,cloudid opts
+/issuetypescreenscheme/project,GET,"
+Get issue type screen schemes for projects
+
+",issuetypescreenschemeProjectGet,cloudid opts
+/issuetypescreenscheme/project,PUT,"
+Assign issue type screen scheme to project
+
+",issuetypescreenschemeProjectPut,cloudid body
+/field/{fieldKey}/option,GET,"
+Get all issue field options
+
+",fieldFieldKeyOptionGet,cloudid fieldKey opts
+/field/{fieldKey}/option/{optionId},DELETE,"
+Delete issue field option
+
+",fieldFieldKeyOptionOptionIdDelete,cloudid fieldKey optionId
+/field/{fieldKey}/option/{optionId},GET,"
+Get issue field option
+
+",fieldFieldKeyOptionOptionIdGet,cloudid fieldKey optionId
+/field/{fieldKey}/option/{optionId}/issue,DELETE,"
+Replace issue field option
+
+",fieldFieldKeyOptionOptionIdIssueDelete,cloudid fieldKey optionId opts
+/field/{fieldKey}/option/{optionId},PUT,"
+Update issue field option
+
+",fieldFieldKeyOptionOptionIdPut,cloudid fieldKey optionId body
+/field/{fieldKey}/option,POST,"
+Create issue field option
+
+",fieldFieldKeyOptionPost,cloudid fieldKey body
+/field/{fieldKey}/option/suggestions/edit,GET,"
+Get selectable issue field options
+
+",fieldFieldKeyOptionSuggestionsEditGet,cloudid fieldKey opts
+/field/{fieldKey}/option/suggestions/search,GET,"
+Get visible issue field options
+
+",fieldFieldKeyOptionSuggestionsSearchGet,cloudid fieldKey opts
+/issueLink/{linkId},DELETE,"
+Delete issue link
+
+",issueLinkLinkIdDelete,cloudid linkId
+/issueLink/{linkId},GET,"
+Get issue link
+
+",issueLinkLinkIdGet,cloudid linkId
+/issueLink,POST,"
+Create issue link
+
+",issueLinkPost,cloudid body
+/field/{fieldId}/contexts,GET,"
+Get contexts for a field
+
+",fieldFieldIdContextsGet,cloudid fieldId opts
+/field,GET,"
+Get fields
+
+",fieldGet,cloudid
+/field,POST,"
+Create custom field
+
+",fieldPost,cloudid body
+/field/search,GET,"
+Get fields paginated
+
+",fieldSearchGet,cloudid opts
+/webhook,DELETE,"
+Delete webhooks by ID
+
+",webhookDelete,cloudid body
+/webhook/failed,GET,"
+Get failed webhooks
+
+",webhookFailedGet,cloudid opts
+/webhook,GET,"
+Get dynamic webhooks for app
+
+",webhookGet,cloudid opts
+/webhook,POST,"
+Register dynamic webhooks
+
+",webhookPost,cloudid body
+/webhook/refresh,PUT,"
+Extend webhook life
+
+",webhookRefreshPut,cloudid body
+/fieldconfiguration,GET,"
+Get all field configurations
+
+",fieldconfigurationGet,cloudid opts
+/fieldconfiguration/{id}/fields,GET,"
+Get field configuration items
+
+",fieldconfigurationIdFieldsGet,cloudid id opts
+/fieldconfigurationscheme,GET,"
+Get all field configuration schemes
+
+",fieldconfigurationschemeGet,cloudid opts
+/fieldconfigurationscheme/mapping,GET,"
+Get field configuration issue type items
+
+",fieldconfigurationschemeMappingGet,cloudid opts
+/fieldconfigurationscheme/project,GET,"
+Get field configuration schemes for projects
+
+",fieldconfigurationschemeProjectGet,cloudid projectId opts
+/fieldconfigurationscheme/project,PUT,"
+Assign field configuration scheme to project
+
+",fieldconfigurationschemeProjectPut,cloudid body
+/project/{projectKeyOrId}/issuesecuritylevelscheme,GET,"
+Get project issue security scheme
+
+",projectProjectKeyOrIdIssuesecuritylevelschemeGet,cloudid projectKeyOrId
+/project/{projectKeyOrId}/permissionscheme,GET,"
+Get assigned permission scheme
+
+",projectProjectKeyOrIdPermissionschemeGet,cloudid projectKeyOrId opts
+/project/{projectKeyOrId}/permissionscheme,PUT,"
+Assign permission scheme
+
+",projectProjectKeyOrIdPermissionschemePut,cloudid projectKeyOrId body opts
+/project/{projectKeyOrId}/securitylevel,GET,"
+Get project issue security levels
+
+",projectProjectKeyOrIdSecuritylevelGet,cloudid projectKeyOrId
+/project,GET,"
+Get all projects
+
+",projectGet,cloudid opts
+/project,POST,"
+Create project
+
+",projectPost,cloudid body
+/project/{projectId}/hierarchy,GET,"
+Get project issue type hierarchy
+
+",projectProjectIdHierarchyGet,cloudid projectId
+/project/{projectIdOrKey},DELETE,"
+Delete project
+
+",projectProjectIdOrKeyDelete,cloudid projectIdOrKey opts
+/project/{projectIdOrKey}/delete,POST,"
+Delete project asynchronously
+
+",projectProjectIdOrKeyDeletePost,cloudid projectIdOrKey
+/project/{projectIdOrKey},GET,"
+Get project
+
+",projectProjectIdOrKeyGet,cloudid projectIdOrKey opts
+/project/{projectIdOrKey},PUT,"
+Update project
+
+",projectProjectIdOrKeyPut,cloudid projectIdOrKey body opts
+/project/{projectIdOrKey}/statuses,GET,"
+Get all statuses for project
+
+",projectProjectIdOrKeyStatusesGet,cloudid projectIdOrKey
+/project/{projectIdOrKey}/type/{newProjectTypeKey},PUT,"
+Update project type
+
+",projectProjectIdOrKeyTypeNewProjectTypeKeyPut,cloudid projectIdOrKey newProjectTypeKey
+/project/{projectKeyOrId}/notificationscheme,GET,"
+Get project notification scheme
+
+",projectProjectKeyOrIdNotificationschemeGet,cloudid projectKeyOrId opts
+/project/search,GET,"
+Get projects paginated
+
+",projectSearchGet,cloudid opts
+/issue/{issueIdOrKey}/properties,GET,"
+Get issue property keys
+
+",issueIssueIdOrKeyPropertiesGet,cloudid issueIdOrKey
+/issue/{issueIdOrKey}/properties/{propertyKey},DELETE,"
+Delete issue property
+
+",issueIssueIdOrKeyPropertiesPropertyKeyDelete,cloudid issueIdOrKey propertyKey
+/issue/{issueIdOrKey}/properties/{propertyKey},GET,"
+Get issue property
+
+",issueIssueIdOrKeyPropertiesPropertyKeyGet,cloudid issueIdOrKey propertyKey
+/issue/{issueIdOrKey}/properties/{propertyKey},PUT,"
+Set issue property
+
+",issueIssueIdOrKeyPropertiesPropertyKeyPut,cloudid issueIdOrKey propertyKey body
+/issue/properties,POST,"
+Bulk set issues properties
+
+",issuePropertiesPost,cloudid body
+/issue/properties/{propertyKey},DELETE,"
+Bulk delete issue property
+
+",issuePropertiesPropertyKeyDelete,cloudid propertyKey body
+/issue/properties/{propertyKey},PUT,"
+Bulk set issue property
+
+",issuePropertiesPropertyKeyPut,cloudid propertyKey body
+/configuration/timetracking,GET,"
+Get selected time tracking provider
+
+",configurationTimetrackingGet,cloudid
+/configuration/timetracking/list,GET,"
+Get all time tracking providers
+
+",configurationTimetrackingListGet,cloudid
+/configuration/timetracking/options,GET,"
+Get time tracking settings
+
+",configurationTimetrackingOptionsGet,cloudid
+/configuration/timetracking/options,PUT,"
+Set time tracking settings
+
+",configurationTimetrackingOptionsPut,cloudid body
+/configuration/timetracking,PUT,"
+Select time tracking provider
+
+",configurationTimetrackingPut,cloudid body
+/dashboard/{dashboardId}/items/{itemId}/properties,GET,"
+Get dashboard item property keys
+
+",dashboardDashboardIdItemsItemIdPropertiesGet,cloudid dashboardId itemId
+/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},DELETE,"
+Delete dashboard item property
+
+",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyDelete,cloudid dashboardId itemId propertyKey
+/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},GET,"
+Get dashboard item property
+
+",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyGet,cloudid dashboardId itemId propertyKey
+/dashboard/{dashboardId}/items/{itemId}/properties/{propertyKey},PUT,"
+Set dashboard item property
+
+",dashboardDashboardIdItemsItemIdPropertiesPropertyKeyPut,cloudid dashboardId itemId propertyKey body
+/dashboard,GET,"
+Get all dashboards
+
+",dashboardGet,cloudid opts
+/dashboard/{id}/copy,POST,"
+Copy dashboard
+
+",dashboardIdCopyPost,cloudid id body
+/dashboard/{id},DELETE,"
+Delete dashboard
+
+",dashboardIdDelete,cloudid id
+/dashboard/{id},GET,"
+Get dashboard
+
+",dashboardIdGet,cloudid id
+/dashboard/{id},PUT,"
+Update dashboard
+
+",dashboardIdPut,cloudid id body
+/dashboard,POST,"
+Create dashboard
+
+",dashboardPost,cloudid body
+/dashboard/search,GET,"
+Search for dashboards
+
+",dashboardSearchGet,cloudid opts
+/rest/atlassian-connect/1/addons/{addonKey}/properties,GET,"
+Get app properties
+
+",restAtlassianConnect1AddonsAddonKeyPropertiesGet,cloudid addonKey
+/rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey},DELETE,"
+Delete app property
+
+",restAtlassianConnect1AddonsAddonKeyPropertiesPropertyKeyDelete,cloudid addonKey propertyKey
+/rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey},GET,"
+Get app property
+
+",restAtlassianConnect1AddonsAddonKeyPropertiesPropertyKeyGet,cloudid addonKey propertyKey
+/rest/atlassian-connect/1/addons/{addonKey}/properties/{propertyKey},PUT,"
+Set app property
+
+",restAtlassianConnect1AddonsAddonKeyPropertiesPropertyKeyPut,cloudid addonKey propertyKey body
+/issue/{issueIdOrKey}/worklog,GET,"
+Get issue worklogs
+
+",issueIssueIdOrKeyWorklogGet,cloudid issueIdOrKey opts
+/issue/{issueIdOrKey}/worklog/{id},DELETE,"
+Delete worklog
+
+",issueIssueIdOrKeyWorklogIdDelete,cloudid issueIdOrKey id opts
+/issue/{issueIdOrKey}/worklog/{id},GET,"
+Get worklog
+
+",issueIssueIdOrKeyWorklogIdGet,cloudid issueIdOrKey id opts
+/issue/{issueIdOrKey}/worklog/{id},PUT,"
+Update worklog
+
+",issueIssueIdOrKeyWorklogIdPut,cloudid issueIdOrKey id body opts
+/issue/{issueIdOrKey}/worklog,POST,"
+Add worklog
+
+",issueIssueIdOrKeyWorklogPost,cloudid issueIdOrKey body opts
 /worklog/deleted,GET,"
-
-
-Returns a list of IDs and delete timestamps for worklogs deleted after a date and time.
+Get IDs of deleted worklogs
 
 ",worklogDeletedGet,cloudid opts
 /worklog/list,POST,"
+Get worklogs
 
-
-Returns worklog details for a list of worklog IDs.
-
-",worklogListPost,cloudid opts
+",worklogListPost,cloudid body opts
 /worklog/updated,GET,"
-
-
-Returns a list of IDs and update timestamps for worklogs updated after a date and time.
+Get IDs of updated worklogs
 
 ",worklogUpdatedGet,cloudid opts
+/projectvalidate/key,GET,"
+Validate project key
+
+",projectvalidateKeyGet,cloudid opts
+/projectvalidate/validProjectKey,GET,"
+Get valid project key
+
+",projectvalidateValidProjectKeyGet,cloudid opts
+/projectvalidate/validProjectName,GET,"
+Get valid project name
+
+",projectvalidateValidProjectNameGet,cloudid name
