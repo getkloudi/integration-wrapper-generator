@@ -570,7 +570,8 @@ exports.generateActionandIntentJSONFile = function (
       createIntentForQueries(
         tableName,
         functionName,
-        createQueryFromFunctionName(httpMethod, functionName)
+        createQueryFromFunctionName(httpMethod, functionName),
+        description
       )
     );
   }
@@ -588,7 +589,7 @@ createQueryFromFunctionName = function (httpMethod, functionName) {
   return `${httpMethod} ${query}`;
 };
 
-createIntentForQueries = function (table, functionName, query) {
+createIntentForQueries = function (table, functionName, query, description) {
   const intent = {
     manifest: {
       name: `intent.${table}.${functionName}`,
@@ -621,7 +622,7 @@ createIntentForQueries = function (table, functionName, query) {
     triggers: {
       queryPatterns: {
         text: query,
-        trainingPhrases: [query],
+        trainingPhrases: [query, description.trim()],
         isSystemQuery: true,
       },
     },
