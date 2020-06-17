@@ -14,6 +14,7 @@ const SCOPES = [
   'write:jira-work',
   'read:jira-user',
   'offline_access',
+  'read:me',
 ];
 
 class JiraService {
@@ -219,7 +220,7 @@ class JiraService {
       );
   }
 
-  async connect(authParams) {
+  async connect(authParams, metadata) {
     let response;
     response = await Axios.default.post(
       'https://auth.atlassian.com/oauth/token',
@@ -270,11 +271,59 @@ class JiraService {
       );
       if (!incomingOptions.opts) break;
     }
+    projects = projects.map((item) => ({
+      ...item,
+      organizationId: incomingOptions.cloudid,
+      organizationName: incomingOptions.cloudDomainName,
+    }));
     return { data: projects };
   }
 
   async registerWebhooks(incomingOptions) {
-    //TODO: Add custom registerWebhooks functionality here
+    let res = await this.get('MYSELF', incomingOptions);
+
+    const email = res.data.emailAddress;
+    const apiKey = incomingOptions.webhookApiKey;
+    const webhookURL = `${nconf.get('WEBHOOK_API_URI')}/${
+      incomingOptions.userId
+    }/${incomingOptions.projectId}/JIRA/${
+      incomingOptions.project.organizationId
+    }/${incomingOptions.project.projectId}/`;
+    const webhookEvents = Array.from(new Set(this.webhooks));
+
+    res = await Axios.get(
+      `https://${incomingOptions.cloudDomainName}.atlassian.net/rest/webhooks/1.0/webhook/`,
+      {
+        auth: { username: email, password: apiKey },
+        headers: { Accept: 'application/json' },
+      }
+    );
+    const webhooks = res.data.filter(
+      (item) =>
+        item.url === webhookURL &&
+        item.events.sort().toString() === webhookEvents.sort().toString()
+    );
+    if (webhooks && webhooks.length > 0) return 'Ok';
+
+    try {
+      res = await Axios.post(
+        `https://${incomingOptions.cloudDomainName}.atlassian.net/rest/webhooks/1.0/webhook/`,
+        {
+          name: 'Webhook for Kloudi',
+          url: webhookURL,
+          events: webhookEvents,
+        },
+        {
+          auth: { username: email, password: apiKey },
+          headers: { Accept: 'application/json' },
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    } finally {
+      if (res.status == 201) return 'Ok';
+      return 'ERROR';
+    }
   }
 
   async syncIntegrationEntities(integration, incomingOptions) {

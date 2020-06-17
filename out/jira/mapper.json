@@ -59,12 +59,34 @@
         "output": {
           "key": "projectIcon"
         }
+      },
+      {
+        "input": {
+          "key": "organizationName"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "organizationName"
+        }
+      },
+      {
+        "input": {
+          "key": "organizationId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "organizationId"
+        }
       }
     ]
   },
   {
     "type": "REQUEST",
-    "entity": "PROJECTS|WEBHOOKS",
+    "entity": "PROJECTS|WEBHOOKS|ALL",
     "integration": "JIRA",
     "method": "GET|POST",
     "map": [
@@ -108,8 +130,7 @@
           "key": "body.integration.integrationSpecificParams.cloudDomainName"
         },
         "transform": {
-          "type": "FUNCTION",
-          "name": "tansformDomainToAtlassianDomain"
+          "type": "ONE-TO-ONE"
         },
         "output": {
           "key": "cloudDomainName"
@@ -125,6 +146,17 @@
         },
         "output": {
           "key": "opts"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.webhookApiKey"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "webhookApiKey"
         }
       }
     ]
