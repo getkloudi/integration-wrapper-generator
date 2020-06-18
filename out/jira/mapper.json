@@ -160,5 +160,68 @@
         }
       }
     ]
+  },
+  {
+    "type": "RESPONSE",
+    "entity": "MYSELF",
+    "integration": "JIRA",
+    "method": "GET|POST",
+    "map": [
+      {
+        "input": {
+          "key": "displayName"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "name"
+        }
+      },
+      {
+        "input": {
+          "key": "accountId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "refId"
+        }
+      },
+      {
+        "input": {
+          "key": "emailAddress"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "email"
+        }
+      },
+      {
+        "input": {
+          "key": "avatarUrls['48x48']"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "icon"
+        }
+      },
+      {
+        "input": {
+          "key": "applicationRoles"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "role"
+        }
+      }
+    ]
   }
 ]

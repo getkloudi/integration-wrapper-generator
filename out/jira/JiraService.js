@@ -331,15 +331,15 @@ class JiraService {
     const authToken = nconf.get('PEPPER_TASK_API_ACCESS_TOKEN');
 
     try {
-      //TODO: Add custom syncIntegrationEntities functionality here
       const res = await Axios.default.post(
         taskUri,
         {
-          pepper_task: [],
+          pepper_task: ['task.pepper.SYNC_JIRA_USER'],
           project_id: incomingOptions.projectId,
           user_id: incomingOptions.userId,
-          third_party_project_id: '',
-          third_party_organization_id: '',
+          third_party_project_id: incomingOptions.thirdPartyProject.projectId,
+          third_party_organization_id:
+            incomingOptions.thirdPartyProject.organizationId,
         },
         {
           headers: {
