@@ -334,7 +334,10 @@ class JiraService {
       const res = await Axios.default.post(
         taskUri,
         {
-          pepper_task: ['task.pepper.SYNC_JIRA_USER'],
+          pepper_task: [
+            'task.pepper.SYNC_JIRA_USER',
+            'task.pepper.SYNC_LEGACY_JIRA_ISSUES',
+          ],
           project_id: incomingOptions.projectId,
           user_id: incomingOptions.userId,
           third_party_project_id: incomingOptions.thirdPartyProject.projectId,
@@ -355,27 +358,23 @@ class JiraService {
   }
 
   async createIssues(options) {
-    if (
-      !options.integration.thirdPartyProjects ||
-      options.integration.thirdPartyProjects.length == 0
-    ) {
+    if (!options.projects || options.projects.length == 0) {
       console.error('No third party projects present');
       return 'Ok';
     }
 
     const taskUri = nconf.get('TASK_API_URI');
     const authToken = nconf.get('PEPPER_TASK_API_ACCESS_TOKEN');
-
     try {
       const res = await Axios.default.post(
         taskUri,
         {
           pepper_task: 'task.thirdParty.CREATE_JIRA_ISSUES',
-          project_id: options.projectID,
-          user_id: options.userID,
-          bug: options.bug,
-          clubSimilarBugs: options.clubSimilarBugs,
-          jiraProjectID: options.integration.thirdPartyProjects[0].projectId,
+          project_id: options.projectId,
+          user_id: options.userId,
+          bug: options.body.bug,
+          clubSimilarBugs: options.body.clubSimilarBugs,
+          jiraProjectID: options.projects[0].projectId,
         },
         {
           headers: {
@@ -3926,7 +3925,7 @@ Get workflow transition rule configurations
     /*let cloudid = null;*/ /*let types = ["null"];*/ let opts = {
       startAt: 0, // Number | The index of the first item to return in a page of results (page offset).
       maxResults: 10, // Number | The maximum number of items to return per page.
-      keys: ['null'], // [String] | The transition rule class keys, as defined in the Connect app descriptor, of the transition rules to return.
+      // keys: ['null'], // [String] | The transition rule class keys, as defined in the Connect app descriptor, of the transition rules to return.
       //  'expand': "expand_example" // String | Use [expand](#expansion) to include additional information in the response. This parameter accepts `transition`, which, for each rule, returns information about the transition the rule is assigned to.
     };
 
@@ -4156,7 +4155,7 @@ Search for issues using JQL (GET)
       validateQuery: "'strict'", // String | Determines how to validate the JQL query and treat the validation results. Supported values are:   *  `strict` Returns a 400 response code if any errors are found, along with a list of all errors (and warnings).  *  `warn` Returns all errors as warnings.  *  `none` No validation is performed.  *  `true` *Deprecated* A legacy synonym for `strict`.  *  `false` *Deprecated* A legacy synonym for `warn`.  Note: If the JQL is not correctly formed a 400 response code is returned, regardless of the `validateQuery` value.
       fields: ["'*navigable'"], // [String] | A list of fields to return for each issue, use it to retrieve a subset of fields. This parameter accepts a comma-separated list. Expand options include:   *  `*all` Returns all fields.  *  `*navigable` Returns navigable fields.  *  Any issue field, prefixed with a minus to exclude.  Examples:   *  `summary,comment` Returns only the summary and comments fields.  *  `-description` Returns all navigable (default) fields except description.  *  `*all,-comment` Returns all fields except comments.  This parameter may be specified multiple times. For example, `fields=field1,field2&fields=field3`.  Note: All navigable fields are returned by default. This differs from [GET issue](#api-rest-api-3-issue-issueIdOrKey-get) where the default is all fields.
       //  'expand': "expand_example", // String | Use [expand](#expansion) to include additional information about issues in the response. This parameter accepts a comma-separated list. Expand options include:   *  `renderedFields` Returns field values rendered in HTML format.  *  `names` Returns the display name of each field.  *  `schema` Returns the schema describing a field type.  *  `transitions` Returns all possible transitions for the issue.  *  `operations` Returns all possible operations for the issue.  *  `editmeta` Returns information about how each field can be edited.  *  `changelog` Returns a list of recent updates to an issue, sorted by date, starting from the most recent.  *  `versionedRepresentations` Instead of `fields`, returns `versionedRepresentations` a JSON array containing each version of a field's value, with the highest numbered item representing the most recent version.
-      properties: ['null'], // [String] | A list of issue property keys for issue properties to include in the results. This parameter accepts a comma-separated list. Multiple properties can also be provided using an ampersand separated list. For example, `properties=prop1,prop2&properties=prop3`. A maximum of 5 issue property keys can be specified.
+      // properties: ['null'], // [String] | A list of issue property keys for issue properties to include in the results. This parameter accepts a comma-separated list. Multiple properties can also be provided using an ampersand separated list. For example, `properties=prop1,prop2&properties=prop3`. A maximum of 5 issue property keys can be specified.
       fieldsByKeys: false, // Boolean | Reference fields by their key (rather than ID).
     };
 
@@ -5070,8 +5069,8 @@ Find users for picker
     /*let cloudid = null;*/ /*let query = "query_example";*/ let opts = {
       maxResults: 50, // Number | The maximum number of items to return. The total number of matched users is returned in `total`.
       showAvatar: false, // Boolean | Include the URI to the user's avatar.
-      exclude: ['null'], // [String] | This parameter is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
-      excludeAccountIds: ['null'], // [String] | A list of account IDs to exclude from the search results. This parameter accepts a comma-separated list. Multiple account IDs can also be provided using an ampersand-separated list. For example, `excludeAccountIds=5b10a2844c20165700ede21g,5b10a0effa615349cb016cd8&excludeAccountIds=5b10ac8d82e05b22cc7d4ef5`. Cannot be provided with `exclude`.
+      // exclude: ['null'], // [String] | This parameter is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
+      // excludeAccountIds: ['null'], // [String] | A list of account IDs to exclude from the search results. This parameter accepts a comma-separated list. Multiple account IDs can also be provided using an ampersand-separated list. For example, `excludeAccountIds=5b10a2844c20165700ede21g,5b10a0effa615349cb016cd8&excludeAccountIds=5b10ac8d82e05b22cc7d4ef5`. Cannot be provided with `exclude`.
       //  'avatarSize': "avatarSize_example", // String |
       excludeConnectUsers: false, // Boolean |
     };
@@ -5792,8 +5791,8 @@ Bulk get users
     /*let cloudid = null;*/ /*let accountId = ["5b10ac8d82e05b22cc7d4ef5"];*/ let opts = {
       startAt: 0, // Number | The index of the first item to return in a page of results (page offset).
       maxResults: 10, // Number | The maximum number of items to return per page.
-      username: ['null'], // [String] | This parameter is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
-      key: ['null'], // [String] | This parameter is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
+      // username: ['null'], // [String] | This parameter is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
+      // key: ['null'], // [String] | This parameter is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
     };
 
     if (incomingOptions.opts)
@@ -5835,8 +5834,8 @@ Get account IDs for users
     /*let cloudid = null;*/ let opts = {
       startAt: 0, // Number | The index of the first item to return in a page of results (page offset).
       maxResults: 10, // Number | The maximum number of items to return per page.
-      username: ['null'], // [String] | Username of a user. To specify multiple users, pass multiple copies of this parameter. For example, `username=fred&username=barney`. Required if `key` isn't provided. Cannot be provided if `key` is present.
-      key: ['null'], // [String] | Key of a user. To specify multiple users, pass multiple copies of this parameter. For example, `key=fred&key=barney`. Required if `username` isn't provided. Cannot be provided if `username` is present.
+      // username: ['null'], // [String] | Username of a user. To specify multiple users, pass multiple copies of this parameter. For example, `username=fred&username=barney`. Required if `key` isn't provided. Cannot be provided if `key` is present.
+      // key: ['null'], // [String] | Key of a user. To specify multiple users, pass multiple copies of this parameter. For example, `key=fred&key=barney`. Required if `username` isn't provided. Cannot be provided if `username` is present.
     };
 
     if (incomingOptions.opts)
@@ -6181,10 +6180,10 @@ Get create issue metadata
 
     let apiInstance = new Jira.IssuesApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ let opts = {
-      projectIds: ['null'], // [String] | List of project IDs. This parameter accepts a comma-separated list. Multiple project IDs can also be provided using an ampersand-separated list. For example, `projectIds=10000,10001&projectIds=10020,10021`. This parameter may be provided with `projectKeys`.
-      projectKeys: ['null'], // [String] | List of project keys. This parameter accepts a comma-separated list. Multiple project keys can also be provided using an ampersand-separated list. For example, `projectKeys=proj1,proj2&projectKeys=proj3`. This parameter may be provided with `projectIds`.
-      issuetypeIds: ['null'], // [String] | List of issue type IDs. This parameter accepts a comma-separated list. Multiple issue type IDs can also be provided using an ampersand-separated list. For example, `issuetypeIds=10000,10001&issuetypeIds=10020,10021`. This parameter may be provided with `issuetypeNames`.
-      issuetypeNames: ['null'], // [String] | List of issue type names. This parameter accepts a comma-separated list. Multiple issue type names can also be provided using an ampersand-separated list. For example, `issuetypeNames=name1,name2&issuetypeNames=name3`. This parameter may be provided with `issuetypeIds`.
+      // projectIds: ['null'], // [String] | List of project IDs. This parameter accepts a comma-separated list. Multiple project IDs can also be provided using an ampersand-separated list. For example, `projectIds=10000,10001&projectIds=10020,10021`. This parameter may be provided with `projectKeys`.
+      // projectKeys: ['null'], // [String] | List of project keys. This parameter accepts a comma-separated list. Multiple project keys can also be provided using an ampersand-separated list. For example, `projectKeys=proj1,proj2&projectKeys=proj3`. This parameter may be provided with `projectIds`.
+      // issuetypeIds: ['null'], // [String] | List of issue type IDs. This parameter accepts a comma-separated list. Multiple issue type IDs can also be provided using an ampersand-separated list. For example, `issuetypeIds=10000,10001&issuetypeIds=10020,10021`. This parameter may be provided with `issuetypeNames`.
+      // issuetypeNames: ['null'], // [String] | List of issue type names. This parameter accepts a comma-separated list. Multiple issue type names can also be provided using an ampersand-separated list. For example, `issuetypeNames=name1,name2&issuetypeNames=name3`. This parameter may be provided with `issuetypeIds`.
       //  'expand': "expand_example" // String | Use [expand](#expansion) to include additional information about issue metadata in the response. This parameter accepts `projects.issuetypes.fields`, which returns information about the fields in the issue creation screen for each issue type. Fields hidden from the screen are not returned. Use the information to populate the `fields` and `update` fields in [Create issue](#api-rest-api-3-issue-post) and [Create issues](#api-rest-api-3-issue-bulk-post).
     };
 
@@ -7586,9 +7585,9 @@ Find users and groups
       maxResults: 50, // Number | The maximum number of items to return in each list.
       showAvatar: false, // Boolean | Whether the user avatar should be returned. If an invalid value is provided, the default value is used.
       //  'fieldId': "fieldId_example", // String | The custom field ID of the field this request is for.
-      projectId: ['null'], // [String] | The ID of a project that returned users and groups must have permission to view. To include multiple projects, provide an ampersand-separated list. For example, `projectId=10000&projectId=10001`. This parameter is only used when `fieldId` is present.
-      issueTypeId: ['null'], // [String] | The ID of an issue type that returned users and groups must have permission to view. To include multiple issue types, provide an ampersand-separated list. For example, `issueTypeId=10000&issueTypeId=10001`. Special values, such as `-1` (all standard issue types) and `-2` (all subtask issue types), are supported. This parameter is only used when `fieldId` is present.
-      avatarSize: "'xsmall'", // String | The size of the avatar to return. If an invalid value is provided, the default value is used.
+      // projectId: ['null'], // [String] | The ID of a project that returned users and groups must have permission to view. To include multiple projects, provide an ampersand-separated list. For example, `projectId=10000&projectId=10001`. This parameter is only used when `fieldId` is present.
+      // issueTypeId: ['null'], // [String] | The ID of an issue type that returned users and groups must have permission to view. To include multiple issue types, provide an ampersand-separated list. For example, `issueTypeId=10000&issueTypeId=10001`. Special values, such as `-1` (all standard issue types) and `-2` (all subtask issue types), are supported. This parameter is only used when `fieldId` is present.
+      // avatarSize: "'xsmall'", // String | The size of the avatar to return. If an invalid value is provided, the default value is used.
       caseInsensitive: false, // Boolean | Whether the search for groups should be case insensitive.
       excludeConnectAddons: false, // Boolean | Whether Connect app users and groups should be excluded from the search results. If an invalid value is provided, the default value is used.
     };
@@ -7671,7 +7670,7 @@ Get workflows paginated
     /*let cloudid = null;*/ let opts = {
       startAt: 0, // Number | The index of the first item to return in a page of results (page offset).
       maxResults: 50, // Number | The maximum number of items to return per page.
-      workflowName: ['null'], // [String] | The name of a workflow to return.
+      // workflowName: ['null'], // [String] | The name of a workflow to return.
       //  'expand': "expand_example" // String | Use [expand](#expansion) to include additional information in the response. This parameter accepts a comma-separated list. Expand options include:   *  `transitions` For each workflow, returns information about the transitions inside the workflow.  *  `transitions.rules` For each workflow transition, returns information about its rules. Transitions are included automatically if this expand is requested.  *  `statuses` For each workflow, returns information about the statuses inside the workflow.  *  `statuses.properties` For each workflow status, returns information about its properties. Statuses are included automatically if this expand is requested.
     };
 
@@ -8642,7 +8641,7 @@ Find groups
     /*let cloudid = null;*/ let opts = {
       //  'accountId': "accountId_example", // String | This parameter is deprecated, setting it does not affect the results. To find groups containing a particular user, use [Get user groups](#api-rest-api-3-user-groups-get).
       //  'query': "query_example", // String | The string to find in group names.
-      exclude: ['null'], // [String] | A group to exclude from the result. To exclude multiple groups, provide an ampersand-separated list. For example, `exclude=group1&exclude=group2`.
+      // exclude: ['null'], // [String] | A group to exclude from the result. To exclude multiple groups, provide an ampersand-separated list. For example, `exclude=group1&exclude=group2`.
       maxResults: 56, // Number | The maximum number of groups to return. The maximum number of groups that can be returned is limited by the system property `jira.ajax.autocomplete.limit`.
       //  'userName': "userName_example" // String | This parameter is no longer available and will be removed from the documentation soon. See the [deprecation notice](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/) for details.
     };
@@ -9171,8 +9170,8 @@ Get fields paginated
     /*let cloudid = null;*/ let opts = {
       startAt: 0, // Number | The index of the first item to return in a page of results (page offset).
       maxResults: 50, // Number | The maximum number of items to return per page.
-      type: ['null'], // [String] | The type of fields to search.
-      id: ['null'], // [String] | The IDs of the custom fields to return or, where`query is specified, filter. IDs should be provided in the format customfield_XXXXX.`
+      // type: ['null'], // [String] | The type of fields to search.
+      // id: ['null'], // [String] | The IDs of the custom fields to return or, where`query is specified, filter. IDs should be provided in the format customfield_XXXXX.`
       //  'query': "query_example", // String | String used to perform a case-insensitive partial match with field names or descriptions.
       //  'orderBy': "orderBy_example", // String | [Order](#ordering) the results by a field:   *  `contextsCount` Sorts by the number of contexts related to a field.  *  `lastUsed` Sorts by the date when the value of the field last changed.  *  `name` Sorts by the field name.  *  `screensCount` Sorts by the number of screens related to a field.
       //  'expand': "expand_example" // String | Use [expand](#expansion) to include additional information in the response. This parameter accepts a comma-separated list. Expand options include:   *  `key` Returns the key for each field.  *  `lastUsed` Returns the date when the value of the field last changed.  *  `screensCount` Returns the number of screens related to a field.  *  `contextsCount` Returns the number of contexts related to a field.  *  `isLocked` Returns information about whether the field is [locked](https://confluence.atlassian.com/x/ZSN7Og).
@@ -9593,8 +9592,8 @@ Get all projects
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ let opts = {
       //  'expand': "expand_example", // String | Use [expand](#expansion) to include additional information in the response. This parameter accepts a comma-separated list. Expanded options include:   *  `description` Returns the project description.  *  `issueTypes` Returns all issue types associated with the project.  *  `lead` Returns information about the the project lead.  *  `projectKeys` Returns all project keys associated with the project.
-      recent: 56, // Number | Returns the user's most recently accessed projects. You may specify the number of results to return up to a maximum of 20. If access is anonymous, then the recently accessed projects are based on the current HTTP session.
-      properties: ['null'], // [String] | A list of project properties to return for the project. This parameter accepts a comma-separated list.
+      // recent: 56, // Number | Returns the user's most recently accessed projects. You may specify the number of results to return up to a maximum of 20. If access is anonymous, then the recently accessed projects are based on the current HTTP session.
+      // properties: ['null'], // [String] | A list of project properties to return for the project. This parameter accepts a comma-separated list.
     };
 
     if (incomingOptions.opts)
@@ -9660,7 +9659,7 @@ Get project
     let apiInstance = new Jira.ProjectsApi(); // Object | Cloudi of the projec // String | The project ID or project key (case sensitive).
     /*let cloudid = null;*/ /*let projectIdOrKey = "projectIdOrKey_example";*/ let opts = {
       //  'expand': "expand_example", // String | Use [expand](#expansion) to include additional information in the response. This parameter accepts a comma-separated list. Note that the project description, issue types, and project lead are included in all responses by default. Expand options include:   *  `description` The project description.  *  `issueTypes` The issue types associated with the project.  *  `lead` The project lead.  *  `projectKeys` All project keys associated with the project.  *  `issueTypeHierarchy` The project issue type hierarchy.
-      properties: ['null'], // [String] | A list of project properties to return for the project. This parameter accepts a comma-separated list.
+      // properties: ['null'], // [String] | A list of project properties to return for the project. This parameter accepts a comma-separated list.
     };
 
     if (incomingOptions.opts)
@@ -17150,7 +17149,7 @@ Remove modules
 
     let apiInstance = new Jira.DynamicModulesApi(); // Object | Cloudi of the project
     /*let cloudid = null;*/ let opts = {
-      moduleKey: ['null'], // [String] | The key of the module to remove. To include multiple module keys, provide multiple copies of this parameter. For example, `moduleKey=dynamic-attachment-entity-property&moduleKey=dynamic-select-field`. Nonexistent keys are ignored.
+      // moduleKey: ['null'], // [String] | The key of the module to remove. To include multiple module keys, provide multiple copies of this parameter. For example, `moduleKey=dynamic-attachment-entity-property&moduleKey=dynamic-select-field`. Nonexistent keys are ignored.
     };
 
     if (incomingOptions.opts)

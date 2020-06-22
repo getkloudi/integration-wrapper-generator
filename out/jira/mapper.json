@@ -223,5 +223,236 @@
         }
       }
     ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "ISSUES",
+    "integration": "JIRA",
+    "method": "POST",
+    "map": [
+      {
+        "input": {
+          "key": "query.userId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "userId"
+        }
+      },
+      {
+        "input": {
+          "key": "query.projectId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectId"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "accessToken"
+        }
+      },
+      {
+        "input": {
+          "key": "",
+          "parent": "body.integration.thirdPartyProjects"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformThirdPartyProjects"
+        },
+        "output": {
+          "parent": "projects"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.cloudId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "cloudid"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.cloudDomainName"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "cloudDomainName"
+        }
+      },
+      {
+        "input": {
+          "key": "query"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformQueryParamsToOpts"
+        },
+        "output": {
+          "key": "opts"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.webhookApiKey"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "webhookApiKey"
+        }
+      },
+      {
+        "input": {
+          "key": "body.bug"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "body.bug"
+        }
+      },
+      {
+        "input": {
+          "key": "body.clubSimilarBugs"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "body.clubSimilarBugs"
+        }
+      }
+    ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "ISSUE",
+    "integration": "JIRA",
+    "method": "POST",
+    "map": [
+      {
+        "input": {
+          "key": "query.userId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "userId"
+        }
+      },
+      {
+        "input": {
+          "key": "query.projectId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "projectId"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "accessToken"
+        }
+      },
+      {
+        "input": {
+          "key": "",
+          "parent": "body.integration.thirdPartyProjects"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformThirdPartyProjects"
+        },
+        "output": {
+          "parent": "projects"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.cloudId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "cloudid"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.cloudDomainName"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "cloudDomainName"
+        }
+      },
+      {
+        "input": {
+          "key": "query"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformQueryParamsToOpts"
+        },
+        "output": {
+          "key": "opts"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.integrationSpecificParams.webhookApiKey"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "webhookApiKey"
+        }
+      },
+      {
+        "input": {
+          "key": "body.issue"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "body"
+        }
+      }
+    ]
   }
 ]
