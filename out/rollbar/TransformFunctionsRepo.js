@@ -64,7 +64,10 @@ module.exports.transformItemToBug = (item) => {
     logger: '',
     level: item.level,
     environment: item.environment,
-    status: item.status.toUpperCase() === 'ACTIVE' ? 'OPEN' : item.status,
+    status:
+      item.status.toUpperCase() === 'ACTIVE'
+        ? 'OPEN'
+        : item.status.toUpperCase(),
     similarBugs: [],
     count: parseInt(item.total_occurrences),
     occurences: {
