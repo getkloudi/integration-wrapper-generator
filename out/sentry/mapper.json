@@ -135,5 +135,47 @@
         }
       }
     ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "ISSUES",
+    "integration": "SENTRY",
+    "method": "PUT",
+    "map": [
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "accessToken"
+        }
+      },
+      {
+        "input": {
+          "key": "query"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "query"
+        }
+      },
+      {
+        "input": {
+          "key": "body"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformBody"
+        },
+        "output": {
+          "key": "body"
+        }
+      }
+    ]
   }
 ]

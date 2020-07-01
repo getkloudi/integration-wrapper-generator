@@ -139,6 +139,8 @@ class SentryService {
     switch (entity.toUpperCase()) {
       case 'ISSUE':
         return await this.updateIssue(options);
+      case 'ISSUES':
+        return await this.updateIssues(options);
       default:
         throw ErrorHelper.getError(`Entity ${entity} not supported`, 400);
     }
@@ -267,42 +269,31 @@ class SentryService {
   }
 
   async updateIssues(options) {
-    if (
-      !options.integration.thirdPartyProjects ||
-      options.integration.thirdPartyProjects.length == 0
-    ) {
+    if (!options.body.organization_slug || !options.body.project_slug) {
       console.error('No third party projects present');
       return { data: 'Error' };
     }
 
-    const taskUri = nconf.get('TASK_API_URI');
-    const authToken = nconf.get('PEPPER_TASK_API_ACCESS_TOKEN');
+    let params = {};
+    const optionKeys = Object.keys(options.body);
+    if (optionKeys.includes('hasSeen'))
+      params = { hasSeen: options.body.hasSeen };
+    if (optionKeys.includes('status'))
+      params = { hasSeen: true, status: options.body.status };
 
+    if (Object.keys(params) <= 0) return { data: 'Nothing to update' };
     try {
-      const res = await Axios.default.post(
-        taskUri,
+      const data = await Axios.default.put(
+        `${this.apiEndpoint}/projects/${options.body.organization_slug}/${options.body.project_slug}/issues/?${options.body.sentry}`,
+        params,
         {
-          pepper_task: options.pepperTask,
-          project_id: options.projectId,
-          user_id: options.userId,
-          sentry_ids: options.sentryIDs,
-          resolveSimilarBugs: options.resolveSimilarBugs,
-          markSimilarBugsAsViewed: options.markSimilarBugsAsViewed,
-          third_party_project_id:
-            options.integration.thirdPartyProjects[0].projectId,
-          third_party_organization_id:
-            options.integration.thirdPartyProjects[0].projectId,
-        },
-        {
-          headers: {
-            Authorization: authToken,
-          },
+          headers: { Authorization: `Bearer ${options.accessToken}` },
         }
       );
       return { data: 'Ok' };
     } catch (error) {
-      console.error(error.response || error);
-      return { data: 'ERROR' };
+      console.error(error.response.data || error.response || error);
+      return { data: error.response.data };
     }
   }
 

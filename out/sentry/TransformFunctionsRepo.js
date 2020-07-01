@@ -12,3 +12,18 @@ module.exports.transformQueryParamsToOpts = (query) => {
     maxResults: query.maxResults ? query.maxResults : 50,
   };
 };
+
+module.exports.transformBody = (body) => {
+  body.organization_slug = body.thirdPartyProject.organizationId;
+  body.project_slug = body.thirdPartyProject.projectId;
+  delete body.thirdPartyProject;
+
+  body.sentry = `id=${body.sentry.id.join('&id=')}`;
+
+  if (body.status === 'FIXED') body.status = 'resolved';
+  else if (body.status === 'OPEN') body.status = 'unresolved';
+  else body.status = 'ignored';
+
+  if (!body.hasSeen) body.hasSeen = true;
+  return body;
+};
