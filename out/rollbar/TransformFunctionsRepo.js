@@ -34,11 +34,25 @@ module.exports.transformQueryParamsToOpts = (query) => {
 
 module.exports.getAccessTokenFromReq = (res) => {
   if (!!res.query.projectAccessToken) return res.query.projectAccessToken;
-  if (!!res.query.thirdPartyProject.projectId) {
+  else if (
+    !!res.query &&
+    !!res.query.thirdPartyProject &&
+    !!res.query.thirdPartyProject.projectId
+  ) {
     const data = res.body.integration.thirdPartyProjects.find(
       ({ projectId }) => {
         return `${projectId}` === `${res.query.thirdPartyProject.projectId}`;
       }
+    );
+    return data.projectSpecificParams.projectAccessToken;
+  } else if (
+    !!res.body &&
+    !!res.body.thirdPartyProject &&
+    !!res.body.thirdPartyProject.projectId
+  ) {
+    const value = res.body.thirdPartyProject.projectId;
+    const data = res.body.integration.thirdPartyProjects.find(
+      ({ projectId }) => `${projectId}` === `${value}`
     );
     return data.projectSpecificParams.projectAccessToken;
   } else return res.body.integration.authAccessToken;
@@ -79,3 +93,24 @@ module.exports.transformItemToBug = (item) => {
 };
 
 module.exports.transforIntToString = (item) => `${item}`;
+
+module.exports.transformBody = (body) => {
+  delete body.thirdPartyProject;
+
+  if (body.rollbar.status === 'FIXED') body.status = 'resolved';
+  else if (body.rollbar.status === 'OPEN') body.status = 'active';
+  else if (body.rollbar.status === 'MUTED') body.status = 'muted';
+  else body.status = 'active';
+
+  body = {
+    status: body.status,
+    resolved_in_version: body.resolvedInVersion,
+    title: body.title,
+    level: body.level,
+    assigned_user_id: body.assignee,
+  };
+  Object.keys(body).forEach(
+    (key) => body[key] === undefined && delete body[key]
+  );
+  return body;
+};

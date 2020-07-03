@@ -3029,6 +3029,7 @@ Permanently deletes an occurrence. This will make it unavailable in the Rollbar 
           });
         });
 
+      case 'ISSUES':
       case 'ITEM_ITEMID':
         /*
 

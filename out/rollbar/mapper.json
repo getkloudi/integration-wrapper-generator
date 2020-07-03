@@ -276,5 +276,59 @@
         "output": {}
       }
     ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "ISSUES",
+    "integration": "ROLLBAR",
+    "method": "PATCH|DELETE",
+    "map": [
+      {
+        "input": {
+          "key": ""
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "getAccessTokenFromReq"
+        },
+        "output": {
+          "key": "xRollbarAccessToken"
+        }
+      },
+      {
+        "input": {
+          "key": "query"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "query"
+        }
+      },
+      {
+        "input": {
+          "key": "body.rollbar.id[0]"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "itemid"
+        }
+      },
+      {
+        "input": {
+          "key": "body"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformBody"
+        },
+        "output": {
+          "key": "opts.body"
+        }
+      }
+    ]
   }
 ]
