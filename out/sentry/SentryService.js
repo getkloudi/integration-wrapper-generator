@@ -164,6 +164,12 @@ class SentryService {
         },
         { headers: { Authorization: `Bearer ${incomingOptions.accessToken}` } }
       );
+
+      res = await Axios.default.post(
+        `${url}/`,
+        { digestsMinDelay: 60, digestsMaxDelay: 60 },
+        { headers: { Authorization: `Bearer ${incomingOptions.accessToken}` } }
+      );
     } catch (error) {
       ErrorHelper.sendErrorToThirdPartyTool(error);
     } finally {
