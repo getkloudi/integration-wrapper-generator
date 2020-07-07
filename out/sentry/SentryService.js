@@ -54,6 +54,14 @@ class SentryService {
         name: 'task.pepper.SYNC_SENTRY_ISSUE_EVENT',
         webhook: 'issue_event',
       },
+      {
+        name: 'task.pepper.REOPEN_SENTRY_ISSUE',
+        webhook: 'issue_event',
+      },
+      {
+        name: 'task.pepper.UNMUTE_SENTRY_ISSUE',
+        webhook: 'issue_event',
+      },
     ];
   }
 
@@ -84,7 +92,84 @@ class SentryService {
   }
 
   async registerWebhooks(incomingOptions) {
-    //TODO: Add custom registerWebhooks functionality here
+    const url = `https://sentry.io/api/0/projects/${incomingOptions.project.organizationId}/${incomingOptions.project.projectId}`;
+
+    let res;
+    res = await Axios.default.post(`${url}/plugins/webhooks/`, undefined, {
+      headers: { Authorization: `Bearer ${incomingOptions.accessToken}` },
+    });
+
+    res = await Axios.default.get(`${url}/plugins/webhooks/`, {
+      headers: { Authorization: `Bearer ${incomingOptions.accessToken}` },
+    });
+    const { config } = res.data;
+    const webhookURL = `${nconf.get('WEBHOOK_API_URI')}/${
+      incomingOptions.userId
+    }/${incomingOptions.projectId}/SENTRY/${
+      incomingOptions.project.organizationId
+    }/${incomingOptions.project.projectId}/`;
+    if (config[0].value.split('\n').indexOf(webhookURL) < 0) {
+      try {
+        res = await Axios.default.put(
+          `${url}/plugins/webhooks/`,
+          { urls: `${config[0].value}\n${webhookURL}` },
+          {
+            headers: { Authorization: `Bearer ${incomingOptions.accessToken}` },
+          }
+        );
+      } catch (error) {
+        ErrorHelper.sendErrorToThirdPartyTool(error);
+      } finally {
+        if (res.status != 200) return 'ERROR';
+      }
+    }
+
+    try {
+      res = await Axios.default.get(`${url}/combined-rules/`, {
+        headers: { Authorization: `Bearer ${incomingOptions.accessToken}` },
+      });
+      const alertNames = res.data.map((item) => item.name);
+      if (alertNames.indexOf(`Alert Rules for Kloudi ${nconf.get('ENV')}`) >= 0)
+        return 'Ok';
+      res = await Axios.default.post(
+        `${url}/rules/`,
+        {
+          actionMatch: 'all',
+          actions: [
+            {
+              id: 'sentry.rules.actions.notify_event.NotifyEventAction',
+            },
+            {
+              id:
+                'sentry.rules.actions.notify_event_service.NotifyEventServiceAction',
+              service: 'webhooks',
+            },
+          ],
+          conditions: [
+            {
+              id: 'sentry.rules.conditions.every_event.EveryEventCondition',
+              name: 'An event is seen',
+            },
+            {
+              id:
+                'sentry.rules.conditions.regression_event.RegressionEventCondition',
+            },
+            {
+              id:
+                'sentry.rules.conditions.reappeared_event.ReappearedEventCondition',
+            },
+          ],
+          name: `Alert Rules for Kloudi ${nconf.get('ENV')}`,
+          frequency: '5',
+        },
+        { headers: { Authorization: `Bearer ${incomingOptions.accessToken}` } }
+      );
+    } catch (error) {
+      ErrorHelper.sendErrorToThirdPartyTool(error);
+    } finally {
+      if (res.status == 200) return 'Ok';
+      else 'ERROR';
+    }
   }
 
   async syncIntegrationEntities(integration, incomingOptions) {
@@ -113,7 +198,7 @@ class SentryService {
       );
       return { data: 'Ok' };
     } catch (error) {
-      console.error(error.response);
+      ErrorHelper.sendErrorToThirdPartyTool(error.response);
       return { data: 'ERROR' };
     }
   }
@@ -230,7 +315,7 @@ class SentryService {
         count++;
       }
     } catch (error) {
-      console.error(error);
+      ErrorHelper.sendErrorToThirdPartyTool(error);
     }
     return { data: issues };
   }
@@ -263,14 +348,14 @@ class SentryService {
         count++;
       }
     } catch (error) {
-      console.error(error);
+      ErrorHelper.sendErrorToThirdPartyTool(error);
     }
     return { data: members };
   }
 
   async updateIssues(options) {
     if (!options.body.organization_slug || !options.body.project_slug) {
-      console.error('No third party projects present');
+      ErrorHelper.sendErrorToThirdPartyTool('No third party projects present');
       return { data: 'Error' };
     }
 
@@ -292,7 +377,9 @@ class SentryService {
       );
       return { data: 'Ok' };
     } catch (error) {
-      console.error(error.response.data || error.response || error);
+      ErrorHelper.sendErrorToThirdPartyTool(
+        error.response.data || error.response || error
+      );
       return { data: error.response.data };
     }
   }
@@ -302,7 +389,7 @@ class SentryService {
       !options.integration.thirdPartyProjects ||
       options.integration.thirdPartyProjects.length == 0
     ) {
-      console.error('No third party projects present');
+      ErrorHelper.sendErrorToThirdPartyTool('No third party projects present');
       return { data: 'Error' };
     }
 
@@ -325,7 +412,9 @@ class SentryService {
       );
       return { data: 'Ok' };
     } catch (error) {
-      console.error(error.response.data || error.response || error);
+      ErrorHelper.sendErrorToThirdPartyTool(
+        error.response.data || error.response || error
+      );
       return { data: error.response.data };
     }
   }
