@@ -134,7 +134,7 @@ class SentryService {
       res = await Axios.default.post(
         `${url}/rules/`,
         {
-          actionMatch: 'all',
+          actionMatch: 'any',
           actions: [
             {
               id: 'sentry.rules.actions.notify_event.NotifyEventAction',
