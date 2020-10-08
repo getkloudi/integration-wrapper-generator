@@ -64,7 +64,9 @@ function () {
      * @default {}
      */
 
-    this.defaultHeaders = {};
+    this.defaultHeaders = {
+      "User-Agent": "kloudi-tech"
+    };
     /**
      * The default HTTP timeout for all API calls.
      * @type {Number}

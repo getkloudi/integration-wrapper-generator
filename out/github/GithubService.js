@@ -11,7 +11,7 @@ const SCOPES = [
   "repo",
   "read:user",
   "user:email",
-  "write:org"
+  "write:org",
 ];
 
 class GithubService {
@@ -68,7 +68,7 @@ class GithubService {
       "commit_comment",
       "issues",
       "issue_comment",
-      "ping"
+      "ping",
     ];
   }
 
@@ -76,37 +76,37 @@ class GithubService {
     return [
       {
         name: "task.thirdParty.UPDATE_GITHUB_PR",
-        webhook: "pull_request"
+        webhook: "pull_request",
       },
       {
         name: "task.thirdParty.UPDATE_GITHUB_PR",
-        webhook: "pull_request_review"
+        webhook: "pull_request_review",
       },
       {
         name: "task.thirdParty.UPDATE_GITHUB_PR",
-        webhook: "pull_request_review_comment"
+        webhook: "pull_request_review_comment",
       },
       { name: "task.pepper.SYNC_GITHUB_COMMITS", webhook: "push" },
       {
         name: "task.pepper.SYNC_GITHUB_TEAM_MEMBERS",
-        webhook: "push"
+        webhook: "push",
       },
       {
         name: "task.thirdParty.UPDATE_GITHUB_ISSUE",
-        webhook: "commit_comment"
+        webhook: "commit_comment",
       },
       {
         name: "task.thirdParty.UPDATE_GITHUB_ISSUE",
-        webhook: "issues"
+        webhook: "issues",
       },
       {
         name: "task.thirdParty.UPDATE_GITHUB_ISSUE",
-        webhook: "issue_comment"
+        webhook: "issue_comment",
       },
       {
         name: "task.system.UPDATE_WEBHOOK_STATUS",
-        webhook: "ping"
-      }
+        webhook: "ping",
+      },
     ];
   }
 
@@ -114,7 +114,7 @@ class GithubService {
     return {
       type: "HREF",
       url: this.authEndpoint,
-      requiredAuthParams: this.requiredAuthParams
+      requiredAuthParams: this.requiredAuthParams,
     };
   }
 
@@ -131,17 +131,17 @@ class GithubService {
   }
 
   async connect(authParams) {
-    const res = await axios.default.post(
+    let res = await axios.default.post(
       "https://github.com/login/oauth/access_token",
       {
         client_id: nconf.get("GITHUB_CLIENT_ID"),
         client_secret: nconf.get("GITHUB_CLIENT_SECRET"),
-        code: authParams.code
+        code: authParams.code,
       },
       {
         headers: {
-          Accept: "application/json"
-        }
+          Accept: "application/json",
+        },
       }
     );
     const apiKey = res.data.access_token;
@@ -149,34 +149,36 @@ class GithubService {
     let orgs = [],
       incomingOptions = { opts: {} };
 
-    const user = await this.get("USER", {
+    res = await this.get("USER", {
       apiKey: apiKey,
       apiKeyPrefix: apiKeyPrefix,
       opts: {
         perPage: incomingOptions.opts.perPage,
-        page: incomingOptions.opts.page
-      }
+        page: incomingOptions.opts.page,
+      },
     });
+    const user = res.data;
 
     while (true) {
       let res = await this.get("USER_ORGS", {
         apiKey: apiKey,
         opts: {
           perPage: incomingOptions.opts.perPage,
-          page: incomingOptions.opts.page
-        }
+          page: incomingOptions.opts.page,
+        },
       });
       incomingOptions.opts = this.getNextPaginationURIFromResponse(
         res.response
       );
-      orgs = orgs.concat(res.data.map(item => item.login));
+      orgs = orgs.concat(res.data.map((item) => item.login));
       if (!incomingOptions.opts || !incomingOptions.opts.page) break;
     }
+
     const data = {
       accessToken: apiKey,
       integrationSpecificParams: {
-        username: user.data.login
-      }
+        username: user.login,
+      },
     };
     if (orgs.length > 0) data.team = { usernames: orgs };
     return data;
@@ -199,12 +201,20 @@ class GithubService {
   }
 
   async registerWebhooks(options) {
+    const incomingOptions = {
+      apiKey: options.apiKey,
+      apiKeyPrefix: options.apiKeyPrefix,
+      opts: options.opts,
+      skip: options.skip,
+      limit: options.limit,
+      ...options.project,
+    };
     let data, res;
 
-    res = await this.get("REPOS_OWNER_REPO_HOOKS", options);
+    res = await this.get("REPOS_OWNER_REPO_HOOKS", incomingOptions);
     data = res.data;
     const webhooks = data.filter(
-      item =>
+      (item) =>
         item.config.url === options.body.webhookURL &&
         item.events.sort().toString() ===
           options.body.webhookEvents.sort().toString()
@@ -217,14 +227,14 @@ class GithubService {
       config: {
         url: options.body.webhookURL,
         content_type: "json",
-        insecure_ssl: "0"
-      }
+        insecure_ssl: "0",
+      },
     };
     delete options.body;
     try {
       res = await this.post("REPOS_OWNER_REPO_HOOKS", {
         body: body,
-        ...options
+        ...incomingOptions,
       });
     } catch (err) {
     } finally {
@@ -245,25 +255,25 @@ class GithubService {
             "task.pepper.SYNC_GITHUB_TEAM_MEMBERS",
             "task.pepper.SYNC_GITHUB_PRS",
             "task.pepper.SYNC_GITHUB_COMMITS",
-            "task.pepper.SYNC_GITHUB_ISSUES"
+            "task.pepper.SYNC_GITHUB_ISSUES",
           ],
           project_id: options.projectId,
           user_id: options.userId,
-          third_party_project_id: options.repo,
-          third_party_organization_id: options.owner,
-          repo_endpoint: `${options.owner}/${options.repo}`,
-          github_username: integration.integrationSpecificParams.username
+          third_party_project_id: options.thirdPartyProject.repo,
+          third_party_organization_id: options.thirdPartyProject.owner,
+          repo_endpoint: `${options.thirdPartyProject.owner}/${options.thirdPartyProject.repo}`,
+          github_username: integration.integrationSpecificParams.username,
         },
         {
           headers: {
-            Authorization: authToken
-          }
+            Authorization: authToken,
+          },
         }
       );
-      return "Ok";
+      return { data: "Ok" };
     } catch (error) {
       console.error(error.response || error);
-      return "ERROR";
+      return { data: "ERROR" };
     }
   }
 
@@ -3202,11 +3212,11 @@ Lists all the emojis available to use on GitHub.
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3241,11 +3251,11 @@ List public events.
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3280,11 +3290,11 @@ List Feeds. GitHub provides several timeline resources in Atom format. The Feeds
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3319,12 +3329,12 @@ List the authenticated user&#39;s gists or if called anonymously, this will retu
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3361,7 +3371,7 @@ Get a single comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3401,11 +3411,11 @@ List comments on a gist.
     /*let id = 56;*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3446,7 +3456,7 @@ Get a single gist.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3485,11 +3495,11 @@ Check if a gist is starred.
     /*let id = 56;*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3528,12 +3538,12 @@ List all public gists.
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3571,12 +3581,12 @@ List the authenticated user&#39;s starred gists.
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3614,11 +3624,11 @@ Listing available templates. List all templates available to pass as an option w
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3654,11 +3664,11 @@ Get a single template.
 
     let apiInstance = new Github.DefaultApi(); // String |
     /*let language = "language_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3697,12 +3707,12 @@ List issues. List all issues across all the authenticated user&#39;s visible rep
     /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3741,7 +3751,7 @@ Find issues by state and keyword.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3775,7 +3785,7 @@ Find repositories by keyword. Note, this legacy method does not follow the v3 pa
 
     let apiInstance = new Github.DefaultApi(); // String | The search term
     /*let keyword = "keyword_example";*/ let opts = {
-      order: "'desc'" // String | The sort field. if sort param is provided. Can be either asc or desc.
+      order: "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
       //  'language': "language_example", // String | Filter results by language
       //  'startPage': "startPage_example", // String | The page number to fetch
       //  'sort': "sort_example", // String | The sort field. One of stars, forks, or updated. Default: results are sorted by best match.
@@ -3783,7 +3793,7 @@ Find repositories by keyword. Note, this legacy method does not follow the v3 pa
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3818,7 +3828,7 @@ This API call is added for compatibility reasons only.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3849,14 +3859,14 @@ Find users by keyword.
 
     let apiInstance = new Github.DefaultApi(); // String | The search term
     /*let keyword = "keyword_example";*/ let opts = {
-      order: "'desc'" // String | The sort field. if sort param is provided. Can be either asc or desc.
+      order: "'desc'", // String | The sort field. if sort param is provided. Can be either asc or desc.
       //  'startPage': "startPage_example", // String | The page number to fetch
       //  'sort': "sort_example", // String | The sort field. One of stars, forks, or updated. Default: results are sorted by best match.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3897,7 +3907,7 @@ This gives some information about GitHub.com, the service.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3932,11 +3942,11 @@ List public events for a network of repositories.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -3979,11 +3989,11 @@ List your notifications. List all notifications for the current user, grouped by
       //  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4023,7 +4033,7 @@ View a single thread.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4062,11 +4072,11 @@ Get a Thread Subscription.
     /*let id = 56;*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4105,11 +4115,11 @@ List public events for an organization.
     /*let org = "org_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4148,11 +4158,11 @@ Get an Organization.
     /*let org = "org_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4191,12 +4201,12 @@ List issues. List all issues for a given organization for the authenticated user
     /*let org = "org_example";*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4240,11 +4250,11 @@ Members list. List all users who are members of an organization. A member is a u
     /*let org = "org_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4283,11 +4293,11 @@ Check if a user is, publicly or privately, a member of the organization.
     /*let org = "org_example";*/ /*let username = "username_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4327,11 +4337,11 @@ Public members list. Members of an organization can choose to have their members
     /*let org = "org_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4370,11 +4380,11 @@ Check public membership.
     /*let org = "org_example";*/ /*let username = "username_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4415,11 +4425,11 @@ List repositories for the specified org.
       type: "'all'", // String |
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4458,11 +4468,11 @@ List teams.
     /*let org = "org_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4501,11 +4511,11 @@ Get your current rate limit status Note: Accessing this endpoint does not count 
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4540,11 +4550,11 @@ Get archive link. This method will return a 302 to a URL to download a tarball o
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let archiveFormat = "archiveFormat_example";*/ /*let path = "path_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4586,11 +4596,11 @@ Check assignee. You may also check to see if a particular user is an assignee fo
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let assignee = "assignee_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4631,11 +4641,11 @@ List assignees. This call lists all the available assignees (owner + collaborato
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4675,11 +4685,11 @@ Get Branch
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let branch = "branch_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4720,11 +4730,11 @@ Get list of branches
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4764,11 +4774,11 @@ List. When authenticating as an organization owner of an organization-owned repo
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4808,11 +4818,11 @@ Check if user is a collaborator
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let user = "user_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4853,11 +4863,11 @@ Get a single commit comment.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let commentId = 56;*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4898,11 +4908,11 @@ List commit comments for a repository. Comments are ordered by ascending ID.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4947,11 +4957,11 @@ List commits on a repository.
       //  'until': "until_example", // String | ISO 8601 Date - Only commits before this date will be returned.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -4991,11 +5001,11 @@ Get the combined Status for a specific Ref The Combined status endpoint is curre
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5036,11 +5046,11 @@ List comments for a single commitList comments for a single commit.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5081,11 +5091,11 @@ Get a single commit.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5126,11 +5136,11 @@ Compare two commits
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let baseId = "baseId_example";*/ /*let headId = "headId_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5174,11 +5184,11 @@ Get contents. This method returns the contents of a file or directory in a repos
       //  'ref': "ref_example", // String | The String name of the Commit/Branch/Tag. Defaults to 'master'.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5219,11 +5229,11 @@ Get list of contributors.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let anon = "anon_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5264,11 +5274,11 @@ Users with pull access can view deployments for a repository
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5308,11 +5318,11 @@ Users with pull access can view deployment statuses for a deployment
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let id = 56;*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5355,7 +5365,7 @@ Deprecated. Get a single download.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5398,7 +5408,7 @@ Deprecated. List downloads for a repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5438,11 +5448,11 @@ Get list of repository events.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5483,11 +5493,11 @@ List forks.
       sort: "'newes'", // String |
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5527,11 +5537,11 @@ Get repository.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5567,7 +5577,7 @@ Get a Blob. Since blobs can be any arbitrary binary data, the input and response
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5604,7 +5614,7 @@ Get a Commit.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5639,11 +5649,11 @@ Get all References
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5677,11 +5687,11 @@ Get a Reference
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let ref = "ref_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5716,11 +5726,11 @@ Get a Tag.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5753,12 +5763,12 @@ Get a Tree.
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // String | Tree SHA.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let shaCode = "shaCode_example";*/ let opts = {
-      recursive: 56 // Number | Get a Tree Recursively. (0 or 1)
+      recursive: 56, // Number | Get a Tree Recursively. (0 or 1)
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5799,11 +5809,11 @@ Get list of hooks.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5845,7 +5855,7 @@ Get single hook.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5882,7 +5892,7 @@ Get a single comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5922,7 +5932,7 @@ List comments in a repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5958,7 +5968,7 @@ Get a single event.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -5995,7 +6005,7 @@ List issue events for a repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6029,12 +6039,12 @@ List issues for a repository.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6075,7 +6085,7 @@ List comments on an issue.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6112,7 +6122,7 @@ List events for an issue.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6149,7 +6159,7 @@ Get a single issue
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6186,7 +6196,7 @@ List labels on an issue.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6223,7 +6233,7 @@ Get list of keys.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6259,7 +6269,7 @@ Get a key
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6296,7 +6306,7 @@ List all labels for this repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6332,7 +6342,7 @@ Get a single label.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6369,7 +6379,7 @@ List languages. List languages for the specified repository. The value on the ri
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6403,12 +6413,12 @@ List milestones for a repository.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       state: "'open'", // String | String to filter by state.
       //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-      sort: "'due_date'" // String |
+      sort: "'due_date'", // String |
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6444,7 +6454,7 @@ Get a single milestone.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6481,7 +6491,7 @@ Get labels for every issue in a milestone.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6515,13 +6525,13 @@ List your notifications in a repository List all notifications for the current u
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       all: true, // Boolean | True to show notifications marked as read.
-      participating: true // Boolean | True to show only notifications in which the user is directly participating or mentioned.
+      participating: true, // Boolean | True to show only notifications in which the user is directly participating or mentioned.
       //  'since': "since_example", // String | The time should be passed in as UTC in the ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Example: \"2012-10-09T23:39:01Z\".
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6557,7 +6567,7 @@ Get a single comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6597,7 +6607,7 @@ List comments in a repository. By default, Review Comments are ordered by ascend
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6629,14 +6639,14 @@ List pull requests.
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
-      state: "'open'" // String | String to filter by state.
+      state: "'open'", // String | String to filter by state.
       //  'head': "head_example", // String | Filter pulls by head user and branch name in the format of 'user:ref-name'. Example: github:new-script-format.
       //  'base': "base_example", // String | Filter pulls by base branch name. Example - gh-pages.
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6672,7 +6682,7 @@ List comments on a pull request.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6709,7 +6719,7 @@ List commits on a pull request.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6746,7 +6756,7 @@ List pull requests files.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6783,7 +6793,7 @@ Get a single pull request.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6820,7 +6830,7 @@ Get if a pull request has been merged.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6858,7 +6868,7 @@ Get the README. This method returns the preferred README for a repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6894,7 +6904,7 @@ Get a single release asset
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6931,7 +6941,7 @@ Users with push access to the repository will receive all releases (i.e., publis
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -6967,7 +6977,7 @@ List assets for a release
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7004,7 +7014,7 @@ Get a single release
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7041,7 +7051,7 @@ List Stargazers.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7077,7 +7087,7 @@ Get the number of additions and deletions per week. Returns a weekly aggregate o
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7113,7 +7123,7 @@ Get the last year of commit activity data. Returns the last year of commit activ
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7149,7 +7159,7 @@ Get contributors list with additions, deletions, and commit counts.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7185,7 +7195,7 @@ Get the weekly commit count for the repo owner and everyone else.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7221,7 +7231,7 @@ Get the number of commits per hour in each day. Each array contains the day numb
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7257,7 +7267,7 @@ List Statuses for a specific Ref.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7294,7 +7304,7 @@ List watchers.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7330,7 +7340,7 @@ Get a Repository Subscription.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7366,7 +7376,7 @@ Get list of tags.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7402,7 +7412,7 @@ Get list of teams
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7444,7 +7454,7 @@ List Stargazers. New implementation.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7484,12 +7494,12 @@ List all public repositories. This provides a dump of every public repository, i
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7529,11 +7539,11 @@ Search code.
       //  'sort': "sort_example", // String | Can only be 'indexed', which indicates how recently a file has been indexed by the GitHub search infrastructure. If not provided, results are sorted by best match.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7574,11 +7584,11 @@ Find issues by state and keyword. (This method returns up to 100 results per pag
       //  'sort': "sort_example", // String | The sort field. Can be comments, created, or updated. Default: results are sorted by best match.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7619,11 +7629,11 @@ Search repositories.
       //  'sort': "sort_example", // String | If not provided, results are sorted by best match.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7664,11 +7674,11 @@ Search users.
       //  'sort': "sort_example", // String | If not provided, results are sorted by best match.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7709,7 +7719,7 @@ Get team.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7748,11 +7758,11 @@ List team members. In order to list members in a team, the authenticated user mu
     /*let teamId = 56;*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7793,7 +7803,7 @@ The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7835,7 +7845,7 @@ Get team membership. In order to get a user&#39;s membership with a team, the au
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7875,11 +7885,11 @@ List team repos
     /*let teamId = 56;*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7920,7 +7930,7 @@ Check if a team manages a repository
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7963,7 +7973,7 @@ List email addresses for a user. In the final version of the API, this method wi
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -7998,11 +8008,11 @@ List the authenticated user&#39;s followers
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8040,11 +8050,11 @@ List who the authenticated user is following.
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8084,7 +8094,7 @@ Check if you are following a user.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8123,11 +8133,11 @@ Get the authenticated user.
     let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8162,12 +8172,12 @@ List issues. List all issues across owned and member repositories for the authen
     /*let filter = "'all'";*/ /*let state = "'open'";*/ /*let labels = "labels_example";*/ /*let sort = "'created'";*/ /*let direction = "'desc'";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8208,11 +8218,11 @@ List your public keys. Lists the current user&#39;s keys. Management of public k
 
     let apiInstance = new Github.DefaultApi();
     let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8249,7 +8259,7 @@ Get a single public key.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8286,11 +8296,11 @@ List public and private organizations for the authenticated user.
 
     let apiInstance = new Github.DefaultApi();
     let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8326,11 +8336,11 @@ List repositories for the authenticated user. Note that this does not include re
       type: "'all'", // String |
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8364,12 +8374,12 @@ List repositories being starred by the authenticated user.
     let apiInstance = new Github.DefaultApi();
     let opts = {
       //  'direction': "direction_example", // String | Ignored without 'sort' parameter.
-      sort: "'created'" // String |
+      sort: "'created'", // String |
       //  'accept': "accept_example" // String | Is used to set specified media type.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8409,7 +8419,7 @@ Check if you are starring a repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8451,7 +8461,7 @@ List repositories being watched by the authenticated user.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8491,7 +8501,7 @@ Check if you are watching a repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8529,11 +8539,11 @@ List all of the teams across all of the organizations to which the authenticated
 
     let apiInstance = new Github.DefaultApi();
     let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8569,11 +8579,11 @@ Get all users. This provides a dump of every user, in the order that they signed
       since: 56, // Number | The integer ID of the last user that you've seen.
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8608,11 +8618,11 @@ If you are authenticated as the given user, you will see your private events. Ot
     /*let username = "username_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8649,11 +8659,11 @@ This is the user&#39;s organization dashboard. You must be authenticated as the 
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user // String |
     /*let username = "username_example";*/ /*let org = "org_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8691,11 +8701,11 @@ List a user&#39;s followers
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user.
     /*let username = "username_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8726,11 +8736,11 @@ Check if one user follows another.
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user // String | Name of user.
     /*let username = "username_example";*/ /*let targetUser = "targetUser_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8768,11 +8778,11 @@ Get a single user.
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user.
     /*let username = "username_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8811,12 +8821,12 @@ List a users gists.
     /*let username = "username_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
       //  'since': "since_example" // String | Timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SSZ.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8853,11 +8863,11 @@ List public keys for a user. Lists the verified public keys for a user. This is 
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user.
     /*let username = "username_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8894,11 +8904,11 @@ List all public organizations for a user.
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user.
     /*let username = "username_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8935,11 +8945,11 @@ These are events that you&#39;ll only see public events.
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user.
     /*let username = "username_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -8976,11 +8986,11 @@ List public events that a user has received
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user.
     /*let username = "username_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -9020,11 +9030,11 @@ List public repositories for the specified user.
       type: "'all'", // String |
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -9061,11 +9071,11 @@ List repositories being starred by a user.
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user.
     /*let username = "username_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -9102,11 +9112,11 @@ List repositories being watched by a user.
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user.
     /*let username = "username_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -9779,7 +9789,7 @@ Create a commen
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -9821,7 +9831,7 @@ Fork a gist.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -9862,7 +9872,7 @@ Create a gist.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -9903,7 +9913,7 @@ Render an arbitrary Markdown document
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -9944,7 +9954,7 @@ Render a Markdown document in raw mode
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -9984,7 +9994,7 @@ Create a new repository for the authenticated user. OAuth users must supply repo
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10026,7 +10036,7 @@ Create team. In order to create a team, the authenticated user must be an owner 
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10068,7 +10078,7 @@ Create a commit comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10112,7 +10122,7 @@ Create a Deployment Status Users with push access can create deployment statuses
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10156,7 +10166,7 @@ Users with push access can create a deployment for a given ref
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10199,7 +10209,7 @@ Create a fork. Forking a Repository happens asynchronously. Therefore, you may h
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10240,11 +10250,11 @@ Create a Blob.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let body = null;*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10281,7 +10291,7 @@ Create a Commit.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10318,7 +10328,7 @@ Create a Reference
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10355,7 +10365,7 @@ Create a Tag Object. Note that creating a tag object does not create the referen
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10392,7 +10402,7 @@ Create a Tree. The tree creation API will take nested entries as well. If both a
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10429,7 +10439,7 @@ Test a push hook. This will trigger the hook with the latest push to the current
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10472,7 +10482,7 @@ Create a hook.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10509,7 +10519,7 @@ Create a comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10547,7 +10557,7 @@ Add labels to an issue.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10585,7 +10595,7 @@ Create an issue. Any user with pull access to a repository can create an issue.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10622,7 +10632,7 @@ Create a key.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10659,7 +10669,7 @@ Create a label.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10696,7 +10706,7 @@ Perform a merge.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10733,7 +10743,7 @@ Create a milestone.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10770,7 +10780,7 @@ Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pul
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10808,7 +10818,7 @@ Create a pull request.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10845,7 +10855,7 @@ Create a release Users with push access to the repository can create a release.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10882,7 +10892,7 @@ Create a Status.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10926,7 +10936,7 @@ Add email address(es). You can post a single email address or an array of addres
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -10967,7 +10977,7 @@ Create a public key.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11008,7 +11018,7 @@ Create a new repository for the authenticated user. OAuth users must supply repo
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11380,7 +11390,7 @@ Star a gist.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11421,7 +11431,7 @@ Mark as read. Marking a notification as \&quot;read\&quot; removes it from the d
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11462,7 +11472,7 @@ Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Su
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11504,7 +11514,7 @@ Publicize a user&#39;s membership.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11546,7 +11556,7 @@ Add collaborator.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11589,7 +11599,7 @@ Create a file.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11627,7 +11637,7 @@ Replace all labels for an issue. Sending an empty array ([]) will remove all Lab
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11665,7 +11675,7 @@ Mark notifications as read in a repository. Marking all notifications in a repos
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11702,7 +11712,7 @@ Merge a pull request (Merge Button&#39;s)
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11740,7 +11750,7 @@ Set a Repository Subscription
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11783,7 +11793,7 @@ The API (described below) is deprecated and is scheduled for removal in the next
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11825,7 +11835,7 @@ Add team membership. In order to add a membership between a user and a team, the
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11867,7 +11877,7 @@ In order to add a repository to a team, the authenticated user must be an owner 
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11910,7 +11920,7 @@ Follow a user. Following a user requires the user to be logged in and authentica
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11951,7 +11961,7 @@ Star a repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -11993,7 +12003,7 @@ Watch a repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -12715,7 +12725,7 @@ Delete a comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -12757,7 +12767,7 @@ Delete a gist.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -12798,7 +12808,7 @@ Unstar a gist.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -12839,7 +12849,7 @@ Delete a Thread Subscription.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -12880,7 +12890,7 @@ Remove a member. Removing a user from this list will remove them from all teams 
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -12922,7 +12932,7 @@ Conceal a user&#39;s membership.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -12964,7 +12974,7 @@ Remove collaborator.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13007,7 +13017,7 @@ Delete a commit comment
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13050,7 +13060,7 @@ Delete a file. This method deletes a file in a repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13094,7 +13104,7 @@ Delete a Repository. Deleting a repository requires admin access. If OAuth is us
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13136,7 +13146,7 @@ Deprecated. Delete a download.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13173,7 +13183,7 @@ Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13216,7 +13226,7 @@ Delete a hook.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13253,7 +13263,7 @@ Delete a comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13290,7 +13300,7 @@ Remove all labels from an issue.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13327,7 +13337,7 @@ Remove a label from an issue.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13365,7 +13375,7 @@ Delete a key.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13402,7 +13412,7 @@ Delete a label.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13439,7 +13449,7 @@ Delete a milestone.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13476,7 +13486,7 @@ Delete a comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13513,7 +13523,7 @@ Delete a release asset
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13550,7 +13560,7 @@ Users with push access to the repository can delete a release.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13587,7 +13597,7 @@ Delete a Repository Subscription.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13627,11 +13637,11 @@ Delete team. In order to delete a team, the authenticated user must be an owner 
     /*let teamId = 56;*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13670,11 +13680,11 @@ The \&quot;Remove team member\&quot; API is deprecated and is scheduled for remo
     /*let teamId = 56;*/ /*let username = "username_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13714,11 +13724,11 @@ Remove team membership. In order to remove a membership between a user and a tea
     /*let teamId = 56;*/ /*let username = "username_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13758,11 +13768,11 @@ In order to remove a repository from a team, the authenticated user must be an o
     /*let teamId = 56;*/ /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ let opts = {
       accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
       perPage: 30, // Number | No of result showed per request.
-      page: 1 // Number | Page number at which you want the search result to come from.
+      page: 1, // Number | Page number at which you want the search result to come from.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13801,11 +13811,11 @@ Delete email address(es). You can include a single email address or an array of 
 
     let apiInstance = new Github.DefaultApi(); // [String] |
     /*let body = ["null"];*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13842,11 +13852,11 @@ Unfollow a user. Unfollowing a user requires the user to be logged in and authen
 
     let apiInstance = new Github.DefaultApi(); // String | Name of user.
     /*let username = "username_example";*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13883,11 +13893,11 @@ Delete a public key. Removes a public key. Requires that you are authenticated v
 
     let apiInstance = new Github.DefaultApi(); // Number | ID of key.
     /*let keyId = 56;*/ let opts = {
-      accept: "'application/vnd.github.v3+json'" // String | Is used to set specified media type
+      accept: "'application/vnd.github.v3+json'", // String | Is used to set specified media type
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13928,7 +13938,7 @@ Unstar a repository
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -13970,7 +13980,7 @@ Stop watching a repository
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14384,7 +14394,7 @@ Edit a comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14427,7 +14437,7 @@ Edit a gist.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14469,7 +14479,7 @@ Mark a thread as read
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14510,7 +14520,7 @@ Edit an Organization.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14552,7 +14562,7 @@ Update a commit comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14590,7 +14600,7 @@ Update a Reference
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14634,7 +14644,7 @@ Edit a hook.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14672,7 +14682,7 @@ Edit a comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14710,7 +14720,7 @@ Edit an issue. Issue owners and users with push access can edit an issue.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14748,7 +14758,7 @@ Update a label.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14786,7 +14796,7 @@ Update a milestone.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14830,7 +14840,7 @@ Edit repository.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14867,7 +14877,7 @@ Edit a comment.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14905,7 +14915,7 @@ Update a pull request.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14943,7 +14953,7 @@ Edit a release asset Users with push access to the repository can edit a release
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -14981,7 +14991,7 @@ Users with push access to the repository can edit a release
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -15025,7 +15035,7 @@ Edit team. In order to edit a team, the authenticated user must be an owner of t
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
@@ -15067,7 +15077,7 @@ Update the authenticated user.
     };
 
     Object.keys(incomingOptions.opts).forEach(
-      key =>
+      (key) =>
         incomingOptions.opts[key] === undefined &&
         delete incomingOptions.opts[key]
     );
