@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ContentsPathLinks model module.
  * @module model/ContentsPathLinks
- * @version 1.4.4
+ * @version 1.4.5
  */
 class ContentsPathLinks {
     /**

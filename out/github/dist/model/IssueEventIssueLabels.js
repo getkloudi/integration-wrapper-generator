@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueEventIssueLabels model module.
  * @module model/IssueEventIssueLabels
- * @version 1.4.4
+ * @version 1.4.5
  */
 var IssueEventIssueLabels = /*#__PURE__*/function () {
   /**

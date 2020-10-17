@@ -84,6 +84,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property url (base name: "url")', function() {
+      // uncomment below and update the code to test the property url
+      //var instane = new Github.Issue();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property _number (base name: "number")', function() {
+      // uncomment below and update the code to test the property _number
+      //var instane = new Github.Issue();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

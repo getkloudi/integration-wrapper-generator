@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RefsBody model module.
  * @module model/RefsBody
- * @version 1.4.4
+ * @version 1.4.5
  */
 class RefsBody {
     /**

@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Milestone model module.
  * @module model/Milestone
- * @version 1.4.4
+ * @version 1.4.5
  */
 var Milestone = /*#__PURE__*/function () {
   /**

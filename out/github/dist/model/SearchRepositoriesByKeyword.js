@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchRepositoriesByKeyword model module.
  * @module model/SearchRepositoriesByKeyword
- * @version 1.4.4
+ * @version 1.4.5
  */
 var SearchRepositoriesByKeyword = /*#__PURE__*/function () {
   /**

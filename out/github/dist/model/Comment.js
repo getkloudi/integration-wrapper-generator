@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Comment model module.
  * @module model/Comment
- * @version 1.4.4
+ * @version 1.4.5
  */
 var Comment = /*#__PURE__*/function () {
   /**

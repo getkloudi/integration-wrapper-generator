@@ -188,7 +188,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 1.4.4
+* @version 1.4.5
 */
 export {
     /**

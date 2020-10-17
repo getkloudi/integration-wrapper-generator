@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OrganizationAsTeamMemberErrors model module.
  * @module model/OrganizationAsTeamMemberErrors
- * @version 1.4.4
+ * @version 1.4.5
  */
 class OrganizationAsTeamMemberErrors {
     /**

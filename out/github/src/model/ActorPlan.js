@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActorPlan model module.
  * @module model/ActorPlan
- * @version 1.4.4
+ * @version 1.4.5
  */
 class ActorPlan {
     /**

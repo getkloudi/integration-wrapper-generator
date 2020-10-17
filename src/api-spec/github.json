@@ -21787,6 +21787,12 @@
 				},
 				"title": {
 					"type": "string"
+				},
+				"url": {
+					"type": "string"
+				},
+				"number": {
+					"type": "integer"
 				}
 			},
 			"type": "object"

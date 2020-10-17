@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Label model module.
  * @module model/Label
- * @version 1.4.4
+ * @version 1.4.5
  */
 var Label = /*#__PURE__*/function () {
   /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GitignoreLang model module.
  * @module model/GitignoreLang
- * @version 1.4.4
+ * @version 1.4.5
  */
 class GitignoreLang {
     /**

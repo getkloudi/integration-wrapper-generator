@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompareCommitsFiles model module.
  * @module model/CompareCommitsFiles
- * @version 1.4.4
+ * @version 1.4.5
  */
 var CompareCommitsFiles = /*#__PURE__*/function () {
   /**

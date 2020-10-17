@@ -9,5 +9,7 @@ Name | Type | Description | Notes
 **labels** | **[String]** |  | [optional] 
 **milestone** | **Number** |  | [optional] 
 **title** | **String** |  | [optional] 
+**url** | **String** |  | [optional] 
+**_number** | **Number** |  | [optional] 
 
 

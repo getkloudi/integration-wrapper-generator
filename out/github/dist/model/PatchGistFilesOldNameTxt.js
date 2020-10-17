@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PatchGistFilesOldNameTxt model module.
  * @module model/PatchGistFilesOldNameTxt
- * @version 1.4.4
+ * @version 1.4.5
  */
 var PatchGistFilesOldNameTxt = /*#__PURE__*/function () {
   /**

@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Issue model module.
  * @module model/Issue
- * @version 1.4.4
+ * @version 1.4.5
  */
 var Issue = /*#__PURE__*/function () {
   /**
@@ -73,6 +73,14 @@ var Issue = /*#__PURE__*/function () {
         if (data.hasOwnProperty('title')) {
           obj['title'] = _ApiClient["default"].convertToType(data['title'], 'String');
         }
+
+        if (data.hasOwnProperty('url')) {
+          obj['url'] = _ApiClient["default"].convertToType(data['url'], 'String');
+        }
+
+        if (data.hasOwnProperty('number')) {
+          obj['number'] = _ApiClient["default"].convertToType(data['number'], 'Number');
+        }
       }
 
       return obj;
@@ -107,5 +115,15 @@ Issue.prototype['milestone'] = undefined;
  */
 
 Issue.prototype['title'] = undefined;
+/**
+ * @member {String} url
+ */
+
+Issue.prototype['url'] = undefined;
+/**
+ * @member {Number} number
+ */
+
+Issue.prototype['number'] = undefined;
 var _default = Issue;
 exports["default"] = _default;

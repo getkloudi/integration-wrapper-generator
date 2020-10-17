@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteFile model module.
  * @module model/DeleteFile
- * @version 1.4.4
+ * @version 1.4.5
  */
 var DeleteFile = /*#__PURE__*/function () {
   /**

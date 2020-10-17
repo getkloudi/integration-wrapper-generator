@@ -20,7 +20,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ContentsPath model module.
  * @module model/ContentsPath
- * @version 1.4.4
+ * @version 1.4.5
  */
 var ContentsPath = /*#__PURE__*/function () {
   /**

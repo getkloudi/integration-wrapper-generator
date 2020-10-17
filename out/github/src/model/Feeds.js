@@ -17,7 +17,7 @@ import FeedsLinks from './FeedsLinks';
 /**
  * The Feeds model module.
  * @module model/Feeds
- * @version 1.4.4
+ * @version 1.4.5
  */
 class Feeds {
     /**

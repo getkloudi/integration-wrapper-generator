@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MergesConflict model module.
  * @module model/MergesConflict
- * @version 1.4.4
+ * @version 1.4.5
  */
 class MergesConflict {
     /**

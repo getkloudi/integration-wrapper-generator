@@ -18,7 +18,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchLinks model module.
  * @module model/BranchLinks
- * @version 1.4.4
+ * @version 1.4.5
  */
 var BranchLinks = /*#__PURE__*/function () {
   /**

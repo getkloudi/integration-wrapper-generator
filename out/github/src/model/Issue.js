@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Issue model module.
  * @module model/Issue
- * @version 1.4.4
+ * @version 1.4.5
  */
 class Issue {
     /**
@@ -62,6 +62,12 @@ class Issue {
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('number')) {
+                obj['number'] = ApiClient.convertToType(data['number'], 'Number');
+            }
         }
         return obj;
     }
@@ -93,6 +99,16 @@ Issue.prototype['milestone'] = undefined;
  * @member {String} title
  */
 Issue.prototype['title'] = undefined;
+
+/**
+ * @member {String} url
+ */
+Issue.prototype['url'] = undefined;
+
+/**
+ * @member {Number} number
+ */
+Issue.prototype['number'] = undefined;
 
 
 
