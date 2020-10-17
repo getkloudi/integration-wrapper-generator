@@ -18,7 +18,7 @@ import CompareCommitsBaseCommitCommitAuthor from './CompareCommitsBaseCommitComm
 /**
  * The MergesSuccessfulCommit model module.
  * @module model/MergesSuccessfulCommit
- * @version 1.4.3
+ * @version 1.4.4
  */
 class MergesSuccessfulCommit {
     /**

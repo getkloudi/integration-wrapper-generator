@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeploymentStatusesCreate model module.
  * @module model/DeploymentStatusesCreate
- * @version 1.4.3
+ * @version 1.4.4
  */
-var DeploymentStatusesCreate =
-/*#__PURE__*/
-function () {
+var DeploymentStatusesCreate = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeploymentStatusesCreate</code>.
    * @alias module:model/DeploymentStatusesCreate

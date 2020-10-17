@@ -17,7 +17,7 @@ import GistFilesRingErl from './GistFilesRingErl';
 /**
  * The GistFiles model module.
  * @module model/GistFiles
- * @version 1.4.3
+ * @version 1.4.4
  */
 class GistFiles {
     /**

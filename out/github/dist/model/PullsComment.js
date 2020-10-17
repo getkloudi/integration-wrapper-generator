@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullsComment model module.
  * @module model/PullsComment
- * @version 1.4.3
+ * @version 1.4.4
  */
-var PullsComment =
-/*#__PURE__*/
-function () {
+var PullsComment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PullsComment</code>.
    * @alias module:model/PullsComment

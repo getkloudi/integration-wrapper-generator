@@ -19,7 +19,7 @@ import Organization from './Organization';
 /**
  * The Event model module.
  * @module model/Event
- * @version 1.4.3
+ * @version 1.4.4
  */
 class Event {
     /**

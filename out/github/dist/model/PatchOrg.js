@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PatchOrg model module.
  * @module model/PatchOrg
- * @version 1.4.3
+ * @version 1.4.4
  */
-var PatchOrg =
-/*#__PURE__*/
-function () {
+var PatchOrg = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PatchOrg</code>.
    * @alias module:model/PatchOrg

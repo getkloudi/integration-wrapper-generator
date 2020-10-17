@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchLinks model module.
  * @module model/BranchLinks
- * @version 1.4.3
+ * @version 1.4.4
  */
-var BranchLinks =
-/*#__PURE__*/
-function () {
+var BranchLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BranchLinks</code>.
    * @alias module:model/BranchLinks

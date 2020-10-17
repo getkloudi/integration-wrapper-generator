@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CompareCommitsBaseCommitCommit model module.
  * @module model/CompareCommitsBaseCommitCommit
- * @version 1.4.3
+ * @version 1.4.4
  */
-var CompareCommitsBaseCommitCommit =
-/*#__PURE__*/
-function () {
+var CompareCommitsBaseCommitCommit = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CompareCommitsBaseCommitCommit</code>.
    * @alias module:model/CompareCommitsBaseCommitCommit

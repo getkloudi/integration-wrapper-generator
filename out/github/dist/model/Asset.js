@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Asset model module.
  * @module model/Asset
- * @version 1.4.3
+ * @version 1.4.4
  */
-var Asset =
-/*#__PURE__*/
-function () {
+var Asset = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Asset</code>.
    * @alias module:model/Asset

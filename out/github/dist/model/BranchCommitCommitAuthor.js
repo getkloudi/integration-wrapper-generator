@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchCommitCommitAuthor model module.
  * @module model/BranchCommitCommitAuthor
- * @version 1.4.3
+ * @version 1.4.4
  */
-var BranchCommitCommitAuthor =
-/*#__PURE__*/
-function () {
+var BranchCommitCommitAuthor = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BranchCommitCommitAuthor</code>.
    * @alias module:model/BranchCommitCommitAuthor

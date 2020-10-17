@@ -17,7 +17,7 @@ import CompareCommitsBaseCommitCommitAuthor from './CompareCommitsBaseCommitComm
 /**
  * The GitCommit model module.
  * @module model/GitCommit
- * @version 1.4.3
+ * @version 1.4.4
  */
 class GitCommit {
     /**

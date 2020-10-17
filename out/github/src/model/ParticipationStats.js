@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ParticipationStats model module.
  * @module model/ParticipationStats
- * @version 1.4.3
+ * @version 1.4.4
  */
 class ParticipationStats {
     /**

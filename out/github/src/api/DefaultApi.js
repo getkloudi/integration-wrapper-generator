@@ -103,7 +103,7 @@ import UserUpdate from '../model/UserUpdate';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 1.4.3
+* @version 1.4.4
 */
 export default class DefaultApi {
 
@@ -6383,7 +6383,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [Object];
@@ -7044,7 +7044,7 @@ export default class DefaultApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['api_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = Issue;

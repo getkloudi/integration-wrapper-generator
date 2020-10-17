@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CompareCommitsBaseCommitCommitAuthor model module.
  * @module model/CompareCommitsBaseCommitCommitAuthor
- * @version 1.4.3
+ * @version 1.4.4
  */
 class CompareCommitsBaseCommitCommitAuthor {
     /**

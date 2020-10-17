@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TeamRepos model module.
  * @module model/TeamRepos
- * @version 1.4.3
+ * @version 1.4.4
  */
-var TeamRepos =
-/*#__PURE__*/
-function () {
+var TeamRepos = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TeamRepos</code>.
    * @alias module:model/TeamRepos

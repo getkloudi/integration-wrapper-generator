@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PostRepo model module.
  * @module model/PostRepo
- * @version 1.4.3
+ * @version 1.4.4
  */
-var PostRepo =
-/*#__PURE__*/
-function () {
+var PostRepo = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PostRepo</code>.
    * @alias module:model/PostRepo

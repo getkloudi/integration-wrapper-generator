@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFile model module.
  * @module model/CreateFile
- * @version 1.4.3
+ * @version 1.4.4
  */
-var CreateFile =
-/*#__PURE__*/
-function () {
+var CreateFile = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CreateFile</code>.
    * @alias module:model/CreateFile

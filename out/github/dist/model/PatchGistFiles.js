@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PatchGistFiles model module.
  * @module model/PatchGistFiles
- * @version 1.4.3
+ * @version 1.4.4
  */
-var PatchGistFiles =
-/*#__PURE__*/
-function () {
+var PatchGistFiles = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PatchGistFiles</code>.
    * @alias module:model/PatchGistFiles

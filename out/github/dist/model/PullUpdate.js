@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullUpdate model module.
  * @module model/PullUpdate
- * @version 1.4.3
+ * @version 1.4.4
  */
-var PullUpdate =
-/*#__PURE__*/
-function () {
+var PullUpdate = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PullUpdate</code>.
    * @alias module:model/PullUpdate

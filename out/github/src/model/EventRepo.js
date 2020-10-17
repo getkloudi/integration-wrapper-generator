@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventRepo model module.
  * @module model/EventRepo
- * @version 1.4.3
+ * @version 1.4.4
  */
 class EventRepo {
     /**

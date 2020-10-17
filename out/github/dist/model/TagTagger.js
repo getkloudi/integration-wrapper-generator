@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TagTagger model module.
  * @module model/TagTagger
- * @version 1.4.3
+ * @version 1.4.4
  */
-var TagTagger =
-/*#__PURE__*/
-function () {
+var TagTagger = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TagTagger</code>.
    * @alias module:model/TagTagger

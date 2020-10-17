@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The DeleteFileBody model module.
  * @module model/DeleteFileBody
- * @version 1.4.3
+ * @version 1.4.4
  */
-var DeleteFileBody =
-/*#__PURE__*/
-function () {
+var DeleteFileBody = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DeleteFileBody</code>.
    * @alias module:model/DeleteFileBody

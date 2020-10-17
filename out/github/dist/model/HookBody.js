@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The HookBody model module.
  * @module model/HookBody
- * @version 1.4.3
+ * @version 1.4.4
  */
-var HookBody =
-/*#__PURE__*/
-function () {
+var HookBody = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>HookBody</code>.
    * @alias module:model/HookBody

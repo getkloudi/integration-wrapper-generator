@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Feeds model module.
  * @module model/Feeds
- * @version 1.4.3
+ * @version 1.4.4
  */
-var Feeds =
-/*#__PURE__*/
-function () {
+var Feeds = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Feeds</code>.
    * @alias module:model/Feeds

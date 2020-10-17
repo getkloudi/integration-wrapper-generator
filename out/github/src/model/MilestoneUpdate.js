@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MilestoneUpdate model module.
  * @module model/MilestoneUpdate
- * @version 1.4.3
+ * @version 1.4.4
  */
 class MilestoneUpdate {
     /**

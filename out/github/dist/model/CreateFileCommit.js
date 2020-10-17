@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFileCommit model module.
  * @module model/CreateFileCommit
- * @version 1.4.3
+ * @version 1.4.4
  */
-var CreateFileCommit =
-/*#__PURE__*/
-function () {
+var CreateFileCommit = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CreateFileCommit</code>.
    * @alias module:model/CreateFileCommit

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PullRequestLinksComments model module.
  * @module model/PullRequestLinksComments
- * @version 1.4.3
+ * @version 1.4.4
  */
 class PullRequestLinksComments {
     /**

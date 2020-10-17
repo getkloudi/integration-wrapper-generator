@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Branch model module.
  * @module model/Branch
- * @version 1.4.3
+ * @version 1.4.4
  */
-var Branch =
-/*#__PURE__*/
-function () {
+var Branch = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Branch</code>.
    * @alias module:model/Branch

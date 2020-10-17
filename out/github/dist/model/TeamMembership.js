@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TeamMembership model module.
  * @module model/TeamMembership
- * @version 1.4.3
+ * @version 1.4.4
  */
-var TeamMembership =
-/*#__PURE__*/
-function () {
+var TeamMembership = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TeamMembership</code>.
    * @alias module:model/TeamMembership

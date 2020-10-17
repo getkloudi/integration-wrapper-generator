@@ -186,5 +186,113 @@
         }
       }
     ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "ALL",
+    "integration": "GITHUB",
+    "method": "POST",
+    "map": [
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "apiKey"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "CONSTANT",
+          "value": "token"
+        },
+        "output": {
+          "key": "apiKeyPrefix"
+        }
+      },
+      {
+        "input": {
+          "key": "body.githubProject.projectId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "repo"
+        }
+      },
+      {
+        "input": {
+          "key": "body.githubProject.organizationId"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "owner"
+        }
+      },
+      {
+        "input": {
+          "key": "body.content"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "body"
+        }
+      },
+      {
+        "input": {
+          "key": "query.page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.page"
+        }
+      },
+      {
+        "input": {
+          "key": "query.per_page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.perPage"
+        }
+      },
+      {
+        "input": {
+          "key": "query.page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "skip"
+        }
+      },
+      {
+        "input": {
+          "key": "query.per_page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "limit"
+        }
+      }
+    ]
   }
 ]

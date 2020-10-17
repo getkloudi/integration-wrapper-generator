@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Release model module.
  * @module model/Release
- * @version 1.4.3
+ * @version 1.4.4
  */
-var Release =
-/*#__PURE__*/
-function () {
+var Release = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Release</code>.
    * @alias module:model/Release

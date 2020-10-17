@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Meta model module.
  * @module model/Meta
- * @version 1.4.3
+ * @version 1.4.4
  */
 class Meta {
     /**

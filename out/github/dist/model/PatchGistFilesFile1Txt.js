@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PatchGistFilesFile1Txt model module.
  * @module model/PatchGistFilesFile1Txt
- * @version 1.4.3
+ * @version 1.4.4
  */
-var PatchGistFilesFile1Txt =
-/*#__PURE__*/
-function () {
+var PatchGistFilesFile1Txt = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PatchGistFilesFile1Txt</code>.
    * @alias module:model/PatchGistFilesFile1Txt

@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The MergesSuccessful model module.
  * @module model/MergesSuccessful
- * @version 1.4.3
+ * @version 1.4.4
  */
-var MergesSuccessful =
-/*#__PURE__*/
-function () {
+var MergesSuccessful = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>MergesSuccessful</code>.
    * @alias module:model/MergesSuccessful

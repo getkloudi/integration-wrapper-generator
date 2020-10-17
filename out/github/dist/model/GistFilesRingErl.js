@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The GistFilesRingErl model module.
  * @module model/GistFilesRingErl
- * @version 1.4.3
+ * @version 1.4.4
  */
-var GistFilesRingErl =
-/*#__PURE__*/
-function () {
+var GistFilesRingErl = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>GistFilesRingErl</code>.
    * @alias module:model/GistFilesRingErl

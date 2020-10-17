@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Meta model module.
  * @module model/Meta
- * @version 1.4.3
+ * @version 1.4.4
  */
-var Meta =
-/*#__PURE__*/
-function () {
+var Meta = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Meta</code>.
    * @alias module:model/Meta

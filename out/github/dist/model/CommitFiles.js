@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommitFiles model module.
  * @module model/CommitFiles
- * @version 1.4.3
+ * @version 1.4.4
  */
-var CommitFiles =
-/*#__PURE__*/
-function () {
+var CommitFiles = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CommitFiles</code>.
    * @alias module:model/CommitFiles

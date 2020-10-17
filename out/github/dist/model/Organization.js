@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Organization model module.
  * @module model/Organization
- * @version 1.4.3
+ * @version 1.4.4
  */
-var Organization =
-/*#__PURE__*/
-function () {
+var Organization = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Organization</code>.
    * @alias module:model/Organization

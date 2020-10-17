@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The UserKeysKeyId model module.
  * @module model/UserKeysKeyId
- * @version 1.4.3
+ * @version 1.4.4
  */
-var UserKeysKeyId =
-/*#__PURE__*/
-function () {
+var UserKeysKeyId = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>UserKeysKeyId</code>.
    * @alias module:model/UserKeysKeyId

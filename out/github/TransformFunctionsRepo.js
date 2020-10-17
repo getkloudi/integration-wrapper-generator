@@ -12,9 +12,9 @@ module.exports.transforToInfoTableMetrics = (value, key) => {
   return { key: key, value: value };
 };
 
-module.exports.tansformThirdPartyProjectsToRepoAndOwner = value => {
+module.exports.tansformThirdPartyProjectsToRepoAndOwner = (value) => {
   return {
     repo: value.projectId,
-    owner: value.organizationId
+    owner: value.organizationId,
   };
 };

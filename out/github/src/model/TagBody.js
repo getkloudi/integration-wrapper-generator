@@ -17,7 +17,7 @@ import TagTagger from './TagTagger';
 /**
  * The TagBody model module.
  * @module model/TagBody
- * @version 1.4.3
+ * @version 1.4.4
  */
 class TagBody {
     /**

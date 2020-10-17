@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Notifications model module.
  * @module model/Notifications
- * @version 1.4.3
+ * @version 1.4.4
  */
-var Notifications =
-/*#__PURE__*/
-function () {
+var Notifications = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Notifications</code>.
    * @alias module:model/Notifications

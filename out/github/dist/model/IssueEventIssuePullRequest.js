@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The IssueEventIssuePullRequest model module.
  * @module model/IssueEventIssuePullRequest
- * @version 1.4.3
+ * @version 1.4.4
  */
-var IssueEventIssuePullRequest =
-/*#__PURE__*/
-function () {
+var IssueEventIssuePullRequest = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>IssueEventIssuePullRequest</code>.
    * @alias module:model/IssueEventIssuePullRequest

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PatchGistFilesOldNameTxt model module.
  * @module model/PatchGistFilesOldNameTxt
- * @version 1.4.3
+ * @version 1.4.4
  */
 class PatchGistFilesOldNameTxt {
     /**

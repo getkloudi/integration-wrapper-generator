@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RepoCommit model module.
  * @module model/RepoCommit
- * @version 1.4.3
+ * @version 1.4.4
  */
-var RepoCommit =
-/*#__PURE__*/
-function () {
+var RepoCommit = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RepoCommit</code>.
    * @alias module:model/RepoCommit

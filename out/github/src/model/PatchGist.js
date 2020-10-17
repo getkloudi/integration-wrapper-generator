@@ -17,7 +17,7 @@ import PatchGistFiles from './PatchGistFiles';
 /**
  * The PatchGist model module.
  * @module model/PatchGist
- * @version 1.4.3
+ * @version 1.4.4
  */
 class PatchGist {
     /**

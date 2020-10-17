@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TreeTree model module.
  * @module model/TreeTree
- * @version 1.4.3
+ * @version 1.4.4
  */
-var TreeTree =
-/*#__PURE__*/
-function () {
+var TreeTree = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TreeTree</code>.
    * @alias module:model/TreeTree

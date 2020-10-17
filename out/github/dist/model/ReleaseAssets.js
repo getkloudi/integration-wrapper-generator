@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ReleaseAssets model module.
  * @module model/ReleaseAssets
- * @version 1.4.3
+ * @version 1.4.4
  */
-var ReleaseAssets =
-/*#__PURE__*/
-function () {
+var ReleaseAssets = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ReleaseAssets</code>.
    * @alias module:model/ReleaseAssets

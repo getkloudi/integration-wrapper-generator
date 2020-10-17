@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PutSubscription model module.
  * @module model/PutSubscription
- * @version 1.4.3
+ * @version 1.4.4
  */
-var PutSubscription =
-/*#__PURE__*/
-function () {
+var PutSubscription = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PutSubscription</code>.
    * @alias module:model/PutSubscription

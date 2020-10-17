@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommitStats model module.
  * @module model/CommitStats
- * @version 1.4.3
+ * @version 1.4.4
  */
-var CommitStats =
-/*#__PURE__*/
-function () {
+var CommitStats = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CommitStats</code>.
    * @alias module:model/CommitStats

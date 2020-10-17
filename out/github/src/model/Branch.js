@@ -18,7 +18,7 @@ import BranchLinks from './BranchLinks';
 /**
  * The Branch model module.
  * @module model/Branch
- * @version 1.4.3
+ * @version 1.4.4
  */
 class Branch {
     /**

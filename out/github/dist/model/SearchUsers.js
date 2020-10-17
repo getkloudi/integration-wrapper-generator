@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchUsers model module.
  * @module model/SearchUsers
- * @version 1.4.3
+ * @version 1.4.4
  */
-var SearchUsers =
-/*#__PURE__*/
-function () {
+var SearchUsers = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SearchUsers</code>.
    * @alias module:model/SearchUsers

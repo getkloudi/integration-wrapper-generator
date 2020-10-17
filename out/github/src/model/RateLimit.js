@@ -17,7 +17,7 @@ import RateLimitRate from './RateLimitRate';
 /**
  * The RateLimit model module.
  * @module model/RateLimit
- * @version 1.4.3
+ * @version 1.4.4
  */
 class RateLimit {
     /**

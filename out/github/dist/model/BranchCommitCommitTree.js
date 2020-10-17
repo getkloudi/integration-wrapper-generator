@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The BranchCommitCommitTree model module.
  * @module model/BranchCommitCommitTree
- * @version 1.4.3
+ * @version 1.4.4
  */
-var BranchCommitCommitTree =
-/*#__PURE__*/
-function () {
+var BranchCommitCommitTree = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BranchCommitCommitTree</code>.
    * @alias module:model/BranchCommitCommitTree

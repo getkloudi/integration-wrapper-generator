@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EditTeam model module.
  * @module model/EditTeam
- * @version 1.4.3
+ * @version 1.4.4
  */
 class EditTeam {
     /**

@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The SearchIssuesItems model module.
  * @module model/SearchIssuesItems
- * @version 1.4.3
+ * @version 1.4.4
  */
-var SearchIssuesItems =
-/*#__PURE__*/
-function () {
+var SearchIssuesItems = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SearchIssuesItems</code>.
    * @alias module:model/SearchIssuesItems

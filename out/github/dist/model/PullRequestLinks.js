@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullRequestLinks model module.
  * @module model/PullRequestLinks
- * @version 1.4.3
+ * @version 1.4.4
  */
-var PullRequestLinks =
-/*#__PURE__*/
-function () {
+var PullRequestLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PullRequestLinks</code>.
    * @alias module:model/PullRequestLinks

@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ParticipationStats model module.
  * @module model/ParticipationStats
- * @version 1.4.3
+ * @version 1.4.4
  */
-var ParticipationStats =
-/*#__PURE__*/
-function () {
+var ParticipationStats = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ParticipationStats</code>.
    * @alias module:model/ParticipationStats

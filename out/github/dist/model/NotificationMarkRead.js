@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The NotificationMarkRead model module.
  * @module model/NotificationMarkRead
- * @version 1.4.3
+ * @version 1.4.4
  */
-var NotificationMarkRead =
-/*#__PURE__*/
-function () {
+var NotificationMarkRead = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>NotificationMarkRead</code>.
    * @alias module:model/NotificationMarkRead

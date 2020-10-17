@@ -26,11 +26,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Gist model module.
  * @module model/Gist
- * @version 1.4.3
+ * @version 1.4.4
  */
-var Gist =
-/*#__PURE__*/
-function () {
+var Gist = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Gist</code>.
    * @alias module:model/Gist

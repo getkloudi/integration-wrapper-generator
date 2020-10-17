@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The PullRequestLinksComments model module.
  * @module model/PullRequestLinksComments
- * @version 1.4.3
+ * @version 1.4.4
  */
-var PullRequestLinksComments =
-/*#__PURE__*/
-function () {
+var PullRequestLinksComments = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>PullRequestLinksComments</code>.
    * @alias module:model/PullRequestLinksComments

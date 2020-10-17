@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommitComment model module.
  * @module model/CommitComment
- * @version 1.4.3
+ * @version 1.4.4
  */
-var CommitComment =
-/*#__PURE__*/
-function () {
+var CommitComment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CommitComment</code>.
    * @alias module:model/CommitComment

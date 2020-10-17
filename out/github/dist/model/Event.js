@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Event model module.
  * @module model/Event
- * @version 1.4.3
+ * @version 1.4.4
  */
-var Event =
-/*#__PURE__*/
-function () {
+var Event = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Event</code>.
    * @alias module:model/Event

@@ -19,7 +19,7 @@ import CreateFileCommitParents from './CreateFileCommitParents';
 /**
  * The CreateFileCommit model module.
  * @module model/CreateFileCommit
- * @version 1.4.3
+ * @version 1.4.4
  */
 class CreateFileCommit {
     /**

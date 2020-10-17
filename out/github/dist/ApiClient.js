@@ -11,7 +11,7 @@ var _querystring = _interopRequireDefault(require("querystring"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -20,20 +20,18 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 /**
-* @module ApiClient
-* @version 1.4.3
-*/
+ * @module ApiClient
+ * @version 1.4.4
+ */
 
 /**
-* Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
-* application to use this class directly - the *Api and model classes provide the public API for the service. The
-* contents of this file should be regarded as internal but are documented for completeness.
-* @alias module:ApiClient
-* @class
-*/
-var ApiClient =
-/*#__PURE__*/
-function () {
+ * Manages low level client-server communications, parameter marshalling, etc. There should not be any need for an
+ * application to use this class directly - the *Api and model classes provide the public API for the service. The
+ * contents of this file should be regarded as internal but are documented for completeness.
+ * @alias module:ApiClient
+ * @class
+ */
+var ApiClient = /*#__PURE__*/function () {
   function ApiClient() {
     _classCallCheck(this, ApiClient);
 
@@ -42,20 +40,20 @@ function () {
      * @type {String}
      * @default https://api.github.com
      */
-    this.basePath = 'https://api.github.com'.replace(/\/+$/, '');
+    this.basePath = "https://api.github.com".replace(/\/+$/, "");
     /**
      * The authentication methods to be included for all API calls.
      * @type {Array.<String>}
      */
 
     this.authentications = {
-      'api_key': {
-        type: 'apiKey',
-        'in': 'header',
-        name: 'Authorization'
+      api_key: {
+        type: "apiKey",
+        "in": "header",
+        name: "Authorization"
       },
-      'oauth2': {
-        type: 'oauth2'
+      oauth2: {
+        type: "oauth2"
       }
     };
     /**
@@ -94,7 +92,7 @@ function () {
      * if this.enableCookies is set to true.
      */
 
-    if (typeof window === 'undefined') {
+    if (typeof window === "undefined") {
       this.agent = new _superagent["default"].agent();
     }
     /*
@@ -110,17 +108,17 @@ function () {
     this.plugins = null;
   }
   /**
-  * Returns a string representation for an actual parameter.
-  * @param param The actual parameter.
-  * @returns {String} The string representation of <code>param</code>.
-  */
+   * Returns a string representation for an actual parameter.
+   * @param param The actual parameter.
+   * @returns {String} The string representation of <code>param</code>.
+   */
 
 
   _createClass(ApiClient, [{
     key: "paramToString",
     value: function paramToString(param) {
       if (param == undefined || param == null) {
-        return '';
+        return "";
       }
 
       if (param instanceof Date) {
@@ -144,7 +142,7 @@ function () {
       var _this = this;
 
       if (!path.match(/^\//)) {
-        path = '/' + path;
+        path = "/" + path;
       }
 
       var url = this.basePath + path; // use API (operation, path) base path if defined
@@ -167,16 +165,16 @@ function () {
       return url;
     }
     /**
-    * Checks whether the given content type represents JSON.<br>
-    * JSON content type examples:<br>
-    * <ul>
-    * <li>application/json</li>
-    * <li>application/json; charset=UTF8</li>
-    * <li>APPLICATION/JSON</li>
-    * </ul>
-    * @param {String} contentType The MIME content type to check.
-    * @returns {Boolean} <code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.
-    */
+     * Checks whether the given content type represents JSON.<br>
+     * JSON content type examples:<br>
+     * <ul>
+     * <li>application/json</li>
+     * <li>application/json; charset=UTF8</li>
+     * <li>APPLICATION/JSON</li>
+     * </ul>
+     * @param {String} contentType The MIME content type to check.
+     * @returns {Boolean} <code>true</code> if <code>contentType</code> represents JSON, otherwise <code>false</code>.
+     */
 
   }, {
     key: "isJsonMime",
@@ -184,10 +182,10 @@ function () {
       return Boolean(contentType != null && contentType.match(/^application\/json(;.*)?$/i));
     }
     /**
-    * Chooses a content type from the given array, with JSON preferred; i.e. return JSON if included, otherwise return the first.
-    * @param {Array.<String>} contentTypes
-    * @returns {String} The chosen content type, preferring JSON.
-    */
+     * Chooses a content type from the given array, with JSON preferred; i.e. return JSON if included, otherwise return the first.
+     * @param {Array.<String>} contentTypes
+     * @returns {String} The chosen content type, preferring JSON.
+     */
 
   }, {
     key: "jsonPreferredMime",
@@ -201,20 +199,20 @@ function () {
       return contentTypes[0];
     }
     /**
-    * Checks whether the given parameter value represents file-like content.
-    * @param param The parameter to check.
-    * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
-    */
+     * Checks whether the given parameter value represents file-like content.
+     * @param param The parameter to check.
+     * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
+     */
 
   }, {
     key: "isFileParam",
     value: function isFileParam(param) {
       // fs.ReadStream in Node.js and Electron (but not in runtime like browserify)
-      if (typeof require === 'function') {
+      if (typeof require === "function") {
         var fs;
 
         try {
-          fs = require('fs');
+          fs = require("fs");
         } catch (err) {}
 
         if (fs && fs.ReadStream && param instanceof fs.ReadStream) {
@@ -223,32 +221,32 @@ function () {
       } // Buffer in Node.js
 
 
-      if (typeof Buffer === 'function' && param instanceof Buffer) {
+      if (typeof Buffer === "function" && param instanceof Buffer) {
         return true;
       } // Blob in browser
 
 
-      if (typeof Blob === 'function' && param instanceof Blob) {
+      if (typeof Blob === "function" && param instanceof Blob) {
         return true;
       } // File in browser (it seems File object is also instance of Blob, but keep this for safe)
 
 
-      if (typeof File === 'function' && param instanceof File) {
+      if (typeof File === "function" && param instanceof File) {
         return true;
       }
 
       return false;
     }
     /**
-    * Normalizes parameter values:
-    * <ul>
-    * <li>remove nils</li>
-    * <li>keep files and arrays</li>
-    * <li>format to string with `paramToString` for other cases</li>
-    * </ul>
-    * @param {Object.<String, Object>} params The parameters as object properties.
-    * @returns {Object.<String, Object>} normalized parameters.
-    */
+     * Normalizes parameter values:
+     * <ul>
+     * <li>remove nils</li>
+     * <li>keep files and arrays</li>
+     * <li>format to string with `paramToString` for other cases</li>
+     * </ul>
+     * @param {Object.<String, Object>} params The parameters as object properties.
+     * @returns {Object.<String, Object>} normalized parameters.
+     */
 
   }, {
     key: "normalizeParams",
@@ -270,12 +268,12 @@ function () {
       return newParams;
     }
     /**
-    * Builds a string representation of an array-type actual parameter, according to the given collection format.
-    * @param {Array} param An array parameter.
-    * @param {module:ApiClient.CollectionFormatEnum} collectionFormat The array element separator strategy.
-    * @returns {String|Array} A string representation of the supplied collection, using the specified delimiter. Returns
-    * <code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.
-    */
+     * Builds a string representation of an array-type actual parameter, according to the given collection format.
+     * @param {Array} param An array parameter.
+     * @param {module:ApiClient.CollectionFormatEnum} collectionFormat The array element separator strategy.
+     * @returns {String|Array} A string representation of the supplied collection, using the specified delimiter. Returns
+     * <code>param</code> as is if <code>collectionFormat</code> is <code>multi</code>.
+     */
 
   }, {
     key: "buildCollectionParam",
@@ -285,31 +283,31 @@ function () {
       }
 
       switch (collectionFormat) {
-        case 'csv':
-          return param.map(this.paramToString).join(',');
+        case "csv":
+          return param.map(this.paramToString).join(",");
 
-        case 'ssv':
-          return param.map(this.paramToString).join(' ');
+        case "ssv":
+          return param.map(this.paramToString).join(" ");
 
-        case 'tsv':
-          return param.map(this.paramToString).join('\t');
+        case "tsv":
+          return param.map(this.paramToString).join("\t");
 
-        case 'pipes':
-          return param.map(this.paramToString).join('|');
+        case "pipes":
+          return param.map(this.paramToString).join("|");
 
-        case 'multi':
+        case "multi":
           //return the array directly as SuperAgent will handle it as expected
           return param.map(this.paramToString);
 
         default:
-          throw new Error('Unknown collection format: ' + collectionFormat);
+          throw new Error("Unknown collection format: " + collectionFormat);
       }
     }
     /**
-    * Applies authentication headers to the request.
-    * @param {Object} request The request object created by a <code>superagent()</code> call.
-    * @param {Array.<String>} authNames An array of authentication method names.
-    */
+     * Applies authentication headers to the request.
+     * @param {Object} request The request object created by a <code>superagent()</code> call.
+     * @param {Array.<String>} authNames An array of authentication method names.
+     */
 
   }, {
     key: "applyAuthToRequest",
@@ -320,33 +318,33 @@ function () {
         var auth = _this2.authentications[authName];
 
         switch (auth.type) {
-          case 'basic':
+          case "basic":
             if (auth.username || auth.password) {
-              request.auth(auth.username || '', auth.password || '');
+              request.auth(auth.username || "", auth.password || "");
             }
 
             break;
 
-          case 'bearer':
+          case "bearer":
             if (auth.accessToken) {
               request.set({
-                'Authorization': 'Bearer ' + auth.accessToken
+                Authorization: "Bearer " + auth.accessToken
               });
             }
 
             break;
 
-          case 'apiKey':
+          case "apiKey":
             if (auth.apiKey) {
               var data = {};
 
               if (auth.apiKeyPrefix) {
-                data[auth.name] = auth.apiKeyPrefix + ' ' + auth.apiKey;
+                data[auth.name] = auth.apiKeyPrefix + " " + auth.apiKey;
               } else {
                 data[auth.name] = auth.apiKey;
               }
 
-              if (auth['in'] === 'header') {
+              if (auth["in"] === "header") {
                 request.set(data);
               } else {
                 request.query(data);
@@ -355,17 +353,17 @@ function () {
 
             break;
 
-          case 'oauth2':
+          case "oauth2":
             if (auth.accessToken) {
               request.set({
-                'Authorization': 'Bearer ' + auth.accessToken
+                Authorization: "Bearer " + auth.accessToken
               });
             }
 
             break;
 
           default:
-            throw new Error('Unknown authentication type: ' + auth.type);
+            throw new Error("Unknown authentication type: " + auth.type);
         }
       });
     }
@@ -390,7 +388,7 @@ function () {
 
       var data = response.body;
 
-      if (data == null || _typeof(data) === 'object' && typeof data.length === 'undefined' && !Object.keys(data).length) {
+      if (data == null || _typeof(data) === "object" && typeof data.length === "undefined" && !Object.keys(data).length) {
         // SuperAgent does not always produce a body; use the unparsed response as a fallback
         data = response.text;
       }
@@ -443,8 +441,8 @@ function () {
 
       this.applyAuthToRequest(request, authNames); // set query parameters
 
-      if (httpMethod.toUpperCase() === 'GET' && this.cache === false) {
-        queryParams['_'] = new Date().getTime();
+      if (httpMethod.toUpperCase() === "GET" && this.cache === false) {
+        queryParams["_"] = new Date().getTime();
       }
 
       request.query(this.normalizeParams(queryParams)); // set header parameters
@@ -461,16 +459,16 @@ function () {
 
       if (contentType) {
         // Issue with superagent and multipart/form-data (https://github.com/visionmedia/superagent/issues/746)
-        if (contentType != 'multipart/form-data') {
+        if (contentType != "multipart/form-data") {
           request.type(contentType);
         }
-      } else if (!request.header['Content-Type']) {
-        request.type('application/json');
+      } else if (!request.header["Content-Type"]) {
+        request.type("application/json");
       }
 
-      if (contentType === 'application/x-www-form-urlencoded') {
+      if (contentType === "application/x-www-form-urlencoded") {
         request.send(_querystring["default"].stringify(this.normalizeParams(formParams)));
-      } else if (contentType == 'multipart/form-data') {
+      } else if (contentType == "multipart/form-data") {
         var _formParams = this.normalizeParams(formParams);
 
         for (var key in _formParams) {
@@ -493,15 +491,15 @@ function () {
         request.accept(accept);
       }
 
-      if (returnType === 'Blob') {
-        request.responseType('blob');
-      } else if (returnType === 'String') {
-        request.responseType('string');
+      if (returnType === "Blob") {
+        request.responseType("blob");
+      } else if (returnType === "String") {
+        request.responseType("string");
       } // Attach previously saved cookies, if enabled
 
 
       if (this.enableCookies) {
-        if (typeof window === 'undefined') {
+        if (typeof window === "undefined") {
           this.agent._attachCookies(request);
         } else {
           request.withCredentials();
@@ -516,7 +514,7 @@ function () {
             try {
               data = _this3.deserialize(response, returnType);
 
-              if (_this3.enableCookies && typeof window === 'undefined') {
+              if (_this3.enableCookies && typeof window === "undefined") {
                 _this3.agent._saveCookies(response);
               }
             } catch (err) {
@@ -530,22 +528,22 @@ function () {
       return request;
     }
     /**
-    * Parses an ISO-8601 string representation of a date value.
-    * @param {String} str The date value as a string.
-    * @returns {Date} The parsed date object.
-    */
+     * Parses an ISO-8601 string representation of a date value.
+     * @param {String} str The date value as a string.
+     * @returns {Date} The parsed date object.
+     */
 
   }, {
     key: "hostSettings",
 
     /**
-      * Gets an array of host settings
-      * @returns An array of host settings
-      */
+     * Gets an array of host settings
+     * @returns An array of host settings
+     */
     value: function hostSettings() {
       return [{
-        'url': "https://api.github.com/",
-        'description': "No description provided"
+        url: "https://api.github.com/",
+        description: "No description provided"
       }];
     }
   }, {
@@ -559,30 +557,30 @@ function () {
       }
 
       var server = servers[index];
-      var url = server['url']; // go through variable and assign a value
+      var url = server["url"]; // go through variable and assign a value
 
-      for (var variable_name in server['variables']) {
+      for (var variable_name in server["variables"]) {
         if (variable_name in variables) {
-          var variable = server['variables'][variable_name];
+          var variable = server["variables"][variable_name];
 
-          if (!('enum_values' in variable) || variable['enum_values'].includes(variables[variable_name])) {
+          if (!("enum_values" in variable) || variable["enum_values"].includes(variables[variable_name])) {
             url = url.replace("{" + variable_name + "}", variables[variable_name]);
           } else {
-            throw new Error("The variable `" + variable_name + "` in the host URL has invalid value " + variables[variable_name] + ". Must be " + server['variables'][variable_name]['enum_values'] + ".");
+            throw new Error("The variable `" + variable_name + "` in the host URL has invalid value " + variables[variable_name] + ". Must be " + server["variables"][variable_name]["enum_values"] + ".");
           }
         } else {
           // use default value
-          url = url.replace("{" + variable_name + "}", server['variables'][variable_name]['default_value']);
+          url = url.replace("{" + variable_name + "}", server["variables"][variable_name]["default_value"]);
         }
       }
 
       return url;
     }
     /**
-    * Constructs a new map or array model from REST data.
-    * @param data {Object|Array} The REST data.
-    * @param obj {Object|Array} The target object or array.
-    */
+     * Constructs a new map or array model from REST data.
+     * @param data {Object|Array} The REST data.
+     * @param obj {Object|Array} The target object or array.
+     */
 
   }], [{
     key: "parseDate",
@@ -590,14 +588,14 @@ function () {
       return new Date(str);
     }
     /**
-    * Converts a value to the specified type.
-    * @param {(String|Object)} data The data to convert, as a string or object.
-    * @param {(String|Array.<String>|Object.<String, Object>|Function)} type The type to return. Pass a string for simple types
-    * or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
-    * return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type:
-    * all properties on <code>data<code> will be converted to this type.
-    * @returns An instance of the specified type or null or undefined if data is null or undefined.
-    */
+     * Converts a value to the specified type.
+     * @param {(String|Object)} data The data to convert, as a string or object.
+     * @param {(String|Array.<String>|Object.<String, Object>|Function)} type The type to return. Pass a string for simple types
+     * or the constructor function for a complex type. Pass an array containing the type name to return an array of that type. To
+     * return an object, pass an object with one property whose name is the key type and whose value is the corresponding value type:
+     * all properties on <code>data<code> will be converted to this type.
+     * @returns An instance of the specified type or null or undefined if data is null or undefined.
+     */
 
   }, {
     key: "convertToType",
@@ -605,29 +603,29 @@ function () {
       if (data === null || data === undefined) return data;
 
       switch (type) {
-        case 'Boolean':
+        case "Boolean":
           return Boolean(data);
 
-        case 'Integer':
+        case "Integer":
           return parseInt(data, 10);
 
-        case 'Number':
+        case "Number":
           return parseFloat(data);
 
-        case 'String':
+        case "String":
           return String(data);
 
-        case 'Date':
+        case "Date":
           return ApiClient.parseDate(String(data));
 
-        case 'Blob':
+        case "Blob":
           return data;
 
         default:
           if (type === Object) {
             // generic object, return directly
             return data;
-          } else if (typeof type.constructFromObject === 'function') {
+          } else if (typeof type.constructFromObject === "function") {
             // for model type like User and enum class
             return type.constructFromObject(data);
           } else if (Array.isArray(type)) {
@@ -636,7 +634,7 @@ function () {
             return data.map(function (item) {
               return ApiClient.convertToType(item, itemType);
             });
-          } else if (_typeof(type) === 'object') {
+          } else if (_typeof(type) === "object") {
             // for plain object type like: {'String': 'Integer'}
             var keyType, valueType;
 
@@ -695,36 +693,36 @@ ApiClient.CollectionFormatEnum = {
    * Comma-separated values. Value: <code>csv</code>
    * @const
    */
-  CSV: ',',
+  CSV: ",",
 
   /**
    * Space-separated values. Value: <code>ssv</code>
    * @const
    */
-  SSV: ' ',
+  SSV: " ",
 
   /**
    * Tab-separated values. Value: <code>tsv</code>
    * @const
    */
-  TSV: '\t',
+  TSV: "\t",
 
   /**
    * Pipe(|)-separated values. Value: <code>pipes</code>
    * @const
    */
-  PIPES: '|',
+  PIPES: "|",
 
   /**
    * Native array. Value: <code>multi</code>
    * @const
    */
-  MULTI: 'multi'
+  MULTI: "multi"
 };
 /**
-* The default API client implementation.
-* @type {module:ApiClient}
-*/
+ * The default API client implementation.
+ * @type {module:ApiClient}
+ */
 
 ApiClient.instance = new ApiClient();
 var _default = ApiClient;

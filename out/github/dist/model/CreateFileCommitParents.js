@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CreateFileCommitParents model module.
  * @module model/CreateFileCommitParents
- * @version 1.4.3
+ * @version 1.4.4
  */
-var CreateFileCommitParents =
-/*#__PURE__*/
-function () {
+var CreateFileCommitParents = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CreateFileCommitParents</code>.
    * @alias module:model/CreateFileCommitParents

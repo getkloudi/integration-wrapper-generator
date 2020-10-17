@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FeedsLinksCurrentUser model module.
  * @module model/FeedsLinksCurrentUser
- * @version 1.4.3
+ * @version 1.4.4
  */
 class FeedsLinksCurrentUser {
     /**

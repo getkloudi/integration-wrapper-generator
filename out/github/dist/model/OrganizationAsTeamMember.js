@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The OrganizationAsTeamMember model module.
  * @module model/OrganizationAsTeamMember
- * @version 1.4.3
+ * @version 1.4.4
  */
-var OrganizationAsTeamMember =
-/*#__PURE__*/
-function () {
+var OrganizationAsTeamMember = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>OrganizationAsTeamMember</code>.
    * @alias module:model/OrganizationAsTeamMember

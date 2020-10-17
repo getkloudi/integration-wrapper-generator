@@ -17,7 +17,7 @@ import ContentsPathLinks from './ContentsPathLinks';
 /**
  * The ContentsPath model module.
  * @module model/ContentsPath
- * @version 1.4.3
+ * @version 1.4.4
  */
 class ContentsPath {
     /**

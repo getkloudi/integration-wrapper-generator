@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CommitCommentBody model module.
  * @module model/CommitCommentBody
- * @version 1.4.3
+ * @version 1.4.4
  */
-var CommitCommentBody =
-/*#__PURE__*/
-function () {
+var CommitCommentBody = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CommitCommentBody</code>.
    * @alias module:model/CommitCommentBody

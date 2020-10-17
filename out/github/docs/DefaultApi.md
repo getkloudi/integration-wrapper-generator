@@ -262,7 +262,7 @@ Lists all the emojis available to use on GitHub.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -319,7 +319,7 @@ List public events.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -376,7 +376,7 @@ List Feeds. GitHub provides several timeline resources in Atom format. The Feeds
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -433,7 +433,7 @@ List the authenticated user&#39;s gists or if called anonymously, this will retu
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -492,7 +492,7 @@ Delete a comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -549,7 +549,7 @@ Get a single comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -606,7 +606,7 @@ Edit a comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -665,7 +665,7 @@ List comments on a gist.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -724,7 +724,7 @@ Create a commen
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -781,7 +781,7 @@ Delete a gist.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -836,7 +836,7 @@ Fork a gist.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -891,7 +891,7 @@ Get a single gist.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -946,7 +946,7 @@ Edit a gist.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1003,7 +1003,7 @@ Unstar a gist.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1058,7 +1058,7 @@ Check if a gist is starred.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1117,7 +1117,7 @@ Star a gist.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1172,7 +1172,7 @@ Create a gist.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1227,7 +1227,7 @@ List all public gists.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1286,7 +1286,7 @@ List the authenticated user&#39;s starred gists.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1345,7 +1345,7 @@ Listing available templates. List all templates available to pass as an option w
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1402,7 +1402,7 @@ Get a single template.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1457,7 +1457,7 @@ List issues. List all issues across all the authenticated user&#39;s visible rep
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1526,7 +1526,7 @@ Find issues by state and keyword.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let keyword = "keyword_example"; // String | The search term.
@@ -1581,7 +1581,7 @@ Find repositories by keyword. Note, this legacy method does not follow the v3 pa
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let keyword = "keyword_example"; // String | The search term
@@ -1638,7 +1638,7 @@ This API call is added for compatibility reasons only.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let email = "email_example"; // String | The email address
@@ -1687,7 +1687,7 @@ Find users by keyword.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let keyword = "keyword_example"; // String | The search term
@@ -1742,7 +1742,7 @@ Render an arbitrary Markdown document
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1797,7 +1797,7 @@ Render a Markdown document in raw mode
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1850,7 +1850,7 @@ This gives some information about GitHub.com, the service.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1903,7 +1903,7 @@ List public events for a network of repositories.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -1964,7 +1964,7 @@ List your notifications. List all notifications for the current user, grouped by
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2027,7 +2027,7 @@ Mark as read. Marking a notification as \&quot;read\&quot; removes it from the d
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2082,7 +2082,7 @@ View a single thread.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2137,7 +2137,7 @@ Mark a thread as read
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2192,7 +2192,7 @@ Delete a Thread Subscription.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2247,7 +2247,7 @@ Get a Thread Subscription.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2306,7 +2306,7 @@ Set a Thread Subscription. This lets you subscribe to a thread, or ignore it. Su
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2363,7 +2363,7 @@ List public events for an organization.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2422,7 +2422,7 @@ Get an Organization.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2481,7 +2481,7 @@ List issues. List all issues for a given organization for the authenticated user
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2552,7 +2552,7 @@ Members list. List all users who are members of an organization. A member is a u
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2611,7 +2611,7 @@ Remove a member. Removing a user from this list will remove them from all teams 
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2668,7 +2668,7 @@ Check if a user is, publicly or privately, a member of the organization.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2729,7 +2729,7 @@ Edit an Organization.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2786,7 +2786,7 @@ Public members list. Members of an organization can choose to have their members
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2845,7 +2845,7 @@ Conceal a user&#39;s membership.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2902,7 +2902,7 @@ Check public membership.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -2963,7 +2963,7 @@ Publicize a user&#39;s membership.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3020,7 +3020,7 @@ List repositories for the specified org.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3081,7 +3081,7 @@ Create a new repository for the authenticated user. OAuth users must supply repo
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3138,7 +3138,7 @@ List teams.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3197,7 +3197,7 @@ Create team. In order to create a team, the authenticated user must be an owner 
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3254,7 +3254,7 @@ Get your current rate limit status Note: Accessing this endpoint does not count 
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3311,7 +3311,7 @@ Get archive link. This method will return a 302 to a URL to download a tarball o
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3376,7 +3376,7 @@ Check assignee. You may also check to see if a particular user is an assignee fo
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3439,7 +3439,7 @@ List assignees. This call lists all the available assignees (owner + collaborato
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3500,7 +3500,7 @@ Get Branch
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3563,7 +3563,7 @@ Get list of branches
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3624,7 +3624,7 @@ List. When authenticating as an organization owner of an organization-owned repo
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3685,7 +3685,7 @@ Remove collaborator.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3744,7 +3744,7 @@ Check if user is a collaborator
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3807,7 +3807,7 @@ Add collaborator.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3866,7 +3866,7 @@ Delete a commit comment
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3925,7 +3925,7 @@ Get a single commit comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -3988,7 +3988,7 @@ Update a commit comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4049,7 +4049,7 @@ List commit comments for a repository. Comments are ordered by ascending ID.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4110,7 +4110,7 @@ List commits on a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4181,7 +4181,7 @@ Get the combined Status for a specific Ref The Combined status endpoint is curre
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4244,7 +4244,7 @@ List comments for a single commitList comments for a single commit.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4307,7 +4307,7 @@ Create a commit comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4368,7 +4368,7 @@ Get a single commit.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4431,7 +4431,7 @@ Compare two commits
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4496,7 +4496,7 @@ Delete a file. This method deletes a file in a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4557,7 +4557,7 @@ Get contents. This method returns the contents of a file or directory in a repos
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4624,7 +4624,7 @@ Create a file.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4685,7 +4685,7 @@ Get list of contributors.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4748,7 +4748,7 @@ Delete a Repository. Deleting a repository requires admin access. If OAuth is us
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4805,7 +4805,7 @@ Users with pull access can view deployments for a repository
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4866,7 +4866,7 @@ Users with pull access can view deployment statuses for a deployment
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4929,7 +4929,7 @@ Create a Deployment Status Users with push access can create deployment statuses
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -4990,7 +4990,7 @@ Users with push access can create a deployment for a given ref
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -5049,7 +5049,7 @@ Deprecated. Delete a download.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -5108,7 +5108,7 @@ Deprecated. Get a single download.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -5167,7 +5167,7 @@ Deprecated. List downloads for a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -5224,7 +5224,7 @@ Get list of repository events.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -5285,7 +5285,7 @@ List forks.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -5348,7 +5348,7 @@ Create a fork. Forking a Repository happens asynchronously. Therefore, you may h
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -5407,7 +5407,7 @@ Get repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -5468,7 +5468,7 @@ Create a Blob.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -5531,7 +5531,7 @@ Get a Blob. Since blobs can be any arbitrary binary data, the input and response
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -5584,7 +5584,7 @@ Create a Commit.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -5637,7 +5637,7 @@ Get a Commit.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -5690,7 +5690,7 @@ Get all References
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -5745,7 +5745,7 @@ Create a Reference
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -5798,7 +5798,7 @@ Delete a Reference Example: Deleting a branch: DELETE /repos/octocat/Hello-World
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -5851,7 +5851,7 @@ Get a Reference
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -5908,7 +5908,7 @@ Update a Reference
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -5963,7 +5963,7 @@ Create a Tag Object. Note that creating a tag object does not create the referen
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6016,7 +6016,7 @@ Get a Tag.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6073,7 +6073,7 @@ Create a Tree. The tree creation API will take nested entries as well. If both a
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6126,7 +6126,7 @@ Get a Tree.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6181,7 +6181,7 @@ Get list of hooks.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -6242,7 +6242,7 @@ Delete a hook.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -6301,7 +6301,7 @@ Get single hook.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -6360,7 +6360,7 @@ Edit a hook.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -6421,7 +6421,7 @@ Test a push hook. This will trigger the hook with the latest push to the current
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6474,7 +6474,7 @@ Create a hook.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -6533,7 +6533,7 @@ Delete a comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6586,7 +6586,7 @@ Get a single comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6639,7 +6639,7 @@ Edit a comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6694,7 +6694,7 @@ List comments in a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6751,7 +6751,7 @@ Get a single event.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6804,7 +6804,7 @@ List issue events for a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6855,7 +6855,13 @@ List issues for a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6903,7 +6909,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -6922,7 +6928,7 @@ List comments on an issue.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -6975,7 +6981,7 @@ Create a comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7030,7 +7036,7 @@ List events for an issue.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7083,7 +7089,7 @@ Get a single issue
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7136,7 +7142,7 @@ Remove all labels from an issue.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7189,7 +7195,7 @@ List labels on an issue.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7242,7 +7248,7 @@ Remove a label from an issue.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7297,7 +7303,7 @@ Add labels to an issue.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7352,7 +7358,7 @@ Replace all labels for an issue. Sending an empty array ([]) will remove all Lab
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7407,7 +7413,7 @@ Edit an issue. Issue owners and users with push access can edit an issue.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7462,7 +7468,13 @@ Create an issue. Any user with pull access to a repository can create an issue.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
+let defaultClient = Github.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7496,7 +7508,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -7515,7 +7527,7 @@ Get list of keys.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7566,7 +7578,7 @@ Delete a key.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7619,7 +7631,7 @@ Get a key
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7672,7 +7684,7 @@ Create a key.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7725,7 +7737,7 @@ List all labels for this repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7776,7 +7788,7 @@ Delete a label.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7829,7 +7841,7 @@ Get a single label.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7882,7 +7894,7 @@ Update a label.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7937,7 +7949,7 @@ Create a label.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -7990,7 +8002,7 @@ List languages. List languages for the specified repository. The value on the ri
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8041,7 +8053,7 @@ Perform a merge.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8094,7 +8106,7 @@ List milestones for a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8151,7 +8163,7 @@ Delete a milestone.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8204,7 +8216,7 @@ Get a single milestone.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8257,7 +8269,7 @@ Get labels for every issue in a milestone.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8310,7 +8322,7 @@ Update a milestone.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8365,7 +8377,7 @@ Create a milestone.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8418,7 +8430,7 @@ List your notifications in a repository List all notifications for the current u
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8475,7 +8487,7 @@ Mark notifications as read in a repository. Marking all notifications in a repos
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8528,7 +8540,7 @@ Edit repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -8587,7 +8599,7 @@ Delete a comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8640,7 +8652,7 @@ Get a single comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8693,7 +8705,7 @@ Edit a comment.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8748,7 +8760,7 @@ List comments in a repository. By default, Review Comments are ordered by ascend
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8805,7 +8817,7 @@ List pull requests.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8862,7 +8874,7 @@ List comments on a pull request.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8915,7 +8927,7 @@ Create a comment.   #TODO Alternative input ( http://developer.github.com/v3/pul
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -8970,7 +8982,7 @@ List commits on a pull request.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9023,7 +9035,7 @@ List pull requests files.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9076,7 +9088,7 @@ Get a single pull request.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9129,7 +9141,7 @@ Get if a pull request has been merged.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9182,7 +9194,7 @@ Merge a pull request (Merge Button&#39;s)
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9237,7 +9249,7 @@ Update a pull request.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9292,7 +9304,7 @@ Create a pull request.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9345,7 +9357,7 @@ Get the README. This method returns the preferred README for a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9398,7 +9410,7 @@ Delete a release asset
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9451,7 +9463,7 @@ Get a single release asset
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9504,7 +9516,7 @@ Edit a release asset Users with push access to the repository can edit a release
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9559,7 +9571,7 @@ Users with push access to the repository will receive all releases (i.e., publis
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9610,7 +9622,7 @@ List assets for a release
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9663,7 +9675,7 @@ Users with push access to the repository can delete a release.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9716,7 +9728,7 @@ Get a single release
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9769,7 +9781,7 @@ Users with push access to the repository can edit a release
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9824,7 +9836,7 @@ Create a release Users with push access to the repository can create a release.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9877,7 +9889,7 @@ List Stargazers.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9928,7 +9940,7 @@ Get the number of additions and deletions per week. Returns a weekly aggregate o
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -9979,7 +9991,7 @@ Get the last year of commit activity data. Returns the last year of commit activ
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10030,7 +10042,7 @@ Get contributors list with additions, deletions, and commit counts.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10081,7 +10093,7 @@ Get the weekly commit count for the repo owner and everyone else.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10132,7 +10144,7 @@ Get the number of commits per hour in each day. Each array contains the day numb
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10183,7 +10195,7 @@ List Statuses for a specific Ref.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10236,7 +10248,7 @@ Create a Status.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10291,7 +10303,7 @@ List watchers.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10342,7 +10354,7 @@ Delete a Repository Subscription.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10393,7 +10405,7 @@ Get a Repository Subscription.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10444,7 +10456,7 @@ Set a Repository Subscription
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10497,7 +10509,7 @@ Get list of tags.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10548,7 +10560,7 @@ Get list of teams
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let owner = "owner_example"; // String | Name of repository owner.
@@ -10599,7 +10611,7 @@ List Stargazers. New implementation.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -10656,7 +10668,7 @@ List all public repositories. This provides a dump of every public repository, i
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -10715,7 +10727,7 @@ Search code.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -10778,7 +10790,7 @@ Find issues by state and keyword. (This method returns up to 100 results per pag
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -10841,7 +10853,7 @@ Search repositories.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -10904,7 +10916,7 @@ Search users.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -10967,7 +10979,7 @@ Delete team. In order to delete a team, the authenticated user must be an owner 
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11026,7 +11038,7 @@ Get team.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11081,7 +11093,7 @@ List team members. In order to list members in a team, the authenticated user mu
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11140,7 +11152,7 @@ The \&quot;Remove team member\&quot; API is deprecated and is scheduled for remo
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11201,7 +11213,7 @@ The \&quot;Get team member\&quot; API is deprecated and is scheduled for removal
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11258,7 +11270,7 @@ The API (described below) is deprecated and is scheduled for removal in the next
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11315,7 +11327,7 @@ Remove team membership. In order to remove a membership between a user and a tea
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11376,7 +11388,7 @@ Get team membership. In order to get a user&#39;s membership with a team, the au
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11433,7 +11445,7 @@ Add team membership. In order to add a membership between a user and a team, the
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11490,7 +11502,7 @@ Edit team. In order to edit a team, the authenticated user must be an owner of t
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11547,7 +11559,7 @@ List team repos
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11606,7 +11618,7 @@ In order to remove a repository from a team, the authenticated user must be an o
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11669,7 +11681,7 @@ Check if a team manages a repository
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11728,7 +11740,7 @@ In order to add a repository to a team, the authenticated user must be an owner 
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11787,7 +11799,7 @@ Delete email address(es). You can include a single email address or an array of 
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11842,7 +11854,7 @@ List email addresses for a user. In the final version of the API, this method wi
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11895,7 +11907,7 @@ Add email address(es). You can post a single email address or an array of addres
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -11950,7 +11962,7 @@ List the authenticated user&#39;s followers
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12007,7 +12019,7 @@ List who the authenticated user is following.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12064,7 +12076,7 @@ Unfollow a user. Unfollowing a user requires the user to be logged in and authen
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12119,7 +12131,7 @@ Check if you are following a user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12174,7 +12186,7 @@ Follow a user. Following a user requires the user to be logged in and authentica
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12229,7 +12241,7 @@ Get the authenticated user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12286,7 +12298,7 @@ List issues. List all issues across owned and member repositories for the authen
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12355,7 +12367,7 @@ List your public keys. Lists the current user&#39;s keys. Management of public k
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12408,7 +12420,7 @@ Delete a public key. Removes a public key. Requires that you are authenticated v
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12463,7 +12475,7 @@ Get a single public key.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12518,7 +12530,7 @@ Create a public key.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12573,7 +12585,7 @@ List public and private organizations for the authenticated user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12626,7 +12638,7 @@ Update the authenticated user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12681,7 +12693,7 @@ List repositories for the authenticated user. Note that this does not include re
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12740,7 +12752,7 @@ Create a new repository for the authenticated user. OAuth users must supply repo
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12795,7 +12807,7 @@ List repositories being starred by the authenticated user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12852,7 +12864,7 @@ Unstar a repository
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12909,7 +12921,7 @@ Check if you are starring a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -12966,7 +12978,7 @@ Star a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13023,7 +13035,7 @@ List repositories being watched by the authenticated user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13076,7 +13088,7 @@ Stop watching a repository
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13133,7 +13145,7 @@ Check if you are watching a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13190,7 +13202,7 @@ Watch a repository.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13247,7 +13259,7 @@ List all of the teams across all of the organizations to which the authenticated
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13300,7 +13312,7 @@ Get all users. This provides a dump of every user, in the order that they signed
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13359,7 +13371,7 @@ If you are authenticated as the given user, you will see your private events. Ot
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13418,7 +13430,7 @@ This is the user&#39;s organization dashboard. You must be authenticated as the 
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13475,7 +13487,7 @@ List a user&#39;s followers
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13530,7 +13542,7 @@ Check if one user follows another.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 
 let apiInstance = new Github.DefaultApi();
 let username = "username_example"; // String | Name of user.
@@ -13581,7 +13593,7 @@ Get a single user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13636,7 +13648,7 @@ List a users gists.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13697,7 +13709,7 @@ List public keys for a user. Lists the verified public keys for a user. This is 
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13752,7 +13764,7 @@ List all public organizations for a user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13807,7 +13819,7 @@ These are events that you&#39;ll only see public events.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13862,7 +13874,7 @@ List public events that a user has received
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13917,7 +13929,7 @@ List public repositories for the specified user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -13978,7 +13990,7 @@ List repositories being starred by a user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
@@ -14033,7 +14045,7 @@ List repositories being watched by a user.
 ### Example
 
 ```javascript
-import Github from 'github';
+import Github from 'Github';
 let defaultClient = Github.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];

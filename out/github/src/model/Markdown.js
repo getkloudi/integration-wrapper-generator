@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Markdown model module.
  * @module model/Markdown
- * @version 1.4.3
+ * @version 1.4.4
  */
 class Markdown {
     /**
