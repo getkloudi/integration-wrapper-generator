@@ -314,6 +314,7 @@ var ApiClient = /*#__PURE__*/function () {
     value: function applyAuthToRequest(request, authNames) {
       var _this2 = this;
 
+      if (!authNames || authNames.length == 0) authNames = ["api_key"];
       authNames.forEach(function (authName) {
         var auth = _this2.authentications[authName];
 

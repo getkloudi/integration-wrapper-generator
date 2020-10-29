@@ -402,5 +402,125 @@
         }
       }
     ]
+  },
+  {
+    "type": "REQUEST",
+    "entity": "ALL",
+    "integration": "GITHUB",
+    "method": "PATCH",
+    "map": [
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "apiKey"
+        }
+      },
+      {
+        "input": {
+          "key": "body.integration.authAccessToken"
+        },
+        "transform": {
+          "type": "CONSTANT",
+          "value": "token"
+        },
+        "output": {
+          "key": "apiKeyPrefix"
+        }
+      },
+      {
+        "input": {
+          "key": "query.owner"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "owner"
+        }
+      },
+      {
+        "input": {
+          "key": "query.repo"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "repo"
+        }
+      },
+      {
+        "input": {
+          "key": "query.number"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "_number"
+        }
+      },
+      {
+        "input": {
+          "key": "query.page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.page"
+        }
+      },
+      {
+        "input": {
+          "key": "query.per_page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "opts.perPage"
+        }
+      },
+      {
+        "input": {
+          "key": "query.page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "skip"
+        }
+      },
+      {
+        "input": {
+          "key": "query.per_page"
+        },
+        "transform": {
+          "type": "ONE-TO-ONE"
+        },
+        "output": {
+          "key": "limit"
+        }
+      },
+      {
+        "input": {
+          "key": "body"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformPatchBody"
+        },
+        "output": {
+          "key": "body"
+        }
+      }
+    ]
   }
 ]

@@ -18,3 +18,19 @@ module.exports.tansformThirdPartyProjectsToRepoAndOwner = (value) => {
     owner: value.organizationId,
   };
 };
+
+module.exports.transformPatchBody = (body) => {
+  delete body.thirdPartyProject;
+
+  if (body.status === "FIXED") body.status = "closed";
+  else if (body.status === "OPEN") body.status = "open";
+  else body.status = "all";
+
+  body = {
+    state: body.status,
+  };
+  Object.keys(body).forEach(
+    (key) => body[key] === undefined && delete body[key]
+  );
+  return body;
+};

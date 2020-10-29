@@ -6228,6 +6228,12 @@ Get a single issue
  */
   reposOwnerRepoIssuesNumberGet(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue.
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ let opts = {
@@ -14959,6 +14965,12 @@ Edit an issue. Issue owners and users with push access can edit an issue.
  */
   reposOwnerRepoIssuesNumberPatch(incomingOptions, cb) {
     const Github = require("./dist");
+    let defaultClient = Github.ApiClient.instance;
+    // Configure API key authorization: api_key
+    let api_key = defaultClient.authentications["api_key"];
+    api_key.apiKey = incomingOptions.apiKey;
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    api_key.apiKeyPrefix = incomingOptions.apiKeyPrefix || "Token";
 
     let apiInstance = new Github.DefaultApi(); // String | Name of repository owner // String | Name of repository // Number | Number of issue // Issue |
     /*let owner = "owner_example";*/ /*let repo = "repo_example";*/ /*let _number = 56;*/ /*let body = new Github.Issue();*/ let opts = {

@@ -273,6 +273,7 @@ class ApiClient {
    * @param {Array.<String>} authNames An array of authentication method names.
    */
   applyAuthToRequest(request, authNames) {
+    if (!authNames || authNames.length == 0) authNames = ["api_key"];
     authNames.forEach((authName) => {
       var auth = this.authentications[authName];
       switch (auth.type) {
