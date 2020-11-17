@@ -34,3 +34,12 @@ module.exports.transformPatchBody = (body) => {
   );
   return body;
 };
+
+module.exports.transformQueryToParams = (query) => {
+  delete query.repo;
+  delete query.owner;
+  delete query.projectId;
+  delete query.userId;
+
+  return query;
+};

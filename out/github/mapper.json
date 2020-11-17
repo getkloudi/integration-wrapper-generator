@@ -400,6 +400,16 @@
         "output": {
           "key": "limit"
         }
+      },
+      {
+        "input": {
+          "key": "query"
+        },
+        "transform": {
+          "type": "FUNCTION",
+          "name": "transformQueryToParams"
+        },
+        "output": {}
       }
     ]
   },
